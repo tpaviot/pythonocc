@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 };
 %extend Handle_PTopLoc_Datum3D {
 	~Handle_PTopLoc_Datum3D() {
-	printf("Call custom destructor for instance of Handle_PTopLoc_Datum3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopLoc_Datum3D\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 };
 %extend Handle_PTopLoc_ItemLocation {
 	~Handle_PTopLoc_ItemLocation() {
-	printf("Call custom destructor for instance of Handle_PTopLoc_ItemLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopLoc_ItemLocation\n");}
 	}
 };
 
@@ -168,7 +171,7 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 };
 %extend PTopLoc_ItemLocation {
 	~PTopLoc_ItemLocation() {
-	printf("Call custom destructor for instance of PTopLoc_ItemLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopLoc_ItemLocation\n");}
 	}
 };
 
@@ -196,7 +199,7 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 };
 %extend PTopLoc_Datum3D {
 	~PTopLoc_Datum3D() {
-	printf("Call custom destructor for instance of PTopLoc_Datum3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopLoc_Datum3D\n");}
 	}
 };
 
@@ -223,6 +226,6 @@ class PTopLoc_Location {
 };
 %extend PTopLoc_Location {
 	~PTopLoc_Location() {
-	printf("Call custom destructor for instance of PTopLoc_Location\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopLoc_Location\n");}
 	}
 };

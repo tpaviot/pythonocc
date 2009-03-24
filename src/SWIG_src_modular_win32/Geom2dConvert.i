@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -111,7 +114,7 @@ class Geom2dConvert {
 };
 %extend Geom2dConvert {
 	~Geom2dConvert() {
-	printf("Call custom destructor for instance of Geom2dConvert\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert\n");}
 	}
 };
 
@@ -130,7 +133,7 @@ class Geom2dConvert_BSplineCurveKnotSplitting {
 };
 %extend Geom2dConvert_BSplineCurveKnotSplitting {
 	~Geom2dConvert_BSplineCurveKnotSplitting() {
-	printf("Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");}
 	}
 };
 
@@ -153,7 +156,7 @@ class Geom2dConvert_BSplineCurveToBezierCurve {
 };
 %extend Geom2dConvert_BSplineCurveToBezierCurve {
 	~Geom2dConvert_BSplineCurveToBezierCurve() {
-	printf("Call custom destructor for instance of Geom2dConvert_BSplineCurveToBezierCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveToBezierCurve\n");}
 	}
 };
 
@@ -170,7 +173,7 @@ class Geom2dConvert_CompCurveToBSplineCurve {
 };
 %extend Geom2dConvert_CompCurveToBSplineCurve {
 	~Geom2dConvert_CompCurveToBSplineCurve() {
-	printf("Call custom destructor for instance of Geom2dConvert_CompCurveToBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert_CompCurveToBSplineCurve\n");}
 	}
 };
 
@@ -193,6 +196,6 @@ class Geom2dConvert_ApproxCurve {
 };
 %extend Geom2dConvert_ApproxCurve {
 	~Geom2dConvert_ApproxCurve() {
-	printf("Call custom destructor for instance of Geom2dConvert_ApproxCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert_ApproxCurve\n");}
 	}
 };

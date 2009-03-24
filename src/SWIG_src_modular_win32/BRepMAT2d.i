@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Ha
 };
 %extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
 	~Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt() {
-	printf("Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TColl
 };
 %extend Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
 	~Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape() {
-	printf("Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollect
 };
 %extend Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
 	~Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
-	printf("Call custom destructor for instance of Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollecti
 };
 %extend BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt {
 	~BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt() {
-	printf("Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");}
 	}
 };
 
@@ -209,7 +212,7 @@ class BRepMAT2d_BisectingLocus {
 };
 %extend BRepMAT2d_BisectingLocus {
 	~BRepMAT2d_BisectingLocus() {
-	printf("Call custom destructor for instance of BRepMAT2d_BisectingLocus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_BisectingLocus\n");}
 	}
 };
 
@@ -231,7 +234,7 @@ class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 };
 %extend BRepMAT2d_SequenceNodeOfSequenceOfBasicElt {
 	~BRepMAT2d_SequenceNodeOfSequenceOfBasicElt() {
-	printf("Call custom destructor for instance of BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
 	}
 };
 
@@ -252,7 +255,7 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TColl
 };
 %extend BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt {
 	~BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt() {
-	printf("Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt\n");}
 	}
 };
 
@@ -305,7 +308,7 @@ class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {
 };
 %extend BRepMAT2d_SequenceOfBasicElt {
 	~BRepMAT2d_SequenceOfBasicElt() {
-	printf("Call custom destructor for instance of BRepMAT2d_SequenceOfBasicElt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceOfBasicElt\n");}
 	}
 };
 
@@ -338,7 +341,7 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 };
 %extend BRepMAT2d_DataMapOfShapeSequenceOfBasicElt {
 	~BRepMAT2d_DataMapOfShapeSequenceOfBasicElt() {
-	printf("Call custom destructor for instance of BRepMAT2d_DataMapOfShapeSequenceOfBasicElt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapOfShapeSequenceOfBasicElt\n");}
 	}
 };
 
@@ -359,7 +362,7 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_Bas
 };
 %extend BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape {
 	~BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape() {
-	printf("Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape\n");}
 	}
 };
 
@@ -383,7 +386,7 @@ class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode
 };
 %extend BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape {
 	~BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape() {
-	printf("Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 };
 %extend BRepMAT2d_DataMapOfBasicEltShape {
 	~BRepMAT2d_DataMapOfBasicEltShape() {
-	printf("Call custom destructor for instance of BRepMAT2d_DataMapOfBasicEltShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapOfBasicEltShape\n");}
 	}
 };
 
@@ -443,7 +446,7 @@ class BRepMAT2d_LinkTopoBilo {
 };
 %extend BRepMAT2d_LinkTopoBilo {
 	~BRepMAT2d_LinkTopoBilo() {
-	printf("Call custom destructor for instance of BRepMAT2d_LinkTopoBilo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_LinkTopoBilo\n");}
 	}
 };
 
@@ -484,6 +487,6 @@ class BRepMAT2d_Explorer {
 };
 %extend BRepMAT2d_Explorer {
 	~BRepMAT2d_Explorer() {
-	printf("Call custom destructor for instance of BRepMAT2d_Explorer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepMAT2d_Explorer\n");}
 	}
 };

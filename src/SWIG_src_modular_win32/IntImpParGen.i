@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -101,6 +104,6 @@ class IntImpParGen {
 };
 %extend IntImpParGen {
 	~IntImpParGen() {
-	printf("Call custom destructor for instance of IntImpParGen\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntImpParGen\n");}
 	}
 };

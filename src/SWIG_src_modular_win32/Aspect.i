@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -432,7 +435,7 @@ class Handle_Aspect_ColorScale : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_ColorScale {
 	~Handle_Aspect_ColorScale() {
-	printf("Call custom destructor for instance of Handle_Aspect_ColorScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorScale\n");}
 	}
 };
 
@@ -456,7 +459,7 @@ class Handle_Aspect_Grid : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_Grid {
 	~Handle_Aspect_Grid() {
-	printf("Call custom destructor for instance of Handle_Aspect_Grid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_Grid\n");}
 	}
 };
 
@@ -480,7 +483,7 @@ class Handle_Aspect_RectangularGrid : public Handle_Aspect_Grid {
 };
 %extend Handle_Aspect_RectangularGrid {
 	~Handle_Aspect_RectangularGrid() {
-	printf("Call custom destructor for instance of Handle_Aspect_RectangularGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_RectangularGrid\n");}
 	}
 };
 
@@ -504,7 +507,7 @@ class Handle_Aspect_WindowError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_WindowError {
 	~Handle_Aspect_WindowError() {
-	printf("Call custom destructor for instance of Handle_Aspect_WindowError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowError\n");}
 	}
 };
 
@@ -528,7 +531,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public Handle_TColle
 };
 %extend Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
 	~Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry() {
-	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry\n");}
 	}
 };
 
@@ -552,7 +555,7 @@ class Handle_Aspect_WindowDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_WindowDefinitionError {
 	~Handle_Aspect_WindowDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_WindowDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowDefinitionError\n");}
 	}
 };
 
@@ -576,7 +579,7 @@ class Handle_Aspect_MarkerStyleDefinitionError : public Handle_Standard_OutOfRan
 };
 %extend Handle_Aspect_MarkerStyleDefinitionError {
 	~Handle_Aspect_MarkerStyleDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_MarkerStyleDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_MarkerStyleDefinitionError\n");}
 	}
 };
 
@@ -600,7 +603,7 @@ class Handle_Aspect_AspectMarkerDefinitionError : public Handle_Standard_OutOfRa
 };
 %extend Handle_Aspect_AspectMarkerDefinitionError {
 	~Handle_Aspect_AspectMarkerDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_AspectMarkerDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectMarkerDefinitionError\n");}
 	}
 };
 
@@ -624,7 +627,7 @@ class Handle_Aspect_WidthMap : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_WidthMap {
 	~Handle_Aspect_WidthMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_WidthMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WidthMap\n");}
 	}
 };
 
@@ -648,7 +651,7 @@ class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_PixMap {
 	~Handle_Aspect_PixMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_PixMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixMap\n");}
 	}
 };
 
@@ -672,7 +675,7 @@ class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfR
 };
 %extend Handle_Aspect_GraphicDeviceDefinitionError {
 	~Handle_Aspect_GraphicDeviceDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_GraphicDeviceDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDeviceDefinitionError\n");}
 	}
 };
 
@@ -696,7 +699,7 @@ class Handle_Aspect_MarkMap : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_MarkMap {
 	~Handle_Aspect_MarkMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_MarkMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_MarkMap\n");}
 	}
 };
 
@@ -720,7 +723,7 @@ class Handle_Aspect_WidthMapDefinitionError : public Handle_Standard_OutOfRange 
 };
 %extend Handle_Aspect_WidthMapDefinitionError {
 	~Handle_Aspect_WidthMapDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_WidthMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WidthMapDefinitionError\n");}
 	}
 };
 
@@ -744,7 +747,7 @@ class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRang
 };
 %extend Handle_Aspect_AspectLineDefinitionError {
 	~Handle_Aspect_AspectLineDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_AspectLineDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectLineDefinitionError\n");}
 	}
 };
 
@@ -768,7 +771,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public Handle_TCollec
 };
 %extend Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
 	~Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry() {
-	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");}
 	}
 };
 
@@ -792,7 +795,7 @@ class Handle_Aspect_PixmapError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_PixmapError {
 	~Handle_Aspect_PixmapError() {
-	printf("Call custom destructor for instance of Handle_Aspect_PixmapError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixmapError\n");}
 	}
 };
 
@@ -816,7 +819,7 @@ class Handle_Aspect_Driver : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_Driver {
 	~Handle_Aspect_Driver() {
-	printf("Call custom destructor for instance of Handle_Aspect_Driver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_Driver\n");}
 	}
 };
 
@@ -840,7 +843,7 @@ class Handle_Aspect_ColorMapDefinitionError : public Handle_Standard_OutOfRange 
 };
 %extend Handle_Aspect_ColorMapDefinitionError {
 	~Handle_Aspect_ColorMapDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_ColorMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorMapDefinitionError\n");}
 	}
 };
 
@@ -864,7 +867,7 @@ class Handle_Aspect_TypeMap : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_TypeMap {
 	~Handle_Aspect_TypeMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_TypeMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_TypeMap\n");}
 	}
 };
 
@@ -888,7 +891,7 @@ class Handle_Aspect_AspectFillArea : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_AspectFillArea {
 	~Handle_Aspect_AspectFillArea() {
-	printf("Call custom destructor for instance of Handle_Aspect_AspectFillArea\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectFillArea\n");}
 	}
 };
 
@@ -912,7 +915,7 @@ class Handle_Aspect_IdentDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_IdentDefinitionError {
 	~Handle_Aspect_IdentDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_IdentDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_IdentDefinitionError\n");}
 	}
 };
 
@@ -936,7 +939,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public Handle_TCollec
 };
 %extend Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
 	~Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry() {
-	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");}
 	}
 };
 
@@ -960,7 +963,7 @@ class Handle_Aspect_ColorMap : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_ColorMap {
 	~Handle_Aspect_ColorMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_ColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorMap\n");}
 	}
 };
 
@@ -984,7 +987,7 @@ class Handle_Aspect_FontStyleDefinitionError : public Handle_Standard_OutOfRange
 };
 %extend Handle_Aspect_FontStyleDefinitionError {
 	~Handle_Aspect_FontStyleDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_FontStyleDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontStyleDefinitionError\n");}
 	}
 };
 
@@ -1008,7 +1011,7 @@ class Handle_Aspect_AspectMarker : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_AspectMarker {
 	~Handle_Aspect_AspectMarker() {
-	printf("Call custom destructor for instance of Handle_Aspect_AspectMarker\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectMarker\n");}
 	}
 };
 
@@ -1032,7 +1035,7 @@ class Handle_Aspect_LineStyleDefinitionError : public Handle_Standard_OutOfRange
 };
 %extend Handle_Aspect_LineStyleDefinitionError {
 	~Handle_Aspect_LineStyleDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_LineStyleDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_LineStyleDefinitionError\n");}
 	}
 };
 
@@ -1056,7 +1059,7 @@ class Handle_Aspect_GenericColorMap : public Handle_Aspect_ColorMap {
 };
 %extend Handle_Aspect_GenericColorMap {
 	~Handle_Aspect_GenericColorMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_GenericColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GenericColorMap\n");}
 	}
 };
 
@@ -1080,7 +1083,7 @@ class Handle_Aspect_PixmapDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_PixmapDefinitionError {
 	~Handle_Aspect_PixmapDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_PixmapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixmapDefinitionError\n");}
 	}
 };
 
@@ -1104,7 +1107,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry : public Handle_TCollec
 };
 %extend Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry {
 	~Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry() {
-	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");}
 	}
 };
 
@@ -1128,7 +1131,7 @@ class Handle_Aspect_TypeMapDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_TypeMapDefinitionError {
 	~Handle_Aspect_TypeMapDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_TypeMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_TypeMapDefinitionError\n");}
 	}
 };
 
@@ -1152,7 +1155,7 @@ class Handle_Aspect_ColorRampColorMap : public Handle_Aspect_ColorMap {
 };
 %extend Handle_Aspect_ColorRampColorMap {
 	~Handle_Aspect_ColorRampColorMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_ColorRampColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorRampColorMap\n");}
 	}
 };
 
@@ -1176,7 +1179,7 @@ class Handle_Aspect_Window : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_Window {
 	~Handle_Aspect_Window() {
-	printf("Call custom destructor for instance of Handle_Aspect_Window\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_Window\n");}
 	}
 };
 
@@ -1200,7 +1203,7 @@ class Handle_Aspect_BadAccess : public Handle_Standard_DomainError {
 };
 %extend Handle_Aspect_BadAccess {
 	~Handle_Aspect_BadAccess() {
-	printf("Call custom destructor for instance of Handle_Aspect_BadAccess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_BadAccess\n");}
 	}
 };
 
@@ -1224,7 +1227,7 @@ class Handle_Aspect_FontMap : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_FontMap {
 	~Handle_Aspect_FontMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_FontMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontMap\n");}
 	}
 };
 
@@ -1248,7 +1251,7 @@ class Handle_Aspect_LineWidthDefinitionError : public Handle_Standard_OutOfRange
 };
 %extend Handle_Aspect_LineWidthDefinitionError {
 	~Handle_Aspect_LineWidthDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_LineWidthDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_LineWidthDefinitionError\n");}
 	}
 };
 
@@ -1272,7 +1275,7 @@ class Handle_Aspect_FontMapDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_FontMapDefinitionError {
 	~Handle_Aspect_FontMapDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_FontMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontMapDefinitionError\n");}
 	}
 };
 
@@ -1296,7 +1299,7 @@ class Handle_Aspect_AspectLine : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_AspectLine {
 	~Handle_Aspect_AspectLine() {
-	printf("Call custom destructor for instance of Handle_Aspect_AspectLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectLine\n");}
 	}
 };
 
@@ -1320,7 +1323,7 @@ class Handle_Aspect_DriverError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_DriverError {
 	~Handle_Aspect_DriverError() {
-	printf("Call custom destructor for instance of Handle_Aspect_DriverError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_DriverError\n");}
 	}
 };
 
@@ -1344,7 +1347,7 @@ class Handle_Aspect_ColorCubeColorMap : public Handle_Aspect_ColorMap {
 };
 %extend Handle_Aspect_ColorCubeColorMap {
 	~Handle_Aspect_ColorCubeColorMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_ColorCubeColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorCubeColorMap\n");}
 	}
 };
 
@@ -1368,7 +1371,7 @@ class Handle_Aspect_WindowDriver : public Handle_Aspect_Driver {
 };
 %extend Handle_Aspect_WindowDriver {
 	~Handle_Aspect_WindowDriver() {
-	printf("Call custom destructor for instance of Handle_Aspect_WindowDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowDriver\n");}
 	}
 };
 
@@ -1392,7 +1395,7 @@ class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_MarkMapDefinitionError {
 	~Handle_Aspect_MarkMapDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_MarkMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_MarkMapDefinitionError\n");}
 	}
 };
 
@@ -1416,7 +1419,7 @@ class Handle_Aspect_GraphicDriver : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_GraphicDriver {
 	~Handle_Aspect_GraphicDriver() {
-	printf("Call custom destructor for instance of Handle_Aspect_GraphicDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDriver\n");}
 	}
 };
 
@@ -1440,7 +1443,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColor : public Handle_TCollection_Se
 };
 %extend Handle_Aspect_SequenceNodeOfSequenceOfColor {
 	~Handle_Aspect_SequenceNodeOfSequenceOfColor() {
-	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColor\n");}
 	}
 };
 
@@ -1464,7 +1467,7 @@ class Handle_Aspect_GraphicDevice : public Handle_MMgt_TShared {
 };
 %extend Handle_Aspect_GraphicDevice {
 	~Handle_Aspect_GraphicDevice() {
-	printf("Call custom destructor for instance of Handle_Aspect_GraphicDevice\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDevice\n");}
 	}
 };
 
@@ -1488,7 +1491,7 @@ class Handle_Aspect_CircularGrid : public Handle_Aspect_Grid {
 };
 %extend Handle_Aspect_CircularGrid {
 	~Handle_Aspect_CircularGrid() {
-	printf("Call custom destructor for instance of Handle_Aspect_CircularGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_CircularGrid\n");}
 	}
 };
 
@@ -1512,7 +1515,7 @@ class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_UndefinedMap {
 	~Handle_Aspect_UndefinedMap() {
-	printf("Call custom destructor for instance of Handle_Aspect_UndefinedMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_UndefinedMap\n");}
 	}
 };
 
@@ -1536,7 +1539,7 @@ class Handle_Aspect_AspectFillAreaDefinitionError : public Handle_Standard_OutOf
 };
 %extend Handle_Aspect_AspectFillAreaDefinitionError {
 	~Handle_Aspect_AspectFillAreaDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_AspectFillAreaDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectFillAreaDefinitionError\n");}
 	}
 };
 
@@ -1560,7 +1563,7 @@ class Handle_Aspect_DriverDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_DriverDefinitionError {
 	~Handle_Aspect_DriverDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_DriverDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_DriverDefinitionError\n");}
 	}
 };
 
@@ -1584,7 +1587,7 @@ class Handle_Aspect_PolyStyleDefinitionError : public Handle_Standard_OutOfRange
 };
 %extend Handle_Aspect_PolyStyleDefinitionError {
 	~Handle_Aspect_PolyStyleDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_PolyStyleDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PolyStyleDefinitionError\n");}
 	}
 };
 
@@ -1608,7 +1611,7 @@ class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Aspect_EdgeDefinitionError {
 	~Handle_Aspect_EdgeDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Aspect_EdgeDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_EdgeDefinitionError\n");}
 	}
 };
 
@@ -1632,7 +1635,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry : public Handle_TColle
 };
 %extend Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry {
 	~Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry() {
-	printf("Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");}
 	}
 };
 
@@ -1654,7 +1657,7 @@ class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfFontMapEntry {
 	~Aspect_SequenceNodeOfSequenceOfFontMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");}
 	}
 };
 
@@ -1682,7 +1685,7 @@ class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_MarkMapDefinitionError {
 	~Aspect_MarkMapDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_MarkMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_MarkMapDefinitionError\n");}
 	}
 };
 
@@ -1714,7 +1717,7 @@ class Aspect_TypeMap : public MMgt_TShared {
 };
 %extend Aspect_TypeMap {
 	~Aspect_TypeMap() {
-	printf("Call custom destructor for instance of Aspect_TypeMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_TypeMap\n");}
 	}
 };
 
@@ -1727,7 +1730,7 @@ class Aspect_GraphicCallbackStruct {
 };
 %extend Aspect_GraphicCallbackStruct {
 	~Aspect_GraphicCallbackStruct() {
-	printf("Call custom destructor for instance of Aspect_GraphicCallbackStruct\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_GraphicCallbackStruct\n");}
 	}
 };
 
@@ -1755,7 +1758,7 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectFillAreaDefinitionError {
 	~Aspect_AspectFillAreaDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_AspectFillAreaDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_AspectFillAreaDefinitionError\n");}
 	}
 };
 
@@ -1768,7 +1771,7 @@ class Aspect_Pixel {
 };
 %extend Aspect_Pixel {
 	~Aspect_Pixel() {
-	printf("Call custom destructor for instance of Aspect_Pixel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_Pixel\n");}
 	}
 };
 
@@ -1797,7 +1800,7 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 };
 %extend Aspect_ColorPixel {
 	~Aspect_ColorPixel() {
-	printf("Call custom destructor for instance of Aspect_ColorPixel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_ColorPixel\n");}
 	}
 };
 
@@ -1857,7 +1860,7 @@ class Aspect_Grid : public MMgt_TShared {
 };
 %extend Aspect_Grid {
 	~Aspect_Grid() {
-	printf("Call custom destructor for instance of Aspect_Grid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_Grid\n");}
 	}
 };
 
@@ -1885,7 +1888,7 @@ class Aspect_CircularGrid : public Aspect_Grid {
 };
 %extend Aspect_CircularGrid {
 	~Aspect_CircularGrid() {
-	printf("Call custom destructor for instance of Aspect_CircularGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_CircularGrid\n");}
 	}
 };
 
@@ -1913,7 +1916,7 @@ class Aspect_ColorMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_ColorMapDefinitionError {
 	~Aspect_ColorMapDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_ColorMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_ColorMapDefinitionError\n");}
 	}
 };
 
@@ -1941,7 +1944,7 @@ class Aspect_PixMap : public MMgt_TShared {
 };
 %extend Aspect_PixMap {
 	~Aspect_PixMap() {
-	printf("Call custom destructor for instance of Aspect_PixMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_PixMap\n");}
 	}
 };
 
@@ -1967,7 +1970,7 @@ class Aspect_AspectMarker : public MMgt_TShared {
 };
 %extend Aspect_AspectMarker {
 	~Aspect_AspectMarker() {
-	printf("Call custom destructor for instance of Aspect_AspectMarker\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_AspectMarker\n");}
 	}
 };
 
@@ -2005,7 +2008,7 @@ class Aspect_ColorMap : public MMgt_TShared {
 };
 %extend Aspect_ColorMap {
 	~Aspect_ColorMap() {
-	printf("Call custom destructor for instance of Aspect_ColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_ColorMap\n");}
 	}
 };
 
@@ -2025,7 +2028,7 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_ColorCubeColorMap {
 	~Aspect_ColorCubeColorMap() {
-	printf("Call custom destructor for instance of Aspect_ColorCubeColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_ColorCubeColorMap\n");}
 	}
 };
 
@@ -2058,7 +2061,7 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 };
 %extend Aspect_IndexPixel {
 	~Aspect_IndexPixel() {
-	printf("Call custom destructor for instance of Aspect_IndexPixel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_IndexPixel\n");}
 	}
 };
 
@@ -2071,7 +2074,7 @@ class Aspect_RGBPixel {
 };
 %extend Aspect_RGBPixel {
 	~Aspect_RGBPixel() {
-	printf("Call custom destructor for instance of Aspect_RGBPixel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_RGBPixel\n");}
 	}
 };
 
@@ -2124,7 +2127,7 @@ class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
 };
 %extend Aspect_SequenceOfMarkMapEntry {
 	~Aspect_SequenceOfMarkMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceOfMarkMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfMarkMapEntry\n");}
 	}
 };
 
@@ -2163,7 +2166,7 @@ class Aspect_Array1OfEdge {
 };
 %extend Aspect_Array1OfEdge {
 	~Aspect_Array1OfEdge() {
-	printf("Call custom destructor for instance of Aspect_Array1OfEdge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_Array1OfEdge\n");}
 	}
 };
 
@@ -2191,7 +2194,7 @@ class Aspect_PixmapError : public Standard_OutOfRange {
 };
 %extend Aspect_PixmapError {
 	~Aspect_PixmapError() {
-	printf("Call custom destructor for instance of Aspect_PixmapError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_PixmapError\n");}
 	}
 };
 
@@ -2244,7 +2247,7 @@ class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
 };
 %extend Aspect_SequenceOfTypeMapEntry {
 	~Aspect_SequenceOfTypeMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceOfTypeMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfTypeMapEntry\n");}
 	}
 };
 
@@ -2272,7 +2275,7 @@ class Aspect_PixmapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_PixmapDefinitionError {
 	~Aspect_PixmapDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_PixmapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_PixmapDefinitionError\n");}
 	}
 };
 
@@ -2384,7 +2387,7 @@ class Aspect_Driver : public MMgt_TShared {
 };
 %extend Aspect_Driver {
 	~Aspect_Driver() {
-	printf("Call custom destructor for instance of Aspect_Driver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_Driver\n");}
 	}
 };
 
@@ -2418,7 +2421,7 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_ColorRampColorMap {
 	~Aspect_ColorRampColorMap() {
-	printf("Call custom destructor for instance of Aspect_ColorRampColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_ColorRampColorMap\n");}
 	}
 };
 
@@ -2452,7 +2455,7 @@ class Aspect_GenericColorMap : public Aspect_ColorMap {
 };
 %extend Aspect_GenericColorMap {
 	~Aspect_GenericColorMap() {
-	printf("Call custom destructor for instance of Aspect_GenericColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_GenericColorMap\n");}
 	}
 };
 
@@ -2474,7 +2477,7 @@ class Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfMarkMapEntry {
 	~Aspect_SequenceNodeOfSequenceOfMarkMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");}
 	}
 };
 
@@ -2506,7 +2509,7 @@ class Aspect_MarkMap : public MMgt_TShared {
 };
 %extend Aspect_MarkMap {
 	~Aspect_MarkMap() {
-	printf("Call custom destructor for instance of Aspect_MarkMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_MarkMap\n");}
 	}
 };
 
@@ -2534,7 +2537,7 @@ class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_DriverDefinitionError {
 	~Aspect_DriverDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_DriverDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_DriverDefinitionError\n");}
 	}
 };
 
@@ -2569,7 +2572,7 @@ class Aspect_FontMapEntry {
 };
 %extend Aspect_FontMapEntry {
 	~Aspect_FontMapEntry() {
-	printf("Call custom destructor for instance of Aspect_FontMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_FontMapEntry\n");}
 	}
 };
 
@@ -2591,7 +2594,7 @@ class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfTypeMapEntry {
 	~Aspect_SequenceNodeOfSequenceOfTypeMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");}
 	}
 };
 
@@ -2644,7 +2647,7 @@ class Aspect_SequenceOfColor : public TCollection_BaseSequence {
 };
 %extend Aspect_SequenceOfColor {
 	~Aspect_SequenceOfColor() {
-	printf("Call custom destructor for instance of Aspect_SequenceOfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfColor\n");}
 	}
 };
 
@@ -2678,7 +2681,7 @@ class Aspect_WidthMap : public MMgt_TShared {
 };
 %extend Aspect_WidthMap {
 	~Aspect_WidthMap() {
-	printf("Call custom destructor for instance of Aspect_WidthMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_WidthMap\n");}
 	}
 };
 
@@ -2706,7 +2709,7 @@ class Aspect_UndefinedMap : public Standard_OutOfRange {
 };
 %extend Aspect_UndefinedMap {
 	~Aspect_UndefinedMap() {
-	printf("Call custom destructor for instance of Aspect_UndefinedMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_UndefinedMap\n");}
 	}
 };
 
@@ -2734,7 +2737,7 @@ class Aspect_EdgeDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_EdgeDefinitionError {
 	~Aspect_EdgeDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_EdgeDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_EdgeDefinitionError\n");}
 	}
 };
 
@@ -2762,7 +2765,7 @@ class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_LineWidthDefinitionError {
 	~Aspect_LineWidthDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_LineWidthDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_LineWidthDefinitionError\n");}
 	}
 };
 
@@ -2800,7 +2803,7 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 };
 %extend Aspect_AspectFillArea {
 	~Aspect_AspectFillArea() {
-	printf("Call custom destructor for instance of Aspect_AspectFillArea\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_AspectFillArea\n");}
 	}
 };
 
@@ -2828,7 +2831,7 @@ class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_FontStyleDefinitionError {
 	~Aspect_FontStyleDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_FontStyleDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_FontStyleDefinitionError\n");}
 	}
 };
 
@@ -2915,7 +2918,7 @@ class Aspect_FontStyle {
 };
 %extend Aspect_FontStyle {
 	~Aspect_FontStyle() {
-	printf("Call custom destructor for instance of Aspect_FontStyle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_FontStyle\n");}
 	}
 };
 
@@ -2950,7 +2953,7 @@ class Aspect_MarkMapEntry {
 };
 %extend Aspect_MarkMapEntry {
 	~Aspect_MarkMapEntry() {
-	printf("Call custom destructor for instance of Aspect_MarkMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_MarkMapEntry\n");}
 	}
 };
 
@@ -2978,7 +2981,7 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_TypeMapDefinitionError {
 	~Aspect_TypeMapDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_TypeMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_TypeMapDefinitionError\n");}
 	}
 };
 
@@ -3072,7 +3075,7 @@ class Aspect_Window : public MMgt_TShared {
 };
 %extend Aspect_Window {
 	~Aspect_Window() {
-	printf("Call custom destructor for instance of Aspect_Window\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_Window\n");}
 	}
 };
 
@@ -3099,7 +3102,7 @@ class Aspect_GenId {
 };
 %extend Aspect_GenId {
 	~Aspect_GenId() {
-	printf("Call custom destructor for instance of Aspect_GenId\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_GenId\n");}
 	}
 };
 
@@ -3127,7 +3130,7 @@ class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_PolyStyleDefinitionError {
 	~Aspect_PolyStyleDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_PolyStyleDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_PolyStyleDefinitionError\n");}
 	}
 };
 
@@ -3146,7 +3149,7 @@ class Aspect {
 };
 %extend Aspect {
 	~Aspect() {
-	printf("Call custom destructor for instance of Aspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect\n");}
 	}
 };
 
@@ -3174,7 +3177,7 @@ class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_MarkerStyleDefinitionError {
 	~Aspect_MarkerStyleDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_MarkerStyleDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_MarkerStyleDefinitionError\n");}
 	}
 };
 
@@ -3202,7 +3205,7 @@ class Aspect_GraphicDeviceDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_GraphicDeviceDefinitionError {
 	~Aspect_GraphicDeviceDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_GraphicDeviceDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_GraphicDeviceDefinitionError\n");}
 	}
 };
 
@@ -3230,7 +3233,7 @@ class Aspect_DriverError : public Standard_OutOfRange {
 };
 %extend Aspect_DriverError {
 	~Aspect_DriverError() {
-	printf("Call custom destructor for instance of Aspect_DriverError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_DriverError\n");}
 	}
 };
 
@@ -3270,7 +3273,7 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 };
 %extend Aspect_RectangularGrid {
 	~Aspect_RectangularGrid() {
-	printf("Call custom destructor for instance of Aspect_RectangularGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_RectangularGrid\n");}
 	}
 };
 
@@ -3350,7 +3353,7 @@ class Aspect_WindowDriver : public Aspect_Driver {
 };
 %extend Aspect_WindowDriver {
 	~Aspect_WindowDriver() {
-	printf("Call custom destructor for instance of Aspect_WindowDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_WindowDriver\n");}
 	}
 };
 
@@ -3378,7 +3381,7 @@ class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectMarkerDefinitionError {
 	~Aspect_AspectMarkerDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_AspectMarkerDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_AspectMarkerDefinitionError\n");}
 	}
 };
 
@@ -3400,7 +3403,7 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 };
 %extend Aspect_SequenceNodeOfSequenceOfColorMapEntry {
 	~Aspect_SequenceNodeOfSequenceOfColorMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");}
 	}
 };
 
@@ -3453,7 +3456,7 @@ class Aspect_ColorMapEntry {
 };
 %extend Aspect_ColorMapEntry {
 	~Aspect_ColorMapEntry() {
-	printf("Call custom destructor for instance of Aspect_ColorMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_ColorMapEntry\n");}
 	}
 };
 
@@ -3479,7 +3482,7 @@ class Aspect_AspectLine : public MMgt_TShared {
 };
 %extend Aspect_AspectLine {
 	~Aspect_AspectLine() {
-	printf("Call custom destructor for instance of Aspect_AspectLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_AspectLine\n");}
 	}
 };
 
@@ -3507,7 +3510,7 @@ class Aspect_BadAccess : public Standard_DomainError {
 };
 %extend Aspect_BadAccess {
 	~Aspect_BadAccess() {
-	printf("Call custom destructor for instance of Aspect_BadAccess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_BadAccess\n");}
 	}
 };
 
@@ -3535,7 +3538,7 @@ class Aspect_AspectLineDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_AspectLineDefinitionError {
 	~Aspect_AspectLineDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_AspectLineDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_AspectLineDefinitionError\n");}
 	}
 };
 
@@ -3588,7 +3591,7 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 };
 %extend Aspect_SequenceOfColorMapEntry {
 	~Aspect_SequenceOfColorMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceOfColorMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfColorMapEntry\n");}
 	}
 };
 
@@ -3620,7 +3623,7 @@ class Aspect_FontMap : public MMgt_TShared {
 };
 %extend Aspect_FontMap {
 	~Aspect_FontMap() {
-	printf("Call custom destructor for instance of Aspect_FontMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_FontMap\n");}
 	}
 };
 
@@ -3655,7 +3658,7 @@ class Aspect_LineStyle {
 };
 %extend Aspect_LineStyle {
 	~Aspect_LineStyle() {
-	printf("Call custom destructor for instance of Aspect_LineStyle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_LineStyle\n");}
 	}
 };
 
@@ -3694,7 +3697,7 @@ class Aspect_MarkerStyle {
 };
 %extend Aspect_MarkerStyle {
 	~Aspect_MarkerStyle() {
-	printf("Call custom destructor for instance of Aspect_MarkerStyle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_MarkerStyle\n");}
 	}
 };
 
@@ -3722,7 +3725,7 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_LineStyleDefinitionError {
 	~Aspect_LineStyleDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_LineStyleDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_LineStyleDefinitionError\n");}
 	}
 };
 
@@ -3750,7 +3753,7 @@ class Aspect_IdentDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_IdentDefinitionError {
 	~Aspect_IdentDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_IdentDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_IdentDefinitionError\n");}
 	}
 };
 
@@ -3769,7 +3772,7 @@ class Aspect_Background {
 };
 %extend Aspect_Background {
 	~Aspect_Background() {
-	printf("Call custom destructor for instance of Aspect_Background\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_Background\n");}
 	}
 };
 
@@ -3812,7 +3815,7 @@ class Aspect_WidthMapEntry {
 };
 %extend Aspect_WidthMapEntry {
 	~Aspect_WidthMapEntry() {
-	printf("Call custom destructor for instance of Aspect_WidthMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_WidthMapEntry\n");}
 	}
 };
 
@@ -3834,7 +3837,7 @@ class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode 
 };
 %extend Aspect_SequenceNodeOfSequenceOfWidthMapEntry {
 	~Aspect_SequenceNodeOfSequenceOfWidthMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfWidthMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfWidthMapEntry\n");}
 	}
 };
 
@@ -3859,7 +3862,7 @@ class Aspect_Edge {
 };
 %extend Aspect_Edge {
 	~Aspect_Edge() {
-	printf("Call custom destructor for instance of Aspect_Edge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_Edge\n");}
 	}
 };
 
@@ -3887,7 +3890,7 @@ class Aspect_WindowDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_WindowDefinitionError {
 	~Aspect_WindowDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_WindowDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_WindowDefinitionError\n");}
 	}
 };
 
@@ -3922,7 +3925,7 @@ class Aspect_TypeMapEntry {
 };
 %extend Aspect_TypeMapEntry {
 	~Aspect_TypeMapEntry() {
-	printf("Call custom destructor for instance of Aspect_TypeMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_TypeMapEntry\n");}
 	}
 };
 
@@ -3975,7 +3978,7 @@ class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
 };
 %extend Aspect_SequenceOfFontMapEntry {
 	~Aspect_SequenceOfFontMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceOfFontMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfFontMapEntry\n");}
 	}
 };
 
@@ -4028,7 +4031,7 @@ class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 };
 %extend Aspect_SequenceOfWidthMapEntry {
 	~Aspect_SequenceOfWidthMapEntry() {
-	printf("Call custom destructor for instance of Aspect_SequenceOfWidthMapEntry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceOfWidthMapEntry\n");}
 	}
 };
 
@@ -4046,7 +4049,7 @@ class Aspect_GraphicDriver : public MMgt_TShared {
 };
 %extend Aspect_GraphicDriver {
 	~Aspect_GraphicDriver() {
-	printf("Call custom destructor for instance of Aspect_GraphicDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_GraphicDriver\n");}
 	}
 };
 
@@ -4074,7 +4077,7 @@ class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_WidthMapDefinitionError {
 	~Aspect_WidthMapDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_WidthMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_WidthMapDefinitionError\n");}
 	}
 };
 
@@ -4198,7 +4201,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 };
 %extend Aspect_ColorScale {
 	~Aspect_ColorScale() {
-	printf("Call custom destructor for instance of Aspect_ColorScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_ColorScale\n");}
 	}
 };
 
@@ -4218,7 +4221,7 @@ class Aspect_GraphicDevice : public MMgt_TShared {
 };
 %extend Aspect_GraphicDevice {
 	~Aspect_GraphicDevice() {
-	printf("Call custom destructor for instance of Aspect_GraphicDevice\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_GraphicDevice\n");}
 	}
 };
 
@@ -4246,7 +4249,7 @@ class Aspect_WindowError : public Standard_OutOfRange {
 };
 %extend Aspect_WindowError {
 	~Aspect_WindowError() {
-	printf("Call custom destructor for instance of Aspect_WindowError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_WindowError\n");}
 	}
 };
 
@@ -4274,7 +4277,7 @@ class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 };
 %extend Aspect_FontMapDefinitionError {
 	~Aspect_FontMapDefinitionError() {
-	printf("Call custom destructor for instance of Aspect_FontMapDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_FontMapDefinitionError\n");}
 	}
 };
 
@@ -4296,6 +4299,6 @@ class Aspect_SequenceNodeOfSequenceOfColor : public TCollection_SeqNode {
 };
 %extend Aspect_SequenceNodeOfSequenceOfColor {
 	~Aspect_SequenceNodeOfSequenceOfColor() {
-	printf("Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColor\n");}
 	}
 };

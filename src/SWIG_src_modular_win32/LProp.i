@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -117,7 +120,7 @@ class Handle_LProp_SequenceNodeOfSequenceOfCIType : public Handle_TCollection_Se
 };
 %extend Handle_LProp_SequenceNodeOfSequenceOfCIType {
 	~Handle_LProp_SequenceNodeOfSequenceOfCIType() {
-	printf("Call custom destructor for instance of Handle_LProp_SequenceNodeOfSequenceOfCIType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_LProp_SequenceNodeOfSequenceOfCIType\n");}
 	}
 };
 
@@ -141,7 +144,7 @@ class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 };
 %extend Handle_LProp_BadContinuity {
 	~Handle_LProp_BadContinuity() {
-	printf("Call custom destructor for instance of Handle_LProp_BadContinuity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_LProp_BadContinuity\n");}
 	}
 };
 
@@ -165,7 +168,7 @@ class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 };
 %extend Handle_LProp_NotDefined {
 	~Handle_LProp_NotDefined() {
-	printf("Call custom destructor for instance of Handle_LProp_NotDefined\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_LProp_NotDefined\n");}
 	}
 };
 
@@ -187,7 +190,7 @@ class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
 };
 %extend LProp_SequenceNodeOfSequenceOfCIType {
 	~LProp_SequenceNodeOfSequenceOfCIType() {
-	printf("Call custom destructor for instance of LProp_SequenceNodeOfSequenceOfCIType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp_SequenceNodeOfSequenceOfCIType\n");}
 	}
 };
 
@@ -240,7 +243,7 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 };
 %extend LProp_SequenceOfCIType {
 	~LProp_SequenceOfCIType() {
-	printf("Call custom destructor for instance of LProp_SequenceOfCIType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp_SequenceOfCIType\n");}
 	}
 };
 
@@ -255,7 +258,7 @@ class LProp_AnalyticCurInf {
 };
 %extend LProp_AnalyticCurInf {
 	~LProp_AnalyticCurInf() {
-	printf("Call custom destructor for instance of LProp_AnalyticCurInf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp_AnalyticCurInf\n");}
 	}
 };
 
@@ -282,7 +285,7 @@ class LProp_CurAndInf {
 };
 %extend LProp_CurAndInf {
 	~LProp_CurAndInf() {
-	printf("Call custom destructor for instance of LProp_CurAndInf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp_CurAndInf\n");}
 	}
 };
 
@@ -310,7 +313,7 @@ class LProp_NotDefined : public Standard_Failure {
 };
 %extend LProp_NotDefined {
 	~LProp_NotDefined() {
-	printf("Call custom destructor for instance of LProp_NotDefined\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp_NotDefined\n");}
 	}
 };
 
@@ -338,6 +341,6 @@ class LProp_BadContinuity : public Standard_Failure {
 };
 %extend LProp_BadContinuity {
 	~LProp_BadContinuity() {
-	printf("Call custom destructor for instance of LProp_BadContinuity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp_BadContinuity\n");}
 	}
 };

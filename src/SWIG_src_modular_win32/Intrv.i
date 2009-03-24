@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -120,7 +123,7 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 };
 %extend Handle_Intrv_SequenceNodeOfSequenceOfInterval {
 	~Handle_Intrv_SequenceNodeOfSequenceOfInterval() {
-	printf("Call custom destructor for instance of Handle_Intrv_SequenceNodeOfSequenceOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Intrv_SequenceNodeOfSequenceOfInterval\n");}
 	}
 };
 
@@ -157,7 +160,7 @@ class Intrv_Intervals {
 };
 %extend Intrv_Intervals {
 	~Intrv_Intervals() {
-	printf("Call custom destructor for instance of Intrv_Intervals\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intrv_Intervals\n");}
 	}
 };
 
@@ -226,7 +229,7 @@ class Intrv_Interval {
 };
 %extend Intrv_Interval {
 	~Intrv_Interval() {
-	printf("Call custom destructor for instance of Intrv_Interval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intrv_Interval\n");}
 	}
 };
 
@@ -279,7 +282,7 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 };
 %extend Intrv_SequenceOfInterval {
 	~Intrv_SequenceOfInterval() {
-	printf("Call custom destructor for instance of Intrv_SequenceOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intrv_SequenceOfInterval\n");}
 	}
 };
 
@@ -301,6 +304,6 @@ class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {
 };
 %extend Intrv_SequenceNodeOfSequenceOfInterval {
 	~Intrv_SequenceNodeOfSequenceOfInterval() {
-	printf("Call custom destructor for instance of Intrv_SequenceNodeOfSequenceOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intrv_SequenceNodeOfSequenceOfInterval\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMNaming_NamingDriver {
 	~Handle_BinMNaming_NamingDriver() {
-	printf("Call custom destructor for instance of Handle_BinMNaming_NamingDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMNaming_NamingDriver\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMNaming_NamedShapeDriver {
 	~Handle_BinMNaming_NamedShapeDriver() {
-	printf("Call custom destructor for instance of Handle_BinMNaming_NamedShapeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMNaming_NamedShapeDriver\n");}
 	}
 };
 
@@ -143,7 +146,7 @@ class BinMNaming {
 };
 %extend BinMNaming {
 	~BinMNaming() {
-	printf("Call custom destructor for instance of BinMNaming\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMNaming\n");}
 	}
 };
 
@@ -169,7 +172,7 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 };
 %extend BinMNaming_NamingDriver {
 	~BinMNaming_NamingDriver() {
-	printf("Call custom destructor for instance of BinMNaming_NamingDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMNaming_NamingDriver\n");}
 	}
 };
 
@@ -205,6 +208,6 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 };
 %extend BinMNaming_NamedShapeDriver {
 	~BinMNaming_NamedShapeDriver() {
-	printf("Call custom destructor for instance of BinMNaming_NamedShapeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMNaming_NamedShapeDriver\n");}
 	}
 };

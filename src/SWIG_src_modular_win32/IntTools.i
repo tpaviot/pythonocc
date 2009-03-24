@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -105,7 +108,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfCurves {
 	~Handle_IntTools_SequenceNodeOfSequenceOfCurves() {
-	printf("Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfCurves\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfCurves\n");}
 	}
 };
 
@@ -129,7 +132,7 @@ class Handle_IntTools_ListNodeOfListOfCurveRangeSample : public Handle_TCollecti
 };
 %extend Handle_IntTools_ListNodeOfListOfCurveRangeSample {
 	~Handle_IntTools_ListNodeOfListOfCurveRangeSample() {
-	printf("Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfCurveRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfCurveRangeSample\n");}
 	}
 };
 
@@ -153,7 +156,7 @@ class Handle_IntTools_ListNodeOfListOfSurfaceRangeSample : public Handle_TCollec
 };
 %extend Handle_IntTools_ListNodeOfListOfSurfaceRangeSample {
 	~Handle_IntTools_ListNodeOfListOfSurfaceRangeSample() {
-	printf("Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfSurfaceRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfSurfaceRangeSample\n");}
 	}
 };
 
@@ -177,7 +180,7 @@ class Handle_IntTools_ListNodeOfListOfBox : public Handle_TCollection_MapNode {
 };
 %extend Handle_IntTools_ListNodeOfListOfBox {
 	~Handle_IntTools_ListNodeOfListOfBox() {
-	printf("Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_ListNodeOfListOfBox\n");}
 	}
 };
 
@@ -201,7 +204,7 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : pub
 };
 %extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {
 	~Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress() {
-	printf("Call custom destructor for instance of Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress\n");}
 	}
 };
 
@@ -225,7 +228,7 @@ class Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public Handle_TCo
 };
 %extend Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
 	~Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox() {
-	printf("Call custom destructor for instance of Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");}
 	}
 };
 
@@ -249,7 +252,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRanges : public Handle_TCollection
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfRanges {
 	~Handle_IntTools_SequenceNodeOfSequenceOfRanges() {
-	printf("Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfRanges\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfRanges\n");}
 	}
 };
 
@@ -273,7 +276,7 @@ class Handle_IntTools_TopolTool : public Handle_Adaptor3d_TopolTool {
 };
 %extend Handle_IntTools_TopolTool {
 	~Handle_IntTools_TopolTool() {
-	printf("Call custom destructor for instance of Handle_IntTools_TopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_TopolTool\n");}
 	}
 };
 
@@ -297,7 +300,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts : public Handle_TCollec
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts {
 	~Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts() {
-	printf("Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts\n");}
 	}
 };
 
@@ -321,7 +324,7 @@ class Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public Handle_TColl
 };
 %extend Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
 	~Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox() {
-	printf("Call custom destructor for instance of Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox\n");}
 	}
 };
 
@@ -345,7 +348,7 @@ class Handle_IntTools_StdMapNodeOfMapOfCurveSample : public Handle_TCollection_M
 };
 %extend Handle_IntTools_StdMapNodeOfMapOfCurveSample {
 	~Handle_IntTools_StdMapNodeOfMapOfCurveSample() {
-	printf("Call custom destructor for instance of Handle_IntTools_StdMapNodeOfMapOfCurveSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_StdMapNodeOfMapOfCurveSample\n");}
 	}
 };
 
@@ -369,7 +372,7 @@ class Handle_IntTools_StdMapNodeOfMapOfSurfaceSample : public Handle_TCollection
 };
 %extend Handle_IntTools_StdMapNodeOfMapOfSurfaceSample {
 	~Handle_IntTools_StdMapNodeOfMapOfSurfaceSample() {
-	printf("Call custom destructor for instance of Handle_IntTools_StdMapNodeOfMapOfSurfaceSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_StdMapNodeOfMapOfSurfaceSample\n");}
 	}
 };
 
@@ -393,7 +396,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRoots : public Handle_TCollection_
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfRoots {
 	~Handle_IntTools_SequenceNodeOfSequenceOfRoots() {
-	printf("Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfRoots\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfRoots\n");}
 	}
 };
 
@@ -417,7 +420,7 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public 
 };
 %extend Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
 	~Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress() {
-	printf("Call custom destructor for instance of Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");}
 	}
 };
 
@@ -441,7 +444,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TColle
 };
 %extend Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
 	~Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces() {
-	printf("Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces\n");}
 	}
 };
 
@@ -458,7 +461,7 @@ class IntTools_SurfaceRangeSampleMapHasher {
 };
 %extend IntTools_SurfaceRangeSampleMapHasher {
 	~IntTools_SurfaceRangeSampleMapHasher() {
-	printf("Call custom destructor for instance of IntTools_SurfaceRangeSampleMapHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SurfaceRangeSampleMapHasher\n");}
 	}
 };
 
@@ -495,7 +498,7 @@ class IntTools_CArray1OfReal {
 };
 %extend IntTools_CArray1OfReal {
 	~IntTools_CArray1OfReal() {
-	printf("Call custom destructor for instance of IntTools_CArray1OfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_CArray1OfReal\n");}
 	}
 };
 
@@ -517,7 +520,7 @@ class IntTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfCurves {
 	~IntTools_SequenceNodeOfSequenceOfCurves() {
-	printf("Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfCurves\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfCurves\n");}
 	}
 };
 
@@ -539,7 +542,7 @@ class IntTools_SequenceNodeOfSequenceOfRoots : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfRoots {
 	~IntTools_SequenceNodeOfSequenceOfRoots() {
-	printf("Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfRoots\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfRoots\n");}
 	}
 };
 
@@ -566,7 +569,7 @@ class IntTools_FClass2d {
 };
 %extend IntTools_FClass2d {
 	~IntTools_FClass2d() {
-	printf("Call custom destructor for instance of IntTools_FClass2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_FClass2d\n");}
 	}
 };
 
@@ -588,7 +591,7 @@ class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfSurfaceRangeSample {
 	~IntTools_ListNodeOfListOfSurfaceRangeSample() {
-	printf("Call custom destructor for instance of IntTools_ListNodeOfListOfSurfaceRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfSurfaceRangeSample\n");}
 	}
 };
 
@@ -631,7 +634,7 @@ class IntTools_IndexedDataMapOfTransientAddress : public TCollection_BasicMap {
 };
 %extend IntTools_IndexedDataMapOfTransientAddress {
 	~IntTools_IndexedDataMapOfTransientAddress() {
-	printf("Call custom destructor for instance of IntTools_IndexedDataMapOfTransientAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapOfTransientAddress\n");}
 	}
 };
 
@@ -694,7 +697,7 @@ class IntTools_CommonPrt {
 };
 %extend IntTools_CommonPrt {
 	~IntTools_CommonPrt() {
-	printf("Call custom destructor for instance of IntTools_CommonPrt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_CommonPrt\n");}
 	}
 };
 
@@ -713,7 +716,7 @@ class IntTools_BaseRangeSample {
 };
 %extend IntTools_BaseRangeSample {
 	~IntTools_BaseRangeSample() {
-	printf("Call custom destructor for instance of IntTools_BaseRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_BaseRangeSample\n");}
 	}
 };
 
@@ -735,7 +738,7 @@ class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfBox {
 	~IntTools_ListNodeOfListOfBox() {
-	printf("Call custom destructor for instance of IntTools_ListNodeOfListOfBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfBox\n");}
 	}
 };
 
@@ -752,7 +755,7 @@ class IntTools_CurveRangeSampleMapHasher {
 };
 %extend IntTools_CurveRangeSampleMapHasher {
 	~IntTools_CurveRangeSampleMapHasher() {
-	printf("Call custom destructor for instance of IntTools_CurveRangeSampleMapHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeSampleMapHasher\n");}
 	}
 };
 
@@ -791,7 +794,7 @@ class IntTools_BeanFaceIntersector {
 };
 %extend IntTools_BeanFaceIntersector {
 	~IntTools_BeanFaceIntersector() {
-	printf("Call custom destructor for instance of IntTools_BeanFaceIntersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_BeanFaceIntersector\n");}
 	}
 };
 
@@ -834,7 +837,7 @@ class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
 };
 %extend IntTools_IndexedDataMapOfShapeAddress {
 	~IntTools_IndexedDataMapOfShapeAddress() {
-	printf("Call custom destructor for instance of IntTools_IndexedDataMapOfShapeAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapOfShapeAddress\n");}
 	}
 };
 
@@ -887,7 +890,7 @@ class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
 };
 %extend IntTools_SequenceOfRoots {
 	~IntTools_SequenceOfRoots() {
-	printf("Call custom destructor for instance of IntTools_SequenceOfRoots\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfRoots\n");}
 	}
 };
 
@@ -908,7 +911,7 @@ class IntTools_Compare {
 };
 %extend IntTools_Compare {
 	~IntTools_Compare() {
-	printf("Call custom destructor for instance of IntTools_Compare\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_Compare\n");}
 	}
 };
 
@@ -961,7 +964,7 @@ class IntTools_SequenceOfCurves : public TCollection_BaseSequence {
 };
 %extend IntTools_SequenceOfCurves {
 	~IntTools_SequenceOfCurves() {
-	printf("Call custom destructor for instance of IntTools_SequenceOfCurves\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfCurves\n");}
 	}
 };
 
@@ -1010,7 +1013,7 @@ class IntTools_ListOfSurfaceRangeSample {
 };
 %extend IntTools_ListOfSurfaceRangeSample {
 	~IntTools_ListOfSurfaceRangeSample() {
-	printf("Call custom destructor for instance of IntTools_ListOfSurfaceRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListOfSurfaceRangeSample\n");}
 	}
 };
 
@@ -1049,7 +1052,7 @@ class IntTools_Array1OfRoots {
 };
 %extend IntTools_Array1OfRoots {
 	~IntTools_Array1OfRoots() {
-	printf("Call custom destructor for instance of IntTools_Array1OfRoots\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_Array1OfRoots\n");}
 	}
 };
 
@@ -1100,7 +1103,7 @@ class IntTools_EdgeEdge {
 };
 %extend IntTools_EdgeEdge {
 	~IntTools_EdgeEdge() {
-	printf("Call custom destructor for instance of IntTools_EdgeEdge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_EdgeEdge\n");}
 	}
 };
 
@@ -1121,7 +1124,7 @@ class IntTools_CompareRange {
 };
 %extend IntTools_CompareRange {
 	~IntTools_CompareRange() {
-	printf("Call custom destructor for instance of IntTools_CompareRange\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_CompareRange\n");}
 	}
 };
 
@@ -1136,7 +1139,7 @@ class IntTools_QuickSort {
 };
 %extend IntTools_QuickSort {
 	~IntTools_QuickSort() {
-	printf("Call custom destructor for instance of IntTools_QuickSort\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_QuickSort\n");}
 	}
 };
 
@@ -1159,7 +1162,7 @@ class IntTools_LineConstructor {
 };
 %extend IntTools_LineConstructor {
 	~IntTools_LineConstructor() {
-	printf("Call custom destructor for instance of IntTools_LineConstructor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_LineConstructor\n");}
 	}
 };
 
@@ -1184,7 +1187,7 @@ class IntTools_MapOfCurveSample : public TCollection_BasicMap {
 };
 %extend IntTools_MapOfCurveSample {
 	~IntTools_MapOfCurveSample() {
-	printf("Call custom destructor for instance of IntTools_MapOfCurveSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_MapOfCurveSample\n");}
 	}
 };
 
@@ -1237,7 +1240,7 @@ class IntTools_SequenceOfCommonPrts : public TCollection_BaseSequence {
 };
 %extend IntTools_SequenceOfCommonPrts {
 	~IntTools_SequenceOfCommonPrts() {
-	printf("Call custom destructor for instance of IntTools_SequenceOfCommonPrts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfCommonPrts\n");}
 	}
 };
 
@@ -1280,7 +1283,7 @@ class IntTools_MarkedRangeSet {
 };
 %extend IntTools_MarkedRangeSet {
 	~IntTools_MarkedRangeSet() {
-	printf("Call custom destructor for instance of IntTools_MarkedRangeSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_MarkedRangeSet\n");}
 	}
 };
 
@@ -1357,7 +1360,7 @@ class IntTools_SurfaceRangeLocalizeData {
 };
 %extend IntTools_SurfaceRangeLocalizeData {
 	~IntTools_SurfaceRangeLocalizeData() {
-	printf("Call custom destructor for instance of IntTools_SurfaceRangeLocalizeData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SurfaceRangeLocalizeData\n");}
 	}
 };
 
@@ -1410,7 +1413,7 @@ class IntTools_SequenceOfPntOn2Faces : public TCollection_BaseSequence {
 };
 %extend IntTools_SequenceOfPntOn2Faces {
 	~IntTools_SequenceOfPntOn2Faces() {
-	printf("Call custom destructor for instance of IntTools_SequenceOfPntOn2Faces\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfPntOn2Faces\n");}
 	}
 };
 
@@ -1432,7 +1435,7 @@ class IntTools_SequenceNodeOfSequenceOfRanges : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfRanges {
 	~IntTools_SequenceNodeOfSequenceOfRanges() {
-	printf("Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfRanges\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfRanges\n");}
 	}
 };
 
@@ -1481,7 +1484,7 @@ class IntTools_ListOfCurveRangeSample {
 };
 %extend IntTools_ListOfCurveRangeSample {
 	~IntTools_ListOfCurveRangeSample() {
-	printf("Call custom destructor for instance of IntTools_ListOfCurveRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListOfCurveRangeSample\n");}
 	}
 };
 
@@ -1522,7 +1525,7 @@ class IntTools_Root {
 };
 %extend IntTools_Root {
 	~IntTools_Root() {
-	printf("Call custom destructor for instance of IntTools_Root\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_Root\n");}
 	}
 };
 
@@ -1555,7 +1558,7 @@ class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 };
 %extend IntTools_DataMapOfCurveSampleBox {
 	~IntTools_DataMapOfCurveSampleBox() {
-	printf("Call custom destructor for instance of IntTools_DataMapOfCurveSampleBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_DataMapOfCurveSampleBox\n");}
 	}
 };
 
@@ -1577,7 +1580,7 @@ class IntTools_StdMapNodeOfMapOfCurveSample : public TCollection_MapNode {
 };
 %extend IntTools_StdMapNodeOfMapOfCurveSample {
 	~IntTools_StdMapNodeOfMapOfCurveSample() {
-	printf("Call custom destructor for instance of IntTools_StdMapNodeOfMapOfCurveSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_StdMapNodeOfMapOfCurveSample\n");}
 	}
 };
 
@@ -1614,7 +1617,7 @@ class IntTools_CArray1OfInteger {
 };
 %extend IntTools_CArray1OfInteger {
 	~IntTools_CArray1OfInteger() {
-	printf("Call custom destructor for instance of IntTools_CArray1OfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_CArray1OfInteger\n");}
 	}
 };
 
@@ -1637,7 +1640,7 @@ class IntTools_ListIteratorOfListOfCurveRangeSample {
 };
 %extend IntTools_ListIteratorOfListOfCurveRangeSample {
 	~IntTools_ListIteratorOfListOfCurveRangeSample() {
-	printf("Call custom destructor for instance of IntTools_ListIteratorOfListOfCurveRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListIteratorOfListOfCurveRangeSample\n");}
 	}
 };
 
@@ -1675,7 +1678,7 @@ class IntTools_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend IntTools_TopolTool {
 	~IntTools_TopolTool() {
-	printf("Call custom destructor for instance of IntTools_TopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_TopolTool\n");}
 	}
 };
 
@@ -1697,7 +1700,7 @@ class IntTools_ListNodeOfListOfCurveRangeSample : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfCurveRangeSample {
 	~IntTools_ListNodeOfListOfCurveRangeSample() {
-	printf("Call custom destructor for instance of IntTools_ListNodeOfListOfCurveRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfCurveRangeSample\n");}
 	}
 };
 
@@ -1730,7 +1733,7 @@ class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 };
 %extend IntTools_DataMapOfSurfaceSampleBox {
 	~IntTools_DataMapOfSurfaceSampleBox() {
-	printf("Call custom destructor for instance of IntTools_DataMapOfSurfaceSampleBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_DataMapOfSurfaceSampleBox\n");}
 	}
 };
 
@@ -1755,7 +1758,7 @@ class IntTools_MapOfSurfaceSample : public TCollection_BasicMap {
 };
 %extend IntTools_MapOfSurfaceSample {
 	~IntTools_MapOfSurfaceSample() {
-	printf("Call custom destructor for instance of IntTools_MapOfSurfaceSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_MapOfSurfaceSample\n");}
 	}
 };
 
@@ -1777,7 +1780,7 @@ class IntTools_StdMapNodeOfMapOfSurfaceSample : public TCollection_MapNode {
 };
 %extend IntTools_StdMapNodeOfMapOfSurfaceSample {
 	~IntTools_StdMapNodeOfMapOfSurfaceSample() {
-	printf("Call custom destructor for instance of IntTools_StdMapNodeOfMapOfSurfaceSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_StdMapNodeOfMapOfSurfaceSample\n");}
 	}
 };
 
@@ -1808,7 +1811,7 @@ class IntTools_PntOnFace {
 };
 %extend IntTools_PntOnFace {
 	~IntTools_PntOnFace() {
-	printf("Call custom destructor for instance of IntTools_PntOnFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_PntOnFace\n");}
 	}
 };
 
@@ -1830,7 +1833,7 @@ class IntTools_SequenceNodeOfSequenceOfCommonPrts : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfCommonPrts {
 	~IntTools_SequenceNodeOfSequenceOfCommonPrts() {
-	printf("Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfCommonPrts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfCommonPrts\n");}
 	}
 };
 
@@ -1854,7 +1857,7 @@ class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNo
 };
 %extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
 	~IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox() {
-	printf("Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");}
 	}
 };
 
@@ -1881,7 +1884,7 @@ class IntTools_PntOn2Faces {
 };
 %extend IntTools_PntOn2Faces {
 	~IntTools_PntOn2Faces() {
-	printf("Call custom destructor for instance of IntTools_PntOn2Faces\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_PntOn2Faces\n");}
 	}
 };
 
@@ -1908,7 +1911,7 @@ class IntTools_CurveRangeLocalizeData {
 };
 %extend IntTools_CurveRangeLocalizeData {
 	~IntTools_CurveRangeLocalizeData() {
-	printf("Call custom destructor for instance of IntTools_CurveRangeLocalizeData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeLocalizeData\n");}
 	}
 };
 
@@ -1936,7 +1939,7 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollec
 };
 %extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
 	~IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress() {
-	printf("Call custom destructor for instance of IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");}
 	}
 };
 
@@ -2001,7 +2004,7 @@ class IntTools_SurfaceRangeSample {
 };
 %extend IntTools_SurfaceRangeSample {
 	~IntTools_SurfaceRangeSample() {
-	printf("Call custom destructor for instance of IntTools_SurfaceRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SurfaceRangeSample\n");}
 	}
 };
 
@@ -2023,7 +2026,7 @@ class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode 
 };
 %extend IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
 	~IntTools_SequenceNodeOfSequenceOfPntOn2Faces() {
-	printf("Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfPntOn2Faces\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfPntOn2Faces\n");}
 	}
 };
 
@@ -2048,7 +2051,7 @@ class IntTools_Range {
 };
 %extend IntTools_Range {
 	~IntTools_Range() {
-	printf("Call custom destructor for instance of IntTools_Range\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_Range\n");}
 	}
 };
 
@@ -2083,7 +2086,7 @@ class IntTools_BeanBeanIntersector {
 };
 %extend IntTools_BeanBeanIntersector {
 	~IntTools_BeanBeanIntersector() {
-	printf("Call custom destructor for instance of IntTools_BeanBeanIntersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_BeanBeanIntersector\n");}
 	}
 };
 
@@ -2104,7 +2107,7 @@ class IntTools_DataMapIteratorOfDataMapOfCurveSampleBox : public TCollection_Bas
 };
 %extend IntTools_DataMapIteratorOfDataMapOfCurveSampleBox {
 	~IntTools_DataMapIteratorOfDataMapOfCurveSampleBox() {
-	printf("Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfCurveSampleBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfCurveSampleBox\n");}
 	}
 };
 
@@ -2155,7 +2158,7 @@ class IntTools_Context {
 };
 %extend IntTools_Context {
 	~IntTools_Context() {
-	printf("Call custom destructor for instance of IntTools_Context\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_Context\n");}
 	}
 };
 
@@ -2174,7 +2177,7 @@ class IntTools_MapIteratorOfMapOfSurfaceSample : public TCollection_BasicMapIter
 };
 %extend IntTools_MapIteratorOfMapOfSurfaceSample {
 	~IntTools_MapIteratorOfMapOfSurfaceSample() {
-	printf("Call custom destructor for instance of IntTools_MapIteratorOfMapOfSurfaceSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_MapIteratorOfMapOfSurfaceSample\n");}
 	}
 };
 
@@ -2189,7 +2192,7 @@ class IntTools_QuickSortRange {
 };
 %extend IntTools_QuickSortRange {
 	~IntTools_QuickSortRange() {
-	printf("Call custom destructor for instance of IntTools_QuickSortRange\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_QuickSortRange\n");}
 	}
 };
 
@@ -2234,7 +2237,7 @@ class IntTools_Tools {
 };
 %extend IntTools_Tools {
 	~IntTools_Tools() {
-	printf("Call custom destructor for instance of IntTools_Tools\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_Tools\n");}
 	}
 };
 
@@ -2281,7 +2284,7 @@ class IntTools_EdgeFace {
 };
 %extend IntTools_EdgeFace {
 	~IntTools_EdgeFace() {
-	printf("Call custom destructor for instance of IntTools_EdgeFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_EdgeFace\n");}
 	}
 };
 
@@ -2304,7 +2307,7 @@ class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 };
 %extend IntTools_ListIteratorOfListOfSurfaceRangeSample {
 	~IntTools_ListIteratorOfListOfSurfaceRangeSample() {
-	printf("Call custom destructor for instance of IntTools_ListIteratorOfListOfSurfaceRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListIteratorOfListOfSurfaceRangeSample\n");}
 	}
 };
 
@@ -2325,7 +2328,7 @@ class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_B
 };
 %extend IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox {
 	~IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox() {
-	printf("Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox\n");}
 	}
 };
 
@@ -2354,7 +2357,7 @@ class IntTools_ShrunkRange {
 };
 %extend IntTools_ShrunkRange {
 	~IntTools_ShrunkRange() {
-	printf("Call custom destructor for instance of IntTools_ShrunkRange\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ShrunkRange\n");}
 	}
 };
 
@@ -2403,7 +2406,7 @@ class IntTools_ListOfBox {
 };
 %extend IntTools_ListOfBox {
 	~IntTools_ListOfBox() {
-	printf("Call custom destructor for instance of IntTools_ListOfBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListOfBox\n");}
 	}
 };
 
@@ -2422,7 +2425,7 @@ class IntTools_MapIteratorOfMapOfCurveSample : public TCollection_BasicMapIterat
 };
 %extend IntTools_MapIteratorOfMapOfCurveSample {
 	~IntTools_MapIteratorOfMapOfCurveSample() {
-	printf("Call custom destructor for instance of IntTools_MapIteratorOfMapOfCurveSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_MapIteratorOfMapOfCurveSample\n");}
 	}
 };
 
@@ -2475,7 +2478,7 @@ class IntTools_SequenceOfRanges : public TCollection_BaseSequence {
 };
 %extend IntTools_SequenceOfRanges {
 	~IntTools_SequenceOfRanges() {
-	printf("Call custom destructor for instance of IntTools_SequenceOfRanges\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfRanges\n");}
 	}
 };
 
@@ -2514,7 +2517,7 @@ class IntTools_Array1OfRange {
 };
 %extend IntTools_Array1OfRange {
 	~IntTools_Array1OfRange() {
-	printf("Call custom destructor for instance of IntTools_Array1OfRange\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_Array1OfRange\n");}
 	}
 };
 
@@ -2542,7 +2545,7 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : public TCo
 };
 %extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {
 	~IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress() {
-	printf("Call custom destructor for instance of IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress\n");}
 	}
 };
 
@@ -2566,7 +2569,7 @@ class IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public TCollection_MapNode
 };
 %extend IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
 	~IntTools_DataMapNodeOfDataMapOfCurveSampleBox() {
-	printf("Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfCurveSampleBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_DataMapNodeOfDataMapOfCurveSampleBox\n");}
 	}
 };
 
@@ -2591,7 +2594,7 @@ class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 };
 %extend IntTools_CurveRangeSample {
 	~IntTools_CurveRangeSample() {
-	printf("Call custom destructor for instance of IntTools_CurveRangeSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeSample\n");}
 	}
 };
 
@@ -2628,7 +2631,7 @@ class IntTools_FaceFace {
 };
 %extend IntTools_FaceFace {
 	~IntTools_FaceFace() {
-	printf("Call custom destructor for instance of IntTools_FaceFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_FaceFace\n");}
 	}
 };
 
@@ -2665,7 +2668,7 @@ class IntTools_Curve {
 };
 %extend IntTools_Curve {
 	~IntTools_Curve() {
-	printf("Call custom destructor for instance of IntTools_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_Curve\n");}
 	}
 };
 
@@ -2692,7 +2695,7 @@ class IntTools {
 };
 %extend IntTools {
 	~IntTools() {
-	printf("Call custom destructor for instance of IntTools\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools\n");}
 	}
 };
 
@@ -2715,6 +2718,6 @@ class IntTools_ListIteratorOfListOfBox {
 };
 %extend IntTools_ListIteratorOfListOfBox {
 	~IntTools_ListIteratorOfListOfBox() {
-	printf("Call custom destructor for instance of IntTools_ListIteratorOfListOfBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntTools_ListIteratorOfListOfBox\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -113,7 +116,7 @@ class IFGraph_Compare : public Interface_GraphContent {
 };
 %extend IFGraph_Compare {
 	~IFGraph_Compare() {
-	printf("Call custom destructor for instance of IFGraph_Compare\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_Compare\n");}
 	}
 };
 
@@ -174,7 +177,7 @@ class IFGraph_SubPartsIterator {
 };
 %extend IFGraph_SubPartsIterator {
 	~IFGraph_SubPartsIterator() {
-	printf("Call custom destructor for instance of IFGraph_SubPartsIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_SubPartsIterator\n");}
 	}
 };
 
@@ -189,7 +192,7 @@ class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 };
 %extend IFGraph_StrongComponants {
 	~IFGraph_StrongComponants() {
-	printf("Call custom destructor for instance of IFGraph_StrongComponants\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_StrongComponants\n");}
 	}
 };
 
@@ -206,7 +209,7 @@ class IFGraph_SCRoots : public IFGraph_StrongComponants {
 };
 %extend IFGraph_SCRoots {
 	~IFGraph_SCRoots() {
-	printf("Call custom destructor for instance of IFGraph_SCRoots\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_SCRoots\n");}
 	}
 };
 
@@ -227,7 +230,7 @@ class IFGraph_AllConnected : public Interface_GraphContent {
 };
 %extend IFGraph_AllConnected {
 	~IFGraph_AllConnected() {
-	printf("Call custom destructor for instance of IFGraph_AllConnected\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_AllConnected\n");}
 	}
 };
 
@@ -244,7 +247,7 @@ class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 };
 %extend IFGraph_ConnectedComponants {
 	~IFGraph_ConnectedComponants() {
-	printf("Call custom destructor for instance of IFGraph_ConnectedComponants\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_ConnectedComponants\n");}
 	}
 };
 
@@ -267,7 +270,7 @@ class IFGraph_AllShared : public Interface_GraphContent {
 };
 %extend IFGraph_AllShared {
 	~IFGraph_AllShared() {
-	printf("Call custom destructor for instance of IFGraph_AllShared\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_AllShared\n");}
 	}
 };
 
@@ -288,7 +291,7 @@ class IFGraph_Articulations : public Interface_GraphContent {
 };
 %extend IFGraph_Articulations {
 	~IFGraph_Articulations() {
-	printf("Call custom destructor for instance of IFGraph_Articulations\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_Articulations\n");}
 	}
 };
 
@@ -311,7 +314,7 @@ class IFGraph_ExternalSources : public Interface_GraphContent {
 };
 %extend IFGraph_ExternalSources {
 	~IFGraph_ExternalSources() {
-	printf("Call custom destructor for instance of IFGraph_ExternalSources\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_ExternalSources\n");}
 	}
 };
 
@@ -342,7 +345,7 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 };
 %extend IFGraph_Cumulate {
 	~IFGraph_Cumulate() {
-	printf("Call custom destructor for instance of IFGraph_Cumulate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_Cumulate\n");}
 	}
 };
 
@@ -361,6 +364,6 @@ class IFGraph_Cycles : public IFGraph_SubPartsIterator {
 };
 %extend IFGraph_Cycles {
 	~IFGraph_Cycles() {
-	printf("Call custom destructor for instance of IFGraph_Cycles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFGraph_Cycles\n");}
 	}
 };

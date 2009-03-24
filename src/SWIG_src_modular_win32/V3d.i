@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -223,7 +226,7 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 };
 %extend Handle_V3d_UnMapped {
 	~Handle_V3d_UnMapped() {
-	printf("Call custom destructor for instance of Handle_V3d_UnMapped\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_UnMapped\n");}
 	}
 };
 
@@ -247,7 +250,7 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 };
 %extend Handle_V3d_Plane {
 	~Handle_V3d_Plane() {
-	printf("Call custom destructor for instance of Handle_V3d_Plane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_Plane\n");}
 	}
 };
 
@@ -271,7 +274,7 @@ class Handle_V3d_View : public Handle_Viewer_View {
 };
 %extend Handle_V3d_View {
 	~Handle_V3d_View() {
-	printf("Call custom destructor for instance of Handle_V3d_View\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_View\n");}
 	}
 };
 
@@ -295,7 +298,7 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 };
 %extend Handle_V3d_PerspectiveView {
 	~Handle_V3d_PerspectiveView() {
-	printf("Call custom destructor for instance of Handle_V3d_PerspectiveView\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_PerspectiveView\n");}
 	}
 };
 
@@ -319,7 +322,7 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 };
 %extend Handle_V3d_Light {
 	~Handle_V3d_Light() {
-	printf("Call custom destructor for instance of Handle_V3d_Light\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_Light\n");}
 	}
 };
 
@@ -343,7 +346,7 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 };
 %extend Handle_V3d_AmbientLight {
 	~Handle_V3d_AmbientLight() {
-	printf("Call custom destructor for instance of Handle_V3d_AmbientLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_AmbientLight\n");}
 	}
 };
 
@@ -367,7 +370,7 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 };
 %extend Handle_V3d_Camera {
 	~Handle_V3d_Camera() {
-	printf("Call custom destructor for instance of Handle_V3d_Camera\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_Camera\n");}
 	}
 };
 
@@ -391,7 +394,7 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 };
 %extend Handle_V3d_LayerMgr {
 	~Handle_V3d_LayerMgr() {
-	printf("Call custom destructor for instance of Handle_V3d_LayerMgr\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_LayerMgr\n");}
 	}
 };
 
@@ -415,7 +418,7 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 };
 %extend Handle_V3d_CircularGrid {
 	~Handle_V3d_CircularGrid() {
-	printf("Call custom destructor for instance of Handle_V3d_CircularGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_CircularGrid\n");}
 	}
 };
 
@@ -439,7 +442,7 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 };
 %extend Handle_V3d_ColorScale {
 	~Handle_V3d_ColorScale() {
-	printf("Call custom destructor for instance of Handle_V3d_ColorScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_ColorScale\n");}
 	}
 };
 
@@ -463,7 +466,7 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 };
 %extend Handle_V3d_OrthographicView {
 	~Handle_V3d_OrthographicView() {
-	printf("Call custom destructor for instance of Handle_V3d_OrthographicView\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_OrthographicView\n");}
 	}
 };
 
@@ -487,7 +490,7 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 };
 %extend Handle_V3d_PositionLight {
 	~Handle_V3d_PositionLight() {
-	printf("Call custom destructor for instance of Handle_V3d_PositionLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionLight\n");}
 	}
 };
 
@@ -511,7 +514,7 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 };
 %extend Handle_V3d_SpotLight {
 	~Handle_V3d_SpotLight() {
-	printf("Call custom destructor for instance of Handle_V3d_SpotLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_SpotLight\n");}
 	}
 };
 
@@ -535,7 +538,7 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 };
 %extend Handle_V3d_Viewer {
 	~Handle_V3d_Viewer() {
-	printf("Call custom destructor for instance of Handle_V3d_Viewer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_Viewer\n");}
 	}
 };
 
@@ -559,7 +562,7 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 };
 %extend Handle_V3d_DirectionalLight {
 	~Handle_V3d_DirectionalLight() {
-	printf("Call custom destructor for instance of Handle_V3d_DirectionalLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_DirectionalLight\n");}
 	}
 };
 
@@ -583,7 +586,7 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 };
 %extend Handle_V3d_RectangularGrid {
 	~Handle_V3d_RectangularGrid() {
-	printf("Call custom destructor for instance of Handle_V3d_RectangularGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_RectangularGrid\n");}
 	}
 };
 
@@ -607,7 +610,7 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 };
 %extend Handle_V3d_PositionalLight {
 	~Handle_V3d_PositionalLight() {
-	printf("Call custom destructor for instance of Handle_V3d_PositionalLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionalLight\n");}
 	}
 };
 
@@ -669,7 +672,7 @@ class V3d_Camera : public MMgt_TShared {
 };
 %extend V3d_Camera {
 	~V3d_Camera() {
-	printf("Call custom destructor for instance of V3d_Camera\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_Camera\n");}
 	}
 };
 
@@ -705,7 +708,7 @@ class V3d_Light : public MMgt_TShared {
 };
 %extend V3d_Light {
 	~V3d_Light() {
-	printf("Call custom destructor for instance of V3d_Light\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_Light\n");}
 	}
 };
 
@@ -749,7 +752,7 @@ class V3d_PositionLight : public V3d_Light {
 };
 %extend V3d_PositionLight {
 	~V3d_PositionLight() {
-	printf("Call custom destructor for instance of V3d_PositionLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_PositionLight\n");}
 	}
 };
 
@@ -769,7 +772,7 @@ class V3d_AmbientLight : public V3d_Light {
 };
 %extend V3d_AmbientLight {
 	~V3d_AmbientLight() {
-	printf("Call custom destructor for instance of V3d_AmbientLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_AmbientLight\n");}
 	}
 };
 
@@ -801,7 +804,7 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %extend V3d_RectangularGrid {
 	~V3d_RectangularGrid() {
-	printf("Call custom destructor for instance of V3d_RectangularGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_RectangularGrid\n");}
 	}
 };
 
@@ -847,7 +850,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 };
 %extend V3d_SpotLight {
 	~V3d_SpotLight() {
-	printf("Call custom destructor for instance of V3d_SpotLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_SpotLight\n");}
 	}
 };
 
@@ -864,7 +867,7 @@ class V3d_ListOfTransient : public TColStd_ListOfTransient {
 };
 %extend V3d_ListOfTransient {
 	~V3d_ListOfTransient() {
-	printf("Call custom destructor for instance of V3d_ListOfTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_ListOfTransient\n");}
 	}
 };
 
@@ -891,7 +894,7 @@ class V3d {
 };
 %extend V3d {
 	~V3d() {
-	printf("Call custom destructor for instance of V3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d\n");}
 	}
 };
 
@@ -1093,7 +1096,7 @@ class V3d_Viewer : public Viewer_Viewer {
 };
 %extend V3d_Viewer {
 	~V3d_Viewer() {
-	printf("Call custom destructor for instance of V3d_Viewer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_Viewer\n");}
 	}
 };
 
@@ -1125,7 +1128,7 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 };
 %extend V3d_CircularGrid {
 	~V3d_CircularGrid() {
-	printf("Call custom destructor for instance of V3d_CircularGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_CircularGrid\n");}
 	}
 };
 
@@ -1513,7 +1516,7 @@ class V3d_View : public Viewer_View {
 };
 %extend V3d_View {
 	~V3d_View() {
-	printf("Call custom destructor for instance of V3d_View\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_View\n");}
 	}
 };
 
@@ -1537,7 +1540,7 @@ class V3d_OrthographicView : public V3d_View {
 };
 %extend V3d_OrthographicView {
 	~V3d_OrthographicView() {
-	printf("Call custom destructor for instance of V3d_OrthographicView\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_OrthographicView\n");}
 	}
 };
 
@@ -1565,7 +1568,7 @@ class V3d_UnMapped : public Standard_DomainError {
 };
 %extend V3d_UnMapped {
 	~V3d_UnMapped() {
-	printf("Call custom destructor for instance of V3d_UnMapped\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_UnMapped\n");}
 	}
 };
 
@@ -1595,7 +1598,7 @@ class V3d_Plane : public MMgt_TShared {
 };
 %extend V3d_Plane {
 	~V3d_Plane() {
-	printf("Call custom destructor for instance of V3d_Plane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_Plane\n");}
 	}
 };
 
@@ -1627,7 +1630,7 @@ class V3d_PositionalLight : public V3d_PositionLight {
 };
 %extend V3d_PositionalLight {
 	~V3d_PositionalLight() {
-	printf("Call custom destructor for instance of V3d_PositionalLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_PositionalLight\n");}
 	}
 };
 
@@ -1665,7 +1668,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 };
 %extend V3d_ColorScale {
 	~V3d_ColorScale() {
-	printf("Call custom destructor for instance of V3d_ColorScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_ColorScale\n");}
 	}
 };
 
@@ -1697,7 +1700,7 @@ class V3d_PerspectiveView : public V3d_View {
 };
 %extend V3d_PerspectiveView {
 	~V3d_PerspectiveView() {
-	printf("Call custom destructor for instance of V3d_PerspectiveView\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_PerspectiveView\n");}
 	}
 };
 
@@ -1733,7 +1736,7 @@ class V3d_LayerMgr : public MMgt_TShared {
 };
 %extend V3d_LayerMgr {
 	~V3d_LayerMgr() {
-	printf("Call custom destructor for instance of V3d_LayerMgr\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_LayerMgr\n");}
 	}
 };
 
@@ -1771,6 +1774,6 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 };
 %extend V3d_DirectionalLight {
 	~V3d_DirectionalLight() {
-	printf("Call custom destructor for instance of V3d_DirectionalLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V3d_DirectionalLight\n");}
 	}
 };

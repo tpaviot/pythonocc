@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -109,7 +112,7 @@ class Handle_MgtBRep_TranslateTool1 : public Handle_MgtTopoDS_TranslateTool1 {
 };
 %extend Handle_MgtBRep_TranslateTool1 {
 	~Handle_MgtBRep_TranslateTool1() {
-	printf("Call custom destructor for instance of Handle_MgtBRep_TranslateTool1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MgtBRep_TranslateTool1\n");}
 	}
 };
 
@@ -133,7 +136,7 @@ class Handle_MgtBRep_TranslateTool : public Handle_MgtTopoDS_TranslateTool {
 };
 %extend Handle_MgtBRep_TranslateTool {
 	~Handle_MgtBRep_TranslateTool() {
-	printf("Call custom destructor for instance of Handle_MgtBRep_TranslateTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MgtBRep_TranslateTool\n");}
 	}
 };
 
@@ -199,7 +202,7 @@ class MgtBRep_TranslateTool1 : public MgtTopoDS_TranslateTool1 {
 };
 %extend MgtBRep_TranslateTool1 {
 	~MgtBRep_TranslateTool1() {
-	printf("Call custom destructor for instance of MgtBRep_TranslateTool1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MgtBRep_TranslateTool1\n");}
 	}
 };
 
@@ -265,7 +268,7 @@ class MgtBRep_TranslateTool : public MgtTopoDS_TranslateTool {
 };
 %extend MgtBRep_TranslateTool {
 	~MgtBRep_TranslateTool() {
-	printf("Call custom destructor for instance of MgtBRep_TranslateTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MgtBRep_TranslateTool\n");}
 	}
 };
 
@@ -286,6 +289,6 @@ class MgtBRep {
 };
 %extend MgtBRep {
 	~MgtBRep() {
-	printf("Call custom destructor for instance of MgtBRep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MgtBRep\n");}
 	}
 };

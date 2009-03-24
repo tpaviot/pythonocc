@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 };
 %extend Handle_GeomAdaptor_GHCurve {
 	~Handle_GeomAdaptor_GHCurve() {
-	printf("Call custom destructor for instance of Handle_GeomAdaptor_GHCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GeomAdaptor_GHCurve\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 };
 %extend Handle_GeomAdaptor_HCurve {
 	~Handle_GeomAdaptor_HCurve() {
-	printf("Call custom destructor for instance of Handle_GeomAdaptor_HCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GeomAdaptor_HCurve\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 };
 %extend Handle_GeomAdaptor_GHSurface {
 	~Handle_GeomAdaptor_GHSurface() {
-	printf("Call custom destructor for instance of Handle_GeomAdaptor_GHSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GeomAdaptor_GHSurface\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 };
 %extend Handle_GeomAdaptor_HSurface {
 	~Handle_GeomAdaptor_HSurface() {
-	printf("Call custom destructor for instance of Handle_GeomAdaptor_HSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GeomAdaptor_HSurface\n");}
 	}
 };
 
@@ -206,7 +209,7 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 };
 %extend GeomAdaptor_GHCurve {
 	~GeomAdaptor_GHCurve() {
-	printf("Call custom destructor for instance of GeomAdaptor_GHCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAdaptor_GHCurve\n");}
 	}
 };
 
@@ -230,7 +233,7 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 };
 %extend GeomAdaptor_HCurve {
 	~GeomAdaptor_HCurve() {
-	printf("Call custom destructor for instance of GeomAdaptor_HCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAdaptor_HCurve\n");}
 	}
 };
 
@@ -258,7 +261,7 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 };
 %extend GeomAdaptor_GHSurface {
 	~GeomAdaptor_GHSurface() {
-	printf("Call custom destructor for instance of GeomAdaptor_GHSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAdaptor_GHSurface\n");}
 	}
 };
 
@@ -282,7 +285,7 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 };
 %extend GeomAdaptor_HSurface {
 	~GeomAdaptor_HSurface() {
-	printf("Call custom destructor for instance of GeomAdaptor_HSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAdaptor_HSurface\n");}
 	}
 };
 
@@ -299,7 +302,7 @@ class GeomAdaptor {
 };
 %extend GeomAdaptor {
 	~GeomAdaptor() {
-	printf("Call custom destructor for instance of GeomAdaptor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAdaptor\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 };
 %extend GeomAdaptor_Surface {
 	~GeomAdaptor_Surface() {
-	printf("Call custom destructor for instance of GeomAdaptor_Surface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAdaptor_Surface\n");}
 	}
 };
 
@@ -495,6 +498,6 @@ class GeomAdaptor_Curve : public Adaptor3d_Curve {
 };
 %extend GeomAdaptor_Curve {
 	~GeomAdaptor_Curve() {
-	printf("Call custom destructor for instance of GeomAdaptor_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAdaptor_Curve\n");}
 	}
 };

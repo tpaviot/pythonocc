@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_ManifoldSolid {
 	~Handle_IGESSolid_ManifoldSolid() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_ManifoldSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ManifoldSolid\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %extend Handle_IGESSolid_SpecificModule {
 	~Handle_IGESSolid_SpecificModule() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SpecificModule\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_EdgeList {
 	~Handle_IGESSolid_EdgeList() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_EdgeList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_EdgeList\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_ConeFrustum {
 	~Handle_IGESSolid_ConeFrustum() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_ConeFrustum\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ConeFrustum\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_IGESSolid_HArray1OfFace : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESSolid_HArray1OfFace {
 	~Handle_IGESSolid_HArray1OfFace() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_HArray1OfFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfFace\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_RightAngularWedge {
 	~Handle_IGESSolid_RightAngularWedge() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_RightAngularWedge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_RightAngularWedge\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_CylindricalSurface {
 	~Handle_IGESSolid_CylindricalSurface() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_CylindricalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_CylindricalSurface\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_BooleanTree {
 	~Handle_IGESSolid_BooleanTree() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_BooleanTree\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_BooleanTree\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_IGESSolid_Shell : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_Shell {
 	~Handle_IGESSolid_Shell() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Shell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Shell\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_SolidInstance {
 	~Handle_IGESSolid_SolidInstance() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_SolidInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidInstance\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_SolidOfRevolution {
 	~Handle_IGESSolid_SolidOfRevolution() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_SolidOfRevolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfRevolution\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_ConicalSurface {
 	~Handle_IGESSolid_ConicalSurface() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_ConicalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ConicalSurface\n");}
 	}
 };
 
@@ -392,7 +395,7 @@ class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 };
 %extend Handle_IGESSolid_Protocol {
 	~Handle_IGESSolid_Protocol() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Protocol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Protocol\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_VertexList {
 	~Handle_IGESSolid_VertexList() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_VertexList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_VertexList\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %extend Handle_IGESSolid_GeneralModule {
 	~Handle_IGESSolid_GeneralModule() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_GeneralModule\n");}
 	}
 };
 
@@ -464,7 +467,7 @@ class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESSolid_HArray1OfLoop {
 	~Handle_IGESSolid_HArray1OfLoop() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_HArray1OfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfLoop\n");}
 	}
 };
 
@@ -488,7 +491,7 @@ class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESSolid_HArray1OfVertexList {
 	~Handle_IGESSolid_HArray1OfVertexList() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_HArray1OfVertexList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfVertexList\n");}
 	}
 };
 
@@ -512,7 +515,7 @@ class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_SphericalSurface {
 	~Handle_IGESSolid_SphericalSurface() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_SphericalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SphericalSurface\n");}
 	}
 };
 
@@ -536,7 +539,7 @@ class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_Cylinder {
 	~Handle_IGESSolid_Cylinder() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Cylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Cylinder\n");}
 	}
 };
 
@@ -560,7 +563,7 @@ class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_SolidAssembly {
 	~Handle_IGESSolid_SolidAssembly() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_SolidAssembly\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidAssembly\n");}
 	}
 };
 
@@ -584,7 +587,7 @@ class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_Block {
 	~Handle_IGESSolid_Block() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Block\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Block\n");}
 	}
 };
 
@@ -608,7 +611,7 @@ class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_Loop {
 	~Handle_IGESSolid_Loop() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Loop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Loop\n");}
 	}
 };
 
@@ -632,7 +635,7 @@ class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_Sphere {
 	~Handle_IGESSolid_Sphere() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Sphere\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Sphere\n");}
 	}
 };
 
@@ -656,7 +659,7 @@ class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESSolid_HArray1OfShell {
 	~Handle_IGESSolid_HArray1OfShell() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_HArray1OfShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfShell\n");}
 	}
 };
 
@@ -680,7 +683,7 @@ class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_ToroidalSurface {
 	~Handle_IGESSolid_ToroidalSurface() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_ToroidalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ToroidalSurface\n");}
 	}
 };
 
@@ -704,7 +707,7 @@ class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_Torus {
 	~Handle_IGESSolid_Torus() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Torus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Torus\n");}
 	}
 };
 
@@ -728,7 +731,7 @@ class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 };
 %extend Handle_IGESSolid_ReadWriteModule {
 	~Handle_IGESSolid_ReadWriteModule() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ReadWriteModule\n");}
 	}
 };
 
@@ -752,7 +755,7 @@ class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_Face {
 	~Handle_IGESSolid_Face() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Face\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Face\n");}
 	}
 };
 
@@ -776,7 +779,7 @@ class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_PlaneSurface {
 	~Handle_IGESSolid_PlaneSurface() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_PlaneSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_PlaneSurface\n");}
 	}
 };
 
@@ -800,7 +803,7 @@ class Handle_IGESSolid_Ellipsoid : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_Ellipsoid {
 	~Handle_IGESSolid_Ellipsoid() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_Ellipsoid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Ellipsoid\n");}
 	}
 };
 
@@ -824,7 +827,7 @@ class Handle_IGESSolid_SelectedComponent : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESSolid_SelectedComponent {
 	~Handle_IGESSolid_SelectedComponent() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_SelectedComponent\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SelectedComponent\n");}
 	}
 };
 
@@ -848,7 +851,7 @@ class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntit
 };
 %extend Handle_IGESSolid_SolidOfLinearExtrusion {
 	~Handle_IGESSolid_SolidOfLinearExtrusion() {
-	printf("Call custom destructor for instance of Handle_IGESSolid_SolidOfLinearExtrusion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfLinearExtrusion\n");}
 	}
 };
 
@@ -882,7 +885,7 @@ class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SphericalSurface {
 	~IGESSolid_SphericalSurface() {
-	printf("Call custom destructor for instance of IGESSolid_SphericalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_SphericalSurface\n");}
 	}
 };
 
@@ -920,7 +923,7 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidOfRevolution {
 	~IGESSolid_SolidOfRevolution() {
-	printf("Call custom destructor for instance of IGESSolid_SolidOfRevolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidOfRevolution\n");}
 	}
 };
 
@@ -960,7 +963,7 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfShell {
 	~IGESSolid_HArray1OfShell() {
-	printf("Call custom destructor for instance of IGESSolid_HArray1OfShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfShell\n");}
 	}
 };
 
@@ -987,7 +990,7 @@ class IGESSolid_ToolToroidalSurface {
 };
 %extend IGESSolid_ToolToroidalSurface {
 	~IGESSolid_ToolToroidalSurface() {
-	printf("Call custom destructor for instance of IGESSolid_ToolToroidalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolToroidalSurface\n");}
 	}
 };
 
@@ -1023,7 +1026,7 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ConeFrustum {
 	~IGESSolid_ConeFrustum() {
-	printf("Call custom destructor for instance of IGESSolid_ConeFrustum\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ConeFrustum\n");}
 	}
 };
 
@@ -1050,7 +1053,7 @@ class IGESSolid_ToolSolidOfRevolution {
 };
 %extend IGESSolid_ToolSolidOfRevolution {
 	~IGESSolid_ToolSolidOfRevolution() {
-	printf("Call custom destructor for instance of IGESSolid_ToolSolidOfRevolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidOfRevolution\n");}
 	}
 };
 
@@ -1089,7 +1092,7 @@ class IGESSolid_Array1OfShell {
 };
 %extend IGESSolid_Array1OfShell {
 	~IGESSolid_Array1OfShell() {
-	printf("Call custom destructor for instance of IGESSolid_Array1OfShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfShell\n");}
 	}
 };
 
@@ -1121,7 +1124,7 @@ class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidAssembly {
 	~IGESSolid_SolidAssembly() {
-	printf("Call custom destructor for instance of IGESSolid_SolidAssembly\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidAssembly\n");}
 	}
 };
 
@@ -1153,7 +1156,7 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_CylindricalSurface {
 	~IGESSolid_CylindricalSurface() {
-	printf("Call custom destructor for instance of IGESSolid_CylindricalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_CylindricalSurface\n");}
 	}
 };
 
@@ -1181,7 +1184,7 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SelectedComponent {
 	~IGESSolid_SelectedComponent() {
-	printf("Call custom destructor for instance of IGESSolid_SelectedComponent\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_SelectedComponent\n");}
 	}
 };
 
@@ -1211,7 +1214,7 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 };
 %extend IGESSolid_BooleanTree {
 	~IGESSolid_BooleanTree() {
-	printf("Call custom destructor for instance of IGESSolid_BooleanTree\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_BooleanTree\n");}
 	}
 };
 
@@ -1238,7 +1241,7 @@ class IGESSolid_ToolTorus {
 };
 %extend IGESSolid_ToolTorus {
 	~IGESSolid_ToolTorus() {
-	printf("Call custom destructor for instance of IGESSolid_ToolTorus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolTorus\n");}
 	}
 };
 
@@ -1265,7 +1268,7 @@ class IGESSolid_ToolConeFrustum {
 };
 %extend IGESSolid_ToolConeFrustum {
 	~IGESSolid_ToolConeFrustum() {
-	printf("Call custom destructor for instance of IGESSolid_ToolConeFrustum\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolConeFrustum\n");}
 	}
 };
 
@@ -1305,7 +1308,7 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfLoop {
 	~IGESSolid_HArray1OfLoop() {
-	printf("Call custom destructor for instance of IGESSolid_HArray1OfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfLoop\n");}
 	}
 };
 
@@ -1344,7 +1347,7 @@ class IGESSolid_Array1OfLoop {
 };
 %extend IGESSolid_Array1OfLoop {
 	~IGESSolid_Array1OfLoop() {
-	printf("Call custom destructor for instance of IGESSolid_Array1OfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfLoop\n");}
 	}
 };
 
@@ -1374,7 +1377,7 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidOfLinearExtrusion {
 	~IGESSolid_SolidOfLinearExtrusion() {
-	printf("Call custom destructor for instance of IGESSolid_SolidOfLinearExtrusion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidOfLinearExtrusion\n");}
 	}
 };
 
@@ -1406,7 +1409,7 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Shell {
 	~IGESSolid_Shell() {
-	printf("Call custom destructor for instance of IGESSolid_Shell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Shell\n");}
 	}
 };
 
@@ -1434,7 +1437,7 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidInstance {
 	~IGESSolid_SolidInstance() {
-	printf("Call custom destructor for instance of IGESSolid_SolidInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidInstance\n");}
 	}
 };
 
@@ -1461,7 +1464,7 @@ class IGESSolid_ToolSelectedComponent {
 };
 %extend IGESSolid_ToolSelectedComponent {
 	~IGESSolid_ToolSelectedComponent() {
-	printf("Call custom destructor for instance of IGESSolid_ToolSelectedComponent\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSelectedComponent\n");}
 	}
 };
 
@@ -1488,7 +1491,7 @@ class IGESSolid_ToolFace {
 };
 %extend IGESSolid_ToolFace {
 	~IGESSolid_ToolFace() {
-	printf("Call custom destructor for instance of IGESSolid_ToolFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolFace\n");}
 	}
 };
 
@@ -1515,7 +1518,7 @@ class IGESSolid_ToolLoop {
 };
 %extend IGESSolid_ToolLoop {
 	~IGESSolid_ToolLoop() {
-	printf("Call custom destructor for instance of IGESSolid_ToolLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolLoop\n");}
 	}
 };
 
@@ -1542,7 +1545,7 @@ class IGESSolid_ToolEllipsoid {
 };
 %extend IGESSolid_ToolEllipsoid {
 	~IGESSolid_ToolEllipsoid() {
-	printf("Call custom destructor for instance of IGESSolid_ToolEllipsoid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolEllipsoid\n");}
 	}
 };
 
@@ -1569,7 +1572,7 @@ class IGESSolid_ToolEdgeList {
 };
 %extend IGESSolid_ToolEdgeList {
 	~IGESSolid_ToolEdgeList() {
-	printf("Call custom destructor for instance of IGESSolid_ToolEdgeList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolEdgeList\n");}
 	}
 };
 
@@ -1597,7 +1600,7 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Sphere {
 	~IGESSolid_Sphere() {
-	printf("Call custom destructor for instance of IGESSolid_Sphere\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Sphere\n");}
 	}
 };
 
@@ -1624,7 +1627,7 @@ class IGESSolid_ToolBlock {
 };
 %extend IGESSolid_ToolBlock {
 	~IGESSolid_ToolBlock() {
-	printf("Call custom destructor for instance of IGESSolid_ToolBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolBlock\n");}
 	}
 };
 
@@ -1658,7 +1661,7 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Cylinder {
 	~IGESSolid_Cylinder() {
-	printf("Call custom destructor for instance of IGESSolid_Cylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Cylinder\n");}
 	}
 };
 
@@ -1685,7 +1688,7 @@ class IGESSolid_ToolSphericalSurface {
 };
 %extend IGESSolid_ToolSphericalSurface {
 	~IGESSolid_ToolSphericalSurface() {
-	printf("Call custom destructor for instance of IGESSolid_ToolSphericalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphericalSurface\n");}
 	}
 };
 
@@ -1712,7 +1715,7 @@ class IGESSolid_ToolBooleanTree {
 };
 %extend IGESSolid_ToolBooleanTree {
 	~IGESSolid_ToolBooleanTree() {
-	printf("Call custom destructor for instance of IGESSolid_ToolBooleanTree\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolBooleanTree\n");}
 	}
 };
 
@@ -1739,7 +1742,7 @@ class IGESSolid_ToolVertexList {
 };
 %extend IGESSolid_ToolVertexList {
 	~IGESSolid_ToolVertexList() {
-	printf("Call custom destructor for instance of IGESSolid_ToolVertexList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolVertexList\n");}
 	}
 };
 
@@ -1787,7 +1790,7 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 };
 %extend IGESSolid_RightAngularWedge {
 	~IGESSolid_RightAngularWedge() {
-	printf("Call custom destructor for instance of IGESSolid_RightAngularWedge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_RightAngularWedge\n");}
 	}
 };
 
@@ -1814,7 +1817,7 @@ class IGESSolid_ToolManifoldSolid {
 };
 %extend IGESSolid_ToolManifoldSolid {
 	~IGESSolid_ToolManifoldSolid() {
-	printf("Call custom destructor for instance of IGESSolid_ToolManifoldSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolManifoldSolid\n");}
 	}
 };
 
@@ -1840,7 +1843,7 @@ class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESSolid_ReadWriteModule {
 	~IGESSolid_ReadWriteModule() {
-	printf("Call custom destructor for instance of IGESSolid_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ReadWriteModule\n");}
 	}
 };
 
@@ -1866,7 +1869,7 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 };
 %extend IGESSolid_VertexList {
 	~IGESSolid_VertexList() {
-	printf("Call custom destructor for instance of IGESSolid_VertexList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_VertexList\n");}
 	}
 };
 
@@ -1893,7 +1896,7 @@ class IGESSolid_ToolConicalSurface {
 };
 %extend IGESSolid_ToolConicalSurface {
 	~IGESSolid_ToolConicalSurface() {
-	printf("Call custom destructor for instance of IGESSolid_ToolConicalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolConicalSurface\n");}
 	}
 };
 
@@ -1929,7 +1932,7 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ToroidalSurface {
 	~IGESSolid_ToroidalSurface() {
-	printf("Call custom destructor for instance of IGESSolid_ToroidalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToroidalSurface\n");}
 	}
 };
 
@@ -1968,7 +1971,7 @@ class IGESSolid_Array1OfFace {
 };
 %extend IGESSolid_Array1OfFace {
 	~IGESSolid_Array1OfFace() {
-	printf("Call custom destructor for instance of IGESSolid_Array1OfFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfFace\n");}
 	}
 };
 
@@ -2008,7 +2011,7 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfFace {
 	~IGESSolid_HArray1OfFace() {
-	printf("Call custom destructor for instance of IGESSolid_HArray1OfFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfFace\n");}
 	}
 };
 
@@ -2025,7 +2028,7 @@ class IGESSolid {
 };
 %extend IGESSolid {
 	~IGESSolid() {
-	printf("Call custom destructor for instance of IGESSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid\n");}
 	}
 };
 
@@ -2052,7 +2055,7 @@ class IGESSolid_ToolSphere {
 };
 %extend IGESSolid_ToolSphere {
 	~IGESSolid_ToolSphere() {
-	printf("Call custom destructor for instance of IGESSolid_ToolSphere\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphere\n");}
 	}
 };
 
@@ -2082,7 +2085,7 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_PlaneSurface {
 	~IGESSolid_PlaneSurface() {
-	printf("Call custom destructor for instance of IGESSolid_PlaneSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_PlaneSurface\n");}
 	}
 };
 
@@ -2121,7 +2124,7 @@ class IGESSolid_Array1OfVertexList {
 };
 %extend IGESSolid_Array1OfVertexList {
 	~IGESSolid_Array1OfVertexList() {
-	printf("Call custom destructor for instance of IGESSolid_Array1OfVertexList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfVertexList\n");}
 	}
 };
 
@@ -2167,7 +2170,7 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Ellipsoid {
 	~IGESSolid_Ellipsoid() {
-	printf("Call custom destructor for instance of IGESSolid_Ellipsoid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Ellipsoid\n");}
 	}
 };
 
@@ -2201,7 +2204,7 @@ class IGESSolid_Torus : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Torus {
 	~IGESSolid_Torus() {
-	printf("Call custom destructor for instance of IGESSolid_Torus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Torus\n");}
 	}
 };
 
@@ -2231,7 +2234,7 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Face {
 	~IGESSolid_Face() {
-	printf("Call custom destructor for instance of IGESSolid_Face\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Face\n");}
 	}
 };
 
@@ -2258,7 +2261,7 @@ class IGESSolid_ToolRightAngularWedge {
 };
 %extend IGESSolid_ToolRightAngularWedge {
 	~IGESSolid_ToolRightAngularWedge() {
-	printf("Call custom destructor for instance of IGESSolid_ToolRightAngularWedge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolRightAngularWedge\n");}
 	}
 };
 
@@ -2298,7 +2301,7 @@ class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfVertexList {
 	~IGESSolid_HArray1OfVertexList() {
-	printf("Call custom destructor for instance of IGESSolid_HArray1OfVertexList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfVertexList\n");}
 	}
 };
 
@@ -2340,7 +2343,7 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Loop {
 	~IGESSolid_Loop() {
-	printf("Call custom destructor for instance of IGESSolid_Loop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Loop\n");}
 	}
 };
 
@@ -2367,7 +2370,7 @@ class IGESSolid_ToolCylindricalSurface {
 };
 %extend IGESSolid_ToolCylindricalSurface {
 	~IGESSolid_ToolCylindricalSurface() {
-	printf("Call custom destructor for instance of IGESSolid_ToolCylindricalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolCylindricalSurface\n");}
 	}
 };
 
@@ -2401,7 +2404,7 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ConicalSurface {
 	~IGESSolid_ConicalSurface() {
-	printf("Call custom destructor for instance of IGESSolid_ConicalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ConicalSurface\n");}
 	}
 };
 
@@ -2428,7 +2431,7 @@ class IGESSolid_ToolSolidInstance {
 };
 %extend IGESSolid_ToolSolidInstance {
 	~IGESSolid_ToolSolidInstance() {
-	printf("Call custom destructor for instance of IGESSolid_ToolSolidInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidInstance\n");}
 	}
 };
 
@@ -2460,7 +2463,7 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ManifoldSolid {
 	~IGESSolid_ManifoldSolid() {
-	printf("Call custom destructor for instance of IGESSolid_ManifoldSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ManifoldSolid\n");}
 	}
 };
 
@@ -2482,7 +2485,7 @@ class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESSolid_SpecificModule {
 	~IGESSolid_SpecificModule() {
-	printf("Call custom destructor for instance of IGESSolid_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_SpecificModule\n");}
 	}
 };
 
@@ -2509,7 +2512,7 @@ class IGESSolid_ToolPlaneSurface {
 };
 %extend IGESSolid_ToolPlaneSurface {
 	~IGESSolid_ToolPlaneSurface() {
-	printf("Call custom destructor for instance of IGESSolid_ToolPlaneSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolPlaneSurface\n");}
 	}
 };
 
@@ -2536,7 +2539,7 @@ class IGESSolid_ToolSolidAssembly {
 };
 %extend IGESSolid_ToolSolidAssembly {
 	~IGESSolid_ToolSolidAssembly() {
-	printf("Call custom destructor for instance of IGESSolid_ToolSolidAssembly\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidAssembly\n");}
 	}
 };
 
@@ -2570,7 +2573,7 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 };
 %extend IGESSolid_EdgeList {
 	~IGESSolid_EdgeList() {
-	printf("Call custom destructor for instance of IGESSolid_EdgeList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_EdgeList\n");}
 	}
 };
 
@@ -2597,7 +2600,7 @@ class IGESSolid_ToolSolidOfLinearExtrusion {
 };
 %extend IGESSolid_ToolSolidOfLinearExtrusion {
 	~IGESSolid_ToolSolidOfLinearExtrusion() {
-	printf("Call custom destructor for instance of IGESSolid_ToolSolidOfLinearExtrusion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidOfLinearExtrusion\n");}
 	}
 };
 
@@ -2624,7 +2627,7 @@ class IGESSolid_ToolCylinder {
 };
 %extend IGESSolid_ToolCylinder {
 	~IGESSolid_ToolCylinder() {
-	printf("Call custom destructor for instance of IGESSolid_ToolCylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolCylinder\n");}
 	}
 };
 
@@ -2656,7 +2659,7 @@ class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESSolid_GeneralModule {
 	~IGESSolid_GeneralModule() {
-	printf("Call custom destructor for instance of IGESSolid_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_GeneralModule\n");}
 	}
 };
 
@@ -2702,7 +2705,7 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Block {
 	~IGESSolid_Block() {
-	printf("Call custom destructor for instance of IGESSolid_Block\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_Block\n");}
 	}
 };
 
@@ -2763,7 +2766,7 @@ class IGESSolid_TopoBuilder {
 };
 %extend IGESSolid_TopoBuilder {
 	~IGESSolid_TopoBuilder() {
-	printf("Call custom destructor for instance of IGESSolid_TopoBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_TopoBuilder\n");}
 	}
 };
 
@@ -2790,6 +2793,6 @@ class IGESSolid_ToolShell {
 };
 %extend IGESSolid_ToolShell {
 	~IGESSolid_ToolShell() {
-	printf("Call custom destructor for instance of IGESSolid_ToolShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolShell\n");}
 	}
 };

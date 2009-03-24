@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_TColGeom2d_HSequenceOfCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_TColGeom2d_HSequenceOfCurve {
 	~Handle_TColGeom2d_HSequenceOfCurve() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfCurve\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_TColGeom2d_HSequenceOfGeometry : public Handle_MMgt_TShared {
 };
 %extend Handle_TColGeom2d_HSequenceOfGeometry {
 	~Handle_TColGeom2d_HSequenceOfGeometry() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfGeometry\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_TColGeom2d_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_TColGeom2d_HSequenceOfBoundedCurve {
 	~Handle_TColGeom2d_HSequenceOfBoundedCurve() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfBoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HSequenceOfBoundedCurve\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_TColGeom2d_HArray1OfGeometry : public Handle_MMgt_TShared {
 };
 %extend Handle_TColGeom2d_HArray1OfGeometry {
 	~Handle_TColGeom2d_HArray1OfGeometry() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HArray1OfGeometry\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TCo
 };
 %extend Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
 	~Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_TColGeom2d_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_TColGeom2d_HArray1OfBSplineCurve {
 	~Handle_TColGeom2d_HArray1OfBSplineCurve() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_TColGeom2d_HArray1OfCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_TColGeom2d_HArray1OfCurve {
 	~Handle_TColGeom2d_HArray1OfCurve() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HArray1OfCurve\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 };
 %extend Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve {
 	~Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_TColGeom2d_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_TColGeom2d_HArray1OfBoundedCurve {
 	~Handle_TColGeom2d_HArray1OfBoundedCurve() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBoundedCurve\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_TColGeom2d_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_TColGeom2d_HArray1OfBezierCurve {
 	~Handle_TColGeom2d_HArray1OfBezierCurve() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBezierCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_HArray1OfBezierCurve\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry : public Handle_TCollec
 };
 %extend Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry {
 	~Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry() {
-	printf("Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColGeom2d_SequenceNodeOfSequenceOfGeometry\n");}
 	}
 };
 
@@ -383,7 +386,7 @@ class TColGeom2d_Array1OfBoundedCurve {
 };
 %extend TColGeom2d_Array1OfBoundedCurve {
 	~TColGeom2d_Array1OfBoundedCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_Array1OfBoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_Array1OfBoundedCurve\n");}
 	}
 };
 
@@ -447,7 +450,7 @@ class TColGeom2d_HSequenceOfBoundedCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HSequenceOfBoundedCurve {
 	~TColGeom2d_HSequenceOfBoundedCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_HSequenceOfBoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_HSequenceOfBoundedCurve\n");}
 	}
 };
 
@@ -486,7 +489,7 @@ class TColGeom2d_Array1OfBezierCurve {
 };
 %extend TColGeom2d_Array1OfBezierCurve {
 	~TColGeom2d_Array1OfBezierCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_Array1OfBezierCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_Array1OfBezierCurve\n");}
 	}
 };
 
@@ -539,7 +542,7 @@ class TColGeom2d_SequenceOfCurve : public TCollection_BaseSequence {
 };
 %extend TColGeom2d_SequenceOfCurve {
 	~TColGeom2d_SequenceOfCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_SequenceOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_SequenceOfCurve\n");}
 	}
 };
 
@@ -561,7 +564,7 @@ class TColGeom2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfCurve {
 	~TColGeom2d_SequenceNodeOfSequenceOfCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
 
@@ -625,7 +628,7 @@ class TColGeom2d_HSequenceOfGeometry : public MMgt_TShared {
 };
 %extend TColGeom2d_HSequenceOfGeometry {
 	~TColGeom2d_HSequenceOfGeometry() {
-	printf("Call custom destructor for instance of TColGeom2d_HSequenceOfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_HSequenceOfGeometry\n");}
 	}
 };
 
@@ -665,7 +668,7 @@ class TColGeom2d_HArray1OfCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfCurve {
 	~TColGeom2d_HArray1OfCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_HArray1OfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_HArray1OfCurve\n");}
 	}
 };
 
@@ -705,7 +708,7 @@ class TColGeom2d_HArray1OfGeometry : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfGeometry {
 	~TColGeom2d_HArray1OfGeometry() {
-	printf("Call custom destructor for instance of TColGeom2d_HArray1OfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_HArray1OfGeometry\n");}
 	}
 };
 
@@ -727,7 +730,7 @@ class TColGeom2d_SequenceNodeOfSequenceOfGeometry : public TCollection_SeqNode {
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
 	~TColGeom2d_SequenceNodeOfSequenceOfGeometry() {
-	printf("Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfGeometry\n");}
 	}
 };
 
@@ -766,7 +769,7 @@ class TColGeom2d_Array1OfGeometry {
 };
 %extend TColGeom2d_Array1OfGeometry {
 	~TColGeom2d_Array1OfGeometry() {
-	printf("Call custom destructor for instance of TColGeom2d_Array1OfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_Array1OfGeometry\n");}
 	}
 };
 
@@ -788,7 +791,7 @@ class TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNo
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
 	~TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve\n");}
 	}
 };
 
@@ -827,7 +830,7 @@ class TColGeom2d_Array1OfBSplineCurve {
 };
 %extend TColGeom2d_Array1OfBSplineCurve {
 	~TColGeom2d_Array1OfBSplineCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_Array1OfBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_Array1OfBSplineCurve\n");}
 	}
 };
 
@@ -867,7 +870,7 @@ class TColGeom2d_HArray1OfBSplineCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfBSplineCurve {
 	~TColGeom2d_HArray1OfBSplineCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_HArray1OfBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_HArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -920,7 +923,7 @@ class TColGeom2d_SequenceOfGeometry : public TCollection_BaseSequence {
 };
 %extend TColGeom2d_SequenceOfGeometry {
 	~TColGeom2d_SequenceOfGeometry() {
-	printf("Call custom destructor for instance of TColGeom2d_SequenceOfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_SequenceOfGeometry\n");}
 	}
 };
 
@@ -960,7 +963,7 @@ class TColGeom2d_HArray1OfBezierCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfBezierCurve {
 	~TColGeom2d_HArray1OfBezierCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_HArray1OfBezierCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_HArray1OfBezierCurve\n");}
 	}
 };
 
@@ -1024,7 +1027,7 @@ class TColGeom2d_HSequenceOfCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HSequenceOfCurve {
 	~TColGeom2d_HSequenceOfCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_HSequenceOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_HSequenceOfCurve\n");}
 	}
 };
 
@@ -1063,7 +1066,7 @@ class TColGeom2d_Array1OfCurve {
 };
 %extend TColGeom2d_Array1OfCurve {
 	~TColGeom2d_Array1OfCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_Array1OfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_Array1OfCurve\n");}
 	}
 };
 
@@ -1116,7 +1119,7 @@ class TColGeom2d_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 };
 %extend TColGeom2d_SequenceOfBoundedCurve {
 	~TColGeom2d_SequenceOfBoundedCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_SequenceOfBoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_SequenceOfBoundedCurve\n");}
 	}
 };
 
@@ -1156,6 +1159,6 @@ class TColGeom2d_HArray1OfBoundedCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfBoundedCurve {
 	~TColGeom2d_HArray1OfBoundedCurve() {
-	printf("Call custom destructor for instance of TColGeom2d_HArray1OfBoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColGeom2d_HArray1OfBoundedCurve\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 };
 %extend Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
 	~Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation() {
-	printf("Call custom destructor for instance of Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");}
 	}
 };
 
@@ -129,7 +132,7 @@ class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 };
 %extend GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 	~GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox\n");}
 	}
 };
 
@@ -144,7 +147,7 @@ class GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox : publi
 };
 %extend GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox {
 	~GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -171,7 +174,7 @@ class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 };
 %extend GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 	~GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -220,7 +223,7 @@ class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_Functio
 };
 %extend GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox {
 	~GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox\n");}
 	}
 };
 
@@ -265,7 +268,7 @@ class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public 
 };
 %extend GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox {
 	~GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -300,7 +303,7 @@ class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public m
 };
 %extend GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox {
 	~GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
 	}
 };
 
@@ -353,7 +356,7 @@ class GeomInt_SequenceOfParameterAndOrientation : public TCollection_BaseSequenc
 };
 %extend GeomInt_SequenceOfParameterAndOrientation {
 	~GeomInt_SequenceOfParameterAndOrientation() {
-	printf("Call custom destructor for instance of GeomInt_SequenceOfParameterAndOrientation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_SequenceOfParameterAndOrientation\n");}
 	}
 };
 
@@ -406,7 +409,7 @@ class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
 };
 %extend GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
 	~GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -445,7 +448,7 @@ class GeomInt_TheMultiLineOfWLApprox {
 };
 %extend GeomInt_TheMultiLineOfWLApprox {
 	~GeomInt_TheMultiLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_TheMultiLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_TheMultiLineOfWLApprox\n");}
 	}
 };
 
@@ -468,7 +471,7 @@ class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 };
 %extend GeomInt_ThePrmPrmSvSurfacesOfWLApprox {
 	~GeomInt_ThePrmPrmSvSurfacesOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_ThePrmPrmSvSurfacesOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_ThePrmPrmSvSurfacesOfWLApprox\n");}
 	}
 };
 
@@ -483,7 +486,7 @@ class GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox : public ma
 };
 %extend GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox {
 	~GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -518,7 +521,7 @@ class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math
 };
 %extend GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox {
 	~GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -561,7 +564,7 @@ class GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox : public math
 };
 %extend GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 	~GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");}
 	}
 };
 
@@ -608,7 +611,7 @@ class GeomInt_TheComputeLineBezierOfWLApprox {
 };
 %extend GeomInt_TheComputeLineBezierOfWLApprox {
 	~GeomInt_TheComputeLineBezierOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_TheComputeLineBezierOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_TheComputeLineBezierOfWLApprox\n");}
 	}
 };
 
@@ -661,7 +664,7 @@ class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
 };
 %extend GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
 	~GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
 	}
 };
 
@@ -683,7 +686,7 @@ class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollecti
 };
 %extend GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation {
 	~GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation() {
-	printf("Call custom destructor for instance of GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation\n");}
 	}
 };
 
@@ -704,7 +707,7 @@ class GeomInt_LineTool {
 };
 %extend GeomInt_LineTool {
 	~GeomInt_LineTool() {
-	printf("Call custom destructor for instance of GeomInt_LineTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_LineTool\n");}
 	}
 };
 
@@ -719,7 +722,7 @@ class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public
 };
 %extend GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox {
 	~GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
 	}
 };
 
@@ -744,7 +747,7 @@ class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 };
 %extend GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 	~GeomInt_MyGradientbisOfTheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_MyGradientbisOfTheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_MyGradientbisOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -797,7 +800,7 @@ class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 };
 %extend GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 	~GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -848,7 +851,7 @@ class GeomInt_TheComputeLineOfWLApprox {
 };
 %extend GeomInt_TheComputeLineOfWLApprox {
 	~GeomInt_TheComputeLineOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_TheComputeLineOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_TheComputeLineOfWLApprox\n");}
 	}
 };
 
@@ -873,7 +876,7 @@ class GeomInt_ParameterAndOrientation {
 };
 %extend GeomInt_ParameterAndOrientation {
 	~GeomInt_ParameterAndOrientation() {
-	printf("Call custom destructor for instance of GeomInt_ParameterAndOrientation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_ParameterAndOrientation\n");}
 	}
 };
 
@@ -916,7 +919,7 @@ class GeomInt_TheMultiLineToolOfWLApprox {
 };
 %extend GeomInt_TheMultiLineToolOfWLApprox {
 	~GeomInt_TheMultiLineToolOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_TheMultiLineToolOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_TheMultiLineToolOfWLApprox\n");}
 	}
 };
 
@@ -939,7 +942,7 @@ class GeomInt_LineConstructor {
 };
 %extend GeomInt_LineConstructor {
 	~GeomInt_LineConstructor() {
-	printf("Call custom destructor for instance of GeomInt_LineConstructor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_LineConstructor\n");}
 	}
 };
 
@@ -976,7 +979,7 @@ class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 };
 %extend GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 	~GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");}
 	}
 };
 
@@ -1001,6 +1004,6 @@ class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 };
 %extend GeomInt_TheImpPrmSvSurfacesOfWLApprox {
 	~GeomInt_TheImpPrmSvSurfacesOfWLApprox() {
-	printf("Call custom destructor for instance of GeomInt_TheImpPrmSvSurfacesOfWLApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomInt_TheImpPrmSvSurfacesOfWLApprox\n");}
 	}
 };

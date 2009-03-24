@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName : public Handle_TCollecti
 };
 %extend Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName {
 	~Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName() {
-	printf("Call custom destructor for instance of Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName\n");}
 	}
 };
 
@@ -135,7 +138,7 @@ class DNaming {
 };
 %extend DNaming {
 	~DNaming() {
-	printf("Call custom destructor for instance of DNaming\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DNaming\n");}
 	}
 };
 
@@ -156,7 +159,7 @@ class DNaming_DataMapIteratorOfDataMapOfShapeOfName : public TCollection_BasicMa
 };
 %extend DNaming_DataMapIteratorOfDataMapOfShapeOfName {
 	~DNaming_DataMapIteratorOfDataMapOfShapeOfName() {
-	printf("Call custom destructor for instance of DNaming_DataMapIteratorOfDataMapOfShapeOfName\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DNaming_DataMapIteratorOfDataMapOfShapeOfName\n");}
 	}
 };
 
@@ -180,7 +183,7 @@ class DNaming_DataMapNodeOfDataMapOfShapeOfName : public TCollection_MapNode {
 };
 %extend DNaming_DataMapNodeOfDataMapOfShapeOfName {
 	~DNaming_DataMapNodeOfDataMapOfShapeOfName() {
-	printf("Call custom destructor for instance of DNaming_DataMapNodeOfDataMapOfShapeOfName\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DNaming_DataMapNodeOfDataMapOfShapeOfName\n");}
 	}
 };
 
@@ -213,6 +216,6 @@ class DNaming_DataMapOfShapeOfName : public TCollection_BasicMap {
 };
 %extend DNaming_DataMapOfShapeOfName {
 	~DNaming_DataMapOfShapeOfName() {
-	printf("Call custom destructor for instance of DNaming_DataMapOfShapeOfName\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DNaming_DataMapOfShapeOfName\n");}
 	}
 };

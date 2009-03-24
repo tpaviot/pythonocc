@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged 
 };
 %extend Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence {
 	~Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_LayerTool {
 	~Handle_PXCAFDoc_LayerTool() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_LayerTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_LayerTool\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_ShapeTool {
 	~Handle_PXCAFDoc_ShapeTool() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_ShapeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_ShapeTool\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_PXCAFDoc_Area : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_Area {
 	~Handle_PXCAFDoc_Area() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_Area\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Area\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_Color {
 	~Handle_PXCAFDoc_Color() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_Color\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Color\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_Location {
 	~Handle_PXCAFDoc_Location() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_Location\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Location\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_GraphNode {
 	~Handle_PXCAFDoc_GraphNode() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_GraphNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_GraphNode\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_Centroid {
 	~Handle_PXCAFDoc_Centroid() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_Centroid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Centroid\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_PXCAFDoc_GraphNodeSequence : public Handle_Standard_Persistent {
 };
 %extend Handle_PXCAFDoc_GraphNodeSequence {
 	~Handle_PXCAFDoc_GraphNodeSequence() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_GraphNodeSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_GraphNodeSequence\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_Volume {
 	~Handle_PXCAFDoc_Volume() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_Volume\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Volume\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_DocumentTool {
 	~Handle_PXCAFDoc_DocumentTool() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_DocumentTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_DocumentTool\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 };
 %extend Handle_PXCAFDoc_ColorTool {
 	~Handle_PXCAFDoc_ColorTool() {
-	printf("Call custom destructor for instance of Handle_PXCAFDoc_ColorTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_ColorTool\n");}
 	}
 };
 
@@ -400,7 +403,7 @@ class PXCAFDoc_Volume : public PDF_Attribute {
 };
 %extend PXCAFDoc_Volume {
 	~PXCAFDoc_Volume() {
-	printf("Call custom destructor for instance of PXCAFDoc_Volume\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_Volume\n");}
 	}
 };
 
@@ -452,7 +455,7 @@ class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
 };
 %extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
 	~PXCAFDoc_SeqNodeOfGraphNodeSequence() {
-	printf("Call custom destructor for instance of PXCAFDoc_SeqNodeOfGraphNodeSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_SeqNodeOfGraphNodeSequence\n");}
 	}
 };
 
@@ -484,7 +487,7 @@ class PXCAFDoc_Area : public PDF_Attribute {
 };
 %extend PXCAFDoc_Area {
 	~PXCAFDoc_Area() {
-	printf("Call custom destructor for instance of PXCAFDoc_Area\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_Area\n");}
 	}
 };
 
@@ -506,7 +509,7 @@ class PXCAFDoc_DocumentTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_DocumentTool {
 	~PXCAFDoc_DocumentTool() {
-	printf("Call custom destructor for instance of PXCAFDoc_DocumentTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_DocumentTool\n");}
 	}
 };
 
@@ -527,7 +530,7 @@ class PXCAFDoc_SeqExplorerOfGraphNodeSequence {
 };
 %extend PXCAFDoc_SeqExplorerOfGraphNodeSequence {
 	~PXCAFDoc_SeqExplorerOfGraphNodeSequence() {
-	printf("Call custom destructor for instance of PXCAFDoc_SeqExplorerOfGraphNodeSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_SeqExplorerOfGraphNodeSequence\n");}
 	}
 };
 
@@ -549,7 +552,7 @@ class PXCAFDoc_ColorTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_ColorTool {
 	~PXCAFDoc_ColorTool() {
-	printf("Call custom destructor for instance of PXCAFDoc_ColorTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_ColorTool\n");}
 	}
 };
 
@@ -579,7 +582,7 @@ class PXCAFDoc_Location : public PDF_Attribute {
 };
 %extend PXCAFDoc_Location {
 	~PXCAFDoc_Location() {
-	printf("Call custom destructor for instance of PXCAFDoc_Location\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_Location\n");}
 	}
 };
 
@@ -601,7 +604,7 @@ class PXCAFDoc_LayerTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_LayerTool {
 	~PXCAFDoc_LayerTool() {
-	printf("Call custom destructor for instance of PXCAFDoc_LayerTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_LayerTool\n");}
 	}
 };
 
@@ -623,7 +626,7 @@ class PXCAFDoc_ShapeTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_ShapeTool {
 	~PXCAFDoc_ShapeTool() {
-	printf("Call custom destructor for instance of PXCAFDoc_ShapeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_ShapeTool\n");}
 	}
 };
 
@@ -653,7 +656,7 @@ class PXCAFDoc_Centroid : public PDF_Attribute {
 };
 %extend PXCAFDoc_Centroid {
 	~PXCAFDoc_Centroid() {
-	printf("Call custom destructor for instance of PXCAFDoc_Centroid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_Centroid\n");}
 	}
 };
 
@@ -741,7 +744,7 @@ class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
 };
 %extend PXCAFDoc_GraphNodeSequence {
 	~PXCAFDoc_GraphNodeSequence() {
-	printf("Call custom destructor for instance of PXCAFDoc_GraphNodeSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_GraphNodeSequence\n");}
 	}
 };
 
@@ -793,7 +796,7 @@ class PXCAFDoc_GraphNode : public PDF_Attribute {
 };
 %extend PXCAFDoc_GraphNode {
 	~PXCAFDoc_GraphNode() {
-	printf("Call custom destructor for instance of PXCAFDoc_GraphNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_GraphNode\n");}
 	}
 };
 
@@ -823,6 +826,6 @@ class PXCAFDoc_Color : public PDF_Attribute {
 };
 %extend PXCAFDoc_Color {
 	~PXCAFDoc_Color() {
-	printf("Call custom destructor for instance of PXCAFDoc_Color\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PXCAFDoc_Color\n");}
 	}
 };

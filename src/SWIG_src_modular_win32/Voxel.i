@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -111,7 +114,7 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_Voxel_Prs {
 	~Handle_Voxel_Prs() {
-	printf("Call custom destructor for instance of Handle_Voxel_Prs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Voxel_Prs\n");}
 	}
 };
 
@@ -156,7 +159,7 @@ class Voxel_DS {
 };
 %extend Voxel_DS {
 	~Voxel_DS() {
-	printf("Call custom destructor for instance of Voxel_DS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_DS\n");}
 	}
 };
 
@@ -179,7 +182,7 @@ class Voxel_BoolDS : public Voxel_DS {
 };
 %extend Voxel_BoolDS {
 	~Voxel_BoolDS() {
-	printf("Call custom destructor for instance of Voxel_BoolDS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_BoolDS\n");}
 	}
 };
 
@@ -204,7 +207,7 @@ class Voxel_FloatDS : public Voxel_DS {
 };
 %extend Voxel_FloatDS {
 	~Voxel_FloatDS() {
-	printf("Call custom destructor for instance of Voxel_FloatDS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_FloatDS\n");}
 	}
 };
 
@@ -227,7 +230,7 @@ class Voxel_Selector {
 };
 %extend Voxel_Selector {
 	~Voxel_Selector() {
-	printf("Call custom destructor for instance of Voxel_Selector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_Selector\n");}
 	}
 };
 
@@ -279,7 +282,7 @@ class Voxel_Prs : public AIS_InteractiveObject {
 };
 %extend Voxel_Prs {
 	~Voxel_Prs() {
-	printf("Call custom destructor for instance of Voxel_Prs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_Prs\n");}
 	}
 };
 
@@ -304,7 +307,7 @@ class Voxel_BooleanOperation {
 };
 %extend Voxel_BooleanOperation {
 	~Voxel_BooleanOperation() {
-	printf("Call custom destructor for instance of Voxel_BooleanOperation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_BooleanOperation\n");}
 	}
 };
 
@@ -325,7 +328,7 @@ class Voxel_FastConverter {
 };
 %extend Voxel_FastConverter {
 	~Voxel_FastConverter() {
-	printf("Call custom destructor for instance of Voxel_FastConverter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_FastConverter\n");}
 	}
 };
 
@@ -350,7 +353,7 @@ class Voxel_ColorDS : public Voxel_DS {
 };
 %extend Voxel_ColorDS {
 	~Voxel_ColorDS() {
-	printf("Call custom destructor for instance of Voxel_ColorDS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_ColorDS\n");}
 	}
 };
 
@@ -389,6 +392,6 @@ class Voxel_CollisionDetection {
 };
 %extend Voxel_CollisionDetection {
 	~Voxel_CollisionDetection() {
-	printf("Call custom destructor for instance of Voxel_CollisionDetection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Voxel_CollisionDetection\n");}
 	}
 };

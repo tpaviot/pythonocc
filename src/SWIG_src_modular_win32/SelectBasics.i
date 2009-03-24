@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 };
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfOwner {
 	~Handle_SelectBasics_SequenceNodeOfSequenceOfOwner() {
-	printf("Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfOwner\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 };
 %extend Handle_SelectBasics_ListNodeOfListOfBox2d {
 	~Handle_SelectBasics_ListNodeOfListOfBox2d() {
-	printf("Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfBox2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfBox2d\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TColle
 };
 %extend Handle_SelectBasics_SequenceNodeOfSequenceOfAddress {
 	~Handle_SelectBasics_SequenceNodeOfSequenceOfAddress() {
-	printf("Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 };
 %extend Handle_SelectBasics_SensitiveEntity {
 	~Handle_SelectBasics_SensitiveEntity() {
-	printf("Call custom destructor for instance of Handle_SelectBasics_SensitiveEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SensitiveEntity\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 };
 %extend Handle_SelectBasics_ListNodeOfListOfSensitive {
 	~Handle_SelectBasics_ListNodeOfListOfSensitive() {
-	printf("Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfSensitive\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 };
 %extend Handle_SelectBasics_EntityOwner {
 	~Handle_SelectBasics_EntityOwner() {
-	printf("Call custom destructor for instance of Handle_SelectBasics_EntityOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_EntityOwner\n");}
 	}
 };
 
@@ -251,7 +254,7 @@ class SelectBasics_SortAlgo {
 };
 %extend SelectBasics_SortAlgo {
 	~SelectBasics_SortAlgo() {
-	printf("Call custom destructor for instance of SelectBasics_SortAlgo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_SortAlgo\n");}
 	}
 };
 
@@ -274,7 +277,7 @@ class SelectBasics_ListIteratorOfListOfBox2d {
 };
 %extend SelectBasics_ListIteratorOfListOfBox2d {
 	~SelectBasics_ListIteratorOfListOfBox2d() {
-	printf("Call custom destructor for instance of SelectBasics_ListIteratorOfListOfBox2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfBox2d\n");}
 	}
 };
 
@@ -304,7 +307,7 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 };
 %extend SelectBasics_EntityOwner {
 	~SelectBasics_EntityOwner() {
-	printf("Call custom destructor for instance of SelectBasics_EntityOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_EntityOwner\n");}
 	}
 };
 
@@ -326,7 +329,7 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfBox2d {
 	~SelectBasics_ListNodeOfListOfBox2d() {
-	printf("Call custom destructor for instance of SelectBasics_ListNodeOfListOfBox2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_ListNodeOfListOfBox2d\n");}
 	}
 };
 
@@ -348,7 +351,7 @@ class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode 
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfAddress {
 	~SelectBasics_SequenceNodeOfSequenceOfAddress() {
-	printf("Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
 
@@ -397,7 +400,7 @@ class SelectBasics_ListOfSensitive {
 };
 %extend SelectBasics_ListOfSensitive {
 	~SelectBasics_ListOfSensitive() {
-	printf("Call custom destructor for instance of SelectBasics_ListOfSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_ListOfSensitive\n");}
 	}
 };
 
@@ -420,7 +423,7 @@ class SelectBasics_ListIteratorOfListOfSensitive {
 };
 %extend SelectBasics_ListIteratorOfListOfSensitive {
 	~SelectBasics_ListIteratorOfListOfSensitive() {
-	printf("Call custom destructor for instance of SelectBasics_ListIteratorOfListOfSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfSensitive\n");}
 	}
 };
 
@@ -439,7 +442,7 @@ class SelectBasics_BasicTool {
 };
 %extend SelectBasics_BasicTool {
 	~SelectBasics_BasicTool() {
-	printf("Call custom destructor for instance of SelectBasics_BasicTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_BasicTool\n");}
 	}
 };
 
@@ -456,7 +459,7 @@ class SelectBasics {
 };
 %extend SelectBasics {
 	~SelectBasics() {
-	printf("Call custom destructor for instance of SelectBasics\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics\n");}
 	}
 };
 
@@ -478,7 +481,7 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfOwner {
 	~SelectBasics_SequenceNodeOfSequenceOfOwner() {
-	printf("Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfOwner\n");}
 	}
 };
 
@@ -531,7 +534,7 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 };
 %extend SelectBasics_SequenceOfAddress {
 	~SelectBasics_SequenceOfAddress() {
-	printf("Call custom destructor for instance of SelectBasics_SequenceOfAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceOfAddress\n");}
 	}
 };
 
@@ -580,7 +583,7 @@ class SelectBasics_ListOfBox2d {
 };
 %extend SelectBasics_ListOfBox2d {
 	~SelectBasics_ListOfBox2d() {
-	printf("Call custom destructor for instance of SelectBasics_ListOfBox2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_ListOfBox2d\n");}
 	}
 };
 
@@ -622,7 +625,7 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 };
 %extend SelectBasics_SensitiveEntity {
 	~SelectBasics_SensitiveEntity() {
-	printf("Call custom destructor for instance of SelectBasics_SensitiveEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_SensitiveEntity\n");}
 	}
 };
 
@@ -675,7 +678,7 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 };
 %extend SelectBasics_SequenceOfOwner {
 	~SelectBasics_SequenceOfOwner() {
-	printf("Call custom destructor for instance of SelectBasics_SequenceOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceOfOwner\n");}
 	}
 };
 
@@ -697,6 +700,6 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfSensitive {
 	~SelectBasics_ListNodeOfListOfSensitive() {
-	printf("Call custom destructor for instance of SelectBasics_ListNodeOfListOfSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectBasics_ListNodeOfListOfSensitive\n");}
 	}
 };

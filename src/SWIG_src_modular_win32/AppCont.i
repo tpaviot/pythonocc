@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -99,7 +102,7 @@ class AppCont_FitFunction {
 };
 %extend AppCont_FitFunction {
 	~AppCont_FitFunction() {
-	printf("Call custom destructor for instance of AppCont_FitFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppCont_FitFunction\n");}
 	}
 };
 
@@ -132,7 +135,7 @@ class AppCont_FunctionTool2d {
 };
 %extend AppCont_FunctionTool2d {
 	~AppCont_FunctionTool2d() {
-	printf("Call custom destructor for instance of AppCont_FunctionTool2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppCont_FunctionTool2d\n");}
 	}
 };
 
@@ -153,7 +156,7 @@ class AppCont_Function {
 };
 %extend AppCont_Function {
 	~AppCont_Function() {
-	printf("Call custom destructor for instance of AppCont_Function\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppCont_Function\n");}
 	}
 };
 
@@ -174,7 +177,7 @@ class AppCont_Function2d {
 };
 %extend AppCont_Function2d {
 	~AppCont_Function2d() {
-	printf("Call custom destructor for instance of AppCont_Function2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppCont_Function2d\n");}
 	}
 };
 
@@ -207,7 +210,7 @@ class AppCont_FunctionTool {
 };
 %extend AppCont_FunctionTool {
 	~AppCont_FunctionTool() {
-	printf("Call custom destructor for instance of AppCont_FunctionTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppCont_FunctionTool\n");}
 	}
 };
 
@@ -226,6 +229,6 @@ class AppCont_FitFunction2d {
 };
 %extend AppCont_FitFunction2d {
 	~AppCont_FitFunction2d() {
-	printf("Call custom destructor for instance of AppCont_FitFunction2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppCont_FitFunction2d\n");}
 	}
 };

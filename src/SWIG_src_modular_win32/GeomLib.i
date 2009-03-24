@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -103,7 +106,7 @@ class GeomLib_LogSample : public math_FunctionSample {
 };
 %extend GeomLib_LogSample {
 	~GeomLib_LogSample() {
-	printf("Call custom destructor for instance of GeomLib_LogSample\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_LogSample\n");}
 	}
 };
 
@@ -118,7 +121,7 @@ class GeomLib_DenominatorMultiplier {
 };
 %extend GeomLib_DenominatorMultiplier {
 	~GeomLib_DenominatorMultiplier() {
-	printf("Call custom destructor for instance of GeomLib_DenominatorMultiplier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_DenominatorMultiplier\n");}
 	}
 };
 
@@ -137,7 +140,7 @@ class GeomLib_Tool {
 };
 %extend GeomLib_Tool {
 	~GeomLib_Tool() {
-	printf("Call custom destructor for instance of GeomLib_Tool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_Tool\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class GeomLib_Array1OfMat {
 };
 %extend GeomLib_Array1OfMat {
 	~GeomLib_Array1OfMat() {
-	printf("Call custom destructor for instance of GeomLib_Array1OfMat\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_Array1OfMat\n");}
 	}
 };
 
@@ -195,7 +198,7 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 };
 %extend GeomLib_PolyFunc {
 	~GeomLib_PolyFunc() {
-	printf("Call custom destructor for instance of GeomLib_PolyFunc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_PolyFunc\n");}
 	}
 };
 
@@ -214,7 +217,7 @@ class GeomLib_Interpolate {
 };
 %extend GeomLib_Interpolate {
 	~GeomLib_Interpolate() {
-	printf("Call custom destructor for instance of GeomLib_Interpolate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_Interpolate\n");}
 	}
 };
 
@@ -245,7 +248,7 @@ class GeomLib_MakeCurvefromApprox {
 };
 %extend GeomLib_MakeCurvefromApprox {
 	~GeomLib_MakeCurvefromApprox() {
-	printf("Call custom destructor for instance of GeomLib_MakeCurvefromApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_MakeCurvefromApprox\n");}
 	}
 };
 
@@ -262,7 +265,7 @@ class GeomLib_IsPlanarSurface {
 };
 %extend GeomLib_IsPlanarSurface {
 	~GeomLib_IsPlanarSurface() {
-	printf("Call custom destructor for instance of GeomLib_IsPlanarSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_IsPlanarSurface\n");}
 	}
 };
 
@@ -283,7 +286,7 @@ class GeomLib_Check2dBSplineCurve {
 };
 %extend GeomLib_Check2dBSplineCurve {
 	~GeomLib_Check2dBSplineCurve() {
-	printf("Call custom destructor for instance of GeomLib_Check2dBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_Check2dBSplineCurve\n");}
 	}
 };
 
@@ -328,7 +331,7 @@ class GeomLib {
 };
 %extend GeomLib {
 	~GeomLib() {
-	printf("Call custom destructor for instance of GeomLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib\n");}
 	}
 };
 
@@ -349,6 +352,6 @@ class GeomLib_CheckBSplineCurve {
 };
 %extend GeomLib_CheckBSplineCurve {
 	~GeomLib_CheckBSplineCurve() {
-	printf("Call custom destructor for instance of GeomLib_CheckBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLib_CheckBSplineCurve\n");}
 	}
 };

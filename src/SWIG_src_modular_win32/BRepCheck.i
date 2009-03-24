@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -141,7 +144,7 @@ class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 };
 %extend Handle_BRepCheck_Result {
 	~Handle_BRepCheck_Result() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_Result\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Result\n");}
 	}
 };
 
@@ -165,7 +168,7 @@ class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 };
 %extend Handle_BRepCheck_Shell {
 	~Handle_BRepCheck_Shell() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_Shell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Shell\n");}
 	}
 };
 
@@ -189,7 +192,7 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollec
 };
 %extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult {
 	~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");}
 	}
 };
 
@@ -213,7 +216,7 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_T
 };
 %extend Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
 	~Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");}
 	}
 };
 
@@ -237,7 +240,7 @@ class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 };
 %extend Handle_BRepCheck_Wire {
 	~Handle_BRepCheck_Wire() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_Wire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Wire\n");}
 	}
 };
 
@@ -261,7 +264,7 @@ class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNod
 };
 %extend Handle_BRepCheck_ListNodeOfListOfStatus {
 	~Handle_BRepCheck_ListNodeOfListOfStatus() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_ListNodeOfListOfStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_ListNodeOfListOfStatus\n");}
 	}
 };
 
@@ -285,7 +288,7 @@ class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
 };
 %extend Handle_BRepCheck_Edge {
 	~Handle_BRepCheck_Edge() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_Edge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Edge\n");}
 	}
 };
 
@@ -309,7 +312,7 @@ class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 };
 %extend Handle_BRepCheck_Vertex {
 	~Handle_BRepCheck_Vertex() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_Vertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Vertex\n");}
 	}
 };
 
@@ -333,7 +336,7 @@ class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 };
 %extend Handle_BRepCheck_Face {
 	~Handle_BRepCheck_Face() {
-	printf("Call custom destructor for instance of Handle_BRepCheck_Face\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Face\n");}
 	}
 };
 
@@ -355,7 +358,7 @@ class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
 };
 %extend BRepCheck_ListNodeOfListOfStatus {
 	~BRepCheck_ListNodeOfListOfStatus() {
-	printf("Call custom destructor for instance of BRepCheck_ListNodeOfListOfStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_ListNodeOfListOfStatus\n");}
 	}
 };
 
@@ -388,7 +391,7 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 };
 %extend BRepCheck_DataMapOfShapeListOfStatus {
 	~BRepCheck_DataMapOfShapeListOfStatus() {
-	printf("Call custom destructor for instance of BRepCheck_DataMapOfShapeListOfStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeListOfStatus\n");}
 	}
 };
 
@@ -434,7 +437,7 @@ class BRepCheck_Result : public MMgt_TShared {
 };
 %extend BRepCheck_Result {
 	~BRepCheck_Result() {
-	printf("Call custom destructor for instance of BRepCheck_Result\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_Result\n");}
 	}
 };
 
@@ -462,7 +465,7 @@ class BRepCheck_Shell : public BRepCheck_Result {
 };
 %extend BRepCheck_Shell {
 	~BRepCheck_Shell() {
-	printf("Call custom destructor for instance of BRepCheck_Shell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_Shell\n");}
 	}
 };
 
@@ -483,7 +486,7 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_Basic
 };
 %extend BRepCheck_DataMapIteratorOfDataMapOfShapeResult {
 	~BRepCheck_DataMapIteratorOfDataMapOfShapeResult() {
-	printf("Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeResult\n");}
 	}
 };
 
@@ -523,7 +526,7 @@ class BRepCheck_Face : public BRepCheck_Result {
 };
 %extend BRepCheck_Face {
 	~BRepCheck_Face() {
-	printf("Call custom destructor for instance of BRepCheck_Face\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_Face\n");}
 	}
 };
 
@@ -547,7 +550,7 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
 	~BRepCheck_DataMapNodeOfDataMapOfShapeResult() {
-	printf("Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeResult\n");}
 	}
 };
 
@@ -566,7 +569,7 @@ class BRepCheck {
 };
 %extend BRepCheck {
 	~BRepCheck() {
-	printf("Call custom destructor for instance of BRepCheck\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck\n");}
 	}
 };
 
@@ -604,7 +607,7 @@ class BRepCheck_Wire : public BRepCheck_Result {
 };
 %extend BRepCheck_Wire {
 	~BRepCheck_Wire() {
-	printf("Call custom destructor for instance of BRepCheck_Wire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_Wire\n");}
 	}
 };
 
@@ -632,7 +635,7 @@ class BRepCheck_Vertex : public BRepCheck_Result {
 };
 %extend BRepCheck_Vertex {
 	~BRepCheck_Vertex() {
-	printf("Call custom destructor for instance of BRepCheck_Vertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_Vertex\n");}
 	}
 };
 
@@ -665,7 +668,7 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 };
 %extend BRepCheck_DataMapOfShapeResult {
 	~BRepCheck_DataMapOfShapeResult() {
-	printf("Call custom destructor for instance of BRepCheck_DataMapOfShapeResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeResult\n");}
 	}
 };
 
@@ -697,7 +700,7 @@ class BRepCheck_Edge : public BRepCheck_Result {
 };
 %extend BRepCheck_Edge {
 	~BRepCheck_Edge() {
-	printf("Call custom destructor for instance of BRepCheck_Edge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_Edge\n");}
 	}
 };
 
@@ -721,7 +724,7 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_Map
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
 	~BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus() {
-	printf("Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");}
 	}
 };
 
@@ -742,7 +745,7 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection
 };
 %extend BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus {
 	~BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus() {
-	printf("Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus\n");}
 	}
 };
 
@@ -791,7 +794,7 @@ class BRepCheck_ListOfStatus {
 };
 %extend BRepCheck_ListOfStatus {
 	~BRepCheck_ListOfStatus() {
-	printf("Call custom destructor for instance of BRepCheck_ListOfStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_ListOfStatus\n");}
 	}
 };
 
@@ -814,7 +817,7 @@ class BRepCheck_ListIteratorOfListOfStatus {
 };
 %extend BRepCheck_ListIteratorOfListOfStatus {
 	~BRepCheck_ListIteratorOfListOfStatus() {
-	printf("Call custom destructor for instance of BRepCheck_ListIteratorOfListOfStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_ListIteratorOfListOfStatus\n");}
 	}
 };
 
@@ -835,6 +838,6 @@ class BRepCheck_Analyzer {
 };
 %extend BRepCheck_Analyzer {
 	~BRepCheck_Analyzer() {
-	printf("Call custom destructor for instance of BRepCheck_Analyzer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepCheck_Analyzer\n");}
 	}
 };

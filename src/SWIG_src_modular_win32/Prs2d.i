@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -191,7 +194,7 @@ class Handle_Prs2d_Tolerance : public Handle_Graphic2d_Line {
 };
 %extend Handle_Prs2d_Tolerance {
 	~Handle_Prs2d_Tolerance() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Tolerance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Tolerance\n");}
 	}
 };
 
@@ -215,7 +218,7 @@ class Handle_Prs2d_Flatness : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Flatness {
 	~Handle_Prs2d_Flatness() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Flatness\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Flatness\n");}
 	}
 };
 
@@ -239,7 +242,7 @@ class Handle_Prs2d_SurfProfile : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_SurfProfile {
 	~Handle_Prs2d_SurfProfile() {
-	printf("Call custom destructor for instance of Handle_Prs2d_SurfProfile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SurfProfile\n");}
 	}
 };
 
@@ -263,7 +266,7 @@ class Handle_Prs2d_Dimension : public Handle_Graphic2d_Line {
 };
 %extend Handle_Prs2d_Dimension {
 	~Handle_Prs2d_Dimension() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Dimension\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Dimension\n");}
 	}
 };
 
@@ -287,7 +290,7 @@ class Handle_Prs2d_Repere : public Handle_Prs2d_Dimension {
 };
 %extend Handle_Prs2d_Repere {
 	~Handle_Prs2d_Repere() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Repere\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Repere\n");}
 	}
 };
 
@@ -311,7 +314,7 @@ class Handle_Prs2d_Axis : public Handle_Graphic2d_Line {
 };
 %extend Handle_Prs2d_Axis {
 	~Handle_Prs2d_Axis() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Axis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Axis\n");}
 	}
 };
 
@@ -335,7 +338,7 @@ class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
 };
 %extend Handle_Prs2d_Radius {
 	~Handle_Prs2d_Radius() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Radius\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Radius\n");}
 	}
 };
 
@@ -359,7 +362,7 @@ class Handle_Prs2d_AspectRoot : public Handle_MMgt_TShared {
 };
 %extend Handle_Prs2d_AspectRoot {
 	~Handle_Prs2d_AspectRoot() {
-	printf("Call custom destructor for instance of Handle_Prs2d_AspectRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectRoot\n");}
 	}
 };
 
@@ -383,7 +386,7 @@ class Handle_Prs2d_AspectFramedText : public Handle_Prs2d_AspectRoot {
 };
 %extend Handle_Prs2d_AspectFramedText {
 	~Handle_Prs2d_AspectFramedText() {
-	printf("Call custom destructor for instance of Handle_Prs2d_AspectFramedText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectFramedText\n");}
 	}
 };
 
@@ -407,7 +410,7 @@ class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
 };
 %extend Handle_Prs2d_DrawSymbol {
 	~Handle_Prs2d_DrawSymbol() {
-	printf("Call custom destructor for instance of Handle_Prs2d_DrawSymbol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_DrawSymbol\n");}
 	}
 };
 
@@ -431,7 +434,7 @@ class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Cylindric {
 	~Handle_Prs2d_Cylindric() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Cylindric\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Cylindric\n");}
 	}
 };
 
@@ -455,7 +458,7 @@ class Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot : public Handle_TCollection_
 };
 %extend Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot {
 	~Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot() {
-	printf("Call custom destructor for instance of Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");}
 	}
 };
 
@@ -479,7 +482,7 @@ class Handle_Prs2d_Diameter : public Handle_Prs2d_Dimension {
 };
 %extend Handle_Prs2d_Diameter {
 	~Handle_Prs2d_Diameter() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Diameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Diameter\n");}
 	}
 };
 
@@ -503,7 +506,7 @@ class Handle_Prs2d_Drawer : public Handle_MMgt_TShared {
 };
 %extend Handle_Prs2d_Drawer {
 	~Handle_Prs2d_Drawer() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Drawer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Drawer\n");}
 	}
 };
 
@@ -527,7 +530,7 @@ class Handle_Prs2d_Length : public Handle_Prs2d_Dimension {
 };
 %extend Handle_Prs2d_Length {
 	~Handle_Prs2d_Length() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Length\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Length\n");}
 	}
 };
 
@@ -551,7 +554,7 @@ class Handle_Prs2d_Taper : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Taper {
 	~Handle_Prs2d_Taper() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Taper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Taper\n");}
 	}
 };
 
@@ -575,7 +578,7 @@ class Handle_Prs2d_Arrow : public Handle_Graphic2d_Line {
 };
 %extend Handle_Prs2d_Arrow {
 	~Handle_Prs2d_Arrow() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Arrow\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Arrow\n");}
 	}
 };
 
@@ -599,7 +602,7 @@ class Handle_Prs2d_ToleranceFrame : public Handle_Graphic2d_Line {
 };
 %extend Handle_Prs2d_ToleranceFrame {
 	~Handle_Prs2d_ToleranceFrame() {
-	printf("Call custom destructor for instance of Handle_Prs2d_ToleranceFrame\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_ToleranceFrame\n");}
 	}
 };
 
@@ -623,7 +626,7 @@ class Handle_Prs2d_SymCircular : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_SymCircular {
 	~Handle_Prs2d_SymCircular() {
-	printf("Call custom destructor for instance of Handle_Prs2d_SymCircular\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SymCircular\n");}
 	}
 };
 
@@ -647,7 +650,7 @@ class Handle_Prs2d_Position : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Position {
 	~Handle_Prs2d_Position() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Position\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Position\n");}
 	}
 };
 
@@ -671,7 +674,7 @@ class Handle_Prs2d_Concentric : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Concentric {
 	~Handle_Prs2d_Concentric() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Concentric\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Concentric\n");}
 	}
 };
 
@@ -695,7 +698,7 @@ class Handle_Prs2d_Perpendicular : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Perpendicular {
 	~Handle_Prs2d_Perpendicular() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Perpendicular\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Perpendicular\n");}
 	}
 };
 
@@ -719,7 +722,7 @@ class Handle_Prs2d_LineProfile : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_LineProfile {
 	~Handle_Prs2d_LineProfile() {
-	printf("Call custom destructor for instance of Handle_Prs2d_LineProfile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_LineProfile\n");}
 	}
 };
 
@@ -743,7 +746,7 @@ class Handle_Prs2d_AspectHidingText : public Handle_Prs2d_AspectRoot {
 };
 %extend Handle_Prs2d_AspectHidingText {
 	~Handle_Prs2d_AspectHidingText() {
-	printf("Call custom destructor for instance of Handle_Prs2d_AspectHidingText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectHidingText\n");}
 	}
 };
 
@@ -767,7 +770,7 @@ class Handle_Prs2d_RadiusIndep : public Handle_Graphic2d_Line {
 };
 %extend Handle_Prs2d_RadiusIndep {
 	~Handle_Prs2d_RadiusIndep() {
-	printf("Call custom destructor for instance of Handle_Prs2d_RadiusIndep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_RadiusIndep\n");}
 	}
 };
 
@@ -791,7 +794,7 @@ class Handle_Prs2d_Angularity : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Angularity {
 	~Handle_Prs2d_Angularity() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Angularity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Angularity\n");}
 	}
 };
 
@@ -815,7 +818,7 @@ class Handle_Prs2d_Symmetry : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Symmetry {
 	~Handle_Prs2d_Symmetry() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Symmetry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Symmetry\n");}
 	}
 };
 
@@ -839,7 +842,7 @@ class Handle_Prs2d_Circularity : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Circularity {
 	~Handle_Prs2d_Circularity() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Circularity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Circularity\n");}
 	}
 };
 
@@ -863,7 +866,7 @@ class Handle_Prs2d_Straightness : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Straightness {
 	~Handle_Prs2d_Straightness() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Straightness\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Straightness\n");}
 	}
 };
 
@@ -887,7 +890,7 @@ class Handle_Prs2d_SymbolDefinitionError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Prs2d_SymbolDefinitionError {
 	~Handle_Prs2d_SymbolDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Prs2d_SymbolDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SymbolDefinitionError\n");}
 	}
 };
 
@@ -911,7 +914,7 @@ class Handle_Prs2d_AspectHidingPoly : public Handle_Prs2d_AspectRoot {
 };
 %extend Handle_Prs2d_AspectHidingPoly {
 	~Handle_Prs2d_AspectHidingPoly() {
-	printf("Call custom destructor for instance of Handle_Prs2d_AspectHidingPoly\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectHidingPoly\n");}
 	}
 };
 
@@ -935,7 +938,7 @@ class Handle_Prs2d_Point : public Handle_Graphic2d_Line {
 };
 %extend Handle_Prs2d_Point {
 	~Handle_Prs2d_Point() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Point\n");}
 	}
 };
 
@@ -959,7 +962,7 @@ class Handle_Prs2d_AspectText : public Handle_Prs2d_AspectRoot {
 };
 %extend Handle_Prs2d_AspectText {
 	~Handle_Prs2d_AspectText() {
-	printf("Call custom destructor for instance of Handle_Prs2d_AspectText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectText\n");}
 	}
 };
 
@@ -983,7 +986,7 @@ class Handle_Prs2d_Parallelism : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_Parallelism {
 	~Handle_Prs2d_Parallelism() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Parallelism\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Parallelism\n");}
 	}
 };
 
@@ -1007,7 +1010,7 @@ class Handle_Prs2d_SymTotal : public Handle_Prs2d_Tolerance {
 };
 %extend Handle_Prs2d_SymTotal {
 	~Handle_Prs2d_SymTotal() {
-	printf("Call custom destructor for instance of Handle_Prs2d_SymTotal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SymTotal\n");}
 	}
 };
 
@@ -1031,7 +1034,7 @@ class Handle_Prs2d_Angle : public Handle_Prs2d_Dimension {
 };
 %extend Handle_Prs2d_Angle {
 	~Handle_Prs2d_Angle() {
-	printf("Call custom destructor for instance of Handle_Prs2d_Angle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Angle\n");}
 	}
 };
 
@@ -1055,7 +1058,7 @@ class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
 };
 %extend Handle_Prs2d_AspectLine {
 	~Handle_Prs2d_AspectLine() {
-	printf("Call custom destructor for instance of Handle_Prs2d_AspectLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectLine\n");}
 	}
 };
 
@@ -1077,7 +1080,7 @@ class Prs2d_Tolerance : public Graphic2d_Line {
 };
 %extend Prs2d_Tolerance {
 	~Prs2d_Tolerance() {
-	printf("Call custom destructor for instance of Prs2d_Tolerance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Tolerance\n");}
 	}
 };
 
@@ -1097,7 +1100,7 @@ class Prs2d_LineProfile : public Prs2d_Tolerance {
 };
 %extend Prs2d_LineProfile {
 	~Prs2d_LineProfile() {
-	printf("Call custom destructor for instance of Prs2d_LineProfile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_LineProfile\n");}
 	}
 };
 
@@ -1117,7 +1120,7 @@ class Prs2d_AspectRoot : public MMgt_TShared {
 };
 %extend Prs2d_AspectRoot {
 	~Prs2d_AspectRoot() {
-	printf("Call custom destructor for instance of Prs2d_AspectRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_AspectRoot\n");}
 	}
 };
 
@@ -1155,7 +1158,7 @@ class Prs2d_AspectHidingText : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectHidingText {
 	~Prs2d_AspectHidingText() {
-	printf("Call custom destructor for instance of Prs2d_AspectHidingText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_AspectHidingText\n");}
 	}
 };
 
@@ -1188,7 +1191,7 @@ class Prs2d_DataMapOfAspectRoot : public TCollection_BasicMap {
 };
 %extend Prs2d_DataMapOfAspectRoot {
 	~Prs2d_DataMapOfAspectRoot() {
-	printf("Call custom destructor for instance of Prs2d_DataMapOfAspectRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_DataMapOfAspectRoot\n");}
 	}
 };
 
@@ -1209,7 +1212,7 @@ class Prs2d_DataMapIteratorOfDataMapOfAspectRoot : public TCollection_BasicMapIt
 };
 %extend Prs2d_DataMapIteratorOfDataMapOfAspectRoot {
 	~Prs2d_DataMapIteratorOfDataMapOfAspectRoot() {
-	printf("Call custom destructor for instance of Prs2d_DataMapIteratorOfDataMapOfAspectRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_DataMapIteratorOfDataMapOfAspectRoot\n");}
 	}
 };
 
@@ -1289,7 +1292,7 @@ class Prs2d_Dimension : public Graphic2d_Line {
 };
 %extend Prs2d_Dimension {
 	~Prs2d_Dimension() {
-	printf("Call custom destructor for instance of Prs2d_Dimension\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Dimension\n");}
 	}
 };
 
@@ -1311,7 +1314,7 @@ class Prs2d_Radius : public Prs2d_Dimension {
 };
 %extend Prs2d_Radius {
 	~Prs2d_Radius() {
-	printf("Call custom destructor for instance of Prs2d_Radius\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Radius\n");}
 	}
 };
 
@@ -1333,7 +1336,7 @@ class Prs2d_Concentric : public Prs2d_Tolerance {
 };
 %extend Prs2d_Concentric {
 	~Prs2d_Concentric() {
-	printf("Call custom destructor for instance of Prs2d_Concentric\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Concentric\n");}
 	}
 };
 
@@ -1355,7 +1358,7 @@ class Prs2d_SymCircular : public Prs2d_Tolerance {
 };
 %extend Prs2d_SymCircular {
 	~Prs2d_SymCircular() {
-	printf("Call custom destructor for instance of Prs2d_SymCircular\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_SymCircular\n");}
 	}
 };
 
@@ -1377,7 +1380,7 @@ class Prs2d_Angularity : public Prs2d_Tolerance {
 };
 %extend Prs2d_Angularity {
 	~Prs2d_Angularity() {
-	printf("Call custom destructor for instance of Prs2d_Angularity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Angularity\n");}
 	}
 };
 
@@ -1413,7 +1416,7 @@ class Prs2d_Axis : public Graphic2d_Line {
 };
 %extend Prs2d_Axis {
 	~Prs2d_Axis() {
-	printf("Call custom destructor for instance of Prs2d_Axis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Axis\n");}
 	}
 };
 
@@ -1445,7 +1448,7 @@ class Prs2d_Point : public Graphic2d_Line {
 };
 %extend Prs2d_Point {
 	~Prs2d_Point() {
-	printf("Call custom destructor for instance of Prs2d_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Point\n");}
 	}
 };
 
@@ -1475,7 +1478,7 @@ class Prs2d_AspectHidingPoly : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectHidingPoly {
 	~Prs2d_AspectHidingPoly() {
-	printf("Call custom destructor for instance of Prs2d_AspectHidingPoly\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_AspectHidingPoly\n");}
 	}
 };
 
@@ -1497,7 +1500,7 @@ class Prs2d_Cylindric : public Prs2d_Tolerance {
 };
 %extend Prs2d_Cylindric {
 	~Prs2d_Cylindric() {
-	printf("Call custom destructor for instance of Prs2d_Cylindric\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Cylindric\n");}
 	}
 };
 
@@ -1519,7 +1522,7 @@ class Prs2d_Straightness : public Prs2d_Tolerance {
 };
 %extend Prs2d_Straightness {
 	~Prs2d_Straightness() {
-	printf("Call custom destructor for instance of Prs2d_Straightness\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Straightness\n");}
 	}
 };
 
@@ -1541,7 +1544,7 @@ class Prs2d_Position : public Prs2d_Tolerance {
 };
 %extend Prs2d_Position {
 	~Prs2d_Position() {
-	printf("Call custom destructor for instance of Prs2d_Position\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Position\n");}
 	}
 };
 
@@ -1565,7 +1568,7 @@ class Prs2d_DataMapNodeOfDataMapOfAspectRoot : public TCollection_MapNode {
 };
 %extend Prs2d_DataMapNodeOfDataMapOfAspectRoot {
 	~Prs2d_DataMapNodeOfDataMapOfAspectRoot() {
-	printf("Call custom destructor for instance of Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");}
 	}
 };
 
@@ -1609,7 +1612,7 @@ class Prs2d_RadiusIndep : public Graphic2d_Line {
 };
 %extend Prs2d_RadiusIndep {
 	~Prs2d_RadiusIndep() {
-	printf("Call custom destructor for instance of Prs2d_RadiusIndep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_RadiusIndep\n");}
 	}
 };
 
@@ -1631,7 +1634,7 @@ class Prs2d_Flatness : public Prs2d_Tolerance {
 };
 %extend Prs2d_Flatness {
 	~Prs2d_Flatness() {
-	printf("Call custom destructor for instance of Prs2d_Flatness\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Flatness\n");}
 	}
 };
 
@@ -1653,7 +1656,7 @@ class Prs2d_Circularity : public Prs2d_Tolerance {
 };
 %extend Prs2d_Circularity {
 	~Prs2d_Circularity() {
-	printf("Call custom destructor for instance of Prs2d_Circularity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Circularity\n");}
 	}
 };
 
@@ -1675,7 +1678,7 @@ class Prs2d_Parallelism : public Prs2d_Tolerance {
 };
 %extend Prs2d_Parallelism {
 	~Prs2d_Parallelism() {
-	printf("Call custom destructor for instance of Prs2d_Parallelism\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Parallelism\n");}
 	}
 };
 
@@ -1697,7 +1700,7 @@ class Prs2d_DrawSymbol : public Graphic2d_Line {
 };
 %extend Prs2d_DrawSymbol {
 	~Prs2d_DrawSymbol() {
-	printf("Call custom destructor for instance of Prs2d_DrawSymbol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_DrawSymbol\n");}
 	}
 };
 
@@ -1745,7 +1748,7 @@ class Prs2d_AspectText : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectText {
 	~Prs2d_AspectText() {
-	printf("Call custom destructor for instance of Prs2d_AspectText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_AspectText\n");}
 	}
 };
 
@@ -1767,7 +1770,7 @@ class Prs2d_Symmetry : public Prs2d_Tolerance {
 };
 %extend Prs2d_Symmetry {
 	~Prs2d_Symmetry() {
-	printf("Call custom destructor for instance of Prs2d_Symmetry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Symmetry\n");}
 	}
 };
 
@@ -1829,7 +1832,7 @@ class Prs2d_AspectLine : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectLine {
 	~Prs2d_AspectLine() {
-	printf("Call custom destructor for instance of Prs2d_AspectLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_AspectLine\n");}
 	}
 };
 
@@ -1853,7 +1856,7 @@ class Prs2d_Angle : public Prs2d_Dimension {
 };
 %extend Prs2d_Angle {
 	~Prs2d_Angle() {
-	printf("Call custom destructor for instance of Prs2d_Angle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Angle\n");}
 	}
 };
 
@@ -1875,7 +1878,7 @@ class Prs2d_Repere : public Prs2d_Dimension {
 };
 %extend Prs2d_Repere {
 	~Prs2d_Repere() {
-	printf("Call custom destructor for instance of Prs2d_Repere\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Repere\n");}
 	}
 };
 
@@ -1917,7 +1920,7 @@ class Prs2d_ToleranceFrame : public Graphic2d_Line {
 };
 %extend Prs2d_ToleranceFrame {
 	~Prs2d_ToleranceFrame() {
-	printf("Call custom destructor for instance of Prs2d_ToleranceFrame\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_ToleranceFrame\n");}
 	}
 };
 
@@ -1943,7 +1946,7 @@ class Prs2d_Arrow : public Graphic2d_Line {
 };
 %extend Prs2d_Arrow {
 	~Prs2d_Arrow() {
-	printf("Call custom destructor for instance of Prs2d_Arrow\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Arrow\n");}
 	}
 };
 
@@ -1965,7 +1968,7 @@ class Prs2d_Taper : public Prs2d_Tolerance {
 };
 %extend Prs2d_Taper {
 	~Prs2d_Taper() {
-	printf("Call custom destructor for instance of Prs2d_Taper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Taper\n");}
 	}
 };
 
@@ -1993,7 +1996,7 @@ class Prs2d_Drawer : public MMgt_TShared {
 };
 %extend Prs2d_Drawer {
 	~Prs2d_Drawer() {
-	printf("Call custom destructor for instance of Prs2d_Drawer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Drawer\n");}
 	}
 };
 
@@ -2031,7 +2034,7 @@ class Prs2d_AspectFramedText : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectFramedText {
 	~Prs2d_AspectFramedText() {
-	printf("Call custom destructor for instance of Prs2d_AspectFramedText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_AspectFramedText\n");}
 	}
 };
 
@@ -2053,7 +2056,7 @@ class Prs2d_SurfProfile : public Prs2d_Tolerance {
 };
 %extend Prs2d_SurfProfile {
 	~Prs2d_SurfProfile() {
-	printf("Call custom destructor for instance of Prs2d_SurfProfile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_SurfProfile\n");}
 	}
 };
 
@@ -2075,7 +2078,7 @@ class Prs2d_SymTotal : public Prs2d_Tolerance {
 };
 %extend Prs2d_SymTotal {
 	~Prs2d_SymTotal() {
-	printf("Call custom destructor for instance of Prs2d_SymTotal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_SymTotal\n");}
 	}
 };
 
@@ -2109,7 +2112,7 @@ class Prs2d_Length : public Prs2d_Dimension {
 };
 %extend Prs2d_Length {
 	~Prs2d_Length() {
-	printf("Call custom destructor for instance of Prs2d_Length\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Length\n");}
 	}
 };
 
@@ -2137,7 +2140,7 @@ class Prs2d_SymbolDefinitionError : public Standard_OutOfRange {
 };
 %extend Prs2d_SymbolDefinitionError {
 	~Prs2d_SymbolDefinitionError() {
-	printf("Call custom destructor for instance of Prs2d_SymbolDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_SymbolDefinitionError\n");}
 	}
 };
 
@@ -2159,7 +2162,7 @@ class Prs2d_Perpendicular : public Prs2d_Tolerance {
 };
 %extend Prs2d_Perpendicular {
 	~Prs2d_Perpendicular() {
-	printf("Call custom destructor for instance of Prs2d_Perpendicular\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Perpendicular\n");}
 	}
 };
 
@@ -2183,6 +2186,6 @@ class Prs2d_Diameter : public Prs2d_Dimension {
 };
 %extend Prs2d_Diameter {
 	~Prs2d_Diameter() {
-	printf("Call custom destructor for instance of Prs2d_Diameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs2d_Diameter\n");}
 	}
 };

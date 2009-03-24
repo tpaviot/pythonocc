@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -111,7 +114,7 @@ class IntAna2d_Conic {
 };
 %extend IntAna2d_Conic {
 	~IntAna2d_Conic() {
-	printf("Call custom destructor for instance of IntAna2d_Conic\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna2d_Conic\n");}
 	}
 };
 
@@ -168,7 +171,7 @@ class IntAna2d_AnaIntersection {
 };
 %extend IntAna2d_AnaIntersection {
 	~IntAna2d_AnaIntersection() {
-	printf("Call custom destructor for instance of IntAna2d_AnaIntersection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna2d_AnaIntersection\n");}
 	}
 };
 
@@ -211,6 +214,6 @@ class IntAna2d_IntPoint {
 };
 %extend IntAna2d_IntPoint {
 	~IntAna2d_IntPoint() {
-	printf("Call custom destructor for instance of IntAna2d_IntPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna2d_IntPoint\n");}
 	}
 };

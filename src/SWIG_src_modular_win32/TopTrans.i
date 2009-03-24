@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -103,7 +106,7 @@ class TopTrans_CurveTransition {
 };
 %extend TopTrans_CurveTransition {
 	~TopTrans_CurveTransition() {
-	printf("Call custom destructor for instance of TopTrans_CurveTransition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopTrans_CurveTransition\n");}
 	}
 };
 
@@ -146,7 +149,7 @@ class TopTrans_Array2OfOrientation {
 };
 %extend TopTrans_Array2OfOrientation {
 	~TopTrans_Array2OfOrientation() {
-	printf("Call custom destructor for instance of TopTrans_Array2OfOrientation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopTrans_Array2OfOrientation\n");}
 	}
 };
 
@@ -175,6 +178,6 @@ class TopTrans_SurfaceTransition {
 };
 %extend TopTrans_SurfaceTransition {
 	~TopTrans_SurfaceTransition() {
-	printf("Call custom destructor for instance of TopTrans_SurfaceTransition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopTrans_SurfaceTransition\n");}
 	}
 };

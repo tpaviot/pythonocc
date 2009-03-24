@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -109,7 +112,7 @@ class Sweep_NumShape {
 };
 %extend Sweep_NumShape {
 	~Sweep_NumShape() {
-	printf("Call custom destructor for instance of Sweep_NumShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Sweep_NumShape\n");}
 	}
 };
 
@@ -140,7 +143,7 @@ class Sweep_NumShapeTool {
 };
 %extend Sweep_NumShapeTool {
 	~Sweep_NumShapeTool() {
-	printf("Call custom destructor for instance of Sweep_NumShapeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Sweep_NumShapeTool\n");}
 	}
 };
 
@@ -163,6 +166,6 @@ class Sweep_NumShapeIterator {
 };
 %extend Sweep_NumShapeIterator {
 	~Sweep_NumShapeIterator() {
-	printf("Call custom destructor for instance of Sweep_NumShapeIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Sweep_NumShapeIterator\n");}
 	}
 };

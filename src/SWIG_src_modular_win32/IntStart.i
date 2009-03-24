@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_IntStart_SITopolTool : public Handle_MMgt_TShared {
 };
 %extend Handle_IntStart_SITopolTool {
 	~Handle_IntStart_SITopolTool() {
-	printf("Call custom destructor for instance of Handle_IntStart_SITopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntStart_SITopolTool\n");}
 	}
 };
 
@@ -124,6 +127,6 @@ class IntStart_SITopolTool : public MMgt_TShared {
 };
 %extend IntStart_SITopolTool {
 	~IntStart_SITopolTool() {
-	printf("Call custom destructor for instance of IntStart_SITopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntStart_SITopolTool\n");}
 	}
 };

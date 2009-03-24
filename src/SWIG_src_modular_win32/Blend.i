@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -122,7 +125,7 @@ class Handle_Blend_SequenceNodeOfSequenceOfPoint : public Handle_TCollection_Seq
 };
 %extend Handle_Blend_SequenceNodeOfSequenceOfPoint {
 	~Handle_Blend_SequenceNodeOfSequenceOfPoint() {
-	printf("Call custom destructor for instance of Handle_Blend_SequenceNodeOfSequenceOfPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Blend_SequenceNodeOfSequenceOfPoint\n");}
 	}
 };
 
@@ -151,7 +154,7 @@ class Blend_SurfCurvFuncInv : public math_FunctionSetWithDerivatives {
 };
 %extend Blend_SurfCurvFuncInv {
 	~Blend_SurfCurvFuncInv() {
-	printf("Call custom destructor for instance of Blend_SurfCurvFuncInv\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_SurfCurvFuncInv\n");}
 	}
 };
 
@@ -180,7 +183,7 @@ class Blend_SurfPointFuncInv : public math_FunctionSetWithDerivatives {
 };
 %extend Blend_SurfPointFuncInv {
 	~Blend_SurfPointFuncInv() {
-	printf("Call custom destructor for instance of Blend_SurfPointFuncInv\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_SurfPointFuncInv\n");}
 	}
 };
 
@@ -245,7 +248,7 @@ class Blend_AppFunction : public math_FunctionSetWithDerivatives {
 };
 %extend Blend_AppFunction {
 	~Blend_AppFunction() {
-	printf("Call custom destructor for instance of Blend_AppFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_AppFunction\n");}
 	}
 };
 
@@ -274,7 +277,7 @@ class Blend_CSFunction : public Blend_AppFunction {
 };
 %extend Blend_CSFunction {
 	~Blend_CSFunction() {
-	printf("Call custom destructor for instance of Blend_CSFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_CSFunction\n");}
 	}
 };
 
@@ -359,7 +362,7 @@ class Blend_RstRstFunction : public Blend_AppFunction {
 };
 %extend Blend_RstRstFunction {
 	~Blend_RstRstFunction() {
-	printf("Call custom destructor for instance of Blend_RstRstFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_RstRstFunction\n");}
 	}
 };
 
@@ -388,7 +391,7 @@ class Blend_CurvPointFuncInv : public math_FunctionSetWithDerivatives {
 };
 %extend Blend_CurvPointFuncInv {
 	~Blend_CurvPointFuncInv() {
-	printf("Call custom destructor for instance of Blend_CurvPointFuncInv\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_CurvPointFuncInv\n");}
 	}
 };
 
@@ -441,7 +444,7 @@ class Blend_SequenceOfPoint : public TCollection_BaseSequence {
 };
 %extend Blend_SequenceOfPoint {
 	~Blend_SequenceOfPoint() {
-	printf("Call custom destructor for instance of Blend_SequenceOfPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_SequenceOfPoint\n");}
 	}
 };
 
@@ -470,7 +473,7 @@ class Blend_FuncInv : public math_FunctionSetWithDerivatives {
 };
 %extend Blend_FuncInv {
 	~Blend_FuncInv() {
-	printf("Call custom destructor for instance of Blend_FuncInv\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_FuncInv\n");}
 	}
 };
 
@@ -492,7 +495,7 @@ class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 };
 %extend Blend_SequenceNodeOfSequenceOfPoint {
 	~Blend_SequenceNodeOfSequenceOfPoint() {
-	printf("Call custom destructor for instance of Blend_SequenceNodeOfSequenceOfPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_SequenceNodeOfSequenceOfPoint\n");}
 	}
 };
 
@@ -561,7 +564,7 @@ class Blend_Function : public Blend_AppFunction {
 };
 %extend Blend_Function {
 	~Blend_Function() {
-	printf("Call custom destructor for instance of Blend_Function\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_Function\n");}
 	}
 };
 
@@ -644,7 +647,7 @@ class Blend_SurfRstFunction : public Blend_AppFunction {
 };
 %extend Blend_SurfRstFunction {
 	~Blend_SurfRstFunction() {
-	printf("Call custom destructor for instance of Blend_SurfRstFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_SurfRstFunction\n");}
 	}
 };
 
@@ -737,6 +740,6 @@ class Blend_Point {
 };
 %extend Blend_Point {
 	~Blend_Point() {
-	printf("Call custom destructor for instance of Blend_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Blend_Point\n");}
 	}
 };

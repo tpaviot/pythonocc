@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -105,7 +108,7 @@ class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 };
 %extend Handle_TDocStd_ApplicationDelta {
 	~Handle_TDocStd_ApplicationDelta() {
-	printf("Call custom destructor for instance of Handle_TDocStd_ApplicationDelta\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_ApplicationDelta\n");}
 	}
 };
 
@@ -129,7 +132,7 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 };
 %extend Handle_TDocStd_XLinkRoot {
 	~Handle_TDocStd_XLinkRoot() {
-	printf("Call custom destructor for instance of Handle_TDocStd_XLinkRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_XLinkRoot\n");}
 	}
 };
 
@@ -153,7 +156,7 @@ class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 };
 %extend Handle_TDocStd_Owner {
 	~Handle_TDocStd_Owner() {
-	printf("Call custom destructor for instance of Handle_TDocStd_Owner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Owner\n");}
 	}
 };
 
@@ -177,7 +180,7 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TC
 };
 %extend Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
 	~Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta() {
-	printf("Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");}
 	}
 };
 
@@ -201,7 +204,7 @@ class Handle_TDocStd_Document : public Handle_CDM_Document {
 };
 %extend Handle_TDocStd_Document {
 	~Handle_TDocStd_Document() {
-	printf("Call custom destructor for instance of Handle_TDocStd_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Document\n");}
 	}
 };
 
@@ -225,7 +228,7 @@ class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 };
 %extend Handle_TDocStd_MultiTransactionManager {
 	~Handle_TDocStd_MultiTransactionManager() {
-	printf("Call custom destructor for instance of Handle_TDocStd_MultiTransactionManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_MultiTransactionManager\n");}
 	}
 };
 
@@ -249,7 +252,7 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 };
 %extend Handle_TDocStd_SequenceNodeOfSequenceOfDocument {
 	~Handle_TDocStd_SequenceNodeOfSequenceOfDocument() {
-	printf("Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfDocument\n");}
 	}
 };
 
@@ -273,7 +276,7 @@ class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 };
 %extend Handle_TDocStd_Modified {
 	~Handle_TDocStd_Modified() {
-	printf("Call custom destructor for instance of Handle_TDocStd_Modified\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Modified\n");}
 	}
 };
 
@@ -297,7 +300,7 @@ class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 };
 %extend Handle_TDocStd_XLink {
 	~Handle_TDocStd_XLink() {
-	printf("Call custom destructor for instance of Handle_TDocStd_XLink\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_XLink\n");}
 	}
 };
 
@@ -321,7 +324,7 @@ class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 };
 %extend Handle_TDocStd_CompoundDelta {
 	~Handle_TDocStd_CompoundDelta() {
-	printf("Call custom destructor for instance of Handle_TDocStd_CompoundDelta\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_CompoundDelta\n");}
 	}
 };
 
@@ -345,7 +348,7 @@ class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_
 };
 %extend Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap {
 	~Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap() {
-	printf("Call custom destructor for instance of Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap\n");}
 	}
 };
 
@@ -369,7 +372,7 @@ class Handle_TDocStd_Application : public Handle_CDF_Application {
 };
 %extend Handle_TDocStd_Application {
 	~Handle_TDocStd_Application() {
-	printf("Call custom destructor for instance of Handle_TDocStd_Application\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Application\n");}
 	}
 };
 
@@ -391,7 +394,7 @@ class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqN
 };
 %extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
 	~TDocStd_SequenceNodeOfSequenceOfApplicationDelta() {
-	printf("Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");}
 	}
 };
 
@@ -431,7 +434,7 @@ class TDocStd_Owner : public TDF_Attribute {
 };
 %extend TDocStd_Owner {
 	~TDocStd_Owner() {
-	printf("Call custom destructor for instance of TDocStd_Owner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_Owner\n");}
 	}
 };
 
@@ -456,7 +459,7 @@ class TDocStd_PathParser {
 };
 %extend TDocStd_PathParser {
 	~TDocStd_PathParser() {
-	printf("Call custom destructor for instance of TDocStd_PathParser\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_PathParser\n");}
 	}
 };
 
@@ -476,7 +479,7 @@ class TDocStd_CompoundDelta : public TDF_Delta {
 };
 %extend TDocStd_CompoundDelta {
 	~TDocStd_CompoundDelta() {
-	printf("Call custom destructor for instance of TDocStd_CompoundDelta\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_CompoundDelta\n");}
 	}
 };
 
@@ -500,7 +503,7 @@ class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 };
 %extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
 	~TDocStd_DataMapNodeOfLabelIDMapDataMap() {
-	printf("Call custom destructor for instance of TDocStd_DataMapNodeOfLabelIDMapDataMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_DataMapNodeOfLabelIDMapDataMap\n");}
 	}
 };
 
@@ -538,7 +541,7 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 };
 %extend TDocStd_XLinkRoot {
 	~TDocStd_XLinkRoot() {
-	printf("Call custom destructor for instance of TDocStd_XLinkRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkRoot\n");}
 	}
 };
 
@@ -559,7 +562,7 @@ class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIt
 };
 %extend TDocStd_DataMapIteratorOfLabelIDMapDataMap {
 	~TDocStd_DataMapIteratorOfLabelIDMapDataMap() {
-	printf("Call custom destructor for instance of TDocStd_DataMapIteratorOfLabelIDMapDataMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_DataMapIteratorOfLabelIDMapDataMap\n");}
 	}
 };
 
@@ -584,7 +587,7 @@ class TDocStd_XLinkTool {
 };
 %extend TDocStd_XLinkTool {
 	~TDocStd_XLinkTool() {
-	printf("Call custom destructor for instance of TDocStd_XLinkTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkTool\n");}
 	}
 };
 
@@ -690,7 +693,7 @@ class TDocStd_Document : public CDM_Document {
 };
 %extend TDocStd_Document {
 	~TDocStd_Document() {
-	printf("Call custom destructor for instance of TDocStd_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_Document\n");}
 	}
 };
 
@@ -743,7 +746,7 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 };
 %extend TDocStd_SequenceOfApplicationDelta {
 	~TDocStd_SequenceOfApplicationDelta() {
-	printf("Call custom destructor for instance of TDocStd_SequenceOfApplicationDelta\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceOfApplicationDelta\n");}
 	}
 };
 
@@ -776,7 +779,7 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 };
 %extend TDocStd_LabelIDMapDataMap {
 	~TDocStd_LabelIDMapDataMap() {
-	printf("Call custom destructor for instance of TDocStd_LabelIDMapDataMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_LabelIDMapDataMap\n");}
 	}
 };
 
@@ -799,7 +802,7 @@ class TDocStd_XLinkIterator {
 };
 %extend TDocStd_XLinkIterator {
 	~TDocStd_XLinkIterator() {
-	printf("Call custom destructor for instance of TDocStd_XLinkIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkIterator\n");}
 	}
 };
 
@@ -814,7 +817,7 @@ class TDocStd {
 };
 %extend TDocStd {
 	~TDocStd() {
-	printf("Call custom destructor for instance of TDocStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd\n");}
 	}
 };
 
@@ -836,7 +839,7 @@ class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 };
 %extend TDocStd_SequenceNodeOfSequenceOfDocument {
 	~TDocStd_SequenceNodeOfSequenceOfDocument() {
-	printf("Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfDocument\n");}
 	}
 };
 
@@ -890,7 +893,7 @@ class TDocStd_Modified : public TDF_Attribute {
 };
 %extend TDocStd_Modified {
 	~TDocStd_Modified() {
-	printf("Call custom destructor for instance of TDocStd_Modified\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_Modified\n");}
 	}
 };
 
@@ -946,7 +949,7 @@ class TDocStd_XLink : public TDF_Attribute {
 };
 %extend TDocStd_XLink {
 	~TDocStd_XLink() {
-	printf("Call custom destructor for instance of TDocStd_XLink\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_XLink\n");}
 	}
 };
 
@@ -1010,7 +1013,7 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 };
 %extend TDocStd_MultiTransactionManager {
 	~TDocStd_MultiTransactionManager() {
-	printf("Call custom destructor for instance of TDocStd_MultiTransactionManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_MultiTransactionManager\n");}
 	}
 };
 
@@ -1058,7 +1061,7 @@ class TDocStd_Application : public CDF_Application {
 };
 %extend TDocStd_Application {
 	~TDocStd_Application() {
-	printf("Call custom destructor for instance of TDocStd_Application\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_Application\n");}
 	}
 };
 
@@ -1086,7 +1089,7 @@ class TDocStd_ApplicationDelta : public MMgt_TShared {
 };
 %extend TDocStd_ApplicationDelta {
 	~TDocStd_ApplicationDelta() {
-	printf("Call custom destructor for instance of TDocStd_ApplicationDelta\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_ApplicationDelta\n");}
 	}
 };
 
@@ -1139,7 +1142,7 @@ class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
 };
 %extend TDocStd_SequenceOfDocument {
 	~TDocStd_SequenceOfDocument() {
-	printf("Call custom destructor for instance of TDocStd_SequenceOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceOfDocument\n");}
 	}
 };
 
@@ -1156,6 +1159,6 @@ class TDocStd_Context {
 };
 %extend TDocStd_Context {
 	~TDocStd_Context() {
-	printf("Call custom destructor for instance of TDocStd_Context\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDocStd_Context\n");}
 	}
 };

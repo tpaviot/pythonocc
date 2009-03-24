@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -138,7 +141,7 @@ class BRepLib_Command {
 };
 %extend BRepLib_Command {
 	~BRepLib_Command() {
-	printf("Call custom destructor for instance of BRepLib_Command\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_Command\n");}
 	}
 };
 
@@ -165,7 +168,7 @@ class BRepLib_MakeShape : public BRepLib_Command {
 };
 %extend BRepLib_MakeShape {
 	~BRepLib_MakeShape() {
-	printf("Call custom destructor for instance of BRepLib_MakeShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakeShape\n");}
 	}
 };
 
@@ -180,7 +183,7 @@ class BRepLib_MakeVertex : public BRepLib_MakeShape {
 };
 %extend BRepLib_MakeVertex {
 	~BRepLib_MakeVertex() {
-	printf("Call custom destructor for instance of BRepLib_MakeVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakeVertex\n");}
 	}
 };
 
@@ -293,7 +296,7 @@ class BRepLib_MakeEdge : public BRepLib_MakeShape {
 };
 %extend BRepLib_MakeEdge {
 	~BRepLib_MakeEdge() {
-	printf("Call custom destructor for instance of BRepLib_MakeEdge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakeEdge\n");}
 	}
 };
 
@@ -380,7 +383,7 @@ class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
 };
 %extend BRepLib_MakeEdge2d {
 	~BRepLib_MakeEdge2d() {
-	printf("Call custom destructor for instance of BRepLib_MakeEdge2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakeEdge2d\n");}
 	}
 };
 
@@ -403,7 +406,7 @@ class BRepLib_MakeShell : public BRepLib_MakeShape {
 };
 %extend BRepLib_MakeShell {
 	~BRepLib_MakeShell() {
-	printf("Call custom destructor for instance of BRepLib_MakeShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakeShell\n");}
 	}
 };
 
@@ -454,7 +457,7 @@ class BRepLib {
 };
 %extend BRepLib {
 	~BRepLib() {
-	printf("Call custom destructor for instance of BRepLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib\n");}
 	}
 };
 
@@ -483,7 +486,7 @@ class BRepLib_FuseEdges {
 };
 %extend BRepLib_FuseEdges {
 	~BRepLib_FuseEdges() {
-	printf("Call custom destructor for instance of BRepLib_FuseEdges\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_FuseEdges\n");}
 	}
 };
 
@@ -524,7 +527,7 @@ class BRepLib_MakePolygon : public BRepLib_MakeShape {
 };
 %extend BRepLib_MakePolygon {
 	~BRepLib_MakePolygon() {
-	printf("Call custom destructor for instance of BRepLib_MakePolygon\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakePolygon\n");}
 	}
 };
 
@@ -591,7 +594,7 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 };
 %extend BRepLib_MakeFace {
 	~BRepLib_MakeFace() {
-	printf("Call custom destructor for instance of BRepLib_MakeFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakeFace\n");}
 	}
 };
 
@@ -622,7 +625,7 @@ class BRepLib_MakeSolid : public BRepLib_MakeShape {
 };
 %extend BRepLib_MakeSolid {
 	~BRepLib_MakeSolid() {
-	printf("Call custom destructor for instance of BRepLib_MakeSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakeSolid\n");}
 	}
 };
 
@@ -661,7 +664,7 @@ class BRepLib_MakeWire : public BRepLib_MakeShape {
 };
 %extend BRepLib_MakeWire {
 	~BRepLib_MakeWire() {
-	printf("Call custom destructor for instance of BRepLib_MakeWire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_MakeWire\n");}
 	}
 };
 
@@ -690,6 +693,6 @@ class BRepLib_FindSurface {
 };
 %extend BRepLib_FindSurface {
 	~BRepLib_FindSurface() {
-	printf("Call custom destructor for instance of BRepLib_FindSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLib_FindSurface\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 };
 %extend Handle_PBRep_TFace1 {
 	~Handle_PBRep_TFace1() {
-	printf("Call custom destructor for instance of Handle_PBRep_TFace1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TFace1\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
 };
 %extend Handle_PBRep_PointRepresentation {
 	~Handle_PBRep_PointRepresentation() {
-	printf("Call custom destructor for instance of Handle_PBRep_PointRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointRepresentation\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
 };
 %extend Handle_PBRep_TVertex1 {
 	~Handle_PBRep_TVertex1() {
-	printf("Call custom destructor for instance of Handle_PBRep_TVertex1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TVertex1\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 };
 %extend Handle_PBRep_CurveRepresentation {
 	~Handle_PBRep_CurveRepresentation() {
-	printf("Call custom destructor for instance of Handle_PBRep_CurveRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveRepresentation\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_PBRep_GCurve : public Handle_PBRep_CurveRepresentation {
 };
 %extend Handle_PBRep_GCurve {
 	~Handle_PBRep_GCurve() {
-	printf("Call custom destructor for instance of Handle_PBRep_GCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_GCurve\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 };
 %extend Handle_PBRep_CurveOnSurface {
 	~Handle_PBRep_CurveOnSurface() {
-	printf("Call custom destructor for instance of Handle_PBRep_CurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOnSurface\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 };
 %extend Handle_PBRep_TFace {
 	~Handle_PBRep_TFace() {
-	printf("Call custom destructor for instance of Handle_PBRep_TFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TFace\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentat
 };
 %extend Handle_PBRep_PolygonOnTriangulation {
 	~Handle_PBRep_PolygonOnTriangulation() {
-	printf("Call custom destructor for instance of Handle_PBRep_PolygonOnTriangulation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
 };
 %extend Handle_PBRep_PointsOnSurface {
 	~Handle_PBRep_PointsOnSurface() {
-	printf("Call custom destructor for instance of Handle_PBRep_PointsOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointsOnSurface\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
 };
 %extend Handle_PBRep_CurveOn2Surfaces {
 	~Handle_PBRep_CurveOn2Surfaces() {
-	printf("Call custom destructor for instance of Handle_PBRep_CurveOn2Surfaces\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOn2Surfaces\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
 };
 %extend Handle_PBRep_TEdge1 {
 	~Handle_PBRep_TEdge1() {
-	printf("Call custom destructor for instance of Handle_PBRep_TEdge1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TEdge1\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_PBRep_PolygonOnSurface : public Handle_PBRep_CurveRepresentation {
 };
 %extend Handle_PBRep_PolygonOnSurface {
 	~Handle_PBRep_PolygonOnSurface() {
-	printf("Call custom destructor for instance of Handle_PBRep_PolygonOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnSurface\n");}
 	}
 };
 
@@ -392,7 +395,7 @@ class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface
 };
 %extend Handle_PBRep_PolygonOnClosedSurface {
 	~Handle_PBRep_PolygonOnClosedSurface() {
-	printf("Call custom destructor for instance of Handle_PBRep_PolygonOnClosedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnClosedSurface\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 };
 %extend Handle_PBRep_Polygon3D {
 	~Handle_PBRep_Polygon3D() {
-	printf("Call custom destructor for instance of Handle_PBRep_Polygon3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_Polygon3D\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class Handle_PBRep_Curve3D : public Handle_PBRep_GCurve {
 };
 %extend Handle_PBRep_Curve3D {
 	~Handle_PBRep_Curve3D() {
-	printf("Call custom destructor for instance of Handle_PBRep_Curve3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_Curve3D\n");}
 	}
 };
 
@@ -464,7 +467,7 @@ class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 };
 %extend Handle_PBRep_PointOnSurface {
 	~Handle_PBRep_PointOnSurface() {
-	printf("Call custom destructor for instance of Handle_PBRep_PointOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnSurface\n");}
 	}
 };
 
@@ -488,7 +491,7 @@ class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
 };
 %extend Handle_PBRep_TEdge {
 	~Handle_PBRep_TEdge() {
-	printf("Call custom destructor for instance of Handle_PBRep_TEdge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TEdge\n");}
 	}
 };
 
@@ -512,7 +515,7 @@ class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 };
 %extend Handle_PBRep_CurveOnClosedSurface {
 	~Handle_PBRep_CurveOnClosedSurface() {
-	printf("Call custom destructor for instance of Handle_PBRep_CurveOnClosedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOnClosedSurface\n");}
 	}
 };
 
@@ -536,7 +539,7 @@ class Handle_PBRep_PolygonOnClosedTriangulation : public Handle_PBRep_PolygonOnT
 };
 %extend Handle_PBRep_PolygonOnClosedTriangulation {
 	~Handle_PBRep_PolygonOnClosedTriangulation() {
-	printf("Call custom destructor for instance of Handle_PBRep_PolygonOnClosedTriangulation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnClosedTriangulation\n");}
 	}
 };
 
@@ -560,7 +563,7 @@ class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 };
 %extend Handle_PBRep_TVertex {
 	~Handle_PBRep_TVertex() {
-	printf("Call custom destructor for instance of Handle_PBRep_TVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TVertex\n");}
 	}
 };
 
@@ -584,7 +587,7 @@ class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 };
 %extend Handle_PBRep_PointOnCurve {
 	~Handle_PBRep_PointOnCurve() {
-	printf("Call custom destructor for instance of Handle_PBRep_PointOnCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnCurve\n");}
 	}
 };
 
@@ -608,7 +611,7 @@ class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
 };
 %extend Handle_PBRep_PointOnCurveOnSurface {
 	~Handle_PBRep_PointOnCurveOnSurface() {
-	printf("Call custom destructor for instance of Handle_PBRep_PointOnCurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnCurveOnSurface\n");}
 	}
 };
 
@@ -662,7 +665,7 @@ class PBRep_CurveRepresentation : public Standard_Persistent {
 };
 %extend PBRep_CurveRepresentation {
 	~PBRep_CurveRepresentation() {
-	printf("Call custom destructor for instance of PBRep_CurveRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_CurveRepresentation\n");}
 	}
 };
 
@@ -696,7 +699,7 @@ class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 };
 %extend PBRep_PolygonOnTriangulation {
 	~PBRep_PolygonOnTriangulation() {
-	printf("Call custom destructor for instance of PBRep_PolygonOnTriangulation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -724,7 +727,7 @@ class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 };
 %extend PBRep_PolygonOnClosedTriangulation {
 	~PBRep_PolygonOnClosedTriangulation() {
-	printf("Call custom destructor for instance of PBRep_PolygonOnClosedTriangulation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnClosedTriangulation\n");}
 	}
 };
 
@@ -768,7 +771,7 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 };
 %extend PBRep_TVertex1 {
 	~PBRep_TVertex1() {
-	printf("Call custom destructor for instance of PBRep_TVertex1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_TVertex1\n");}
 	}
 };
 
@@ -822,7 +825,7 @@ class PBRep_TEdge1 : public PTopoDS_TEdge1 {
 };
 %extend PBRep_TEdge1 {
 	~PBRep_TEdge1() {
-	printf("Call custom destructor for instance of PBRep_TEdge1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_TEdge1\n");}
 	}
 };
 
@@ -862,7 +865,7 @@ class PBRep_GCurve : public PBRep_CurveRepresentation {
 };
 %extend PBRep_GCurve {
 	~PBRep_GCurve() {
-	printf("Call custom destructor for instance of PBRep_GCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_GCurve\n");}
 	}
 };
 
@@ -908,7 +911,7 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 };
 %extend PBRep_CurveOnSurface {
 	~PBRep_CurveOnSurface() {
-	printf("Call custom destructor for instance of PBRep_CurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_CurveOnSurface\n");}
 	}
 };
 
@@ -962,7 +965,7 @@ class PBRep_TEdge : public PTopoDS_TEdge {
 };
 %extend PBRep_TEdge {
 	~PBRep_TEdge() {
-	printf("Call custom destructor for instance of PBRep_TEdge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_TEdge\n");}
 	}
 };
 
@@ -1010,7 +1013,7 @@ class PBRep_PointRepresentation : public Standard_Persistent {
 };
 %extend PBRep_PointRepresentation {
 	~PBRep_PointRepresentation() {
-	printf("Call custom destructor for instance of PBRep_PointRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PointRepresentation\n");}
 	}
 };
 
@@ -1036,7 +1039,7 @@ class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 };
 %extend PBRep_PointsOnSurface {
 	~PBRep_PointsOnSurface() {
-	printf("Call custom destructor for instance of PBRep_PointsOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PointsOnSurface\n");}
 	}
 };
 
@@ -1084,7 +1087,7 @@ class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
 };
 %extend PBRep_CurveOn2Surfaces {
 	~PBRep_CurveOn2Surfaces() {
-	printf("Call custom destructor for instance of PBRep_CurveOn2Surfaces\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_CurveOn2Surfaces\n");}
 	}
 };
 
@@ -1116,7 +1119,7 @@ class PBRep_Curve3D : public PBRep_GCurve {
 };
 %extend PBRep_Curve3D {
 	~PBRep_Curve3D() {
-	printf("Call custom destructor for instance of PBRep_Curve3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_Curve3D\n");}
 	}
 };
 
@@ -1148,7 +1151,7 @@ class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 };
 %extend PBRep_PointOnCurveOnSurface {
 	~PBRep_PointOnCurveOnSurface() {
-	printf("Call custom destructor for instance of PBRep_PointOnCurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PointOnCurveOnSurface\n");}
 	}
 };
 
@@ -1192,7 +1195,7 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 };
 %extend PBRep_TVertex {
 	~PBRep_TVertex() {
-	printf("Call custom destructor for instance of PBRep_TVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_TVertex\n");}
 	}
 };
 
@@ -1230,7 +1233,7 @@ class PBRep_PolygonOnSurface : public PBRep_CurveRepresentation {
 };
 %extend PBRep_PolygonOnSurface {
 	~PBRep_PolygonOnSurface() {
-	printf("Call custom destructor for instance of PBRep_PolygonOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnSurface\n");}
 	}
 };
 
@@ -1260,7 +1263,7 @@ class PBRep_PolygonOnClosedSurface : public PBRep_PolygonOnSurface {
 };
 %extend PBRep_PolygonOnClosedSurface {
 	~PBRep_PolygonOnClosedSurface() {
-	printf("Call custom destructor for instance of PBRep_PolygonOnClosedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnClosedSurface\n");}
 	}
 };
 
@@ -1292,7 +1295,7 @@ class PBRep_Polygon3D : public PBRep_CurveRepresentation {
 };
 %extend PBRep_Polygon3D {
 	~PBRep_Polygon3D() {
-	printf("Call custom destructor for instance of PBRep_Polygon3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_Polygon3D\n");}
 	}
 };
 
@@ -1324,7 +1327,7 @@ class PBRep_PointOnSurface : public PBRep_PointsOnSurface {
 };
 %extend PBRep_PointOnSurface {
 	~PBRep_PointOnSurface() {
-	printf("Call custom destructor for instance of PBRep_PointOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PointOnSurface\n");}
 	}
 };
 
@@ -1374,7 +1377,7 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 };
 %extend PBRep_CurveOnClosedSurface {
 	~PBRep_CurveOnClosedSurface() {
-	printf("Call custom destructor for instance of PBRep_CurveOnClosedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_CurveOnClosedSurface\n");}
 	}
 };
 
@@ -1434,7 +1437,7 @@ class PBRep_TFace1 : public PTopoDS_TFace1 {
 };
 %extend PBRep_TFace1 {
 	~PBRep_TFace1() {
-	printf("Call custom destructor for instance of PBRep_TFace1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_TFace1\n");}
 	}
 };
 
@@ -1494,7 +1497,7 @@ class PBRep_TFace : public PTopoDS_TFace {
 };
 %extend PBRep_TFace {
 	~PBRep_TFace() {
-	printf("Call custom destructor for instance of PBRep_TFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_TFace\n");}
 	}
 };
 
@@ -1526,6 +1529,6 @@ class PBRep_PointOnCurve : public PBRep_PointRepresentation {
 };
 %extend PBRep_PointOnCurve {
 	~PBRep_PointOnCurve() {
-	printf("Call custom destructor for instance of PBRep_PointOnCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PBRep_PointOnCurve\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -112,7 +115,7 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethods : public Handle_TCollection_SeqN
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfMethods {
 	~Handle_Dynamic_SequenceNodeOfSeqOfMethods() {
-	printf("Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethods\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethods\n");}
 	}
 };
 
@@ -136,7 +139,7 @@ class Handle_Dynamic_Parameter : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_Parameter {
 	~Handle_Dynamic_Parameter() {
-	printf("Call custom destructor for instance of Handle_Dynamic_Parameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Parameter\n");}
 	}
 };
 
@@ -160,7 +163,7 @@ class Handle_Dynamic_StringParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_StringParameter {
 	~Handle_Dynamic_StringParameter() {
-	printf("Call custom destructor for instance of Handle_Dynamic_StringParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_StringParameter\n");}
 	}
 };
 
@@ -184,7 +187,7 @@ class Handle_Dynamic_VariableNode : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_VariableNode {
 	~Handle_Dynamic_VariableNode() {
-	printf("Call custom destructor for instance of Handle_Dynamic_VariableNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableNode\n");}
 	}
 };
 
@@ -208,7 +211,7 @@ class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_DynamicClass {
 	~Handle_Dynamic_DynamicClass() {
-	printf("Call custom destructor for instance of Handle_Dynamic_DynamicClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicClass\n");}
 	}
 };
 
@@ -232,7 +235,7 @@ class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_FuzzyDefinitionsDictionary {
 	~Handle_Dynamic_FuzzyDefinitionsDictionary() {
-	printf("Call custom destructor for instance of Handle_Dynamic_FuzzyDefinitionsDictionary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinitionsDictionary\n");}
 	}
 };
 
@@ -256,7 +259,7 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TColle
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
 	~Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions() {
-	printf("Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");}
 	}
 };
 
@@ -280,7 +283,7 @@ class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqN
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
 	~Handle_Dynamic_SequenceNodeOfSeqOfClasses() {
-	printf("Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfClasses\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfClasses\n");}
 	}
 };
 
@@ -304,7 +307,7 @@ class Handle_Dynamic_FuzzyClass : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_FuzzyClass {
 	~Handle_Dynamic_FuzzyClass() {
-	printf("Call custom destructor for instance of Handle_Dynamic_FuzzyClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyClass\n");}
 	}
 };
 
@@ -328,7 +331,7 @@ class Handle_Dynamic_FuzzyDefinition : public Handle_Dynamic_FuzzyClass {
 };
 %extend Handle_Dynamic_FuzzyDefinition {
 	~Handle_Dynamic_FuzzyDefinition() {
-	printf("Call custom destructor for instance of Handle_Dynamic_FuzzyDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinition\n");}
 	}
 };
 
@@ -352,7 +355,7 @@ class Handle_Dynamic_Method : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_Method {
 	~Handle_Dynamic_Method() {
-	printf("Call custom destructor for instance of Handle_Dynamic_Method\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Method\n");}
 	}
 };
 
@@ -376,7 +379,7 @@ class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_Variable {
 	~Handle_Dynamic_Variable() {
-	printf("Call custom destructor for instance of Handle_Dynamic_Variable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Variable\n");}
 	}
 };
 
@@ -400,7 +403,7 @@ class Handle_Dynamic_AbstractVariableInstance : public Handle_Dynamic_Variable {
 };
 %extend Handle_Dynamic_AbstractVariableInstance {
 	~Handle_Dynamic_AbstractVariableInstance() {
-	printf("Call custom destructor for instance of Handle_Dynamic_AbstractVariableInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_AbstractVariableInstance\n");}
 	}
 };
 
@@ -424,7 +427,7 @@ class Handle_Dynamic_RealParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_RealParameter {
 	~Handle_Dynamic_RealParameter() {
-	printf("Call custom destructor for instance of Handle_Dynamic_RealParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_RealParameter\n");}
 	}
 };
 
@@ -448,7 +451,7 @@ class Handle_Dynamic_SequenceOfClasses : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_SequenceOfClasses {
 	~Handle_Dynamic_SequenceOfClasses() {
-	printf("Call custom destructor for instance of Handle_Dynamic_SequenceOfClasses\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfClasses\n");}
 	}
 };
 
@@ -472,7 +475,7 @@ class Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public Handle_TCollec
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
 	~Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions() {
-	printf("Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -496,7 +499,7 @@ class Handle_Dynamic_MethodDefinition : public Handle_Dynamic_Method {
 };
 %extend Handle_Dynamic_MethodDefinition {
 	~Handle_Dynamic_MethodDefinition() {
-	printf("Call custom destructor for instance of Handle_Dynamic_MethodDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_MethodDefinition\n");}
 	}
 };
 
@@ -520,7 +523,7 @@ class Handle_Dynamic_CompiledMethod : public Handle_Dynamic_MethodDefinition {
 };
 %extend Handle_Dynamic_CompiledMethod {
 	~Handle_Dynamic_CompiledMethod() {
-	printf("Call custom destructor for instance of Handle_Dynamic_CompiledMethod\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompiledMethod\n");}
 	}
 };
 
@@ -544,7 +547,7 @@ class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_DynamicInstance {
 	~Handle_Dynamic_DynamicInstance() {
-	printf("Call custom destructor for instance of Handle_Dynamic_DynamicInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicInstance\n");}
 	}
 };
 
@@ -568,7 +571,7 @@ class Handle_Dynamic_InterpretedMethod : public Handle_Dynamic_MethodDefinition 
 };
 %extend Handle_Dynamic_InterpretedMethod {
 	~Handle_Dynamic_InterpretedMethod() {
-	printf("Call custom destructor for instance of Handle_Dynamic_InterpretedMethod\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_InterpretedMethod\n");}
 	}
 };
 
@@ -592,7 +595,7 @@ class Handle_Dynamic_BooleanParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_BooleanParameter {
 	~Handle_Dynamic_BooleanParameter() {
-	printf("Call custom destructor for instance of Handle_Dynamic_BooleanParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_BooleanParameter\n");}
 	}
 };
 
@@ -616,7 +619,7 @@ class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_SequenceOfFuzzyDefinitions {
 	~Handle_Dynamic_SequenceOfFuzzyDefinitions() {
-	printf("Call custom destructor for instance of Handle_Dynamic_SequenceOfFuzzyDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -640,7 +643,7 @@ class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableIn
 };
 %extend Handle_Dynamic_VariableInstance {
 	~Handle_Dynamic_VariableInstance() {
-	printf("Call custom destructor for instance of Handle_Dynamic_VariableInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableInstance\n");}
 	}
 };
 
@@ -664,7 +667,7 @@ class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 };
 %extend Handle_Dynamic_VariableGroup {
 	~Handle_Dynamic_VariableGroup() {
-	printf("Call custom destructor for instance of Handle_Dynamic_VariableGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableGroup\n");}
 	}
 };
 
@@ -688,7 +691,7 @@ class Handle_Dynamic_IntegerParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_IntegerParameter {
 	~Handle_Dynamic_IntegerParameter() {
-	printf("Call custom destructor for instance of Handle_Dynamic_IntegerParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_IntegerParameter\n");}
 	}
 };
 
@@ -712,7 +715,7 @@ class Handle_Dynamic_CompositVariableInstance : public Handle_Dynamic_AbstractVa
 };
 %extend Handle_Dynamic_CompositVariableInstance {
 	~Handle_Dynamic_CompositVariableInstance() {
-	printf("Call custom destructor for instance of Handle_Dynamic_CompositVariableInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositVariableInstance\n");}
 	}
 };
 
@@ -736,7 +739,7 @@ class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_InstanceParameter {
 	~Handle_Dynamic_InstanceParameter() {
-	printf("Call custom destructor for instance of Handle_Dynamic_InstanceParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_InstanceParameter\n");}
 	}
 };
 
@@ -760,7 +763,7 @@ class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transi
 };
 %extend Handle_Dynamic_MethodDefinitionsDictionary {
 	~Handle_Dynamic_MethodDefinitionsDictionary() {
-	printf("Call custom destructor for instance of Handle_Dynamic_MethodDefinitionsDictionary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_MethodDefinitionsDictionary\n");}
 	}
 };
 
@@ -784,7 +787,7 @@ class Handle_Dynamic_ParameterNode : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_ParameterNode {
 	~Handle_Dynamic_ParameterNode() {
-	printf("Call custom destructor for instance of Handle_Dynamic_ParameterNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ParameterNode\n");}
 	}
 };
 
@@ -808,7 +811,7 @@ class Handle_Dynamic_SequenceOfMethods : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_SequenceOfMethods {
 	~Handle_Dynamic_SequenceOfMethods() {
-	printf("Call custom destructor for instance of Handle_Dynamic_SequenceOfMethods\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethods\n");}
 	}
 };
 
@@ -832,7 +835,7 @@ class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_SequenceOfMethodDefinitions {
 	~Handle_Dynamic_SequenceOfMethodDefinitions() {
-	printf("Call custom destructor for instance of Handle_Dynamic_SequenceOfMethodDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethodDefinitions\n");}
 	}
 };
 
@@ -856,7 +859,7 @@ class Handle_Dynamic_DynamicDerivedClass : public Handle_Dynamic_DynamicClass {
 };
 %extend Handle_Dynamic_DynamicDerivedClass {
 	~Handle_Dynamic_DynamicDerivedClass() {
-	printf("Call custom destructor for instance of Handle_Dynamic_DynamicDerivedClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicDerivedClass\n");}
 	}
 };
 
@@ -880,7 +883,7 @@ class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 };
 %extend Handle_Dynamic_CompositMethod {
 	~Handle_Dynamic_CompositMethod() {
-	printf("Call custom destructor for instance of Handle_Dynamic_CompositMethod\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositMethod\n");}
 	}
 };
 
@@ -904,7 +907,7 @@ class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_ObjectParameter {
 	~Handle_Dynamic_ObjectParameter() {
-	printf("Call custom destructor for instance of Handle_Dynamic_ObjectParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ObjectParameter\n");}
 	}
 };
 
@@ -936,7 +939,7 @@ class Dynamic_Method : public MMgt_TShared {
 };
 %extend Dynamic_Method {
 	~Dynamic_Method() {
-	printf("Call custom destructor for instance of Dynamic_Method\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_Method\n");}
 	}
 };
 
@@ -954,7 +957,7 @@ class Dynamic_MethodDefinition : public Dynamic_Method {
 };
 %extend Dynamic_MethodDefinition {
 	~Dynamic_MethodDefinition() {
-	printf("Call custom destructor for instance of Dynamic_MethodDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinition\n");}
 	}
 };
 
@@ -978,7 +981,7 @@ class Dynamic_InterpretedMethod : public Dynamic_MethodDefinition {
 };
 %extend Dynamic_InterpretedMethod {
 	~Dynamic_InterpretedMethod() {
-	printf("Call custom destructor for instance of Dynamic_InterpretedMethod\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_InterpretedMethod\n");}
 	}
 };
 
@@ -1042,7 +1045,7 @@ class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
 };
 %extend Dynamic_SequenceOfMethodDefinitions {
 	~Dynamic_SequenceOfMethodDefinitions() {
-	printf("Call custom destructor for instance of Dynamic_SequenceOfMethodDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfMethodDefinitions\n");}
 	}
 };
 
@@ -1090,7 +1093,7 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 };
 %extend Dynamic_FuzzyClass {
 	~Dynamic_FuzzyClass() {
-	printf("Call custom destructor for instance of Dynamic_FuzzyClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyClass\n");}
 	}
 };
 
@@ -1122,7 +1125,7 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 };
 %extend Dynamic_DynamicClass {
 	~Dynamic_DynamicClass() {
-	printf("Call custom destructor for instance of Dynamic_DynamicClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicClass\n");}
 	}
 };
 
@@ -1137,7 +1140,7 @@ class Dynamic {
 };
 %extend Dynamic {
 	~Dynamic() {
-	printf("Call custom destructor for instance of Dynamic\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic\n");}
 	}
 };
 
@@ -1161,7 +1164,7 @@ class Dynamic_CompiledMethod : public Dynamic_MethodDefinition {
 };
 %extend Dynamic_CompiledMethod {
 	~Dynamic_CompiledMethod() {
-	printf("Call custom destructor for instance of Dynamic_CompiledMethod\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_CompiledMethod\n");}
 	}
 };
 
@@ -1183,7 +1186,7 @@ class Dynamic_Parameter : public MMgt_TShared {
 };
 %extend Dynamic_Parameter {
 	~Dynamic_Parameter() {
-	printf("Call custom destructor for instance of Dynamic_Parameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_Parameter\n");}
 	}
 };
 
@@ -1207,7 +1210,7 @@ class Dynamic_StringParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_StringParameter {
 	~Dynamic_StringParameter() {
-	printf("Call custom destructor for instance of Dynamic_StringParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_StringParameter\n");}
 	}
 };
 
@@ -1229,7 +1232,7 @@ class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 };
 %extend Dynamic_SequenceNodeOfSeqOfClasses {
 	~Dynamic_SequenceNodeOfSeqOfClasses() {
-	printf("Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfClasses\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfClasses\n");}
 	}
 };
 
@@ -1257,7 +1260,7 @@ class Dynamic_InstanceParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_InstanceParameter {
 	~Dynamic_InstanceParameter() {
-	printf("Call custom destructor for instance of Dynamic_InstanceParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_InstanceParameter\n");}
 	}
 };
 
@@ -1287,7 +1290,7 @@ class Dynamic_VariableNode : public MMgt_TShared {
 };
 %extend Dynamic_VariableNode {
 	~Dynamic_VariableNode() {
-	printf("Call custom destructor for instance of Dynamic_VariableNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_VariableNode\n");}
 	}
 };
 
@@ -1340,7 +1343,7 @@ class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
 };
 %extend Dynamic_SeqOfMethodDefinitions {
 	~Dynamic_SeqOfMethodDefinitions() {
-	printf("Call custom destructor for instance of Dynamic_SeqOfMethodDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfMethodDefinitions\n");}
 	}
 };
 
@@ -1393,7 +1396,7 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 };
 %extend Dynamic_SeqOfMethods {
 	~Dynamic_SeqOfMethods() {
-	printf("Call custom destructor for instance of Dynamic_SeqOfMethods\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfMethods\n");}
 	}
 };
 
@@ -1457,7 +1460,7 @@ class Dynamic_SequenceOfMethods : public MMgt_TShared {
 };
 %extend Dynamic_SequenceOfMethods {
 	~Dynamic_SequenceOfMethods() {
-	printf("Call custom destructor for instance of Dynamic_SequenceOfMethods\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfMethods\n");}
 	}
 };
 
@@ -1485,7 +1488,7 @@ class Dynamic_RealParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_RealParameter {
 	~Dynamic_RealParameter() {
-	printf("Call custom destructor for instance of Dynamic_RealParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_RealParameter\n");}
 	}
 };
 
@@ -1549,7 +1552,7 @@ class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
 };
 %extend Dynamic_SequenceOfFuzzyDefinitions {
 	~Dynamic_SequenceOfFuzzyDefinitions() {
-	printf("Call custom destructor for instance of Dynamic_SequenceOfFuzzyDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -1579,7 +1582,7 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_BooleanParameter {
 	~Dynamic_BooleanParameter() {
-	printf("Call custom destructor for instance of Dynamic_BooleanParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_BooleanParameter\n");}
 	}
 };
 
@@ -1611,7 +1614,7 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 };
 %extend Dynamic_FuzzyDefinitionsDictionary {
 	~Dynamic_FuzzyDefinitionsDictionary() {
-	printf("Call custom destructor for instance of Dynamic_FuzzyDefinitionsDictionary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyDefinitionsDictionary\n");}
 	}
 };
 
@@ -1649,7 +1652,7 @@ class Dynamic_DynamicInstance : public MMgt_TShared {
 };
 %extend Dynamic_DynamicInstance {
 	~Dynamic_DynamicInstance() {
-	printf("Call custom destructor for instance of Dynamic_DynamicInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicInstance\n");}
 	}
 };
 
@@ -1702,7 +1705,7 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 };
 %extend Dynamic_SeqOfClasses {
 	~Dynamic_SeqOfClasses() {
-	printf("Call custom destructor for instance of Dynamic_SeqOfClasses\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfClasses\n");}
 	}
 };
 
@@ -1766,7 +1769,7 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 };
 %extend Dynamic_SequenceOfClasses {
 	~Dynamic_SequenceOfClasses() {
-	printf("Call custom destructor for instance of Dynamic_SequenceOfClasses\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfClasses\n");}
 	}
 };
 
@@ -1796,7 +1799,7 @@ class Dynamic_Variable : public MMgt_TShared {
 };
 %extend Dynamic_Variable {
 	~Dynamic_Variable() {
-	printf("Call custom destructor for instance of Dynamic_Variable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_Variable\n");}
 	}
 };
 
@@ -1814,7 +1817,7 @@ class Dynamic_VariableGroup : public Dynamic_Variable {
 };
 %extend Dynamic_VariableGroup {
 	~Dynamic_VariableGroup() {
-	printf("Call custom destructor for instance of Dynamic_VariableGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_VariableGroup\n");}
 	}
 };
 
@@ -1842,7 +1845,7 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 };
 %extend Dynamic_CompositMethod {
 	~Dynamic_CompositMethod() {
-	printf("Call custom destructor for instance of Dynamic_CompositMethod\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_CompositMethod\n");}
 	}
 };
 
@@ -1872,7 +1875,7 @@ class Dynamic_ParameterNode : public MMgt_TShared {
 };
 %extend Dynamic_ParameterNode {
 	~Dynamic_ParameterNode() {
-	printf("Call custom destructor for instance of Dynamic_ParameterNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_ParameterNode\n");}
 	}
 };
 
@@ -1892,7 +1895,7 @@ class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 };
 %extend Dynamic_AbstractVariableInstance {
 	~Dynamic_AbstractVariableInstance() {
-	printf("Call custom destructor for instance of Dynamic_AbstractVariableInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_AbstractVariableInstance\n");}
 	}
 };
 
@@ -1920,7 +1923,7 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_ObjectParameter {
 	~Dynamic_ObjectParameter() {
-	printf("Call custom destructor for instance of Dynamic_ObjectParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_ObjectParameter\n");}
 	}
 };
 
@@ -1942,7 +1945,7 @@ class Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public TCollection_SeqNode {
 };
 %extend Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
 	~Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions() {
-	printf("Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -1964,7 +1967,7 @@ class Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public TCollection_SeqNode 
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
 	~Dynamic_SequenceNodeOfSeqOfMethodDefinitions() {
-	printf("Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");}
 	}
 };
 
@@ -1988,7 +1991,7 @@ class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 };
 %extend Dynamic_FuzzyDefinition {
 	~Dynamic_FuzzyDefinition() {
-	printf("Call custom destructor for instance of Dynamic_FuzzyDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyDefinition\n");}
 	}
 };
 
@@ -2012,7 +2015,7 @@ class Dynamic_VariableInstance : public Dynamic_AbstractVariableInstance {
 };
 %extend Dynamic_VariableInstance {
 	~Dynamic_VariableInstance() {
-	printf("Call custom destructor for instance of Dynamic_VariableInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_VariableInstance\n");}
 	}
 };
 
@@ -2040,7 +2043,7 @@ class Dynamic_IntegerParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_IntegerParameter {
 	~Dynamic_IntegerParameter() {
-	printf("Call custom destructor for instance of Dynamic_IntegerParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_IntegerParameter\n");}
 	}
 };
 
@@ -2066,7 +2069,7 @@ class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
 };
 %extend Dynamic_DynamicDerivedClass {
 	~Dynamic_DynamicDerivedClass() {
-	printf("Call custom destructor for instance of Dynamic_DynamicDerivedClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicDerivedClass\n");}
 	}
 };
 
@@ -2100,7 +2103,7 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 };
 %extend Dynamic_MethodDefinitionsDictionary {
 	~Dynamic_MethodDefinitionsDictionary() {
-	printf("Call custom destructor for instance of Dynamic_MethodDefinitionsDictionary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinitionsDictionary\n");}
 	}
 };
 
@@ -2122,7 +2125,7 @@ class Dynamic_SequenceNodeOfSeqOfMethods : public TCollection_SeqNode {
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethods {
 	~Dynamic_SequenceNodeOfSeqOfMethods() {
-	printf("Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethods\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethods\n");}
 	}
 };
 
@@ -2175,7 +2178,7 @@ class Dynamic_SeqOfFuzzyDefinitions : public TCollection_BaseSequence {
 };
 %extend Dynamic_SeqOfFuzzyDefinitions {
 	~Dynamic_SeqOfFuzzyDefinitions() {
-	printf("Call custom destructor for instance of Dynamic_SeqOfFuzzyDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -2199,6 +2202,6 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 };
 %extend Dynamic_CompositVariableInstance {
 	~Dynamic_CompositVariableInstance() {
-	printf("Call custom destructor for instance of Dynamic_CompositVariableInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_CompositVariableInstance\n");}
 	}
 };

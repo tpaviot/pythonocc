@@ -19,7 +19,17 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
-#include <PlotMgt_fill.hxx>
+#include <Handle_PlotMgt_HListOfMFTFonts.hxx>
+#include <Handle_PlotMgt_HListOfMFTSizes.hxx>
+#include <Handle_PlotMgt_HListOfPlotterParameter.hxx>
+#include <Handle_PlotMgt_ImageDriver.hxx>
+#include <Handle_PlotMgt_Plotter.hxx>
+#include <Handle_PlotMgt_PlotterAccessError.hxx>
+#include <Handle_PlotMgt_PlotterDefinitionError.hxx>
+#include <Handle_PlotMgt_PlotterDriver.hxx>
+#include <Handle_PlotMgt_PlotterParameter.hxx>
+#include <Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter.hxx>
+#include <Handle_PlotMgt_TextManager.hxx>
 #include <PlotMgt_HListOfMFTFonts.hxx>
 #include <PlotMgt_HListOfMFTSizes.hxx>
 #include <PlotMgt_HListOfPlotterParameter.hxx>
@@ -42,17 +52,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <PlotMgt_TypeOfOrigin.hxx>
 #include <PlotMgt_TypeOfPlotterParameter.hxx>
 #include <PlotMgt_TypeOfQuality.hxx>
-#include <Handle_PlotMgt_HListOfMFTFonts.hxx>
-#include <Handle_PlotMgt_HListOfMFTSizes.hxx>
-#include <Handle_PlotMgt_HListOfPlotterParameter.hxx>
-#include <Handle_PlotMgt_ImageDriver.hxx>
-#include <Handle_PlotMgt_Plotter.hxx>
-#include <Handle_PlotMgt_PlotterAccessError.hxx>
-#include <Handle_PlotMgt_PlotterDefinitionError.hxx>
-#include <Handle_PlotMgt_PlotterDriver.hxx>
-#include <Handle_PlotMgt_PlotterParameter.hxx>
-#include <Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter.hxx>
-#include <Handle_PlotMgt_TextManager.hxx>
+#include <PlotMgt_fill.hxx>
 %};
 
 %import PlotMgt.i

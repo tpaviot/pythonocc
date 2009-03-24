@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -95,7 +98,7 @@ class AdvApprox_Cutting {
 };
 %extend AdvApprox_Cutting {
 	~AdvApprox_Cutting() {
-	printf("Call custom destructor for instance of AdvApprox_Cutting\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AdvApprox_Cutting\n");}
 	}
 };
 
@@ -108,7 +111,7 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 };
 %extend AdvApprox_DichoCutting {
 	~AdvApprox_DichoCutting() {
-	printf("Call custom destructor for instance of AdvApprox_DichoCutting\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AdvApprox_DichoCutting\n");}
 	}
 };
 
@@ -161,7 +164,7 @@ class AdvApprox_ApproxAFunction {
 };
 %extend AdvApprox_ApproxAFunction {
 	~AdvApprox_ApproxAFunction() {
-	printf("Call custom destructor for instance of AdvApprox_ApproxAFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AdvApprox_ApproxAFunction\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 };
 %extend AdvApprox_PrefAndRec {
 	~AdvApprox_PrefAndRec() {
-	printf("Call custom destructor for instance of AdvApprox_PrefAndRec\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AdvApprox_PrefAndRec\n");}
 	}
 };
 
@@ -191,7 +194,7 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 };
 %extend AdvApprox_PrefCutting {
 	~AdvApprox_PrefCutting() {
-	printf("Call custom destructor for instance of AdvApprox_PrefCutting\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AdvApprox_PrefCutting\n");}
 	}
 };
 
@@ -226,6 +229,6 @@ class AdvApprox_SimpleApprox {
 };
 %extend AdvApprox_SimpleApprox {
 	~AdvApprox_SimpleApprox() {
-	printf("Call custom destructor for instance of AdvApprox_SimpleApprox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AdvApprox_SimpleApprox\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -156,7 +159,7 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 };
 %extend FilletSurf_InternalBuilder {
 	~FilletSurf_InternalBuilder() {
-	printf("Call custom destructor for instance of FilletSurf_InternalBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FilletSurf_InternalBuilder\n");}
 	}
 };
 
@@ -211,6 +214,6 @@ class FilletSurf_Builder {
 };
 %extend FilletSurf_Builder {
 	~FilletSurf_Builder() {
-	printf("Call custom destructor for instance of FilletSurf_Builder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FilletSurf_Builder\n");}
 	}
 };

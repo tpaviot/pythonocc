@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -112,7 +115,7 @@ class Handle_Prs3d_Drawer : public Handle_MMgt_TShared {
 };
 %extend Handle_Prs3d_Drawer {
 	~Handle_Prs3d_Drawer() {
-	printf("Call custom destructor for instance of Handle_Prs3d_Drawer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Drawer\n");}
 	}
 };
 
@@ -136,7 +139,7 @@ class Handle_Prs3d_BasicAspect : public Handle_MMgt_TShared {
 };
 %extend Handle_Prs3d_BasicAspect {
 	~Handle_Prs3d_BasicAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_BasicAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_BasicAspect\n");}
 	}
 };
 
@@ -160,7 +163,7 @@ class Handle_Prs3d_PlaneSet : public Handle_MMgt_TShared {
 };
 %extend Handle_Prs3d_PlaneSet {
 	~Handle_Prs3d_PlaneSet() {
-	printf("Call custom destructor for instance of Handle_Prs3d_PlaneSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PlaneSet\n");}
 	}
 };
 
@@ -184,7 +187,7 @@ class Handle_Prs3d_CompositeAspect : public Handle_MMgt_TShared {
 };
 %extend Handle_Prs3d_CompositeAspect {
 	~Handle_Prs3d_CompositeAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_CompositeAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_CompositeAspect\n");}
 	}
 };
 
@@ -208,7 +211,7 @@ class Handle_Prs3d_LengthAspect : public Handle_Prs3d_CompositeAspect {
 };
 %extend Handle_Prs3d_LengthAspect {
 	~Handle_Prs3d_LengthAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_LengthAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_LengthAspect\n");}
 	}
 };
 
@@ -232,7 +235,7 @@ class Handle_Prs3d_ShadingAspect : public Handle_Prs3d_BasicAspect {
 };
 %extend Handle_Prs3d_ShadingAspect {
 	~Handle_Prs3d_ShadingAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_ShadingAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_ShadingAspect\n");}
 	}
 };
 
@@ -256,7 +259,7 @@ class Handle_Prs3d_ArrowAspect : public Handle_Prs3d_CompositeAspect {
 };
 %extend Handle_Prs3d_ArrowAspect {
 	~Handle_Prs3d_ArrowAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_ArrowAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_ArrowAspect\n");}
 	}
 };
 
@@ -280,7 +283,7 @@ class Handle_Prs3d_Projector : public Handle_MMgt_TShared {
 };
 %extend Handle_Prs3d_Projector {
 	~Handle_Prs3d_Projector() {
-	printf("Call custom destructor for instance of Handle_Prs3d_Projector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Projector\n");}
 	}
 };
 
@@ -304,7 +307,7 @@ class Handle_Prs3d_AngleAspect : public Handle_Prs3d_CompositeAspect {
 };
 %extend Handle_Prs3d_AngleAspect {
 	~Handle_Prs3d_AngleAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_AngleAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_AngleAspect\n");}
 	}
 };
 
@@ -328,7 +331,7 @@ class Handle_Prs3d_LineAspect : public Handle_Prs3d_BasicAspect {
 };
 %extend Handle_Prs3d_LineAspect {
 	~Handle_Prs3d_LineAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_LineAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_LineAspect\n");}
 	}
 };
 
@@ -352,7 +355,7 @@ class Handle_Prs3d_PointAspect : public Handle_Prs3d_BasicAspect {
 };
 %extend Handle_Prs3d_PointAspect {
 	~Handle_Prs3d_PointAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_PointAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PointAspect\n");}
 	}
 };
 
@@ -376,7 +379,7 @@ class Handle_Prs3d_InvalidAngle : public Handle_Standard_RangeError {
 };
 %extend Handle_Prs3d_InvalidAngle {
 	~Handle_Prs3d_InvalidAngle() {
-	printf("Call custom destructor for instance of Handle_Prs3d_InvalidAngle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_InvalidAngle\n");}
 	}
 };
 
@@ -400,7 +403,7 @@ class Handle_Prs3d_DatumAspect : public Handle_Prs3d_CompositeAspect {
 };
 %extend Handle_Prs3d_DatumAspect {
 	~Handle_Prs3d_DatumAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_DatumAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_DatumAspect\n");}
 	}
 };
 
@@ -424,7 +427,7 @@ class Handle_Prs3d_PlaneAspect : public Handle_Prs3d_CompositeAspect {
 };
 %extend Handle_Prs3d_PlaneAspect {
 	~Handle_Prs3d_PlaneAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_PlaneAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_PlaneAspect\n");}
 	}
 };
 
@@ -448,7 +451,7 @@ class Handle_Prs3d_RadiusAspect : public Handle_Prs3d_CompositeAspect {
 };
 %extend Handle_Prs3d_RadiusAspect {
 	~Handle_Prs3d_RadiusAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_RadiusAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_RadiusAspect\n");}
 	}
 };
 
@@ -472,7 +475,7 @@ class Handle_Prs3d_Presentation : public Handle_Graphic3d_Structure {
 };
 %extend Handle_Prs3d_Presentation {
 	~Handle_Prs3d_Presentation() {
-	printf("Call custom destructor for instance of Handle_Prs3d_Presentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_Presentation\n");}
 	}
 };
 
@@ -496,7 +499,7 @@ class Handle_Prs3d_IsoAspect : public Handle_Prs3d_LineAspect {
 };
 %extend Handle_Prs3d_IsoAspect {
 	~Handle_Prs3d_IsoAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_IsoAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_IsoAspect\n");}
 	}
 };
 
@@ -520,7 +523,7 @@ class Handle_Prs3d_TextAspect : public Handle_Prs3d_BasicAspect {
 };
 %extend Handle_Prs3d_TextAspect {
 	~Handle_Prs3d_TextAspect() {
-	printf("Call custom destructor for instance of Handle_Prs3d_TextAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Prs3d_TextAspect\n");}
 	}
 };
 
@@ -537,7 +540,7 @@ class Prs3d_Root {
 };
 %extend Prs3d_Root {
 	~Prs3d_Root() {
-	printf("Call custom destructor for instance of Prs3d_Root\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_Root\n");}
 	}
 };
 
@@ -554,7 +557,7 @@ class Prs3d_Text : public Prs3d_Root {
 };
 %extend Prs3d_Text {
 	~Prs3d_Text() {
-	printf("Call custom destructor for instance of Prs3d_Text\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_Text\n");}
 	}
 };
 
@@ -616,7 +619,7 @@ class Prs3d_Presentation : public Graphic3d_Structure {
 };
 %extend Prs3d_Presentation {
 	~Prs3d_Presentation() {
-	printf("Call custom destructor for instance of Prs3d_Presentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_Presentation\n");}
 	}
 };
 
@@ -631,7 +634,7 @@ class Prs3d_AnglePresentation : public Prs3d_Root {
 };
 %extend Prs3d_AnglePresentation {
 	~Prs3d_AnglePresentation() {
-	printf("Call custom destructor for instance of Prs3d_AnglePresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_AnglePresentation\n");}
 	}
 };
 
@@ -651,7 +654,7 @@ class Prs3d_CompositeAspect : public MMgt_TShared {
 };
 %extend Prs3d_CompositeAspect {
 	~Prs3d_CompositeAspect() {
-	printf("Call custom destructor for instance of Prs3d_CompositeAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_CompositeAspect\n");}
 	}
 };
 
@@ -669,7 +672,7 @@ class Prs3d_RadiusAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_RadiusAspect {
 	~Prs3d_RadiusAspect() {
-	printf("Call custom destructor for instance of Prs3d_RadiusAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_RadiusAspect\n");}
 	}
 };
 
@@ -689,7 +692,7 @@ class Prs3d_BasicAspect : public MMgt_TShared {
 };
 %extend Prs3d_BasicAspect {
 	~Prs3d_BasicAspect() {
-	printf("Call custom destructor for instance of Prs3d_BasicAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_BasicAspect\n");}
 	}
 };
 
@@ -721,7 +724,7 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_LineAspect {
 	~Prs3d_LineAspect() {
-	printf("Call custom destructor for instance of Prs3d_LineAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_LineAspect\n");}
 	}
 };
 
@@ -736,7 +739,7 @@ class Prs3d_LengthPresentation : public Prs3d_Root {
 };
 %extend Prs3d_LengthPresentation {
 	~Prs3d_LengthPresentation() {
-	printf("Call custom destructor for instance of Prs3d_LengthPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_LengthPresentation\n");}
 	}
 };
 
@@ -780,7 +783,7 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_DatumAspect {
 	~Prs3d_DatumAspect() {
-	printf("Call custom destructor for instance of Prs3d_DatumAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_DatumAspect\n");}
 	}
 };
 
@@ -814,7 +817,7 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_AngleAspect {
 	~Prs3d_AngleAspect() {
-	printf("Call custom destructor for instance of Prs3d_AngleAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_AngleAspect\n");}
 	}
 };
 
@@ -829,7 +832,7 @@ class Prs3d {
 };
 %extend Prs3d {
 	~Prs3d() {
-	printf("Call custom destructor for instance of Prs3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d\n");}
 	}
 };
 
@@ -869,7 +872,7 @@ class Prs3d_ShadingAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_ShadingAspect {
 	~Prs3d_ShadingAspect() {
-	printf("Call custom destructor for instance of Prs3d_ShadingAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_ShadingAspect\n");}
 	}
 };
 
@@ -909,7 +912,7 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_PointAspect {
 	~Prs3d_PointAspect() {
-	printf("Call custom destructor for instance of Prs3d_PointAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_PointAspect\n");}
 	}
 };
 
@@ -947,7 +950,7 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_ArrowAspect {
 	~Prs3d_ArrowAspect() {
-	printf("Call custom destructor for instance of Prs3d_ArrowAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_ArrowAspect\n");}
 	}
 };
 
@@ -971,7 +974,7 @@ class Prs3d_Projector : public MMgt_TShared {
 };
 %extend Prs3d_Projector {
 	~Prs3d_Projector() {
-	printf("Call custom destructor for instance of Prs3d_Projector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_Projector\n");}
 	}
 };
 
@@ -1131,7 +1134,7 @@ class Prs3d_Drawer : public MMgt_TShared {
 };
 %extend Prs3d_Drawer {
 	~Prs3d_Drawer() {
-	printf("Call custom destructor for instance of Prs3d_Drawer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_Drawer\n");}
 	}
 };
 
@@ -1188,7 +1191,7 @@ class Prs3d_ShapeTool {
 };
 %extend Prs3d_ShapeTool {
 	~Prs3d_ShapeTool() {
-	printf("Call custom destructor for instance of Prs3d_ShapeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_ShapeTool\n");}
 	}
 };
 
@@ -1242,7 +1245,7 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 };
 %extend Prs3d_TextAspect {
 	~Prs3d_TextAspect() {
-	printf("Call custom destructor for instance of Prs3d_TextAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_TextAspect\n");}
 	}
 };
 
@@ -1270,7 +1273,7 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 };
 %extend Prs3d_IsoAspect {
 	~Prs3d_IsoAspect() {
-	printf("Call custom destructor for instance of Prs3d_IsoAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_IsoAspect\n");}
 	}
 };
 
@@ -1298,7 +1301,7 @@ class Prs3d_InvalidAngle : public Standard_RangeError {
 };
 %extend Prs3d_InvalidAngle {
 	~Prs3d_InvalidAngle() {
-	printf("Call custom destructor for instance of Prs3d_InvalidAngle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_InvalidAngle\n");}
 	}
 };
 
@@ -1332,7 +1335,7 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 };
 %extend Prs3d_PlaneSet {
 	~Prs3d_PlaneSet() {
-	printf("Call custom destructor for instance of Prs3d_PlaneSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneSet\n");}
 	}
 };
 
@@ -1349,7 +1352,7 @@ class Prs3d_Arrow : public Prs3d_Root {
 };
 %extend Prs3d_Arrow {
 	~Prs3d_Arrow() {
-	printf("Call custom destructor for instance of Prs3d_Arrow\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_Arrow\n");}
 	}
 };
 
@@ -1413,7 +1416,7 @@ class Prs3d_PlaneAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_PlaneAspect {
 	~Prs3d_PlaneAspect() {
-	printf("Call custom destructor for instance of Prs3d_PlaneAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_PlaneAspect\n");}
 	}
 };
 
@@ -1459,6 +1462,6 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 };
 %extend Prs3d_LengthAspect {
 	~Prs3d_LengthAspect() {
-	printf("Call custom destructor for instance of Prs3d_LengthAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Prs3d_LengthAspect\n");}
 	}
 };

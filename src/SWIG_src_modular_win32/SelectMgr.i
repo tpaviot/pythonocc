@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -121,7 +124,7 @@ class Handle_SelectMgr_Filter : public Handle_MMgt_TShared {
 };
 %extend Handle_SelectMgr_Filter {
 	~Handle_SelectMgr_Filter() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_Filter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_Filter\n");}
 	}
 };
 
@@ -145,7 +148,7 @@ class Handle_SelectMgr_CompositionFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_SelectMgr_CompositionFilter {
 	~Handle_SelectMgr_CompositionFilter() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_CompositionFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_CompositionFilter\n");}
 	}
 };
 
@@ -169,7 +172,7 @@ class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
 };
 %extend Handle_SelectMgr_SelectionManager {
 	~Handle_SelectMgr_SelectionManager() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_SelectionManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SelectionManager\n");}
 	}
 };
 
@@ -193,7 +196,7 @@ class Handle_SelectMgr_EntityOwner : public Handle_SelectBasics_EntityOwner {
 };
 %extend Handle_SelectMgr_EntityOwner {
 	~Handle_SelectMgr_EntityOwner() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_EntityOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_EntityOwner\n");}
 	}
 };
 
@@ -217,7 +220,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelection : public Handle_TCollec
 };
 %extend Handle_SelectMgr_SequenceNodeOfSequenceOfSelection {
 	~Handle_SelectMgr_SequenceNodeOfSequenceOfSelection() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfSelection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfSelection\n");}
 	}
 };
 
@@ -241,7 +244,7 @@ class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
 };
 %extend Handle_SelectMgr_ViewerSelector {
 	~Handle_SelectMgr_ViewerSelector() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_ViewerSelector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_ViewerSelector\n");}
 	}
 };
 
@@ -265,7 +268,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCo
 };
 %extend Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
 	~Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");}
 	}
 };
 
@@ -289,7 +292,7 @@ class Handle_SelectMgr_OrFilter : public Handle_SelectMgr_CompositionFilter {
 };
 %extend Handle_SelectMgr_OrFilter {
 	~Handle_SelectMgr_OrFilter() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_OrFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_OrFilter\n");}
 	}
 };
 
@@ -313,7 +316,7 @@ class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject
 };
 %extend Handle_SelectMgr_SelectableObject {
 	~Handle_SelectMgr_SelectableObject() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_SelectableObject\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SelectableObject\n");}
 	}
 };
 
@@ -337,7 +340,7 @@ class Handle_SelectMgr_AndFilter : public Handle_SelectMgr_CompositionFilter {
 };
 %extend Handle_SelectMgr_AndFilter {
 	~Handle_SelectMgr_AndFilter() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_AndFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_AndFilter\n");}
 	}
 };
 
@@ -361,7 +364,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollectio
 };
 %extend Handle_SelectMgr_SequenceNodeOfSequenceOfFilter {
 	~Handle_SelectMgr_SequenceNodeOfSequenceOfFilter() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfFilter\n");}
 	}
 };
 
@@ -385,7 +388,7 @@ class Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public Handle_TCollec
 };
 %extend Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
 	~Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner\n");}
 	}
 };
 
@@ -409,7 +412,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TC
 };
 %extend Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
 	~Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive\n");}
 	}
 };
 
@@ -433,7 +436,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfOwner : public Handle_TCollection
 };
 %extend Handle_SelectMgr_SequenceNodeOfSequenceOfOwner {
 	~Handle_SelectMgr_SequenceNodeOfSequenceOfOwner() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfOwner\n");}
 	}
 };
 
@@ -457,7 +460,7 @@ class Handle_SelectMgr_ListNodeOfListOfFilter : public Handle_TCollection_MapNod
 };
 %extend Handle_SelectMgr_ListNodeOfListOfFilter {
 	~Handle_SelectMgr_ListNodeOfListOfFilter() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_ListNodeOfListOfFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_ListNodeOfListOfFilter\n");}
 	}
 };
 
@@ -481,7 +484,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public Handle
 };
 %extend Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
 	~Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation\n");}
 	}
 };
 
@@ -505,7 +508,7 @@ class Handle_SelectMgr_Selection : public Handle_MMgt_TShared {
 };
 %extend Handle_SelectMgr_Selection {
 	~Handle_SelectMgr_Selection() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_Selection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_Selection\n");}
 	}
 };
 
@@ -529,7 +532,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelector : public Handle_TCollect
 };
 %extend Handle_SelectMgr_SequenceNodeOfSequenceOfSelector {
 	~Handle_SelectMgr_SequenceNodeOfSequenceOfSelector() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfSelector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfSelector\n");}
 	}
 };
 
@@ -553,7 +556,7 @@ class Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : publ
 };
 %extend Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
 	~Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion() {
-	printf("Call custom destructor for instance of Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion\n");}
 	}
 };
 
@@ -574,7 +577,7 @@ class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_
 };
 %extend SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive {
 	~SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive\n");}
 	}
 };
 
@@ -596,7 +599,7 @@ class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
 };
 %extend SelectMgr_ListNodeOfListOfFilter {
 	~SelectMgr_ListNodeOfListOfFilter() {
-	printf("Call custom destructor for instance of SelectMgr_ListNodeOfListOfFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_ListNodeOfListOfFilter\n");}
 	}
 };
 
@@ -618,7 +621,7 @@ class SelectMgr_Filter : public MMgt_TShared {
 };
 %extend SelectMgr_Filter {
 	~SelectMgr_Filter() {
-	printf("Call custom destructor for instance of SelectMgr_Filter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_Filter\n");}
 	}
 };
 
@@ -646,7 +649,7 @@ class SelectMgr_CompositionFilter : public SelectMgr_Filter {
 };
 %extend SelectMgr_CompositionFilter {
 	~SelectMgr_CompositionFilter() {
-	printf("Call custom destructor for instance of SelectMgr_CompositionFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_CompositionFilter\n");}
 	}
 };
 
@@ -666,7 +669,7 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 };
 %extend SelectMgr_AndFilter {
 	~SelectMgr_AndFilter() {
-	printf("Call custom destructor for instance of SelectMgr_AndFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_AndFilter\n");}
 	}
 };
 
@@ -689,7 +692,7 @@ class SelectMgr_ListIteratorOfListOfFilter {
 };
 %extend SelectMgr_ListIteratorOfListOfFilter {
 	~SelectMgr_ListIteratorOfListOfFilter() {
-	printf("Call custom destructor for instance of SelectMgr_ListIteratorOfListOfFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_ListIteratorOfListOfFilter\n");}
 	}
 };
 
@@ -738,7 +741,7 @@ class SelectMgr_ListOfFilter {
 };
 %extend SelectMgr_ListOfFilter {
 	~SelectMgr_ListOfFilter() {
-	printf("Call custom destructor for instance of SelectMgr_ListOfFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_ListOfFilter\n");}
 	}
 };
 
@@ -794,7 +797,7 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 };
 %extend SelectMgr_EntityOwner {
 	~SelectMgr_EntityOwner() {
-	printf("Call custom destructor for instance of SelectMgr_EntityOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_EntityOwner\n");}
 	}
 };
 
@@ -818,7 +821,7 @@ class SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public TCollection_MapN
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
 	~SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive\n");}
 	}
 };
 
@@ -858,7 +861,7 @@ class SelectMgr_Selection : public MMgt_TShared {
 };
 %extend SelectMgr_Selection {
 	~SelectMgr_Selection() {
-	printf("Call custom destructor for instance of SelectMgr_Selection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_Selection\n");}
 	}
 };
 
@@ -891,7 +894,7 @@ class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 };
 %extend SelectMgr_DataMapOfObjectSelectors {
 	~SelectMgr_DataMapOfObjectSelectors() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapOfObjectSelectors\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapOfObjectSelectors\n");}
 	}
 };
 
@@ -971,7 +974,7 @@ class SelectMgr_SelectionManager : public MMgt_TShared {
 };
 %extend SelectMgr_SelectionManager {
 	~SelectMgr_SelectionManager() {
-	printf("Call custom destructor for instance of SelectMgr_SelectionManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SelectionManager\n");}
 	}
 };
 
@@ -1024,7 +1027,7 @@ class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
 };
 %extend SelectMgr_SequenceOfSelection {
 	~SelectMgr_SequenceOfSelection() {
-	printf("Call custom destructor for instance of SelectMgr_SequenceOfSelection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceOfSelection\n");}
 	}
 };
 
@@ -1046,7 +1049,7 @@ class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelector {
 	~SelectMgr_SequenceNodeOfSequenceOfSelector() {
-	printf("Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfSelector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfSelector\n");}
 	}
 };
 
@@ -1068,7 +1071,7 @@ class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
 };
 %extend SelectMgr_OrFilter {
 	~SelectMgr_OrFilter() {
-	printf("Call custom destructor for instance of SelectMgr_OrFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_OrFilter\n");}
 	}
 };
 
@@ -1101,7 +1104,7 @@ class SelectMgr_IndexedMapOfOwner : public TCollection_BasicMap {
 };
 %extend SelectMgr_IndexedMapOfOwner {
 	~SelectMgr_IndexedMapOfOwner() {
-	printf("Call custom destructor for instance of SelectMgr_IndexedMapOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_IndexedMapOfOwner\n");}
 	}
 };
 
@@ -1125,7 +1128,7 @@ class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNo
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
 	~SelectMgr_DataMapNodeOfDataMapOfObjectSelectors() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");}
 	}
 };
 
@@ -1164,7 +1167,7 @@ class SelectMgr_SortCriterion {
 };
 %extend SelectMgr_SortCriterion {
 	~SelectMgr_SortCriterion() {
-	printf("Call custom destructor for instance of SelectMgr_SortCriterion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SortCriterion\n");}
 	}
 };
 
@@ -1185,7 +1188,7 @@ class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollecti
 };
 %extend SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation {
 	~SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation\n");}
 	}
 };
 
@@ -1269,7 +1272,7 @@ class SelectMgr_ViewerSelector : public MMgt_TShared {
 };
 %extend SelectMgr_ViewerSelector {
 	~SelectMgr_ViewerSelector() {
-	printf("Call custom destructor for instance of SelectMgr_ViewerSelector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_ViewerSelector\n");}
 	}
 };
 
@@ -1293,7 +1296,7 @@ class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_M
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
 	~SelectMgr_DataMapNodeOfDataMapOfSelectionActivation() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfSelectionActivation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfSelectionActivation\n");}
 	}
 };
 
@@ -1314,7 +1317,7 @@ class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_B
 };
 %extend SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors {
 	~SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors\n");}
 	}
 };
 
@@ -1336,7 +1339,7 @@ class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfFilter {
 	~SelectMgr_SequenceNodeOfSequenceOfFilter() {
-	printf("Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfFilter\n");}
 	}
 };
 
@@ -1389,7 +1392,7 @@ class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
 };
 %extend SelectMgr_SequenceOfFilter {
 	~SelectMgr_SequenceOfFilter() {
-	printf("Call custom destructor for instance of SelectMgr_SequenceOfFilter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceOfFilter\n");}
 	}
 };
 
@@ -1447,7 +1450,7 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 };
 %extend SelectMgr_SelectableObject {
 	~SelectMgr_SelectableObject() {
-	printf("Call custom destructor for instance of SelectMgr_SelectableObject\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SelectableObject\n");}
 	}
 };
 
@@ -1469,7 +1472,7 @@ class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelection {
 	~SelectMgr_SequenceNodeOfSequenceOfSelection() {
-	printf("Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfSelection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfSelection\n");}
 	}
 };
 
@@ -1522,7 +1525,7 @@ class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
 };
 %extend SelectMgr_SequenceOfOwner {
 	~SelectMgr_SequenceOfOwner() {
-	printf("Call custom destructor for instance of SelectMgr_SequenceOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceOfOwner\n");}
 	}
 };
 
@@ -1565,7 +1568,7 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 };
 %extend SelectMgr_IndexedDataMapOfOwnerCriterion {
 	~SelectMgr_IndexedDataMapOfOwnerCriterion() {
-	printf("Call custom destructor for instance of SelectMgr_IndexedDataMapOfOwnerCriterion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_IndexedDataMapOfOwnerCriterion\n");}
 	}
 };
 
@@ -1618,7 +1621,7 @@ class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
 };
 %extend SelectMgr_SequenceOfSelector {
 	~SelectMgr_SequenceOfSelector() {
-	printf("Call custom destructor for instance of SelectMgr_SequenceOfSelector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceOfSelector\n");}
 	}
 };
 
@@ -1651,7 +1654,7 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 };
 %extend SelectMgr_DataMapOfSelectionActivation {
 	~SelectMgr_DataMapOfSelectionActivation() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapOfSelectionActivation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapOfSelectionActivation\n");}
 	}
 };
 
@@ -1677,7 +1680,7 @@ class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
 };
 %extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
 	~SelectMgr_IndexedMapNodeOfIndexedMapOfOwner() {
-	printf("Call custom destructor for instance of SelectMgr_IndexedMapNodeOfIndexedMapOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_IndexedMapNodeOfIndexedMapOfOwner\n");}
 	}
 };
 
@@ -1710,7 +1713,7 @@ class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
 };
 %extend SelectMgr_DataMapOfIntegerSensitive {
 	~SelectMgr_DataMapOfIntegerSensitive() {
-	printf("Call custom destructor for instance of SelectMgr_DataMapOfIntegerSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapOfIntegerSensitive\n");}
 	}
 };
 
@@ -1732,7 +1735,7 @@ class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfOwner {
 	~SelectMgr_SequenceNodeOfSequenceOfOwner() {
-	printf("Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfOwner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfOwner\n");}
 	}
 };
 
@@ -1749,7 +1752,7 @@ class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 };
 %extend SelectMgr_CompareResults {
 	~SelectMgr_CompareResults() {
-	printf("Call custom destructor for instance of SelectMgr_CompareResults\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_CompareResults\n");}
 	}
 };
 
@@ -1777,6 +1780,6 @@ class SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public TCol
 };
 %extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
 	~SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion() {
-	printf("Call custom destructor for instance of SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion\n");}
 	}
 };

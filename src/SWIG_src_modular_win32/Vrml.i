@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -186,7 +189,7 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_AsciiText {
 	~Handle_Vrml_AsciiText() {
-	printf("Call custom destructor for instance of Handle_Vrml_AsciiText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_AsciiText\n");}
 	}
 };
 
@@ -210,7 +213,7 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_LOD {
 	~Handle_Vrml_LOD() {
-	printf("Call custom destructor for instance of Handle_Vrml_LOD\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_LOD\n");}
 	}
 };
 
@@ -234,7 +237,7 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_Coordinate3 {
 	~Handle_Vrml_Coordinate3() {
-	printf("Call custom destructor for instance of Handle_Vrml_Coordinate3\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Coordinate3\n");}
 	}
 };
 
@@ -258,7 +261,7 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_SFImage {
 	~Handle_Vrml_SFImage() {
-	printf("Call custom destructor for instance of Handle_Vrml_SFImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_SFImage\n");}
 	}
 };
 
@@ -282,7 +285,7 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_Normal {
 	~Handle_Vrml_Normal() {
-	printf("Call custom destructor for instance of Handle_Vrml_Normal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Normal\n");}
 	}
 };
 
@@ -306,7 +309,7 @@ class Handle_Vrml_Material : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_Material {
 	~Handle_Vrml_Material() {
-	printf("Call custom destructor for instance of Handle_Vrml_Material\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Material\n");}
 	}
 };
 
@@ -330,7 +333,7 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_IndexedLineSet {
 	~Handle_Vrml_IndexedLineSet() {
-	printf("Call custom destructor for instance of Handle_Vrml_IndexedLineSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_IndexedLineSet\n");}
 	}
 };
 
@@ -354,7 +357,7 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_IndexedFaceSet {
 	~Handle_Vrml_IndexedFaceSet() {
-	printf("Call custom destructor for instance of Handle_Vrml_IndexedFaceSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_IndexedFaceSet\n");}
 	}
 };
 
@@ -378,7 +381,7 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 };
 %extend Handle_Vrml_TextureCoordinate2 {
 	~Handle_Vrml_TextureCoordinate2() {
-	printf("Call custom destructor for instance of Handle_Vrml_TextureCoordinate2\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Vrml_TextureCoordinate2\n");}
 	}
 };
 
@@ -407,7 +410,7 @@ class Vrml_WWWInline {
 };
 %extend Vrml_WWWInline {
 	~Vrml_WWWInline() {
-	printf("Call custom destructor for instance of Vrml_WWWInline\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_WWWInline\n");}
 	}
 };
 
@@ -426,7 +429,7 @@ class Vrml_Switch {
 };
 %extend Vrml_Switch {
 	~Vrml_Switch() {
-	printf("Call custom destructor for instance of Vrml_Switch\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Switch\n");}
 	}
 };
 
@@ -447,7 +450,7 @@ class Vrml_MaterialBinding {
 };
 %extend Vrml_MaterialBinding {
 	~Vrml_MaterialBinding() {
-	printf("Call custom destructor for instance of Vrml_MaterialBinding\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_MaterialBinding\n");}
 	}
 };
 
@@ -462,7 +465,7 @@ class Vrml_TransformSeparator {
 };
 %extend Vrml_TransformSeparator {
 	~Vrml_TransformSeparator() {
-	printf("Call custom destructor for instance of Vrml_TransformSeparator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_TransformSeparator\n");}
 	}
 };
 
@@ -489,7 +492,7 @@ class Vrml_FontStyle {
 };
 %extend Vrml_FontStyle {
 	~Vrml_FontStyle() {
-	printf("Call custom destructor for instance of Vrml_FontStyle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_FontStyle\n");}
 	}
 };
 
@@ -522,7 +525,7 @@ class Vrml_PointLight {
 };
 %extend Vrml_PointLight {
 	~Vrml_PointLight() {
-	printf("Call custom destructor for instance of Vrml_PointLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_PointLight\n");}
 	}
 };
 
@@ -539,7 +542,7 @@ class Vrml_Instancing {
 };
 %extend Vrml_Instancing {
 	~Vrml_Instancing() {
-	printf("Call custom destructor for instance of Vrml_Instancing\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Instancing\n");}
 	}
 };
 
@@ -558,7 +561,7 @@ class Vrml_Sphere {
 };
 %extend Vrml_Sphere {
 	~Vrml_Sphere() {
-	printf("Call custom destructor for instance of Vrml_Sphere\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Sphere\n");}
 	}
 };
 
@@ -603,7 +606,7 @@ class Vrml_SpotLight {
 };
 %extend Vrml_SpotLight {
 	~Vrml_SpotLight() {
-	printf("Call custom destructor for instance of Vrml_SpotLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_SpotLight\n");}
 	}
 };
 
@@ -643,7 +646,7 @@ class Vrml_AsciiText : public MMgt_TShared {
 };
 %extend Vrml_AsciiText {
 	~Vrml_AsciiText() {
-	printf("Call custom destructor for instance of Vrml_AsciiText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_AsciiText\n");}
 	}
 };
 
@@ -683,7 +686,7 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 };
 %extend Vrml_IndexedLineSet {
 	~Vrml_IndexedLineSet() {
-	printf("Call custom destructor for instance of Vrml_IndexedLineSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_IndexedLineSet\n");}
 	}
 };
 
@@ -716,7 +719,7 @@ class Vrml_Texture2 {
 };
 %extend Vrml_Texture2 {
 	~Vrml_Texture2() {
-	printf("Call custom destructor for instance of Vrml_Texture2\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Texture2\n");}
 	}
 };
 
@@ -756,7 +759,7 @@ class Vrml_SFImage : public MMgt_TShared {
 };
 %extend Vrml_SFImage {
 	~Vrml_SFImage() {
-	printf("Call custom destructor for instance of Vrml_SFImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_SFImage\n");}
 	}
 };
 
@@ -789,7 +792,7 @@ class Vrml_PerspectiveCamera {
 };
 %extend Vrml_PerspectiveCamera {
 	~Vrml_PerspectiveCamera() {
-	printf("Call custom destructor for instance of Vrml_PerspectiveCamera\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_PerspectiveCamera\n");}
 	}
 };
 
@@ -810,7 +813,7 @@ class Vrml_Rotation {
 };
 %extend Vrml_Rotation {
 	~Vrml_Rotation() {
-	printf("Call custom destructor for instance of Vrml_Rotation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Rotation\n");}
 	}
 };
 
@@ -831,7 +834,7 @@ class Vrml_NormalBinding {
 };
 %extend Vrml_NormalBinding {
 	~Vrml_NormalBinding() {
-	printf("Call custom destructor for instance of Vrml_NormalBinding\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_NormalBinding\n");}
 	}
 };
 
@@ -859,7 +862,7 @@ class Vrml_Normal : public MMgt_TShared {
 };
 %extend Vrml_Normal {
 	~Vrml_Normal() {
-	printf("Call custom destructor for instance of Vrml_Normal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Normal\n");}
 	}
 };
 
@@ -892,7 +895,7 @@ class Vrml_Texture2Transform {
 };
 %extend Vrml_Texture2Transform {
 	~Vrml_Texture2Transform() {
-	printf("Call custom destructor for instance of Vrml_Texture2Transform\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Texture2Transform\n");}
 	}
 };
 
@@ -929,7 +932,7 @@ class Vrml_Transform {
 };
 %extend Vrml_Transform {
 	~Vrml_Transform() {
-	printf("Call custom destructor for instance of Vrml_Transform\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Transform\n");}
 	}
 };
 
@@ -957,7 +960,7 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 };
 %extend Vrml_Coordinate3 {
 	~Vrml_Coordinate3() {
-	printf("Call custom destructor for instance of Vrml_Coordinate3\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Coordinate3\n");}
 	}
 };
 
@@ -984,7 +987,7 @@ class Vrml_Cylinder {
 };
 %extend Vrml_Cylinder {
 	~Vrml_Cylinder() {
-	printf("Call custom destructor for instance of Vrml_Cylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Cylinder\n");}
 	}
 };
 
@@ -1017,7 +1020,7 @@ class Vrml_OrthographicCamera {
 };
 %extend Vrml_OrthographicCamera {
 	~Vrml_OrthographicCamera() {
-	printf("Call custom destructor for instance of Vrml_OrthographicCamera\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_OrthographicCamera\n");}
 	}
 };
 
@@ -1049,7 +1052,7 @@ class Vrml_LOD : public MMgt_TShared {
 };
 %extend Vrml_LOD {
 	~Vrml_LOD() {
-	printf("Call custom destructor for instance of Vrml_LOD\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_LOD\n");}
 	}
 };
 
@@ -1076,7 +1079,7 @@ class Vrml_Cone {
 };
 %extend Vrml_Cone {
 	~Vrml_Cone() {
-	printf("Call custom destructor for instance of Vrml_Cone\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Cone\n");}
 	}
 };
 
@@ -1093,7 +1096,7 @@ class Vrml {
 };
 %extend Vrml {
 	~Vrml() {
-	printf("Call custom destructor for instance of Vrml\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml\n");}
 	}
 };
 
@@ -1112,7 +1115,7 @@ class Vrml_Info {
 };
 %extend Vrml_Info {
 	~Vrml_Info() {
-	printf("Call custom destructor for instance of Vrml_Info\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Info\n");}
 	}
 };
 
@@ -1139,7 +1142,7 @@ class Vrml_Cube {
 };
 %extend Vrml_Cube {
 	~Vrml_Cube() {
-	printf("Call custom destructor for instance of Vrml_Cube\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Cube\n");}
 	}
 };
 
@@ -1160,7 +1163,7 @@ class Vrml_MatrixTransform {
 };
 %extend Vrml_MatrixTransform {
 	~Vrml_MatrixTransform() {
-	printf("Call custom destructor for instance of Vrml_MatrixTransform\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_MatrixTransform\n");}
 	}
 };
 
@@ -1193,7 +1196,7 @@ class Vrml_DirectionalLight {
 };
 %extend Vrml_DirectionalLight {
 	~Vrml_DirectionalLight() {
-	printf("Call custom destructor for instance of Vrml_DirectionalLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_DirectionalLight\n");}
 	}
 };
 
@@ -1220,7 +1223,7 @@ class Vrml_WWWAnchor {
 };
 %extend Vrml_WWWAnchor {
 	~Vrml_WWWAnchor() {
-	printf("Call custom destructor for instance of Vrml_WWWAnchor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_WWWAnchor\n");}
 	}
 };
 
@@ -1268,7 +1271,7 @@ class Vrml_Material : public MMgt_TShared {
 };
 %extend Vrml_Material {
 	~Vrml_Material() {
-	printf("Call custom destructor for instance of Vrml_Material\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Material\n");}
 	}
 };
 
@@ -1299,7 +1302,7 @@ class Vrml_ShapeHints {
 };
 %extend Vrml_ShapeHints {
 	~Vrml_ShapeHints() {
-	printf("Call custom destructor for instance of Vrml_ShapeHints\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_ShapeHints\n");}
 	}
 };
 
@@ -1320,7 +1323,7 @@ class Vrml_Scale {
 };
 %extend Vrml_Scale {
 	~Vrml_Scale() {
-	printf("Call custom destructor for instance of Vrml_Scale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Scale\n");}
 	}
 };
 
@@ -1343,7 +1346,7 @@ class Vrml_PointSet {
 };
 %extend Vrml_PointSet {
 	~Vrml_PointSet() {
-	printf("Call custom destructor for instance of Vrml_PointSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_PointSet\n");}
 	}
 };
 
@@ -1364,7 +1367,7 @@ class Vrml_Separator {
 };
 %extend Vrml_Separator {
 	~Vrml_Separator() {
-	printf("Call custom destructor for instance of Vrml_Separator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Separator\n");}
 	}
 };
 
@@ -1385,7 +1388,7 @@ class Vrml_Translation {
 };
 %extend Vrml_Translation {
 	~Vrml_Translation() {
-	printf("Call custom destructor for instance of Vrml_Translation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Translation\n");}
 	}
 };
 
@@ -1416,7 +1419,7 @@ class Vrml_SFRotation {
 };
 %extend Vrml_SFRotation {
 	~Vrml_SFRotation() {
-	printf("Call custom destructor for instance of Vrml_SFRotation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_SFRotation\n");}
 	}
 };
 
@@ -1431,7 +1434,7 @@ class Vrml_Group {
 };
 %extend Vrml_Group {
 	~Vrml_Group() {
-	printf("Call custom destructor for instance of Vrml_Group\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_Group\n");}
 	}
 };
 
@@ -1459,7 +1462,7 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 };
 %extend Vrml_TextureCoordinate2 {
 	~Vrml_TextureCoordinate2() {
-	printf("Call custom destructor for instance of Vrml_TextureCoordinate2\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_TextureCoordinate2\n");}
 	}
 };
 
@@ -1499,6 +1502,6 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 };
 %extend Vrml_IndexedFaceSet {
 	~Vrml_IndexedFaceSet() {
-	printf("Call custom destructor for instance of Vrml_IndexedFaceSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Vrml_IndexedFaceSet\n");}
 	}
 };

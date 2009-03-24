@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -97,7 +100,7 @@ class GCE2d_Root {
 };
 %extend GCE2d_Root {
 	~GCE2d_Root() {
-	printf("Call custom destructor for instance of GCE2d_Root\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_Root\n");}
 	}
 };
 
@@ -124,7 +127,7 @@ class GCE2d_MakeLine : public GCE2d_Root {
 };
 %extend GCE2d_MakeLine {
 	~GCE2d_MakeLine() {
-	printf("Call custom destructor for instance of GCE2d_MakeLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeLine\n");}
 	}
 };
 
@@ -147,7 +150,7 @@ class GCE2d_MakeMirror {
 };
 %extend GCE2d_MakeMirror {
 	~GCE2d_MakeMirror() {
-	printf("Call custom destructor for instance of GCE2d_MakeMirror\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeMirror\n");}
 	}
 };
 
@@ -172,7 +175,7 @@ class GCE2d_MakeArcOfCircle : public GCE2d_Root {
 };
 %extend GCE2d_MakeArcOfCircle {
 	~GCE2d_MakeArcOfCircle() {
-	printf("Call custom destructor for instance of GCE2d_MakeArcOfCircle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfCircle\n");}
 	}
 };
 
@@ -199,7 +202,7 @@ class GCE2d_MakeParabola : public GCE2d_Root {
 };
 %extend GCE2d_MakeParabola {
 	~GCE2d_MakeParabola() {
-	printf("Call custom destructor for instance of GCE2d_MakeParabola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeParabola\n");}
 	}
 };
 
@@ -216,7 +219,7 @@ class GCE2d_MakeScale {
 };
 %extend GCE2d_MakeScale {
 	~GCE2d_MakeScale() {
-	printf("Call custom destructor for instance of GCE2d_MakeScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeScale\n");}
 	}
 };
 
@@ -239,7 +242,7 @@ class GCE2d_MakeHyperbola : public GCE2d_Root {
 };
 %extend GCE2d_MakeHyperbola {
 	~GCE2d_MakeHyperbola() {
-	printf("Call custom destructor for instance of GCE2d_MakeHyperbola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeHyperbola\n");}
 	}
 };
 
@@ -260,7 +263,7 @@ class GCE2d_MakeArcOfHyperbola : public GCE2d_Root {
 };
 %extend GCE2d_MakeArcOfHyperbola {
 	~GCE2d_MakeArcOfHyperbola() {
-	printf("Call custom destructor for instance of GCE2d_MakeArcOfHyperbola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfHyperbola\n");}
 	}
 };
 
@@ -285,7 +288,7 @@ class GCE2d_MakeSegment : public GCE2d_Root {
 };
 %extend GCE2d_MakeSegment {
 	~GCE2d_MakeSegment() {
-	printf("Call custom destructor for instance of GCE2d_MakeSegment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeSegment\n");}
 	}
 };
 
@@ -308,7 +311,7 @@ class GCE2d_MakeEllipse : public GCE2d_Root {
 };
 %extend GCE2d_MakeEllipse {
 	~GCE2d_MakeEllipse() {
-	printf("Call custom destructor for instance of GCE2d_MakeEllipse\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeEllipse\n");}
 	}
 };
 
@@ -329,7 +332,7 @@ class GCE2d_MakeArcOfParabola : public GCE2d_Root {
 };
 %extend GCE2d_MakeArcOfParabola {
 	~GCE2d_MakeArcOfParabola() {
-	printf("Call custom destructor for instance of GCE2d_MakeArcOfParabola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfParabola\n");}
 	}
 };
 
@@ -360,7 +363,7 @@ class GCE2d_MakeCircle : public GCE2d_Root {
 };
 %extend GCE2d_MakeCircle {
 	~GCE2d_MakeCircle() {
-	printf("Call custom destructor for instance of GCE2d_MakeCircle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeCircle\n");}
 	}
 };
 
@@ -377,7 +380,7 @@ class GCE2d_MakeRotation {
 };
 %extend GCE2d_MakeRotation {
 	~GCE2d_MakeRotation() {
-	printf("Call custom destructor for instance of GCE2d_MakeRotation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeRotation\n");}
 	}
 };
 
@@ -398,7 +401,7 @@ class GCE2d_MakeArcOfEllipse : public GCE2d_Root {
 };
 %extend GCE2d_MakeArcOfEllipse {
 	~GCE2d_MakeArcOfEllipse() {
-	printf("Call custom destructor for instance of GCE2d_MakeArcOfEllipse\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeArcOfEllipse\n");}
 	}
 };
 
@@ -417,6 +420,6 @@ class GCE2d_MakeTranslation {
 };
 %extend GCE2d_MakeTranslation {
 	~GCE2d_MakeTranslation() {
-	printf("Call custom destructor for instance of GCE2d_MakeTranslation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCE2d_MakeTranslation\n");}
 	}
 };

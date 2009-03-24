@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_XmlDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Docume
 };
 %extend Handle_XmlDrivers_DocumentStorageDriver {
 	~Handle_XmlDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of Handle_XmlDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_XmlDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_Docu
 };
 %extend Handle_XmlDrivers_DocumentRetrievalDriver {
 	~Handle_XmlDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of Handle_XmlDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -150,7 +153,7 @@ class XmlDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDrive
 };
 %extend XmlDrivers_DocumentStorageDriver {
 	~XmlDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of XmlDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -167,7 +170,7 @@ class XmlDrivers {
 };
 %extend XmlDrivers {
 	~XmlDrivers() {
-	printf("Call custom destructor for instance of XmlDrivers\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlDrivers\n");}
 	}
 };
 
@@ -189,6 +192,6 @@ class XmlDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalD
 };
 %extend XmlDrivers_DocumentRetrievalDriver {
 	~XmlDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of XmlDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlDrivers_DocumentRetrievalDriver\n");}
 	}
 };

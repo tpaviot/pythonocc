@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_XmlTObjDrivers_XYZDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlTObjDrivers_XYZDriver {
 	~Handle_XmlTObjDrivers_XYZDriver() {
-	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_XYZDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_XYZDriver\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_
 };
 %extend Handle_XmlTObjDrivers_DocumentRetrievalDriver {
 	~Handle_XmlTObjDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_XmlTObjDrivers_ModelDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlTObjDrivers_ModelDriver {
 	~Handle_XmlTObjDrivers_ModelDriver() {
-	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_ModelDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_ModelDriver\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Do
 };
 %extend Handle_XmlTObjDrivers_DocumentStorageDriver {
 	~Handle_XmlTObjDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver 
 };
 %extend Handle_XmlTObjDrivers_IntSparseArrayDriver {
 	~Handle_XmlTObjDrivers_IntSparseArrayDriver() {
-	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_IntSparseArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_IntSparseArrayDriver\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlTObjDrivers_ObjectDriver {
 	~Handle_XmlTObjDrivers_ObjectDriver() {
-	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_ObjectDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_ObjectDriver\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_XmlTObjDrivers_ReferenceDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlTObjDrivers_ReferenceDriver {
 	~Handle_XmlTObjDrivers_ReferenceDriver() {
-	printf("Call custom destructor for instance of Handle_XmlTObjDrivers_ReferenceDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_ReferenceDriver\n");}
 	}
 };
 
@@ -274,7 +277,7 @@ class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ReferenceDriver {
 	~XmlTObjDrivers_ReferenceDriver() {
-	printf("Call custom destructor for instance of XmlTObjDrivers_ReferenceDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_ReferenceDriver\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrie
 };
 %extend XmlTObjDrivers_DocumentRetrievalDriver {
 	~XmlTObjDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of XmlTObjDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -313,7 +316,7 @@ class XmlTObjDrivers {
 };
 %extend XmlTObjDrivers {
 	~XmlTObjDrivers() {
-	printf("Call custom destructor for instance of XmlTObjDrivers\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers\n");}
 	}
 };
 
@@ -339,7 +342,7 @@ class XmlTObjDrivers_ModelDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ModelDriver {
 	~XmlTObjDrivers_ModelDriver() {
-	printf("Call custom destructor for instance of XmlTObjDrivers_ModelDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_ModelDriver\n");}
 	}
 };
 
@@ -365,7 +368,7 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_IntSparseArrayDriver {
 	~XmlTObjDrivers_IntSparseArrayDriver() {
-	printf("Call custom destructor for instance of XmlTObjDrivers_IntSparseArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_IntSparseArrayDriver\n");}
 	}
 };
 
@@ -387,7 +390,7 @@ class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageD
 };
 %extend XmlTObjDrivers_DocumentStorageDriver {
 	~XmlTObjDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of XmlTObjDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -413,7 +416,7 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ObjectDriver {
 	~XmlTObjDrivers_ObjectDriver() {
-	printf("Call custom destructor for instance of XmlTObjDrivers_ObjectDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_ObjectDriver\n");}
 	}
 };
 
@@ -439,6 +442,6 @@ class XmlTObjDrivers_XYZDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_XYZDriver {
 	~XmlTObjDrivers_XYZDriver() {
-	printf("Call custom destructor for instance of XmlTObjDrivers_XYZDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_XYZDriver\n");}
 	}
 };

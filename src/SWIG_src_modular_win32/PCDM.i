@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -130,7 +133,7 @@ class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_
 };
 %extend Handle_PCDM_SequenceNodeOfSequenceOfReference {
 	~Handle_PCDM_SequenceNodeOfSequenceOfReference() {
-	printf("Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfReference\n");}
 	}
 };
 
@@ -154,7 +157,7 @@ class Handle_PCDM_Document : public Handle_Standard_Persistent {
 };
 %extend Handle_PCDM_Document {
 	~Handle_PCDM_Document() {
-	printf("Call custom destructor for instance of Handle_PCDM_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Document\n");}
 	}
 };
 
@@ -178,7 +181,7 @@ class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_S
 };
 %extend Handle_PCDM_SequenceNodeOfSequenceOfDocument {
 	~Handle_PCDM_SequenceNodeOfSequenceOfDocument() {
-	printf("Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfDocument\n");}
 	}
 };
 
@@ -202,7 +205,7 @@ class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 };
 %extend Handle_PCDM_ReadWriter {
 	~Handle_PCDM_ReadWriter() {
-	printf("Call custom destructor for instance of Handle_PCDM_ReadWriter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_ReadWriter\n");}
 	}
 };
 
@@ -226,7 +229,7 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 };
 %extend Handle_PCDM_ReadWriter_1 {
 	~Handle_PCDM_ReadWriter_1() {
-	printf("Call custom destructor for instance of Handle_PCDM_ReadWriter_1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_ReadWriter_1\n");}
 	}
 };
 
@@ -250,7 +253,7 @@ class Handle_PCDM_Reader : public Handle_Standard_Transient {
 };
 %extend Handle_PCDM_Reader {
 	~Handle_PCDM_Reader() {
-	printf("Call custom destructor for instance of Handle_PCDM_Reader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Reader\n");}
 	}
 };
 
@@ -274,7 +277,7 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 };
 %extend Handle_PCDM_RetrievalDriver {
 	~Handle_PCDM_RetrievalDriver() {
-	printf("Call custom destructor for instance of Handle_PCDM_RetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_RetrievalDriver\n");}
 	}
 };
 
@@ -298,7 +301,7 @@ class Handle_PCDM_Writer : public Handle_Standard_Transient {
 };
 %extend Handle_PCDM_Writer {
 	~Handle_PCDM_Writer() {
-	printf("Call custom destructor for instance of Handle_PCDM_Writer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Writer\n");}
 	}
 };
 
@@ -322,7 +325,7 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 };
 %extend Handle_PCDM_ReferenceIterator {
 	~Handle_PCDM_ReferenceIterator() {
-	printf("Call custom destructor for instance of Handle_PCDM_ReferenceIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_ReferenceIterator\n");}
 	}
 };
 
@@ -346,7 +349,7 @@ class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 };
 %extend Handle_PCDM_StorageDriver {
 	~Handle_PCDM_StorageDriver() {
-	printf("Call custom destructor for instance of Handle_PCDM_StorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_StorageDriver\n");}
 	}
 };
 
@@ -370,7 +373,7 @@ class Handle_PCDM_DriverError : public Handle_Standard_Failure {
 };
 %extend Handle_PCDM_DriverError {
 	~Handle_PCDM_DriverError() {
-	printf("Call custom destructor for instance of Handle_PCDM_DriverError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDM_DriverError\n");}
 	}
 };
 
@@ -394,7 +397,7 @@ class PCDM_Reader : public Standard_Transient {
 };
 %extend PCDM_Reader {
 	~PCDM_Reader() {
-	printf("Call custom destructor for instance of PCDM_Reader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_Reader\n");}
 	}
 };
 
@@ -426,7 +429,7 @@ class PCDM_RetrievalDriver : public PCDM_Reader {
 };
 %extend PCDM_RetrievalDriver {
 	~PCDM_RetrievalDriver() {
-	printf("Call custom destructor for instance of PCDM_RetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_RetrievalDriver\n");}
 	}
 };
 
@@ -446,7 +449,7 @@ class PCDM_Writer : public Standard_Transient {
 };
 %extend PCDM_Writer {
 	~PCDM_Writer() {
-	printf("Call custom destructor for instance of PCDM_Writer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_Writer\n");}
 	}
 };
 
@@ -468,7 +471,7 @@ class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 };
 %extend PCDM_SequenceNodeOfSequenceOfReference {
 	~PCDM_SequenceNodeOfSequenceOfReference() {
-	printf("Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfReference\n");}
 	}
 };
 
@@ -489,7 +492,7 @@ class PCDM_Reference {
 };
 %extend PCDM_Reference {
 	~PCDM_Reference() {
-	printf("Call custom destructor for instance of PCDM_Reference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_Reference\n");}
 	}
 };
 
@@ -506,7 +509,7 @@ class PCDM {
 };
 %extend PCDM {
 	~PCDM() {
-	printf("Call custom destructor for instance of PCDM\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM\n");}
 	}
 };
 
@@ -559,7 +562,7 @@ class PCDM_SequenceOfDocument : public TCollection_BaseSequence {
 };
 %extend PCDM_SequenceOfDocument {
 	~PCDM_SequenceOfDocument() {
-	printf("Call custom destructor for instance of PCDM_SequenceOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_SequenceOfDocument\n");}
 	}
 };
 
@@ -612,7 +615,7 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 };
 %extend PCDM_SequenceOfReference {
 	~PCDM_SequenceOfReference() {
-	printf("Call custom destructor for instance of PCDM_SequenceOfReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_SequenceOfReference\n");}
 	}
 };
 
@@ -636,7 +639,7 @@ class PCDM_ReferenceIterator : public Standard_Transient {
 };
 %extend PCDM_ReferenceIterator {
 	~PCDM_ReferenceIterator() {
-	printf("Call custom destructor for instance of PCDM_ReferenceIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_ReferenceIterator\n");}
 	}
 };
 
@@ -664,7 +667,7 @@ class PCDM_DriverError : public Standard_Failure {
 };
 %extend PCDM_DriverError {
 	~PCDM_DriverError() {
-	printf("Call custom destructor for instance of PCDM_DriverError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_DriverError\n");}
 	}
 };
 
@@ -710,7 +713,7 @@ class PCDM_ReadWriter : public Standard_Transient {
 };
 %extend PCDM_ReadWriter {
 	~PCDM_ReadWriter() {
-	printf("Call custom destructor for instance of PCDM_ReadWriter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_ReadWriter\n");}
 	}
 };
 
@@ -732,7 +735,7 @@ class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 };
 %extend PCDM_SequenceNodeOfSequenceOfDocument {
 	~PCDM_SequenceNodeOfSequenceOfDocument() {
-	printf("Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfDocument\n");}
 	}
 };
 
@@ -770,7 +773,7 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 };
 %extend PCDM_ReadWriter_1 {
 	~PCDM_ReadWriter_1() {
-	printf("Call custom destructor for instance of PCDM_ReadWriter_1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_ReadWriter_1\n");}
 	}
 };
 
@@ -792,6 +795,6 @@ class PCDM_Document : public Standard_Persistent {
 };
 %extend PCDM_Document {
 	~PCDM_Document() {
-	printf("Call custom destructor for instance of PCDM_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDM_Document\n");}
 	}
 };

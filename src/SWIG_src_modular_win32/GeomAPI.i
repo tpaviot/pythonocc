@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -117,7 +120,7 @@ class GeomAPI_ExtremaSurfaceSurface {
 };
 %extend GeomAPI_ExtremaSurfaceSurface {
 	~GeomAPI_ExtremaSurfaceSurface() {
-	printf("Call custom destructor for instance of GeomAPI_ExtremaSurfaceSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaSurfaceSurface\n");}
 	}
 };
 
@@ -148,7 +151,7 @@ class GeomAPI_IntCS {
 };
 %extend GeomAPI_IntCS {
 	~GeomAPI_IntCS() {
-	printf("Call custom destructor for instance of GeomAPI_IntCS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_IntCS\n");}
 	}
 };
 
@@ -173,7 +176,7 @@ class GeomAPI_Interpolate {
 };
 %extend GeomAPI_Interpolate {
 	~GeomAPI_Interpolate() {
-	printf("Call custom destructor for instance of GeomAPI_Interpolate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_Interpolate\n");}
 	}
 };
 
@@ -216,7 +219,7 @@ class GeomAPI_ExtremaCurveCurve {
 };
 %extend GeomAPI_ExtremaCurveCurve {
 	~GeomAPI_ExtremaCurveCurve() {
-	printf("Call custom destructor for instance of GeomAPI_ExtremaCurveCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveCurve\n");}
 	}
 };
 
@@ -253,7 +256,7 @@ class GeomAPI_ExtremaCurveSurface {
 };
 %extend GeomAPI_ExtremaCurveSurface {
 	~GeomAPI_ExtremaCurveSurface() {
-	printf("Call custom destructor for instance of GeomAPI_ExtremaCurveSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveSurface\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class GeomAPI_ProjectPointOnCurve {
 };
 %extend GeomAPI_ProjectPointOnCurve {
 	~GeomAPI_ProjectPointOnCurve() {
-	printf("Call custom destructor for instance of GeomAPI_ProjectPointOnCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_ProjectPointOnCurve\n");}
 	}
 };
 
@@ -319,7 +322,7 @@ class GeomAPI_PointsToBSpline {
 };
 %extend GeomAPI_PointsToBSpline {
 	~GeomAPI_PointsToBSpline() {
-	printf("Call custom destructor for instance of GeomAPI_PointsToBSpline\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSpline\n");}
 	}
 };
 
@@ -372,7 +375,7 @@ class GeomAPI_ProjectPointOnSurf {
 };
 %extend GeomAPI_ProjectPointOnSurf {
 	~GeomAPI_ProjectPointOnSurf() {
-	printf("Call custom destructor for instance of GeomAPI_ProjectPointOnSurf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_ProjectPointOnSurf\n");}
 	}
 };
 
@@ -399,7 +402,7 @@ class GeomAPI_PointsToBSplineSurface {
 };
 %extend GeomAPI_PointsToBSplineSurface {
 	~GeomAPI_PointsToBSplineSurface() {
-	printf("Call custom destructor for instance of GeomAPI_PointsToBSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSplineSurface\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class GeomAPI {
 };
 %extend GeomAPI {
 	~GeomAPI() {
-	printf("Call custom destructor for instance of GeomAPI\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI\n");}
 	}
 };
 
@@ -439,6 +442,6 @@ class GeomAPI_IntSS {
 };
 %extend GeomAPI_IntSS {
 	~GeomAPI_IntSS() {
-	printf("Call custom destructor for instance of GeomAPI_IntSS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomAPI_IntSS\n");}
 	}
 };

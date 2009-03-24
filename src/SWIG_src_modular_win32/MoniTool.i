@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -118,7 +121,7 @@ class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_SignText {
 	~Handle_MoniTool_SignText() {
-	printf("Call custom destructor for instance of Handle_MoniTool_SignText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_SignText\n");}
 	}
 };
 
@@ -142,7 +145,7 @@ class Handle_MoniTool_CaseData : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_CaseData {
 	~Handle_MoniTool_CaseData() {
-	printf("Call custom destructor for instance of Handle_MoniTool_CaseData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_CaseData\n");}
 	}
 };
 
@@ -166,7 +169,7 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfTimer : public Handle_TCollection_Ma
 };
 %extend Handle_MoniTool_DataMapNodeOfDataMapOfTimer {
 	~Handle_MoniTool_DataMapNodeOfDataMapOfTimer() {
-	printf("Call custom destructor for instance of Handle_MoniTool_DataMapNodeOfDataMapOfTimer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_DataMapNodeOfDataMapOfTimer\n");}
 	}
 };
 
@@ -190,7 +193,7 @@ class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_IntVal {
 	~Handle_MoniTool_IntVal() {
-	printf("Call custom destructor for instance of Handle_MoniTool_IntVal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_IntVal\n");}
 	}
 };
 
@@ -214,7 +217,7 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TColl
 };
 %extend Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient {
 	~Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient() {
-	printf("Call custom destructor for instance of Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");}
 	}
 };
 
@@ -238,7 +241,7 @@ class Handle_MoniTool_RealVal : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_RealVal {
 	~Handle_MoniTool_RealVal() {
-	printf("Call custom destructor for instance of Handle_MoniTool_RealVal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_RealVal\n");}
 	}
 };
 
@@ -262,7 +265,7 @@ class Handle_MoniTool_Element : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_Element {
 	~Handle_MoniTool_Element() {
-	printf("Call custom destructor for instance of Handle_MoniTool_Element\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Element\n");}
 	}
 };
 
@@ -286,7 +289,7 @@ class Handle_MoniTool_TransientElem : public Handle_MoniTool_Element {
 };
 %extend Handle_MoniTool_TransientElem {
 	~Handle_MoniTool_TransientElem() {
-	printf("Call custom destructor for instance of Handle_MoniTool_TransientElem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_TransientElem\n");}
 	}
 };
 
@@ -310,7 +313,7 @@ class Handle_MoniTool_Profile : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_Profile {
 	~Handle_MoniTool_Profile() {
-	printf("Call custom destructor for instance of Handle_MoniTool_Profile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Profile\n");}
 	}
 };
 
@@ -334,7 +337,7 @@ class Handle_MoniTool_SequenceNodeOfSequenceOfElement : public Handle_TCollectio
 };
 %extend Handle_MoniTool_SequenceNodeOfSequenceOfElement {
 	~Handle_MoniTool_SequenceNodeOfSequenceOfElement() {
-	printf("Call custom destructor for instance of Handle_MoniTool_SequenceNodeOfSequenceOfElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_SequenceNodeOfSequenceOfElement\n");}
 	}
 };
 
@@ -358,7 +361,7 @@ class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_Timer {
 	~Handle_MoniTool_Timer() {
-	printf("Call custom destructor for instance of Handle_MoniTool_Timer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Timer\n");}
 	}
 };
 
@@ -382,7 +385,7 @@ class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_TypedValue {
 	~Handle_MoniTool_TypedValue() {
-	printf("Call custom destructor for instance of Handle_MoniTool_TypedValue\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_TypedValue\n");}
 	}
 };
 
@@ -406,7 +409,7 @@ class Handle_MoniTool_Option : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_Option {
 	~Handle_MoniTool_Option() {
-	printf("Call custom destructor for instance of Handle_MoniTool_Option\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Option\n");}
 	}
 };
 
@@ -430,7 +433,7 @@ class Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : publi
 };
 %extend Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
 	~Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient() {
-	printf("Call custom destructor for instance of Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");}
 	}
 };
 
@@ -454,7 +457,7 @@ class Handle_MoniTool_SignShape : public Handle_MoniTool_SignText {
 };
 %extend Handle_MoniTool_SignShape {
 	~Handle_MoniTool_SignShape() {
-	printf("Call custom destructor for instance of Handle_MoniTool_SignShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_SignShape\n");}
 	}
 };
 
@@ -478,7 +481,7 @@ class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
 };
 %extend Handle_MoniTool_HSequenceOfElement {
 	~Handle_MoniTool_HSequenceOfElement() {
-	printf("Call custom destructor for instance of Handle_MoniTool_HSequenceOfElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_HSequenceOfElement\n");}
 	}
 };
 
@@ -502,7 +505,7 @@ class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode
 };
 %extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
 	~MoniTool_DataMapNodeOfDataMapOfShapeTransient() {
-	printf("Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");}
 	}
 };
 
@@ -566,7 +569,7 @@ class MoniTool_HSequenceOfElement : public MMgt_TShared {
 };
 %extend MoniTool_HSequenceOfElement {
 	~MoniTool_HSequenceOfElement() {
-	printf("Call custom destructor for instance of MoniTool_HSequenceOfElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_HSequenceOfElement\n");}
 	}
 };
 
@@ -583,7 +586,7 @@ class MoniTool_ElemHasher {
 };
 %extend MoniTool_ElemHasher {
 	~MoniTool_ElemHasher() {
-	printf("Call custom destructor for instance of MoniTool_ElemHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_ElemHasher\n");}
 	}
 };
 
@@ -639,7 +642,7 @@ class MoniTool_Timer : public MMgt_TShared {
 };
 %extend MoniTool_Timer {
 	~MoniTool_Timer() {
-	printf("Call custom destructor for instance of MoniTool_Timer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_Timer\n");}
 	}
 };
 
@@ -661,7 +664,7 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 };
 %extend MoniTool_SequenceNodeOfSequenceOfElement {
 	~MoniTool_SequenceNodeOfSequenceOfElement() {
-	printf("Call custom destructor for instance of MoniTool_SequenceNodeOfSequenceOfElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_SequenceNodeOfSequenceOfElement\n");}
 	}
 };
 
@@ -729,7 +732,7 @@ class MoniTool_Profile : public MMgt_TShared {
 };
 %extend MoniTool_Profile {
 	~MoniTool_Profile() {
-	printf("Call custom destructor for instance of MoniTool_Profile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_Profile\n");}
 	}
 };
 
@@ -762,7 +765,7 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 };
 %extend MoniTool_DataMapOfShapeTransient {
 	~MoniTool_DataMapOfShapeTransient() {
-	printf("Call custom destructor for instance of MoniTool_DataMapOfShapeTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapOfShapeTransient\n");}
 	}
 };
 
@@ -783,7 +786,7 @@ class MoniTool_TimerSentry {
 };
 %extend MoniTool_TimerSentry {
 	~MoniTool_TimerSentry() {
-	printf("Call custom destructor for instance of MoniTool_TimerSentry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_TimerSentry\n");}
 	}
 };
 
@@ -807,7 +810,7 @@ class MoniTool_IntVal : public MMgt_TShared {
 };
 %extend MoniTool_IntVal {
 	~MoniTool_IntVal() {
-	printf("Call custom destructor for instance of MoniTool_IntVal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_IntVal\n");}
 	}
 };
 
@@ -831,7 +834,7 @@ class MoniTool_RealVal : public MMgt_TShared {
 };
 %extend MoniTool_RealVal {
 	~MoniTool_RealVal() {
-	printf("Call custom destructor for instance of MoniTool_RealVal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_RealVal\n");}
 	}
 };
 
@@ -852,7 +855,7 @@ class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_Bas
 };
 %extend MoniTool_DataMapIteratorOfDataMapOfShapeTransient {
 	~MoniTool_DataMapIteratorOfDataMapOfShapeTransient() {
-	printf("Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfShapeTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfShapeTransient\n");}
 	}
 };
 
@@ -882,7 +885,7 @@ class MoniTool_Element : public MMgt_TShared {
 };
 %extend MoniTool_Element {
 	~MoniTool_Element() {
-	printf("Call custom destructor for instance of MoniTool_Element\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_Element\n");}
 	}
 };
 
@@ -910,7 +913,7 @@ class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TColl
 };
 %extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
 	~MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient() {
-	printf("Call custom destructor for instance of MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");}
 	}
 };
 
@@ -1020,7 +1023,7 @@ class MoniTool_CaseData : public MMgt_TShared {
 };
 %extend MoniTool_CaseData {
 	~MoniTool_CaseData() {
-	printf("Call custom destructor for instance of MoniTool_CaseData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_CaseData\n");}
 	}
 };
 
@@ -1037,7 +1040,7 @@ class MoniTool_DataInfo {
 };
 %extend MoniTool_DataInfo {
 	~MoniTool_DataInfo() {
-	printf("Call custom destructor for instance of MoniTool_DataInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_DataInfo\n");}
 	}
 };
 
@@ -1054,7 +1057,7 @@ class MoniTool_MTHasher {
 };
 %extend MoniTool_MTHasher {
 	~MoniTool_MTHasher() {
-	printf("Call custom destructor for instance of MoniTool_MTHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_MTHasher\n");}
 	}
 };
 
@@ -1082,7 +1085,7 @@ class MoniTool_TransientElem : public MoniTool_Element {
 };
 %extend MoniTool_TransientElem {
 	~MoniTool_TransientElem() {
-	printf("Call custom destructor for instance of MoniTool_TransientElem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_TransientElem\n");}
 	}
 };
 
@@ -1200,7 +1203,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 };
 %extend MoniTool_TypedValue {
 	~MoniTool_TypedValue() {
-	printf("Call custom destructor for instance of MoniTool_TypedValue\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_TypedValue\n");}
 	}
 };
 
@@ -1224,7 +1227,7 @@ class MoniTool_SignText : public MMgt_TShared {
 };
 %extend MoniTool_SignText {
 	~MoniTool_SignText() {
-	printf("Call custom destructor for instance of MoniTool_SignText\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_SignText\n");}
 	}
 };
 
@@ -1242,7 +1245,7 @@ class MoniTool_SignShape : public MoniTool_SignText {
 };
 %extend MoniTool_SignShape {
 	~MoniTool_SignShape() {
-	printf("Call custom destructor for instance of MoniTool_SignShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_SignShape\n");}
 	}
 };
 
@@ -1266,7 +1269,7 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 };
 %extend MoniTool_DataMapNodeOfDataMapOfTimer {
 	~MoniTool_DataMapNodeOfDataMapOfTimer() {
-	printf("Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfTimer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfTimer\n");}
 	}
 };
 
@@ -1293,7 +1296,7 @@ class MoniTool_OptValue {
 };
 %extend MoniTool_OptValue {
 	~MoniTool_OptValue() {
-	printf("Call custom destructor for instance of MoniTool_OptValue\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_OptValue\n");}
 	}
 };
 
@@ -1326,7 +1329,7 @@ class MoniTool_Stat {
 };
 %extend MoniTool_Stat {
 	~MoniTool_Stat() {
-	printf("Call custom destructor for instance of MoniTool_Stat\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_Stat\n");}
 	}
 };
 
@@ -1369,7 +1372,7 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 };
 %extend MoniTool_IndexedDataMapOfShapeTransient {
 	~MoniTool_IndexedDataMapOfShapeTransient() {
-	printf("Call custom destructor for instance of MoniTool_IndexedDataMapOfShapeTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_IndexedDataMapOfShapeTransient\n");}
 	}
 };
 
@@ -1416,7 +1419,7 @@ class MoniTool_AttrList {
 };
 %extend MoniTool_AttrList {
 	~MoniTool_AttrList() {
-	printf("Call custom destructor for instance of MoniTool_AttrList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_AttrList\n");}
 	}
 };
 
@@ -1469,7 +1472,7 @@ class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
 };
 %extend MoniTool_SequenceOfElement {
 	~MoniTool_SequenceOfElement() {
-	printf("Call custom destructor for instance of MoniTool_SequenceOfElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_SequenceOfElement\n");}
 	}
 };
 
@@ -1502,7 +1505,7 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 };
 %extend MoniTool_DataMapOfTimer {
 	~MoniTool_DataMapOfTimer() {
-	printf("Call custom destructor for instance of MoniTool_DataMapOfTimer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapOfTimer\n");}
 	}
 };
 
@@ -1552,7 +1555,7 @@ class MoniTool_Option : public MMgt_TShared {
 };
 %extend MoniTool_Option {
 	~MoniTool_Option() {
-	printf("Call custom destructor for instance of MoniTool_Option\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_Option\n");}
 	}
 };
 
@@ -1573,6 +1576,6 @@ class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIter
 };
 %extend MoniTool_DataMapIteratorOfDataMapOfTimer {
 	~MoniTool_DataMapIteratorOfDataMapOfTimer() {
-	printf("Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfTimer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapIteratorOfDataMapOfTimer\n");}
 	}
 };

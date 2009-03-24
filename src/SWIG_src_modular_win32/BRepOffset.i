@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -134,7 +137,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollect
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal {
 	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal() {
-	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");}
 	}
 };
 
@@ -158,7 +161,7 @@ class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_Map
 };
 %extend Handle_BRepOffset_ListNodeOfListOfInterval {
 	~Handle_BRepOffset_ListNodeOfListOfInterval() {
-	printf("Call custom destructor for instance of Handle_BRepOffset_ListNodeOfListOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_ListNodeOfListOfInterval\n");}
 	}
 };
 
@@ -182,7 +185,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TC
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
 	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
-	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");}
 	}
 };
 
@@ -206,7 +209,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TColle
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
 	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
-	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");}
 	}
 };
 
@@ -230,7 +233,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handl
 };
 %extend Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	~Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval() {
-	printf("Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");}
 	}
 };
 
@@ -263,7 +266,7 @@ class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
 };
 %extend BRepOffset_DataMapOfShapeMapOfShape {
 	~BRepOffset_DataMapOfShapeMapOfShape() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapOfShapeMapOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapOfShapeMapOfShape\n");}
 	}
 };
 
@@ -304,7 +307,7 @@ class BRepOffset_Analyse {
 };
 %extend BRepOffset_Analyse {
 	~BRepOffset_Analyse() {
-	printf("Call custom destructor for instance of BRepOffset_Analyse\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_Analyse\n");}
 	}
 };
 
@@ -325,7 +328,7 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicM
 };
 %extend BRepOffset_DataMapIteratorOfDataMapOfShapeReal {
 	~BRepOffset_DataMapIteratorOfDataMapOfShapeReal() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeReal\n");}
 	}
 };
 
@@ -348,7 +351,7 @@ class BRepOffset_ListIteratorOfListOfInterval {
 };
 %extend BRepOffset_ListIteratorOfListOfInterval {
 	~BRepOffset_ListIteratorOfListOfInterval() {
-	printf("Call custom destructor for instance of BRepOffset_ListIteratorOfListOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_ListIteratorOfListOfInterval\n");}
 	}
 };
 
@@ -369,7 +372,7 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_Basi
 };
 %extend BRepOffset_DataMapIteratorOfDataMapOfShapeOffset {
 	~BRepOffset_DataMapIteratorOfDataMapOfShapeOffset() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeOffset\n");}
 	}
 };
 
@@ -410,7 +413,7 @@ class BRepOffset_MakeOffset {
 };
 %extend BRepOffset_MakeOffset {
 	~BRepOffset_MakeOffset() {
-	printf("Call custom destructor for instance of BRepOffset_MakeOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_MakeOffset\n");}
 	}
 };
 
@@ -459,7 +462,7 @@ class BRepOffset_ListOfInterval {
 };
 %extend BRepOffset_ListOfInterval {
 	~BRepOffset_ListOfInterval() {
-	printf("Call custom destructor for instance of BRepOffset_ListOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_ListOfInterval\n");}
 	}
 };
 
@@ -492,7 +495,7 @@ class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
 };
 %extend BRepOffset_DataMapOfShapeReal {
 	~BRepOffset_DataMapOfShapeReal() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapOfShapeReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapOfShapeReal\n");}
 	}
 };
 
@@ -507,7 +510,7 @@ class BRepOffset {
 };
 %extend BRepOffset {
 	~BRepOffset() {
-	printf("Call custom destructor for instance of BRepOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset\n");}
 	}
 };
 
@@ -540,7 +543,7 @@ class BRepOffset_DataMapOfShapeListOfInterval : public TCollection_BasicMap {
 };
 %extend BRepOffset_DataMapOfShapeListOfInterval {
 	~BRepOffset_DataMapOfShapeListOfInterval() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapOfShapeListOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapOfShapeListOfInterval\n");}
 	}
 };
 
@@ -564,7 +567,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	~BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");}
 	}
 };
 
@@ -588,7 +591,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
 	~BRepOffset_DataMapNodeOfDataMapOfShapeReal() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeReal\n");}
 	}
 };
 
@@ -609,7 +612,7 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollect
 };
 %extend BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval {
 	~BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval\n");}
 	}
 };
 
@@ -636,7 +639,7 @@ class BRepOffset_Interval {
 };
 %extend BRepOffset_Interval {
 	~BRepOffset_Interval() {
-	printf("Call custom destructor for instance of BRepOffset_Interval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_Interval\n");}
 	}
 };
 
@@ -658,7 +661,7 @@ class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 };
 %extend BRepOffset_ListNodeOfListOfInterval {
 	~BRepOffset_ListNodeOfListOfInterval() {
-	printf("Call custom destructor for instance of BRepOffset_ListNodeOfListOfInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_ListNodeOfListOfInterval\n");}
 	}
 };
 
@@ -691,7 +694,7 @@ class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
 };
 %extend BRepOffset_DataMapOfShapeOffset {
 	~BRepOffset_DataMapOfShapeOffset() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapOfShapeOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapOfShapeOffset\n");}
 	}
 };
 
@@ -710,7 +713,7 @@ class BRepOffset_MakeLoops {
 };
 %extend BRepOffset_MakeLoops {
 	~BRepOffset_MakeLoops() {
-	printf("Call custom destructor for instance of BRepOffset_MakeLoops\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_MakeLoops\n");}
 	}
 };
 
@@ -731,7 +734,7 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_
 };
 %extend BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape {
 	~BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape\n");}
 	}
 };
 
@@ -755,7 +758,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
 	~BRepOffset_DataMapNodeOfDataMapOfShapeOffset() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");}
 	}
 };
 
@@ -802,7 +805,7 @@ class BRepOffset_Tool {
 };
 %extend BRepOffset_Tool {
 	~BRepOffset_Tool() {
-	printf("Call custom destructor for instance of BRepOffset_Tool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_Tool\n");}
 	}
 };
 
@@ -845,7 +848,7 @@ class BRepOffset_Offset {
 };
 %extend BRepOffset_Offset {
 	~BRepOffset_Offset() {
-	printf("Call custom destructor for instance of BRepOffset_Offset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_Offset\n");}
 	}
 };
 
@@ -869,7 +872,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapN
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
 	~BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape() {
-	printf("Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape\n");}
 	}
 };
 
@@ -886,7 +889,7 @@ class BRepOffset_Inter2d {
 };
 %extend BRepOffset_Inter2d {
 	~BRepOffset_Inter2d() {
-	printf("Call custom destructor for instance of BRepOffset_Inter2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_Inter2d\n");}
 	}
 };
 
@@ -923,6 +926,6 @@ class BRepOffset_Inter3d {
 };
 %extend BRepOffset_Inter3d {
 	~BRepOffset_Inter3d() {
-	printf("Call custom destructor for instance of BRepOffset_Inter3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffset_Inter3d\n");}
 	}
 };

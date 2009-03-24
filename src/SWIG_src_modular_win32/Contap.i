@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -118,7 +121,7 @@ class Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : publ
 };
 %extend Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
 	~Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour() {
-	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");}
 	}
 };
 
@@ -142,7 +145,7 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCo
 };
 %extend Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour {
 	~Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour() {
-	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");}
 	}
 };
 
@@ -166,7 +169,7 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TC
 };
 %extend Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour {
 	~Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour() {
-	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");}
 	}
 };
 
@@ -190,7 +193,7 @@ class Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : publi
 };
 %extend Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
 	~Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour() {
-	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");}
 	}
 };
 
@@ -214,7 +217,7 @@ class Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public
 };
 %extend Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
 	~Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour() {
-	printf("Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");}
 	}
 };
 
@@ -238,7 +241,7 @@ class Handle_Contap_TheIWLineOfTheIWalkingOfContour : public Handle_MMgt_TShared
 };
 %extend Handle_Contap_TheIWLineOfTheIWalkingOfContour {
 	~Handle_Contap_TheIWLineOfTheIWalkingOfContour() {
-	printf("Call custom destructor for instance of Handle_Contap_TheIWLineOfTheIWalkingOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Contap_TheIWLineOfTheIWalkingOfContour\n");}
 	}
 };
 
@@ -262,7 +265,7 @@ class Handle_Contap_TheHSequenceOfPointOfContour : public Handle_MMgt_TShared {
 };
 %extend Handle_Contap_TheHSequenceOfPointOfContour {
 	~Handle_Contap_TheHSequenceOfPointOfContour() {
-	printf("Call custom destructor for instance of Handle_Contap_TheHSequenceOfPointOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Contap_TheHSequenceOfPointOfContour\n");}
 	}
 };
 
@@ -284,7 +287,7 @@ class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCol
 };
 %extend Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
 	~Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour() {
-	printf("Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");}
 	}
 };
 
@@ -341,7 +344,7 @@ class Contap_TheSurfFunctionOfContour : public math_FunctionSetWithDerivatives {
 };
 %extend Contap_TheSurfFunctionOfContour {
 	~Contap_TheSurfFunctionOfContour() {
-	printf("Call custom destructor for instance of Contap_TheSurfFunctionOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheSurfFunctionOfContour\n");}
 	}
 };
 
@@ -394,7 +397,7 @@ class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
 };
 %extend Contap_TheSequenceOfPointOfContour {
 	~Contap_TheSequenceOfPointOfContour() {
-	printf("Call custom destructor for instance of Contap_TheSequenceOfPointOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheSequenceOfPointOfContour\n");}
 	}
 };
 
@@ -485,7 +488,7 @@ class Contap_HSurfaceTool {
 };
 %extend Contap_HSurfaceTool {
 	~Contap_HSurfaceTool() {
-	printf("Call custom destructor for instance of Contap_HSurfaceTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_HSurfaceTool\n");}
 	}
 };
 
@@ -538,7 +541,7 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 };
 %extend Contap_SequenceOfSegmentOfTheSearchOfContour {
 	~Contap_SequenceOfSegmentOfTheSearchOfContour() {
-	printf("Call custom destructor for instance of Contap_SequenceOfSegmentOfTheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfSegmentOfTheSearchOfContour\n");}
 	}
 };
 
@@ -565,7 +568,7 @@ class Contap_TheSegmentOfTheSearchOfContour {
 };
 %extend Contap_TheSegmentOfTheSearchOfContour {
 	~Contap_TheSegmentOfTheSearchOfContour() {
-	printf("Call custom destructor for instance of Contap_TheSegmentOfTheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheSegmentOfTheSearchOfContour\n");}
 	}
 };
 
@@ -592,7 +595,7 @@ class Contap_TheSearchOfContour {
 };
 %extend Contap_TheSearchOfContour {
 	~Contap_TheSearchOfContour() {
-	printf("Call custom destructor for instance of Contap_TheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheSearchOfContour\n");}
 	}
 };
 
@@ -611,7 +614,7 @@ class Contap_TheSurfPropsOfContour {
 };
 %extend Contap_TheSurfPropsOfContour {
 	~Contap_TheSurfPropsOfContour() {
-	printf("Call custom destructor for instance of Contap_TheSurfPropsOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheSurfPropsOfContour\n");}
 	}
 };
 
@@ -675,7 +678,7 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 };
 %extend Contap_TheHSequenceOfPointOfContour {
 	~Contap_TheHSequenceOfPointOfContour() {
-	printf("Call custom destructor for instance of Contap_TheHSequenceOfPointOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheHSequenceOfPointOfContour\n");}
 	}
 };
 
@@ -724,7 +727,7 @@ class Contap_Contour {
 };
 %extend Contap_Contour {
 	~Contap_Contour() {
-	printf("Call custom destructor for instance of Contap_Contour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_Contour\n");}
 	}
 };
 
@@ -775,7 +778,7 @@ class Contap_TheLineOfContour {
 };
 %extend Contap_TheLineOfContour {
 	~Contap_TheLineOfContour() {
-	printf("Call custom destructor for instance of Contap_TheLineOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheLineOfContour\n");}
 	}
 };
 
@@ -828,7 +831,7 @@ class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSe
 };
 %extend Contap_SequenceOfPathPointOfTheSearchOfContour {
 	~Contap_SequenceOfPathPointOfTheSearchOfContour() {
-	printf("Call custom destructor for instance of Contap_SequenceOfPathPointOfTheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfPathPointOfTheSearchOfContour\n");}
 	}
 };
 
@@ -850,7 +853,7 @@ class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TColl
 };
 %extend Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
 	~Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour() {
-	printf("Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");}
 	}
 };
 
@@ -872,7 +875,7 @@ class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNo
 };
 %extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
 	~Contap_SequenceNodeOfTheSequenceOfLineOfContour() {
-	printf("Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");}
 	}
 };
 
@@ -946,7 +949,7 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 };
 %extend Contap_TheIWLineOfTheIWalkingOfContour {
 	~Contap_TheIWLineOfTheIWalkingOfContour() {
-	printf("Call custom destructor for instance of Contap_TheIWLineOfTheIWalkingOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheIWLineOfTheIWalkingOfContour\n");}
 	}
 };
 
@@ -987,7 +990,7 @@ class Contap_ContAna {
 };
 %extend Contap_ContAna {
 	~Contap_ContAna() {
-	printf("Call custom destructor for instance of Contap_ContAna\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_ContAna\n");}
 	}
 };
 
@@ -1036,7 +1039,7 @@ class Contap_HContTool {
 };
 %extend Contap_HContTool {
 	~Contap_HContTool() {
-	printf("Call custom destructor for instance of Contap_HContTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_HContTool\n");}
 	}
 };
 
@@ -1089,7 +1092,7 @@ class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSeq
 };
 %extend Contap_SequenceOfIWLineOfTheIWalkingOfContour {
 	~Contap_SequenceOfIWLineOfTheIWalkingOfContour() {
-	printf("Call custom destructor for instance of Contap_SequenceOfIWLineOfTheIWalkingOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfIWLineOfTheIWalkingOfContour\n");}
 	}
 };
 
@@ -1122,7 +1125,7 @@ class Contap_ThePathPointOfTheSearchOfContour {
 };
 %extend Contap_ThePathPointOfTheSearchOfContour {
 	~Contap_ThePathPointOfTheSearchOfContour() {
-	printf("Call custom destructor for instance of Contap_ThePathPointOfTheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_ThePathPointOfTheSearchOfContour\n");}
 	}
 };
 
@@ -1147,7 +1150,7 @@ class Contap_TheSearchInsideOfContour {
 };
 %extend Contap_TheSearchInsideOfContour {
 	~Contap_TheSearchInsideOfContour() {
-	printf("Call custom destructor for instance of Contap_TheSearchInsideOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheSearchInsideOfContour\n");}
 	}
 };
 
@@ -1200,7 +1203,7 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 };
 %extend Contap_TheSequenceOfLineOfContour {
 	~Contap_TheSequenceOfLineOfContour() {
-	printf("Call custom destructor for instance of Contap_TheSequenceOfLineOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheSequenceOfLineOfContour\n");}
 	}
 };
 
@@ -1251,7 +1254,7 @@ class Contap_ThePointOfContour {
 };
 %extend Contap_ThePointOfContour {
 	~Contap_ThePointOfContour() {
-	printf("Call custom destructor for instance of Contap_ThePointOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_ThePointOfContour\n");}
 	}
 };
 
@@ -1273,7 +1276,7 @@ class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TColle
 };
 %extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
 	~Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour() {
-	printf("Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");}
 	}
 };
 
@@ -1295,7 +1298,7 @@ class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqN
 };
 %extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {
 	~Contap_SequenceNodeOfTheSequenceOfPointOfContour() {
-	printf("Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");}
 	}
 };
 
@@ -1334,7 +1337,7 @@ class Contap_TheArcFunctionOfContour : public math_FunctionWithDerivative {
 };
 %extend Contap_TheArcFunctionOfContour {
 	~Contap_TheArcFunctionOfContour() {
-	printf("Call custom destructor for instance of Contap_TheArcFunctionOfContour\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_TheArcFunctionOfContour\n");}
 	}
 };
 
@@ -1395,6 +1398,6 @@ class Contap_HCurve2dTool {
 };
 %extend Contap_HCurve2dTool {
 	~Contap_HCurve2dTool() {
-	printf("Call custom destructor for instance of Contap_HCurve2dTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Contap_HCurve2dTool\n");}
 	}
 };

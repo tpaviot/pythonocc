@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMFunction_GraphNodeDriver {
 	~Handle_XmlMFunction_GraphNodeDriver() {
-	printf("Call custom destructor for instance of Handle_XmlMFunction_GraphNodeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_GraphNodeDriver\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMFunction_FunctionDriver {
 	~Handle_XmlMFunction_FunctionDriver() {
-	printf("Call custom destructor for instance of Handle_XmlMFunction_FunctionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_FunctionDriver\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_XmlMFunction_ScopeDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMFunction_ScopeDriver {
 	~Handle_XmlMFunction_ScopeDriver() {
-	printf("Call custom destructor for instance of Handle_XmlMFunction_ScopeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_ScopeDriver\n");}
 	}
 };
 
@@ -178,7 +181,7 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_ScopeDriver {
 	~XmlMFunction_ScopeDriver() {
-	printf("Call custom destructor for instance of XmlMFunction_ScopeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMFunction_ScopeDriver\n");}
 	}
 };
 
@@ -193,7 +196,7 @@ class XmlMFunction {
 };
 %extend XmlMFunction {
 	~XmlMFunction() {
-	printf("Call custom destructor for instance of XmlMFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMFunction\n");}
 	}
 };
 
@@ -219,7 +222,7 @@ class XmlMFunction_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_GraphNodeDriver {
 	~XmlMFunction_GraphNodeDriver() {
-	printf("Call custom destructor for instance of XmlMFunction_GraphNodeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMFunction_GraphNodeDriver\n");}
 	}
 };
 
@@ -245,6 +248,6 @@ class XmlMFunction_FunctionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_FunctionDriver {
 	~XmlMFunction_FunctionDriver() {
-	printf("Call custom destructor for instance of XmlMFunction_FunctionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMFunction_FunctionDriver\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -139,7 +142,7 @@ class GeomLProp_SLProps {
 };
 %extend GeomLProp_SLProps {
 	~GeomLProp_SLProps() {
-	printf("Call custom destructor for instance of GeomLProp_SLProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp_SLProps\n");}
 	}
 };
 
@@ -178,7 +181,7 @@ class GeomLProp_CLProps {
 };
 %extend GeomLProp_CLProps {
 	~GeomLProp_CLProps() {
-	printf("Call custom destructor for instance of GeomLProp_CLProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp_CLProps\n");}
 	}
 };
 
@@ -195,7 +198,7 @@ class GeomLProp {
 };
 %extend GeomLProp {
 	~GeomLProp() {
-	printf("Call custom destructor for instance of GeomLProp\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp\n");}
 	}
 };
 
@@ -220,7 +223,7 @@ class GeomLProp_SurfaceTool {
 };
 %extend GeomLProp_SurfaceTool {
 	~GeomLProp_SurfaceTool() {
-	printf("Call custom destructor for instance of GeomLProp_SurfaceTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp_SurfaceTool\n");}
 	}
 };
 
@@ -247,6 +250,6 @@ class GeomLProp_CurveTool {
 };
 %extend GeomLProp_CurveTool {
 	~GeomLProp_CurveTool() {
-	printf("Call custom destructor for instance of GeomLProp_CurveTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp_CurveTool\n");}
 	}
 };

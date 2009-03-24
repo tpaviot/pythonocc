@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -112,7 +115,7 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 };
 %extend Handle_TCollection_SeqNode {
 	~Handle_TCollection_SeqNode() {
-	printf("Call custom destructor for instance of Handle_TCollection_SeqNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TCollection_SeqNode\n");}
 	}
 };
 
@@ -136,7 +139,7 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 };
 %extend Handle_TCollection_HExtendedString {
 	~Handle_TCollection_HExtendedString() {
-	printf("Call custom destructor for instance of Handle_TCollection_HExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TCollection_HExtendedString\n");}
 	}
 };
 
@@ -160,7 +163,7 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 };
 %extend Handle_TCollection_AVLBaseNode {
 	~Handle_TCollection_AVLBaseNode() {
-	printf("Call custom destructor for instance of Handle_TCollection_AVLBaseNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TCollection_AVLBaseNode\n");}
 	}
 };
 
@@ -184,7 +187,7 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 };
 %extend Handle_TCollection_HAsciiString {
 	~Handle_TCollection_HAsciiString() {
-	printf("Call custom destructor for instance of Handle_TCollection_HAsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TCollection_HAsciiString\n");}
 	}
 };
 
@@ -208,7 +211,7 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 };
 %extend Handle_TCollection_MapNode {
 	~Handle_TCollection_MapNode() {
-	printf("Call custom destructor for instance of Handle_TCollection_MapNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TCollection_MapNode\n");}
 	}
 };
 
@@ -419,7 +422,7 @@ class TCollection_AsciiString {
 };
 %extend TCollection_AsciiString {
 	~TCollection_AsciiString() {
-	printf("Call custom destructor for instance of TCollection_AsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_AsciiString\n");}
 	}
 };
 
@@ -434,7 +437,7 @@ class TCollection {
 };
 %extend TCollection {
 	~TCollection() {
-	printf("Call custom destructor for instance of TCollection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection\n");}
 	}
 };
 
@@ -456,7 +459,7 @@ class TCollection_MapNode : public MMgt_TShared {
 };
 %extend TCollection_MapNode {
 	~TCollection_MapNode() {
-	printf("Call custom destructor for instance of TCollection_MapNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_MapNode\n");}
 	}
 };
 
@@ -475,7 +478,7 @@ class TCollection_PrivCompareOfInteger {
 };
 %extend TCollection_PrivCompareOfInteger {
 	~TCollection_PrivCompareOfInteger() {
-	printf("Call custom destructor for instance of TCollection_PrivCompareOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_PrivCompareOfInteger\n");}
 	}
 };
 
@@ -509,7 +512,7 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 };
 %extend TCollection_AVLBaseNode {
 	~TCollection_AVLBaseNode() {
-	printf("Call custom destructor for instance of TCollection_AVLBaseNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_AVLBaseNode\n");}
 	}
 };
 
@@ -526,7 +529,7 @@ class TCollection_BasicMapIterator {
 };
 %extend TCollection_BasicMapIterator {
 	~TCollection_BasicMapIterator() {
-	printf("Call custom destructor for instance of TCollection_BasicMapIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_BasicMapIterator\n");}
 	}
 };
 
@@ -545,7 +548,7 @@ class TCollection_PrivCompareOfReal {
 };
 %extend TCollection_PrivCompareOfReal {
 	~TCollection_PrivCompareOfReal() {
-	printf("Call custom destructor for instance of TCollection_PrivCompareOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_PrivCompareOfReal\n");}
 	}
 };
 
@@ -558,7 +561,7 @@ class TCollection_CompareOfReal : public TCollection_PrivCompareOfReal {
 };
 %extend TCollection_CompareOfReal {
 	~TCollection_CompareOfReal() {
-	printf("Call custom destructor for instance of TCollection_CompareOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_CompareOfReal\n");}
 	}
 };
 
@@ -673,7 +676,7 @@ class TCollection_ExtendedString {
 };
 %extend TCollection_ExtendedString {
 	~TCollection_ExtendedString() {
-	printf("Call custom destructor for instance of TCollection_ExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_ExtendedString\n");}
 	}
 };
 
@@ -694,7 +697,7 @@ class TCollection_Array2Descriptor {
 };
 %extend TCollection_Array2Descriptor {
 	~TCollection_Array2Descriptor() {
-	printf("Call custom destructor for instance of TCollection_Array2Descriptor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_Array2Descriptor\n");}
 	}
 };
 
@@ -782,7 +785,7 @@ class TCollection_HExtendedString : public MMgt_TShared {
 };
 %extend TCollection_HExtendedString {
 	~TCollection_HExtendedString() {
-	printf("Call custom destructor for instance of TCollection_HExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_HExtendedString\n");}
 	}
 };
 
@@ -801,7 +804,7 @@ class TCollection_BaseSequence {
 };
 %extend TCollection_BaseSequence {
 	~TCollection_BaseSequence() {
-	printf("Call custom destructor for instance of TCollection_BaseSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_BaseSequence\n");}
 	}
 };
 
@@ -825,7 +828,7 @@ class TCollection_SeqNode : public MMgt_TShared {
 };
 %extend TCollection_SeqNode {
 	~TCollection_SeqNode() {
-	printf("Call custom destructor for instance of TCollection_SeqNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_SeqNode\n");}
 	}
 };
 
@@ -842,7 +845,7 @@ class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 };
 %extend TCollection_CompareOfInteger {
 	~TCollection_CompareOfInteger() {
-	printf("Call custom destructor for instance of TCollection_CompareOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_CompareOfInteger\n");}
 	}
 };
 
@@ -859,7 +862,7 @@ class TCollection_Array1Descriptor {
 };
 %extend TCollection_Array1Descriptor {
 	~TCollection_Array1Descriptor() {
-	printf("Call custom destructor for instance of TCollection_Array1Descriptor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_Array1Descriptor\n");}
 	}
 };
 
@@ -878,7 +881,7 @@ class TCollection_BasicMap {
 };
 %extend TCollection_BasicMap {
 	~TCollection_BasicMap() {
-	printf("Call custom destructor for instance of TCollection_BasicMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_BasicMap\n");}
 	}
 };
 
@@ -1030,6 +1033,6 @@ class TCollection_HAsciiString : public MMgt_TShared {
 };
 %extend TCollection_HAsciiString {
 	~TCollection_HAsciiString() {
-	printf("Call custom destructor for instance of TCollection_HAsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TCollection_HAsciiString\n");}
 	}
 };

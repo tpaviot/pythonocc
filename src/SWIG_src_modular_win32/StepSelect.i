@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 };
 %extend Handle_StepSelect_WorkLibrary {
 	~Handle_StepSelect_WorkLibrary() {
-	printf("Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_WorkLibrary\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 };
 %extend Handle_StepSelect_FileModifier {
 	~Handle_StepSelect_FileModifier() {
-	printf("Call custom destructor for instance of Handle_StepSelect_FileModifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_FileModifier\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 };
 %extend Handle_StepSelect_Activator {
 	~Handle_StepSelect_Activator() {
-	printf("Call custom destructor for instance of Handle_StepSelect_Activator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_Activator\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 };
 %extend Handle_StepSelect_ModelModifier {
 	~Handle_StepSelect_ModelModifier() {
-	printf("Call custom destructor for instance of Handle_StepSelect_ModelModifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_ModelModifier\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 };
 %extend Handle_StepSelect_FloatFormat {
 	~Handle_StepSelect_FloatFormat() {
-	printf("Call custom destructor for instance of Handle_StepSelect_FloatFormat\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_FloatFormat\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 };
 %extend Handle_StepSelect_StepType {
 	~Handle_StepSelect_StepType() {
-	printf("Call custom destructor for instance of Handle_StepSelect_StepType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_StepType\n");}
 	}
 };
 
@@ -244,7 +247,7 @@ class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 };
 %extend StepSelect_FileModifier {
 	~StepSelect_FileModifier() {
-	printf("Call custom destructor for instance of StepSelect_FileModifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepSelect_FileModifier\n");}
 	}
 };
 
@@ -274,7 +277,7 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %extend StepSelect_WorkLibrary {
 	~StepSelect_WorkLibrary() {
-	printf("Call custom destructor for instance of StepSelect_WorkLibrary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepSelect_WorkLibrary\n");}
 	}
 };
 
@@ -298,7 +301,7 @@ class StepSelect_StepType : public IFSelect_Signature {
 };
 %extend StepSelect_StepType {
 	~StepSelect_StepType() {
-	printf("Call custom destructor for instance of StepSelect_StepType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepSelect_StepType\n");}
 	}
 };
 
@@ -332,7 +335,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 };
 %extend StepSelect_FloatFormat {
 	~StepSelect_FloatFormat() {
-	printf("Call custom destructor for instance of StepSelect_FloatFormat\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepSelect_FloatFormat\n");}
 	}
 };
 
@@ -356,7 +359,7 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 };
 %extend StepSelect_ModelModifier {
 	~StepSelect_ModelModifier() {
-	printf("Call custom destructor for instance of StepSelect_ModelModifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepSelect_ModelModifier\n");}
 	}
 };
 
@@ -380,6 +383,6 @@ class StepSelect_Activator : public IFSelect_Activator {
 };
 %extend StepSelect_Activator {
 	~StepSelect_Activator() {
-	printf("Call custom destructor for instance of StepSelect_Activator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepSelect_Activator\n");}
 	}
 };

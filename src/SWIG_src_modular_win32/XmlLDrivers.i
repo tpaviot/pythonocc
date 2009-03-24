@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 };
 %extend Handle_XmlLDrivers_DocumentStorageDriver {
 	~Handle_XmlLDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of Handle_XmlLDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlLDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 };
 %extend Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
 	~Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef() {
-	printf("Call custom destructor for instance of Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 };
 %extend Handle_XmlLDrivers_DocumentRetrievalDriver {
 	~Handle_XmlLDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of Handle_XmlLDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlLDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -182,7 +185,7 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend XmlLDrivers_DocumentRetrievalDriver {
 	~XmlLDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of XmlLDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlLDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -210,7 +213,7 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend XmlLDrivers_DocumentStorageDriver {
 	~XmlLDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of XmlLDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlLDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -263,7 +266,7 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 };
 %extend XmlLDrivers_SequenceOfNamespaceDef {
 	~XmlLDrivers_SequenceOfNamespaceDef() {
-	printf("Call custom destructor for instance of XmlLDrivers_SequenceOfNamespaceDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlLDrivers_SequenceOfNamespaceDef\n");}
 	}
 };
 
@@ -285,7 +288,7 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 };
 %extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
 	~XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef() {
-	printf("Call custom destructor for instance of XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");}
 	}
 };
 
@@ -306,7 +309,7 @@ class XmlLDrivers {
 };
 %extend XmlLDrivers {
 	~XmlLDrivers() {
-	printf("Call custom destructor for instance of XmlLDrivers\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlLDrivers\n");}
 	}
 };
 
@@ -325,6 +328,6 @@ class XmlLDrivers_NamespaceDef {
 };
 %extend XmlLDrivers_NamespaceDef {
 	~XmlLDrivers_NamespaceDef() {
-	printf("Call custom destructor for instance of XmlLDrivers_NamespaceDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlLDrivers_NamespaceDef\n");}
 	}
 };

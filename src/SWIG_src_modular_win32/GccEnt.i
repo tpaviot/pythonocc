@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -112,7 +115,7 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 };
 %extend Handle_GccEnt_BadQualifier {
 	~Handle_GccEnt_BadQualifier() {
-	printf("Call custom destructor for instance of Handle_GccEnt_BadQualifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccEnt_BadQualifier\n");}
 	}
 };
 
@@ -139,7 +142,7 @@ class GccEnt {
 };
 %extend GccEnt {
 	~GccEnt() {
-	printf("Call custom destructor for instance of GccEnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccEnt\n");}
 	}
 };
 
@@ -170,7 +173,7 @@ class GccEnt_QualifiedLin {
 };
 %extend GccEnt_QualifiedLin {
 	~GccEnt_QualifiedLin() {
-	printf("Call custom destructor for instance of GccEnt_QualifiedLin\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccEnt_QualifiedLin\n");}
 	}
 };
 
@@ -209,7 +212,7 @@ class GccEnt_Array1OfPosition {
 };
 %extend GccEnt_Array1OfPosition {
 	~GccEnt_Array1OfPosition() {
-	printf("Call custom destructor for instance of GccEnt_Array1OfPosition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccEnt_Array1OfPosition\n");}
 	}
 };
 
@@ -237,7 +240,7 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 };
 %extend GccEnt_BadQualifier {
 	~GccEnt_BadQualifier() {
-	printf("Call custom destructor for instance of GccEnt_BadQualifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccEnt_BadQualifier\n");}
 	}
 };
 
@@ -270,6 +273,6 @@ class GccEnt_QualifiedCirc {
 };
 %extend GccEnt_QualifiedCirc {
 	~GccEnt_QualifiedCirc() {
-	printf("Call custom destructor for instance of GccEnt_QualifiedCirc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccEnt_QualifiedCirc\n");}
 	}
 };

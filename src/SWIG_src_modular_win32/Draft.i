@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -111,7 +114,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
 	~Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo() {
-	printf("Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");}
 	}
 };
 
@@ -135,7 +138,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
 	~Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo() {
-	printf("Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");}
 	}
 };
 
@@ -159,7 +162,7 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 };
 %extend Handle_Draft_Modification {
 	~Handle_Draft_Modification() {
-	printf("Call custom destructor for instance of Handle_Draft_Modification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Draft_Modification\n");}
 	}
 };
 
@@ -183,7 +186,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 };
 %extend Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	~Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo() {
-	printf("Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");}
 	}
 };
 
@@ -218,7 +221,7 @@ class Draft_FaceInfo {
 };
 %extend Draft_FaceInfo {
 	~Draft_FaceInfo() {
-	printf("Call custom destructor for instance of Draft_FaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_FaceInfo\n");}
 	}
 };
 
@@ -267,7 +270,7 @@ class Draft_EdgeInfo {
 };
 %extend Draft_EdgeInfo {
 	~Draft_EdgeInfo() {
-	printf("Call custom destructor for instance of Draft_EdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_EdgeInfo\n");}
 	}
 };
 
@@ -300,7 +303,7 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 };
 %extend Draft_DataMapOfEdgeEdgeInfo {
 	~Draft_DataMapOfEdgeEdgeInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapOfEdgeEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapOfEdgeEdgeInfo\n");}
 	}
 };
 
@@ -321,7 +324,7 @@ class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMap
 };
 %extend Draft_DataMapIteratorOfDataMapOfFaceFaceInfo {
 	~Draft_DataMapIteratorOfDataMapOfFaceFaceInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfFaceFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfFaceFaceInfo\n");}
 	}
 };
 
@@ -373,7 +376,7 @@ class Draft_Modification : public BRepTools_Modification {
 };
 %extend Draft_Modification {
 	~Draft_Modification() {
-	printf("Call custom destructor for instance of Draft_Modification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_Modification\n");}
 	}
 };
 
@@ -397,7 +400,7 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 };
 %extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	~Draft_DataMapNodeOfDataMapOfVertexVertexInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");}
 	}
 };
 
@@ -418,7 +421,7 @@ class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_Basi
 };
 %extend Draft_DataMapIteratorOfDataMapOfVertexVertexInfo {
 	~Draft_DataMapIteratorOfDataMapOfVertexVertexInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfVertexVertexInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfVertexVertexInfo\n");}
 	}
 };
 
@@ -439,7 +442,7 @@ class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMap
 };
 %extend Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo {
 	~Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo\n");}
 	}
 };
 
@@ -463,7 +466,7 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
 	~Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");}
 	}
 };
 
@@ -494,7 +497,7 @@ class Draft_VertexInfo {
 };
 %extend Draft_VertexInfo {
 	~Draft_VertexInfo() {
-	printf("Call custom destructor for instance of Draft_VertexInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_VertexInfo\n");}
 	}
 };
 
@@ -527,7 +530,7 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 };
 %extend Draft_DataMapOfFaceFaceInfo {
 	~Draft_DataMapOfFaceFaceInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapOfFaceFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapOfFaceFaceInfo\n");}
 	}
 };
 
@@ -551,7 +554,7 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
 	~Draft_DataMapNodeOfDataMapOfFaceFaceInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");}
 	}
 };
 
@@ -584,7 +587,7 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 };
 %extend Draft_DataMapOfVertexVertexInfo {
 	~Draft_DataMapOfVertexVertexInfo() {
-	printf("Call custom destructor for instance of Draft_DataMapOfVertexVertexInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft_DataMapOfVertexVertexInfo\n");}
 	}
 };
 
@@ -599,6 +602,6 @@ class Draft {
 };
 %extend Draft {
 	~Draft() {
-	printf("Call custom destructor for instance of Draft\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Draft\n");}
 	}
 };

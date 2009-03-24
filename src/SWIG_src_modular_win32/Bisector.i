@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_Bisector_Curve : public Handle_Geom2d_Curve {
 };
 %extend Handle_Bisector_Curve {
 	~Handle_Bisector_Curve() {
-	printf("Call custom destructor for instance of Handle_Bisector_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Bisector_Curve\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 };
 %extend Handle_Bisector_BisecAna {
 	~Handle_Bisector_BisecAna() {
-	printf("Call custom destructor for instance of Handle_Bisector_BisecAna\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Bisector_BisecAna\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
 };
 %extend Handle_Bisector_BisecCC {
 	~Handle_Bisector_BisecCC() {
-	printf("Call custom destructor for instance of Handle_Bisector_BisecCC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Bisector_BisecCC\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 };
 %extend Handle_Bisector_BisecPC {
 	~Handle_Bisector_BisecPC() {
-	printf("Call custom destructor for instance of Handle_Bisector_BisecPC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Bisector_BisecPC\n");}
 	}
 };
 
@@ -193,7 +196,7 @@ class Bisector_Inter : public IntRes2d_Intersection {
 };
 %extend Bisector_Inter {
 	~Bisector_Inter() {
-	printf("Call custom destructor for instance of Bisector_Inter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_Inter\n");}
 	}
 };
 
@@ -216,7 +219,7 @@ class Bisector_FunctionInter : public math_FunctionWithDerivative {
 };
 %extend Bisector_FunctionInter {
 	~Bisector_FunctionInter() {
-	printf("Call custom destructor for instance of Bisector_FunctionInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_FunctionInter\n");}
 	}
 };
 
@@ -246,7 +249,7 @@ class Bisector_Curve : public Geom2d_Curve {
 };
 %extend Bisector_Curve {
 	~Bisector_Curve() {
-	printf("Call custom destructor for instance of Bisector_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_Curve\n");}
 	}
 };
 
@@ -318,7 +321,7 @@ class Bisector_BisecCC : public Bisector_Curve {
 };
 %extend Bisector_BisecCC {
 	~Bisector_BisecCC() {
-	printf("Call custom destructor for instance of Bisector_BisecCC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_BisecCC\n");}
 	}
 };
 
@@ -398,7 +401,7 @@ class Bisector_BisecPC : public Bisector_Curve {
 };
 %extend Bisector_BisecPC {
 	~Bisector_BisecPC() {
-	printf("Call custom destructor for instance of Bisector_BisecPC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_BisecPC\n");}
 	}
 };
 
@@ -482,7 +485,7 @@ class Bisector_BisecAna : public Bisector_Curve {
 };
 %extend Bisector_BisecAna {
 	~Bisector_BisecAna() {
-	printf("Call custom destructor for instance of Bisector_BisecAna\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_BisecAna\n");}
 	}
 };
 
@@ -511,7 +514,7 @@ class Bisector_PolyBis {
 };
 %extend Bisector_PolyBis {
 	~Bisector_PolyBis() {
-	printf("Call custom destructor for instance of Bisector_PolyBis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_PolyBis\n");}
 	}
 };
 
@@ -552,7 +555,7 @@ class Bisector_PointOnBis {
 };
 %extend Bisector_PointOnBis {
 	~Bisector_PointOnBis() {
-	printf("Call custom destructor for instance of Bisector_PointOnBis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_PointOnBis\n");}
 	}
 };
 
@@ -577,7 +580,7 @@ class Bisector_Bisec {
 };
 %extend Bisector_Bisec {
 	~Bisector_Bisec() {
-	printf("Call custom destructor for instance of Bisector_Bisec\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_Bisec\n");}
 	}
 };
 
@@ -592,7 +595,7 @@ class Bisector {
 };
 %extend Bisector {
 	~Bisector() {
-	printf("Call custom destructor for instance of Bisector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector\n");}
 	}
 };
 
@@ -611,6 +614,6 @@ class Bisector_FunctionH : public math_FunctionWithDerivative {
 };
 %extend Bisector_FunctionH {
 	~Bisector_FunctionH() {
-	printf("Call custom destructor for instance of Bisector_FunctionH\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bisector_FunctionH\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntit
 };
 %extend Handle_IGESGraph_LineFontDefPattern {
 	~Handle_IGESGraph_LineFontDefPattern() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_LineFontDefPattern\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_LineFontDefPattern\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_Pick {
 	~Handle_IGESGraph_Pick() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_Pick\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Pick\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared
 };
 %extend Handle_IGESGraph_HArray1OfTextDisplayTemplate {
 	~Handle_IGESGraph_HArray1OfTextDisplayTemplate() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_HArray1OfTextDisplayTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HArray1OfTextDisplayTemplate\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 };
 %extend Handle_IGESGraph_Color {
 	~Handle_IGESGraph_Color() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_Color\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Color\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_TextDisplayTemplate {
 	~Handle_IGESGraph_TextDisplayTemplate() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_TextDisplayTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_TextDisplayTemplate\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_NominalSize {
 	~Handle_IGESGraph_NominalSize() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_NominalSize\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_NominalSize\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_DrawingSize {
 	~Handle_IGESGraph_DrawingSize() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_DrawingSize\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingSize\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_DrawingUnits {
 	~Handle_IGESGraph_DrawingUnits() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_DrawingUnits\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingUnits\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 };
 %extend Handle_IGESGraph_IntercharacterSpacing {
 	~Handle_IGESGraph_IntercharacterSpacing() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_IntercharacterSpacing\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_IntercharacterSpacing\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %extend Handle_IGESGraph_GeneralModule {
 	~Handle_IGESGraph_GeneralModule() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_GeneralModule\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESGraph_HArray1OfColor {
 	~Handle_IGESGraph_HArray1OfColor() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_HArray1OfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HArray1OfColor\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity 
 };
 %extend Handle_IGESGraph_DefinitionLevel {
 	~Handle_IGESGraph_DefinitionLevel() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_DefinitionLevel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DefinitionLevel\n");}
 	}
 };
 
@@ -392,7 +395,7 @@ class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESGraph_HArray1OfTextFontDef {
 	~Handle_IGESGraph_HArray1OfTextFontDef() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_HArray1OfTextFontDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HArray1OfTextFontDef\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %extend Handle_IGESGraph_SpecificModule {
 	~Handle_IGESGraph_SpecificModule() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_SpecificModule\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_UniformRectGrid {
 	~Handle_IGESGraph_UniformRectGrid() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_UniformRectGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_UniformRectGrid\n");}
 	}
 };
 
@@ -464,7 +467,7 @@ class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_HighLight {
 	~Handle_IGESGraph_HighLight() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_HighLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HighLight\n");}
 	}
 };
 
@@ -488,7 +491,7 @@ class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEnti
 };
 %extend Handle_IGESGraph_LineFontDefTemplate {
 	~Handle_IGESGraph_LineFontDefTemplate() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_LineFontDefTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_LineFontDefTemplate\n");}
 	}
 };
 
@@ -512,7 +515,7 @@ class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 };
 %extend Handle_IGESGraph_ReadWriteModule {
 	~Handle_IGESGraph_ReadWriteModule() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_ReadWriteModule\n");}
 	}
 };
 
@@ -536,7 +539,7 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 };
 %extend Handle_IGESGraph_Protocol {
 	~Handle_IGESGraph_Protocol() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_Protocol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Protocol\n");}
 	}
 };
 
@@ -560,7 +563,7 @@ class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_TextFontDef {
 	~Handle_IGESGraph_TextFontDef() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_TextFontDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_TextFontDef\n");}
 	}
 };
 
@@ -584,7 +587,7 @@ class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGraph_LineFontPredefined {
 	~Handle_IGESGraph_LineFontPredefined() {
-	printf("Call custom destructor for instance of Handle_IGESGraph_LineFontPredefined\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_LineFontPredefined\n");}
 	}
 };
 
@@ -612,7 +615,7 @@ class IGESGraph_HighLight : public IGESData_IGESEntity {
 };
 %extend IGESGraph_HighLight {
 	~IGESGraph_HighLight() {
-	printf("Call custom destructor for instance of IGESGraph_HighLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_HighLight\n");}
 	}
 };
 
@@ -640,7 +643,7 @@ class IGESGraph_Pick : public IGESData_IGESEntity {
 };
 %extend IGESGraph_Pick {
 	~IGESGraph_Pick() {
-	printf("Call custom destructor for instance of IGESGraph_Pick\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_Pick\n");}
 	}
 };
 
@@ -669,7 +672,7 @@ class IGESGraph_ToolDrawingUnits {
 };
 %extend IGESGraph_ToolDrawingUnits {
 	~IGESGraph_ToolDrawingUnits() {
-	printf("Call custom destructor for instance of IGESGraph_ToolDrawingUnits\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingUnits\n");}
 	}
 };
 
@@ -699,7 +702,7 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 };
 %extend IGESGraph_DrawingUnits {
 	~IGESGraph_DrawingUnits() {
-	printf("Call custom destructor for instance of IGESGraph_DrawingUnits\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_DrawingUnits\n");}
 	}
 };
 
@@ -738,7 +741,7 @@ class IGESGraph_Array1OfTextFontDef {
 };
 %extend IGESGraph_Array1OfTextFontDef {
 	~IGESGraph_Array1OfTextFontDef() {
-	printf("Call custom destructor for instance of IGESGraph_Array1OfTextFontDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_Array1OfTextFontDef\n");}
 	}
 };
 
@@ -776,7 +779,7 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 };
 %extend IGESGraph_UniformRectGrid {
 	~IGESGraph_UniformRectGrid() {
-	printf("Call custom destructor for instance of IGESGraph_UniformRectGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_UniformRectGrid\n");}
 	}
 };
 
@@ -805,7 +808,7 @@ class IGESGraph_ToolUniformRectGrid {
 };
 %extend IGESGraph_ToolUniformRectGrid {
 	~IGESGraph_ToolUniformRectGrid() {
-	printf("Call custom destructor for instance of IGESGraph_ToolUniformRectGrid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolUniformRectGrid\n");}
 	}
 };
 
@@ -834,7 +837,7 @@ class IGESGraph_ToolIntercharacterSpacing {
 };
 %extend IGESGraph_ToolIntercharacterSpacing {
 	~IGESGraph_ToolIntercharacterSpacing() {
-	printf("Call custom destructor for instance of IGESGraph_ToolIntercharacterSpacing\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolIntercharacterSpacing\n");}
 	}
 };
 
@@ -863,7 +866,7 @@ class IGESGraph_ToolNominalSize {
 };
 %extend IGESGraph_ToolNominalSize {
 	~IGESGraph_ToolNominalSize() {
-	printf("Call custom destructor for instance of IGESGraph_ToolNominalSize\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolNominalSize\n");}
 	}
 };
 
@@ -903,7 +906,7 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 %extend IGESGraph_HArray1OfTextDisplayTemplate {
 	~IGESGraph_HArray1OfTextDisplayTemplate() {
-	printf("Call custom destructor for instance of IGESGraph_HArray1OfTextDisplayTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_HArray1OfTextDisplayTemplate\n");}
 	}
 };
 
@@ -932,7 +935,7 @@ class IGESGraph_ToolDrawingSize {
 };
 %extend IGESGraph_ToolDrawingSize {
 	~IGESGraph_ToolDrawingSize() {
-	printf("Call custom destructor for instance of IGESGraph_ToolDrawingSize\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingSize\n");}
 	}
 };
 
@@ -958,7 +961,7 @@ class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
 };
 %extend IGESGraph_IntercharacterSpacing {
 	~IGESGraph_IntercharacterSpacing() {
-	printf("Call custom destructor for instance of IGESGraph_IntercharacterSpacing\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_IntercharacterSpacing\n");}
 	}
 };
 
@@ -985,7 +988,7 @@ class IGESGraph_ToolTextFontDef {
 };
 %extend IGESGraph_ToolTextFontDef {
 	~IGESGraph_ToolTextFontDef() {
-	printf("Call custom destructor for instance of IGESGraph_ToolTextFontDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolTextFontDef\n");}
 	}
 };
 
@@ -1015,7 +1018,7 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 };
 %extend IGESGraph_LineFontDefTemplate {
 	~IGESGraph_LineFontDefTemplate() {
-	printf("Call custom destructor for instance of IGESGraph_LineFontDefTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontDefTemplate\n");}
 	}
 };
 
@@ -1032,7 +1035,7 @@ class IGESGraph {
 };
 %extend IGESGraph {
 	~IGESGraph() {
-	printf("Call custom destructor for instance of IGESGraph\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph\n");}
 	}
 };
 
@@ -1061,7 +1064,7 @@ class IGESGraph_ToolPick {
 };
 %extend IGESGraph_ToolPick {
 	~IGESGraph_ToolPick() {
-	printf("Call custom destructor for instance of IGESGraph_ToolPick\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolPick\n");}
 	}
 };
 
@@ -1088,7 +1091,7 @@ class IGESGraph_ToolColor {
 };
 %extend IGESGraph_ToolColor {
 	~IGESGraph_ToolColor() {
-	printf("Call custom destructor for instance of IGESGraph_ToolColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolColor\n");}
 	}
 };
 
@@ -1120,7 +1123,7 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESGraph_GeneralModule {
 	~IGESGraph_GeneralModule() {
-	printf("Call custom destructor for instance of IGESGraph_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_GeneralModule\n");}
 	}
 };
 
@@ -1147,7 +1150,7 @@ class IGESGraph_ToolLineFontDefTemplate {
 };
 %extend IGESGraph_ToolLineFontDefTemplate {
 	~IGESGraph_ToolLineFontDefTemplate() {
-	printf("Call custom destructor for instance of IGESGraph_ToolLineFontDefTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontDefTemplate\n");}
 	}
 };
 
@@ -1179,7 +1182,7 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 };
 %extend IGESGraph_Color {
 	~IGESGraph_Color() {
-	printf("Call custom destructor for instance of IGESGraph_Color\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_Color\n");}
 	}
 };
 
@@ -1206,7 +1209,7 @@ class IGESGraph_ToolDefinitionLevel {
 };
 %extend IGESGraph_ToolDefinitionLevel {
 	~IGESGraph_ToolDefinitionLevel() {
-	printf("Call custom destructor for instance of IGESGraph_ToolDefinitionLevel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDefinitionLevel\n");}
 	}
 };
 
@@ -1254,7 +1257,7 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 };
 %extend IGESGraph_TextDisplayTemplate {
 	~IGESGraph_TextDisplayTemplate() {
-	printf("Call custom destructor for instance of IGESGraph_TextDisplayTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_TextDisplayTemplate\n");}
 	}
 };
 
@@ -1278,7 +1281,7 @@ class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESGraph_SpecificModule {
 	~IGESGraph_SpecificModule() {
-	printf("Call custom destructor for instance of IGESGraph_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_SpecificModule\n");}
 	}
 };
 
@@ -1317,7 +1320,7 @@ class IGESGraph_Array1OfTextDisplayTemplate {
 };
 %extend IGESGraph_Array1OfTextDisplayTemplate {
 	~IGESGraph_Array1OfTextDisplayTemplate() {
-	printf("Call custom destructor for instance of IGESGraph_Array1OfTextDisplayTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_Array1OfTextDisplayTemplate\n");}
 	}
 };
 
@@ -1345,7 +1348,7 @@ class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 };
 %extend IGESGraph_DefinitionLevel {
 	~IGESGraph_DefinitionLevel() {
-	printf("Call custom destructor for instance of IGESGraph_DefinitionLevel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_DefinitionLevel\n");}
 	}
 };
 
@@ -1371,7 +1374,7 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESGraph_ReadWriteModule {
 	~IGESGraph_ReadWriteModule() {
-	printf("Call custom destructor for instance of IGESGraph_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ReadWriteModule\n");}
 	}
 };
 
@@ -1398,7 +1401,7 @@ class IGESGraph_ToolTextDisplayTemplate {
 };
 %extend IGESGraph_ToolTextDisplayTemplate {
 	~IGESGraph_ToolTextDisplayTemplate() {
-	printf("Call custom destructor for instance of IGESGraph_ToolTextDisplayTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolTextDisplayTemplate\n");}
 	}
 };
 
@@ -1430,7 +1433,7 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 };
 %extend IGESGraph_NominalSize {
 	~IGESGraph_NominalSize() {
-	printf("Call custom destructor for instance of IGESGraph_NominalSize\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_NominalSize\n");}
 	}
 };
 
@@ -1457,7 +1460,7 @@ class IGESGraph_ToolLineFontDefPattern {
 };
 %extend IGESGraph_ToolLineFontDefPattern {
 	~IGESGraph_ToolLineFontDefPattern() {
-	printf("Call custom destructor for instance of IGESGraph_ToolLineFontDefPattern\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontDefPattern\n");}
 	}
 };
 
@@ -1485,7 +1488,7 @@ class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 };
 %extend IGESGraph_DrawingSize {
 	~IGESGraph_DrawingSize() {
-	printf("Call custom destructor for instance of IGESGraph_DrawingSize\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_DrawingSize\n");}
 	}
 };
 
@@ -1531,7 +1534,7 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 };
 %extend IGESGraph_TextFontDef {
 	~IGESGraph_TextFontDef() {
-	printf("Call custom destructor for instance of IGESGraph_TextFontDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_TextFontDef\n");}
 	}
 };
 
@@ -1557,7 +1560,7 @@ class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 };
 %extend IGESGraph_LineFontPredefined {
 	~IGESGraph_LineFontPredefined() {
-	printf("Call custom destructor for instance of IGESGraph_LineFontPredefined\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontPredefined\n");}
 	}
 };
 
@@ -1586,7 +1589,7 @@ class IGESGraph_ToolHighLight {
 };
 %extend IGESGraph_ToolHighLight {
 	~IGESGraph_ToolHighLight() {
-	printf("Call custom destructor for instance of IGESGraph_ToolHighLight\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolHighLight\n");}
 	}
 };
 
@@ -1615,7 +1618,7 @@ class IGESGraph_ToolLineFontPredefined {
 };
 %extend IGESGraph_ToolLineFontPredefined {
 	~IGESGraph_ToolLineFontPredefined() {
-	printf("Call custom destructor for instance of IGESGraph_ToolLineFontPredefined\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontPredefined\n");}
 	}
 };
 
@@ -1654,7 +1657,7 @@ class IGESGraph_Array1OfColor {
 };
 %extend IGESGraph_Array1OfColor {
 	~IGESGraph_Array1OfColor() {
-	printf("Call custom destructor for instance of IGESGraph_Array1OfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_Array1OfColor\n");}
 	}
 };
 
@@ -1684,7 +1687,7 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 };
 %extend IGESGraph_LineFontDefPattern {
 	~IGESGraph_LineFontDefPattern() {
-	printf("Call custom destructor for instance of IGESGraph_LineFontDefPattern\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontDefPattern\n");}
 	}
 };
 
@@ -1724,7 +1727,7 @@ class IGESGraph_HArray1OfColor : public MMgt_TShared {
 };
 %extend IGESGraph_HArray1OfColor {
 	~IGESGraph_HArray1OfColor() {
-	printf("Call custom destructor for instance of IGESGraph_HArray1OfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_HArray1OfColor\n");}
 	}
 };
 
@@ -1764,6 +1767,6 @@ class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {
 };
 %extend IGESGraph_HArray1OfTextFontDef {
 	~IGESGraph_HArray1OfTextFontDef() {
-	printf("Call custom destructor for instance of IGESGraph_HArray1OfTextFontDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGraph_HArray1OfTextFontDef\n");}
 	}
 };

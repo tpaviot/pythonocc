@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMDocStd_XLinkDriver {
 	~Handle_XmlMDocStd_XLinkDriver() {
-	printf("Call custom destructor for instance of Handle_XmlMDocStd_XLinkDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMDocStd_XLinkDriver\n");}
 	}
 };
 
@@ -130,7 +133,7 @@ class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDocStd_XLinkDriver {
 	~XmlMDocStd_XLinkDriver() {
-	printf("Call custom destructor for instance of XmlMDocStd_XLinkDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMDocStd_XLinkDriver\n");}
 	}
 };
 
@@ -145,6 +148,6 @@ class XmlMDocStd {
 };
 %extend XmlMDocStd {
 	~XmlMDocStd() {
-	printf("Call custom destructor for instance of XmlMDocStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMDocStd\n");}
 	}
 };

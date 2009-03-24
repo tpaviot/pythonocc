@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TColle
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
 	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion() {
-	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT2d_Connexion {
 	~Handle_MAT2d_Connexion() {
-	printf("Call custom destructor for instance of Handle_MAT2d_Connexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_Connexion\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public Handle_TCollectio
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
 	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d() {
-	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollectio
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
 	~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger() {
-	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public Handle_TCollectio
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
 	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec() {
-	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public Handle_TCollectio
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
 	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d() {
-	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfConnexion {
 	~Handle_MAT2d_SequenceNodeOfSequenceOfConnexion() {
-	printf("Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfConnexion\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Han
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
 	~Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion() {
-	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TC
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
 	~Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry() {
-	printf("Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT2d_Circuit {
 	~Handle_MAT2d_Circuit() {
-	printf("Call custom destructor for instance of Handle_MAT2d_Circuit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_Circuit\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_
 };
 %extend Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
 	~Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger() {
-	printf("Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public Handle_TColl
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
 	~Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve() {
-	printf("Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve\n");}
 	}
 };
 
@@ -392,7 +395,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_S
 };
 %extend Handle_MAT2d_SequenceNodeOfSequenceOfBoolean {
 	~Handle_MAT2d_SequenceNodeOfSequenceOfBoolean() {
-	printf("Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfBoolean\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfBoolean\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
 	~MAT2d_DataMapNodeOfDataMapOfBiIntInteger() {
-	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfBiIntInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfBiIntInteger\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_Ma
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
 	~MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger() {
-	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger\n");}
 	}
 };
 
@@ -461,7 +464,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d : public TCollection_BasicMap
 };
 %extend MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d {
 	~MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d() {
-	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d\n");}
 	}
 };
 
@@ -485,7 +488,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
 	~MAT2d_DataMapNodeOfDataMapOfIntegerBisec() {
-	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerBisec\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerBisec\n");}
 	}
 };
 
@@ -508,7 +511,7 @@ class MAT2d_BiInt {
 };
 %extend MAT2d_BiInt {
 	~MAT2d_BiInt() {
-	printf("Call custom destructor for instance of MAT2d_BiInt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_BiInt\n");}
 	}
 };
 
@@ -525,7 +528,7 @@ class MAT2d_MapBiIntHasher {
 };
 %extend MAT2d_MapBiIntHasher {
 	~MAT2d_MapBiIntHasher() {
-	printf("Call custom destructor for instance of MAT2d_MapBiIntHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_MapBiIntHasher\n");}
 	}
 };
 
@@ -547,7 +550,7 @@ class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 };
 %extend MAT2d_SequenceNodeOfSequenceOfConnexion {
 	~MAT2d_SequenceNodeOfSequenceOfConnexion() {
-	printf("Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfConnexion\n");}
 	}
 };
 
@@ -600,7 +603,7 @@ class MAT2d_SequenceOfSequenceOfGeometry : public TCollection_BaseSequence {
 };
 %extend MAT2d_SequenceOfSequenceOfGeometry {
 	~MAT2d_SequenceOfSequenceOfGeometry() {
-	printf("Call custom destructor for instance of MAT2d_SequenceOfSequenceOfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceOfSequenceOfGeometry\n");}
 	}
 };
 
@@ -622,7 +625,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqN
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
 	~MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry() {
-	printf("Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry\n");}
 	}
 };
 
@@ -643,7 +646,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion : public TColle
 };
 %extend MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion {
 	~MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion() {
-	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion\n");}
 	}
 };
 
@@ -677,7 +680,7 @@ class MAT2d_Circuit : public MMgt_TShared {
 };
 %extend MAT2d_Circuit {
 	~MAT2d_Circuit() {
-	printf("Call custom destructor for instance of MAT2d_Circuit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_Circuit\n");}
 	}
 };
 
@@ -710,7 +713,7 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 };
 %extend MAT2d_DataMapOfIntegerVec2d {
 	~MAT2d_DataMapOfIntegerVec2d() {
-	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerVec2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerVec2d\n");}
 	}
 };
 
@@ -765,7 +768,7 @@ class MAT2d_Tool2d {
 };
 %extend MAT2d_Tool2d {
 	~MAT2d_Tool2d() {
-	printf("Call custom destructor for instance of MAT2d_Tool2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_Tool2d\n");}
 	}
 };
 
@@ -787,7 +790,7 @@ class MAT2d_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 };
 %extend MAT2d_SequenceNodeOfSequenceOfBoolean {
 	~MAT2d_SequenceNodeOfSequenceOfBoolean() {
-	printf("Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfBoolean\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfBoolean\n");}
 	}
 };
 
@@ -840,7 +843,7 @@ class MAT2d_SequenceOfSequenceOfCurve : public TCollection_BaseSequence {
 };
 %extend MAT2d_SequenceOfSequenceOfCurve {
 	~MAT2d_SequenceOfSequenceOfCurve() {
-	printf("Call custom destructor for instance of MAT2d_SequenceOfSequenceOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceOfSequenceOfCurve\n");}
 	}
 };
 
@@ -883,7 +886,7 @@ class MAT2d_Array2OfConnexion {
 };
 %extend MAT2d_Array2OfConnexion {
 	~MAT2d_Array2OfConnexion() {
-	printf("Call custom destructor for instance of MAT2d_Array2OfConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_Array2OfConnexion\n");}
 	}
 };
 
@@ -907,7 +910,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollectio
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
 	~MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion() {
-	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion\n");}
 	}
 };
 
@@ -940,7 +943,7 @@ class MAT2d_DataMapOfIntegerPnt2d : public TCollection_BasicMap {
 };
 %extend MAT2d_DataMapOfIntegerPnt2d {
 	~MAT2d_DataMapOfIntegerPnt2d() {
-	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerPnt2d\n");}
 	}
 };
 
@@ -973,7 +976,7 @@ class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
 };
 %extend MAT2d_DataMapOfBiIntSequenceOfInteger {
 	~MAT2d_DataMapOfBiIntSequenceOfInteger() {
-	printf("Call custom destructor for instance of MAT2d_DataMapOfBiIntSequenceOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfBiIntSequenceOfInteger\n");}
 	}
 };
 
@@ -997,7 +1000,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
 	~MAT2d_DataMapNodeOfDataMapOfIntegerVec2d() {
-	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerVec2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerVec2d\n");}
 	}
 };
 
@@ -1018,7 +1021,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMap
 };
 %extend MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d {
 	~MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d() {
-	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d\n");}
 	}
 };
 
@@ -1051,7 +1054,7 @@ class MAT2d_DataMapOfBiIntInteger : public TCollection_BasicMap {
 };
 %extend MAT2d_DataMapOfBiIntInteger {
 	~MAT2d_DataMapOfBiIntInteger() {
-	printf("Call custom destructor for instance of MAT2d_DataMapOfBiIntInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfBiIntInteger\n");}
 	}
 };
 
@@ -1075,7 +1078,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
 	~MAT2d_DataMapNodeOfDataMapOfIntegerConnexion() {
-	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerConnexion\n");}
 	}
 };
 
@@ -1096,7 +1099,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_Basi
 };
 %extend MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion {
 	~MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion() {
-	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion\n");}
 	}
 };
 
@@ -1160,7 +1163,7 @@ class MAT2d_Connexion : public MMgt_TShared {
 };
 %extend MAT2d_Connexion {
 	~MAT2d_Connexion() {
-	printf("Call custom destructor for instance of MAT2d_Connexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_Connexion\n");}
 	}
 };
 
@@ -1182,7 +1185,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
 	~MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve() {
-	printf("Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve\n");}
 	}
 };
 
@@ -1215,7 +1218,7 @@ class MAT2d_DataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMap {
 };
 %extend MAT2d_DataMapOfIntegerSequenceOfConnexion {
 	~MAT2d_DataMapOfIntegerSequenceOfConnexion() {
-	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerSequenceOfConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerSequenceOfConnexion\n");}
 	}
 };
 
@@ -1248,7 +1251,7 @@ class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
 };
 %extend MAT2d_DataMapOfIntegerBisec {
 	~MAT2d_DataMapOfIntegerBisec() {
-	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerBisec\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerBisec\n");}
 	}
 };
 
@@ -1281,7 +1284,7 @@ class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 };
 %extend MAT2d_DataMapOfIntegerConnexion {
 	~MAT2d_DataMapOfIntegerConnexion() {
-	printf("Call custom destructor for instance of MAT2d_DataMapOfIntegerConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerConnexion\n");}
 	}
 };
 
@@ -1302,7 +1305,7 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMap
 };
 %extend MAT2d_DataMapIteratorOfDataMapOfBiIntInteger {
 	~MAT2d_DataMapIteratorOfDataMapOfBiIntInteger() {
-	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntInteger\n");}
 	}
 };
 
@@ -1323,7 +1326,7 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollectio
 };
 %extend MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger {
 	~MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger() {
-	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger\n");}
 	}
 };
 
@@ -1376,7 +1379,7 @@ class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
 };
 %extend MAT2d_SequenceOfBoolean {
 	~MAT2d_SequenceOfBoolean() {
-	printf("Call custom destructor for instance of MAT2d_SequenceOfBoolean\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceOfBoolean\n");}
 	}
 };
 
@@ -1397,7 +1400,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMap
 };
 %extend MAT2d_DataMapIteratorOfDataMapOfIntegerBisec {
 	~MAT2d_DataMapIteratorOfDataMapOfIntegerBisec() {
-	printf("Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerBisec\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerBisec\n");}
 	}
 };
 
@@ -1424,7 +1427,7 @@ class MAT2d_MiniPath {
 };
 %extend MAT2d_MiniPath {
 	~MAT2d_MiniPath() {
-	printf("Call custom destructor for instance of MAT2d_MiniPath\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_MiniPath\n");}
 	}
 };
 
@@ -1448,7 +1451,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
 	~MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d() {
-	printf("Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");}
 	}
 };
 
@@ -1501,7 +1504,7 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 };
 %extend MAT2d_SequenceOfConnexion {
 	~MAT2d_SequenceOfConnexion() {
-	printf("Call custom destructor for instance of MAT2d_SequenceOfConnexion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceOfConnexion\n");}
 	}
 };
 
@@ -1530,6 +1533,6 @@ class MAT2d_Mat2d {
 };
 %extend MAT2d_Mat2d {
 	~MAT2d_Mat2d() {
-	printf("Call custom destructor for instance of MAT2d_Mat2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT2d_Mat2d\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 };
 %extend Handle_PPrsStd_AISPresentation {
 	~Handle_PPrsStd_AISPresentation() {
-	printf("Call custom destructor for instance of Handle_PPrsStd_AISPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPrsStd_AISPresentation\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 };
 %extend Handle_PPrsStd_AISPresentation_1 {
 	~Handle_PPrsStd_AISPresentation_1() {
-	printf("Call custom destructor for instance of Handle_PPrsStd_AISPresentation_1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPrsStd_AISPresentation_1\n");}
 	}
 };
 
@@ -206,7 +209,7 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 };
 %extend PPrsStd_AISPresentation_1 {
 	~PPrsStd_AISPresentation_1() {
-	printf("Call custom destructor for instance of PPrsStd_AISPresentation_1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPrsStd_AISPresentation_1\n");}
 	}
 };
 
@@ -276,6 +279,6 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 };
 %extend PPrsStd_AISPresentation {
 	~PPrsStd_AISPresentation() {
-	printf("Call custom destructor for instance of PPrsStd_AISPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPrsStd_AISPresentation\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -113,7 +116,7 @@ class Geom2dAPI_InterCurveCurve {
 };
 %extend Geom2dAPI_InterCurveCurve {
 	~Geom2dAPI_InterCurveCurve() {
-	printf("Call custom destructor for instance of Geom2dAPI_InterCurveCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dAPI_InterCurveCurve\n");}
 	}
 };
 
@@ -136,7 +139,7 @@ class Geom2dAPI_PointsToBSpline {
 };
 %extend Geom2dAPI_PointsToBSpline {
 	~Geom2dAPI_PointsToBSpline() {
-	printf("Call custom destructor for instance of Geom2dAPI_PointsToBSpline\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dAPI_PointsToBSpline\n");}
 	}
 };
 
@@ -161,7 +164,7 @@ class Geom2dAPI_Interpolate {
 };
 %extend Geom2dAPI_Interpolate {
 	~Geom2dAPI_Interpolate() {
-	printf("Call custom destructor for instance of Geom2dAPI_Interpolate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dAPI_Interpolate\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Geom2dAPI_ProjectPointOnCurve {
 };
 %extend Geom2dAPI_ProjectPointOnCurve {
 	~Geom2dAPI_ProjectPointOnCurve() {
-	printf("Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ProjectPointOnCurve\n");}
 	}
 };
 
@@ -229,6 +232,6 @@ class Geom2dAPI_ExtremaCurveCurve {
 };
 %extend Geom2dAPI_ExtremaCurveCurve {
 	~Geom2dAPI_ExtremaCurveCurve() {
-	printf("Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dAPI_ExtremaCurveCurve\n");}
 	}
 };

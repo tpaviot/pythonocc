@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -99,7 +102,7 @@ class RWStepFEA_RWFeaParametricPoint {
 };
 %extend RWStepFEA_RWFeaParametricPoint {
 	~RWStepFEA_RWFeaParametricPoint() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaParametricPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaParametricPoint\n");}
 	}
 };
 
@@ -118,7 +121,7 @@ class RWStepFEA_RWCurve3dElementRepresentation {
 };
 %extend RWStepFEA_RWCurve3dElementRepresentation {
 	~RWStepFEA_RWCurve3dElementRepresentation() {
-	printf("Call custom destructor for instance of RWStepFEA_RWCurve3dElementRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurve3dElementRepresentation\n");}
 	}
 };
 
@@ -137,7 +140,7 @@ class RWStepFEA_RWCurve3dElementProperty {
 };
 %extend RWStepFEA_RWCurve3dElementProperty {
 	~RWStepFEA_RWCurve3dElementProperty() {
-	printf("Call custom destructor for instance of RWStepFEA_RWCurve3dElementProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurve3dElementProperty\n");}
 	}
 };
 
@@ -156,7 +159,7 @@ class RWStepFEA_RWFeaAreaDensity {
 };
 %extend RWStepFEA_RWFeaAreaDensity {
 	~RWStepFEA_RWFeaAreaDensity() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaAreaDensity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaAreaDensity\n");}
 	}
 };
 
@@ -175,7 +178,7 @@ class RWStepFEA_RWCurveElementInterval {
 };
 %extend RWStepFEA_RWCurveElementInterval {
 	~RWStepFEA_RWCurveElementInterval() {
-	printf("Call custom destructor for instance of RWStepFEA_RWCurveElementInterval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementInterval\n");}
 	}
 };
 
@@ -194,7 +197,7 @@ class RWStepFEA_RWNodeRepresentation {
 };
 %extend RWStepFEA_RWNodeRepresentation {
 	~RWStepFEA_RWNodeRepresentation() {
-	printf("Call custom destructor for instance of RWStepFEA_RWNodeRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeRepresentation\n");}
 	}
 };
 
@@ -213,7 +216,7 @@ class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 };
 %extend RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 	~RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -232,7 +235,7 @@ class RWStepFEA_RWElementRepresentation {
 };
 %extend RWStepFEA_RWElementRepresentation {
 	~RWStepFEA_RWElementRepresentation() {
-	printf("Call custom destructor for instance of RWStepFEA_RWElementRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWElementRepresentation\n");}
 	}
 };
 
@@ -251,7 +254,7 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 };
 %extend RWStepFEA_RWFeaMoistureAbsorption {
 	~RWStepFEA_RWFeaMoistureAbsorption() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaMoistureAbsorption\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaMoistureAbsorption\n");}
 	}
 };
 
@@ -270,7 +273,7 @@ class RWStepFEA_RWCurveElementIntervalConstant {
 };
 %extend RWStepFEA_RWCurveElementIntervalConstant {
 	~RWStepFEA_RWCurveElementIntervalConstant() {
-	printf("Call custom destructor for instance of RWStepFEA_RWCurveElementIntervalConstant\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementIntervalConstant\n");}
 	}
 };
 
@@ -289,7 +292,7 @@ class RWStepFEA_RWNode {
 };
 %extend RWStepFEA_RWNode {
 	~RWStepFEA_RWNode() {
-	printf("Call custom destructor for instance of RWStepFEA_RWNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNode\n");}
 	}
 };
 
@@ -308,7 +311,7 @@ class RWStepFEA_RWFeaMassDensity {
 };
 %extend RWStepFEA_RWFeaMassDensity {
 	~RWStepFEA_RWFeaMassDensity() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaMassDensity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaMassDensity\n");}
 	}
 };
 
@@ -327,7 +330,7 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 };
 %extend RWStepFEA_RWFeaMaterialPropertyRepresentation {
 	~RWStepFEA_RWFeaMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -346,7 +349,7 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 };
 %extend RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 	~RWStepFEA_RWParametricCurve3dElementCoordinateSystem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWParametricCurve3dElementCoordinateSystem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWParametricCurve3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -365,7 +368,7 @@ class RWStepFEA_RWFeaShellBendingStiffness {
 };
 %extend RWStepFEA_RWFeaShellBendingStiffness {
 	~RWStepFEA_RWFeaShellBendingStiffness() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaShellBendingStiffness\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaShellBendingStiffness\n");}
 	}
 };
 
@@ -384,7 +387,7 @@ class RWStepFEA_RWNodeGroup {
 };
 %extend RWStepFEA_RWNodeGroup {
 	~RWStepFEA_RWNodeGroup() {
-	printf("Call custom destructor for instance of RWStepFEA_RWNodeGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeGroup\n");}
 	}
 };
 
@@ -403,7 +406,7 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 };
 %extend RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 	~RWStepFEA_RWParametricSurface3dElementCoordinateSystem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWParametricSurface3dElementCoordinateSystem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWParametricSurface3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -422,7 +425,7 @@ class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 };
 %extend RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 	~RWStepFEA_RWAlignedCurve3dElementCoordinateSystem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWAlignedCurve3dElementCoordinateSystem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWAlignedCurve3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -441,7 +444,7 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 };
 %extend RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 	~RWStepFEA_RWFeaSurfaceSectionGeometricRelationship() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaSurfaceSectionGeometricRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaSurfaceSectionGeometricRelationship\n");}
 	}
 };
 
@@ -460,7 +463,7 @@ class RWStepFEA_RWDummyNode {
 };
 %extend RWStepFEA_RWDummyNode {
 	~RWStepFEA_RWDummyNode() {
-	printf("Call custom destructor for instance of RWStepFEA_RWDummyNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWDummyNode\n");}
 	}
 };
 
@@ -479,7 +482,7 @@ class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 };
 %extend RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 	~RWStepFEA_RWAlignedSurface3dElementCoordinateSystem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWAlignedSurface3dElementCoordinateSystem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWAlignedSurface3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -498,7 +501,7 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 };
 %extend RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 	~RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion\n");}
 	}
 };
 
@@ -517,7 +520,7 @@ class RWStepFEA_RWFeaAxis2Placement3d {
 };
 %extend RWStepFEA_RWFeaAxis2Placement3d {
 	~RWStepFEA_RWFeaAxis2Placement3d() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaAxis2Placement3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaAxis2Placement3d\n");}
 	}
 };
 
@@ -536,7 +539,7 @@ class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 };
 %extend RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 	~RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion\n");}
 	}
 };
 
@@ -555,7 +558,7 @@ class RWStepFEA_RWGeometricNode {
 };
 %extend RWStepFEA_RWGeometricNode {
 	~RWStepFEA_RWGeometricNode() {
-	printf("Call custom destructor for instance of RWStepFEA_RWGeometricNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWGeometricNode\n");}
 	}
 };
 
@@ -574,7 +577,7 @@ class RWStepFEA_RWFeaShellMembraneStiffness {
 };
 %extend RWStepFEA_RWFeaShellMembraneStiffness {
 	~RWStepFEA_RWFeaShellMembraneStiffness() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaShellMembraneStiffness\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaShellMembraneStiffness\n");}
 	}
 };
 
@@ -593,7 +596,7 @@ class RWStepFEA_RWFreedomsList {
 };
 %extend RWStepFEA_RWFreedomsList {
 	~RWStepFEA_RWFreedomsList() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFreedomsList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFreedomsList\n");}
 	}
 };
 
@@ -612,7 +615,7 @@ class RWStepFEA_RWFeaModelDefinition {
 };
 %extend RWStepFEA_RWFeaModelDefinition {
 	~RWStepFEA_RWFeaModelDefinition() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaModelDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModelDefinition\n");}
 	}
 };
 
@@ -631,7 +634,7 @@ class RWStepFEA_RWFeaShellShearStiffness {
 };
 %extend RWStepFEA_RWFeaShellShearStiffness {
 	~RWStepFEA_RWFeaShellShearStiffness() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaShellShearStiffness\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaShellShearStiffness\n");}
 	}
 };
 
@@ -650,7 +653,7 @@ class RWStepFEA_RWNodeSet {
 };
 %extend RWStepFEA_RWNodeSet {
 	~RWStepFEA_RWNodeSet() {
-	printf("Call custom destructor for instance of RWStepFEA_RWNodeSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeSet\n");}
 	}
 };
 
@@ -669,7 +672,7 @@ class RWStepFEA_RWFreedomAndCoefficient {
 };
 %extend RWStepFEA_RWFreedomAndCoefficient {
 	~RWStepFEA_RWFreedomAndCoefficient() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFreedomAndCoefficient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFreedomAndCoefficient\n");}
 	}
 };
 
@@ -688,7 +691,7 @@ class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 };
 %extend RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 	~RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness\n");}
 	}
 };
 
@@ -707,7 +710,7 @@ class RWStepFEA_RWSurface3dElementRepresentation {
 };
 %extend RWStepFEA_RWSurface3dElementRepresentation {
 	~RWStepFEA_RWSurface3dElementRepresentation() {
-	printf("Call custom destructor for instance of RWStepFEA_RWSurface3dElementRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWSurface3dElementRepresentation\n");}
 	}
 };
 
@@ -726,7 +729,7 @@ class RWStepFEA_RWElementGroup {
 };
 %extend RWStepFEA_RWElementGroup {
 	~RWStepFEA_RWElementGroup() {
-	printf("Call custom destructor for instance of RWStepFEA_RWElementGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWElementGroup\n");}
 	}
 };
 
@@ -745,7 +748,7 @@ class RWStepFEA_RWCurveElementEndOffset {
 };
 %extend RWStepFEA_RWCurveElementEndOffset {
 	~RWStepFEA_RWCurveElementEndOffset() {
-	printf("Call custom destructor for instance of RWStepFEA_RWCurveElementEndOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementEndOffset\n");}
 	}
 };
 
@@ -764,7 +767,7 @@ class RWStepFEA_RWVolume3dElementRepresentation {
 };
 %extend RWStepFEA_RWVolume3dElementRepresentation {
 	~RWStepFEA_RWVolume3dElementRepresentation() {
-	printf("Call custom destructor for instance of RWStepFEA_RWVolume3dElementRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWVolume3dElementRepresentation\n");}
 	}
 };
 
@@ -783,7 +786,7 @@ class RWStepFEA_RWFeaRepresentationItem {
 };
 %extend RWStepFEA_RWFeaRepresentationItem {
 	~RWStepFEA_RWFeaRepresentationItem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaRepresentationItem\n");}
 	}
 };
 
@@ -802,7 +805,7 @@ class RWStepFEA_RWFeaModel {
 };
 %extend RWStepFEA_RWFeaModel {
 	~RWStepFEA_RWFeaModel() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaModel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel\n");}
 	}
 };
 
@@ -821,7 +824,7 @@ class RWStepFEA_RWNodeDefinition {
 };
 %extend RWStepFEA_RWNodeDefinition {
 	~RWStepFEA_RWNodeDefinition() {
-	printf("Call custom destructor for instance of RWStepFEA_RWNodeDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeDefinition\n");}
 	}
 };
 
@@ -840,7 +843,7 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 };
 %extend RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 	~RWStepFEA_RWParametricCurve3dElementCoordinateDirection() {
-	printf("Call custom destructor for instance of RWStepFEA_RWParametricCurve3dElementCoordinateDirection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWParametricCurve3dElementCoordinateDirection\n");}
 	}
 };
 
@@ -859,7 +862,7 @@ class RWStepFEA_RWFeaLinearElasticity {
 };
 %extend RWStepFEA_RWFeaLinearElasticity {
 	~RWStepFEA_RWFeaLinearElasticity() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaLinearElasticity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaLinearElasticity\n");}
 	}
 };
 
@@ -878,7 +881,7 @@ class RWStepFEA_RWCurveElementLocation {
 };
 %extend RWStepFEA_RWCurveElementLocation {
 	~RWStepFEA_RWCurveElementLocation() {
-	printf("Call custom destructor for instance of RWStepFEA_RWCurveElementLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementLocation\n");}
 	}
 };
 
@@ -897,7 +900,7 @@ class RWStepFEA_RWElementGeometricRelationship {
 };
 %extend RWStepFEA_RWElementGeometricRelationship {
 	~RWStepFEA_RWElementGeometricRelationship() {
-	printf("Call custom destructor for instance of RWStepFEA_RWElementGeometricRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWElementGeometricRelationship\n");}
 	}
 };
 
@@ -916,7 +919,7 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 };
 %extend RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 	~RWStepFEA_RWFeaMaterialPropertyRepresentationItem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaMaterialPropertyRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaMaterialPropertyRepresentationItem\n");}
 	}
 };
 
@@ -935,7 +938,7 @@ class RWStepFEA_RWCurveElementEndRelease {
 };
 %extend RWStepFEA_RWCurveElementEndRelease {
 	~RWStepFEA_RWCurveElementEndRelease() {
-	printf("Call custom destructor for instance of RWStepFEA_RWCurveElementEndRelease\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementEndRelease\n");}
 	}
 };
 
@@ -954,7 +957,7 @@ class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 };
 %extend RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 	~RWStepFEA_RWCurveElementIntervalLinearlyVarying() {
-	printf("Call custom destructor for instance of RWStepFEA_RWCurveElementIntervalLinearlyVarying\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementIntervalLinearlyVarying\n");}
 	}
 };
 
@@ -973,7 +976,7 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 };
 %extend RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 	~RWStepFEA_RWNodeWithSolutionCoordinateSystem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWNodeWithSolutionCoordinateSystem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeWithSolutionCoordinateSystem\n");}
 	}
 };
 
@@ -992,7 +995,7 @@ class RWStepFEA_RWNodeWithVector {
 };
 %extend RWStepFEA_RWNodeWithVector {
 	~RWStepFEA_RWNodeWithVector() {
-	printf("Call custom destructor for instance of RWStepFEA_RWNodeWithVector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeWithVector\n");}
 	}
 };
 
@@ -1011,7 +1014,7 @@ class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 };
 %extend RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 	~RWStepFEA_RWFeaCurveSectionGeometricRelationship() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaCurveSectionGeometricRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaCurveSectionGeometricRelationship\n");}
 	}
 };
 
@@ -1030,7 +1033,7 @@ class RWStepFEA_RWFeaGroup {
 };
 %extend RWStepFEA_RWFeaGroup {
 	~RWStepFEA_RWFeaGroup() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaGroup\n");}
 	}
 };
 
@@ -1049,7 +1052,7 @@ class RWStepFEA_RWFeaModel3d {
 };
 %extend RWStepFEA_RWFeaModel3d {
 	~RWStepFEA_RWFeaModel3d() {
-	printf("Call custom destructor for instance of RWStepFEA_RWFeaModel3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel3d\n");}
 	}
 };
 
@@ -1068,6 +1071,6 @@ class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
 };
 %extend RWStepFEA_RWConstantSurface3dElementCoordinateSystem {
 	~RWStepFEA_RWConstantSurface3dElementCoordinateSystem() {
-	printf("Call custom destructor for instance of RWStepFEA_RWConstantSurface3dElementCoordinateSystem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWConstantSurface3dElementCoordinateSystem\n");}
 	}
 };

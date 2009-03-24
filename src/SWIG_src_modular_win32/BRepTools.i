@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 };
 %extend Handle_BRepTools_Modification {
 	~Handle_BRepTools_Modification() {
-	printf("Call custom destructor for instance of Handle_BRepTools_Modification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_Modification\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 };
 %extend Handle_BRepTools_GTrsfModification {
 	~Handle_BRepTools_GTrsfModification() {
-	printf("Call custom destructor for instance of Handle_BRepTools_GTrsfModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_GTrsfModification\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 };
 %extend Handle_BRepTools_TrsfModification {
 	~Handle_BRepTools_TrsfModification() {
-	printf("Call custom destructor for instance of Handle_BRepTools_TrsfModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_TrsfModification\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 };
 %extend Handle_BRepTools_ReShape {
 	~Handle_BRepTools_ReShape() {
-	printf("Call custom destructor for instance of Handle_BRepTools_ReShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_ReShape\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 };
 %extend Handle_BRepTools_NurbsConvertModification {
 	~Handle_BRepTools_NurbsConvertModification() {
-	printf("Call custom destructor for instance of Handle_BRepTools_NurbsConvertModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_NurbsConvertModification\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 };
 %extend Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d {
 	~Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
-	printf("Call custom destructor for instance of Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");}
 	}
 };
 
@@ -277,7 +280,7 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 };
 %extend BRepTools_ShapeSet {
 	~BRepTools_ShapeSet() {
-	printf("Call custom destructor for instance of BRepTools_ShapeSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_ShapeSet\n");}
 	}
 };
 
@@ -302,7 +305,7 @@ class BRepTools_Quilt {
 };
 %extend BRepTools_Quilt {
 	~BRepTools_Quilt() {
-	printf("Call custom destructor for instance of BRepTools_Quilt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_Quilt\n");}
 	}
 };
 
@@ -332,7 +335,7 @@ class BRepTools_Modification : public MMgt_TShared {
 };
 %extend BRepTools_Modification {
 	~BRepTools_Modification() {
-	printf("Call custom destructor for instance of BRepTools_Modification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_Modification\n");}
 	}
 };
 
@@ -365,7 +368,7 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 };
 %extend BRepTools_MapOfVertexPnt2d {
 	~BRepTools_MapOfVertexPnt2d() {
-	printf("Call custom destructor for instance of BRepTools_MapOfVertexPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_MapOfVertexPnt2d\n");}
 	}
 };
 
@@ -436,7 +439,7 @@ class BRepTools {
 };
 %extend BRepTools {
 	~BRepTools() {
-	printf("Call custom destructor for instance of BRepTools\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools\n");}
 	}
 };
 
@@ -470,7 +473,7 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_GTrsfModification {
 	~BRepTools_GTrsfModification() {
-	printf("Call custom destructor for instance of BRepTools_GTrsfModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_GTrsfModification\n");}
 	}
 };
 
@@ -495,7 +498,7 @@ class BRepTools_Modifier {
 };
 %extend BRepTools_Modifier {
 	~BRepTools_Modifier() {
-	printf("Call custom destructor for instance of BRepTools_Modifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_Modifier\n");}
 	}
 };
 
@@ -529,7 +532,7 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_TrsfModification {
 	~BRepTools_TrsfModification() {
-	printf("Call custom destructor for instance of BRepTools_TrsfModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_TrsfModification\n");}
 	}
 };
 
@@ -562,7 +565,7 @@ class BRepTools_WireExplorer {
 };
 %extend BRepTools_WireExplorer {
 	~BRepTools_WireExplorer() {
-	printf("Call custom destructor for instance of BRepTools_WireExplorer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_WireExplorer\n");}
 	}
 };
 
@@ -602,7 +605,7 @@ class BRepTools_ReShape : public MMgt_TShared {
 };
 %extend BRepTools_ReShape {
 	~BRepTools_ReShape() {
-	printf("Call custom destructor for instance of BRepTools_ReShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_ReShape\n");}
 	}
 };
 
@@ -634,7 +637,7 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 };
 %extend BRepTools_NurbsConvertModification {
 	~BRepTools_NurbsConvertModification() {
-	printf("Call custom destructor for instance of BRepTools_NurbsConvertModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_NurbsConvertModification\n");}
 	}
 };
 
@@ -655,7 +658,7 @@ class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapI
 };
 %extend BRepTools_DataMapIteratorOfMapOfVertexPnt2d {
 	~BRepTools_DataMapIteratorOfMapOfVertexPnt2d() {
-	printf("Call custom destructor for instance of BRepTools_DataMapIteratorOfMapOfVertexPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_DataMapIteratorOfMapOfVertexPnt2d\n");}
 	}
 };
 
@@ -678,7 +681,7 @@ class BRepTools_Substitution {
 };
 %extend BRepTools_Substitution {
 	~BRepTools_Substitution() {
-	printf("Call custom destructor for instance of BRepTools_Substitution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_Substitution\n");}
 	}
 };
 
@@ -702,6 +705,6 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 };
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
 	~BRepTools_DataMapNodeOfMapOfVertexPnt2d() {
-	printf("Call custom destructor for instance of BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");}
 	}
 };

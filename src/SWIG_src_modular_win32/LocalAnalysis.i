@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -145,7 +148,7 @@ class LocalAnalysis_SurfaceContinuity {
 };
 %extend LocalAnalysis_SurfaceContinuity {
 	~LocalAnalysis_SurfaceContinuity() {
-	printf("Call custom destructor for instance of LocalAnalysis_SurfaceContinuity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LocalAnalysis_SurfaceContinuity\n");}
 	}
 };
 
@@ -162,7 +165,7 @@ class LocalAnalysis {
 };
 %extend LocalAnalysis {
 	~LocalAnalysis() {
-	printf("Call custom destructor for instance of LocalAnalysis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LocalAnalysis\n");}
 	}
 };
 
@@ -207,6 +210,6 @@ class LocalAnalysis_CurveContinuity {
 };
 %extend LocalAnalysis_CurveContinuity {
 	~LocalAnalysis_CurveContinuity() {
-	printf("Call custom destructor for instance of LocalAnalysis_CurveContinuity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LocalAnalysis_CurveContinuity\n");}
 	}
 };

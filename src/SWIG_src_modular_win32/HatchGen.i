@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -119,7 +122,7 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 };
 %extend Handle_HatchGen_SequenceNodeOfDomains {
 	~Handle_HatchGen_SequenceNodeOfDomains() {
-	printf("Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfDomains\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfDomains\n");}
 	}
 };
 
@@ -143,7 +146,7 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 };
 %extend Handle_HatchGen_SequenceNodeOfPointsOnElement {
 	~Handle_HatchGen_SequenceNodeOfPointsOnElement() {
-	printf("Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnElement\n");}
 	}
 };
 
@@ -167,7 +170,7 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 };
 %extend Handle_HatchGen_SequenceNodeOfPointsOnHatching {
 	~Handle_HatchGen_SequenceNodeOfPointsOnHatching() {
-	printf("Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnHatching\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnHatching\n");}
 	}
 };
 
@@ -220,7 +223,7 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 };
 %extend HatchGen_PointsOnHatching {
 	~HatchGen_PointsOnHatching() {
-	printf("Call custom destructor for instance of HatchGen_PointsOnHatching\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_PointsOnHatching\n");}
 	}
 };
 
@@ -273,7 +276,7 @@ class HatchGen_Domains : public TCollection_BaseSequence {
 };
 %extend HatchGen_Domains {
 	~HatchGen_Domains() {
-	printf("Call custom destructor for instance of HatchGen_Domains\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_Domains\n");}
 	}
 };
 
@@ -314,7 +317,7 @@ class HatchGen_IntersectionPoint {
 };
 %extend HatchGen_IntersectionPoint {
 	~HatchGen_IntersectionPoint() {
-	printf("Call custom destructor for instance of HatchGen_IntersectionPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_IntersectionPoint\n");}
 	}
 };
 
@@ -349,7 +352,7 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 };
 %extend HatchGen_PointOnHatching {
 	~HatchGen_PointOnHatching() {
-	printf("Call custom destructor for instance of HatchGen_PointOnHatching\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_PointOnHatching\n");}
 	}
 };
 
@@ -376,7 +379,7 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 };
 %extend HatchGen_PointOnElement {
 	~HatchGen_PointOnElement() {
-	printf("Call custom destructor for instance of HatchGen_PointOnElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_PointOnElement\n");}
 	}
 };
 
@@ -398,7 +401,7 @@ class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
 };
 %extend HatchGen_SequenceNodeOfPointsOnElement {
 	~HatchGen_SequenceNodeOfPointsOnElement() {
-	printf("Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnElement\n");}
 	}
 };
 
@@ -451,7 +454,7 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 };
 %extend HatchGen_PointsOnElement {
 	~HatchGen_PointsOnElement() {
-	printf("Call custom destructor for instance of HatchGen_PointsOnElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_PointsOnElement\n");}
 	}
 };
 
@@ -473,7 +476,7 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 };
 %extend HatchGen_SequenceNodeOfDomains {
 	~HatchGen_SequenceNodeOfDomains() {
-	printf("Call custom destructor for instance of HatchGen_SequenceNodeOfDomains\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfDomains\n");}
 	}
 };
 
@@ -512,7 +515,7 @@ class HatchGen_Domain {
 };
 %extend HatchGen_Domain {
 	~HatchGen_Domain() {
-	printf("Call custom destructor for instance of HatchGen_Domain\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_Domain\n");}
 	}
 };
 
@@ -534,6 +537,6 @@ class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
 };
 %extend HatchGen_SequenceNodeOfPointsOnHatching {
 	~HatchGen_SequenceNodeOfPointsOnHatching() {
-	printf("Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnHatching\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnHatching\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 };
 %extend Handle_BRepTopAdaptor_TopolTool {
 	~Handle_BRepTopAdaptor_TopolTool() {
-	printf("Call custom destructor for instance of Handle_BRepTopAdaptor_TopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_TopolTool\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 };
 %extend Handle_BRepTopAdaptor_HVertex {
 	~Handle_BRepTopAdaptor_HVertex() {
-	printf("Call custom destructor for instance of Handle_BRepTopAdaptor_HVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_HVertex\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 };
 %extend Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
 	~Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
-	printf("Call custom destructor for instance of Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 };
 %extend Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
 	~Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
-	printf("Call custom destructor for instance of Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
 	}
 };
 
@@ -209,7 +212,7 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 };
 %extend BRepTopAdaptor_MapOfShapeTool {
 	~BRepTopAdaptor_MapOfShapeTool() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_MapOfShapeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_MapOfShapeTool\n");}
 	}
 };
 
@@ -243,7 +246,7 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 };
 %extend BRepTopAdaptor_HVertex {
 	~BRepTopAdaptor_HVertex() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_HVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_HVertex\n");}
 	}
 };
 
@@ -264,7 +267,7 @@ class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicM
 };
 %extend BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool {
 	~BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool\n");}
 	}
 };
 
@@ -287,7 +290,7 @@ class BRepTopAdaptor_FClass2d {
 };
 %extend BRepTopAdaptor_FClass2d {
 	~BRepTopAdaptor_FClass2d() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_FClass2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_FClass2d\n");}
 	}
 };
 
@@ -363,7 +366,7 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend BRepTopAdaptor_TopolTool {
 	~BRepTopAdaptor_TopolTool() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_TopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_TopolTool\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 };
 %extend BRepTopAdaptor_SeqOfPtr {
 	~BRepTopAdaptor_SeqOfPtr() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_SeqOfPtr\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SeqOfPtr\n");}
 	}
 };
 
@@ -445,7 +448,7 @@ class BRepTopAdaptor_Tool {
 };
 %extend BRepTopAdaptor_Tool {
 	~BRepTopAdaptor_Tool() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_Tool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_Tool\n");}
 	}
 };
 
@@ -467,7 +470,7 @@ class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
 };
 %extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
 	~BRepTopAdaptor_SequenceNodeOfSeqOfPtr() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
 	}
 };
 
@@ -491,6 +494,6 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 };
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
 	~BRepTopAdaptor_DataMapNodeOfMapOfShapeTool() {
-	printf("Call custom destructor for instance of BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapNodeOfMapOfShapeTool\n");}
 	}
 };

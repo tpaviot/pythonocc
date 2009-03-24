@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_StepRepr_RepresentationContext : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_RepresentationContext {
 	~Handle_StepRepr_RepresentationContext() {
-	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_RepresentationContext\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_StepRepr_GlobalUncertaintyAssignedContext : public Handle_StepRepr_
 };
 %extend Handle_StepRepr_GlobalUncertaintyAssignedContext {
 	~Handle_StepRepr_GlobalUncertaintyAssignedContext() {
-	printf("Call custom destructor for instance of Handle_StepRepr_GlobalUncertaintyAssignedContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_GlobalUncertaintyAssignedContext\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_StepRepr_ParametricRepresentationContext : public Handle_StepRepr_R
 };
 %extend Handle_StepRepr_ParametricRepresentationContext {
 	~Handle_StepRepr_ParametricRepresentationContext() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ParametricRepresentationContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ParametricRepresentationContext\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_StepRepr_ShapeAspectRelationship : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_ShapeAspectRelationship {
 	~Handle_StepRepr_ShapeAspectRelationship() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ShapeAspectRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspectRelationship\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_StepRepr_HArray1OfMaterialPropertyRepresentation : public Handle_MM
 };
 %extend Handle_StepRepr_HArray1OfMaterialPropertyRepresentation {
 	~Handle_StepRepr_HArray1OfMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_HArray1OfMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HArray1OfMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_StepRepr_ProductDefinitionUsage : public Handle_StepBasic_ProductDe
 };
 %extend Handle_StepRepr_ProductDefinitionUsage {
 	~Handle_StepRepr_ProductDefinitionUsage() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ProductDefinitionUsage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ProductDefinitionUsage\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_StepRepr_MakeFromUsageOption : public Handle_StepRepr_ProductDefini
 };
 %extend Handle_StepRepr_MakeFromUsageOption {
 	~Handle_StepRepr_MakeFromUsageOption() {
-	printf("Call custom destructor for instance of Handle_StepRepr_MakeFromUsageOption\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MakeFromUsageOption\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_StepRepr_RepresentationRelationship : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_RepresentationRelationship {
 	~Handle_StepRepr_RepresentationRelationship() {
-	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_RepresentationRelationship\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_R
 };
 %extend Handle_StepRepr_ShapeRepresentationRelationship {
 	~Handle_StepRepr_ShapeRepresentationRelationship() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ShapeRepresentationRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeRepresentationRelationship\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_StepRepr_RepresentationRelationshipWithTransformation : public Hand
 };
 %extend Handle_StepRepr_RepresentationRelationshipWithTransformation {
 	~Handle_StepRepr_RepresentationRelationshipWithTransformation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationRelationshipWithTransformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_RepresentationRelationshipWithTransformation\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_Representation {
 	~Handle_StepRepr_Representation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_Representation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_Representation\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_ProductConcept {
 	~Handle_StepRepr_ProductConcept() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ProductConcept\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ProductConcept\n");}
 	}
 };
 
@@ -392,7 +395,7 @@ class Handle_StepRepr_PropertyDefinitionRelationship : public Handle_MMgt_TShare
 };
 %extend Handle_StepRepr_PropertyDefinitionRelationship {
 	~Handle_StepRepr_PropertyDefinitionRelationship() {
-	printf("Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRelationship\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_
 };
 %extend Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation {
 	~Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDef
 };
 %extend Handle_StepRepr_AssemblyComponentUsage {
 	~Handle_StepRepr_AssemblyComponentUsage() {
-	printf("Call custom destructor for instance of Handle_StepRepr_AssemblyComponentUsage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_AssemblyComponentUsage\n");}
 	}
 };
 
@@ -464,7 +467,7 @@ class Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : p
 };
 %extend Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
 	~Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -488,7 +491,7 @@ class Handle_StepRepr_PropertyDefinition : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_PropertyDefinition {
 	~Handle_StepRepr_PropertyDefinition() {
-	printf("Call custom destructor for instance of Handle_StepRepr_PropertyDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_PropertyDefinition\n");}
 	}
 };
 
@@ -512,7 +515,7 @@ class Handle_StepRepr_ShapeAspect : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_ShapeAspect {
 	~Handle_StepRepr_ShapeAspect() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ShapeAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspect\n");}
 	}
 };
 
@@ -536,7 +539,7 @@ class Handle_StepRepr_CompositeShapeAspect : public Handle_StepRepr_ShapeAspect 
 };
 %extend Handle_StepRepr_CompositeShapeAspect {
 	~Handle_StepRepr_CompositeShapeAspect() {
-	printf("Call custom destructor for instance of Handle_StepRepr_CompositeShapeAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_CompositeShapeAspect\n");}
 	}
 };
 
@@ -560,7 +563,7 @@ class Handle_StepRepr_RepresentationItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_RepresentationItem {
 	~Handle_StepRepr_RepresentationItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_RepresentationItem\n");}
 	}
 };
 
@@ -584,7 +587,7 @@ class Handle_StepRepr_CompoundRepresentationItem : public Handle_StepRepr_Repres
 };
 %extend Handle_StepRepr_CompoundRepresentationItem {
 	~Handle_StepRepr_CompoundRepresentationItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_CompoundRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_CompoundRepresentationItem\n");}
 	}
 };
 
@@ -608,7 +611,7 @@ class Handle_StepRepr_HSequenceOfRepresentationItem : public Handle_MMgt_TShared
 };
 %extend Handle_StepRepr_HSequenceOfRepresentationItem {
 	~Handle_StepRepr_HSequenceOfRepresentationItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_HSequenceOfRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HSequenceOfRepresentationItem\n");}
 	}
 };
 
@@ -632,7 +635,7 @@ class Handle_StepRepr_FunctionallyDefinedTransformation : public Handle_MMgt_TSh
 };
 %extend Handle_StepRepr_FunctionallyDefinedTransformation {
 	~Handle_StepRepr_FunctionallyDefinedTransformation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_FunctionallyDefinedTransformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_FunctionallyDefinedTransformation\n");}
 	}
 };
 
@@ -656,7 +659,7 @@ class Handle_StepRepr_MaterialProperty : public Handle_StepRepr_PropertyDefiniti
 };
 %extend Handle_StepRepr_MaterialProperty {
 	~Handle_StepRepr_MaterialProperty() {
-	printf("Call custom destructor for instance of Handle_StepRepr_MaterialProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MaterialProperty\n");}
 	}
 };
 
@@ -680,7 +683,7 @@ class Handle_StepRepr_AssemblyComponentUsageSubstitute : public Handle_MMgt_TSha
 };
 %extend Handle_StepRepr_AssemblyComponentUsageSubstitute {
 	~Handle_StepRepr_AssemblyComponentUsageSubstitute() {
-	printf("Call custom destructor for instance of Handle_StepRepr_AssemblyComponentUsageSubstitute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_AssemblyComponentUsageSubstitute\n");}
 	}
 };
 
@@ -704,7 +707,7 @@ class Handle_StepRepr_MappedItem : public Handle_StepRepr_RepresentationItem {
 };
 %extend Handle_StepRepr_MappedItem {
 	~Handle_StepRepr_MappedItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_MappedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MappedItem\n");}
 	}
 };
 
@@ -728,7 +731,7 @@ class Handle_StepRepr_QuantifiedAssemblyComponentUsage : public Handle_StepRepr_
 };
 %extend Handle_StepRepr_QuantifiedAssemblyComponentUsage {
 	~Handle_StepRepr_QuantifiedAssemblyComponentUsage() {
-	printf("Call custom destructor for instance of Handle_StepRepr_QuantifiedAssemblyComponentUsage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_QuantifiedAssemblyComponentUsage\n");}
 	}
 };
 
@@ -752,7 +755,7 @@ class Handle_StepRepr_RepresentationMap : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_RepresentationMap {
 	~Handle_StepRepr_RepresentationMap() {
-	printf("Call custom destructor for instance of Handle_StepRepr_RepresentationMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_RepresentationMap\n");}
 	}
 };
 
@@ -776,7 +779,7 @@ class Handle_StepRepr_MaterialDesignation : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_MaterialDesignation {
 	~Handle_StepRepr_MaterialDesignation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_MaterialDesignation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MaterialDesignation\n");}
 	}
 };
 
@@ -800,7 +803,7 @@ class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspect
 };
 %extend Handle_StepRepr_ShapeAspectTransition {
 	~Handle_StepRepr_ShapeAspectTransition() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ShapeAspectTransition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspectTransition\n");}
 	}
 };
 
@@ -824,7 +827,7 @@ class Handle_StepRepr_ItemDefinedTransformation : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_ItemDefinedTransformation {
 	~Handle_StepRepr_ItemDefinedTransformation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ItemDefinedTransformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ItemDefinedTransformation\n");}
 	}
 };
 
@@ -848,7 +851,7 @@ class Handle_StepRepr_NextAssemblyUsageOccurrence : public Handle_StepRepr_Assem
 };
 %extend Handle_StepRepr_NextAssemblyUsageOccurrence {
 	~Handle_StepRepr_NextAssemblyUsageOccurrence() {
-	printf("Call custom destructor for instance of Handle_StepRepr_NextAssemblyUsageOccurrence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_NextAssemblyUsageOccurrence\n");}
 	}
 };
 
@@ -872,7 +875,7 @@ class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_DataEnvironment {
 	~Handle_StepRepr_DataEnvironment() {
-	printf("Call custom destructor for instance of Handle_StepRepr_DataEnvironment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DataEnvironment\n");}
 	}
 };
 
@@ -896,7 +899,7 @@ class Handle_StepRepr_DerivedShapeAspect : public Handle_StepRepr_ShapeAspect {
 };
 %extend Handle_StepRepr_DerivedShapeAspect {
 	~Handle_StepRepr_DerivedShapeAspect() {
-	printf("Call custom destructor for instance of Handle_StepRepr_DerivedShapeAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DerivedShapeAspect\n");}
 	}
 };
 
@@ -920,7 +923,7 @@ class Handle_StepRepr_Extension : public Handle_StepRepr_DerivedShapeAspect {
 };
 %extend Handle_StepRepr_Extension {
 	~Handle_StepRepr_Extension() {
-	printf("Call custom destructor for instance of Handle_StepRepr_Extension\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_Extension\n");}
 	}
 };
 
@@ -944,7 +947,7 @@ class Handle_StepRepr_ReprItemAndLengthMeasureWithUnit : public Handle_StepRepr_
 };
 %extend Handle_StepRepr_ReprItemAndLengthMeasureWithUnit {
 	~Handle_StepRepr_ReprItemAndLengthMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ReprItemAndLengthMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ReprItemAndLengthMeasureWithUnit\n");}
 	}
 };
 
@@ -968,7 +971,7 @@ class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TSha
 };
 %extend Handle_StepRepr_PropertyDefinitionRepresentation {
 	~Handle_StepRepr_PropertyDefinitionRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRepresentation\n");}
 	}
 };
 
@@ -992,7 +995,7 @@ class Handle_StepRepr_MaterialPropertyRepresentation : public Handle_StepRepr_Pr
 };
 %extend Handle_StepRepr_MaterialPropertyRepresentation {
 	~Handle_StepRepr_MaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_MaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -1016,7 +1019,7 @@ class Handle_StepRepr_ProductDefinitionShape : public Handle_StepRepr_PropertyDe
 };
 %extend Handle_StepRepr_ProductDefinitionShape {
 	~Handle_StepRepr_ProductDefinitionShape() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ProductDefinitionShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ProductDefinitionShape\n");}
 	}
 };
 
@@ -1040,7 +1043,7 @@ class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_HArray1OfRepresentationItem {
 	~Handle_StepRepr_HArray1OfRepresentationItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_HArray1OfRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HArray1OfRepresentationItem\n");}
 	}
 };
 
@@ -1064,7 +1067,7 @@ class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : publi
 };
 %extend Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation {
 	~Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");}
 	}
 };
 
@@ -1088,7 +1091,7 @@ class Handle_StepRepr_DescriptiveRepresentationItem : public Handle_StepRepr_Rep
 };
 %extend Handle_StepRepr_DescriptiveRepresentationItem {
 	~Handle_StepRepr_DescriptiveRepresentationItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_DescriptiveRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DescriptiveRepresentationItem\n");}
 	}
 };
 
@@ -1112,7 +1115,7 @@ class Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public Handle
 };
 %extend Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
 	~Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem\n");}
 	}
 };
 
@@ -1136,7 +1139,7 @@ class Handle_StepRepr_StructuralResponseProperty : public Handle_StepRepr_Proper
 };
 %extend Handle_StepRepr_StructuralResponseProperty {
 	~Handle_StepRepr_StructuralResponseProperty() {
-	printf("Call custom destructor for instance of Handle_StepRepr_StructuralResponseProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_StructuralResponseProperty\n");}
 	}
 };
 
@@ -1160,7 +1163,7 @@ class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_As
 };
 %extend Handle_StepRepr_SpecifiedHigherUsageOccurrence {
 	~Handle_StepRepr_SpecifiedHigherUsageOccurrence() {
-	printf("Call custom destructor for instance of Handle_StepRepr_SpecifiedHigherUsageOccurrence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_SpecifiedHigherUsageOccurrence\n");}
 	}
 };
 
@@ -1184,7 +1187,7 @@ class Handle_StepRepr_GlobalUnitAssignedContext : public Handle_StepRepr_Represe
 };
 %extend Handle_StepRepr_GlobalUnitAssignedContext {
 	~Handle_StepRepr_GlobalUnitAssignedContext() {
-	printf("Call custom destructor for instance of Handle_StepRepr_GlobalUnitAssignedContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_GlobalUnitAssignedContext\n");}
 	}
 };
 
@@ -1208,7 +1211,7 @@ class Handle_StepRepr_ValueRange : public Handle_StepRepr_CompoundRepresentation
 };
 %extend Handle_StepRepr_ValueRange {
 	~Handle_StepRepr_ValueRange() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ValueRange\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ValueRange\n");}
 	}
 };
 
@@ -1232,7 +1235,7 @@ class Handle_StepRepr_ShapeAspectDerivingRelationship : public Handle_StepRepr_S
 };
 %extend Handle_StepRepr_ShapeAspectDerivingRelationship {
 	~Handle_StepRepr_ShapeAspectDerivingRelationship() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ShapeAspectDerivingRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspectDerivingRelationship\n");}
 	}
 };
 
@@ -1256,7 +1259,7 @@ class Handle_StepRepr_DefinitionalRepresentation : public Handle_StepRepr_Repres
 };
 %extend Handle_StepRepr_DefinitionalRepresentation {
 	~Handle_StepRepr_DefinitionalRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_DefinitionalRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DefinitionalRepresentation\n");}
 	}
 };
 
@@ -1280,7 +1283,7 @@ class Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation : public Handle_
 };
 %extend Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation {
 	~Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation\n");}
 	}
 };
 
@@ -1304,7 +1307,7 @@ class Handle_StepRepr_ConfigurationItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_ConfigurationItem {
 	~Handle_StepRepr_ConfigurationItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ConfigurationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ConfigurationItem\n");}
 	}
 };
 
@@ -1328,7 +1331,7 @@ class Handle_StepRepr_ExternallyDefinedRepresentation : public Handle_StepRepr_R
 };
 %extend Handle_StepRepr_ExternallyDefinedRepresentation {
 	~Handle_StepRepr_ExternallyDefinedRepresentation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ExternallyDefinedRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ExternallyDefinedRepresentation\n");}
 	}
 };
 
@@ -1352,7 +1355,7 @@ class Handle_StepRepr_ConfigurationEffectivity : public Handle_StepBasic_Product
 };
 %extend Handle_StepRepr_ConfigurationEffectivity {
 	~Handle_StepRepr_ConfigurationEffectivity() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ConfigurationEffectivity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ConfigurationEffectivity\n");}
 	}
 };
 
@@ -1376,7 +1379,7 @@ class Handle_StepRepr_MeasureRepresentationItem : public Handle_StepRepr_Represe
 };
 %extend Handle_StepRepr_MeasureRepresentationItem {
 	~Handle_StepRepr_MeasureRepresentationItem() {
-	printf("Call custom destructor for instance of Handle_StepRepr_MeasureRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MeasureRepresentationItem\n");}
 	}
 };
 
@@ -1400,7 +1403,7 @@ class Handle_StepRepr_ConfigurationDesign : public Handle_MMgt_TShared {
 };
 %extend Handle_StepRepr_ConfigurationDesign {
 	~Handle_StepRepr_ConfigurationDesign() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ConfigurationDesign\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ConfigurationDesign\n");}
 	}
 };
 
@@ -1424,7 +1427,7 @@ class Handle_StepRepr_PromissoryUsageOccurrence : public Handle_StepRepr_Assembl
 };
 %extend Handle_StepRepr_PromissoryUsageOccurrence {
 	~Handle_StepRepr_PromissoryUsageOccurrence() {
-	printf("Call custom destructor for instance of Handle_StepRepr_PromissoryUsageOccurrence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_PromissoryUsageOccurrence\n");}
 	}
 };
 
@@ -1448,7 +1451,7 @@ class Handle_StepRepr_SuppliedPartRelationship : public Handle_StepBasic_Product
 };
 %extend Handle_StepRepr_SuppliedPartRelationship {
 	~Handle_StepRepr_SuppliedPartRelationship() {
-	printf("Call custom destructor for instance of Handle_StepRepr_SuppliedPartRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_SuppliedPartRelationship\n");}
 	}
 };
 
@@ -1472,7 +1475,7 @@ class Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation : public
 };
 %extend Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation {
 	~Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation() {
-	printf("Call custom destructor for instance of Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation\n");}
 	}
 };
 
@@ -1511,7 +1514,7 @@ class StepRepr_Array1OfPropertyDefinitionRepresentation {
 };
 %extend StepRepr_Array1OfPropertyDefinitionRepresentation {
 	~StepRepr_Array1OfPropertyDefinitionRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_Array1OfPropertyDefinitionRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_Array1OfPropertyDefinitionRepresentation\n");}
 	}
 };
 
@@ -1540,7 +1543,7 @@ class StepRepr_CharacterizedDefinition : public StepData_SelectType {
 };
 %extend StepRepr_CharacterizedDefinition {
 	~StepRepr_CharacterizedDefinition() {
-	printf("Call custom destructor for instance of StepRepr_CharacterizedDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_CharacterizedDefinition\n");}
 	}
 };
 
@@ -1580,7 +1583,7 @@ class StepRepr_ShapeAspectRelationship : public MMgt_TShared {
 };
 %extend StepRepr_ShapeAspectRelationship {
 	~StepRepr_ShapeAspectRelationship() {
-	printf("Call custom destructor for instance of StepRepr_ShapeAspectRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeAspectRelationship\n");}
 	}
 };
 
@@ -1598,7 +1601,7 @@ class StepRepr_ShapeAspectTransition : public StepRepr_ShapeAspectRelationship {
 };
 %extend StepRepr_ShapeAspectTransition {
 	~StepRepr_ShapeAspectTransition() {
-	printf("Call custom destructor for instance of StepRepr_ShapeAspectTransition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeAspectTransition\n");}
 	}
 };
 
@@ -1628,7 +1631,7 @@ class StepRepr_ConfigurationDesign : public MMgt_TShared {
 };
 %extend StepRepr_ConfigurationDesign {
 	~StepRepr_ConfigurationDesign() {
-	printf("Call custom destructor for instance of StepRepr_ConfigurationDesign\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationDesign\n");}
 	}
 };
 
@@ -1666,7 +1669,7 @@ class StepRepr_RepresentationRelationship : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationRelationship {
 	~StepRepr_RepresentationRelationship() {
-	printf("Call custom destructor for instance of StepRepr_RepresentationRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentationRelationship\n");}
 	}
 };
 
@@ -1684,7 +1687,7 @@ class StepRepr_ShapeRepresentationRelationship : public StepRepr_RepresentationR
 };
 %extend StepRepr_ShapeRepresentationRelationship {
 	~StepRepr_ShapeRepresentationRelationship() {
-	printf("Call custom destructor for instance of StepRepr_ShapeRepresentationRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeRepresentationRelationship\n");}
 	}
 };
 
@@ -1708,7 +1711,7 @@ class StepRepr_RepresentationRelationshipWithTransformation : public StepRepr_Sh
 };
 %extend StepRepr_RepresentationRelationshipWithTransformation {
 	~StepRepr_RepresentationRelationshipWithTransformation() {
-	printf("Call custom destructor for instance of StepRepr_RepresentationRelationshipWithTransformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentationRelationshipWithTransformation\n");}
 	}
 };
 
@@ -1772,7 +1775,7 @@ class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_HSequenceOfRepresentationItem {
 	~StepRepr_HSequenceOfRepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_HSequenceOfRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_HSequenceOfRepresentationItem\n");}
 	}
 };
 
@@ -1810,7 +1813,7 @@ class StepRepr_Representation : public MMgt_TShared {
 };
 %extend StepRepr_Representation {
 	~StepRepr_Representation() {
-	printf("Call custom destructor for instance of StepRepr_Representation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_Representation\n");}
 	}
 };
 
@@ -1848,7 +1851,7 @@ class StepRepr_PropertyDefinitionRelationship : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinitionRelationship {
 	~StepRepr_PropertyDefinitionRelationship() {
-	printf("Call custom destructor for instance of StepRepr_PropertyDefinitionRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_PropertyDefinitionRelationship\n");}
 	}
 };
 
@@ -1888,7 +1891,7 @@ class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfMaterialPropertyRepresentation {
 	~StepRepr_HArray1OfMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_HArray1OfMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_HArray1OfMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -1928,7 +1931,7 @@ class StepRepr_ProductConcept : public MMgt_TShared {
 };
 %extend StepRepr_ProductConcept {
 	~StepRepr_ProductConcept() {
-	printf("Call custom destructor for instance of StepRepr_ProductConcept\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ProductConcept\n");}
 	}
 };
 
@@ -1953,7 +1956,7 @@ class StepRepr_RepresentedDefinition : public StepData_SelectType {
 };
 %extend StepRepr_RepresentedDefinition {
 	~StepRepr_RepresentedDefinition() {
-	printf("Call custom destructor for instance of StepRepr_RepresentedDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentedDefinition\n");}
 	}
 };
 
@@ -1973,7 +1976,7 @@ class StepRepr_SuppliedPartRelationship : public StepBasic_ProductDefinitionRela
 };
 %extend StepRepr_SuppliedPartRelationship {
 	~StepRepr_SuppliedPartRelationship() {
-	printf("Call custom destructor for instance of StepRepr_SuppliedPartRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_SuppliedPartRelationship\n");}
 	}
 };
 
@@ -2011,7 +2014,7 @@ class StepRepr_ShapeAspect : public MMgt_TShared {
 };
 %extend StepRepr_ShapeAspect {
 	~StepRepr_ShapeAspect() {
-	printf("Call custom destructor for instance of StepRepr_ShapeAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeAspect\n");}
 	}
 };
 
@@ -2029,7 +2032,7 @@ class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 };
 %extend StepRepr_DerivedShapeAspect {
 	~StepRepr_DerivedShapeAspect() {
-	printf("Call custom destructor for instance of StepRepr_DerivedShapeAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_DerivedShapeAspect\n");}
 	}
 };
 
@@ -2047,7 +2050,7 @@ class StepRepr_Extension : public StepRepr_DerivedShapeAspect {
 };
 %extend StepRepr_Extension {
 	~StepRepr_Extension() {
-	printf("Call custom destructor for instance of StepRepr_Extension\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_Extension\n");}
 	}
 };
 
@@ -2069,7 +2072,7 @@ class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_S
 };
 %extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
 	~StepRepr_SequenceNodeOfSequenceOfRepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_SequenceNodeOfSequenceOfRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_SequenceNodeOfSequenceOfRepresentationItem\n");}
 	}
 };
 
@@ -2089,7 +2092,7 @@ class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelati
 };
 %extend StepRepr_ProductDefinitionUsage {
 	~StepRepr_ProductDefinitionUsage() {
-	printf("Call custom destructor for instance of StepRepr_ProductDefinitionUsage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ProductDefinitionUsage\n");}
 	}
 };
 
@@ -2119,7 +2122,7 @@ class StepRepr_RepresentationContext : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationContext {
 	~StepRepr_RepresentationContext() {
-	printf("Call custom destructor for instance of StepRepr_RepresentationContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentationContext\n");}
 	}
 };
 
@@ -2137,7 +2140,7 @@ class StepRepr_ParametricRepresentationContext : public StepRepr_RepresentationC
 };
 %extend StepRepr_ParametricRepresentationContext {
 	~StepRepr_ParametricRepresentationContext() {
-	printf("Call custom destructor for instance of StepRepr_ParametricRepresentationContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ParametricRepresentationContext\n");}
 	}
 };
 
@@ -2157,7 +2160,7 @@ class StepRepr_ShapeRepresentationRelationshipWithTransformation : public StepRe
 };
 %extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
 	~StepRepr_ShapeRepresentationRelationshipWithTransformation() {
-	printf("Call custom destructor for instance of StepRepr_ShapeRepresentationRelationshipWithTransformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeRepresentationRelationshipWithTransformation\n");}
 	}
 };
 
@@ -2197,7 +2200,7 @@ class StepRepr_HArray1OfRepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfRepresentationItem {
 	~StepRepr_HArray1OfRepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_HArray1OfRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_HArray1OfRepresentationItem\n");}
 	}
 };
 
@@ -2227,7 +2230,7 @@ class StepRepr_MaterialDesignation : public MMgt_TShared {
 };
 %extend StepRepr_MaterialDesignation {
 	~StepRepr_MaterialDesignation() {
-	printf("Call custom destructor for instance of StepRepr_MaterialDesignation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_MaterialDesignation\n");}
 	}
 };
 
@@ -2257,7 +2260,7 @@ class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
 };
 %extend StepRepr_FunctionallyDefinedTransformation {
 	~StepRepr_FunctionallyDefinedTransformation() {
-	printf("Call custom destructor for instance of StepRepr_FunctionallyDefinedTransformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_FunctionallyDefinedTransformation\n");}
 	}
 };
 
@@ -2277,7 +2280,7 @@ class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
 };
 %extend StepRepr_CompositeShapeAspect {
 	~StepRepr_CompositeShapeAspect() {
-	printf("Call custom destructor for instance of StepRepr_CompositeShapeAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_CompositeShapeAspect\n");}
 	}
 };
 
@@ -2305,7 +2308,7 @@ class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
 };
 %extend StepRepr_AssemblyComponentUsage {
 	~StepRepr_AssemblyComponentUsage() {
-	printf("Call custom destructor for instance of StepRepr_AssemblyComponentUsage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_AssemblyComponentUsage\n");}
 	}
 };
 
@@ -2345,7 +2348,7 @@ class StepRepr_HArray1OfPropertyDefinitionRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
 	~StepRepr_HArray1OfPropertyDefinitionRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_HArray1OfPropertyDefinitionRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_HArray1OfPropertyDefinitionRepresentation\n");}
 	}
 };
 
@@ -2371,7 +2374,7 @@ class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffe
 };
 %extend StepRepr_ConfigurationEffectivity {
 	~StepRepr_ConfigurationEffectivity() {
-	printf("Call custom destructor for instance of StepRepr_ConfigurationEffectivity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationEffectivity\n");}
 	}
 };
 
@@ -2403,7 +2406,7 @@ class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_Representation
 };
 %extend StepRepr_GlobalUncertaintyAssignedContext {
 	~StepRepr_GlobalUncertaintyAssignedContext() {
-	printf("Call custom destructor for instance of StepRepr_GlobalUncertaintyAssignedContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_GlobalUncertaintyAssignedContext\n");}
 	}
 };
 
@@ -2433,7 +2436,7 @@ class StepRepr_PropertyDefinitionRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinitionRepresentation {
 	~StepRepr_PropertyDefinitionRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_PropertyDefinitionRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_PropertyDefinitionRepresentation\n");}
 	}
 };
 
@@ -2457,7 +2460,7 @@ class StepRepr_MaterialPropertyRepresentation : public StepRepr_PropertyDefiniti
 };
 %extend StepRepr_MaterialPropertyRepresentation {
 	~StepRepr_MaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_MaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_MaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -2487,7 +2490,7 @@ class StepRepr_SpecifiedHigherUsageOccurrence : public StepRepr_AssemblyComponen
 };
 %extend StepRepr_SpecifiedHigherUsageOccurrence {
 	~StepRepr_SpecifiedHigherUsageOccurrence() {
-	printf("Call custom destructor for instance of StepRepr_SpecifiedHigherUsageOccurrence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_SpecifiedHigherUsageOccurrence\n");}
 	}
 };
 
@@ -2513,7 +2516,7 @@ class StepRepr_RepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationItem {
 	~StepRepr_RepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_RepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentationItem\n");}
 	}
 };
 
@@ -2541,7 +2544,7 @@ class StepRepr_MappedItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_MappedItem {
 	~StepRepr_MappedItem() {
-	printf("Call custom destructor for instance of StepRepr_MappedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_MappedItem\n");}
 	}
 };
 
@@ -2561,7 +2564,7 @@ class StepRepr_StructuralResponsePropertyDefinitionRepresentation : public StepR
 };
 %extend StepRepr_StructuralResponsePropertyDefinitionRepresentation {
 	~StepRepr_StructuralResponsePropertyDefinitionRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");}
 	}
 };
 
@@ -2595,7 +2598,7 @@ class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_Representation
 };
 %extend StepRepr_ReprItemAndLengthMeasureWithUnit {
 	~StepRepr_ReprItemAndLengthMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepRepr_ReprItemAndLengthMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ReprItemAndLengthMeasureWithUnit\n");}
 	}
 };
 
@@ -2648,7 +2651,7 @@ class StepRepr_SequenceOfMaterialPropertyRepresentation : public TCollection_Bas
 };
 %extend StepRepr_SequenceOfMaterialPropertyRepresentation {
 	~StepRepr_SequenceOfMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_SequenceOfMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_SequenceOfMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -2668,7 +2671,7 @@ class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRela
 };
 %extend StepRepr_ShapeAspectDerivingRelationship {
 	~StepRepr_ShapeAspectDerivingRelationship() {
-	printf("Call custom destructor for instance of StepRepr_ShapeAspectDerivingRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeAspectDerivingRelationship\n");}
 	}
 };
 
@@ -2687,7 +2690,7 @@ class StepRepr_Transformation : public StepData_SelectType {
 };
 %extend StepRepr_Transformation {
 	~StepRepr_Transformation() {
-	printf("Call custom destructor for instance of StepRepr_Transformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_Transformation\n");}
 	}
 };
 
@@ -2717,7 +2720,7 @@ class StepRepr_RepresentationMap : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationMap {
 	~StepRepr_RepresentationMap() {
-	printf("Call custom destructor for instance of StepRepr_RepresentationMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentationMap\n");}
 	}
 };
 
@@ -2756,7 +2759,7 @@ class StepRepr_Array1OfMaterialPropertyRepresentation {
 };
 %extend StepRepr_Array1OfMaterialPropertyRepresentation {
 	~StepRepr_Array1OfMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_Array1OfMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_Array1OfMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -2792,7 +2795,7 @@ class StepRepr_PropertyDefinition : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinition {
 	~StepRepr_PropertyDefinition() {
-	printf("Call custom destructor for instance of StepRepr_PropertyDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_PropertyDefinition\n");}
 	}
 };
 
@@ -2810,7 +2813,7 @@ class StepRepr_ProductDefinitionShape : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_ProductDefinitionShape {
 	~StepRepr_ProductDefinitionShape() {
-	printf("Call custom destructor for instance of StepRepr_ProductDefinitionShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ProductDefinitionShape\n");}
 	}
 };
 
@@ -2842,7 +2845,7 @@ class StepRepr_CompoundRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_CompoundRepresentationItem {
 	~StepRepr_CompoundRepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_CompoundRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_CompoundRepresentationItem\n");}
 	}
 };
 
@@ -2862,7 +2865,7 @@ class StepRepr_NextAssemblyUsageOccurrence : public StepRepr_AssemblyComponentUs
 };
 %extend StepRepr_NextAssemblyUsageOccurrence {
 	~StepRepr_NextAssemblyUsageOccurrence() {
-	printf("Call custom destructor for instance of StepRepr_NextAssemblyUsageOccurrence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_NextAssemblyUsageOccurrence\n");}
 	}
 };
 
@@ -2894,7 +2897,7 @@ class StepRepr_GlobalUnitAssignedContext : public StepRepr_RepresentationContext
 };
 %extend StepRepr_GlobalUnitAssignedContext {
 	~StepRepr_GlobalUnitAssignedContext() {
-	printf("Call custom destructor for instance of StepRepr_GlobalUnitAssignedContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_GlobalUnitAssignedContext\n");}
 	}
 };
 
@@ -2916,7 +2919,7 @@ class StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public T
 };
 %extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
 	~StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -2936,7 +2939,7 @@ class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
 };
 %extend StepRepr_ValueRange {
 	~StepRepr_ValueRange() {
-	printf("Call custom destructor for instance of StepRepr_ValueRange\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ValueRange\n");}
 	}
 };
 
@@ -2989,7 +2992,7 @@ class StepRepr_SequenceOfRepresentationItem : public TCollection_BaseSequence {
 };
 %extend StepRepr_SequenceOfRepresentationItem {
 	~StepRepr_SequenceOfRepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_SequenceOfRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_SequenceOfRepresentationItem\n");}
 	}
 };
 
@@ -3009,7 +3012,7 @@ class StepRepr_ExternallyDefinedRepresentation : public StepRepr_Representation 
 };
 %extend StepRepr_ExternallyDefinedRepresentation {
 	~StepRepr_ExternallyDefinedRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_ExternallyDefinedRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ExternallyDefinedRepresentation\n");}
 	}
 };
 
@@ -3029,7 +3032,7 @@ class StepRepr_DefinitionalRepresentation : public StepRepr_Representation {
 };
 %extend StepRepr_DefinitionalRepresentation {
 	~StepRepr_DefinitionalRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_DefinitionalRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_DefinitionalRepresentation\n");}
 	}
 };
 
@@ -3067,7 +3070,7 @@ class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
 };
 %extend StepRepr_AssemblyComponentUsageSubstitute {
 	~StepRepr_AssemblyComponentUsageSubstitute() {
-	printf("Call custom destructor for instance of StepRepr_AssemblyComponentUsageSubstitute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_AssemblyComponentUsageSubstitute\n");}
 	}
 };
 
@@ -3093,7 +3096,7 @@ class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyCompon
 };
 %extend StepRepr_QuantifiedAssemblyComponentUsage {
 	~StepRepr_QuantifiedAssemblyComponentUsage() {
-	printf("Call custom destructor for instance of StepRepr_QuantifiedAssemblyComponentUsage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_QuantifiedAssemblyComponentUsage\n");}
 	}
 };
 
@@ -3114,7 +3117,7 @@ class StepRepr_ShapeDefinition : public StepData_SelectType {
 };
 %extend StepRepr_ShapeDefinition {
 	~StepRepr_ShapeDefinition() {
-	printf("Call custom destructor for instance of StepRepr_ShapeDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeDefinition\n");}
 	}
 };
 
@@ -3142,7 +3145,7 @@ class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationIte
 };
 %extend StepRepr_DescriptiveRepresentationItem {
 	~StepRepr_DescriptiveRepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_DescriptiveRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_DescriptiveRepresentationItem\n");}
 	}
 };
 
@@ -3206,7 +3209,7 @@ class StepRepr_HSequenceOfMaterialPropertyRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
 	~StepRepr_HSequenceOfMaterialPropertyRepresentation() {
-	printf("Call custom destructor for instance of StepRepr_HSequenceOfMaterialPropertyRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_HSequenceOfMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -3240,7 +3243,7 @@ class StepRepr_DataEnvironment : public MMgt_TShared {
 };
 %extend StepRepr_DataEnvironment {
 	~StepRepr_DataEnvironment() {
-	printf("Call custom destructor for instance of StepRepr_DataEnvironment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_DataEnvironment\n");}
 	}
 };
 
@@ -3279,7 +3282,7 @@ class StepRepr_Array1OfRepresentationItem {
 };
 %extend StepRepr_Array1OfRepresentationItem {
 	~StepRepr_Array1OfRepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_Array1OfRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_Array1OfRepresentationItem\n");}
 	}
 };
 
@@ -3298,7 +3301,7 @@ class StepRepr_ConfigurationDesignItem : public StepData_SelectType {
 };
 %extend StepRepr_ConfigurationDesignItem {
 	~StepRepr_ConfigurationDesignItem() {
-	printf("Call custom destructor for instance of StepRepr_ConfigurationDesignItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationDesignItem\n");}
 	}
 };
 
@@ -3324,7 +3327,7 @@ class StepRepr_MeasureRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_MeasureRepresentationItem {
 	~StepRepr_MeasureRepresentationItem() {
-	printf("Call custom destructor for instance of StepRepr_MeasureRepresentationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_MeasureRepresentationItem\n");}
 	}
 };
 
@@ -3344,7 +3347,7 @@ class StepRepr_MaterialProperty : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_MaterialProperty {
 	~StepRepr_MaterialProperty() {
-	printf("Call custom destructor for instance of StepRepr_MaterialProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_MaterialProperty\n");}
 	}
 };
 
@@ -3382,7 +3385,7 @@ class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
 };
 %extend StepRepr_ItemDefinedTransformation {
 	~StepRepr_ItemDefinedTransformation() {
-	printf("Call custom destructor for instance of StepRepr_ItemDefinedTransformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ItemDefinedTransformation\n");}
 	}
 };
 
@@ -3402,7 +3405,7 @@ class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsag
 };
 %extend StepRepr_PromissoryUsageOccurrence {
 	~StepRepr_PromissoryUsageOccurrence() {
-	printf("Call custom destructor for instance of StepRepr_PromissoryUsageOccurrence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_PromissoryUsageOccurrence\n");}
 	}
 };
 
@@ -3422,7 +3425,7 @@ class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_StructuralResponseProperty {
 	~StepRepr_StructuralResponseProperty() {
-	printf("Call custom destructor for instance of StepRepr_StructuralResponseProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_StructuralResponseProperty\n");}
 	}
 };
 
@@ -3456,7 +3459,7 @@ class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
 };
 %extend StepRepr_MakeFromUsageOption {
 	~StepRepr_MakeFromUsageOption() {
-	printf("Call custom destructor for instance of StepRepr_MakeFromUsageOption\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_MakeFromUsageOption\n");}
 	}
 };
 
@@ -3502,6 +3505,6 @@ class StepRepr_ConfigurationItem : public MMgt_TShared {
 };
 %extend StepRepr_ConfigurationItem {
 	~StepRepr_ConfigurationItem() {
-	printf("Call custom destructor for instance of StepRepr_ConfigurationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationItem\n");}
 	}
 };

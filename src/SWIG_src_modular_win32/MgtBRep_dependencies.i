@@ -19,10 +19,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
-#include <MgtTopoDS_TranslateTool.hxx>
-#include <MgtTopoDS_TranslateTool1.hxx>
 #include <Handle_MgtTopoDS_TranslateTool.hxx>
 #include <Handle_MgtTopoDS_TranslateTool1.hxx>
+#include <MgtTopoDS_TranslateTool.hxx>
+#include <MgtTopoDS_TranslateTool1.hxx>
 %};
 
 %import MgtTopoDS.i

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -103,7 +106,7 @@ class Geom2dToIGES_Geom2dEntity {
 };
 %extend Geom2dToIGES_Geom2dEntity {
 	~Geom2dToIGES_Geom2dEntity() {
-	printf("Call custom destructor for instance of Geom2dToIGES_Geom2dEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dToIGES_Geom2dEntity\n");}
 	}
 };
 
@@ -120,7 +123,7 @@ class Geom2dToIGES_Geom2dCurve : public Geom2dToIGES_Geom2dEntity {
 };
 %extend Geom2dToIGES_Geom2dCurve {
 	~Geom2dToIGES_Geom2dCurve() {
-	printf("Call custom destructor for instance of Geom2dToIGES_Geom2dCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dToIGES_Geom2dCurve\n");}
 	}
 };
 
@@ -141,7 +144,7 @@ class Geom2dToIGES_Geom2dVector : public Geom2dToIGES_Geom2dEntity {
 };
 %extend Geom2dToIGES_Geom2dVector {
 	~Geom2dToIGES_Geom2dVector() {
-	printf("Call custom destructor for instance of Geom2dToIGES_Geom2dVector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dToIGES_Geom2dVector\n");}
 	}
 };
 
@@ -160,6 +163,6 @@ class Geom2dToIGES_Geom2dPoint : public Geom2dToIGES_Geom2dEntity {
 };
 %extend Geom2dToIGES_Geom2dPoint {
 	~Geom2dToIGES_Geom2dPoint() {
-	printf("Call custom destructor for instance of Geom2dToIGES_Geom2dPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dToIGES_Geom2dPoint\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,6 +107,6 @@ class Handle_CGM_Driver : public Handle_PlotMgt_PlotterDriver {
 };
 %extend Handle_CGM_Driver {
 	~Handle_CGM_Driver() {
-	printf("Call custom destructor for instance of Handle_CGM_Driver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CGM_Driver\n");}
 	}
 };

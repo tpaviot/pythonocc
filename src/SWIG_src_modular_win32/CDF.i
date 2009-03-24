@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -161,7 +164,7 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 };
 %extend Handle_CDF_MetaDataDriver {
 	~Handle_CDF_MetaDataDriver() {
-	printf("Call custom destructor for instance of Handle_CDF_MetaDataDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriver\n");}
 	}
 };
 
@@ -185,7 +188,7 @@ class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 };
 %extend Handle_CDF_MetaDataDriverError {
 	~Handle_CDF_MetaDataDriverError() {
-	printf("Call custom destructor for instance of Handle_CDF_MetaDataDriverError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriverError\n");}
 	}
 };
 
@@ -209,7 +212,7 @@ class Handle_CDF_StoreList : public Handle_Standard_Transient {
 };
 %extend Handle_CDF_StoreList {
 	~Handle_CDF_StoreList() {
-	printf("Call custom destructor for instance of Handle_CDF_StoreList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDF_StoreList\n");}
 	}
 };
 
@@ -233,7 +236,7 @@ class Handle_CDF_Directory : public Handle_Standard_Transient {
 };
 %extend Handle_CDF_Directory {
 	~Handle_CDF_Directory() {
-	printf("Call custom destructor for instance of Handle_CDF_Directory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDF_Directory\n");}
 	}
 };
 
@@ -257,7 +260,7 @@ class Handle_CDF_Application : public Handle_CDM_Application {
 };
 %extend Handle_CDF_Application {
 	~Handle_CDF_Application() {
-	printf("Call custom destructor for instance of Handle_CDF_Application\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDF_Application\n");}
 	}
 };
 
@@ -281,7 +284,7 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 };
 %extend Handle_CDF_MetaDataDriverFactory {
 	~Handle_CDF_MetaDataDriverFactory() {
-	printf("Call custom destructor for instance of Handle_CDF_MetaDataDriverFactory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriverFactory\n");}
 	}
 };
 
@@ -305,7 +308,7 @@ class Handle_CDF_Session : public Handle_Standard_Transient {
 };
 %extend Handle_CDF_Session {
 	~Handle_CDF_Session() {
-	printf("Call custom destructor for instance of Handle_CDF_Session\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDF_Session\n");}
 	}
 };
 
@@ -333,7 +336,7 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 };
 %extend CDF_MetaDataDriverError {
 	~CDF_MetaDataDriverError() {
-	printf("Call custom destructor for instance of CDF_MetaDataDriverError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriverError\n");}
 	}
 };
 
@@ -350,7 +353,7 @@ class CDF {
 };
 %extend CDF {
 	~CDF() {
-	printf("Call custom destructor for instance of CDF\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF\n");}
 	}
 };
 
@@ -404,7 +407,7 @@ class CDF_Application : public CDM_Application {
 };
 %extend CDF_Application {
 	~CDF_Application() {
-	printf("Call custom destructor for instance of CDF_Application\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_Application\n");}
 	}
 };
 
@@ -423,7 +426,7 @@ class CDF_Timer {
 };
 %extend CDF_Timer {
 	~CDF_Timer() {
-	printf("Call custom destructor for instance of CDF_Timer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_Timer\n");}
 	}
 };
 
@@ -455,7 +458,7 @@ class CDF_StoreList : public Standard_Transient {
 };
 %extend CDF_StoreList {
 	~CDF_StoreList() {
-	printf("Call custom destructor for instance of CDF_StoreList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_StoreList\n");}
 	}
 };
 
@@ -505,7 +508,7 @@ class CDF_MetaDataDriver : public Standard_Transient {
 };
 %extend CDF_MetaDataDriver {
 	~CDF_MetaDataDriver() {
-	printf("Call custom destructor for instance of CDF_MetaDataDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriver\n");}
 	}
 };
 
@@ -525,7 +528,7 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 };
 %extend CDF_MetaDataDriverFactory {
 	~CDF_MetaDataDriverFactory() {
-	printf("Call custom destructor for instance of CDF_MetaDataDriverFactory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriverFactory\n");}
 	}
 };
 
@@ -557,7 +560,7 @@ class CDF_Directory : public Standard_Transient {
 };
 %extend CDF_Directory {
 	~CDF_Directory() {
-	printf("Call custom destructor for instance of CDF_Directory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_Directory\n");}
 	}
 };
 
@@ -595,7 +598,7 @@ class CDF_Session : public Standard_Transient {
 };
 %extend CDF_Session {
 	~CDF_Session() {
-	printf("Call custom destructor for instance of CDF_Session\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_Session\n");}
 	}
 };
 
@@ -616,7 +619,7 @@ class CDF_DirectoryIterator {
 };
 %extend CDF_DirectoryIterator {
 	~CDF_DirectoryIterator() {
-	printf("Call custom destructor for instance of CDF_DirectoryIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_DirectoryIterator\n");}
 	}
 };
 
@@ -697,6 +700,6 @@ class CDF_Store {
 };
 %extend CDF_Store {
 	~CDF_Store() {
-	printf("Call custom destructor for instance of CDF_Store\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDF_Store\n");}
 	}
 };

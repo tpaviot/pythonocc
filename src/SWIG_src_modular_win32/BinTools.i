@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -107,7 +110,7 @@ class BinTools_LocationSet {
 };
 %extend BinTools_LocationSet {
 	~BinTools_LocationSet() {
-	printf("Call custom destructor for instance of BinTools_LocationSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTools_LocationSet\n");}
 	}
 };
 
@@ -136,7 +139,7 @@ class BinTools {
 };
 %extend BinTools {
 	~BinTools() {
-	printf("Call custom destructor for instance of BinTools\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTools\n");}
 	}
 };
 
@@ -201,7 +204,7 @@ class BinTools_ShapeSet {
 };
 %extend BinTools_ShapeSet {
 	~BinTools_ShapeSet() {
-	printf("Call custom destructor for instance of BinTools_ShapeSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTools_ShapeSet\n");}
 	}
 };
 
@@ -230,7 +233,7 @@ class BinTools_Curve2dSet {
 };
 %extend BinTools_Curve2dSet {
 	~BinTools_Curve2dSet() {
-	printf("Call custom destructor for instance of BinTools_Curve2dSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTools_Curve2dSet\n");}
 	}
 };
 
@@ -259,7 +262,7 @@ class BinTools_SurfaceSet {
 };
 %extend BinTools_SurfaceSet {
 	~BinTools_SurfaceSet() {
-	printf("Call custom destructor for instance of BinTools_SurfaceSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTools_SurfaceSet\n");}
 	}
 };
 
@@ -288,6 +291,6 @@ class BinTools_CurveSet {
 };
 %extend BinTools_CurveSet {
 	~BinTools_CurveSet() {
-	printf("Call custom destructor for instance of BinTools_CurveSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTools_CurveSet\n");}
 	}
 };

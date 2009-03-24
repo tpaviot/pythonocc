@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -95,7 +98,7 @@ class XDEDRAW_Common {
 };
 %extend XDEDRAW_Common {
 	~XDEDRAW_Common() {
-	printf("Call custom destructor for instance of XDEDRAW_Common\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Common\n");}
 	}
 };
 
@@ -110,7 +113,7 @@ class XDEDRAW_Layers {
 };
 %extend XDEDRAW_Layers {
 	~XDEDRAW_Layers() {
-	printf("Call custom destructor for instance of XDEDRAW_Layers\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Layers\n");}
 	}
 };
 
@@ -127,7 +130,7 @@ class XDEDRAW {
 };
 %extend XDEDRAW {
 	~XDEDRAW() {
-	printf("Call custom destructor for instance of XDEDRAW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW\n");}
 	}
 };
 
@@ -142,7 +145,7 @@ class XDEDRAW_Colors {
 };
 %extend XDEDRAW_Colors {
 	~XDEDRAW_Colors() {
-	printf("Call custom destructor for instance of XDEDRAW_Colors\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Colors\n");}
 	}
 };
 
@@ -157,7 +160,7 @@ class XDEDRAW_Shapes {
 };
 %extend XDEDRAW_Shapes {
 	~XDEDRAW_Shapes() {
-	printf("Call custom destructor for instance of XDEDRAW_Shapes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Shapes\n");}
 	}
 };
 
@@ -172,6 +175,6 @@ class XDEDRAW_Props {
 };
 %extend XDEDRAW_Props {
 	~XDEDRAW_Props() {
-	printf("Call custom destructor for instance of XDEDRAW_Props\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Props\n");}
 	}
 };

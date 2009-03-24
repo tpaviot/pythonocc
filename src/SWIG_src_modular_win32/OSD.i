@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -224,7 +227,7 @@ class Handle_OSD_Exception : public Handle_Standard_Failure {
 };
 %extend Handle_OSD_Exception {
 	~Handle_OSD_Exception() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_STACK_OVERFLOW {
 	~Handle_OSD_Exception_STACK_OVERFLOW() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_STACK_OVERFLOW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_STACK_OVERFLOW\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_OSD_Signal : public Handle_Standard_Failure {
 };
 %extend Handle_OSD_Signal {
 	~Handle_OSD_Signal() {
-	printf("Call custom destructor for instance of Handle_OSD_Signal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Signal\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 };
 %extend Handle_OSD_SIGILL {
 	~Handle_OSD_SIGILL() {
-	printf("Call custom destructor for instance of Handle_OSD_SIGILL\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGILL\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 };
 %extend Handle_OSD_SIGHUP {
 	~Handle_OSD_SIGHUP() {
-	printf("Call custom destructor for instance of Handle_OSD_SIGHUP\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGHUP\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_ILLEGAL_INSTRUCTION {
 	~Handle_OSD_Exception_ILLEGAL_INSTRUCTION() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_ILLEGAL_INSTRUCTION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ILLEGAL_INSTRUCTION\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_OSD_OSDError : public Handle_Standard_Failure {
 };
 %extend Handle_OSD_OSDError {
 	~Handle_OSD_OSDError() {
-	printf("Call custom destructor for instance of Handle_OSD_OSDError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_OSDError\n");}
 	}
 };
 
@@ -392,7 +395,7 @@ class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_CTRL_BREAK {
 	~Handle_OSD_Exception_CTRL_BREAK() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_CTRL_BREAK\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_CTRL_BREAK\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class Handle_OSD_SIGINT : public Handle_OSD_Signal {
 };
 %extend Handle_OSD_SIGINT {
 	~Handle_OSD_SIGINT() {
-	printf("Call custom destructor for instance of Handle_OSD_SIGINT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGINT\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_PRIV_INSTRUCTION {
 	~Handle_OSD_Exception_PRIV_INSTRUCTION() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_PRIV_INSTRUCTION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_PRIV_INSTRUCTION\n");}
 	}
 };
 
@@ -464,7 +467,7 @@ class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 };
 %extend Handle_OSD_SIGKILL {
 	~Handle_OSD_SIGKILL() {
-	printf("Call custom destructor for instance of Handle_OSD_SIGKILL\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGKILL\n");}
 	}
 };
 
@@ -488,7 +491,7 @@ class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_ACCESS_VIOLATION {
 	~Handle_OSD_Exception_ACCESS_VIOLATION() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_ACCESS_VIOLATION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ACCESS_VIOLATION\n");}
 	}
 };
 
@@ -512,7 +515,7 @@ class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
 };
 %extend Handle_OSD_SIGQUIT {
 	~Handle_OSD_SIGQUIT() {
-	printf("Call custom destructor for instance of Handle_OSD_SIGQUIT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGQUIT\n");}
 	}
 };
 
@@ -536,7 +539,7 @@ class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_INVALID_DISPOSITION {
 	~Handle_OSD_Exception_INVALID_DISPOSITION() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_INVALID_DISPOSITION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INVALID_DISPOSITION\n");}
 	}
 };
 
@@ -560,7 +563,7 @@ class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_INT_DIVIDE_BY_ZERO {
 	~Handle_OSD_Exception_INT_DIVIDE_BY_ZERO() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_INT_DIVIDE_BY_ZERO\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_DIVIDE_BY_ZERO\n");}
 	}
 };
 
@@ -584,7 +587,7 @@ class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_INT_OVERFLOW {
 	~Handle_OSD_Exception_INT_OVERFLOW() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_INT_OVERFLOW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_OVERFLOW\n");}
 	}
 };
 
@@ -608,7 +611,7 @@ class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_FLT_STACK_CHECK {
 	~Handle_OSD_Exception_FLT_STACK_CHECK() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_STACK_CHECK\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_STACK_CHECK\n");}
 	}
 };
 
@@ -632,7 +635,7 @@ class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_STATUS_NO_MEMORY {
 	~Handle_OSD_Exception_STATUS_NO_MEMORY() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_STATUS_NO_MEMORY\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_STATUS_NO_MEMORY\n");}
 	}
 };
 
@@ -656,7 +659,7 @@ class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_FLT_INVALID_OPERATION {
 	~Handle_OSD_Exception_FLT_INVALID_OPERATION() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_INVALID_OPERATION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_INVALID_OPERATION\n");}
 	}
 };
 
@@ -680,7 +683,7 @@ class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exceptio
 };
 %extend Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION {
 	~Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION\n");}
 	}
 };
 
@@ -704,7 +707,7 @@ class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_FLT_OVERFLOW {
 	~Handle_OSD_Exception_FLT_OVERFLOW() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_OVERFLOW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_OVERFLOW\n");}
 	}
 };
 
@@ -728,7 +731,7 @@ class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
 	~Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");}
 	}
 };
 
@@ -752,7 +755,7 @@ class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 };
 %extend Handle_OSD_SIGBUS {
 	~Handle_OSD_SIGBUS() {
-	printf("Call custom destructor for instance of Handle_OSD_SIGBUS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGBUS\n");}
 	}
 };
 
@@ -776,7 +779,7 @@ class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_FLT_INEXACT_RESULT {
 	~Handle_OSD_Exception_FLT_INEXACT_RESULT() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_INEXACT_RESULT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_INEXACT_RESULT\n");}
 	}
 };
 
@@ -800,7 +803,7 @@ class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_FLT_DENORMAL_OPERAND {
 	~Handle_OSD_Exception_FLT_DENORMAL_OPERAND() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_DENORMAL_OPERAND\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_DENORMAL_OPERAND\n");}
 	}
 };
 
@@ -824,7 +827,7 @@ class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 };
 %extend Handle_OSD_SIGSEGV {
 	~Handle_OSD_SIGSEGV() {
-	printf("Call custom destructor for instance of Handle_OSD_SIGSEGV\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGSEGV\n");}
 	}
 };
 
@@ -848,7 +851,7 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO {
 	~Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO\n");}
 	}
 };
 
@@ -872,7 +875,7 @@ class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 };
 %extend Handle_OSD_SIGSYS {
 	~Handle_OSD_SIGSYS() {
-	printf("Call custom destructor for instance of Handle_OSD_SIGSYS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGSYS\n");}
 	}
 };
 
@@ -896,7 +899,7 @@ class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_FLT_UNDERFLOW {
 	~Handle_OSD_Exception_FLT_UNDERFLOW() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_FLT_UNDERFLOW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_UNDERFLOW\n");}
 	}
 };
 
@@ -920,7 +923,7 @@ class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 };
 %extend Handle_OSD_Exception_IN_PAGE_ERROR {
 	~Handle_OSD_Exception_IN_PAGE_ERROR() {
-	printf("Call custom destructor for instance of Handle_OSD_Exception_IN_PAGE_ERROR\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_IN_PAGE_ERROR\n");}
 	}
 };
 
@@ -953,7 +956,7 @@ class OSD_FileIterator {
 };
 %extend OSD_FileIterator {
 	~OSD_FileIterator() {
-	printf("Call custom destructor for instance of OSD_FileIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_FileIterator\n");}
 	}
 };
 
@@ -986,7 +989,7 @@ class OSD_DirectoryIterator {
 };
 %extend OSD_DirectoryIterator {
 	~OSD_DirectoryIterator() {
-	printf("Call custom destructor for instance of OSD_DirectoryIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_DirectoryIterator\n");}
 	}
 };
 
@@ -1014,7 +1017,7 @@ class OSD_Exception : public Standard_Failure {
 };
 %extend OSD_Exception {
 	~OSD_Exception() {
-	printf("Call custom destructor for instance of OSD_Exception\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception\n");}
 	}
 };
 
@@ -1036,7 +1039,7 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 };
 %extend OSD_Exception_CTRL_BREAK {
 	~OSD_Exception_CTRL_BREAK() {
-	printf("Call custom destructor for instance of OSD_Exception_CTRL_BREAK\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_CTRL_BREAK\n");}
 	}
 };
 
@@ -1053,7 +1056,7 @@ class OSD_Real2String {
 };
 %extend OSD_Real2String {
 	~OSD_Real2String() {
-	printf("Call custom destructor for instance of OSD_Real2String\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Real2String\n");}
 	}
 };
 
@@ -1081,7 +1084,7 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 };
 %extend OSD_Exception_INVALID_DISPOSITION {
 	~OSD_Exception_INVALID_DISPOSITION() {
-	printf("Call custom destructor for instance of OSD_Exception_INVALID_DISPOSITION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_INVALID_DISPOSITION\n");}
 	}
 };
 
@@ -1109,7 +1112,7 @@ class OSD_Signal : public Standard_Failure {
 };
 %extend OSD_Signal {
 	~OSD_Signal() {
-	printf("Call custom destructor for instance of OSD_Signal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Signal\n");}
 	}
 };
 
@@ -1131,7 +1134,7 @@ class OSD_SIGKILL : public OSD_Signal {
 };
 %extend OSD_SIGKILL {
 	~OSD_SIGKILL() {
-	printf("Call custom destructor for instance of OSD_SIGKILL\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SIGKILL\n");}
 	}
 };
 
@@ -1166,7 +1169,7 @@ class OSD_Host {
 };
 %extend OSD_Host {
 	~OSD_Host() {
-	printf("Call custom destructor for instance of OSD_Host\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Host\n");}
 	}
 };
 
@@ -1194,7 +1197,7 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_INEXACT_RESULT {
 	~OSD_Exception_FLT_INEXACT_RESULT() {
-	printf("Call custom destructor for instance of OSD_Exception_FLT_INEXACT_RESULT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_INEXACT_RESULT\n");}
 	}
 };
 
@@ -1222,7 +1225,7 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %extend OSD_Exception_INT_DIVIDE_BY_ZERO {
 	~OSD_Exception_INT_DIVIDE_BY_ZERO() {
-	printf("Call custom destructor for instance of OSD_Exception_INT_DIVIDE_BY_ZERO\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_INT_DIVIDE_BY_ZERO\n");}
 	}
 };
 
@@ -1250,7 +1253,7 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_STACK_CHECK {
 	~OSD_Exception_FLT_STACK_CHECK() {
-	printf("Call custom destructor for instance of OSD_Exception_FLT_STACK_CHECK\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_STACK_CHECK\n");}
 	}
 };
 
@@ -1275,7 +1278,7 @@ class OSD_Printer {
 };
 %extend OSD_Printer {
 	~OSD_Printer() {
-	printf("Call custom destructor for instance of OSD_Printer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Printer\n");}
 	}
 };
 
@@ -1304,7 +1307,7 @@ class OSD_EnvironmentIterator {
 };
 %extend OSD_EnvironmentIterator {
 	~OSD_EnvironmentIterator() {
-	printf("Call custom destructor for instance of OSD_EnvironmentIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_EnvironmentIterator\n");}
 	}
 };
 
@@ -1332,7 +1335,7 @@ class OSD_SIGSYS : public OSD_Signal {
 };
 %extend OSD_SIGSYS {
 	~OSD_SIGSYS() {
-	printf("Call custom destructor for instance of OSD_SIGSYS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SIGSYS\n");}
 	}
 };
 
@@ -1360,7 +1363,7 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_UNDERFLOW {
 	~OSD_Exception_FLT_UNDERFLOW() {
-	printf("Call custom destructor for instance of OSD_Exception_FLT_UNDERFLOW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_UNDERFLOW\n");}
 	}
 };
 
@@ -1388,7 +1391,7 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 };
 %extend OSD_Exception_IN_PAGE_ERROR {
 	~OSD_Exception_IN_PAGE_ERROR() {
-	printf("Call custom destructor for instance of OSD_Exception_IN_PAGE_ERROR\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_IN_PAGE_ERROR\n");}
 	}
 };
 
@@ -1416,7 +1419,7 @@ class OSD_OSDError : public Standard_Failure {
 };
 %extend OSD_OSDError {
 	~OSD_OSDError() {
-	printf("Call custom destructor for instance of OSD_OSDError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_OSDError\n");}
 	}
 };
 
@@ -1457,7 +1460,7 @@ class OSD_Disk {
 };
 %extend OSD_Disk {
 	~OSD_Disk() {
-	printf("Call custom destructor for instance of OSD_Disk\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Disk\n");}
 	}
 };
 
@@ -1480,7 +1483,7 @@ class OSD_Error {
 };
 %extend OSD_Error {
 	~OSD_Error() {
-	printf("Call custom destructor for instance of OSD_Error\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Error\n");}
 	}
 };
 
@@ -1511,7 +1514,7 @@ class OSD_SharedMemory {
 };
 %extend OSD_SharedMemory {
 	~OSD_SharedMemory() {
-	printf("Call custom destructor for instance of OSD_SharedMemory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SharedMemory\n");}
 	}
 };
 
@@ -1539,7 +1542,7 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 };
 %extend OSD_Exception_ARRAY_BOUNDS_EXCEEDED {
 	~OSD_Exception_ARRAY_BOUNDS_EXCEEDED() {
-	printf("Call custom destructor for instance of OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");}
 	}
 };
 
@@ -1574,7 +1577,7 @@ class OSD_Thread {
 };
 %extend OSD_Thread {
 	~OSD_Thread() {
-	printf("Call custom destructor for instance of OSD_Thread\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Thread\n");}
 	}
 };
 
@@ -1602,7 +1605,7 @@ class OSD_SIGQUIT : public OSD_Signal {
 };
 %extend OSD_SIGQUIT {
 	~OSD_SIGQUIT() {
-	printf("Call custom destructor for instance of OSD_SIGQUIT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SIGQUIT\n");}
 	}
 };
 
@@ -1630,7 +1633,7 @@ class OSD_SIGBUS : public OSD_Signal {
 };
 %extend OSD_SIGBUS {
 	~OSD_SIGBUS() {
-	printf("Call custom destructor for instance of OSD_SIGBUS\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SIGBUS\n");}
 	}
 };
 
@@ -1673,7 +1676,7 @@ class OSD_FileNode {
 };
 %extend OSD_FileNode {
 	~OSD_FileNode() {
-	printf("Call custom destructor for instance of OSD_FileNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_FileNode\n");}
 	}
 };
 
@@ -1738,7 +1741,7 @@ class OSD_File : public OSD_FileNode {
 };
 %extend OSD_File {
 	~OSD_File() {
-	printf("Call custom destructor for instance of OSD_File\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_File\n");}
 	}
 };
 
@@ -1766,7 +1769,7 @@ class OSD_SIGSEGV : public OSD_Signal {
 };
 %extend OSD_SIGSEGV {
 	~OSD_SIGSEGV() {
-	printf("Call custom destructor for instance of OSD_SIGSEGV\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SIGSEGV\n");}
 	}
 };
 
@@ -1794,7 +1797,7 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 };
 %extend OSD_Exception_PRIV_INSTRUCTION {
 	~OSD_Exception_PRIV_INSTRUCTION() {
-	printf("Call custom destructor for instance of OSD_Exception_PRIV_INSTRUCTION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_PRIV_INSTRUCTION\n");}
 	}
 };
 
@@ -1813,7 +1816,7 @@ class OSD_Directory : public OSD_FileNode {
 };
 %extend OSD_Directory {
 	~OSD_Directory() {
-	printf("Call custom destructor for instance of OSD_Directory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Directory\n");}
 	}
 };
 
@@ -1850,7 +1853,7 @@ class OSD_Environment {
 };
 %extend OSD_Environment {
 	~OSD_Environment() {
-	printf("Call custom destructor for instance of OSD_Environment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Environment\n");}
 	}
 };
 
@@ -1878,7 +1881,7 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 };
 %extend OSD_Exception_ACCESS_VIOLATION {
 	~OSD_Exception_ACCESS_VIOLATION() {
-	printf("Call custom destructor for instance of OSD_Exception_ACCESS_VIOLATION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_ACCESS_VIOLATION\n");}
 	}
 };
 
@@ -1915,7 +1918,7 @@ class OSD {
 };
 %extend OSD {
 	~OSD() {
-	printf("Call custom destructor for instance of OSD\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD\n");}
 	}
 };
 
@@ -1943,7 +1946,7 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 };
 %extend OSD_Exception_ILLEGAL_INSTRUCTION {
 	~OSD_Exception_ILLEGAL_INSTRUCTION() {
-	printf("Call custom destructor for instance of OSD_Exception_ILLEGAL_INSTRUCTION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_ILLEGAL_INSTRUCTION\n");}
 	}
 };
 
@@ -1971,7 +1974,7 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_INVALID_OPERATION {
 	~OSD_Exception_FLT_INVALID_OPERATION() {
-	printf("Call custom destructor for instance of OSD_Exception_FLT_INVALID_OPERATION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_INVALID_OPERATION\n");}
 	}
 };
 
@@ -1999,7 +2002,7 @@ class OSD_SIGINT : public OSD_Signal {
 };
 %extend OSD_SIGINT {
 	~OSD_SIGINT() {
-	printf("Call custom destructor for instance of OSD_SIGINT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SIGINT\n");}
 	}
 };
 
@@ -2027,7 +2030,7 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_STACK_OVERFLOW {
 	~OSD_Exception_STACK_OVERFLOW() {
-	printf("Call custom destructor for instance of OSD_Exception_STACK_OVERFLOW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_STACK_OVERFLOW\n");}
 	}
 };
 
@@ -2056,7 +2059,7 @@ class OSD_Chronometer {
 };
 %extend OSD_Chronometer {
 	~OSD_Chronometer() {
-	printf("Call custom destructor for instance of OSD_Chronometer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Chronometer\n");}
 	}
 };
 
@@ -2084,7 +2087,7 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_INT_OVERFLOW {
 	~OSD_Exception_INT_OVERFLOW() {
-	printf("Call custom destructor for instance of OSD_Exception_INT_OVERFLOW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_INT_OVERFLOW\n");}
 	}
 };
 
@@ -2157,7 +2160,7 @@ class OSD_Path {
 };
 %extend OSD_Path {
 	~OSD_Path() {
-	printf("Call custom destructor for instance of OSD_Path\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Path\n");}
 	}
 };
 
@@ -2185,7 +2188,7 @@ class OSD_SIGHUP : public OSD_Signal {
 };
 %extend OSD_SIGHUP {
 	~OSD_SIGHUP() {
-	printf("Call custom destructor for instance of OSD_SIGHUP\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SIGHUP\n");}
 	}
 };
 
@@ -2212,7 +2215,7 @@ class OSD_Timer : public OSD_Chronometer {
 };
 %extend OSD_Timer {
 	~OSD_Timer() {
-	printf("Call custom destructor for instance of OSD_Timer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Timer\n");}
 	}
 };
 
@@ -2240,7 +2243,7 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 };
 %extend OSD_Exception_STATUS_NO_MEMORY {
 	~OSD_Exception_STATUS_NO_MEMORY() {
-	printf("Call custom destructor for instance of OSD_Exception_STATUS_NO_MEMORY\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_STATUS_NO_MEMORY\n");}
 	}
 };
 
@@ -2279,7 +2282,7 @@ class OSD_Protection {
 };
 %extend OSD_Protection {
 	~OSD_Protection() {
-	printf("Call custom destructor for instance of OSD_Protection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Protection\n");}
 	}
 };
 
@@ -2307,7 +2310,7 @@ class OSD_SIGILL : public OSD_Signal {
 };
 %extend OSD_SIGILL {
 	~OSD_SIGILL() {
-	printf("Call custom destructor for instance of OSD_SIGILL\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SIGILL\n");}
 	}
 };
 
@@ -2334,7 +2337,7 @@ class OSD_SharedLibrary {
 };
 %extend OSD_SharedLibrary {
 	~OSD_SharedLibrary() {
-	printf("Call custom destructor for instance of OSD_SharedLibrary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_SharedLibrary\n");}
 	}
 };
 
@@ -2362,7 +2365,7 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_DENORMAL_OPERAND {
 	~OSD_Exception_FLT_DENORMAL_OPERAND() {
-	printf("Call custom destructor for instance of OSD_Exception_FLT_DENORMAL_OPERAND\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_DENORMAL_OPERAND\n");}
 	}
 };
 
@@ -2390,7 +2393,7 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_OVERFLOW {
 	~OSD_Exception_FLT_OVERFLOW() {
-	printf("Call custom destructor for instance of OSD_Exception_FLT_OVERFLOW\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_OVERFLOW\n");}
 	}
 };
 
@@ -2418,7 +2421,7 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 };
 %extend OSD_Exception_FLT_DIVIDE_BY_ZERO {
 	~OSD_Exception_FLT_DIVIDE_BY_ZERO() {
-	printf("Call custom destructor for instance of OSD_Exception_FLT_DIVIDE_BY_ZERO\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_DIVIDE_BY_ZERO\n");}
 	}
 };
 
@@ -2446,6 +2449,6 @@ class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {
 };
 %extend OSD_Exception_NONCONTINUABLE_EXCEPTION {
 	~OSD_Exception_NONCONTINUABLE_EXCEPTION() {
-	printf("Call custom destructor for instance of OSD_Exception_NONCONTINUABLE_EXCEPTION\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of OSD_Exception_NONCONTINUABLE_EXCEPTION\n");}
 	}
 };

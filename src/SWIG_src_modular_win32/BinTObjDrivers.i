@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_BinTObjDrivers_ModelDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinTObjDrivers_ModelDriver {
 	~Handle_BinTObjDrivers_ModelDriver() {
-	printf("Call custom destructor for instance of Handle_BinTObjDrivers_ModelDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_ModelDriver\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_
 };
 %extend Handle_BinTObjDrivers_DocumentRetrievalDriver {
 	~Handle_BinTObjDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of Handle_BinTObjDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinTObjDrivers_ObjectDriver {
 	~Handle_BinTObjDrivers_ObjectDriver() {
-	printf("Call custom destructor for instance of Handle_BinTObjDrivers_ObjectDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_ObjectDriver\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver 
 };
 %extend Handle_BinTObjDrivers_IntSparseArrayDriver {
 	~Handle_BinTObjDrivers_IntSparseArrayDriver() {
-	printf("Call custom destructor for instance of Handle_BinTObjDrivers_IntSparseArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_IntSparseArrayDriver\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinTObjDrivers_ReferenceDriver {
 	~Handle_BinTObjDrivers_ReferenceDriver() {
-	printf("Call custom destructor for instance of Handle_BinTObjDrivers_ReferenceDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_ReferenceDriver\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinTObjDrivers_XYZDriver {
 	~Handle_BinTObjDrivers_XYZDriver() {
-	printf("Call custom destructor for instance of Handle_BinTObjDrivers_XYZDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_XYZDriver\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Do
 };
 %extend Handle_BinTObjDrivers_DocumentStorageDriver {
 	~Handle_BinTObjDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of Handle_BinTObjDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -274,7 +277,7 @@ class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ObjectDriver {
 	~BinTObjDrivers_ObjectDriver() {
-	printf("Call custom destructor for instance of BinTObjDrivers_ObjectDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_ObjectDriver\n");}
 	}
 };
 
@@ -300,7 +303,7 @@ class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ReferenceDriver {
 	~BinTObjDrivers_ReferenceDriver() {
-	printf("Call custom destructor for instance of BinTObjDrivers_ReferenceDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_ReferenceDriver\n");}
 	}
 };
 
@@ -322,7 +325,7 @@ class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrie
 };
 %extend BinTObjDrivers_DocumentRetrievalDriver {
 	~BinTObjDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of BinTObjDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -339,7 +342,7 @@ class BinTObjDrivers {
 };
 %extend BinTObjDrivers {
 	~BinTObjDrivers() {
-	printf("Call custom destructor for instance of BinTObjDrivers\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTObjDrivers\n");}
 	}
 };
 
@@ -361,7 +364,7 @@ class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageD
 };
 %extend BinTObjDrivers_DocumentStorageDriver {
 	~BinTObjDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of BinTObjDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -387,7 +390,7 @@ class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_XYZDriver {
 	~BinTObjDrivers_XYZDriver() {
-	printf("Call custom destructor for instance of BinTObjDrivers_XYZDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_XYZDriver\n");}
 	}
 };
 
@@ -413,7 +416,7 @@ class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_IntSparseArrayDriver {
 	~BinTObjDrivers_IntSparseArrayDriver() {
-	printf("Call custom destructor for instance of BinTObjDrivers_IntSparseArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_IntSparseArrayDriver\n");}
 	}
 };
 
@@ -439,6 +442,6 @@ class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ModelDriver {
 	~BinTObjDrivers_ModelDriver() {
-	printf("Call custom destructor for instance of BinTObjDrivers_ModelDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_ModelDriver\n");}
 	}
 };

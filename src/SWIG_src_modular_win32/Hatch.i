@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -110,7 +113,7 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 };
 %extend Handle_Hatch_SequenceNodeOfSequenceOfLine {
 	~Handle_Hatch_SequenceNodeOfSequenceOfLine() {
-	printf("Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfLine\n");}
 	}
 };
 
@@ -134,7 +137,7 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 };
 %extend Handle_Hatch_SequenceNodeOfSequenceOfParameter {
 	~Handle_Hatch_SequenceNodeOfSequenceOfParameter() {
-	printf("Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfParameter\n");}
 	}
 };
 
@@ -187,7 +190,7 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 };
 %extend Hatch_SequenceOfParameter {
 	~Hatch_SequenceOfParameter() {
-	printf("Call custom destructor for instance of Hatch_SequenceOfParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfParameter\n");}
 	}
 };
 
@@ -209,7 +212,7 @@ class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 };
 %extend Hatch_SequenceNodeOfSequenceOfLine {
 	~Hatch_SequenceNodeOfSequenceOfLine() {
-	printf("Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfLine\n");}
 	}
 };
 
@@ -264,7 +267,7 @@ class Hatch_Hatcher {
 };
 %extend Hatch_Hatcher {
 	~Hatch_Hatcher() {
-	printf("Call custom destructor for instance of Hatch_Hatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_Hatcher\n");}
 	}
 };
 
@@ -281,7 +284,7 @@ class Hatch_Line {
 };
 %extend Hatch_Line {
 	~Hatch_Line() {
-	printf("Call custom destructor for instance of Hatch_Line\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_Line\n");}
 	}
 };
 
@@ -334,7 +337,7 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 };
 %extend Hatch_SequenceOfLine {
 	~Hatch_SequenceOfLine() {
-	printf("Call custom destructor for instance of Hatch_SequenceOfLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfLine\n");}
 	}
 };
 
@@ -349,7 +352,7 @@ class Hatch_Parameter {
 };
 %extend Hatch_Parameter {
 	~Hatch_Parameter() {
-	printf("Call custom destructor for instance of Hatch_Parameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_Parameter\n");}
 	}
 };
 
@@ -371,6 +374,6 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 };
 %extend Hatch_SequenceNodeOfSequenceOfParameter {
 	~Hatch_SequenceNodeOfSequenceOfParameter() {
-	printf("Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfParameter\n");}
 	}
 };

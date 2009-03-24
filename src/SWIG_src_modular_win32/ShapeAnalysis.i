@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -105,7 +108,7 @@ class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TC
 };
 %extend Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
 	~Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds\n");}
 	}
 };
 
@@ -129,7 +132,7 @@ class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeAnalysis_FreeBoundData {
 	~Handle_ShapeAnalysis_FreeBoundData() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_FreeBoundData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_FreeBoundData\n");}
 	}
 };
 
@@ -153,7 +156,7 @@ class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeAnalysis_Wire {
 	~Handle_ShapeAnalysis_Wire() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_Wire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_Wire\n");}
 	}
 };
 
@@ -177,7 +180,7 @@ class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeAnalysis_TransferParameters {
 	~Handle_ShapeAnalysis_TransferParameters() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_TransferParameters\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_TransferParameters\n");}
 	}
 };
 
@@ -201,7 +204,7 @@ class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_
 };
 %extend Handle_ShapeAnalysis_TransferParametersProj {
 	~Handle_ShapeAnalysis_TransferParametersProj() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_TransferParametersProj\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_TransferParametersProj\n");}
 	}
 };
 
@@ -225,7 +228,7 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle
 };
 %extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
 	~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal\n");}
 	}
 };
 
@@ -249,7 +252,7 @@ class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeAnalysis_HSequenceOfFreeBounds {
 	~Handle_ShapeAnalysis_HSequenceOfFreeBounds() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_HSequenceOfFreeBounds\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_HSequenceOfFreeBounds\n");}
 	}
 };
 
@@ -273,7 +276,7 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TColl
 };
 %extend Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
 	~Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal\n");}
 	}
 };
 
@@ -297,7 +300,7 @@ class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeAnalysis_Surface {
 	~Handle_ShapeAnalysis_Surface() {
-	printf("Call custom destructor for instance of Handle_ShapeAnalysis_Surface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_Surface\n");}
 	}
 };
 
@@ -321,7 +324,7 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
 	~ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal() {
-	printf("Call custom destructor for instance of ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal\n");}
 	}
 };
 
@@ -346,7 +349,7 @@ class ShapeAnalysis_ShapeTolerance {
 };
 %extend ShapeAnalysis_ShapeTolerance {
 	~ShapeAnalysis_ShapeTolerance() {
-	printf("Call custom destructor for instance of ShapeAnalysis_ShapeTolerance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_ShapeTolerance\n");}
 	}
 };
 
@@ -377,7 +380,7 @@ class ShapeAnalysis_FreeBounds {
 };
 %extend ShapeAnalysis_FreeBounds {
 	~ShapeAnalysis_FreeBounds() {
-	printf("Call custom destructor for instance of ShapeAnalysis_FreeBounds\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_FreeBounds\n");}
 	}
 };
 
@@ -406,7 +409,7 @@ class ShapeAnalysis {
 };
 %extend ShapeAnalysis {
 	~ShapeAnalysis() {
-	printf("Call custom destructor for instance of ShapeAnalysis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 };
 %extend ShapeAnalysis_TransferParameters {
 	~ShapeAnalysis_TransferParameters() {
-	printf("Call custom destructor for instance of ShapeAnalysis_TransferParameters\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_TransferParameters\n");}
 	}
 };
 
@@ -549,7 +552,7 @@ class ShapeAnalysis_ShapeContents {
 };
 %extend ShapeAnalysis_ShapeContents {
 	~ShapeAnalysis_ShapeContents() {
-	printf("Call custom destructor for instance of ShapeAnalysis_ShapeContents\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_ShapeContents\n");}
 	}
 };
 
@@ -594,7 +597,7 @@ class ShapeAnalysis_Curve {
 };
 %extend ShapeAnalysis_Curve {
 	~ShapeAnalysis_Curve() {
-	printf("Call custom destructor for instance of ShapeAnalysis_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Curve\n");}
 	}
 };
 
@@ -657,7 +660,7 @@ class ShapeAnalysis_Edge {
 };
 %extend ShapeAnalysis_Edge {
 	~ShapeAnalysis_Edge() {
-	printf("Call custom destructor for instance of ShapeAnalysis_Edge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Edge\n");}
 	}
 };
 
@@ -690,7 +693,7 @@ class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 };
 %extend ShapeAnalysis_DataMapOfShapeReal {
 	~ShapeAnalysis_DataMapOfShapeReal() {
-	printf("Call custom destructor for instance of ShapeAnalysis_DataMapOfShapeReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_DataMapOfShapeReal\n");}
 	}
 };
 
@@ -714,7 +717,7 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
 	~ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal() {
-	printf("Call custom destructor for instance of ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal\n");}
 	}
 };
 
@@ -735,7 +738,7 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_Bas
 };
 %extend ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal {
 	~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal() {
-	printf("Call custom destructor for instance of ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal\n");}
 	}
 };
 
@@ -791,7 +794,7 @@ class ShapeAnalysis_FreeBoundData : public MMgt_TShared {
 };
 %extend ShapeAnalysis_FreeBoundData {
 	~ShapeAnalysis_FreeBoundData() {
-	printf("Call custom destructor for instance of ShapeAnalysis_FreeBoundData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_FreeBoundData\n");}
 	}
 };
 
@@ -855,7 +858,7 @@ class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
 };
 %extend ShapeAnalysis_HSequenceOfFreeBounds {
 	~ShapeAnalysis_HSequenceOfFreeBounds() {
-	printf("Call custom destructor for instance of ShapeAnalysis_HSequenceOfFreeBounds\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_HSequenceOfFreeBounds\n");}
 	}
 };
 
@@ -888,7 +891,7 @@ class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 };
 %extend ShapeAnalysis_DataMapOfShapeListOfReal {
 	~ShapeAnalysis_DataMapOfShapeListOfReal() {
-	printf("Call custom destructor for instance of ShapeAnalysis_DataMapOfShapeListOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_DataMapOfShapeListOfReal\n");}
 	}
 };
 
@@ -945,7 +948,7 @@ class ShapeAnalysis_CheckSmallFace {
 };
 %extend ShapeAnalysis_CheckSmallFace {
 	~ShapeAnalysis_CheckSmallFace() {
-	printf("Call custom destructor for instance of ShapeAnalysis_CheckSmallFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_CheckSmallFace\n");}
 	}
 };
 
@@ -967,7 +970,7 @@ class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqN
 };
 %extend ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
 	~ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds() {
-	printf("Call custom destructor for instance of ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds\n");}
 	}
 };
 
@@ -1020,7 +1023,7 @@ class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 };
 %extend ShapeAnalysis_SequenceOfFreeBounds {
 	~ShapeAnalysis_SequenceOfFreeBounds() {
-	printf("Call custom destructor for instance of ShapeAnalysis_SequenceOfFreeBounds\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_SequenceOfFreeBounds\n");}
 	}
 };
 
@@ -1075,7 +1078,7 @@ class ShapeAnalysis_WireOrder {
 };
 %extend ShapeAnalysis_WireOrder {
 	~ShapeAnalysis_WireOrder() {
-	printf("Call custom destructor for instance of ShapeAnalysis_WireOrder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_WireOrder\n");}
 	}
 };
 
@@ -1113,7 +1116,7 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 };
 %extend ShapeAnalysis_TransferParametersProj {
 	~ShapeAnalysis_TransferParametersProj() {
-	printf("Call custom destructor for instance of ShapeAnalysis_TransferParametersProj\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_TransferParametersProj\n");}
 	}
 };
 
@@ -1275,7 +1278,7 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 };
 %extend ShapeAnalysis_Wire {
 	~ShapeAnalysis_Wire() {
-	printf("Call custom destructor for instance of ShapeAnalysis_Wire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Wire\n");}
 	}
 };
 
@@ -1336,7 +1339,7 @@ class ShapeAnalysis_WireVertex {
 };
 %extend ShapeAnalysis_WireVertex {
 	~ShapeAnalysis_WireVertex() {
-	printf("Call custom destructor for instance of ShapeAnalysis_WireVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_WireVertex\n");}
 	}
 };
 
@@ -1357,7 +1360,7 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollecti
 };
 %extend ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal {
 	~ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal() {
-	printf("Call custom destructor for instance of ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal\n");}
 	}
 };
 
@@ -1374,7 +1377,7 @@ class ShapeAnalysis_Geom {
 };
 %extend ShapeAnalysis_Geom {
 	~ShapeAnalysis_Geom() {
-	printf("Call custom destructor for instance of ShapeAnalysis_Geom\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Geom\n");}
 	}
 };
 
@@ -1458,7 +1461,7 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 };
 %extend ShapeAnalysis_Surface {
 	~ShapeAnalysis_Surface() {
-	printf("Call custom destructor for instance of ShapeAnalysis_Surface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Surface\n");}
 	}
 };
 
@@ -1493,7 +1496,7 @@ class ShapeAnalysis_Shell {
 };
 %extend ShapeAnalysis_Shell {
 	~ShapeAnalysis_Shell() {
-	printf("Call custom destructor for instance of ShapeAnalysis_Shell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Shell\n");}
 	}
 };
 
@@ -1548,6 +1551,6 @@ class ShapeAnalysis_FreeBoundsProperties {
 };
 %extend ShapeAnalysis_FreeBoundsProperties {
 	~ShapeAnalysis_FreeBoundsProperties() {
-	printf("Call custom destructor for instance of ShapeAnalysis_FreeBoundsProperties\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_FreeBoundsProperties\n");}
 	}
 };

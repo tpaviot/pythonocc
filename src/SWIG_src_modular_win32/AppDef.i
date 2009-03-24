@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 };
 %extend Handle_AppDef_MyCriterionOfTheVariational {
 	~Handle_AppDef_MyCriterionOfTheVariational() {
-	printf("Call custom destructor for instance of Handle_AppDef_MyCriterionOfTheVariational\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppDef_MyCriterionOfTheVariational\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 };
 %extend Handle_AppDef_HArray1OfMultiPointConstraint {
 	~Handle_AppDef_HArray1OfMultiPointConstraint() {
-	printf("Call custom destructor for instance of Handle_AppDef_HArray1OfMultiPointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppDef_HArray1OfMultiPointConstraint\n");}
 	}
 };
 
@@ -171,7 +174,7 @@ class AppDef_MyLineTool {
 };
 %extend AppDef_MyLineTool {
 	~AppDef_MyLineTool() {
-	printf("Call custom destructor for instance of AppDef_MyLineTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_MyLineTool\n");}
 	}
 };
 
@@ -206,7 +209,7 @@ class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradi
 };
 %extend AppDef_ParFunctionOfTheGradient {
 	~AppDef_ParFunctionOfTheGradient() {
-	printf("Call custom destructor for instance of AppDef_ParFunctionOfTheGradient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ParFunctionOfTheGradient\n");}
 	}
 };
 
@@ -261,7 +264,7 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 };
 %extend AppDef_MultiPointConstraint {
 	~AppDef_MultiPointConstraint() {
-	printf("Call custom destructor for instance of AppDef_MultiPointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_MultiPointConstraint\n");}
 	}
 };
 
@@ -292,7 +295,7 @@ class AppDef_MultiLine {
 };
 %extend AppDef_MultiLine {
 	~AppDef_MultiLine() {
-	printf("Call custom destructor for instance of AppDef_MultiLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_MultiLine\n");}
 	}
 };
 
@@ -319,7 +322,7 @@ class AppDef_MyBSplGradientOfBSplineCompute {
 };
 %extend AppDef_MyBSplGradientOfBSplineCompute {
 	~AppDef_MyBSplGradientOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_MyBSplGradientOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_MyBSplGradientOfBSplineCompute\n");}
 	}
 };
 
@@ -359,7 +362,7 @@ class AppDef_HArray1OfMultiPointConstraint : public MMgt_TShared {
 };
 %extend AppDef_HArray1OfMultiPointConstraint {
 	~AppDef_HArray1OfMultiPointConstraint() {
-	printf("Call custom destructor for instance of AppDef_HArray1OfMultiPointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_HArray1OfMultiPointConstraint\n");}
 	}
 };
 
@@ -404,7 +407,7 @@ class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_Multip
 };
 %extend AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute {
 	~AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute\n");}
 	}
 };
 
@@ -419,7 +422,7 @@ class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 };
 %extend AppDef_Gradient_BFGSOfMyGradientOfCompute {
 	~AppDef_Gradient_BFGSOfMyGradientOfCompute() {
-	printf("Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientOfCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientOfCompute\n");}
 	}
 };
 
@@ -472,7 +475,7 @@ class AppDef_TheLeastSquares {
 };
 %extend AppDef_TheLeastSquares {
 	~AppDef_TheLeastSquares() {
-	printf("Call custom destructor for instance of AppDef_TheLeastSquares\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_TheLeastSquares\n");}
 	}
 };
 
@@ -487,7 +490,7 @@ class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS
 };
 %extend AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute {
 	~AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute\n");}
 	}
 };
 
@@ -502,7 +505,7 @@ class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
 };
 %extend AppDef_Gradient_BFGSOfTheGradient {
 	~AppDef_Gradient_BFGSOfTheGradient() {
-	printf("Call custom destructor for instance of AppDef_Gradient_BFGSOfTheGradient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfTheGradient\n");}
 	}
 };
 
@@ -583,7 +586,7 @@ class AppDef_TheVariational {
 };
 %extend AppDef_TheVariational {
 	~AppDef_TheVariational() {
-	printf("Call custom destructor for instance of AppDef_TheVariational\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_TheVariational\n");}
 	}
 };
 
@@ -630,7 +633,7 @@ class AppDef_Compute {
 };
 %extend AppDef_Compute {
 	~AppDef_Compute() {
-	printf("Call custom destructor for instance of AppDef_Compute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_Compute\n");}
 	}
 };
 
@@ -665,7 +668,7 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 };
 %extend AppDef_ParFunctionOfMyGradientbisOfBSplineCompute {
 	~AppDef_ParFunctionOfMyGradientbisOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_ParFunctionOfMyGradientbisOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ParFunctionOfMyGradientbisOfBSplineCompute\n");}
 	}
 };
 
@@ -690,7 +693,7 @@ class AppDef_TheGradient {
 };
 %extend AppDef_TheGradient {
 	~AppDef_TheGradient() {
-	printf("Call custom destructor for instance of AppDef_TheGradient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_TheGradient\n");}
 	}
 };
 
@@ -743,7 +746,7 @@ class AppDef_ParLeastSquareOfTheGradient {
 };
 %extend AppDef_ParLeastSquareOfTheGradient {
 	~AppDef_ParLeastSquareOfTheGradient() {
-	printf("Call custom destructor for instance of AppDef_ParLeastSquareOfTheGradient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfTheGradient\n");}
 	}
 };
 
@@ -795,7 +798,7 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 };
 %extend AppDef_MyCriterionOfTheVariational {
 	~AppDef_MyCriterionOfTheVariational() {
-	printf("Call custom destructor for instance of AppDef_MyCriterionOfTheVariational\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_MyCriterionOfTheVariational\n");}
 	}
 };
 
@@ -848,7 +851,7 @@ class AppDef_ParLeastSquareOfMyGradientOfCompute {
 };
 %extend AppDef_ParLeastSquareOfMyGradientOfCompute {
 	~AppDef_ParLeastSquareOfMyGradientOfCompute() {
-	printf("Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientOfCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientOfCompute\n");}
 	}
 };
 
@@ -871,7 +874,7 @@ class AppDef_ResConstraintOfTheGradient {
 };
 %extend AppDef_ResConstraintOfTheGradient {
 	~AppDef_ResConstraintOfTheGradient() {
-	printf("Call custom destructor for instance of AppDef_ResConstraintOfTheGradient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ResConstraintOfTheGradient\n");}
 	}
 };
 
@@ -906,7 +909,7 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 };
 %extend AppDef_TheFunction {
 	~AppDef_TheFunction() {
-	printf("Call custom destructor for instance of AppDef_TheFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_TheFunction\n");}
 	}
 };
 
@@ -931,7 +934,7 @@ class AppDef_MyGradientOfCompute {
 };
 %extend AppDef_MyGradientOfCompute {
 	~AppDef_MyGradientOfCompute() {
-	printf("Call custom destructor for instance of AppDef_MyGradientOfCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientOfCompute\n");}
 	}
 };
 
@@ -984,7 +987,7 @@ class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 };
 %extend AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 	~AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute\n");}
 	}
 };
 
@@ -1009,7 +1012,7 @@ class AppDef_MyGradientbisOfBSplineCompute {
 };
 %extend AppDef_MyGradientbisOfBSplineCompute {
 	~AppDef_MyGradientbisOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_MyGradientbisOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientbisOfBSplineCompute\n");}
 	}
 };
 
@@ -1060,7 +1063,7 @@ class AppDef_BSplineCompute {
 };
 %extend AppDef_BSplineCompute {
 	~AppDef_BSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_BSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_BSplineCompute\n");}
 	}
 };
 
@@ -1113,7 +1116,7 @@ class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 };
 %extend AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 	~AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute\n");}
 	}
 };
 
@@ -1136,7 +1139,7 @@ class AppDef_ResConstraintOfMyGradientOfCompute {
 };
 %extend AppDef_ResConstraintOfMyGradientOfCompute {
 	~AppDef_ResConstraintOfMyGradientOfCompute() {
-	printf("Call custom destructor for instance of AppDef_ResConstraintOfMyGradientOfCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ResConstraintOfMyGradientOfCompute\n");}
 	}
 };
 
@@ -1151,7 +1154,7 @@ class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
 };
 %extend AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute {
 	~AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute\n");}
 	}
 };
 
@@ -1190,7 +1193,7 @@ class AppDef_Array1OfMultiPointConstraint {
 };
 %extend AppDef_Array1OfMultiPointConstraint {
 	~AppDef_Array1OfMultiPointConstraint() {
-	printf("Call custom destructor for instance of AppDef_Array1OfMultiPointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_Array1OfMultiPointConstraint\n");}
 	}
 };
 
@@ -1213,7 +1216,7 @@ class AppDef_TheResol {
 };
 %extend AppDef_TheResol {
 	~AppDef_TheResol() {
-	printf("Call custom destructor for instance of AppDef_TheResol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_TheResol\n");}
 	}
 };
 
@@ -1236,7 +1239,7 @@ class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 };
 %extend AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 	~AppDef_ResConstraintOfMyGradientbisOfBSplineCompute() {
-	printf("Call custom destructor for instance of AppDef_ResConstraintOfMyGradientbisOfBSplineCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ResConstraintOfMyGradientbisOfBSplineCompute\n");}
 	}
 };
 
@@ -1271,6 +1274,6 @@ class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionW
 };
 %extend AppDef_ParFunctionOfMyGradientOfCompute {
 	~AppDef_ParFunctionOfMyGradientOfCompute() {
-	printf("Call custom destructor for instance of AppDef_ParFunctionOfMyGradientOfCompute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppDef_ParFunctionOfMyGradientOfCompute\n");}
 	}
 };

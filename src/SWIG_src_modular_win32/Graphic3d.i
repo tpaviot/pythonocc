@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -319,7 +322,7 @@ class Handle_Graphic3d_TextureRoot : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_TextureRoot {
 	~Handle_Graphic3d_TextureRoot() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_TextureRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TextureRoot\n");}
 	}
 };
 
@@ -343,7 +346,7 @@ class Handle_Graphic3d_TextureMap : public Handle_Graphic3d_TextureRoot {
 };
 %extend Handle_Graphic3d_TextureMap {
 	~Handle_Graphic3d_TextureMap() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_TextureMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TextureMap\n");}
 	}
 };
 
@@ -367,7 +370,7 @@ class Handle_Graphic3d_Texture2D : public Handle_Graphic3d_TextureMap {
 };
 %extend Handle_Graphic3d_Texture2D {
 	~Handle_Graphic3d_Texture2D() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Texture2D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture2D\n");}
 	}
 };
 
@@ -391,7 +394,7 @@ class Handle_Graphic3d_Texture2Dmanual : public Handle_Graphic3d_Texture2D {
 };
 %extend Handle_Graphic3d_Texture2Dmanual {
 	~Handle_Graphic3d_Texture2Dmanual() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Texture2Dmanual\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture2Dmanual\n");}
 	}
 };
 
@@ -415,7 +418,7 @@ class Handle_Graphic3d_DataStructureManager : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_DataStructureManager {
 	~Handle_Graphic3d_DataStructureManager() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_DataStructureManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_DataStructureManager\n");}
 	}
 };
 
@@ -439,7 +442,7 @@ class Handle_Graphic3d_Texture1D : public Handle_Graphic3d_TextureMap {
 };
 %extend Handle_Graphic3d_Texture1D {
 	~Handle_Graphic3d_Texture1D() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Texture1D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture1D\n");}
 	}
 };
 
@@ -463,7 +466,7 @@ class Handle_Graphic3d_Texture1Dmanual : public Handle_Graphic3d_Texture1D {
 };
 %extend Handle_Graphic3d_Texture1Dmanual {
 	~Handle_Graphic3d_Texture1Dmanual() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Texture1Dmanual\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture1Dmanual\n");}
 	}
 };
 
@@ -487,7 +490,7 @@ class Handle_Graphic3d_MaterialDefinitionError : public Handle_Standard_OutOfRan
 };
 %extend Handle_Graphic3d_MaterialDefinitionError {
 	~Handle_Graphic3d_MaterialDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_MaterialDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_MaterialDefinitionError\n");}
 	}
 };
 
@@ -511,7 +514,7 @@ class Handle_Graphic3d_HSequenceOfGroup : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_HSequenceOfGroup {
 	~Handle_Graphic3d_HSequenceOfGroup() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_HSequenceOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HSequenceOfGroup\n");}
 	}
 };
 
@@ -535,7 +538,7 @@ class Handle_Graphic3d_VectorError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Graphic3d_VectorError {
 	~Handle_Graphic3d_VectorError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_VectorError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_VectorError\n");}
 	}
 };
 
@@ -559,7 +562,7 @@ class Handle_Graphic3d_ListNodeOfListOfShortReal : public Handle_TCollection_Map
 };
 %extend Handle_Graphic3d_ListNodeOfListOfShortReal {
 	~Handle_Graphic3d_ListNodeOfListOfShortReal() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ListNodeOfListOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ListNodeOfListOfShortReal\n");}
 	}
 };
 
@@ -583,7 +586,7 @@ class Handle_Graphic3d_AspectTextDefinitionError : public Handle_Standard_OutOfR
 };
 %extend Handle_Graphic3d_AspectTextDefinitionError {
 	~Handle_Graphic3d_AspectTextDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_AspectTextDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectTextDefinitionError\n");}
 	}
 };
 
@@ -607,7 +610,7 @@ class Handle_Graphic3d_ArrayOfPrimitives : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_ArrayOfPrimitives {
 	~Handle_Graphic3d_ArrayOfPrimitives() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfPrimitives\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPrimitives\n");}
 	}
 };
 
@@ -631,7 +634,7 @@ class Handle_Graphic3d_ArrayOfQuadrangleStrips : public Handle_Graphic3d_ArrayOf
 };
 %extend Handle_Graphic3d_ArrayOfQuadrangleStrips {
 	~Handle_Graphic3d_ArrayOfQuadrangleStrips() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfQuadrangleStrips\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfQuadrangleStrips\n");}
 	}
 };
 
@@ -655,7 +658,7 @@ class Handle_Graphic3d_ListNodeOfListOfPArray : public Handle_TCollection_MapNod
 };
 %extend Handle_Graphic3d_ListNodeOfListOfPArray {
 	~Handle_Graphic3d_ListNodeOfListOfPArray() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ListNodeOfListOfPArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ListNodeOfListOfPArray\n");}
 	}
 };
 
@@ -679,7 +682,7 @@ class Handle_Graphic3d_StdMapNodeOfMapOfStructure : public Handle_TCollection_Ma
 };
 %extend Handle_Graphic3d_StdMapNodeOfMapOfStructure {
 	~Handle_Graphic3d_StdMapNodeOfMapOfStructure() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_StdMapNodeOfMapOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StdMapNodeOfMapOfStructure\n");}
 	}
 };
 
@@ -703,7 +706,7 @@ class Handle_Graphic3d_ArrayOfQuadrangles : public Handle_Graphic3d_ArrayOfPrimi
 };
 %extend Handle_Graphic3d_ArrayOfQuadrangles {
 	~Handle_Graphic3d_ArrayOfQuadrangles() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfQuadrangles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfQuadrangles\n");}
 	}
 };
 
@@ -727,7 +730,7 @@ class Handle_Graphic3d_GraphicDriver : public Handle_Aspect_GraphicDriver {
 };
 %extend Handle_Graphic3d_GraphicDriver {
 	~Handle_Graphic3d_GraphicDriver() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_GraphicDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_GraphicDriver\n");}
 	}
 };
 
@@ -751,7 +754,7 @@ class Handle_Graphic3d_PickIdDefinitionError : public Handle_Standard_OutOfRange
 };
 %extend Handle_Graphic3d_PickIdDefinitionError {
 	~Handle_Graphic3d_PickIdDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_PickIdDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_PickIdDefinitionError\n");}
 	}
 };
 
@@ -775,7 +778,7 @@ class Handle_Graphic3d_GroupDefinitionError : public Handle_Standard_OutOfRange 
 };
 %extend Handle_Graphic3d_GroupDefinitionError {
 	~Handle_Graphic3d_GroupDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_GroupDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_GroupDefinitionError\n");}
 	}
 };
 
@@ -799,7 +802,7 @@ class Handle_Graphic3d_ArrayOfTriangleFans : public Handle_Graphic3d_ArrayOfPrim
 };
 %extend Handle_Graphic3d_ArrayOfTriangleFans {
 	~Handle_Graphic3d_ArrayOfTriangleFans() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangleFans\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangleFans\n");}
 	}
 };
 
@@ -823,7 +826,7 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfStructure : public Handle_TCollec
 };
 %extend Handle_Graphic3d_SequenceNodeOfSequenceOfStructure {
 	~Handle_Graphic3d_SequenceNodeOfSequenceOfStructure() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfStructure\n");}
 	}
 };
 
@@ -847,7 +850,7 @@ class Handle_Graphic3d_ArrayOfSegments : public Handle_Graphic3d_ArrayOfPrimitiv
 };
 %extend Handle_Graphic3d_ArrayOfSegments {
 	~Handle_Graphic3d_ArrayOfSegments() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfSegments\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfSegments\n");}
 	}
 };
 
@@ -871,7 +874,7 @@ class Handle_Graphic3d_PlotterDefinitionError : public Handle_Standard_OutOfRang
 };
 %extend Handle_Graphic3d_PlotterDefinitionError {
 	~Handle_Graphic3d_PlotterDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_PlotterDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_PlotterDefinitionError\n");}
 	}
 };
 
@@ -895,7 +898,7 @@ class Handle_Graphic3d_ArrayOfPolylines : public Handle_Graphic3d_ArrayOfPrimiti
 };
 %extend Handle_Graphic3d_ArrayOfPolylines {
 	~Handle_Graphic3d_ArrayOfPolylines() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfPolylines\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPolylines\n");}
 	}
 };
 
@@ -919,7 +922,7 @@ class Handle_Graphic3d_Group : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_Group {
 	~Handle_Graphic3d_Group() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Group\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Group\n");}
 	}
 };
 
@@ -943,7 +946,7 @@ class Handle_Graphic3d_ArrayOfTriangleStrips : public Handle_Graphic3d_ArrayOfPr
 };
 %extend Handle_Graphic3d_ArrayOfTriangleStrips {
 	~Handle_Graphic3d_ArrayOfTriangleStrips() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangleStrips\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangleStrips\n");}
 	}
 };
 
@@ -967,7 +970,7 @@ class Handle_Graphic3d_ArrayOfPolygons : public Handle_Graphic3d_ArrayOfPrimitiv
 };
 %extend Handle_Graphic3d_ArrayOfPolygons {
 	~Handle_Graphic3d_ArrayOfPolygons() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfPolygons\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPolygons\n");}
 	}
 };
 
@@ -991,7 +994,7 @@ class Handle_Graphic3d_HArray1OfBytes : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_HArray1OfBytes {
 	~Handle_Graphic3d_HArray1OfBytes() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_HArray1OfBytes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HArray1OfBytes\n");}
 	}
 };
 
@@ -1015,7 +1018,7 @@ class Handle_Graphic3d_StructureManager : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_StructureManager {
 	~Handle_Graphic3d_StructureManager() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_StructureManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StructureManager\n");}
 	}
 };
 
@@ -1039,7 +1042,7 @@ class Handle_Graphic3d_PriorityDefinitionError : public Handle_Standard_OutOfRan
 };
 %extend Handle_Graphic3d_PriorityDefinitionError {
 	~Handle_Graphic3d_PriorityDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_PriorityDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_PriorityDefinitionError\n");}
 	}
 };
 
@@ -1063,7 +1066,7 @@ class Handle_Graphic3d_AspectFillArea3d : public Handle_Aspect_AspectFillArea {
 };
 %extend Handle_Graphic3d_AspectFillArea3d {
 	~Handle_Graphic3d_AspectFillArea3d() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_AspectFillArea3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectFillArea3d\n");}
 	}
 };
 
@@ -1087,7 +1090,7 @@ class Handle_Graphic3d_AspectLine3d : public Handle_Aspect_AspectLine {
 };
 %extend Handle_Graphic3d_AspectLine3d {
 	~Handle_Graphic3d_AspectLine3d() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_AspectLine3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectLine3d\n");}
 	}
 };
 
@@ -1111,7 +1114,7 @@ class Handle_Graphic3d_HSetOfGroup : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_HSetOfGroup {
 	~Handle_Graphic3d_HSetOfGroup() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_HSetOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HSetOfGroup\n");}
 	}
 };
 
@@ -1135,7 +1138,7 @@ class Handle_Graphic3d_Plotter : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_Plotter {
 	~Handle_Graphic3d_Plotter() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Plotter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Plotter\n");}
 	}
 };
 
@@ -1159,7 +1162,7 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 };
 %extend Handle_Graphic3d_SequenceNodeOfSequenceOfAddress {
 	~Handle_Graphic3d_SequenceNodeOfSequenceOfAddress() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
 
@@ -1183,7 +1186,7 @@ class Handle_Graphic3d_AspectMarker3d : public Handle_Aspect_AspectMarker {
 };
 %extend Handle_Graphic3d_AspectMarker3d {
 	~Handle_Graphic3d_AspectMarker3d() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_AspectMarker3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectMarker3d\n");}
 	}
 };
 
@@ -1207,7 +1210,7 @@ class Handle_Graphic3d_TextureEnv : public Handle_Graphic3d_TextureRoot {
 };
 %extend Handle_Graphic3d_TextureEnv {
 	~Handle_Graphic3d_TextureEnv() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_TextureEnv\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TextureEnv\n");}
 	}
 };
 
@@ -1231,7 +1234,7 @@ class Handle_Graphic3d_Texture2Dplane : public Handle_Graphic3d_Texture2D {
 };
 %extend Handle_Graphic3d_Texture2Dplane {
 	~Handle_Graphic3d_Texture2Dplane() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Texture2Dplane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture2Dplane\n");}
 	}
 };
 
@@ -1255,7 +1258,7 @@ class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRa
 };
 %extend Handle_Graphic3d_StructureDefinitionError {
 	~Handle_Graphic3d_StructureDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_StructureDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StructureDefinitionError\n");}
 	}
 };
 
@@ -1279,7 +1282,7 @@ class Handle_Graphic3d_TransformError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Graphic3d_TransformError {
 	~Handle_Graphic3d_TransformError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_TransformError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TransformError\n");}
 	}
 };
 
@@ -1303,7 +1306,7 @@ class Handle_Graphic3d_ArrayOfPoints : public Handle_Graphic3d_ArrayOfPrimitives
 };
 %extend Handle_Graphic3d_ArrayOfPoints {
 	~Handle_Graphic3d_ArrayOfPoints() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfPoints\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPoints\n");}
 	}
 };
 
@@ -1327,7 +1330,7 @@ class Handle_Graphic3d_WNTGraphicDevice : public Handle_WNT_GraphicDevice {
 };
 %extend Handle_Graphic3d_WNTGraphicDevice {
 	~Handle_Graphic3d_WNTGraphicDevice() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_WNTGraphicDevice\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_WNTGraphicDevice\n");}
 	}
 };
 
@@ -1351,7 +1354,7 @@ class Handle_Graphic3d_HSequenceOfStructure : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_HSequenceOfStructure {
 	~Handle_Graphic3d_HSequenceOfStructure() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_HSequenceOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HSequenceOfStructure\n");}
 	}
 };
 
@@ -1375,7 +1378,7 @@ class Handle_Graphic3d_AspectText3d : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_AspectText3d {
 	~Handle_Graphic3d_AspectText3d() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_AspectText3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectText3d\n");}
 	}
 };
 
@@ -1399,7 +1402,7 @@ class Handle_Graphic3d_ArrayOfTriangles : public Handle_Graphic3d_ArrayOfPrimiti
 };
 %extend Handle_Graphic3d_ArrayOfTriangles {
 	~Handle_Graphic3d_ArrayOfTriangles() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangles\n");}
 	}
 };
 
@@ -1423,7 +1426,7 @@ class Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup : public Handle_TCollection
 };
 %extend Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup {
 	~Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup\n");}
 	}
 };
 
@@ -1447,7 +1450,7 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfGroup : public Handle_TCollection
 };
 %extend Handle_Graphic3d_SequenceNodeOfSequenceOfGroup {
 	~Handle_Graphic3d_SequenceNodeOfSequenceOfGroup() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfGroup\n");}
 	}
 };
 
@@ -1471,7 +1474,7 @@ class Handle_Graphic3d_InitialisationError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Graphic3d_InitialisationError {
 	~Handle_Graphic3d_InitialisationError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_InitialisationError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_InitialisationError\n");}
 	}
 };
 
@@ -1495,7 +1498,7 @@ class Handle_Graphic3d_CycleError : public Handle_Standard_DomainError {
 };
 %extend Handle_Graphic3d_CycleError {
 	~Handle_Graphic3d_CycleError() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_CycleError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_CycleError\n");}
 	}
 };
 
@@ -1519,7 +1522,7 @@ class Handle_Graphic3d_Structure : public Handle_MMgt_TShared {
 };
 %extend Handle_Graphic3d_Structure {
 	~Handle_Graphic3d_Structure() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Structure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Structure\n");}
 	}
 };
 
@@ -1543,7 +1546,7 @@ class Handle_Graphic3d_Texture1Dsegment : public Handle_Graphic3d_Texture1D {
 };
 %extend Handle_Graphic3d_Texture1Dsegment {
 	~Handle_Graphic3d_Texture1Dsegment() {
-	printf("Call custom destructor for instance of Handle_Graphic3d_Texture1Dsegment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture1Dsegment\n");}
 	}
 };
 
@@ -1556,7 +1559,7 @@ class Graphic3d_CBitFields20 {
 };
 %extend Graphic3d_CBitFields20 {
 	~Graphic3d_CBitFields20() {
-	printf("Call custom destructor for instance of Graphic3d_CBitFields20\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields20\n");}
 	}
 };
 
@@ -1584,7 +1587,7 @@ class Graphic3d_GroupDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_GroupDefinitionError {
 	~Graphic3d_GroupDefinitionError() {
-	printf("Call custom destructor for instance of Graphic3d_GroupDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_GroupDefinitionError\n");}
 	}
 };
 
@@ -1612,7 +1615,7 @@ class Graphic3d_PlotterDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_PlotterDefinitionError {
 	~Graphic3d_PlotterDefinitionError() {
-	printf("Call custom destructor for instance of Graphic3d_PlotterDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_PlotterDefinitionError\n");}
 	}
 };
 
@@ -1655,7 +1658,7 @@ class Graphic3d_Array2OfVertexC {
 };
 %extend Graphic3d_Array2OfVertexC {
 	~Graphic3d_Array2OfVertexC() {
-	printf("Call custom destructor for instance of Graphic3d_Array2OfVertexC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexC\n");}
 	}
 };
 
@@ -1698,7 +1701,7 @@ class Graphic3d_Array2OfVertexN {
 };
 %extend Graphic3d_Array2OfVertexN {
 	~Graphic3d_Array2OfVertexN() {
-	printf("Call custom destructor for instance of Graphic3d_Array2OfVertexN\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexN\n");}
 	}
 };
 
@@ -1737,7 +1740,7 @@ class Graphic3d_Array1OfVertexC {
 };
 %extend Graphic3d_Array1OfVertexC {
 	~Graphic3d_Array1OfVertexC() {
-	printf("Call custom destructor for instance of Graphic3d_Array1OfVertexC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexC\n");}
 	}
 };
 
@@ -1761,7 +1764,7 @@ class Graphic3d_WNTGraphicDevice : public WNT_GraphicDevice {
 };
 %extend Graphic3d_WNTGraphicDevice {
 	~Graphic3d_WNTGraphicDevice() {
-	printf("Call custom destructor for instance of Graphic3d_WNTGraphicDevice\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_WNTGraphicDevice\n");}
 	}
 };
 
@@ -1786,7 +1789,7 @@ class Graphic3d_Strips {
 };
 %extend Graphic3d_Strips {
 	~Graphic3d_Strips() {
-	printf("Call custom destructor for instance of Graphic3d_Strips\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Strips\n");}
 	}
 };
 
@@ -1821,7 +1824,7 @@ class Graphic3d_Vertex {
 };
 %extend Graphic3d_Vertex {
 	~Graphic3d_Vertex() {
-	printf("Call custom destructor for instance of Graphic3d_Vertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Vertex\n");}
 	}
 };
 
@@ -1874,7 +1877,7 @@ class Graphic3d_SequenceOfGroup : public TCollection_BaseSequence {
 };
 %extend Graphic3d_SequenceOfGroup {
 	~Graphic3d_SequenceOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_SequenceOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceOfGroup\n");}
 	}
 };
 
@@ -1922,7 +1925,7 @@ class Graphic3d_HSetOfGroup : public MMgt_TShared {
 };
 %extend Graphic3d_HSetOfGroup {
 	~Graphic3d_HSetOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_HSetOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_HSetOfGroup\n");}
 	}
 };
 
@@ -1986,7 +1989,7 @@ class Graphic3d_HSequenceOfGroup : public MMgt_TShared {
 };
 %extend Graphic3d_HSequenceOfGroup {
 	~Graphic3d_HSequenceOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_HSequenceOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_HSequenceOfGroup\n");}
 	}
 };
 
@@ -2020,7 +2023,7 @@ class Graphic3d_TextureRoot : public MMgt_TShared {
 };
 %extend Graphic3d_TextureRoot {
 	~Graphic3d_TextureRoot() {
-	printf("Call custom destructor for instance of Graphic3d_TextureRoot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_TextureRoot\n");}
 	}
 };
 
@@ -2054,7 +2057,7 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 };
 %extend Graphic3d_TextureMap {
 	~Graphic3d_TextureMap() {
-	printf("Call custom destructor for instance of Graphic3d_TextureMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_TextureMap\n");}
 	}
 };
 
@@ -2076,7 +2079,7 @@ class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 };
 %extend Graphic3d_Texture1D {
 	~Graphic3d_Texture1D() {
-	printf("Call custom destructor for instance of Graphic3d_Texture1D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture1D\n");}
 	}
 };
 
@@ -2106,7 +2109,7 @@ class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
 };
 %extend Graphic3d_AspectMarker3d {
 	~Graphic3d_AspectMarker3d() {
-	printf("Call custom destructor for instance of Graphic3d_AspectMarker3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectMarker3d\n");}
 	}
 };
 
@@ -2128,7 +2131,7 @@ class Graphic3d_ListNodeOfListOfShortReal : public TCollection_MapNode {
 };
 %extend Graphic3d_ListNodeOfListOfShortReal {
 	~Graphic3d_ListNodeOfListOfShortReal() {
-	printf("Call custom destructor for instance of Graphic3d_ListNodeOfListOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfListOfShortReal\n");}
 	}
 };
 
@@ -2156,7 +2159,7 @@ class Graphic3d_AspectTextDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_AspectTextDefinitionError {
 	~Graphic3d_AspectTextDefinitionError() {
-	printf("Call custom destructor for instance of Graphic3d_AspectTextDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectTextDefinitionError\n");}
 	}
 };
 
@@ -2176,7 +2179,7 @@ class Graphic3d_DataStructureManager : public MMgt_TShared {
 };
 %extend Graphic3d_DataStructureManager {
 	~Graphic3d_DataStructureManager() {
-	printf("Call custom destructor for instance of Graphic3d_DataStructureManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_DataStructureManager\n");}
 	}
 };
 
@@ -2306,7 +2309,7 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 };
 %extend Graphic3d_ArrayOfPrimitives {
 	~Graphic3d_ArrayOfPrimitives() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfPrimitives\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPrimitives\n");}
 	}
 };
 
@@ -2324,7 +2327,7 @@ class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfTriangles {
 	~Graphic3d_ArrayOfTriangles() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfTriangles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfTriangles\n");}
 	}
 };
 
@@ -2352,7 +2355,7 @@ class Graphic3d_PriorityDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_PriorityDefinitionError {
 	~Graphic3d_PriorityDefinitionError() {
-	printf("Call custom destructor for instance of Graphic3d_PriorityDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_PriorityDefinitionError\n");}
 	}
 };
 
@@ -2374,7 +2377,7 @@ class Graphic3d_ListNodeOfListOfPArray : public TCollection_MapNode {
 };
 %extend Graphic3d_ListNodeOfListOfPArray {
 	~Graphic3d_ListNodeOfListOfPArray() {
-	printf("Call custom destructor for instance of Graphic3d_ListNodeOfListOfPArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfListOfPArray\n");}
 	}
 };
 
@@ -2402,7 +2405,7 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 };
 %extend Graphic3d_TextureEnv {
 	~Graphic3d_TextureEnv() {
-	printf("Call custom destructor for instance of Graphic3d_TextureEnv\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_TextureEnv\n");}
 	}
 };
 
@@ -2425,7 +2428,7 @@ class Graphic3d_ListIteratorOfListOfShortReal {
 };
 %extend Graphic3d_ListIteratorOfListOfShortReal {
 	~Graphic3d_ListIteratorOfListOfShortReal() {
-	printf("Call custom destructor for instance of Graphic3d_ListIteratorOfListOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ListIteratorOfListOfShortReal\n");}
 	}
 };
 
@@ -2470,7 +2473,7 @@ class Graphic3d_Vector {
 };
 %extend Graphic3d_Vector {
 	~Graphic3d_Vector() {
-	printf("Call custom destructor for instance of Graphic3d_Vector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Vector\n");}
 	}
 };
 
@@ -2492,7 +2495,7 @@ class Graphic3d_AspectLine3d : public Aspect_AspectLine {
 };
 %extend Graphic3d_AspectLine3d {
 	~Graphic3d_AspectLine3d() {
-	printf("Call custom destructor for instance of Graphic3d_AspectLine3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectLine3d\n");}
 	}
 };
 
@@ -2516,7 +2519,7 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 };
 %extend Graphic3d_Texture2D {
 	~Graphic3d_Texture2D() {
-	printf("Call custom destructor for instance of Graphic3d_Texture2D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2D\n");}
 	}
 };
 
@@ -2568,7 +2571,7 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 };
 %extend Graphic3d_Texture2Dplane {
 	~Graphic3d_Texture2Dplane() {
-	printf("Call custom destructor for instance of Graphic3d_Texture2Dplane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2Dplane\n");}
 	}
 };
 
@@ -2581,7 +2584,7 @@ class Graphic3d_CBitFields16 {
 };
 %extend Graphic3d_CBitFields16 {
 	~Graphic3d_CBitFields16() {
-	printf("Call custom destructor for instance of Graphic3d_CBitFields16\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields16\n");}
 	}
 };
 
@@ -2594,7 +2597,7 @@ class Graphic3d_CBitFields8 {
 };
 %extend Graphic3d_CBitFields8 {
 	~Graphic3d_CBitFields8() {
-	printf("Call custom destructor for instance of Graphic3d_CBitFields8\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields8\n");}
 	}
 };
 
@@ -2633,7 +2636,7 @@ class Graphic3d_Array1OfVertexN {
 };
 %extend Graphic3d_Array1OfVertexN {
 	~Graphic3d_Array1OfVertexN() {
-	printf("Call custom destructor for instance of Graphic3d_Array1OfVertexN\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexN\n");}
 	}
 };
 
@@ -2652,7 +2655,7 @@ class Graphic3d_MapIteratorOfMapOfStructure : public TCollection_BasicMapIterato
 };
 %extend Graphic3d_MapIteratorOfMapOfStructure {
 	~Graphic3d_MapIteratorOfMapOfStructure() {
-	printf("Call custom destructor for instance of Graphic3d_MapIteratorOfMapOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_MapIteratorOfMapOfStructure\n");}
 	}
 };
 
@@ -2677,7 +2680,7 @@ class Graphic3d_MapOfStructure : public TCollection_BasicMap {
 };
 %extend Graphic3d_MapOfStructure {
 	~Graphic3d_MapOfStructure() {
-	printf("Call custom destructor for instance of Graphic3d_MapOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_MapOfStructure\n");}
 	}
 };
 
@@ -2699,7 +2702,7 @@ class Graphic3d_SequenceNodeOfSequenceOfStructure : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfStructure {
 	~Graphic3d_SequenceNodeOfSequenceOfStructure() {
-	printf("Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfStructure\n");}
 	}
 };
 
@@ -2721,7 +2724,7 @@ class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 };
 %extend Graphic3d_Texture2Dmanual {
 	~Graphic3d_Texture2Dmanual() {
-	printf("Call custom destructor for instance of Graphic3d_Texture2Dmanual\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2Dmanual\n");}
 	}
 };
 
@@ -2875,7 +2878,7 @@ class Graphic3d_Group : public MMgt_TShared {
 };
 %extend Graphic3d_Group {
 	~Graphic3d_Group() {
-	printf("Call custom destructor for instance of Graphic3d_Group\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Group\n");}
 	}
 };
 
@@ -2897,7 +2900,7 @@ class Graphic3d_ListNodeOfSetListOfSetOfGroup : public TCollection_MapNode {
 };
 %extend Graphic3d_ListNodeOfSetListOfSetOfGroup {
 	~Graphic3d_ListNodeOfSetListOfSetOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_ListNodeOfSetListOfSetOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfSetListOfSetOfGroup\n");}
 	}
 };
 
@@ -2919,7 +2922,7 @@ class Graphic3d_SequenceNodeOfSequenceOfGroup : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfGroup {
 	~Graphic3d_SequenceNodeOfSequenceOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfGroup\n");}
 	}
 };
 
@@ -2941,7 +2944,7 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 };
 %extend Graphic3d_Texture1Dmanual {
 	~Graphic3d_Texture1Dmanual() {
-	printf("Call custom destructor for instance of Graphic3d_Texture1Dmanual\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture1Dmanual\n");}
 	}
 };
 
@@ -2969,7 +2972,7 @@ class Graphic3d_CycleError : public Standard_DomainError {
 };
 %extend Graphic3d_CycleError {
 	~Graphic3d_CycleError() {
-	printf("Call custom destructor for instance of Graphic3d_CycleError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_CycleError\n");}
 	}
 };
 
@@ -3017,7 +3020,7 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 };
 %extend Graphic3d_AspectText3d {
 	~Graphic3d_AspectText3d() {
-	printf("Call custom destructor for instance of Graphic3d_AspectText3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectText3d\n");}
 	}
 };
 
@@ -3377,7 +3380,7 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 };
 %extend Graphic3d_GraphicDriver {
 	~Graphic3d_GraphicDriver() {
-	printf("Call custom destructor for instance of Graphic3d_GraphicDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_GraphicDriver\n");}
 	}
 };
 
@@ -3420,7 +3423,7 @@ class Graphic3d_Array2OfVertex {
 };
 %extend Graphic3d_Array2OfVertex {
 	~Graphic3d_Array2OfVertex() {
-	printf("Call custom destructor for instance of Graphic3d_Array2OfVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertex\n");}
 	}
 };
 
@@ -3448,7 +3451,7 @@ class Graphic3d_InitialisationError : public Standard_OutOfRange {
 };
 %extend Graphic3d_InitialisationError {
 	~Graphic3d_InitialisationError() {
-	printf("Call custom destructor for instance of Graphic3d_InitialisationError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_InitialisationError\n");}
 	}
 };
 
@@ -3470,7 +3473,7 @@ class Graphic3d_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfAddress {
 	~Graphic3d_SequenceNodeOfSequenceOfAddress() {
-	printf("Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
 
@@ -3509,7 +3512,7 @@ class Graphic3d_Array1OfBytes {
 };
 %extend Graphic3d_Array1OfBytes {
 	~Graphic3d_Array1OfBytes() {
-	printf("Call custom destructor for instance of Graphic3d_Array1OfBytes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfBytes\n");}
 	}
 };
 
@@ -3537,7 +3540,7 @@ class Graphic3d_PickIdDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_PickIdDefinitionError {
 	~Graphic3d_PickIdDefinitionError() {
-	printf("Call custom destructor for instance of Graphic3d_PickIdDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_PickIdDefinitionError\n");}
 	}
 };
 
@@ -3590,7 +3593,7 @@ class Graphic3d_SequenceOfStructure : public TCollection_BaseSequence {
 };
 %extend Graphic3d_SequenceOfStructure {
 	~Graphic3d_SequenceOfStructure() {
-	printf("Call custom destructor for instance of Graphic3d_SequenceOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceOfStructure\n");}
 	}
 };
 
@@ -3610,7 +3613,7 @@ class Graphic3d_ArrayOfPoints : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPoints {
 	~Graphic3d_ArrayOfPoints() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfPoints\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPoints\n");}
 	}
 };
 
@@ -3663,7 +3666,7 @@ class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
 };
 %extend Graphic3d_SequenceOfAddress {
 	~Graphic3d_SequenceOfAddress() {
-	printf("Call custom destructor for instance of Graphic3d_SequenceOfAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceOfAddress\n");}
 	}
 };
 
@@ -3727,7 +3730,7 @@ class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
 };
 %extend Graphic3d_HSequenceOfStructure {
 	~Graphic3d_HSequenceOfStructure() {
-	printf("Call custom destructor for instance of Graphic3d_HSequenceOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_HSequenceOfStructure\n");}
 	}
 };
 
@@ -3750,7 +3753,7 @@ class Graphic3d_ListIteratorOfListOfPArray {
 };
 %extend Graphic3d_ListIteratorOfListOfPArray {
 	~Graphic3d_ListIteratorOfListOfPArray() {
-	printf("Call custom destructor for instance of Graphic3d_ListIteratorOfListOfPArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ListIteratorOfListOfPArray\n");}
 	}
 };
 
@@ -3773,7 +3776,7 @@ class Graphic3d_ListIteratorOfSetListOfSetOfGroup {
 };
 %extend Graphic3d_ListIteratorOfSetListOfSetOfGroup {
 	~Graphic3d_ListIteratorOfSetListOfSetOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_ListIteratorOfSetListOfSetOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ListIteratorOfSetListOfSetOfGroup\n");}
 	}
 };
 
@@ -3812,7 +3815,7 @@ class Graphic3d_Array1OfVertex {
 };
 %extend Graphic3d_Array1OfVertex {
 	~Graphic3d_Array1OfVertex() {
-	printf("Call custom destructor for instance of Graphic3d_Array1OfVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertex\n");}
 	}
 };
 
@@ -4002,7 +4005,7 @@ class Graphic3d_Structure : public MMgt_TShared {
 };
 %extend Graphic3d_Structure {
 	~Graphic3d_Structure() {
-	printf("Call custom destructor for instance of Graphic3d_Structure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Structure\n");}
 	}
 };
 
@@ -4045,7 +4048,7 @@ class Graphic3d_Array2OfVertexNT {
 };
 %extend Graphic3d_Array2OfVertexNT {
 	~Graphic3d_Array2OfVertexNT() {
-	printf("Call custom destructor for instance of Graphic3d_Array2OfVertexNT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexNT\n");}
 	}
 };
 
@@ -4073,7 +4076,7 @@ class Graphic3d_VectorError : public Standard_OutOfRange {
 };
 %extend Graphic3d_VectorError {
 	~Graphic3d_VectorError() {
-	printf("Call custom destructor for instance of Graphic3d_VectorError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_VectorError\n");}
 	}
 };
 
@@ -4116,7 +4119,7 @@ class Graphic3d_Array2OfVertexNC {
 };
 %extend Graphic3d_Array2OfVertexNC {
 	~Graphic3d_Array2OfVertexNC() {
-	printf("Call custom destructor for instance of Graphic3d_Array2OfVertexNC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexNC\n");}
 	}
 };
 
@@ -4136,7 +4139,7 @@ class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfTriangleFans {
 	~Graphic3d_ArrayOfTriangleFans() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfTriangleFans\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfTriangleFans\n");}
 	}
 };
 
@@ -4164,7 +4167,7 @@ class Graphic3d_TransformError : public Standard_OutOfRange {
 };
 %extend Graphic3d_TransformError {
 	~Graphic3d_TransformError() {
-	printf("Call custom destructor for instance of Graphic3d_TransformError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_TransformError\n");}
 	}
 };
 
@@ -4213,7 +4216,7 @@ class Graphic3d_ListOfPArray {
 };
 %extend Graphic3d_ListOfPArray {
 	~Graphic3d_ListOfPArray() {
-	printf("Call custom destructor for instance of Graphic3d_ListOfPArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ListOfPArray\n");}
 	}
 };
 
@@ -4234,7 +4237,7 @@ class Graphic3d_VertexC : public Graphic3d_Vertex {
 };
 %extend Graphic3d_VertexC {
 	~Graphic3d_VertexC() {
-	printf("Call custom destructor for instance of Graphic3d_VertexC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexC\n");}
 	}
 };
 
@@ -4255,7 +4258,7 @@ class Graphic3d_VertexN : public Graphic3d_Vertex {
 };
 %extend Graphic3d_VertexN {
 	~Graphic3d_VertexN() {
-	printf("Call custom destructor for instance of Graphic3d_VertexN\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexN\n");}
 	}
 };
 
@@ -4276,7 +4279,7 @@ class Graphic3d_VertexNT : public Graphic3d_VertexN {
 };
 %extend Graphic3d_VertexNT {
 	~Graphic3d_VertexNT() {
-	printf("Call custom destructor for instance of Graphic3d_VertexNT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexNT\n");}
 	}
 };
 
@@ -4296,7 +4299,7 @@ class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfTriangleStrips {
 	~Graphic3d_ArrayOfTriangleStrips() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfTriangleStrips\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfTriangleStrips\n");}
 	}
 };
 
@@ -4316,7 +4319,7 @@ class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPolylines {
 	~Graphic3d_ArrayOfPolylines() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfPolylines\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPolylines\n");}
 	}
 };
 
@@ -4355,7 +4358,7 @@ class Graphic3d_Array1OfVertexNC {
 };
 %extend Graphic3d_Array1OfVertexNC {
 	~Graphic3d_Array1OfVertexNC() {
-	printf("Call custom destructor for instance of Graphic3d_Array1OfVertexNC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexNC\n");}
 	}
 };
 
@@ -4394,7 +4397,7 @@ class Graphic3d_Array1OfVertexNT {
 };
 %extend Graphic3d_Array1OfVertexNT {
 	~Graphic3d_Array1OfVertexNT() {
-	printf("Call custom destructor for instance of Graphic3d_Array1OfVertexNT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexNT\n");}
 	}
 };
 
@@ -4429,7 +4432,7 @@ class Graphic3d_SetOfGroup {
 };
 %extend Graphic3d_SetOfGroup {
 	~Graphic3d_SetOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_SetOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SetOfGroup\n");}
 	}
 };
 
@@ -4457,7 +4460,7 @@ class Graphic3d_MaterialDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_MaterialDefinitionError {
 	~Graphic3d_MaterialDefinitionError() {
-	printf("Call custom destructor for instance of Graphic3d_MaterialDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_MaterialDefinitionError\n");}
 	}
 };
 
@@ -4470,7 +4473,7 @@ class Graphic3d_CBitFields4 {
 };
 %extend Graphic3d_CBitFields4 {
 	~Graphic3d_CBitFields4() {
-	printf("Call custom destructor for instance of Graphic3d_CBitFields4\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields4\n");}
 	}
 };
 
@@ -4490,7 +4493,7 @@ class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfSegments {
 	~Graphic3d_ArrayOfSegments() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfSegments\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfSegments\n");}
 	}
 };
 
@@ -4585,7 +4588,7 @@ class Graphic3d_MaterialAspect {
 };
 %extend Graphic3d_MaterialAspect {
 	~Graphic3d_MaterialAspect() {
-	printf("Call custom destructor for instance of Graphic3d_MaterialAspect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_MaterialAspect\n");}
 	}
 };
 
@@ -4605,7 +4608,7 @@ class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfQuadrangleStrips {
 	~Graphic3d_ArrayOfQuadrangleStrips() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfQuadrangleStrips\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfQuadrangleStrips\n");}
 	}
 };
 
@@ -4644,7 +4647,7 @@ class Graphic3d_Array1OfVector {
 };
 %extend Graphic3d_Array1OfVector {
 	~Graphic3d_Array1OfVector() {
-	printf("Call custom destructor for instance of Graphic3d_Array1OfVector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVector\n");}
 	}
 };
 
@@ -4693,7 +4696,7 @@ class Graphic3d_SetListOfSetOfGroup {
 };
 %extend Graphic3d_SetListOfSetOfGroup {
 	~Graphic3d_SetListOfSetOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_SetListOfSetOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SetListOfSetOfGroup\n");}
 	}
 };
 
@@ -4733,7 +4736,7 @@ class Graphic3d_HArray1OfBytes : public MMgt_TShared {
 };
 %extend Graphic3d_HArray1OfBytes {
 	~Graphic3d_HArray1OfBytes() {
-	printf("Call custom destructor for instance of Graphic3d_HArray1OfBytes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_HArray1OfBytes\n");}
 	}
 };
 
@@ -4754,7 +4757,7 @@ class Graphic3d_VertexNC : public Graphic3d_VertexN {
 };
 %extend Graphic3d_VertexNC {
 	~Graphic3d_VertexNC() {
-	printf("Call custom destructor for instance of Graphic3d_VertexNC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexNC\n");}
 	}
 };
 
@@ -4803,7 +4806,7 @@ class Graphic3d_ListOfShortReal {
 };
 %extend Graphic3d_ListOfShortReal {
 	~Graphic3d_ListOfShortReal() {
-	printf("Call custom destructor for instance of Graphic3d_ListOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ListOfShortReal\n");}
 	}
 };
 
@@ -4829,7 +4832,7 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 };
 %extend Graphic3d_Texture1Dsegment {
 	~Graphic3d_Texture1Dsegment() {
-	printf("Call custom destructor for instance of Graphic3d_Texture1Dsegment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture1Dsegment\n");}
 	}
 };
 
@@ -4855,7 +4858,7 @@ class Graphic3d_Plotter : public MMgt_TShared {
 };
 %extend Graphic3d_Plotter {
 	~Graphic3d_Plotter() {
-	printf("Call custom destructor for instance of Graphic3d_Plotter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_Plotter\n");}
 	}
 };
 
@@ -4943,7 +4946,7 @@ class Graphic3d_StructureManager : public MMgt_TShared {
 };
 %extend Graphic3d_StructureManager {
 	~Graphic3d_StructureManager() {
-	printf("Call custom destructor for instance of Graphic3d_StructureManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_StructureManager\n");}
 	}
 };
 
@@ -4966,7 +4969,7 @@ class Graphic3d_SetIteratorOfSetOfGroup {
 };
 %extend Graphic3d_SetIteratorOfSetOfGroup {
 	~Graphic3d_SetIteratorOfSetOfGroup() {
-	printf("Call custom destructor for instance of Graphic3d_SetIteratorOfSetOfGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_SetIteratorOfSetOfGroup\n");}
 	}
 };
 
@@ -5036,7 +5039,7 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 };
 %extend Graphic3d_AspectFillArea3d {
 	~Graphic3d_AspectFillArea3d() {
-	printf("Call custom destructor for instance of Graphic3d_AspectFillArea3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectFillArea3d\n");}
 	}
 };
 
@@ -5056,7 +5059,7 @@ class Graphic3d_ArrayOfQuadrangles : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfQuadrangles {
 	~Graphic3d_ArrayOfQuadrangles() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfQuadrangles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfQuadrangles\n");}
 	}
 };
 
@@ -5076,7 +5079,7 @@ class Graphic3d_ArrayOfPolygons : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPolygons {
 	~Graphic3d_ArrayOfPolygons() {
-	printf("Call custom destructor for instance of Graphic3d_ArrayOfPolygons\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPolygons\n");}
 	}
 };
 
@@ -5098,7 +5101,7 @@ class Graphic3d_StdMapNodeOfMapOfStructure : public TCollection_MapNode {
 };
 %extend Graphic3d_StdMapNodeOfMapOfStructure {
 	~Graphic3d_StdMapNodeOfMapOfStructure() {
-	printf("Call custom destructor for instance of Graphic3d_StdMapNodeOfMapOfStructure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_StdMapNodeOfMapOfStructure\n");}
 	}
 };
 
@@ -5126,6 +5129,6 @@ class Graphic3d_StructureDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_StructureDefinitionError {
 	~Graphic3d_StructureDefinitionError() {
-	printf("Call custom destructor for instance of Graphic3d_StructureDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Graphic3d_StructureDefinitionError\n");}
 	}
 };

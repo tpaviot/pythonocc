@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -107,7 +110,7 @@ class ChFi3d {
 };
 %extend ChFi3d {
 	~ChFi3d() {
-	printf("Call custom destructor for instance of ChFi3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ChFi3d\n");}
 	}
 };
 
@@ -182,7 +185,7 @@ class ChFi3d_Builder {
 };
 %extend ChFi3d_Builder {
 	~ChFi3d_Builder() {
-	printf("Call custom destructor for instance of ChFi3d_Builder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ChFi3d_Builder\n");}
 	}
 };
 
@@ -201,7 +204,7 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 };
 %extend ChFi3d_SearchSing {
 	~ChFi3d_SearchSing() {
-	printf("Call custom destructor for instance of ChFi3d_SearchSing\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ChFi3d_SearchSing\n");}
 	}
 };
 
@@ -260,7 +263,7 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 };
 %extend ChFi3d_ChBuilder {
 	~ChFi3d_ChBuilder() {
-	printf("Call custom destructor for instance of ChFi3d_ChBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ChFi3d_ChBuilder\n");}
 	}
 };
 
@@ -315,6 +318,6 @@ class ChFi3d_FilBuilder : public ChFi3d_Builder {
 };
 %extend ChFi3d_FilBuilder {
 	~ChFi3d_FilBuilder() {
-	printf("Call custom destructor for instance of ChFi3d_FilBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ChFi3d_FilBuilder\n");}
 	}
 };

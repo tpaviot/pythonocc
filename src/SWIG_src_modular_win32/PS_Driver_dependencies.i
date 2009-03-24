@@ -19,8 +19,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
-#include <PS_Driver.hxx>
 #include <Handle_PS_Driver.hxx>
+#include <PS_Driver.hxx>
 %};
 
 %import PS.i

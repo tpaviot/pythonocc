@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 };
 %extend Handle_TopBas_ListNodeOfListOfTestInterference {
 	~Handle_TopBas_ListNodeOfListOfTestInterference() {
-	printf("Call custom destructor for instance of Handle_TopBas_ListNodeOfListOfTestInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopBas_ListNodeOfListOfTestInterference\n");}
 	}
 };
 
@@ -153,7 +156,7 @@ class TopBas_ListOfTestInterference {
 };
 %extend TopBas_ListOfTestInterference {
 	~TopBas_ListOfTestInterference() {
-	printf("Call custom destructor for instance of TopBas_ListOfTestInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopBas_ListOfTestInterference\n");}
 	}
 };
 
@@ -175,7 +178,7 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 };
 %extend TopBas_ListNodeOfListOfTestInterference {
 	~TopBas_ListNodeOfListOfTestInterference() {
-	printf("Call custom destructor for instance of TopBas_ListNodeOfListOfTestInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopBas_ListNodeOfListOfTestInterference\n");}
 	}
 };
 
@@ -198,7 +201,7 @@ class TopBas_ListIteratorOfListOfTestInterference {
 };
 %extend TopBas_ListIteratorOfListOfTestInterference {
 	~TopBas_ListIteratorOfListOfTestInterference() {
-	printf("Call custom destructor for instance of TopBas_ListIteratorOfListOfTestInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopBas_ListIteratorOfListOfTestInterference\n");}
 	}
 };
 
@@ -237,6 +240,6 @@ class TopBas_TestInterference {
 };
 %extend TopBas_TestInterference {
 	~TopBas_TestInterference() {
-	printf("Call custom destructor for instance of TopBas_TestInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopBas_TestInterference\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 };
 %extend Handle_BRepAdaptor_HCompCurve {
 	~Handle_BRepAdaptor_HCompCurve() {
-	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCompCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HCompCurve\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 };
 %extend Handle_BRepAdaptor_HSurface {
 	~Handle_BRepAdaptor_HSurface() {
-	printf("Call custom destructor for instance of Handle_BRepAdaptor_HSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HSurface\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 };
 %extend Handle_BRepAdaptor_HCurve2d {
 	~Handle_BRepAdaptor_HCurve2d() {
-	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCurve2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HCurve2d\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 };
 %extend Handle_BRepAdaptor_HCurve {
 	~Handle_BRepAdaptor_HCurve() {
-	printf("Call custom destructor for instance of Handle_BRepAdaptor_HCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HCurve\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_BRepAdaptor_HArray1OfCurve {
 	~Handle_BRepAdaptor_HArray1OfCurve() {
-	printf("Call custom destructor for instance of Handle_BRepAdaptor_HArray1OfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HArray1OfCurve\n");}
 	}
 };
 
@@ -240,7 +243,7 @@ class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 };
 %extend BRepAdaptor_HArray1OfCurve {
 	~BRepAdaptor_HArray1OfCurve() {
-	printf("Call custom destructor for instance of BRepAdaptor_HArray1OfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HArray1OfCurve\n");}
 	}
 };
 
@@ -270,7 +273,7 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 };
 %extend BRepAdaptor_HCompCurve {
 	~BRepAdaptor_HCompCurve() {
-	printf("Call custom destructor for instance of BRepAdaptor_HCompCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCompCurve\n");}
 	}
 };
 
@@ -291,7 +294,7 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 };
 %extend BRepAdaptor_Curve2d {
 	~BRepAdaptor_Curve2d() {
-	printf("Call custom destructor for instance of BRepAdaptor_Curve2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve2d\n");}
 	}
 };
 
@@ -330,7 +333,7 @@ class BRepAdaptor_Array1OfCurve {
 };
 %extend BRepAdaptor_Array1OfCurve {
 	~BRepAdaptor_Array1OfCurve() {
-	printf("Call custom destructor for instance of BRepAdaptor_Array1OfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Array1OfCurve\n");}
 	}
 };
 
@@ -451,7 +454,7 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 };
 %extend BRepAdaptor_Surface {
 	~BRepAdaptor_Surface() {
-	printf("Call custom destructor for instance of BRepAdaptor_Surface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Surface\n");}
 	}
 };
 
@@ -481,7 +484,7 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 };
 %extend BRepAdaptor_HCurve {
 	~BRepAdaptor_HCurve() {
-	printf("Call custom destructor for instance of BRepAdaptor_HCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve\n");}
 	}
 };
 
@@ -509,7 +512,7 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 };
 %extend BRepAdaptor_HCurve2d {
 	~BRepAdaptor_HCurve2d() {
-	printf("Call custom destructor for instance of BRepAdaptor_HCurve2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve2d\n");}
 	}
 };
 
@@ -592,7 +595,7 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 };
 %extend BRepAdaptor_CompCurve {
 	~BRepAdaptor_CompCurve() {
-	printf("Call custom destructor for instance of BRepAdaptor_CompCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_CompCurve\n");}
 	}
 };
 
@@ -683,7 +686,7 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 };
 %extend BRepAdaptor_Curve {
 	~BRepAdaptor_Curve() {
-	printf("Call custom destructor for instance of BRepAdaptor_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve\n");}
 	}
 };
 
@@ -711,6 +714,6 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 };
 %extend BRepAdaptor_HSurface {
 	~BRepAdaptor_HSurface() {
-	printf("Call custom destructor for instance of BRepAdaptor_HSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HSurface\n");}
 	}
 };

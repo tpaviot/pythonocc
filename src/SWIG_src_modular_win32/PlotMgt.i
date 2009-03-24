@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -160,7 +163,7 @@ class Handle_PlotMgt_PlotterParameter : public Handle_MMgt_TShared {
 };
 %extend Handle_PlotMgt_PlotterParameter {
 	~Handle_PlotMgt_PlotterParameter() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_PlotterParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterParameter\n");}
 	}
 };
 
@@ -184,7 +187,7 @@ class Handle_PlotMgt_PlotterDefinitionError : public Handle_Standard_OutOfRange 
 };
 %extend Handle_PlotMgt_PlotterDefinitionError {
 	~Handle_PlotMgt_PlotterDefinitionError() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_PlotterDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterDefinitionError\n");}
 	}
 };
 
@@ -208,7 +211,7 @@ class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TColle
 };
 %extend Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter {
 	~Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter\n");}
 	}
 };
 
@@ -232,7 +235,7 @@ class Handle_PlotMgt_HListOfMFTFonts : public Handle_MMgt_TShared {
 };
 %extend Handle_PlotMgt_HListOfMFTFonts {
 	~Handle_PlotMgt_HListOfMFTFonts() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_HListOfMFTFonts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfMFTFonts\n");}
 	}
 };
 
@@ -256,7 +259,7 @@ class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
 };
 %extend Handle_PlotMgt_HListOfPlotterParameter {
 	~Handle_PlotMgt_HListOfPlotterParameter() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_HListOfPlotterParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfPlotterParameter\n");}
 	}
 };
 
@@ -280,7 +283,7 @@ class Handle_PlotMgt_Plotter : public Handle_MMgt_TShared {
 };
 %extend Handle_PlotMgt_Plotter {
 	~Handle_PlotMgt_Plotter() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_Plotter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_Plotter\n");}
 	}
 };
 
@@ -304,7 +307,7 @@ class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
 };
 %extend Handle_PlotMgt_TextManager {
 	~Handle_PlotMgt_TextManager() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_TextManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_TextManager\n");}
 	}
 };
 
@@ -328,7 +331,7 @@ class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 };
 %extend Handle_PlotMgt_PlotterAccessError {
 	~Handle_PlotMgt_PlotterAccessError() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_PlotterAccessError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterAccessError\n");}
 	}
 };
 
@@ -352,7 +355,7 @@ class Handle_PlotMgt_HListOfMFTSizes : public Handle_MMgt_TShared {
 };
 %extend Handle_PlotMgt_HListOfMFTSizes {
 	~Handle_PlotMgt_HListOfMFTSizes() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_HListOfMFTSizes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfMFTSizes\n");}
 	}
 };
 
@@ -376,7 +379,7 @@ class Handle_PlotMgt_PlotterDriver : public Handle_Aspect_Driver {
 };
 %extend Handle_PlotMgt_PlotterDriver {
 	~Handle_PlotMgt_PlotterDriver() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_PlotterDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterDriver\n");}
 	}
 };
 
@@ -400,7 +403,7 @@ class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
 };
 %extend Handle_PlotMgt_ImageDriver {
 	~Handle_PlotMgt_ImageDriver() {
-	printf("Call custom destructor for instance of Handle_PlotMgt_ImageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_ImageDriver\n");}
 	}
 };
 
@@ -428,7 +431,7 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 };
 %extend PlotMgt_PlotterDefinitionError {
 	~PlotMgt_PlotterDefinitionError() {
-	printf("Call custom destructor for instance of PlotMgt_PlotterDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDefinitionError\n");}
 	}
 };
 
@@ -468,7 +471,7 @@ class PlotMgt_TextManager : public MFT_TextManager {
 };
 %extend PlotMgt_TextManager {
 	~PlotMgt_TextManager() {
-	printf("Call custom destructor for instance of PlotMgt_TextManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_TextManager\n");}
 	}
 };
 
@@ -582,7 +585,7 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 };
 %extend PlotMgt_PlotterDriver {
 	~PlotMgt_PlotterDriver() {
-	printf("Call custom destructor for instance of PlotMgt_PlotterDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDriver\n");}
 	}
 };
 
@@ -604,7 +607,7 @@ class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode 
 };
 %extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
 	~PlotMgt_SequenceNodeOfListOfPlotterParameter() {
-	printf("Call custom destructor for instance of PlotMgt_SequenceNodeOfListOfPlotterParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_SequenceNodeOfListOfPlotterParameter\n");}
 	}
 };
 
@@ -657,7 +660,7 @@ class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
 };
 %extend PlotMgt_ListOfPlotterParameter {
 	~PlotMgt_ListOfPlotterParameter() {
-	printf("Call custom destructor for instance of PlotMgt_ListOfPlotterParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfPlotterParameter\n");}
 	}
 };
 
@@ -721,7 +724,7 @@ class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfPlotterParameter {
 	~PlotMgt_HListOfPlotterParameter() {
-	printf("Call custom destructor for instance of PlotMgt_HListOfPlotterParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfPlotterParameter\n");}
 	}
 };
 
@@ -760,7 +763,7 @@ class PlotMgt_ListOfMFTFonts {
 };
 %extend PlotMgt_ListOfMFTFonts {
 	~PlotMgt_ListOfMFTFonts() {
-	printf("Call custom destructor for instance of PlotMgt_ListOfMFTFonts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfMFTFonts\n");}
 	}
 };
 
@@ -1106,7 +1109,7 @@ class PlotMgt_Plotter : public MMgt_TShared {
 };
 %extend PlotMgt_Plotter {
 	~PlotMgt_Plotter() {
-	printf("Call custom destructor for instance of PlotMgt_Plotter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_Plotter\n");}
 	}
 };
 
@@ -1146,7 +1149,7 @@ class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfMFTSizes {
 	~PlotMgt_HListOfMFTSizes() {
-	printf("Call custom destructor for instance of PlotMgt_HListOfMFTSizes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfMFTSizes\n");}
 	}
 };
 
@@ -1172,7 +1175,7 @@ class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 };
 %extend PlotMgt_ImageDriver {
 	~PlotMgt_ImageDriver() {
-	printf("Call custom destructor for instance of PlotMgt_ImageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_ImageDriver\n");}
 	}
 };
 
@@ -1213,7 +1216,7 @@ class PlotMgt {
 };
 %extend PlotMgt {
 	~PlotMgt() {
-	printf("Call custom destructor for instance of PlotMgt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt\n");}
 	}
 };
 
@@ -1241,7 +1244,7 @@ class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
 };
 %extend PlotMgt_PlotterAccessError {
 	~PlotMgt_PlotterAccessError() {
-	printf("Call custom destructor for instance of PlotMgt_PlotterAccessError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterAccessError\n");}
 	}
 };
 
@@ -1299,7 +1302,7 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 };
 %extend PlotMgt_PlotterParameter {
 	~PlotMgt_PlotterParameter() {
-	printf("Call custom destructor for instance of PlotMgt_PlotterParameter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterParameter\n");}
 	}
 };
 
@@ -1339,7 +1342,7 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfMFTFonts {
 	~PlotMgt_HListOfMFTFonts() {
-	printf("Call custom destructor for instance of PlotMgt_HListOfMFTFonts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfMFTFonts\n");}
 	}
 };
 
@@ -1378,6 +1381,6 @@ class PlotMgt_ListOfMFTSizes {
 };
 %extend PlotMgt_ListOfMFTSizes {
 	~PlotMgt_ListOfMFTSizes() {
-	printf("Call custom destructor for instance of PlotMgt_ListOfMFTSizes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfMFTSizes\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 };
 %extend Handle_PNaming_Name {
 	~Handle_PNaming_Name() {
-	printf("Call custom destructor for instance of Handle_PNaming_Name\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_Name\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 };
 %extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	~Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape() {
-	printf("Call custom destructor for instance of Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 };
 %extend Handle_PNaming_HArray1OfNamedShape {
 	~Handle_PNaming_HArray1OfNamedShape() {
-	printf("Call custom destructor for instance of Handle_PNaming_HArray1OfNamedShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_HArray1OfNamedShape\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 };
 %extend Handle_PNaming_NamedShape {
 	~Handle_PNaming_NamedShape() {
-	printf("Call custom destructor for instance of Handle_PNaming_NamedShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_NamedShape\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 };
 %extend Handle_PNaming_Naming {
 	~Handle_PNaming_Naming() {
-	printf("Call custom destructor for instance of Handle_PNaming_Naming\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_Naming\n");}
 	}
 };
 
@@ -229,7 +232,7 @@ class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
 };
 %extend PNaming_FieldOfHArray1OfNamedShape {
 	~PNaming_FieldOfHArray1OfNamedShape() {
-	printf("Call custom destructor for instance of PNaming_FieldOfHArray1OfNamedShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_FieldOfHArray1OfNamedShape\n");}
 	}
 };
 
@@ -259,7 +262,7 @@ class PNaming_Naming : public PDF_Attribute {
 };
 %extend PNaming_Naming {
 	~PNaming_Naming() {
-	printf("Call custom destructor for instance of PNaming_Naming\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_Naming\n");}
 	}
 };
 
@@ -315,7 +318,7 @@ class PNaming_NamedShape : public PDF_Attribute {
 };
 %extend PNaming_NamedShape {
 	~PNaming_NamedShape() {
-	printf("Call custom destructor for instance of PNaming_NamedShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_NamedShape\n");}
 	}
 };
 
@@ -334,7 +337,7 @@ class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 };
 %extend PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 	~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape() {
-	printf("Call custom destructor for instance of PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape\n");}
 	}
 };
 
@@ -384,7 +387,7 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 };
 %extend PNaming_HArray1OfNamedShape {
 	~PNaming_HArray1OfNamedShape() {
-	printf("Call custom destructor for instance of PNaming_HArray1OfNamedShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_HArray1OfNamedShape\n");}
 	}
 };
 
@@ -446,7 +449,7 @@ class PNaming_Name : public Standard_Persistent {
 };
 %extend PNaming_Name {
 	~PNaming_Name() {
-	printf("Call custom destructor for instance of PNaming_Name\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_Name\n");}
 	}
 };
 
@@ -478,6 +481,6 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 };
 %extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape() {
-	printf("Call custom destructor for instance of PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
 	}
 };

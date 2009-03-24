@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -97,7 +100,7 @@ class BndLib_AddSurface {
 };
 %extend BndLib_AddSurface {
 	~BndLib_AddSurface() {
-	printf("Call custom destructor for instance of BndLib_AddSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BndLib_AddSurface\n");}
 	}
 };
 
@@ -114,7 +117,7 @@ class BndLib_Add3dCurve {
 };
 %extend BndLib_Add3dCurve {
 	~BndLib_Add3dCurve() {
-	printf("Call custom destructor for instance of BndLib_Add3dCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BndLib_Add3dCurve\n");}
 	}
 };
 
@@ -171,7 +174,7 @@ class BndLib {
 };
 %extend BndLib {
 	~BndLib() {
-	printf("Call custom destructor for instance of BndLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BndLib\n");}
 	}
 };
 
@@ -188,6 +191,6 @@ class BndLib_Add2dCurve {
 };
 %extend BndLib_Add2dCurve {
 	~BndLib_Add2dCurve() {
-	printf("Call custom destructor for instance of BndLib_Add2dCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BndLib_Add2dCurve\n");}
 	}
 };

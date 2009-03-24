@@ -19,6 +19,12 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
+#include <Handle_MDocStd_DocumentRetrievalDriver.hxx>
+#include <Handle_MDocStd_DocumentStorageDriver.hxx>
+#include <Handle_MDocStd_ListNodeOfDocEntryList.hxx>
+#include <Handle_MDocStd_StdMapNodeOfPersistentMap.hxx>
+#include <Handle_MDocStd_XLinkRetrievalDriver.hxx>
+#include <Handle_MDocStd_XLinkStorageDriver.hxx>
 #include <MDocStd_DocEntryList.hxx>
 #include <MDocStd_DocumentRetrievalDriver.hxx>
 #include <MDocStd_DocumentStorageDriver.hxx>
@@ -29,12 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include <MDocStd_StdMapNodeOfPersistentMap.hxx>
 #include <MDocStd_XLinkRetrievalDriver.hxx>
 #include <MDocStd_XLinkStorageDriver.hxx>
-#include <Handle_MDocStd_DocumentRetrievalDriver.hxx>
-#include <Handle_MDocStd_DocumentStorageDriver.hxx>
-#include <Handle_MDocStd_ListNodeOfDocEntryList.hxx>
-#include <Handle_MDocStd_StdMapNodeOfPersistentMap.hxx>
-#include <Handle_MDocStd_XLinkRetrievalDriver.hxx>
-#include <Handle_MDocStd_XLinkStorageDriver.hxx>
 %};
 
 %import MDocStd.i

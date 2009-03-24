@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -117,7 +120,7 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 };
 %extend Handle_IntAna_ListNodeOfListOfCurve {
 	~Handle_IntAna_ListNodeOfListOfCurve() {
-	printf("Call custom destructor for instance of Handle_IntAna_ListNodeOfListOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntAna_ListNodeOfListOfCurve\n");}
 	}
 };
 
@@ -150,7 +153,7 @@ class IntAna_Quadric {
 };
 %extend IntAna_Quadric {
 	~IntAna_Quadric() {
-	printf("Call custom destructor for instance of IntAna_Quadric\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_Quadric\n");}
 	}
 };
 
@@ -225,7 +228,7 @@ class IntAna_QuadQuadGeo {
 };
 %extend IntAna_QuadQuadGeo {
 	~IntAna_QuadQuadGeo() {
-	printf("Call custom destructor for instance of IntAna_QuadQuadGeo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_QuadQuadGeo\n");}
 	}
 };
 
@@ -247,7 +250,7 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 };
 %extend IntAna_ListNodeOfListOfCurve {
 	~IntAna_ListNodeOfListOfCurve() {
-	printf("Call custom destructor for instance of IntAna_ListNodeOfListOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_ListNodeOfListOfCurve\n");}
 	}
 };
 
@@ -290,7 +293,7 @@ class IntAna_IntQuadQuad {
 };
 %extend IntAna_IntQuadQuad {
 	~IntAna_IntQuadQuad() {
-	printf("Call custom destructor for instance of IntAna_IntQuadQuad\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_IntQuadQuad\n");}
 	}
 };
 
@@ -355,7 +358,7 @@ class IntAna_IntConicQuad {
 };
 %extend IntAna_IntConicQuad {
 	~IntAna_IntConicQuad() {
-	printf("Call custom destructor for instance of IntAna_IntConicQuad\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_IntConicQuad\n");}
 	}
 };
 
@@ -404,7 +407,7 @@ class IntAna_ListOfCurve {
 };
 %extend IntAna_ListOfCurve {
 	~IntAna_ListOfCurve() {
-	printf("Call custom destructor for instance of IntAna_ListOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_ListOfCurve\n");}
 	}
 };
 
@@ -427,7 +430,7 @@ class IntAna_ListIteratorOfListOfCurve {
 };
 %extend IntAna_ListIteratorOfListOfCurve {
 	~IntAna_ListIteratorOfListOfCurve() {
-	printf("Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_ListIteratorOfListOfCurve\n");}
 	}
 };
 
@@ -450,7 +453,7 @@ class IntAna_Int3Pln {
 };
 %extend IntAna_Int3Pln {
 	~IntAna_Int3Pln() {
-	printf("Call custom destructor for instance of IntAna_Int3Pln\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_Int3Pln\n");}
 	}
 };
 
@@ -491,7 +494,7 @@ class IntAna_Curve {
 };
 %extend IntAna_Curve {
 	~IntAna_Curve() {
-	printf("Call custom destructor for instance of IntAna_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_Curve\n");}
 	}
 };
 
@@ -518,6 +521,6 @@ class IntAna_IntLinTorus {
 };
 %extend IntAna_IntLinTorus {
 	~IntAna_IntLinTorus() {
-	printf("Call custom destructor for instance of IntAna_IntLinTorus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna_IntLinTorus\n");}
 	}
 };

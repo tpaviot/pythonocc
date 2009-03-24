@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_PMMgt_PManaged : public Handle_Standard_Persistent {
 };
 %extend Handle_PMMgt_PManaged {
 	~Handle_PMMgt_PManaged() {
-	printf("Call custom destructor for instance of Handle_PMMgt_PManaged\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PMMgt_PManaged\n");}
 	}
 };
 
@@ -124,6 +127,6 @@ class PMMgt_PManaged : public Standard_Persistent {
 };
 %extend PMMgt_PManaged {
 	~PMMgt_PManaged() {
-	printf("Call custom destructor for instance of PMMgt_PManaged\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PMMgt_PManaged\n");}
 	}
 };

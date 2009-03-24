@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurO
 };
 %extend Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
 	~Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
-	printf("Call custom destructor for instance of Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
 	}
 };
 
@@ -123,7 +126,7 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 };
 %extend Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter {
 	~Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter\n");}
 	}
 };
 
@@ -158,7 +161,7 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 };
 %extend Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
 	~Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
 	}
 };
 
@@ -181,7 +184,7 @@ class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 };
 %extend Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	~Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter\n");}
 	}
 };
 
@@ -214,7 +217,7 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 };
 %extend Geom2dInt_IntConicCurveOfGInter {
 	~Geom2dInt_IntConicCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_IntConicCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_IntConicCurveOfGInter\n");}
 	}
 };
 
@@ -227,7 +230,7 @@ class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 };
 %extend Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 	~Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 };
 %extend Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 	~Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter\n");}
 	}
 };
 
@@ -295,7 +298,7 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 };
 %extend Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter {
 	~Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter\n");}
 	}
 };
 
@@ -312,7 +315,7 @@ class Geom2dInt_TheProjPCurOfGInter {
 };
 %extend Geom2dInt_TheProjPCurOfGInter {
 	~Geom2dInt_TheProjPCurOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_TheProjPCurOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheProjPCurOfGInter\n");}
 	}
 };
 
@@ -341,7 +344,7 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 };
 %extend Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 	~Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter\n");}
 	}
 };
 
@@ -390,7 +393,7 @@ class Geom2dInt_Geom2dCurveTool {
 };
 %extend Geom2dInt_Geom2dCurveTool {
 	~Geom2dInt_Geom2dCurveTool() {
-	printf("Call custom destructor for instance of Geom2dInt_Geom2dCurveTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_Geom2dCurveTool\n");}
 	}
 };
 
@@ -412,7 +415,7 @@ class Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter
 };
 %extend Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
 	~Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
 	}
 };
 
@@ -435,7 +438,7 @@ class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Int
 };
 %extend Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter {
 	~Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter\n");}
 	}
 };
 
@@ -474,7 +477,7 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 };
 %extend Geom2dInt_GInter {
 	~Geom2dInt_GInter() {
-	printf("Call custom destructor for instance of Geom2dInt_GInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_GInter\n");}
 	}
 };
 
@@ -527,7 +530,7 @@ class Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCol
 };
 %extend Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter {
 	~Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
 	}
 };
 
@@ -560,7 +563,7 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 };
 %extend Geom2dInt_TheIntConicCurveOfGInter {
 	~Geom2dInt_TheIntConicCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_TheIntConicCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheIntConicCurveOfGInter\n");}
 	}
 };
 
@@ -577,7 +580,7 @@ class Geom2dInt_TheIntPCurvePCurveOfGInter : public IntRes2d_Intersection {
 };
 %extend Geom2dInt_TheIntPCurvePCurveOfGInter {
 	~Geom2dInt_TheIntPCurvePCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_TheIntPCurvePCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheIntPCurvePCurveOfGInter\n");}
 	}
 };
 
@@ -602,7 +605,7 @@ class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 };
 %extend Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 	~Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter\n");}
 	}
 };
 
@@ -625,6 +628,6 @@ class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Inter
 };
 %extend Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter {
 	~Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter() {
-	printf("Call custom destructor for instance of Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter\n");}
 	}
 };

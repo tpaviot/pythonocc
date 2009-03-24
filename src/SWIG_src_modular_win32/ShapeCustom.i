@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modificati
 };
 %extend Handle_ShapeCustom_BSplineRestriction {
 	~Handle_ShapeCustom_BSplineRestriction() {
-	printf("Call custom destructor for instance of Handle_ShapeCustom_BSplineRestriction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_BSplineRestriction\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModifica
 };
 %extend Handle_ShapeCustom_TrsfModification {
 	~Handle_ShapeCustom_TrsfModification() {
-	printf("Call custom destructor for instance of Handle_ShapeCustom_TrsfModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_TrsfModification\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modificatio
 };
 %extend Handle_ShapeCustom_SweptToElementary {
 	~Handle_ShapeCustom_SweptToElementary() {
-	printf("Call custom destructor for instance of Handle_ShapeCustom_SweptToElementary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_SweptToElementary\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 };
 %extend Handle_ShapeCustom_ConvertToBSpline {
 	~Handle_ShapeCustom_ConvertToBSpline() {
-	printf("Call custom destructor for instance of Handle_ShapeCustom_ConvertToBSpline\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_ConvertToBSpline\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modificat
 };
 %extend Handle_ShapeCustom_ConvertToRevolution {
 	~Handle_ShapeCustom_ConvertToRevolution() {
-	printf("Call custom destructor for instance of Handle_ShapeCustom_ConvertToRevolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_ConvertToRevolution\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeCustom_RestrictionParameters {
 	~Handle_ShapeCustom_RestrictionParameters() {
-	printf("Call custom destructor for instance of Handle_ShapeCustom_RestrictionParameters\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_RestrictionParameters\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 };
 %extend Handle_ShapeCustom_DirectModification {
 	~Handle_ShapeCustom_DirectModification() {
-	printf("Call custom destructor for instance of Handle_ShapeCustom_DirectModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_DirectModification\n");}
 	}
 };
 
@@ -326,7 +329,7 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 };
 %extend ShapeCustom_BSplineRestriction {
 	~ShapeCustom_BSplineRestriction() {
-	printf("Call custom destructor for instance of ShapeCustom_BSplineRestriction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_BSplineRestriction\n");}
 	}
 };
 
@@ -356,7 +359,7 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 };
 %extend ShapeCustom_TrsfModification {
 	~ShapeCustom_TrsfModification() {
-	printf("Call custom destructor for instance of ShapeCustom_TrsfModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_TrsfModification\n");}
 	}
 };
 
@@ -400,7 +403,7 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 };
 %extend ShapeCustom_RestrictionParameters {
 	~ShapeCustom_RestrictionParameters() {
-	printf("Call custom destructor for instance of ShapeCustom_RestrictionParameters\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_RestrictionParameters\n");}
 	}
 };
 
@@ -432,7 +435,7 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 };
 %extend ShapeCustom_SweptToElementary {
 	~ShapeCustom_SweptToElementary() {
-	printf("Call custom destructor for instance of ShapeCustom_SweptToElementary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_SweptToElementary\n");}
 	}
 };
 
@@ -451,7 +454,7 @@ class ShapeCustom_Curve2d {
 };
 %extend ShapeCustom_Curve2d {
 	~ShapeCustom_Curve2d() {
-	printf("Call custom destructor for instance of ShapeCustom_Curve2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_Curve2d\n");}
 	}
 };
 
@@ -470,7 +473,7 @@ class ShapeCustom_Curve {
 };
 %extend ShapeCustom_Curve {
 	~ShapeCustom_Curve() {
-	printf("Call custom destructor for instance of ShapeCustom_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_Curve\n");}
 	}
 };
 
@@ -493,7 +496,7 @@ class ShapeCustom_Surface {
 };
 %extend ShapeCustom_Surface {
 	~ShapeCustom_Surface() {
-	printf("Call custom destructor for instance of ShapeCustom_Surface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_Surface\n");}
 	}
 };
 
@@ -525,7 +528,7 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 };
 %extend ShapeCustom_ConvertToRevolution {
 	~ShapeCustom_ConvertToRevolution() {
-	printf("Call custom destructor for instance of ShapeCustom_ConvertToRevolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_ConvertToRevolution\n");}
 	}
 };
 
@@ -544,7 +547,7 @@ class ShapeCustom {
 };
 %extend ShapeCustom {
 	~ShapeCustom() {
-	printf("Call custom destructor for instance of ShapeCustom\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom\n");}
 	}
 };
 
@@ -576,7 +579,7 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 };
 %extend ShapeCustom_DirectModification {
 	~ShapeCustom_DirectModification() {
-	printf("Call custom destructor for instance of ShapeCustom_DirectModification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_DirectModification\n");}
 	}
 };
 
@@ -614,6 +617,6 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 };
 %extend ShapeCustom_ConvertToBSpline {
 	~ShapeCustom_ConvertToBSpline() {
-	printf("Call custom destructor for instance of ShapeCustom_ConvertToBSpline\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeCustom_ConvertToBSpline\n");}
 	}
 };

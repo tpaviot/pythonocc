@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_StepAP203_Change : public Handle_StepBasic_ActionAssignment {
 };
 %extend Handle_StepAP203_Change {
 	~Handle_StepAP203_Change() {
-	printf("Call custom destructor for instance of Handle_StepAP203_Change\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_Change\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_StepAP203_HArray1OfWorkItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfWorkItem {
 	~Handle_StepAP203_HArray1OfWorkItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfWorkItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfWorkItem\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_StepAP203_CcDesignPersonAndOrganizationAssignment : public Handle_S
 };
 %extend Handle_StepAP203_CcDesignPersonAndOrganizationAssignment {
 	~Handle_StepAP203_CcDesignPersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignPersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_StepAP203_StartRequest : public Handle_StepBasic_ActionRequestAssig
 };
 %extend Handle_StepAP203_StartRequest {
 	~Handle_StepAP203_StartRequest() {
-	printf("Call custom destructor for instance of Handle_StepAP203_StartRequest\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_StartRequest\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_
 };
 %extend Handle_StepAP203_CcDesignSpecificationReference {
 	~Handle_StepAP203_CcDesignSpecificationReference() {
-	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignSpecificationReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignSpecificationReference\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TSha
 };
 %extend Handle_StepAP203_HArray1OfPersonOrganizationItem {
 	~Handle_StepAP203_HArray1OfPersonOrganizationItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfPersonOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfPersonOrganizationItem\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_StepAP203_ChangeRequest : public Handle_StepBasic_ActionRequestAssi
 };
 %extend Handle_StepAP203_ChangeRequest {
 	~Handle_StepAP203_ChangeRequest() {
-	printf("Call custom destructor for instance of Handle_StepAP203_ChangeRequest\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_ChangeRequest\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_StepAP203_CcDesignDateAndTimeAssignment : public Handle_StepBasic_D
 };
 %extend Handle_StepAP203_CcDesignDateAndTimeAssignment {
 	~Handle_StepAP203_CcDesignDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignDateAndTimeAssignment\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssign
 };
 %extend Handle_StepAP203_CcDesignApproval {
 	~Handle_StepAP203_CcDesignApproval() {
-	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignApproval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignApproval\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfChangeRequestItem {
 	~Handle_StepAP203_HArray1OfChangeRequestItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfChangeRequestItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfChangeRequestItem\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
 };
 %extend Handle_StepAP203_StartWork {
 	~Handle_StepAP203_StartWork() {
-	printf("Call custom destructor for instance of Handle_StepAP203_StartWork\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_StartWork\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfStartRequestItem {
 	~Handle_StepAP203_HArray1OfStartRequestItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfStartRequestItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfStartRequestItem\n");}
 	}
 };
 
@@ -392,7 +395,7 @@ class Handle_StepAP203_CcDesignSecurityClassification : public Handle_StepBasic_
 };
 %extend Handle_StepAP203_CcDesignSecurityClassification {
 	~Handle_StepAP203_CcDesignSecurityClassification() {
-	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignSecurityClassification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignSecurityClassification\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfApprovedItem {
 	~Handle_StepAP203_HArray1OfApprovedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfApprovedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfApprovedItem\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfSpecifiedItem {
 	~Handle_StepAP203_HArray1OfSpecifiedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfSpecifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfSpecifiedItem\n");}
 	}
 };
 
@@ -464,7 +467,7 @@ class Handle_StepAP203_CcDesignContract : public Handle_StepBasic_ContractAssign
 };
 %extend Handle_StepAP203_CcDesignContract {
 	~Handle_StepAP203_CcDesignContract() {
-	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignContract\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignContract\n");}
 	}
 };
 
@@ -488,7 +491,7 @@ class Handle_StepAP203_HArray1OfDateTimeItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfDateTimeItem {
 	~Handle_StepAP203_HArray1OfDateTimeItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfDateTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfDateTimeItem\n");}
 	}
 };
 
@@ -512,7 +515,7 @@ class Handle_StepAP203_CcDesignCertification : public Handle_StepBasic_Certifica
 };
 %extend Handle_StepAP203_CcDesignCertification {
 	~Handle_StepAP203_CcDesignCertification() {
-	printf("Call custom destructor for instance of Handle_StepAP203_CcDesignCertification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignCertification\n");}
 	}
 };
 
@@ -536,7 +539,7 @@ class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfContractedItem {
 	~Handle_StepAP203_HArray1OfContractedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfContractedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfContractedItem\n");}
 	}
 };
 
@@ -560,7 +563,7 @@ class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfClassifiedItem {
 	~Handle_StepAP203_HArray1OfClassifiedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfClassifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfClassifiedItem\n");}
 	}
 };
 
@@ -584,7 +587,7 @@ class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP203_HArray1OfCertifiedItem {
 	~Handle_StepAP203_HArray1OfCertifiedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP203_HArray1OfCertifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfCertifiedItem\n");}
 	}
 };
 
@@ -624,7 +627,7 @@ class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfSpecifiedItem {
 	~StepAP203_HArray1OfSpecifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfSpecifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfSpecifiedItem\n");}
 	}
 };
 
@@ -663,7 +666,7 @@ class StepAP203_Array1OfClassifiedItem {
 };
 %extend StepAP203_Array1OfClassifiedItem {
 	~StepAP203_Array1OfClassifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfClassifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfClassifiedItem\n");}
 	}
 };
 
@@ -703,7 +706,7 @@ class StepAP203_HArray1OfChangeRequestItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfChangeRequestItem {
 	~StepAP203_HArray1OfChangeRequestItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfChangeRequestItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfChangeRequestItem\n");}
 	}
 };
 
@@ -729,7 +732,7 @@ class StepAP203_ChangeRequest : public StepBasic_ActionRequestAssignment {
 };
 %extend StepAP203_ChangeRequest {
 	~StepAP203_ChangeRequest() {
-	printf("Call custom destructor for instance of StepAP203_ChangeRequest\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_ChangeRequest\n");}
 	}
 };
 
@@ -755,7 +758,7 @@ class StepAP203_CcDesignSecurityClassification : public StepBasic_SecurityClassi
 };
 %extend StepAP203_CcDesignSecurityClassification {
 	~StepAP203_CcDesignSecurityClassification() {
-	printf("Call custom destructor for instance of StepAP203_CcDesignSecurityClassification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignSecurityClassification\n");}
 	}
 };
 
@@ -781,7 +784,7 @@ class StepAP203_CcDesignDateAndTimeAssignment : public StepBasic_DateAndTimeAssi
 };
 %extend StepAP203_CcDesignDateAndTimeAssignment {
 	~StepAP203_CcDesignDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of StepAP203_CcDesignDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignDateAndTimeAssignment\n");}
 	}
 };
 
@@ -820,7 +823,7 @@ class StepAP203_Array1OfWorkItem {
 };
 %extend StepAP203_Array1OfWorkItem {
 	~StepAP203_Array1OfWorkItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfWorkItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfWorkItem\n");}
 	}
 };
 
@@ -846,7 +849,7 @@ class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
 };
 %extend StepAP203_CcDesignContract {
 	~StepAP203_CcDesignContract() {
-	printf("Call custom destructor for instance of StepAP203_CcDesignContract\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignContract\n");}
 	}
 };
 
@@ -886,7 +889,7 @@ class StepAP203_HArray1OfCertifiedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfCertifiedItem {
 	~StepAP203_HArray1OfCertifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfCertifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfCertifiedItem\n");}
 	}
 };
 
@@ -905,7 +908,7 @@ class StepAP203_SpecifiedItem : public StepData_SelectType {
 };
 %extend StepAP203_SpecifiedItem {
 	~StepAP203_SpecifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_SpecifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_SpecifiedItem\n");}
 	}
 };
 
@@ -944,7 +947,7 @@ class StepAP203_Array1OfContractedItem {
 };
 %extend StepAP203_Array1OfContractedItem {
 	~StepAP203_Array1OfContractedItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfContractedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfContractedItem\n");}
 	}
 };
 
@@ -983,7 +986,7 @@ class StepAP203_Array1OfPersonOrganizationItem {
 };
 %extend StepAP203_Array1OfPersonOrganizationItem {
 	~StepAP203_Array1OfPersonOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfPersonOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfPersonOrganizationItem\n");}
 	}
 };
 
@@ -1023,7 +1026,7 @@ class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfClassifiedItem {
 	~StepAP203_HArray1OfClassifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfClassifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfClassifiedItem\n");}
 	}
 };
 
@@ -1062,7 +1065,7 @@ class StepAP203_Array1OfChangeRequestItem {
 };
 %extend StepAP203_Array1OfChangeRequestItem {
 	~StepAP203_Array1OfChangeRequestItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfChangeRequestItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfChangeRequestItem\n");}
 	}
 };
 
@@ -1102,7 +1105,7 @@ class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfWorkItem {
 	~StepAP203_HArray1OfWorkItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfWorkItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfWorkItem\n");}
 	}
 };
 
@@ -1119,7 +1122,7 @@ class StepAP203_StartRequestItem : public StepData_SelectType {
 };
 %extend StepAP203_StartRequestItem {
 	~StepAP203_StartRequestItem() {
-	printf("Call custom destructor for instance of StepAP203_StartRequestItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_StartRequestItem\n");}
 	}
 };
 
@@ -1154,7 +1157,7 @@ class StepAP203_PersonOrganizationItem : public StepData_SelectType {
 };
 %extend StepAP203_PersonOrganizationItem {
 	~StepAP203_PersonOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP203_PersonOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_PersonOrganizationItem\n");}
 	}
 };
 
@@ -1171,7 +1174,7 @@ class StepAP203_WorkItem : public StepData_SelectType {
 };
 %extend StepAP203_WorkItem {
 	~StepAP203_WorkItem() {
-	printf("Call custom destructor for instance of StepAP203_WorkItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_WorkItem\n");}
 	}
 };
 
@@ -1188,7 +1191,7 @@ class StepAP203_CertifiedItem : public StepData_SelectType {
 };
 %extend StepAP203_CertifiedItem {
 	~StepAP203_CertifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_CertifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_CertifiedItem\n");}
 	}
 };
 
@@ -1228,7 +1231,7 @@ class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfContractedItem {
 	~StepAP203_HArray1OfContractedItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfContractedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfContractedItem\n");}
 	}
 };
 
@@ -1268,7 +1271,7 @@ class StepAP203_HArray1OfApprovedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfApprovedItem {
 	~StepAP203_HArray1OfApprovedItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfApprovedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfApprovedItem\n");}
 	}
 };
 
@@ -1294,7 +1297,7 @@ class StepAP203_StartWork : public StepBasic_ActionAssignment {
 };
 %extend StepAP203_StartWork {
 	~StepAP203_StartWork() {
-	printf("Call custom destructor for instance of StepAP203_StartWork\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_StartWork\n");}
 	}
 };
 
@@ -1334,7 +1337,7 @@ class StepAP203_HArray1OfPersonOrganizationItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfPersonOrganizationItem {
 	~StepAP203_HArray1OfPersonOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfPersonOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfPersonOrganizationItem\n");}
 	}
 };
 
@@ -1360,7 +1363,7 @@ class StepAP203_CcDesignPersonAndOrganizationAssignment : public StepBasic_Perso
 };
 %extend StepAP203_CcDesignPersonAndOrganizationAssignment {
 	~StepAP203_CcDesignPersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of StepAP203_CcDesignPersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -1377,7 +1380,7 @@ class StepAP203_ChangeRequestItem : public StepData_SelectType {
 };
 %extend StepAP203_ChangeRequestItem {
 	~StepAP203_ChangeRequestItem() {
-	printf("Call custom destructor for instance of StepAP203_ChangeRequestItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_ChangeRequestItem\n");}
 	}
 };
 
@@ -1410,7 +1413,7 @@ class StepAP203_DateTimeItem : public StepData_SelectType {
 };
 %extend StepAP203_DateTimeItem {
 	~StepAP203_DateTimeItem() {
-	printf("Call custom destructor for instance of StepAP203_DateTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_DateTimeItem\n");}
 	}
 };
 
@@ -1449,7 +1452,7 @@ class StepAP203_Array1OfStartRequestItem {
 };
 %extend StepAP203_Array1OfStartRequestItem {
 	~StepAP203_Array1OfStartRequestItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfStartRequestItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfStartRequestItem\n");}
 	}
 };
 
@@ -1489,7 +1492,7 @@ class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfDateTimeItem {
 	~StepAP203_HArray1OfDateTimeItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfDateTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfDateTimeItem\n");}
 	}
 };
 
@@ -1529,7 +1532,7 @@ class StepAP203_HArray1OfStartRequestItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfStartRequestItem {
 	~StepAP203_HArray1OfStartRequestItem() {
-	printf("Call custom destructor for instance of StepAP203_HArray1OfStartRequestItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_HArray1OfStartRequestItem\n");}
 	}
 };
 
@@ -1555,7 +1558,7 @@ class StepAP203_StartRequest : public StepBasic_ActionRequestAssignment {
 };
 %extend StepAP203_StartRequest {
 	~StepAP203_StartRequest() {
-	printf("Call custom destructor for instance of StepAP203_StartRequest\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_StartRequest\n");}
 	}
 };
 
@@ -1581,7 +1584,7 @@ class StepAP203_Change : public StepBasic_ActionAssignment {
 };
 %extend StepAP203_Change {
 	~StepAP203_Change() {
-	printf("Call custom destructor for instance of StepAP203_Change\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Change\n");}
 	}
 };
 
@@ -1620,7 +1623,7 @@ class StepAP203_Array1OfApprovedItem {
 };
 %extend StepAP203_Array1OfApprovedItem {
 	~StepAP203_Array1OfApprovedItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfApprovedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfApprovedItem\n");}
 	}
 };
 
@@ -1657,7 +1660,7 @@ class StepAP203_ApprovedItem : public StepData_SelectType {
 };
 %extend StepAP203_ApprovedItem {
 	~StepAP203_ApprovedItem() {
-	printf("Call custom destructor for instance of StepAP203_ApprovedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_ApprovedItem\n");}
 	}
 };
 
@@ -1683,7 +1686,7 @@ class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment
 };
 %extend StepAP203_CcDesignCertification {
 	~StepAP203_CcDesignCertification() {
-	printf("Call custom destructor for instance of StepAP203_CcDesignCertification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignCertification\n");}
 	}
 };
 
@@ -1709,7 +1712,7 @@ class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
 };
 %extend StepAP203_CcDesignApproval {
 	~StepAP203_CcDesignApproval() {
-	printf("Call custom destructor for instance of StepAP203_CcDesignApproval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignApproval\n");}
 	}
 };
 
@@ -1726,7 +1729,7 @@ class StepAP203_ContractedItem : public StepData_SelectType {
 };
 %extend StepAP203_ContractedItem {
 	~StepAP203_ContractedItem() {
-	printf("Call custom destructor for instance of StepAP203_ContractedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_ContractedItem\n");}
 	}
 };
 
@@ -1752,7 +1755,7 @@ class StepAP203_CcDesignSpecificationReference : public StepBasic_DocumentRefere
 };
 %extend StepAP203_CcDesignSpecificationReference {
 	~StepAP203_CcDesignSpecificationReference() {
-	printf("Call custom destructor for instance of StepAP203_CcDesignSpecificationReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignSpecificationReference\n");}
 	}
 };
 
@@ -1771,7 +1774,7 @@ class StepAP203_ClassifiedItem : public StepData_SelectType {
 };
 %extend StepAP203_ClassifiedItem {
 	~StepAP203_ClassifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_ClassifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_ClassifiedItem\n");}
 	}
 };
 
@@ -1810,7 +1813,7 @@ class StepAP203_Array1OfDateTimeItem {
 };
 %extend StepAP203_Array1OfDateTimeItem {
 	~StepAP203_Array1OfDateTimeItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfDateTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfDateTimeItem\n");}
 	}
 };
 
@@ -1849,7 +1852,7 @@ class StepAP203_Array1OfCertifiedItem {
 };
 %extend StepAP203_Array1OfCertifiedItem {
 	~StepAP203_Array1OfCertifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfCertifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfCertifiedItem\n");}
 	}
 };
 
@@ -1888,6 +1891,6 @@ class StepAP203_Array1OfSpecifiedItem {
 };
 %extend StepAP203_Array1OfSpecifiedItem {
 	~StepAP203_Array1OfSpecifiedItem() {
-	printf("Call custom destructor for instance of StepAP203_Array1OfSpecifiedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfSpecifiedItem\n");}
 	}
 };

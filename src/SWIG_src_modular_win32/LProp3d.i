@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -105,7 +108,7 @@ class LProp3d_SurfaceTool {
 };
 %extend LProp3d_SurfaceTool {
 	~LProp3d_SurfaceTool() {
-	printf("Call custom destructor for instance of LProp3d_SurfaceTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp3d_SurfaceTool\n");}
 	}
 };
 
@@ -164,7 +167,7 @@ class LProp3d_SLProps {
 };
 %extend LProp3d_SLProps {
 	~LProp3d_SLProps() {
-	printf("Call custom destructor for instance of LProp3d_SLProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp3d_SLProps\n");}
 	}
 };
 
@@ -191,7 +194,7 @@ class LProp3d_CurveTool {
 };
 %extend LProp3d_CurveTool {
 	~LProp3d_CurveTool() {
-	printf("Call custom destructor for instance of LProp3d_CurveTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp3d_CurveTool\n");}
 	}
 };
 
@@ -230,6 +233,6 @@ class LProp3d_CLProps {
 };
 %extend LProp3d_CLProps {
 	~LProp3d_CLProps() {
-	printf("Call custom destructor for instance of LProp3d_CLProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LProp3d_CLProps\n");}
 	}
 };

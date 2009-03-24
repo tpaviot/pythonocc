@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 };
 %extend Handle_PTColStd_DataMapNodeOfTransientPersistentMap {
 	~Handle_PTColStd_DataMapNodeOfTransientPersistentMap() {
-	printf("Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfTransientPersistentMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfTransientPersistentMap\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 };
 %extend Handle_PTColStd_DataMapNodeOfPersistentTransientMap {
 	~Handle_PTColStd_DataMapNodeOfPersistentTransientMap() {
-	printf("Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfPersistentTransientMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfPersistentTransientMap\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 };
 %extend Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
 	~Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent() {
-	printf("Call custom destructor for instance of Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent\n");}
 	}
 };
 
@@ -173,7 +176,7 @@ class PTColStd_DataMapIteratorOfPersistentTransientMap : public TCollection_Basi
 };
 %extend PTColStd_DataMapIteratorOfPersistentTransientMap {
 	~PTColStd_DataMapIteratorOfPersistentTransientMap() {
-	printf("Call custom destructor for instance of PTColStd_DataMapIteratorOfPersistentTransientMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfPersistentTransientMap\n");}
 	}
 };
 
@@ -197,7 +200,7 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfPersistentTransientMap {
 	~PTColStd_DataMapNodeOfPersistentTransientMap() {
-	printf("Call custom destructor for instance of PTColStd_DataMapNodeOfPersistentTransientMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapNodeOfPersistentTransientMap\n");}
 	}
 };
 
@@ -214,7 +217,7 @@ class PTColStd_MapPersistentHasher {
 };
 %extend PTColStd_MapPersistentHasher {
 	~PTColStd_MapPersistentHasher() {
-	printf("Call custom destructor for instance of PTColStd_MapPersistentHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_MapPersistentHasher\n");}
 	}
 };
 
@@ -235,7 +238,7 @@ class PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent : public TColle
 };
 %extend PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent {
 	~PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent() {
-	printf("Call custom destructor for instance of PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent\n");}
 	}
 };
 
@@ -268,7 +271,7 @@ class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
 };
 %extend PTColStd_TransientPersistentMap {
 	~PTColStd_TransientPersistentMap() {
-	printf("Call custom destructor for instance of PTColStd_TransientPersistentMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_TransientPersistentMap\n");}
 	}
 };
 
@@ -301,7 +304,7 @@ class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
 };
 %extend PTColStd_PersistentTransientMap {
 	~PTColStd_PersistentTransientMap() {
-	printf("Call custom destructor for instance of PTColStd_PersistentTransientMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_PersistentTransientMap\n");}
 	}
 };
 
@@ -327,7 +330,7 @@ class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollectio
 };
 %extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
 	~PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent() {
-	printf("Call custom destructor for instance of PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent\n");}
 	}
 };
 
@@ -348,7 +351,7 @@ class PTColStd_DataMapIteratorOfTransientPersistentMap : public TCollection_Basi
 };
 %extend PTColStd_DataMapIteratorOfTransientPersistentMap {
 	~PTColStd_DataMapIteratorOfTransientPersistentMap() {
-	printf("Call custom destructor for instance of PTColStd_DataMapIteratorOfTransientPersistentMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfTransientPersistentMap\n");}
 	}
 };
 
@@ -372,7 +375,7 @@ class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {
 	~PTColStd_DataMapNodeOfTransientPersistentMap() {
-	printf("Call custom destructor for instance of PTColStd_DataMapNodeOfTransientPersistentMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapNodeOfTransientPersistentMap\n");}
 	}
 };
 
@@ -407,6 +410,6 @@ class PTColStd_DoubleMapOfTransientPersistent : public TCollection_BasicMap {
 };
 %extend PTColStd_DoubleMapOfTransientPersistent {
 	~PTColStd_DoubleMapOfTransientPersistent() {
-	printf("Call custom destructor for instance of PTColStd_DoubleMapOfTransientPersistent\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTColStd_DoubleMapOfTransientPersistent\n");}
 	}
 };

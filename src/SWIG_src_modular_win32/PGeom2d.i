@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_PGeom2d_Geometry : public Handle_Standard_Persistent {
 };
 %extend Handle_PGeom2d_Geometry {
 	~Handle_PGeom2d_Geometry() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Geometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Geometry\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_PGeom2d_Curve : public Handle_PGeom2d_Geometry {
 };
 %extend Handle_PGeom2d_Curve {
 	~Handle_PGeom2d_Curve() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Curve\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_PGeom2d_OffsetCurve : public Handle_PGeom2d_Curve {
 };
 %extend Handle_PGeom2d_OffsetCurve {
 	~Handle_PGeom2d_OffsetCurve() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_OffsetCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_OffsetCurve\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_PGeom2d_Line : public Handle_PGeom2d_Curve {
 };
 %extend Handle_PGeom2d_Line {
 	~Handle_PGeom2d_Line() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Line\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Line\n");}
 	}
 };
 
@@ -200,7 +203,7 @@ class Handle_PGeom2d_Conic : public Handle_PGeom2d_Curve {
 };
 %extend Handle_PGeom2d_Conic {
 	~Handle_PGeom2d_Conic() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Conic\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Conic\n");}
 	}
 };
 
@@ -224,7 +227,7 @@ class Handle_PGeom2d_Ellipse : public Handle_PGeom2d_Conic {
 };
 %extend Handle_PGeom2d_Ellipse {
 	~Handle_PGeom2d_Ellipse() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Ellipse\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Ellipse\n");}
 	}
 };
 
@@ -248,7 +251,7 @@ class Handle_PGeom2d_Vector : public Handle_PGeom2d_Geometry {
 };
 %extend Handle_PGeom2d_Vector {
 	~Handle_PGeom2d_Vector() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Vector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Vector\n");}
 	}
 };
 
@@ -272,7 +275,7 @@ class Handle_PGeom2d_VectorWithMagnitude : public Handle_PGeom2d_Vector {
 };
 %extend Handle_PGeom2d_VectorWithMagnitude {
 	~Handle_PGeom2d_VectorWithMagnitude() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_VectorWithMagnitude\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_VectorWithMagnitude\n");}
 	}
 };
 
@@ -296,7 +299,7 @@ class Handle_PGeom2d_BoundedCurve : public Handle_PGeom2d_Curve {
 };
 %extend Handle_PGeom2d_BoundedCurve {
 	~Handle_PGeom2d_BoundedCurve() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_BoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_BoundedCurve\n");}
 	}
 };
 
@@ -320,7 +323,7 @@ class Handle_PGeom2d_BezierCurve : public Handle_PGeom2d_BoundedCurve {
 };
 %extend Handle_PGeom2d_BezierCurve {
 	~Handle_PGeom2d_BezierCurve() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_BezierCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_BezierCurve\n");}
 	}
 };
 
@@ -344,7 +347,7 @@ class Handle_PGeom2d_BSplineCurve : public Handle_PGeom2d_BoundedCurve {
 };
 %extend Handle_PGeom2d_BSplineCurve {
 	~Handle_PGeom2d_BSplineCurve() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_BSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_BSplineCurve\n");}
 	}
 };
 
@@ -368,7 +371,7 @@ class Handle_PGeom2d_AxisPlacement : public Handle_PGeom2d_Geometry {
 };
 %extend Handle_PGeom2d_AxisPlacement {
 	~Handle_PGeom2d_AxisPlacement() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_AxisPlacement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_AxisPlacement\n");}
 	}
 };
 
@@ -392,7 +395,7 @@ class Handle_PGeom2d_Circle : public Handle_PGeom2d_Conic {
 };
 %extend Handle_PGeom2d_Circle {
 	~Handle_PGeom2d_Circle() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Circle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Circle\n");}
 	}
 };
 
@@ -416,7 +419,7 @@ class Handle_PGeom2d_Hyperbola : public Handle_PGeom2d_Conic {
 };
 %extend Handle_PGeom2d_Hyperbola {
 	~Handle_PGeom2d_Hyperbola() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Hyperbola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Hyperbola\n");}
 	}
 };
 
@@ -440,7 +443,7 @@ class Handle_PGeom2d_TrimmedCurve : public Handle_PGeom2d_BoundedCurve {
 };
 %extend Handle_PGeom2d_TrimmedCurve {
 	~Handle_PGeom2d_TrimmedCurve() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_TrimmedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_TrimmedCurve\n");}
 	}
 };
 
@@ -464,7 +467,7 @@ class Handle_PGeom2d_Parabola : public Handle_PGeom2d_Conic {
 };
 %extend Handle_PGeom2d_Parabola {
 	~Handle_PGeom2d_Parabola() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Parabola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Parabola\n");}
 	}
 };
 
@@ -488,7 +491,7 @@ class Handle_PGeom2d_Direction : public Handle_PGeom2d_Vector {
 };
 %extend Handle_PGeom2d_Direction {
 	~Handle_PGeom2d_Direction() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Direction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Direction\n");}
 	}
 };
 
@@ -512,7 +515,7 @@ class Handle_PGeom2d_Transformation : public Handle_Standard_Persistent {
 };
 %extend Handle_PGeom2d_Transformation {
 	~Handle_PGeom2d_Transformation() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Transformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Transformation\n");}
 	}
 };
 
@@ -536,7 +539,7 @@ class Handle_PGeom2d_Point : public Handle_PGeom2d_Geometry {
 };
 %extend Handle_PGeom2d_Point {
 	~Handle_PGeom2d_Point() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Point\n");}
 	}
 };
 
@@ -560,7 +563,7 @@ class Handle_PGeom2d_CartesianPoint : public Handle_PGeom2d_Point {
 };
 %extend Handle_PGeom2d_CartesianPoint {
 	~Handle_PGeom2d_CartesianPoint() {
-	printf("Call custom destructor for instance of Handle_PGeom2d_CartesianPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_CartesianPoint\n");}
 	}
 };
 
@@ -582,7 +585,7 @@ class PGeom2d_Geometry : public Standard_Persistent {
 };
 %extend PGeom2d_Geometry {
 	~PGeom2d_Geometry() {
-	printf("Call custom destructor for instance of PGeom2d_Geometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Geometry\n");}
 	}
 };
 
@@ -602,7 +605,7 @@ class PGeom2d_Curve : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Curve {
 	~PGeom2d_Curve() {
-	printf("Call custom destructor for instance of PGeom2d_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Curve\n");}
 	}
 };
 
@@ -622,7 +625,7 @@ class PGeom2d_BoundedCurve : public PGeom2d_Curve {
 };
 %extend PGeom2d_BoundedCurve {
 	~PGeom2d_BoundedCurve() {
-	printf("Call custom destructor for instance of PGeom2d_BoundedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_BoundedCurve\n");}
 	}
 };
 
@@ -648,7 +651,7 @@ class PGeom2d_Conic : public PGeom2d_Curve {
 };
 %extend PGeom2d_Conic {
 	~PGeom2d_Conic() {
-	printf("Call custom destructor for instance of PGeom2d_Conic\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Conic\n");}
 	}
 };
 
@@ -696,7 +699,7 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_TrimmedCurve {
 	~PGeom2d_TrimmedCurve() {
-	printf("Call custom destructor for instance of PGeom2d_TrimmedCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_TrimmedCurve\n");}
 	}
 };
 
@@ -722,7 +725,7 @@ class PGeom2d_Vector : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Vector {
 	~PGeom2d_Vector() {
-	printf("Call custom destructor for instance of PGeom2d_Vector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Vector\n");}
 	}
 };
 
@@ -744,7 +747,7 @@ class PGeom2d_Direction : public PGeom2d_Vector {
 };
 %extend PGeom2d_Direction {
 	~PGeom2d_Direction() {
-	printf("Call custom destructor for instance of PGeom2d_Direction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Direction\n");}
 	}
 };
 
@@ -776,7 +779,7 @@ class PGeom2d_Parabola : public PGeom2d_Conic {
 };
 %extend PGeom2d_Parabola {
 	~PGeom2d_Parabola() {
-	printf("Call custom destructor for instance of PGeom2d_Parabola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Parabola\n");}
 	}
 };
 
@@ -816,7 +819,7 @@ class PGeom2d_Ellipse : public PGeom2d_Conic {
 };
 %extend PGeom2d_Ellipse {
 	~PGeom2d_Ellipse() {
-	printf("Call custom destructor for instance of PGeom2d_Ellipse\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Ellipse\n");}
 	}
 };
 
@@ -846,7 +849,7 @@ class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
 };
 %extend PGeom2d_AxisPlacement {
 	~PGeom2d_AxisPlacement() {
-	printf("Call custom destructor for instance of PGeom2d_AxisPlacement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_AxisPlacement\n");}
 	}
 };
 
@@ -878,7 +881,7 @@ class PGeom2d_Circle : public PGeom2d_Conic {
 };
 %extend PGeom2d_Circle {
 	~PGeom2d_Circle() {
-	printf("Call custom destructor for instance of PGeom2d_Circle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Circle\n");}
 	}
 };
 
@@ -918,7 +921,7 @@ class PGeom2d_Hyperbola : public PGeom2d_Conic {
 };
 %extend PGeom2d_Hyperbola {
 	~PGeom2d_Hyperbola() {
-	printf("Call custom destructor for instance of PGeom2d_Hyperbola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Hyperbola\n");}
 	}
 };
 
@@ -958,7 +961,7 @@ class PGeom2d_OffsetCurve : public PGeom2d_Curve {
 };
 %extend PGeom2d_OffsetCurve {
 	~PGeom2d_OffsetCurve() {
-	printf("Call custom destructor for instance of PGeom2d_OffsetCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_OffsetCurve\n");}
 	}
 };
 
@@ -988,7 +991,7 @@ class PGeom2d_Transformation : public Standard_Persistent {
 };
 %extend PGeom2d_Transformation {
 	~PGeom2d_Transformation() {
-	printf("Call custom destructor for instance of PGeom2d_Transformation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Transformation\n");}
 	}
 };
 
@@ -1012,7 +1015,7 @@ class PGeom2d_VectorWithMagnitude : public PGeom2d_Vector {
 };
 %extend PGeom2d_VectorWithMagnitude {
 	~PGeom2d_VectorWithMagnitude() {
-	printf("Call custom destructor for instance of PGeom2d_VectorWithMagnitude\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_VectorWithMagnitude\n");}
 	}
 };
 
@@ -1060,7 +1063,7 @@ class PGeom2d_BezierCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_BezierCurve {
 	~PGeom2d_BezierCurve() {
-	printf("Call custom destructor for instance of PGeom2d_BezierCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_BezierCurve\n");}
 	}
 };
 
@@ -1090,7 +1093,7 @@ class PGeom2d_Line : public PGeom2d_Curve {
 };
 %extend PGeom2d_Line {
 	~PGeom2d_Line() {
-	printf("Call custom destructor for instance of PGeom2d_Line\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Line\n");}
 	}
 };
 
@@ -1112,7 +1115,7 @@ class PGeom2d_Point : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Point {
 	~PGeom2d_Point() {
-	printf("Call custom destructor for instance of PGeom2d_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_Point\n");}
 	}
 };
 
@@ -1140,7 +1143,7 @@ class PGeom2d_CartesianPoint : public PGeom2d_Point {
 };
 %extend PGeom2d_CartesianPoint {
 	~PGeom2d_CartesianPoint() {
-	printf("Call custom destructor for instance of PGeom2d_CartesianPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_CartesianPoint\n");}
 	}
 };
 
@@ -1220,6 +1223,6 @@ class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_BSplineCurve {
 	~PGeom2d_BSplineCurve() {
-	printf("Call custom destructor for instance of PGeom2d_BSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PGeom2d_BSplineCurve\n");}
 	}
 };

@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -106,7 +109,7 @@ class BlendFunc {
 };
 %extend BlendFunc {
 	~BlendFunc() {
-	printf("Call custom destructor for instance of BlendFunc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BlendFunc\n");}
 	}
 };
 
@@ -131,6 +134,6 @@ class BlendFunc_Tensor {
 };
 %extend BlendFunc_Tensor {
 	~BlendFunc_Tensor() {
-	printf("Call custom destructor for instance of BlendFunc_Tensor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BlendFunc_Tensor\n");}
 	}
 };

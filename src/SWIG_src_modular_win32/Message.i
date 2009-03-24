@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -251,7 +254,7 @@ class Handle_Message_Printer : public Handle_MMgt_TShared {
 };
 %extend Handle_Message_Printer {
 	~Handle_Message_Printer() {
-	printf("Call custom destructor for instance of Handle_Message_Printer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Message_Printer\n");}
 	}
 };
 
@@ -275,7 +278,7 @@ class Handle_Message_PrinterOStream : public Handle_Message_Printer {
 };
 %extend Handle_Message_PrinterOStream {
 	~Handle_Message_PrinterOStream() {
-	printf("Call custom destructor for instance of Handle_Message_PrinterOStream\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Message_PrinterOStream\n");}
 	}
 };
 
@@ -299,7 +302,7 @@ class Handle_Message_Messenger : public Handle_MMgt_TShared {
 };
 %extend Handle_Message_Messenger {
 	~Handle_Message_Messenger() {
-	printf("Call custom destructor for instance of Handle_Message_Messenger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Message_Messenger\n");}
 	}
 };
 
@@ -323,7 +326,7 @@ class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollectio
 };
 %extend Handle_Message_SequenceNodeOfSequenceOfPrinters {
 	~Handle_Message_SequenceNodeOfSequenceOfPrinters() {
-	printf("Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfPrinters\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfPrinters\n");}
 	}
 };
 
@@ -347,7 +350,7 @@ class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
 };
 %extend Handle_Message_ListNodeOfListOfMsg {
 	~Handle_Message_ListNodeOfListOfMsg() {
-	printf("Call custom destructor for instance of Handle_Message_ListNodeOfListOfMsg\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Message_ListNodeOfListOfMsg\n");}
 	}
 };
 
@@ -371,7 +374,7 @@ class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
 };
 %extend Handle_Message_ProgressIndicator {
 	~Handle_Message_ProgressIndicator() {
-	printf("Call custom destructor for instance of Handle_Message_ProgressIndicator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Message_ProgressIndicator\n");}
 	}
 };
 
@@ -395,7 +398,7 @@ class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TColl
 };
 %extend Handle_Message_SequenceNodeOfSequenceOfProgressScale {
 	~Handle_Message_SequenceNodeOfSequenceOfProgressScale() {
-	printf("Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfProgressScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfProgressScale\n");}
 	}
 };
 
@@ -419,7 +422,7 @@ class Handle_Message_Algorithm : public Handle_MMgt_TShared {
 };
 %extend Handle_Message_Algorithm {
 	~Handle_Message_Algorithm() {
-	printf("Call custom destructor for instance of Handle_Message_Algorithm\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Message_Algorithm\n");}
 	}
 };
 
@@ -487,7 +490,7 @@ class Message_ProgressIndicator : public MMgt_TShared {
 };
 %extend Message_ProgressIndicator {
 	~Message_ProgressIndicator() {
-	printf("Call custom destructor for instance of Message_ProgressIndicator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_ProgressIndicator\n");}
 	}
 };
 
@@ -511,7 +514,7 @@ class Message_Printer : public MMgt_TShared {
 };
 %extend Message_Printer {
 	~Message_Printer() {
-	printf("Call custom destructor for instance of Message_Printer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_Printer\n");}
 	}
 };
 
@@ -533,7 +536,7 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 };
 %extend Message_SequenceNodeOfSequenceOfPrinters {
 	~Message_SequenceNodeOfSequenceOfPrinters() {
-	printf("Call custom destructor for instance of Message_SequenceNodeOfSequenceOfPrinters\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_SequenceNodeOfSequenceOfPrinters\n");}
 	}
 };
 
@@ -571,7 +574,7 @@ class Message_Messenger : public MMgt_TShared {
 };
 %extend Message_Messenger {
 	~Message_Messenger() {
-	printf("Call custom destructor for instance of Message_Messenger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_Messenger\n");}
 	}
 };
 
@@ -588,7 +591,7 @@ class Message {
 };
 %extend Message {
 	~Message() {
-	printf("Call custom destructor for instance of Message\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message\n");}
 	}
 };
 
@@ -637,7 +640,7 @@ class Message_ListOfMsg {
 };
 %extend Message_ListOfMsg {
 	~Message_ListOfMsg() {
-	printf("Call custom destructor for instance of Message_ListOfMsg\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_ListOfMsg\n");}
 	}
 };
 
@@ -690,7 +693,7 @@ class Message_SequenceOfPrinters : public TCollection_BaseSequence {
 };
 %extend Message_SequenceOfPrinters {
 	~Message_SequenceOfPrinters() {
-	printf("Call custom destructor for instance of Message_SequenceOfPrinters\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_SequenceOfPrinters\n");}
 	}
 };
 
@@ -739,7 +742,7 @@ class Message_ProgressScale {
 };
 %extend Message_ProgressScale {
 	~Message_ProgressScale() {
-	printf("Call custom destructor for instance of Message_ProgressScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_ProgressScale\n");}
 	}
 };
 
@@ -764,7 +767,7 @@ class Message_MsgFile {
 };
 %extend Message_MsgFile {
 	~Message_MsgFile() {
-	printf("Call custom destructor for instance of Message_MsgFile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_MsgFile\n");}
 	}
 };
 
@@ -786,7 +789,7 @@ class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode
 };
 %extend Message_SequenceNodeOfSequenceOfProgressScale {
 	~Message_SequenceNodeOfSequenceOfProgressScale() {
-	printf("Call custom destructor for instance of Message_SequenceNodeOfSequenceOfProgressScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_SequenceNodeOfSequenceOfProgressScale\n");}
 	}
 };
 
@@ -808,7 +811,7 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 };
 %extend Message_ListNodeOfListOfMsg {
 	~Message_ListNodeOfListOfMsg() {
-	printf("Call custom destructor for instance of Message_ListNodeOfListOfMsg\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_ListNodeOfListOfMsg\n");}
 	}
 };
 
@@ -861,7 +864,7 @@ class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
 };
 %extend Message_SequenceOfProgressScale {
 	~Message_SequenceOfProgressScale() {
-	printf("Call custom destructor for instance of Message_SequenceOfProgressScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_SequenceOfProgressScale\n");}
 	}
 };
 
@@ -901,7 +904,7 @@ class Message_PrinterOStream : public Message_Printer {
 };
 %extend Message_PrinterOStream {
 	~Message_PrinterOStream() {
-	printf("Call custom destructor for instance of Message_PrinterOStream\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_PrinterOStream\n");}
 	}
 };
 
@@ -924,7 +927,7 @@ class Message_ListIteratorOfListOfMsg {
 };
 %extend Message_ListIteratorOfListOfMsg {
 	~Message_ListIteratorOfListOfMsg() {
-	printf("Call custom destructor for instance of Message_ListIteratorOfListOfMsg\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_ListIteratorOfListOfMsg\n");}
 	}
 };
 
@@ -951,7 +954,7 @@ class Message_ProgressSentry {
 };
 %extend Message_ProgressSentry {
 	~Message_ProgressSentry() {
-	printf("Call custom destructor for instance of Message_ProgressSentry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_ProgressSentry\n");}
 	}
 };
 
@@ -996,6 +999,6 @@ class Message_Msg {
 };
 %extend Message_Msg {
 	~Message_Msg() {
-	printf("Call custom destructor for instance of Message_Msg\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Message_Msg\n");}
 	}
 };

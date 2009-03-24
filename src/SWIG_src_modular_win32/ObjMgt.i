@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 };
 %extend Handle_ObjMgt_ExternRef {
 	~Handle_ObjMgt_ExternRef() {
-	printf("Call custom destructor for instance of Handle_ObjMgt_ExternRef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_ExternRef\n");}
 	}
 };
 
@@ -128,7 +131,7 @@ class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 };
 %extend Handle_ObjMgt_ExternShareable {
 	~Handle_ObjMgt_ExternShareable() {
-	printf("Call custom destructor for instance of Handle_ObjMgt_ExternShareable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_ExternShareable\n");}
 	}
 };
 
@@ -152,7 +155,7 @@ class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
 };
 %extend Handle_ObjMgt_SeqNodeOfPSeqOfExtRef {
 	~Handle_ObjMgt_SeqNodeOfPSeqOfExtRef() {
-	printf("Call custom destructor for instance of Handle_ObjMgt_SeqNodeOfPSeqOfExtRef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_SeqNodeOfPSeqOfExtRef\n");}
 	}
 };
 
@@ -176,7 +179,7 @@ class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 };
 %extend Handle_ObjMgt_PSeqOfExtRef {
 	~Handle_ObjMgt_PSeqOfExtRef() {
-	printf("Call custom destructor for instance of Handle_ObjMgt_PSeqOfExtRef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_PSeqOfExtRef\n");}
 	}
 };
 
@@ -197,7 +200,7 @@ class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 };
 %extend ObjMgt_SeqExplorerOfPSeqOfExtRef {
 	~ObjMgt_SeqExplorerOfPSeqOfExtRef() {
-	printf("Call custom destructor for instance of ObjMgt_SeqExplorerOfPSeqOfExtRef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ObjMgt_SeqExplorerOfPSeqOfExtRef\n");}
 	}
 };
 
@@ -285,7 +288,7 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 };
 %extend ObjMgt_PSeqOfExtRef {
 	~ObjMgt_PSeqOfExtRef() {
-	printf("Call custom destructor for instance of ObjMgt_PSeqOfExtRef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ObjMgt_PSeqOfExtRef\n");}
 	}
 };
 
@@ -337,7 +340,7 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 };
 %extend ObjMgt_SeqNodeOfPSeqOfExtRef {
 	~ObjMgt_SeqNodeOfPSeqOfExtRef() {
-	printf("Call custom destructor for instance of ObjMgt_SeqNodeOfPSeqOfExtRef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ObjMgt_SeqNodeOfPSeqOfExtRef\n");}
 	}
 };
 
@@ -367,7 +370,7 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 };
 %extend ObjMgt_ExternRef {
 	~ObjMgt_ExternRef() {
-	printf("Call custom destructor for instance of ObjMgt_ExternRef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ObjMgt_ExternRef\n");}
 	}
 };
 
@@ -393,6 +396,6 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 };
 %extend ObjMgt_ExternShareable {
 	~ObjMgt_ExternShareable() {
-	printf("Call custom destructor for instance of ObjMgt_ExternShareable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ObjMgt_ExternShareable\n");}
 	}
 };

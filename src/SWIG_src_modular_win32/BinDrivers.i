@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -109,7 +112,7 @@ class Handle_BinDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_Docu
 };
 %extend Handle_BinDrivers_DocumentRetrievalDriver {
 	~Handle_BinDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of Handle_BinDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -133,7 +136,7 @@ class Handle_BinDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Docume
 };
 %extend Handle_BinDrivers_DocumentStorageDriver {
 	~Handle_BinDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of Handle_BinDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -155,7 +158,7 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 };
 %extend BinDrivers_DocumentStorageDriver {
 	~BinDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of BinDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -174,7 +177,7 @@ class BinDrivers {
 };
 %extend BinDrivers {
 	~BinDrivers() {
-	printf("Call custom destructor for instance of BinDrivers\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinDrivers\n");}
 	}
 };
 
@@ -196,6 +199,6 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 };
 %extend BinDrivers_DocumentRetrievalDriver {
 	~BinDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of BinDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinDrivers_DocumentRetrievalDriver\n");}
 	}
 };

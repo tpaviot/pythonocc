@@ -36,6 +36,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 Exception handling
 */
 %{#include <Standard_Failure.hxx>%}
+%{#include <cstdlib>%}
+%{#include <iostream>%}
+%{#include <string>%}
 %exception
 {
     try
@@ -104,7 +107,7 @@ class FairCurve_DistributionOfEnergy : public math_FunctionSet {
 };
 %extend FairCurve_DistributionOfEnergy {
 	~FairCurve_DistributionOfEnergy() {
-	printf("Call custom destructor for instance of FairCurve_DistributionOfEnergy\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfEnergy\n");}
 	}
 };
 
@@ -119,7 +122,7 @@ class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
 };
 %extend FairCurve_DistributionOfSagging {
 	~FairCurve_DistributionOfSagging() {
-	printf("Call custom destructor for instance of FairCurve_DistributionOfSagging\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfSagging\n");}
 	}
 };
 
@@ -136,7 +139,7 @@ class FairCurve_Newton : public math_NewtonMinimum {
 };
 %extend FairCurve_Newton {
 	~FairCurve_Newton() {
-	printf("Call custom destructor for instance of FairCurve_Newton\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_Newton\n");}
 	}
 };
 
@@ -199,7 +202,7 @@ class FairCurve_Batten {
 };
 %extend FairCurve_Batten {
 	~FairCurve_Batten() {
-	printf("Call custom destructor for instance of FairCurve_Batten\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_Batten\n");}
 	}
 };
 
@@ -220,7 +223,7 @@ class FairCurve_BattenLaw : public math_Function {
 };
 %extend FairCurve_BattenLaw {
 	~FairCurve_BattenLaw() {
-	printf("Call custom destructor for instance of FairCurve_BattenLaw\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_BattenLaw\n");}
 	}
 };
 
@@ -235,7 +238,7 @@ class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
 };
 %extend FairCurve_DistributionOfJerk {
 	~FairCurve_DistributionOfJerk() {
-	printf("Call custom destructor for instance of FairCurve_DistributionOfJerk\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfJerk\n");}
 	}
 };
 
@@ -264,7 +267,7 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 };
 %extend FairCurve_MinimalVariation {
 	~FairCurve_MinimalVariation() {
-	printf("Call custom destructor for instance of FairCurve_MinimalVariation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_MinimalVariation\n");}
 	}
 };
 
@@ -289,7 +292,7 @@ class FairCurve_Energy : public math_MultipleVarFunctionWithHessian {
 };
 %extend FairCurve_Energy {
 	~FairCurve_Energy() {
-	printf("Call custom destructor for instance of FairCurve_Energy\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_Energy\n");}
 	}
 };
 
@@ -306,7 +309,7 @@ class FairCurve_EnergyOfMVC : public FairCurve_Energy {
 };
 %extend FairCurve_EnergyOfMVC {
 	~FairCurve_EnergyOfMVC() {
-	printf("Call custom destructor for instance of FairCurve_EnergyOfMVC\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_EnergyOfMVC\n");}
 	}
 };
 
@@ -323,7 +326,7 @@ class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
 };
 %extend FairCurve_DistributionOfTension {
 	~FairCurve_DistributionOfTension() {
-	printf("Call custom destructor for instance of FairCurve_DistributionOfTension\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfTension\n");}
 	}
 };
 
@@ -342,6 +345,6 @@ class FairCurve_EnergyOfBatten : public FairCurve_Energy {
 };
 %extend FairCurve_EnergyOfBatten {
 	~FairCurve_EnergyOfBatten() {
-	printf("Call custom destructor for instance of FairCurve_EnergyOfBatten\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FairCurve_EnergyOfBatten\n");}
 	}
 };
