@@ -27,7 +27,7 @@ from distutils import sysconfig
 #
 # Define pythonOCC version
 #
-VERSION = '2009_03_14'
+VERSION = '2009_03_21_2'
 #
 # Define paths
 #
@@ -53,7 +53,7 @@ if sys.platform=='win32':
     ECA = ['/link']#,'/SUBSYSTEM:CONSOLE']#,'/Os'] #space optimization '/MACHINE:X86',
     #SWIG_OPTS = ['-modern','-small','-fastdispatch','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
-                 '-w302,314,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+                 '-w302,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ELA = []
 elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')
@@ -65,7 +65,7 @@ elif sys.platform=='linux2':
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None),('LIN',None),('LININTEL',None),('_GNU_SOURCE','1')]
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                 '-w302,314,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
+                 '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
@@ -83,7 +83,7 @@ elif sys.platform=='darwin':
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
-                 '-w302,314,512','-DOCC_CONVERT_SIGNALS',\
+                 '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ECA = ['-O0']
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
