@@ -262,6 +262,7 @@ class ModularBuilder(object):
         """
         dependencies_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_dependencies.i'%self.MODULE_NAME),"w")
         WriteLicenseHeader(dependencies_fp)
+        self.dependencies_headers_to_write.sort()
         if len(self.module_dependencies)==0:
             return True
         dependencies_fp.write("%{\n")
@@ -315,19 +316,19 @@ class ModularBuilder(object):
                 if not (header_to_add in self.NEEDED_HXX):
                     self.NEEDED_HXX.append('%s.hxx'%return_type)
         
-    def CheckClassReturnAHandle(self,class_declaration):
-        """
-        Check whether a method in the class returns a Handle_* smart pointer
-        """
-        RETURN_TYPES = []
-        for mem_fun in class_declaration.public_members:#member_functions():
-            if hasattr(mem_fun,"return_type"):
-                return_type = "%s"%mem_fun.return_type
-                RETURN_TYPES.append(return_type)
-        for return_type in RETURN_TYPES:
-            if 'Handle_' in return_type:
-                return True
-        return False
+#    def CheckClassReturnAHandle(self,class_declaration):
+#        """
+#        Check whether a method in the class returns a Handle_* smart pointer
+#        """
+#        RETURN_TYPES = []
+#        for mem_fun in class_declaration.public_members:#member_functions():
+#            if hasattr(mem_fun,"return_type"):
+#                return_type = "%s"%mem_fun.return_type
+#                RETURN_TYPES.append(return_type)
+#        for return_type in RETURN_TYPES:
+#            if 'Handle_' in return_type:
+#                return True
+#        return False
     
     def write_function( self , mem_fun , parent_is_abstract):
         """
@@ -506,15 +507,15 @@ class ModularBuilder(object):
         #
         # Check whether a method of the class returns a Handle_* type
         #
-        HAVE_HANDLE_RETURN_TYPE = self.CheckClassReturnAHandle(class_declaration)
+        #HAVE_HANDLE_RETURN_TYPE = self.CheckClassReturnAHandle(class_declaration)
         #
         # Filter classes that need a customized destructor
         #
-        if (HAVE_HANDLE_RETURN_TYPE or (('Handle_%s'%class_name) in self.ALREADY_EXPOSED))\
-        or class_name.startswith('Handle_'):
-            NEED_CUSTOMIZED_DESTRUCTOR = True
-        else:
-            NEED_CUSTOMIZED_DESTRUCTOR = False
+#        if (HAVE_HANDLE_RETURN_TYPE or (('Handle_%s'%class_name) in self.ALREADY_EXPOSED))\
+#        or class_name.startswith('Handle_'):
+#            NEED_CUSTOMIZED_DESTRUCTOR = True
+#        else:
+#            NEED_CUSTOMIZED_DESTRUCTOR = False
         if class_declaration.is_abstract: #cannot instanciate abstract class
             CURRENT_CLASS_IS_ABSTRACT = True
 
@@ -602,7 +603,7 @@ class ModularBuilder(object):
         # Customize destructor
         self.fp.write('\n%')
         self.fp.write('extend %s {\n'%class_name)
-        self.fp.write('\t~%s() {\n\tprintf("Call custom destructor for instance of %s\\n");'%(class_name,class_name))
+        self.fp.write('\t~%s() {\n\tchar *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of %s\\n");}'%(class_name,class_name))
         self.fp.write('\n\t}\n};')
         #
         # On l'ajoute a la liste des classes deja exposees
