@@ -99,7 +99,7 @@ class RWStepElement_RWAnalysisItemWithinRepresentation {
 };
 %extend RWStepElement_RWAnalysisItemWithinRepresentation {
 	~RWStepElement_RWAnalysisItemWithinRepresentation() {
-	printf("Call custom destructor for instance of RWStepElement_RWAnalysisItemWithinRepresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWAnalysisItemWithinRepresentation\n");}
 	}
 };
 
@@ -118,7 +118,7 @@ class RWStepElement_RWSurfaceSectionField {
 };
 %extend RWStepElement_RWSurfaceSectionField {
 	~RWStepElement_RWSurfaceSectionField() {
-	printf("Call custom destructor for instance of RWStepElement_RWSurfaceSectionField\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSectionField\n");}
 	}
 };
 
@@ -137,7 +137,7 @@ class RWStepElement_RWCurveElementSectionDefinition {
 };
 %extend RWStepElement_RWCurveElementSectionDefinition {
 	~RWStepElement_RWCurveElementSectionDefinition() {
-	printf("Call custom destructor for instance of RWStepElement_RWCurveElementSectionDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurveElementSectionDefinition\n");}
 	}
 };
 
@@ -156,7 +156,7 @@ class RWStepElement_RWSurface3dElementDescriptor {
 };
 %extend RWStepElement_RWSurface3dElementDescriptor {
 	~RWStepElement_RWSurface3dElementDescriptor() {
-	printf("Call custom destructor for instance of RWStepElement_RWSurface3dElementDescriptor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurface3dElementDescriptor\n");}
 	}
 };
 
@@ -175,7 +175,7 @@ class RWStepElement_RWCurveElementSectionDerivedDefinitions {
 };
 %extend RWStepElement_RWCurveElementSectionDerivedDefinitions {
 	~RWStepElement_RWCurveElementSectionDerivedDefinitions() {
-	printf("Call custom destructor for instance of RWStepElement_RWCurveElementSectionDerivedDefinitions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurveElementSectionDerivedDefinitions\n");}
 	}
 };
 
@@ -194,7 +194,7 @@ class RWStepElement_RWSurfaceSectionFieldVarying {
 };
 %extend RWStepElement_RWSurfaceSectionFieldVarying {
 	~RWStepElement_RWSurfaceSectionFieldVarying() {
-	printf("Call custom destructor for instance of RWStepElement_RWSurfaceSectionFieldVarying\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSectionFieldVarying\n");}
 	}
 };
 
@@ -213,7 +213,7 @@ class RWStepElement_RWElementDescriptor {
 };
 %extend RWStepElement_RWElementDescriptor {
 	~RWStepElement_RWElementDescriptor() {
-	printf("Call custom destructor for instance of RWStepElement_RWElementDescriptor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWElementDescriptor\n");}
 	}
 };
 
@@ -232,7 +232,7 @@ class RWStepElement_RWElementMaterial {
 };
 %extend RWStepElement_RWElementMaterial {
 	~RWStepElement_RWElementMaterial() {
-	printf("Call custom destructor for instance of RWStepElement_RWElementMaterial\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWElementMaterial\n");}
 	}
 };
 
@@ -251,7 +251,7 @@ class RWStepElement_RWVolume3dElementDescriptor {
 };
 %extend RWStepElement_RWVolume3dElementDescriptor {
 	~RWStepElement_RWVolume3dElementDescriptor() {
-	printf("Call custom destructor for instance of RWStepElement_RWVolume3dElementDescriptor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWVolume3dElementDescriptor\n");}
 	}
 };
 
@@ -270,7 +270,7 @@ class RWStepElement_RWSurfaceElementProperty {
 };
 %extend RWStepElement_RWSurfaceElementProperty {
 	~RWStepElement_RWSurfaceElementProperty() {
-	printf("Call custom destructor for instance of RWStepElement_RWSurfaceElementProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceElementProperty\n");}
 	}
 };
 
@@ -289,7 +289,7 @@ class RWStepElement_RWUniformSurfaceSection {
 };
 %extend RWStepElement_RWUniformSurfaceSection {
 	~RWStepElement_RWUniformSurfaceSection() {
-	printf("Call custom destructor for instance of RWStepElement_RWUniformSurfaceSection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWUniformSurfaceSection\n");}
 	}
 };
 
@@ -308,7 +308,7 @@ class RWStepElement_RWSurfaceSectionFieldConstant {
 };
 %extend RWStepElement_RWSurfaceSectionFieldConstant {
 	~RWStepElement_RWSurfaceSectionFieldConstant() {
-	printf("Call custom destructor for instance of RWStepElement_RWSurfaceSectionFieldConstant\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSectionFieldConstant\n");}
 	}
 };
 
@@ -327,7 +327,7 @@ class RWStepElement_RWCurve3dElementDescriptor {
 };
 %extend RWStepElement_RWCurve3dElementDescriptor {
 	~RWStepElement_RWCurve3dElementDescriptor() {
-	printf("Call custom destructor for instance of RWStepElement_RWCurve3dElementDescriptor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurve3dElementDescriptor\n");}
 	}
 };
 
@@ -346,7 +346,7 @@ class RWStepElement_RWCurveElementEndReleasePacket {
 };
 %extend RWStepElement_RWCurveElementEndReleasePacket {
 	~RWStepElement_RWCurveElementEndReleasePacket() {
-	printf("Call custom destructor for instance of RWStepElement_RWCurveElementEndReleasePacket\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurveElementEndReleasePacket\n");}
 	}
 };
 
@@ -365,6 +365,6 @@ class RWStepElement_RWSurfaceSection {
 };
 %extend RWStepElement_RWSurfaceSection {
 	~RWStepElement_RWSurfaceSection() {
-	printf("Call custom destructor for instance of RWStepElement_RWSurfaceSection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSection\n");}
 	}
 };

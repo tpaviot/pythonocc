@@ -107,7 +107,7 @@ class DsgPrs_SymbPresentation {
 };
 %extend DsgPrs_SymbPresentation {
 	~DsgPrs_SymbPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_SymbPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_SymbPresentation\n");}
 	}
 };
 
@@ -122,7 +122,7 @@ class DsgPrs_FilletRadiusPresentation {
 };
 %extend DsgPrs_FilletRadiusPresentation {
 	~DsgPrs_FilletRadiusPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_FilletRadiusPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_FilletRadiusPresentation\n");}
 	}
 };
 
@@ -143,7 +143,7 @@ class DsgPrs_MidPointPresentation {
 };
 %extend DsgPrs_MidPointPresentation {
 	~DsgPrs_MidPointPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_MidPointPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_MidPointPresentation\n");}
 	}
 };
 
@@ -158,7 +158,7 @@ class DsgPrs_ShapeDirPresentation {
 };
 %extend DsgPrs_ShapeDirPresentation {
 	~DsgPrs_ShapeDirPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_ShapeDirPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_ShapeDirPresentation\n");}
 	}
 };
 
@@ -173,7 +173,7 @@ class DsgPrs_ShadedPlanePresentation {
 };
 %extend DsgPrs_ShadedPlanePresentation {
 	~DsgPrs_ShadedPlanePresentation() {
-	printf("Call custom destructor for instance of DsgPrs_ShadedPlanePresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_ShadedPlanePresentation\n");}
 	}
 };
 
@@ -196,7 +196,7 @@ class DsgPrs_LengthPresentation {
 };
 %extend DsgPrs_LengthPresentation {
 	~DsgPrs_LengthPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_LengthPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_LengthPresentation\n");}
 	}
 };
 
@@ -209,7 +209,7 @@ class DsgPrs_RadiusPresentation {
 };
 %extend DsgPrs_RadiusPresentation {
 	~DsgPrs_RadiusPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_RadiusPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_RadiusPresentation\n");}
 	}
 };
 
@@ -228,7 +228,7 @@ class DsgPrs_EqualDistancePresentation {
 };
 %extend DsgPrs_EqualDistancePresentation {
 	~DsgPrs_EqualDistancePresentation() {
-	printf("Call custom destructor for instance of DsgPrs_EqualDistancePresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_EqualDistancePresentation\n");}
 	}
 };
 
@@ -243,7 +243,7 @@ class DsgPrs_XYZPlanePresentation {
 };
 %extend DsgPrs_XYZPlanePresentation {
 	~DsgPrs_XYZPlanePresentation() {
-	printf("Call custom destructor for instance of DsgPrs_XYZPlanePresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_XYZPlanePresentation\n");}
 	}
 };
 
@@ -266,7 +266,7 @@ class DsgPrs_IdenticPresentation {
 };
 %extend DsgPrs_IdenticPresentation {
 	~DsgPrs_IdenticPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_IdenticPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_IdenticPresentation\n");}
 	}
 };
 
@@ -283,7 +283,7 @@ class DsgPrs_DiameterPresentation {
 };
 %extend DsgPrs_DiameterPresentation {
 	~DsgPrs_DiameterPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_DiameterPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_DiameterPresentation\n");}
 	}
 };
 
@@ -298,7 +298,7 @@ class DsgPrs_FixPresentation {
 };
 %extend DsgPrs_FixPresentation {
 	~DsgPrs_FixPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_FixPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_FixPresentation\n");}
 	}
 };
 
@@ -317,7 +317,7 @@ class DsgPrs_EllipseRadiusPresentation {
 };
 %extend DsgPrs_EllipseRadiusPresentation {
 	~DsgPrs_EllipseRadiusPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_EllipseRadiusPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_EllipseRadiusPresentation\n");}
 	}
 };
 
@@ -332,7 +332,7 @@ class DsgPrs_DatumPrs : public Prs3d_Root {
 };
 %extend DsgPrs_DatumPrs {
 	~DsgPrs_DatumPrs() {
-	printf("Call custom destructor for instance of DsgPrs_DatumPrs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_DatumPrs\n");}
 	}
 };
 
@@ -359,7 +359,7 @@ class DsgPrs_AnglePresentation {
 };
 %extend DsgPrs_AnglePresentation {
 	~DsgPrs_AnglePresentation() {
-	printf("Call custom destructor for instance of DsgPrs_AnglePresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_AnglePresentation\n");}
 	}
 };
 
@@ -374,7 +374,7 @@ class DsgPrs_TangentPresentation {
 };
 %extend DsgPrs_TangentPresentation {
 	~DsgPrs_TangentPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_TangentPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_TangentPresentation\n");}
 	}
 };
 
@@ -389,7 +389,7 @@ class DsgPrs_DatumTool {
 };
 %extend DsgPrs_DatumTool {
 	~DsgPrs_DatumTool() {
-	printf("Call custom destructor for instance of DsgPrs_DatumTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_DatumTool\n");}
 	}
 };
 
@@ -406,7 +406,7 @@ class DsgPrs_Chamf2dPresentation {
 };
 %extend DsgPrs_Chamf2dPresentation {
 	~DsgPrs_Chamf2dPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_Chamf2dPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_Chamf2dPresentation\n");}
 	}
 };
 
@@ -423,7 +423,7 @@ class DsgPrs_ParalPresentation {
 };
 %extend DsgPrs_ParalPresentation {
 	~DsgPrs_ParalPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_ParalPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_ParalPresentation\n");}
 	}
 };
 
@@ -438,7 +438,7 @@ class DsgPrs_EqualRadiusPresentation {
 };
 %extend DsgPrs_EqualRadiusPresentation {
 	~DsgPrs_EqualRadiusPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_EqualRadiusPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_EqualRadiusPresentation\n");}
 	}
 };
 
@@ -455,7 +455,7 @@ class DsgPrs_OffsetPresentation {
 };
 %extend DsgPrs_OffsetPresentation {
 	~DsgPrs_OffsetPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_OffsetPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_OffsetPresentation\n");}
 	}
 };
 
@@ -470,7 +470,7 @@ class DsgPrs_PerpenPresentation {
 };
 %extend DsgPrs_PerpenPresentation {
 	~DsgPrs_PerpenPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_PerpenPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_PerpenPresentation\n");}
 	}
 };
 
@@ -499,7 +499,7 @@ class DsgPrs {
 };
 %extend DsgPrs {
 	~DsgPrs() {
-	printf("Call custom destructor for instance of DsgPrs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs\n");}
 	}
 };
 
@@ -516,7 +516,7 @@ class DsgPrs_XYZAxisPresentation {
 };
 %extend DsgPrs_XYZAxisPresentation {
 	~DsgPrs_XYZAxisPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_XYZAxisPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_XYZAxisPresentation\n");}
 	}
 };
 
@@ -531,7 +531,7 @@ class DsgPrs_ConcentricPresentation {
 };
 %extend DsgPrs_ConcentricPresentation {
 	~DsgPrs_ConcentricPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_ConcentricPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_ConcentricPresentation\n");}
 	}
 };
 
@@ -550,6 +550,6 @@ class DsgPrs_SymmetricPresentation {
 };
 %extend DsgPrs_SymmetricPresentation {
 	~DsgPrs_SymmetricPresentation() {
-	printf("Call custom destructor for instance of DsgPrs_SymmetricPresentation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DsgPrs_SymmetricPresentation\n");}
 	}
 };

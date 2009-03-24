@@ -105,7 +105,7 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 };
 %extend Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	~Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints() {
-	printf("Call custom destructor for instance of Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints\n");}
 	}
 };
 
@@ -158,7 +158,7 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 };
 %extend IntPolyh_SeqOfStartPoints {
 	~IntPolyh_SeqOfStartPoints() {
-	printf("Call custom destructor for instance of IntPolyh_SeqOfStartPoints\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_SeqOfStartPoints\n");}
 	}
 };
 
@@ -195,7 +195,7 @@ class IntPolyh_Edge {
 };
 %extend IntPolyh_Edge {
 	~IntPolyh_Edge() {
-	printf("Call custom destructor for instance of IntPolyh_Edge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_Edge\n");}
 	}
 };
 
@@ -230,7 +230,7 @@ class IntPolyh_ArrayOfCouples {
 };
 %extend IntPolyh_ArrayOfCouples {
 	~IntPolyh_ArrayOfCouples() {
-	printf("Call custom destructor for instance of IntPolyh_ArrayOfCouples\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfCouples\n");}
 	}
 };
 
@@ -269,7 +269,7 @@ class IntPolyh_SectionLine {
 };
 %extend IntPolyh_SectionLine {
 	~IntPolyh_SectionLine() {
-	printf("Call custom destructor for instance of IntPolyh_SectionLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_SectionLine\n");}
 	}
 };
 
@@ -308,7 +308,7 @@ class IntPolyh_ArrayOfEdges {
 };
 %extend IntPolyh_ArrayOfEdges {
 	~IntPolyh_ArrayOfEdges() {
-	printf("Call custom destructor for instance of IntPolyh_ArrayOfEdges\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfEdges\n");}
 	}
 };
 
@@ -345,7 +345,7 @@ class IntPolyh_ArrayOfTangentZones {
 };
 %extend IntPolyh_ArrayOfTangentZones {
 	~IntPolyh_ArrayOfTangentZones() {
-	printf("Call custom destructor for instance of IntPolyh_ArrayOfTangentZones\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfTangentZones\n");}
 	}
 };
 
@@ -418,7 +418,7 @@ class IntPolyh_Point {
 };
 %extend IntPolyh_Point {
 	~IntPolyh_Point() {
-	printf("Call custom destructor for instance of IntPolyh_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_Point\n");}
 	}
 };
 
@@ -493,7 +493,7 @@ class IntPolyh_StartPoint {
 };
 %extend IntPolyh_StartPoint {
 	~IntPolyh_StartPoint() {
-	printf("Call custom destructor for instance of IntPolyh_StartPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_StartPoint\n");}
 	}
 };
 
@@ -530,7 +530,7 @@ class IntPolyh_ArrayOfSectionLines {
 };
 %extend IntPolyh_ArrayOfSectionLines {
 	~IntPolyh_ArrayOfSectionLines() {
-	printf("Call custom destructor for instance of IntPolyh_ArrayOfSectionLines\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfSectionLines\n");}
 	}
 };
 
@@ -563,7 +563,7 @@ class IntPolyh_ArrayOfStartPoints {
 };
 %extend IntPolyh_ArrayOfStartPoints {
 	~IntPolyh_ArrayOfStartPoints() {
-	printf("Call custom destructor for instance of IntPolyh_ArrayOfStartPoints\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfStartPoints\n");}
 	}
 };
 
@@ -585,7 +585,7 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 };
 %extend IntPolyh_SequenceNodeOfSeqOfStartPoints {
 	~IntPolyh_SequenceNodeOfSeqOfStartPoints() {
-	printf("Call custom destructor for instance of IntPolyh_SequenceNodeOfSeqOfStartPoints\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_SequenceNodeOfSeqOfStartPoints\n");}
 	}
 };
 
@@ -616,7 +616,7 @@ class IntPolyh_Couple {
 };
 %extend IntPolyh_Couple {
 	~IntPolyh_Couple() {
-	printf("Call custom destructor for instance of IntPolyh_Couple\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_Couple\n");}
 	}
 };
 
@@ -651,7 +651,7 @@ class IntPolyh_Intersection {
 };
 %extend IntPolyh_Intersection {
 	~IntPolyh_Intersection() {
-	printf("Call custom destructor for instance of IntPolyh_Intersection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_Intersection\n");}
 	}
 };
 
@@ -690,7 +690,7 @@ class IntPolyh_ArrayOfPoints {
 };
 %extend IntPolyh_ArrayOfPoints {
 	~IntPolyh_ArrayOfPoints() {
-	printf("Call custom destructor for instance of IntPolyh_ArrayOfPoints\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfPoints\n");}
 	}
 };
 
@@ -731,6 +731,6 @@ class IntPolyh_ArrayOfTriangles {
 };
 %extend IntPolyh_ArrayOfTriangles {
 	~IntPolyh_ArrayOfTriangles() {
-	printf("Call custom destructor for instance of IntPolyh_ArrayOfTriangles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfTriangles\n");}
 	}
 };

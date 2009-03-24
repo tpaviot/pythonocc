@@ -110,7 +110,7 @@ class Handle_BinLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 };
 %extend Handle_BinLDrivers_DocumentRetrievalDriver {
 	~Handle_BinLDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of Handle_BinLDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinLDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -134,7 +134,7 @@ class Handle_BinLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 };
 %extend Handle_BinLDrivers_DocumentStorageDriver {
 	~Handle_BinLDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of Handle_BinLDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinLDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -164,7 +164,7 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend BinLDrivers_DocumentStorageDriver {
 	~BinLDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of BinLDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinLDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -197,7 +197,7 @@ class BinLDrivers_DocumentSection {
 };
 %extend BinLDrivers_DocumentSection {
 	~BinLDrivers_DocumentSection() {
-	printf("Call custom destructor for instance of BinLDrivers_DocumentSection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinLDrivers_DocumentSection\n");}
 	}
 };
 
@@ -227,7 +227,7 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend BinLDrivers_DocumentRetrievalDriver {
 	~BinLDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of BinLDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinLDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -246,6 +246,6 @@ class BinLDrivers {
 };
 %extend BinLDrivers {
 	~BinLDrivers() {
-	printf("Call custom destructor for instance of BinLDrivers\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinLDrivers\n");}
 	}
 };

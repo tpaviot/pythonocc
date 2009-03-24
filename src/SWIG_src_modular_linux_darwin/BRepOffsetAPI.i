@@ -105,7 +105,7 @@ class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public H
 };
 %extend Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
 	~Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
-	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");}
 	}
 };
 
@@ -129,7 +129,7 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 };
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
 	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal() {
-	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");}
 	}
 };
 
@@ -153,7 +153,7 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Hand
 };
 %extend Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	~Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
-	printf("Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");}
 	}
 };
 
@@ -177,7 +177,7 @@ class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollect
 };
 %extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
 	~BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");}
 	}
 };
 
@@ -204,7 +204,7 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepOffsetAPI_MakeDraft {
 	~BRepOffsetAPI_MakeDraft() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_MakeDraft\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeDraft\n");}
 	}
 };
 
@@ -245,7 +245,7 @@ class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
 };
 %extend BRepOffsetAPI_DraftAngle {
 	~BRepOffsetAPI_DraftAngle() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_DraftAngle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DraftAngle\n");}
 	}
 };
 
@@ -298,7 +298,7 @@ class BRepOffsetAPI_SequenceOfSequenceOfReal : public TCollection_BaseSequence {
 };
 %extend BRepOffsetAPI_SequenceOfSequenceOfReal {
 	~BRepOffsetAPI_SequenceOfSequenceOfReal() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfReal\n");}
 	}
 };
 
@@ -345,7 +345,7 @@ class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepOffsetAPI_MakeFilling {
 	~BRepOffsetAPI_MakeFilling() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_MakeFilling\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeFilling\n");}
 	}
 };
 
@@ -367,7 +367,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");}
 	}
 };
 
@@ -420,7 +420,7 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 };
 %extend BRepOffsetAPI_MakePipeShell {
 	~BRepOffsetAPI_MakePipeShell() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_MakePipeShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakePipeShell\n");}
 	}
 };
 
@@ -473,7 +473,7 @@ class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence 
 };
 %extend BRepOffsetAPI_SequenceOfSequenceOfShape {
 	~BRepOffsetAPI_SequenceOfSequenceOfShape() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceOfSequenceOfShape\n");}
 	}
 };
 
@@ -498,7 +498,7 @@ class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepOffsetAPI_MakeOffsetShape {
 	~BRepOffsetAPI_MakeOffsetShape() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_MakeOffsetShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeOffsetShape\n");}
 	}
 };
 
@@ -515,7 +515,7 @@ class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 };
 %extend BRepOffsetAPI_MakeThickSolid {
 	~BRepOffsetAPI_MakeThickSolid() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_MakeThickSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeThickSolid\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCol
 };
 %extend BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape {
 	~BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape\n");}
 	}
 };
 
@@ -563,7 +563,7 @@ class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepOffsetAPI_MakeEvolved {
 	~BRepOffsetAPI_MakeEvolved() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_MakeEvolved\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeEvolved\n");}
 	}
 };
 
@@ -585,7 +585,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
 	~BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");}
 	}
 };
 
@@ -614,7 +614,7 @@ class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepOffsetAPI_ThruSections {
 	~BRepOffsetAPI_ThruSections() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_ThruSections\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_ThruSections\n");}
 	}
 };
 
@@ -655,7 +655,7 @@ class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepOffsetAPI_NormalProjection {
 	~BRepOffsetAPI_NormalProjection() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_NormalProjection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_NormalProjection\n");}
 	}
 };
 
@@ -684,7 +684,7 @@ class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepOffsetAPI_MakeOffset {
 	~BRepOffsetAPI_MakeOffset() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_MakeOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeOffset\n");}
 	}
 };
 
@@ -707,7 +707,7 @@ class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 };
 %extend BRepOffsetAPI_MakePipe {
 	~BRepOffsetAPI_MakePipe() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_MakePipe\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakePipe\n");}
 	}
 };
 
@@ -740,6 +740,6 @@ class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap 
 };
 %extend BRepOffsetAPI_DataMapOfShapeSequenceOfShape {
 	~BRepOffsetAPI_DataMapOfShapeSequenceOfShape() {
-	printf("Call custom destructor for instance of BRepOffsetAPI_DataMapOfShapeSequenceOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DataMapOfShapeSequenceOfShape\n");}
 	}
 };

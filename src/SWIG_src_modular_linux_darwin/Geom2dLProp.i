@@ -103,7 +103,7 @@ class Geom2dLProp_NumericCurInf2d {
 };
 %extend Geom2dLProp_NumericCurInf2d {
 	~Geom2dLProp_NumericCurInf2d() {
-	printf("Call custom destructor for instance of Geom2dLProp_NumericCurInf2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dLProp_NumericCurInf2d\n");}
 	}
 };
 
@@ -122,7 +122,7 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 };
 %extend Geom2dLProp_FCurNulOfNumericCurInf2d {
 	~Geom2dLProp_FCurNulOfNumericCurInf2d() {
-	printf("Call custom destructor for instance of Geom2dLProp_FCurNulOfNumericCurInf2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurNulOfNumericCurInf2d\n");}
 	}
 };
 
@@ -149,7 +149,7 @@ class Geom2dLProp_Curve2dTool {
 };
 %extend Geom2dLProp_Curve2dTool {
 	~Geom2dLProp_Curve2dTool() {
-	printf("Call custom destructor for instance of Geom2dLProp_Curve2dTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dLProp_Curve2dTool\n");}
 	}
 };
 
@@ -170,7 +170,7 @@ class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 };
 %extend Geom2dLProp_CurAndInf2d {
 	~Geom2dLProp_CurAndInf2d() {
-	printf("Call custom destructor for instance of Geom2dLProp_CurAndInf2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dLProp_CurAndInf2d\n");}
 	}
 };
 
@@ -209,7 +209,7 @@ class Geom2dLProp_CLProps2d {
 };
 %extend Geom2dLProp_CLProps2d {
 	~Geom2dLProp_CLProps2d() {
-	printf("Call custom destructor for instance of Geom2dLProp_CLProps2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dLProp_CLProps2d\n");}
 	}
 };
 
@@ -230,6 +230,6 @@ class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative 
 };
 %extend Geom2dLProp_FCurExtOfNumericCurInf2d {
 	~Geom2dLProp_FCurExtOfNumericCurInf2d() {
-	printf("Call custom destructor for instance of Geom2dLProp_FCurExtOfNumericCurInf2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurExtOfNumericCurInf2d\n");}
 	}
 };

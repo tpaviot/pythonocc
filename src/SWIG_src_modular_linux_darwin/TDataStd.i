@@ -151,7 +151,7 @@ class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Relation {
 	~Handle_TDataStd_Relation() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Relation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Relation\n");}
 	}
 };
 
@@ -175,7 +175,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollecti
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringByte {
 	~Handle_TDataStd_DataMapNodeOfDataMapOfStringByte() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringByte\n");}
 	}
 };
 
@@ -199,7 +199,7 @@ class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection
 };
 %extend Handle_TDataStd_ListNodeOfListOfExtendedString {
 	~Handle_TDataStd_ListNodeOfListOfExtendedString() {
-	printf("Call custom destructor for instance of Handle_TDataStd_ListNodeOfListOfExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ListNodeOfListOfExtendedString\n");}
 	}
 };
 
@@ -223,7 +223,7 @@ class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_ExtStringList {
 	~Handle_TDataStd_ExtStringList() {
-	printf("Call custom destructor for instance of Handle_TDataStd_ExtStringList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ExtStringList\n");}
 	}
 };
 
@@ -247,7 +247,7 @@ class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_TreeNode {
 	~Handle_TDataStd_TreeNode() {
-	printf("Call custom destructor for instance of Handle_TDataStd_TreeNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_TreeNode\n");}
 	}
 };
 
@@ -271,7 +271,7 @@ class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 };
 %extend Handle_TDataStd_HDataMapOfStringInteger {
 	~Handle_TDataStd_HDataMapOfStringInteger() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringInteger\n");}
 	}
 };
 
@@ -295,7 +295,7 @@ class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_BooleanList {
 	~Handle_TDataStd_BooleanList() {
-	printf("Call custom destructor for instance of Handle_TDataStd_BooleanList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_BooleanList\n");}
 	}
 };
 
@@ -319,7 +319,7 @@ class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Pattern {
 	~Handle_TDataStd_Pattern() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Pattern\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Pattern\n");}
 	}
 };
 
@@ -343,7 +343,7 @@ class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Geometry {
 	~Handle_TDataStd_Geometry() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Geometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Geometry\n");}
 	}
 };
 
@@ -367,7 +367,7 @@ class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_UAttribute {
 	~Handle_TDataStd_UAttribute() {
-	printf("Call custom destructor for instance of Handle_TDataStd_UAttribute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_UAttribute\n");}
 	}
 };
 
@@ -391,7 +391,7 @@ class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_BooleanArray {
 	~Handle_TDataStd_BooleanArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_BooleanArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_BooleanArray\n");}
 	}
 };
 
@@ -415,7 +415,7 @@ class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
 };
 %extend Handle_TDataStd_PatternStd {
 	~Handle_TDataStd_PatternStd() {
-	printf("Call custom destructor for instance of Handle_TDataStd_PatternStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_PatternStd\n");}
 	}
 };
 
@@ -439,7 +439,7 @@ class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
 };
 %extend Handle_TDataStd_HDataMapOfStringByte {
 	~Handle_TDataStd_HDataMapOfStringByte() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringByte\n");}
 	}
 };
 
@@ -463,7 +463,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollecti
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringReal {
 	~Handle_TDataStd_DataMapNodeOfDataMapOfStringReal() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringReal\n");}
 	}
 };
 
@@ -487,7 +487,7 @@ class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_RealList {
 	~Handle_TDataStd_RealList() {
-	printf("Call custom destructor for instance of Handle_TDataStd_RealList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_RealList\n");}
 	}
 };
 
@@ -511,7 +511,7 @@ class Handle_TDataStd_ReferenceArray : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_ReferenceArray {
 	~Handle_TDataStd_ReferenceArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_ReferenceArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ReferenceArray\n");}
 	}
 };
 
@@ -535,7 +535,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
 	~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");}
 	}
 };
 
@@ -559,7 +559,7 @@ class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Expression {
 	~Handle_TDataStd_Expression() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Expression\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Expression\n");}
 	}
 };
 
@@ -583,7 +583,7 @@ class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 };
 %extend Handle_TDataStd_HArray1OfByte {
 	~Handle_TDataStd_HArray1OfByte() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HArray1OfByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HArray1OfByte\n");}
 	}
 };
 
@@ -607,7 +607,7 @@ class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 };
 %extend Handle_TDataStd_HDataMapOfStringString {
 	~Handle_TDataStd_HDataMapOfStringString() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringString\n");}
 	}
 };
 
@@ -631,7 +631,7 @@ class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnM
 };
 %extend Handle_TDataStd_DeltaOnModificationOfIntArray {
 	~Handle_TDataStd_DeltaOnModificationOfIntArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfIntArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfIntArray\n");}
 	}
 };
 
@@ -655,7 +655,7 @@ class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_AsciiString {
 	~Handle_TDataStd_AsciiString() {
-	printf("Call custom destructor for instance of Handle_TDataStd_AsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_AsciiString\n");}
 	}
 };
 
@@ -679,7 +679,7 @@ class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Constraint {
 	~Handle_TDataStd_Constraint() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Constraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Constraint\n");}
 	}
 };
 
@@ -703,7 +703,7 @@ class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOn
 };
 %extend Handle_TDataStd_DeltaOnModificationOfByteArray {
 	~Handle_TDataStd_DeltaOnModificationOfByteArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfByteArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfByteArray\n");}
 	}
 };
 
@@ -727,7 +727,7 @@ class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_IntegerList {
 	~Handle_TDataStd_IntegerList() {
-	printf("Call custom destructor for instance of Handle_TDataStd_IntegerList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntegerList\n");}
 	}
 };
 
@@ -751,7 +751,7 @@ class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_Delt
 };
 %extend Handle_TDataStd_DeltaOnModificationOfIntPackedMap {
 	~Handle_TDataStd_DeltaOnModificationOfIntPackedMap() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfIntPackedMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfIntPackedMap\n");}
 	}
 };
 
@@ -775,7 +775,7 @@ class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_ExtStringArray {
 	~Handle_TDataStd_ExtStringArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_ExtStringArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ExtStringArray\n");}
 	}
 };
 
@@ -799,7 +799,7 @@ class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Position {
 	~Handle_TDataStd_Position() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Position\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Position\n");}
 	}
 };
 
@@ -823,7 +823,7 @@ class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_IntegerArray {
 	~Handle_TDataStd_IntegerArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_IntegerArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntegerArray\n");}
 	}
 };
 
@@ -847,7 +847,7 @@ class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 };
 %extend Handle_TDataStd_HDataMapOfStringReal {
 	~Handle_TDataStd_HDataMapOfStringReal() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringReal\n");}
 	}
 };
 
@@ -871,7 +871,7 @@ class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Plane {
 	~Handle_TDataStd_Plane() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Plane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Plane\n");}
 	}
 };
 
@@ -895,7 +895,7 @@ class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_ReferenceList {
 	~Handle_TDataStd_ReferenceList() {
-	printf("Call custom destructor for instance of Handle_TDataStd_ReferenceList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ReferenceList\n");}
 	}
 };
 
@@ -919,7 +919,7 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TSha
 };
 %extend Handle_TDataStd_HDataMapOfStringHArray1OfInteger {
 	~Handle_TDataStd_HDataMapOfStringHArray1OfInteger() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfInteger\n");}
 	}
 };
 
@@ -943,7 +943,7 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared
 };
 %extend Handle_TDataStd_HDataMapOfStringHArray1OfReal {
 	~Handle_TDataStd_HDataMapOfStringHArray1OfReal() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfReal\n");}
 	}
 };
 
@@ -967,7 +967,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TColle
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger {
 	~Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger\n");}
 	}
 };
 
@@ -991,7 +991,7 @@ class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Variable {
 	~Handle_TDataStd_Variable() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Variable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Variable\n");}
 	}
 };
 
@@ -1015,7 +1015,7 @@ class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Axis {
 	~Handle_TDataStd_Axis() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Axis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Axis\n");}
 	}
 };
 
@@ -1039,7 +1039,7 @@ class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Point {
 	~Handle_TDataStd_Point() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Point\n");}
 	}
 };
 
@@ -1063,7 +1063,7 @@ class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_IntPackedMap {
 	~Handle_TDataStd_IntPackedMap() {
-	printf("Call custom destructor for instance of Handle_TDataStd_IntPackedMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntPackedMap\n");}
 	}
 };
 
@@ -1087,7 +1087,7 @@ class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 };
 %extend Handle_TDataStd_HLabelArray1 {
 	~Handle_TDataStd_HLabelArray1() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HLabelArray1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HLabelArray1\n");}
 	}
 };
 
@@ -1111,7 +1111,7 @@ class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
 };
 %extend Handle_TDataStd_HArray1OfTrsf {
 	~Handle_TDataStd_HArray1OfTrsf() {
-	printf("Call custom destructor for instance of Handle_TDataStd_HArray1OfTrsf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HArray1OfTrsf\n");}
 	}
 };
 
@@ -1135,7 +1135,7 @@ class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Name {
 	~Handle_TDataStd_Name() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Name\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Name\n");}
 	}
 };
 
@@ -1159,7 +1159,7 @@ class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_De
 };
 %extend Handle_TDataStd_DeltaOnModificationOfExtStringArray {
 	~Handle_TDataStd_DeltaOnModificationOfExtStringArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfExtStringArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfExtStringArray\n");}
 	}
 };
 
@@ -1183,7 +1183,7 @@ class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
 };
 %extend Handle_TDataStd_ListNodeOfListOfByte {
 	~Handle_TDataStd_ListNodeOfListOfByte() {
-	printf("Call custom destructor for instance of Handle_TDataStd_ListNodeOfListOfByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ListNodeOfListOfByte\n");}
 	}
 };
 
@@ -1207,7 +1207,7 @@ class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Tick {
 	~Handle_TDataStd_Tick() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Tick\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Tick\n");}
 	}
 };
 
@@ -1231,7 +1231,7 @@ class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Shape {
 	~Handle_TDataStd_Shape() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Shape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Shape\n");}
 	}
 };
 
@@ -1255,7 +1255,7 @@ class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Placement {
 	~Handle_TDataStd_Placement() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Placement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Placement\n");}
 	}
 };
 
@@ -1279,7 +1279,7 @@ class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOn
 };
 %extend Handle_TDataStd_DeltaOnModificationOfRealArray {
 	~Handle_TDataStd_DeltaOnModificationOfRealArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfRealArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfRealArray\n");}
 	}
 };
 
@@ -1303,7 +1303,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollec
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringString {
 	~Handle_TDataStd_DataMapNodeOfDataMapOfStringString() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringString\n");}
 	}
 };
 
@@ -1327,7 +1327,7 @@ class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Integer {
 	~Handle_TDataStd_Integer() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Integer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Integer\n");}
 	}
 };
 
@@ -1351,7 +1351,7 @@ class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Directory {
 	~Handle_TDataStd_Directory() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Directory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Directory\n");}
 	}
 };
 
@@ -1375,7 +1375,7 @@ class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Comment {
 	~Handle_TDataStd_Comment() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Comment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Comment\n");}
 	}
 };
 
@@ -1399,7 +1399,7 @@ class Handle_TDataStd_Current : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Current {
 	~Handle_TDataStd_Current() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Current\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Current\n");}
 	}
 };
 
@@ -1423,7 +1423,7 @@ class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_RealArray {
 	~Handle_TDataStd_RealArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_RealArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_RealArray\n");}
 	}
 };
 
@@ -1447,7 +1447,7 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_NoteBook {
 	~Handle_TDataStd_NoteBook() {
-	printf("Call custom destructor for instance of Handle_TDataStd_NoteBook\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_NoteBook\n");}
 	}
 };
 
@@ -1471,7 +1471,7 @@ class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_ByteArray {
 	~Handle_TDataStd_ByteArray() {
-	printf("Call custom destructor for instance of Handle_TDataStd_ByteArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ByteArray\n");}
 	}
 };
 
@@ -1495,7 +1495,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_
 };
 %extend Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
 	~Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal() {
-	printf("Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");}
 	}
 };
 
@@ -1519,7 +1519,7 @@ class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_Real {
 	~Handle_TDataStd_Real() {
-	printf("Call custom destructor for instance of Handle_TDataStd_Real\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Real\n");}
 	}
 };
 
@@ -1543,7 +1543,7 @@ class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 };
 %extend Handle_TDataStd_NamedData {
 	~Handle_TDataStd_NamedData() {
-	printf("Call custom destructor for instance of Handle_TDataStd_NamedData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_NamedData\n");}
 	}
 };
 
@@ -1565,7 +1565,7 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 };
 %extend TDataStd_ListNodeOfListOfByte {
 	~TDataStd_ListNodeOfListOfByte() {
-	printf("Call custom destructor for instance of TDataStd_ListNodeOfListOfByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ListNodeOfListOfByte\n");}
 	}
 };
 
@@ -1586,7 +1586,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMa
 };
 %extend TDataStd_DataMapIteratorOfDataMapOfStringByte {
 	~TDataStd_DataMapIteratorOfDataMapOfStringByte() {
-	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringByte\n");}
 	}
 };
 
@@ -1626,7 +1626,7 @@ class TDataStd_NoteBook : public TDF_Attribute {
 };
 %extend TDataStd_NoteBook {
 	~TDataStd_NoteBook() {
-	printf("Call custom destructor for instance of TDataStd_NoteBook\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_NoteBook\n");}
 	}
 };
 
@@ -1650,7 +1650,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringString {
 	~TDataStd_DataMapNodeOfDataMapOfStringString() {
-	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringString\n");}
 	}
 };
 
@@ -1672,7 +1672,7 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 };
 %extend TDataStd_DeltaOnModificationOfIntPackedMap {
 	~TDataStd_DeltaOnModificationOfIntPackedMap() {
-	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntPackedMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntPackedMap\n");}
 	}
 };
 
@@ -1711,7 +1711,7 @@ class TDataStd_Array1OfTrsf {
 };
 %extend TDataStd_Array1OfTrsf {
 	~TDataStd_Array1OfTrsf() {
-	printf("Call custom destructor for instance of TDataStd_Array1OfTrsf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Array1OfTrsf\n");}
 	}
 };
 
@@ -1734,7 +1734,7 @@ class TDataStd_ListIteratorOfListOfExtendedString {
 };
 %extend TDataStd_ListIteratorOfListOfExtendedString {
 	~TDataStd_ListIteratorOfListOfExtendedString() {
-	printf("Call custom destructor for instance of TDataStd_ListIteratorOfListOfExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ListIteratorOfListOfExtendedString\n");}
 	}
 };
 
@@ -1758,7 +1758,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringReal {
 	~TDataStd_DataMapNodeOfDataMapOfStringReal() {
-	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringReal\n");}
 	}
 };
 
@@ -1840,7 +1840,7 @@ class TDataStd_Constraint : public TDF_Attribute {
 };
 %extend TDataStd_Constraint {
 	~TDataStd_Constraint() {
-	printf("Call custom destructor for instance of TDataStd_Constraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Constraint\n");}
 	}
 };
 
@@ -1879,7 +1879,7 @@ class TDataStd_Array1OfByte {
 };
 %extend TDataStd_Array1OfByte {
 	~TDataStd_Array1OfByte() {
-	printf("Call custom destructor for instance of TDataStd_Array1OfByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Array1OfByte\n");}
 	}
 };
 
@@ -1907,7 +1907,7 @@ class TDataStd_Pattern : public TDF_Attribute {
 };
 %extend TDataStd_Pattern {
 	~TDataStd_Pattern() {
-	printf("Call custom destructor for instance of TDataStd_Pattern\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Pattern\n");}
 	}
 };
 
@@ -1979,7 +1979,7 @@ class TDataStd_PatternStd : public TDataStd_Pattern {
 };
 %extend TDataStd_PatternStd {
 	~TDataStd_PatternStd() {
-	printf("Call custom destructor for instance of TDataStd_PatternStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_PatternStd\n");}
 	}
 };
 
@@ -2013,7 +2013,7 @@ class TDataStd_Placement : public TDF_Attribute {
 };
 %extend TDataStd_Placement {
 	~TDataStd_Placement() {
-	printf("Call custom destructor for instance of TDataStd_Placement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Placement\n");}
 	}
 };
 
@@ -2046,7 +2046,7 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 };
 %extend TDataStd_DataMapOfStringReal {
 	~TDataStd_DataMapOfStringReal() {
-	printf("Call custom destructor for instance of TDataStd_DataMapOfStringReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringReal\n");}
 	}
 };
 
@@ -2072,7 +2072,7 @@ class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringHArray1OfInteger {
 	~TDataStd_HDataMapOfStringHArray1OfInteger() {
-	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfInteger\n");}
 	}
 };
 
@@ -2178,7 +2178,7 @@ class TDataStd_NamedData : public TDF_Attribute {
 };
 %extend TDataStd_NamedData {
 	~TDataStd_NamedData() {
-	printf("Call custom destructor for instance of TDataStd_NamedData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_NamedData\n");}
 	}
 };
 
@@ -2218,7 +2218,7 @@ class TDataStd_Integer : public TDF_Attribute {
 };
 %extend TDataStd_Integer {
 	~TDataStd_Integer() {
-	printf("Call custom destructor for instance of TDataStd_Integer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Integer\n");}
 	}
 };
 
@@ -2239,7 +2239,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMa
 };
 %extend TDataStd_DataMapIteratorOfDataMapOfStringReal {
 	~TDataStd_DataMapIteratorOfDataMapOfStringReal() {
-	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringReal\n");}
 	}
 };
 
@@ -2289,7 +2289,7 @@ class TDataStd_BooleanList : public TDF_Attribute {
 };
 %extend TDataStd_BooleanList {
 	~TDataStd_BooleanList() {
-	printf("Call custom destructor for instance of TDataStd_BooleanList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_BooleanList\n");}
 	}
 };
 
@@ -2338,7 +2338,7 @@ class TDataStd_ListOfExtendedString {
 };
 %extend TDataStd_ListOfExtendedString {
 	~TDataStd_ListOfExtendedString() {
-	printf("Call custom destructor for instance of TDataStd_ListOfExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfExtendedString\n");}
 	}
 };
 
@@ -2380,7 +2380,7 @@ class TDataStd_Relation : public TDF_Attribute {
 };
 %extend TDataStd_Relation {
 	~TDataStd_Relation() {
-	printf("Call custom destructor for instance of TDataStd_Relation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Relation\n");}
 	}
 };
 
@@ -2402,7 +2402,7 @@ class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 };
 %extend TDataStd_ListNodeOfListOfExtendedString {
 	~TDataStd_ListNodeOfListOfExtendedString() {
-	printf("Call custom destructor for instance of TDataStd_ListNodeOfListOfExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ListNodeOfListOfExtendedString\n");}
 	}
 };
 
@@ -2442,7 +2442,7 @@ class TDataStd_AsciiString : public TDF_Attribute {
 };
 %extend TDataStd_AsciiString {
 	~TDataStd_AsciiString() {
-	printf("Call custom destructor for instance of TDataStd_AsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_AsciiString\n");}
 	}
 };
 
@@ -2484,7 +2484,7 @@ class TDataStd_Expression : public TDF_Attribute {
 };
 %extend TDataStd_Expression {
 	~TDataStd_Expression() {
-	printf("Call custom destructor for instance of TDataStd_Expression\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Expression\n");}
 	}
 };
 
@@ -2506,7 +2506,7 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 };
 %extend TDataStd_DeltaOnModificationOfExtStringArray {
 	~TDataStd_DeltaOnModificationOfExtStringArray() {
-	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfExtStringArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfExtStringArray\n");}
 	}
 };
 
@@ -2530,7 +2530,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode 
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringInteger {
 	~TDataStd_DataMapNodeOfDataMapOfStringInteger() {
-	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringInteger\n");}
 	}
 };
 
@@ -2588,7 +2588,7 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 };
 %extend TDataStd_IntegerArray {
 	~TDataStd_IntegerArray() {
-	printf("Call custom destructor for instance of TDataStd_IntegerArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_IntegerArray\n");}
 	}
 };
 
@@ -2628,7 +2628,7 @@ class TDataStd_Position : public TDF_Attribute {
 };
 %extend TDataStd_Position {
 	~TDataStd_Position() {
-	printf("Call custom destructor for instance of TDataStd_Position\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Position\n");}
 	}
 };
 
@@ -2650,7 +2650,7 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfRealArray {
 	~TDataStd_DeltaOnModificationOfRealArray() {
-	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfRealArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfRealArray\n");}
 	}
 };
 
@@ -2699,7 +2699,7 @@ class TDataStd_ListOfByte {
 };
 %extend TDataStd_ListOfByte {
 	~TDataStd_ListOfByte() {
-	printf("Call custom destructor for instance of TDataStd_ListOfByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfByte\n");}
 	}
 };
 
@@ -2751,7 +2751,7 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 };
 %extend TDataStd_BooleanArray {
 	~TDataStd_BooleanArray() {
-	printf("Call custom destructor for instance of TDataStd_BooleanArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_BooleanArray\n");}
 	}
 };
 
@@ -2809,7 +2809,7 @@ class TDataStd_ByteArray : public TDF_Attribute {
 };
 %extend TDataStd_ByteArray {
 	~TDataStd_ByteArray() {
-	printf("Call custom destructor for instance of TDataStd_ByteArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ByteArray\n");}
 	}
 };
 
@@ -2867,7 +2867,7 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 };
 %extend TDataStd_IntPackedMap {
 	~TDataStd_IntPackedMap() {
-	printf("Call custom destructor for instance of TDataStd_IntPackedMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_IntPackedMap\n");}
 	}
 };
 
@@ -2888,7 +2888,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_Basic
 };
 %extend TDataStd_DataMapIteratorOfDataMapOfStringString {
 	~TDataStd_DataMapIteratorOfDataMapOfStringString() {
-	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringString\n");}
 	}
 };
 
@@ -2909,7 +2909,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal : public TCollectio
 };
 %extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal {
 	~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal() {
-	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal\n");}
 	}
 };
 
@@ -2931,7 +2931,7 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfByteArray {
 	~TDataStd_DeltaOnModificationOfByteArray() {
-	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfByteArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfByteArray\n");}
 	}
 };
 
@@ -2964,7 +2964,7 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 };
 %extend TDataStd_DataMapOfStringByte {
 	~TDataStd_DataMapOfStringByte() {
-	printf("Call custom destructor for instance of TDataStd_DataMapOfStringByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringByte\n");}
 	}
 };
 
@@ -3020,7 +3020,7 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 };
 %extend TDataStd_ExtStringList {
 	~TDataStd_ExtStringList() {
-	printf("Call custom destructor for instance of TDataStd_ExtStringList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ExtStringList\n");}
 	}
 };
 
@@ -3053,7 +3053,7 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 };
 %extend TDataStd_DataMapOfStringHArray1OfInteger {
 	~TDataStd_DataMapOfStringHArray1OfInteger() {
-	printf("Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfInteger\n");}
 	}
 };
 
@@ -3092,7 +3092,7 @@ class TDataStd_LabelArray1 {
 };
 %extend TDataStd_LabelArray1 {
 	~TDataStd_LabelArray1() {
-	printf("Call custom destructor for instance of TDataStd_LabelArray1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_LabelArray1\n");}
 	}
 };
 
@@ -3116,7 +3116,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringByte {
 	~TDataStd_DataMapNodeOfDataMapOfStringByte() {
-	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringByte\n");}
 	}
 };
 
@@ -3142,7 +3142,7 @@ class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringReal {
 	~TDataStd_HDataMapOfStringReal() {
-	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringReal\n");}
 	}
 };
 
@@ -3178,7 +3178,7 @@ class TDataStd_Point : public TDF_Attribute {
 };
 %extend TDataStd_Point {
 	~TDataStd_Point() {
-	printf("Call custom destructor for instance of TDataStd_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Point\n");}
 	}
 };
 
@@ -3199,7 +3199,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_Basi
 };
 %extend TDataStd_DataMapIteratorOfDataMapOfStringInteger {
 	~TDataStd_DataMapIteratorOfDataMapOfStringInteger() {
-	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringInteger\n");}
 	}
 };
 
@@ -3239,7 +3239,7 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 };
 %extend TDataStd_HArray1OfTrsf {
 	~TDataStd_HArray1OfTrsf() {
-	printf("Call custom destructor for instance of TDataStd_HArray1OfTrsf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HArray1OfTrsf\n");}
 	}
 };
 
@@ -3295,7 +3295,7 @@ class TDataStd_IntegerList : public TDF_Attribute {
 };
 %extend TDataStd_IntegerList {
 	~TDataStd_IntegerList() {
-	printf("Call custom destructor for instance of TDataStd_IntegerList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_IntegerList\n");}
 	}
 };
 
@@ -3317,7 +3317,7 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfIntArray {
 	~TDataStd_DeltaOnModificationOfIntArray() {
-	printf("Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntArray\n");}
 	}
 };
 
@@ -3340,7 +3340,7 @@ class TDataStd_ListIteratorOfListOfByte {
 };
 %extend TDataStd_ListIteratorOfListOfByte {
 	~TDataStd_ListIteratorOfListOfByte() {
-	printf("Call custom destructor for instance of TDataStd_ListIteratorOfListOfByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ListIteratorOfListOfByte\n");}
 	}
 };
 
@@ -3398,7 +3398,7 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 };
 %extend TDataStd_ReferenceList {
 	~TDataStd_ReferenceList() {
-	printf("Call custom destructor for instance of TDataStd_ReferenceList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ReferenceList\n");}
 	}
 };
 
@@ -3422,7 +3422,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_Ma
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
 	~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal() {
-	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");}
 	}
 };
 
@@ -3455,7 +3455,7 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 };
 %extend TDataStd_DataMapOfStringString {
 	~TDataStd_DataMapOfStringString() {
-	printf("Call custom destructor for instance of TDataStd_DataMapOfStringString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringString\n");}
 	}
 };
 
@@ -3491,7 +3491,7 @@ class TDataStd_Plane : public TDF_Attribute {
 };
 %extend TDataStd_Plane {
 	~TDataStd_Plane() {
-	printf("Call custom destructor for instance of TDataStd_Plane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Plane\n");}
 	}
 };
 
@@ -3533,7 +3533,7 @@ class TDataStd_Current : public TDF_Attribute {
 };
 %extend TDataStd_Current {
 	~TDataStd_Current() {
-	printf("Call custom destructor for instance of TDataStd_Current\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Current\n");}
 	}
 };
 
@@ -3559,7 +3559,7 @@ class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringByte {
 	~TDataStd_HDataMapOfStringByte() {
-	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringByte\n");}
 	}
 };
 
@@ -3585,7 +3585,7 @@ class TDataStd_HDataMapOfStringString : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringString {
 	~TDataStd_HDataMapOfStringString() {
-	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringString\n");}
 	}
 };
 
@@ -3621,7 +3621,7 @@ class TDataStd_UAttribute : public TDF_Attribute {
 };
 %extend TDataStd_UAttribute {
 	~TDataStd_UAttribute() {
-	printf("Call custom destructor for instance of TDataStd_UAttribute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_UAttribute\n");}
 	}
 };
 
@@ -3661,7 +3661,7 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 };
 %extend TDataStd_HLabelArray1 {
 	~TDataStd_HLabelArray1() {
-	printf("Call custom destructor for instance of TDataStd_HLabelArray1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HLabelArray1\n");}
 	}
 };
 
@@ -3682,7 +3682,7 @@ class TDataStd {
 };
 %extend TDataStd {
 	~TDataStd() {
-	printf("Call custom destructor for instance of TDataStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd\n");}
 	}
 };
 
@@ -3715,7 +3715,7 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 };
 %extend TDataStd_DataMapOfStringInteger {
 	~TDataStd_DataMapOfStringInteger() {
-	printf("Call custom destructor for instance of TDataStd_DataMapOfStringInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringInteger\n");}
 	}
 };
 
@@ -3821,7 +3821,7 @@ class TDataStd_TreeNode : public TDF_Attribute {
 };
 %extend TDataStd_TreeNode {
 	~TDataStd_TreeNode() {
-	printf("Call custom destructor for instance of TDataStd_TreeNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_TreeNode\n");}
 	}
 };
 
@@ -3845,7 +3845,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
 	~TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger() {
-	printf("Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");}
 	}
 };
 
@@ -3879,7 +3879,7 @@ class TDataStd_Tick : public TDF_Attribute {
 };
 %extend TDataStd_Tick {
 	~TDataStd_Tick() {
-	printf("Call custom destructor for instance of TDataStd_Tick\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Tick\n");}
 	}
 };
 
@@ -3933,7 +3933,7 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 };
 %extend TDataStd_ReferenceArray {
 	~TDataStd_ReferenceArray() {
-	printf("Call custom destructor for instance of TDataStd_ReferenceArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ReferenceArray\n");}
 	}
 };
 
@@ -3971,7 +3971,7 @@ class TDataStd_Name : public TDF_Attribute {
 };
 %extend TDataStd_Name {
 	~TDataStd_Name() {
-	printf("Call custom destructor for instance of TDataStd_Name\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Name\n");}
 	}
 };
 
@@ -4029,7 +4029,7 @@ class TDataStd_RealArray : public TDF_Attribute {
 };
 %extend TDataStd_RealArray {
 	~TDataStd_RealArray() {
-	printf("Call custom destructor for instance of TDataStd_RealArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_RealArray\n");}
 	}
 };
 
@@ -4054,7 +4054,7 @@ class TDataStd_ChildNodeIterator {
 };
 %extend TDataStd_ChildNodeIterator {
 	~TDataStd_ChildNodeIterator() {
-	printf("Call custom destructor for instance of TDataStd_ChildNodeIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ChildNodeIterator\n");}
 	}
 };
 
@@ -4096,7 +4096,7 @@ class TDataStd_Directory : public TDF_Attribute {
 };
 %extend TDataStd_Directory {
 	~TDataStd_Directory() {
-	printf("Call custom destructor for instance of TDataStd_Directory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Directory\n");}
 	}
 };
 
@@ -4152,7 +4152,7 @@ class TDataStd_RealList : public TDF_Attribute {
 };
 %extend TDataStd_RealList {
 	~TDataStd_RealList() {
-	printf("Call custom destructor for instance of TDataStd_RealList\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_RealList\n");}
 	}
 };
 
@@ -4178,7 +4178,7 @@ class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringInteger {
 	~TDataStd_HDataMapOfStringInteger() {
-	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringInteger\n");}
 	}
 };
 
@@ -4211,7 +4211,7 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 };
 %extend TDataStd_DataMapOfStringHArray1OfReal {
 	~TDataStd_DataMapOfStringHArray1OfReal() {
-	printf("Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringHArray1OfReal\n");}
 	}
 };
 
@@ -4253,7 +4253,7 @@ class TDataStd_Comment : public TDF_Attribute {
 };
 %extend TDataStd_Comment {
 	~TDataStd_Comment() {
-	printf("Call custom destructor for instance of TDataStd_Comment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Comment\n");}
 	}
 };
 
@@ -4319,7 +4319,7 @@ class TDataStd_Variable : public TDF_Attribute {
 };
 %extend TDataStd_Variable {
 	~TDataStd_Variable() {
-	printf("Call custom destructor for instance of TDataStd_Variable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Variable\n");}
 	}
 };
 
@@ -4359,7 +4359,7 @@ class TDataStd_HArray1OfByte : public MMgt_TShared {
 };
 %extend TDataStd_HArray1OfByte {
 	~TDataStd_HArray1OfByte() {
-	printf("Call custom destructor for instance of TDataStd_HArray1OfByte\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HArray1OfByte\n");}
 	}
 };
 
@@ -4403,7 +4403,7 @@ class TDataStd_Real : public TDF_Attribute {
 };
 %extend TDataStd_Real {
 	~TDataStd_Real() {
-	printf("Call custom destructor for instance of TDataStd_Real\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Real\n");}
 	}
 };
 
@@ -4424,7 +4424,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollec
 };
 %extend TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger {
 	~TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger() {
-	printf("Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger\n");}
 	}
 };
 
@@ -4466,7 +4466,7 @@ class TDataStd_Shape : public TDF_Attribute {
 };
 %extend TDataStd_Shape {
 	~TDataStd_Shape() {
-	printf("Call custom destructor for instance of TDataStd_Shape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Shape\n");}
 	}
 };
 
@@ -4536,7 +4536,7 @@ class TDataStd_Geometry : public TDF_Attribute {
 };
 %extend TDataStd_Geometry {
 	~TDataStd_Geometry() {
-	printf("Call custom destructor for instance of TDataStd_Geometry\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Geometry\n");}
 	}
 };
 
@@ -4572,7 +4572,7 @@ class TDataStd_Axis : public TDF_Attribute {
 };
 %extend TDataStd_Axis {
 	~TDataStd_Axis() {
-	printf("Call custom destructor for instance of TDataStd_Axis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_Axis\n");}
 	}
 };
 
@@ -4630,7 +4630,7 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 };
 %extend TDataStd_ExtStringArray {
 	~TDataStd_ExtStringArray() {
-	printf("Call custom destructor for instance of TDataStd_ExtStringArray\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_ExtStringArray\n");}
 	}
 };
 
@@ -4656,6 +4656,6 @@ class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringHArray1OfReal {
 	~TDataStd_HDataMapOfStringHArray1OfReal() {
-	printf("Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfReal\n");}
 	}
 };

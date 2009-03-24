@@ -116,7 +116,7 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 };
 %extend Handle_gp_VectorWithNullMagnitude {
 	~Handle_gp_VectorWithNullMagnitude() {
-	printf("Call custom destructor for instance of Handle_gp_VectorWithNullMagnitude\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_gp_VectorWithNullMagnitude\n");}
 	}
 };
 
@@ -207,7 +207,7 @@ class gp_Cone {
 };
 %extend gp_Cone {
 	~gp_Cone() {
-	printf("Call custom destructor for instance of gp_Cone\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Cone\n");}
 	}
 };
 
@@ -288,7 +288,7 @@ class gp_Dir2d {
 };
 %extend gp_Dir2d {
 	~gp_Dir2d() {
-	printf("Call custom destructor for instance of gp_Dir2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Dir2d\n");}
 	}
 };
 
@@ -373,7 +373,7 @@ class gp_Parab2d {
 };
 %extend gp_Parab2d {
 	~gp_Parab2d() {
-	printf("Call custom destructor for instance of gp_Parab2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Parab2d\n");}
 	}
 };
 
@@ -401,7 +401,7 @@ class gp_VectorWithNullMagnitude : public Standard_DomainError {
 };
 %extend gp_VectorWithNullMagnitude {
 	~gp_VectorWithNullMagnitude() {
-	printf("Call custom destructor for instance of gp_VectorWithNullMagnitude\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_VectorWithNullMagnitude\n");}
 	}
 };
 
@@ -476,7 +476,7 @@ class gp_Ax22d {
 };
 %extend gp_Ax22d {
 	~gp_Ax22d() {
-	printf("Call custom destructor for instance of gp_Ax22d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Ax22d\n");}
 	}
 };
 
@@ -617,7 +617,7 @@ class gp_XYZ {
 };
 %extend gp_XYZ {
 	~gp_XYZ() {
-	printf("Call custom destructor for instance of gp_XYZ\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_XYZ\n");}
 	}
 };
 
@@ -722,7 +722,7 @@ class gp_Mat2d {
 };
 %extend gp_Mat2d {
 	~gp_Mat2d() {
-	printf("Call custom destructor for instance of gp_Mat2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Mat2d\n");}
 	}
 };
 
@@ -861,7 +861,7 @@ class gp_Vec2d {
 };
 %extend gp_Vec2d {
 	~gp_Vec2d() {
-	printf("Call custom destructor for instance of gp_Vec2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Vec2d\n");}
 	}
 };
 
@@ -958,7 +958,7 @@ class gp_Elips {
 };
 %extend gp_Elips {
 	~gp_Elips() {
-	printf("Call custom destructor for instance of gp_Elips\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Elips\n");}
 	}
 };
 
@@ -1121,7 +1121,7 @@ class gp_Vec {
 };
 %extend gp_Vec {
 	~gp_Vec() {
-	printf("Call custom destructor for instance of gp_Vec\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Vec\n");}
 	}
 };
 
@@ -1202,7 +1202,7 @@ class gp_Ax2 {
 };
 %extend gp_Ax2 {
 	~gp_Ax2() {
-	printf("Call custom destructor for instance of gp_Ax2\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Ax2\n");}
 	}
 };
 
@@ -1295,7 +1295,7 @@ class gp_Torus {
 };
 %extend gp_Torus {
 	~gp_Torus() {
-	printf("Call custom destructor for instance of gp_Torus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Torus\n");}
 	}
 };
 
@@ -1396,7 +1396,7 @@ class gp_Dir {
 };
 %extend gp_Dir {
 	~gp_Dir() {
-	printf("Call custom destructor for instance of gp_Dir\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Dir\n");}
 	}
 };
 
@@ -1487,7 +1487,7 @@ class gp_Circ2d {
 };
 %extend gp_Circ2d {
 	~gp_Circ2d() {
-	printf("Call custom destructor for instance of gp_Circ2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Circ2d\n");}
 	}
 };
 
@@ -1568,7 +1568,7 @@ class gp_Lin {
 };
 %extend gp_Lin {
 	~gp_Lin() {
-	printf("Call custom destructor for instance of gp_Lin\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Lin\n");}
 	}
 };
 
@@ -1689,7 +1689,7 @@ class gp_XY {
 };
 %extend gp_XY {
 	~gp_XY() {
-	printf("Call custom destructor for instance of gp_XY\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_XY\n");}
 	}
 };
 
@@ -1770,7 +1770,7 @@ class gp_Lin2d {
 };
 %extend gp_Lin2d {
 	~gp_Lin2d() {
-	printf("Call custom destructor for instance of gp_Lin2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Lin2d\n");}
 	}
 };
 
@@ -1875,7 +1875,7 @@ class gp_Hypr {
 };
 %extend gp_Hypr {
 	~gp_Hypr() {
-	printf("Call custom destructor for instance of gp_Hypr\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Hypr\n");}
 	}
 };
 
@@ -1978,7 +1978,7 @@ class gp_Elips2d {
 };
 %extend gp_Elips2d {
 	~gp_Elips2d() {
-	printf("Call custom destructor for instance of gp_Elips2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Elips2d\n");}
 	}
 };
 
@@ -2069,7 +2069,7 @@ class gp_Trsf {
 };
 %extend gp_Trsf {
 	~gp_Trsf() {
-	printf("Call custom destructor for instance of gp_Trsf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Trsf\n");}
 	}
 };
 
@@ -2180,7 +2180,7 @@ class gp_Hypr2d {
 };
 %extend gp_Hypr2d {
 	~gp_Hypr2d() {
-	printf("Call custom destructor for instance of gp_Hypr2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Hypr2d\n");}
 	}
 };
 
@@ -2265,7 +2265,7 @@ class gp_Trsf2d {
 };
 %extend gp_Trsf2d {
 	~gp_Trsf2d() {
-	printf("Call custom destructor for instance of gp_Trsf2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Trsf2d\n");}
 	}
 };
 
@@ -2346,7 +2346,7 @@ class gp_Parab {
 };
 %extend gp_Parab {
 	~gp_Parab() {
-	printf("Call custom destructor for instance of gp_Parab\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Parab\n");}
 	}
 };
 
@@ -2427,7 +2427,7 @@ class gp_Cylinder {
 };
 %extend gp_Cylinder {
 	~gp_Cylinder() {
-	printf("Call custom destructor for instance of gp_Cylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Cylinder\n");}
 	}
 };
 
@@ -2500,7 +2500,7 @@ class gp_Ax1 {
 };
 %extend gp_Ax1 {
 	~gp_Ax1() {
-	printf("Call custom destructor for instance of gp_Ax1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Ax1\n");}
 	}
 };
 
@@ -2581,7 +2581,7 @@ class gp_Sphere {
 };
 %extend gp_Sphere {
 	~gp_Sphere() {
-	printf("Call custom destructor for instance of gp_Sphere\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Sphere\n");}
 	}
 };
 
@@ -2658,7 +2658,7 @@ class gp_GTrsf {
 };
 %extend gp_GTrsf {
 	~gp_GTrsf() {
-	printf("Call custom destructor for instance of gp_GTrsf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_GTrsf\n");}
 	}
 };
 
@@ -2751,7 +2751,7 @@ class gp_Pln {
 };
 %extend gp_Pln {
 	~gp_Pln() {
-	printf("Call custom destructor for instance of gp_Pln\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Pln\n");}
 	}
 };
 
@@ -2844,7 +2844,7 @@ class gp_Ax3 {
 };
 %extend gp_Ax3 {
 	~gp_Ax3() {
-	printf("Call custom destructor for instance of gp_Ax3\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Ax3\n");}
 	}
 };
 
@@ -2931,7 +2931,7 @@ class gp_Pnt {
 };
 %extend gp_Pnt {
 	~gp_Pnt() {
-	printf("Call custom destructor for instance of gp_Pnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Pnt\n");}
 	}
 };
 
@@ -3008,7 +3008,7 @@ class gp_Pnt2d {
 };
 %extend gp_Pnt2d {
 	~gp_Pnt2d() {
-	printf("Call custom destructor for instance of gp_Pnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Pnt2d\n");}
 	}
 };
 
@@ -3091,7 +3091,7 @@ class gp_Circ {
 };
 %extend gp_Circ {
 	~gp_Circ() {
-	printf("Call custom destructor for instance of gp_Circ\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Circ\n");}
 	}
 };
 
@@ -3204,7 +3204,7 @@ class gp_Mat {
 };
 %extend gp_Mat {
 	~gp_Mat() {
-	printf("Call custom destructor for instance of gp_Mat\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Mat\n");}
 	}
 };
 
@@ -3273,7 +3273,7 @@ class gp_Ax2d {
 };
 %extend gp_Ax2d {
 	~gp_Ax2d() {
-	printf("Call custom destructor for instance of gp_Ax2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_Ax2d\n");}
 	}
 };
 
@@ -3318,7 +3318,7 @@ class gp {
 };
 %extend gp {
 	~gp() {
-	printf("Call custom destructor for instance of gp\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp\n");}
 	}
 };
 
@@ -3397,6 +3397,6 @@ class gp_GTrsf2d {
 };
 %extend gp_GTrsf2d {
 	~gp_GTrsf2d() {
-	printf("Call custom destructor for instance of gp_GTrsf2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gp_GTrsf2d\n");}
 	}
 };

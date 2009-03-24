@@ -95,7 +95,7 @@ class SortTools_QuickSortOfReal {
 };
 %extend SortTools_QuickSortOfReal {
 	~SortTools_QuickSortOfReal() {
-	printf("Call custom destructor for instance of SortTools_QuickSortOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SortTools_QuickSortOfReal\n");}
 	}
 };
 
@@ -110,7 +110,7 @@ class SortTools_HeapSortOfInteger {
 };
 %extend SortTools_HeapSortOfInteger {
 	~SortTools_HeapSortOfInteger() {
-	printf("Call custom destructor for instance of SortTools_HeapSortOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SortTools_HeapSortOfInteger\n");}
 	}
 };
 
@@ -125,7 +125,7 @@ class SortTools_StraightInsertionSortOfInteger {
 };
 %extend SortTools_StraightInsertionSortOfInteger {
 	~SortTools_StraightInsertionSortOfInteger() {
-	printf("Call custom destructor for instance of SortTools_StraightInsertionSortOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SortTools_StraightInsertionSortOfInteger\n");}
 	}
 };
 
@@ -140,7 +140,7 @@ class SortTools_HeapSortOfReal {
 };
 %extend SortTools_HeapSortOfReal {
 	~SortTools_HeapSortOfReal() {
-	printf("Call custom destructor for instance of SortTools_HeapSortOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SortTools_HeapSortOfReal\n");}
 	}
 };
 
@@ -155,7 +155,7 @@ class SortTools_StraightInsertionSortOfReal {
 };
 %extend SortTools_StraightInsertionSortOfReal {
 	~SortTools_StraightInsertionSortOfReal() {
-	printf("Call custom destructor for instance of SortTools_StraightInsertionSortOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SortTools_StraightInsertionSortOfReal\n");}
 	}
 };
 
@@ -170,7 +170,7 @@ class SortTools_QuickSortOfInteger {
 };
 %extend SortTools_QuickSortOfInteger {
 	~SortTools_QuickSortOfInteger() {
-	printf("Call custom destructor for instance of SortTools_QuickSortOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SortTools_QuickSortOfInteger\n");}
 	}
 };
 
@@ -185,7 +185,7 @@ class SortTools_ShellSortOfReal {
 };
 %extend SortTools_ShellSortOfReal {
 	~SortTools_ShellSortOfReal() {
-	printf("Call custom destructor for instance of SortTools_ShellSortOfReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SortTools_ShellSortOfReal\n");}
 	}
 };
 
@@ -200,6 +200,6 @@ class SortTools_ShellSortOfInteger {
 };
 %extend SortTools_ShellSortOfInteger {
 	~SortTools_ShellSortOfInteger() {
-	printf("Call custom destructor for instance of SortTools_ShellSortOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of SortTools_ShellSortOfInteger\n");}
 	}
 };

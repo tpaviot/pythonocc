@@ -113,7 +113,7 @@ class BRepGProp_Sinert : public GProp_GProps {
 };
 %extend BRepGProp_Sinert {
 	~BRepGProp_Sinert() {
-	printf("Call custom destructor for instance of BRepGProp_Sinert\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp_Sinert\n");}
 	}
 };
 
@@ -140,7 +140,7 @@ class BRepGProp {
 };
 %extend BRepGProp {
 	~BRepGProp() {
-	printf("Call custom destructor for instance of BRepGProp\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp\n");}
 	}
 };
 
@@ -167,7 +167,7 @@ class BRepGProp_EdgeTool {
 };
 %extend BRepGProp_EdgeTool {
 	~BRepGProp_EdgeTool() {
-	printf("Call custom destructor for instance of BRepGProp_EdgeTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp_EdgeTool\n");}
 	}
 };
 
@@ -232,7 +232,7 @@ class BRepGProp_Vinert : public GProp_GProps {
 };
 %extend BRepGProp_Vinert {
 	~BRepGProp_Vinert() {
-	printf("Call custom destructor for instance of BRepGProp_Vinert\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp_Vinert\n");}
 	}
 };
 
@@ -251,7 +251,7 @@ class BRepGProp_UFunctionOfVinertGK : public math_Function {
 };
 %extend BRepGProp_UFunctionOfVinertGK {
 	~BRepGProp_UFunctionOfVinertGK() {
-	printf("Call custom destructor for instance of BRepGProp_UFunctionOfVinertGK\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp_UFunctionOfVinertGK\n");}
 	}
 };
 
@@ -270,7 +270,7 @@ class BRepGProp_Cinert : public GProp_GProps {
 };
 %extend BRepGProp_Cinert {
 	~BRepGProp_Cinert() {
-	printf("Call custom destructor for instance of BRepGProp_Cinert\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp_Cinert\n");}
 	}
 };
 
@@ -295,7 +295,7 @@ class BRepGProp_Domain {
 };
 %extend BRepGProp_Domain {
 	~BRepGProp_Domain() {
-	printf("Call custom destructor for instance of BRepGProp_Domain\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp_Domain\n");}
 	}
 };
 
@@ -324,7 +324,7 @@ class BRepGProp_TFunctionOfVinertGK : public math_Function {
 };
 %extend BRepGProp_TFunctionOfVinertGK {
 	~BRepGProp_TFunctionOfVinertGK() {
-	printf("Call custom destructor for instance of BRepGProp_TFunctionOfVinertGK\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp_TFunctionOfVinertGK\n");}
 	}
 };
 
@@ -385,6 +385,6 @@ class BRepGProp_Face {
 };
 %extend BRepGProp_Face {
 	~BRepGProp_Face() {
-	printf("Call custom destructor for instance of BRepGProp_Face\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepGProp_Face\n");}
 	}
 };

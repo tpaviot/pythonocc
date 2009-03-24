@@ -111,7 +111,7 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 };
 %extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
 	~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
-	printf("Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");}
 	}
 };
 
@@ -135,7 +135,7 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 };
 %extend Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
 	~Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString() {
-	printf("Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");}
 	}
 };
 
@@ -159,7 +159,7 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 };
 %extend Handle_Resource_NoSuchResource {
 	~Handle_Resource_NoSuchResource() {
-	printf("Call custom destructor for instance of Handle_Resource_NoSuchResource\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Resource_NoSuchResource\n");}
 	}
 };
 
@@ -183,7 +183,7 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 };
 %extend Handle_Resource_Manager {
 	~Handle_Resource_Manager() {
-	printf("Call custom destructor for instance of Handle_Resource_Manager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Resource_Manager\n");}
 	}
 };
 
@@ -216,7 +216,7 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 };
 %extend Resource_DataMapOfAsciiStringAsciiString {
 	~Resource_DataMapOfAsciiStringAsciiString() {
-	printf("Call custom destructor for instance of Resource_DataMapOfAsciiStringAsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_DataMapOfAsciiStringAsciiString\n");}
 	}
 };
 
@@ -255,7 +255,7 @@ class Resource_Array1OfAsciiString {
 };
 %extend Resource_Array1OfAsciiString {
 	~Resource_Array1OfAsciiString() {
-	printf("Call custom destructor for instance of Resource_Array1OfAsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_Array1OfAsciiString\n");}
 	}
 };
 
@@ -276,7 +276,7 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCol
 };
 %extend Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString {
 	~Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString() {
-	printf("Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString\n");}
 	}
 };
 
@@ -300,7 +300,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
 	~Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString() {
-	printf("Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");}
 	}
 };
 
@@ -342,7 +342,7 @@ class Resource_Manager : public MMgt_TShared {
 };
 %extend Resource_Manager {
 	~Resource_Manager() {
-	printf("Call custom destructor for instance of Resource_Manager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_Manager\n");}
 	}
 };
 
@@ -381,7 +381,7 @@ class Resource_Unicode {
 };
 %extend Resource_Unicode {
 	~Resource_Unicode() {
-	printf("Call custom destructor for instance of Resource_Unicode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_Unicode\n");}
 	}
 };
 
@@ -396,7 +396,7 @@ class Resource_QuickSortOfArray1 {
 };
 %extend Resource_QuickSortOfArray1 {
 	~Resource_QuickSortOfArray1() {
-	printf("Call custom destructor for instance of Resource_QuickSortOfArray1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_QuickSortOfArray1\n");}
 	}
 };
 
@@ -411,7 +411,7 @@ class Resource_LexicalCompare {
 };
 %extend Resource_LexicalCompare {
 	~Resource_LexicalCompare() {
-	printf("Call custom destructor for instance of Resource_LexicalCompare\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_LexicalCompare\n");}
 	}
 };
 
@@ -435,7 +435,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
 	~Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString() {
-	printf("Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");}
 	}
 };
 
@@ -463,7 +463,7 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 };
 %extend Resource_NoSuchResource {
 	~Resource_NoSuchResource() {
-	printf("Call custom destructor for instance of Resource_NoSuchResource\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_NoSuchResource\n");}
 	}
 };
 
@@ -496,7 +496,7 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 };
 %extend Resource_DataMapOfAsciiStringExtendedString {
 	~Resource_DataMapOfAsciiStringExtendedString() {
-	printf("Call custom destructor for instance of Resource_DataMapOfAsciiStringExtendedString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_DataMapOfAsciiStringExtendedString\n");}
 	}
 };
 
@@ -517,6 +517,6 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollec
 };
 %extend Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString {
 	~Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString() {
-	printf("Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString\n");}
 	}
 };

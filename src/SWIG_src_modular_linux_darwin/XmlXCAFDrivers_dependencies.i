@@ -19,10 +19,10 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
+#include <Handle_XmlDrivers_DocumentRetrievalDriver.hxx>
+#include <Handle_XmlDrivers_DocumentStorageDriver.hxx>
 #include <XmlDrivers_DocumentRetrievalDriver.hxx>
 #include <XmlDrivers_DocumentStorageDriver.hxx>
-#include <Handle_XmlDrivers_DocumentStorageDriver.hxx>
-#include <Handle_XmlDrivers_DocumentRetrievalDriver.hxx>
 %};
 
 %import XmlDrivers.i

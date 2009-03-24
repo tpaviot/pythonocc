@@ -104,7 +104,7 @@ class Handle_IGESGeom_BoundedSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_BoundedSurface {
 	~Handle_IGESGeom_BoundedSurface() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_BoundedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_BoundedSurface\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_IGESGeom_SurfaceOfRevolution : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_SurfaceOfRevolution {
 	~Handle_IGESGeom_SurfaceOfRevolution() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_SurfaceOfRevolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_SurfaceOfRevolution\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_IGESGeom_Boundary : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_Boundary {
 	~Handle_IGESGeom_Boundary() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_Boundary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Boundary\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_Flash {
 	~Handle_IGESGeom_Flash() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_Flash\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Flash\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_IGESGeom_CurveOnSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_CurveOnSurface {
 	~Handle_IGESGeom_CurveOnSurface() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_CurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_CurveOnSurface\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %extend Handle_IGESGeom_SpecificModule {
 	~Handle_IGESGeom_SpecificModule() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_SpecificModule\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Handle_IGESGeom_HArray1OfBoundary : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESGeom_HArray1OfBoundary {
 	~Handle_IGESGeom_HArray1OfBoundary() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_HArray1OfBoundary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_HArray1OfBoundary\n");}
 	}
 };
 
@@ -272,7 +272,7 @@ class Handle_IGESGeom_CompositeCurve : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_CompositeCurve {
 	~Handle_IGESGeom_CompositeCurve() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_CompositeCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_CompositeCurve\n");}
 	}
 };
 
@@ -296,7 +296,7 @@ class Handle_IGESGeom_HArray1OfCurveOnSurface : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESGeom_HArray1OfCurveOnSurface {
 	~Handle_IGESGeom_HArray1OfCurveOnSurface() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_HArray1OfCurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_HArray1OfCurveOnSurface\n");}
 	}
 };
 
@@ -320,7 +320,7 @@ class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_Line {
 	~Handle_IGESGeom_Line() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_Line\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Line\n");}
 	}
 };
 
@@ -344,7 +344,7 @@ class Handle_IGESGeom_TransformationMatrix : public Handle_IGESData_TransfEntity
 };
 %extend Handle_IGESGeom_TransformationMatrix {
 	~Handle_IGESGeom_TransformationMatrix() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_TransformationMatrix\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_TransformationMatrix\n");}
 	}
 };
 
@@ -368,7 +368,7 @@ class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_RuledSurface {
 	~Handle_IGESGeom_RuledSurface() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_RuledSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_RuledSurface\n");}
 	}
 };
 
@@ -392,7 +392,7 @@ class Handle_IGESGeom_Plane : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_Plane {
 	~Handle_IGESGeom_Plane() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_Plane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Plane\n");}
 	}
 };
 
@@ -416,7 +416,7 @@ class Handle_IGESGeom_BSplineCurve : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_BSplineCurve {
 	~Handle_IGESGeom_BSplineCurve() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_BSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_BSplineCurve\n");}
 	}
 };
 
@@ -440,7 +440,7 @@ class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_BSplineSurface {
 	~Handle_IGESGeom_BSplineSurface() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_BSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_BSplineSurface\n");}
 	}
 };
 
@@ -464,7 +464,7 @@ class Handle_IGESGeom_Protocol : public Handle_IGESData_Protocol {
 };
 %extend Handle_IGESGeom_Protocol {
 	~Handle_IGESGeom_Protocol() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_Protocol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Protocol\n");}
 	}
 };
 
@@ -488,7 +488,7 @@ class Handle_IGESGeom_ConicArc : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_ConicArc {
 	~Handle_IGESGeom_ConicArc() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_ConicArc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_ConicArc\n");}
 	}
 };
 
@@ -512,7 +512,7 @@ class Handle_IGESGeom_OffsetSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_OffsetSurface {
 	~Handle_IGESGeom_OffsetSurface() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_OffsetSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_OffsetSurface\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class Handle_IGESGeom_TrimmedSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_TrimmedSurface {
 	~Handle_IGESGeom_TrimmedSurface() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_TrimmedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_TrimmedSurface\n");}
 	}
 };
 
@@ -560,7 +560,7 @@ class Handle_IGESGeom_SplineCurve : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_SplineCurve {
 	~Handle_IGESGeom_SplineCurve() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_SplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_SplineCurve\n");}
 	}
 };
 
@@ -584,7 +584,7 @@ class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 };
 %extend Handle_IGESGeom_ReadWriteModule {
 	~Handle_IGESGeom_ReadWriteModule() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_ReadWriteModule\n");}
 	}
 };
 
@@ -608,7 +608,7 @@ class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_CircularArc {
 	~Handle_IGESGeom_CircularArc() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_CircularArc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_CircularArc\n");}
 	}
 };
 
@@ -632,7 +632,7 @@ class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_Direction {
 	~Handle_IGESGeom_Direction() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_Direction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Direction\n");}
 	}
 };
 
@@ -656,7 +656,7 @@ class Handle_IGESGeom_Point : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_Point {
 	~Handle_IGESGeom_Point() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Point\n");}
 	}
 };
 
@@ -680,7 +680,7 @@ class Handle_IGESGeom_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %extend Handle_IGESGeom_GeneralModule {
 	~Handle_IGESGeom_GeneralModule() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_GeneralModule\n");}
 	}
 };
 
@@ -704,7 +704,7 @@ class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_OffsetCurve {
 	~Handle_IGESGeom_OffsetCurve() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_OffsetCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_OffsetCurve\n");}
 	}
 };
 
@@ -728,7 +728,7 @@ class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_SplineSurface {
 	~Handle_IGESGeom_SplineSurface() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_SplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_SplineSurface\n");}
 	}
 };
 
@@ -752,7 +752,7 @@ class Handle_IGESGeom_CopiousData : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_CopiousData {
 	~Handle_IGESGeom_CopiousData() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_CopiousData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_CopiousData\n");}
 	}
 };
 
@@ -776,7 +776,7 @@ class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared
 };
 %extend Handle_IGESGeom_HArray1OfTransformationMatrix {
 	~Handle_IGESGeom_HArray1OfTransformationMatrix() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_HArray1OfTransformationMatrix\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_HArray1OfTransformationMatrix\n");}
 	}
 };
 
@@ -800,7 +800,7 @@ class Handle_IGESGeom_TabulatedCylinder : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESGeom_TabulatedCylinder {
 	~Handle_IGESGeom_TabulatedCylinder() {
-	printf("Call custom destructor for instance of Handle_IGESGeom_TabulatedCylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_TabulatedCylinder\n");}
 	}
 };
 
@@ -829,7 +829,7 @@ class IGESGeom_ToolBoundary {
 };
 %extend IGESGeom_ToolBoundary {
 	~IGESGeom_ToolBoundary() {
-	printf("Call custom destructor for instance of IGESGeom_ToolBoundary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolBoundary\n");}
 	}
 };
 
@@ -863,7 +863,7 @@ class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_TrimmedSurface {
 	~IGESGeom_TrimmedSurface() {
-	printf("Call custom destructor for instance of IGESGeom_TrimmedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_TrimmedSurface\n");}
 	}
 };
 
@@ -889,7 +889,7 @@ class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESGeom_ReadWriteModule {
 	~IGESGeom_ReadWriteModule() {
-	printf("Call custom destructor for instance of IGESGeom_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ReadWriteModule\n");}
 	}
 };
 
@@ -929,7 +929,7 @@ class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
 };
 %extend IGESGeom_HArray1OfTransformationMatrix {
 	~IGESGeom_HArray1OfTransformationMatrix() {
-	printf("Call custom destructor for instance of IGESGeom_HArray1OfTransformationMatrix\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_HArray1OfTransformationMatrix\n");}
 	}
 };
 
@@ -975,7 +975,7 @@ class IGESGeom_CircularArc : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CircularArc {
 	~IGESGeom_CircularArc() {
-	printf("Call custom destructor for instance of IGESGeom_CircularArc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_CircularArc\n");}
 	}
 };
 
@@ -1005,7 +1005,7 @@ class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 };
 %extend IGESGeom_SurfaceOfRevolution {
 	~IGESGeom_SurfaceOfRevolution() {
-	printf("Call custom destructor for instance of IGESGeom_SurfaceOfRevolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_SurfaceOfRevolution\n");}
 	}
 };
 
@@ -1033,7 +1033,7 @@ class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
 };
 %extend IGESGeom_TabulatedCylinder {
 	~IGESGeom_TabulatedCylinder() {
-	printf("Call custom destructor for instance of IGESGeom_TabulatedCylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_TabulatedCylinder\n");}
 	}
 };
 
@@ -1073,7 +1073,7 @@ class IGESGeom_Boundary : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Boundary {
 	~IGESGeom_Boundary() {
-	printf("Call custom destructor for instance of IGESGeom_Boundary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Boundary\n");}
 	}
 };
 
@@ -1141,7 +1141,7 @@ class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_BSplineSurface {
 	~IGESGeom_BSplineSurface() {
-	printf("Call custom destructor for instance of IGESGeom_BSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_BSplineSurface\n");}
 	}
 };
 
@@ -1168,7 +1168,7 @@ class IGESGeom_ToolOffsetSurface {
 };
 %extend IGESGeom_ToolOffsetSurface {
 	~IGESGeom_ToolOffsetSurface() {
-	printf("Call custom destructor for instance of IGESGeom_ToolOffsetSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolOffsetSurface\n");}
 	}
 };
 
@@ -1202,7 +1202,7 @@ class IGESGeom_Line : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Line {
 	~IGESGeom_Line() {
-	printf("Call custom destructor for instance of IGESGeom_Line\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Line\n");}
 	}
 };
 
@@ -1229,7 +1229,7 @@ class IGESGeom_ToolCopiousData {
 };
 %extend IGESGeom_ToolCopiousData {
 	~IGESGeom_ToolCopiousData() {
-	printf("Call custom destructor for instance of IGESGeom_ToolCopiousData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolCopiousData\n");}
 	}
 };
 
@@ -1261,7 +1261,7 @@ class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CurveOnSurface {
 	~IGESGeom_CurveOnSurface() {
-	printf("Call custom destructor for instance of IGESGeom_CurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_CurveOnSurface\n");}
 	}
 };
 
@@ -1288,7 +1288,7 @@ class IGESGeom_ToolSplineCurve {
 };
 %extend IGESGeom_ToolSplineCurve {
 	~IGESGeom_ToolSplineCurve() {
-	printf("Call custom destructor for instance of IGESGeom_ToolSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolSplineCurve\n");}
 	}
 };
 
@@ -1318,7 +1318,7 @@ class IGESGeom_BoundedSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_BoundedSurface {
 	~IGESGeom_BoundedSurface() {
-	printf("Call custom destructor for instance of IGESGeom_BoundedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_BoundedSurface\n");}
 	}
 };
 
@@ -1352,7 +1352,7 @@ class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_RuledSurface {
 	~IGESGeom_RuledSurface() {
-	printf("Call custom destructor for instance of IGESGeom_RuledSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_RuledSurface\n");}
 	}
 };
 
@@ -1381,7 +1381,7 @@ class IGESGeom_ToolFlash {
 };
 %extend IGESGeom_ToolFlash {
 	~IGESGeom_ToolFlash() {
-	printf("Call custom destructor for instance of IGESGeom_ToolFlash\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolFlash\n");}
 	}
 };
 
@@ -1408,7 +1408,7 @@ class IGESGeom_ToolTabulatedCylinder {
 };
 %extend IGESGeom_ToolTabulatedCylinder {
 	~IGESGeom_ToolTabulatedCylinder() {
-	printf("Call custom destructor for instance of IGESGeom_ToolTabulatedCylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolTabulatedCylinder\n");}
 	}
 };
 
@@ -1437,7 +1437,7 @@ class IGESGeom_ToolConicArc {
 };
 %extend IGESGeom_ToolConicArc {
 	~IGESGeom_ToolConicArc() {
-	printf("Call custom destructor for instance of IGESGeom_ToolConicArc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolConicArc\n");}
 	}
 };
 
@@ -1467,7 +1467,7 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_OffsetSurface {
 	~IGESGeom_OffsetSurface() {
-	printf("Call custom destructor for instance of IGESGeom_OffsetSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_OffsetSurface\n");}
 	}
 };
 
@@ -1494,7 +1494,7 @@ class IGESGeom_ToolDirection {
 };
 %extend IGESGeom_ToolDirection {
 	~IGESGeom_ToolDirection() {
-	printf("Call custom destructor for instance of IGESGeom_ToolDirection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolDirection\n");}
 	}
 };
 
@@ -1533,7 +1533,7 @@ class IGESGeom_Array1OfCurveOnSurface {
 };
 %extend IGESGeom_Array1OfCurveOnSurface {
 	~IGESGeom_Array1OfCurveOnSurface() {
-	printf("Call custom destructor for instance of IGESGeom_Array1OfCurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Array1OfCurveOnSurface\n");}
 	}
 };
 
@@ -1550,7 +1550,7 @@ class IGESGeom {
 };
 %extend IGESGeom {
 	~IGESGeom() {
-	printf("Call custom destructor for instance of IGESGeom\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom\n");}
 	}
 };
 
@@ -1577,7 +1577,7 @@ class IGESGeom_ToolCircularArc {
 };
 %extend IGESGeom_ToolCircularArc {
 	~IGESGeom_ToolCircularArc() {
-	printf("Call custom destructor for instance of IGESGeom_ToolCircularArc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolCircularArc\n");}
 	}
 };
 
@@ -1604,7 +1604,7 @@ class IGESGeom_ToolSplineSurface {
 };
 %extend IGESGeom_ToolSplineSurface {
 	~IGESGeom_ToolSplineSurface() {
-	printf("Call custom destructor for instance of IGESGeom_ToolSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolSplineSurface\n");}
 	}
 };
 
@@ -1646,7 +1646,7 @@ class IGESGeom_SplineSurface : public IGESData_IGESEntity {
 };
 %extend IGESGeom_SplineSurface {
 	~IGESGeom_SplineSurface() {
-	printf("Call custom destructor for instance of IGESGeom_SplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_SplineSurface\n");}
 	}
 };
 
@@ -1686,7 +1686,7 @@ class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 };
 %extend IGESGeom_HArray1OfBoundary {
 	~IGESGeom_HArray1OfBoundary() {
-	printf("Call custom destructor for instance of IGESGeom_HArray1OfBoundary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_HArray1OfBoundary\n");}
 	}
 };
 
@@ -1715,7 +1715,7 @@ class IGESGeom_ToolCurveOnSurface {
 };
 %extend IGESGeom_ToolCurveOnSurface {
 	~IGESGeom_ToolCurveOnSurface() {
-	printf("Call custom destructor for instance of IGESGeom_ToolCurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolCurveOnSurface\n");}
 	}
 };
 
@@ -1742,7 +1742,7 @@ class IGESGeom_ToolRuledSurface {
 };
 %extend IGESGeom_ToolRuledSurface {
 	~IGESGeom_ToolRuledSurface() {
-	printf("Call custom destructor for instance of IGESGeom_ToolRuledSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolRuledSurface\n");}
 	}
 };
 
@@ -1781,7 +1781,7 @@ class IGESGeom_Array1OfBoundary {
 };
 %extend IGESGeom_Array1OfBoundary {
 	~IGESGeom_Array1OfBoundary() {
-	printf("Call custom destructor for instance of IGESGeom_Array1OfBoundary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Array1OfBoundary\n");}
 	}
 };
 
@@ -1835,7 +1835,7 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_BSplineCurve {
 	~IGESGeom_BSplineCurve() {
-	printf("Call custom destructor for instance of IGESGeom_BSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_BSplineCurve\n");}
 	}
 };
 
@@ -1862,7 +1862,7 @@ class IGESGeom_ToolBSplineCurve {
 };
 %extend IGESGeom_ToolBSplineCurve {
 	~IGESGeom_ToolBSplineCurve() {
-	printf("Call custom destructor for instance of IGESGeom_ToolBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolBSplineCurve\n");}
 	}
 };
 
@@ -1889,7 +1889,7 @@ class IGESGeom_ToolPlane {
 };
 %extend IGESGeom_ToolPlane {
 	~IGESGeom_ToolPlane() {
-	printf("Call custom destructor for instance of IGESGeom_ToolPlane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolPlane\n");}
 	}
 };
 
@@ -1915,7 +1915,7 @@ class IGESGeom_CompositeCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CompositeCurve {
 	~IGESGeom_CompositeCurve() {
-	printf("Call custom destructor for instance of IGESGeom_CompositeCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_CompositeCurve\n");}
 	}
 };
 
@@ -1944,7 +1944,7 @@ class IGESGeom_ToolTransformationMatrix {
 };
 %extend IGESGeom_ToolTransformationMatrix {
 	~IGESGeom_ToolTransformationMatrix() {
-	printf("Call custom destructor for instance of IGESGeom_ToolTransformationMatrix\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolTransformationMatrix\n");}
 	}
 };
 
@@ -1968,7 +1968,7 @@ class IGESGeom_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESGeom_SpecificModule {
 	~IGESGeom_SpecificModule() {
-	printf("Call custom destructor for instance of IGESGeom_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_SpecificModule\n");}
 	}
 };
 
@@ -2024,7 +2024,7 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 };
 %extend IGESGeom_ConicArc {
 	~IGESGeom_ConicArc() {
-	printf("Call custom destructor for instance of IGESGeom_ConicArc\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ConicArc\n");}
 	}
 };
 
@@ -2056,7 +2056,7 @@ class IGESGeom_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESGeom_GeneralModule {
 	~IGESGeom_GeneralModule() {
-	printf("Call custom destructor for instance of IGESGeom_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_GeneralModule\n");}
 	}
 };
 
@@ -2084,7 +2084,7 @@ class IGESGeom_TransformationMatrix : public IGESData_TransfEntity {
 };
 %extend IGESGeom_TransformationMatrix {
 	~IGESGeom_TransformationMatrix() {
-	printf("Call custom destructor for instance of IGESGeom_TransformationMatrix\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_TransformationMatrix\n");}
 	}
 };
 
@@ -2124,7 +2124,7 @@ class IGESGeom_HArray1OfCurveOnSurface : public MMgt_TShared {
 };
 %extend IGESGeom_HArray1OfCurveOnSurface {
 	~IGESGeom_HArray1OfCurveOnSurface() {
-	printf("Call custom destructor for instance of IGESGeom_HArray1OfCurveOnSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_HArray1OfCurveOnSurface\n");}
 	}
 };
 
@@ -2172,7 +2172,7 @@ class IGESGeom_CopiousData : public IGESData_IGESEntity {
 };
 %extend IGESGeom_CopiousData {
 	~IGESGeom_CopiousData() {
-	printf("Call custom destructor for instance of IGESGeom_CopiousData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_CopiousData\n");}
 	}
 };
 
@@ -2199,7 +2199,7 @@ class IGESGeom_ToolLine {
 };
 %extend IGESGeom_ToolLine {
 	~IGESGeom_ToolLine() {
-	printf("Call custom destructor for instance of IGESGeom_ToolLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolLine\n");}
 	}
 };
 
@@ -2226,7 +2226,7 @@ class IGESGeom_ToolBoundedSurface {
 };
 %extend IGESGeom_ToolBoundedSurface {
 	~IGESGeom_ToolBoundedSurface() {
-	printf("Call custom destructor for instance of IGESGeom_ToolBoundedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolBoundedSurface\n");}
 	}
 };
 
@@ -2253,7 +2253,7 @@ class IGESGeom_ToolCompositeCurve {
 };
 %extend IGESGeom_ToolCompositeCurve {
 	~IGESGeom_ToolCompositeCurve() {
-	printf("Call custom destructor for instance of IGESGeom_ToolCompositeCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolCompositeCurve\n");}
 	}
 };
 
@@ -2283,7 +2283,7 @@ class IGESGeom_Point : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Point {
 	~IGESGeom_Point() {
-	printf("Call custom destructor for instance of IGESGeom_Point\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Point\n");}
 	}
 };
 
@@ -2327,7 +2327,7 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_SplineCurve {
 	~IGESGeom_SplineCurve() {
-	printf("Call custom destructor for instance of IGESGeom_SplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_SplineCurve\n");}
 	}
 };
 
@@ -2369,7 +2369,7 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Plane {
 	~IGESGeom_Plane() {
-	printf("Call custom destructor for instance of IGESGeom_Plane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Plane\n");}
 	}
 };
 
@@ -2396,7 +2396,7 @@ class IGESGeom_ToolPoint {
 };
 %extend IGESGeom_ToolPoint {
 	~IGESGeom_ToolPoint() {
-	printf("Call custom destructor for instance of IGESGeom_ToolPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolPoint\n");}
 	}
 };
 
@@ -2435,7 +2435,7 @@ class IGESGeom_Array1OfTransformationMatrix {
 };
 %extend IGESGeom_Array1OfTransformationMatrix {
 	~IGESGeom_Array1OfTransformationMatrix() {
-	printf("Call custom destructor for instance of IGESGeom_Array1OfTransformationMatrix\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Array1OfTransformationMatrix\n");}
 	}
 };
 
@@ -2461,7 +2461,7 @@ class IGESGeom_Direction : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Direction {
 	~IGESGeom_Direction() {
-	printf("Call custom destructor for instance of IGESGeom_Direction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Direction\n");}
 	}
 };
 
@@ -2488,7 +2488,7 @@ class IGESGeom_ToolBSplineSurface {
 };
 %extend IGESGeom_ToolBSplineSurface {
 	~IGESGeom_ToolBSplineSurface() {
-	printf("Call custom destructor for instance of IGESGeom_ToolBSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolBSplineSurface\n");}
 	}
 };
 
@@ -2515,7 +2515,7 @@ class IGESGeom_ToolTrimmedSurface {
 };
 %extend IGESGeom_ToolTrimmedSurface {
 	~IGESGeom_ToolTrimmedSurface() {
-	printf("Call custom destructor for instance of IGESGeom_ToolTrimmedSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolTrimmedSurface\n");}
 	}
 };
 
@@ -2544,7 +2544,7 @@ class IGESGeom_ToolOffsetCurve {
 };
 %extend IGESGeom_ToolOffsetCurve {
 	~IGESGeom_ToolOffsetCurve() {
-	printf("Call custom destructor for instance of IGESGeom_ToolOffsetCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolOffsetCurve\n");}
 	}
 };
 
@@ -2582,7 +2582,7 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 };
 %extend IGESGeom_Flash {
 	~IGESGeom_Flash() {
-	printf("Call custom destructor for instance of IGESGeom_Flash\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_Flash\n");}
 	}
 };
 
@@ -2609,7 +2609,7 @@ class IGESGeom_ToolSurfaceOfRevolution {
 };
 %extend IGESGeom_ToolSurfaceOfRevolution {
 	~IGESGeom_ToolSurfaceOfRevolution() {
-	printf("Call custom destructor for instance of IGESGeom_ToolSurfaceOfRevolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolSurfaceOfRevolution\n");}
 	}
 };
 
@@ -2661,6 +2661,6 @@ class IGESGeom_OffsetCurve : public IGESData_IGESEntity {
 };
 %extend IGESGeom_OffsetCurve {
 	~IGESGeom_OffsetCurve() {
-	printf("Call custom destructor for instance of IGESGeom_OffsetCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESGeom_OffsetCurve\n");}
 	}
 };

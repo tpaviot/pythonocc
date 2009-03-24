@@ -127,7 +127,7 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepFilletAPI_LocalOperation {
 	~BRepFilletAPI_LocalOperation() {
-	printf("Call custom destructor for instance of BRepFilletAPI_LocalOperation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_LocalOperation\n");}
 	}
 };
 
@@ -174,7 +174,7 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 };
 %extend BRepFilletAPI_MakeChamfer {
 	~BRepFilletAPI_MakeChamfer() {
-	printf("Call custom destructor for instance of BRepFilletAPI_MakeChamfer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeChamfer\n");}
 	}
 };
 
@@ -235,7 +235,7 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepFilletAPI_MakeFillet2d {
 	~BRepFilletAPI_MakeFillet2d() {
-	printf("Call custom destructor for instance of BRepFilletAPI_MakeFillet2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeFillet2d\n");}
 	}
 };
 
@@ -358,6 +358,6 @@ class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {
 };
 %extend BRepFilletAPI_MakeFillet {
 	~BRepFilletAPI_MakeFillet() {
-	printf("Call custom destructor for instance of BRepFilletAPI_MakeFillet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeFillet\n");}
 	}
 };

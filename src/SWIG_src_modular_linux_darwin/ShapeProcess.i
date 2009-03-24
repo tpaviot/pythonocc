@@ -104,7 +104,7 @@ class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_T
 };
 %extend Handle_ShapeProcess_StackItemOfDictionaryOfOperator {
 	~Handle_ShapeProcess_StackItemOfDictionaryOfOperator() {
-	printf("Call custom destructor for instance of Handle_ShapeProcess_StackItemOfDictionaryOfOperator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_StackItemOfDictionaryOfOperator\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeProcess_Context {
 	~Handle_ShapeProcess_Context() {
-	printf("Call custom destructor for instance of Handle_ShapeProcess_Context\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_Context\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeProcess_Operator {
 	~Handle_ShapeProcess_Operator() {
-	printf("Call custom destructor for instance of Handle_ShapeProcess_Operator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_Operator\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 };
 %extend Handle_ShapeProcess_UOperator {
 	~Handle_ShapeProcess_UOperator() {
-	printf("Call custom destructor for instance of Handle_ShapeProcess_UOperator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_UOperator\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeProcess_DictionaryOfOperator {
 	~Handle_ShapeProcess_DictionaryOfOperator() {
-	printf("Call custom destructor for instance of Handle_ShapeProcess_DictionaryOfOperator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_DictionaryOfOperator\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 };
 %extend Handle_ShapeProcess_ShapeContext {
 	~Handle_ShapeProcess_ShapeContext() {
-	printf("Call custom destructor for instance of Handle_ShapeProcess_ShapeContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_ShapeContext\n");}
 	}
 };
 
@@ -244,7 +244,7 @@ class ShapeProcess_Operator : public MMgt_TShared {
 };
 %extend ShapeProcess_Operator {
 	~ShapeProcess_Operator() {
-	printf("Call custom destructor for instance of ShapeProcess_Operator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess_Operator\n");}
 	}
 };
 
@@ -262,7 +262,7 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 };
 %extend ShapeProcess_UOperator {
 	~ShapeProcess_UOperator() {
-	printf("Call custom destructor for instance of ShapeProcess_UOperator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess_UOperator\n");}
 	}
 };
 
@@ -281,7 +281,7 @@ class ShapeProcess {
 };
 %extend ShapeProcess {
 	~ShapeProcess() {
-	printf("Call custom destructor for instance of ShapeProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess\n");}
 	}
 };
 
@@ -309,7 +309,7 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
 	~ShapeProcess_StackItemOfDictionaryOfOperator() {
-	printf("Call custom destructor for instance of ShapeProcess_StackItemOfDictionaryOfOperator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess_StackItemOfDictionaryOfOperator\n");}
 	}
 };
 
@@ -326,7 +326,7 @@ class ShapeProcess_OperLibrary {
 };
 %extend ShapeProcess_OperLibrary {
 	~ShapeProcess_OperLibrary() {
-	printf("Call custom destructor for instance of ShapeProcess_OperLibrary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess_OperLibrary\n");}
 	}
 };
 
@@ -353,7 +353,7 @@ class ShapeProcess_IteratorOfDictionaryOfOperator {
 };
 %extend ShapeProcess_IteratorOfDictionaryOfOperator {
 	~ShapeProcess_IteratorOfDictionaryOfOperator() {
-	printf("Call custom destructor for instance of ShapeProcess_IteratorOfDictionaryOfOperator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess_IteratorOfDictionaryOfOperator\n");}
 	}
 };
 
@@ -411,7 +411,7 @@ class ShapeProcess_Context : public MMgt_TShared {
 };
 %extend ShapeProcess_Context {
 	~ShapeProcess_Context() {
-	printf("Call custom destructor for instance of ShapeProcess_Context\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess_Context\n");}
 	}
 };
 
@@ -465,7 +465,7 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 };
 %extend ShapeProcess_ShapeContext {
 	~ShapeProcess_ShapeContext() {
-	printf("Call custom destructor for instance of ShapeProcess_ShapeContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess_ShapeContext\n");}
 	}
 };
 
@@ -519,6 +519,6 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_DictionaryOfOperator {
 	~ShapeProcess_DictionaryOfOperator() {
-	printf("Call custom destructor for instance of ShapeProcess_DictionaryOfOperator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcess_DictionaryOfOperator\n");}
 	}
 };

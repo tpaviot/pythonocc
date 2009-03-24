@@ -104,7 +104,7 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMFunction_FunctionDriver {
 	~Handle_BinMFunction_FunctionDriver() {
-	printf("Call custom destructor for instance of Handle_BinMFunction_FunctionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_FunctionDriver\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMFunction_ScopeDriver {
 	~Handle_BinMFunction_ScopeDriver() {
-	printf("Call custom destructor for instance of Handle_BinMFunction_ScopeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_ScopeDriver\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMFunction_GraphNodeDriver {
 	~Handle_BinMFunction_GraphNodeDriver() {
-	printf("Call custom destructor for instance of Handle_BinMFunction_GraphNodeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_GraphNodeDriver\n");}
 	}
 };
 
@@ -178,7 +178,7 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_FunctionDriver {
 	~BinMFunction_FunctionDriver() {
-	printf("Call custom destructor for instance of BinMFunction_FunctionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMFunction_FunctionDriver\n");}
 	}
 };
 
@@ -193,7 +193,7 @@ class BinMFunction {
 };
 %extend BinMFunction {
 	~BinMFunction() {
-	printf("Call custom destructor for instance of BinMFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMFunction\n");}
 	}
 };
 
@@ -219,7 +219,7 @@ class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_GraphNodeDriver {
 	~BinMFunction_GraphNodeDriver() {
-	printf("Call custom destructor for instance of BinMFunction_GraphNodeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMFunction_GraphNodeDriver\n");}
 	}
 };
 
@@ -245,6 +245,6 @@ class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_ScopeDriver {
 	~BinMFunction_ScopeDriver() {
-	printf("Call custom destructor for instance of BinMFunction_ScopeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMFunction_ScopeDriver\n");}
 	}
 };

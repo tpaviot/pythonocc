@@ -104,7 +104,7 @@ class Handle_BinMDataStd_ConstraintDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_ConstraintDriver {
 	~Handle_BinMDataStd_ConstraintDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_ConstraintDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_ConstraintDriver\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_BinMDataStd_PlacementDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_PlacementDriver {
 	~Handle_BinMDataStd_PlacementDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_PlacementDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_PlacementDriver\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_BinMDataStd_ReferenceArrayDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_ReferenceArrayDriver {
 	~Handle_BinMDataStd_ReferenceArrayDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_ReferenceArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_ReferenceArrayDriver\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_BinMDataStd_AsciiStringDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_AsciiStringDriver {
 	~Handle_BinMDataStd_AsciiStringDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_AsciiStringDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_AsciiStringDriver\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_BinMDataStd_ByteArrayDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_ByteArrayDriver {
 	~Handle_BinMDataStd_ByteArrayDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_ByteArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_ByteArrayDriver\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_BinMDataStd_ExpressionDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_ExpressionDriver {
 	~Handle_BinMDataStd_ExpressionDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_ExpressionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_ExpressionDriver\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Handle_BinMDataStd_PointDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_PointDriver {
 	~Handle_BinMDataStd_PointDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_PointDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_PointDriver\n");}
 	}
 };
 
@@ -272,7 +272,7 @@ class Handle_BinMDataStd_PlaneDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_PlaneDriver {
 	~Handle_BinMDataStd_PlaneDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_PlaneDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_PlaneDriver\n");}
 	}
 };
 
@@ -296,7 +296,7 @@ class Handle_BinMDataStd_IntegerArrayDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_IntegerArrayDriver {
 	~Handle_BinMDataStd_IntegerArrayDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_IntegerArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_IntegerArrayDriver\n");}
 	}
 };
 
@@ -320,7 +320,7 @@ class Handle_BinMDataStd_AxisDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_AxisDriver {
 	~Handle_BinMDataStd_AxisDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_AxisDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_AxisDriver\n");}
 	}
 };
 
@@ -344,7 +344,7 @@ class Handle_BinMDataStd_ExtStringListDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_ExtStringListDriver {
 	~Handle_BinMDataStd_ExtStringListDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_ExtStringListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_ExtStringListDriver\n");}
 	}
 };
 
@@ -368,7 +368,7 @@ class Handle_BinMDataStd_BooleanListDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_BooleanListDriver {
 	~Handle_BinMDataStd_BooleanListDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_BooleanListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_BooleanListDriver\n");}
 	}
 };
 
@@ -392,7 +392,7 @@ class Handle_BinMDataStd_RelationDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_RelationDriver {
 	~Handle_BinMDataStd_RelationDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_RelationDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_RelationDriver\n");}
 	}
 };
 
@@ -416,7 +416,7 @@ class Handle_BinMDataStd_RealArrayDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_RealArrayDriver {
 	~Handle_BinMDataStd_RealArrayDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_RealArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_RealArrayDriver\n");}
 	}
 };
 
@@ -440,7 +440,7 @@ class Handle_BinMDataStd_ExtStringArrayDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_ExtStringArrayDriver {
 	~Handle_BinMDataStd_ExtStringArrayDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_ExtStringArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_ExtStringArrayDriver\n");}
 	}
 };
 
@@ -464,7 +464,7 @@ class Handle_BinMDataStd_VariableDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_VariableDriver {
 	~Handle_BinMDataStd_VariableDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_VariableDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_VariableDriver\n");}
 	}
 };
 
@@ -488,7 +488,7 @@ class Handle_BinMDataStd_TickDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_TickDriver {
 	~Handle_BinMDataStd_TickDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_TickDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_TickDriver\n");}
 	}
 };
 
@@ -512,7 +512,7 @@ class Handle_BinMDataStd_RealDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_RealDriver {
 	~Handle_BinMDataStd_RealDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_RealDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_RealDriver\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class Handle_BinMDataStd_NameDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_NameDriver {
 	~Handle_BinMDataStd_NameDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_NameDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_NameDriver\n");}
 	}
 };
 
@@ -560,7 +560,7 @@ class Handle_BinMDataStd_NamedDataDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_NamedDataDriver {
 	~Handle_BinMDataStd_NamedDataDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_NamedDataDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_NamedDataDriver\n");}
 	}
 };
 
@@ -584,7 +584,7 @@ class Handle_BinMDataStd_TreeNodeDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_TreeNodeDriver {
 	~Handle_BinMDataStd_TreeNodeDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_TreeNodeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_TreeNodeDriver\n");}
 	}
 };
 
@@ -608,7 +608,7 @@ class Handle_BinMDataStd_ShapeDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_ShapeDriver {
 	~Handle_BinMDataStd_ShapeDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_ShapeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_ShapeDriver\n");}
 	}
 };
 
@@ -632,7 +632,7 @@ class Handle_BinMDataStd_CommentDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_CommentDriver {
 	~Handle_BinMDataStd_CommentDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_CommentDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_CommentDriver\n");}
 	}
 };
 
@@ -656,7 +656,7 @@ class Handle_BinMDataStd_BooleanArrayDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_BooleanArrayDriver {
 	~Handle_BinMDataStd_BooleanArrayDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_BooleanArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_BooleanArrayDriver\n");}
 	}
 };
 
@@ -680,7 +680,7 @@ class Handle_BinMDataStd_IntPackedMapDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_IntPackedMapDriver {
 	~Handle_BinMDataStd_IntPackedMapDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_IntPackedMapDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_IntPackedMapDriver\n");}
 	}
 };
 
@@ -704,7 +704,7 @@ class Handle_BinMDataStd_PatternStdDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_PatternStdDriver {
 	~Handle_BinMDataStd_PatternStdDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_PatternStdDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_PatternStdDriver\n");}
 	}
 };
 
@@ -728,7 +728,7 @@ class Handle_BinMDataStd_DirectoryDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_DirectoryDriver {
 	~Handle_BinMDataStd_DirectoryDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_DirectoryDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_DirectoryDriver\n");}
 	}
 };
 
@@ -752,7 +752,7 @@ class Handle_BinMDataStd_ReferenceListDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_ReferenceListDriver {
 	~Handle_BinMDataStd_ReferenceListDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_ReferenceListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_ReferenceListDriver\n");}
 	}
 };
 
@@ -776,7 +776,7 @@ class Handle_BinMDataStd_IntegerListDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_IntegerListDriver {
 	~Handle_BinMDataStd_IntegerListDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_IntegerListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_IntegerListDriver\n");}
 	}
 };
 
@@ -800,7 +800,7 @@ class Handle_BinMDataStd_IntegerDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_IntegerDriver {
 	~Handle_BinMDataStd_IntegerDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_IntegerDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_IntegerDriver\n");}
 	}
 };
 
@@ -824,7 +824,7 @@ class Handle_BinMDataStd_UAttributeDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_UAttributeDriver {
 	~Handle_BinMDataStd_UAttributeDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_UAttributeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_UAttributeDriver\n");}
 	}
 };
 
@@ -848,7 +848,7 @@ class Handle_BinMDataStd_NoteBookDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_NoteBookDriver {
 	~Handle_BinMDataStd_NoteBookDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_NoteBookDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_NoteBookDriver\n");}
 	}
 };
 
@@ -872,7 +872,7 @@ class Handle_BinMDataStd_RealListDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_RealListDriver {
 	~Handle_BinMDataStd_RealListDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_RealListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_RealListDriver\n");}
 	}
 };
 
@@ -896,7 +896,7 @@ class Handle_BinMDataStd_GeometryDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDataStd_GeometryDriver {
 	~Handle_BinMDataStd_GeometryDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDataStd_GeometryDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDataStd_GeometryDriver\n");}
 	}
 };
 
@@ -922,7 +922,7 @@ class BinMDataStd_IntegerArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerArrayDriver {
 	~BinMDataStd_IntegerArrayDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_IntegerArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_IntegerArrayDriver\n");}
 	}
 };
 
@@ -948,7 +948,7 @@ class BinMDataStd_UAttributeDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_UAttributeDriver {
 	~BinMDataStd_UAttributeDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_UAttributeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_UAttributeDriver\n");}
 	}
 };
 
@@ -974,7 +974,7 @@ class BinMDataStd_TreeNodeDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_TreeNodeDriver {
 	~BinMDataStd_TreeNodeDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_TreeNodeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_TreeNodeDriver\n");}
 	}
 };
 
@@ -1000,7 +1000,7 @@ class BinMDataStd_TickDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_TickDriver {
 	~BinMDataStd_TickDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_TickDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_TickDriver\n");}
 	}
 };
 
@@ -1026,7 +1026,7 @@ class BinMDataStd_PointDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_PointDriver {
 	~BinMDataStd_PointDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_PointDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_PointDriver\n");}
 	}
 };
 
@@ -1052,7 +1052,7 @@ class BinMDataStd_GeometryDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_GeometryDriver {
 	~BinMDataStd_GeometryDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_GeometryDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_GeometryDriver\n");}
 	}
 };
 
@@ -1078,7 +1078,7 @@ class BinMDataStd_AsciiStringDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_AsciiStringDriver {
 	~BinMDataStd_AsciiStringDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_AsciiStringDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_AsciiStringDriver\n");}
 	}
 };
 
@@ -1104,7 +1104,7 @@ class BinMDataStd_NoteBookDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NoteBookDriver {
 	~BinMDataStd_NoteBookDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_NoteBookDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_NoteBookDriver\n");}
 	}
 };
 
@@ -1130,7 +1130,7 @@ class BinMDataStd_ConstraintDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ConstraintDriver {
 	~BinMDataStd_ConstraintDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_ConstraintDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_ConstraintDriver\n");}
 	}
 };
 
@@ -1156,7 +1156,7 @@ class BinMDataStd_ExpressionDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExpressionDriver {
 	~BinMDataStd_ExpressionDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_ExpressionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_ExpressionDriver\n");}
 	}
 };
 
@@ -1182,7 +1182,7 @@ class BinMDataStd_CommentDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_CommentDriver {
 	~BinMDataStd_CommentDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_CommentDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_CommentDriver\n");}
 	}
 };
 
@@ -1208,7 +1208,7 @@ class BinMDataStd_ReferenceArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ReferenceArrayDriver {
 	~BinMDataStd_ReferenceArrayDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_ReferenceArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_ReferenceArrayDriver\n");}
 	}
 };
 
@@ -1234,7 +1234,7 @@ class BinMDataStd_IntegerDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerDriver {
 	~BinMDataStd_IntegerDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_IntegerDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_IntegerDriver\n");}
 	}
 };
 
@@ -1260,7 +1260,7 @@ class BinMDataStd_ReferenceListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ReferenceListDriver {
 	~BinMDataStd_ReferenceListDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_ReferenceListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_ReferenceListDriver\n");}
 	}
 };
 
@@ -1286,7 +1286,7 @@ class BinMDataStd_RealArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealArrayDriver {
 	~BinMDataStd_RealArrayDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_RealArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_RealArrayDriver\n");}
 	}
 };
 
@@ -1312,7 +1312,7 @@ class BinMDataStd_PatternStdDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_PatternStdDriver {
 	~BinMDataStd_PatternStdDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_PatternStdDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_PatternStdDriver\n");}
 	}
 };
 
@@ -1338,7 +1338,7 @@ class BinMDataStd_BooleanArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_BooleanArrayDriver {
 	~BinMDataStd_BooleanArrayDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_BooleanArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_BooleanArrayDriver\n");}
 	}
 };
 
@@ -1364,7 +1364,7 @@ class BinMDataStd_RealListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealListDriver {
 	~BinMDataStd_RealListDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_RealListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_RealListDriver\n");}
 	}
 };
 
@@ -1390,7 +1390,7 @@ class BinMDataStd_IntPackedMapDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntPackedMapDriver {
 	~BinMDataStd_IntPackedMapDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_IntPackedMapDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_IntPackedMapDriver\n");}
 	}
 };
 
@@ -1416,7 +1416,7 @@ class BinMDataStd_ByteArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ByteArrayDriver {
 	~BinMDataStd_ByteArrayDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_ByteArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_ByteArrayDriver\n");}
 	}
 };
 
@@ -1442,7 +1442,7 @@ class BinMDataStd_NameDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NameDriver {
 	~BinMDataStd_NameDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_NameDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_NameDriver\n");}
 	}
 };
 
@@ -1468,7 +1468,7 @@ class BinMDataStd_RealDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealDriver {
 	~BinMDataStd_RealDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_RealDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_RealDriver\n");}
 	}
 };
 
@@ -1494,7 +1494,7 @@ class BinMDataStd_ExtStringListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExtStringListDriver {
 	~BinMDataStd_ExtStringListDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_ExtStringListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_ExtStringListDriver\n");}
 	}
 };
 
@@ -1520,7 +1520,7 @@ class BinMDataStd_BooleanListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_BooleanListDriver {
 	~BinMDataStd_BooleanListDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_BooleanListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_BooleanListDriver\n");}
 	}
 };
 
@@ -1546,7 +1546,7 @@ class BinMDataStd_VariableDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_VariableDriver {
 	~BinMDataStd_VariableDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_VariableDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_VariableDriver\n");}
 	}
 };
 
@@ -1572,7 +1572,7 @@ class BinMDataStd_DirectoryDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_DirectoryDriver {
 	~BinMDataStd_DirectoryDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_DirectoryDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_DirectoryDriver\n");}
 	}
 };
 
@@ -1598,7 +1598,7 @@ class BinMDataStd_ShapeDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ShapeDriver {
 	~BinMDataStd_ShapeDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_ShapeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_ShapeDriver\n");}
 	}
 };
 
@@ -1624,7 +1624,7 @@ class BinMDataStd_ExtStringArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExtStringArrayDriver {
 	~BinMDataStd_ExtStringArrayDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_ExtStringArrayDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_ExtStringArrayDriver\n");}
 	}
 };
 
@@ -1650,7 +1650,7 @@ class BinMDataStd_AxisDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_AxisDriver {
 	~BinMDataStd_AxisDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_AxisDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_AxisDriver\n");}
 	}
 };
 
@@ -1676,7 +1676,7 @@ class BinMDataStd_NamedDataDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NamedDataDriver {
 	~BinMDataStd_NamedDataDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_NamedDataDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_NamedDataDriver\n");}
 	}
 };
 
@@ -1702,7 +1702,7 @@ class BinMDataStd_IntegerListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerListDriver {
 	~BinMDataStd_IntegerListDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_IntegerListDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_IntegerListDriver\n");}
 	}
 };
 
@@ -1721,7 +1721,7 @@ class BinMDataStd {
 };
 %extend BinMDataStd {
 	~BinMDataStd() {
-	printf("Call custom destructor for instance of BinMDataStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd\n");}
 	}
 };
 
@@ -1747,7 +1747,7 @@ class BinMDataStd_PlacementDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_PlacementDriver {
 	~BinMDataStd_PlacementDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_PlacementDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_PlacementDriver\n");}
 	}
 };
 
@@ -1773,7 +1773,7 @@ class BinMDataStd_PlaneDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_PlaneDriver {
 	~BinMDataStd_PlaneDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_PlaneDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_PlaneDriver\n");}
 	}
 };
 
@@ -1799,6 +1799,6 @@ class BinMDataStd_RelationDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RelationDriver {
 	~BinMDataStd_RelationDriver() {
-	printf("Call custom destructor for instance of BinMDataStd_RelationDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDataStd_RelationDriver\n");}
 	}
 };

@@ -125,6 +125,6 @@ class Precision {
 };
 %extend Precision {
 	~Precision() {
-	printf("Call custom destructor for instance of Precision\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Precision\n");}
 	}
 };

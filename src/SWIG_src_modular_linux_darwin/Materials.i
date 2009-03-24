@@ -104,7 +104,7 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 };
 %extend Handle_Materials_SequenceNodeOfMtsSequence {
 	~Handle_Materials_SequenceNodeOfMtsSequence() {
-	printf("Call custom destructor for instance of Handle_Materials_SequenceNodeOfMtsSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Materials_SequenceNodeOfMtsSequence\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 };
 %extend Handle_Materials_FuzzyInstance {
 	~Handle_Materials_FuzzyInstance() {
-	printf("Call custom destructor for instance of Handle_Materials_FuzzyInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Materials_FuzzyInstance\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 };
 %extend Handle_Materials_MaterialDefinition {
 	~Handle_Materials_MaterialDefinition() {
-	printf("Call custom destructor for instance of Handle_Materials_MaterialDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialDefinition\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_Materials_Color : public Handle_Standard_Transient {
 };
 %extend Handle_Materials_Color {
 	~Handle_Materials_Color() {
-	printf("Call custom destructor for instance of Handle_Materials_Color\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Materials_Color\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 };
 %extend Handle_Materials_Material {
 	~Handle_Materials_Material() {
-	printf("Call custom destructor for instance of Handle_Materials_Material\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Materials_Material\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 };
 %extend Handle_Materials_MaterialsDictionary {
 	~Handle_Materials_MaterialsDictionary() {
-	printf("Call custom destructor for instance of Handle_Materials_MaterialsDictionary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialsDictionary\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 };
 %extend Handle_Materials_MaterialsSequence {
 	~Handle_Materials_MaterialsSequence() {
-	printf("Call custom destructor for instance of Handle_Materials_MaterialsSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialsSequence\n");}
 	}
 };
 
@@ -280,7 +280,7 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 };
 %extend Materials_MaterialsDictionary {
 	~Materials_MaterialsDictionary() {
-	printf("Call custom destructor for instance of Materials_MaterialsDictionary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials_MaterialsDictionary\n");}
 	}
 };
 
@@ -328,7 +328,7 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 };
 %extend Materials_FuzzyInstance {
 	~Materials_FuzzyInstance() {
-	printf("Call custom destructor for instance of Materials_FuzzyInstance\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials_FuzzyInstance\n");}
 	}
 };
 
@@ -348,7 +348,7 @@ class Materials_Material : public Materials_FuzzyInstance {
 };
 %extend Materials_Material {
 	~Materials_Material() {
-	printf("Call custom destructor for instance of Materials_Material\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials_Material\n");}
 	}
 };
 
@@ -370,7 +370,7 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 };
 %extend Materials_SequenceNodeOfMtsSequence {
 	~Materials_SequenceNodeOfMtsSequence() {
-	printf("Call custom destructor for instance of Materials_SequenceNodeOfMtsSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials_SequenceNodeOfMtsSequence\n");}
 	}
 };
 
@@ -392,7 +392,7 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 };
 %extend Materials_MaterialDefinition {
 	~Materials_MaterialDefinition() {
-	printf("Call custom destructor for instance of Materials_MaterialDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials_MaterialDefinition\n");}
 	}
 };
 
@@ -421,7 +421,7 @@ class Materials {
 };
 %extend Materials {
 	~Materials() {
-	printf("Call custom destructor for instance of Materials\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials\n");}
 	}
 };
 
@@ -474,7 +474,7 @@ class Materials_MtsSequence : public TCollection_BaseSequence {
 };
 %extend Materials_MtsSequence {
 	~Materials_MtsSequence() {
-	printf("Call custom destructor for instance of Materials_MtsSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials_MtsSequence\n");}
 	}
 };
 
@@ -538,7 +538,7 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 };
 %extend Materials_MaterialsSequence {
 	~Materials_MaterialsSequence() {
-	printf("Call custom destructor for instance of Materials_MaterialsSequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials_MaterialsSequence\n");}
 	}
 };
 
@@ -572,6 +572,6 @@ class Materials_Color : public Standard_Transient {
 };
 %extend Materials_Color {
 	~Materials_Color() {
-	printf("Call custom destructor for instance of Materials_Color\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Materials_Color\n");}
 	}
 };

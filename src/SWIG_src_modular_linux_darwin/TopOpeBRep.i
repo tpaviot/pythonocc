@@ -131,7 +131,7 @@ class Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public Handle_TCollect
 };
 %extend Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d {
 	~Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d\n");}
 	}
 };
 
@@ -155,7 +155,7 @@ class Handle_TopOpeBRep_Hctxff2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRep_Hctxff2d {
 	~Handle_TopOpeBRep_Hctxff2d() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_Hctxff2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_Hctxff2d\n");}
 	}
 };
 
@@ -179,7 +179,7 @@ class Handle_TopOpeBRep_FFDumper : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRep_FFDumper {
 	~Handle_TopOpeBRep_FFDumper() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_FFDumper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_FFDumper\n");}
 	}
 };
 
@@ -203,7 +203,7 @@ class Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public Handle_TCollect
 };
 %extend Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool {
 	~Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool\n");}
 	}
 };
 
@@ -227,7 +227,7 @@ class Handle_TopOpeBRep_ListNodeOfListOfBipoint : public Handle_TCollection_MapN
 };
 %extend Handle_TopOpeBRep_ListNodeOfListOfBipoint {
 	~Handle_TopOpeBRep_ListNodeOfListOfBipoint() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_ListNodeOfListOfBipoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_ListNodeOfListOfBipoint\n");}
 	}
 };
 
@@ -251,7 +251,7 @@ class Handle_TopOpeBRep_HArray1OfVPointInter : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRep_HArray1OfVPointInter {
 	~Handle_TopOpeBRep_HArray1OfVPointInter() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_HArray1OfVPointInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_HArray1OfVPointInter\n");}
 	}
 };
 
@@ -275,7 +275,7 @@ class Handle_TopOpeBRep_Hctxee2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRep_Hctxee2d {
 	~Handle_TopOpeBRep_Hctxee2d() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_Hctxee2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_Hctxee2d\n");}
 	}
 };
 
@@ -299,7 +299,7 @@ class Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public Handle_TColl
 };
 %extend Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger {
 	~Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger\n");}
 	}
 };
 
@@ -323,7 +323,7 @@ class Handle_TopOpeBRep_HArray1OfLineInter : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRep_HArray1OfLineInter {
 	~Handle_TopOpeBRep_HArray1OfLineInter() {
-	printf("Call custom destructor for instance of Handle_TopOpeBRep_HArray1OfLineInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_HArray1OfLineInter\n");}
 	}
 };
 
@@ -356,7 +356,7 @@ class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
 };
 %extend TopOpeBRep_DataMapOfShapeInteger {
 	~TopOpeBRep_DataMapOfShapeInteger() {
-	printf("Call custom destructor for instance of TopOpeBRep_DataMapOfShapeInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapOfShapeInteger\n");}
 	}
 };
 
@@ -403,7 +403,7 @@ class TopOpeBRep_FaceEdgeIntersector {
 };
 %extend TopOpeBRep_FaceEdgeIntersector {
 	~TopOpeBRep_FaceEdgeIntersector() {
-	printf("Call custom destructor for instance of TopOpeBRep_FaceEdgeIntersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FaceEdgeIntersector\n");}
 	}
 };
 
@@ -422,7 +422,7 @@ class TopOpeBRep_VPointInterClassifier {
 };
 %extend TopOpeBRep_VPointInterClassifier {
 	~TopOpeBRep_VPointInterClassifier() {
-	printf("Call custom destructor for instance of TopOpeBRep_VPointInterClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_VPointInterClassifier\n");}
 	}
 };
 
@@ -443,7 +443,7 @@ class TopOpeBRep_GeomTool {
 };
 %extend TopOpeBRep_GeomTool {
 	~TopOpeBRep_GeomTool() {
-	printf("Call custom destructor for instance of TopOpeBRep_GeomTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_GeomTool\n");}
 	}
 };
 
@@ -500,7 +500,7 @@ class TopOpeBRep_DSFiller {
 };
 %extend TopOpeBRep_DSFiller {
 	~TopOpeBRep_DSFiller() {
-	printf("Call custom destructor for instance of TopOpeBRep_DSFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DSFiller\n");}
 	}
 };
 
@@ -529,7 +529,7 @@ class TopOpeBRep_WPointInter {
 };
 %extend TopOpeBRep_WPointInter {
 	~TopOpeBRep_WPointInter() {
-	printf("Call custom destructor for instance of TopOpeBRep_WPointInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_WPointInter\n");}
 	}
 };
 
@@ -582,7 +582,7 @@ class TopOpeBRep_FacesIntersector {
 };
 %extend TopOpeBRep_FacesIntersector {
 	~TopOpeBRep_FacesIntersector() {
-	printf("Call custom destructor for instance of TopOpeBRep_FacesIntersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FacesIntersector\n");}
 	}
 };
 
@@ -603,7 +603,7 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool : public TCollection_BasicM
 };
 %extend TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool {
 	~TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool() {
-	printf("Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool\n");}
 	}
 };
 
@@ -708,7 +708,7 @@ class TopOpeBRep_VPointInter {
 };
 %extend TopOpeBRep_VPointInter {
 	~TopOpeBRep_VPointInter() {
-	printf("Call custom destructor for instance of TopOpeBRep_VPointInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_VPointInter\n");}
 	}
 };
 
@@ -779,7 +779,7 @@ class TopOpeBRep_EdgesIntersector {
 };
 %extend TopOpeBRep_EdgesIntersector {
 	~TopOpeBRep_EdgesIntersector() {
-	printf("Call custom destructor for instance of TopOpeBRep_EdgesIntersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_EdgesIntersector\n");}
 	}
 };
 
@@ -812,7 +812,7 @@ class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 };
 %extend TopOpeBRep_DataMapOfTopolTool {
 	~TopOpeBRep_DataMapOfTopolTool() {
-	printf("Call custom destructor for instance of TopOpeBRep_DataMapOfTopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapOfTopolTool\n");}
 	}
 };
 
@@ -835,7 +835,7 @@ class TopOpeBRep_ListIteratorOfListOfBipoint {
 };
 %extend TopOpeBRep_ListIteratorOfListOfBipoint {
 	~TopOpeBRep_ListIteratorOfListOfBipoint() {
-	printf("Call custom destructor for instance of TopOpeBRep_ListIteratorOfListOfBipoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListIteratorOfListOfBipoint\n");}
 	}
 };
 
@@ -874,7 +874,7 @@ class TopOpeBRep_Array1OfLineInter {
 };
 %extend TopOpeBRep_Array1OfLineInter {
 	~TopOpeBRep_Array1OfLineInter() {
-	printf("Call custom destructor for instance of TopOpeBRep_Array1OfLineInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Array1OfLineInter\n");}
 	}
 };
 
@@ -902,7 +902,7 @@ class TopOpeBRep_Hctxee2d : public MMgt_TShared {
 };
 %extend TopOpeBRep_Hctxee2d {
 	~TopOpeBRep_Hctxee2d() {
-	printf("Call custom destructor for instance of TopOpeBRep_Hctxee2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Hctxee2d\n");}
 	}
 };
 
@@ -1011,7 +1011,7 @@ class TopOpeBRep_FacesFiller {
 };
 %extend TopOpeBRep_FacesFiller {
 	~TopOpeBRep_FacesFiller() {
-	printf("Call custom destructor for instance of TopOpeBRep_FacesFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FacesFiller\n");}
 	}
 };
 
@@ -1035,7 +1035,7 @@ class TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode
 };
 %extend TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger {
 	~TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger() {
-	printf("Call custom destructor for instance of TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger\n");}
 	}
 };
 
@@ -1057,7 +1057,7 @@ class TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public TCollection_SeqNode {
 };
 %extend TopOpeBRep_SequenceNodeOfSequenceOfPoint2d {
 	~TopOpeBRep_SequenceNodeOfSequenceOfPoint2d() {
-	printf("Call custom destructor for instance of TopOpeBRep_SequenceNodeOfSequenceOfPoint2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_SequenceNodeOfSequenceOfPoint2d\n");}
 	}
 };
 
@@ -1080,7 +1080,7 @@ class TopOpeBRep_FFTransitionTool {
 };
 %extend TopOpeBRep_FFTransitionTool {
 	~TopOpeBRep_FFTransitionTool() {
-	printf("Call custom destructor for instance of TopOpeBRep_FFTransitionTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FFTransitionTool\n");}
 	}
 };
 
@@ -1101,7 +1101,7 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Bas
 };
 %extend TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger {
 	~TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger() {
-	printf("Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger\n");}
 	}
 };
 
@@ -1132,7 +1132,7 @@ class TopOpeBRep_VPointInterIterator {
 };
 %extend TopOpeBRep_VPointInterIterator {
 	~TopOpeBRep_VPointInterIterator() {
-	printf("Call custom destructor for instance of TopOpeBRep_VPointInterIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_VPointInterIterator\n");}
 	}
 };
 
@@ -1155,7 +1155,7 @@ class TopOpeBRep_PointGeomTool {
 };
 %extend TopOpeBRep_PointGeomTool {
 	~TopOpeBRep_PointGeomTool() {
-	printf("Call custom destructor for instance of TopOpeBRep_PointGeomTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_PointGeomTool\n");}
 	}
 };
 
@@ -1174,7 +1174,7 @@ class TopOpeBRep_EdgesFiller {
 };
 %extend TopOpeBRep_EdgesFiller {
 	~TopOpeBRep_EdgesFiller() {
-	printf("Call custom destructor for instance of TopOpeBRep_EdgesFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_EdgesFiller\n");}
 	}
 };
 
@@ -1189,7 +1189,7 @@ class TopOpeBRep_FaceEdgeFiller {
 };
 %extend TopOpeBRep_FaceEdgeFiller {
 	~TopOpeBRep_FaceEdgeFiller() {
-	printf("Call custom destructor for instance of TopOpeBRep_FaceEdgeFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FaceEdgeFiller\n");}
 	}
 };
 
@@ -1213,7 +1213,7 @@ class TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public TCollection_MapNode {
 };
 %extend TopOpeBRep_DataMapNodeOfDataMapOfTopolTool {
 	~TopOpeBRep_DataMapNodeOfDataMapOfTopolTool() {
-	printf("Call custom destructor for instance of TopOpeBRep_DataMapNodeOfDataMapOfTopolTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapNodeOfDataMapOfTopolTool\n");}
 	}
 };
 
@@ -1253,7 +1253,7 @@ class TopOpeBRep_HArray1OfLineInter : public MMgt_TShared {
 };
 %extend TopOpeBRep_HArray1OfLineInter {
 	~TopOpeBRep_HArray1OfLineInter() {
-	printf("Call custom destructor for instance of TopOpeBRep_HArray1OfLineInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_HArray1OfLineInter\n");}
 	}
 };
 
@@ -1292,7 +1292,7 @@ class TopOpeBRep_ShapeIntersector {
 };
 %extend TopOpeBRep_ShapeIntersector {
 	~TopOpeBRep_ShapeIntersector() {
-	printf("Call custom destructor for instance of TopOpeBRep_ShapeIntersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ShapeIntersector\n");}
 	}
 };
 
@@ -1327,7 +1327,7 @@ class TopOpeBRep_ShapeScanner {
 };
 %extend TopOpeBRep_ShapeScanner {
 	~TopOpeBRep_ShapeScanner() {
-	printf("Call custom destructor for instance of TopOpeBRep_ShapeScanner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ShapeScanner\n");}
 	}
 };
 
@@ -1366,7 +1366,7 @@ class TopOpeBRep_Array1OfVPointInter {
 };
 %extend TopOpeBRep_Array1OfVPointInter {
 	~TopOpeBRep_Array1OfVPointInter() {
-	printf("Call custom destructor for instance of TopOpeBRep_Array1OfVPointInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Array1OfVPointInter\n");}
 	}
 };
 
@@ -1393,7 +1393,7 @@ class TopOpeBRep_WPointInterIterator {
 };
 %extend TopOpeBRep_WPointInterIterator {
 	~TopOpeBRep_WPointInterIterator() {
-	printf("Call custom destructor for instance of TopOpeBRep_WPointInterIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_WPointInterIterator\n");}
 	}
 };
 
@@ -1408,7 +1408,7 @@ class TopOpeBRep {
 };
 %extend TopOpeBRep {
 	~TopOpeBRep() {
-	printf("Call custom destructor for instance of TopOpeBRep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep\n");}
 	}
 };
 
@@ -1430,7 +1430,7 @@ class TopOpeBRep_ListNodeOfListOfBipoint : public TCollection_MapNode {
 };
 %extend TopOpeBRep_ListNodeOfListOfBipoint {
 	~TopOpeBRep_ListNodeOfListOfBipoint() {
-	printf("Call custom destructor for instance of TopOpeBRep_ListNodeOfListOfBipoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListNodeOfListOfBipoint\n");}
 	}
 };
 
@@ -1470,7 +1470,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 };
 %extend TopOpeBRep_Hctxff2d {
 	~TopOpeBRep_Hctxff2d() {
-	printf("Call custom destructor for instance of TopOpeBRep_Hctxff2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Hctxff2d\n");}
 	}
 };
 
@@ -1489,7 +1489,7 @@ class TopOpeBRep_Bipoint {
 };
 %extend TopOpeBRep_Bipoint {
 	~TopOpeBRep_Bipoint() {
-	printf("Call custom destructor for instance of TopOpeBRep_Bipoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Bipoint\n");}
 	}
 };
 
@@ -1572,7 +1572,7 @@ class TopOpeBRep_Point2d {
 };
 %extend TopOpeBRep_Point2d {
 	~TopOpeBRep_Point2d() {
-	printf("Call custom destructor for instance of TopOpeBRep_Point2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Point2d\n");}
 	}
 };
 
@@ -1608,7 +1608,7 @@ class TopOpeBRep_FFDumper : public MMgt_TShared {
 };
 %extend TopOpeBRep_FFDumper {
 	~TopOpeBRep_FFDumper() {
-	printf("Call custom destructor for instance of TopOpeBRep_FFDumper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FFDumper\n");}
 	}
 };
 
@@ -1637,7 +1637,7 @@ class TopOpeBRep_ShapeIntersector2d {
 };
 %extend TopOpeBRep_ShapeIntersector2d {
 	~TopOpeBRep_ShapeIntersector2d() {
-	printf("Call custom destructor for instance of TopOpeBRep_ShapeIntersector2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ShapeIntersector2d\n");}
 	}
 };
 
@@ -1658,7 +1658,7 @@ class TopOpeBRep_PointClassifier {
 };
 %extend TopOpeBRep_PointClassifier {
 	~TopOpeBRep_PointClassifier() {
-	printf("Call custom destructor for instance of TopOpeBRep_PointClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_PointClassifier\n");}
 	}
 };
 
@@ -1707,7 +1707,7 @@ class TopOpeBRep_ListOfBipoint {
 };
 %extend TopOpeBRep_ListOfBipoint {
 	~TopOpeBRep_ListOfBipoint() {
-	printf("Call custom destructor for instance of TopOpeBRep_ListOfBipoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListOfBipoint\n");}
 	}
 };
 
@@ -1760,7 +1760,7 @@ class TopOpeBRep_SequenceOfPoint2d : public TCollection_BaseSequence {
 };
 %extend TopOpeBRep_SequenceOfPoint2d {
 	~TopOpeBRep_SequenceOfPoint2d() {
-	printf("Call custom destructor for instance of TopOpeBRep_SequenceOfPoint2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_SequenceOfPoint2d\n");}
 	}
 };
 
@@ -1800,6 +1800,6 @@ class TopOpeBRep_HArray1OfVPointInter : public MMgt_TShared {
 };
 %extend TopOpeBRep_HArray1OfVPointInter {
 	~TopOpeBRep_HArray1OfVPointInter() {
-	printf("Call custom destructor for instance of TopOpeBRep_HArray1OfVPointInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRep_HArray1OfVPointInter\n");}
 	}
 };

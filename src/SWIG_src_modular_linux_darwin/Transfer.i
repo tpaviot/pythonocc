@@ -125,7 +125,7 @@ class Handle_Transfer_ProcessForFinder : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_ProcessForFinder {
 	~Handle_Transfer_ProcessForFinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_ProcessForFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ProcessForFinder\n");}
 	}
 };
 
@@ -149,7 +149,7 @@ class Handle_Transfer_FinderProcess : public Handle_Transfer_ProcessForFinder {
 };
 %extend Handle_Transfer_FinderProcess {
 	~Handle_Transfer_FinderProcess() {
-	printf("Call custom destructor for instance of Handle_Transfer_FinderProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_FinderProcess\n");}
 	}
 };
 
@@ -173,7 +173,7 @@ class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_HSequenceOfFinder {
 	~Handle_Transfer_HSequenceOfFinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_HSequenceOfFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_HSequenceOfFinder\n");}
 	}
 };
 
@@ -197,7 +197,7 @@ class Handle_Transfer_Binder : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_Binder {
 	~Handle_Transfer_Binder() {
-	printf("Call custom destructor for instance of Handle_Transfer_Binder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_Binder\n");}
 	}
 };
 
@@ -221,7 +221,7 @@ class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
 };
 %extend Handle_Transfer_VoidBinder {
 	~Handle_Transfer_VoidBinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_VoidBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_VoidBinder\n");}
 	}
 };
 
@@ -245,7 +245,7 @@ class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_Finder {
 	~Handle_Transfer_Finder() {
-	printf("Call custom destructor for instance of Handle_Transfer_Finder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_Finder\n");}
 	}
 };
 
@@ -269,7 +269,7 @@ class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_ResultFromTransient {
 	~Handle_Transfer_ResultFromTransient() {
-	printf("Call custom destructor for instance of Handle_Transfer_ResultFromTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromTransient\n");}
 	}
 };
 
@@ -293,7 +293,7 @@ class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 };
 %extend Handle_Transfer_SimpleBinderOfTransient {
 	~Handle_Transfer_SimpleBinderOfTransient() {
-	printf("Call custom destructor for instance of Handle_Transfer_SimpleBinderOfTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SimpleBinderOfTransient\n");}
 	}
 };
 
@@ -317,7 +317,7 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public
 };
 %extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
 	~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");}
 	}
 };
 
@@ -341,7 +341,7 @@ class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 };
 %extend Handle_Transfer_TransientMapper {
 	~Handle_Transfer_TransientMapper() {
-	printf("Call custom destructor for instance of Handle_Transfer_TransientMapper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransientMapper\n");}
 	}
 };
 
@@ -365,7 +365,7 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : pub
 };
 %extend Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
 	~Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient() {
-	printf("Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");}
 	}
 };
 
@@ -389,7 +389,7 @@ class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_ActorOfProcessForFinder {
 	~Handle_Transfer_ActorOfProcessForFinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_ActorOfProcessForFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfProcessForFinder\n");}
 	}
 };
 
@@ -413,7 +413,7 @@ class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
 };
 %extend Handle_Transfer_TransferFailure {
 	~Handle_Transfer_TransferFailure() {
-	printf("Call custom destructor for instance of Handle_Transfer_TransferFailure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransferFailure\n");}
 	}
 };
 
@@ -437,7 +437,7 @@ class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection
 };
 %extend Handle_Transfer_SequenceNodeOfSequenceOfBinder {
 	~Handle_Transfer_SequenceNodeOfSequenceOfBinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfBinder\n");}
 	}
 };
 
@@ -461,7 +461,7 @@ class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_ProcessForTransient {
 	~Handle_Transfer_ProcessForTransient() {
-	printf("Call custom destructor for instance of Handle_Transfer_ProcessForTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ProcessForTransient\n");}
 	}
 };
 
@@ -485,7 +485,7 @@ class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransi
 };
 %extend Handle_Transfer_TransientProcess {
 	~Handle_Transfer_TransientProcess() {
-	printf("Call custom destructor for instance of Handle_Transfer_TransientProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransientProcess\n");}
 	}
 };
 
@@ -509,7 +509,7 @@ class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_ActorOfProcessForTransient {
 	~Handle_Transfer_ActorOfProcessForTransient() {
-	printf("Call custom destructor for instance of Handle_Transfer_ActorOfProcessForTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfProcessForTransient\n");}
 	}
 };
 
@@ -533,7 +533,7 @@ class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfPr
 };
 %extend Handle_Transfer_ActorOfTransientProcess {
 	~Handle_Transfer_ActorOfTransientProcess() {
-	printf("Call custom destructor for instance of Handle_Transfer_ActorOfTransientProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfTransientProcess\n");}
 	}
 };
 
@@ -557,7 +557,7 @@ class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBi
 };
 %extend Handle_Transfer_BinderOfTransientInteger {
 	~Handle_Transfer_BinderOfTransientInteger() {
-	printf("Call custom destructor for instance of Handle_Transfer_BinderOfTransientInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_BinderOfTransientInteger\n");}
 	}
 };
 
@@ -581,7 +581,7 @@ class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_T
 };
 %extend Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient {
 	~Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient() {
-	printf("Call custom destructor for instance of Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient\n");}
 	}
 };
 
@@ -605,7 +605,7 @@ class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProce
 };
 %extend Handle_Transfer_ActorOfFinderProcess {
 	~Handle_Transfer_ActorOfFinderProcess() {
-	printf("Call custom destructor for instance of Handle_Transfer_ActorOfFinderProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfFinderProcess\n");}
 	}
 };
 
@@ -629,7 +629,7 @@ class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 };
 %extend Handle_Transfer_DispatchControl {
 	~Handle_Transfer_DispatchControl() {
-	printf("Call custom destructor for instance of Handle_Transfer_DispatchControl\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DispatchControl\n");}
 	}
 };
 
@@ -653,7 +653,7 @@ class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure 
 };
 %extend Handle_Transfer_TransferDeadLoop {
 	~Handle_Transfer_TransferDeadLoop() {
-	printf("Call custom destructor for instance of Handle_Transfer_TransferDeadLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransferDeadLoop\n");}
 	}
 };
 
@@ -677,7 +677,7 @@ class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_HSequenceOfBinder {
 	~Handle_Transfer_HSequenceOfBinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_HSequenceOfBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_HSequenceOfBinder\n");}
 	}
 };
 
@@ -701,7 +701,7 @@ class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 };
 %extend Handle_Transfer_MultipleBinder {
 	~Handle_Transfer_MultipleBinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_MultipleBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_MultipleBinder\n");}
 	}
 };
 
@@ -725,7 +725,7 @@ class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientPro
 };
 %extend Handle_Transfer_ActorDispatch {
 	~Handle_Transfer_ActorDispatch() {
-	printf("Call custom destructor for instance of Handle_Transfer_ActorDispatch\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorDispatch\n");}
 	}
 };
 
@@ -749,7 +749,7 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_ResultFromModel {
 	~Handle_Transfer_ResultFromModel() {
-	printf("Call custom destructor for instance of Handle_Transfer_ResultFromModel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromModel\n");}
 	}
 };
 
@@ -773,7 +773,7 @@ class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 };
 %extend Handle_Transfer_MapContainer {
 	~Handle_Transfer_MapContainer() {
-	printf("Call custom destructor for instance of Handle_Transfer_MapContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_MapContainer\n");}
 	}
 };
 
@@ -797,7 +797,7 @@ class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
 };
 %extend Handle_Transfer_TransientListBinder {
 	~Handle_Transfer_TransientListBinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_TransientListBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransientListBinder\n");}
 	}
 };
 
@@ -821,7 +821,7 @@ class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection
 };
 %extend Handle_Transfer_SequenceNodeOfSequenceOfFinder {
 	~Handle_Transfer_SequenceNodeOfSequenceOfFinder() {
-	printf("Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfFinder\n");}
 	}
 };
 
@@ -864,7 +864,7 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 };
 %extend Transfer_TransferMapOfProcessForTransient {
 	~Transfer_TransferMapOfProcessForTransient() {
-	printf("Call custom destructor for instance of Transfer_TransferMapOfProcessForTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransferMapOfProcessForTransient\n");}
 	}
 };
 
@@ -887,7 +887,7 @@ class Transfer_TransferInput {
 };
 %extend Transfer_TransferInput {
 	~Transfer_TransferInput() {
-	printf("Call custom destructor for instance of Transfer_TransferInput\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransferInput\n");}
 	}
 };
 
@@ -917,7 +917,7 @@ class Transfer_DispatchControl : public Interface_CopyControl {
 };
 %extend Transfer_DispatchControl {
 	~Transfer_DispatchControl() {
-	printf("Call custom destructor for instance of Transfer_DispatchControl\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_DispatchControl\n");}
 	}
 };
 
@@ -969,7 +969,7 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 };
 %extend Transfer_ResultFromTransient {
 	~Transfer_ResultFromTransient() {
-	printf("Call custom destructor for instance of Transfer_ResultFromTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ResultFromTransient\n");}
 	}
 };
 
@@ -1017,7 +1017,7 @@ class Transfer_Binder : public MMgt_TShared {
 };
 %extend Transfer_Binder {
 	~Transfer_Binder() {
-	printf("Call custom destructor for instance of Transfer_Binder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_Binder\n");}
 	}
 };
 
@@ -1070,7 +1070,7 @@ class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
 };
 %extend Transfer_SequenceOfFinder {
 	~Transfer_SequenceOfFinder() {
-	printf("Call custom destructor for instance of Transfer_SequenceOfFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_SequenceOfFinder\n");}
 	}
 };
 
@@ -1121,7 +1121,7 @@ class Transfer_TransferIterator {
 };
 %extend Transfer_TransferIterator {
 	~Transfer_TransferIterator() {
-	printf("Call custom destructor for instance of Transfer_TransferIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransferIterator\n");}
 	}
 };
 
@@ -1157,7 +1157,7 @@ class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
 };
 %extend Transfer_ActorOfProcessForTransient {
 	~Transfer_ActorOfProcessForTransient() {
-	printf("Call custom destructor for instance of Transfer_ActorOfProcessForTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForTransient\n");}
 	}
 };
 
@@ -1305,7 +1305,7 @@ class Transfer_ProcessForFinder : public MMgt_TShared {
 };
 %extend Transfer_ProcessForFinder {
 	~Transfer_ProcessForFinder() {
-	printf("Call custom destructor for instance of Transfer_ProcessForFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ProcessForFinder\n");}
 	}
 };
 
@@ -1369,7 +1369,7 @@ class Transfer_HSequenceOfFinder : public MMgt_TShared {
 };
 %extend Transfer_HSequenceOfFinder {
 	~Transfer_HSequenceOfFinder() {
-	printf("Call custom destructor for instance of Transfer_HSequenceOfFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_HSequenceOfFinder\n");}
 	}
 };
 
@@ -1427,7 +1427,7 @@ class Transfer_Finder : public MMgt_TShared {
 };
 %extend Transfer_Finder {
 	~Transfer_Finder() {
-	printf("Call custom destructor for instance of Transfer_Finder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_Finder\n");}
 	}
 };
 
@@ -1460,7 +1460,7 @@ class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
 };
 %extend Transfer_DataMapOfTransientTransient {
 	~Transfer_DataMapOfTransientTransient() {
-	printf("Call custom destructor for instance of Transfer_DataMapOfTransientTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_DataMapOfTransientTransient\n");}
 	}
 };
 
@@ -1608,7 +1608,7 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 };
 %extend Transfer_ProcessForTransient {
 	~Transfer_ProcessForTransient() {
-	printf("Call custom destructor for instance of Transfer_ProcessForTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ProcessForTransient\n");}
 	}
 };
 
@@ -1629,7 +1629,7 @@ class Transfer_TransferDispatch : public Interface_CopyTool {
 };
 %extend Transfer_TransferDispatch {
 	~Transfer_TransferDispatch() {
-	printf("Call custom destructor for instance of Transfer_TransferDispatch\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransferDispatch\n");}
 	}
 };
 
@@ -1646,7 +1646,7 @@ class Transfer_FindHasher {
 };
 %extend Transfer_FindHasher {
 	~Transfer_FindHasher() {
-	printf("Call custom destructor for instance of Transfer_FindHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_FindHasher\n");}
 	}
 };
 
@@ -1674,7 +1674,7 @@ class Transfer_TransferFailure : public Interface_InterfaceError {
 };
 %extend Transfer_TransferFailure {
 	~Transfer_TransferFailure() {
-	printf("Call custom destructor for instance of Transfer_TransferFailure\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransferFailure\n");}
 	}
 };
 
@@ -1696,7 +1696,7 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 };
 %extend Transfer_TransferDeadLoop {
 	~Transfer_TransferDeadLoop() {
-	printf("Call custom destructor for instance of Transfer_TransferDeadLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransferDeadLoop\n");}
 	}
 };
 
@@ -1720,7 +1720,7 @@ class Transfer_VoidBinder : public Transfer_Binder {
 };
 %extend Transfer_VoidBinder {
 	~Transfer_VoidBinder() {
-	printf("Call custom destructor for instance of Transfer_VoidBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_VoidBinder\n");}
 	}
 };
 
@@ -1748,7 +1748,7 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 };
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder {
 	~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder() {
-	printf("Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");}
 	}
 };
 
@@ -1774,7 +1774,7 @@ class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransi
 };
 %extend Transfer_ActorOfTransientProcess {
 	~Transfer_ActorOfTransientProcess() {
-	printf("Call custom destructor for instance of Transfer_ActorOfTransientProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfTransientProcess\n");}
 	}
 };
 
@@ -1800,7 +1800,7 @@ class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
 };
 %extend Transfer_ActorDispatch {
 	~Transfer_ActorDispatch() {
-	printf("Call custom destructor for instance of Transfer_ActorDispatch\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ActorDispatch\n");}
 	}
 };
 
@@ -1858,7 +1858,7 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 };
 %extend Transfer_ResultFromModel {
 	~Transfer_ResultFromModel() {
-	printf("Call custom destructor for instance of Transfer_ResultFromModel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ResultFromModel\n");}
 	}
 };
 
@@ -1910,7 +1910,7 @@ class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 };
 %extend Transfer_TransientProcess {
 	~Transfer_TransientProcess() {
-	printf("Call custom destructor for instance of Transfer_TransientProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransientProcess\n");}
 	}
 };
 
@@ -1940,7 +1940,7 @@ class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
 };
 %extend Transfer_SimpleBinderOfTransient {
 	~Transfer_SimpleBinderOfTransient() {
-	printf("Call custom destructor for instance of Transfer_SimpleBinderOfTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_SimpleBinderOfTransient\n");}
 	}
 };
 
@@ -1963,7 +1963,7 @@ class Transfer_IteratorOfProcessForFinder : public Transfer_TransferIterator {
 };
 %extend Transfer_IteratorOfProcessForFinder {
 	~Transfer_IteratorOfProcessForFinder() {
-	printf("Call custom destructor for instance of Transfer_IteratorOfProcessForFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_IteratorOfProcessForFinder\n");}
 	}
 };
 
@@ -1999,7 +1999,7 @@ class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
 };
 %extend Transfer_ActorOfProcessForFinder {
 	~Transfer_ActorOfProcessForFinder() {
-	printf("Call custom destructor for instance of Transfer_ActorOfProcessForFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForFinder\n");}
 	}
 };
 
@@ -2023,7 +2023,7 @@ class Transfer_MapContainer : public MMgt_TShared {
 };
 %extend Transfer_MapContainer {
 	~Transfer_MapContainer() {
-	printf("Call custom destructor for instance of Transfer_MapContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_MapContainer\n");}
 	}
 };
 
@@ -2051,7 +2051,7 @@ class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
 };
 %extend Transfer_ActorOfFinderProcess {
 	~Transfer_ActorOfFinderProcess() {
-	printf("Call custom destructor for instance of Transfer_ActorOfFinderProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfFinderProcess\n");}
 	}
 };
 
@@ -2083,7 +2083,7 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 };
 %extend Transfer_FinderProcess {
 	~Transfer_FinderProcess() {
-	printf("Call custom destructor for instance of Transfer_FinderProcess\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_FinderProcess\n");}
 	}
 };
 
@@ -2107,7 +2107,7 @@ class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_Map
 };
 %extend Transfer_DataMapNodeOfDataMapOfTransientTransient {
 	~Transfer_DataMapNodeOfDataMapOfTransientTransient() {
-	printf("Call custom destructor for instance of Transfer_DataMapNodeOfDataMapOfTransientTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_DataMapNodeOfDataMapOfTransientTransient\n");}
 	}
 };
 
@@ -2160,7 +2160,7 @@ class Transfer_SequenceOfBinder : public TCollection_BaseSequence {
 };
 %extend Transfer_SequenceOfBinder {
 	~Transfer_SequenceOfBinder() {
-	printf("Call custom destructor for instance of Transfer_SequenceOfBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_SequenceOfBinder\n");}
 	}
 };
 
@@ -2196,7 +2196,7 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 };
 %extend Transfer_MultipleBinder {
 	~Transfer_MultipleBinder() {
-	printf("Call custom destructor for instance of Transfer_MultipleBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_MultipleBinder\n");}
 	}
 };
 
@@ -2218,7 +2218,7 @@ class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
 };
 %extend Transfer_SequenceNodeOfSequenceOfFinder {
 	~Transfer_SequenceNodeOfSequenceOfFinder() {
-	printf("Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfFinder\n");}
 	}
 };
 
@@ -2249,7 +2249,7 @@ class Transfer_TransferOutput {
 };
 %extend Transfer_TransferOutput {
 	~Transfer_TransferOutput() {
-	printf("Call custom destructor for instance of Transfer_TransferOutput\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransferOutput\n");}
 	}
 };
 
@@ -2292,7 +2292,7 @@ class Transfer_TransferMapOfProcessForFinder : public TCollection_BasicMap {
 };
 %extend Transfer_TransferMapOfProcessForFinder {
 	~Transfer_TransferMapOfProcessForFinder() {
-	printf("Call custom destructor for instance of Transfer_TransferMapOfProcessForFinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransferMapOfProcessForFinder\n");}
 	}
 };
 
@@ -2330,7 +2330,7 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 };
 %extend Transfer_TransientListBinder {
 	~Transfer_TransientListBinder() {
-	printf("Call custom destructor for instance of Transfer_TransientListBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransientListBinder\n");}
 	}
 };
 
@@ -2352,7 +2352,7 @@ class Transfer_SequenceNodeOfSequenceOfBinder : public TCollection_SeqNode {
 };
 %extend Transfer_SequenceNodeOfSequenceOfBinder {
 	~Transfer_SequenceNodeOfSequenceOfBinder() {
-	printf("Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfBinder\n");}
 	}
 };
 
@@ -2376,7 +2376,7 @@ class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransien
 };
 %extend Transfer_BinderOfTransientInteger {
 	~Transfer_BinderOfTransientInteger() {
-	printf("Call custom destructor for instance of Transfer_BinderOfTransientInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_BinderOfTransientInteger\n");}
 	}
 };
 
@@ -2440,7 +2440,7 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 };
 %extend Transfer_HSequenceOfBinder {
 	~Transfer_HSequenceOfBinder() {
-	printf("Call custom destructor for instance of Transfer_HSequenceOfBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_HSequenceOfBinder\n");}
 	}
 };
 
@@ -2457,7 +2457,7 @@ class Transfer_DataInfo {
 };
 %extend Transfer_DataInfo {
 	~Transfer_DataInfo() {
-	printf("Call custom destructor for instance of Transfer_DataInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_DataInfo\n");}
 	}
 };
 
@@ -2485,7 +2485,7 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 };
 %extend Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient {
 	~Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient() {
-	printf("Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");}
 	}
 };
 
@@ -2513,7 +2513,7 @@ class Transfer_TransientMapper : public Transfer_Finder {
 };
 %extend Transfer_TransientMapper {
 	~Transfer_TransientMapper() {
-	printf("Call custom destructor for instance of Transfer_TransientMapper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_TransientMapper\n");}
 	}
 };
 
@@ -2534,7 +2534,7 @@ class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection
 };
 %extend Transfer_DataMapIteratorOfDataMapOfTransientTransient {
 	~Transfer_DataMapIteratorOfDataMapOfTransientTransient() {
-	printf("Call custom destructor for instance of Transfer_DataMapIteratorOfDataMapOfTransientTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_DataMapIteratorOfDataMapOfTransientTransient\n");}
 	}
 };
 
@@ -2557,6 +2557,6 @@ class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator 
 };
 %extend Transfer_IteratorOfProcessForTransient {
 	~Transfer_IteratorOfProcessForTransient() {
-	printf("Call custom destructor for instance of Transfer_IteratorOfProcessForTransient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Transfer_IteratorOfProcessForTransient\n");}
 	}
 };

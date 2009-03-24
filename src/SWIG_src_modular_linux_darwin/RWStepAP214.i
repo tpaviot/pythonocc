@@ -104,7 +104,7 @@ class Handle_RWStepAP214_ReadWriteModule : public Handle_StepData_ReadWriteModul
 };
 %extend Handle_RWStepAP214_ReadWriteModule {
 	~Handle_RWStepAP214_ReadWriteModule() {
-	printf("Call custom destructor for instance of Handle_RWStepAP214_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_RWStepAP214_ReadWriteModule\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 };
 %extend Handle_RWStepAP214_GeneralModule {
 	~Handle_RWStepAP214_GeneralModule() {
-	printf("Call custom destructor for instance of Handle_RWStepAP214_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_RWStepAP214_GeneralModule\n");}
 	}
 };
 
@@ -147,7 +147,7 @@ class RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
 };
 %extend RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
 	~RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -166,7 +166,7 @@ class RWStepAP214_RWAppliedDateAssignment {
 };
 %extend RWStepAP214_RWAppliedDateAssignment {
 	~RWStepAP214_RWAppliedDateAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedDateAssignment\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {
 };
 %extend RWStepAP214_ReadWriteModule {
 	~RWStepAP214_ReadWriteModule() {
-	printf("Call custom destructor for instance of RWStepAP214_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_ReadWriteModule\n");}
 	}
 };
 
@@ -219,7 +219,7 @@ class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
 };
 %extend RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
 	~RWStepAP214_RWAutoDesignSecurityClassificationAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignSecurityClassificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignSecurityClassificationAssignment\n");}
 	}
 };
 
@@ -238,7 +238,7 @@ class RWStepAP214_RWAutoDesignNominalDateAssignment {
 };
 %extend RWStepAP214_RWAutoDesignNominalDateAssignment {
 	~RWStepAP214_RWAutoDesignNominalDateAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAssignment\n");}
 	}
 };
 
@@ -257,7 +257,7 @@ class RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
 };
 %extend RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
 	~RWStepAP214_RWAppliedPersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedPersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -276,7 +276,7 @@ class RWStepAP214_RWAppliedGroupAssignment {
 };
 %extend RWStepAP214_RWAppliedGroupAssignment {
 	~RWStepAP214_RWAppliedGroupAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedGroupAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedGroupAssignment\n");}
 	}
 };
 
@@ -295,7 +295,7 @@ class RWStepAP214_RWAppliedDateAndTimeAssignment {
 };
 %extend RWStepAP214_RWAppliedDateAndTimeAssignment {
 	~RWStepAP214_RWAppliedDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedDateAndTimeAssignment\n");}
 	}
 };
 
@@ -314,7 +314,7 @@ class RWStepAP214_RWAutoDesignOrganizationAssignment {
 };
 %extend RWStepAP214_RWAutoDesignOrganizationAssignment {
 	~RWStepAP214_RWAutoDesignOrganizationAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignOrganizationAssignment\n");}
 	}
 };
 
@@ -333,7 +333,7 @@ class RWStepAP214_RWClass {
 };
 %extend RWStepAP214_RWClass {
 	~RWStepAP214_RWClass() {
-	printf("Call custom destructor for instance of RWStepAP214_RWClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWClass\n");}
 	}
 };
 
@@ -352,7 +352,7 @@ class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 };
 %extend RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 	~RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment\n");}
 	}
 };
 
@@ -384,7 +384,7 @@ class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 };
 %extend RWStepAP214_GeneralModule {
 	~RWStepAP214_GeneralModule() {
-	printf("Call custom destructor for instance of RWStepAP214_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_GeneralModule\n");}
 	}
 };
 
@@ -403,7 +403,7 @@ class RWStepAP214_RWAutoDesignGroupAssignment {
 };
 %extend RWStepAP214_RWAutoDesignGroupAssignment {
 	~RWStepAP214_RWAutoDesignGroupAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignGroupAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignGroupAssignment\n");}
 	}
 };
 
@@ -422,7 +422,7 @@ class RWStepAP214_RWAppliedApprovalAssignment {
 };
 %extend RWStepAP214_RWAppliedApprovalAssignment {
 	~RWStepAP214_RWAppliedApprovalAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedApprovalAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedApprovalAssignment\n");}
 	}
 };
 
@@ -441,7 +441,7 @@ class RWStepAP214_RWAutoDesignPresentedItem {
 };
 %extend RWStepAP214_RWAutoDesignPresentedItem {
 	~RWStepAP214_RWAutoDesignPresentedItem() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignPresentedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignPresentedItem\n");}
 	}
 };
 
@@ -460,7 +460,7 @@ class RWStepAP214_RWRepItemGroup {
 };
 %extend RWStepAP214_RWRepItemGroup {
 	~RWStepAP214_RWRepItemGroup() {
-	printf("Call custom destructor for instance of RWStepAP214_RWRepItemGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWRepItemGroup\n");}
 	}
 };
 
@@ -479,7 +479,7 @@ class RWStepAP214_RWAppliedDocumentReference {
 };
 %extend RWStepAP214_RWAppliedDocumentReference {
 	~RWStepAP214_RWAppliedDocumentReference() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedDocumentReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedDocumentReference\n");}
 	}
 };
 
@@ -498,7 +498,7 @@ class RWStepAP214_RWExternallyDefinedGeneralProperty {
 };
 %extend RWStepAP214_RWExternallyDefinedGeneralProperty {
 	~RWStepAP214_RWExternallyDefinedGeneralProperty() {
-	printf("Call custom destructor for instance of RWStepAP214_RWExternallyDefinedGeneralProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWExternallyDefinedGeneralProperty\n");}
 	}
 };
 
@@ -517,7 +517,7 @@ class RWStepAP214_RWAutoDesignApprovalAssignment {
 };
 %extend RWStepAP214_RWAutoDesignApprovalAssignment {
 	~RWStepAP214_RWAutoDesignApprovalAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignApprovalAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignApprovalAssignment\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class RWStepAP214_RWAppliedPresentedItem {
 };
 %extend RWStepAP214_RWAppliedPresentedItem {
 	~RWStepAP214_RWAppliedPresentedItem() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedPresentedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedPresentedItem\n");}
 	}
 };
 
@@ -555,7 +555,7 @@ class RWStepAP214_RWAppliedExternalIdentificationAssignment {
 };
 %extend RWStepAP214_RWAppliedExternalIdentificationAssignment {
 	~RWStepAP214_RWAppliedExternalIdentificationAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedExternalIdentificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedExternalIdentificationAssignment\n");}
 	}
 };
 
@@ -574,7 +574,7 @@ class RWStepAP214_RWAppliedOrganizationAssignment {
 };
 %extend RWStepAP214_RWAppliedOrganizationAssignment {
 	~RWStepAP214_RWAppliedOrganizationAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedOrganizationAssignment\n");}
 	}
 };
 
@@ -589,7 +589,7 @@ class RWStepAP214 {
 };
 %extend RWStepAP214 {
 	~RWStepAP214() {
-	printf("Call custom destructor for instance of RWStepAP214\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214\n");}
 	}
 };
 
@@ -608,7 +608,7 @@ class RWStepAP214_RWExternallyDefinedClass {
 };
 %extend RWStepAP214_RWExternallyDefinedClass {
 	~RWStepAP214_RWExternallyDefinedClass() {
-	printf("Call custom destructor for instance of RWStepAP214_RWExternallyDefinedClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWExternallyDefinedClass\n");}
 	}
 };
 
@@ -627,7 +627,7 @@ class RWStepAP214_RWAutoDesignDocumentReference {
 };
 %extend RWStepAP214_RWAutoDesignDocumentReference {
 	~RWStepAP214_RWAutoDesignDocumentReference() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignDocumentReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignDocumentReference\n");}
 	}
 };
 
@@ -646,7 +646,7 @@ class RWStepAP214_RWAppliedSecurityClassificationAssignment {
 };
 %extend RWStepAP214_RWAppliedSecurityClassificationAssignment {
 	~RWStepAP214_RWAppliedSecurityClassificationAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAppliedSecurityClassificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedSecurityClassificationAssignment\n");}
 	}
 };
 
@@ -665,7 +665,7 @@ class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 };
 %extend RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 	~RWStepAP214_RWAutoDesignDateAndPersonAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignDateAndPersonAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignDateAndPersonAssignment\n");}
 	}
 };
 
@@ -684,7 +684,7 @@ class RWStepAP214_RWAutoDesignActualDateAssignment {
 };
 %extend RWStepAP214_RWAutoDesignActualDateAssignment {
 	~RWStepAP214_RWAutoDesignActualDateAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignActualDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignActualDateAssignment\n");}
 	}
 };
 
@@ -703,6 +703,6 @@ class RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
 };
 %extend RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
 	~RWStepAP214_RWAutoDesignActualDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of RWStepAP214_RWAutoDesignActualDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignActualDateAndTimeAssignment\n");}
 	}
 };

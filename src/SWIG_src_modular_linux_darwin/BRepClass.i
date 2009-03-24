@@ -103,7 +103,7 @@ class BRepClass_Edge {
 };
 %extend BRepClass_Edge {
 	~BRepClass_Edge() {
-	printf("Call custom destructor for instance of BRepClass_Edge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass_Edge\n");}
 	}
 };
 
@@ -120,7 +120,7 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 };
 %extend BRepClass_Intersector {
 	~BRepClass_Intersector() {
-	printf("Call custom destructor for instance of BRepClass_Intersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass_Intersector\n");}
 	}
 };
 
@@ -149,7 +149,7 @@ class BRepClass_FClassifier {
 };
 %extend BRepClass_FClassifier {
 	~BRepClass_FClassifier() {
-	printf("Call custom destructor for instance of BRepClass_FClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass_FClassifier\n");}
 	}
 };
 
@@ -164,7 +164,7 @@ class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 };
 %extend BRepClass_FaceClassifier {
 	~BRepClass_FaceClassifier() {
-	printf("Call custom destructor for instance of BRepClass_FaceClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass_FaceClassifier\n");}
 	}
 };
 
@@ -191,7 +191,7 @@ class BRepClass_FClass2dOfFClassifier {
 };
 %extend BRepClass_FClass2dOfFClassifier {
 	~BRepClass_FClass2dOfFClassifier() {
-	printf("Call custom destructor for instance of BRepClass_FClass2dOfFClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass_FClass2dOfFClassifier\n");}
 	}
 };
 
@@ -228,7 +228,7 @@ class BRepClass_FaceExplorer {
 };
 %extend BRepClass_FaceExplorer {
 	~BRepClass_FaceExplorer() {
-	printf("Call custom destructor for instance of BRepClass_FaceExplorer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass_FaceExplorer\n");}
 	}
 };
 
@@ -255,6 +255,6 @@ class BRepClass_FacePassiveClassifier {
 };
 %extend BRepClass_FacePassiveClassifier {
 	~BRepClass_FacePassiveClassifier() {
-	printf("Call custom destructor for instance of BRepClass_FacePassiveClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass_FacePassiveClassifier\n");}
 	}
 };

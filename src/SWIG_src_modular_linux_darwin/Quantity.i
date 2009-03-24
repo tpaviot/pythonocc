@@ -779,7 +779,7 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 };
 %extend Handle_Quantity_ColorDefinitionError {
 	~Handle_Quantity_ColorDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Quantity_ColorDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Quantity_ColorDefinitionError\n");}
 	}
 };
 
@@ -803,7 +803,7 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 };
 %extend Handle_Quantity_PeriodDefinitionError {
 	~Handle_Quantity_PeriodDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Quantity_PeriodDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Quantity_PeriodDefinitionError\n");}
 	}
 };
 
@@ -827,7 +827,7 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 };
 %extend Handle_Quantity_HArray1OfColor {
 	~Handle_Quantity_HArray1OfColor() {
-	printf("Call custom destructor for instance of Handle_Quantity_HArray1OfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Quantity_HArray1OfColor\n");}
 	}
 };
 
@@ -851,7 +851,7 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 };
 %extend Handle_Quantity_DateDefinitionError {
 	~Handle_Quantity_DateDefinitionError() {
-	printf("Call custom destructor for instance of Handle_Quantity_DateDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Quantity_DateDefinitionError\n");}
 	}
 };
 
@@ -894,7 +894,7 @@ class Quantity_Array2OfColor {
 };
 %extend Quantity_Array2OfColor {
 	~Quantity_Array2OfColor() {
-	printf("Call custom destructor for instance of Quantity_Array2OfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_Array2OfColor\n");}
 	}
 };
 
@@ -922,7 +922,7 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_ColorDefinitionError {
 	~Quantity_ColorDefinitionError() {
-	printf("Call custom destructor for instance of Quantity_ColorDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_ColorDefinitionError\n");}
 	}
 };
 
@@ -961,7 +961,7 @@ class Quantity_Array1OfCoefficient {
 };
 %extend Quantity_Array1OfCoefficient {
 	~Quantity_Array1OfCoefficient() {
-	printf("Call custom destructor for instance of Quantity_Array1OfCoefficient\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfCoefficient\n");}
 	}
 };
 
@@ -1016,7 +1016,7 @@ class Quantity_Period {
 };
 %extend Quantity_Period {
 	~Quantity_Period() {
-	printf("Call custom destructor for instance of Quantity_Period\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_Period\n");}
 	}
 };
 
@@ -1083,7 +1083,7 @@ class Quantity_Date {
 };
 %extend Quantity_Date {
 	~Quantity_Date() {
-	printf("Call custom destructor for instance of Quantity_Date\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_Date\n");}
 	}
 };
 
@@ -1111,7 +1111,7 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_PeriodDefinitionError {
 	~Quantity_PeriodDefinitionError() {
-	printf("Call custom destructor for instance of Quantity_PeriodDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_PeriodDefinitionError\n");}
 	}
 };
 
@@ -1192,7 +1192,7 @@ class Quantity_Color {
 };
 %extend Quantity_Color {
 	~Quantity_Color() {
-	printf("Call custom destructor for instance of Quantity_Color\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_Color\n");}
 	}
 };
 
@@ -1231,7 +1231,7 @@ class Quantity_Array1OfColor {
 };
 %extend Quantity_Array1OfColor {
 	~Quantity_Array1OfColor() {
-	printf("Call custom destructor for instance of Quantity_Array1OfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfColor\n");}
 	}
 };
 
@@ -1259,7 +1259,7 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_DateDefinitionError {
 	~Quantity_DateDefinitionError() {
-	printf("Call custom destructor for instance of Quantity_DateDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_DateDefinitionError\n");}
 	}
 };
 
@@ -1299,7 +1299,7 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 };
 %extend Quantity_HArray1OfColor {
 	~Quantity_HArray1OfColor() {
-	printf("Call custom destructor for instance of Quantity_HArray1OfColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_HArray1OfColor\n");}
 	}
 };
 
@@ -1320,6 +1320,6 @@ class Quantity_Convert {
 };
 %extend Quantity_Convert {
 	~Quantity_Convert() {
-	printf("Call custom destructor for instance of Quantity_Convert\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Quantity_Convert\n");}
 	}
 };

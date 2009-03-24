@@ -166,7 +166,7 @@ class Handle_StepBasic_Person : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Person {
 	~Handle_StepBasic_Person() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Person\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Person\n");}
 	}
 };
 
@@ -190,7 +190,7 @@ class Handle_StepBasic_IdentificationRole : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_IdentificationRole {
 	~Handle_StepBasic_IdentificationRole() {
-	printf("Call custom destructor for instance of Handle_StepBasic_IdentificationRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_IdentificationRole\n");}
 	}
 };
 
@@ -214,7 +214,7 @@ class Handle_StepBasic_ApplicationContextElement : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ApplicationContextElement {
 	~Handle_StepBasic_ApplicationContextElement() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApplicationContextElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApplicationContextElement\n");}
 	}
 };
 
@@ -238,7 +238,7 @@ class Handle_StepBasic_MeasureWithUnit : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_MeasureWithUnit {
 	~Handle_StepBasic_MeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_MeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MeasureWithUnit\n");}
 	}
 };
 
@@ -262,7 +262,7 @@ class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_Measu
 };
 %extend Handle_StepBasic_PlaneAngleMeasureWithUnit {
 	~Handle_StepBasic_PlaneAngleMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_PlaneAngleMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PlaneAngleMeasureWithUnit\n");}
 	}
 };
 
@@ -286,7 +286,7 @@ class Handle_StepBasic_Document : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Document {
 	~Handle_StepBasic_Document() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Document\n");}
 	}
 };
 
@@ -310,7 +310,7 @@ class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_NamedUnit {
 	~Handle_StepBasic_NamedUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_NamedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_NamedUnit\n");}
 	}
 };
 
@@ -334,7 +334,7 @@ class Handle_StepBasic_SiUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_SiUnit {
 	~Handle_StepBasic_SiUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnit\n");}
 	}
 };
 
@@ -358,7 +358,7 @@ class Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit : public Handle_Ste
 };
 %extend Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit {
 	~Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");}
 	}
 };
 
@@ -382,7 +382,7 @@ class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ApprovalRelationship {
 	~Handle_StepBasic_ApprovalRelationship() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalRelationship\n");}
 	}
 };
 
@@ -406,7 +406,7 @@ class Handle_StepBasic_ApprovalAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ApprovalAssignment {
 	~Handle_StepBasic_ApprovalAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalAssignment\n");}
 	}
 };
 
@@ -430,7 +430,7 @@ class Handle_StepBasic_ApprovalStatus : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ApprovalStatus {
 	~Handle_StepBasic_ApprovalStatus() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalStatus\n");}
 	}
 };
 
@@ -454,7 +454,7 @@ class Handle_StepBasic_ActionMethod : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ActionMethod {
 	~Handle_StepBasic_ActionMethod() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ActionMethod\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionMethod\n");}
 	}
 };
 
@@ -478,7 +478,7 @@ class Handle_StepBasic_SiUnitAndSolidAngleUnit : public Handle_StepBasic_SiUnit 
 };
 %extend Handle_StepBasic_SiUnitAndSolidAngleUnit {
 	~Handle_StepBasic_SiUnitAndSolidAngleUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndSolidAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndSolidAngleUnit\n");}
 	}
 };
 
@@ -502,7 +502,7 @@ class Handle_StepBasic_Approval : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Approval {
 	~Handle_StepBasic_Approval() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Approval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Approval\n");}
 	}
 };
 
@@ -526,7 +526,7 @@ class Handle_StepBasic_SiUnitAndTimeUnit : public Handle_StepBasic_SiUnit {
 };
 %extend Handle_StepBasic_SiUnitAndTimeUnit {
 	~Handle_StepBasic_SiUnitAndTimeUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndTimeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndTimeUnit\n");}
 	}
 };
 
@@ -550,7 +550,7 @@ class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ActionRequestAssignment {
 	~Handle_StepBasic_ActionRequestAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ActionRequestAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionRequestAssignment\n");}
 	}
 };
 
@@ -574,7 +574,7 @@ class Handle_StepBasic_IdentificationAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_IdentificationAssignment {
 	~Handle_StepBasic_IdentificationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_IdentificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_IdentificationAssignment\n");}
 	}
 };
 
@@ -598,7 +598,7 @@ class Handle_StepBasic_ExternalIdentificationAssignment : public Handle_StepBasi
 };
 %extend Handle_StepBasic_ExternalIdentificationAssignment {
 	~Handle_StepBasic_ExternalIdentificationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ExternalIdentificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ExternalIdentificationAssignment\n");}
 	}
 };
 
@@ -622,7 +622,7 @@ class Handle_StepBasic_ProductDefinition : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ProductDefinition {
 	~Handle_StepBasic_ProductDefinition() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinition\n");}
 	}
 };
 
@@ -646,7 +646,7 @@ class Handle_StepBasic_ProductDefinitionWithAssociatedDocuments : public Handle_
 };
 %extend Handle_StepBasic_ProductDefinitionWithAssociatedDocuments {
 	~Handle_StepBasic_ProductDefinitionWithAssociatedDocuments() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionWithAssociatedDocuments\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionWithAssociatedDocuments\n");}
 	}
 };
 
@@ -670,7 +670,7 @@ class Handle_StepBasic_Date : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Date {
 	~Handle_StepBasic_Date() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Date\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Date\n");}
 	}
 };
 
@@ -694,7 +694,7 @@ class Handle_StepBasic_OrdinalDate : public Handle_StepBasic_Date {
 };
 %extend Handle_StepBasic_OrdinalDate {
 	~Handle_StepBasic_OrdinalDate() {
-	printf("Call custom destructor for instance of Handle_StepBasic_OrdinalDate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrdinalDate\n");}
 	}
 };
 
@@ -718,7 +718,7 @@ class Handle_StepBasic_ProductContext : public Handle_StepBasic_ApplicationConte
 };
 %extend Handle_StepBasic_ProductContext {
 	~Handle_StepBasic_ProductContext() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductContext\n");}
 	}
 };
 
@@ -742,7 +742,7 @@ class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContex
 };
 %extend Handle_StepBasic_MechanicalContext {
 	~Handle_StepBasic_MechanicalContext() {
-	printf("Call custom destructor for instance of Handle_StepBasic_MechanicalContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MechanicalContext\n");}
 	}
 };
 
@@ -766,7 +766,7 @@ class Handle_StepBasic_MassMeasureWithUnit : public Handle_StepBasic_MeasureWith
 };
 %extend Handle_StepBasic_MassMeasureWithUnit {
 	~Handle_StepBasic_MassMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_MassMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MassMeasureWithUnit\n");}
 	}
 };
 
@@ -790,7 +790,7 @@ class Handle_StepBasic_ProductDefinitionContext : public Handle_StepBasic_Applic
 };
 %extend Handle_StepBasic_ProductDefinitionContext {
 	~Handle_StepBasic_ProductDefinitionContext() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionContext\n");}
 	}
 };
 
@@ -814,7 +814,7 @@ class Handle_StepBasic_DesignContext : public Handle_StepBasic_ProductDefinition
 };
 %extend Handle_StepBasic_DesignContext {
 	~Handle_StepBasic_DesignContext() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DesignContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DesignContext\n");}
 	}
 };
 
@@ -838,7 +838,7 @@ class Handle_StepBasic_DateAndTimeAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DateAndTimeAssignment {
 	~Handle_StepBasic_DateAndTimeAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateAndTimeAssignment\n");}
 	}
 };
 
@@ -862,7 +862,7 @@ class Handle_StepBasic_ProductCategoryRelationship : public Handle_MMgt_TShared 
 };
 %extend Handle_StepBasic_ProductCategoryRelationship {
 	~Handle_StepBasic_ProductCategoryRelationship() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductCategoryRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductCategoryRelationship\n");}
 	}
 };
 
@@ -886,7 +886,7 @@ class Handle_StepBasic_ObjectRole : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ObjectRole {
 	~Handle_StepBasic_ObjectRole() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ObjectRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ObjectRole\n");}
 	}
 };
 
@@ -910,7 +910,7 @@ class Handle_StepBasic_SecurityClassification : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_SecurityClassification {
 	~Handle_StepBasic_SecurityClassification() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SecurityClassification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassification\n");}
 	}
 };
 
@@ -934,7 +934,7 @@ class Handle_StepBasic_ConversionBasedUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_ConversionBasedUnit {
 	~Handle_StepBasic_ConversionBasedUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnit\n");}
 	}
 };
 
@@ -958,7 +958,7 @@ class Handle_StepBasic_ConversionBasedUnitAndRatioUnit : public Handle_StepBasic
 };
 %extend Handle_StepBasic_ConversionBasedUnitAndRatioUnit {
 	~Handle_StepBasic_ConversionBasedUnitAndRatioUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndRatioUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndRatioUnit\n");}
 	}
 };
 
@@ -982,7 +982,7 @@ class Handle_StepBasic_PersonAndOrganization : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_PersonAndOrganization {
 	~Handle_StepBasic_PersonAndOrganization() {
-	printf("Call custom destructor for instance of Handle_StepBasic_PersonAndOrganization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonAndOrganization\n");}
 	}
 };
 
@@ -1006,7 +1006,7 @@ class Handle_StepBasic_ActionRequestSolution : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ActionRequestSolution {
 	~Handle_StepBasic_ActionRequestSolution() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ActionRequestSolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionRequestSolution\n");}
 	}
 };
 
@@ -1030,7 +1030,7 @@ class Handle_StepBasic_DocumentReference : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DocumentReference {
 	~Handle_StepBasic_DocumentReference() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DocumentReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentReference\n");}
 	}
 };
 
@@ -1054,7 +1054,7 @@ class Handle_StepBasic_CoordinatedUniversalTimeOffset : public Handle_MMgt_TShar
 };
 %extend Handle_StepBasic_CoordinatedUniversalTimeOffset {
 	~Handle_StepBasic_CoordinatedUniversalTimeOffset() {
-	printf("Call custom destructor for instance of Handle_StepBasic_CoordinatedUniversalTimeOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CoordinatedUniversalTimeOffset\n");}
 	}
 };
 
@@ -1078,7 +1078,7 @@ class Handle_StepBasic_SolidAngleUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_SolidAngleUnit {
 	~Handle_StepBasic_SolidAngleUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SolidAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SolidAngleUnit\n");}
 	}
 };
 
@@ -1102,7 +1102,7 @@ class Handle_StepBasic_MeasureValueMember : public Handle_StepData_SelectReal {
 };
 %extend Handle_StepBasic_MeasureValueMember {
 	~Handle_StepBasic_MeasureValueMember() {
-	printf("Call custom destructor for instance of Handle_StepBasic_MeasureValueMember\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MeasureValueMember\n");}
 	}
 };
 
@@ -1126,7 +1126,7 @@ class Handle_StepBasic_SiUnitAndAreaUnit : public Handle_StepBasic_SiUnit {
 };
 %extend Handle_StepBasic_SiUnitAndAreaUnit {
 	~Handle_StepBasic_SiUnitAndAreaUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndAreaUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndAreaUnit\n");}
 	}
 };
 
@@ -1150,7 +1150,7 @@ class Handle_StepBasic_DocumentType : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DocumentType {
 	~Handle_StepBasic_DocumentType() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DocumentType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentType\n");}
 	}
 };
 
@@ -1174,7 +1174,7 @@ class Handle_StepBasic_HArray1OfProductDefinition : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_HArray1OfProductDefinition {
 	~Handle_StepBasic_HArray1OfProductDefinition() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfProductDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfProductDefinition\n");}
 	}
 };
 
@@ -1198,7 +1198,7 @@ class Handle_StepBasic_ProductDefinitionFormation : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ProductDefinitionFormation {
 	~Handle_StepBasic_ProductDefinitionFormation() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormation\n");}
 	}
 };
 
@@ -1222,7 +1222,7 @@ class Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource : public Ha
 };
 %extend Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource {
 	~Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");}
 	}
 };
 
@@ -1246,7 +1246,7 @@ class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_RatioUnit {
 	~Handle_StepBasic_RatioUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_RatioUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RatioUnit\n");}
 	}
 };
 
@@ -1270,7 +1270,7 @@ class Handle_StepBasic_DocumentRepresentationType : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DocumentRepresentationType {
 	~Handle_StepBasic_DocumentRepresentationType() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DocumentRepresentationType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentRepresentationType\n");}
 	}
 };
 
@@ -1294,7 +1294,7 @@ class Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public Handle_Step
 };
 %extend Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
 	~Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");}
 	}
 };
 
@@ -1318,7 +1318,7 @@ class Handle_StepBasic_EffectivityAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_EffectivityAssignment {
 	~Handle_StepBasic_EffectivityAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_EffectivityAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_EffectivityAssignment\n");}
 	}
 };
 
@@ -1342,7 +1342,7 @@ class Handle_StepBasic_SecurityClassificationAssignment : public Handle_MMgt_TSh
 };
 %extend Handle_StepBasic_SecurityClassificationAssignment {
 	~Handle_StepBasic_SecurityClassificationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SecurityClassificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassificationAssignment\n");}
 	}
 };
 
@@ -1366,7 +1366,7 @@ class Handle_StepBasic_ProductCategory : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ProductCategory {
 	~Handle_StepBasic_ProductCategory() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductCategory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductCategory\n");}
 	}
 };
 
@@ -1390,7 +1390,7 @@ class Handle_StepBasic_PersonAndOrganizationRole : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_PersonAndOrganizationRole {
 	~Handle_StepBasic_PersonAndOrganizationRole() {
-	printf("Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationRole\n");}
 	}
 };
 
@@ -1414,7 +1414,7 @@ class Handle_StepBasic_HArray1OfApproval : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_HArray1OfApproval {
 	~Handle_StepBasic_HArray1OfApproval() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfApproval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfApproval\n");}
 	}
 };
 
@@ -1438,7 +1438,7 @@ class Handle_StepBasic_DocumentProductAssociation : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DocumentProductAssociation {
 	~Handle_StepBasic_DocumentProductAssociation() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DocumentProductAssociation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentProductAssociation\n");}
 	}
 };
 
@@ -1462,7 +1462,7 @@ class Handle_StepBasic_RoleAssociation : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_RoleAssociation {
 	~Handle_StepBasic_RoleAssociation() {
-	printf("Call custom destructor for instance of Handle_StepBasic_RoleAssociation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RoleAssociation\n");}
 	}
 };
 
@@ -1486,7 +1486,7 @@ class Handle_StepBasic_DocumentProductEquivalence : public Handle_StepBasic_Docu
 };
 %extend Handle_StepBasic_DocumentProductEquivalence {
 	~Handle_StepBasic_DocumentProductEquivalence() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DocumentProductEquivalence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentProductEquivalence\n");}
 	}
 };
 
@@ -1510,7 +1510,7 @@ class Handle_StepBasic_ProductRelatedProductCategory : public Handle_StepBasic_P
 };
 %extend Handle_StepBasic_ProductRelatedProductCategory {
 	~Handle_StepBasic_ProductRelatedProductCategory() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductRelatedProductCategory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductRelatedProductCategory\n");}
 	}
 };
 
@@ -1534,7 +1534,7 @@ class Handle_StepBasic_DateRole : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DateRole {
 	~Handle_StepBasic_DateRole() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DateRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateRole\n");}
 	}
 };
 
@@ -1558,7 +1558,7 @@ class Handle_StepBasic_GeneralProperty : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_GeneralProperty {
 	~Handle_StepBasic_GeneralProperty() {
-	printf("Call custom destructor for instance of Handle_StepBasic_GeneralProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_GeneralProperty\n");}
 	}
 };
 
@@ -1582,7 +1582,7 @@ class Handle_StepBasic_DigitalDocument : public Handle_StepBasic_Document {
 };
 %extend Handle_StepBasic_DigitalDocument {
 	~Handle_StepBasic_DigitalDocument() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DigitalDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DigitalDocument\n");}
 	}
 };
 
@@ -1606,7 +1606,7 @@ class Handle_StepBasic_TimeUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_TimeUnit {
 	~Handle_StepBasic_TimeUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_TimeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_TimeUnit\n");}
 	}
 };
 
@@ -1630,7 +1630,7 @@ class Handle_StepBasic_ExternalSource : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ExternalSource {
 	~Handle_StepBasic_ExternalSource() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ExternalSource\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ExternalSource\n");}
 	}
 };
 
@@ -1654,7 +1654,7 @@ class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_CertificationAssignment {
 	~Handle_StepBasic_CertificationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_CertificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CertificationAssignment\n");}
 	}
 };
 
@@ -1678,7 +1678,7 @@ class Handle_StepBasic_SiUnitAndRatioUnit : public Handle_StepBasic_SiUnit {
 };
 %extend Handle_StepBasic_SiUnitAndRatioUnit {
 	~Handle_StepBasic_SiUnitAndRatioUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndRatioUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndRatioUnit\n");}
 	}
 };
 
@@ -1702,7 +1702,7 @@ class Handle_StepBasic_HArray1OfProduct : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_HArray1OfProduct {
 	~Handle_StepBasic_HArray1OfProduct() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfProduct\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfProduct\n");}
 	}
 };
 
@@ -1726,7 +1726,7 @@ class Handle_StepBasic_Group : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Group {
 	~Handle_StepBasic_Group() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Group\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Group\n");}
 	}
 };
 
@@ -1750,7 +1750,7 @@ class Handle_StepBasic_SolidAngleMeasureWithUnit : public Handle_StepBasic_Measu
 };
 %extend Handle_StepBasic_SolidAngleMeasureWithUnit {
 	~Handle_StepBasic_SolidAngleMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SolidAngleMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SolidAngleMeasureWithUnit\n");}
 	}
 };
 
@@ -1774,7 +1774,7 @@ class Handle_StepBasic_ProductDefinitionFormationRelationship : public Handle_MM
 };
 %extend Handle_StepBasic_ProductDefinitionFormationRelationship {
 	~Handle_StepBasic_ProductDefinitionFormationRelationship() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationRelationship\n");}
 	}
 };
 
@@ -1798,7 +1798,7 @@ class Handle_StepBasic_NameAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_NameAssignment {
 	~Handle_StepBasic_NameAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_NameAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_NameAssignment\n");}
 	}
 };
 
@@ -1822,7 +1822,7 @@ class Handle_StepBasic_MassUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_MassUnit {
 	~Handle_StepBasic_MassUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_MassUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MassUnit\n");}
 	}
 };
 
@@ -1846,7 +1846,7 @@ class Handle_StepBasic_Address : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Address {
 	~Handle_StepBasic_Address() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Address\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Address\n");}
 	}
 };
 
@@ -1870,7 +1870,7 @@ class Handle_StepBasic_PersonalAddress : public Handle_StepBasic_Address {
 };
 %extend Handle_StepBasic_PersonalAddress {
 	~Handle_StepBasic_PersonalAddress() {
-	printf("Call custom destructor for instance of Handle_StepBasic_PersonalAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonalAddress\n");}
 	}
 };
 
@@ -1894,7 +1894,7 @@ class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DocumentRelationship {
 	~Handle_StepBasic_DocumentRelationship() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DocumentRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentRelationship\n");}
 	}
 };
 
@@ -1918,7 +1918,7 @@ class Handle_StepBasic_DerivedUnitElement : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DerivedUnitElement {
 	~Handle_StepBasic_DerivedUnitElement() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DerivedUnitElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DerivedUnitElement\n");}
 	}
 };
 
@@ -1942,7 +1942,7 @@ class Handle_StepBasic_ConversionBasedUnitAndVolumeUnit : public Handle_StepBasi
 };
 %extend Handle_StepBasic_ConversionBasedUnitAndVolumeUnit {
 	~Handle_StepBasic_ConversionBasedUnitAndVolumeUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndVolumeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndVolumeUnit\n");}
 	}
 };
 
@@ -1966,7 +1966,7 @@ class Handle_StepBasic_ConversionBasedUnitAndMassUnit : public Handle_StepBasic_
 };
 %extend Handle_StepBasic_ConversionBasedUnitAndMassUnit {
 	~Handle_StepBasic_ConversionBasedUnitAndMassUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndMassUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndMassUnit\n");}
 	}
 };
 
@@ -1990,7 +1990,7 @@ class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ActionAssignment {
 	~Handle_StepBasic_ActionAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ActionAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionAssignment\n");}
 	}
 };
 
@@ -2014,7 +2014,7 @@ class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit 
 };
 %extend Handle_StepBasic_SiUnitAndPlaneAngleUnit {
 	~Handle_StepBasic_SiUnitAndPlaneAngleUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndPlaneAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndPlaneAngleUnit\n");}
 	}
 };
 
@@ -2038,7 +2038,7 @@ class Handle_StepBasic_ThermodynamicTemperatureUnit : public Handle_StepBasic_Na
 };
 %extend Handle_StepBasic_ThermodynamicTemperatureUnit {
 	~Handle_StepBasic_ThermodynamicTemperatureUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ThermodynamicTemperatureUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ThermodynamicTemperatureUnit\n");}
 	}
 };
 
@@ -2062,7 +2062,7 @@ class Handle_StepBasic_DateAndTime : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DateAndTime {
 	~Handle_StepBasic_DateAndTime() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DateAndTime\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateAndTime\n");}
 	}
 };
 
@@ -2086,7 +2086,7 @@ class Handle_StepBasic_SiUnitAndVolumeUnit : public Handle_StepBasic_SiUnit {
 };
 %extend Handle_StepBasic_SiUnitAndVolumeUnit {
 	~Handle_StepBasic_SiUnitAndVolumeUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndVolumeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndVolumeUnit\n");}
 	}
 };
 
@@ -2110,7 +2110,7 @@ class Handle_StepBasic_LengthUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_LengthUnit {
 	~Handle_StepBasic_LengthUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_LengthUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LengthUnit\n");}
 	}
 };
 
@@ -2134,7 +2134,7 @@ class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DateAssignment {
 	~Handle_StepBasic_DateAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateAssignment\n");}
 	}
 };
 
@@ -2158,7 +2158,7 @@ class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Effectivity {
 	~Handle_StepBasic_Effectivity() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Effectivity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Effectivity\n");}
 	}
 };
 
@@ -2182,7 +2182,7 @@ class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_PlaneAngleUnit {
 	~Handle_StepBasic_PlaneAngleUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_PlaneAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PlaneAngleUnit\n");}
 	}
 };
 
@@ -2206,7 +2206,7 @@ class Handle_StepBasic_Product : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Product {
 	~Handle_StepBasic_Product() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Product\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Product\n");}
 	}
 };
 
@@ -2230,7 +2230,7 @@ class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_GroupRelationship {
 	~Handle_StepBasic_GroupRelationship() {
-	printf("Call custom destructor for instance of Handle_StepBasic_GroupRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_GroupRelationship\n");}
 	}
 };
 
@@ -2254,7 +2254,7 @@ class Handle_StepBasic_HArray1OfDerivedUnitElement : public Handle_MMgt_TShared 
 };
 %extend Handle_StepBasic_HArray1OfDerivedUnitElement {
 	~Handle_StepBasic_HArray1OfDerivedUnitElement() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfDerivedUnitElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfDerivedUnitElement\n");}
 	}
 };
 
@@ -2278,7 +2278,7 @@ class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_CharacterizedObject {
 	~Handle_StepBasic_CharacterizedObject() {
-	printf("Call custom destructor for instance of Handle_StepBasic_CharacterizedObject\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CharacterizedObject\n");}
 	}
 };
 
@@ -2302,7 +2302,7 @@ class Handle_StepBasic_ConversionBasedUnitAndLengthUnit : public Handle_StepBasi
 };
 %extend Handle_StepBasic_ConversionBasedUnitAndLengthUnit {
 	~Handle_StepBasic_ConversionBasedUnitAndLengthUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndLengthUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndLengthUnit\n");}
 	}
 };
 
@@ -2326,7 +2326,7 @@ class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_OrganizationRole {
 	~Handle_StepBasic_OrganizationRole() {
-	printf("Call custom destructor for instance of Handle_StepBasic_OrganizationRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationRole\n");}
 	}
 };
 
@@ -2350,7 +2350,7 @@ class Handle_StepBasic_VersionedActionRequest : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_VersionedActionRequest {
 	~Handle_StepBasic_VersionedActionRequest() {
-	printf("Call custom destructor for instance of Handle_StepBasic_VersionedActionRequest\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_VersionedActionRequest\n");}
 	}
 };
 
@@ -2374,7 +2374,7 @@ class Handle_StepBasic_OrganizationAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_OrganizationAssignment {
 	~Handle_StepBasic_OrganizationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_OrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationAssignment\n");}
 	}
 };
 
@@ -2398,7 +2398,7 @@ class Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit : public Handle_Step
 };
 %extend Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit {
 	~Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");}
 	}
 };
 
@@ -2422,7 +2422,7 @@ class Handle_StepBasic_CalendarDate : public Handle_StepBasic_Date {
 };
 %extend Handle_StepBasic_CalendarDate {
 	~Handle_StepBasic_CalendarDate() {
-	printf("Call custom destructor for instance of Handle_StepBasic_CalendarDate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CalendarDate\n");}
 	}
 };
 
@@ -2446,7 +2446,7 @@ class Handle_StepBasic_HArray1OfPerson : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_HArray1OfPerson {
 	~Handle_StepBasic_HArray1OfPerson() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfPerson\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfPerson\n");}
 	}
 };
 
@@ -2470,7 +2470,7 @@ class Handle_StepBasic_ContractType : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ContractType {
 	~Handle_StepBasic_ContractType() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ContractType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ContractType\n");}
 	}
 };
 
@@ -2494,7 +2494,7 @@ class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Ef
 };
 %extend Handle_StepBasic_ProductDefinitionEffectivity {
 	~Handle_StepBasic_ProductDefinitionEffectivity() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionEffectivity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionEffectivity\n");}
 	}
 };
 
@@ -2518,7 +2518,7 @@ class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_Applicati
 };
 %extend Handle_StepBasic_ProductConceptContext {
 	~Handle_StepBasic_ProductConceptContext() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductConceptContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductConceptContext\n");}
 	}
 };
 
@@ -2542,7 +2542,7 @@ class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Certification {
 	~Handle_StepBasic_Certification() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Certification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Certification\n");}
 	}
 };
 
@@ -2566,7 +2566,7 @@ class Handle_StepBasic_AreaUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_AreaUnit {
 	~Handle_StepBasic_AreaUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_AreaUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_AreaUnit\n");}
 	}
 };
 
@@ -2590,7 +2590,7 @@ class Handle_StepBasic_SecurityClassificationLevel : public Handle_MMgt_TShared 
 };
 %extend Handle_StepBasic_SecurityClassificationLevel {
 	~Handle_StepBasic_SecurityClassificationLevel() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SecurityClassificationLevel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassificationLevel\n");}
 	}
 };
 
@@ -2614,7 +2614,7 @@ class Handle_StepBasic_HArray1OfProductContext : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_HArray1OfProductContext {
 	~Handle_StepBasic_HArray1OfProductContext() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfProductContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfProductContext\n");}
 	}
 };
 
@@ -2638,7 +2638,7 @@ class Handle_StepBasic_ConversionBasedUnitAndAreaUnit : public Handle_StepBasic_
 };
 %extend Handle_StepBasic_ConversionBasedUnitAndAreaUnit {
 	~Handle_StepBasic_ConversionBasedUnitAndAreaUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndAreaUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndAreaUnit\n");}
 	}
 };
 
@@ -2662,7 +2662,7 @@ class Handle_StepBasic_HArray1OfNamedUnit : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_HArray1OfNamedUnit {
 	~Handle_StepBasic_HArray1OfNamedUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfNamedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfNamedUnit\n");}
 	}
 };
 
@@ -2686,7 +2686,7 @@ class Handle_StepBasic_HArray1OfOrganization : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_HArray1OfOrganization {
 	~Handle_StepBasic_HArray1OfOrganization() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfOrganization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfOrganization\n");}
 	}
 };
 
@@ -2710,7 +2710,7 @@ class Handle_StepBasic_ConversionBasedUnitAndTimeUnit : public Handle_StepBasic_
 };
 %extend Handle_StepBasic_ConversionBasedUnitAndTimeUnit {
 	~Handle_StepBasic_ConversionBasedUnitAndTimeUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndTimeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndTimeUnit\n");}
 	}
 };
 
@@ -2734,7 +2734,7 @@ class Handle_StepBasic_OrganizationalAddress : public Handle_StepBasic_Address {
 };
 %extend Handle_StepBasic_OrganizationalAddress {
 	~Handle_StepBasic_OrganizationalAddress() {
-	printf("Call custom destructor for instance of Handle_StepBasic_OrganizationalAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationalAddress\n");}
 	}
 };
 
@@ -2758,7 +2758,7 @@ class Handle_StepBasic_ExternallyDefinedItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ExternallyDefinedItem {
 	~Handle_StepBasic_ExternallyDefinedItem() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ExternallyDefinedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ExternallyDefinedItem\n");}
 	}
 };
 
@@ -2782,7 +2782,7 @@ class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 };
 %extend Handle_StepBasic_WeekOfYearAndDayDate {
 	~Handle_StepBasic_WeekOfYearAndDayDate() {
-	printf("Call custom destructor for instance of Handle_StepBasic_WeekOfYearAndDayDate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_WeekOfYearAndDayDate\n");}
 	}
 };
 
@@ -2806,7 +2806,7 @@ class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
 };
 %extend Handle_StepBasic_SiUnitAndMassUnit {
 	~Handle_StepBasic_SiUnitAndMassUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndMassUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndMassUnit\n");}
 	}
 };
 
@@ -2830,7 +2830,7 @@ class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_Meas
 };
 %extend Handle_StepBasic_UncertaintyMeasureWithUnit {
 	~Handle_StepBasic_UncertaintyMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_UncertaintyMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_UncertaintyMeasureWithUnit\n");}
 	}
 };
 
@@ -2854,7 +2854,7 @@ class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShare
 };
 %extend Handle_StepBasic_ProductDefinitionRelationship {
 	~Handle_StepBasic_ProductDefinitionRelationship() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductDefinitionRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionRelationship\n");}
 	}
 };
 
@@ -2878,7 +2878,7 @@ class Handle_StepBasic_ContractAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ContractAssignment {
 	~Handle_StepBasic_ContractAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ContractAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ContractAssignment\n");}
 	}
 };
 
@@ -2902,7 +2902,7 @@ class Handle_StepBasic_LengthMeasureWithUnit : public Handle_StepBasic_MeasureWi
 };
 %extend Handle_StepBasic_LengthMeasureWithUnit {
 	~Handle_StepBasic_LengthMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_LengthMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LengthMeasureWithUnit\n");}
 	}
 };
 
@@ -2926,7 +2926,7 @@ class Handle_StepBasic_CertificationType : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_CertificationType {
 	~Handle_StepBasic_CertificationType() {
-	printf("Call custom destructor for instance of Handle_StepBasic_CertificationType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CertificationType\n");}
 	}
 };
 
@@ -2950,7 +2950,7 @@ class Handle_StepBasic_ApprovalRole : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ApprovalRole {
 	~Handle_StepBasic_ApprovalRole() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalRole\n");}
 	}
 };
 
@@ -2974,7 +2974,7 @@ class Handle_StepBasic_DerivedUnit : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DerivedUnit {
 	~Handle_StepBasic_DerivedUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DerivedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DerivedUnit\n");}
 	}
 };
 
@@ -2998,7 +2998,7 @@ class Handle_StepBasic_HArray1OfDocument : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_HArray1OfDocument {
 	~Handle_StepBasic_HArray1OfDocument() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfDocument\n");}
 	}
 };
 
@@ -3022,7 +3022,7 @@ class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 };
 %extend Handle_StepBasic_VolumeUnit {
 	~Handle_StepBasic_VolumeUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_VolumeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_VolumeUnit\n");}
 	}
 };
 
@@ -3046,7 +3046,7 @@ class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
 };
 %extend Handle_StepBasic_SizeMember {
 	~Handle_StepBasic_SizeMember() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SizeMember\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SizeMember\n");}
 	}
 };
 
@@ -3070,7 +3070,7 @@ class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_EulerAngles {
 	~Handle_StepBasic_EulerAngles() {
-	printf("Call custom destructor for instance of Handle_StepBasic_EulerAngles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_EulerAngles\n");}
 	}
 };
 
@@ -3094,7 +3094,7 @@ class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
 };
 %extend Handle_StepBasic_DocumentFile {
 	~Handle_StepBasic_DocumentFile() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DocumentFile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentFile\n");}
 	}
 };
 
@@ -3118,7 +3118,7 @@ class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_LocalTime {
 	~Handle_StepBasic_LocalTime() {
-	printf("Call custom destructor for instance of Handle_StepBasic_LocalTime\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LocalTime\n");}
 	}
 };
 
@@ -3142,7 +3142,7 @@ class Handle_StepBasic_ProductType : public Handle_StepBasic_ProductRelatedProdu
 };
 %extend Handle_StepBasic_ProductType {
 	~Handle_StepBasic_ProductType() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ProductType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductType\n");}
 	}
 };
 
@@ -3166,7 +3166,7 @@ class Handle_StepBasic_SiUnitAndLengthUnit : public Handle_StepBasic_SiUnit {
 };
 %extend Handle_StepBasic_SiUnitAndLengthUnit {
 	~Handle_StepBasic_SiUnitAndLengthUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_SiUnitAndLengthUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndLengthUnit\n");}
 	}
 };
 
@@ -3190,7 +3190,7 @@ class Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit : public Handle_MMgt_
 };
 %extend Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit {
 	~Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");}
 	}
 };
 
@@ -3214,7 +3214,7 @@ class Handle_StepBasic_Action : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Action {
 	~Handle_StepBasic_Action() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Action\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Action\n");}
 	}
 };
 
@@ -3238,7 +3238,7 @@ class Handle_StepBasic_Organization : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Organization {
 	~Handle_StepBasic_Organization() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Organization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Organization\n");}
 	}
 };
 
@@ -3262,7 +3262,7 @@ class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWith
 };
 %extend Handle_StepBasic_TimeMeasureWithUnit {
 	~Handle_StepBasic_TimeMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_TimeMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_TimeMeasureWithUnit\n");}
 	}
 };
 
@@ -3286,7 +3286,7 @@ class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ApprovalDateTime {
 	~Handle_StepBasic_ApprovalDateTime() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalDateTime\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalDateTime\n");}
 	}
 };
 
@@ -3310,7 +3310,7 @@ class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DimensionalExponents {
 	~Handle_StepBasic_DimensionalExponents() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DimensionalExponents\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DimensionalExponents\n");}
 	}
 };
 
@@ -3334,7 +3334,7 @@ class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ApprovalPersonOrganization {
 	~Handle_StepBasic_ApprovalPersonOrganization() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApprovalPersonOrganization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalPersonOrganization\n");}
 	}
 };
 
@@ -3358,7 +3358,7 @@ class Handle_StepBasic_RatioMeasureWithUnit : public Handle_StepBasic_MeasureWit
 };
 %extend Handle_StepBasic_RatioMeasureWithUnit {
 	~Handle_StepBasic_RatioMeasureWithUnit() {
-	printf("Call custom destructor for instance of Handle_StepBasic_RatioMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RatioMeasureWithUnit\n");}
 	}
 };
 
@@ -3382,7 +3382,7 @@ class Handle_StepBasic_ApplicationProtocolDefinition : public Handle_MMgt_TShare
 };
 %extend Handle_StepBasic_ApplicationProtocolDefinition {
 	~Handle_StepBasic_ApplicationProtocolDefinition() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApplicationProtocolDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApplicationProtocolDefinition\n");}
 	}
 };
 
@@ -3406,7 +3406,7 @@ class Handle_StepBasic_ApplicationContext : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_ApplicationContext {
 	~Handle_StepBasic_ApplicationContext() {
-	printf("Call custom destructor for instance of Handle_StepBasic_ApplicationContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApplicationContext\n");}
 	}
 };
 
@@ -3430,7 +3430,7 @@ class Handle_StepBasic_DateTimeRole : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DateTimeRole {
 	~Handle_StepBasic_DateTimeRole() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DateTimeRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateTimeRole\n");}
 	}
 };
 
@@ -3454,7 +3454,7 @@ class Handle_StepBasic_GroupAssignment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_GroupAssignment {
 	~Handle_StepBasic_GroupAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_GroupAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_GroupAssignment\n");}
 	}
 };
 
@@ -3478,7 +3478,7 @@ class Handle_StepBasic_PersonAndOrganizationAssignment : public Handle_MMgt_TSha
 };
 %extend Handle_StepBasic_PersonAndOrganizationAssignment {
 	~Handle_StepBasic_PersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -3502,7 +3502,7 @@ class Handle_StepBasic_PhysicallyModeledProductDefinition : public Handle_StepBa
 };
 %extend Handle_StepBasic_PhysicallyModeledProductDefinition {
 	~Handle_StepBasic_PhysicallyModeledProductDefinition() {
-	printf("Call custom destructor for instance of Handle_StepBasic_PhysicallyModeledProductDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PhysicallyModeledProductDefinition\n");}
 	}
 };
 
@@ -3526,7 +3526,7 @@ class Handle_StepBasic_DocumentUsageConstraint : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_DocumentUsageConstraint {
 	~Handle_StepBasic_DocumentUsageConstraint() {
-	printf("Call custom destructor for instance of Handle_StepBasic_DocumentUsageConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentUsageConstraint\n");}
 	}
 };
 
@@ -3550,7 +3550,7 @@ class Handle_StepBasic_Contract : public Handle_MMgt_TShared {
 };
 %extend Handle_StepBasic_Contract {
 	~Handle_StepBasic_Contract() {
-	printf("Call custom destructor for instance of Handle_StepBasic_Contract\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Contract\n");}
 	}
 };
 
@@ -3576,7 +3576,7 @@ class StepBasic_NameAssignment : public MMgt_TShared {
 };
 %extend StepBasic_NameAssignment {
 	~StepBasic_NameAssignment() {
-	printf("Call custom destructor for instance of StepBasic_NameAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_NameAssignment\n");}
 	}
 };
 
@@ -3602,7 +3602,7 @@ class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassificationLevel {
 	~StepBasic_SecurityClassificationLevel() {
-	printf("Call custom destructor for instance of StepBasic_SecurityClassificationLevel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassificationLevel\n");}
 	}
 };
 
@@ -3638,7 +3638,7 @@ class StepBasic_GeneralProperty : public MMgt_TShared {
 };
 %extend StepBasic_GeneralProperty {
 	~StepBasic_GeneralProperty() {
-	printf("Call custom destructor for instance of StepBasic_GeneralProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_GeneralProperty\n");}
 	}
 };
 
@@ -3668,7 +3668,7 @@ class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
 };
 %extend StepBasic_DateAndTimeAssignment {
 	~StepBasic_DateAndTimeAssignment() {
-	printf("Call custom destructor for instance of StepBasic_DateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DateAndTimeAssignment\n");}
 	}
 };
 
@@ -3694,7 +3694,7 @@ class StepBasic_NamedUnit : public MMgt_TShared {
 };
 %extend StepBasic_NamedUnit {
 	~StepBasic_NamedUnit() {
-	printf("Call custom destructor for instance of StepBasic_NamedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_NamedUnit\n");}
 	}
 };
 
@@ -3722,7 +3722,7 @@ class StepBasic_ConversionBasedUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_ConversionBasedUnit {
 	~StepBasic_ConversionBasedUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnit\n");}
 	}
 };
 
@@ -3744,7 +3744,7 @@ class StepBasic_ConversionBasedUnitAndAreaUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndAreaUnit {
 	~StepBasic_ConversionBasedUnitAndAreaUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndAreaUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndAreaUnit\n");}
 	}
 };
 
@@ -3778,7 +3778,7 @@ class StepBasic_MeasureWithUnit : public MMgt_TShared {
 };
 %extend StepBasic_MeasureWithUnit {
 	~StepBasic_MeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_MeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_MeasureWithUnit\n");}
 	}
 };
 
@@ -3796,7 +3796,7 @@ class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_MassMeasureWithUnit {
 	~StepBasic_MassMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_MassMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_MassMeasureWithUnit\n");}
 	}
 };
 
@@ -3830,7 +3830,7 @@ class StepBasic_DocumentUsageConstraint : public MMgt_TShared {
 };
 %extend StepBasic_DocumentUsageConstraint {
 	~StepBasic_DocumentUsageConstraint() {
-	printf("Call custom destructor for instance of StepBasic_DocumentUsageConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentUsageConstraint\n");}
 	}
 };
 
@@ -3869,7 +3869,7 @@ class StepBasic_Array1OfProduct {
 };
 %extend StepBasic_Array1OfProduct {
 	~StepBasic_Array1OfProduct() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfProduct\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfProduct\n");}
 	}
 };
 
@@ -3895,7 +3895,7 @@ class StepBasic_SizeMember : public StepData_SelectReal {
 };
 %extend StepBasic_SizeMember {
 	~StepBasic_SizeMember() {
-	printf("Call custom destructor for instance of StepBasic_SizeMember\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SizeMember\n");}
 	}
 };
 
@@ -3915,7 +3915,7 @@ class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_TimeMeasureWithUnit {
 	~StepBasic_TimeMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_TimeMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_TimeMeasureWithUnit\n");}
 	}
 };
 
@@ -3949,7 +3949,7 @@ class StepBasic_ProductCategory : public MMgt_TShared {
 };
 %extend StepBasic_ProductCategory {
 	~StepBasic_ProductCategory() {
-	printf("Call custom destructor for instance of StepBasic_ProductCategory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductCategory\n");}
 	}
 };
 
@@ -3975,7 +3975,7 @@ class StepBasic_DateRole : public MMgt_TShared {
 };
 %extend StepBasic_DateRole {
 	~StepBasic_DateRole() {
-	printf("Call custom destructor for instance of StepBasic_DateRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DateRole\n");}
 	}
 };
 
@@ -4015,7 +4015,7 @@ class StepBasic_HArray1OfOrganization : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfOrganization {
 	~StepBasic_HArray1OfOrganization() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfOrganization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfOrganization\n");}
 	}
 };
 
@@ -4036,7 +4036,7 @@ class StepBasic_DateTimeSelect : public StepData_SelectType {
 };
 %extend StepBasic_DateTimeSelect {
 	~StepBasic_DateTimeSelect() {
-	printf("Call custom destructor for instance of StepBasic_DateTimeSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DateTimeSelect\n");}
 	}
 };
 
@@ -4073,7 +4073,7 @@ class StepBasic_RoleSelect : public StepData_SelectType {
 };
 %extend StepBasic_RoleSelect {
 	~StepBasic_RoleSelect() {
-	printf("Call custom destructor for instance of StepBasic_RoleSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_RoleSelect\n");}
 	}
 };
 
@@ -4113,7 +4113,7 @@ class StepBasic_VersionedActionRequest : public MMgt_TShared {
 };
 %extend StepBasic_VersionedActionRequest {
 	~StepBasic_VersionedActionRequest() {
-	printf("Call custom destructor for instance of StepBasic_VersionedActionRequest\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_VersionedActionRequest\n");}
 	}
 };
 
@@ -4133,7 +4133,7 @@ class StepBasic_RatioUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_RatioUnit {
 	~StepBasic_RatioUnit() {
-	printf("Call custom destructor for instance of StepBasic_RatioUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_RatioUnit\n");}
 	}
 };
 
@@ -4172,7 +4172,7 @@ class StepBasic_Array1OfProductDefinition {
 };
 %extend StepBasic_Array1OfProductDefinition {
 	~StepBasic_Array1OfProductDefinition() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfProductDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfProductDefinition\n");}
 	}
 };
 
@@ -4198,7 +4198,7 @@ class StepBasic_Date : public MMgt_TShared {
 };
 %extend StepBasic_Date {
 	~StepBasic_Date() {
-	printf("Call custom destructor for instance of StepBasic_Date\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Date\n");}
 	}
 };
 
@@ -4228,7 +4228,7 @@ class StepBasic_ApplicationContextElement : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationContextElement {
 	~StepBasic_ApplicationContextElement() {
-	printf("Call custom destructor for instance of StepBasic_ApplicationContextElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationContextElement\n");}
 	}
 };
 
@@ -4252,7 +4252,7 @@ class StepBasic_ProductDefinitionContext : public StepBasic_ApplicationContextEl
 };
 %extend StepBasic_ProductDefinitionContext {
 	~StepBasic_ProductDefinitionContext() {
-	printf("Call custom destructor for instance of StepBasic_ProductDefinitionContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionContext\n");}
 	}
 };
 
@@ -4270,7 +4270,7 @@ class StepBasic_DesignContext : public StepBasic_ProductDefinitionContext {
 };
 %extend StepBasic_DesignContext {
 	~StepBasic_DesignContext() {
-	printf("Call custom destructor for instance of StepBasic_DesignContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DesignContext\n");}
 	}
 };
 
@@ -4300,7 +4300,7 @@ class StepBasic_ActionRequestSolution : public MMgt_TShared {
 };
 %extend StepBasic_ActionRequestSolution {
 	~StepBasic_ActionRequestSolution() {
-	printf("Call custom destructor for instance of StepBasic_ActionRequestSolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ActionRequestSolution\n");}
 	}
 };
 
@@ -4340,7 +4340,7 @@ class StepBasic_SiUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_SiUnit {
 	~StepBasic_SiUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnit\n");}
 	}
 };
 
@@ -4362,7 +4362,7 @@ class StepBasic_SiUnitAndPlaneAngleUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndPlaneAngleUnit {
 	~StepBasic_SiUnitAndPlaneAngleUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndPlaneAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndPlaneAngleUnit\n");}
 	}
 };
 
@@ -4400,7 +4400,7 @@ class StepBasic_DocumentRelationship : public MMgt_TShared {
 };
 %extend StepBasic_DocumentRelationship {
 	~StepBasic_DocumentRelationship() {
-	printf("Call custom destructor for instance of StepBasic_DocumentRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentRelationship\n");}
 	}
 };
 
@@ -4420,7 +4420,7 @@ class StepBasic_LengthUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_LengthUnit {
 	~StepBasic_LengthUnit() {
-	printf("Call custom destructor for instance of StepBasic_LengthUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_LengthUnit\n");}
 	}
 };
 
@@ -4448,7 +4448,7 @@ class StepBasic_ConversionBasedUnitAndMassUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndMassUnit {
 	~StepBasic_ConversionBasedUnitAndMassUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndMassUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndMassUnit\n");}
 	}
 };
 
@@ -4468,7 +4468,7 @@ class StepBasic_AreaUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_AreaUnit {
 	~StepBasic_AreaUnit() {
-	printf("Call custom destructor for instance of StepBasic_AreaUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_AreaUnit\n");}
 	}
 };
 
@@ -4507,7 +4507,7 @@ class StepBasic_Array1OfApproval {
 };
 %extend StepBasic_Array1OfApproval {
 	~StepBasic_Array1OfApproval() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfApproval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfApproval\n");}
 	}
 };
 
@@ -4547,7 +4547,7 @@ class StepBasic_HArray1OfProductContext : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProductContext {
 	~StepBasic_HArray1OfProductContext() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfProductContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProductContext\n");}
 	}
 };
 
@@ -4585,7 +4585,7 @@ class StepBasic_ApplicationProtocolDefinition : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationProtocolDefinition {
 	~StepBasic_ApplicationProtocolDefinition() {
-	printf("Call custom destructor for instance of StepBasic_ApplicationProtocolDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationProtocolDefinition\n");}
 	}
 };
 
@@ -4624,7 +4624,7 @@ class StepBasic_Array1OfOrganization {
 };
 %extend StepBasic_Array1OfOrganization {
 	~StepBasic_Array1OfOrganization() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfOrganization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfOrganization\n");}
 	}
 };
 
@@ -4644,7 +4644,7 @@ class StepBasic_PlaneAngleUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_PlaneAngleUnit {
 	~StepBasic_PlaneAngleUnit() {
-	printf("Call custom destructor for instance of StepBasic_PlaneAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_PlaneAngleUnit\n");}
 	}
 };
 
@@ -4762,7 +4762,7 @@ class StepBasic_Address : public MMgt_TShared {
 };
 %extend StepBasic_Address {
 	~StepBasic_Address() {
-	printf("Call custom destructor for instance of StepBasic_Address\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Address\n");}
 	}
 };
 
@@ -4800,7 +4800,7 @@ class StepBasic_Organization : public MMgt_TShared {
 };
 %extend StepBasic_Organization {
 	~StepBasic_Organization() {
-	printf("Call custom destructor for instance of StepBasic_Organization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Organization\n");}
 	}
 };
 
@@ -4826,7 +4826,7 @@ class StepBasic_ApplicationContext : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationContext {
 	~StepBasic_ApplicationContext() {
-	printf("Call custom destructor for instance of StepBasic_ApplicationContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationContext\n");}
 	}
 };
 
@@ -4854,7 +4854,7 @@ class StepBasic_ConversionBasedUnitAndTimeUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndTimeUnit {
 	~StepBasic_ConversionBasedUnitAndTimeUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndTimeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndTimeUnit\n");}
 	}
 };
 
@@ -4884,7 +4884,7 @@ class StepBasic_Approval : public MMgt_TShared {
 };
 %extend StepBasic_Approval {
 	~StepBasic_Approval() {
-	printf("Call custom destructor for instance of StepBasic_Approval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Approval\n");}
 	}
 };
 
@@ -4916,7 +4916,7 @@ class StepBasic_ProductRelatedProductCategory : public StepBasic_ProductCategory
 };
 %extend StepBasic_ProductRelatedProductCategory {
 	~StepBasic_ProductRelatedProductCategory() {
-	printf("Call custom destructor for instance of StepBasic_ProductRelatedProductCategory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductRelatedProductCategory\n");}
 	}
 };
 
@@ -4936,7 +4936,7 @@ class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 };
 %extend StepBasic_ProductType {
 	~StepBasic_ProductType() {
-	printf("Call custom destructor for instance of StepBasic_ProductType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductType\n");}
 	}
 };
 
@@ -4966,7 +4966,7 @@ class StepBasic_DateAndTime : public MMgt_TShared {
 };
 %extend StepBasic_DateAndTime {
 	~StepBasic_DateAndTime() {
-	printf("Call custom destructor for instance of StepBasic_DateAndTime\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DateAndTime\n");}
 	}
 };
 
@@ -4992,7 +4992,7 @@ class StepBasic_DocumentType : public MMgt_TShared {
 };
 %extend StepBasic_DocumentType {
 	~StepBasic_DocumentType() {
-	printf("Call custom destructor for instance of StepBasic_DocumentType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentType\n");}
 	}
 };
 
@@ -5018,7 +5018,7 @@ class StepBasic_Effectivity : public MMgt_TShared {
 };
 %extend StepBasic_Effectivity {
 	~StepBasic_Effectivity() {
-	printf("Call custom destructor for instance of StepBasic_Effectivity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Effectivity\n");}
 	}
 };
 
@@ -5044,7 +5044,7 @@ class StepBasic_EulerAngles : public MMgt_TShared {
 };
 %extend StepBasic_EulerAngles {
 	~StepBasic_EulerAngles() {
-	printf("Call custom destructor for instance of StepBasic_EulerAngles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_EulerAngles\n");}
 	}
 };
 
@@ -5076,7 +5076,7 @@ class StepBasic_CalendarDate : public StepBasic_Date {
 };
 %extend StepBasic_CalendarDate {
 	~StepBasic_CalendarDate() {
-	printf("Call custom destructor for instance of StepBasic_CalendarDate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_CalendarDate\n");}
 	}
 };
 
@@ -5102,7 +5102,7 @@ class StepBasic_ActionAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ActionAssignment {
 	~StepBasic_ActionAssignment() {
-	printf("Call custom destructor for instance of StepBasic_ActionAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ActionAssignment\n");}
 	}
 };
 
@@ -5128,7 +5128,7 @@ class StepBasic_OrganizationRole : public MMgt_TShared {
 };
 %extend StepBasic_OrganizationRole {
 	~StepBasic_OrganizationRole() {
-	printf("Call custom destructor for instance of StepBasic_OrganizationRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationRole\n");}
 	}
 };
 
@@ -5158,7 +5158,7 @@ class StepBasic_DerivedUnitElement : public MMgt_TShared {
 };
 %extend StepBasic_DerivedUnitElement {
 	~StepBasic_DerivedUnitElement() {
-	printf("Call custom destructor for instance of StepBasic_DerivedUnitElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DerivedUnitElement\n");}
 	}
 };
 
@@ -5186,7 +5186,7 @@ class StepBasic_SiUnitAndThermodynamicTemperatureUnit : public StepBasic_SiUnit 
 };
 %extend StepBasic_SiUnitAndThermodynamicTemperatureUnit {
 	~StepBasic_SiUnitAndThermodynamicTemperatureUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndThermodynamicTemperatureUnit\n");}
 	}
 };
 
@@ -5205,7 +5205,7 @@ class StepBasic_Unit : public StepData_SelectType {
 };
 %extend StepBasic_Unit {
 	~StepBasic_Unit() {
-	printf("Call custom destructor for instance of StepBasic_Unit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Unit\n");}
 	}
 };
 
@@ -5237,7 +5237,7 @@ class StepBasic_IdentificationRole : public MMgt_TShared {
 };
 %extend StepBasic_IdentificationRole {
 	~StepBasic_IdentificationRole() {
-	printf("Call custom destructor for instance of StepBasic_IdentificationRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_IdentificationRole\n");}
 	}
 };
 
@@ -5263,7 +5263,7 @@ class StepBasic_ApprovalStatus : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalStatus {
 	~StepBasic_ApprovalStatus() {
-	printf("Call custom destructor for instance of StepBasic_ApprovalStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalStatus\n");}
 	}
 };
 
@@ -5309,7 +5309,7 @@ class StepBasic_LocalTime : public MMgt_TShared {
 };
 %extend StepBasic_LocalTime {
 	~StepBasic_LocalTime() {
-	printf("Call custom destructor for instance of StepBasic_LocalTime\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_LocalTime\n");}
 	}
 };
 
@@ -5329,7 +5329,7 @@ class StepBasic_PlaneAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_PlaneAngleMeasureWithUnit {
 	~StepBasic_PlaneAngleMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_PlaneAngleMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_PlaneAngleMeasureWithUnit\n");}
 	}
 };
 
@@ -5357,7 +5357,7 @@ class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndMassUnit {
 	~StepBasic_SiUnitAndMassUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndMassUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndMassUnit\n");}
 	}
 };
 
@@ -5393,7 +5393,7 @@ class StepBasic_PersonalAddress : public StepBasic_Address {
 };
 %extend StepBasic_PersonalAddress {
 	~StepBasic_PersonalAddress() {
-	printf("Call custom destructor for instance of StepBasic_PersonalAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_PersonalAddress\n");}
 	}
 };
 
@@ -5419,7 +5419,7 @@ class StepBasic_CertificationType : public MMgt_TShared {
 };
 %extend StepBasic_CertificationType {
 	~StepBasic_CertificationType() {
-	printf("Call custom destructor for instance of StepBasic_CertificationType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_CertificationType\n");}
 	}
 };
 
@@ -5445,7 +5445,7 @@ class StepBasic_MeasureValueMember : public StepData_SelectReal {
 };
 %extend StepBasic_MeasureValueMember {
 	~StepBasic_MeasureValueMember() {
-	printf("Call custom destructor for instance of StepBasic_MeasureValueMember\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_MeasureValueMember\n");}
 	}
 };
 
@@ -5489,7 +5489,7 @@ class StepBasic_ProductDefinitionRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionRelationship {
 	~StepBasic_ProductDefinitionRelationship() {
-	printf("Call custom destructor for instance of StepBasic_ProductDefinitionRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionRelationship\n");}
 	}
 };
 
@@ -5531,7 +5531,7 @@ class StepBasic_Product : public MMgt_TShared {
 };
 %extend StepBasic_Product {
 	~StepBasic_Product() {
-	printf("Call custom destructor for instance of StepBasic_Product\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Product\n");}
 	}
 };
 
@@ -5555,7 +5555,7 @@ class StepBasic_ConversionBasedUnitAndVolumeUnit : public StepBasic_ConversionBa
 };
 %extend StepBasic_ConversionBasedUnitAndVolumeUnit {
 	~StepBasic_ConversionBasedUnitAndVolumeUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndVolumeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndVolumeUnit\n");}
 	}
 };
 
@@ -5593,7 +5593,7 @@ class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
 };
 %extend StepBasic_CoordinatedUniversalTimeOffset {
 	~StepBasic_CoordinatedUniversalTimeOffset() {
-	printf("Call custom destructor for instance of StepBasic_CoordinatedUniversalTimeOffset\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_CoordinatedUniversalTimeOffset\n");}
 	}
 };
 
@@ -5625,7 +5625,7 @@ class StepBasic_Group : public MMgt_TShared {
 };
 %extend StepBasic_Group {
 	~StepBasic_Group() {
-	printf("Call custom destructor for instance of StepBasic_Group\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Group\n");}
 	}
 };
 
@@ -5651,7 +5651,7 @@ class StepBasic_ApprovalRole : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalRole {
 	~StepBasic_ApprovalRole() {
-	printf("Call custom destructor for instance of StepBasic_ApprovalRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalRole\n");}
 	}
 };
 
@@ -5691,7 +5691,7 @@ class StepBasic_GroupRelationship : public MMgt_TShared {
 };
 %extend StepBasic_GroupRelationship {
 	~StepBasic_GroupRelationship() {
-	printf("Call custom destructor for instance of StepBasic_GroupRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_GroupRelationship\n");}
 	}
 };
 
@@ -5717,7 +5717,7 @@ class StepBasic_CertificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_CertificationAssignment {
 	~StepBasic_CertificationAssignment() {
-	printf("Call custom destructor for instance of StepBasic_CertificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_CertificationAssignment\n");}
 	}
 };
 
@@ -5745,7 +5745,7 @@ class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
 };
 %extend StepBasic_ProductContext {
 	~StepBasic_ProductContext() {
-	printf("Call custom destructor for instance of StepBasic_ProductContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductContext\n");}
 	}
 };
 
@@ -5763,7 +5763,7 @@ class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 };
 %extend StepBasic_MechanicalContext {
 	~StepBasic_MechanicalContext() {
-	printf("Call custom destructor for instance of StepBasic_MechanicalContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_MechanicalContext\n");}
 	}
 };
 
@@ -5783,7 +5783,7 @@ class StepBasic_MassUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_MassUnit {
 	~StepBasic_MassUnit() {
-	printf("Call custom destructor for instance of StepBasic_MassUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_MassUnit\n");}
 	}
 };
 
@@ -5809,7 +5809,7 @@ class StepBasic_SecurityClassificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassificationAssignment {
 	~StepBasic_SecurityClassificationAssignment() {
-	printf("Call custom destructor for instance of StepBasic_SecurityClassificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassificationAssignment\n");}
 	}
 };
 
@@ -5837,7 +5837,7 @@ class StepBasic_SiUnitAndSolidAngleUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndSolidAngleUnit {
 	~StepBasic_SiUnitAndSolidAngleUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndSolidAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndSolidAngleUnit\n");}
 	}
 };
 
@@ -5857,7 +5857,7 @@ class StepBasic_ThermodynamicTemperatureUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_ThermodynamicTemperatureUnit {
 	~StepBasic_ThermodynamicTemperatureUnit() {
-	printf("Call custom destructor for instance of StepBasic_ThermodynamicTemperatureUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ThermodynamicTemperatureUnit\n");}
 	}
 };
 
@@ -5897,7 +5897,7 @@ class StepBasic_Document : public MMgt_TShared {
 };
 %extend StepBasic_Document {
 	~StepBasic_Document() {
-	printf("Call custom destructor for instance of StepBasic_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Document\n");}
 	}
 };
 
@@ -5917,7 +5917,7 @@ class StepBasic_SolidAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_SolidAngleMeasureWithUnit {
 	~StepBasic_SolidAngleMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_SolidAngleMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SolidAngleMeasureWithUnit\n");}
 	}
 };
 
@@ -5953,7 +5953,7 @@ class StepBasic_OrganizationalAddress : public StepBasic_Address {
 };
 %extend StepBasic_OrganizationalAddress {
 	~StepBasic_OrganizationalAddress() {
-	printf("Call custom destructor for instance of StepBasic_OrganizationalAddress\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationalAddress\n");}
 	}
 };
 
@@ -5979,7 +5979,7 @@ class StepBasic_DocumentFile : public StepBasic_Document {
 };
 %extend StepBasic_DocumentFile {
 	~StepBasic_DocumentFile() {
-	printf("Call custom destructor for instance of StepBasic_DocumentFile\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentFile\n");}
 	}
 };
 
@@ -6007,7 +6007,7 @@ class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndRatioUnit {
 	~StepBasic_SiUnitAndRatioUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndRatioUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndRatioUnit\n");}
 	}
 };
 
@@ -6041,7 +6041,7 @@ class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalPersonOrganization {
 	~StepBasic_ApprovalPersonOrganization() {
-	printf("Call custom destructor for instance of StepBasic_ApprovalPersonOrganization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalPersonOrganization\n");}
 	}
 };
 
@@ -6083,7 +6083,7 @@ class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionFormationRelationship {
 	~StepBasic_ProductDefinitionFormationRelationship() {
-	printf("Call custom destructor for instance of StepBasic_ProductDefinitionFormationRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionFormationRelationship\n");}
 	}
 };
 
@@ -6113,7 +6113,7 @@ class StepBasic_DocumentRepresentationType : public MMgt_TShared {
 };
 %extend StepBasic_DocumentRepresentationType {
 	~StepBasic_DocumentRepresentationType() {
-	printf("Call custom destructor for instance of StepBasic_DocumentRepresentationType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentRepresentationType\n");}
 	}
 };
 
@@ -6141,7 +6141,7 @@ class StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public StepBasic_Conversi
 };
 %extend StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
 	~StepBasic_ConversionBasedUnitAndPlaneAngleUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");}
 	}
 };
 
@@ -6169,7 +6169,7 @@ class StepBasic_SiUnitAndAreaUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndAreaUnit {
 	~StepBasic_SiUnitAndAreaUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndAreaUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndAreaUnit\n");}
 	}
 };
 
@@ -6201,7 +6201,7 @@ class StepBasic_ObjectRole : public MMgt_TShared {
 };
 %extend StepBasic_ObjectRole {
 	~StepBasic_ObjectRole() {
-	printf("Call custom destructor for instance of StepBasic_ObjectRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ObjectRole\n");}
 	}
 };
 
@@ -6240,7 +6240,7 @@ class StepBasic_Array1OfProductContext {
 };
 %extend StepBasic_Array1OfProductContext {
 	~StepBasic_Array1OfProductContext() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfProductContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfProductContext\n");}
 	}
 };
 
@@ -6266,7 +6266,7 @@ class StepBasic_PersonAndOrganizationRole : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganizationRole {
 	~StepBasic_PersonAndOrganizationRole() {
-	printf("Call custom destructor for instance of StepBasic_PersonAndOrganizationRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_PersonAndOrganizationRole\n");}
 	}
 };
 
@@ -6302,7 +6302,7 @@ class StepBasic_Action : public MMgt_TShared {
 };
 %extend StepBasic_Action {
 	~StepBasic_Action() {
-	printf("Call custom destructor for instance of StepBasic_Action\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Action\n");}
 	}
 };
 
@@ -6332,7 +6332,7 @@ class StepBasic_DocumentReference : public MMgt_TShared {
 };
 %extend StepBasic_DocumentReference {
 	~StepBasic_DocumentReference() {
-	printf("Call custom destructor for instance of StepBasic_DocumentReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentReference\n");}
 	}
 };
 
@@ -6352,7 +6352,7 @@ class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_SolidAngleUnit {
 	~StepBasic_SolidAngleUnit() {
-	printf("Call custom destructor for instance of StepBasic_SolidAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SolidAngleUnit\n");}
 	}
 };
 
@@ -6372,7 +6372,7 @@ class StepBasic_DigitalDocument : public StepBasic_Document {
 };
 %extend StepBasic_DigitalDocument {
 	~StepBasic_DigitalDocument() {
-	printf("Call custom destructor for instance of StepBasic_DigitalDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DigitalDocument\n");}
 	}
 };
 
@@ -6393,7 +6393,7 @@ class StepBasic_PersonOrganizationSelect : public StepData_SelectType {
 };
 %extend StepBasic_PersonOrganizationSelect {
 	~StepBasic_PersonOrganizationSelect() {
-	printf("Call custom destructor for instance of StepBasic_PersonOrganizationSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_PersonOrganizationSelect\n");}
 	}
 };
 
@@ -6419,7 +6419,7 @@ class StepBasic_ProductDefinitionEffectivity : public StepBasic_Effectivity {
 };
 %extend StepBasic_ProductDefinitionEffectivity {
 	~StepBasic_ProductDefinitionEffectivity() {
-	printf("Call custom destructor for instance of StepBasic_ProductDefinitionEffectivity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionEffectivity\n");}
 	}
 };
 
@@ -6453,7 +6453,7 @@ class StepBasic_Certification : public MMgt_TShared {
 };
 %extend StepBasic_Certification {
 	~StepBasic_Certification() {
-	printf("Call custom destructor for instance of StepBasic_Certification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Certification\n");}
 	}
 };
 
@@ -6479,7 +6479,7 @@ class StepBasic_GroupAssignment : public MMgt_TShared {
 };
 %extend StepBasic_GroupAssignment {
 	~StepBasic_GroupAssignment() {
-	printf("Call custom destructor for instance of StepBasic_GroupAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_GroupAssignment\n");}
 	}
 };
 
@@ -6513,7 +6513,7 @@ class StepBasic_ProductDefinitionFormation : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionFormation {
 	~StepBasic_ProductDefinitionFormation() {
-	printf("Call custom destructor for instance of StepBasic_ProductDefinitionFormation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionFormation\n");}
 	}
 };
 
@@ -6537,7 +6537,7 @@ class StepBasic_ProductDefinitionFormationWithSpecifiedSource : public StepBasic
 };
 %extend StepBasic_ProductDefinitionFormationWithSpecifiedSource {
 	~StepBasic_ProductDefinitionFormationWithSpecifiedSource() {
-	printf("Call custom destructor for instance of StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");}
 	}
 };
 
@@ -6565,7 +6565,7 @@ class StepBasic_ConversionBasedUnitAndRatioUnit : public StepBasic_ConversionBas
 };
 %extend StepBasic_ConversionBasedUnitAndRatioUnit {
 	~StepBasic_ConversionBasedUnitAndRatioUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndRatioUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndRatioUnit\n");}
 	}
 };
 
@@ -6605,7 +6605,7 @@ class StepBasic_HArray1OfNamedUnit : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfNamedUnit {
 	~StepBasic_HArray1OfNamedUnit() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfNamedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfNamedUnit\n");}
 	}
 };
 
@@ -6633,7 +6633,7 @@ class StepBasic_ConversionBasedUnitAndLengthUnit : public StepBasic_ConversionBa
 };
 %extend StepBasic_ConversionBasedUnitAndLengthUnit {
 	~StepBasic_ConversionBasedUnitAndLengthUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndLengthUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndLengthUnit\n");}
 	}
 };
 
@@ -6661,7 +6661,7 @@ class StepBasic_OrdinalDate : public StepBasic_Date {
 };
 %extend StepBasic_OrdinalDate {
 	~StepBasic_OrdinalDate() {
-	printf("Call custom destructor for instance of StepBasic_OrdinalDate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_OrdinalDate\n");}
 	}
 };
 
@@ -6691,7 +6691,7 @@ class StepBasic_OrganizationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_OrganizationAssignment {
 	~StepBasic_OrganizationAssignment() {
-	printf("Call custom destructor for instance of StepBasic_OrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationAssignment\n");}
 	}
 };
 
@@ -6731,7 +6731,7 @@ class StepBasic_HArray1OfDocument : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfDocument {
 	~StepBasic_HArray1OfDocument() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfDocument\n");}
 	}
 };
 
@@ -6757,7 +6757,7 @@ class StepBasic_ExternalSource : public MMgt_TShared {
 };
 %extend StepBasic_ExternalSource {
 	~StepBasic_ExternalSource() {
-	printf("Call custom destructor for instance of StepBasic_ExternalSource\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ExternalSource\n");}
 	}
 };
 
@@ -6783,7 +6783,7 @@ class StepBasic_DateTimeRole : public MMgt_TShared {
 };
 %extend StepBasic_DateTimeRole {
 	~StepBasic_DateTimeRole() {
-	printf("Call custom destructor for instance of StepBasic_DateTimeRole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DateTimeRole\n");}
 	}
 };
 
@@ -6811,7 +6811,7 @@ class StepBasic_SiUnitAndTimeUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndTimeUnit {
 	~StepBasic_SiUnitAndTimeUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndTimeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndTimeUnit\n");}
 	}
 };
 
@@ -6841,7 +6841,7 @@ class StepBasic_ExternallyDefinedItem : public MMgt_TShared {
 };
 %extend StepBasic_ExternallyDefinedItem {
 	~StepBasic_ExternallyDefinedItem() {
-	printf("Call custom destructor for instance of StepBasic_ExternallyDefinedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ExternallyDefinedItem\n");}
 	}
 };
 
@@ -6875,7 +6875,7 @@ class StepBasic_SecurityClassification : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassification {
 	~StepBasic_SecurityClassification() {
-	printf("Call custom destructor for instance of StepBasic_SecurityClassification\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassification\n");}
 	}
 };
 
@@ -6925,7 +6925,7 @@ class StepBasic_DimensionalExponents : public MMgt_TShared {
 };
 %extend StepBasic_DimensionalExponents {
 	~StepBasic_DimensionalExponents() {
-	printf("Call custom destructor for instance of StepBasic_DimensionalExponents\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DimensionalExponents\n");}
 	}
 };
 
@@ -6951,7 +6951,7 @@ class StepBasic_ContractAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ContractAssignment {
 	~StepBasic_ContractAssignment() {
-	printf("Call custom destructor for instance of StepBasic_ContractAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ContractAssignment\n");}
 	}
 };
 
@@ -6981,7 +6981,7 @@ class StepBasic_ApprovalDateTime : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalDateTime {
 	~StepBasic_ApprovalDateTime() {
-	printf("Call custom destructor for instance of StepBasic_ApprovalDateTime\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalDateTime\n");}
 	}
 };
 
@@ -7001,7 +7001,7 @@ class StepBasic_LengthMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_LengthMeasureWithUnit {
 	~StepBasic_LengthMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_LengthMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_LengthMeasureWithUnit\n");}
 	}
 };
 
@@ -7039,7 +7039,7 @@ class StepBasic_ProductDefinition : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinition {
 	~StepBasic_ProductDefinition() {
-	printf("Call custom destructor for instance of StepBasic_ProductDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinition\n");}
 	}
 };
 
@@ -7069,7 +7069,7 @@ class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_Prod
 };
 %extend StepBasic_ProductDefinitionWithAssociatedDocuments {
 	~StepBasic_ProductDefinitionWithAssociatedDocuments() {
-	printf("Call custom destructor for instance of StepBasic_ProductDefinitionWithAssociatedDocuments\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionWithAssociatedDocuments\n");}
 	}
 };
 
@@ -7095,7 +7095,7 @@ class StepBasic_EffectivityAssignment : public MMgt_TShared {
 };
 %extend StepBasic_EffectivityAssignment {
 	~StepBasic_EffectivityAssignment() {
-	printf("Call custom destructor for instance of StepBasic_EffectivityAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_EffectivityAssignment\n");}
 	}
 };
 
@@ -7125,7 +7125,7 @@ class StepBasic_PersonAndOrganization : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganization {
 	~StepBasic_PersonAndOrganization() {
-	printf("Call custom destructor for instance of StepBasic_PersonAndOrganization\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_PersonAndOrganization\n");}
 	}
 };
 
@@ -7164,7 +7164,7 @@ class StepBasic_Array1OfDocument {
 };
 %extend StepBasic_Array1OfDocument {
 	~StepBasic_Array1OfDocument() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDocument\n");}
 	}
 };
 
@@ -7204,7 +7204,7 @@ class StepBasic_HArray1OfProductDefinition : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProductDefinition {
 	~StepBasic_HArray1OfProductDefinition() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfProductDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProductDefinition\n");}
 	}
 };
 
@@ -7232,7 +7232,7 @@ class StepBasic_SiUnitAndVolumeUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndVolumeUnit {
 	~StepBasic_SiUnitAndVolumeUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndVolumeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndVolumeUnit\n");}
 	}
 };
 
@@ -7258,7 +7258,7 @@ class StepBasic_ContractType : public MMgt_TShared {
 };
 %extend StepBasic_ContractType {
 	~StepBasic_ContractType() {
-	printf("Call custom destructor for instance of StepBasic_ContractType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ContractType\n");}
 	}
 };
 
@@ -7298,7 +7298,7 @@ class StepBasic_ActionMethod : public MMgt_TShared {
 };
 %extend StepBasic_ActionMethod {
 	~StepBasic_ActionMethod() {
-	printf("Call custom destructor for instance of StepBasic_ActionMethod\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ActionMethod\n");}
 	}
 };
 
@@ -7326,7 +7326,7 @@ class StepBasic_ConversionBasedUnitAndSolidAngleUnit : public StepBasic_Conversi
 };
 %extend StepBasic_ConversionBasedUnitAndSolidAngleUnit {
 	~StepBasic_ConversionBasedUnitAndSolidAngleUnit() {
-	printf("Call custom destructor for instance of StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");}
 	}
 };
 
@@ -7346,7 +7346,7 @@ class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_VolumeUnit {
 	~StepBasic_VolumeUnit() {
-	printf("Call custom destructor for instance of StepBasic_VolumeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_VolumeUnit\n");}
 	}
 };
 
@@ -7386,7 +7386,7 @@ class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductCategoryRelationship {
 	~StepBasic_ProductCategoryRelationship() {
-	printf("Call custom destructor for instance of StepBasic_ProductCategoryRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductCategoryRelationship\n");}
 	}
 };
 
@@ -7416,7 +7416,7 @@ class StepBasic_IdentificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_IdentificationAssignment {
 	~StepBasic_IdentificationAssignment() {
-	printf("Call custom destructor for instance of StepBasic_IdentificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_IdentificationAssignment\n");}
 	}
 };
 
@@ -7454,7 +7454,7 @@ class StepBasic_ApprovalRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalRelationship {
 	~StepBasic_ApprovalRelationship() {
-	printf("Call custom destructor for instance of StepBasic_ApprovalRelationship\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalRelationship\n");}
 	}
 };
 
@@ -7484,7 +7484,7 @@ class StepBasic_RoleAssociation : public MMgt_TShared {
 };
 %extend StepBasic_RoleAssociation {
 	~StepBasic_RoleAssociation() {
-	printf("Call custom destructor for instance of StepBasic_RoleAssociation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_RoleAssociation\n");}
 	}
 };
 
@@ -7510,7 +7510,7 @@ class StepBasic_ApprovalAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalAssignment {
 	~StepBasic_ApprovalAssignment() {
-	printf("Call custom destructor for instance of StepBasic_ApprovalAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalAssignment\n");}
 	}
 };
 
@@ -7540,7 +7540,7 @@ class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganizationAssignment {
 	~StepBasic_PersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of StepBasic_PersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_PersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -7570,7 +7570,7 @@ class StepBasic_DateAssignment : public MMgt_TShared {
 };
 %extend StepBasic_DateAssignment {
 	~StepBasic_DateAssignment() {
-	printf("Call custom destructor for instance of StepBasic_DateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DateAssignment\n");}
 	}
 };
 
@@ -7606,7 +7606,7 @@ class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
 };
 %extend StepBasic_WeekOfYearAndDayDate {
 	~StepBasic_WeekOfYearAndDayDate() {
-	printf("Call custom destructor for instance of StepBasic_WeekOfYearAndDayDate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_WeekOfYearAndDayDate\n");}
 	}
 };
 
@@ -7636,7 +7636,7 @@ class StepBasic_DerivedUnit : public MMgt_TShared {
 };
 %extend StepBasic_DerivedUnit {
 	~StepBasic_DerivedUnit() {
-	printf("Call custom destructor for instance of StepBasic_DerivedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DerivedUnit\n");}
 	}
 };
 
@@ -7662,7 +7662,7 @@ class StepBasic_ExternalIdentificationAssignment : public StepBasic_Identificati
 };
 %extend StepBasic_ExternalIdentificationAssignment {
 	~StepBasic_ExternalIdentificationAssignment() {
-	printf("Call custom destructor for instance of StepBasic_ExternalIdentificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ExternalIdentificationAssignment\n");}
 	}
 };
 
@@ -7702,7 +7702,7 @@ class StepBasic_DocumentProductAssociation : public MMgt_TShared {
 };
 %extend StepBasic_DocumentProductAssociation {
 	~StepBasic_DocumentProductAssociation() {
-	printf("Call custom destructor for instance of StepBasic_DocumentProductAssociation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentProductAssociation\n");}
 	}
 };
 
@@ -7720,7 +7720,7 @@ class StepBasic_DocumentProductEquivalence : public StepBasic_DocumentProductAss
 };
 %extend StepBasic_DocumentProductEquivalence {
 	~StepBasic_DocumentProductEquivalence() {
-	printf("Call custom destructor for instance of StepBasic_DocumentProductEquivalence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentProductEquivalence\n");}
 	}
 };
 
@@ -7759,7 +7759,7 @@ class StepBasic_Array1OfNamedUnit {
 };
 %extend StepBasic_Array1OfNamedUnit {
 	~StepBasic_Array1OfNamedUnit() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfNamedUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfNamedUnit\n");}
 	}
 };
 
@@ -7778,7 +7778,7 @@ class StepBasic_SourceItem : public StepData_SelectType {
 };
 %extend StepBasic_SourceItem {
 	~StepBasic_SourceItem() {
-	printf("Call custom destructor for instance of StepBasic_SourceItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SourceItem\n");}
 	}
 };
 
@@ -7817,7 +7817,7 @@ class StepBasic_Array1OfUncertaintyMeasureWithUnit {
 };
 %extend StepBasic_Array1OfUncertaintyMeasureWithUnit {
 	~StepBasic_Array1OfUncertaintyMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfUncertaintyMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfUncertaintyMeasureWithUnit\n");}
 	}
 };
 
@@ -7857,7 +7857,7 @@ class StepBasic_HArray1OfProduct : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProduct {
 	~StepBasic_HArray1OfProduct() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfProduct\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfProduct\n");}
 	}
 };
 
@@ -7897,7 +7897,7 @@ class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
 	~StepBasic_HArray1OfUncertaintyMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");}
 	}
 };
 
@@ -7937,7 +7937,7 @@ class StepBasic_HArray1OfPerson : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfPerson {
 	~StepBasic_HArray1OfPerson() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfPerson\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfPerson\n");}
 	}
 };
 
@@ -7957,7 +7957,7 @@ class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDef
 };
 %extend StepBasic_PhysicallyModeledProductDefinition {
 	~StepBasic_PhysicallyModeledProductDefinition() {
-	printf("Call custom destructor for instance of StepBasic_PhysicallyModeledProductDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_PhysicallyModeledProductDefinition\n");}
 	}
 };
 
@@ -8035,7 +8035,7 @@ class StepBasic_Person : public MMgt_TShared {
 };
 %extend StepBasic_Person {
 	~StepBasic_Person() {
-	printf("Call custom destructor for instance of StepBasic_Person\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Person\n");}
 	}
 };
 
@@ -8067,7 +8067,7 @@ class StepBasic_UncertaintyMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_UncertaintyMeasureWithUnit {
 	~StepBasic_UncertaintyMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_UncertaintyMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_UncertaintyMeasureWithUnit\n");}
 	}
 };
 
@@ -8093,7 +8093,7 @@ class StepBasic_ProductConceptContext : public StepBasic_ApplicationContextEleme
 };
 %extend StepBasic_ProductConceptContext {
 	~StepBasic_ProductConceptContext() {
-	printf("Call custom destructor for instance of StepBasic_ProductConceptContext\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductConceptContext\n");}
 	}
 };
 
@@ -8114,7 +8114,7 @@ class StepBasic_ProductOrFormationOrDefinition : public StepData_SelectType {
 };
 %extend StepBasic_ProductOrFormationOrDefinition {
 	~StepBasic_ProductOrFormationOrDefinition() {
-	printf("Call custom destructor for instance of StepBasic_ProductOrFormationOrDefinition\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ProductOrFormationOrDefinition\n");}
 	}
 };
 
@@ -8134,7 +8134,7 @@ class StepBasic_RatioMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_RatioMeasureWithUnit {
 	~StepBasic_RatioMeasureWithUnit() {
-	printf("Call custom destructor for instance of StepBasic_RatioMeasureWithUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_RatioMeasureWithUnit\n");}
 	}
 };
 
@@ -8157,7 +8157,7 @@ class StepBasic_SizeSelect : public StepData_SelectType {
 };
 %extend StepBasic_SizeSelect {
 	~StepBasic_SizeSelect() {
-	printf("Call custom destructor for instance of StepBasic_SizeSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SizeSelect\n");}
 	}
 };
 
@@ -8197,7 +8197,7 @@ class StepBasic_HArray1OfApproval : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfApproval {
 	~StepBasic_HArray1OfApproval() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfApproval\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfApproval\n");}
 	}
 };
 
@@ -8217,7 +8217,7 @@ class StepBasic_TimeUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_TimeUnit {
 	~StepBasic_TimeUnit() {
-	printf("Call custom destructor for instance of StepBasic_TimeUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_TimeUnit\n");}
 	}
 };
 
@@ -8257,7 +8257,7 @@ class StepBasic_HArray1OfDerivedUnitElement : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfDerivedUnitElement {
 	~StepBasic_HArray1OfDerivedUnitElement() {
-	printf("Call custom destructor for instance of StepBasic_HArray1OfDerivedUnitElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfDerivedUnitElement\n");}
 	}
 };
 
@@ -8283,7 +8283,7 @@ class StepBasic_ActionRequestAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ActionRequestAssignment {
 	~StepBasic_ActionRequestAssignment() {
-	printf("Call custom destructor for instance of StepBasic_ActionRequestAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_ActionRequestAssignment\n");}
 	}
 };
 
@@ -8322,7 +8322,7 @@ class StepBasic_Array1OfDerivedUnitElement {
 };
 %extend StepBasic_Array1OfDerivedUnitElement {
 	~StepBasic_Array1OfDerivedUnitElement() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfDerivedUnitElement\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDerivedUnitElement\n");}
 	}
 };
 
@@ -8356,7 +8356,7 @@ class StepBasic_Contract : public MMgt_TShared {
 };
 %extend StepBasic_Contract {
 	~StepBasic_Contract() {
-	printf("Call custom destructor for instance of StepBasic_Contract\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Contract\n");}
 	}
 };
 
@@ -8395,7 +8395,7 @@ class StepBasic_Array1OfPerson {
 };
 %extend StepBasic_Array1OfPerson {
 	~StepBasic_Array1OfPerson() {
-	printf("Call custom destructor for instance of StepBasic_Array1OfPerson\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfPerson\n");}
 	}
 };
 
@@ -8427,7 +8427,7 @@ class StepBasic_CharacterizedObject : public MMgt_TShared {
 };
 %extend StepBasic_CharacterizedObject {
 	~StepBasic_CharacterizedObject() {
-	printf("Call custom destructor for instance of StepBasic_CharacterizedObject\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_CharacterizedObject\n");}
 	}
 };
 
@@ -8455,6 +8455,6 @@ class StepBasic_SiUnitAndLengthUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndLengthUnit {
 	~StepBasic_SiUnitAndLengthUnit() {
-	printf("Call custom destructor for instance of StepBasic_SiUnitAndLengthUnit\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndLengthUnit\n");}
 	}
 };

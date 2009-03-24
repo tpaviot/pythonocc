@@ -126,7 +126,7 @@ class Handle_Image_Image : public Handle_MMgt_TShared {
 };
 %extend Handle_Image_Image {
 	~Handle_Image_Image() {
-	printf("Call custom destructor for instance of Handle_Image_Image\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Image_Image\n");}
 	}
 };
 
@@ -150,7 +150,7 @@ class Handle_Image_DIndexedImage : public Handle_Image_Image {
 };
 %extend Handle_Image_DIndexedImage {
 	~Handle_Image_DIndexedImage() {
-	printf("Call custom destructor for instance of Handle_Image_DIndexedImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Image_DIndexedImage\n");}
 	}
 };
 
@@ -174,7 +174,7 @@ class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
 };
 %extend Handle_Image_PseudoColorImage {
 	~Handle_Image_PseudoColorImage() {
-	printf("Call custom destructor for instance of Handle_Image_PseudoColorImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Image_PseudoColorImage\n");}
 	}
 };
 
@@ -198,7 +198,7 @@ class Handle_Image_DColorImage : public Handle_Image_Image {
 };
 %extend Handle_Image_DColorImage {
 	~Handle_Image_DColorImage() {
-	printf("Call custom destructor for instance of Handle_Image_DColorImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Image_DColorImage\n");}
 	}
 };
 
@@ -222,7 +222,7 @@ class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 };
 %extend Handle_Image_ColorImage {
 	~Handle_Image_ColorImage() {
-	printf("Call custom destructor for instance of Handle_Image_ColorImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Image_ColorImage\n");}
 	}
 };
 
@@ -246,7 +246,7 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 };
 %extend Handle_Image_DataMapNodeOfColorPixelDataMap {
 	~Handle_Image_DataMapNodeOfColorPixelDataMap() {
-	printf("Call custom destructor for instance of Handle_Image_DataMapNodeOfColorPixelDataMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Image_DataMapNodeOfColorPixelDataMap\n");}
 	}
 };
 
@@ -270,7 +270,7 @@ class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode 
 };
 %extend Handle_Image_DataMapNodeOfLookupTable {
 	~Handle_Image_DataMapNodeOfLookupTable() {
-	printf("Call custom destructor for instance of Handle_Image_DataMapNodeOfLookupTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Image_DataMapNodeOfLookupTable\n");}
 	}
 };
 
@@ -346,7 +346,7 @@ class Image_Image : public MMgt_TShared {
 };
 %extend Image_Image {
 	~Image_Image() {
-	printf("Call custom destructor for instance of Image_Image\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_Image\n");}
 	}
 };
 
@@ -363,7 +363,7 @@ class Image_IndexPixelMapHasher {
 };
 %extend Image_IndexPixelMapHasher {
 	~Image_IndexPixelMapHasher() {
-	printf("Call custom destructor for instance of Image_IndexPixelMapHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_IndexPixelMapHasher\n");}
 	}
 };
 
@@ -382,7 +382,7 @@ class Image_PixelInterpolation {
 };
 %extend Image_PixelInterpolation {
 	~Image_PixelInterpolation() {
-	printf("Call custom destructor for instance of Image_PixelInterpolation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_PixelInterpolation\n");}
 	}
 };
 
@@ -399,7 +399,7 @@ class Image_PlanarPixelInterpolation : public Image_PixelInterpolation {
 };
 %extend Image_PlanarPixelInterpolation {
 	~Image_PlanarPixelInterpolation() {
-	printf("Call custom destructor for instance of Image_PlanarPixelInterpolation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_PlanarPixelInterpolation\n");}
 	}
 };
 
@@ -438,7 +438,7 @@ class Image_PixelRowOfDIndexedImage {
 };
 %extend Image_PixelRowOfDIndexedImage {
 	~Image_PixelRowOfDIndexedImage() {
-	printf("Call custom destructor for instance of Image_PixelRowOfDIndexedImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_PixelRowOfDIndexedImage\n");}
 	}
 };
 
@@ -459,7 +459,7 @@ class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
 };
 %extend Image_DataMapIteratorOfLookupTable {
 	~Image_DataMapIteratorOfLookupTable() {
-	printf("Call custom destructor for instance of Image_DataMapIteratorOfLookupTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_DataMapIteratorOfLookupTable\n");}
 	}
 };
 
@@ -492,7 +492,7 @@ class Image_LookupTable : public TCollection_BasicMap {
 };
 %extend Image_LookupTable {
 	~Image_LookupTable() {
-	printf("Call custom destructor for instance of Image_LookupTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_LookupTable\n");}
 	}
 };
 
@@ -594,7 +594,7 @@ class Image_DColorImage : public Image_Image {
 };
 %extend Image_DColorImage {
 	~Image_DColorImage() {
-	printf("Call custom destructor for instance of Image_DColorImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_DColorImage\n");}
 	}
 };
 
@@ -620,7 +620,7 @@ class Image_ColorImage : public Image_DColorImage {
 };
 %extend Image_ColorImage {
 	~Image_ColorImage() {
-	printf("Call custom destructor for instance of Image_ColorImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_ColorImage\n");}
 	}
 };
 
@@ -644,7 +644,7 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfColorPixelDataMap {
 	~Image_DataMapNodeOfColorPixelDataMap() {
-	printf("Call custom destructor for instance of Image_DataMapNodeOfColorPixelDataMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_DataMapNodeOfColorPixelDataMap\n");}
 	}
 };
 
@@ -677,7 +677,7 @@ class Image {
 };
 %extend Image {
 	~Image() {
-	printf("Call custom destructor for instance of Image\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image\n");}
 	}
 };
 
@@ -696,7 +696,7 @@ class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 };
 %extend Image_AveragePixelInterpolation {
 	~Image_AveragePixelInterpolation() {
-	printf("Call custom destructor for instance of Image_AveragePixelInterpolation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_AveragePixelInterpolation\n");}
 	}
 };
 
@@ -720,7 +720,7 @@ class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfLookupTable {
 	~Image_DataMapNodeOfLookupTable() {
-	printf("Call custom destructor for instance of Image_DataMapNodeOfLookupTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_DataMapNodeOfLookupTable\n");}
 	}
 };
 
@@ -822,7 +822,7 @@ class Image_DIndexedImage : public Image_Image {
 };
 %extend Image_DIndexedImage {
 	~Image_DIndexedImage() {
-	printf("Call custom destructor for instance of Image_DIndexedImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_DIndexedImage\n");}
 	}
 };
 
@@ -841,7 +841,7 @@ class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
 };
 %extend Image_BilinearPixelInterpolation {
 	~Image_BilinearPixelInterpolation() {
-	printf("Call custom destructor for instance of Image_BilinearPixelInterpolation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_BilinearPixelInterpolation\n");}
 	}
 };
 
@@ -862,7 +862,7 @@ class Image_Convertor {
 };
 %extend Image_Convertor {
 	~Image_Convertor() {
-	printf("Call custom destructor for instance of Image_Convertor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_Convertor\n");}
 	}
 };
 
@@ -879,7 +879,7 @@ class Image_ColorPixelMapHasher {
 };
 %extend Image_ColorPixelMapHasher {
 	~Image_ColorPixelMapHasher() {
-	printf("Call custom destructor for instance of Image_ColorPixelMapHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_ColorPixelMapHasher\n");}
 	}
 };
 
@@ -912,7 +912,7 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 };
 %extend Image_ColorPixelDataMap {
 	~Image_ColorPixelDataMap() {
-	printf("Call custom destructor for instance of Image_ColorPixelDataMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_ColorPixelDataMap\n");}
 	}
 };
 
@@ -951,7 +951,7 @@ class Image_PixelRowOfDColorImage {
 };
 %extend Image_PixelRowOfDColorImage {
 	~Image_PixelRowOfDColorImage() {
-	printf("Call custom destructor for instance of Image_PixelRowOfDColorImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_PixelRowOfDColorImage\n");}
 	}
 };
 
@@ -970,7 +970,7 @@ class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
 };
 %extend Image_BalancedPixelInterpolation {
 	~Image_BalancedPixelInterpolation() {
-	printf("Call custom destructor for instance of Image_BalancedPixelInterpolation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_BalancedPixelInterpolation\n");}
 	}
 };
 
@@ -991,7 +991,7 @@ class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIter
 };
 %extend Image_DataMapIteratorOfColorPixelDataMap {
 	~Image_DataMapIteratorOfColorPixelDataMap() {
-	printf("Call custom destructor for instance of Image_DataMapIteratorOfColorPixelDataMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_DataMapIteratorOfColorPixelDataMap\n");}
 	}
 };
 
@@ -1037,7 +1037,7 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 };
 %extend Image_PseudoColorImage {
 	~Image_PseudoColorImage() {
-	printf("Call custom destructor for instance of Image_PseudoColorImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_PseudoColorImage\n");}
 	}
 };
 
@@ -1072,6 +1072,6 @@ class Image_PixelFieldOfDColorImage {
 };
 %extend Image_PixelFieldOfDColorImage {
 	~Image_PixelFieldOfDColorImage() {
-	printf("Call custom destructor for instance of Image_PixelFieldOfDColorImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Image_PixelFieldOfDColorImage\n");}
 	}
 };

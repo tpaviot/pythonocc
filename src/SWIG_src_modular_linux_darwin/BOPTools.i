@@ -130,7 +130,7 @@ class Handle_BOPTools_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
 };
 %extend Handle_BOPTools_ListNodeOfListOfPave {
 	~Handle_BOPTools_ListNodeOfListOfPave() {
-	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfPave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfPave\n");}
 	}
 };
 
@@ -154,7 +154,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public 
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
 	~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState() {
-	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState\n");}
 	}
 };
 
@@ -178,7 +178,7 @@ class Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public Handle_TCollectio
 };
 %extend Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
 	~Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock() {
-	printf("Call custom destructor for instance of Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");}
 	}
 };
 
@@ -202,7 +202,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
 	~Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger() {
-	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger\n");}
 	}
 };
 
@@ -226,7 +226,7 @@ class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 };
 %extend Handle_BOPTools_ListNodeOfListOfCommonBlock {
 	~Handle_BOPTools_ListNodeOfListOfCommonBlock() {
-	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCommonBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCommonBlock\n");}
 	}
 };
 
@@ -250,7 +250,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
 	~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo() {
-	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");}
 	}
 };
 
@@ -274,7 +274,7 @@ class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_M
 };
 %extend Handle_BOPTools_ListNodeOfListOfCheckResults {
 	~Handle_BOPTools_ListNodeOfListOfCheckResults() {
-	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCheckResults\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCheckResults\n");}
 	}
 };
 
@@ -298,7 +298,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : publi
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
 	~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet() {
-	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet\n");}
 	}
 };
 
@@ -322,7 +322,7 @@ class Handle_BOPTools_ListNodeOfListOfInterference : public Handle_TCollection_M
 };
 %extend Handle_BOPTools_ListNodeOfListOfInterference {
 	~Handle_BOPTools_ListNodeOfListOfInterference() {
-	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfInterference\n");}
 	}
 };
 
@@ -346,7 +346,7 @@ class Handle_BOPTools_ListNodeOfListOfShapeEnum : public Handle_TCollection_MapN
 };
 %extend Handle_BOPTools_ListNodeOfListOfShapeEnum {
 	~Handle_BOPTools_ListNodeOfListOfShapeEnum() {
-	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfShapeEnum\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfShapeEnum\n");}
 	}
 };
 
@@ -370,7 +370,7 @@ class Handle_BOPTools_HArray2OfIntersectionStatus : public Handle_MMgt_TShared {
 };
 %extend Handle_BOPTools_HArray2OfIntersectionStatus {
 	~Handle_BOPTools_HArray2OfIntersectionStatus() {
-	printf("Call custom destructor for instance of Handle_BOPTools_HArray2OfIntersectionStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_HArray2OfIntersectionStatus\n");}
 	}
 };
 
@@ -394,7 +394,7 @@ class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapN
 };
 %extend Handle_BOPTools_ListNodeOfListOfPaveBlock {
 	~Handle_BOPTools_ListNodeOfListOfPaveBlock() {
-	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfPaveBlock\n");}
 	}
 };
 
@@ -418,7 +418,7 @@ class Handle_BOPTools_ListNodeOfListOfCoupleOfInteger : public Handle_TCollectio
 };
 %extend Handle_BOPTools_ListNodeOfListOfCoupleOfInteger {
 	~Handle_BOPTools_ListNodeOfListOfCoupleOfInteger() {
-	printf("Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCoupleOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfCoupleOfInteger\n");}
 	}
 };
 
@@ -442,7 +442,7 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollect
 };
 %extend Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock {
 	~Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock() {
-	printf("Call custom destructor for instance of Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");}
 	}
 };
 
@@ -466,7 +466,7 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 };
 %extend Handle_BOPTools_SequenceNodeOfSequenceOfCurves {
 	~Handle_BOPTools_SequenceNodeOfSequenceOfCurves() {
-	printf("Call custom destructor for instance of Handle_BOPTools_SequenceNodeOfSequenceOfCurves\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_SequenceNodeOfSequenceOfCurves\n");}
 	}
 };
 
@@ -490,7 +490,7 @@ class Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public Handl
 };
 %extend Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
 	~Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger() {
-	printf("Call custom destructor for instance of Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");}
 	}
 };
 
@@ -514,7 +514,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : publi
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	~Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
-	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
 	}
 };
 
@@ -538,7 +538,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : publ
 };
 %extend Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
 	~Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock() {
-	printf("Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock\n");}
 	}
 };
 
@@ -565,7 +565,7 @@ class BOPTools_Interference {
 };
 %extend BOPTools_Interference {
 	~BOPTools_Interference() {
-	printf("Call custom destructor for instance of BOPTools_Interference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Interference\n");}
 	}
 };
 
@@ -587,7 +587,7 @@ class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfShapeEnum {
 	~BOPTools_ListNodeOfListOfShapeEnum() {
-	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfShapeEnum\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfShapeEnum\n");}
 	}
 };
 
@@ -620,7 +620,7 @@ class BOPTools_CommonBlock {
 };
 %extend BOPTools_CommonBlock {
 	~BOPTools_CommonBlock() {
-	printf("Call custom destructor for instance of BOPTools_CommonBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CommonBlock\n");}
 	}
 };
 
@@ -665,7 +665,7 @@ class BOPTools_Tools {
 };
 %extend BOPTools_Tools {
 	~BOPTools_Tools() {
-	printf("Call custom destructor for instance of BOPTools_Tools\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Tools\n");}
 	}
 };
 
@@ -690,7 +690,7 @@ class BOPTools_PointBetween {
 };
 %extend BOPTools_PointBetween {
 	~BOPTools_PointBetween() {
-	printf("Call custom destructor for instance of BOPTools_PointBetween\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_PointBetween\n");}
 	}
 };
 
@@ -713,7 +713,7 @@ class BOPTools_ListIteratorOfListOfCommonBlock {
 };
 %extend BOPTools_ListIteratorOfListOfCommonBlock {
 	~BOPTools_ListIteratorOfListOfCommonBlock() {
-	printf("Call custom destructor for instance of BOPTools_ListIteratorOfListOfCommonBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfCommonBlock\n");}
 	}
 };
 
@@ -730,7 +730,7 @@ class BOPTools_PCurveMaker {
 };
 %extend BOPTools_PCurveMaker {
 	~BOPTools_PCurveMaker() {
-	printf("Call custom destructor for instance of BOPTools_PCurveMaker\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_PCurveMaker\n");}
 	}
 };
 
@@ -755,7 +755,7 @@ class BOPTools_SSIntersectionAttribute {
 };
 %extend BOPTools_SSIntersectionAttribute {
 	~BOPTools_SSIntersectionAttribute() {
-	printf("Call custom destructor for instance of BOPTools_SSIntersectionAttribute\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_SSIntersectionAttribute\n");}
 	}
 };
 
@@ -798,7 +798,7 @@ class BOPTools_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
 };
 %extend BOPTools_IndexedDataMapOfShapeWithState {
 	~BOPTools_IndexedDataMapOfShapeWithState() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapOfShapeWithState\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapOfShapeWithState\n");}
 	}
 };
 
@@ -815,7 +815,7 @@ class BOPTools_DEProcessor {
 };
 %extend BOPTools_DEProcessor {
 	~BOPTools_DEProcessor() {
-	printf("Call custom destructor for instance of BOPTools_DEProcessor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_DEProcessor\n");}
 	}
 };
 
@@ -846,7 +846,7 @@ class BOPTools_ShapeShapeInterference {
 };
 %extend BOPTools_ShapeShapeInterference {
 	~BOPTools_ShapeShapeInterference() {
-	printf("Call custom destructor for instance of BOPTools_ShapeShapeInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ShapeShapeInterference\n");}
 	}
 };
 
@@ -861,7 +861,7 @@ class BOPTools_VVInterference : public BOPTools_ShapeShapeInterference {
 };
 %extend BOPTools_VVInterference {
 	~BOPTools_VVInterference() {
-	printf("Call custom destructor for instance of BOPTools_VVInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_VVInterference\n");}
 	}
 };
 
@@ -900,7 +900,7 @@ class BOPTools_Array1OfPave {
 };
 %extend BOPTools_Array1OfPave {
 	~BOPTools_Array1OfPave() {
-	printf("Call custom destructor for instance of BOPTools_Array1OfPave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Array1OfPave\n");}
 	}
 };
 
@@ -919,7 +919,7 @@ class BOPTools_RoughShapeIntersector {
 };
 %extend BOPTools_RoughShapeIntersector {
 	~BOPTools_RoughShapeIntersector() {
-	printf("Call custom destructor for instance of BOPTools_RoughShapeIntersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_RoughShapeIntersector\n");}
 	}
 };
 
@@ -947,7 +947,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public TColl
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
 	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet\n");}
 	}
 };
 
@@ -996,7 +996,7 @@ class BOPTools_ListOfCommonBlock {
 };
 %extend BOPTools_ListOfCommonBlock {
 	~BOPTools_ListOfCommonBlock() {
-	printf("Call custom destructor for instance of BOPTools_ListOfCommonBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfCommonBlock\n");}
 	}
 };
 
@@ -1045,7 +1045,7 @@ class BOPTools_ListOfCoupleOfInteger {
 };
 %extend BOPTools_ListOfCoupleOfInteger {
 	~BOPTools_ListOfCoupleOfInteger() {
-	printf("Call custom destructor for instance of BOPTools_ListOfCoupleOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfCoupleOfInteger\n");}
 	}
 };
 
@@ -1084,7 +1084,7 @@ class BOPTools_PavePool {
 };
 %extend BOPTools_PavePool {
 	~BOPTools_PavePool() {
-	printf("Call custom destructor for instance of BOPTools_PavePool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_PavePool\n");}
 	}
 };
 
@@ -1107,7 +1107,7 @@ class BOPTools_ListIteratorOfListOfShapeEnum {
 };
 %extend BOPTools_ListIteratorOfListOfShapeEnum {
 	~BOPTools_ListIteratorOfListOfShapeEnum() {
-	printf("Call custom destructor for instance of BOPTools_ListIteratorOfListOfShapeEnum\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfShapeEnum\n");}
 	}
 };
 
@@ -1134,7 +1134,7 @@ class BOPTools_Curve {
 };
 %extend BOPTools_Curve {
 	~BOPTools_Curve() {
-	printf("Call custom destructor for instance of BOPTools_Curve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Curve\n");}
 	}
 };
 
@@ -1149,7 +1149,7 @@ class BOPTools_QuickSortPave {
 };
 %extend BOPTools_QuickSortPave {
 	~BOPTools_QuickSortPave() {
-	printf("Call custom destructor for instance of BOPTools_QuickSortPave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_QuickSortPave\n");}
 	}
 };
 
@@ -1172,7 +1172,7 @@ class BOPTools_DEInfo {
 };
 %extend BOPTools_DEInfo {
 	~BOPTools_DEInfo() {
-	printf("Call custom destructor for instance of BOPTools_DEInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_DEInfo\n");}
 	}
 };
 
@@ -1198,7 +1198,7 @@ class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_
 };
 %extend BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
 	~BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger() {
-	printf("Call custom destructor for instance of BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");}
 	}
 };
 
@@ -1233,7 +1233,7 @@ class BOPTools_IteratorOfCoupleOfShape {
 };
 %extend BOPTools_IteratorOfCoupleOfShape {
 	~BOPTools_IteratorOfCoupleOfShape() {
-	printf("Call custom destructor for instance of BOPTools_IteratorOfCoupleOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IteratorOfCoupleOfShape\n");}
 	}
 };
 
@@ -1276,7 +1276,7 @@ class BOPTools_IndexedDataMapOfIntegerState : public TCollection_BasicMap {
 };
 %extend BOPTools_IndexedDataMapOfIntegerState {
 	~BOPTools_IndexedDataMapOfIntegerState() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapOfIntegerState\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapOfIntegerState\n");}
 	}
 };
 
@@ -1304,7 +1304,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public TColle
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
 	~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger\n");}
 	}
 };
 
@@ -1326,7 +1326,7 @@ class BOPTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCommonBlock {
 	~BOPTools_ListNodeOfListOfCommonBlock() {
-	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfCommonBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfCommonBlock\n");}
 	}
 };
 
@@ -1365,7 +1365,7 @@ class BOPTools_CommonBlockPool {
 };
 %extend BOPTools_CommonBlockPool {
 	~BOPTools_CommonBlockPool() {
-	printf("Call custom destructor for instance of BOPTools_CommonBlockPool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CommonBlockPool\n");}
 	}
 };
 
@@ -1382,7 +1382,7 @@ class BOPTools_CoupleOfIntegerMapHasher {
 };
 %extend BOPTools_CoupleOfIntegerMapHasher {
 	~BOPTools_CoupleOfIntegerMapHasher() {
-	printf("Call custom destructor for instance of BOPTools_CoupleOfIntegerMapHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CoupleOfIntegerMapHasher\n");}
 	}
 };
 
@@ -1461,7 +1461,7 @@ class BOPTools_PaveFiller {
 };
 %extend BOPTools_PaveFiller {
 	~BOPTools_PaveFiller() {
-	printf("Call custom destructor for instance of BOPTools_PaveFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_PaveFiller\n");}
 	}
 };
 
@@ -1488,7 +1488,7 @@ class BOPTools_Checker : public BOPTools_PaveFiller {
 };
 %extend BOPTools_Checker {
 	~BOPTools_Checker() {
-	printf("Call custom destructor for instance of BOPTools_Checker\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Checker\n");}
 	}
 };
 
@@ -1516,7 +1516,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollec
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
 	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState\n");}
 	}
 };
 
@@ -1535,7 +1535,7 @@ class BOPTools_VSInterference : public BOPTools_ShapeShapeInterference {
 };
 %extend BOPTools_VSInterference {
 	~BOPTools_VSInterference() {
-	printf("Call custom destructor for instance of BOPTools_VSInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_VSInterference\n");}
 	}
 };
 
@@ -1552,7 +1552,7 @@ class BOPTools_EEInterference : public BOPTools_ShapeShapeInterference {
 };
 %extend BOPTools_EEInterference {
 	~BOPTools_EEInterference() {
-	printf("Call custom destructor for instance of BOPTools_EEInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_EEInterference\n");}
 	}
 };
 
@@ -1579,7 +1579,7 @@ class BOPTools_StateFiller {
 };
 %extend BOPTools_StateFiller {
 	~BOPTools_StateFiller() {
-	printf("Call custom destructor for instance of BOPTools_StateFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_StateFiller\n");}
 	}
 };
 
@@ -1592,7 +1592,7 @@ class BOPTools_WireStateFiller : public BOPTools_StateFiller {
 };
 %extend BOPTools_WireStateFiller {
 	~BOPTools_WireStateFiller() {
-	printf("Call custom destructor for instance of BOPTools_WireStateFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_WireStateFiller\n");}
 	}
 };
 
@@ -1614,7 +1614,7 @@ class BOPTools_ListNodeOfListOfCheckResults : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCheckResults {
 	~BOPTools_ListNodeOfListOfCheckResults() {
-	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfCheckResults\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfCheckResults\n");}
 	}
 };
 
@@ -1637,7 +1637,7 @@ class BOPTools_PaveBlockIterator {
 };
 %extend BOPTools_PaveBlockIterator {
 	~BOPTools_PaveBlockIterator() {
-	printf("Call custom destructor for instance of BOPTools_PaveBlockIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_PaveBlockIterator\n");}
 	}
 };
 
@@ -1660,7 +1660,7 @@ class BOPTools_ListIteratorOfListOfCoupleOfInteger {
 };
 %extend BOPTools_ListIteratorOfListOfCoupleOfInteger {
 	~BOPTools_ListIteratorOfListOfCoupleOfInteger() {
-	printf("Call custom destructor for instance of BOPTools_ListIteratorOfListOfCoupleOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfCoupleOfInteger\n");}
 	}
 };
 
@@ -1703,7 +1703,7 @@ class BOPTools_IDMapOfPaveBlockIMapOfPaveBlock : public TCollection_BasicMap {
 };
 %extend BOPTools_IDMapOfPaveBlockIMapOfPaveBlock {
 	~BOPTools_IDMapOfPaveBlockIMapOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_IDMapOfPaveBlockIMapOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IDMapOfPaveBlockIMapOfPaveBlock\n");}
 	}
 };
 
@@ -1731,7 +1731,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TColl
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
 	}
 };
 
@@ -1774,7 +1774,7 @@ class BOPTools_IndexedDataMapOfIntegerPaveSet : public TCollection_BasicMap {
 };
 %extend BOPTools_IndexedDataMapOfIntegerPaveSet {
 	~BOPTools_IndexedDataMapOfIntegerPaveSet() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapOfIntegerPaveSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapOfIntegerPaveSet\n");}
 	}
 };
 
@@ -1797,7 +1797,7 @@ class BOPTools_ListIteratorOfListOfInterference {
 };
 %extend BOPTools_ListIteratorOfListOfInterference {
 	~BOPTools_ListIteratorOfListOfInterference() {
-	printf("Call custom destructor for instance of BOPTools_ListIteratorOfListOfInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfInterference\n");}
 	}
 };
 
@@ -1846,7 +1846,7 @@ class BOPTools_ListOfShapeEnum {
 };
 %extend BOPTools_ListOfShapeEnum {
 	~BOPTools_ListOfShapeEnum() {
-	printf("Call custom destructor for instance of BOPTools_ListOfShapeEnum\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfShapeEnum\n");}
 	}
 };
 
@@ -1861,7 +1861,7 @@ class BOPTools_SolidStateFiller : public BOPTools_StateFiller {
 };
 %extend BOPTools_SolidStateFiller {
 	~BOPTools_SolidStateFiller() {
-	printf("Call custom destructor for instance of BOPTools_SolidStateFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_SolidStateFiller\n");}
 	}
 };
 
@@ -1914,7 +1914,7 @@ class BOPTools_SequenceOfPaveBlock : public TCollection_BaseSequence {
 };
 %extend BOPTools_SequenceOfPaveBlock {
 	~BOPTools_SequenceOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_SequenceOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceOfPaveBlock\n");}
 	}
 };
 
@@ -1933,7 +1933,7 @@ class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
 };
 %extend BOPTools_VEInterference {
 	~BOPTools_VEInterference() {
-	printf("Call custom destructor for instance of BOPTools_VEInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_VEInterference\n");}
 	}
 };
 
@@ -1950,7 +1950,7 @@ class BOPTools_ESInterference : public BOPTools_ShapeShapeInterference {
 };
 %extend BOPTools_ESInterference {
 	~BOPTools_ESInterference() {
-	printf("Call custom destructor for instance of BOPTools_ESInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ESInterference\n");}
 	}
 };
 
@@ -1989,7 +1989,7 @@ class BOPTools_CArray1OfEEInterference {
 };
 %extend BOPTools_CArray1OfEEInterference {
 	~BOPTools_CArray1OfEEInterference() {
-	printf("Call custom destructor for instance of BOPTools_CArray1OfEEInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfEEInterference\n");}
 	}
 };
 
@@ -2015,7 +2015,7 @@ class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
 };
 %extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
 	~BOPTools_IndexedMapNodeOfIMapOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");}
 	}
 };
 
@@ -2054,7 +2054,7 @@ class BOPTools_SplitShapesPool {
 };
 %extend BOPTools_SplitShapesPool {
 	~BOPTools_SplitShapesPool() {
-	printf("Call custom destructor for instance of BOPTools_SplitShapesPool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_SplitShapesPool\n");}
 	}
 };
 
@@ -2082,7 +2082,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TColle
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
 	~BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");}
 	}
 };
 
@@ -2128,7 +2128,7 @@ class BOPTools_HArray2OfIntersectionStatus : public MMgt_TShared {
 };
 %extend BOPTools_HArray2OfIntersectionStatus {
 	~BOPTools_HArray2OfIntersectionStatus() {
-	printf("Call custom destructor for instance of BOPTools_HArray2OfIntersectionStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_HArray2OfIntersectionStatus\n");}
 	}
 };
 
@@ -2150,7 +2150,7 @@ class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 };
 %extend BOPTools_SequenceNodeOfSequenceOfPaveBlock {
 	~BOPTools_SequenceNodeOfSequenceOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");}
 	}
 };
 
@@ -2189,7 +2189,7 @@ class BOPTools_CArray1OfESInterference {
 };
 %extend BOPTools_CArray1OfESInterference {
 	~BOPTools_CArray1OfESInterference() {
-	printf("Call custom destructor for instance of BOPTools_CArray1OfESInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfESInterference\n");}
 	}
 };
 
@@ -2212,7 +2212,7 @@ class BOPTools_ListIteratorOfListOfPave {
 };
 %extend BOPTools_ListIteratorOfListOfPave {
 	~BOPTools_ListIteratorOfListOfPave() {
-	printf("Call custom destructor for instance of BOPTools_ListIteratorOfListOfPave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfPave\n");}
 	}
 };
 
@@ -2240,7 +2240,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public TCol
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
 	~BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock\n");}
 	}
 };
 
@@ -2301,7 +2301,7 @@ class BOPTools_PaveBlock {
 };
 %extend BOPTools_PaveBlock {
 	~BOPTools_PaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_PaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_PaveBlock\n");}
 	}
 };
 
@@ -2340,7 +2340,7 @@ class BOPTools_CArray1OfVEInterference {
 };
 %extend BOPTools_CArray1OfVEInterference {
 	~BOPTools_CArray1OfVEInterference() {
-	printf("Call custom destructor for instance of BOPTools_CArray1OfVEInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfVEInterference\n");}
 	}
 };
 
@@ -2359,7 +2359,7 @@ class BOPTools_CommonBlockAPI {
 };
 %extend BOPTools_CommonBlockAPI {
 	~BOPTools_CommonBlockAPI() {
-	printf("Call custom destructor for instance of BOPTools_CommonBlockAPI\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CommonBlockAPI\n");}
 	}
 };
 
@@ -2416,7 +2416,7 @@ class BOPTools_InterferencePool {
 };
 %extend BOPTools_InterferencePool {
 	~BOPTools_InterferencePool() {
-	printf("Call custom destructor for instance of BOPTools_InterferencePool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_InterferencePool\n");}
 	}
 };
 
@@ -2465,7 +2465,7 @@ class BOPTools_ListOfPaveBlock {
 };
 %extend BOPTools_ListOfPaveBlock {
 	~BOPTools_ListOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_ListOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfPaveBlock\n");}
 	}
 };
 
@@ -2520,7 +2520,7 @@ class BOPTools_DSFiller {
 };
 %extend BOPTools_DSFiller {
 	~BOPTools_DSFiller() {
-	printf("Call custom destructor for instance of BOPTools_DSFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_DSFiller\n");}
 	}
 };
 
@@ -2569,7 +2569,7 @@ class BOPTools_ListOfPave {
 };
 %extend BOPTools_ListOfPave {
 	~BOPTools_ListOfPave() {
-	printf("Call custom destructor for instance of BOPTools_ListOfPave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfPave\n");}
 	}
 };
 
@@ -2591,7 +2591,7 @@ class BOPTools_ListNodeOfListOfPaveBlock : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfPaveBlock {
 	~BOPTools_ListNodeOfListOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfPaveBlock\n");}
 	}
 };
 
@@ -2640,7 +2640,7 @@ class BOPTools_ListOfInterference {
 };
 %extend BOPTools_ListOfInterference {
 	~BOPTools_ListOfInterference() {
-	printf("Call custom destructor for instance of BOPTools_ListOfInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfInterference\n");}
 	}
 };
 
@@ -2693,7 +2693,7 @@ class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
 };
 %extend BOPTools_SequenceOfCurves {
 	~BOPTools_SequenceOfCurves() {
-	printf("Call custom destructor for instance of BOPTools_SequenceOfCurves\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceOfCurves\n");}
 	}
 };
 
@@ -2714,7 +2714,7 @@ class BOPTools_ComparePave {
 };
 %extend BOPTools_ComparePave {
 	~BOPTools_ComparePave() {
-	printf("Call custom destructor for instance of BOPTools_ComparePave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ComparePave\n");}
 	}
 };
 
@@ -2753,7 +2753,7 @@ class BOPTools_CArray1OfInterferenceLine {
 };
 %extend BOPTools_CArray1OfInterferenceLine {
 	~BOPTools_CArray1OfInterferenceLine() {
-	printf("Call custom destructor for instance of BOPTools_CArray1OfInterferenceLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfInterferenceLine\n");}
 	}
 };
 
@@ -2784,7 +2784,7 @@ class BOPTools_CoupleOfInteger {
 };
 %extend BOPTools_CoupleOfInteger {
 	~BOPTools_CoupleOfInteger() {
-	printf("Call custom destructor for instance of BOPTools_CoupleOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CoupleOfInteger\n");}
 	}
 };
 
@@ -2827,7 +2827,7 @@ class BOPTools_Array2OfIntersectionStatus {
 };
 %extend BOPTools_Array2OfIntersectionStatus {
 	~BOPTools_Array2OfIntersectionStatus() {
-	printf("Call custom destructor for instance of BOPTools_Array2OfIntersectionStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Array2OfIntersectionStatus\n");}
 	}
 };
 
@@ -2884,7 +2884,7 @@ class BOPTools_Tools2D {
 };
 %extend BOPTools_Tools2D {
 	~BOPTools_Tools2D() {
-	printf("Call custom destructor for instance of BOPTools_Tools2D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Tools2D\n");}
 	}
 };
 
@@ -2985,7 +2985,7 @@ class BOPTools_Tools3D {
 };
 %extend BOPTools_Tools3D {
 	~BOPTools_Tools3D() {
-	printf("Call custom destructor for instance of BOPTools_Tools3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Tools3D\n");}
 	}
 };
 
@@ -3018,7 +3018,7 @@ class BOPTools_IMapOfPaveBlock : public TCollection_BasicMap {
 };
 %extend BOPTools_IMapOfPaveBlock {
 	~BOPTools_IMapOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_IMapOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IMapOfPaveBlock\n");}
 	}
 };
 
@@ -3040,7 +3040,7 @@ class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfInterference {
 	~BOPTools_ListNodeOfListOfInterference() {
-	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfInterference\n");}
 	}
 };
 
@@ -3079,7 +3079,7 @@ class BOPTools_CArray1OfPave {
 };
 %extend BOPTools_CArray1OfPave {
 	~BOPTools_CArray1OfPave() {
-	printf("Call custom destructor for instance of BOPTools_CArray1OfPave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfPave\n");}
 	}
 };
 
@@ -3104,7 +3104,7 @@ class BOPTools_CheckResult {
 };
 %extend BOPTools_CheckResult {
 	~BOPTools_CheckResult() {
-	printf("Call custom destructor for instance of BOPTools_CheckResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CheckResult\n");}
 	}
 };
 
@@ -3147,7 +3147,7 @@ class BOPTools_IDMapOfPaveBlockIMapOfInteger : public TCollection_BasicMap {
 };
 %extend BOPTools_IDMapOfPaveBlockIMapOfInteger {
 	~BOPTools_IDMapOfPaveBlockIMapOfInteger() {
-	printf("Call custom destructor for instance of BOPTools_IDMapOfPaveBlockIMapOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IDMapOfPaveBlockIMapOfInteger\n");}
 	}
 };
 
@@ -3180,7 +3180,7 @@ class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
 };
 %extend BOPTools_IndexedMapOfCoupleOfInteger {
 	~BOPTools_IndexedMapOfCoupleOfInteger() {
-	printf("Call custom destructor for instance of BOPTools_IndexedMapOfCoupleOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapOfCoupleOfInteger\n");}
 	}
 };
 
@@ -3202,7 +3202,7 @@ class BOPTools_ListNodeOfListOfCoupleOfInteger : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCoupleOfInteger {
 	~BOPTools_ListNodeOfListOfCoupleOfInteger() {
-	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfCoupleOfInteger\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfCoupleOfInteger\n");}
 	}
 };
 
@@ -3224,7 +3224,7 @@ class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfPave {
 	~BOPTools_ListNodeOfListOfPave() {
-	printf("Call custom destructor for instance of BOPTools_ListNodeOfListOfPave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfPave\n");}
 	}
 };
 
@@ -3247,7 +3247,7 @@ class BOPTools_ListIteratorOfListOfCheckResults {
 };
 %extend BOPTools_ListIteratorOfListOfCheckResults {
 	~BOPTools_ListIteratorOfListOfCheckResults() {
-	printf("Call custom destructor for instance of BOPTools_ListIteratorOfListOfCheckResults\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfCheckResults\n");}
 	}
 };
 
@@ -3286,7 +3286,7 @@ class BOPTools_CArray1OfVSInterference {
 };
 %extend BOPTools_CArray1OfVSInterference {
 	~BOPTools_CArray1OfVSInterference() {
-	printf("Call custom destructor for instance of BOPTools_CArray1OfVSInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfVSInterference\n");}
 	}
 };
 
@@ -3335,7 +3335,7 @@ class BOPTools_SSInterference : public BOPTools_ShapeShapeInterference {
 };
 %extend BOPTools_SSInterference {
 	~BOPTools_SSInterference() {
-	printf("Call custom destructor for instance of BOPTools_SSInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_SSInterference\n");}
 	}
 };
 
@@ -3356,7 +3356,7 @@ class BOPTools_PaveSet {
 };
 %extend BOPTools_PaveSet {
 	~BOPTools_PaveSet() {
-	printf("Call custom destructor for instance of BOPTools_PaveSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_PaveSet\n");}
 	}
 };
 
@@ -3373,7 +3373,7 @@ class BOPTools_PaveBlockMapHasher {
 };
 %extend BOPTools_PaveBlockMapHasher {
 	~BOPTools_PaveBlockMapHasher() {
-	printf("Call custom destructor for instance of BOPTools_PaveBlockMapHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_PaveBlockMapHasher\n");}
 	}
 };
 
@@ -3422,7 +3422,7 @@ class BOPTools_ListOfCheckResults {
 };
 %extend BOPTools_ListOfCheckResults {
 	~BOPTools_ListOfCheckResults() {
-	printf("Call custom destructor for instance of BOPTools_ListOfCheckResults\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfCheckResults\n");}
 	}
 };
 
@@ -3461,7 +3461,7 @@ class BOPTools_CArray1OfSSInterference {
 };
 %extend BOPTools_CArray1OfSSInterference {
 	~BOPTools_CArray1OfSSInterference() {
-	printf("Call custom destructor for instance of BOPTools_CArray1OfSSInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfSSInterference\n");}
 	}
 };
 
@@ -3488,7 +3488,7 @@ class BOPTools_InterferenceLine {
 };
 %extend BOPTools_InterferenceLine {
 	~BOPTools_InterferenceLine() {
-	printf("Call custom destructor for instance of BOPTools_InterferenceLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_InterferenceLine\n");}
 	}
 };
 
@@ -3531,7 +3531,7 @@ class BOPTools_IndexedDataMapOfIntegerDEInfo : public TCollection_BasicMap {
 };
 %extend BOPTools_IndexedDataMapOfIntegerDEInfo {
 	~BOPTools_IndexedDataMapOfIntegerDEInfo() {
-	printf("Call custom destructor for instance of BOPTools_IndexedDataMapOfIntegerDEInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapOfIntegerDEInfo\n");}
 	}
 };
 
@@ -3553,7 +3553,7 @@ class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 };
 %extend BOPTools_SequenceNodeOfSequenceOfCurves {
 	~BOPTools_SequenceNodeOfSequenceOfCurves() {
-	printf("Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfCurves\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfCurves\n");}
 	}
 };
 
@@ -3576,7 +3576,7 @@ class BOPTools_ListIteratorOfListOfPaveBlock {
 };
 %extend BOPTools_ListIteratorOfListOfPaveBlock {
 	~BOPTools_ListIteratorOfListOfPaveBlock() {
-	printf("Call custom destructor for instance of BOPTools_ListIteratorOfListOfPaveBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfPaveBlock\n");}
 	}
 };
 
@@ -3615,7 +3615,7 @@ class BOPTools_CArray1OfVVInterference {
 };
 %extend BOPTools_CArray1OfVVInterference {
 	~BOPTools_CArray1OfVVInterference() {
-	printf("Call custom destructor for instance of BOPTools_CArray1OfVVInterference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfVVInterference\n");}
 	}
 };
 
@@ -3648,6 +3648,6 @@ class BOPTools_Pave {
 };
 %extend BOPTools_Pave {
 	~BOPTools_Pave() {
-	printf("Call custom destructor for instance of BOPTools_Pave\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOPTools_Pave\n");}
 	}
 };

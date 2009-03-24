@@ -123,7 +123,7 @@ class IntCurvesFace_Intersector {
 };
 %extend IntCurvesFace_Intersector {
 	~IntCurvesFace_Intersector() {
-	printf("Call custom destructor for instance of IntCurvesFace_Intersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurvesFace_Intersector\n");}
 	}
 };
 
@@ -166,6 +166,6 @@ class IntCurvesFace_ShapeIntersector {
 };
 %extend IntCurvesFace_ShapeIntersector {
 	~IntCurvesFace_ShapeIntersector() {
-	printf("Call custom destructor for instance of IntCurvesFace_ShapeIntersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurvesFace_ShapeIntersector\n");}
 	}
 };

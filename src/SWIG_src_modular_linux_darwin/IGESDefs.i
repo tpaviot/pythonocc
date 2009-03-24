@@ -104,7 +104,7 @@ class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
 };
 %extend Handle_IGESDefs_Protocol {
 	~Handle_IGESDefs_Protocol() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_Protocol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_Protocol\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %extend Handle_IGESDefs_GeneralModule {
 	~Handle_IGESDefs_GeneralModule() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_GeneralModule\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_IGESDefs_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %extend Handle_IGESDefs_SpecificModule {
 	~Handle_IGESDefs_SpecificModule() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_SpecificModule\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESDefs_HArray1OfTabularData {
 	~Handle_IGESDefs_HArray1OfTabularData() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_HArray1OfTabularData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_HArray1OfTabularData\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_IGESDefs_GenericData : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESDefs_GenericData {
 	~Handle_IGESDefs_GenericData() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_GenericData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_GenericData\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_IGESDefs_TabularData : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESDefs_TabularData {
 	~Handle_IGESDefs_TabularData() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_TabularData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_TabularData\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Handle_IGESDefs_AssociativityDef : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESDefs_AssociativityDef {
 	~Handle_IGESDefs_AssociativityDef() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_AssociativityDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AssociativityDef\n");}
 	}
 };
 
@@ -272,7 +272,7 @@ class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESDefs_AttributeTable {
 	~Handle_IGESDefs_AttributeTable() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_AttributeTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AttributeTable\n");}
 	}
 };
 
@@ -296,7 +296,7 @@ class Handle_IGESDefs_AttributeDef : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESDefs_AttributeDef {
 	~Handle_IGESDefs_AttributeDef() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_AttributeDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AttributeDef\n");}
 	}
 };
 
@@ -320,7 +320,7 @@ class Handle_IGESDefs_UnitsData : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESDefs_UnitsData {
 	~Handle_IGESDefs_UnitsData() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_UnitsData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_UnitsData\n");}
 	}
 };
 
@@ -344,7 +344,7 @@ class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt
 };
 %extend Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
 	~Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");}
 	}
 };
 
@@ -368,7 +368,7 @@ class Handle_IGESDefs_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 };
 %extend Handle_IGESDefs_ReadWriteModule {
 	~Handle_IGESDefs_ReadWriteModule() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_ReadWriteModule\n");}
 	}
 };
 
@@ -392,7 +392,7 @@ class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESDefs_MacroDef {
 	~Handle_IGESDefs_MacroDef() {
-	printf("Call custom destructor for instance of Handle_IGESDefs_MacroDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_MacroDef\n");}
 	}
 };
 
@@ -419,7 +419,7 @@ class IGESDefs_ToolAssociativityDef {
 };
 %extend IGESDefs_ToolAssociativityDef {
 	~IGESDefs_ToolAssociativityDef() {
-	printf("Call custom destructor for instance of IGESDefs_ToolAssociativityDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAssociativityDef\n");}
 	}
 };
 
@@ -445,7 +445,7 @@ class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESDefs_ReadWriteModule {
 	~IGESDefs_ReadWriteModule() {
-	printf("Call custom destructor for instance of IGESDefs_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_ReadWriteModule\n");}
 	}
 };
 
@@ -491,7 +491,7 @@ class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AttributeTable {
 	~IGESDefs_AttributeTable() {
-	printf("Call custom destructor for instance of IGESDefs_AttributeTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_AttributeTable\n");}
 	}
 };
 
@@ -533,7 +533,7 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_GenericData {
 	~IGESDefs_GenericData() {
-	printf("Call custom destructor for instance of IGESDefs_GenericData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_GenericData\n");}
 	}
 };
 
@@ -560,7 +560,7 @@ class IGESDefs_ToolAttributeDef {
 };
 %extend IGESDefs_ToolAttributeDef {
 	~IGESDefs_ToolAttributeDef() {
-	printf("Call custom destructor for instance of IGESDefs_ToolAttributeDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeDef\n");}
 	}
 };
 
@@ -587,7 +587,7 @@ class IGESDefs_ToolUnitsData {
 };
 %extend IGESDefs_ToolUnitsData {
 	~IGESDefs_ToolUnitsData() {
-	printf("Call custom destructor for instance of IGESDefs_ToolUnitsData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolUnitsData\n");}
 	}
 };
 
@@ -614,7 +614,7 @@ class IGESDefs_ToolGenericData {
 };
 %extend IGESDefs_ToolGenericData {
 	~IGESDefs_ToolGenericData() {
-	printf("Call custom destructor for instance of IGESDefs_ToolGenericData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolGenericData\n");}
 	}
 };
 
@@ -646,7 +646,7 @@ class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESDefs_GeneralModule {
 	~IGESDefs_GeneralModule() {
-	printf("Call custom destructor for instance of IGESDefs_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_GeneralModule\n");}
 	}
 };
 
@@ -673,7 +673,7 @@ class IGESDefs_ToolTabularData {
 };
 %extend IGESDefs_ToolTabularData {
 	~IGESDefs_ToolTabularData() {
-	printf("Call custom destructor for instance of IGESDefs_ToolTabularData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolTabularData\n");}
 	}
 };
 
@@ -713,7 +713,7 @@ class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 };
 %extend IGESDefs_HArray1OfTabularData {
 	~IGESDefs_HArray1OfTabularData() {
-	printf("Call custom destructor for instance of IGESDefs_HArray1OfTabularData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_HArray1OfTabularData\n");}
 	}
 };
 
@@ -740,7 +740,7 @@ class IGESDefs_ToolAttributeTable {
 };
 %extend IGESDefs_ToolAttributeTable {
 	~IGESDefs_ToolAttributeTable() {
-	printf("Call custom destructor for instance of IGESDefs_ToolAttributeTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeTable\n");}
 	}
 };
 
@@ -794,7 +794,7 @@ class IGESDefs_AttributeDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AttributeDef {
 	~IGESDefs_AttributeDef() {
-	printf("Call custom destructor for instance of IGESDefs_AttributeDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_AttributeDef\n");}
 	}
 };
 
@@ -811,7 +811,7 @@ class IGESDefs {
 };
 %extend IGESDefs {
 	~IGESDefs() {
-	printf("Call custom destructor for instance of IGESDefs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs\n");}
 	}
 };
 
@@ -833,7 +833,7 @@ class IGESDefs_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESDefs_SpecificModule {
 	~IGESDefs_SpecificModule() {
-	printf("Call custom destructor for instance of IGESDefs_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_SpecificModule\n");}
 	}
 };
 
@@ -865,7 +865,7 @@ class IGESDefs_MacroDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_MacroDef {
 	~IGESDefs_MacroDef() {
-	printf("Call custom destructor for instance of IGESDefs_MacroDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_MacroDef\n");}
 	}
 };
 
@@ -895,7 +895,7 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_UnitsData {
 	~IGESDefs_UnitsData() {
-	printf("Call custom destructor for instance of IGESDefs_UnitsData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_UnitsData\n");}
 	}
 };
 
@@ -922,7 +922,7 @@ class IGESDefs_ToolMacroDef {
 };
 %extend IGESDefs_ToolMacroDef {
 	~IGESDefs_ToolMacroDef() {
-	printf("Call custom destructor for instance of IGESDefs_ToolMacroDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolMacroDef\n");}
 	}
 };
 
@@ -952,7 +952,7 @@ class IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 %extend IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
 	~IGESDefs_HArray1OfHArray1OfTextDisplayTemplate() {
-	printf("Call custom destructor for instance of IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");}
 	}
 };
 
@@ -996,7 +996,7 @@ class IGESDefs_TabularData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_TabularData {
 	~IGESDefs_TabularData() {
-	printf("Call custom destructor for instance of IGESDefs_TabularData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_TabularData\n");}
 	}
 };
 
@@ -1035,7 +1035,7 @@ class IGESDefs_Array1OfTabularData {
 };
 %extend IGESDefs_Array1OfTabularData {
 	~IGESDefs_Array1OfTabularData() {
-	printf("Call custom destructor for instance of IGESDefs_Array1OfTabularData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_Array1OfTabularData\n");}
 	}
 };
 
@@ -1073,6 +1073,6 @@ class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AssociativityDef {
 	~IGESDefs_AssociativityDef() {
-	printf("Call custom destructor for instance of IGESDefs_AssociativityDef\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESDefs_AssociativityDef\n");}
 	}
 };

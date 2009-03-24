@@ -101,7 +101,7 @@ class TopClass_Intersection3d {
 };
 %extend TopClass_Intersection3d {
 	~TopClass_Intersection3d() {
-	printf("Call custom destructor for instance of TopClass_Intersection3d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopClass_Intersection3d\n");}
 	}
 };
 
@@ -136,6 +136,6 @@ class TopClass_SolidExplorer {
 };
 %extend TopClass_SolidExplorer {
 	~TopClass_SolidExplorer() {
-	printf("Call custom destructor for instance of TopClass_SolidExplorer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopClass_SolidExplorer\n");}
 	}
 };

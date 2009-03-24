@@ -104,7 +104,7 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 };
 %extend Handle_MMgt_TShared {
 	~Handle_MMgt_TShared() {
-	printf("Call custom destructor for instance of Handle_MMgt_TShared\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MMgt_TShared\n");}
 	}
 };
 
@@ -126,7 +126,7 @@ class MMgt_TShared : public Standard_Transient {
 };
 %extend MMgt_TShared {
 	~MMgt_TShared() {
-	printf("Call custom destructor for instance of MMgt_TShared\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MMgt_TShared\n");}
 	}
 };
 
@@ -149,6 +149,6 @@ class MMgt_StackManager {
 };
 %extend MMgt_StackManager {
 	~MMgt_StackManager() {
-	printf("Call custom destructor for instance of MMgt_StackManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MMgt_StackManager\n");}
 	}
 };

@@ -104,7 +104,7 @@ class Handle_StepAP214_Class : public Handle_StepBasic_Group {
 };
 %extend Handle_StepAP214_Class {
 	~Handle_StepAP214_Class() {
-	printf("Call custom destructor for instance of Handle_StepAP214_Class\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_Class\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_StepAP214_HArray1OfDateItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP214_HArray1OfDateItem {
 	~Handle_StepAP214_HArray1OfDateItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfDateItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDateItem\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_StepAP214_HArray1OfPresentedItemSelect : public Handle_MMgt_TShared
 };
 %extend Handle_StepAP214_HArray1OfPresentedItemSelect {
 	~Handle_StepAP214_HArray1OfPresentedItemSelect() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfPresentedItemSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPresentedItemSelect\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_StepAP214_HArray1OfAutoDesignDatedItem : public Handle_MMgt_TShared
 };
 %extend Handle_StepAP214_HArray1OfAutoDesignDatedItem {
 	~Handle_StepAP214_HArray1OfAutoDesignDatedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDatedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDatedItem\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment : public Handle_St
 };
 %extend Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment {
 	~Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_StepAP214_AutoDesignApprovalAssignment : public Handle_StepBasic_Ap
 };
 %extend Handle_StepAP214_AutoDesignApprovalAssignment {
 	~Handle_StepAP214_AutoDesignApprovalAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignApprovalAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignApprovalAssignment\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Handle_StepAP214_ExternallyDefinedClass : public Handle_StepAP214_Class {
 };
 %extend Handle_StepAP214_ExternallyDefinedClass {
 	~Handle_StepAP214_ExternallyDefinedClass() {
-	printf("Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedClass\n");}
 	}
 };
 
@@ -272,7 +272,7 @@ class Handle_StepAP214_AutoDesignActualDateAssignment : public Handle_StepBasic_
 };
 %extend Handle_StepAP214_AutoDesignActualDateAssignment {
 	~Handle_StepAP214_AutoDesignActualDateAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAssignment\n");}
 	}
 };
 
@@ -296,7 +296,7 @@ class Handle_StepAP214_AutoDesignPresentedItem : public Handle_StepVisual_Presen
 };
 %extend Handle_StepAP214_AutoDesignPresentedItem {
 	~Handle_StepAP214_AutoDesignPresentedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignPresentedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignPresentedItem\n");}
 	}
 };
 
@@ -320,7 +320,7 @@ class Handle_StepAP214_HArray1OfApprovalItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP214_HArray1OfApprovalItem {
 	~Handle_StepAP214_HArray1OfApprovalItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfApprovalItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfApprovalItem\n");}
 	}
 };
 
@@ -344,7 +344,7 @@ class Handle_StepAP214_HArray1OfSecurityClassificationItem : public Handle_MMgt_
 };
 %extend Handle_StepAP214_HArray1OfSecurityClassificationItem {
 	~Handle_StepAP214_HArray1OfSecurityClassificationItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfSecurityClassificationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfSecurityClassificationItem\n");}
 	}
 };
 
@@ -368,7 +368,7 @@ class Handle_StepAP214_AppliedPersonAndOrganizationAssignment : public Handle_St
 };
 %extend Handle_StepAP214_AppliedPersonAndOrganizationAssignment {
 	~Handle_StepAP214_AppliedPersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedPersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -392,7 +392,7 @@ class Handle_StepAP214_AutoDesignNominalDateAssignment : public Handle_StepBasic
 };
 %extend Handle_StepAP214_AutoDesignNominalDateAssignment {
 	~Handle_StepAP214_AutoDesignNominalDateAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignNominalDateAssignment\n");}
 	}
 };
 
@@ -416,7 +416,7 @@ class Handle_StepAP214_HArray1OfDateAndTimeItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP214_HArray1OfDateAndTimeItem {
 	~Handle_StepAP214_HArray1OfDateAndTimeItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfDateAndTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDateAndTimeItem\n");}
 	}
 };
 
@@ -440,7 +440,7 @@ class Handle_StepAP214_RepItemGroup : public Handle_StepBasic_Group {
 };
 %extend Handle_StepAP214_RepItemGroup {
 	~Handle_StepAP214_RepItemGroup() {
-	printf("Call custom destructor for instance of Handle_StepAP214_RepItemGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_RepItemGroup\n");}
 	}
 };
 
@@ -464,7 +464,7 @@ class Handle_StepAP214_HArray1OfDocumentReferenceItem : public Handle_MMgt_TShar
 };
 %extend Handle_StepAP214_HArray1OfDocumentReferenceItem {
 	~Handle_StepAP214_HArray1OfDocumentReferenceItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfDocumentReferenceItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfDocumentReferenceItem\n");}
 	}
 };
 
@@ -488,7 +488,7 @@ class Handle_StepAP214_AppliedDocumentReference : public Handle_StepBasic_Docume
 };
 %extend Handle_StepAP214_AppliedDocumentReference {
 	~Handle_StepAP214_AppliedDocumentReference() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedDocumentReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDocumentReference\n");}
 	}
 };
 
@@ -512,7 +512,7 @@ class Handle_StepAP214_HArray1OfGroupItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP214_HArray1OfGroupItem {
 	~Handle_StepAP214_HArray1OfGroupItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfGroupItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfGroupItem\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class Handle_StepAP214_HArray1OfAutoDesignReferencingItem : public Handle_MMgt_T
 };
 %extend Handle_StepAP214_HArray1OfAutoDesignReferencingItem {
 	~Handle_StepAP214_HArray1OfAutoDesignReferencingItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignReferencingItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignReferencingItem\n");}
 	}
 };
 
@@ -560,7 +560,7 @@ class Handle_StepAP214_HArray1OfOrganizationItem : public Handle_MMgt_TShared {
 };
 %extend Handle_StepAP214_HArray1OfOrganizationItem {
 	~Handle_StepAP214_HArray1OfOrganizationItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfOrganizationItem\n");}
 	}
 };
 
@@ -584,7 +584,7 @@ class Handle_StepAP214_AutoDesignActualDateAndTimeAssignment : public Handle_Ste
 };
 %extend Handle_StepAP214_AutoDesignActualDateAndTimeAssignment {
 	~Handle_StepAP214_AutoDesignActualDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignActualDateAndTimeAssignment\n");}
 	}
 };
 
@@ -608,7 +608,7 @@ class Handle_StepAP214_Protocol : public Handle_StepData_Protocol {
 };
 %extend Handle_StepAP214_Protocol {
 	~Handle_StepAP214_Protocol() {
-	printf("Call custom destructor for instance of Handle_StepAP214_Protocol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_Protocol\n");}
 	}
 };
 
@@ -632,7 +632,7 @@ class Handle_StepAP214_AppliedExternalIdentificationAssignment : public Handle_S
 };
 %extend Handle_StepAP214_AppliedExternalIdentificationAssignment {
 	~Handle_StepAP214_AppliedExternalIdentificationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedExternalIdentificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedExternalIdentificationAssignment\n");}
 	}
 };
 
@@ -656,7 +656,7 @@ class Handle_StepAP214_AutoDesignOrganizationAssignment : public Handle_StepBasi
 };
 %extend Handle_StepAP214_AutoDesignOrganizationAssignment {
 	~Handle_StepAP214_AutoDesignOrganizationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignOrganizationAssignment\n");}
 	}
 };
 
@@ -680,7 +680,7 @@ class Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect : public Handle_MM
 };
 %extend Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect {
 	~Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");}
 	}
 };
 
@@ -704,7 +704,7 @@ class Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem : public Handle_MMgt_TS
 };
 %extend Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem {
 	~Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
 	}
 };
 
@@ -728,7 +728,7 @@ class Handle_StepAP214_AppliedGroupAssignment : public Handle_StepBasic_GroupAss
 };
 %extend Handle_StepAP214_AppliedGroupAssignment {
 	~Handle_StepAP214_AppliedGroupAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedGroupAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedGroupAssignment\n");}
 	}
 };
 
@@ -752,7 +752,7 @@ class Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment : public Handle
 };
 %extend Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment {
 	~Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -776,7 +776,7 @@ class Handle_StepAP214_ExternallyDefinedGeneralProperty : public Handle_StepBasi
 };
 %extend Handle_StepAP214_ExternallyDefinedGeneralProperty {
 	~Handle_StepAP214_ExternallyDefinedGeneralProperty() {
-	printf("Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedGeneralProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_ExternallyDefinedGeneralProperty\n");}
 	}
 };
 
@@ -800,7 +800,7 @@ class Handle_StepAP214_AppliedDateAssignment : public Handle_StepBasic_DateAssig
 };
 %extend Handle_StepAP214_AppliedDateAssignment {
 	~Handle_StepAP214_AppliedDateAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAssignment\n");}
 	}
 };
 
@@ -824,7 +824,7 @@ class Handle_StepAP214_AutoDesignSecurityClassificationAssignment : public Handl
 };
 %extend Handle_StepAP214_AutoDesignSecurityClassificationAssignment {
 	~Handle_StepAP214_AutoDesignSecurityClassificationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignSecurityClassificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignSecurityClassificationAssignment\n");}
 	}
 };
 
@@ -848,7 +848,7 @@ class Handle_StepAP214_AutoDesignDateAndPersonAssignment : public Handle_StepBas
 };
 %extend Handle_StepAP214_AutoDesignDateAndPersonAssignment {
 	~Handle_StepAP214_AutoDesignDateAndPersonAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignDateAndPersonAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignDateAndPersonAssignment\n");}
 	}
 };
 
@@ -872,7 +872,7 @@ class Handle_StepAP214_AutoDesignDocumentReference : public Handle_StepBasic_Doc
 };
 %extend Handle_StepAP214_AutoDesignDocumentReference {
 	~Handle_StepAP214_AutoDesignDocumentReference() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignDocumentReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignDocumentReference\n");}
 	}
 };
 
@@ -896,7 +896,7 @@ class Handle_StepAP214_HArray1OfAutoDesignGroupedItem : public Handle_MMgt_TShar
 };
 %extend Handle_StepAP214_HArray1OfAutoDesignGroupedItem {
 	~Handle_StepAP214_HArray1OfAutoDesignGroupedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGroupedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignGroupedItem\n");}
 	}
 };
 
@@ -920,7 +920,7 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem : public Handle_MMgt
 };
 %extend Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem {
 	~Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");}
 	}
 };
 
@@ -944,7 +944,7 @@ class Handle_StepAP214_AutoDesignGroupAssignment : public Handle_StepBasic_Group
 };
 %extend Handle_StepAP214_AutoDesignGroupAssignment {
 	~Handle_StepAP214_AutoDesignGroupAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AutoDesignGroupAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AutoDesignGroupAssignment\n");}
 	}
 };
 
@@ -968,7 +968,7 @@ class Handle_StepAP214_HArray1OfExternalIdentificationItem : public Handle_MMgt_
 };
 %extend Handle_StepAP214_HArray1OfExternalIdentificationItem {
 	~Handle_StepAP214_HArray1OfExternalIdentificationItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfExternalIdentificationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfExternalIdentificationItem\n");}
 	}
 };
 
@@ -992,7 +992,7 @@ class Handle_StepAP214_AppliedPresentedItem : public Handle_StepVisual_Presented
 };
 %extend Handle_StepAP214_AppliedPresentedItem {
 	~Handle_StepAP214_AppliedPresentedItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedPresentedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedPresentedItem\n");}
 	}
 };
 
@@ -1016,7 +1016,7 @@ class Handle_StepAP214_AppliedApprovalAssignment : public Handle_StepBasic_Appro
 };
 %extend Handle_StepAP214_AppliedApprovalAssignment {
 	~Handle_StepAP214_AppliedApprovalAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedApprovalAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedApprovalAssignment\n");}
 	}
 };
 
@@ -1040,7 +1040,7 @@ class Handle_StepAP214_AppliedOrganizationAssignment : public Handle_StepBasic_O
 };
 %extend Handle_StepAP214_AppliedOrganizationAssignment {
 	~Handle_StepAP214_AppliedOrganizationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedOrganizationAssignment\n");}
 	}
 };
 
@@ -1064,7 +1064,7 @@ class Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem : public Handle_MMgt_T
 };
 %extend Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem {
 	~Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
 	}
 };
 
@@ -1088,7 +1088,7 @@ class Handle_StepAP214_HArray1OfPersonAndOrganizationItem : public Handle_MMgt_T
 };
 %extend Handle_StepAP214_HArray1OfPersonAndOrganizationItem {
 	~Handle_StepAP214_HArray1OfPersonAndOrganizationItem() {
-	printf("Call custom destructor for instance of Handle_StepAP214_HArray1OfPersonAndOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_HArray1OfPersonAndOrganizationItem\n");}
 	}
 };
 
@@ -1112,7 +1112,7 @@ class Handle_StepAP214_AppliedSecurityClassificationAssignment : public Handle_S
 };
 %extend Handle_StepAP214_AppliedSecurityClassificationAssignment {
 	~Handle_StepAP214_AppliedSecurityClassificationAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedSecurityClassificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedSecurityClassificationAssignment\n");}
 	}
 };
 
@@ -1136,7 +1136,7 @@ class Handle_StepAP214_AppliedDateAndTimeAssignment : public Handle_StepBasic_Da
 };
 %extend Handle_StepAP214_AppliedDateAndTimeAssignment {
 	~Handle_StepAP214_AppliedDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of Handle_StepAP214_AppliedDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepAP214_AppliedDateAndTimeAssignment\n");}
 	}
 };
 
@@ -1156,7 +1156,7 @@ class StepAP214_Class : public StepBasic_Group {
 };
 %extend StepAP214_Class {
 	~StepAP214_Class() {
-	printf("Call custom destructor for instance of StepAP214_Class\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Class\n");}
 	}
 };
 
@@ -1180,7 +1180,7 @@ class StepAP214_ExternallyDefinedClass : public StepAP214_Class {
 };
 %extend StepAP214_ExternallyDefinedClass {
 	~StepAP214_ExternallyDefinedClass() {
-	printf("Call custom destructor for instance of StepAP214_ExternallyDefinedClass\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_ExternallyDefinedClass\n");}
 	}
 };
 
@@ -1197,7 +1197,7 @@ class StepAP214_GroupItem : public StepData_SelectType {
 };
 %extend StepAP214_GroupItem {
 	~StepAP214_GroupItem() {
-	printf("Call custom destructor for instance of StepAP214_GroupItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_GroupItem\n");}
 	}
 };
 
@@ -1237,7 +1237,7 @@ class StepAP214_HArray1OfExternalIdentificationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfExternalIdentificationItem {
 	~StepAP214_HArray1OfExternalIdentificationItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfExternalIdentificationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfExternalIdentificationItem\n");}
 	}
 };
 
@@ -1263,7 +1263,7 @@ class StepAP214_ExternallyDefinedGeneralProperty : public StepBasic_GeneralPrope
 };
 %extend StepAP214_ExternallyDefinedGeneralProperty {
 	~StepAP214_ExternallyDefinedGeneralProperty() {
-	printf("Call custom destructor for instance of StepAP214_ExternallyDefinedGeneralProperty\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_ExternallyDefinedGeneralProperty\n");}
 	}
 };
 
@@ -1302,7 +1302,7 @@ class StepAP214_Array1OfPresentedItemSelect {
 };
 %extend StepAP214_Array1OfPresentedItemSelect {
 	~StepAP214_Array1OfPresentedItemSelect() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfPresentedItemSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfPresentedItemSelect\n");}
 	}
 };
 
@@ -1333,7 +1333,7 @@ class StepAP214_AutoDesignGeneralOrgItem : public StepData_SelectType {
 };
 %extend StepAP214_AutoDesignGeneralOrgItem {
 	~StepAP214_AutoDesignGeneralOrgItem() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignGeneralOrgItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGeneralOrgItem\n");}
 	}
 };
 
@@ -1373,7 +1373,7 @@ class StepAP214_HArray1OfDateAndTimeItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfDateAndTimeItem {
 	~StepAP214_HArray1OfDateAndTimeItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfDateAndTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDateAndTimeItem\n");}
 	}
 };
 
@@ -1412,7 +1412,7 @@ class StepAP214_Array1OfDateItem {
 };
 %extend StepAP214_Array1OfDateItem {
 	~StepAP214_Array1OfDateItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfDateItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDateItem\n");}
 	}
 };
 
@@ -1442,7 +1442,7 @@ class StepAP214_AppliedPresentedItem : public StepVisual_PresentedItem {
 };
 %extend StepAP214_AppliedPresentedItem {
 	~StepAP214_AppliedPresentedItem() {
-	printf("Call custom destructor for instance of StepAP214_AppliedPresentedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPresentedItem\n");}
 	}
 };
 
@@ -1474,7 +1474,7 @@ class StepAP214_AppliedApprovalAssignment : public StepBasic_ApprovalAssignment 
 };
 %extend StepAP214_AppliedApprovalAssignment {
 	~StepAP214_AppliedApprovalAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AppliedApprovalAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedApprovalAssignment\n");}
 	}
 };
 
@@ -1506,7 +1506,7 @@ class StepAP214_AppliedOrganizationAssignment : public StepBasic_OrganizationAss
 };
 %extend StepAP214_AppliedOrganizationAssignment {
 	~StepAP214_AppliedOrganizationAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AppliedOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedOrganizationAssignment\n");}
 	}
 };
 
@@ -1539,7 +1539,7 @@ class StepAP214_AutoDesignDateAndPersonItem : public StepData_SelectType {
 };
 %extend StepAP214_AutoDesignDateAndPersonItem {
 	~StepAP214_AutoDesignDateAndPersonItem() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonItem\n");}
 	}
 };
 
@@ -1571,7 +1571,7 @@ class StepAP214_AutoDesignNominalDateAndTimeAssignment : public StepBasic_DateAn
 };
 %extend StepAP214_AutoDesignNominalDateAndTimeAssignment {
 	~StepAP214_AutoDesignNominalDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignNominalDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAndTimeAssignment\n");}
 	}
 };
 
@@ -1611,7 +1611,7 @@ class StepAP214_HArray1OfGroupItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfGroupItem {
 	~StepAP214_HArray1OfGroupItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfGroupItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfGroupItem\n");}
 	}
 };
 
@@ -1641,7 +1641,7 @@ class StepAP214_AppliedDocumentReference : public StepBasic_DocumentReference {
 };
 %extend StepAP214_AppliedDocumentReference {
 	~StepAP214_AppliedDocumentReference() {
-	printf("Call custom destructor for instance of StepAP214_AppliedDocumentReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDocumentReference\n");}
 	}
 };
 
@@ -1681,7 +1681,7 @@ class StepAP214_HArray1OfApprovalItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfApprovalItem {
 	~StepAP214_HArray1OfApprovalItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfApprovalItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfApprovalItem\n");}
 	}
 };
 
@@ -1713,7 +1713,7 @@ class StepAP214_AutoDesignGroupAssignment : public StepBasic_GroupAssignment {
 };
 %extend StepAP214_AutoDesignGroupAssignment {
 	~StepAP214_AutoDesignGroupAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignGroupAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGroupAssignment\n");}
 	}
 };
 
@@ -1753,7 +1753,7 @@ class StepAP214_HArray1OfPresentedItemSelect : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfPresentedItemSelect {
 	~StepAP214_HArray1OfPresentedItemSelect() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfPresentedItemSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPresentedItemSelect\n");}
 	}
 };
 
@@ -1779,7 +1779,7 @@ class StepAP214_AppliedExternalIdentificationAssignment : public StepBasic_Exter
 };
 %extend StepAP214_AppliedExternalIdentificationAssignment {
 	~StepAP214_AppliedExternalIdentificationAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AppliedExternalIdentificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedExternalIdentificationAssignment\n");}
 	}
 };
 
@@ -1818,7 +1818,7 @@ class StepAP214_Array1OfAutoDesignDatedItem {
 };
 %extend StepAP214_Array1OfAutoDesignDatedItem {
 	~StepAP214_Array1OfAutoDesignDatedItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignDatedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDatedItem\n");}
 	}
 };
 
@@ -1850,7 +1850,7 @@ class StepAP214_AutoDesignPersonAndOrganizationAssignment : public StepBasic_Per
 };
 %extend StepAP214_AutoDesignPersonAndOrganizationAssignment {
 	~StepAP214_AutoDesignPersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignPersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -1882,7 +1882,7 @@ class StepAP214_AutoDesignDateAndPersonAssignment : public StepBasic_PersonAndOr
 };
 %extend StepAP214_AutoDesignDateAndPersonAssignment {
 	~StepAP214_AutoDesignDateAndPersonAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndPersonAssignment\n");}
 	}
 };
 
@@ -1919,7 +1919,7 @@ class StepAP214_AutoDesignGroupedItem : public StepData_SelectType {
 };
 %extend StepAP214_AutoDesignGroupedItem {
 	~StepAP214_AutoDesignGroupedItem() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignGroupedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignGroupedItem\n");}
 	}
 };
 
@@ -1951,7 +1951,7 @@ class StepAP214_AppliedDateAssignment : public StepBasic_DateAssignment {
 };
 %extend StepAP214_AppliedDateAssignment {
 	~StepAP214_AppliedDateAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AppliedDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDateAssignment\n");}
 	}
 };
 
@@ -1990,7 +1990,7 @@ class StepAP214_ApprovalItem : public StepData_SelectType {
 };
 %extend StepAP214_ApprovalItem {
 	~StepAP214_ApprovalItem() {
-	printf("Call custom destructor for instance of StepAP214_ApprovalItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_ApprovalItem\n");}
 	}
 };
 
@@ -2030,7 +2030,7 @@ class StepAP214_HArray1OfDocumentReferenceItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfDocumentReferenceItem {
 	~StepAP214_HArray1OfDocumentReferenceItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfDocumentReferenceItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDocumentReferenceItem\n");}
 	}
 };
 
@@ -2049,7 +2049,7 @@ class StepAP214_PresentedItemSelect : public StepData_SelectType {
 };
 %extend StepAP214_PresentedItemSelect {
 	~StepAP214_PresentedItemSelect() {
-	printf("Call custom destructor for instance of StepAP214_PresentedItemSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_PresentedItemSelect\n");}
 	}
 };
 
@@ -2072,7 +2072,7 @@ class StepAP214_DateItem : public StepAP214_ApprovalItem {
 };
 %extend StepAP214_DateItem {
 	~StepAP214_DateItem() {
-	printf("Call custom destructor for instance of StepAP214_DateItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_DateItem\n");}
 	}
 };
 
@@ -2112,7 +2112,7 @@ class StepAP214_HArray1OfAutoDesignReferencingItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignReferencingItem {
 	~StepAP214_HArray1OfAutoDesignReferencingItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfAutoDesignReferencingItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignReferencingItem\n");}
 	}
 };
 
@@ -2152,7 +2152,7 @@ class StepAP214_HArray1OfAutoDesignDateAndTimeItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignDateAndTimeItem {
 	~StepAP214_HArray1OfAutoDesignDateAndTimeItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndTimeItem\n");}
 	}
 };
 
@@ -2191,7 +2191,7 @@ class StepAP214_Array1OfAutoDesignPresentedItemSelect {
 };
 %extend StepAP214_Array1OfAutoDesignPresentedItemSelect {
 	~StepAP214_Array1OfAutoDesignPresentedItemSelect() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignPresentedItemSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignPresentedItemSelect\n");}
 	}
 };
 
@@ -2206,7 +2206,7 @@ class StepAP214 {
 };
 %extend StepAP214 {
 	~StepAP214() {
-	printf("Call custom destructor for instance of StepAP214\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214\n");}
 	}
 };
 
@@ -2245,7 +2245,7 @@ class StepAP214_Array1OfDateAndTimeItem {
 };
 %extend StepAP214_Array1OfDateAndTimeItem {
 	~StepAP214_Array1OfDateAndTimeItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfDateAndTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDateAndTimeItem\n");}
 	}
 };
 
@@ -2275,7 +2275,7 @@ class StepAP214_AutoDesignDocumentReference : public StepBasic_DocumentReference
 };
 %extend StepAP214_AutoDesignDocumentReference {
 	~StepAP214_AutoDesignDocumentReference() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignDocumentReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDocumentReference\n");}
 	}
 };
 
@@ -2314,7 +2314,7 @@ class StepAP214_Array1OfAutoDesignDateAndPersonItem {
 };
 %extend StepAP214_Array1OfAutoDesignDateAndPersonItem {
 	~StepAP214_Array1OfAutoDesignDateAndPersonItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndPersonItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndPersonItem\n");}
 	}
 };
 
@@ -2346,7 +2346,7 @@ class StepAP214_AutoDesignSecurityClassificationAssignment : public StepBasic_Se
 };
 %extend StepAP214_AutoDesignSecurityClassificationAssignment {
 	~StepAP214_AutoDesignSecurityClassificationAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignSecurityClassificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignSecurityClassificationAssignment\n");}
 	}
 };
 
@@ -2385,7 +2385,7 @@ class StepAP214_Array1OfOrganizationItem {
 };
 %extend StepAP214_Array1OfOrganizationItem {
 	~StepAP214_Array1OfOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfOrganizationItem\n");}
 	}
 };
 
@@ -2424,7 +2424,7 @@ class StepAP214_Array1OfApprovalItem {
 };
 %extend StepAP214_Array1OfApprovalItem {
 	~StepAP214_Array1OfApprovalItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfApprovalItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfApprovalItem\n");}
 	}
 };
 
@@ -2443,7 +2443,7 @@ class StepAP214_AutoDesignOrganizationItem : public StepAP214_AutoDesignGeneralO
 };
 %extend StepAP214_AutoDesignOrganizationItem {
 	~StepAP214_AutoDesignOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationItem\n");}
 	}
 };
 
@@ -2475,7 +2475,7 @@ class StepAP214_AppliedDateAndTimeAssignment : public StepBasic_DateAndTimeAssig
 };
 %extend StepAP214_AppliedDateAndTimeAssignment {
 	~StepAP214_AppliedDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AppliedDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedDateAndTimeAssignment\n");}
 	}
 };
 
@@ -2514,7 +2514,7 @@ class StepAP214_Array1OfAutoDesignGroupedItem {
 };
 %extend StepAP214_Array1OfAutoDesignGroupedItem {
 	~StepAP214_Array1OfAutoDesignGroupedItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignGroupedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignGroupedItem\n");}
 	}
 };
 
@@ -2554,7 +2554,7 @@ class StepAP214_HArray1OfAutoDesignPresentedItemSelect : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignPresentedItemSelect {
 	~StepAP214_HArray1OfAutoDesignPresentedItemSelect() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignPresentedItemSelect\n");}
 	}
 };
 
@@ -2587,7 +2587,7 @@ class StepAP214_DocumentReferenceItem : public StepData_SelectType {
 };
 %extend StepAP214_DocumentReferenceItem {
 	~StepAP214_DocumentReferenceItem() {
-	printf("Call custom destructor for instance of StepAP214_DocumentReferenceItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_DocumentReferenceItem\n");}
 	}
 };
 
@@ -2627,7 +2627,7 @@ class StepAP214_HArray1OfPersonAndOrganizationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfPersonAndOrganizationItem {
 	~StepAP214_HArray1OfPersonAndOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfPersonAndOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfPersonAndOrganizationItem\n");}
 	}
 };
 
@@ -2654,7 +2654,7 @@ class StepAP214_AutoDesignPresentedItemSelect : public StepData_SelectType {
 };
 %extend StepAP214_AutoDesignPresentedItemSelect {
 	~StepAP214_AutoDesignPresentedItemSelect() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignPresentedItemSelect\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPresentedItemSelect\n");}
 	}
 };
 
@@ -2697,7 +2697,7 @@ class StepAP214_AutoDesignReferencingItem : public StepData_SelectType {
 };
 %extend StepAP214_AutoDesignReferencingItem {
 	~StepAP214_AutoDesignReferencingItem() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignReferencingItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignReferencingItem\n");}
 	}
 };
 
@@ -2729,7 +2729,7 @@ class StepAP214_AppliedSecurityClassificationAssignment : public StepBasic_Secur
 };
 %extend StepAP214_AppliedSecurityClassificationAssignment {
 	~StepAP214_AppliedSecurityClassificationAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AppliedSecurityClassificationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedSecurityClassificationAssignment\n");}
 	}
 };
 
@@ -2768,7 +2768,7 @@ class StepAP214_Array1OfGroupItem {
 };
 %extend StepAP214_Array1OfGroupItem {
 	~StepAP214_Array1OfGroupItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfGroupItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfGroupItem\n");}
 	}
 };
 
@@ -2800,7 +2800,7 @@ class StepAP214_AutoDesignApprovalAssignment : public StepBasic_ApprovalAssignme
 };
 %extend StepAP214_AutoDesignApprovalAssignment {
 	~StepAP214_AutoDesignApprovalAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignApprovalAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignApprovalAssignment\n");}
 	}
 };
 
@@ -2823,7 +2823,7 @@ class StepAP214_DateAndTimeItem : public StepAP214_ApprovalItem {
 };
 %extend StepAP214_DateAndTimeItem {
 	~StepAP214_DateAndTimeItem() {
-	printf("Call custom destructor for instance of StepAP214_DateAndTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_DateAndTimeItem\n");}
 	}
 };
 
@@ -2855,7 +2855,7 @@ class StepAP214_AutoDesignOrganizationAssignment : public StepBasic_Organization
 };
 %extend StepAP214_AutoDesignOrganizationAssignment {
 	~StepAP214_AutoDesignOrganizationAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignOrganizationAssignment\n");}
 	}
 };
 
@@ -2894,7 +2894,7 @@ class StepAP214_Array1OfAutoDesignReferencingItem {
 };
 %extend StepAP214_Array1OfAutoDesignReferencingItem {
 	~StepAP214_Array1OfAutoDesignReferencingItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignReferencingItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignReferencingItem\n");}
 	}
 };
 
@@ -2933,7 +2933,7 @@ class StepAP214_Array1OfExternalIdentificationItem {
 };
 %extend StepAP214_Array1OfExternalIdentificationItem {
 	~StepAP214_Array1OfExternalIdentificationItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfExternalIdentificationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfExternalIdentificationItem\n");}
 	}
 };
 
@@ -2973,7 +2973,7 @@ class StepAP214_HArray1OfAutoDesignGeneralOrgItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignGeneralOrgItem {
 	~StepAP214_HArray1OfAutoDesignGeneralOrgItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGeneralOrgItem\n");}
 	}
 };
 
@@ -3013,7 +3013,7 @@ class StepAP214_HArray1OfOrganizationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfOrganizationItem {
 	~StepAP214_HArray1OfOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfOrganizationItem\n");}
 	}
 };
 
@@ -3053,7 +3053,7 @@ class StepAP214_HArray1OfAutoDesignGroupedItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignGroupedItem {
 	~StepAP214_HArray1OfAutoDesignGroupedItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGroupedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignGroupedItem\n");}
 	}
 };
 
@@ -3085,7 +3085,7 @@ class StepAP214_AutoDesignActualDateAndTimeAssignment : public StepBasic_DateAnd
 };
 %extend StepAP214_AutoDesignActualDateAndTimeAssignment {
 	~StepAP214_AutoDesignActualDateAndTimeAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignActualDateAndTimeAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignActualDateAndTimeAssignment\n");}
 	}
 };
 
@@ -3111,7 +3111,7 @@ class StepAP214_AppliedGroupAssignment : public StepBasic_GroupAssignment {
 };
 %extend StepAP214_AppliedGroupAssignment {
 	~StepAP214_AppliedGroupAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AppliedGroupAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedGroupAssignment\n");}
 	}
 };
 
@@ -3137,7 +3137,7 @@ class StepAP214_RepItemGroup : public StepBasic_Group {
 };
 %extend StepAP214_RepItemGroup {
 	~StepAP214_RepItemGroup() {
-	printf("Call custom destructor for instance of StepAP214_RepItemGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_RepItemGroup\n");}
 	}
 };
 
@@ -3169,7 +3169,7 @@ class StepAP214_AutoDesignActualDateAssignment : public StepBasic_DateAssignment
 };
 %extend StepAP214_AutoDesignActualDateAssignment {
 	~StepAP214_AutoDesignActualDateAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignActualDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignActualDateAssignment\n");}
 	}
 };
 
@@ -3190,7 +3190,7 @@ class StepAP214_AutoDesignDateAndTimeItem : public StepData_SelectType {
 };
 %extend StepAP214_AutoDesignDateAndTimeItem {
 	~StepAP214_AutoDesignDateAndTimeItem() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignDateAndTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDateAndTimeItem\n");}
 	}
 };
 
@@ -3229,7 +3229,7 @@ class StepAP214_Array1OfDocumentReferenceItem {
 };
 %extend StepAP214_Array1OfDocumentReferenceItem {
 	~StepAP214_Array1OfDocumentReferenceItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfDocumentReferenceItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfDocumentReferenceItem\n");}
 	}
 };
 
@@ -3246,7 +3246,7 @@ class StepAP214_PersonAndOrganizationItem : public StepAP214_ApprovalItem {
 };
 %extend StepAP214_PersonAndOrganizationItem {
 	~StepAP214_PersonAndOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP214_PersonAndOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_PersonAndOrganizationItem\n");}
 	}
 };
 
@@ -3265,7 +3265,7 @@ class StepAP214_OrganizationItem : public StepAP214_ApprovalItem {
 };
 %extend StepAP214_OrganizationItem {
 	~StepAP214_OrganizationItem() {
-	printf("Call custom destructor for instance of StepAP214_OrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_OrganizationItem\n");}
 	}
 };
 
@@ -3295,7 +3295,7 @@ class StepAP214_AutoDesignPresentedItem : public StepVisual_PresentedItem {
 };
 %extend StepAP214_AutoDesignPresentedItem {
 	~StepAP214_AutoDesignPresentedItem() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignPresentedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignPresentedItem\n");}
 	}
 };
 
@@ -3316,7 +3316,7 @@ class StepAP214_AutoDesignDatedItem : public StepData_SelectType {
 };
 %extend StepAP214_AutoDesignDatedItem {
 	~StepAP214_AutoDesignDatedItem() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignDatedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignDatedItem\n");}
 	}
 };
 
@@ -3355,7 +3355,7 @@ class StepAP214_Array1OfAutoDesignGeneralOrgItem {
 };
 %extend StepAP214_Array1OfAutoDesignGeneralOrgItem {
 	~StepAP214_Array1OfAutoDesignGeneralOrgItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignGeneralOrgItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignGeneralOrgItem\n");}
 	}
 };
 
@@ -3378,7 +3378,7 @@ class StepAP214_ExternalIdentificationItem : public StepData_SelectType {
 };
 %extend StepAP214_ExternalIdentificationItem {
 	~StepAP214_ExternalIdentificationItem() {
-	printf("Call custom destructor for instance of StepAP214_ExternalIdentificationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_ExternalIdentificationItem\n");}
 	}
 };
 
@@ -3418,7 +3418,7 @@ class StepAP214_HArray1OfSecurityClassificationItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfSecurityClassificationItem {
 	~StepAP214_HArray1OfSecurityClassificationItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfSecurityClassificationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfSecurityClassificationItem\n");}
 	}
 };
 
@@ -3457,7 +3457,7 @@ class StepAP214_Array1OfPersonAndOrganizationItem {
 };
 %extend StepAP214_Array1OfPersonAndOrganizationItem {
 	~StepAP214_Array1OfPersonAndOrganizationItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfPersonAndOrganizationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfPersonAndOrganizationItem\n");}
 	}
 };
 
@@ -3470,7 +3470,7 @@ class StepAP214_SecurityClassificationItem : public StepAP214_ApprovalItem {
 };
 %extend StepAP214_SecurityClassificationItem {
 	~StepAP214_SecurityClassificationItem() {
-	printf("Call custom destructor for instance of StepAP214_SecurityClassificationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_SecurityClassificationItem\n");}
 	}
 };
 
@@ -3510,7 +3510,7 @@ class StepAP214_HArray1OfDateItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfDateItem {
 	~StepAP214_HArray1OfDateItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfDateItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfDateItem\n");}
 	}
 };
 
@@ -3542,7 +3542,7 @@ class StepAP214_AppliedPersonAndOrganizationAssignment : public StepBasic_Person
 };
 %extend StepAP214_AppliedPersonAndOrganizationAssignment {
 	~StepAP214_AppliedPersonAndOrganizationAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AppliedPersonAndOrganizationAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AppliedPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -3582,7 +3582,7 @@ class StepAP214_HArray1OfAutoDesignDateAndPersonItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignDateAndPersonItem {
 	~StepAP214_HArray1OfAutoDesignDateAndPersonItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDateAndPersonItem\n");}
 	}
 };
 
@@ -3621,7 +3621,7 @@ class StepAP214_Array1OfSecurityClassificationItem {
 };
 %extend StepAP214_Array1OfSecurityClassificationItem {
 	~StepAP214_Array1OfSecurityClassificationItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfSecurityClassificationItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfSecurityClassificationItem\n");}
 	}
 };
 
@@ -3660,7 +3660,7 @@ class StepAP214_Array1OfAutoDesignDateAndTimeItem {
 };
 %extend StepAP214_Array1OfAutoDesignDateAndTimeItem {
 	~StepAP214_Array1OfAutoDesignDateAndTimeItem() {
-	printf("Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndTimeItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_Array1OfAutoDesignDateAndTimeItem\n");}
 	}
 };
 
@@ -3692,7 +3692,7 @@ class StepAP214_AutoDesignNominalDateAssignment : public StepBasic_DateAssignmen
 };
 %extend StepAP214_AutoDesignNominalDateAssignment {
 	~StepAP214_AutoDesignNominalDateAssignment() {
-	printf("Call custom destructor for instance of StepAP214_AutoDesignNominalDateAssignment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_AutoDesignNominalDateAssignment\n");}
 	}
 };
 
@@ -3732,6 +3732,6 @@ class StepAP214_HArray1OfAutoDesignDatedItem : public MMgt_TShared {
 };
 %extend StepAP214_HArray1OfAutoDesignDatedItem {
 	~StepAP214_HArray1OfAutoDesignDatedItem() {
-	printf("Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDatedItem\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepAP214_HArray1OfAutoDesignDatedItem\n");}
 	}
 };

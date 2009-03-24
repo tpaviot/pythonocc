@@ -104,7 +104,7 @@ class Handle_BinXCAFDrivers_DocumentStorageDriver : public Handle_BinDrivers_Doc
 };
 %extend Handle_BinXCAFDrivers_DocumentStorageDriver {
 	~Handle_BinXCAFDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of Handle_BinXCAFDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinXCAFDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_BinXCAFDrivers_DocumentRetrievalDriver : public Handle_BinDrivers_D
 };
 %extend Handle_BinXCAFDrivers_DocumentRetrievalDriver {
 	~Handle_BinXCAFDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of Handle_BinXCAFDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinXCAFDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -150,7 +150,7 @@ class BinXCAFDrivers_DocumentRetrievalDriver : public BinDrivers_DocumentRetriev
 };
 %extend BinXCAFDrivers_DocumentRetrievalDriver {
 	~BinXCAFDrivers_DocumentRetrievalDriver() {
-	printf("Call custom destructor for instance of BinXCAFDrivers_DocumentRetrievalDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinXCAFDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -167,7 +167,7 @@ class BinXCAFDrivers {
 };
 %extend BinXCAFDrivers {
 	~BinXCAFDrivers() {
-	printf("Call custom destructor for instance of BinXCAFDrivers\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinXCAFDrivers\n");}
 	}
 };
 
@@ -189,6 +189,6 @@ class BinXCAFDrivers_DocumentStorageDriver : public BinDrivers_DocumentStorageDr
 };
 %extend BinXCAFDrivers_DocumentStorageDriver {
 	~BinXCAFDrivers_DocumentStorageDriver() {
-	printf("Call custom destructor for instance of BinXCAFDrivers_DocumentStorageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinXCAFDrivers_DocumentStorageDriver\n");}
 	}
 };

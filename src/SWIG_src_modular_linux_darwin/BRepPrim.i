@@ -193,7 +193,7 @@ class BRepPrim_OneAxis {
 };
 %extend BRepPrim_OneAxis {
 	~BRepPrim_OneAxis() {
-	printf("Call custom destructor for instance of BRepPrim_OneAxis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_OneAxis\n");}
 	}
 };
 
@@ -206,7 +206,7 @@ class BRepPrim_Revolution : public BRepPrim_OneAxis {
 };
 %extend BRepPrim_Revolution {
 	~BRepPrim_Revolution() {
-	printf("Call custom destructor for instance of BRepPrim_Revolution\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_Revolution\n");}
 	}
 };
 
@@ -223,7 +223,7 @@ class BRepPrim_Torus : public BRepPrim_Revolution {
 };
 %extend BRepPrim_Torus {
 	~BRepPrim_Torus() {
-	printf("Call custom destructor for instance of BRepPrim_Torus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_Torus\n");}
 	}
 };
 
@@ -242,7 +242,7 @@ class BRepPrim_Sphere : public BRepPrim_Revolution {
 };
 %extend BRepPrim_Sphere {
 	~BRepPrim_Sphere() {
-	printf("Call custom destructor for instance of BRepPrim_Sphere\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_Sphere\n");}
 	}
 };
 
@@ -311,7 +311,7 @@ class BRepPrim_GWedge {
 };
 %extend BRepPrim_GWedge {
 	~BRepPrim_GWedge() {
-	printf("Call custom destructor for instance of BRepPrim_GWedge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_GWedge\n");}
 	}
 };
 
@@ -338,7 +338,7 @@ class BRepPrim_FaceBuilder {
 };
 %extend BRepPrim_FaceBuilder {
 	~BRepPrim_FaceBuilder() {
-	printf("Call custom destructor for instance of BRepPrim_FaceBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_FaceBuilder\n");}
 	}
 };
 
@@ -355,7 +355,7 @@ class BRepPrim_Wedge : public BRepPrim_GWedge {
 };
 %extend BRepPrim_Wedge {
 	~BRepPrim_Wedge() {
-	printf("Call custom destructor for instance of BRepPrim_Wedge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_Wedge\n");}
 	}
 };
 
@@ -414,7 +414,7 @@ class BRepPrim_Builder {
 };
 %extend BRepPrim_Builder {
 	~BRepPrim_Builder() {
-	printf("Call custom destructor for instance of BRepPrim_Builder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_Builder\n");}
 	}
 };
 
@@ -441,7 +441,7 @@ class BRepPrim_Cone : public BRepPrim_Revolution {
 };
 %extend BRepPrim_Cone {
 	~BRepPrim_Cone() {
-	printf("Call custom destructor for instance of BRepPrim_Cone\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_Cone\n");}
 	}
 };
 
@@ -466,6 +466,6 @@ class BRepPrim_Cylinder : public BRepPrim_Revolution {
 };
 %extend BRepPrim_Cylinder {
 	~BRepPrim_Cylinder() {
-	printf("Call custom destructor for instance of BRepPrim_Cylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrim_Cylinder\n");}
 	}
 };

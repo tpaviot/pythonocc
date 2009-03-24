@@ -131,6 +131,6 @@ class TopAbs {
 };
 %extend TopAbs {
 	~TopAbs() {
-	printf("Call custom destructor for instance of TopAbs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopAbs\n");}
 	}
 };

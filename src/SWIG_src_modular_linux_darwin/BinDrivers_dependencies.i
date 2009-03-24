@@ -19,13 +19,13 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
-#include <BinLDrivers_DocumentStorageDriver.hxx>
-#include <BinLDrivers_VectorOfDocumentSection.hxx>
-#include <BinLDrivers_Marker.hxx>
 #include <BinLDrivers_DocumentRetrievalDriver.hxx>
 #include <BinLDrivers_DocumentSection.hxx>
-#include <Handle_BinLDrivers_DocumentStorageDriver.hxx>
+#include <BinLDrivers_DocumentStorageDriver.hxx>
+#include <BinLDrivers_Marker.hxx>
+#include <BinLDrivers_VectorOfDocumentSection.hxx>
 #include <Handle_BinLDrivers_DocumentRetrievalDriver.hxx>
+#include <Handle_BinLDrivers_DocumentStorageDriver.hxx>
 %};
 
 %import BinLDrivers.i

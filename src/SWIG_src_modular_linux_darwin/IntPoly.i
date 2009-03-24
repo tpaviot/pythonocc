@@ -104,7 +104,7 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 };
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
 	~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d() {
-	printf("Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 };
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
 	~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d() {
-	printf("Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 };
 %extend Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
 	~Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt() {
-	printf("Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 };
 %extend Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
 	~Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt() {
-	printf("Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");}
 	}
 };
 
@@ -229,7 +229,7 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 };
 %extend IntPoly_SequenceOfSequenceOfPnt2d {
 	~IntPoly_SequenceOfSequenceOfPnt2d() {
-	printf("Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt2d\n");}
 	}
 };
 
@@ -262,7 +262,7 @@ class IntPoly_PlaneSection {
 };
 %extend IntPoly_PlaneSection {
 	~IntPoly_PlaneSection() {
-	printf("Call custom destructor for instance of IntPoly_PlaneSection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_PlaneSection\n");}
 	}
 };
 
@@ -288,7 +288,7 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 };
 %extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt {
 	~IntPoly_IndexedMapNodeOfIndexedMapOfPnt() {
-	printf("Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");}
 	}
 };
 
@@ -329,7 +329,7 @@ class IntPoly_ShapeSection {
 };
 %extend IntPoly_ShapeSection {
 	~IntPoly_ShapeSection() {
-	printf("Call custom destructor for instance of IntPoly_ShapeSection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_ShapeSection\n");}
 	}
 };
 
@@ -346,7 +346,7 @@ class IntPoly_PntHasher {
 };
 %extend IntPoly_PntHasher {
 	~IntPoly_PntHasher() {
-	printf("Call custom destructor for instance of IntPoly_PntHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_PntHasher\n");}
 	}
 };
 
@@ -399,7 +399,7 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 };
 %extend IntPoly_SequenceOfSequenceOfPnt {
 	~IntPoly_SequenceOfSequenceOfPnt() {
-	printf("Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceOfSequenceOfPnt\n");}
 	}
 };
 
@@ -421,7 +421,7 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNo
 };
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d {
 	~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d() {
-	printf("Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");}
 	}
 };
 
@@ -454,7 +454,7 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 };
 %extend IntPoly_IndexedMapOfPnt2d {
 	~IntPoly_IndexedMapOfPnt2d() {
-	printf("Call custom destructor for instance of IntPoly_IndexedMapOfPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapOfPnt2d\n");}
 	}
 };
 
@@ -480,7 +480,7 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 };
 %extend IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d {
 	~IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d() {
-	printf("Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d\n");}
 	}
 };
 
@@ -502,7 +502,7 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public TCollection_SeqNode
 };
 %extend IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt {
 	~IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt() {
-	printf("Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");}
 	}
 };
 
@@ -535,7 +535,7 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 };
 %extend IntPoly_IndexedMapOfPnt {
 	~IntPoly_IndexedMapOfPnt() {
-	printf("Call custom destructor for instance of IntPoly_IndexedMapOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapOfPnt\n");}
 	}
 };
 
@@ -552,6 +552,6 @@ class IntPoly_Pnt2dHasher {
 };
 %extend IntPoly_Pnt2dHasher {
 	~IntPoly_Pnt2dHasher() {
-	printf("Call custom destructor for instance of IntPoly_Pnt2dHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntPoly_Pnt2dHasher\n");}
 	}
 };

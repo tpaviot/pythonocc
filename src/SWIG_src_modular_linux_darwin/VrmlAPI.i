@@ -101,7 +101,7 @@ class VrmlAPI {
 };
 %extend VrmlAPI {
 	~VrmlAPI() {
-	printf("Call custom destructor for instance of VrmlAPI\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlAPI\n");}
 	}
 };
 
@@ -154,6 +154,6 @@ class VrmlAPI_Writer {
 };
 %extend VrmlAPI_Writer {
 	~VrmlAPI_Writer() {
-	printf("Call custom destructor for instance of VrmlAPI_Writer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlAPI_Writer\n");}
 	}
 };

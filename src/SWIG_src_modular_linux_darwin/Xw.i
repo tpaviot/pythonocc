@@ -135,7 +135,7 @@ class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 };
 %extend Handle_Xw_HListOfMFTFonts {
 	~Handle_Xw_HListOfMFTFonts() {
-	printf("Call custom destructor for instance of Handle_Xw_HListOfMFTFonts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTFonts\n");}
 	}
 };
 
@@ -159,7 +159,7 @@ class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 };
 %extend Handle_Xw_TextManager {
 	~Handle_Xw_TextManager() {
-	printf("Call custom destructor for instance of Handle_Xw_TextManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_TextManager\n");}
 	}
 };
 
@@ -183,7 +183,7 @@ class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
 };
 %extend Handle_Xw_Driver {
 	~Handle_Xw_Driver() {
-	printf("Call custom destructor for instance of Handle_Xw_Driver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_Driver\n");}
 	}
 };
 
@@ -207,7 +207,7 @@ class Handle_Xw_Window : public Handle_Aspect_Window {
 };
 %extend Handle_Xw_Window {
 	~Handle_Xw_Window() {
-	printf("Call custom destructor for instance of Handle_Xw_Window\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_Window\n");}
 	}
 };
 
@@ -231,7 +231,7 @@ class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
 };
 %extend Handle_Xw_ColorMap {
 	~Handle_Xw_ColorMap() {
-	printf("Call custom destructor for instance of Handle_Xw_ColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_ColorMap\n");}
 	}
 };
 
@@ -255,7 +255,7 @@ class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 };
 %extend Handle_Xw_HListOfMFTSizes {
 	~Handle_Xw_HListOfMFTSizes() {
-	printf("Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");}
 	}
 };
 
@@ -279,7 +279,7 @@ class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 };
 %extend Handle_Xw_GraphicDevice {
 	~Handle_Xw_GraphicDevice() {
-	printf("Call custom destructor for instance of Handle_Xw_GraphicDevice\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_GraphicDevice\n");}
 	}
 };
 
@@ -303,7 +303,7 @@ class Handle_Xw_FontMap : public Handle_Standard_Transient {
 };
 %extend Handle_Xw_FontMap {
 	~Handle_Xw_FontMap() {
-	printf("Call custom destructor for instance of Handle_Xw_FontMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_FontMap\n");}
 	}
 };
 
@@ -327,7 +327,7 @@ class Handle_Xw_MarkMap : public Handle_Standard_Transient {
 };
 %extend Handle_Xw_MarkMap {
 	~Handle_Xw_MarkMap() {
-	printf("Call custom destructor for instance of Handle_Xw_MarkMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_MarkMap\n");}
 	}
 };
 
@@ -351,7 +351,7 @@ class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 };
 %extend Handle_Xw_HListOfIndexs {
 	~Handle_Xw_HListOfIndexs() {
-	printf("Call custom destructor for instance of Handle_Xw_HListOfIndexs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfIndexs\n");}
 	}
 };
 
@@ -375,7 +375,7 @@ class Handle_Xw_IconBox : public Handle_Xw_Window {
 };
 %extend Handle_Xw_IconBox {
 	~Handle_Xw_IconBox() {
-	printf("Call custom destructor for instance of Handle_Xw_IconBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_IconBox\n");}
 	}
 };
 
@@ -399,7 +399,7 @@ class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 };
 %extend Handle_Xw_WidthMap {
 	~Handle_Xw_WidthMap() {
-	printf("Call custom destructor for instance of Handle_Xw_WidthMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_WidthMap\n");}
 	}
 };
 
@@ -423,7 +423,7 @@ class Handle_Xw_TypeMap : public Handle_Standard_Transient {
 };
 %extend Handle_Xw_TypeMap {
 	~Handle_Xw_TypeMap() {
-	printf("Call custom destructor for instance of Handle_Xw_TypeMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_TypeMap\n");}
 	}
 };
 
@@ -447,7 +447,7 @@ class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
 };
 %extend Handle_Xw_PixMap {
 	~Handle_Xw_PixMap() {
-	printf("Call custom destructor for instance of Handle_Xw_PixMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Xw_PixMap\n");}
 	}
 };
 
@@ -487,7 +487,7 @@ class Xw_HListOfMFTFonts : public MMgt_TShared {
 };
 %extend Xw_HListOfMFTFonts {
 	~Xw_HListOfMFTFonts() {
-	printf("Call custom destructor for instance of Xw_HListOfMFTFonts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTFonts\n");}
 	}
 };
 
@@ -526,7 +526,7 @@ class Xw_ListOfMFTFonts {
 };
 %extend Xw_ListOfMFTFonts {
 	~Xw_ListOfMFTFonts() {
-	printf("Call custom destructor for instance of Xw_ListOfMFTFonts\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTFonts\n");}
 	}
 };
 
@@ -684,7 +684,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 };
 %extend Xw_Driver {
 	~Xw_Driver() {
-	printf("Call custom destructor for instance of Xw_Driver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_Driver\n");}
 	}
 };
 
@@ -752,7 +752,7 @@ class Xw_ColorMap : public MMgt_TShared {
 };
 %extend Xw_ColorMap {
 	~Xw_ColorMap() {
-	printf("Call custom destructor for instance of Xw_ColorMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_ColorMap\n");}
 	}
 };
 
@@ -780,7 +780,7 @@ class Xw_FontMap : public Standard_Transient {
 };
 %extend Xw_FontMap {
 	~Xw_FontMap() {
-	printf("Call custom destructor for instance of Xw_FontMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_FontMap\n");}
 	}
 };
 
@@ -820,7 +820,7 @@ class Xw_HListOfIndexs : public MMgt_TShared {
 };
 %extend Xw_HListOfIndexs {
 	~Xw_HListOfIndexs() {
-	printf("Call custom destructor for instance of Xw_HListOfIndexs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_HListOfIndexs\n");}
 	}
 };
 
@@ -846,7 +846,7 @@ class Xw_PixMap : public Aspect_PixMap {
 };
 %extend Xw_PixMap {
 	~Xw_PixMap() {
-	printf("Call custom destructor for instance of Xw_PixMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_PixMap\n");}
 	}
 };
 
@@ -980,7 +980,7 @@ class Xw_Window : public Aspect_Window {
 };
 %extend Xw_Window {
 	~Xw_Window() {
-	printf("Call custom destructor for instance of Xw_Window\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_Window\n");}
 	}
 };
 
@@ -1018,7 +1018,7 @@ class Xw_IconBox : public Xw_Window {
 };
 %extend Xw_IconBox {
 	~Xw_IconBox() {
-	printf("Call custom destructor for instance of Xw_IconBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_IconBox\n");}
 	}
 };
 
@@ -1058,7 +1058,7 @@ class Xw_TextManager : public MFT_TextManager {
 };
 %extend Xw_TextManager {
 	~Xw_TextManager() {
-	printf("Call custom destructor for instance of Xw_TextManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_TextManager\n");}
 	}
 };
 
@@ -1086,7 +1086,7 @@ class Xw_WidthMap : public Standard_Transient {
 };
 %extend Xw_WidthMap {
 	~Xw_WidthMap() {
-	printf("Call custom destructor for instance of Xw_WidthMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_WidthMap\n");}
 	}
 };
 
@@ -1114,7 +1114,7 @@ class Xw_TypeMap : public Standard_Transient {
 };
 %extend Xw_TypeMap {
 	~Xw_TypeMap() {
-	printf("Call custom destructor for instance of Xw_TypeMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_TypeMap\n");}
 	}
 };
 
@@ -1153,7 +1153,7 @@ class Xw_ListOfIndexs {
 };
 %extend Xw_ListOfIndexs {
 	~Xw_ListOfIndexs() {
-	printf("Call custom destructor for instance of Xw_ListOfIndexs\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_ListOfIndexs\n");}
 	}
 };
 
@@ -1207,7 +1207,7 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 };
 %extend Xw_GraphicDevice {
 	~Xw_GraphicDevice() {
-	printf("Call custom destructor for instance of Xw_GraphicDevice\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_GraphicDevice\n");}
 	}
 };
 
@@ -1247,7 +1247,7 @@ class Xw_HListOfMFTSizes : public MMgt_TShared {
 };
 %extend Xw_HListOfMFTSizes {
 	~Xw_HListOfMFTSizes() {
-	printf("Call custom destructor for instance of Xw_HListOfMFTSizes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_HListOfMFTSizes\n");}
 	}
 };
 
@@ -1275,7 +1275,7 @@ class Xw_MarkMap : public Standard_Transient {
 };
 %extend Xw_MarkMap {
 	~Xw_MarkMap() {
-	printf("Call custom destructor for instance of Xw_MarkMap\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_MarkMap\n");}
 	}
 };
 
@@ -1290,7 +1290,7 @@ class Xw {
 };
 %extend Xw {
 	~Xw() {
-	printf("Call custom destructor for instance of Xw\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw\n");}
 	}
 };
 
@@ -1329,6 +1329,6 @@ class Xw_ListOfMFTSizes {
 };
 %extend Xw_ListOfMFTSizes {
 	~Xw_ListOfMFTSizes() {
-	printf("Call custom destructor for instance of Xw_ListOfMFTSizes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTSizes\n");}
 	}
 };

@@ -115,7 +115,7 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TColl
 };
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles {
 	~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles() {
-	printf("Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles\n");}
 	}
 };
 
@@ -139,7 +139,7 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 };
 %extend Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
 	~Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d() {
-	printf("Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");}
 	}
 };
 
@@ -170,7 +170,7 @@ class Convert_CompPolynomialToPoles {
 };
 %extend Convert_CompPolynomialToPoles {
 	~Convert_CompPolynomialToPoles() {
-	printf("Call custom destructor for instance of Convert_CompPolynomialToPoles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_CompPolynomialToPoles\n");}
 	}
 };
 
@@ -223,7 +223,7 @@ class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
 };
 %extend Convert_SequenceOfArray1OfPoles2d {
 	~Convert_SequenceOfArray1OfPoles2d() {
-	printf("Call custom destructor for instance of Convert_SequenceOfArray1OfPoles2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_SequenceOfArray1OfPoles2d\n");}
 	}
 };
 
@@ -245,7 +245,7 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles {
 	~Convert_SequenceNodeOfSequenceOfArray1OfPoles() {
-	printf("Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles\n");}
 	}
 };
 
@@ -276,7 +276,7 @@ class Convert_ConicToBSplineCurve {
 };
 %extend Convert_ConicToBSplineCurve {
 	~Convert_ConicToBSplineCurve() {
-	printf("Call custom destructor for instance of Convert_ConicToBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_ConicToBSplineCurve\n");}
 	}
 };
 
@@ -291,7 +291,7 @@ class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 };
 %extend Convert_CircleToBSplineCurve {
 	~Convert_CircleToBSplineCurve() {
-	printf("Call custom destructor for instance of Convert_CircleToBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_CircleToBSplineCurve\n");}
 	}
 };
 
@@ -332,7 +332,7 @@ class Convert_GridPolynomialToPoles {
 };
 %extend Convert_GridPolynomialToPoles {
 	~Convert_GridPolynomialToPoles() {
-	printf("Call custom destructor for instance of Convert_GridPolynomialToPoles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_GridPolynomialToPoles\n");}
 	}
 };
 
@@ -371,7 +371,7 @@ class Convert_ElementarySurfaceToBSplineSurface {
 };
 %extend Convert_ElementarySurfaceToBSplineSurface {
 	~Convert_ElementarySurfaceToBSplineSurface() {
-	printf("Call custom destructor for instance of Convert_ElementarySurfaceToBSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_ElementarySurfaceToBSplineSurface\n");}
 	}
 };
 
@@ -386,7 +386,7 @@ class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSu
 };
 %extend Convert_ConeToBSplineSurface {
 	~Convert_ConeToBSplineSurface() {
-	printf("Call custom destructor for instance of Convert_ConeToBSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_ConeToBSplineSurface\n");}
 	}
 };
 
@@ -403,7 +403,7 @@ class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineS
 };
 %extend Convert_TorusToBSplineSurface {
 	~Convert_TorusToBSplineSurface() {
-	printf("Call custom destructor for instance of Convert_TorusToBSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_TorusToBSplineSurface\n");}
 	}
 };
 
@@ -416,7 +416,7 @@ class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 };
 %extend Convert_HyperbolaToBSplineCurve {
 	~Convert_HyperbolaToBSplineCurve() {
-	printf("Call custom destructor for instance of Convert_HyperbolaToBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_HyperbolaToBSplineCurve\n");}
 	}
 };
 
@@ -443,7 +443,7 @@ class Convert_CompBezierCurvesToBSplineCurve {
 };
 %extend Convert_CompBezierCurvesToBSplineCurve {
 	~Convert_CompBezierCurvesToBSplineCurve() {
-	printf("Call custom destructor for instance of Convert_CompBezierCurvesToBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurvesToBSplineCurve\n");}
 	}
 };
 
@@ -458,7 +458,7 @@ class Convert_EllipseToBSplineCurve : public Convert_ConicToBSplineCurve {
 };
 %extend Convert_EllipseToBSplineCurve {
 	~Convert_EllipseToBSplineCurve() {
-	printf("Call custom destructor for instance of Convert_EllipseToBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_EllipseToBSplineCurve\n");}
 	}
 };
 
@@ -511,7 +511,7 @@ class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
 };
 %extend Convert_SequenceOfArray1OfPoles {
 	~Convert_SequenceOfArray1OfPoles() {
-	printf("Call custom destructor for instance of Convert_SequenceOfArray1OfPoles\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_SequenceOfArray1OfPoles\n");}
 	}
 };
 
@@ -533,7 +533,7 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNo
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
 	~Convert_SequenceNodeOfSequenceOfArray1OfPoles2d() {
-	printf("Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");}
 	}
 };
 
@@ -548,7 +548,7 @@ class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSpli
 };
 %extend Convert_CylinderToBSplineSurface {
 	~Convert_CylinderToBSplineSurface() {
-	printf("Call custom destructor for instance of Convert_CylinderToBSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_CylinderToBSplineSurface\n");}
 	}
 };
 
@@ -561,7 +561,7 @@ class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 };
 %extend Convert_ParabolaToBSplineCurve {
 	~Convert_ParabolaToBSplineCurve() {
-	printf("Call custom destructor for instance of Convert_ParabolaToBSplineCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_ParabolaToBSplineCurve\n");}
 	}
 };
 
@@ -588,7 +588,7 @@ class Convert_CompBezierCurves2dToBSplineCurve2d {
 };
 %extend Convert_CompBezierCurves2dToBSplineCurve2d {
 	~Convert_CompBezierCurves2dToBSplineCurve2d() {
-	printf("Call custom destructor for instance of Convert_CompBezierCurves2dToBSplineCurve2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurves2dToBSplineCurve2d\n");}
 	}
 };
 
@@ -605,6 +605,6 @@ class Convert_SphereToBSplineSurface : public Convert_ElementarySurfaceToBSpline
 };
 %extend Convert_SphereToBSplineSurface {
 	~Convert_SphereToBSplineSurface() {
-	printf("Call custom destructor for instance of Convert_SphereToBSplineSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Convert_SphereToBSplineSurface\n");}
 	}
 };

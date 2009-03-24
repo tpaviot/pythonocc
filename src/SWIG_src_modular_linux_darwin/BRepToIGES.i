@@ -133,7 +133,7 @@ class BRepToIGES_BREntity {
 };
 %extend BRepToIGES_BREntity {
 	~BRepToIGES_BREntity() {
-	printf("Call custom destructor for instance of BRepToIGES_BREntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepToIGES_BREntity\n");}
 	}
 };
 
@@ -154,7 +154,7 @@ class BRepToIGES_BRShell : public BRepToIGES_BREntity {
 };
 %extend BRepToIGES_BRShell {
 	~BRepToIGES_BRShell() {
-	printf("Call custom destructor for instance of BRepToIGES_BRShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRShell\n");}
 	}
 };
 
@@ -177,7 +177,7 @@ class BRepToIGES_BRSolid : public BRepToIGES_BREntity {
 };
 %extend BRepToIGES_BRSolid {
 	~BRepToIGES_BRSolid() {
-	printf("Call custom destructor for instance of BRepToIGES_BRSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRSolid\n");}
 	}
 };
 
@@ -212,6 +212,6 @@ class BRepToIGES_BRWire : public BRepToIGES_BREntity {
 };
 %extend BRepToIGES_BRWire {
 	~BRepToIGES_BRWire() {
-	printf("Call custom destructor for instance of BRepToIGES_BRWire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepToIGES_BRWire\n");}
 	}
 };

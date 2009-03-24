@@ -104,7 +104,7 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMNaming_NamingDriver {
 	~Handle_XmlMNaming_NamingDriver() {
-	printf("Call custom destructor for instance of Handle_XmlMNaming_NamingDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamingDriver\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMNaming_NamedShapeDriver {
 	~Handle_XmlMNaming_NamedShapeDriver() {
-	printf("Call custom destructor for instance of Handle_XmlMNaming_NamedShapeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamedShapeDriver\n");}
 	}
 };
 
@@ -160,7 +160,7 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMNaming_NamedShapeDriver {
 	~XmlMNaming_NamedShapeDriver() {
-	printf("Call custom destructor for instance of XmlMNaming_NamedShapeDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamedShapeDriver\n");}
 	}
 };
 
@@ -189,7 +189,7 @@ class XmlMNaming_Array1OfShape1 {
 };
 %extend XmlMNaming_Array1OfShape1 {
 	~XmlMNaming_Array1OfShape1() {
-	printf("Call custom destructor for instance of XmlMNaming_Array1OfShape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming_Array1OfShape1\n");}
 	}
 };
 
@@ -236,7 +236,7 @@ class XmlMNaming_Shape1 {
 };
 %extend XmlMNaming_Shape1 {
 	~XmlMNaming_Shape1() {
-	printf("Call custom destructor for instance of XmlMNaming_Shape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming_Shape1\n");}
 	}
 };
 
@@ -262,7 +262,7 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 };
 %extend XmlMNaming_NamingDriver {
 	~XmlMNaming_NamingDriver() {
-	printf("Call custom destructor for instance of XmlMNaming_NamingDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamingDriver\n");}
 	}
 };
 
@@ -277,6 +277,6 @@ class XmlMNaming {
 };
 %extend XmlMNaming {
 	~XmlMNaming() {
-	printf("Call custom destructor for instance of XmlMNaming\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming\n");}
 	}
 };

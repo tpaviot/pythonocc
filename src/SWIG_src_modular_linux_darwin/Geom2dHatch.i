@@ -104,7 +104,7 @@ class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollec
 };
 %extend Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
 	~Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
-	printf("Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public 
 };
 %extend Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
 	~Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
-	printf("Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");}
 	}
 };
 
@@ -153,7 +153,7 @@ class Geom2dHatch_ElementOfHatcher {
 };
 %extend Geom2dHatch_ElementOfHatcher {
 	~Geom2dHatch_ElementOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_ElementOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ElementOfHatcher\n");}
 	}
 };
 
@@ -186,7 +186,7 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 };
 %extend Geom2dHatch_MapOfElementsOfElementsOfHatcher {
 	~Geom2dHatch_MapOfElementsOfElementsOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_MapOfElementsOfElementsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_MapOfElementsOfElementsOfHatcher\n");}
 	}
 };
 
@@ -265,7 +265,7 @@ class Geom2dHatch_Hatcher {
 };
 %extend Geom2dHatch_Hatcher {
 	~Geom2dHatch_Hatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_Hatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_Hatcher\n");}
 	}
 };
 
@@ -324,7 +324,7 @@ class Geom2dHatch_HatchingOfHatcher {
 };
 %extend Geom2dHatch_HatchingOfHatcher {
 	~Geom2dHatch_HatchingOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_HatchingOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_HatchingOfHatcher\n");}
 	}
 };
 
@@ -353,7 +353,7 @@ class Geom2dHatch_ClassifierOfHatcher {
 };
 %extend Geom2dHatch_ClassifierOfHatcher {
 	~Geom2dHatch_ClassifierOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_ClassifierOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ClassifierOfHatcher\n");}
 	}
 };
 
@@ -377,7 +377,7 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 };
 %extend Geom2dHatch_DataMapNodeOfHatchingsOfHatcher {
 	~Geom2dHatch_DataMapNodeOfHatchingsOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapNodeOfHatchingsOfHatcher\n");}
 	}
 };
 
@@ -401,7 +401,7 @@ class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollec
 };
 %extend Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher {
 	~Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");}
 	}
 };
 
@@ -430,7 +430,7 @@ class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 };
 %extend Geom2dHatch_Intersector {
 	~Geom2dHatch_Intersector() {
-	printf("Call custom destructor for instance of Geom2dHatch_Intersector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_Intersector\n");}
 	}
 };
 
@@ -463,7 +463,7 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 };
 %extend Geom2dHatch_HatchingsOfHatcher {
 	~Geom2dHatch_HatchingsOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_HatchingsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_HatchingsOfHatcher\n");}
 	}
 };
 
@@ -490,7 +490,7 @@ class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 };
 %extend Geom2dHatch_FClass2dOfClassifierOfHatcher {
 	~Geom2dHatch_FClass2dOfClassifierOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_FClass2dOfClassifierOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_FClass2dOfClassifierOfHatcher\n");}
 	}
 };
 
@@ -545,7 +545,7 @@ class Geom2dHatch_ElementsOfHatcher {
 };
 %extend Geom2dHatch_ElementsOfHatcher {
 	~Geom2dHatch_ElementsOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_ElementsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ElementsOfHatcher\n");}
 	}
 };
 
@@ -566,7 +566,7 @@ class Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher : public TCollection_Basic
 };
 %extend Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher {
 	~Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher\n");}
 	}
 };
 
@@ -587,6 +587,6 @@ class Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher : public TCo
 };
 %extend Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher {
 	~Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher() {
-	printf("Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher\n");}
 	}
 };

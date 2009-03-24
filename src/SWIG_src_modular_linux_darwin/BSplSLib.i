@@ -161,6 +161,6 @@ class BSplSLib {
 };
 %extend BSplSLib {
 	~BSplSLib() {
-	printf("Call custom destructor for instance of BSplSLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BSplSLib\n");}
 	}
 };

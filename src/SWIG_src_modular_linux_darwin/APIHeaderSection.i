@@ -104,7 +104,7 @@ class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 };
 %extend Handle_APIHeaderSection_EditHeader {
 	~Handle_APIHeaderSection_EditHeader() {
-	printf("Call custom destructor for instance of Handle_APIHeaderSection_EditHeader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_APIHeaderSection_EditHeader\n");}
 	}
 };
 
@@ -134,7 +134,7 @@ class APIHeaderSection_EditHeader : public IFSelect_Editor {
 };
 %extend APIHeaderSection_EditHeader {
 	~APIHeaderSection_EditHeader() {
-	printf("Call custom destructor for instance of APIHeaderSection_EditHeader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of APIHeaderSection_EditHeader\n");}
 	}
 };
 
@@ -235,6 +235,6 @@ class APIHeaderSection_MakeHeader {
 };
 %extend APIHeaderSection_MakeHeader {
 	~APIHeaderSection_MakeHeader() {
-	printf("Call custom destructor for instance of APIHeaderSection_MakeHeader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of APIHeaderSection_MakeHeader\n");}
 	}
 };

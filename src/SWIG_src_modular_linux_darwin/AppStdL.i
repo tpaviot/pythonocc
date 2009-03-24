@@ -104,7 +104,7 @@ class Handle_AppStdL_Application : public Handle_TDocStd_Application {
 };
 %extend Handle_AppStdL_Application {
 	~Handle_AppStdL_Application() {
-	printf("Call custom destructor for instance of Handle_AppStdL_Application\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppStdL_Application\n");}
 	}
 };
 
@@ -130,6 +130,6 @@ class AppStdL_Application : public TDocStd_Application {
 };
 %extend AppStdL_Application {
 	~AppStdL_Application() {
-	printf("Call custom destructor for instance of AppStdL_Application\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppStdL_Application\n");}
 	}
 };

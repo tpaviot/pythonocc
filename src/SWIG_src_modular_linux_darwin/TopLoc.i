@@ -105,7 +105,7 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 };
 %extend Handle_TopLoc_SListNodeOfSListOfItemLocation {
 	~Handle_TopLoc_SListNodeOfSListOfItemLocation() {
-	printf("Call custom destructor for instance of Handle_TopLoc_SListNodeOfSListOfItemLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_SListNodeOfSListOfItemLocation\n");}
 	}
 };
 
@@ -129,7 +129,7 @@ class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNod
 };
 %extend Handle_TopLoc_StdMapNodeOfMapOfLocation {
 	~Handle_TopLoc_StdMapNodeOfMapOfLocation() {
-	printf("Call custom destructor for instance of Handle_TopLoc_StdMapNodeOfMapOfLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_StdMapNodeOfMapOfLocation\n");}
 	}
 };
 
@@ -153,7 +153,7 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 };
 %extend Handle_TopLoc_Datum3D {
 	~Handle_TopLoc_Datum3D() {
-	printf("Call custom destructor for instance of Handle_TopLoc_Datum3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_Datum3D\n");}
 	}
 };
 
@@ -177,7 +177,7 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 };
 %extend Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
 	~Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation() {
-	printf("Call custom destructor for instance of Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");}
 	}
 };
 
@@ -202,7 +202,7 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 };
 %extend TopLoc_MapOfLocation {
 	~TopLoc_MapOfLocation() {
-	printf("Call custom destructor for instance of TopLoc_MapOfLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_MapOfLocation\n");}
 	}
 };
 
@@ -235,7 +235,7 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 };
 %extend TopLoc_IndexedMapOfLocation {
 	~TopLoc_IndexedMapOfLocation() {
-	printf("Call custom destructor for instance of TopLoc_IndexedMapOfLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapOfLocation\n");}
 	}
 };
 
@@ -257,7 +257,7 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 };
 %extend TopLoc_StdMapNodeOfMapOfLocation {
 	~TopLoc_StdMapNodeOfMapOfLocation() {
-	printf("Call custom destructor for instance of TopLoc_StdMapNodeOfMapOfLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_StdMapNodeOfMapOfLocation\n");}
 	}
 };
 
@@ -283,7 +283,7 @@ class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
 };
 %extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
 	~TopLoc_IndexedMapNodeOfIndexedMapOfLocation() {
-	printf("Call custom destructor for instance of TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");}
 	}
 };
 
@@ -336,7 +336,7 @@ class TopLoc_Location {
 };
 %extend TopLoc_Location {
 	~TopLoc_Location() {
-	printf("Call custom destructor for instance of TopLoc_Location\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_Location\n");}
 	}
 };
 
@@ -355,7 +355,7 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 };
 %extend TopLoc_MapIteratorOfMapOfLocation {
 	~TopLoc_MapIteratorOfMapOfLocation() {
-	printf("Call custom destructor for instance of TopLoc_MapIteratorOfMapOfLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_MapIteratorOfMapOfLocation\n");}
 	}
 };
 
@@ -372,7 +372,7 @@ class TopLoc_MapLocationHasher {
 };
 %extend TopLoc_MapLocationHasher {
 	~TopLoc_MapLocationHasher() {
-	printf("Call custom destructor for instance of TopLoc_MapLocationHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_MapLocationHasher\n");}
 	}
 };
 
@@ -391,7 +391,7 @@ class TopLoc_ItemLocation {
 };
 %extend TopLoc_ItemLocation {
 	~TopLoc_ItemLocation() {
-	printf("Call custom destructor for instance of TopLoc_ItemLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_ItemLocation\n");}
 	}
 };
 
@@ -417,7 +417,7 @@ class TopLoc_Datum3D : public MMgt_TShared {
 };
 %extend TopLoc_Datum3D {
 	~TopLoc_Datum3D() {
-	printf("Call custom destructor for instance of TopLoc_Datum3D\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_Datum3D\n");}
 	}
 };
 
@@ -464,6 +464,6 @@ class TopLoc_SListOfItemLocation {
 };
 %extend TopLoc_SListOfItemLocation {
 	~TopLoc_SListOfItemLocation() {
-	printf("Call custom destructor for instance of TopLoc_SListOfItemLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopLoc_SListOfItemLocation\n");}
 	}
 };

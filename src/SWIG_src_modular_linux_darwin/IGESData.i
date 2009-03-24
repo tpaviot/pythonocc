@@ -136,7 +136,7 @@ class Handle_IGESData_GeneralModule : public Handle_Interface_GeneralModule {
 };
 %extend Handle_IGESData_GeneralModule {
 	~Handle_IGESData_GeneralModule() {
-	printf("Call custom destructor for instance of Handle_IGESData_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_GeneralModule\n");}
 	}
 };
 
@@ -160,7 +160,7 @@ class Handle_IGESData_ToolLocation : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESData_ToolLocation {
 	~Handle_IGESData_ToolLocation() {
-	printf("Call custom destructor for instance of Handle_IGESData_ToolLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_ToolLocation\n");}
 	}
 };
 
@@ -184,7 +184,7 @@ class Handle_IGESData_IGESEntity : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESData_IGESEntity {
 	~Handle_IGESData_IGESEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_IGESEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_IGESEntity\n");}
 	}
 };
 
@@ -208,7 +208,7 @@ class Handle_IGESData_UndefinedEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_UndefinedEntity {
 	~Handle_IGESData_UndefinedEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_UndefinedEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_UndefinedEntity\n");}
 	}
 };
 
@@ -232,7 +232,7 @@ class Handle_IGESData_FreeFormatEntity : public Handle_IGESData_UndefinedEntity 
 };
 %extend Handle_IGESData_FreeFormatEntity {
 	~Handle_IGESData_FreeFormatEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_FreeFormatEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_FreeFormatEntity\n");}
 	}
 };
 
@@ -256,7 +256,7 @@ class Handle_IGESData_SingleParentEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_SingleParentEntity {
 	~Handle_IGESData_SingleParentEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_SingleParentEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_SingleParentEntity\n");}
 	}
 };
 
@@ -280,7 +280,7 @@ class Handle_IGESData_Protocol : public Handle_Interface_Protocol {
 };
 %extend Handle_IGESData_Protocol {
 	~Handle_IGESData_Protocol() {
-	printf("Call custom destructor for instance of Handle_IGESData_Protocol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_Protocol\n");}
 	}
 };
 
@@ -304,7 +304,7 @@ class Handle_IGESData_GlobalNodeOfSpecificLib : public Handle_Standard_Transient
 };
 %extend Handle_IGESData_GlobalNodeOfSpecificLib {
 	~Handle_IGESData_GlobalNodeOfSpecificLib() {
-	printf("Call custom destructor for instance of Handle_IGESData_GlobalNodeOfSpecificLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_GlobalNodeOfSpecificLib\n");}
 	}
 };
 
@@ -328,7 +328,7 @@ class Handle_IGESData_LevelListEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_LevelListEntity {
 	~Handle_IGESData_LevelListEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_LevelListEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_LevelListEntity\n");}
 	}
 };
 
@@ -352,7 +352,7 @@ class Handle_IGESData_NameEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_NameEntity {
 	~Handle_IGESData_NameEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_NameEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_NameEntity\n");}
 	}
 };
 
@@ -376,7 +376,7 @@ class Handle_IGESData_ColorEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_ColorEntity {
 	~Handle_IGESData_ColorEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_ColorEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_ColorEntity\n");}
 	}
 };
 
@@ -400,7 +400,7 @@ class Handle_IGESData_LineFontEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_LineFontEntity {
 	~Handle_IGESData_LineFontEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_LineFontEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_LineFontEntity\n");}
 	}
 };
 
@@ -424,7 +424,7 @@ class Handle_IGESData_TransfEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_TransfEntity {
 	~Handle_IGESData_TransfEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_TransfEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_TransfEntity\n");}
 	}
 };
 
@@ -448,7 +448,7 @@ class Handle_IGESData_IGESReaderData : public Handle_Interface_FileReaderData {
 };
 %extend Handle_IGESData_IGESReaderData {
 	~Handle_IGESData_IGESReaderData() {
-	printf("Call custom destructor for instance of Handle_IGESData_IGESReaderData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_IGESReaderData\n");}
 	}
 };
 
@@ -472,7 +472,7 @@ class Handle_IGESData_NodeOfSpecificLib : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESData_NodeOfSpecificLib {
 	~Handle_IGESData_NodeOfSpecificLib() {
-	printf("Call custom destructor for instance of Handle_IGESData_NodeOfSpecificLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_NodeOfSpecificLib\n");}
 	}
 };
 
@@ -496,7 +496,7 @@ class Handle_IGESData_ViewKindEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_ViewKindEntity {
 	~Handle_IGESData_ViewKindEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_ViewKindEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_ViewKindEntity\n");}
 	}
 };
 
@@ -520,7 +520,7 @@ class Handle_IGESData_SpecificModule : public Handle_Standard_Transient {
 };
 %extend Handle_IGESData_SpecificModule {
 	~Handle_IGESData_SpecificModule() {
-	printf("Call custom destructor for instance of Handle_IGESData_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_SpecificModule\n");}
 	}
 };
 
@@ -544,7 +544,7 @@ class Handle_IGESData_FileProtocol : public Handle_IGESData_Protocol {
 };
 %extend Handle_IGESData_FileProtocol {
 	~Handle_IGESData_FileProtocol() {
-	printf("Call custom destructor for instance of Handle_IGESData_FileProtocol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_FileProtocol\n");}
 	}
 };
 
@@ -568,7 +568,7 @@ class Handle_IGESData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 };
 %extend Handle_IGESData_GlobalNodeOfWriterLib {
 	~Handle_IGESData_GlobalNodeOfWriterLib() {
-	printf("Call custom destructor for instance of Handle_IGESData_GlobalNodeOfWriterLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_GlobalNodeOfWriterLib\n");}
 	}
 };
 
@@ -592,7 +592,7 @@ class Handle_IGESData_HArray1OfIGESEntity : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESData_HArray1OfIGESEntity {
 	~Handle_IGESData_HArray1OfIGESEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_HArray1OfIGESEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_HArray1OfIGESEntity\n");}
 	}
 };
 
@@ -616,7 +616,7 @@ class Handle_IGESData_NodeOfWriterLib : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESData_NodeOfWriterLib {
 	~Handle_IGESData_NodeOfWriterLib() {
-	printf("Call custom destructor for instance of Handle_IGESData_NodeOfWriterLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_NodeOfWriterLib\n");}
 	}
 };
 
@@ -640,7 +640,7 @@ class Handle_IGESData_DefaultSpecific : public Handle_IGESData_SpecificModule {
 };
 %extend Handle_IGESData_DefaultSpecific {
 	~Handle_IGESData_DefaultSpecific() {
-	printf("Call custom destructor for instance of Handle_IGESData_DefaultSpecific\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_DefaultSpecific\n");}
 	}
 };
 
@@ -664,7 +664,7 @@ class Handle_IGESData_FileRecognizer : public Handle_Standard_Transient {
 };
 %extend Handle_IGESData_FileRecognizer {
 	~Handle_IGESData_FileRecognizer() {
-	printf("Call custom destructor for instance of Handle_IGESData_FileRecognizer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_FileRecognizer\n");}
 	}
 };
 
@@ -688,7 +688,7 @@ class Handle_IGESData_ReadWriteModule : public Handle_Interface_ReaderModule {
 };
 %extend Handle_IGESData_ReadWriteModule {
 	~Handle_IGESData_ReadWriteModule() {
-	printf("Call custom destructor for instance of Handle_IGESData_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_ReadWriteModule\n");}
 	}
 };
 
@@ -712,7 +712,7 @@ class Handle_IGESData_DefaultGeneral : public Handle_IGESData_GeneralModule {
 };
 %extend Handle_IGESData_DefaultGeneral {
 	~Handle_IGESData_DefaultGeneral() {
-	printf("Call custom destructor for instance of Handle_IGESData_DefaultGeneral\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_DefaultGeneral\n");}
 	}
 };
 
@@ -736,7 +736,7 @@ class Handle_IGESData_IGESModel : public Handle_Interface_InterfaceModel {
 };
 %extend Handle_IGESData_IGESModel {
 	~Handle_IGESData_IGESModel() {
-	printf("Call custom destructor for instance of Handle_IGESData_IGESModel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_IGESModel\n");}
 	}
 };
 
@@ -760,7 +760,7 @@ class Handle_IGESData_LabelDisplayEntity : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESData_LabelDisplayEntity {
 	~Handle_IGESData_LabelDisplayEntity() {
-	printf("Call custom destructor for instance of Handle_IGESData_LabelDisplayEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESData_LabelDisplayEntity\n");}
 	}
 };
 
@@ -782,7 +782,7 @@ class IGESData_SpecificModule : public Standard_Transient {
 };
 %extend IGESData_SpecificModule {
 	~IGESData_SpecificModule() {
-	printf("Call custom destructor for instance of IGESData_SpecificModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_SpecificModule\n");}
 	}
 };
 
@@ -800,7 +800,7 @@ class IGESData_DefaultSpecific : public IGESData_SpecificModule {
 };
 %extend IGESData_DefaultSpecific {
 	~IGESData_DefaultSpecific() {
-	printf("Call custom destructor for instance of IGESData_DefaultSpecific\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_DefaultSpecific\n");}
 	}
 };
 
@@ -828,7 +828,7 @@ class IGESData_GlobalNodeOfWriterLib : public Standard_Transient {
 };
 %extend IGESData_GlobalNodeOfWriterLib {
 	~IGESData_GlobalNodeOfWriterLib() {
-	printf("Call custom destructor for instance of IGESData_GlobalNodeOfWriterLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_GlobalNodeOfWriterLib\n");}
 	}
 };
 
@@ -856,7 +856,7 @@ class IGESData_ReadWriteModule : public Interface_ReaderModule {
 };
 %extend IGESData_ReadWriteModule {
 	~IGESData_ReadWriteModule() {
-	printf("Call custom destructor for instance of IGESData_ReadWriteModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_ReadWriteModule\n");}
 	}
 };
 
@@ -904,7 +904,7 @@ class IGESData_IGESReaderData : public Interface_FileReaderData {
 };
 %extend IGESData_IGESReaderData {
 	~IGESData_IGESReaderData() {
-	printf("Call custom destructor for instance of IGESData_IGESReaderData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_IGESReaderData\n");}
 	}
 };
 
@@ -1052,7 +1052,7 @@ class IGESData_IGESEntity : public MMgt_TShared {
 };
 %extend IGESData_IGESEntity {
 	~IGESData_IGESEntity() {
-	printf("Call custom destructor for instance of IGESData_IGESEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_IGESEntity\n");}
 	}
 };
 
@@ -1070,7 +1070,7 @@ class IGESData_ColorEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_ColorEntity {
 	~IGESData_ColorEntity() {
-	printf("Call custom destructor for instance of IGESData_ColorEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_ColorEntity\n");}
 	}
 };
 
@@ -1091,7 +1091,7 @@ class IGESData_IGESDumper {
 };
 %extend IGESData_IGESDumper {
 	~IGESData_IGESDumper() {
-	printf("Call custom destructor for instance of IGESData_IGESDumper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_IGESDumper\n");}
 	}
 };
 
@@ -1108,7 +1108,7 @@ class IGESData {
 };
 %extend IGESData {
 	~IGESData() {
-	printf("Call custom destructor for instance of IGESData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData\n");}
 	}
 };
 
@@ -1131,7 +1131,7 @@ class IGESData_IGESType {
 };
 %extend IGESData_IGESType {
 	~IGESData_IGESType() {
-	printf("Call custom destructor for instance of IGESData_IGESType\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_IGESType\n");}
 	}
 };
 
@@ -1151,7 +1151,7 @@ class IGESData_TransfEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_TransfEntity {
 	~IGESData_TransfEntity() {
-	printf("Call custom destructor for instance of IGESData_TransfEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_TransfEntity\n");}
 	}
 };
 
@@ -1207,7 +1207,7 @@ class IGESData_ToolLocation : public MMgt_TShared {
 };
 %extend IGESData_ToolLocation {
 	~IGESData_ToolLocation() {
-	printf("Call custom destructor for instance of IGESData_ToolLocation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_ToolLocation\n");}
 	}
 };
 
@@ -1336,7 +1336,7 @@ class IGESData_ParamReader {
 };
 %extend IGESData_ParamReader {
 	~IGESData_ParamReader() {
-	printf("Call custom destructor for instance of IGESData_ParamReader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_ParamReader\n");}
 	}
 };
 
@@ -1375,7 +1375,7 @@ class IGESData_Array1OfIGESEntity {
 };
 %extend IGESData_Array1OfIGESEntity {
 	~IGESData_Array1OfIGESEntity() {
-	printf("Call custom destructor for instance of IGESData_Array1OfIGESEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_Array1OfIGESEntity\n");}
 	}
 };
 
@@ -1423,7 +1423,7 @@ class IGESData_UndefinedEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_UndefinedEntity {
 	~IGESData_UndefinedEntity() {
-	printf("Call custom destructor for instance of IGESData_UndefinedEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_UndefinedEntity\n");}
 	}
 };
 
@@ -1454,7 +1454,7 @@ class IGESData_IGESReaderTool : public Interface_FileReaderTool {
 };
 %extend IGESData_IGESReaderTool {
 	~IGESData_IGESReaderTool() {
-	printf("Call custom destructor for instance of IGESData_IGESReaderTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_IGESReaderTool\n");}
 	}
 };
 
@@ -1493,7 +1493,7 @@ class IGESData_Array1OfDirPart {
 };
 %extend IGESData_Array1OfDirPart {
 	~IGESData_Array1OfDirPart() {
-	printf("Call custom destructor for instance of IGESData_Array1OfDirPart\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_Array1OfDirPart\n");}
 	}
 };
 
@@ -1521,7 +1521,7 @@ class IGESData_GlobalNodeOfSpecificLib : public Standard_Transient {
 };
 %extend IGESData_GlobalNodeOfSpecificLib {
 	~IGESData_GlobalNodeOfSpecificLib() {
-	printf("Call custom destructor for instance of IGESData_GlobalNodeOfSpecificLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_GlobalNodeOfSpecificLib\n");}
 	}
 };
 
@@ -1547,7 +1547,7 @@ class IGESData_FileProtocol : public IGESData_Protocol {
 };
 %extend IGESData_FileProtocol {
 	~IGESData_FileProtocol() {
-	printf("Call custom destructor for instance of IGESData_FileProtocol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_FileProtocol\n");}
 	}
 };
 
@@ -1582,7 +1582,7 @@ class IGESData_WriterLib {
 };
 %extend IGESData_WriterLib {
 	~IGESData_WriterLib() {
-	printf("Call custom destructor for instance of IGESData_WriterLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_WriterLib\n");}
 	}
 };
 
@@ -1606,7 +1606,7 @@ class IGESData_LevelListEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_LevelListEntity {
 	~IGESData_LevelListEntity() {
-	printf("Call custom destructor for instance of IGESData_LevelListEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_LevelListEntity\n");}
 	}
 };
 
@@ -1634,7 +1634,7 @@ class IGESData_NodeOfSpecificLib : public MMgt_TShared {
 };
 %extend IGESData_NodeOfSpecificLib {
 	~IGESData_NodeOfSpecificLib() {
-	printf("Call custom destructor for instance of IGESData_NodeOfSpecificLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_NodeOfSpecificLib\n");}
 	}
 };
 
@@ -1654,7 +1654,7 @@ class IGESData_NameEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_NameEntity {
 	~IGESData_NameEntity() {
-	printf("Call custom destructor for instance of IGESData_NameEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_NameEntity\n");}
 	}
 };
 
@@ -1797,7 +1797,7 @@ class IGESData_GlobalSection {
 };
 %extend IGESData_GlobalSection {
 	~IGESData_GlobalSection() {
-	printf("Call custom destructor for instance of IGESData_GlobalSection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_GlobalSection\n");}
 	}
 };
 
@@ -1832,7 +1832,7 @@ class IGESData_SpecificLib {
 };
 %extend IGESData_SpecificLib {
 	~IGESData_SpecificLib() {
-	printf("Call custom destructor for instance of IGESData_SpecificLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_SpecificLib\n");}
 	}
 };
 
@@ -1872,7 +1872,7 @@ class IGESData_HArray1OfIGESEntity : public MMgt_TShared {
 };
 %extend IGESData_HArray1OfIGESEntity {
 	~IGESData_HArray1OfIGESEntity() {
-	printf("Call custom destructor for instance of IGESData_HArray1OfIGESEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_HArray1OfIGESEntity\n");}
 	}
 };
 
@@ -1901,7 +1901,7 @@ class IGESData_DirPart {
 };
 %extend IGESData_DirPart {
 	~IGESData_DirPart() {
-	printf("Call custom destructor for instance of IGESData_DirPart\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_DirPart\n");}
 	}
 };
 
@@ -1951,7 +1951,7 @@ class IGESData_GeneralModule : public Interface_GeneralModule {
 };
 %extend IGESData_GeneralModule {
 	~IGESData_GeneralModule() {
-	printf("Call custom destructor for instance of IGESData_GeneralModule\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_GeneralModule\n");}
 	}
 };
 
@@ -1971,7 +1971,7 @@ class IGESData_LabelDisplayEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_LabelDisplayEntity {
 	~IGESData_LabelDisplayEntity() {
-	printf("Call custom destructor for instance of IGESData_LabelDisplayEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_LabelDisplayEntity\n");}
 	}
 };
 
@@ -1995,7 +1995,7 @@ class IGESData_FileRecognizer : public Standard_Transient {
 };
 %extend IGESData_FileRecognizer {
 	~IGESData_FileRecognizer() {
-	printf("Call custom destructor for instance of IGESData_FileRecognizer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_FileRecognizer\n");}
 	}
 };
 
@@ -2023,7 +2023,7 @@ class IGESData_NodeOfWriterLib : public MMgt_TShared {
 };
 %extend IGESData_NodeOfWriterLib {
 	~IGESData_NodeOfWriterLib() {
-	printf("Call custom destructor for instance of IGESData_NodeOfWriterLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_NodeOfWriterLib\n");}
 	}
 };
 
@@ -2050,7 +2050,7 @@ class IGESData_DefSwitch {
 };
 %extend IGESData_DefSwitch {
 	~IGESData_DefSwitch() {
-	printf("Call custom destructor for instance of IGESData_DefSwitch\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_DefSwitch\n");}
 	}
 };
 
@@ -2114,7 +2114,7 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 };
 %extend IGESData_IGESModel {
 	~IGESData_IGESModel() {
-	printf("Call custom destructor for instance of IGESData_IGESModel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_IGESModel\n");}
 	}
 };
 
@@ -2153,7 +2153,7 @@ class IGESData_ParamCursor {
 };
 %extend IGESData_ParamCursor {
 	~IGESData_ParamCursor() {
-	printf("Call custom destructor for instance of IGESData_ParamCursor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_ParamCursor\n");}
 	}
 };
 
@@ -2177,7 +2177,7 @@ class IGESData_ViewKindEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_ViewKindEntity {
 	~IGESData_ViewKindEntity() {
-	printf("Call custom destructor for instance of IGESData_ViewKindEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_ViewKindEntity\n");}
 	}
 };
 
@@ -2207,7 +2207,7 @@ class IGESData_DefaultGeneral : public IGESData_GeneralModule {
 };
 %extend IGESData_DefaultGeneral {
 	~IGESData_DefaultGeneral() {
-	printf("Call custom destructor for instance of IGESData_DefaultGeneral\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_DefaultGeneral\n");}
 	}
 };
 
@@ -2262,7 +2262,7 @@ class IGESData_DirChecker {
 };
 %extend IGESData_DirChecker {
 	~IGESData_DirChecker() {
-	printf("Call custom destructor for instance of IGESData_DirChecker\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_DirChecker\n");}
 	}
 };
 
@@ -2282,7 +2282,7 @@ class IGESData_LineFontEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_LineFontEntity {
 	~IGESData_LineFontEntity() {
-	printf("Call custom destructor for instance of IGESData_LineFontEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_LineFontEntity\n");}
 	}
 };
 
@@ -2327,7 +2327,7 @@ class IGESData_BasicEditor {
 };
 %extend IGESData_BasicEditor {
 	~IGESData_BasicEditor() {
-	printf("Call custom destructor for instance of IGESData_BasicEditor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_BasicEditor\n");}
 	}
 };
 
@@ -2351,7 +2351,7 @@ class IGESData_SingleParentEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_SingleParentEntity {
 	~IGESData_SingleParentEntity() {
-	printf("Call custom destructor for instance of IGESData_SingleParentEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_SingleParentEntity\n");}
 	}
 };
 
@@ -2405,7 +2405,7 @@ class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
 };
 %extend IGESData_FreeFormatEntity {
 	~IGESData_FreeFormatEntity() {
-	printf("Call custom destructor for instance of IGESData_FreeFormatEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_FreeFormatEntity\n");}
 	}
 };
 
@@ -2470,6 +2470,6 @@ class IGESData_IGESWriter {
 };
 %extend IGESData_IGESWriter {
 	~IGESData_IGESWriter() {
-	printf("Call custom destructor for instance of IGESData_IGESWriter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESData_IGESWriter\n");}
 	}
 };

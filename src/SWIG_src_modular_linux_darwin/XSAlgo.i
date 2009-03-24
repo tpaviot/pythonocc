@@ -110,7 +110,7 @@ class Handle_XSAlgo_ToolContainer : public Handle_MMgt_TShared {
 };
 %extend Handle_XSAlgo_ToolContainer {
 	~Handle_XSAlgo_ToolContainer() {
-	printf("Call custom destructor for instance of Handle_XSAlgo_ToolContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSAlgo_ToolContainer\n");}
 	}
 };
 
@@ -134,7 +134,7 @@ class Handle_XSAlgo_AlgoContainer : public Handle_MMgt_TShared {
 };
 %extend Handle_XSAlgo_AlgoContainer {
 	~Handle_XSAlgo_AlgoContainer() {
-	printf("Call custom destructor for instance of Handle_XSAlgo_AlgoContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSAlgo_AlgoContainer\n");}
 	}
 };
 
@@ -153,7 +153,7 @@ class XSAlgo {
 };
 %extend XSAlgo {
 	~XSAlgo() {
-	printf("Call custom destructor for instance of XSAlgo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSAlgo\n");}
 	}
 };
 
@@ -173,6 +173,6 @@ class XSAlgo_ToolContainer : public MMgt_TShared {
 };
 %extend XSAlgo_ToolContainer {
 	~XSAlgo_ToolContainer() {
-	printf("Call custom destructor for instance of XSAlgo_ToolContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSAlgo_ToolContainer\n");}
 	}
 };

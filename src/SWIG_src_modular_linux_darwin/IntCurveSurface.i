@@ -110,7 +110,7 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollec
 };
 %extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt {
 	~Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt() {
-	printf("Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
 
@@ -134,7 +134,7 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 };
 %extend Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg {
 	~Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg() {
-	printf("Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg\n");}
 	}
 };
 
@@ -167,7 +167,7 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 };
 %extend IntCurveSurface_ThePolyhedronToolOfHInter {
 	~IntCurveSurface_ThePolyhedronToolOfHInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_ThePolyhedronToolOfHInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_ThePolyhedronToolOfHInter\n");}
 	}
 };
 
@@ -220,7 +220,7 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 };
 %extend IntCurveSurface_SequenceOfPnt {
 	~IntCurveSurface_SequenceOfPnt() {
-	printf("Call custom destructor for instance of IntCurveSurface_SequenceOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_SequenceOfPnt\n");}
 	}
 };
 
@@ -251,7 +251,7 @@ class IntCurveSurface_IntersectionPoint {
 };
 %extend IntCurveSurface_IntersectionPoint {
 	~IntCurveSurface_IntersectionPoint() {
-	printf("Call custom destructor for instance of IntCurveSurface_IntersectionPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_IntersectionPoint\n");}
 	}
 };
 
@@ -274,7 +274,7 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 };
 %extend IntCurveSurface_TheQuadCurvExactHInter {
 	~IntCurveSurface_TheQuadCurvExactHInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_TheQuadCurvExactHInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheQuadCurvExactHInter\n");}
 	}
 };
 
@@ -369,7 +369,7 @@ class IntCurveSurface_TheHSurfaceTool {
 };
 %extend IntCurveSurface_TheHSurfaceTool {
 	~IntCurveSurface_TheHSurfaceTool() {
-	printf("Call custom destructor for instance of IntCurveSurface_TheHSurfaceTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheHSurfaceTool\n");}
 	}
 };
 
@@ -398,7 +398,7 @@ class IntCurveSurface_TheExactHInter {
 };
 %extend IntCurveSurface_TheExactHInter {
 	~IntCurveSurface_TheExactHInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_TheExactHInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheExactHInter\n");}
 	}
 };
 
@@ -421,7 +421,7 @@ class IntCurveSurface_Intersection {
 };
 %extend IntCurveSurface_Intersection {
 	~IntCurveSurface_Intersection() {
-	printf("Call custom destructor for instance of IntCurveSurface_Intersection\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_Intersection\n");}
 	}
 };
 
@@ -444,7 +444,7 @@ class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 };
 %extend IntCurveSurface_HInter {
 	~IntCurveSurface_HInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_HInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_HInter\n");}
 	}
 };
 
@@ -463,7 +463,7 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 };
 %extend IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter {
 	~IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter\n");}
 	}
 };
 
@@ -485,7 +485,7 @@ class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 };
 %extend IntCurveSurface_SequenceNodeOfSequenceOfPnt {
 	~IntCurveSurface_SequenceNodeOfSequenceOfPnt() {
-	printf("Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
 
@@ -512,7 +512,7 @@ class IntCurveSurface_ThePolygonToolOfHInter {
 };
 %extend IntCurveSurface_ThePolygonToolOfHInter {
 	~IntCurveSurface_ThePolygonToolOfHInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_ThePolygonToolOfHInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_ThePolygonToolOfHInter\n");}
 	}
 };
 
@@ -541,7 +541,7 @@ class IntCurveSurface_IntersectionSegment {
 };
 %extend IntCurveSurface_IntersectionSegment {
 	~IntCurveSurface_IntersectionSegment() {
-	printf("Call custom destructor for instance of IntCurveSurface_IntersectionSegment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_IntersectionSegment\n");}
 	}
 };
 
@@ -582,7 +582,7 @@ class IntCurveSurface_ThePolygonOfHInter {
 };
 %extend IntCurveSurface_ThePolygonOfHInter {
 	~IntCurveSurface_ThePolygonOfHInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_ThePolygonOfHInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_ThePolygonOfHInter\n");}
 	}
 };
 
@@ -604,7 +604,7 @@ class IntCurveSurface_SequenceNodeOfSequenceOfSeg : public TCollection_SeqNode {
 };
 %extend IntCurveSurface_SequenceNodeOfSequenceOfSeg {
 	~IntCurveSurface_SequenceNodeOfSequenceOfSeg() {
-	printf("Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfSeg\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfSeg\n");}
 	}
 };
 
@@ -635,7 +635,7 @@ class IntCurveSurface_TheCSFunctionOfHInter : public math_FunctionSetWithDerivat
 };
 %extend IntCurveSurface_TheCSFunctionOfHInter {
 	~IntCurveSurface_TheCSFunctionOfHInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_TheCSFunctionOfHInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheCSFunctionOfHInter\n");}
 	}
 };
 
@@ -688,7 +688,7 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 };
 %extend IntCurveSurface_SequenceOfSeg {
 	~IntCurveSurface_SequenceOfSeg() {
-	printf("Call custom destructor for instance of IntCurveSurface_SequenceOfSeg\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_SequenceOfSeg\n");}
 	}
 };
 
@@ -751,7 +751,7 @@ class IntCurveSurface_TheHCurveTool {
 };
 %extend IntCurveSurface_TheHCurveTool {
 	~IntCurveSurface_TheHCurveTool() {
-	printf("Call custom destructor for instance of IntCurveSurface_TheHCurveTool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheHCurveTool\n");}
 	}
 };
 
@@ -792,6 +792,6 @@ class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 };
 %extend IntCurveSurface_TheInterferenceOfHInter {
 	~IntCurveSurface_TheInterferenceOfHInter() {
-	printf("Call custom destructor for instance of IntCurveSurface_TheInterferenceOfHInter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheInterferenceOfHInter\n");}
 	}
 };

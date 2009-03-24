@@ -134,7 +134,7 @@ class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNo
 };
 %extend Handle_BOP_SequenceNodeOfSeqOfSeqOfShape {
 	~Handle_BOP_SequenceNodeOfSeqOfSeqOfShape() {
-	printf("Call custom destructor for instance of Handle_BOP_SequenceNodeOfSeqOfSeqOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_SequenceNodeOfSeqOfSeqOfShape\n");}
 	}
 };
 
@@ -158,7 +158,7 @@ class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode 
 };
 %extend Handle_BOP_ListNodeOfListOfListOfLoop {
 	~Handle_BOP_ListNodeOfListOfListOfLoop() {
-	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfListOfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfListOfLoop\n");}
 	}
 };
 
@@ -182,7 +182,7 @@ class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
 };
 %extend Handle_BOP_HistoryCollector {
 	~Handle_BOP_HistoryCollector() {
-	printf("Call custom destructor for instance of Handle_BOP_HistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_HistoryCollector\n");}
 	}
 };
 
@@ -206,7 +206,7 @@ class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector
 };
 %extend Handle_BOP_SolidSolidHistoryCollector {
 	~Handle_BOP_SolidSolidHistoryCollector() {
-	printf("Call custom destructor for instance of Handle_BOP_SolidSolidHistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_SolidSolidHistoryCollector\n");}
 	}
 };
 
@@ -230,7 +230,7 @@ class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
 };
 %extend Handle_BOP_ListNodeOfListOfFaceInfo {
 	~Handle_BOP_ListNodeOfListOfFaceInfo() {
-	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfFaceInfo\n");}
 	}
 };
 
@@ -254,7 +254,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Ha
 };
 %extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
-	printf("Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
 	}
 };
 
@@ -278,7 +278,7 @@ class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
 };
 %extend Handle_BOP_ListNodeOfListOfEdgeInfo {
 	~Handle_BOP_ListNodeOfListOfEdgeInfo() {
-	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfEdgeInfo\n");}
 	}
 };
 
@@ -302,7 +302,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public H
 };
 %extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
 	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo() {
-	printf("Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");}
 	}
 };
 
@@ -326,7 +326,7 @@ class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector
 };
 %extend Handle_BOP_ShellSolidHistoryCollector {
 	~Handle_BOP_ShellSolidHistoryCollector() {
-	printf("Call custom destructor for instance of Handle_BOP_ShellSolidHistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_ShellSolidHistoryCollector\n");}
 	}
 };
 
@@ -350,7 +350,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public
 };
 %extend Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
 	~Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo() {
-	printf("Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");}
 	}
 };
 
@@ -374,7 +374,7 @@ class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode
 };
 %extend Handle_BOP_ListNodeOfListOfCheckResult {
 	~Handle_BOP_ListNodeOfListOfCheckResult() {
-	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfCheckResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfCheckResult\n");}
 	}
 };
 
@@ -398,7 +398,7 @@ class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 };
 %extend Handle_BOP_ListNodeOfListOfLoop {
 	~Handle_BOP_ListNodeOfListOfLoop() {
-	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfLoop\n");}
 	}
 };
 
@@ -422,7 +422,7 @@ class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
 };
 %extend Handle_BOP_SectionHistoryCollector {
 	~Handle_BOP_SectionHistoryCollector() {
-	printf("Call custom destructor for instance of Handle_BOP_SectionHistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_SectionHistoryCollector\n");}
 	}
 };
 
@@ -446,7 +446,7 @@ class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector 
 };
 %extend Handle_BOP_WireSolidHistoryCollector {
 	~Handle_BOP_WireSolidHistoryCollector() {
-	printf("Call custom destructor for instance of Handle_BOP_WireSolidHistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_WireSolidHistoryCollector\n");}
 	}
 };
 
@@ -470,7 +470,7 @@ class Handle_BOP_Loop : public Handle_MMgt_TShared {
 };
 %extend Handle_BOP_Loop {
 	~Handle_BOP_Loop() {
-	printf("Call custom destructor for instance of Handle_BOP_Loop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_Loop\n");}
 	}
 };
 
@@ -494,7 +494,7 @@ class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapN
 };
 %extend Handle_BOP_ListNodeOfListOfConnexityBlock {
 	~Handle_BOP_ListNodeOfListOfConnexityBlock() {
-	printf("Call custom destructor for instance of Handle_BOP_ListNodeOfListOfConnexityBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfConnexityBlock\n");}
 	}
 };
 
@@ -526,7 +526,7 @@ class BOP_HistoryCollector : public MMgt_TShared {
 };
 %extend BOP_HistoryCollector {
 	~BOP_HistoryCollector() {
-	printf("Call custom destructor for instance of BOP_HistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_HistoryCollector\n");}
 	}
 };
 
@@ -544,7 +544,7 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_WireSolidHistoryCollector {
 	~BOP_WireSolidHistoryCollector() {
-	printf("Call custom destructor for instance of BOP_WireSolidHistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WireSolidHistoryCollector\n");}
 	}
 };
 
@@ -567,7 +567,7 @@ class BOP_ListIteratorOfListOfFaceInfo {
 };
 %extend BOP_ListIteratorOfListOfFaceInfo {
 	~BOP_ListIteratorOfListOfFaceInfo() {
-	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfFaceInfo\n");}
 	}
 };
 
@@ -606,7 +606,7 @@ class BOP_AreaBuilder {
 };
 %extend BOP_AreaBuilder {
 	~BOP_AreaBuilder() {
-	printf("Call custom destructor for instance of BOP_AreaBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_AreaBuilder\n");}
 	}
 };
 
@@ -655,7 +655,7 @@ class BOP_ListOfLoop {
 };
 %extend BOP_ListOfLoop {
 	~BOP_ListOfLoop() {
-	printf("Call custom destructor for instance of BOP_ListOfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListOfLoop\n");}
 	}
 };
 
@@ -680,7 +680,7 @@ class BOP_BlockIterator {
 };
 %extend BOP_BlockIterator {
 	~BOP_BlockIterator() {
-	printf("Call custom destructor for instance of BOP_BlockIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_BlockIterator\n");}
 	}
 };
 
@@ -697,7 +697,7 @@ class BOP_Area2dBuilder : public BOP_AreaBuilder {
 };
 %extend BOP_Area2dBuilder {
 	~BOP_Area2dBuilder() {
-	printf("Call custom destructor for instance of BOP_Area2dBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_Area2dBuilder\n");}
 	}
 };
 
@@ -714,7 +714,7 @@ class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
 };
 %extend BOP_FaceAreaBuilder {
 	~BOP_FaceAreaBuilder() {
-	printf("Call custom destructor for instance of BOP_FaceAreaBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_FaceAreaBuilder\n");}
 	}
 };
 
@@ -736,7 +736,7 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfFaceInfo {
 	~BOP_ListNodeOfListOfFaceInfo() {
-	printf("Call custom destructor for instance of BOP_ListNodeOfListOfFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfFaceInfo\n");}
 	}
 };
 
@@ -777,7 +777,7 @@ class BOP_SolidBuilder {
 };
 %extend BOP_SolidBuilder {
 	~BOP_SolidBuilder() {
-	printf("Call custom destructor for instance of BOP_SolidBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SolidBuilder\n");}
 	}
 };
 
@@ -820,7 +820,7 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 };
 %extend BOP_IndexedDataMapOfEdgeListFaceInfo {
 	~BOP_IndexedDataMapOfEdgeListFaceInfo() {
-	printf("Call custom destructor for instance of BOP_IndexedDataMapOfEdgeListFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfEdgeListFaceInfo\n");}
 	}
 };
 
@@ -869,7 +869,7 @@ class BOP_ListOfConnexityBlock {
 };
 %extend BOP_ListOfConnexityBlock {
 	~BOP_ListOfConnexityBlock() {
-	printf("Call custom destructor for instance of BOP_ListOfConnexityBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListOfConnexityBlock\n");}
 	}
 };
 
@@ -891,7 +891,7 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfCheckResult {
 	~BOP_ListNodeOfListOfCheckResult() {
-	printf("Call custom destructor for instance of BOP_ListNodeOfListOfCheckResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfCheckResult\n");}
 	}
 };
 
@@ -906,7 +906,7 @@ class BOP_LoopClassifier {
 };
 %extend BOP_LoopClassifier {
 	~BOP_LoopClassifier() {
-	printf("Call custom destructor for instance of BOP_LoopClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_LoopClassifier\n");}
 	}
 };
 
@@ -929,7 +929,7 @@ class BOP_CompositeClassifier : public BOP_LoopClassifier {
 };
 %extend BOP_CompositeClassifier {
 	~BOP_CompositeClassifier() {
-	printf("Call custom destructor for instance of BOP_CompositeClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_CompositeClassifier\n");}
 	}
 };
 
@@ -946,7 +946,7 @@ class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 };
 %extend BOP_WireEdgeClassifier {
 	~BOP_WireEdgeClassifier() {
-	printf("Call custom destructor for instance of BOP_WireEdgeClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeClassifier\n");}
 	}
 };
 
@@ -995,7 +995,7 @@ class BOP_ListOfCheckResult {
 };
 %extend BOP_ListOfCheckResult {
 	~BOP_ListOfCheckResult() {
-	printf("Call custom destructor for instance of BOP_ListOfCheckResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListOfCheckResult\n");}
 	}
 };
 
@@ -1018,7 +1018,7 @@ class BOP_ListIteratorOfListOfCheckResult {
 };
 %extend BOP_ListIteratorOfListOfCheckResult {
 	~BOP_ListIteratorOfListOfCheckResult() {
-	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfCheckResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfCheckResult\n");}
 	}
 };
 
@@ -1040,7 +1040,7 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 };
 %extend BOP_SequenceNodeOfSeqOfSeqOfShape {
 	~BOP_SequenceNodeOfSeqOfSeqOfShape() {
-	printf("Call custom destructor for instance of BOP_SequenceNodeOfSeqOfSeqOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SequenceNodeOfSeqOfSeqOfShape\n");}
 	}
 };
 
@@ -1099,7 +1099,7 @@ class BOP_FaceBuilder {
 };
 %extend BOP_FaceBuilder {
 	~BOP_FaceBuilder() {
-	printf("Call custom destructor for instance of BOP_FaceBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_FaceBuilder\n");}
 	}
 };
 
@@ -1121,7 +1121,7 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfLoop {
 	~BOP_ListNodeOfListOfLoop() {
-	printf("Call custom destructor for instance of BOP_ListNodeOfListOfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfLoop\n");}
 	}
 };
 
@@ -1170,7 +1170,7 @@ class BOP_ListOfListOfLoop {
 };
 %extend BOP_ListOfListOfLoop {
 	~BOP_ListOfListOfLoop() {
-	printf("Call custom destructor for instance of BOP_ListOfListOfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListOfListOfLoop\n");}
 	}
 };
 
@@ -1221,7 +1221,7 @@ class BOP_Builder {
 };
 %extend BOP_Builder {
 	~BOP_Builder() {
-	printf("Call custom destructor for instance of BOP_Builder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_Builder\n");}
 	}
 };
 
@@ -1240,7 +1240,7 @@ class BOP_WireShape : public BOP_Builder {
 };
 %extend BOP_WireShape {
 	~BOP_WireShape() {
-	printf("Call custom destructor for instance of BOP_WireShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WireShape\n");}
 	}
 };
 
@@ -1293,7 +1293,7 @@ class BOP_SeqOfSeqOfShape : public TCollection_BaseSequence {
 };
 %extend BOP_SeqOfSeqOfShape {
 	~BOP_SeqOfSeqOfShape() {
-	printf("Call custom destructor for instance of BOP_SeqOfSeqOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SeqOfSeqOfShape\n");}
 	}
 };
 
@@ -1314,7 +1314,7 @@ class BOP_WireWire : public BOP_WireShape {
 };
 %extend BOP_WireWire {
 	~BOP_WireWire() {
-	printf("Call custom destructor for instance of BOP_WireWire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WireWire\n");}
 	}
 };
 
@@ -1357,7 +1357,7 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 };
 %extend BOP_IndexedDataMapOfSolidClassifier {
 	~BOP_IndexedDataMapOfSolidClassifier() {
-	printf("Call custom destructor for instance of BOP_IndexedDataMapOfSolidClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfSolidClassifier\n");}
 	}
 };
 
@@ -1384,7 +1384,7 @@ class BOP_WireSplitter {
 };
 %extend BOP_WireSplitter {
 	~BOP_WireSplitter() {
-	printf("Call custom destructor for instance of BOP_WireSplitter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WireSplitter\n");}
 	}
 };
 
@@ -1406,7 +1406,7 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfConnexityBlock {
 	~BOP_ListNodeOfListOfConnexityBlock() {
-	printf("Call custom destructor for instance of BOP_ListNodeOfListOfConnexityBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfConnexityBlock\n");}
 	}
 };
 
@@ -1451,7 +1451,7 @@ class BOP_ArgumentAnalyzer {
 };
 %extend BOP_ArgumentAnalyzer {
 	~BOP_ArgumentAnalyzer() {
-	printf("Call custom destructor for instance of BOP_ArgumentAnalyzer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ArgumentAnalyzer\n");}
 	}
 };
 
@@ -1500,7 +1500,7 @@ class BOP_ListOfFaceInfo {
 };
 %extend BOP_ListOfFaceInfo {
 	~BOP_ListOfFaceInfo() {
-	printf("Call custom destructor for instance of BOP_ListOfFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListOfFaceInfo\n");}
 	}
 };
 
@@ -1529,7 +1529,7 @@ class BOP_EdgeInfo {
 };
 %extend BOP_EdgeInfo {
 	~BOP_EdgeInfo() {
-	printf("Call custom destructor for instance of BOP_EdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_EdgeInfo\n");}
 	}
 };
 
@@ -1557,7 +1557,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TColle
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
 	~BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo() {
-	printf("Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");}
 	}
 };
 
@@ -1579,7 +1579,7 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfListOfLoop {
 	~BOP_ListNodeOfListOfListOfLoop() {
-	printf("Call custom destructor for instance of BOP_ListNodeOfListOfListOfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfListOfLoop\n");}
 	}
 };
 
@@ -1606,7 +1606,7 @@ class BOP_ShellSplitter {
 };
 %extend BOP_ShellSplitter {
 	~BOP_ShellSplitter() {
-	printf("Call custom destructor for instance of BOP_ShellSplitter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ShellSplitter\n");}
 	}
 };
 
@@ -1628,7 +1628,7 @@ class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_SectionHistoryCollector {
 	~BOP_SectionHistoryCollector() {
-	printf("Call custom destructor for instance of BOP_SectionHistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SectionHistoryCollector\n");}
 	}
 };
 
@@ -1652,7 +1652,7 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_SolidSolidHistoryCollector {
 	~BOP_SolidSolidHistoryCollector() {
-	printf("Call custom destructor for instance of BOP_SolidSolidHistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SolidSolidHistoryCollector\n");}
 	}
 };
 
@@ -1675,7 +1675,7 @@ class BOP_ListIteratorOfListOfEdgeInfo {
 };
 %extend BOP_ListIteratorOfListOfEdgeInfo {
 	~BOP_ListIteratorOfListOfEdgeInfo() {
-	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfEdgeInfo\n");}
 	}
 };
 
@@ -1692,7 +1692,7 @@ class BOP_Area3dBuilder : public BOP_AreaBuilder {
 };
 %extend BOP_Area3dBuilder {
 	~BOP_Area3dBuilder() {
-	printf("Call custom destructor for instance of BOP_Area3dBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_Area3dBuilder\n");}
 	}
 };
 
@@ -1713,7 +1713,7 @@ class BOP_EmptyBuilder : public BOP_Builder {
 };
 %extend BOP_EmptyBuilder {
 	~BOP_EmptyBuilder() {
-	printf("Call custom destructor for instance of BOP_EmptyBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_EmptyBuilder\n");}
 	}
 };
 
@@ -1736,7 +1736,7 @@ class BOP_Draw {
 };
 %extend BOP_Draw {
 	~BOP_Draw() {
-	printf("Call custom destructor for instance of BOP_Draw\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_Draw\n");}
 	}
 };
 
@@ -1761,7 +1761,7 @@ class BOP_WESCorrector {
 };
 %extend BOP_WESCorrector {
 	~BOP_WESCorrector() {
-	printf("Call custom destructor for instance of BOP_WESCorrector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WESCorrector\n");}
 	}
 };
 
@@ -1792,7 +1792,7 @@ class BOP_Refiner {
 };
 %extend BOP_Refiner {
 	~BOP_Refiner() {
-	printf("Call custom destructor for instance of BOP_Refiner\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_Refiner\n");}
 	}
 };
 
@@ -1820,7 +1820,7 @@ class BOP_Loop : public MMgt_TShared {
 };
 %extend BOP_Loop {
 	~BOP_Loop() {
-	printf("Call custom destructor for instance of BOP_Loop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_Loop\n");}
 	}
 };
 
@@ -1848,7 +1848,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
 	~BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo() {
-	printf("Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");}
 	}
 };
 
@@ -1871,7 +1871,7 @@ class BOP_ConnexityBlock {
 };
 %extend BOP_ConnexityBlock {
 	~BOP_ConnexityBlock() {
-	printf("Call custom destructor for instance of BOP_ConnexityBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ConnexityBlock\n");}
 	}
 };
 
@@ -1893,7 +1893,7 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfEdgeInfo {
 	~BOP_ListNodeOfListOfEdgeInfo() {
-	printf("Call custom destructor for instance of BOP_ListNodeOfListOfEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfEdgeInfo\n");}
 	}
 };
 
@@ -1924,7 +1924,7 @@ class BOP_BuilderTools {
 };
 %extend BOP_BuilderTools {
 	~BOP_BuilderTools() {
-	printf("Call custom destructor for instance of BOP_BuilderTools\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_BuilderTools\n");}
 	}
 };
 
@@ -1967,7 +1967,7 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 };
 %extend BOP_IndexedDataMapOfVertexListEdgeInfo {
 	~BOP_IndexedDataMapOfVertexListEdgeInfo() {
-	printf("Call custom destructor for instance of BOP_IndexedDataMapOfVertexListEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfVertexListEdgeInfo\n");}
 	}
 };
 
@@ -2024,7 +2024,7 @@ class BOP_ShapeSet {
 };
 %extend BOP_ShapeSet {
 	~BOP_ShapeSet() {
-	printf("Call custom destructor for instance of BOP_ShapeSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ShapeSet\n");}
 	}
 };
 
@@ -2041,7 +2041,7 @@ class BOP_ShellFaceSet : public BOP_ShapeSet {
 };
 %extend BOP_ShellFaceSet {
 	~BOP_ShellFaceSet() {
-	printf("Call custom destructor for instance of BOP_ShellFaceSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceSet\n");}
 	}
 };
 
@@ -2068,7 +2068,7 @@ class BOP_SolidClassifier {
 };
 %extend BOP_SolidClassifier {
 	~BOP_SolidClassifier() {
-	printf("Call custom destructor for instance of BOP_SolidClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SolidClassifier\n");}
 	}
 };
 
@@ -2093,7 +2093,7 @@ class BOP_WireSolid : public BOP_WireShape {
 };
 %extend BOP_WireSolid {
 	~BOP_WireSolid() {
-	printf("Call custom destructor for instance of BOP_WireSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WireSolid\n");}
 	}
 };
 
@@ -2126,7 +2126,7 @@ class BOP_CheckResult {
 };
 %extend BOP_CheckResult {
 	~BOP_CheckResult() {
-	printf("Call custom destructor for instance of BOP_CheckResult\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_CheckResult\n");}
 	}
 };
 
@@ -2153,7 +2153,7 @@ class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
 };
 %extend BOP_ShellFaceClassifier {
 	~BOP_ShellFaceClassifier() {
-	printf("Call custom destructor for instance of BOP_ShellFaceClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceClassifier\n");}
 	}
 };
 
@@ -2176,7 +2176,7 @@ class BOP_ListIteratorOfListOfListOfLoop {
 };
 %extend BOP_ListIteratorOfListOfListOfLoop {
 	~BOP_ListIteratorOfListOfListOfLoop() {
-	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfListOfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfListOfLoop\n");}
 	}
 };
 
@@ -2199,7 +2199,7 @@ class BOP_Section : public BOP_Builder {
 };
 %extend BOP_Section {
 	~BOP_Section() {
-	printf("Call custom destructor for instance of BOP_Section\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_Section\n");}
 	}
 };
 
@@ -2232,7 +2232,7 @@ class BOP_ShellSolid : public BOP_Builder {
 };
 %extend BOP_ShellSolid {
 	~BOP_ShellSolid() {
-	printf("Call custom destructor for instance of BOP_ShellSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ShellSolid\n");}
 	}
 };
 
@@ -2245,7 +2245,7 @@ class BOP_ShellShell : public BOP_ShellSolid {
 };
 %extend BOP_ShellShell {
 	~BOP_ShellShell() {
-	printf("Call custom destructor for instance of BOP_ShellShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ShellShell\n");}
 	}
 };
 
@@ -2288,7 +2288,7 @@ class BOP_BlockBuilder {
 };
 %extend BOP_BlockBuilder {
 	~BOP_BlockBuilder() {
-	printf("Call custom destructor for instance of BOP_BlockBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_BlockBuilder\n");}
 	}
 };
 
@@ -2307,7 +2307,7 @@ class BOP_CorrectTolerances {
 };
 %extend BOP_CorrectTolerances {
 	~BOP_CorrectTolerances() {
-	printf("Call custom destructor for instance of BOP_CorrectTolerances\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_CorrectTolerances\n");}
 	}
 };
 
@@ -2330,7 +2330,7 @@ class BOP_SolidSolid : public BOP_ShellSolid {
 };
 %extend BOP_SolidSolid {
 	~BOP_SolidSolid() {
-	printf("Call custom destructor for instance of BOP_SolidSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SolidSolid\n");}
 	}
 };
 
@@ -2353,7 +2353,7 @@ class BOP_ListIteratorOfListOfConnexityBlock {
 };
 %extend BOP_ListIteratorOfListOfConnexityBlock {
 	~BOP_ListIteratorOfListOfConnexityBlock() {
-	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfConnexityBlock\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfConnexityBlock\n");}
 	}
 };
 
@@ -2378,7 +2378,7 @@ class BOP_SFSCorrector {
 };
 %extend BOP_SFSCorrector {
 	~BOP_SFSCorrector() {
-	printf("Call custom destructor for instance of BOP_SFSCorrector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SFSCorrector\n");}
 	}
 };
 
@@ -2403,7 +2403,7 @@ class BOP_LoopSet {
 };
 %extend BOP_LoopSet {
 	~BOP_LoopSet() {
-	printf("Call custom destructor for instance of BOP_LoopSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_LoopSet\n");}
 	}
 };
 
@@ -2440,7 +2440,7 @@ class BOP_WireEdgeSet : public BOP_ShapeSet {
 };
 %extend BOP_WireEdgeSet {
 	~BOP_WireEdgeSet() {
-	printf("Call custom destructor for instance of BOP_WireEdgeSet\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeSet\n");}
 	}
 };
 
@@ -2463,7 +2463,7 @@ class BOP_WireShell : public BOP_WireShape {
 };
 %extend BOP_WireShell {
 	~BOP_WireShell() {
-	printf("Call custom destructor for instance of BOP_WireShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_WireShell\n");}
 	}
 };
 
@@ -2480,7 +2480,7 @@ class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
 };
 %extend BOP_SolidAreaBuilder {
 	~BOP_SolidAreaBuilder() {
-	printf("Call custom destructor for instance of BOP_SolidAreaBuilder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SolidAreaBuilder\n");}
 	}
 };
 
@@ -2503,7 +2503,7 @@ class BOP_ListIteratorOfListOfLoop {
 };
 %extend BOP_ListIteratorOfListOfLoop {
 	~BOP_ListIteratorOfListOfLoop() {
-	printf("Call custom destructor for instance of BOP_ListIteratorOfListOfLoop\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfLoop\n");}
 	}
 };
 
@@ -2527,7 +2527,7 @@ class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_ShellSolidHistoryCollector {
 	~BOP_ShellSolidHistoryCollector() {
-	printf("Call custom destructor for instance of BOP_ShellSolidHistoryCollector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ShellSolidHistoryCollector\n");}
 	}
 };
 
@@ -2555,7 +2555,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollecti
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	~BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier() {
-	printf("Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
 	}
 };
 
@@ -2596,7 +2596,7 @@ class BOP_SDFWESFiller {
 };
 %extend BOP_SDFWESFiller {
 	~BOP_SDFWESFiller() {
-	printf("Call custom destructor for instance of BOP_SDFWESFiller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_SDFWESFiller\n");}
 	}
 };
 
@@ -2645,7 +2645,7 @@ class BOP_ListOfEdgeInfo {
 };
 %extend BOP_ListOfEdgeInfo {
 	~BOP_ListOfEdgeInfo() {
-	printf("Call custom destructor for instance of BOP_ListOfEdgeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_ListOfEdgeInfo\n");}
 	}
 };
 
@@ -2686,6 +2686,6 @@ class BOP_FaceInfo {
 };
 %extend BOP_FaceInfo {
 	~BOP_FaceInfo() {
-	printf("Call custom destructor for instance of BOP_FaceInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BOP_FaceInfo\n");}
 	}
 };

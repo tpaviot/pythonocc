@@ -103,6 +103,6 @@ class RWStl {
 };
 %extend RWStl {
 	~RWStl() {
-	printf("Call custom destructor for instance of RWStl\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStl\n");}
 	}
 };

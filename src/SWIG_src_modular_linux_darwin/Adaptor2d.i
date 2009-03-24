@@ -105,7 +105,7 @@ class Handle_Adaptor2d_HCurve2d : public Handle_MMgt_TShared {
 };
 %extend Handle_Adaptor2d_HCurve2d {
 	~Handle_Adaptor2d_HCurve2d() {
-	printf("Call custom destructor for instance of Handle_Adaptor2d_HCurve2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Adaptor2d_HCurve2d\n");}
 	}
 };
 
@@ -129,7 +129,7 @@ class Handle_Adaptor2d_HLine2d : public Handle_Adaptor2d_HCurve2d {
 };
 %extend Handle_Adaptor2d_HLine2d {
 	~Handle_Adaptor2d_HLine2d() {
-	printf("Call custom destructor for instance of Handle_Adaptor2d_HLine2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Adaptor2d_HLine2d\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Adaptor2d_Curve2d {
 };
 %extend Adaptor2d_Curve2d {
 	~Adaptor2d_Curve2d() {
-	printf("Call custom destructor for instance of Adaptor2d_Curve2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Adaptor2d_Curve2d\n");}
 	}
 };
 
@@ -229,7 +229,7 @@ class Adaptor2d_Line2d : public Adaptor2d_Curve2d {
 };
 %extend Adaptor2d_Line2d {
 	~Adaptor2d_Line2d() {
-	printf("Call custom destructor for instance of Adaptor2d_Line2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Adaptor2d_Line2d\n");}
 	}
 };
 
@@ -305,7 +305,7 @@ class Adaptor2d_HCurve2d : public MMgt_TShared {
 };
 %extend Adaptor2d_HCurve2d {
 	~Adaptor2d_HCurve2d() {
-	printf("Call custom destructor for instance of Adaptor2d_HCurve2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Adaptor2d_HCurve2d\n");}
 	}
 };
 
@@ -333,6 +333,6 @@ class Adaptor2d_HLine2d : public Adaptor2d_HCurve2d {
 };
 %extend Adaptor2d_HLine2d {
 	~Adaptor2d_HLine2d() {
-	printf("Call custom destructor for instance of Adaptor2d_HLine2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Adaptor2d_HLine2d\n");}
 	}
 };

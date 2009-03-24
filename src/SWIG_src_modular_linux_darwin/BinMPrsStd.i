@@ -104,7 +104,7 @@ class Handle_BinMPrsStd_PositionDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMPrsStd_PositionDriver {
 	~Handle_BinMPrsStd_PositionDriver() {
-	printf("Call custom destructor for instance of Handle_BinMPrsStd_PositionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMPrsStd_PositionDriver\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_BinMPrsStd_AISPresentationDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMPrsStd_AISPresentationDriver {
 	~Handle_BinMPrsStd_AISPresentationDriver() {
-	printf("Call custom destructor for instance of Handle_BinMPrsStd_AISPresentationDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMPrsStd_AISPresentationDriver\n");}
 	}
 };
 
@@ -143,7 +143,7 @@ class BinMPrsStd {
 };
 %extend BinMPrsStd {
 	~BinMPrsStd() {
-	printf("Call custom destructor for instance of BinMPrsStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMPrsStd\n");}
 	}
 };
 
@@ -169,7 +169,7 @@ class BinMPrsStd_AISPresentationDriver : public BinMDF_ADriver {
 };
 %extend BinMPrsStd_AISPresentationDriver {
 	~BinMPrsStd_AISPresentationDriver() {
-	printf("Call custom destructor for instance of BinMPrsStd_AISPresentationDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMPrsStd_AISPresentationDriver\n");}
 	}
 };
 
@@ -195,6 +195,6 @@ class BinMPrsStd_PositionDriver : public BinMDF_ADriver {
 };
 %extend BinMPrsStd_PositionDriver {
 	~BinMPrsStd_PositionDriver() {
-	printf("Call custom destructor for instance of BinMPrsStd_PositionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMPrsStd_PositionDriver\n");}
 	}
 };

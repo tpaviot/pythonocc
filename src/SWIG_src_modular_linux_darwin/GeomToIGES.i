@@ -103,7 +103,7 @@ class GeomToIGES_GeomEntity {
 };
 %extend GeomToIGES_GeomEntity {
 	~GeomToIGES_GeomEntity() {
-	printf("Call custom destructor for instance of GeomToIGES_GeomEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomEntity\n");}
 	}
 };
 
@@ -168,7 +168,7 @@ class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
 };
 %extend GeomToIGES_GeomSurface {
 	~GeomToIGES_GeomSurface() {
-	printf("Call custom destructor for instance of GeomToIGES_GeomSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomSurface\n");}
 	}
 };
 
@@ -189,7 +189,7 @@ class GeomToIGES_GeomVector : public GeomToIGES_GeomEntity {
 };
 %extend GeomToIGES_GeomVector {
 	~GeomToIGES_GeomVector() {
-	printf("Call custom destructor for instance of GeomToIGES_GeomVector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomVector\n");}
 	}
 };
 
@@ -228,7 +228,7 @@ class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
 };
 %extend GeomToIGES_GeomCurve {
 	~GeomToIGES_GeomCurve() {
-	printf("Call custom destructor for instance of GeomToIGES_GeomCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomCurve\n");}
 	}
 };
 
@@ -247,6 +247,6 @@ class GeomToIGES_GeomPoint : public GeomToIGES_GeomEntity {
 };
 %extend GeomToIGES_GeomPoint {
 	~GeomToIGES_GeomPoint() {
-	printf("Call custom destructor for instance of GeomToIGES_GeomPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomPoint\n");}
 	}
 };

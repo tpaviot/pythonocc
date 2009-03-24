@@ -113,7 +113,7 @@ class Handle_CDM_MetaData : public Handle_Standard_Transient {
 };
 %extend Handle_CDM_MetaData {
 	~Handle_CDM_MetaData() {
-	printf("Call custom destructor for instance of Handle_CDM_MetaData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_MetaData\n");}
 	}
 };
 
@@ -137,7 +137,7 @@ class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 };
 %extend Handle_CDM_StdMapNodeOfMapOfDocument {
 	~Handle_CDM_StdMapNodeOfMapOfDocument() {
-	printf("Call custom destructor for instance of Handle_CDM_StdMapNodeOfMapOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_StdMapNodeOfMapOfDocument\n");}
 	}
 };
 
@@ -161,7 +161,7 @@ class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode
 };
 %extend Handle_CDM_DataMapNodeOfNamesDirectory {
 	~Handle_CDM_DataMapNodeOfNamesDirectory() {
-	printf("Call custom destructor for instance of Handle_CDM_DataMapNodeOfNamesDirectory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfNamesDirectory\n");}
 	}
 };
 
@@ -185,7 +185,7 @@ class Handle_CDM_Reference : public Handle_Standard_Transient {
 };
 %extend Handle_CDM_Reference {
 	~Handle_CDM_Reference() {
-	printf("Call custom destructor for instance of Handle_CDM_Reference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_Reference\n");}
 	}
 };
 
@@ -209,7 +209,7 @@ class Handle_CDM_Document : public Handle_Standard_Transient {
 };
 %extend Handle_CDM_Document {
 	~Handle_CDM_Document() {
-	printf("Call custom destructor for instance of Handle_CDM_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_Document\n");}
 	}
 };
 
@@ -233,7 +233,7 @@ class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 };
 %extend Handle_CDM_MessageDriver {
 	~Handle_CDM_MessageDriver() {
-	printf("Call custom destructor for instance of Handle_CDM_MessageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_MessageDriver\n");}
 	}
 };
 
@@ -257,7 +257,7 @@ class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
 };
 %extend Handle_CDM_COutMessageDriver {
 	~Handle_CDM_COutMessageDriver() {
-	printf("Call custom destructor for instance of Handle_CDM_COutMessageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_COutMessageDriver\n");}
 	}
 };
 
@@ -281,7 +281,7 @@ class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 };
 %extend Handle_CDM_NullMessageDriver {
 	~Handle_CDM_NullMessageDriver() {
-	printf("Call custom destructor for instance of Handle_CDM_NullMessageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_NullMessageDriver\n");}
 	}
 };
 
@@ -305,7 +305,7 @@ class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_Ma
 };
 %extend Handle_CDM_DataMapNodeOfMetaDataLookUpTable {
 	~Handle_CDM_DataMapNodeOfMetaDataLookUpTable() {
-	printf("Call custom destructor for instance of Handle_CDM_DataMapNodeOfMetaDataLookUpTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfMetaDataLookUpTable\n");}
 	}
 };
 
@@ -329,7 +329,7 @@ class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_
 };
 %extend Handle_CDM_DataMapNodeOfPresentationDirectory {
 	~Handle_CDM_DataMapNodeOfPresentationDirectory() {
-	printf("Call custom destructor for instance of Handle_CDM_DataMapNodeOfPresentationDirectory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfPresentationDirectory\n");}
 	}
 };
 
@@ -353,7 +353,7 @@ class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 };
 %extend Handle_CDM_ListNodeOfListOfDocument {
 	~Handle_CDM_ListNodeOfListOfDocument() {
-	printf("Call custom destructor for instance of Handle_CDM_ListNodeOfListOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_ListNodeOfListOfDocument\n");}
 	}
 };
 
@@ -377,7 +377,7 @@ class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode 
 };
 %extend Handle_CDM_StackNodeOfStackOfDocument {
 	~Handle_CDM_StackNodeOfStackOfDocument() {
-	printf("Call custom destructor for instance of Handle_CDM_StackNodeOfStackOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_StackNodeOfStackOfDocument\n");}
 	}
 };
 
@@ -401,7 +401,7 @@ class Handle_CDM_Application : public Handle_Standard_Transient {
 };
 %extend Handle_CDM_Application {
 	~Handle_CDM_Application() {
-	printf("Call custom destructor for instance of Handle_CDM_Application\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_Application\n");}
 	}
 };
 
@@ -425,7 +425,7 @@ class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode 
 };
 %extend Handle_CDM_ListNodeOfListOfReferences {
 	~Handle_CDM_ListNodeOfListOfReferences() {
-	printf("Call custom destructor for instance of Handle_CDM_ListNodeOfListOfReferences\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CDM_ListNodeOfListOfReferences\n");}
 	}
 };
 
@@ -449,7 +449,7 @@ class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfNamesDirectory {
 	~CDM_DataMapNodeOfNamesDirectory() {
-	printf("Call custom destructor for instance of CDM_DataMapNodeOfNamesDirectory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfNamesDirectory\n");}
 	}
 };
 
@@ -470,7 +470,7 @@ class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIter
 };
 %extend CDM_DataMapIteratorOfMetaDataLookUpTable {
 	~CDM_DataMapIteratorOfMetaDataLookUpTable() {
-	printf("Call custom destructor for instance of CDM_DataMapIteratorOfMetaDataLookUpTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfMetaDataLookUpTable\n");}
 	}
 };
 
@@ -494,7 +494,7 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfPresentationDirectory {
 	~CDM_DataMapNodeOfPresentationDirectory() {
-	printf("Call custom destructor for instance of CDM_DataMapNodeOfPresentationDirectory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfPresentationDirectory\n");}
 	}
 };
 
@@ -517,7 +517,7 @@ class CDM_ListIteratorOfListOfDocument {
 };
 %extend CDM_ListIteratorOfListOfDocument {
 	~CDM_ListIteratorOfListOfDocument() {
-	printf("Call custom destructor for instance of CDM_ListIteratorOfListOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfDocument\n");}
 	}
 };
 
@@ -540,7 +540,7 @@ class CDM_ReferenceIterator {
 };
 %extend CDM_ReferenceIterator {
 	~CDM_ReferenceIterator() {
-	printf("Call custom destructor for instance of CDM_ReferenceIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_ReferenceIterator\n");}
 	}
 };
 
@@ -568,7 +568,7 @@ class CDM_Application : public Standard_Transient {
 };
 %extend CDM_Application {
 	~CDM_Application() {
-	printf("Call custom destructor for instance of CDM_Application\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_Application\n");}
 	}
 };
 
@@ -601,7 +601,7 @@ class CDM_NamesDirectory : public TCollection_BasicMap {
 };
 %extend CDM_NamesDirectory {
 	~CDM_NamesDirectory() {
-	printf("Call custom destructor for instance of CDM_NamesDirectory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_NamesDirectory\n");}
 	}
 };
 
@@ -650,7 +650,7 @@ class CDM_ListOfReferences {
 };
 %extend CDM_ListOfReferences {
 	~CDM_ListOfReferences() {
-	printf("Call custom destructor for instance of CDM_ListOfReferences\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_ListOfReferences\n");}
 	}
 };
 
@@ -671,7 +671,7 @@ class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIt
 };
 %extend CDM_DataMapIteratorOfPresentationDirectory {
 	~CDM_DataMapIteratorOfPresentationDirectory() {
-	printf("Call custom destructor for instance of CDM_DataMapIteratorOfPresentationDirectory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfPresentationDirectory\n");}
 	}
 };
 
@@ -719,7 +719,7 @@ class CDM_MetaData : public Standard_Transient {
 };
 %extend CDM_MetaData {
 	~CDM_MetaData() {
-	printf("Call custom destructor for instance of CDM_MetaData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_MetaData\n");}
 	}
 };
 
@@ -741,7 +741,7 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 };
 %extend CDM_StdMapNodeOfMapOfDocument {
 	~CDM_StdMapNodeOfMapOfDocument() {
-	printf("Call custom destructor for instance of CDM_StdMapNodeOfMapOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_StdMapNodeOfMapOfDocument\n");}
 	}
 };
 
@@ -761,7 +761,7 @@ class CDM_MessageDriver : public Standard_Transient {
 };
 %extend CDM_MessageDriver {
 	~CDM_MessageDriver() {
-	printf("Call custom destructor for instance of CDM_MessageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_MessageDriver\n");}
 	}
 };
 
@@ -779,7 +779,7 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 };
 %extend CDM_COutMessageDriver {
 	~CDM_COutMessageDriver() {
-	printf("Call custom destructor for instance of CDM_COutMessageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_COutMessageDriver\n");}
 	}
 };
 
@@ -812,7 +812,7 @@ class CDM_PresentationDirectory : public TCollection_BasicMap {
 };
 %extend CDM_PresentationDirectory {
 	~CDM_PresentationDirectory() {
-	printf("Call custom destructor for instance of CDM_PresentationDirectory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_PresentationDirectory\n");}
 	}
 };
 
@@ -834,7 +834,7 @@ class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 };
 %extend CDM_StackNodeOfStackOfDocument {
 	~CDM_StackNodeOfStackOfDocument() {
-	printf("Call custom destructor for instance of CDM_StackNodeOfStackOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_StackNodeOfStackOfDocument\n");}
 	}
 };
 
@@ -856,7 +856,7 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 };
 %extend CDM_NullMessageDriver {
 	~CDM_NullMessageDriver() {
-	printf("Call custom destructor for instance of CDM_NullMessageDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_NullMessageDriver\n");}
 	}
 };
 
@@ -879,7 +879,7 @@ class CDM_ListIteratorOfListOfReferences {
 };
 %extend CDM_ListIteratorOfListOfReferences {
 	~CDM_ListIteratorOfListOfReferences() {
-	printf("Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");}
 	}
 };
 
@@ -912,7 +912,7 @@ class CDM_MetaDataLookUpTable : public TCollection_BasicMap {
 };
 %extend CDM_MetaDataLookUpTable {
 	~CDM_MetaDataLookUpTable() {
-	printf("Call custom destructor for instance of CDM_MetaDataLookUpTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_MetaDataLookUpTable\n");}
 	}
 };
 
@@ -936,7 +936,7 @@ class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfMetaDataLookUpTable {
 	~CDM_DataMapNodeOfMetaDataLookUpTable() {
-	printf("Call custom destructor for instance of CDM_DataMapNodeOfMetaDataLookUpTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_DataMapNodeOfMetaDataLookUpTable\n");}
 	}
 };
 
@@ -957,7 +957,7 @@ class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator 
 };
 %extend CDM_DataMapIteratorOfNamesDirectory {
 	~CDM_DataMapIteratorOfNamesDirectory() {
-	printf("Call custom destructor for instance of CDM_DataMapIteratorOfNamesDirectory\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfNamesDirectory\n");}
 	}
 };
 
@@ -980,7 +980,7 @@ class CDM_StackIteratorOfStackOfDocument {
 };
 %extend CDM_StackIteratorOfStackOfDocument {
 	~CDM_StackIteratorOfStackOfDocument() {
-	printf("Call custom destructor for instance of CDM_StackIteratorOfStackOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_StackIteratorOfStackOfDocument\n");}
 	}
 };
 
@@ -999,7 +999,7 @@ class CDM_MapIteratorOfMapOfDocument : public TCollection_BasicMapIterator {
 };
 %extend CDM_MapIteratorOfMapOfDocument {
 	~CDM_MapIteratorOfMapOfDocument() {
-	printf("Call custom destructor for instance of CDM_MapIteratorOfMapOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_MapIteratorOfMapOfDocument\n");}
 	}
 };
 
@@ -1021,7 +1021,7 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 };
 %extend CDM_ListNodeOfListOfReferences {
 	~CDM_ListNodeOfListOfReferences() {
-	printf("Call custom destructor for instance of CDM_ListNodeOfListOfReferences\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_ListNodeOfListOfReferences\n");}
 	}
 };
 
@@ -1038,7 +1038,7 @@ class CDM_DocumentHasher {
 };
 %extend CDM_DocumentHasher {
 	~CDM_DocumentHasher() {
-	printf("Call custom destructor for instance of CDM_DocumentHasher\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_DocumentHasher\n");}
 	}
 };
 
@@ -1087,7 +1087,7 @@ class CDM_ListOfDocument {
 };
 %extend CDM_ListOfDocument {
 	~CDM_ListOfDocument() {
-	printf("Call custom destructor for instance of CDM_ListOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_ListOfDocument\n");}
 	}
 };
 
@@ -1112,7 +1112,7 @@ class CDM_MapOfDocument : public TCollection_BasicMap {
 };
 %extend CDM_MapOfDocument {
 	~CDM_MapOfDocument() {
-	printf("Call custom destructor for instance of CDM_MapOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_MapOfDocument\n");}
 	}
 };
 
@@ -1134,7 +1134,7 @@ class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 };
 %extend CDM_ListNodeOfListOfDocument {
 	~CDM_ListNodeOfListOfDocument() {
-	printf("Call custom destructor for instance of CDM_ListNodeOfListOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_ListNodeOfListOfDocument\n");}
 	}
 };
 
@@ -1163,7 +1163,7 @@ class CDM_StackOfDocument {
 };
 %extend CDM_StackOfDocument {
 	~CDM_StackOfDocument() {
-	printf("Call custom destructor for instance of CDM_StackOfDocument\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_StackOfDocument\n");}
 	}
 };
 
@@ -1191,6 +1191,6 @@ class CDM_Reference : public Standard_Transient {
 };
 %extend CDM_Reference {
 	~CDM_Reference() {
-	printf("Call custom destructor for instance of CDM_Reference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CDM_Reference\n");}
 	}
 };

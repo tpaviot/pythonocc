@@ -97,7 +97,7 @@ class GC_Root {
 };
 %extend GC_Root {
 	~GC_Root() {
-	printf("Call custom destructor for instance of GC_Root\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_Root\n");}
 	}
 };
 
@@ -118,7 +118,7 @@ class GC_MakeEllipse : public GC_Root {
 };
 %extend GC_MakeEllipse {
 	~GC_MakeEllipse() {
-	printf("Call custom destructor for instance of GC_MakeEllipse\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeEllipse\n");}
 	}
 };
 
@@ -149,7 +149,7 @@ class GC_MakeConicalSurface : public GC_Root {
 };
 %extend GC_MakeConicalSurface {
 	~GC_MakeConicalSurface() {
-	printf("Call custom destructor for instance of GC_MakeConicalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeConicalSurface\n");}
 	}
 };
 
@@ -178,7 +178,7 @@ class GC_MakeCylindricalSurface : public GC_Root {
 };
 %extend GC_MakeCylindricalSurface {
 	~GC_MakeCylindricalSurface() {
-	printf("Call custom destructor for instance of GC_MakeCylindricalSurface\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeCylindricalSurface\n");}
 	}
 };
 
@@ -203,7 +203,7 @@ class GC_MakeArcOfCircle : public GC_Root {
 };
 %extend GC_MakeArcOfCircle {
 	~GC_MakeArcOfCircle() {
-	printf("Call custom destructor for instance of GC_MakeArcOfCircle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfCircle\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class GC_MakeHyperbola : public GC_Root {
 };
 %extend GC_MakeHyperbola {
 	~GC_MakeHyperbola() {
-	printf("Call custom destructor for instance of GC_MakeHyperbola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeHyperbola\n");}
 	}
 };
 
@@ -249,7 +249,7 @@ class GC_MakeLine : public GC_Root {
 };
 %extend GC_MakeLine {
 	~GC_MakeLine() {
-	printf("Call custom destructor for instance of GC_MakeLine\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeLine\n");}
 	}
 };
 
@@ -276,7 +276,7 @@ class GC_MakeMirror {
 };
 %extend GC_MakeMirror {
 	~GC_MakeMirror() {
-	printf("Call custom destructor for instance of GC_MakeMirror\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeMirror\n");}
 	}
 };
 
@@ -293,7 +293,7 @@ class GC_MakeScale {
 };
 %extend GC_MakeScale {
 	~GC_MakeScale() {
-	printf("Call custom destructor for instance of GC_MakeScale\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeScale\n");}
 	}
 };
 
@@ -324,7 +324,7 @@ class GC_MakeCircle : public GC_Root {
 };
 %extend GC_MakeCircle {
 	~GC_MakeCircle() {
-	printf("Call custom destructor for instance of GC_MakeCircle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeCircle\n");}
 	}
 };
 
@@ -345,7 +345,7 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 };
 %extend GC_MakeArcOfHyperbola {
 	~GC_MakeArcOfHyperbola() {
-	printf("Call custom destructor for instance of GC_MakeArcOfHyperbola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfHyperbola\n");}
 	}
 };
 
@@ -364,7 +364,7 @@ class GC_MakeTrimmedCone : public GC_Root {
 };
 %extend GC_MakeTrimmedCone {
 	~GC_MakeTrimmedCone() {
-	printf("Call custom destructor for instance of GC_MakeTrimmedCone\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeTrimmedCone\n");}
 	}
 };
 
@@ -395,7 +395,7 @@ class GC_MakePlane : public GC_Root {
 };
 %extend GC_MakePlane {
 	~GC_MakePlane() {
-	printf("Call custom destructor for instance of GC_MakePlane\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakePlane\n");}
 	}
 };
 
@@ -416,7 +416,7 @@ class GC_MakeArcOfEllipse : public GC_Root {
 };
 %extend GC_MakeArcOfEllipse {
 	~GC_MakeArcOfEllipse() {
-	printf("Call custom destructor for instance of GC_MakeArcOfEllipse\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfEllipse\n");}
 	}
 };
 
@@ -439,7 +439,7 @@ class GC_MakeSegment : public GC_Root {
 };
 %extend GC_MakeSegment {
 	~GC_MakeSegment() {
-	printf("Call custom destructor for instance of GC_MakeSegment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeSegment\n");}
 	}
 };
 
@@ -458,7 +458,7 @@ class GC_MakeTranslation {
 };
 %extend GC_MakeTranslation {
 	~GC_MakeTranslation() {
-	printf("Call custom destructor for instance of GC_MakeTranslation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeTranslation\n");}
 	}
 };
 
@@ -479,7 +479,7 @@ class GC_MakeRotation {
 };
 %extend GC_MakeRotation {
 	~GC_MakeRotation() {
-	printf("Call custom destructor for instance of GC_MakeRotation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeRotation\n");}
 	}
 };
 
@@ -500,7 +500,7 @@ class GC_MakeArcOfParabola : public GC_Root {
 };
 %extend GC_MakeArcOfParabola {
 	~GC_MakeArcOfParabola() {
-	printf("Call custom destructor for instance of GC_MakeArcOfParabola\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfParabola\n");}
 	}
 };
 
@@ -525,6 +525,6 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 };
 %extend GC_MakeTrimmedCylinder {
 	~GC_MakeTrimmedCylinder() {
-	printf("Call custom destructor for instance of GC_MakeTrimmedCylinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GC_MakeTrimmedCylinder\n");}
 	}
 };

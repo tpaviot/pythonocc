@@ -97,6 +97,6 @@ class BRepBndLib {
 };
 %extend BRepBndLib {
 	~BRepBndLib() {
-	printf("Call custom destructor for instance of BRepBndLib\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepBndLib\n");}
 	}
 };

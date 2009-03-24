@@ -104,7 +104,7 @@ class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 };
 %extend Handle_XSControl_TransferWriter {
 	~Handle_XSControl_TransferWriter() {
-	printf("Call custom destructor for instance of Handle_XSControl_TransferWriter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSControl_TransferWriter\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 };
 %extend Handle_XSControl_SignTransferStatus {
 	~Handle_XSControl_SignTransferStatus() {
-	printf("Call custom destructor for instance of Handle_XSControl_SignTransferStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSControl_SignTransferStatus\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 };
 %extend Handle_XSControl_Controller {
 	~Handle_XSControl_Controller() {
-	printf("Call custom destructor for instance of Handle_XSControl_Controller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSControl_Controller\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 };
 %extend Handle_XSControl_TransferReader {
 	~Handle_XSControl_TransferReader() {
-	printf("Call custom destructor for instance of Handle_XSControl_TransferReader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSControl_TransferReader\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract 
 };
 %extend Handle_XSControl_SelectForTransfer {
 	~Handle_XSControl_SelectForTransfer() {
-	printf("Call custom destructor for instance of Handle_XSControl_SelectForTransfer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSControl_SelectForTransfer\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 };
 %extend Handle_XSControl_Vars {
 	~Handle_XSControl_Vars() {
-	printf("Call custom destructor for instance of Handle_XSControl_Vars\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSControl_Vars\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 };
 %extend Handle_XSControl_WorkSession {
 	~Handle_XSControl_WorkSession() {
-	printf("Call custom destructor for instance of Handle_XSControl_WorkSession\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSControl_WorkSession\n");}
 	}
 };
 
@@ -272,7 +272,7 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 };
 %extend Handle_XSControl_ConnectedShapes {
 	~Handle_XSControl_ConnectedShapes() {
-	printf("Call custom destructor for instance of Handle_XSControl_ConnectedShapes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XSControl_ConnectedShapes\n");}
 	}
 };
 
@@ -289,7 +289,7 @@ class XSControl {
 };
 %extend XSControl {
 	~XSControl() {
-	printf("Call custom destructor for instance of XSControl\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl\n");}
 	}
 };
 
@@ -321,7 +321,7 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 };
 %extend XSControl_SignTransferStatus {
 	~XSControl_SignTransferStatus() {
-	printf("Call custom destructor for instance of XSControl_SignTransferStatus\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_SignTransferStatus\n");}
 	}
 };
 
@@ -351,7 +351,7 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 };
 %extend XSControl_ConnectedShapes {
 	~XSControl_ConnectedShapes() {
-	printf("Call custom destructor for instance of XSControl_ConnectedShapes\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_ConnectedShapes\n");}
 	}
 };
 
@@ -448,7 +448,7 @@ class XSControl_Utils {
 };
 %extend XSControl_Utils {
 	~XSControl_Utils() {
-	printf("Call custom destructor for instance of XSControl_Utils\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_Utils\n");}
 	}
 };
 
@@ -467,7 +467,7 @@ class XSControl_FuncShape {
 };
 %extend XSControl_FuncShape {
 	~XSControl_FuncShape() {
-	printf("Call custom destructor for instance of XSControl_FuncShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_FuncShape\n");}
 	}
 };
 
@@ -563,7 +563,7 @@ class XSControl_Controller : public MMgt_TShared {
 };
 %extend XSControl_Controller {
 	~XSControl_Controller() {
-	printf("Call custom destructor for instance of XSControl_Controller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_Controller\n");}
 	}
 };
 
@@ -624,7 +624,7 @@ class XSControl_Reader {
 };
 %extend XSControl_Reader {
 	~XSControl_Reader() {
-	printf("Call custom destructor for instance of XSControl_Reader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_Reader\n");}
 	}
 };
 
@@ -674,7 +674,7 @@ class XSControl_TransferWriter : public MMgt_TShared {
 };
 %extend XSControl_TransferWriter {
 	~XSControl_TransferWriter() {
-	printf("Call custom destructor for instance of XSControl_TransferWriter\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_TransferWriter\n");}
 	}
 };
 
@@ -705,7 +705,7 @@ class XSControl_Writer {
 };
 %extend XSControl_Writer {
 	~XSControl_Writer() {
-	printf("Call custom destructor for instance of XSControl_Writer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_Writer\n");}
 	}
 };
 
@@ -783,7 +783,7 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 };
 %extend XSControl_WorkSession {
 	~XSControl_WorkSession() {
-	printf("Call custom destructor for instance of XSControl_WorkSession\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_WorkSession\n");}
 	}
 };
 
@@ -798,7 +798,7 @@ class XSControl_Functions {
 };
 %extend XSControl_Functions {
 	~XSControl_Functions() {
-	printf("Call custom destructor for instance of XSControl_Functions\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_Functions\n");}
 	}
 };
 
@@ -910,7 +910,7 @@ class XSControl_TransferReader : public MMgt_TShared {
 };
 %extend XSControl_TransferReader {
 	~XSControl_TransferReader() {
-	printf("Call custom destructor for instance of XSControl_TransferReader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_TransferReader\n");}
 	}
 };
 
@@ -944,6 +944,6 @@ class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
 };
 %extend XSControl_SelectForTransfer {
 	~XSControl_SelectForTransfer() {
-	printf("Call custom destructor for instance of XSControl_SelectForTransfer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XSControl_SelectForTransfer\n");}
 	}
 };

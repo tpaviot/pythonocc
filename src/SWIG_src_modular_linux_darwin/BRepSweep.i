@@ -104,7 +104,7 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 };
 %extend Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
 	~Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
-	printf("Call custom destructor for instance of Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");}
 	}
 };
 
@@ -129,7 +129,7 @@ class BRepSweep_Tool {
 };
 %extend BRepSweep_Tool {
 	~BRepSweep_Tool() {
-	printf("Call custom destructor for instance of BRepSweep_Tool\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Tool\n");}
 	}
 };
 
@@ -192,7 +192,7 @@ class BRepSweep_NumLinearRegularSweep {
 };
 %extend BRepSweep_NumLinearRegularSweep {
 	~BRepSweep_NumLinearRegularSweep() {
-	printf("Call custom destructor for instance of BRepSweep_NumLinearRegularSweep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_NumLinearRegularSweep\n");}
 	}
 };
 
@@ -215,7 +215,7 @@ class BRepSweep_Iterator {
 };
 %extend BRepSweep_Iterator {
 	~BRepSweep_Iterator() {
-	printf("Call custom destructor for instance of BRepSweep_Iterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Iterator\n");}
 	}
 };
 
@@ -264,7 +264,7 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 };
 %extend BRepSweep_Trsf {
 	~BRepSweep_Trsf() {
-	printf("Call custom destructor for instance of BRepSweep_Trsf\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Trsf\n");}
 	}
 };
 
@@ -281,7 +281,7 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 };
 %extend BRepSweep_Translation {
 	~BRepSweep_Translation() {
-	printf("Call custom destructor for instance of BRepSweep_Translation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Translation\n");}
 	}
 };
 
@@ -334,7 +334,7 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 };
 %extend BRepSweep_SequenceOfShapesOfNumLinearRegularSweep {
 	~BRepSweep_SequenceOfShapesOfNumLinearRegularSweep() {
-	printf("Call custom destructor for instance of BRepSweep_SequenceOfShapesOfNumLinearRegularSweep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_SequenceOfShapesOfNumLinearRegularSweep\n");}
 	}
 };
 
@@ -377,7 +377,7 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 };
 %extend BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 	~BRepSweep_Array2OfShapesOfNumLinearRegularSweep() {
-	printf("Call custom destructor for instance of BRepSweep_Array2OfShapesOfNumLinearRegularSweep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Array2OfShapesOfNumLinearRegularSweep\n");}
 	}
 };
 
@@ -408,7 +408,7 @@ class BRepSweep_Revol {
 };
 %extend BRepSweep_Revol {
 	~BRepSweep_Revol() {
-	printf("Call custom destructor for instance of BRepSweep_Revol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Revol\n");}
 	}
 };
 
@@ -437,7 +437,7 @@ class BRepSweep_Builder {
 };
 %extend BRepSweep_Builder {
 	~BRepSweep_Builder() {
-	printf("Call custom destructor for instance of BRepSweep_Builder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Builder\n");}
 	}
 };
 
@@ -459,7 +459,7 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 };
 %extend BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep {
 	~BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep() {
-	printf("Call custom destructor for instance of BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");}
 	}
 };
 
@@ -510,7 +510,7 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 };
 %extend BRepSweep_Rotation {
 	~BRepSweep_Rotation() {
-	printf("Call custom destructor for instance of BRepSweep_Rotation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Rotation\n");}
 	}
 };
 
@@ -539,6 +539,6 @@ class BRepSweep_Prism {
 };
 %extend BRepSweep_Prism {
 	~BRepSweep_Prism() {
-	printf("Call custom destructor for instance of BRepSweep_Prism\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepSweep_Prism\n");}
 	}
 };

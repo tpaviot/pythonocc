@@ -104,7 +104,7 @@ class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 };
 %extend Handle_TShort_HSequenceOfShortReal {
 	~Handle_TShort_HSequenceOfShortReal() {
-	printf("Call custom destructor for instance of Handle_TShort_HSequenceOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TShort_HSequenceOfShortReal\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 };
 %extend Handle_TShort_HArray1OfShortReal {
 	~Handle_TShort_HArray1OfShortReal() {
-	printf("Call custom destructor for instance of Handle_TShort_HArray1OfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TShort_HArray1OfShortReal\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollectio
 };
 %extend Handle_TShort_SequenceNodeOfSequenceOfShortReal {
 	~Handle_TShort_SequenceNodeOfSequenceOfShortReal() {
-	printf("Call custom destructor for instance of Handle_TShort_SequenceNodeOfSequenceOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TShort_SequenceNodeOfSequenceOfShortReal\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 };
 %extend Handle_TShort_HArray2OfShortReal {
 	~Handle_TShort_HArray2OfShortReal() {
-	printf("Call custom destructor for instance of Handle_TShort_HArray2OfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TShort_HArray2OfShortReal\n");}
 	}
 };
 
@@ -216,7 +216,7 @@ class TShort_HArray1OfShortReal : public MMgt_TShared {
 };
 %extend TShort_HArray1OfShortReal {
 	~TShort_HArray1OfShortReal() {
-	printf("Call custom destructor for instance of TShort_HArray1OfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TShort_HArray1OfShortReal\n");}
 	}
 };
 
@@ -269,7 +269,7 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 };
 %extend TShort_SequenceOfShortReal {
 	~TShort_SequenceOfShortReal() {
-	printf("Call custom destructor for instance of TShort_SequenceOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TShort_SequenceOfShortReal\n");}
 	}
 };
 
@@ -308,7 +308,7 @@ class TShort_Array1OfShortReal {
 };
 %extend TShort_Array1OfShortReal {
 	~TShort_Array1OfShortReal() {
-	printf("Call custom destructor for instance of TShort_Array1OfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TShort_Array1OfShortReal\n");}
 	}
 };
 
@@ -354,7 +354,7 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 };
 %extend TShort_HArray2OfShortReal {
 	~TShort_HArray2OfShortReal() {
-	printf("Call custom destructor for instance of TShort_HArray2OfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TShort_HArray2OfShortReal\n");}
 	}
 };
 
@@ -376,7 +376,7 @@ class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 };
 %extend TShort_SequenceNodeOfSequenceOfShortReal {
 	~TShort_SequenceNodeOfSequenceOfShortReal() {
-	printf("Call custom destructor for instance of TShort_SequenceNodeOfSequenceOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TShort_SequenceNodeOfSequenceOfShortReal\n");}
 	}
 };
 
@@ -440,7 +440,7 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 };
 %extend TShort_HSequenceOfShortReal {
 	~TShort_HSequenceOfShortReal() {
-	printf("Call custom destructor for instance of TShort_HSequenceOfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TShort_HSequenceOfShortReal\n");}
 	}
 };
 
@@ -483,6 +483,6 @@ class TShort_Array2OfShortReal {
 };
 %extend TShort_Array2OfShortReal {
 	~TShort_Array2OfShortReal() {
-	printf("Call custom destructor for instance of TShort_Array2OfShortReal\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TShort_Array2OfShortReal\n");}
 	}
 };

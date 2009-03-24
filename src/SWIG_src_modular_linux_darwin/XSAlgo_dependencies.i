@@ -19,9 +19,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
-#include <MMgt_TShared.hxx>
-#include <MMgt_StackManager.hxx>
 #include <Handle_MMgt_TShared.hxx>
+#include <MMgt_StackManager.hxx>
+#include <MMgt_TShared.hxx>
 %};
 
 %import MMgt.i

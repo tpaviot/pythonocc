@@ -113,7 +113,7 @@ class Handle_AlienImage_AlienImage : public Handle_MMgt_TShared {
 };
 %extend Handle_AlienImage_AlienImage {
 	~Handle_AlienImage_AlienImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_AlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AlienImage\n");}
 	}
 };
 
@@ -137,7 +137,7 @@ class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
 };
 %extend Handle_AlienImage_AlienUserImage {
 	~Handle_AlienImage_AlienUserImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_AlienUserImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AlienUserImage\n");}
 	}
 };
 
@@ -161,7 +161,7 @@ class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserIma
 };
 %extend Handle_AlienImage_SGIRGBAlienImage {
 	~Handle_AlienImage_SGIRGBAlienImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_SGIRGBAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SGIRGBAlienImage\n");}
 	}
 };
 
@@ -185,7 +185,7 @@ class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
 };
 %extend Handle_AlienImage_AlienImageData {
 	~Handle_AlienImage_AlienImageData() {
-	printf("Call custom destructor for instance of Handle_AlienImage_AlienImageData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AlienImageData\n");}
 	}
 };
 
@@ -209,7 +209,7 @@ class Handle_AlienImage_X11XWDAlienData : public Handle_AlienImage_AlienImageDat
 };
 %extend Handle_AlienImage_X11XWDAlienData {
 	~Handle_AlienImage_X11XWDAlienData() {
-	printf("Call custom destructor for instance of Handle_AlienImage_X11XWDAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_X11XWDAlienData\n");}
 	}
 };
 
@@ -233,7 +233,7 @@ class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserIma
 };
 %extend Handle_AlienImage_EuclidAlienImage {
 	~Handle_AlienImage_EuclidAlienImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_EuclidAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_EuclidAlienImage\n");}
 	}
 };
 
@@ -257,7 +257,7 @@ class Handle_AlienImage_EuclidAlienData : public Handle_AlienImage_AlienImageDat
 };
 %extend Handle_AlienImage_EuclidAlienData {
 	~Handle_AlienImage_EuclidAlienData() {
-	printf("Call custom destructor for instance of Handle_AlienImage_EuclidAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_EuclidAlienData\n");}
 	}
 };
 
@@ -281,7 +281,7 @@ class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageDat
 };
 %extend Handle_AlienImage_SGIRGBAlienData {
 	~Handle_AlienImage_SGIRGBAlienData() {
-	printf("Call custom destructor for instance of Handle_AlienImage_SGIRGBAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SGIRGBAlienData\n");}
 	}
 };
 
@@ -305,7 +305,7 @@ class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData
 };
 %extend Handle_AlienImage_SunRFAlienData {
 	~Handle_AlienImage_SunRFAlienData() {
-	printf("Call custom destructor for instance of Handle_AlienImage_SunRFAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SunRFAlienData\n");}
 	}
 };
 
@@ -329,7 +329,7 @@ class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage
 };
 %extend Handle_AlienImage_AidaAlienImage {
 	~Handle_AlienImage_AidaAlienImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_AidaAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AidaAlienImage\n");}
 	}
 };
 
@@ -353,7 +353,7 @@ class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage 
 };
 %extend Handle_AlienImage_GIFAlienImage {
 	~Handle_AlienImage_GIFAlienImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_GIFAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_GIFAlienImage\n");}
 	}
 };
 
@@ -377,7 +377,7 @@ class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage 
 };
 %extend Handle_AlienImage_BMPAlienImage {
 	~Handle_AlienImage_BMPAlienImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_BMPAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_BMPAlienImage\n");}
 	}
 };
 
@@ -401,7 +401,7 @@ class Handle_AlienImage_BMPAlienData : public Handle_AlienImage_AlienImageData {
 };
 %extend Handle_AlienImage_BMPAlienData {
 	~Handle_AlienImage_BMPAlienData() {
-	printf("Call custom destructor for instance of Handle_AlienImage_BMPAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_BMPAlienData\n");}
 	}
 };
 
@@ -425,7 +425,7 @@ class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 };
 %extend Handle_AlienImage_GIFAlienData {
 	~Handle_AlienImage_GIFAlienData() {
-	printf("Call custom destructor for instance of Handle_AlienImage_GIFAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_GIFAlienData\n");}
 	}
 };
 
@@ -449,7 +449,7 @@ class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImag
 };
 %extend Handle_AlienImage_SunRFAlienImage {
 	~Handle_AlienImage_SunRFAlienImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_SunRFAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SunRFAlienImage\n");}
 	}
 };
 
@@ -473,7 +473,7 @@ class Handle_AlienImage_AidaAlienData : public Handle_AlienImage_AlienImageData 
 };
 %extend Handle_AlienImage_AidaAlienData {
 	~Handle_AlienImage_AidaAlienData() {
-	printf("Call custom destructor for instance of Handle_AlienImage_AidaAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AidaAlienData\n");}
 	}
 };
 
@@ -497,7 +497,7 @@ class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
 };
 %extend Handle_AlienImage_XAlienImage {
 	~Handle_AlienImage_XAlienImage() {
-	printf("Call custom destructor for instance of Handle_AlienImage_XAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_XAlienImage\n");}
 	}
 };
 
@@ -523,7 +523,7 @@ class AlienImage_AlienImage : public MMgt_TShared {
 };
 %extend AlienImage_AlienImage {
 	~AlienImage_AlienImage() {
-	printf("Call custom destructor for instance of AlienImage_AlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_AlienImage\n");}
 	}
 };
 
@@ -543,7 +543,7 @@ class AlienImage_AlienImageData : public AlienImage_AlienImage {
 };
 %extend AlienImage_AlienImageData {
 	~AlienImage_AlienImageData() {
-	printf("Call custom destructor for instance of AlienImage_AlienImageData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_AlienImageData\n");}
 	}
 };
 
@@ -563,7 +563,7 @@ class AlienImage_SGIRGBAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_SGIRGBAlienData {
 	~AlienImage_SGIRGBAlienData() {
-	printf("Call custom destructor for instance of AlienImage_SGIRGBAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_SGIRGBAlienData\n");}
 	}
 };
 
@@ -576,7 +576,7 @@ class AlienImage_SGIRGBFileHeader {
 };
 %extend AlienImage_SGIRGBFileHeader {
 	~AlienImage_SGIRGBFileHeader() {
-	printf("Call custom destructor for instance of AlienImage_SGIRGBFileHeader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_SGIRGBFileHeader\n");}
 	}
 };
 
@@ -589,7 +589,7 @@ class AlienImage_SUNRFFileHeader {
 };
 %extend AlienImage_SUNRFFileHeader {
 	~AlienImage_SUNRFFileHeader() {
-	printf("Call custom destructor for instance of AlienImage_SUNRFFileHeader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_SUNRFFileHeader\n");}
 	}
 };
 
@@ -619,7 +619,7 @@ class AlienImage_AlienUserImage : public AlienImage_AlienImage {
 };
 %extend AlienImage_AlienUserImage {
 	~AlienImage_AlienUserImage() {
-	printf("Call custom destructor for instance of AlienImage_AlienUserImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_AlienUserImage\n");}
 	}
 };
 
@@ -643,7 +643,7 @@ class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_SGIRGBAlienImage {
 	~AlienImage_SGIRGBAlienImage() {
-	printf("Call custom destructor for instance of AlienImage_SGIRGBAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_SGIRGBAlienImage\n");}
 	}
 };
 
@@ -660,7 +660,7 @@ class AlienImage_MemoryOperations {
 };
 %extend AlienImage_MemoryOperations {
 	~AlienImage_MemoryOperations() {
-	printf("Call custom destructor for instance of AlienImage_MemoryOperations\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_MemoryOperations\n");}
 	}
 };
 
@@ -694,7 +694,7 @@ class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_SunRFAlienImage {
 	~AlienImage_SunRFAlienImage() {
-	printf("Call custom destructor for instance of AlienImage_SunRFAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_SunRFAlienImage\n");}
 	}
 };
 
@@ -728,7 +728,7 @@ class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_X11XWDAlienData {
 	~AlienImage_X11XWDAlienData() {
-	printf("Call custom destructor for instance of AlienImage_X11XWDAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_X11XWDAlienData\n");}
 	}
 };
 
@@ -762,7 +762,7 @@ class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_XAlienImage {
 	~AlienImage_XAlienImage() {
-	printf("Call custom destructor for instance of AlienImage_XAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_XAlienImage\n");}
 	}
 };
 
@@ -775,7 +775,7 @@ class AlienImage_X11XColor {
 };
 %extend AlienImage_X11XColor {
 	~AlienImage_X11XColor() {
-	printf("Call custom destructor for instance of AlienImage_X11XColor\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_X11XColor\n");}
 	}
 };
 
@@ -805,7 +805,7 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_BMPAlienData {
 	~AlienImage_BMPAlienData() {
-	printf("Call custom destructor for instance of AlienImage_BMPAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_BMPAlienData\n");}
 	}
 };
 
@@ -826,7 +826,7 @@ class AlienImage {
 };
 %extend AlienImage {
 	~AlienImage() {
-	printf("Call custom destructor for instance of AlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage\n");}
 	}
 };
 
@@ -858,7 +858,7 @@ class AlienImage_AidaAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_AidaAlienImage {
 	~AlienImage_AidaAlienImage() {
-	printf("Call custom destructor for instance of AlienImage_AidaAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_AidaAlienImage\n");}
 	}
 };
 
@@ -888,7 +888,7 @@ class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_EuclidAlienImage {
 	~AlienImage_EuclidAlienImage() {
-	printf("Call custom destructor for instance of AlienImage_EuclidAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_EuclidAlienImage\n");}
 	}
 };
 
@@ -922,7 +922,7 @@ class AlienImage_EuclidAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_EuclidAlienData {
 	~AlienImage_EuclidAlienData() {
-	printf("Call custom destructor for instance of AlienImage_EuclidAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_EuclidAlienData\n");}
 	}
 };
 
@@ -954,7 +954,7 @@ class AlienImage_AidaAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_AidaAlienData {
 	~AlienImage_AidaAlienData() {
-	printf("Call custom destructor for instance of AlienImage_AidaAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_AidaAlienData\n");}
 	}
 };
 
@@ -998,7 +998,7 @@ class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_SunRFAlienData {
 	~AlienImage_SunRFAlienData() {
-	printf("Call custom destructor for instance of AlienImage_SunRFAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_SunRFAlienData\n");}
 	}
 };
 
@@ -1011,7 +1011,7 @@ class AlienImage_BMPHeader {
 };
 %extend AlienImage_BMPHeader {
 	~AlienImage_BMPHeader() {
-	printf("Call custom destructor for instance of AlienImage_BMPHeader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_BMPHeader\n");}
 	}
 };
 
@@ -1041,7 +1041,7 @@ class AlienImage_GIFAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_GIFAlienData {
 	~AlienImage_GIFAlienData() {
-	printf("Call custom destructor for instance of AlienImage_GIFAlienData\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_GIFAlienData\n");}
 	}
 };
 
@@ -1075,7 +1075,7 @@ class AlienImage_BMPAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_BMPAlienImage {
 	~AlienImage_BMPAlienImage() {
-	printf("Call custom destructor for instance of AlienImage_BMPAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_BMPAlienImage\n");}
 	}
 };
 
@@ -1109,6 +1109,6 @@ class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_GIFAlienImage {
 	~AlienImage_GIFAlienImage() {
-	printf("Call custom destructor for instance of AlienImage_GIFAlienImage\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AlienImage_GIFAlienImage\n");}
 	}
 };

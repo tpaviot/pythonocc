@@ -126,7 +126,7 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 };
 %extend Handle_GProp_UndefinedAxis {
 	~Handle_GProp_UndefinedAxis() {
-	printf("Call custom destructor for instance of Handle_GProp_UndefinedAxis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GProp_UndefinedAxis\n");}
 	}
 };
 
@@ -157,7 +157,7 @@ class GProp_GProps {
 };
 %extend GProp_GProps {
 	~GProp_GProps() {
-	printf("Call custom destructor for instance of GProp_GProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp_GProps\n");}
 	}
 };
 
@@ -190,7 +190,7 @@ class GProp_PGProps : public GProp_GProps {
 };
 %extend GProp_PGProps {
 	~GProp_PGProps() {
-	printf("Call custom destructor for instance of GProp_PGProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp_PGProps\n");}
 	}
 };
 
@@ -221,7 +221,7 @@ class GProp_PrincipalProps {
 };
 %extend GProp_PrincipalProps {
 	~GProp_PrincipalProps() {
-	printf("Call custom destructor for instance of GProp_PrincipalProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp_PrincipalProps\n");}
 	}
 };
 
@@ -249,7 +249,7 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 };
 %extend GProp_UndefinedAxis {
 	~GProp_UndefinedAxis() {
-	printf("Call custom destructor for instance of GProp_UndefinedAxis\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp_UndefinedAxis\n");}
 	}
 };
 
@@ -280,7 +280,7 @@ class GProp_SelGProps : public GProp_GProps {
 };
 %extend GProp_SelGProps {
 	~GProp_SelGProps() {
-	printf("Call custom destructor for instance of GProp_SelGProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp_SelGProps\n");}
 	}
 };
 
@@ -305,7 +305,7 @@ class GProp_CelGProps : public GProp_GProps {
 };
 %extend GProp_CelGProps {
 	~GProp_CelGProps() {
-	printf("Call custom destructor for instance of GProp_CelGProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp_CelGProps\n");}
 	}
 };
 
@@ -334,7 +334,7 @@ class GProp_PEquation {
 };
 %extend GProp_PEquation {
 	~GProp_PEquation() {
-	printf("Call custom destructor for instance of GProp_PEquation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp_PEquation\n");}
 	}
 };
 
@@ -365,7 +365,7 @@ class GProp_VelGProps : public GProp_GProps {
 };
 %extend GProp_VelGProps {
 	~GProp_VelGProps() {
-	printf("Call custom destructor for instance of GProp_VelGProps\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp_VelGProps\n");}
 	}
 };
 
@@ -380,6 +380,6 @@ class GProp {
 };
 %extend GProp {
 	~GProp() {
-	printf("Call custom destructor for instance of GProp\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GProp\n");}
 	}
 };

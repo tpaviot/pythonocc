@@ -104,7 +104,7 @@ class Handle_XmlMPrsStd_AISPresentationDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMPrsStd_AISPresentationDriver {
 	~Handle_XmlMPrsStd_AISPresentationDriver() {
-	printf("Call custom destructor for instance of Handle_XmlMPrsStd_AISPresentationDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMPrsStd_AISPresentationDriver\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_XmlMPrsStd_PositionDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMPrsStd_PositionDriver {
 	~Handle_XmlMPrsStd_PositionDriver() {
-	printf("Call custom destructor for instance of Handle_XmlMPrsStd_PositionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMPrsStd_PositionDriver\n");}
 	}
 };
 
@@ -143,7 +143,7 @@ class XmlMPrsStd {
 };
 %extend XmlMPrsStd {
 	~XmlMPrsStd() {
-	printf("Call custom destructor for instance of XmlMPrsStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMPrsStd\n");}
 	}
 };
 
@@ -169,7 +169,7 @@ class XmlMPrsStd_AISPresentationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMPrsStd_AISPresentationDriver {
 	~XmlMPrsStd_AISPresentationDriver() {
-	printf("Call custom destructor for instance of XmlMPrsStd_AISPresentationDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMPrsStd_AISPresentationDriver\n");}
 	}
 };
 
@@ -195,6 +195,6 @@ class XmlMPrsStd_PositionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMPrsStd_PositionDriver {
 	~XmlMPrsStd_PositionDriver() {
-	printf("Call custom destructor for instance of XmlMPrsStd_PositionDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMPrsStd_PositionDriver\n");}
 	}
 };

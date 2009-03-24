@@ -104,7 +104,7 @@ class Handle_PTopoDS_TShape : public Handle_Standard_Persistent {
 };
 %extend Handle_PTopoDS_TShape {
 	~Handle_PTopoDS_TShape() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShape\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_PTopoDS_TShell : public Handle_PTopoDS_TShape {
 };
 %extend Handle_PTopoDS_TShell {
 	~Handle_PTopoDS_TShell() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShell\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public Handle_PStandar
 };
 %extend Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
 	~Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_PTopoDS_HArray1OfHShape : public Handle_Standard_Persistent {
 };
 %extend Handle_PTopoDS_HArray1OfHShape {
 	~Handle_PTopoDS_HArray1OfHShape() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_HArray1OfHShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_HArray1OfHShape\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_PTopoDS_TShape1 : public Handle_Standard_Persistent {
 };
 %extend Handle_PTopoDS_TShape1 {
 	~Handle_PTopoDS_TShape1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TShape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShape1\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_PTopoDS_TShell1 : public Handle_PTopoDS_TShape1 {
 };
 %extend Handle_PTopoDS_TShell1 {
 	~Handle_PTopoDS_TShell1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TShell1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShell1\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Handle_PTopoDS_TEdge1 : public Handle_PTopoDS_TShape1 {
 };
 %extend Handle_PTopoDS_TEdge1 {
 	~Handle_PTopoDS_TEdge1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TEdge1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TEdge1\n");}
 	}
 };
 
@@ -272,7 +272,7 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public Handle_PStandar
 };
 %extend Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
 	~Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");}
 	}
 };
 
@@ -296,7 +296,7 @@ class Handle_PTopoDS_HShape : public Handle_ObjMgt_ExternShareable {
 };
 %extend Handle_PTopoDS_HShape {
 	~Handle_PTopoDS_HShape() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_HShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_HShape\n");}
 	}
 };
 
@@ -320,7 +320,7 @@ class Handle_PTopoDS_Face : public Handle_PTopoDS_HShape {
 };
 %extend Handle_PTopoDS_Face {
 	~Handle_PTopoDS_Face() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_Face\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Face\n");}
 	}
 };
 
@@ -344,7 +344,7 @@ class Handle_PTopoDS_TWire1 : public Handle_PTopoDS_TShape1 {
 };
 %extend Handle_PTopoDS_TWire1 {
 	~Handle_PTopoDS_TWire1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TWire1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TWire1\n");}
 	}
 };
 
@@ -368,7 +368,7 @@ class Handle_PTopoDS_TWire : public Handle_PTopoDS_TShape {
 };
 %extend Handle_PTopoDS_TWire {
 	~Handle_PTopoDS_TWire() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TWire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TWire\n");}
 	}
 };
 
@@ -392,7 +392,7 @@ class Handle_PTopoDS_TSolid1 : public Handle_PTopoDS_TShape1 {
 };
 %extend Handle_PTopoDS_TSolid1 {
 	~Handle_PTopoDS_TSolid1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TSolid1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TSolid1\n");}
 	}
 };
 
@@ -416,7 +416,7 @@ class Handle_PTopoDS_TEdge : public Handle_PTopoDS_TShape {
 };
 %extend Handle_PTopoDS_TEdge {
 	~Handle_PTopoDS_TEdge() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TEdge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TEdge\n");}
 	}
 };
 
@@ -440,7 +440,7 @@ class Handle_PTopoDS_TCompSolid1 : public Handle_PTopoDS_TShape1 {
 };
 %extend Handle_PTopoDS_TCompSolid1 {
 	~Handle_PTopoDS_TCompSolid1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TCompSolid1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompSolid1\n");}
 	}
 };
 
@@ -464,7 +464,7 @@ class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
 };
 %extend Handle_PTopoDS_TVertex {
 	~Handle_PTopoDS_TVertex() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TVertex\n");}
 	}
 };
 
@@ -488,7 +488,7 @@ class Handle_PTopoDS_TVertex1 : public Handle_PTopoDS_TShape1 {
 };
 %extend Handle_PTopoDS_TVertex1 {
 	~Handle_PTopoDS_TVertex1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TVertex1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TVertex1\n");}
 	}
 };
 
@@ -512,7 +512,7 @@ class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
 };
 %extend Handle_PTopoDS_TCompound {
 	~Handle_PTopoDS_TCompound() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TCompound\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompound\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class Handle_PTopoDS_Vertex : public Handle_PTopoDS_HShape {
 };
 %extend Handle_PTopoDS_Vertex {
 	~Handle_PTopoDS_Vertex() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_Vertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Vertex\n");}
 	}
 };
 
@@ -560,7 +560,7 @@ class Handle_PTopoDS_Wire : public Handle_PTopoDS_HShape {
 };
 %extend Handle_PTopoDS_Wire {
 	~Handle_PTopoDS_Wire() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_Wire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Wire\n");}
 	}
 };
 
@@ -584,7 +584,7 @@ class Handle_PTopoDS_TSolid : public Handle_PTopoDS_TShape {
 };
 %extend Handle_PTopoDS_TSolid {
 	~Handle_PTopoDS_TSolid() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TSolid\n");}
 	}
 };
 
@@ -608,7 +608,7 @@ class Handle_PTopoDS_TCompSolid : public Handle_PTopoDS_TShape {
 };
 %extend Handle_PTopoDS_TCompSolid {
 	~Handle_PTopoDS_TCompSolid() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TCompSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompSolid\n");}
 	}
 };
 
@@ -632,7 +632,7 @@ class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
 };
 %extend Handle_PTopoDS_TCompound1 {
 	~Handle_PTopoDS_TCompound1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TCompound1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompound1\n");}
 	}
 };
 
@@ -656,7 +656,7 @@ class Handle_PTopoDS_Compound : public Handle_PTopoDS_HShape {
 };
 %extend Handle_PTopoDS_Compound {
 	~Handle_PTopoDS_Compound() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_Compound\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Compound\n");}
 	}
 };
 
@@ -680,7 +680,7 @@ class Handle_PTopoDS_Solid : public Handle_PTopoDS_HShape {
 };
 %extend Handle_PTopoDS_Solid {
 	~Handle_PTopoDS_Solid() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_Solid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Solid\n");}
 	}
 };
 
@@ -704,7 +704,7 @@ class Handle_PTopoDS_Edge : public Handle_PTopoDS_HShape {
 };
 %extend Handle_PTopoDS_Edge {
 	~Handle_PTopoDS_Edge() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_Edge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Edge\n");}
 	}
 };
 
@@ -728,7 +728,7 @@ class Handle_PTopoDS_HArray1OfShape1 : public Handle_Standard_Persistent {
 };
 %extend Handle_PTopoDS_HArray1OfShape1 {
 	~Handle_PTopoDS_HArray1OfShape1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_HArray1OfShape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_HArray1OfShape1\n");}
 	}
 };
 
@@ -752,7 +752,7 @@ class Handle_PTopoDS_CompSolid : public Handle_PTopoDS_HShape {
 };
 %extend Handle_PTopoDS_CompSolid {
 	~Handle_PTopoDS_CompSolid() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_CompSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_CompSolid\n");}
 	}
 };
 
@@ -776,7 +776,7 @@ class Handle_PTopoDS_TFace1 : public Handle_PTopoDS_TShape1 {
 };
 %extend Handle_PTopoDS_TFace1 {
 	~Handle_PTopoDS_TFace1() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TFace1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TFace1\n");}
 	}
 };
 
@@ -800,7 +800,7 @@ class Handle_PTopoDS_Shell : public Handle_PTopoDS_HShape {
 };
 %extend Handle_PTopoDS_Shell {
 	~Handle_PTopoDS_Shell() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_Shell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Shell\n");}
 	}
 };
 
@@ -824,7 +824,7 @@ class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
 };
 %extend Handle_PTopoDS_TFace {
 	~Handle_PTopoDS_TFace() {
-	printf("Call custom destructor for instance of Handle_PTopoDS_TFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TFace\n");}
 	}
 };
 
@@ -848,7 +848,7 @@ class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TCompound1 {
 	~PTopoDS_TCompound1() {
-	printf("Call custom destructor for instance of PTopoDS_TCompound1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompound1\n");}
 	}
 };
 
@@ -880,7 +880,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public PStandard_ArrayNode {
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
 	~PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape() {
-	printf("Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape\n");}
 	}
 };
 
@@ -904,7 +904,7 @@ class PTopoDS_TShell : public PTopoDS_TShape {
 };
 %extend PTopoDS_TShell {
 	~PTopoDS_TShell() {
-	printf("Call custom destructor for instance of PTopoDS_TShell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TShell\n");}
 	}
 };
 
@@ -928,7 +928,7 @@ class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TEdge1 {
 	~PTopoDS_TEdge1() {
-	printf("Call custom destructor for instance of PTopoDS_TEdge1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TEdge1\n");}
 	}
 };
 
@@ -958,7 +958,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
 	~PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1() {
-	printf("Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");}
 	}
 };
 
@@ -1002,7 +1002,7 @@ class PTopoDS_HShape : public ObjMgt_ExternShareable {
 };
 %extend PTopoDS_HShape {
 	~PTopoDS_HShape() {
-	printf("Call custom destructor for instance of PTopoDS_HShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_HShape\n");}
 	}
 };
 
@@ -1022,7 +1022,7 @@ class PTopoDS_Shell : public PTopoDS_HShape {
 };
 %extend PTopoDS_Shell {
 	~PTopoDS_Shell() {
-	printf("Call custom destructor for instance of PTopoDS_Shell\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_Shell\n");}
 	}
 };
 
@@ -1044,7 +1044,7 @@ class PTopoDS_Wire : public PTopoDS_HShape {
 };
 %extend PTopoDS_Wire {
 	~PTopoDS_Wire() {
-	printf("Call custom destructor for instance of PTopoDS_Wire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_Wire\n");}
 	}
 };
 
@@ -1068,7 +1068,7 @@ class PTopoDS_TEdge : public PTopoDS_TShape {
 };
 %extend PTopoDS_TEdge {
 	~PTopoDS_TEdge() {
-	printf("Call custom destructor for instance of PTopoDS_TEdge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TEdge\n");}
 	}
 };
 
@@ -1118,7 +1118,7 @@ class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 };
 %extend PTopoDS_HArray1OfShape1 {
 	~PTopoDS_HArray1OfShape1() {
-	printf("Call custom destructor for instance of PTopoDS_HArray1OfShape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_HArray1OfShape1\n");}
 	}
 };
 
@@ -1142,7 +1142,7 @@ class PTopoDS_TShell1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TShell1 {
 	~PTopoDS_TShell1() {
-	printf("Call custom destructor for instance of PTopoDS_TShell1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TShell1\n");}
 	}
 };
 
@@ -1164,7 +1164,7 @@ class PTopoDS_Compound : public PTopoDS_HShape {
 };
 %extend PTopoDS_Compound {
 	~PTopoDS_Compound() {
-	printf("Call custom destructor for instance of PTopoDS_Compound\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_Compound\n");}
 	}
 };
 
@@ -1186,7 +1186,7 @@ class PTopoDS_Face : public PTopoDS_HShape {
 };
 %extend PTopoDS_Face {
 	~PTopoDS_Face() {
-	printf("Call custom destructor for instance of PTopoDS_Face\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_Face\n");}
 	}
 };
 
@@ -1208,7 +1208,7 @@ class PTopoDS_Edge : public PTopoDS_HShape {
 };
 %extend PTopoDS_Edge {
 	~PTopoDS_Edge() {
-	printf("Call custom destructor for instance of PTopoDS_Edge\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_Edge\n");}
 	}
 };
 
@@ -1227,7 +1227,7 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
 };
 %extend PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
 	~PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape() {
-	printf("Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape\n");}
 	}
 };
 
@@ -1251,7 +1251,7 @@ class PTopoDS_TSolid : public PTopoDS_TShape {
 };
 %extend PTopoDS_TSolid {
 	~PTopoDS_TSolid() {
-	printf("Call custom destructor for instance of PTopoDS_TSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TSolid\n");}
 	}
 };
 
@@ -1275,7 +1275,7 @@ class PTopoDS_TCompound : public PTopoDS_TShape {
 };
 %extend PTopoDS_TCompound {
 	~PTopoDS_TCompound() {
-	printf("Call custom destructor for instance of PTopoDS_TCompound\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompound\n");}
 	}
 };
 
@@ -1299,7 +1299,7 @@ class PTopoDS_TSolid1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TSolid1 {
 	~PTopoDS_TSolid1() {
-	printf("Call custom destructor for instance of PTopoDS_TSolid1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TSolid1\n");}
 	}
 };
 
@@ -1323,7 +1323,7 @@ class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TVertex1 {
 	~PTopoDS_TVertex1() {
-	printf("Call custom destructor for instance of PTopoDS_TVertex1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TVertex1\n");}
 	}
 };
 
@@ -1345,7 +1345,7 @@ class PTopoDS_Solid : public PTopoDS_HShape {
 };
 %extend PTopoDS_Solid {
 	~PTopoDS_Solid() {
-	printf("Call custom destructor for instance of PTopoDS_Solid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_Solid\n");}
 	}
 };
 
@@ -1369,7 +1369,7 @@ class PTopoDS_TWire : public PTopoDS_TShape {
 };
 %extend PTopoDS_TWire {
 	~PTopoDS_TWire() {
-	printf("Call custom destructor for instance of PTopoDS_TWire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TWire\n");}
 	}
 };
 
@@ -1398,7 +1398,7 @@ class PTopoDS_FieldOfHArray1OfHShape : public DBC_BaseArray {
 };
 %extend PTopoDS_FieldOfHArray1OfHShape {
 	~PTopoDS_FieldOfHArray1OfHShape() {
-	printf("Call custom destructor for instance of PTopoDS_FieldOfHArray1OfHShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_FieldOfHArray1OfHShape\n");}
 	}
 };
 
@@ -1420,7 +1420,7 @@ class PTopoDS_Vertex : public PTopoDS_HShape {
 };
 %extend PTopoDS_Vertex {
 	~PTopoDS_Vertex() {
-	printf("Call custom destructor for instance of PTopoDS_Vertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_Vertex\n");}
 	}
 };
 
@@ -1439,7 +1439,7 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 };
 %extend PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 	~PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1() {
-	printf("Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1\n");}
 	}
 };
 
@@ -1489,7 +1489,7 @@ class PTopoDS_HArray1OfHShape : public Standard_Persistent {
 };
 %extend PTopoDS_HArray1OfHShape {
 	~PTopoDS_HArray1OfHShape() {
-	printf("Call custom destructor for instance of PTopoDS_HArray1OfHShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_HArray1OfHShape\n");}
 	}
 };
 
@@ -1513,7 +1513,7 @@ class PTopoDS_TWire1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TWire1 {
 	~PTopoDS_TWire1() {
-	printf("Call custom destructor for instance of PTopoDS_TWire1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TWire1\n");}
 	}
 };
 
@@ -1542,7 +1542,7 @@ class PTopoDS_FieldOfHArray1OfShape1 : public DBC_BaseArray {
 };
 %extend PTopoDS_FieldOfHArray1OfShape1 {
 	~PTopoDS_FieldOfHArray1OfShape1() {
-	printf("Call custom destructor for instance of PTopoDS_FieldOfHArray1OfShape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_FieldOfHArray1OfShape1\n");}
 	}
 };
 
@@ -1564,7 +1564,7 @@ class PTopoDS_CompSolid : public PTopoDS_HShape {
 };
 %extend PTopoDS_CompSolid {
 	~PTopoDS_CompSolid() {
-	printf("Call custom destructor for instance of PTopoDS_CompSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_CompSolid\n");}
 	}
 };
 
@@ -1588,7 +1588,7 @@ class PTopoDS_TVertex : public PTopoDS_TShape {
 };
 %extend PTopoDS_TVertex {
 	~PTopoDS_TVertex() {
-	printf("Call custom destructor for instance of PTopoDS_TVertex\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TVertex\n");}
 	}
 };
 
@@ -1612,7 +1612,7 @@ class PTopoDS_TFace : public PTopoDS_TShape {
 };
 %extend PTopoDS_TFace {
 	~PTopoDS_TFace() {
-	printf("Call custom destructor for instance of PTopoDS_TFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TFace\n");}
 	}
 };
 
@@ -1636,7 +1636,7 @@ class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TCompSolid1 {
 	~PTopoDS_TCompSolid1() {
-	printf("Call custom destructor for instance of PTopoDS_TCompSolid1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompSolid1\n");}
 	}
 };
 
@@ -1673,7 +1673,7 @@ class PTopoDS_Shape1 {
 };
 %extend PTopoDS_Shape1 {
 	~PTopoDS_Shape1() {
-	printf("Call custom destructor for instance of PTopoDS_Shape1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_Shape1\n");}
 	}
 };
 
@@ -1697,7 +1697,7 @@ class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TFace1 {
 	~PTopoDS_TFace1() {
-	printf("Call custom destructor for instance of PTopoDS_TFace1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TFace1\n");}
 	}
 };
 
@@ -1721,6 +1721,6 @@ class PTopoDS_TCompSolid : public PTopoDS_TShape {
 };
 %extend PTopoDS_TCompSolid {
 	~PTopoDS_TCompSolid() {
-	printf("Call custom destructor for instance of PTopoDS_TCompSolid\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompSolid\n");}
 	}
 };

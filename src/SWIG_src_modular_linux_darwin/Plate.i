@@ -104,7 +104,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint : public Handle_TC
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint {
 	~Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint() {
-	printf("Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public Handl
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
 	~Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint() {
-	printf("Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_T
 };
 %extend Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
 	~Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint() {
-	printf("Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 };
 %extend Handle_Plate_HArray1OfPinpointConstraint {
 	~Handle_Plate_HArray1OfPinpointConstraint() {
-	printf("Call custom destructor for instance of Handle_Plate_HArray1OfPinpointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Plate_HArray1OfPinpointConstraint\n");}
 	}
 };
 
@@ -233,7 +233,7 @@ class Plate_Plate {
 };
 %extend Plate_Plate {
 	~Plate_Plate() {
-	printf("Call custom destructor for instance of Plate_Plate\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_Plate\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Plate_GlobalTranslationConstraint {
 };
 %extend Plate_GlobalTranslationConstraint {
 	~Plate_GlobalTranslationConstraint() {
-	printf("Call custom destructor for instance of Plate_GlobalTranslationConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_GlobalTranslationConstraint\n");}
 	}
 };
 
@@ -263,7 +263,7 @@ class Plate_PlaneConstraint {
 };
 %extend Plate_PlaneConstraint {
 	~Plate_PlaneConstraint() {
-	printf("Call custom destructor for instance of Plate_PlaneConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_PlaneConstraint\n");}
 	}
 };
 
@@ -278,7 +278,7 @@ class Plate_SampledCurveConstraint {
 };
 %extend Plate_SampledCurveConstraint {
 	~Plate_SampledCurveConstraint() {
-	printf("Call custom destructor for instance of Plate_SampledCurveConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_SampledCurveConstraint\n");}
 	}
 };
 
@@ -309,7 +309,7 @@ class Plate_GtoCConstraint {
 };
 %extend Plate_GtoCConstraint {
 	~Plate_GtoCConstraint() {
-	printf("Call custom destructor for instance of Plate_GtoCConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_GtoCConstraint\n");}
 	}
 };
 
@@ -324,7 +324,7 @@ class Plate_D3 {
 };
 %extend Plate_D3 {
 	~Plate_D3() {
-	printf("Call custom destructor for instance of Plate_D3\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_D3\n");}
 	}
 };
 
@@ -377,7 +377,7 @@ class Plate_SequenceOfLinearXYZConstraint : public TCollection_BaseSequence {
 };
 %extend Plate_SequenceOfLinearXYZConstraint {
 	~Plate_SequenceOfLinearXYZConstraint() {
-	printf("Call custom destructor for instance of Plate_SequenceOfLinearXYZConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_SequenceOfLinearXYZConstraint\n");}
 	}
 };
 
@@ -396,7 +396,7 @@ class Plate_D1 {
 };
 %extend Plate_D1 {
 	~Plate_D1() {
-	printf("Call custom destructor for instance of Plate_D1\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_D1\n");}
 	}
 };
 
@@ -435,7 +435,7 @@ class Plate_Array1OfPinpointConstraint {
 };
 %extend Plate_Array1OfPinpointConstraint {
 	~Plate_Array1OfPinpointConstraint() {
-	printf("Call custom destructor for instance of Plate_Array1OfPinpointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_Array1OfPinpointConstraint\n");}
 	}
 };
 
@@ -450,7 +450,7 @@ class Plate_D2 {
 };
 %extend Plate_D2 {
 	~Plate_D2() {
-	printf("Call custom destructor for instance of Plate_D2\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_D2\n");}
 	}
 };
 
@@ -472,7 +472,7 @@ class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_
 };
 %extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
 	~Plate_SequenceNodeOfSequenceOfLinearScalarConstraint() {
-	printf("Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");}
 	}
 };
 
@@ -501,7 +501,7 @@ class Plate_LinearScalarConstraint {
 };
 %extend Plate_LinearScalarConstraint {
 	~Plate_LinearScalarConstraint() {
-	printf("Call custom destructor for instance of Plate_LinearScalarConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_LinearScalarConstraint\n");}
 	}
 };
 
@@ -541,7 +541,7 @@ class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
 };
 %extend Plate_HArray1OfPinpointConstraint {
 	~Plate_HArray1OfPinpointConstraint() {
-	printf("Call custom destructor for instance of Plate_HArray1OfPinpointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_HArray1OfPinpointConstraint\n");}
 	}
 };
 
@@ -564,7 +564,7 @@ class Plate_PinpointConstraint {
 };
 %extend Plate_PinpointConstraint {
 	~Plate_PinpointConstraint() {
-	printf("Call custom destructor for instance of Plate_PinpointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_PinpointConstraint\n");}
 	}
 };
 
@@ -586,7 +586,7 @@ class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_Seq
 };
 %extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
 	~Plate_SequenceNodeOfSequenceOfLinearXYZConstraint() {
-	printf("Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");}
 	}
 };
 
@@ -639,7 +639,7 @@ class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
 };
 %extend Plate_SequenceOfPinpointConstraint {
 	~Plate_SequenceOfPinpointConstraint() {
-	printf("Call custom destructor for instance of Plate_SequenceOfPinpointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_SequenceOfPinpointConstraint\n");}
 	}
 };
 
@@ -664,7 +664,7 @@ class Plate_FreeGtoCConstraint {
 };
 %extend Plate_FreeGtoCConstraint {
 	~Plate_FreeGtoCConstraint() {
-	printf("Call custom destructor for instance of Plate_FreeGtoCConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_FreeGtoCConstraint\n");}
 	}
 };
 
@@ -679,7 +679,7 @@ class Plate_LineConstraint {
 };
 %extend Plate_LineConstraint {
 	~Plate_LineConstraint() {
-	printf("Call custom destructor for instance of Plate_LineConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_LineConstraint\n");}
 	}
 };
 
@@ -701,7 +701,7 @@ class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqN
 };
 %extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
 	~Plate_SequenceNodeOfSequenceOfPinpointConstraint() {
-	printf("Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");}
 	}
 };
 
@@ -754,7 +754,7 @@ class Plate_SequenceOfLinearScalarConstraint : public TCollection_BaseSequence {
 };
 %extend Plate_SequenceOfLinearScalarConstraint {
 	~Plate_SequenceOfLinearScalarConstraint() {
-	printf("Call custom destructor for instance of Plate_SequenceOfLinearScalarConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_SequenceOfLinearScalarConstraint\n");}
 	}
 };
 
@@ -781,6 +781,6 @@ class Plate_LinearXYZConstraint {
 };
 %extend Plate_LinearXYZConstraint {
 	~Plate_LinearXYZConstraint() {
-	printf("Call custom destructor for instance of Plate_LinearXYZConstraint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plate_LinearXYZConstraint\n");}
 	}
 };

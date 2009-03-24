@@ -104,7 +104,7 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 };
 %extend Handle_IGESControl_AlgoContainer {
 	~Handle_IGESControl_AlgoContainer() {
-	printf("Call custom destructor for instance of Handle_IGESControl_AlgoContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_AlgoContainer\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 };
 %extend Handle_IGESControl_ActorWrite {
 	~Handle_IGESControl_ActorWrite() {
-	printf("Call custom destructor for instance of Handle_IGESControl_ActorWrite\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_ActorWrite\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 };
 %extend Handle_IGESControl_IGESBoundary {
 	~Handle_IGESControl_IGESBoundary() {
-	printf("Call custom destructor for instance of Handle_IGESControl_IGESBoundary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_IGESBoundary\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 };
 %extend Handle_IGESControl_Controller {
 	~Handle_IGESControl_Controller() {
-	printf("Call custom destructor for instance of Handle_IGESControl_Controller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_Controller\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 };
 %extend Handle_IGESControl_ToolContainer {
 	~Handle_IGESControl_ToolContainer() {
-	printf("Call custom destructor for instance of Handle_IGESControl_ToolContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_ToolContainer\n");}
 	}
 };
 
@@ -220,7 +220,7 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 };
 %extend IGESControl_AlgoContainer {
 	~IGESControl_AlgoContainer() {
-	printf("Call custom destructor for instance of IGESControl_AlgoContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESControl_AlgoContainer\n");}
 	}
 };
 
@@ -245,7 +245,7 @@ class IGESControl_Reader : public XSControl_Reader {
 };
 %extend IGESControl_Reader {
 	~IGESControl_Reader() {
-	printf("Call custom destructor for instance of IGESControl_Reader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESControl_Reader\n");}
 	}
 };
 
@@ -269,7 +269,7 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 };
 %extend IGESControl_IGESBoundary {
 	~IGESControl_IGESBoundary() {
-	printf("Call custom destructor for instance of IGESControl_IGESBoundary\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESControl_IGESBoundary\n");}
 	}
 };
 
@@ -293,7 +293,7 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 };
 %extend IGESControl_ActorWrite {
 	~IGESControl_ActorWrite() {
-	printf("Call custom destructor for instance of IGESControl_ActorWrite\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESControl_ActorWrite\n");}
 	}
 };
 
@@ -315,7 +315,7 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 };
 %extend IGESControl_ToolContainer {
 	~IGESControl_ToolContainer() {
-	printf("Call custom destructor for instance of IGESControl_ToolContainer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESControl_ToolContainer\n");}
 	}
 };
 
@@ -352,7 +352,7 @@ class IGESControl_Writer {
 };
 %extend IGESControl_Writer {
 	~IGESControl_Writer() {
-	printf("Call custom destructor for instance of IGESControl_Writer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESControl_Writer\n");}
 	}
 };
 
@@ -382,6 +382,6 @@ class IGESControl_Controller : public XSControl_Controller {
 };
 %extend IGESControl_Controller {
 	~IGESControl_Controller() {
-	printf("Call custom destructor for instance of IGESControl_Controller\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESControl_Controller\n");}
 	}
 };

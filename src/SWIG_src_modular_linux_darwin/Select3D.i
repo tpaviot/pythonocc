@@ -110,7 +110,7 @@ class Handle_Select3D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 };
 %extend Handle_Select3D_SensitiveEntity {
 	~Handle_Select3D_SensitiveEntity() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveEntity\n");}
 	}
 };
 
@@ -134,7 +134,7 @@ class Handle_Select3D_SensitivePoly : public Handle_Select3D_SensitiveEntity {
 };
 %extend Handle_Select3D_SensitivePoly {
 	~Handle_Select3D_SensitivePoly() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitivePoly\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitivePoly\n");}
 	}
 };
 
@@ -158,7 +158,7 @@ class Handle_Select3D_SensitiveCurve : public Handle_Select3D_SensitivePoly {
 };
 %extend Handle_Select3D_SensitiveCurve {
 	~Handle_Select3D_SensitiveCurve() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveCurve\n");}
 	}
 };
 
@@ -182,7 +182,7 @@ class Handle_Select3D_SensitiveCircle : public Handle_Select3D_SensitivePoly {
 };
 %extend Handle_Select3D_SensitiveCircle {
 	~Handle_Select3D_SensitiveCircle() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveCircle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveCircle\n");}
 	}
 };
 
@@ -206,7 +206,7 @@ class Handle_Select3D_SensitiveTriangle : public Handle_Select3D_SensitivePoly {
 };
 %extend Handle_Select3D_SensitiveTriangle {
 	~Handle_Select3D_SensitiveTriangle() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveTriangle\n");}
 	}
 };
 
@@ -230,7 +230,7 @@ class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
 };
 %extend Handle_Select3D_SensitivePoint {
 	~Handle_Select3D_SensitivePoint() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitivePoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitivePoint\n");}
 	}
 };
 
@@ -254,7 +254,7 @@ class Handle_Select3D_SequenceNodeOfSensitiveEntitySequence : public Handle_TCol
 };
 %extend Handle_Select3D_SequenceNodeOfSensitiveEntitySequence {
 	~Handle_Select3D_SequenceNodeOfSensitiveEntitySequence() {
-	printf("Call custom destructor for instance of Handle_Select3D_SequenceNodeOfSensitiveEntitySequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SequenceNodeOfSensitiveEntitySequence\n");}
 	}
 };
 
@@ -278,7 +278,7 @@ class Handle_Select3D_SensitiveFace : public Handle_Select3D_SensitivePoly {
 };
 %extend Handle_Select3D_SensitiveFace {
 	~Handle_Select3D_SensitiveFace() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveFace\n");}
 	}
 };
 
@@ -302,7 +302,7 @@ class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity 
 };
 %extend Handle_Select3D_SensitiveSegment {
 	~Handle_Select3D_SensitiveSegment() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveSegment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveSegment\n");}
 	}
 };
 
@@ -326,7 +326,7 @@ class Handle_Select3D_ListNodeOfListOfSensitive : public Handle_TCollection_MapN
 };
 %extend Handle_Select3D_ListNodeOfListOfSensitive {
 	~Handle_Select3D_ListNodeOfListOfSensitive() {
-	printf("Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitive\n");}
 	}
 };
 
@@ -350,7 +350,7 @@ class Handle_Select3D_SensitiveWire : public Handle_Select3D_SensitiveEntity {
 };
 %extend Handle_Select3D_SensitiveWire {
 	~Handle_Select3D_SensitiveWire() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveWire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveWire\n");}
 	}
 };
 
@@ -374,7 +374,7 @@ class Handle_Select3D_SensitiveBox : public Handle_Select3D_SensitiveEntity {
 };
 %extend Handle_Select3D_SensitiveBox {
 	~Handle_Select3D_SensitiveBox() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveBox\n");}
 	}
 };
 
@@ -398,7 +398,7 @@ class Handle_Select3D_SensitiveTriangulation : public Handle_Select3D_SensitiveE
 };
 %extend Handle_Select3D_SensitiveTriangulation {
 	~Handle_Select3D_SensitiveTriangulation() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveTriangulation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveTriangulation\n");}
 	}
 };
 
@@ -422,7 +422,7 @@ class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
 };
 %extend Handle_Select3D_SensitiveGroup {
 	~Handle_Select3D_SensitiveGroup() {
-	printf("Call custom destructor for instance of Handle_Select3D_SensitiveGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveGroup\n");}
 	}
 };
 
@@ -446,7 +446,7 @@ class Handle_Select3D_ListNodeOfListOfSensitiveTriangle : public Handle_TCollect
 };
 %extend Handle_Select3D_ListNodeOfListOfSensitiveTriangle {
 	~Handle_Select3D_ListNodeOfListOfSensitiveTriangle() {
-	printf("Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitiveTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitiveTriangle\n");}
 	}
 };
 
@@ -459,7 +459,7 @@ class Select3D_Pnt {
 };
 %extend Select3D_Pnt {
 	~Select3D_Pnt() {
-	printf("Call custom destructor for instance of Select3D_Pnt\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_Pnt\n");}
 	}
 };
 
@@ -524,7 +524,7 @@ class Select3D_Projector {
 };
 %extend Select3D_Projector {
 	~Select3D_Projector() {
-	printf("Call custom destructor for instance of Select3D_Projector\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_Projector\n");}
 	}
 };
 
@@ -547,7 +547,7 @@ class Select3D_ListIteratorOfListOfSensitive {
 };
 %extend Select3D_ListIteratorOfListOfSensitive {
 	~Select3D_ListIteratorOfListOfSensitive() {
-	printf("Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitive\n");}
 	}
 };
 
@@ -560,7 +560,7 @@ class Select3D_Pnt2d {
 };
 %extend Select3D_Pnt2d {
 	~Select3D_Pnt2d() {
-	printf("Call custom destructor for instance of Select3D_Pnt2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_Pnt2d\n");}
 	}
 };
 
@@ -583,7 +583,7 @@ class Select3D_ListIteratorOfListOfSensitiveTriangle {
 };
 %extend Select3D_ListIteratorOfListOfSensitiveTriangle {
 	~Select3D_ListIteratorOfListOfSensitiveTriangle() {
-	printf("Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitiveTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitiveTriangle\n");}
 	}
 };
 
@@ -605,7 +605,7 @@ class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
 };
 %extend Select3D_ListNodeOfListOfSensitive {
 	~Select3D_ListNodeOfListOfSensitive() {
-	printf("Call custom destructor for instance of Select3D_ListNodeOfListOfSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_ListNodeOfListOfSensitive\n");}
 	}
 };
 
@@ -627,7 +627,7 @@ class Select3D_ListNodeOfListOfSensitiveTriangle : public TCollection_MapNode {
 };
 %extend Select3D_ListNodeOfListOfSensitiveTriangle {
 	~Select3D_ListNodeOfListOfSensitiveTriangle() {
-	printf("Call custom destructor for instance of Select3D_ListNodeOfListOfSensitiveTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_ListNodeOfListOfSensitiveTriangle\n");}
 	}
 };
 
@@ -683,7 +683,7 @@ class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend Select3D_SensitiveEntity {
 	~Select3D_SensitiveEntity() {
-	printf("Call custom destructor for instance of Select3D_SensitiveEntity\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveEntity\n");}
 	}
 };
 
@@ -713,7 +713,7 @@ class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveSegment {
 	~Select3D_SensitiveSegment() {
-	printf("Call custom destructor for instance of Select3D_SensitiveSegment\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveSegment\n");}
 	}
 };
 
@@ -735,7 +735,7 @@ class Select3D_SequenceNodeOfSensitiveEntitySequence : public TCollection_SeqNod
 };
 %extend Select3D_SequenceNodeOfSensitiveEntitySequence {
 	~Select3D_SequenceNodeOfSensitiveEntitySequence() {
-	printf("Call custom destructor for instance of Select3D_SequenceNodeOfSensitiveEntitySequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SequenceNodeOfSensitiveEntitySequence\n");}
 	}
 };
 
@@ -789,7 +789,7 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveTriangulation {
 	~Select3D_SensitiveTriangulation() {
-	printf("Call custom destructor for instance of Select3D_SensitiveTriangulation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveTriangulation\n");}
 	}
 };
 
@@ -817,7 +817,7 @@ class Select3D_SensitivePoly : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitivePoly {
 	~Select3D_SensitivePoly() {
-	printf("Call custom destructor for instance of Select3D_SensitivePoly\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitivePoly\n");}
 	}
 };
 
@@ -866,7 +866,7 @@ class Select3D_ListOfSensitiveTriangle {
 };
 %extend Select3D_ListOfSensitiveTriangle {
 	~Select3D_ListOfSensitiveTriangle() {
-	printf("Call custom destructor for instance of Select3D_ListOfSensitiveTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_ListOfSensitiveTriangle\n");}
 	}
 };
 
@@ -924,7 +924,7 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveGroup {
 	~Select3D_SensitiveGroup() {
-	printf("Call custom destructor for instance of Select3D_SensitiveGroup\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveGroup\n");}
 	}
 };
 
@@ -945,7 +945,7 @@ class Select3D_Box2d {
 };
 %extend Select3D_Box2d {
 	~Select3D_Box2d() {
-	printf("Call custom destructor for instance of Select3D_Box2d\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_Box2d\n");}
 	}
 };
 
@@ -979,7 +979,7 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveCurve {
 	~Select3D_SensitiveCurve() {
-	printf("Call custom destructor for instance of Select3D_SensitiveCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveCurve\n");}
 	}
 };
 
@@ -1019,7 +1019,7 @@ class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveBox {
 	~Select3D_SensitiveBox() {
-	printf("Call custom destructor for instance of Select3D_SensitiveBox\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveBox\n");}
 	}
 };
 
@@ -1051,7 +1051,7 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveFace {
 	~Select3D_SensitiveFace() {
-	printf("Call custom destructor for instance of Select3D_SensitiveFace\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveFace\n");}
 	}
 };
 
@@ -1100,7 +1100,7 @@ class Select3D_ListOfSensitive {
 };
 %extend Select3D_ListOfSensitive {
 	~Select3D_ListOfSensitive() {
-	printf("Call custom destructor for instance of Select3D_ListOfSensitive\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_ListOfSensitive\n");}
 	}
 };
 
@@ -1138,7 +1138,7 @@ class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitivePoint {
 	~Select3D_SensitivePoint() {
-	printf("Call custom destructor for instance of Select3D_SensitivePoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitivePoint\n");}
 	}
 };
 
@@ -1178,7 +1178,7 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveTriangle {
 	~Select3D_SensitiveTriangle() {
-	printf("Call custom destructor for instance of Select3D_SensitiveTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveTriangle\n");}
 	}
 };
 
@@ -1218,7 +1218,7 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveCircle {
 	~Select3D_SensitiveCircle() {
-	printf("Call custom destructor for instance of Select3D_SensitiveCircle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveCircle\n");}
 	}
 };
 
@@ -1271,7 +1271,7 @@ class Select3D_SensitiveEntitySequence : public TCollection_BaseSequence {
 };
 %extend Select3D_SensitiveEntitySequence {
 	~Select3D_SensitiveEntitySequence() {
-	printf("Call custom destructor for instance of Select3D_SensitiveEntitySequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveEntitySequence\n");}
 	}
 };
 
@@ -1317,6 +1317,6 @@ class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveWire {
 	~Select3D_SensitiveWire() {
-	printf("Call custom destructor for instance of Select3D_SensitiveWire\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveWire\n");}
 	}
 };

@@ -111,7 +111,7 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_AppParCurves_HArray1OfMultiCurve {
 	~Handle_AppParCurves_HArray1OfMultiCurve() {
-	printf("Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiCurve\n");}
 	}
 };
 
@@ -135,7 +135,7 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 };
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
 	~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve() {
-	printf("Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");}
 	}
 };
 
@@ -159,7 +159,7 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 };
 %extend Handle_AppParCurves_SmoothCriterion {
 	~Handle_AppParCurves_SmoothCriterion() {
-	printf("Call custom destructor for instance of Handle_AppParCurves_SmoothCriterion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_SmoothCriterion\n");}
 	}
 };
 
@@ -183,7 +183,7 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_AppParCurves_HArray1OfMultiBSpCurve {
 	~Handle_AppParCurves_HArray1OfMultiBSpCurve() {
-	printf("Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiBSpCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiBSpCurve\n");}
 	}
 };
 
@@ -207,7 +207,7 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 };
 %extend Handle_AppParCurves_HArray1OfMultiPoint {
 	~Handle_AppParCurves_HArray1OfMultiPoint() {
-	printf("Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiPoint\n");}
 	}
 };
 
@@ -231,7 +231,7 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 };
 %extend Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
 	~Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve() {
-	printf("Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");}
 	}
 };
 
@@ -255,7 +255,7 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 };
 %extend Handle_AppParCurves_HArray1OfConstraintCouple {
 	~Handle_AppParCurves_HArray1OfConstraintCouple() {
-	printf("Call custom destructor for instance of Handle_AppParCurves_HArray1OfConstraintCouple\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfConstraintCouple\n");}
 	}
 };
 
@@ -308,7 +308,7 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 };
 %extend AppParCurves_SequenceOfMultiCurve {
 	~AppParCurves_SequenceOfMultiCurve() {
-	printf("Call custom destructor for instance of AppParCurves_SequenceOfMultiCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceOfMultiCurve\n");}
 	}
 };
 
@@ -367,7 +367,7 @@ class AppParCurves_MultiCurve {
 };
 %extend AppParCurves_MultiCurve {
 	~AppParCurves_MultiCurve() {
-	printf("Call custom destructor for instance of AppParCurves_MultiCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiCurve\n");}
 	}
 };
 
@@ -394,7 +394,7 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 };
 %extend AppParCurves_MultiBSpCurve {
 	~AppParCurves_MultiBSpCurve() {
-	printf("Call custom destructor for instance of AppParCurves_MultiBSpCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiBSpCurve\n");}
 	}
 };
 
@@ -433,7 +433,7 @@ class AppParCurves_Array1OfMultiCurve {
 };
 %extend AppParCurves_Array1OfMultiCurve {
 	~AppParCurves_Array1OfMultiCurve() {
-	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiCurve\n");}
 	}
 };
 
@@ -455,7 +455,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
 	~AppParCurves_SequenceNodeOfSequenceOfMultiCurve() {
-	printf("Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");}
 	}
 };
 
@@ -498,7 +498,7 @@ class AppParCurves_MultiPoint {
 };
 %extend AppParCurves_MultiPoint {
 	~AppParCurves_MultiPoint() {
-	printf("Call custom destructor for instance of AppParCurves_MultiPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiPoint\n");}
 	}
 };
 
@@ -521,7 +521,7 @@ class AppParCurves_ConstraintCouple {
 };
 %extend AppParCurves_ConstraintCouple {
 	~AppParCurves_ConstraintCouple() {
-	printf("Call custom destructor for instance of AppParCurves_ConstraintCouple\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_ConstraintCouple\n");}
 	}
 };
 
@@ -561,7 +561,7 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiCurve {
 	~AppParCurves_HArray1OfMultiCurve() {
-	printf("Call custom destructor for instance of AppParCurves_HArray1OfMultiCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiCurve\n");}
 	}
 };
 
@@ -611,7 +611,7 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 };
 %extend AppParCurves_SmoothCriterion {
 	~AppParCurves_SmoothCriterion() {
-	printf("Call custom destructor for instance of AppParCurves_SmoothCriterion\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_SmoothCriterion\n");}
 	}
 };
 
@@ -650,7 +650,7 @@ class AppParCurves_Array1OfConstraintCouple {
 };
 %extend AppParCurves_Array1OfConstraintCouple {
 	~AppParCurves_Array1OfConstraintCouple() {
-	printf("Call custom destructor for instance of AppParCurves_Array1OfConstraintCouple\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfConstraintCouple\n");}
 	}
 };
 
@@ -703,7 +703,7 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 };
 %extend AppParCurves_SequenceOfMultiBSpCurve {
 	~AppParCurves_SequenceOfMultiBSpCurve() {
-	printf("Call custom destructor for instance of AppParCurves_SequenceOfMultiBSpCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceOfMultiBSpCurve\n");}
 	}
 };
 
@@ -725,7 +725,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_Se
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
 	~AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve() {
-	printf("Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");}
 	}
 };
 
@@ -764,7 +764,7 @@ class AppParCurves_Array1OfMultiBSpCurve {
 };
 %extend AppParCurves_Array1OfMultiBSpCurve {
 	~AppParCurves_Array1OfMultiBSpCurve() {
-	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiBSpCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiBSpCurve\n");}
 	}
 };
 
@@ -804,7 +804,7 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfConstraintCouple {
 	~AppParCurves_HArray1OfConstraintCouple() {
-	printf("Call custom destructor for instance of AppParCurves_HArray1OfConstraintCouple\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfConstraintCouple\n");}
 	}
 };
 
@@ -844,7 +844,7 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiPoint {
 	~AppParCurves_HArray1OfMultiPoint() {
-	printf("Call custom destructor for instance of AppParCurves_HArray1OfMultiPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiPoint\n");}
 	}
 };
 
@@ -865,7 +865,7 @@ class AppParCurves {
 };
 %extend AppParCurves {
 	~AppParCurves() {
-	printf("Call custom destructor for instance of AppParCurves\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves\n");}
 	}
 };
 
@@ -905,7 +905,7 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiBSpCurve {
 	~AppParCurves_HArray1OfMultiBSpCurve() {
-	printf("Call custom destructor for instance of AppParCurves_HArray1OfMultiBSpCurve\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiBSpCurve\n");}
 	}
 };
 
@@ -944,6 +944,6 @@ class AppParCurves_Array1OfMultiPoint {
 };
 %extend AppParCurves_Array1OfMultiPoint {
 	~AppParCurves_Array1OfMultiPoint() {
-	printf("Call custom destructor for instance of AppParCurves_Array1OfMultiPoint\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiPoint\n");}
 	}
 };

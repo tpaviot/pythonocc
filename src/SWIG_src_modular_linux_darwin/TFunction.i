@@ -112,7 +112,7 @@ class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared
 };
 %extend Handle_TFunction_HArray1OfDataMapOfGUIDDriver {
 	~Handle_TFunction_HArray1OfDataMapOfGUIDDriver() {
-	printf("Call custom destructor for instance of Handle_TFunction_HArray1OfDataMapOfGUIDDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_HArray1OfDataMapOfGUIDDriver\n");}
 	}
 };
 
@@ -136,7 +136,7 @@ class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 };
 %extend Handle_TFunction_DriverTable {
 	~Handle_TFunction_DriverTable() {
-	printf("Call custom destructor for instance of Handle_TFunction_DriverTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DriverTable\n");}
 	}
 };
 
@@ -160,7 +160,7 @@ class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
 };
 %extend Handle_TFunction_GraphNode {
 	~Handle_TFunction_GraphNode() {
-	printf("Call custom destructor for instance of Handle_TFunction_GraphNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_GraphNode\n");}
 	}
 };
 
@@ -184,7 +184,7 @@ class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 };
 %extend Handle_TFunction_Scope {
 	~Handle_TFunction_Scope() {
-	printf("Call custom destructor for instance of Handle_TFunction_Scope\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_Scope\n");}
 	}
 };
 
@@ -208,7 +208,7 @@ class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 };
 %extend Handle_TFunction_Driver {
 	~Handle_TFunction_Driver() {
-	printf("Call custom destructor for instance of Handle_TFunction_Driver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_Driver\n");}
 	}
 };
 
@@ -232,7 +232,7 @@ class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollect
 };
 %extend Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver {
 	~Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver() {
-	printf("Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");}
 	}
 };
 
@@ -256,7 +256,7 @@ class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TC
 };
 %extend Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
 	~Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel() {
-	printf("Call custom destructor for instance of Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");}
 	}
 };
 
@@ -280,7 +280,7 @@ class Handle_TFunction_Function : public Handle_TDF_Attribute {
 };
 %extend Handle_TFunction_Function {
 	~Handle_TFunction_Function() {
-	printf("Call custom destructor for instance of Handle_TFunction_Function\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_Function\n");}
 	}
 };
 
@@ -304,7 +304,7 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 };
 %extend Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
 	~Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel() {
-	printf("Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");}
 	}
 };
 
@@ -344,7 +344,7 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 };
 %extend TFunction_HArray1OfDataMapOfGUIDDriver {
 	~TFunction_HArray1OfDataMapOfGUIDDriver() {
-	printf("Call custom destructor for instance of TFunction_HArray1OfDataMapOfGUIDDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_HArray1OfDataMapOfGUIDDriver\n");}
 	}
 };
 
@@ -376,7 +376,7 @@ class TFunction_Driver : public MMgt_TShared {
 };
 %extend TFunction_Driver {
 	~TFunction_Driver() {
-	printf("Call custom destructor for instance of TFunction_Driver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_Driver\n");}
 	}
 };
 
@@ -409,7 +409,7 @@ class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 };
 %extend TFunction_DataMapOfGUIDDriver {
 	~TFunction_DataMapOfGUIDDriver() {
-	printf("Call custom destructor for instance of TFunction_DataMapOfGUIDDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DataMapOfGUIDDriver\n");}
 	}
 };
 
@@ -457,7 +457,7 @@ class TFunction_Function : public TDF_Attribute {
 };
 %extend TFunction_Function {
 	~TFunction_Function() {
-	printf("Call custom destructor for instance of TFunction_Function\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_Function\n");}
 	}
 };
 
@@ -478,7 +478,7 @@ class TFunction_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicM
 };
 %extend TFunction_DataMapIteratorOfDataMapOfGUIDDriver {
 	~TFunction_DataMapIteratorOfDataMapOfGUIDDriver() {
-	printf("Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfGUIDDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfGUIDDriver\n");}
 	}
 };
 
@@ -499,7 +499,7 @@ class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_
 };
 %extend TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel {
 	~TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel() {
-	printf("Call custom destructor for instance of TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel\n");}
 	}
 };
 
@@ -532,7 +532,7 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 };
 %extend TFunction_DataMapOfLabelListOfLabel {
 	~TFunction_DataMapOfLabelListOfLabel() {
-	printf("Call custom destructor for instance of TFunction_DataMapOfLabelListOfLabel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DataMapOfLabelListOfLabel\n");}
 	}
 };
 
@@ -556,7 +556,7 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 };
 %extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
 	~TFunction_DataMapNodeOfDataMapOfGUIDDriver() {
-	printf("Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");}
 	}
 };
 
@@ -595,7 +595,7 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 };
 %extend TFunction_Array1OfDataMapOfGUIDDriver {
 	~TFunction_Array1OfDataMapOfGUIDDriver() {
-	printf("Call custom destructor for instance of TFunction_Array1OfDataMapOfGUIDDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_Array1OfDataMapOfGUIDDriver\n");}
 	}
 };
 
@@ -629,7 +629,7 @@ class TFunction_DriverTable : public MMgt_TShared {
 };
 %extend TFunction_DriverTable {
 	~TFunction_DriverTable() {
-	printf("Call custom destructor for instance of TFunction_DriverTable\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DriverTable\n");}
 	}
 };
 
@@ -655,7 +655,7 @@ class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapN
 };
 %extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
 	~TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel() {
-	printf("Call custom destructor for instance of TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");}
 	}
 };
 
@@ -679,7 +679,7 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 };
 %extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
 	~TFunction_DataMapNodeOfDataMapOfLabelListOfLabel() {
-	printf("Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");}
 	}
 };
 
@@ -718,7 +718,7 @@ class TFunction_Logbook {
 };
 %extend TFunction_Logbook {
 	~TFunction_Logbook() {
-	printf("Call custom destructor for instance of TFunction_Logbook\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_Logbook\n");}
 	}
 };
 
@@ -765,7 +765,7 @@ class TFunction_IFunction {
 };
 %extend TFunction_IFunction {
 	~TFunction_IFunction() {
-	printf("Call custom destructor for instance of TFunction_IFunction\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_IFunction\n");}
 	}
 };
 
@@ -800,7 +800,7 @@ class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 };
 %extend TFunction_DoubleMapOfIntegerLabel {
 	~TFunction_DoubleMapOfIntegerLabel() {
-	printf("Call custom destructor for instance of TFunction_DoubleMapOfIntegerLabel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapOfIntegerLabel\n");}
 	}
 };
 
@@ -835,7 +835,7 @@ class TFunction_Iterator {
 };
 %extend TFunction_Iterator {
 	~TFunction_Iterator() {
-	printf("Call custom destructor for instance of TFunction_Iterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_Iterator\n");}
 	}
 };
 
@@ -899,7 +899,7 @@ class TFunction_GraphNode : public TDF_Attribute {
 };
 %extend TFunction_GraphNode {
 	~TFunction_GraphNode() {
-	printf("Call custom destructor for instance of TFunction_GraphNode\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_GraphNode\n");}
 	}
 };
 
@@ -959,7 +959,7 @@ class TFunction_Scope : public TDF_Attribute {
 };
 %extend TFunction_Scope {
 	~TFunction_Scope() {
-	printf("Call custom destructor for instance of TFunction_Scope\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_Scope\n");}
 	}
 };
 
@@ -980,6 +980,6 @@ class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_
 };
 %extend TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel {
 	~TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel() {
-	printf("Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel\n");}
 	}
 };

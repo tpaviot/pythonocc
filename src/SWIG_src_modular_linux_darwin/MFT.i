@@ -142,7 +142,7 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 };
 %extend Handle_MFT_SequenceNodeOfListOfFontName {
 	~Handle_MFT_SequenceNodeOfListOfFontName() {
-	printf("Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontName\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontName\n");}
 	}
 };
 
@@ -166,7 +166,7 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 };
 %extend Handle_MFT_SequenceNodeOfListOfFontHandle {
 	~Handle_MFT_SequenceNodeOfListOfFontHandle() {
-	printf("Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontHandle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontHandle\n");}
 	}
 };
 
@@ -190,7 +190,7 @@ class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 };
 %extend Handle_MFT_TextManager {
 	~Handle_MFT_TextManager() {
-	printf("Call custom destructor for instance of Handle_MFT_TextManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFT_TextManager\n");}
 	}
 };
 
@@ -214,7 +214,7 @@ class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 };
 %extend Handle_MFT_FontManager {
 	~Handle_MFT_FontManager() {
-	printf("Call custom destructor for instance of Handle_MFT_FontManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManager\n");}
 	}
 };
 
@@ -238,7 +238,7 @@ class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 };
 %extend Handle_MFT_FontManagerError {
 	~Handle_MFT_FontManagerError() {
-	printf("Call custom destructor for instance of Handle_MFT_FontManagerError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManagerError\n");}
 	}
 };
 
@@ -262,7 +262,7 @@ class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_S
 };
 %extend Handle_MFT_SequenceNodeOfListOfFontReference {
 	~Handle_MFT_SequenceNodeOfListOfFontReference() {
-	printf("Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontReference\n");}
 	}
 };
 
@@ -286,7 +286,7 @@ class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObjec
 };
 %extend Handle_MFT_FontManagerDefinitionError {
 	~Handle_MFT_FontManagerDefinitionError() {
-	printf("Call custom destructor for instance of Handle_MFT_FontManagerDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManagerDefinitionError\n");}
 	}
 };
 
@@ -314,7 +314,7 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 };
 %extend MFT_FontManagerError {
 	~MFT_FontManagerError() {
-	printf("Call custom destructor for instance of MFT_FontManagerError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_FontManagerError\n");}
 	}
 };
 
@@ -342,7 +342,7 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 };
 %extend MFT_FontManagerDefinitionError {
 	~MFT_FontManagerDefinitionError() {
-	printf("Call custom destructor for instance of MFT_FontManagerDefinitionError\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_FontManagerDefinitionError\n");}
 	}
 };
 
@@ -355,7 +355,7 @@ class MFT {
 };
 %extend MFT {
 	~MFT() {
-	printf("Call custom destructor for instance of MFT\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT\n");}
 	}
 };
 
@@ -377,7 +377,7 @@ class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 };
 %extend MFT_SequenceNodeOfListOfFontName {
 	~MFT_SequenceNodeOfListOfFontName() {
-	printf("Call custom destructor for instance of MFT_SequenceNodeOfListOfFontName\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontName\n");}
 	}
 };
 
@@ -430,7 +430,7 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 };
 %extend MFT_ListOfFontHandle {
 	~MFT_ListOfFontHandle() {
-	printf("Call custom destructor for instance of MFT_ListOfFontHandle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_ListOfFontHandle\n");}
 	}
 };
 
@@ -483,7 +483,7 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 };
 %extend MFT_ListOfFontName {
 	~MFT_ListOfFontName() {
-	printf("Call custom destructor for instance of MFT_ListOfFontName\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_ListOfFontName\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 };
 %extend MFT_ListOfFontReference {
 	~MFT_ListOfFontReference() {
-	printf("Call custom destructor for instance of MFT_ListOfFontReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_ListOfFontReference\n");}
 	}
 };
 
@@ -558,7 +558,7 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 };
 %extend MFT_SequenceNodeOfListOfFontReference {
 	~MFT_SequenceNodeOfListOfFontReference() {
-	printf("Call custom destructor for instance of MFT_SequenceNodeOfListOfFontReference\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontReference\n");}
 	}
 };
 
@@ -580,7 +580,7 @@ class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 };
 %extend MFT_SequenceNodeOfListOfFontHandle {
 	~MFT_SequenceNodeOfListOfFontHandle() {
-	printf("Call custom destructor for instance of MFT_SequenceNodeOfListOfFontHandle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontHandle\n");}
 	}
 };
 
@@ -620,7 +620,7 @@ class MFT_TextManager : public MMgt_TShared {
 };
 %extend MFT_TextManager {
 	~MFT_TextManager() {
-	printf("Call custom destructor for instance of MFT_TextManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_TextManager\n");}
 	}
 };
 
@@ -734,6 +734,6 @@ class MFT_FontManager : public MMgt_TShared {
 };
 %extend MFT_FontManager {
 	~MFT_FontManager() {
-	printf("Call custom destructor for instance of MFT_FontManager\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFT_FontManager\n");}
 	}
 };

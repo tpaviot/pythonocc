@@ -103,6 +103,6 @@ class ShapeProcessAPI_ApplySequence {
 };
 %extend ShapeProcessAPI_ApplySequence {
 	~ShapeProcessAPI_ApplySequence() {
-	printf("Call custom destructor for instance of ShapeProcessAPI_ApplySequence\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeProcessAPI_ApplySequence\n");}
 	}
 };

@@ -105,7 +105,7 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 };
 %extend Handle_TopExp_StackNodeOfStackOfIterator {
 	~Handle_TopExp_StackNodeOfStackOfIterator() {
-	printf("Call custom destructor for instance of Handle_TopExp_StackNodeOfStackOfIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopExp_StackNodeOfStackOfIterator\n");}
 	}
 };
 
@@ -134,7 +134,7 @@ class TopExp {
 };
 %extend TopExp {
 	~TopExp() {
-	printf("Call custom destructor for instance of TopExp\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopExp\n");}
 	}
 };
 
@@ -156,7 +156,7 @@ class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 };
 %extend TopExp_StackNodeOfStackOfIterator {
 	~TopExp_StackNodeOfStackOfIterator() {
-	printf("Call custom destructor for instance of TopExp_StackNodeOfStackOfIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopExp_StackNodeOfStackOfIterator\n");}
 	}
 };
 
@@ -185,7 +185,7 @@ class TopExp_StackOfIterator {
 };
 %extend TopExp_StackOfIterator {
 	~TopExp_StackOfIterator() {
-	printf("Call custom destructor for instance of TopExp_StackOfIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopExp_StackOfIterator\n");}
 	}
 };
 
@@ -216,7 +216,7 @@ class TopExp_Explorer {
 };
 %extend TopExp_Explorer {
 	~TopExp_Explorer() {
-	printf("Call custom destructor for instance of TopExp_Explorer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopExp_Explorer\n");}
 	}
 };
 
@@ -239,6 +239,6 @@ class TopExp_StackIteratorOfStackOfIterator {
 };
 %extend TopExp_StackIteratorOfStackOfIterator {
 	~TopExp_StackIteratorOfStackOfIterator() {
-	printf("Call custom destructor for instance of TopExp_StackIteratorOfStackOfIterator\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopExp_StackIteratorOfStackOfIterator\n");}
 	}
 };

@@ -19,14 +19,14 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 %{
-#include <XmlLDrivers_SequenceOfNamespaceDef.hxx>
-#include <XmlLDrivers_NamespaceDef.hxx>
-#include <XmlLDrivers_DocumentRetrievalDriver.hxx>
-#include <XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef.hxx>
-#include <XmlLDrivers_DocumentStorageDriver.hxx>
-#include <Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef.hxx>
 #include <Handle_XmlLDrivers_DocumentRetrievalDriver.hxx>
 #include <Handle_XmlLDrivers_DocumentStorageDriver.hxx>
+#include <Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef.hxx>
+#include <XmlLDrivers_DocumentRetrievalDriver.hxx>
+#include <XmlLDrivers_DocumentStorageDriver.hxx>
+#include <XmlLDrivers_NamespaceDef.hxx>
+#include <XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef.hxx>
+#include <XmlLDrivers_SequenceOfNamespaceDef.hxx>
 %};
 
 %import XmlLDrivers.i

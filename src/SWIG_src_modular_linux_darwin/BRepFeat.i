@@ -142,7 +142,7 @@ class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepFeat_Builder {
 	~BRepFeat_Builder() {
-	printf("Call custom destructor for instance of BRepFeat_Builder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_Builder\n");}
 	}
 };
 
@@ -187,7 +187,7 @@ class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepFeat_Form {
 	~BRepFeat_Form() {
-	printf("Call custom destructor for instance of BRepFeat_Form\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_Form\n");}
 	}
 };
 
@@ -212,7 +212,7 @@ class BRepFeat_MakePipe : public BRepFeat_Form {
 };
 %extend BRepFeat_MakePipe {
 	~BRepFeat_MakePipe() {
-	printf("Call custom destructor for instance of BRepFeat_MakePipe\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_MakePipe\n");}
 	}
 };
 
@@ -249,7 +249,7 @@ class BRepFeat_MakePrism : public BRepFeat_Form {
 };
 %extend BRepFeat_MakePrism {
 	~BRepFeat_MakePrism() {
-	printf("Call custom destructor for instance of BRepFeat_MakePrism\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_MakePrism\n");}
 	}
 };
 
@@ -280,7 +280,7 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 };
 %extend BRepFeat_LocalOperation {
 	~BRepFeat_LocalOperation() {
-	printf("Call custom destructor for instance of BRepFeat_LocalOperation\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_LocalOperation\n");}
 	}
 };
 
@@ -313,7 +313,7 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepFeat_SplitShape {
 	~BRepFeat_SplitShape() {
-	printf("Call custom destructor for instance of BRepFeat_SplitShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_SplitShape\n");}
 	}
 };
 
@@ -346,7 +346,7 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepFeat_RibSlot {
 	~BRepFeat_RibSlot() {
-	printf("Call custom destructor for instance of BRepFeat_RibSlot\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_RibSlot\n");}
 	}
 };
 
@@ -369,7 +369,7 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 };
 %extend BRepFeat_MakeLinearForm {
 	~BRepFeat_MakeLinearForm() {
-	printf("Call custom destructor for instance of BRepFeat_MakeLinearForm\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeLinearForm\n");}
 	}
 };
 
@@ -392,7 +392,7 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 };
 %extend BRepFeat_MakeRevolutionForm {
 	~BRepFeat_MakeRevolutionForm() {
-	printf("Call custom destructor for instance of BRepFeat_MakeRevolutionForm\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevolutionForm\n");}
 	}
 };
 
@@ -435,7 +435,7 @@ class BRepFeat_MakeDPrism : public BRepFeat_Form {
 };
 %extend BRepFeat_MakeDPrism {
 	~BRepFeat_MakeDPrism() {
-	printf("Call custom destructor for instance of BRepFeat_MakeDPrism\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeDPrism\n");}
 	}
 };
 
@@ -468,7 +468,7 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepFeat_Gluer {
 	~BRepFeat_Gluer() {
-	printf("Call custom destructor for instance of BRepFeat_Gluer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_Gluer\n");}
 	}
 };
 
@@ -503,7 +503,7 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 };
 %extend BRepFeat_MakeCylindricalHole {
 	~BRepFeat_MakeCylindricalHole() {
-	printf("Call custom destructor for instance of BRepFeat_MakeCylindricalHole\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeCylindricalHole\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class BRepFeat_MakeRevol : public BRepFeat_Form {
 };
 %extend BRepFeat_MakeRevol {
 	~BRepFeat_MakeRevol() {
-	printf("Call custom destructor for instance of BRepFeat_MakeRevol\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevol\n");}
 	}
 };
 
@@ -565,6 +565,6 @@ class BRepFeat {
 };
 %extend BRepFeat {
 	~BRepFeat() {
-	printf("Call custom destructor for instance of BRepFeat\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepFeat\n");}
 	}
 };

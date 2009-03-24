@@ -199,7 +199,7 @@ MODULES = [
            ('AdvApp2Var',['gp'],['AdvApp2Var_Iso','AdvApp2Var_SysBase','AdvApp2Var_ApproxF2var','AdvApp2Var_MathBase']),
            ('AdvApprox',[],[]), #LINUX TEST
            ('Geom',['BRepFill','gp'],[]),
-           ##('GeomPlate',['gp'],[]),
+           ('GeomPlate',['gp'],[]),
            ('GeomProjLib',[],[]),
            ('GeomToIGES',[],[]),
            ('GeomTools',['Handle_TCollection'],[]),

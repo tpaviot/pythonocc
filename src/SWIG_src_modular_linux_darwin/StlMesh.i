@@ -104,7 +104,7 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 };
 %extend Handle_StlMesh_MeshDomain {
 	~Handle_StlMesh_MeshDomain() {
-	printf("Call custom destructor for instance of Handle_StlMesh_MeshDomain\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_MeshDomain\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 };
 %extend Handle_StlMesh_MeshTriangle {
 	~Handle_StlMesh_MeshTriangle() {
-	printf("Call custom destructor for instance of Handle_StlMesh_MeshTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_MeshTriangle\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 };
 %extend Handle_StlMesh_Mesh {
 	~Handle_StlMesh_Mesh() {
-	printf("Call custom destructor for instance of Handle_StlMesh_Mesh\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_Mesh\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TColle
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
 	~Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle() {
-	printf("Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMesh {
 	~Handle_StlMesh_SequenceNodeOfSequenceOfMesh() {
-	printf("Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMesh\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMesh\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollect
 };
 %extend Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain {
 	~Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
-	printf("Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
 	}
 };
 
@@ -262,7 +262,7 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 };
 %extend StlMesh_MeshDomain {
 	~StlMesh_MeshDomain() {
-	printf("Call custom destructor for instance of StlMesh_MeshDomain\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_MeshDomain\n");}
 	}
 };
 
@@ -287,7 +287,7 @@ class StlMesh_MeshExplorer {
 };
 %extend StlMesh_MeshExplorer {
 	~StlMesh_MeshExplorer() {
-	printf("Call custom destructor for instance of StlMesh_MeshExplorer\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_MeshExplorer\n");}
 	}
 };
 
@@ -340,7 +340,7 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 };
 %extend StlMesh_SequenceOfMeshDomain {
 	~StlMesh_SequenceOfMeshDomain() {
-	printf("Call custom destructor for instance of StlMesh_SequenceOfMeshDomain\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMeshDomain\n");}
 	}
 };
 
@@ -370,7 +370,7 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 };
 %extend StlMesh_MeshTriangle {
 	~StlMesh_MeshTriangle() {
-	printf("Call custom destructor for instance of StlMesh_MeshTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_MeshTriangle\n");}
 	}
 };
 
@@ -392,7 +392,7 @@ class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMesh {
 	~StlMesh_SequenceNodeOfSequenceOfMesh() {
-	printf("Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMesh\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMesh\n");}
 	}
 };
 
@@ -414,7 +414,7 @@ class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
 	~StlMesh_SequenceNodeOfSequenceOfMeshDomain() {
-	printf("Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
 	}
 };
 
@@ -467,7 +467,7 @@ class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
 };
 %extend StlMesh_SequenceOfMeshTriangle {
 	~StlMesh_SequenceOfMeshTriangle() {
-	printf("Call custom destructor for instance of StlMesh_SequenceOfMeshTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMeshTriangle\n");}
 	}
 };
 
@@ -489,7 +489,7 @@ class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode 
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
 	~StlMesh_SequenceNodeOfSequenceOfMeshTriangle() {
-	printf("Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");}
 	}
 };
 
@@ -542,7 +542,7 @@ class StlMesh_SequenceOfMesh : public TCollection_BaseSequence {
 };
 %extend StlMesh_SequenceOfMesh {
 	~StlMesh_SequenceOfMesh() {
-	printf("Call custom destructor for instance of StlMesh_SequenceOfMesh\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMesh\n");}
 	}
 };
 
@@ -557,7 +557,7 @@ class StlMesh {
 };
 %extend StlMesh {
 	~StlMesh() {
-	printf("Call custom destructor for instance of StlMesh\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh\n");}
 	}
 };
 
@@ -609,6 +609,6 @@ class StlMesh_Mesh : public MMgt_TShared {
 };
 %extend StlMesh_Mesh {
 	~StlMesh_Mesh() {
-	printf("Call custom destructor for instance of StlMesh_Mesh\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlMesh_Mesh\n");}
 	}
 };

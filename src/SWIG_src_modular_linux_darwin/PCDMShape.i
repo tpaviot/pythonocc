@@ -104,7 +104,7 @@ class Handle_PCDMShape_Document : public Handle_PCDM_Document {
 };
 %extend Handle_PCDMShape_Document {
 	~Handle_PCDMShape_Document() {
-	printf("Call custom destructor for instance of Handle_PCDMShape_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCDMShape_Document\n");}
 	}
 };
 
@@ -134,6 +134,6 @@ class PCDMShape_Document : public PCDM_Document {
 };
 %extend PCDMShape_Document {
 	~PCDMShape_Document() {
-	printf("Call custom destructor for instance of PCDMShape_Document\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCDMShape_Document\n");}
 	}
 };

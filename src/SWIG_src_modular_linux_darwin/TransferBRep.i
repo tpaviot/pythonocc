@@ -104,7 +104,7 @@ class Handle_TransferBRep_BinderOfShape : public Handle_Transfer_Binder {
 };
 %extend Handle_TransferBRep_BinderOfShape {
 	~Handle_TransferBRep_BinderOfShape() {
-	printf("Call custom destructor for instance of Handle_TransferBRep_BinderOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_BinderOfShape\n");}
 	}
 };
 
@@ -128,7 +128,7 @@ class Handle_TransferBRep_ShapeBinder : public Handle_TransferBRep_BinderOfShape
 };
 %extend Handle_TransferBRep_ShapeBinder {
 	~Handle_TransferBRep_ShapeBinder() {
-	printf("Call custom destructor for instance of Handle_TransferBRep_ShapeBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_ShapeBinder\n");}
 	}
 };
 
@@ -152,7 +152,7 @@ class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TSh
 };
 %extend Handle_TransferBRep_HSequenceOfTransferResultInfo {
 	~Handle_TransferBRep_HSequenceOfTransferResultInfo() {
-	printf("Call custom destructor for instance of Handle_TransferBRep_HSequenceOfTransferResultInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_HSequenceOfTransferResultInfo\n");}
 	}
 };
 
@@ -176,7 +176,7 @@ class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Ha
 };
 %extend Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
 	~Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo() {
-	printf("Call custom destructor for instance of Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo\n");}
 	}
 };
 
@@ -200,7 +200,7 @@ class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
 };
 %extend Handle_TransferBRep_ShapeListBinder {
 	~Handle_TransferBRep_ShapeListBinder() {
-	printf("Call custom destructor for instance of Handle_TransferBRep_ShapeListBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_ShapeListBinder\n");}
 	}
 };
 
@@ -224,7 +224,7 @@ class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 };
 %extend Handle_TransferBRep_ShapeMapper {
 	~Handle_TransferBRep_ShapeMapper() {
-	printf("Call custom destructor for instance of Handle_TransferBRep_ShapeMapper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_ShapeMapper\n");}
 	}
 };
 
@@ -248,7 +248,7 @@ class Handle_TransferBRep_OrientedShapeMapper : public Handle_Transfer_Finder {
 };
 %extend Handle_TransferBRep_OrientedShapeMapper {
 	~Handle_TransferBRep_OrientedShapeMapper() {
-	printf("Call custom destructor for instance of Handle_TransferBRep_OrientedShapeMapper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_OrientedShapeMapper\n");}
 	}
 };
 
@@ -272,7 +272,7 @@ class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
 };
 %extend Handle_TransferBRep_TransferResultInfo {
 	~Handle_TransferBRep_TransferResultInfo() {
-	printf("Call custom destructor for instance of Handle_TransferBRep_TransferResultInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_TransferResultInfo\n");}
 	}
 };
 
@@ -300,7 +300,7 @@ class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 };
 %extend TransferBRep_OrientedShapeMapper {
 	~TransferBRep_OrientedShapeMapper() {
-	printf("Call custom destructor for instance of TransferBRep_OrientedShapeMapper\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_OrientedShapeMapper\n");}
 	}
 };
 
@@ -347,7 +347,7 @@ class TransferBRep {
 };
 %extend TransferBRep {
 	~TransferBRep() {
-	printf("Call custom destructor for instance of TransferBRep\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep\n");}
 	}
 };
 
@@ -411,7 +411,7 @@ class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
 };
 %extend TransferBRep_HSequenceOfTransferResultInfo {
 	~TransferBRep_HSequenceOfTransferResultInfo() {
-	printf("Call custom destructor for instance of TransferBRep_HSequenceOfTransferResultInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_HSequenceOfTransferResultInfo\n");}
 	}
 };
 
@@ -443,7 +443,7 @@ class TransferBRep_BinderOfShape : public Transfer_Binder {
 };
 %extend TransferBRep_BinderOfShape {
 	~TransferBRep_BinderOfShape() {
-	printf("Call custom destructor for instance of TransferBRep_BinderOfShape\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_BinderOfShape\n");}
 	}
 };
 
@@ -483,7 +483,7 @@ class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 };
 %extend TransferBRep_ShapeBinder {
 	~TransferBRep_ShapeBinder() {
-	printf("Call custom destructor for instance of TransferBRep_ShapeBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_ShapeBinder\n");}
 	}
 };
 
@@ -536,7 +536,7 @@ class TransferBRep_SequenceOfTransferResultInfo : public TCollection_BaseSequenc
 };
 %extend TransferBRep_SequenceOfTransferResultInfo {
 	~TransferBRep_SequenceOfTransferResultInfo() {
-	printf("Call custom destructor for instance of TransferBRep_SequenceOfTransferResultInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_SequenceOfTransferResultInfo\n");}
 	}
 };
 
@@ -592,7 +592,7 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 };
 %extend TransferBRep_ShapeListBinder {
 	~TransferBRep_ShapeListBinder() {
-	printf("Call custom destructor for instance of TransferBRep_ShapeListBinder\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_ShapeListBinder\n");}
 	}
 };
 
@@ -609,7 +609,7 @@ class TransferBRep_ShapeInfo {
 };
 %extend TransferBRep_ShapeInfo {
 	~TransferBRep_ShapeInfo() {
-	printf("Call custom destructor for instance of TransferBRep_ShapeInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_ShapeInfo\n");}
 	}
 };
 
@@ -647,7 +647,7 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 };
 %extend TransferBRep_TransferResultInfo {
 	~TransferBRep_TransferResultInfo() {
-	printf("Call custom destructor for instance of TransferBRep_TransferResultInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_TransferResultInfo\n");}
 	}
 };
 
@@ -669,7 +669,7 @@ class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollecti
 };
 %extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
 	~TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo() {
-	printf("Call custom destructor for instance of TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo\n");}
 	}
 };
 
@@ -748,6 +748,6 @@ class TransferBRep_Reader {
 };
 %extend TransferBRep_Reader {
 	~TransferBRep_Reader() {
-	printf("Call custom destructor for instance of TransferBRep_Reader\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TransferBRep_Reader\n");}
 	}
 };

@@ -104,7 +104,7 @@ class Handle_BinMDocStd_XLinkDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDocStd_XLinkDriver {
 	~Handle_BinMDocStd_XLinkDriver() {
-	printf("Call custom destructor for instance of Handle_BinMDocStd_XLinkDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDocStd_XLinkDriver\n");}
 	}
 };
 
@@ -119,7 +119,7 @@ class BinMDocStd {
 };
 %extend BinMDocStd {
 	~BinMDocStd() {
-	printf("Call custom destructor for instance of BinMDocStd\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDocStd\n");}
 	}
 };
 
@@ -145,6 +145,6 @@ class BinMDocStd_XLinkDriver : public BinMDF_ADriver {
 };
 %extend BinMDocStd_XLinkDriver {
 	~BinMDocStd_XLinkDriver() {
-	printf("Call custom destructor for instance of BinMDocStd_XLinkDriver\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDocStd_XLinkDriver\n");}
 	}
 };

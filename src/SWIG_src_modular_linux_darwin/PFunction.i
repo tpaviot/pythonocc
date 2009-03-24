@@ -104,7 +104,7 @@ class Handle_PFunction_Function : public Handle_PDF_Attribute {
 };
 %extend Handle_PFunction_Function {
 	~Handle_PFunction_Function() {
-	printf("Call custom destructor for instance of Handle_PFunction_Function\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PFunction_Function\n");}
 	}
 };
 
@@ -140,6 +140,6 @@ class PFunction_Function : public PDF_Attribute {
 };
 %extend PFunction_Function {
 	~PFunction_Function() {
-	printf("Call custom destructor for instance of PFunction_Function\n");
+	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PFunction_Function\n");}
 	}
 };
