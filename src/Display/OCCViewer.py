@@ -48,7 +48,7 @@ class BaseDriver(object):
         self.Context = None
         self.Viewer = None
         self.View = None
-        self._objects_displayed = []#list to save in memory displayed objects
+        #self._objects_displayed = []#list to save in memory displayed objects
     
     def MoveTo(self,X,Y):
         self.Context.MoveTo(X,Y,self.View_handle)
@@ -103,7 +103,7 @@ class Viewer2d(BaseDriver, OCC.Visualization.Display2d):
                 shape_to_display.SetDisplayMode(3);
         else:
             shape_to_display = OCC.AIS.AIS_Shape(shape)
-        self._objects_displayed.append(shape_to_display)
+        #self._objects_displayed.append(shape_to_display)
         self.Context.Display(shape_to_display.GetHandle())
         self.FitAll()
 
@@ -207,7 +207,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 shape_to_display.SetDisplayMode(3);
         else:
             shape_to_display = OCC.AIS.AIS_Shape(shape)
-        self._objects_displayed.append(shape_to_display)
+        #self._objects_displayed.append(shape_to_display)
         self.Context.Display(shape_to_display.GetHandle())
         self.FitAll()
 
@@ -223,7 +223,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         self.FitAll()
         
     def DisplayTriedron(self):
-        self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_WHITE, 0.08,  OCC.V3d.V3d_WIREFRAME)
+        self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
         self.Repaint()
     
     def EnableAntiAliasing(self):
