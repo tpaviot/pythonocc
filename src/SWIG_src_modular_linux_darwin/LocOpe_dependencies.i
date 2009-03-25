@@ -1,0 +1,220 @@
+/*
+
+Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
+
+This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+%{
+#include <Handle_MMgt_TShared.hxx>
+#include <Handle_Standard_AbortiveTransaction.hxx>
+#include <Handle_Standard_ConstructionError.hxx>
+#include <Handle_Standard_DimensionError.hxx>
+#include <Handle_Standard_DimensionMismatch.hxx>
+#include <Handle_Standard_DivideByZero.hxx>
+#include <Handle_Standard_DomainError.hxx>
+#include <Handle_Standard_Failure.hxx>
+#include <Handle_Standard_ImmutableObject.hxx>
+#include <Handle_Standard_LicenseError.hxx>
+#include <Handle_Standard_LicenseNotFound.hxx>
+#include <Handle_Standard_MultiplyDefined.hxx>
+#include <Handle_Standard_NegativeValue.hxx>
+#include <Handle_Standard_NoMoreObject.hxx>
+#include <Handle_Standard_NoSuchObject.hxx>
+#include <Handle_Standard_NotImplemented.hxx>
+#include <Handle_Standard_NullObject.hxx>
+#include <Handle_Standard_NullValue.hxx>
+#include <Handle_Standard_NumericError.hxx>
+#include <Handle_Standard_OutOfMemory.hxx>
+#include <Handle_Standard_OutOfRange.hxx>
+#include <Handle_Standard_Overflow.hxx>
+#include <Handle_Standard_Persistent.hxx>
+#include <Handle_Standard_ProgramError.hxx>
+#include <Handle_Standard_RangeError.hxx>
+#include <Handle_Standard_TooManyUsers.hxx>
+#include <Handle_Standard_Transient.hxx>
+#include <Handle_Standard_Type.hxx>
+#include <Handle_Standard_TypeMismatch.hxx>
+#include <Handle_Standard_Underflow.hxx>
+#include <Handle_TCollection_AVLBaseNode.hxx>
+#include <Handle_TCollection_HAsciiString.hxx>
+#include <Handle_TCollection_HExtendedString.hxx>
+#include <Handle_TCollection_MapNode.hxx>
+#include <Handle_TCollection_SeqNode.hxx>
+#include <Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger.hxx>
+#include <Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape.hxx>
+#include <Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal.hxx>
+#include <Handle_TopOpeBRepBuild_HBuilder.hxx>
+#include <Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo.hxx>
+#include <Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop.hxx>
+#include <Handle_TopOpeBRepBuild_ListNodeOfListOfLoop.hxx>
+#include <Handle_TopOpeBRepBuild_ListNodeOfListOfPave.hxx>
+#include <Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape.hxx>
+#include <Handle_TopOpeBRepBuild_Loop.hxx>
+#include <Handle_TopOpeBRepBuild_Pave.hxx>
+#include <MMgt_StackManager.hxx>
+#include <MMgt_TShared.hxx>
+#include <Standard_AbortiveTransaction.hxx>
+#include <Standard_Address.hxx>
+#include <Standard_AncestorIterator.hxx>
+#include <Standard_Boolean.hxx>
+#include <Standard_Byte.hxx>
+#include <Standard_CString.hxx>
+#include <Standard_Character.hxx>
+#include <Standard_ConstructionError.hxx>
+#include <Standard_DefineHandle.hxx>
+#include <Standard_DimensionError.hxx>
+#include <Standard_DimensionMismatch.hxx>
+#include <Standard_DivideByZero.hxx>
+#include <Standard_DomainError.hxx>
+#include <Standard_ErrorHandler.hxx>
+#include <Standard_ErrorHandlerCallback.hxx>
+#include <Standard_ExtCharacter.hxx>
+#include <Standard_ExtString.hxx>
+#include <Standard_Failure.hxx>
+#include <Standard_GUID.hxx>
+#include <Standard_HandlerStatus.hxx>
+#include <Standard_IStream.hxx>
+#include <Standard_ImmutableObject.hxx>
+#include <Standard_Integer.hxx>
+#include <Standard_InternalType.hxx>
+#include <Standard_JmpBuf.hxx>
+#include <Standard_KindOfType.hxx>
+#include <Standard_LicenseError.hxx>
+#include <Standard_LicenseNotFound.hxx>
+#include <Standard_MMgrOpt.hxx>
+#include <Standard_MMgrRaw.hxx>
+#include <Standard_MMgrRoot.hxx>
+#include <Standard_Macro.hxx>
+#include <Standard_MultiplyDefined.hxx>
+#include <Standard_Mutex.hxx>
+#include <Standard_NegativeValue.hxx>
+#include <Standard_NoMoreObject.hxx>
+#include <Standard_NoSuchObject.hxx>
+#include <Standard_NotImplemented.hxx>
+#include <Standard_NullObject.hxx>
+#include <Standard_NullValue.hxx>
+#include <Standard_NumericError.hxx>
+#include <Standard_OId.hxx>
+#include <Standard_OStream.hxx>
+#include <Standard_OutOfMemory.hxx>
+#include <Standard_OutOfRange.hxx>
+#include <Standard_Overflow.hxx>
+#include <Standard_PCharacter.hxx>
+#include <Standard_PErrorHandler.hxx>
+#include <Standard_PExtCharacter.hxx>
+#include <Standard_Persistent.hxx>
+#include <Standard_Persistent_proto.hxx>
+#include <Standard_PrimitiveTypes.hxx>
+#include <Standard_ProgramError.hxx>
+#include <Standard_RangeError.hxx>
+#include <Standard_Real.hxx>
+#include <Standard_SStream.hxx>
+#include <Standard_ShortReal.hxx>
+#include <Standard_Size.hxx>
+#include <Standard_Static.hxx>
+#include <Standard_Storable.hxx>
+#include <Standard_Stream.hxx>
+#include <Standard_String.hxx>
+#include <Standard_ThreadId.hxx>
+#include <Standard_TooManyUsers.hxx>
+#include <Standard_Transient.hxx>
+#include <Standard_Type.hxx>
+#include <Standard_TypeDef.hxx>
+#include <Standard_TypeMismatch.hxx>
+#include <Standard_UUID.hxx>
+#include <Standard_Underflow.hxx>
+#include <Standard_Version.hxx>
+#include <Standard_WayOfLife.hxx>
+#include <Standard_ctype.hxx>
+#include <Standard_math.hxx>
+#include <TopAbs_Orientation.hxx>
+#include <TopAbs_ShapeEnum.hxx>
+#include <TopAbs_State.hxx>
+#include <TopOpeBRepBuild_Area1dBuilder.hxx>
+#include <TopOpeBRepBuild_Area2dBuilder.hxx>
+#include <TopOpeBRepBuild_Area3dBuilder.hxx>
+#include <TopOpeBRepBuild_AreaBuilder.hxx>
+#include <TopOpeBRepBuild_BlockBuilder.hxx>
+#include <TopOpeBRepBuild_BlockIterator.hxx>
+#include <TopOpeBRepBuild_Builder1.hxx>
+#include <TopOpeBRepBuild_BuilderON.hxx>
+#include <TopOpeBRepBuild_CompositeClassifier.hxx>
+#include <TopOpeBRepBuild_CorrectFace2d.hxx>
+#include <TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger.hxx>
+#include <TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape.hxx>
+#include <TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal.hxx>
+#include <TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger.hxx>
+#include <TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape.hxx>
+#include <TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal.hxx>
+#include <TopOpeBRepBuild_DataMapOfShapeInteger.hxx>
+#include <TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape.hxx>
+#include <TopOpeBRepBuild_DataMapOfShapeReal.hxx>
+#include <TopOpeBRepBuild_EdgeBuilder.hxx>
+#include <TopOpeBRepBuild_FaceAreaBuilder.hxx>
+#include <TopOpeBRepBuild_FaceBuilder.hxx>
+#include <TopOpeBRepBuild_FuseFace.hxx>
+#include <TopOpeBRepBuild_GIter.hxx>
+#include <TopOpeBRepBuild_GTool.hxx>
+#include <TopOpeBRepBuild_GTopo.hxx>
+#include <TopOpeBRepBuild_HBuilder.hxx>
+#include <TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo.hxx>
+#include <TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo.hxx>
+#include <TopOpeBRepBuild_ListIteratorOfListOfListOfLoop.hxx>
+#include <TopOpeBRepBuild_ListIteratorOfListOfLoop.hxx>
+#include <TopOpeBRepBuild_ListIteratorOfListOfPave.hxx>
+#include <TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape.hxx>
+#include <TopOpeBRepBuild_ListNodeOfListOfListOfLoop.hxx>
+#include <TopOpeBRepBuild_ListNodeOfListOfLoop.hxx>
+#include <TopOpeBRepBuild_ListNodeOfListOfPave.hxx>
+#include <TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape.hxx>
+#include <TopOpeBRepBuild_ListOfListOfLoop.hxx>
+#include <TopOpeBRepBuild_ListOfLoop.hxx>
+#include <TopOpeBRepBuild_ListOfPave.hxx>
+#include <TopOpeBRepBuild_ListOfShapeListOfShape.hxx>
+#include <TopOpeBRepBuild_Loop.hxx>
+#include <TopOpeBRepBuild_LoopClassifier.hxx>
+#include <TopOpeBRepBuild_LoopEnum.hxx>
+#include <TopOpeBRepBuild_LoopSet.hxx>
+#include <TopOpeBRepBuild_PBuilder.hxx>
+#include <TopOpeBRepBuild_PGTopo.hxx>
+#include <TopOpeBRepBuild_PWireEdgeSet.hxx>
+#include <TopOpeBRepBuild_Pave.hxx>
+#include <TopOpeBRepBuild_PaveClassifier.hxx>
+#include <TopOpeBRepBuild_PaveSet.hxx>
+#include <TopOpeBRepBuild_ShapeListOfShape.hxx>
+#include <TopOpeBRepBuild_ShapeSet.hxx>
+#include <TopOpeBRepBuild_ShellFaceClassifier.hxx>
+#include <TopOpeBRepBuild_ShellFaceSet.hxx>
+#include <TopOpeBRepBuild_ShellToSolid.hxx>
+#include <TopOpeBRepBuild_SolidAreaBuilder.hxx>
+#include <TopOpeBRepBuild_SolidBuilder.hxx>
+#include <TopOpeBRepBuild_SplitFace.hxx>
+#include <TopOpeBRepBuild_Tools.hxx>
+#include <TopOpeBRepBuild_Tools2d.hxx>
+#include <TopOpeBRepBuild_VertexInfo.hxx>
+#include <TopOpeBRepBuild_WireEdgeClassifier.hxx>
+#include <TopOpeBRepBuild_WireEdgeSet.hxx>
+#include <TopOpeBRepBuild_WireToFace.hxx>
+#include <TopOpeBRepBuild_define.hxx>
+#include <TopOpeBRepBuild_kpresu.hxx>
+%};
+
+%import TopOpeBRepBuild.i
+%import MMgt.i
+%import TCollection.i
+%import Standard.i
+%import TopAbs.i
