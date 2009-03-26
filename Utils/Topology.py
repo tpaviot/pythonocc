@@ -1,126 +1,1 @@
-# -*- coding: iso-8859-1 -*-
-#! /usr/bin/python
-
-##Copyright 2008 Jelle Feringa
-##
-##jelle.feringa@gmail.com
-##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCasacde library.
-##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
-##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
-
-import OCC
-
-class Topo(object):
-    '''
-    sketch for a pythonic topology wrapper
-    note that `myShape` should be self, which is in return a occ.TopoShape
-    
-    with this 
-    '''
-    
-    def __init__(self, myShape):
-        # assert isinstance( myShape, occ.TopoShape), '% is not a TopoShape instance' % (myShape.__class__)
-        self.myShape = myShape
-    
-    def __loop_topo(self, topologyType):
-        '''
-        this could be a faces generator for a python TopoShape class
-        that way you can just do:
-        for face in srf.faces:
-            processFace(face)
-        '''
-        assert topologyType in [ OCC.TopAbs_EDGE,
-                                 OCC.TopAbs_FACE,
-                                 OCC.TopAbs_VERTEX,
-                                 OCC.TopAbs_WIRE,
-                                 OCC.TopAbs_SHELL,
-                                ]
-        
-        topExp = OCC.TopExp_Explorer()
-        topExp.Init(self.myShape, topologyType)
-        tds =  OCC.TopoDS(topExp.Current())
-        
-        if topologyType == OCC.TopAbs_FACE:
-            yield tds.Face(topExp.Current())
-        elif topologyType == OCC.TopAbs_EDGE:
-            yield tds.Edge(topExp.Current())
-        elif topologyType == OCC.TopAbs_VERTEX:
-            yield tds.Vertex(topExp.Current())
-        elif topologyType == OCC.TopAbs_WIRE:
-            yield tds.Wire(topExp.Current())
-        elif topologyType == OCC.TopAbs_SHELL:
-            yield tds.Shell(topExp.Current())
-        
-        while topExp.Next():
-            if topologyType == OCC.TopAbs_FACE:
-                yield tds.Face(topExp.Current())
-            elif topologyType == OCC.TopAbs_EDGE:
-                yield tds.Edge(topExp.Current())
-            elif topologyType == OCC.TopAbs_VERTEX:
-                yield tds.Vertex(topExp.Current())
-            elif topologyType == OCC.TopAbs_WIRE:
-                yield tds.Wire(topExp.Current())
-            elif topologyType == OCC.TopAbs_SHELL:
-                yield tds.Shell(topExp.Current())
-        # do we need ExpFace.More() ?
-    
-    def GetFaces(self):
-        '''
-        loops over all faces 
-        '''
-        return self.__loop_topo(OCC.TopAbs_FACE)
-    
-    
-    def GetVertices(self):
-        '''
-        loops over all faces 
-        '''
-        return self.__loop_topo(OCC.TopAbs_VERTEX)
-    
-    def GetEdges(self):
-        '''
-        loops over all faces 
-        '''
-        return self.__loop_topo(OCC.TopAbs_EDGE)
-    
-    def GetWires(self):
-        '''
-        loops over all faces 
-        '''
-        return self.__loop_topo(OCC.TopAbs_WIRE)
-    
-    def GetShells(self):
-        '''
-        loops over all faces 
-        '''
-        return self.__loop_topo(OCC.TopAbs_SHELL)
-    
-
-    
-        
+# -*- coding: iso-8859-1 -*-#!/usr/bin/env python##Copyright 2008 Jelle Feringa (jelleferinga@gmail.com)####This file is part of pythonOCC.####pythonOCC is free software: you can redistribute it and/or modify##it under the terms of the GNU General Public License as published by##the Free Software Foundation, either version 3 of the License, or##(at your option) any later version.####pythonOCC is distributed in the hope that it will be useful,##but WITHOUT ANY WARRANTY; without even the implied warranty of##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the##GNU General Public License for more details.####You should have received a copy of the GNU General Public License##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.'''TODO:Hide WireExplorer...BRepTools.Map3DEdges()History:        20-01-2009:    initial version        23-03-2009:    completed and updated for modular pythonOCC build'''from OCC.TopAbs import *from OCC.TopExp import *from OCC.TopoDS import *from OCC.TopTools import *from OCC.BRepTools import *import sys, itertools__all__ = ['Topo']class WireExplorer(object):    '''   '''    def __init__(self, wire):        assert isinstance(wire, TopoDS_Wire), 'not a TopoDS_Wire'        self.wire = wire        self.wire_explorer = BRepTools_WireExplorer(self.wire)        self.done = False         def _reinitialize(self):        self.wire_explorer = BRepTools_WireExplorer(self.wire)        self.done = False      def ordered_edges(self):        if self.done:            self._reinitialize()        while 1:            if self.wire_explorer.More():                yield self.wire_explorer.Current()                self.wire_explorer.Next()            else:                self.done = True                 break    def ordered_vertices(self):        if self.done:            self._reinitialize()        while 1:            if self.wire_explorer.More():                yield self.wire_explorer.CurrentVertex()                self.wire_explorer.Next()            else:                self.done = True                break class Topo(object):    '''    sketch for a pythonic topology wrapper    note that `myShape` should be self, which is in return a occ.TopoShape    with this     '''      def __init__(self, myShape):        # assert isinstance( myShape, occ.TopoShape), '% is not a TopoShape instance' % (myShape.__class__)        self.myShape = myShape        def __loop_topo(self, topologyType, topologicalEntity=None):        '''        this could be a faces generator for a python TopoShape class        that way you can just do:        for face in srf.faces:            processFace(face)        '''        tds =  TopoDS()        topoTypes = {   TopAbs_VERTEX:      tds.Vertex,                        TopAbs_EDGE:        tds.Edge,                        TopAbs_FACE:        tds.Face,                        TopAbs_WIRE:        tds.Wire,                        TopAbs_SHELL:       tds.Shell,                        TopAbs_SOLID:       tds.Solid,                        TopAbs_COMPOUND:    tds.Compound,                        TopAbs_COMPSOLID:   tds.CompSolid,                }               assert topologyType in topoTypes.keys(), '%s not one of %s' %( topologyType, topoTypes.keys() )              self.topExp = TopExp_Explorer()        # use self.myShape if nothing is specified        if topologicalEntity is None:            self.topExp.Init(self.myShape, topologyType)        else:            self.topExp.Init(topologicalEntity, topologyType)                   topo_set = set()        while self.topExp.More():            topo_item = topoTypes[topologyType]( self.topExp.Current() )            if topo_item in topo_set:                pass            else:                yield topo_item                topo_set.add(topo_item)            self.topExp.Next()                def faces(self):        '''        loops over all faces         '''        return self.__loop_topo(TopAbs_FACE)        def vertices(self):        '''        loops over all vertices         '''        return self.__loop_topo(TopAbs_VERTEX)       def edges(self):        '''        loops over all edges         '''        return self.__loop_topo(TopAbs_EDGE)        def wires(self):        '''        loops over all wires         '''        return self.__loop_topo(TopAbs_WIRE)       def shells(self):        '''        loops over all shells        '''        return self.__loop_topo(TopAbs_SHELL)       def solids(self):        '''        loops over all solids        '''        return self.__loop_topo(TopAbs_SOLID)       def comp_solids(self):        '''        loops over all compound solids        '''        return self.__loop_topo(TopAbs_COMPSOLID)       def compounds(self):        '''        loops over all compounds        '''        return self.__loop_topo(TopAbs_COMPOUND)    def ordered_vertices_from_wire(self, wire):        '''        @param wire: TopoDS_Wire        '''        we = WireExplorer(wire)        return we.ordered_vertices()            def ordered_edges_from_wire(self, wire):        '''           @param wire: TopoDS_Wire        '''        we = WireExplorer(wire)        return we.ordered_vertices()    def __MapShapesAndAncestors(self, topoTypeA, topoTypeB, topologicalEntity):        '''        using the same method        @param topoTypeA:        @param topoTypeB:        @param topologicalEntity:        '''        topo_set = set()        _map = TopTools_IndexedDataMapOfShapeListOfShape()        TopExp().MapShapesAndAncestors(self.myShape, topoTypeA, topoTypeB, _map)        results = _map.FindFromKey(topologicalEntity)        if results.IsEmpty():            yield None                        tds =  TopoDS()        topoTypes = {   TopAbs_VERTEX:      tds.Vertex,                TopAbs_EDGE:        tds.Edge,                TopAbs_FACE:        tds.Face,                TopAbs_WIRE:        tds.Wire,                TopAbs_SHELL:       tds.Shell,                TopAbs_SOLID:       tds.Solid,                TopAbs_COMPOUND:    tds.Compound,                TopAbs_COMPSOLID:   tds.CompSolid,        }        topology_iterator = TopTools_ListIteratorOfListOfShape(results)        while 1:            if topology_iterator.More():                topo_entity  = topoTypes[topoTypeB](topology_iterator.Value())                # return the entity if not in set                # to assure we're not returning entities several times                if topo_entity in topo_set:                    pass                else:                    yield topo_entity                                topo_set.add(topo_entity)                topology_iterator.Next()            else:                break            def __NumberShapesAncestors(self, topoTypeA, topoTypeB, topologicalEntity):        '''returns the number of shape ancestors        If you want to know how many edges a faces has:        __NumberShapesAncestors(self, TopAbs_EDGE, TopAbs_FACE, edg)        will return the number of edges a faces has           @param topoTypeA:        @param topoTypeB:        @param topologicalEntity:        '''        topo_set = set()        _map = TopTools_IndexedDataMapOfShapeListOfShape()        TopExp().MapShapesAndAncestors(self.myShape, topoTypeA, topoTypeB, _map)        results = _map.FindFromKey(topologicalEntity)        if results.IsEmpty():            return None               topology_iterator = TopTools_ListIteratorOfListOfShape(results)        while 1:            if topology_iterator.More():                topo_set.add(topology_iterator.Value())                topology_iterator.Next()            else:                break        return len(topo_set)         #===============================================================================# EDGE <-> FACE#===============================================================================    def faces_from_edge(self, edge):        return self.__MapShapesAndAncestors(TopAbs_EDGE,TopAbs_FACE,edge)      def number_of_faces_from_edge(self, edge):        return self.__NumberShapesAncestors(TopAbs_EDGE,TopAbs_FACE,edge)            def edges_from_face(self, face):        return self.__loop_topo(TopAbs_EDGE, face)      def number_of_edges_from_face(self, face):        cnt = 0         for i in self.__loop_topo(TopAbs_EDGE, face):            cnt += 1        return cnt#===============================================================================# VERTEX <-> EDGE#===============================================================================    def vertices_from_edge(self, edg):        return self.__loop_topo(TopAbs_VERTEX, edg)       def number_of_vertices_from_edge(self, edg):        cnt = 0        for i in self.__loop_topo(TopAbs_VERTEX, edg):            cnt += 1        return cnt          def edges_from_vertex(self, vertex):       return self.__MapShapesAndAncestors(TopAbs_VERTEX, TopAbs_EDGE,vertex)    def number_of_edges_from_vertex(self, vertex):        return self.__NumberShapesAncestors(TopAbs_VERTEX,TopAbs_EDGE,vertex)#===============================================================================# VERTEX <-> FACE#===============================================================================    def faces_from_vertex(self, vertex):        return self.__MapShapesAndAncestors(TopAbs_VERTEX,TopAbs_FACE,vertex)        def number_of_faces_from_vertex(self, vertex):        return self.__NumberShapesAncestors(TopAbs_VERTEX,TopAbs_FACE,vertex)       def vertices_from_face(self, face):        return self.__loop_topo(TopAbs_VERTEX, face)      def number_of_vertices_from_face(self, face):        cnt = 0        for i in self.__loop_topo(TopAbs_VERTEX, face):            cnt += 1        return cnt   if __name__ == '__main__':#===============================================================================# NEW #===============================================================================    from OCC.BRepPrimAPI import *    topo = Topo(BRepPrimAPI_MakeBox(10,10,10).Shape())     wire = topo.wires().next()    edg  = topo.edges().next()    vert = topo.vertices().next()    face = topo.faces().next()       print '\nexploring ordered edges from wire'    for i,e in enumerate(topo.ordered_edges_from_wire(wire)):        print 'ordered edge: %s | %s ' % (i+1, e)      for i,v in enumerate(topo.ordered_vertices_from_wire(wire)):        print 'ordered vertex: %s | %s ' % (i+1, v)#===============================================================================# EDGE <-> FACE#===============================================================================    print '\ncounting the number of faces incident to an edge ( 2 )'    print '\nnumber of faces from edge:', topo.number_of_faces_from_edge(edg)    faces_from_edge = [i for i in topo.faces_from_edge(edg)]    print 'faces from edge',faces_from_edge    assert len(faces_from_edge) == topo.number_of_faces_from_edge(edg)    print 'number of faces from edge', topo.number_of_faces_from_edge    edges_from_face = [i for i in topo.edges_from_face(face)]    print '\nedges from face',edges_from_face,     print '\nnumber of edges from face:', topo.number_of_edges_from_face(face)    assert len(edges_from_face) == topo.number_of_edges_from_face(face)#===============================================================================# VERTEX <-> EDGE#===============================================================================    print 'number of vertices from edge', topo.number_of_vertices_from_edge(vert)    verts_from_edge = [i for i in topo.vertices_from_edge(vert)]    print 'vertices from edge', verts_from_edge    assert len(verts_from_edge) == topo.number_of_vertices_from_edge(vert)    print 'number of edges from vertex', topo.number_of_edges_from_vertex(vert)    edges_from_vert = [ i for i in topo.edges_from_vertex(vert)]    print 'edges from vertex', edges_from_vert, len(edges_from_vert)    assert len(edges_from_vert) ==  topo.number_of_edges_from_vertex(vert)  #===============================================================================# VERTEX <-> FACE#===============================================================================    print 'FOLLOWING IS WRONG!!!! EXPECTING 3 FACES FROM VERTEX, NOT 6'    print 'number of faces from vertex', topo.number_of_faces_from_vertex(vert)    faces_from_vertex = [i for i in topo.faces_from_vertex(vert)]    assert len(faces_from_vertex) == topo.number_of_faces_from_vertex(vert)       print 'FOLLOWING IS WRONG!!!! EXPECTING 4 VERTICES FROM FACE, NOT 6'    print 'number of vertices from face', topo.number_of_vertices_from_face(face)    verts_from_face = [i for i in topo.vertices_from_face(face)]    print 'vertices from face', verts_from_face    assert len(verts_from_face) == topo.number_of_vertices_from_face(face)
