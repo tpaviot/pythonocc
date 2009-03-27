@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include V2d_dependencies.i
 
@@ -337,7 +364,7 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void Convert(const Standard_Integer X, const Standard_Integer Y, Quantity_Length & ViewX, Quantity_Length & ViewY) const;
 		%feature("autodoc", "1");
-		void Convert(const Quantity_Length ViewX, const Quantity_Length ViewY, Standard_Integer & X, Standard_Integer & Y) const;
+		void Convert(const Quantity_Length ViewX, const Quantity_Length ViewY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Convert(const Quantity_Length aDriverSize) const;
 		%feature("autodoc", "1");
@@ -413,7 +440,7 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void Color(Quantity_Color & color) const;
 		%feature("autodoc", "1");
-		void Scroll(Standard_Integer & XCenter, Standard_Integer & YCenter, Standard_Integer & DX, Standard_Integer & DY);
+		void Scroll(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer DefaultHighlightColor() const;
 		%feature("autodoc", "1");
@@ -574,7 +601,7 @@ class V2d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		void SetRectangularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");
-		void CircularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & RadiusStep, Standard_Integer & DivisionNumber, Quantity_PlaneAngle & RotationAngle) const;
+		void CircularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & RadiusStep, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetCircularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length RadiusStep, const Standard_Integer DivisionNumber, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");

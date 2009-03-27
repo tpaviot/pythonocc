@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include BSplSLib_dependencies.i
 
@@ -122,7 +149,7 @@ class BSplSLib {
 		%feature("autodoc", "1");
 		void GetPoles(const TColStd_Array1OfReal &FP, TColgp_Array2OfPnt & Poles, TColStd_Array2OfReal & Weights, const Standard_Boolean UDirection);
 		%feature("autodoc", "1");
-		void MovePoint(const Standard_Real U, const Standard_Real V, const gp_Vec &Displ, const Standard_Integer UIndex1, const Standard_Integer UIndex2, const Standard_Integer VIndex1, const Standard_Integer VIndex2, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean Rational, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, Standard_Integer & UFirstIndex, Standard_Integer & ULastIndex, Standard_Integer & VFirstIndex, Standard_Integer & VLastIndex, TColgp_Array2OfPnt & NewPoles);
+		void MovePoint(const Standard_Real U, const Standard_Real V, const gp_Vec &Displ, const Standard_Integer UIndex1, const Standard_Integer UIndex2, const Standard_Integer VIndex1, const Standard_Integer VIndex2, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean Rational, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, TColgp_Array2OfPnt & NewPoles);
 		%feature("autodoc", "1");
 		void InsertKnots(const Standard_Boolean UDirection, const Standard_Integer Degree, const Standard_Boolean Periodic, const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const TColStd_Array1OfReal &AddKnots, const TColStd_Array1OfInteger &AddMults, TColgp_Array2OfPnt & NewPoles, TColStd_Array2OfReal & NewWeights, TColStd_Array1OfReal & NewKnots, TColStd_Array1OfInteger & NewMults, const Standard_Real Epsilon, const Standard_Boolean Add=1);
 		%feature("autodoc", "1");
@@ -154,9 +181,9 @@ class BSplSLib {
 		%feature("autodoc", "1");
 		void Resolution(const TColgp_Array2OfPnt &Poles, const TColStd_Array2OfReal &Weights, const TColStd_Array1OfReal &UKnots, const TColStd_Array1OfReal &VKnots, const TColStd_Array1OfInteger &UMults, const TColStd_Array1OfInteger &VMults, const Standard_Integer UDegree, const Standard_Integer VDegree, const Standard_Boolean URat, const Standard_Boolean VRat, const Standard_Boolean UPer, const Standard_Boolean VPer, const Standard_Real Tolerance3D, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, TColStd_Array2OfReal & Weights, Standard_Integer & InversionProblem);
+		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, TColStd_Array2OfReal & Weights, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, Standard_Integer & InversionProblem);
+		void Interpolate(const Standard_Integer UDegree, const Standard_Integer VDegree, const TColStd_Array1OfReal &UFlatKnots, const TColStd_Array1OfReal &VFlatKnots, const TColStd_Array1OfReal &UParameters, const TColStd_Array1OfReal &VParameters, TColgp_Array2OfPnt & Poles, Standard_Integer &OutValue);
 
 };
 %extend BSplSLib {

@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include Poly_dependencies.i
 
@@ -238,9 +265,9 @@ class Poly_Connect {
 		%feature("autodoc", "1");
 		Standard_Integer Triangle(const Standard_Integer N) const;
 		%feature("autodoc", "1");
-		void Triangles(const Standard_Integer T, Standard_Integer & t1, Standard_Integer & t2, Standard_Integer & t3) const;
+		void Triangles(const Standard_Integer T, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void Nodes(const Standard_Integer T, Standard_Integer & n1, Standard_Integer & n2, Standard_Integer & n3) const;
+		void Nodes(const Standard_Integer T, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Integer N);
 		%feature("autodoc", "1");
@@ -476,7 +503,7 @@ class Poly_Triangle {
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer Index, const Standard_Integer Node);
 		%feature("autodoc", "1");
-		void Get(Standard_Integer & N1, Standard_Integer & N2, Standard_Integer & N3) const;
+		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");

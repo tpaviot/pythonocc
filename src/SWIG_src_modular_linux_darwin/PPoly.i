@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include PPoly_dependencies.i
 
@@ -367,7 +394,7 @@ class PPoly_Triangle {
 		%feature("autodoc", "1");
 		void Set(const Standard_Integer N1, const Standard_Integer N2, const Standard_Integer N3);
 		%feature("autodoc", "1");
-		void Get(Standard_Integer & N1, Standard_Integer & N2, Standard_Integer & N3) const;
+		void Get(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		PPoly_Triangle();
 		%feature("autodoc", "1");

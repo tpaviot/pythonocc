@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include ShapeAnalysis_dependencies.i
 
@@ -654,7 +681,7 @@ class ShapeAnalysis_CheckSmallFace {
 		%feature("autodoc", "1");
 		Standard_Integer CheckSplittingVertices(const TopoDS_Face &F, TopTools_DataMapOfShapeListOfShape & MapEdges, ShapeAnalysis_DataMapOfShapeListOfReal & MapParam, TopoDS_Compound & theAllVert);
 		%feature("autodoc", "1");
-		Standard_Boolean CheckPin(const TopoDS_Face &F, Standard_Integer & whatrow, Standard_Integer & sence);
+		Standard_Boolean CheckPin(const TopoDS_Face &F, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean CheckTwisted(const TopoDS_Face &F, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
@@ -815,7 +842,7 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean CheckOuterBound(const Standard_Boolean APIMake=1);
 		%feature("autodoc", "1");
-		Standard_Boolean CheckNotchedEdges(const Standard_Integer num, Standard_Integer & shortNum, Standard_Real &OutValue, const Standard_Real Tolerance=0.0);
+		Standard_Boolean CheckNotchedEdges(const Standard_Integer num, Standard_Integer &OutValue, Standard_Real &OutValue, const Standard_Real Tolerance=0.0);
 		%feature("autodoc", "1");
 		Standard_Boolean CheckSmallArea(const Standard_Real prec2d=0);
 		%feature("autodoc", "1");
@@ -1377,13 +1404,13 @@ class ShapeAnalysis_WireOrder {
 		%feature("autodoc", "1");
 		Standard_Integer NbChains() const;
 		%feature("autodoc", "1");
-		void Chain(const Standard_Integer num, Standard_Integer & n1, Standard_Integer & n2) const;
+		void Chain(const Standard_Integer num, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetCouples(const Standard_Real gap);
 		%feature("autodoc", "1");
 		Standard_Integer NbCouples() const;
 		%feature("autodoc", "1");
-		void Couple(const Standard_Integer num, Standard_Integer & n1, Standard_Integer & n2) const;
+		void Couple(const Standard_Integer num, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
 %extend ShapeAnalysis_WireOrder {

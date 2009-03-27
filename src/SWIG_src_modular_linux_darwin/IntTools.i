@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include IntTools_dependencies.i
 
@@ -1159,6 +1186,8 @@ class IntTools_CArray1OfInteger {
 		Standard_Integer & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_CArray1OfInteger &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const IntTools_CArray1OfInteger &Other) const;
 
 };
 %extend IntTools_CArray1OfInteger {
@@ -1262,9 +1291,9 @@ class IntTools_SurfaceRangeSample {
 		%feature("autodoc", "1");
 		void SetIndexes(const Standard_Integer theIndexU, const Standard_Integer theIndexV);
 		%feature("autodoc", "1");
-		void GetIndexes(Standard_Integer & theIndexU, Standard_Integer & theIndexV) const;
+		void GetIndexes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void GetDepths(Standard_Integer & theDepthU, Standard_Integer & theDepthV) const;
+		void GetDepths(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetSampleRangeU(const IntTools_CurveRangeSample &theRangeSampleU);
 		%feature("autodoc", "1");
@@ -2349,6 +2378,8 @@ class IntTools_CArray1OfReal {
 		Standard_Real & operator()(const Standard_Integer Index);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IntTools_CArray1OfReal &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const IntTools_CArray1OfReal &Other) const;
 
 };
 %extend IntTools_CArray1OfReal {

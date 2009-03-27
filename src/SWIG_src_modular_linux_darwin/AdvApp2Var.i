@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include AdvApp2Var_dependencies.i
 
@@ -251,7 +278,7 @@ class AdvApp2Var_Network {
 		%feature("autodoc", "1");
 		AdvApp2Var_Network(const AdvApp2Var_SequenceOfPatch &Net, const TColStd_SequenceOfReal &TheU, const TColStd_SequenceOfReal &TheV);
 		%feature("autodoc", "1");
-		Standard_Boolean FirstNotApprox(Standard_Integer & Index) const;
+		Standard_Boolean FirstNotApprox(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		AdvApp2Var_Patch & ChangePatch(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -261,7 +288,7 @@ class AdvApp2Var_Network {
 		%feature("autodoc", "1");
 		void UpdateInV(const Standard_Real CuttingValue);
 		%feature("autodoc", "1");
-		void SameDegree(const Standard_Integer iu, const Standard_Integer iv, Standard_Integer & ncfu, Standard_Integer & ncfv);
+		void SameDegree(const Standard_Integer iu, const Standard_Integer iv, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer NbPatch() const;
 		%feature("autodoc", "1");
@@ -314,7 +341,7 @@ class AdvApp2Var_Framework {
 		%feature("autodoc", "1");
 		AdvApp2Var_Framework(const AdvApp2Var_SequenceOfNode &Frame, const AdvApp2Var_SequenceOfStrip &UFrontier, const AdvApp2Var_SequenceOfStrip &VFrontier);
 		%feature("autodoc", "1");
-		Standard_Boolean FirstNotApprox(Standard_Integer & IndexIso, Standard_Integer & IndexStrip, AdvApp2Var_Iso & anIso) const;
+		Standard_Boolean FirstNotApprox(Standard_Integer &OutValue, Standard_Integer &OutValue, AdvApp2Var_Iso & anIso) const;
 		%feature("autodoc", "1");
 		Standard_Integer FirstNode(const GeomAbs_IsoType Type, const Standard_Integer IndexIso, const Standard_Integer IndexStrip) const;
 		%feature("autodoc", "1");

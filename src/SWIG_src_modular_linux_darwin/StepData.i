@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include StepData_dependencies.i
 
@@ -1537,11 +1564,11 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 		%feature("autodoc", "1");
 		Standard_Integer NextForComplex(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Standard_Boolean NamedForComplex(const char * name, const Standard_Integer num0, Standard_Integer & num, Handle_Interface_Check & ach) const;
+		Standard_Boolean NamedForComplex(const char * name, const Standard_Integer num0, Standard_Integer &OutValue, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CheckNbParams(const Standard_Integer num, const Standard_Integer nbreq, Handle_Interface_Check & ach, const char * mess="") const;
 		%feature("autodoc", "1");
-		Standard_Boolean ReadSubList(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer & numsub, const Standard_Boolean optional=0, const Standard_Integer lenmin=0, const Standard_Integer lenmax=0) const;
+		Standard_Boolean ReadSubList(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, const Standard_Boolean optional=0, const Standard_Integer lenmin=0, const Standard_Integer lenmax=0) const;
 		%feature("autodoc", "1");
 		Standard_Integer ReadSub(const Standard_Integer numsub, const char * mess, Handle_Interface_Check & ach, const Handle_StepData_PDescr &descr, Handle_Standard_Transient & val) const;
 		%feature("autodoc", "1");
@@ -1563,7 +1590,7 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 		%feature("autodoc", "1");
 		Standard_Boolean ReadEntity(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, StepData_SelectType & sel) const;
 		%feature("autodoc", "1");
-		Standard_Boolean ReadInteger(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer & val) const;
+		Standard_Boolean ReadInteger(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean ReadBoolean(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, Standard_Boolean & flag) const;
 		%feature("autodoc", "1");
@@ -1573,9 +1600,9 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 		%feature("autodoc", "1");
 		void FailEnumValue(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach) const;
 		%feature("autodoc", "1");
-		Standard_Boolean ReadEnum(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const StepData_EnumTool &enumtool, Standard_Integer & val) const;
+		Standard_Boolean ReadEnum(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const StepData_EnumTool &enumtool, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Boolean ReadTypedParam(const Standard_Integer num, const Standard_Integer nump, const Standard_Boolean mustbetyped, const char * mess, Handle_Interface_Check & ach, Standard_Integer & numr, Standard_Integer & numrp, TCollection_AsciiString & typ) const;
+		Standard_Boolean ReadTypedParam(const Standard_Integer num, const Standard_Integer nump, const Standard_Boolean mustbetyped, const char * mess, Handle_Interface_Check & ach, Standard_Integer &OutValue, Standard_Integer &OutValue, TCollection_AsciiString & typ) const;
 		%feature("autodoc", "1");
 		Standard_Boolean CheckDerived(const Standard_Integer num, const Standard_Integer nump, const char * mess, Handle_Interface_Check & ach, const Standard_Boolean errstat=0) const;
 		%feature("autodoc", "1");
@@ -2057,7 +2084,7 @@ class StepData_WriterLib {
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc", "1");
-		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_StepData_ReadWriteModule & module, Standard_Integer & CN) const;
+		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_StepData_ReadWriteModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");

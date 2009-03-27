@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include IGESData_dependencies.i
 
@@ -1126,6 +1153,8 @@ class IGESData_IGESType {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const IGESData_IGESType &another) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const IGESData_IGESType &another) const;
+		%feature("autodoc", "1");
 		void Nullify();
 
 };
@@ -1251,9 +1280,9 @@ class IGESData_ParamReader {
 		%feature("autodoc", "1");
 		Standard_Boolean DefinedElseSkip();
 		%feature("autodoc", "1");
-		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, Standard_Integer & val);
+		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, const char * mess, Standard_Integer & val);
+		Standard_Boolean ReadInteger(const IGESData_ParamCursor &PC, const char * mess, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean ReadBoolean(const IGESData_ParamCursor &PC, const Message_Msg &amsg, Standard_Boolean & val, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");
@@ -1307,9 +1336,9 @@ class IGESData_ParamReader {
 		%feature("autodoc", "1");
 		Standard_Boolean ReadingReal(const Standard_Integer num, const char * mess, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, Standard_Integer & val);
+		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, const char * mess, Standard_Integer & val);
+		Standard_Boolean ReadingEntityNumber(const Standard_Integer num, const char * mess, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void SendFail(const Message_Msg &amsg);
 		%feature("autodoc", "1");
@@ -1567,7 +1596,7 @@ class IGESData_WriterLib {
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc", "1");
-		Standard_Boolean Select(const Handle_IGESData_IGESEntity &obj, Handle_IGESData_ReadWriteModule & module, Standard_Integer & CN) const;
+		Standard_Boolean Select(const Handle_IGESData_IGESEntity &obj, Handle_IGESData_ReadWriteModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -1817,7 +1846,7 @@ class IGESData_SpecificLib {
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc", "1");
-		Standard_Boolean Select(const Handle_IGESData_IGESEntity &obj, Handle_IGESData_SpecificModule & module, Standard_Integer & CN) const;
+		Standard_Boolean Select(const Handle_IGESData_IGESEntity &obj, Handle_IGESData_SpecificModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -1884,7 +1913,7 @@ class IGESData_DirPart {
 		%feature("autodoc", "1");
 		void Init(const Standard_Integer i1, const Standard_Integer i2, const Standard_Integer i3, const Standard_Integer i4, const Standard_Integer i5, const Standard_Integer i6, const Standard_Integer i7, const Standard_Integer i8, const Standard_Integer i9, const Standard_Integer i19, const Standard_Integer i11, const Standard_Integer i12, const Standard_Integer i13, const Standard_Integer i14, const Standard_Integer i15, const Standard_Integer i16, const Standard_Integer i17, const char * res1, const char * res2, const char * label, const char * subscript);
 		%feature("autodoc", "1");
-		void Values(Standard_Integer & i1, Standard_Integer & i2, Standard_Integer & i3, Standard_Integer & i4, Standard_Integer & i5, Standard_Integer & i6, Standard_Integer & i7, Standard_Integer & i8, Standard_Integer & i9, Standard_Integer & i19, Standard_Integer & i11, Standard_Integer & i12, Standard_Integer & i13, Standard_Integer & i14, Standard_Integer & i15, Standard_Integer & i16, Standard_Integer & i17, const char * res1, const char * res2, const char * label, const char * subscript) const;
+		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, const char * res1, const char * res2, const char * label, const char * subscript) const;
 		%feature("autodoc", "1");
 		IGESData_IGESType Type() const;
 		%feature("autodoc", "1");

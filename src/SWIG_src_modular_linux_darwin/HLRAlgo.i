@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include HLRAlgo_dependencies.i
 
@@ -945,7 +972,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void NextHide();
 		%feature("autodoc", "1");
-		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, Standard_Integer & Index, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
+		void Hide(Standard_Address & Coordinates, HLRAlgo_EdgeStatus & status, Standard_Integer &OutValue, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		void InitShow();
 		%feature("autodoc", "1");
@@ -953,7 +980,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void NextShow();
 		%feature("autodoc", "1");
-		void Show(Standard_Address & Coordinates, Standard_Integer & Index, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
+		void Show(Standard_Address & Coordinates, Standard_Integer &OutValue, Standard_Boolean & reg1, Standard_Boolean & regn, Standard_Boolean & outl, Standard_Boolean & intl);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1471,7 +1498,7 @@ class HLRAlgo_Coincidence {
 		%feature("autodoc", "1");
 		void SetState3D(const TopAbs_State stbef, const TopAbs_State staft);
 		%feature("autodoc", "1");
-		void Value2D(Standard_Integer & FE, Standard_Real &OutValue) const;
+		void Value2D(Standard_Integer &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void State3D(TopAbs_State & stbef, TopAbs_State & staft) const;
 

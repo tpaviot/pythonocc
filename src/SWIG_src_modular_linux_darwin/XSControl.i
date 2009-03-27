@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include XSControl_dependencies.i
 
@@ -377,7 +404,7 @@ class XSControl_Utils {
 		%feature("autodoc", "1");
 		char * DateString(const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss) const;
 		%feature("autodoc", "1");
-		void DateValues(const char * text, Standard_Integer & yy, Standard_Integer & mm, Standard_Integer & dd, Standard_Integer & hh, Standard_Integer & mn, Standard_Integer & ss) const;
+		void DateValues(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		char * ToCString(const Handle_TCollection_HAsciiString &strval) const;
 		%feature("autodoc", "1");
@@ -517,7 +544,7 @@ class XSControl_Controller : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetModeWriteHelp(const Standard_Integer modetrans, const char * help, const Standard_Boolean shape=1);
 		%feature("autodoc", "1");
-		Standard_Boolean ModeWriteBounds(Standard_Integer & modemin, Standard_Integer & modemax, const Standard_Boolean shape=1) const;
+		Standard_Boolean ModeWriteBounds(Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean shape=1) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsModeWrite(const Standard_Integer modetrans, const Standard_Boolean shape=1) const;
 		%feature("autodoc", "1");
@@ -619,7 +646,7 @@ class XSControl_Reader {
 		%feature("autodoc", "1");
 		void PrintStatsTransfer(const Standard_Integer what, const Standard_Integer mode=0) const;
 		%feature("autodoc", "1");
-		void GetStatsTransfer(const Handle_TColStd_HSequenceOfTransient &list, Standard_Integer & nbMapped, Standard_Integer & nbWithResult, Standard_Integer & nbWithFail) const;
+		void GetStatsTransfer(const Handle_TColStd_HSequenceOfTransient &list, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
 %extend XSControl_Reader {

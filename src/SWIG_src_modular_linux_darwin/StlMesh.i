@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include StlMesh_dependencies.i
 
@@ -352,11 +379,11 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 		%feature("autodoc", "1");
 		StlMesh_MeshTriangle(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
 		%feature("autodoc", "1");
-		void GetVertexAndOrientation(Standard_Integer & V1, Standard_Integer & V2, Standard_Integer & V3, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void GetVertexAndOrientation(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetVertexAndOrientation(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3, const Standard_Real Xn, const Standard_Real Yn, const Standard_Real Zn);
 		%feature("autodoc", "1");
-		void GetVertex(Standard_Integer & V1, Standard_Integer & V2, Standard_Integer & V3) const;
+		void GetVertex(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetVertex(const Standard_Integer V1, const Standard_Integer V2, const Standard_Integer V3);
 		%feature("autodoc", "1");

@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include Select3D_dependencies.i
 
@@ -1202,7 +1229,7 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 		%feature("autodoc", "1");
 		virtual		Standard_Real ComputeDepth(const gp_Lin &EyeLine) const;
 		%feature("autodoc", "1");
-		void ArrayBounds(Standard_Integer & Low, Standard_Integer & Up) const;
+		void ArrayBounds(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		gp_Pnt GetPoint3d(const Standard_Integer rank) const;
 		%feature("autodoc", "1");

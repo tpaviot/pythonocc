@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include IntCurveSurface_dependencies.i
 
@@ -152,11 +179,11 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 		%feature("autodoc", "1");
 		Standard_Integer NbTriangles(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh);
 		%feature("autodoc", "1");
-		void Triangle(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index, Standard_Integer & P1, Standard_Integer & P2, Standard_Integer & P3);
+		void Triangle(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Integer TriConnex(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer & TriCon, Standard_Integer & OtherP);
+		Standard_Integer TriConnex(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnBound(const IntCurveSurface_ThePolyhedronOfHInter &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
 		%feature("autodoc", "1");

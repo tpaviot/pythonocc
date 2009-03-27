@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include V3d_dependencies.i
 
@@ -878,7 +905,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer TextHeight(const TCollection_ExtendedString &aText) const;
 		%feature("autodoc", "1");
-		void TextSize(const TCollection_ExtendedString &AText, const Standard_Integer AHeight, Standard_Integer & AWidth, Standard_Integer & AnAscent, Standard_Integer & ADescent) const;
+		void TextSize(const TCollection_ExtendedString &AText, const Standard_Integer AHeight, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void DrawScale();
 		%feature("autodoc", "1");
@@ -1188,7 +1215,7 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Standard_Integer Convert(const Quantity_Length Vv) const;
 		%feature("autodoc", "1");
-		void Convert(const V3d_Coordinate Xv, const V3d_Coordinate Yv, Standard_Integer & Xp, Standard_Integer & Yp) const;
+		void Convert(const V3d_Coordinate Xv, const V3d_Coordinate Yv, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Convert(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
 		%feature("autodoc", "1");
@@ -1198,7 +1225,7 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void ConvertToGrid(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, V3d_Coordinate & Xg, V3d_Coordinate & Yg, V3d_Coordinate & Zg) const;
 		%feature("autodoc", "1");
-		void Convert(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, Standard_Integer & Xp, Standard_Integer & Yp) const;
+		void Convert(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Project(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, V3d_Coordinate & Xp, V3d_Coordinate & Yp) const;
 		%feature("autodoc", "1");
@@ -1709,7 +1736,7 @@ class V3d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		void SetRectangularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");
-		void CircularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & RadiusStep, Standard_Integer & DivisionNumber, Quantity_PlaneAngle & RotationAngle) const;
+		void CircularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & RadiusStep, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetCircularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length RadiusStep, const Standard_Integer DivisionNumber, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");

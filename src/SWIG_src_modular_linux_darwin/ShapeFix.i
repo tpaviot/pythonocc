@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include ShapeFix_dependencies.i
 
@@ -989,7 +1016,7 @@ class ShapeFix_IntersectionTool {
 		%feature("autodoc", "1");
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
 		%feature("autodoc", "1");
-		Standard_Boolean FixSelfIntersectWire(Handle_ShapeExtend_WireData & sewd, const TopoDS_Face &face, Standard_Integer & NbSplit, Standard_Integer & NbCut, Standard_Integer & NbRemoved) const;
+		Standard_Boolean FixSelfIntersectWire(Handle_ShapeExtend_WireData & sewd, const TopoDS_Face &face, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean FixIntersectingWires(TopoDS_Face & face) const;
 
@@ -1319,7 +1346,7 @@ class ShapeFix_SplitTool {
 		%feature("autodoc", "1");
 		Standard_Boolean CutEdge(const TopoDS_Edge &edge, const Standard_Real pend, const Standard_Real cut, const TopoDS_Face &face, Standard_Boolean & iscutline) const;
 		%feature("autodoc", "1");
-		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer & aNum, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
+		Standard_Boolean SplitEdge(const TopoDS_Edge &edge, const Standard_Real fp, const TopoDS_Vertex &V1, const Standard_Real lp, const TopoDS_Vertex &V2, const TopoDS_Face &face, TopTools_SequenceOfShape & SeqE, Standard_Integer &OutValue, const Handle_ShapeBuild_ReShape &context, const Standard_Real tol3d, const Standard_Real tol2d) const;
 
 };
 %extend ShapeFix_SplitTool {

@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include Dico_dependencies.i
 
@@ -194,9 +221,9 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const Standard_Integer & Item(const TCollection_AsciiString &name, const Standard_Boolean exact=1) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetItem(const char * name, Standard_Integer & anitem, const Standard_Boolean exact=1) const;
+		Standard_Boolean GetItem(const char * name, Standard_Integer &OutValue, const Standard_Boolean exact=1) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetItem(const TCollection_AsciiString &name, Standard_Integer & anitem, const Standard_Boolean exact=1) const;
+		Standard_Boolean GetItem(const TCollection_AsciiString &name, Standard_Integer &OutValue, const Standard_Boolean exact=1) const;
 		%feature("autodoc", "1");
 		void SetItem(const char * name, const Standard_Integer &anitem, const Standard_Boolean exact=1);
 		%feature("autodoc", "1");

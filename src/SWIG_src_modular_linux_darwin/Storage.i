@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include Storage_dependencies.i
 
@@ -1612,7 +1639,7 @@ class Storage_BaseDriver {
 		%feature("autodoc", "1");
 		virtual		Storage_Error BeginReadInfoSection();
 		%feature("autodoc", "1");
-		virtual		void ReadInfo(Standard_Integer & nbObj, TCollection_AsciiString & dbVersion, TCollection_AsciiString & date, TCollection_AsciiString & schemaName, TCollection_AsciiString & schemaVersion, TCollection_ExtendedString & appName, TCollection_AsciiString & appVersion, TCollection_ExtendedString & objectType, TColStd_SequenceOfAsciiString & userInfo);
+		virtual		void ReadInfo(Standard_Integer &OutValue, TCollection_AsciiString & dbVersion, TCollection_AsciiString & date, TCollection_AsciiString & schemaName, TCollection_AsciiString & schemaVersion, TCollection_ExtendedString & appName, TCollection_AsciiString & appVersion, TCollection_ExtendedString & objectType, TColStd_SequenceOfAsciiString & userInfo);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadInfoSection();
 		%feature("autodoc", "1");
@@ -1640,7 +1667,7 @@ class Storage_BaseDriver {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer TypeSectionSize();
 		%feature("autodoc", "1");
-		virtual		void ReadTypeInformations(Standard_Integer & typeNum, TCollection_AsciiString & typeName);
+		virtual		void ReadTypeInformations(Standard_Integer &OutValue, TCollection_AsciiString & typeName);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadTypeSection();
 		%feature("autodoc", "1");
@@ -1656,7 +1683,7 @@ class Storage_BaseDriver {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer RootSectionSize();
 		%feature("autodoc", "1");
-		virtual		void ReadRoot(TCollection_AsciiString & rootName, Standard_Integer & aRef, TCollection_AsciiString & aType);
+		virtual		void ReadRoot(TCollection_AsciiString & rootName, Standard_Integer &OutValue, TCollection_AsciiString & aType);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadRootSection();
 		%feature("autodoc", "1");
@@ -1672,7 +1699,7 @@ class Storage_BaseDriver {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer RefSectionSize();
 		%feature("autodoc", "1");
-		virtual		void ReadReferenceType(Standard_Integer & reference, Standard_Integer & typeNum);
+		virtual		void ReadReferenceType(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_Error EndReadRefSection();
 		%feature("autodoc", "1");
@@ -1692,7 +1719,7 @@ class Storage_BaseDriver {
 		%feature("autodoc", "1");
 		virtual		Storage_Error BeginReadDataSection();
 		%feature("autodoc", "1");
-		virtual		void ReadPersistentObjectHeader(Standard_Integer & aRef, Standard_Integer & aType);
+		virtual		void ReadPersistentObjectHeader(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		void BeginReadPersistentObjectData();
 		%feature("autodoc", "1");
@@ -1720,13 +1747,13 @@ class Storage_BaseDriver {
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & PutShortReal(const Standard_ShortReal aValue);
 		%feature("autodoc", "1");
-		virtual		Storage_BaseDriver & GetReference(Standard_Integer & aValue);
+		virtual		Storage_BaseDriver & GetReference(Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetCharacter(Standard_Character & aValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetExtCharacter(Standard_ExtCharacter & aValue);
 		%feature("autodoc", "1");
-		virtual		Storage_BaseDriver & GetInteger(Standard_Integer & aValue);
+		virtual		Storage_BaseDriver & GetInteger(Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Storage_BaseDriver & GetBoolean(Standard_Boolean & aValue);
 		%feature("autodoc", "1");

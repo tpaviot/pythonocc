@@ -75,6 +75,33 @@ Standard_Real & function transformation
     $1 = &temp;
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
+    $1 = &temp;
+}
+
 
 %include MFT_dependencies.i
 
@@ -674,9 +701,9 @@ class MFT_FontManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void DrawText(const Handle_MFT_TextManager &aTextManager, const Standard_ExtString aString, const Quantity_Length anX, const Quantity_Length anY, const Quantity_PlaneAngle anOrientation=0.0);
 		%feature("autodoc", "1");
-		void BoundingBox(Standard_Integer & aMinX, Standard_Integer & aMinY, Standard_Integer & aMaxX, Standard_Integer & aMaxY) const;
+		void BoundingBox(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void CharBoundingBox(const Standard_Integer aPosition, Standard_Integer & aMinX, Standard_Integer & aMinY, Standard_Integer & aMaxX, Standard_Integer & aMaxY);
+		void CharBoundingBox(const Standard_Integer aPosition, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer PaintType() const;
 		%feature("autodoc", "1");
