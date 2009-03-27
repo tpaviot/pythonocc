@@ -199,7 +199,7 @@ MODULES = [
            ('AdvApp2Var',['gp'],['AdvApp2Var_Iso','AdvApp2Var_SysBase','AdvApp2Var_ApproxF2var','AdvApp2Var_MathBase']),
            ('AdvApprox',[],[]), #LINUX TEST
            ('Geom',['BRepFill','gp'],[]),
-           ('GeomPlate',['gp'],[]),
+           ('GeomPlate',[],[]),
            ('GeomProjLib',[],[]),
            ('GeomToIGES',[],[]),
            ('GeomTools',['Handle_TCollection'],[]),
@@ -526,7 +526,7 @@ else:
                     ('Image',[],[]), #bug on Windows
                     ('AlienImage',['Quantity','TCollection'],[]),
                    ])
-
+   
 def PythonOCCStats():
     """
     This function takes all *.hxx headers and returns a list of available packages:
