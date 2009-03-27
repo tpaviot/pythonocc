@@ -56,54 +56,27 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GProp.hxx>
-#include<GProp_CelGProps.hxx>
-#include<GProp_EquaType.hxx>
-#include<GProp_GProps.hxx>
-#include<GProp_PEquation.hxx>
-#include<GProp_PGProps.hxx>
-#include<GProp_PrincipalProps.hxx>
-#include<GProp_SelGProps.hxx>
-#include<GProp_UndefinedAxis.hxx>
-#include<GProp_ValueType.hxx>
-#include<GProp_VelGProps.hxx>
-#include<gp.hxx>
-#include<gp_Ax1.hxx>
-#include<gp_Ax2.hxx>
-#include<gp_Ax22d.hxx>
-#include<gp_Ax2d.hxx>
-#include<gp_Ax3.hxx>
-#include<gp_Circ.hxx>
-#include<gp_Circ2d.hxx>
-#include<gp_Cone.hxx>
-#include<gp_Cylinder.hxx>
-#include<gp_Dir.hxx>
-#include<gp_Dir2d.hxx>
-#include<gp_Elips.hxx>
-#include<gp_Elips2d.hxx>
-#include<gp_GTrsf.hxx>
-#include<gp_GTrsf2d.hxx>
-#include<gp_Hypr.hxx>
-#include<gp_Hypr2d.hxx>
-#include<gp_Lin.hxx>
-#include<gp_Lin2d.hxx>
-#include<gp_Mat.hxx>
-#include<gp_Mat2d.hxx>
-#include<gp_Parab.hxx>
-#include<gp_Parab2d.hxx>
-#include<gp_Pln.hxx>
-#include<gp_Pnt.hxx>
-#include<gp_Pnt2d.hxx>
-#include<gp_Sphere.hxx>
-#include<gp_Torus.hxx>
-#include<gp_Trsf.hxx>
-#include<gp_Trsf2d.hxx>
-#include<gp_TrsfForm.hxx>
-#include<gp_Vec.hxx>
-#include<gp_Vec2d.hxx>
-#include<gp_VectorWithNullMagnitude.hxx>
-#include<gp_XY.hxx>
-#include<gp_XYZ.hxx>
+#include<GeomPlate_Aij.hxx>
+#include<GeomPlate_Array1OfHCurveOnSurface.hxx>
+#include<GeomPlate_Array1OfSequenceOfReal.hxx>
+#include<GeomPlate_BuildAveragePlane.hxx>
+#include<GeomPlate_BuildPlateSurface.hxx>
+#include<GeomPlate_CurveConstraint.hxx>
+#include<GeomPlate_HArray1OfHCurveOnSurface.hxx>
+#include<GeomPlate_HArray1OfSequenceOfReal.hxx>
+#include<GeomPlate_HSequenceOfCurveConstraint.hxx>
+#include<GeomPlate_HSequenceOfPointConstraint.hxx>
+#include<GeomPlate_MakeApprox.hxx>
+#include<GeomPlate_PlateG0Criterion.hxx>
+#include<GeomPlate_PlateG1Criterion.hxx>
+#include<GeomPlate_PointConstraint.hxx>
+#include<GeomPlate_SequenceNodeOfSequenceOfAij.hxx>
+#include<GeomPlate_SequenceNodeOfSequenceOfCurveConstraint.hxx>
+#include<GeomPlate_SequenceNodeOfSequenceOfPointConstraint.hxx>
+#include<GeomPlate_SequenceOfAij.hxx>
+#include<GeomPlate_SequenceOfCurveConstraint.hxx>
+#include<GeomPlate_SequenceOfPointConstraint.hxx>
+#include<GeomPlate_Surface.hxx>
 
 // Needed headers necessary for compilation.
 
