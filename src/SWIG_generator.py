@@ -119,6 +119,10 @@ Standard_Real & function transformation
     }
 }
 
+%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
+    $1 = &temp;
+}
+
 /*
 Standard_Integer & function transformation
 */
@@ -141,7 +145,8 @@ Standard_Integer & function transformation
         Py_DECREF(o3);
     }
 }
-%typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
+
+%typemap(in,numinputs=0) Standard_Integer &OutValue(Standard_Integer temp) {
     $1 = &temp;
 }
 
