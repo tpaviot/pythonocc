@@ -314,6 +314,7 @@ def Test3d():
             
         def runTests(self):
             self.canva._display.Test()
+            self.canva._display.DisplayMessage("po","po")
             
     app = wx.PySimpleApp()
     wx.InitAllImageHandlers()

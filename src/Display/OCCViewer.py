@@ -25,6 +25,8 @@ import OCC.V2d
 import OCC.AIS
 import OCC.AIS2D
 import OCC.Quantity
+import OCC.TopoDS
+import OCC.Visual3d
 
 try:
     import OCC.NIS
@@ -183,13 +185,54 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         point: a gp_Pnt instance
         text_to_write: a string
         """
-        V1 = OCC.BRepBuilderAPI.BRepBuilderAPI_MakeVertex(point)
-        aisShape = OCC.AIS.AIS_Shape(V1.Vertex())
-        aDrawer = aisShape.Attributes()
-        aPresentation = OCC.Prs3d.Prs3d_Presentation(self.Viewer_handle)
-        Prs3d_Text().Draw(aPresentation,aDrawer,"Test", point)
-        aPresentation.Display()
-        self.Context.Display(anAIS.GetHandle())
+        #print dir(self.View)
+        self.view_manager = self.View.View().GetObject().ViewManager()
+        #print view_manager
+        #self.myLayer= OCC.Visual3d.Visual3d_Layer(self.view_manager,OCC.Aspect.Aspect_TOL_OVERLAY, False)
+        #myLayer.SetViewport(640,480)
+        #myLayer.SetOrtho(0,640,480,0,OCC.Aspect.Aspect_TypeOfConstraint-1)
+        #self.myLayer.Begin()
+        #self.myLayer.DrawText("Thomas",320,240,1)
+        #self.myLayer.End()
+
+
+        #self.View.Redraw()
+#     myLayer->SetViewport(w,h);
+#     myLayer->SetOrtho(0,w,h,0,(Aspect_TypeOfConstraint) -1);
+#     
+#     // then you could draw on the given layer
+#     myLayer->Begin();
+#     
+#     // draw some text
+#     Standard_CString aString = "TEST";
+#     int xPos = w/2;
+#     int yPos = h/2;
+#     int textSize = 1;
+#     myLayer->DrawText(aString, xPos, yPos, textSize);// !!!!! CRASH ERROR !!!!!!!!
+#     
+#     // draw a polyline
+#     Standard_Real wn = 2.0, hn = (2.0/Standard_Real(w))*Standard_Real(h);
+#     Standard_Real x1 = -0.9, x2= x1+wn-.2, y1 = -0.9, y2=y1+hn-.2;
+#     myLayer->BeginPolyline();
+#     myLayer->AddVertex(x1, y1, Standard_False);
+#     myLayer->AddVertex(x2, y2);
+#     myLayer->ClosePrimitive();
+#     
+#     // draw a filled box
+#     myLayer->SetColor(Quantity_NOC_RED);
+#     myLayer->DrawRectangle(xPos,yPos,12,12);
+#     
+#          
+#          // and close the layer and redraw
+#     myLayer->End();
+#     myView->Redraw();
+#        V1 = OCC.BRepBuilderAPI.BRepBuilderAPI_MakeVertex(point)
+#        aisShape = OCC.AIS.AIS_Shape(V1.Vertex())
+#        aDrawer = aisShape.Attributes()
+#        aPresentation = OCC.Prs3d.Prs3d_Presentation(self.Viewer_handle)
+#        Prs3d_Text().Draw(aPresentation,aDrawer,"Test", point)
+#        aPresentation.Display()
+#        self.Context.Display(anAIS.GetHandle())
 
         
     def DisplayShape(self,shape,material=None,texture=None):
