@@ -1,3 +1,16 @@
+2009/3/26:
+	- the '==' operator is wrapped
+	- byref parameter for Standard_Integer &
+2009/3/25:
+	- New Topology module
+	- Level1 andLevel2 hierarchy of samples
+2009/3/23:
+	- LocOpe fix for Linux
+	- in SWIG_generator, added sorting of self.dependencies_headers
+	- if PYTHONOCC_VERBOSE defined, call to custom destructor is displayed
+2009/3/22:
+	- Added 'YELLOW' and GetSelectedShape to OCCViewer.py
+	- Added Visual3d, TopOpeBREpBuild, BRepFeat, TPrsStd for Linux/Darwin
 2009/3/21:
 	- custom destructor extended to all objects
 2009/3/15:
@@ -6,7 +19,7 @@
 	 - Bugfixes in OCCViewer
 	 - SConstruct fixes
 2009/3/11:
-	- Segfaults/memory bugfix (added cursomtzed default destructor for Standard_Transcient objects)
+	- Segfaults/memory bugfix (added cursomtized default destructor for Standard_Transcient objects)
 2009/3/4:
 	- Better portability for lib finding
 2009/3/2:
