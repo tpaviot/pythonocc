@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -251,13 +273,13 @@ class BooleanOperations_ShapeAndInterferences {
 		%feature("autodoc", "1");
 		Standard_Integer GetSuccessor(const Standard_Integer index) const;
 		%feature("autodoc", "1");
-		void GetAncestors(Standard_Address & theArrayOfAncestors, Standard_Integer & AncestorsSize) const;
+		void GetAncestors(Standard_Address & theArrayOfAncestors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void GetSuccessors(Standard_Address & theArrayOfSuccessors, Standard_Integer & SuccessorsSize) const;
+		void GetSuccessors(Standard_Address & theArrayOfSuccessors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopAbs_Orientation GetOrientation(const Standard_Integer index) const;
 		%feature("autodoc", "1");
-		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer & OrientationsSize) const;
+		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
 
 };
 %extend BooleanOperations_ShapeAndInterferences {
@@ -344,7 +366,7 @@ class BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		void FillIndexedMapOfShapesAncestorsAndSuccessors(const TopoDS_Shape &Sha, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
 		%feature("autodoc", "1");
-		void FindSubshapes(const TopoDS_Shape &Sha, Standard_Integer & TotalNumberOfShapes, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
+		void FindSubshapes(const TopoDS_Shape &Sha, Standard_Integer &OutValue, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
 		%feature("autodoc", "1");
 		void Dump(Standard_OStream & S) const;
 		%feature("autodoc", "1");
@@ -366,9 +388,9 @@ class BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		Standard_Integer GetSuccessor(const Standard_Integer index, const Standard_Integer successorNumber) const;
 		%feature("autodoc", "1");
-		void GetAncestors(const Standard_Integer index, Standard_Address & theArrayOfAncestors, Standard_Integer & AncestorsSize) const;
+		void GetAncestors(const Standard_Integer index, Standard_Address & theArrayOfAncestors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void GetSuccessors(const Standard_Integer index, Standard_Address & theArrayOfSuccessors, Standard_Integer & SuccessorsSize) const;
+		void GetSuccessors(const Standard_Integer index, Standard_Address & theArrayOfSuccessors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfAncestors(const Standard_Integer index) const;
 		%feature("autodoc", "1");
@@ -396,9 +418,9 @@ class BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		const TopoDS_Shape & Tool() const;
 		%feature("autodoc", "1");
-		void ObjectRange(Standard_Integer & iFirst, Standard_Integer & iLast) const;
+		void ObjectRange(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void ToolRange(Standard_Integer & iFirst, Standard_Integer & iLast) const;
+		void ToolRange(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Rank(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -408,7 +430,7 @@ class BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		TopAbs_Orientation GetOrientation(const Standard_Integer index, const Standard_Integer successorNumber) const;
 		%feature("autodoc", "1");
-		void GetOrientations(const Standard_Integer index, Standard_Address & theArrayOfOrientations, Standard_Integer & OrientationsSize) const;
+		void GetOrientations(const Standard_Integer index, Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
 
 };
 %extend BooleanOperations_ShapesDataStructure {
@@ -464,19 +486,19 @@ class BooleanOperations_AncestorsAndSuccessors {
 		%feature("autodoc", "1");
 		void SetAncestor(const Standard_Integer AncestorIndex, const Standard_Integer AncestorNumber);
 		%feature("autodoc", "1");
-		void GetAncestors(Standard_Address & theArrayOfAncestors, Standard_Integer & AncestorsNumber) const;
+		void GetAncestors(Standard_Address & theArrayOfAncestors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer GetSuccessor(const Standard_Integer SuccessorIndex) const;
 		%feature("autodoc", "1");
 		void SetSuccessor(const Standard_Integer SuccessorIndex, const Standard_Integer SuccessorNumber);
 		%feature("autodoc", "1");
-		void GetSuccessors(Standard_Address & theArrayOfSuccessors, Standard_Integer & SuccessorsNumber) const;
+		void GetSuccessors(Standard_Address & theArrayOfSuccessors, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopAbs_Orientation GetOrientation(const Standard_Integer OrientationIndex) const;
 		%feature("autodoc", "1");
 		void SetOrientation(const Standard_Integer OrientationIndex, const TopAbs_Orientation OrientationNumber);
 		%feature("autodoc", "1");
-		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer & OrientationsNumber) const;
+		void GetOrientations(Standard_Address & theArrayOfOrientations, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfAncestors() const;
 		%feature("autodoc", "1");

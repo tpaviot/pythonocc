@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -574,7 +596,7 @@ class MAT_Graph : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer NumberOfInfiniteNodes() const;
 		%feature("autodoc", "1");
-		void FusionOfBasicElts(const Standard_Integer IndexElt1, const Standard_Integer IndexElt2, Standard_Boolean & MergeArc1, Standard_Integer & GeomIndexArc1, Standard_Integer & GeomIndexArc2, Standard_Boolean & MergeArc2, Standard_Integer & GeomIndexArc3, Standard_Integer & GeomIndexArc4);
+		void FusionOfBasicElts(const Standard_Integer IndexElt1, const Standard_Integer IndexElt2, Standard_Boolean & MergeArc1, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & MergeArc2, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void CompactArcs();
 		%feature("autodoc", "1");

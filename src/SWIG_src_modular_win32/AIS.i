@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1999,7 +2021,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean HasPolygonOffsets() const;
 		%feature("autodoc", "1");
-		virtual		void PolygonOffsets(Standard_Integer & aMode, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		virtual		void PolygonOffsets(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3706,7 +3728,7 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean HasPolygonOffsets(const Handle_AIS_InteractiveObject &anObj) const;
 		%feature("autodoc", "1");
-		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer & aMode, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void PolygonOffsets(const Handle_AIS_InteractiveObject &anObj, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetTrihedronSize(const Standard_Real aSize, const Standard_Boolean updateviewer=1);
 		%feature("autodoc", "1");
@@ -4072,7 +4094,7 @@ class AIS_InteractiveContext : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void DisplayActiveAreas(const Handle_AIS_InteractiveObject &anObject, const Handle_V3d_View &aView);
 		%feature("autodoc", "1");
-		Standard_Boolean IsInLocal(const Handle_AIS_InteractiveObject &anObject, Standard_Integer & TheIndex) const;
+		Standard_Boolean IsInLocal(const Handle_AIS_InteractiveObject &anObject, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4370,7 +4392,7 @@ class AIS {
 		%feature("autodoc", "1");
 		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge1, const TopoDS_Edge &anEdge2, Handle_Geom_Curve & aCurve1, Handle_Geom_Curve & aCurve2, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, gp_Pnt & FirstPnt2, gp_Pnt & LastPnt2, const Handle_Geom_Plane &aPlane);
 		%feature("autodoc", "1");
-		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge1, const TopoDS_Edge &anEdge2, Standard_Integer & indexExt, Handle_Geom_Curve & aCurve1, Handle_Geom_Curve & aCurve2, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, gp_Pnt & FirstPnt2, gp_Pnt & LastPnt2, Handle_Geom_Curve & ExtCurve, Standard_Boolean & isinfinite1, Standard_Boolean & isinfinite2, const Handle_Geom_Plane &aPlane);
+		Standard_Boolean ComputeGeometry(const TopoDS_Edge &anEdge1, const TopoDS_Edge &anEdge2, Standard_Integer &OutValue, Handle_Geom_Curve & aCurve1, Handle_Geom_Curve & aCurve2, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, gp_Pnt & FirstPnt2, gp_Pnt & LastPnt2, Handle_Geom_Curve & ExtCurve, Standard_Boolean & isinfinite1, Standard_Boolean & isinfinite2, const Handle_Geom_Plane &aPlane);
 		%feature("autodoc", "1");
 		Standard_Boolean ComputeGeomCurve(Handle_Geom_Curve & aCurve, const Standard_Real first1, const Standard_Real last1, gp_Pnt & FirstPnt1, gp_Pnt & LastPnt1, const Handle_Geom_Plane &aPlane, Standard_Boolean & isOnPlane);
 		%feature("autodoc", "1");
@@ -4796,11 +4818,11 @@ class AIS_LengthDimension : public AIS_Relation {
 		%feature("autodoc", "1");
 		virtual		void Compute(const Handle_Prs3d_Projector &aProjector, const Handle_Geom_Transformation &aTrsf, const Handle_Prs3d_Presentation &aPresentation);
 		%feature("autodoc", "1");
-		void ComputeTwoEdgesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Edge &FirstEdge, const TopoDS_Edge &SecondEdge, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer & ExtShape, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeTwoEdgesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Edge &FirstEdge, const TopoDS_Edge &SecondEdge, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc", "1");
-		void ComputeOneEdgeOneVertexLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer & ExtShape, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeOneEdgeOneVertexLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Shape &FirstShape, const TopoDS_Shape &SecondShape, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc", "1");
-		void ComputeTwoVerticesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Vertex &FirstVertex, const TopoDS_Vertex &SecondVertex, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, Standard_Integer & ExtShape, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
+		void ComputeTwoVerticesLength(const Handle_Prs3d_Presentation &aPresentation, const Handle_AIS_Drawer &aDrawer, const TCollection_ExtendedString &aText, const Standard_Real ArrowSize, const TopoDS_Vertex &FirstVertex, const TopoDS_Vertex &SecondVertex, const Handle_Geom_Plane &Plane, const Standard_Boolean AutomaticPos, const Standard_Boolean IsSetBndBox, const Bnd_Box &BndBox, const AIS_TypeOfDist TypeDist, Standard_Integer &OutValue, Standard_Real &OutValue, gp_Dir & DirAttach, gp_Pnt & Position, gp_Pnt & FirstAttach, gp_Pnt & SecondAttach, DsgPrs_ArrowSide & SymbolPrs);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

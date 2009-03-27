@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -998,7 +1020,7 @@ class MoniTool_CaseData : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Real(const Standard_Integer nd, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Integer(const Standard_Integer nd, Standard_Integer & val) const;
+		Standard_Boolean Integer(const Standard_Integer nd, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetDefWarning(const char * acode);
 		%feature("autodoc", "1");
@@ -1118,7 +1140,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetIntegerLimit(const Standard_Boolean max, const Standard_Integer val);
 		%feature("autodoc", "1");
-		Standard_Boolean IntegerLimit(const Standard_Boolean max, Standard_Integer & val) const;
+		Standard_Boolean IntegerLimit(const Standard_Boolean max, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetRealLimit(const Standard_Boolean max, const Standard_Real val);
 		%feature("autodoc", "1");
@@ -1134,7 +1156,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void AddEnumValue(const char * val, const Standard_Integer num);
 		%feature("autodoc", "1");
-		Standard_Boolean EnumDef(Standard_Integer & startcase, Standard_Integer & endcase, Standard_Boolean & match) const;
+		Standard_Boolean EnumDef(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & match) const;
 		%feature("autodoc", "1");
 		char * EnumVal(const Standard_Integer num) const;
 		%feature("autodoc", "1");
@@ -1393,7 +1415,7 @@ class MoniTool_AttrList {
 		%feature("autodoc", "1");
 		void SetIntegerAttribute(const char * name, const Standard_Integer val);
 		%feature("autodoc", "1");
-		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer & val) const;
+		Standard_Boolean GetIntegerAttribute(const char * name, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer IntegerAttribute(const char * name) const;
 		%feature("autodoc", "1");

@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -512,7 +534,7 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer & aWidth, Standard_Integer & aHeight) const;
+		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
 		%feature("autodoc", "1");
@@ -566,11 +588,11 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		%feature("autodoc", "1");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Quantity_Length & DX, Quantity_Length & DY) const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer & PX, Standard_Integer & PY) const;
+		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void LineAttrib(Standard_Integer & ColorIndex, Standard_Integer & TypeIndex, Standard_Integer & WidthIndex) const;
+		void LineAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void PolyAttrib(Standard_Integer & ColorIndex, Standard_Integer & TileIndex, Standard_Boolean & EdgeFlag) const;
+		void PolyAttrib(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & EdgeFlag) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

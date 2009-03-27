@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -504,6 +526,8 @@ class MAT2d_BiInt {
 		void SecondIndex(const Standard_Integer I2);
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const MAT2d_BiInt &B) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const MAT2d_BiInt &B) const;
 
 };
 %extend MAT2d_BiInt {
@@ -742,7 +766,7 @@ class MAT2d_Tool2d {
 		%feature("autodoc", "1");
 		Standard_Boolean TrimBisector(const Handle_MAT_Bisector &abisector, const Standard_Integer apoint);
 		%feature("autodoc", "1");
-		Standard_Real IntersectBisector(const Handle_MAT_Bisector &bisectorone, const Handle_MAT_Bisector &bisectortwo, Standard_Integer & intpnt);
+		Standard_Real IntersectBisector(const Handle_MAT_Bisector &bisectorone, const Handle_MAT_Bisector &bisectortwo, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Real Distance(const Handle_MAT_Bisector &abisector, const Standard_Real param1, const Standard_Real param2) const;
 		%feature("autodoc", "1");

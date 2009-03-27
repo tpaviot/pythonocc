@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1773,15 +1795,15 @@ class Graphic3d_Strips {
 		%feature("autodoc", "1");
 		void STRIPT_INIT(const Standard_Integer NBVERTICES, const TColStd_Array1OfInteger &TABTRIANGLES);
 		%feature("autodoc", "1");
-		void STRIPT_GET_STRIP(Standard_Integer & NBTRIANGLES, Standard_Integer & V1, Standard_Integer & V2);
+		void STRIPT_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void STRIPT_GET_VERTEX(Standard_Integer & VERTEX, Standard_Integer & TRIANGLE);
+		void STRIPT_GET_VERTEX(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void STRIPQ_INIT(const Standard_Integer NBVERTICES, const Standard_Integer NBQUADRANG, const TColStd_SequenceOfInteger &TABQUADRANGLES);
 		%feature("autodoc", "1");
-		void STRIPQ_GET_STRIP(Standard_Integer & NBQUAD, Standard_Integer & V1, Standard_Integer & V2);
+		void STRIPQ_GET_STRIP(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void STRIPQ_GET_NEXT(Standard_Integer & VERTEX1, Standard_Integer & VERTEX2, Standard_Integer & QUADRANGLE);
+		void STRIPQ_GET_NEXT(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 
 };
 %extend Graphic3d_Strips {
@@ -2090,7 +2112,7 @@ class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
 		%feature("autodoc", "1");
 		Graphic3d_AspectMarker3d(const Aspect_TypeOfMarker AType, const Quantity_Color &AColor, const Standard_Real AScaleOrId, const Standard_Integer AWidth, const Standard_Integer AHeight, const Handle_Graphic3d_HArray1OfBytes &ATexture);
 		%feature("autodoc", "1");
-		void GetTextureSize(Standard_Integer & AWidth, Standard_Integer & AHeight);
+		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const Handle_Graphic3d_HArray1OfBytes & GetTexture();
 		%feature("autodoc", "1");
@@ -3119,7 +3141,7 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 		%feature("autodoc", "1");
 		virtual		void DepthCueing(const Graphic3d_CView &ACView, const Standard_Boolean AFlag);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean ProjectRaster(const Graphic3d_CView &ACView, const Standard_ShortReal AX, const Standard_ShortReal AY, const Standard_ShortReal AZ, Standard_Integer & AU, Standard_Integer & AV);
+		virtual		Standard_Boolean ProjectRaster(const Graphic3d_CView &ACView, const Standard_ShortReal AX, const Standard_ShortReal AY, const Standard_ShortReal AZ, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean UnProjectRaster(const Graphic3d_CView &ACView, const Standard_Integer Axm, const Standard_Integer Aym, const Standard_Integer AXM, const Standard_Integer AYM, const Standard_Integer AU, const Standard_Integer AV, Standard_ShortReal & AX, Standard_ShortReal & AY, Standard_ShortReal & AZ);
 		%feature("autodoc", "1");
@@ -4574,6 +4596,8 @@ class Graphic3d_MaterialAspect {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Graphic3d_MaterialAspect &Other) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Graphic3d_MaterialAspect &Other) const;
+		%feature("autodoc", "1");
 		Standard_Integer NumberOfMaterials();
 		%feature("autodoc", "1");
 		char * MaterialName(const Standard_Integer aRank);
@@ -5024,7 +5048,7 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 		%feature("autodoc", "1");
 		Aspect_TypeOfDegenerateModel DefaultDegenerateModel(Quantity_Ratio & aRatio);
 		%feature("autodoc", "1");
-		void PolygonOffsets(Standard_Integer & aMode, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void PolygonOffsets(Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -119,6 +119,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -341,8 +363,10 @@ class ModularBuilder(object):
         if (not is_exportable) and not(class_parent_name in function_name):#for constructors and destructor
             print "\t\t %s method not exportable"%function_name
             return True
-        if ("operator=" in function_name) or ("operator ::" in function_name): #Pb with SWIG
-            return True   
+        if ("operator=" in function_name and not "==" in function_name):#not wrapped by SWIG
+            return True
+        if ("operator ::" in function_name): #Pb with SWIG
+            return True
         if hasattr(mem_fun,"return_type"):
             return_type = "%s"%mem_fun.return_type
         else:
@@ -455,6 +479,8 @@ class ModularBuilder(object):
             else:
                 if 'Standard_Real &' in argument_type: # byref Standard_Float parameter
                     to_write += "Standard_Real &OutValue"
+                elif 'Standard_Integer &' in argument_type:# byref Standard_Integer parameter
+                    to_write += "Standard_Integer &OutValue"
                 else:
                     to_write += "%s %s"%(argument_type,argument_name)
             if 'Standard_CString' in to_write:

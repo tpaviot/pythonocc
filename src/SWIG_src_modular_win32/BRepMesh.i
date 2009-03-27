@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1449,6 +1471,8 @@ class BRepMesh_Vertex {
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Vertex &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const BRepMesh_Vertex &Other) const;
 
 };
 %extend BRepMesh_Vertex {
@@ -2520,7 +2544,7 @@ class BRepMesh_Delaun {
 		%feature("autodoc", "1");
 		void SuperMesh(const Bnd_Box2d &theBox);
 		%feature("autodoc", "1");
-		Standard_Boolean Contains(const Standard_Integer TrianIndex, const BRepMesh_Vertex &theVertex, Standard_Integer & edgeOn) const;
+		Standard_Boolean Contains(const Standard_Integer TrianIndex, const BRepMesh_Vertex &theVertex, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer TriangleContaining(const BRepMesh_Vertex &theVertex);
 
@@ -2616,6 +2640,8 @@ class BRepMesh_Edge {
 		Standard_Boolean SameOrientation(const BRepMesh_Edge &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Edge &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const BRepMesh_Edge &Other) const;
 
 };
 %extend BRepMesh_Edge {
@@ -2659,7 +2685,7 @@ class BRepMesh_Triangle {
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Integer e1, const Standard_Integer e2, const Standard_Integer e3, const Standard_Boolean o1, const Standard_Boolean o2, const Standard_Boolean o3, const MeshDS_DegreeOfFreedom canMove, const Standard_Integer domain=0);
 		%feature("autodoc", "1");
-		void Edges(Standard_Integer & e1, Standard_Integer & e2, Standard_Integer & e3, Standard_Boolean & o1, Standard_Boolean & o2, Standard_Boolean & o3) const;
+		void Edges(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & o1, Standard_Boolean & o2, Standard_Boolean & o3) const;
 		%feature("autodoc", "1");
 		MeshDS_DegreeOfFreedom Movability() const;
 		%feature("autodoc", "1");
@@ -2670,6 +2696,8 @@ class BRepMesh_Triangle {
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const BRepMesh_Triangle &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const BRepMesh_Triangle &Other) const;
 
 };
 %extend BRepMesh_Triangle {

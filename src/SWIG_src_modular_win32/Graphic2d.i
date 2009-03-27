@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1912,7 +1934,7 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		OSD_File ImageFile() const;
 		%feature("autodoc", "1");
-		Standard_Boolean Values(OSD_File & aFile, Standard_Integer & aWidth, Standard_Integer & aHeight, Standard_Integer & aDepth);
+		Standard_Boolean Values(OSD_File & aFile, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void SwapLong(const Standard_Address anAddress, const Standard_Integer aNumOfBytes);
 		%feature("autodoc", "1");
@@ -2063,7 +2085,7 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Standard_Integer & anIndex, Quantity_Length & X, Quantity_Length & Y, Quantity_Length & aW, Quantity_Length & aH, Quantity_PlaneAngle & anAngle) const;
+		void Values(const Standard_Integer aRank, Standard_Integer &OutValue, Quantity_Length & X, Quantity_Length & Y, Quantity_Length & aW, Quantity_Length & aH, Quantity_PlaneAngle & anAngle) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean SetElementsSelected();
 		%feature("autodoc", "1");
@@ -2937,6 +2959,8 @@ class Graphic2d_Vertex {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Graphic2d_Vertex &other) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Graphic2d_Vertex &other) const;
+		%feature("autodoc", "1");
 		Quantity_Length Distance(const Graphic2d_Vertex &AV1, const Graphic2d_Vertex &AV2);
 
 };
@@ -3058,7 +3082,7 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Integer FrameWidthIndex() const;
 		%feature("autodoc", "1");
-		TCollection_ExtendedString Text(const Standard_Integer aRank, Standard_Integer & aRow, Standard_Integer & aColumn, Standard_Integer & aColorIndex, Standard_Integer & aFontIndex, Graphic2d_TypeOfAlignment & anAlignment) const;
+		TCollection_ExtendedString Text(const Standard_Integer aRank, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Graphic2d_TypeOfAlignment & anAlignment) const;
 		%feature("autodoc", "1");
 		Standard_Boolean TextSize(const Standard_Integer aRank, Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & anXoffset, Quantity_Length & anYoffset) const;
 		%feature("autodoc", "1");
@@ -3184,7 +3208,7 @@ class Graphic2d_Drawer : public Standard_Transient {
 		%feature("autodoc", "1");
 		Standard_Boolean GetImageSize(const char * aFileName, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetImageSize(const char * aFileName, Standard_Integer & aWidth, Standard_Integer & aHeight) const;
+		Standard_Boolean GetImageSize(const char * aFileName, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void UnMapFromTo(const Standard_ShortReal x1, const Standard_ShortReal y1, Standard_ShortReal & x2, Standard_ShortReal & y2) const;
 		%feature("autodoc", "1");

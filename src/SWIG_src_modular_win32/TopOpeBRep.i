@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -880,21 +902,21 @@ class TopOpeBRep_FacesFiller {
 		%feature("autodoc", "1");
 		void ProcessVPonclosingR(const TopOpeBRep_VPointInter &VP, const TopoDS_Shape &F1, const Standard_Integer ShapeIndex, const TopOpeBRepDS_Transition &transEdge, const TopOpeBRepDS_Kind PVKind, const Standard_Integer PVIndex, const Standard_Boolean EPIfound, const Handle_TopOpeBRepDS_Interference &IEPI);
 		%feature("autodoc", "1");
-		Standard_Boolean ProcessVPondgE(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & PVKind, Standard_Integer & PVIndex, Standard_Boolean & EPIfound, Handle_TopOpeBRepDS_Interference & IEPI, Standard_Boolean & CPIfound, Handle_TopOpeBRepDS_Interference & ICPI);
+		Standard_Boolean ProcessVPondgE(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & PVKind, Standard_Integer &OutValue, Standard_Boolean & EPIfound, Handle_TopOpeBRepDS_Interference & IEPI, Standard_Boolean & CPIfound, Handle_TopOpeBRepDS_Interference & ICPI);
 		%feature("autodoc", "1");
 		void ProcessVPInotonR(TopOpeBRep_VPointInterIterator & VPI);
 		%feature("autodoc", "1");
 		void ProcessVPnotonR(const TopOpeBRep_VPointInter &VP);
 		%feature("autodoc", "1");
-		Standard_Boolean GetGeometry(TopOpeBRepDS_ListIteratorOfListOfInterference & IT, const TopOpeBRep_VPointInter &VP, Standard_Integer & G, TopOpeBRepDS_Kind & K);
+		Standard_Boolean GetGeometry(TopOpeBRepDS_ListIteratorOfListOfInterference & IT, const TopOpeBRep_VPointInter &VP, Standard_Integer &OutValue, TopOpeBRepDS_Kind & K);
 		%feature("autodoc", "1");
 		Standard_Integer MakeGeometry(const TopOpeBRep_VPointInter &VP, const Standard_Integer ShapeIndex, TopOpeBRepDS_Kind & K);
 		%feature("autodoc", "1");
 		void StoreCurveInterference(const Handle_TopOpeBRepDS_Interference &I);
 		%feature("autodoc", "1");
-		Standard_Boolean GetFFGeometry(const TopOpeBRepDS_Point &DSP, TopOpeBRepDS_Kind & K, Standard_Integer & G) const;
+		Standard_Boolean GetFFGeometry(const TopOpeBRepDS_Point &DSP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GetFFGeometry(const TopOpeBRep_VPointInter &VP, TopOpeBRepDS_Kind & K, Standard_Integer & G) const;
+		Standard_Boolean GetFFGeometry(const TopOpeBRep_VPointInter &VP, TopOpeBRepDS_Kind & K, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		TopOpeBRep_FacesIntersector & ChangeFacesIntersector();
 		%feature("autodoc", "1");
@@ -916,7 +938,7 @@ class TopOpeBRep_FacesFiller {
 		%feature("autodoc", "1");
 		void SetTraceIndex(const Standard_Integer exF1, const Standard_Integer exF2);
 		%feature("autodoc", "1");
-		void GetTraceIndex(Standard_Integer & exF1, Standard_Integer & exF2) const;
+		void GetTraceIndex(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Lminmax(const TopOpeBRep_LineInter &L, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
@@ -1356,7 +1378,7 @@ class TopOpeBRep_VPointInter {
 		%feature("autodoc", "1");
 		void SetShapes(const Standard_Integer I1, const Standard_Integer I2);
 		%feature("autodoc", "1");
-		void GetShapes(Standard_Integer & I1, Standard_Integer & I2) const;
+		void GetShapes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		IntSurf_Transition TransitionOnS1() const;
 		%feature("autodoc", "1");
@@ -1695,7 +1717,7 @@ class TopOpeBRep_Point2d {
 		%feature("autodoc", "1");
 		void SetSegmentAncestors(const Standard_Integer IP1, const Standard_Integer IP2);
 		%feature("autodoc", "1");
-		Standard_Boolean SegmentAncestors(Standard_Integer & IP1, Standard_Integer & IP2) const;
+		Standard_Boolean SegmentAncestors(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetStatus(const TopOpeBRep_P2Dstatus I);
 		%feature("autodoc", "1");

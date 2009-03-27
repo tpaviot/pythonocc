@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -2911,9 +2933,9 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 		%feature("autodoc", "1");
 		void SetWeight(const Standard_Integer Index, const Standard_Real Weight);
 		%feature("autodoc", "1");
-		void MovePoint(const Standard_Real U, const gp_Pnt &P, const Standard_Integer Index1, const Standard_Integer Index2, Standard_Integer & FirstModifiedPole, Standard_Integer & LastModifiedPole);
+		void MovePoint(const Standard_Real U, const gp_Pnt &P, const Standard_Integer Index1, const Standard_Integer Index2, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void MovePointAndTangent(const Standard_Real U, const gp_Pnt &P, const gp_Vec &Tangent, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer & ErrorStatus);
+		void MovePointAndTangent(const Standard_Real U, const gp_Pnt &P, const gp_Vec &Tangent, const Standard_Real Tolerance, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsCN(const Standard_Integer N) const;
 		%feature("autodoc", "1");
@@ -2967,7 +2989,7 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 		%feature("autodoc", "1");
 		virtual		Standard_Real LastParameter() const;
 		%feature("autodoc", "1");
-		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer & I1, Standard_Integer & I2, const Standard_Boolean WithKnotRepetition=0) const;
+		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
 		Standard_Integer Multiplicity(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -3619,9 +3641,9 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 		%feature("autodoc", "1");
 		void SetVKnot(const Standard_Integer VIndex, const Standard_Real K, const Standard_Integer M);
 		%feature("autodoc", "1");
-		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer & I1, Standard_Integer & I2, const Standard_Boolean WithKnotRepetition=0) const;
+		void LocateU(const Standard_Real U, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
-		void LocateV(const Standard_Real V, const Standard_Real ParametricTolerance, Standard_Integer & I1, Standard_Integer & I2, const Standard_Boolean WithKnotRepetition=0) const;
+		void LocateV(const Standard_Real V, const Standard_Real ParametricTolerance, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Boolean WithKnotRepetition=0) const;
 		%feature("autodoc", "1");
 		void SetPole(const Standard_Integer UIndex, const Standard_Integer VIndex, const gp_Pnt &P);
 		%feature("autodoc", "1");
@@ -3641,7 +3663,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 		%feature("autodoc", "1");
 		void SetWeightRow(const Standard_Integer UIndex, const TColStd_Array1OfReal &CPoleWeights);
 		%feature("autodoc", "1");
-		void MovePoint(const Standard_Real U, const Standard_Real V, const gp_Pnt &P, const Standard_Integer UIndex1, const Standard_Integer UIndex2, const Standard_Integer VIndex1, const Standard_Integer VIndex2, Standard_Integer & UFirstIndex, Standard_Integer & ULastIndex, Standard_Integer & VFirstIndex, Standard_Integer & VLastIndex);
+		void MovePoint(const Standard_Real U, const Standard_Real V, const gp_Pnt &P, const Standard_Integer UIndex1, const Standard_Integer UIndex2, const Standard_Integer VIndex1, const Standard_Integer VIndex2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsUClosed() const;
 		%feature("autodoc", "1");

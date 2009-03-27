@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -634,7 +656,7 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 		%feature("autodoc", "1");
 		void ClosedVertices(const Standard_Boolean B);
 		%feature("autodoc", "1");
-		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer & cas);
+		Standard_Real AdjustCase(const Standard_Real p1, const TopAbs_Orientation o, const Standard_Real first, const Standard_Real period, const Standard_Real tol, Standard_Integer &OutValue);
 
 };
 %extend TopOpeBRepBuild_PaveClassifier {
@@ -1357,11 +1379,11 @@ class TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		Standard_Integer KPissososh(const TopoDS_Shape &S) const;
 		%feature("autodoc", "1");
-		void KPiskoleanalyse(const TopAbs_State FT1, const TopAbs_State FT2, const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer & I, Standard_Integer & I1, Standard_Integer & I2) const;
+		void KPiskoleanalyse(const TopAbs_State FT1, const TopAbs_State FT2, const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void KPiskoletgeanalyse(const TopOpeBRepDS_Config Conf, const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer & I) const;
+		void KPiskoletgeanalyse(const TopOpeBRepDS_Config Conf, const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void KPisdisjanalyse(const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer & I, Standard_Integer & IC1, Standard_Integer & IC2) const;
+		void KPisdisjanalyse(const TopAbs_State ST1, const TopAbs_State ST2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer KPls(const TopoDS_Shape &S, const TopAbs_ShapeEnum T, TopTools_ListOfShape & L);
 		%feature("autodoc", "1");
@@ -1541,7 +1563,7 @@ class TopOpeBRepBuild_Builder {
 		%feature("autodoc", "1");
 		Standard_Boolean GtraceSPS(const TopoDS_Shape &S) const;
 		%feature("autodoc", "1");
-		Standard_Boolean GtraceSPS(const TopoDS_Shape &S, Standard_Integer & IS) const;
+		Standard_Boolean GtraceSPS(const TopoDS_Shape &S, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void GdumpSHASETreset();
 		%feature("autodoc", "1");
@@ -1676,7 +1698,7 @@ class TopOpeBRepBuild_GTopo {
 		%feature("autodoc", "1");
 		TopAbs_State GState(const Standard_Integer I) const;
 		%feature("autodoc", "1");
-		void Index(const Standard_Integer II, Standard_Integer & i1, Standard_Integer & i2) const;
+		void Index(const Standard_Integer II, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void DumpVal(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2) const;
 		%feature("autodoc", "1");
@@ -1767,7 +1789,7 @@ class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer GetDSPointFromNewVertex(const TopoDS_Shape &NewVert);
 		%feature("autodoc", "1");
-		Standard_Boolean EdgeCurveAncestors(const TopoDS_Shape &E, TopoDS_Shape & F1, TopoDS_Shape & F2, Standard_Integer & IC);
+		Standard_Boolean EdgeCurveAncestors(const TopoDS_Shape &E, TopoDS_Shape & F1, TopoDS_Shape & F2, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean EdgeSectionAncestors(const TopoDS_Shape &E, TopTools_ListOfShape & LF1, TopTools_ListOfShape & LF2, TopTools_ListOfShape & LE1, TopTools_ListOfShape & LE2);
 		%feature("autodoc", "1");

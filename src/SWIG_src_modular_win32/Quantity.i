@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -945,9 +967,9 @@ class Quantity_Period {
 		%feature("autodoc", "1");
 		Quantity_Period(const Standard_Integer ss, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
-		void Values(Standard_Integer & dd, Standard_Integer & hh, Standard_Integer & mn, Standard_Integer & ss, Standard_Integer & mis, Standard_Integer & mics) const;
+		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void Values(Standard_Integer & ss, Standard_Integer & mics) const;
+		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetValues(const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
@@ -962,6 +984,8 @@ class Quantity_Period {
 		Quantity_Period operator+(const Quantity_Period &anOther) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Quantity_Period &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Quantity_Period &anOther) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsShorter(const Quantity_Period &anOther) const;
 		%feature("autodoc", "1");
@@ -1125,6 +1149,8 @@ class Quantity_Color {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Quantity_Color &Other) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Quantity_Color &Other) const;
+		%feature("autodoc", "1");
 		Quantity_Parameter Light() const;
 		%feature("autodoc", "1");
 		Quantity_NameOfColor Name() const;
@@ -1176,7 +1202,7 @@ class Quantity_Date {
 		%feature("autodoc", "1");
 		Quantity_Date(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yyyy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
-		void Values(Standard_Integer & mm, Standard_Integer & dd, Standard_Integer & yy, Standard_Integer & hh, Standard_Integer & mn, Standard_Integer & ss, Standard_Integer & mis, Standard_Integer & mics) const;
+		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void SetValues(const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer yy, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const Standard_Integer mis=0, const Standard_Integer mics=0);
 		%feature("autodoc", "1");
@@ -1207,6 +1233,8 @@ class Quantity_Date {
 		Standard_Integer MicroSecond();
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Quantity_Date &anOther) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Quantity_Date &anOther) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEarlier(const Quantity_Date &anOther) const;
 		%feature("autodoc", "1");

@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -928,9 +950,9 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Integer NbPassingPoint() const;
 		%feature("autodoc", "1");
-		void PassingPoint(const Standard_Integer Index, Standard_Integer & IndexLine, Standard_Integer & IndexPnts) const;
+		void PassingPoint(const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		const gp_Vec & TangentVector(Standard_Integer & Index) const;
+		const gp_Vec & TangentVector(Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsTangentAtBegining() const;
 		%feature("autodoc", "1");
@@ -1027,9 +1049,9 @@ class Contap_HContTool {
 		%feature("autodoc", "1");
 		Standard_Integer NbSegments(const Handle_Adaptor2d_HCurve2d &C);
 		%feature("autodoc", "1");
-		Standard_Boolean HasFirstPoint(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Standard_Integer & IndFirst);
+		Standard_Boolean HasFirstPoint(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean HasLastPoint(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Standard_Integer & IndLast);
+		Standard_Boolean HasLastPoint(const Handle_Adaptor2d_HCurve2d &C, const Standard_Integer Index, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsAllSolution(const Handle_Adaptor2d_HCurve2d &C);
 

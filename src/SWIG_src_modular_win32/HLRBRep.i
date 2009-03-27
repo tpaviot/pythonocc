@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1618,7 +1640,7 @@ class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Interse
 		%feature("autodoc", "1");
 		Standard_Real FindV(const Standard_Real parameter, gp_Pnt2d & point, const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &ParCurve, const IntRes2d_Domain &TheParCurveDomain, const Standard_Real V0, const Standard_Real V1, const Standard_Real Tolerance) const;
 		%feature("autodoc", "1");
-		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer & NbResultats, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
+		void And_Domaine_Objet1_Intersections(const IntCurve_IConicTool &IntCurve_IConicTool, const Standard_Address &TheParCurve, const IntRes2d_Domain &TheImpCurveDomain, const IntRes2d_Domain &TheParCurveDomain, Standard_Integer &OutValue, TColStd_Array1OfReal & Inter2_And_Domain2, TColStd_Array1OfReal & Inter1, TColStd_Array1OfReal & Resultat1, TColStd_Array1OfReal & Resultat2, const Standard_Real EpsNul) const;
 
 };
 %extend HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter {
@@ -2058,7 +2080,7 @@ class HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
 		%feature("autodoc", "1");
 		HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter(const Standard_Address &C1, const Standard_Address &C2, const Standard_Real Tol);
 		%feature("autodoc", "1");
-		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Poly1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Poly2, Standard_Integer & NumSegOn1, Standard_Integer & NumSegOn2, Standard_Real &OutValue, Standard_Real &OutValue);
+		void Perform(const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Poly1, const HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter &Poly2, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void Perform(const Standard_Real Uo, const Standard_Real Vo, const Standard_Real UInf, const Standard_Real VInf, const Standard_Real USup, const Standard_Real VSup);
 		%feature("autodoc", "1");
@@ -2206,11 +2228,11 @@ class HLRBRep_ThePolyhedronToolOfInterCSurf {
 		%feature("autodoc", "1");
 		Standard_Integer NbTriangles(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh);
 		%feature("autodoc", "1");
-		void Triangle(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index, Standard_Integer & P1, Standard_Integer & P2, Standard_Integer & P3);
+		void Triangle(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		const gp_Pnt & Point(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index);
 		%feature("autodoc", "1");
-		Standard_Integer TriConnex(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer & TriCon, Standard_Integer & OtherP);
+		Standard_Integer TriConnex(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Triang, const Standard_Integer Pivot, const Standard_Integer Pedge, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean IsOnBound(const HLRBRep_ThePolyhedronOfInterCSurf &thePolyh, const Standard_Integer Index1, const Standard_Integer Index2);
 		%feature("autodoc", "1");
@@ -2296,9 +2318,9 @@ class HLRBRep_ShapeBounds {
 		%feature("autodoc", "1");
 		Standard_Integer NbOfIso() const;
 		%feature("autodoc", "1");
-		void Sizes(Standard_Integer & NV, Standard_Integer & NE, Standard_Integer & NF) const;
+		void Sizes(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void Bounds(Standard_Integer & V1, Standard_Integer & V2, Standard_Integer & E1, Standard_Integer & E2, Standard_Integer & F1, Standard_Integer & F2) const;
+		void Bounds(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void UpdateMinMax(const Standard_Address TotMinMax);
 		%feature("autodoc", "1");

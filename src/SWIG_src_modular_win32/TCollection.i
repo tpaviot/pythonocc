@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -312,7 +334,11 @@ class TCollection_AsciiString {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const char * other) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const char * other) const;
+		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TCollection_AsciiString &other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const TCollection_AsciiString &other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const char * other) const;
 		%feature("autodoc", "1");
@@ -608,7 +634,11 @@ class TCollection_ExtendedString {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Standard_ExtString other) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Standard_ExtString other) const;
+		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const TCollection_ExtendedString &other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const TCollection_ExtendedString &other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDifferent(const Standard_ExtString other) const;
 		%feature("autodoc", "1");

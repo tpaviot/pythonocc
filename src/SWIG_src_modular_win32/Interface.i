@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -954,7 +976,7 @@ class Interface_ReaderLib {
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc", "1");
-		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_ReaderModule & module, Standard_Integer & CN) const;
+		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_ReaderModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -1719,7 +1741,7 @@ class Interface_GeneralLib {
 		%feature("autodoc", "1");
 		void SetComplete();
 		%feature("autodoc", "1");
-		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_GeneralModule & module, Standard_Integer & CN) const;
+		Standard_Boolean Select(const Handle_Standard_Transient &obj, Handle_Interface_GeneralModule & module, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Start();
 		%feature("autodoc", "1");
@@ -2032,7 +2054,7 @@ class Interface_IntList {
 		%feature("autodoc", "1");
 		void Initialize(const Standard_Integer nbe);
 		%feature("autodoc", "1");
-		void Internals(Standard_Integer & nbrefs, Handle_TColStd_HArray1OfInteger & ents, Handle_TColStd_HArray1OfInteger & refs) const;
+		void Internals(Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & ents, Handle_TColStd_HArray1OfInteger & refs) const;
 		%feature("autodoc", "1");
 		Standard_Integer NbEntities() const;
 		%feature("autodoc", "1");
@@ -2099,7 +2121,7 @@ class Interface_BitMap {
 		%feature("autodoc", "1");
 		Interface_BitMap(const Interface_BitMap &other, const Standard_Boolean copied=0);
 		%feature("autodoc", "1");
-		void Internals(Standard_Integer & nbitems, Standard_Integer & nbwords, Standard_Integer & nbflags, Handle_TColStd_HArray1OfInteger & flags, Handle_TColStd_HSequenceOfAsciiString & names) const;
+		void Internals(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Handle_TColStd_HArray1OfInteger & flags, Handle_TColStd_HSequenceOfAsciiString & names) const;
 		%feature("autodoc", "1");
 		void Reservate(const Standard_Integer moreflags);
 		%feature("autodoc", "1");
@@ -2773,7 +2795,7 @@ class Interface_GTool : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ClearEntities();
 		%feature("autodoc", "1");
-		Standard_Boolean Select(const Handle_Standard_Transient &ent, Handle_Interface_GeneralModule & gmod, Standard_Integer & CN, const Standard_Boolean enforce=0);
+		Standard_Boolean Select(const Handle_Standard_Transient &ent, Handle_Interface_GeneralModule & gmod, Standard_Integer &OutValue, const Standard_Boolean enforce=0);
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2831,7 +2853,7 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		void TDate(const char * text, const Standard_Integer yy, const Standard_Integer mm, const Standard_Integer dd, const Standard_Integer hh, const Standard_Integer mn, const Standard_Integer ss, const char * format="");
 		%feature("autodoc", "1");
-		Standard_Boolean NDate(const char * text, Standard_Integer & yy, Standard_Integer & mm, Standard_Integer & dd, Standard_Integer & hh, Standard_Integer & mn, Standard_Integer & ss);
+		Standard_Boolean NDate(const char * text, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer CDate(const char * text1, const char * text2);
 		%feature("autodoc", "1");

@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1308,13 +1330,13 @@ class MDF_Tool {
 		%feature("autodoc", "1");
 		void WriteLabels(const Handle_TDF_Data &aSource, const Handle_PDF_Data &aTarget, const MDF_TypeASDriverMap &aDriverMap, const Handle_MDF_SRelocationTable &aReloc);
 		%feature("autodoc", "1");
-		void WriteLabels(const TDF_Label &aSourceLab, const Handle_PColStd_HArray1OfInteger &theLabels, const Handle_PDF_HAttributeArray1 &theAttributes, const MDF_TypeASDriverMap &aDriverMap, const Handle_MDF_SRelocationTable &aReloc, Standard_Integer & labAlloc, Standard_Integer & attAlloc);
+		void WriteLabels(const TDF_Label &aSourceLab, const Handle_PColStd_HArray1OfInteger &theLabels, const Handle_PDF_HAttributeArray1 &theAttributes, const MDF_TypeASDriverMap &aDriverMap, const Handle_MDF_SRelocationTable &aReloc, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void WriteAttributes(const MDF_TypeASDriverMap &aDriverMap, const Handle_MDF_SRelocationTable &aReloc);
 		%feature("autodoc", "1");
 		void ReadLabels(const Handle_PDF_Data &aSource, const Handle_TDF_Data &aTarget, const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc);
 		%feature("autodoc", "1");
-		void ReadLabels(TDF_Label & anIns, const Handle_PColStd_HArray1OfInteger &theLabels, const Handle_PDF_HAttributeArray1 &theAttributes, const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc, Standard_Integer & labRead, Standard_Integer & attRead);
+		void ReadLabels(TDF_Label & anIns, const Handle_PColStd_HArray1OfInteger &theLabels, const Handle_PDF_HAttributeArray1 &theAttributes, const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void ReadAttributes(const MDF_TypeARDriverMap &aDriverMap, const Handle_MDF_RRelocationTable &aReloc);
 

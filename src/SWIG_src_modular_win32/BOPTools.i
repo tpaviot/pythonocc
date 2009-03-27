@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -587,7 +609,7 @@ class BOPTools_ShapeShapeInterference {
 		%feature("autodoc", "1");
 		Standard_Integer Index2() const;
 		%feature("autodoc", "1");
-		void Indices(Standard_Integer & anIndex1, Standard_Integer & anIndex2) const;
+		void Indices(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer OppositeIndex(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -1390,7 +1412,7 @@ class BOPTools_IteratorOfCoupleOfShape {
 		%feature("autodoc", "1");
 		virtual		void Next();
 		%feature("autodoc", "1");
-		virtual		void Current(Standard_Integer & Index1, Standard_Integer & Index2, Standard_Boolean & WithSubShape) const;
+		virtual		void Current(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Boolean & WithSubShape) const;
 		%feature("autodoc", "1");
 		const BOPTools_ListOfCoupleOfInteger & ListOfCouple() const;
 		%feature("autodoc", "1");
@@ -2607,7 +2629,7 @@ class BOPTools_InterferencePool {
 		%feature("autodoc", "1");
 		Standard_Boolean IsComputed(const Standard_Integer anInd1, const Standard_Integer anInd2) const;
 		%feature("autodoc", "1");
-		void SortTypes(Standard_Integer & anInd1, Standard_Integer & anInd2) const;
+		void SortTypes(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		BooleanOperations_KindOfInterference InterferenceType(const Standard_Integer anInd1, const Standard_Integer anInd2) const;
 		%feature("autodoc", "1");
@@ -2793,7 +2815,7 @@ class BOPTools_CoupleOfInteger {
 		%feature("autodoc", "1");
 		void SetSecond(const Standard_Integer aSecond);
 		%feature("autodoc", "1");
-		void Couple(Standard_Integer & aFirst, Standard_Integer & aSecond) const;
+		void Couple(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer First() const;
 		%feature("autodoc", "1");

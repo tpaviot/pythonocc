@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1019,11 +1041,11 @@ class TopOpeBRepTool_CORRISO {
 		%feature("autodoc", "1");
 		Standard_Boolean EdgesOUTofBoundsUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Boolean onU, const Standard_Real tolx, TopTools_DataMapOfOrientedShapeInteger & FyEds) const;
 		%feature("autodoc", "1");
-		Standard_Boolean EdgeWithFaultyUV(const TopoDS_Edge &E, Standard_Integer & Ivfaulty) const;
+		Standard_Boolean EdgeWithFaultyUV(const TopoDS_Edge &E, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean EdgesWithFaultyUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Integer nfybounds, TopTools_DataMapOfOrientedShapeInteger & FyEds, const Standard_Boolean stopatfirst=0) const;
 		%feature("autodoc", "1");
-		Standard_Boolean EdgeWithFaultyUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Integer nfybounds, TopoDS_Shape & fyE, Standard_Integer & Ifaulty) const;
+		Standard_Boolean EdgeWithFaultyUV(const TopTools_ListOfShape &EdsToCheck, const Standard_Integer nfybounds, TopoDS_Shape & fyE, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean TrslUV(const Standard_Boolean onU, const TopTools_DataMapOfOrientedShapeInteger &FyEds);
 		%feature("autodoc", "1");
@@ -1373,13 +1395,13 @@ class TopOpeBRepTool_TOOL {
 		%feature("autodoc", "1");
 		Standard_Boolean outUVbounds(const gp_Pnt2d &uv, const TopoDS_Face &F);
 		%feature("autodoc", "1");
-		void stuvF(const gp_Pnt2d &uv, const TopoDS_Face &F, Standard_Integer & onU, Standard_Integer & onV);
+		void stuvF(const gp_Pnt2d &uv, const TopoDS_Face &F, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Boolean TggeomE(const Standard_Real par, const BRepAdaptor_Curve &BC, gp_Vec & Tg);
 		%feature("autodoc", "1");
 		Standard_Boolean TggeomE(const Standard_Real par, const TopoDS_Edge &E, gp_Vec & Tg);
 		%feature("autodoc", "1");
-		Standard_Boolean TgINSIDE(const TopoDS_Vertex &v, const TopoDS_Edge &E, gp_Vec & Tg, Standard_Integer & OvinE);
+		Standard_Boolean TgINSIDE(const TopoDS_Vertex &v, const TopoDS_Edge &E, gp_Vec & Tg, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		gp_Vec2d Tg2d(const Standard_Integer iv, const TopoDS_Edge &E, const TopOpeBRepTool_C2DF &C2DF);
 		%feature("autodoc", "1");

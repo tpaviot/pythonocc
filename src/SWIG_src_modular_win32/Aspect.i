@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1788,6 +1810,8 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_ColorPixel &Other) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Aspect_ColorPixel &Other) const;
+		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_ColorPixel &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean operator!=(const Aspect_ColorPixel &Other) const;
@@ -1927,7 +1951,7 @@ class Aspect_PixMap : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Aspect_Handle PixmapID() const;
 		%feature("autodoc", "1");
-		void Size(Standard_Integer & aWidth, Standard_Integer & anHeight) const;
+		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Depth() const;
 		%feature("autodoc", "1");
@@ -2015,7 +2039,7 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 		%feature("autodoc", "1");
 		Aspect_ColorCubeColorMap(const Standard_Integer base_pixel, const Standard_Integer redmax, const Standard_Integer redmult, const Standard_Integer greenmax, const Standard_Integer greenmult, const Standard_Integer bluemax, const Standard_Integer bluemult);
 		%feature("autodoc", "1");
-		void ColorCubeDefinition(Standard_Integer & base_pixel, Standard_Integer & redmax, Standard_Integer & redmult, Standard_Integer & greenmax, Standard_Integer & greenmult, Standard_Integer & bluemax, Standard_Integer & bluemult) const;
+		void ColorCubeDefinition(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 
 };
 %extend Aspect_ColorCubeColorMap {
@@ -2046,6 +2070,8 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 		virtual		void Print(Standard_OStream & s) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_IndexPixel &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Aspect_IndexPixel &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_IndexPixel &Other) const;
 		%feature("autodoc", "1");
@@ -2304,7 +2330,7 @@ class Aspect_Driver : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsKnownImage(const Handle_Standard_Transient &anImage);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer & aWidth, Standard_Integer & aHeight) const;
+		virtual		Standard_Boolean SizeOfImageFile(const char * anImageFile, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void ClearImage(const Handle_Standard_Transient &anImageId);
 		%feature("autodoc", "1");
@@ -2370,7 +2396,7 @@ class Aspect_Driver : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Quantity_Length & DX, Quantity_Length & DY) const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer & PX, Standard_Integer & PY) const;
+		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean UseMFT() const;
 		%feature("autodoc", "1");
@@ -2396,7 +2422,7 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 		%feature("autodoc", "1");
 		Aspect_ColorRampColorMap(const Standard_Integer basepixel, const Standard_Integer dimension, const Quantity_NameOfColor colorName);
 		%feature("autodoc", "1");
-		void ColorRampDefinition(Standard_Integer & basepixel, Standard_Integer & dimension, Quantity_Color & color) const;
+		void ColorRampDefinition(Standard_Integer &OutValue, Standard_Integer &OutValue, Quantity_Color & color) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer FindColorMapIndex(const Standard_Integer ColorMapEntryIndex) const;
 		%feature("autodoc", "1");
@@ -2908,6 +2934,8 @@ class Aspect_FontStyle {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_FontStyle &Other) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Aspect_FontStyle &Other) const;
+		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_FontStyle &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean operator!=(const Aspect_FontStyle &Other) const;
@@ -3042,11 +3070,11 @@ class Aspect_Window : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Position(Quantity_Parameter & X1, Quantity_Parameter & Y1, Quantity_Parameter & X2, Quantity_Parameter & Y2) const;
 		%feature("autodoc", "1");
-		virtual		void Position(Standard_Integer & X1, Standard_Integer & Y1, Standard_Integer & X2, Standard_Integer & Y2) const;
+		virtual		void Position(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Size(Quantity_Parameter & Width, Quantity_Parameter & Height) const;
 		%feature("autodoc", "1");
-		virtual		void Size(Standard_Integer & Width, Standard_Integer & Height) const;
+		virtual		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void MMSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
@@ -3056,7 +3084,7 @@ class Aspect_Window : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Quantity_Parameter & DX, Quantity_Parameter & DY) const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const Quantity_Parameter DX, const Quantity_Parameter DY, Standard_Integer & PX, Standard_Integer & PY) const;
+		virtual		void Convert(const Quantity_Parameter DX, const Quantity_Parameter DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean BackingStore() const;
 		%feature("autodoc", "1");
@@ -3320,23 +3348,23 @@ class Aspect_WindowDriver : public Aspect_Driver {
 		%feature("autodoc", "1");
 		virtual		char * FontSize(Quantity_PlaneAngle & aSlant, Standard_ShortReal & aSize, Standard_ShortReal & aBheight, const Standard_Integer aFontIndex=-0x000000001) const;
 		%feature("autodoc", "1");
-		virtual		void ColorBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		virtual		void ColorBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalColorIndex(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		virtual		void FontBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		virtual		void FontBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalFontIndex(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		virtual		void TypeBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		virtual		void TypeBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalTypeIndex(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		virtual		void WidthBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		virtual		void WidthBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalWidthIndex(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
-		virtual		void MarkBoundIndexs(Standard_Integer & aMinIndex, Standard_Integer & aMaxIndex) const;
+		virtual		void MarkBoundIndexs(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer LocalMarkIndex(const Standard_Integer anIndex) const;
 		%feature("autodoc", "1");
@@ -3648,6 +3676,8 @@ class Aspect_LineStyle {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_LineStyle &Other) const;
 		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Aspect_LineStyle &Other) const;
+		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_LineStyle &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean operator!=(const Aspect_LineStyle &Other) const;
@@ -3686,6 +3716,8 @@ class Aspect_MarkerStyle {
 		const TColStd_Array1OfBoolean & SValues() const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_MarkerStyle &Other) const;
+		%feature("autodoc", "1");
+		Standard_Boolean operator==(const Aspect_MarkerStyle &Other) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsNotEqual(const Aspect_MarkerStyle &Other) const;
 		%feature("autodoc", "1");
@@ -3848,7 +3880,7 @@ class Aspect_Edge {
 		%feature("autodoc", "1");
 		void SetValues(const Standard_Integer AIndex1, const Standard_Integer AIndex2, const Aspect_TypeOfEdge AType);
 		%feature("autodoc", "1");
-		void Values(Standard_Integer & AIndex1, Standard_Integer & AIndex2, Aspect_TypeOfEdge & AType) const;
+		void Values(Standard_Integer &OutValue, Standard_Integer &OutValue, Aspect_TypeOfEdge & AType) const;
 		%feature("autodoc", "1");
 		Standard_Integer FirstIndex() const;
 		%feature("autodoc", "1");

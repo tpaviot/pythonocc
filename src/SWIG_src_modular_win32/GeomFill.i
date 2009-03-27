@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -1605,7 +1627,7 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Nb2dCurves() const;
 		%feature("autodoc", "1");
-		virtual		void SectionShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree) const;
+		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");
@@ -1655,7 +1677,7 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
 		%feature("autodoc", "1");
-		virtual		void SectionShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree) const;
+		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");
@@ -1763,7 +1785,7 @@ class GeomFill {
 		%feature("autodoc", "1");
 		Standard_Boolean GetCircle(const Convert_ParameterisationType TConv, const gp_Vec &ns1, const gp_Vec &ns2, const gp_Vec &dn1w, const gp_Vec &dn2w, const gp_Vec &d2n1w, const gp_Vec &d2n2w, const gp_Vec &nplan, const gp_Vec &dnplan, const gp_Vec &d2nplan, const gp_Pnt &pts1, const gp_Pnt &pts2, const gp_Vec &tang1, const gp_Vec &tang2, const gp_Vec &Dtang1, const gp_Vec &Dtang2, const Standard_Real Rayon, const Standard_Real DRayon, const Standard_Real D2Rayon, const gp_Pnt &Center, const gp_Vec &DCenter, const gp_Vec &D2Center, TColgp_Array1OfPnt & Poles, TColgp_Array1OfVec & DPoles, TColgp_Array1OfVec & D2Poles, TColStd_Array1OfReal & Weigths, TColStd_Array1OfReal & DWeigths, TColStd_Array1OfReal & D2Weigths);
 		%feature("autodoc", "1");
-		void GetShape(const Standard_Real MaxAng, Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree, Convert_ParameterisationType & TypeConv);
+		void GetShape(const Standard_Real MaxAng, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Convert_ParameterisationType & TypeConv);
 		%feature("autodoc", "1");
 		void Knots(const Convert_ParameterisationType TypeConv, TColStd_Array1OfReal & TKnots);
 		%feature("autodoc", "1");
@@ -1872,7 +1894,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Nb2dCurves() const;
 		%feature("autodoc", "1");
-		virtual		void SectionShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree) const;
+		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");
@@ -1960,7 +1982,7 @@ class GeomFill_LocFunction {
 		%feature("autodoc", "1");
 		Standard_Boolean D2(const Standard_Real Param, const Standard_Real First, const Standard_Real Last);
 		%feature("autodoc", "1");
-		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer & Ier);
+		void DN(const Standard_Real Param, const Standard_Real First, const Standard_Real Last, const Standard_Integer Order, Standard_Real &OutValue, Standard_Integer &OutValue);
 
 };
 %extend GeomFill_LocFunction {
@@ -2030,7 +2052,7 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 		%feature("autodoc", "1");
 		void SetParam(const Handle_TColStd_HArray1OfReal &Params);
 		%feature("autodoc", "1");
-		void GetShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree, Standard_Integer & NbPoles2d) const;
+		void GetShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		void Knots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");
@@ -2113,7 +2135,7 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		virtual		void SurfShape(Standard_Integer & UDegree, Standard_Integer & VDegree, Standard_Integer & NbUPoles, Standard_Integer & NbVPoles, Standard_Integer & NbUKnots, Standard_Integer & NbVKnots) const;
+		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
 		%feature("autodoc", "1");
@@ -2135,7 +2157,7 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
 		%feature("autodoc", "1");
-		virtual		void Curves2dShape(Standard_Integer & Degree, Standard_Integer & NbPoles, Standard_Integer & NbKnots) const;
+		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
 		%feature("autodoc", "1");
@@ -2254,7 +2276,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
 		%feature("autodoc", "1");
-		virtual		void SectionShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree) const;
+		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");
@@ -2598,7 +2620,7 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		virtual		void SurfShape(Standard_Integer & UDegree, Standard_Integer & VDegree, Standard_Integer & NbUPoles, Standard_Integer & NbVPoles, Standard_Integer & NbUKnots, Standard_Integer & NbVKnots) const;
+		virtual		void SurfShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Surface(TColgp_Array2OfPnt & TPoles, TColStd_Array2OfReal & TWeights, TColStd_Array1OfReal & TUKnots, TColStd_Array1OfReal & TVKnots, TColStd_Array1OfInteger & TUMults, TColStd_Array1OfInteger & TVMults) const;
 		%feature("autodoc", "1");
@@ -2620,7 +2642,7 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer NbCurves2d() const;
 		%feature("autodoc", "1");
-		virtual		void Curves2dShape(Standard_Integer & Degree, Standard_Integer & NbPoles, Standard_Integer & NbKnots) const;
+		virtual		void Curves2dShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Curve2d(const Standard_Integer Index, TColgp_Array1OfPnt2d & TPoles, TColStd_Array1OfReal & TKnots, TColStd_Array1OfInteger & TMults) const;
 		%feature("autodoc", "1");
@@ -2657,7 +2679,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 		%feature("autodoc", "1");
 		virtual		Handle_Geom_BSplineSurface BSplineSurface() const;
 		%feature("autodoc", "1");
-		virtual		void SectionShape(Standard_Integer & NbPoles, Standard_Integer & NbKnots, Standard_Integer & Degree) const;
+		virtual		void SectionShape(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Knots(TColStd_Array1OfReal & TKnots) const;
 		%feature("autodoc", "1");

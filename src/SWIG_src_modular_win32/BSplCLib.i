@@ -71,6 +71,28 @@ Standard_Real & function transformation
     }
 }
 
+/*
+Standard_Integer & function transformation
+*/
+%typemap(argout) Standard_Integer &OutValue {
+    PyObject *o, *o2, *o3;
+    o = PyInt_FromLong(*$1);
+    if ((!$result) || ($result == Py_None)) {
+        $result = o;
+    } else {
+        if (!PyTuple_Check($result)) {
+            PyObject *o2 = $result;
+            $result = PyTuple_New(1);
+            PyTuple_SetItem($result,0,o2);
+        }
+        o3 = PyTuple_New(1);
+        PyTuple_SetItem(o3,0,o);
+        o2 = $result;
+        $result = PySequence_Concat(o2,o3);
+        Py_DECREF(o2);
+        Py_DECREF(o3);
+    }
+}
 %typemap(in,numinputs=0) Standard_Real &OutValue(Standard_Real temp) {
     $1 = &temp;
 }
@@ -101,7 +123,7 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		BSplCLib();
 		%feature("autodoc", "1");
-		void Hunt(const TColStd_Array1OfReal &XX, const Standard_Real X, Standard_Integer & Iloc);
+		void Hunt(const TColStd_Array1OfReal &XX, const Standard_Real X, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer FirstUKnotIndex(const Standard_Integer Degree, const TColStd_Array1OfInteger &Mults);
 		%feature("autodoc", "1");
@@ -109,11 +131,11 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		Standard_Integer FlatIndex(const Standard_Integer Degree, const Standard_Integer Index, const TColStd_Array1OfInteger &Mults, const Standard_Boolean Periodic);
 		%feature("autodoc", "1");
-		void LocateParameter(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Real U, const Standard_Boolean IsPeriodic, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Integer & KnotIndex, Standard_Real &OutValue);
+		void LocateParameter(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Real U, const Standard_Boolean IsPeriodic, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void LocateParameter(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const Standard_Real U, const Standard_Boolean IsPeriodic, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Integer & KnotIndex, Standard_Real &OutValue);
+		void LocateParameter(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const Standard_Real U, const Standard_Boolean IsPeriodic, const Standard_Integer FromK1, const Standard_Integer ToK2, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void LocateParameter(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Real U, const Standard_Boolean Periodic, Standard_Integer & Index, Standard_Real &OutValue);
+		void LocateParameter(const Standard_Integer Degree, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Real U, const Standard_Boolean Periodic, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer MaxKnotMult(const TColStd_Array1OfInteger &Mults, const Standard_Integer K1, const Standard_Integer K2);
 		%feature("autodoc", "1");
@@ -179,9 +201,9 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		Standard_Integer BoorIndex(const Standard_Integer Index, const Standard_Integer Length, const Standard_Integer Depth);
 		%feature("autodoc", "1");
-		void GetPole(const Standard_Integer Index, const Standard_Integer Length, const Standard_Integer Depth, const Standard_Integer Dimension, Standard_Real &OutValue, Standard_Integer & Position, TColStd_Array1OfReal & Pole);
+		void GetPole(const Standard_Integer Index, const Standard_Integer Length, const Standard_Integer Depth, const Standard_Integer Dimension, Standard_Real &OutValue, Standard_Integer &OutValue, TColStd_Array1OfReal & Pole);
 		%feature("autodoc", "1");
-		Standard_Boolean PrepareInsertKnots(const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const TColStd_Array1OfReal &AddKnots, const TColStd_Array1OfInteger &AddMults, Standard_Integer & NbPoles, Standard_Integer & NbKnots, const Standard_Real Epsilon, const Standard_Boolean Add=1);
+		Standard_Boolean PrepareInsertKnots(const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const TColStd_Array1OfReal &AddKnots, const TColStd_Array1OfInteger &AddMults, Standard_Integer &OutValue, Standard_Integer &OutValue, const Standard_Real Epsilon, const Standard_Boolean Add=1);
 		%feature("autodoc", "1");
 		void InsertKnots(const Standard_Integer Degree, const Standard_Boolean Periodic, const Standard_Integer Dimension, const TColStd_Array1OfReal &Poles, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const TColStd_Array1OfReal &AddKnots, const TColStd_Array1OfInteger &AddMults, TColStd_Array1OfReal & NewPoles, TColStd_Array1OfReal & NewKnots, TColStd_Array1OfInteger & NewMults, const Standard_Real Epsilon, const Standard_Boolean Add=1);
 		%feature("autodoc", "1");
@@ -215,7 +237,7 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		void IncreaseDegree(const Standard_Integer NewDegree, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, TColgp_Array1OfPnt2d & NewPoles, TColStd_Array1OfReal & NewWeights);
 		%feature("autodoc", "1");
-		void PrepareUnperiodize(const Standard_Integer Degree, const TColStd_Array1OfInteger &Mults, Standard_Integer & NbKnots, Standard_Integer & NbPoles);
+		void PrepareUnperiodize(const Standard_Integer Degree, const TColStd_Array1OfInteger &Mults, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void Unperiodize(const Standard_Integer Degree, const Standard_Integer Dimension, const TColStd_Array1OfInteger &Mults, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfReal &Poles, TColStd_Array1OfInteger & NewMults, TColStd_Array1OfReal & NewKnots, TColStd_Array1OfReal & NewPoles);
 		%feature("autodoc", "1");
@@ -223,7 +245,7 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		void Unperiodize(const Standard_Integer Degree, const TColStd_Array1OfInteger &Mults, const TColStd_Array1OfReal &Knots, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, TColStd_Array1OfInteger & NewMults, TColStd_Array1OfReal & NewKnots, TColgp_Array1OfPnt2d & NewPoles, TColStd_Array1OfReal & NewWeights);
 		%feature("autodoc", "1");
-		void PrepareTrimming(const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Real U1, const Standard_Real U2, Standard_Integer & NbKnots, Standard_Integer & NbPoles);
+		void PrepareTrimming(const Standard_Integer Degree, const Standard_Boolean Periodic, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const Standard_Real U1, const Standard_Real U2, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void Trimming(const Standard_Integer Degree, const Standard_Boolean Periodic, const Standard_Integer Dimension, const TColStd_Array1OfReal &Knots, const TColStd_Array1OfInteger &Mults, const TColStd_Array1OfReal &Poles, const Standard_Real U1, const Standard_Real U2, TColStd_Array1OfReal & NewKnots, TColStd_Array1OfInteger & NewMults, TColStd_Array1OfReal & NewPoles);
 		%feature("autodoc", "1");
@@ -271,11 +293,11 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		void D3(const Standard_Real U, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & P, gp_Vec2d & V1, gp_Vec2d & V2, gp_Vec2d & V3);
 		%feature("autodoc", "1");
-		Standard_Integer EvalBsplineBasis(const Standard_Integer Side, const Standard_Integer DerivativeOrder, const Standard_Integer Order, const TColStd_Array1OfReal &FlatKnots, const Standard_Real Parameter, Standard_Integer & FirstNonZeroBsplineIndex, math_Matrix & BsplineBasis);
+		Standard_Integer EvalBsplineBasis(const Standard_Integer Side, const Standard_Integer DerivativeOrder, const Standard_Integer Order, const TColStd_Array1OfReal &FlatKnots, const Standard_Real Parameter, Standard_Integer &OutValue, math_Matrix & BsplineBasis);
 		%feature("autodoc", "1");
-		Standard_Integer BuildBSpMatrix(const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &OrderArray, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer Degree, math_Matrix & Matrix, Standard_Integer & UpperBandWidth, Standard_Integer & LowerBandWidth);
+		Standard_Integer BuildBSpMatrix(const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &OrderArray, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer Degree, math_Matrix & Matrix, Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		Standard_Integer FactorBandedMatrix(math_Matrix & Matrix, const Standard_Integer UpperBandWidth, const Standard_Integer LowerBandWidth, Standard_Integer & PivotIndexProblem);
+		Standard_Integer FactorBandedMatrix(math_Matrix & Matrix, const Standard_Integer UpperBandWidth, const Standard_Integer LowerBandWidth, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		Standard_Integer SolveBandedSystem(const math_Matrix &Matrix, const Standard_Integer UpperBandWidth, const Standard_Integer LowerBandWidth, const Standard_Integer ArrayDimension, Standard_Real &OutValue);
 		%feature("autodoc", "1");
@@ -289,17 +311,17 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		Standard_Integer SolveBandedSystem(const math_Matrix &Matrix, const Standard_Integer UpperBandWidth, const Standard_Integer LowerBandWidth, const Standard_Boolean HomogeneousFlag, TColgp_Array1OfPnt & Array, TColStd_Array1OfReal & Weights);
 		%feature("autodoc", "1");
-		void MergeBSplineKnots(const Standard_Real Tolerance, const Standard_Real StartValue, const Standard_Real EndValue, const Standard_Integer Degree1, const TColStd_Array1OfReal &Knots1, const TColStd_Array1OfInteger &Mults1, const Standard_Integer Degree2, const TColStd_Array1OfReal &Knots2, const TColStd_Array1OfInteger &Mults2, Standard_Integer & NumPoles, Handle_TColStd_HArray1OfReal & NewKnots, Handle_TColStd_HArray1OfInteger & NewMults);
+		void MergeBSplineKnots(const Standard_Real Tolerance, const Standard_Real StartValue, const Standard_Real EndValue, const Standard_Integer Degree1, const TColStd_Array1OfReal &Knots1, const TColStd_Array1OfInteger &Mults1, const Standard_Integer Degree2, const TColStd_Array1OfReal &Knots2, const TColStd_Array1OfInteger &Mults2, Standard_Integer &OutValue, Handle_TColStd_HArray1OfReal & NewKnots, Handle_TColStd_HArray1OfInteger & NewMults);
 		%feature("autodoc", "1");
-		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Integer DerivativeRequest, Standard_Integer & ExtrapMode, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue);
+		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Integer DerivativeRequest, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Integer DerivativeRequest, Standard_Integer & ExtrapMode, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
+		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Integer DerivativeRequest, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Boolean HomogeneousFlag, Standard_Integer & ExtrapMode, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & Point, Standard_Real &OutValue);
+		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Boolean HomogeneousFlag, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & Point, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Boolean HomogeneousFlag, Standard_Integer & ExtrapMode, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & Point, Standard_Real &OutValue);
+		void Eval(const Standard_Real U, const Standard_Boolean PeriodicFlag, const Standard_Boolean HomogeneousFlag, Standard_Integer &OutValue, const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt2d & Point, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void TangExtendToConstraint(const TColStd_Array1OfReal &FlatKnots, const Standard_Real C1Coefficient, const Standard_Integer NumPoles, Standard_Real &OutValue, const Standard_Integer Dimension, const Standard_Integer Degree, const TColStd_Array1OfReal &ConstraintPoint, const Standard_Integer Continuity, const Standard_Boolean After, Standard_Integer & NbPolesResult, Standard_Integer & NbKnotsRsult, Standard_Real &OutValue, Standard_Real &OutValue);
+		void TangExtendToConstraint(const TColStd_Array1OfReal &FlatKnots, const Standard_Real C1Coefficient, const Standard_Integer NumPoles, Standard_Real &OutValue, const Standard_Integer Dimension, const Standard_Integer Degree, const TColStd_Array1OfReal &ConstraintPoint, const Standard_Integer Continuity, const Standard_Boolean After, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void CacheD0(const Standard_Real U, const Standard_Integer Degree, const Standard_Real CacheParameter, const Standard_Real SpanLenght, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, gp_Pnt & Point);
 		%feature("autodoc", "1");
@@ -347,27 +369,27 @@ class BSplCLib {
 		%feature("autodoc", "1");
 		void BuildSchoenbergPoints(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, TColStd_Array1OfReal & Parameters);
 		%feature("autodoc", "1");
-		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, TColgp_Array1OfPnt & Poles, Standard_Integer & InversionProblem);
+		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, TColgp_Array1OfPnt & Poles, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, TColgp_Array1OfPnt2d & Poles, Standard_Integer & InversionProblem);
+		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, TColgp_Array1OfPnt2d & Poles, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weights, Standard_Integer & InversionProblem);
+		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, TColgp_Array1OfPnt & Poles, TColStd_Array1OfReal & Weights, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, TColgp_Array1OfPnt2d & Poles, TColStd_Array1OfReal & Weights, Standard_Integer & InversionProblem);
+		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, TColgp_Array1OfPnt2d & Poles, TColStd_Array1OfReal & Weights, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Integer & InversionProblem);
+		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer & InversionProblem);
+		void Interpolate(const Standard_Integer Degree, const TColStd_Array1OfReal &FlatKnots, const TColStd_Array1OfReal &Parameters, const TColStd_Array1OfInteger &ContactOrderArray, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void MovePoint(const Standard_Real U, const gp_Vec2d &Displ, const Standard_Integer Index1, const Standard_Integer Index2, const Standard_Integer Degree, const Standard_Boolean Rational, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, Standard_Integer & FirstIndex, Standard_Integer & LastIndex, TColgp_Array1OfPnt2d & NewPoles);
+		void MovePoint(const Standard_Real U, const gp_Vec2d &Displ, const Standard_Integer Index1, const Standard_Integer Index2, const Standard_Integer Degree, const Standard_Boolean Rational, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, Standard_Integer &OutValue, Standard_Integer &OutValue, TColgp_Array1OfPnt2d & NewPoles);
 		%feature("autodoc", "1");
-		void MovePoint(const Standard_Real U, const gp_Vec &Displ, const Standard_Integer Index1, const Standard_Integer Index2, const Standard_Integer Degree, const Standard_Boolean Rational, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, Standard_Integer & FirstIndex, Standard_Integer & LastIndex, TColgp_Array1OfPnt & NewPoles);
+		void MovePoint(const Standard_Real U, const gp_Vec &Displ, const Standard_Integer Index1, const Standard_Integer Index2, const Standard_Integer Degree, const Standard_Boolean Rational, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, Standard_Integer &OutValue, Standard_Integer &OutValue, TColgp_Array1OfPnt & NewPoles);
 		%feature("autodoc", "1");
-		void MovePointAndTangent(const Standard_Real U, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real Tolerance, const Standard_Integer Degree, const Standard_Boolean Rational, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Real &OutValue, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, Standard_Real &OutValue, Standard_Integer & ErrorStatus);
+		void MovePointAndTangent(const Standard_Real U, const Standard_Integer ArrayDimension, Standard_Real &OutValue, Standard_Real &OutValue, const Standard_Real Tolerance, const Standard_Integer Degree, const Standard_Boolean Rational, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, Standard_Real &OutValue, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, Standard_Real &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void MovePointAndTangent(const Standard_Real U, const gp_Vec &Delta, const gp_Vec &DeltaDerivative, const Standard_Real Tolerance, const Standard_Integer Degree, const Standard_Boolean Rational, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, TColgp_Array1OfPnt & NewPoles, Standard_Integer & ErrorStatus);
+		void MovePointAndTangent(const Standard_Real U, const gp_Vec &Delta, const gp_Vec &DeltaDerivative, const Standard_Real Tolerance, const Standard_Integer Degree, const Standard_Boolean Rational, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, const TColgp_Array1OfPnt &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, TColgp_Array1OfPnt & NewPoles, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
-		void MovePointAndTangent(const Standard_Real U, const gp_Vec2d &Delta, const gp_Vec2d &DeltaDerivative, const Standard_Real Tolerance, const Standard_Integer Degree, const Standard_Boolean Rational, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, TColgp_Array1OfPnt2d & NewPoles, Standard_Integer & ErrorStatus);
+		void MovePointAndTangent(const Standard_Real U, const gp_Vec2d &Delta, const gp_Vec2d &DeltaDerivative, const Standard_Real Tolerance, const Standard_Integer Degree, const Standard_Boolean Rational, const Standard_Integer StartingCondition, const Standard_Integer EndingCondition, const TColgp_Array1OfPnt2d &Poles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, TColgp_Array1OfPnt2d & NewPoles, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
 		void Resolution(Standard_Real &OutValue, const Standard_Integer ArrayDimension, const Standard_Integer NumPoles, const TColStd_Array1OfReal &Weights, const TColStd_Array1OfReal &FlatKnots, const Standard_Integer Degree, const Standard_Real Tolerance3D, Standard_Real &OutValue);
 		%feature("autodoc", "1");
