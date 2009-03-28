@@ -1,37 +1,21 @@
 #!/usr/bin/env python
 
-##Copyright 2008-2009 Thomas Paviot
+##Copyright 2008-2009 Thomas Paviot (thomas.paviot@free.fr)
 ##
-##thomas.paviot@free.fr
+##This file is part of pythonOCC.
 ##
-##pythonOCC is a computer program whose purpose is to provide a complete set
-##of python bindings for OpenCasacde library.
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
 ##
-##This software is governed by the CeCILL license under French law and
-##abiding by the rules of distribution of free software.  You can  use, 
-##modify and/ or redistribute the software under the terms of the CeCILL
-##license as circulated by CEA, CNRS and INRIA at the following URL
-##"http://www.cecill.info". 
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU General Public License for more details.
 ##
-##As a counterpart to the access to the source code and  rights to copy,
-##modify and redistribute granted by the license, users are provided only
-##with a limited warranty  and the software's author,  the holder of the
-##economic rights,  and the successive licensors  have only  limited
-##liability. 
-##
-##In this respect, the user's attention is drawn to the risks associated
-##with loading,  using,  modifying and/or developing or reproducing the
-##software by the user in light of its specific status of free software,
-##that may mean  that it is complicated to manipulate,  and  that  also
-##therefore means  that it is reserved for developers  and  experienced
-##professionals having in-depth computer knowledge. Users are therefore
-##encouraged to load and test the software's suitability as regards their
-##requirements in conditions enabling the security of their systems and/or 
-##data to be ensured and,  more generally, to use and operate it in the 
-##same conditions as regards security. 
-##
-##The fact that you are presently reading this means that you have had
-##knowledge of the CeCILL license and that you accept its terms.
+##You should have received a copy of the GNU General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 import sys, os
 import wx
@@ -73,7 +57,7 @@ class ViewerFrame(wx.MDIChildFrame):
             BRepTools.BRepTools().Read(shape,str(filename),builder)
         else:
             return True
-        self.canva._3dDisplay.DisplayShape(shape)
+        self.canva._display.DisplayShape(shape)
         end_time = time.time()
         self.SetTitle("CAD Viewer - pythonOCC %s:%s"%(VERSION,filename))
         duration = end_time-start_time
@@ -110,6 +94,7 @@ class AppFrame(wx.MDIParentFrame):
             # create another child frame
             new_frame = ViewerFrame(self)
             new_frame.Show(True)
+            new_frame.canva.InitDriver()
             new_frame.LoadFile(paths[0])
             
     def OnAbout(self, event):
@@ -121,10 +106,20 @@ class AppFrame(wx.MDIParentFrame):
         This sample can open and display STEP, STL and IGES CAD files."""
         info.WebSite = ("http://www.pythonocc.org", "pythonOCC home page")
         info.Developers = [ "Thomas Paviot (thomas.paviot@free.fr)"]
-        info.License = """This software is governed by the CeCILL license under French law and
-        abiding by the rules of distribution of free software.  You can  use, modify and/ or
-        redistribute the software under the terms of the CeCILL license as circulated by CEA, CNRS
-        and INRIA at the following URL "http://www.cecill.info"."""
+        info.License = """This file is part of pythonOCC.
+
+pythonOCC is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+pythonOCC is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>."""
         wx.AboutBox(info)
         
     def OnExit(self,event):
@@ -134,11 +129,6 @@ if __name__=="__main__":
     app = wx.PySimpleApp()
     wx.InitAllImageHandlers()
     frame = AppFrame(None)
-    if sys.platform=='win32':
-        frame.Show(True)
-    else:
-        frame.Show(True)
-        wx.SafeYield() #under Linux, frame must be shown before Display3D is initialized
-        frame.canva.InitViewer3d()
+    frame.Show(True)
     app.SetTopWindow(frame)
     app.MainLoop()            
