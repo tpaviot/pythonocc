@@ -131,7 +131,8 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 };
 %extend Handle_Dico_DictionaryOfTransient {
 	~Handle_Dico_DictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dico_DictionaryOfTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dico_DictionaryOfTransient\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 };
 %extend Handle_Dico_StackItemOfDictionaryOfTransient {
 	~Handle_Dico_StackItemOfDictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfTransient\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 };
 %extend Handle_Dico_DictionaryOfInteger {
 	~Handle_Dico_DictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dico_DictionaryOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dico_DictionaryOfInteger\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 };
 %extend Handle_Dico_StackItemOfDictionaryOfInteger {
 	~Handle_Dico_StackItemOfDictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfInteger\n");}
 	}
 };
 
@@ -256,8 +260,14 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 	}
 };
 %extend Dico_DictionaryOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dico_DictionaryOfInteger {
 	~Dico_DictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dico_DictionaryOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dico_DictionaryOfInteger\n");}
 	}
 };
 
@@ -284,7 +294,8 @@ class Dico_IteratorOfDictionaryOfTransient {
 };
 %extend Dico_IteratorOfDictionaryOfTransient {
 	~Dico_IteratorOfDictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfTransient\n");}
 	}
 };
 
@@ -311,8 +322,14 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 	}
 };
 %extend Dico_StackItemOfDictionaryOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dico_StackItemOfDictionaryOfInteger {
 	~Dico_StackItemOfDictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dico_StackItemOfDictionaryOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dico_StackItemOfDictionaryOfInteger\n");}
 	}
 };
 
@@ -339,8 +356,14 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 	}
 };
 %extend Dico_StackItemOfDictionaryOfTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dico_StackItemOfDictionaryOfTransient {
 	~Dico_StackItemOfDictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dico_StackItemOfDictionaryOfTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dico_StackItemOfDictionaryOfTransient\n");}
 	}
 };
 
@@ -367,7 +390,8 @@ class Dico_IteratorOfDictionaryOfInteger {
 };
 %extend Dico_IteratorOfDictionaryOfInteger {
 	~Dico_IteratorOfDictionaryOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfInteger\n");}
 	}
 };
 
@@ -420,7 +444,13 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 	}
 };
 %extend Dico_DictionaryOfTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dico_DictionaryOfTransient {
 	~Dico_DictionaryOfTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dico_DictionaryOfTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dico_DictionaryOfTransient\n");}
 	}
 };

@@ -136,7 +136,8 @@ class Handle_MAT_TListNodeOfListOfBisector : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_TListNodeOfListOfBisector {
 	~Handle_MAT_TListNodeOfListOfBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfBisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfBisector\n");}
 	}
 };
 
@@ -160,7 +161,8 @@ class Handle_MAT_ListOfBisector : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_ListOfBisector {
 	~Handle_MAT_ListOfBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_ListOfBisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_ListOfBisector\n");}
 	}
 };
 
@@ -184,7 +186,8 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public Handle_TCollecti
 };
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
 	~Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerBasicElt\n");}
 	}
 };
 
@@ -208,7 +211,8 @@ class Handle_MAT_SequenceNodeOfSequenceOfArc : public Handle_TCollection_SeqNode
 };
 %extend Handle_MAT_SequenceNodeOfSequenceOfArc {
 	~Handle_MAT_SequenceNodeOfSequenceOfArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_SequenceNodeOfSequenceOfArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_SequenceNodeOfSequenceOfArc\n");}
 	}
 };
 
@@ -232,7 +236,8 @@ class Handle_MAT_BasicElt : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_BasicElt {
 	~Handle_MAT_BasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_BasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_BasicElt\n");}
 	}
 };
 
@@ -256,7 +261,8 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector : public Handle_TCollecti
 };
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector {
 	~Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerBisector\n");}
 	}
 };
 
@@ -280,7 +286,8 @@ class Handle_MAT_Node : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_Node {
 	~Handle_MAT_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_Node\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Node\n");}
 	}
 };
 
@@ -304,7 +311,8 @@ class Handle_MAT_Bisector : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_Bisector {
 	~Handle_MAT_Bisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_Bisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Bisector\n");}
 	}
 };
 
@@ -328,7 +336,8 @@ class Handle_MAT_ListOfEdge : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_ListOfEdge {
 	~Handle_MAT_ListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_ListOfEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_ListOfEdge\n");}
 	}
 };
 
@@ -352,7 +361,8 @@ class Handle_MAT_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollection_Se
 };
 %extend Handle_MAT_SequenceNodeOfSequenceOfBasicElt {
 	~Handle_MAT_SequenceNodeOfSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_SequenceNodeOfSequenceOfBasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_SequenceNodeOfSequenceOfBasicElt\n");}
 	}
 };
 
@@ -376,7 +386,8 @@ class Handle_MAT_Arc : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_Arc {
 	~Handle_MAT_Arc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_Arc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Arc\n");}
 	}
 };
 
@@ -400,7 +411,8 @@ class Handle_MAT_Zone : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_Zone {
 	~Handle_MAT_Zone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_Zone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Zone\n");}
 	}
 };
 
@@ -424,7 +436,8 @@ class Handle_MAT_Graph : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_Graph {
 	~Handle_MAT_Graph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_Graph\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Graph\n");}
 	}
 };
 
@@ -448,7 +461,8 @@ class Handle_MAT_Edge : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_Edge {
 	~Handle_MAT_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_Edge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_Edge\n");}
 	}
 };
 
@@ -472,7 +486,8 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerArc : public Handle_TCollection_Ma
 };
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerArc {
 	~Handle_MAT_DataMapNodeOfDataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
 	}
 };
 
@@ -496,7 +511,8 @@ class Handle_MAT_TListNodeOfListOfEdge : public Handle_MMgt_TShared {
 };
 %extend Handle_MAT_TListNodeOfListOfEdge {
 	~Handle_MAT_TListNodeOfListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_TListNodeOfListOfEdge\n");}
 	}
 };
 
@@ -520,7 +536,8 @@ class Handle_MAT_DataMapNodeOfDataMapOfIntegerNode : public Handle_TCollection_M
 };
 %extend Handle_MAT_DataMapNodeOfDataMapOfIntegerNode {
 	~Handle_MAT_DataMapNodeOfDataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
 	}
 };
 
@@ -553,7 +570,8 @@ class MAT_DataMapOfIntegerBasicElt : public TCollection_BasicMap {
 };
 %extend MAT_DataMapOfIntegerBasicElt {
 	~MAT_DataMapOfIntegerBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerBasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerBasicElt\n");}
 	}
 };
 
@@ -574,8 +592,14 @@ class MAT_SequenceNodeOfSequenceOfArc : public TCollection_SeqNode {
 	}
 };
 %extend MAT_SequenceNodeOfSequenceOfArc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_SequenceNodeOfSequenceOfArc {
 	~MAT_SequenceNodeOfSequenceOfArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_SequenceNodeOfSequenceOfArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_SequenceNodeOfSequenceOfArc\n");}
 	}
 };
 
@@ -620,8 +644,14 @@ class MAT_Graph : public MMgt_TShared {
 	}
 };
 %extend MAT_Graph {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_Graph {
 	~MAT_Graph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_Graph\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Graph\n");}
 	}
 };
 
@@ -654,7 +684,8 @@ class MAT_DataMapOfIntegerBisector : public TCollection_BasicMap {
 };
 %extend MAT_DataMapOfIntegerBisector {
 	~MAT_DataMapOfIntegerBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerBisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerBisector\n");}
 	}
 };
 
@@ -675,7 +706,8 @@ class MAT_DataMapIteratorOfDataMapOfIntegerArc : public TCollection_BasicMapIter
 };
 %extend MAT_DataMapIteratorOfDataMapOfIntegerArc {
 	~MAT_DataMapIteratorOfDataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerArc\n");}
 	}
 };
 
@@ -710,8 +742,14 @@ class MAT_TListNodeOfListOfBisector : public MMgt_TShared {
 	}
 };
 %extend MAT_TListNodeOfListOfBisector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_TListNodeOfListOfBisector {
 	~MAT_TListNodeOfListOfBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_TListNodeOfListOfBisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_TListNodeOfListOfBisector\n");}
 	}
 };
 
@@ -766,8 +804,14 @@ class MAT_Arc : public MMgt_TShared {
 	}
 };
 %extend MAT_Arc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_Arc {
 	~MAT_Arc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_Arc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Arc\n");}
 	}
 };
 
@@ -836,8 +880,14 @@ class MAT_ListOfBisector : public MMgt_TShared {
 	}
 };
 %extend MAT_ListOfBisector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_ListOfBisector {
 	~MAT_ListOfBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_ListOfBisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_ListOfBisector\n");}
 	}
 };
 
@@ -878,8 +928,14 @@ class MAT_Edge : public MMgt_TShared {
 	}
 };
 %extend MAT_Edge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_Edge {
 	~MAT_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_Edge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Edge\n");}
 	}
 };
 
@@ -932,7 +988,8 @@ class MAT_SequenceOfArc : public TCollection_BaseSequence {
 };
 %extend MAT_SequenceOfArc {
 	~MAT_SequenceOfArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_SequenceOfArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_SequenceOfArc\n");}
 	}
 };
 
@@ -953,7 +1010,8 @@ class MAT_DataMapIteratorOfDataMapOfIntegerBasicElt : public TCollection_BasicMa
 };
 %extend MAT_DataMapIteratorOfDataMapOfIntegerBasicElt {
 	~MAT_DataMapIteratorOfDataMapOfIntegerBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBasicElt\n");}
 	}
 };
 
@@ -974,7 +1032,8 @@ class MAT_DataMapIteratorOfDataMapOfIntegerBisector : public TCollection_BasicMa
 };
 %extend MAT_DataMapIteratorOfDataMapOfIntegerBisector {
 	~MAT_DataMapIteratorOfDataMapOfIntegerBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerBisector\n");}
 	}
 };
 
@@ -997,8 +1056,14 @@ class MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public TCollection_MapNode {
 	}
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
 	~MAT_DataMapNodeOfDataMapOfIntegerBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerBasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerBasicElt\n");}
 	}
 };
 
@@ -1037,8 +1102,14 @@ class MAT_Node : public MMgt_TShared {
 	}
 };
 %extend MAT_Node {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_Node {
 	~MAT_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_Node\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Node\n");}
 	}
 };
 
@@ -1059,7 +1130,8 @@ class MAT_DataMapIteratorOfDataMapOfIntegerNode : public TCollection_BasicMapIte
 };
 %extend MAT_DataMapIteratorOfDataMapOfIntegerNode {
 	~MAT_DataMapIteratorOfDataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapIteratorOfDataMapOfIntegerNode\n");}
 	}
 };
 
@@ -1112,7 +1184,8 @@ class MAT_SequenceOfBasicElt : public TCollection_BaseSequence {
 };
 %extend MAT_SequenceOfBasicElt {
 	~MAT_SequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_SequenceOfBasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_SequenceOfBasicElt\n");}
 	}
 };
 
@@ -1135,8 +1208,14 @@ class MAT_DataMapNodeOfDataMapOfIntegerBisector : public TCollection_MapNode {
 	}
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
 	~MAT_DataMapNodeOfDataMapOfIntegerBisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerBisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerBisector\n");}
 	}
 };
 
@@ -1159,8 +1238,14 @@ class MAT_DataMapNodeOfDataMapOfIntegerArc : public TCollection_MapNode {
 	}
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerArc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerArc {
 	~MAT_DataMapNodeOfDataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerArc\n");}
 	}
 };
 
@@ -1229,8 +1314,14 @@ class MAT_ListOfEdge : public MMgt_TShared {
 	}
 };
 %extend MAT_ListOfEdge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_ListOfEdge {
 	~MAT_ListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_ListOfEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_ListOfEdge\n");}
 	}
 };
 
@@ -1251,8 +1342,14 @@ class MAT_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 	}
 };
 %extend MAT_SequenceNodeOfSequenceOfBasicElt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_SequenceNodeOfSequenceOfBasicElt {
 	~MAT_SequenceNodeOfSequenceOfBasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_SequenceNodeOfSequenceOfBasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_SequenceNodeOfSequenceOfBasicElt\n");}
 	}
 };
 
@@ -1285,7 +1382,8 @@ class MAT_DataMapOfIntegerNode : public TCollection_BasicMap {
 };
 %extend MAT_DataMapOfIntegerNode {
 	~MAT_DataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerNode\n");}
 	}
 };
 
@@ -1320,8 +1418,14 @@ class MAT_BasicElt : public MMgt_TShared {
 	}
 };
 %extend MAT_BasicElt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_BasicElt {
 	~MAT_BasicElt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_BasicElt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_BasicElt\n");}
 	}
 };
 
@@ -1352,8 +1456,14 @@ class MAT_Zone : public MMgt_TShared {
 	}
 };
 %extend MAT_Zone {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_Zone {
 	~MAT_Zone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_Zone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Zone\n");}
 	}
 };
 
@@ -1388,8 +1498,14 @@ class MAT_TListNodeOfListOfEdge : public MMgt_TShared {
 	}
 };
 %extend MAT_TListNodeOfListOfEdge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_TListNodeOfListOfEdge {
 	~MAT_TListNodeOfListOfEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_TListNodeOfListOfEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_TListNodeOfListOfEdge\n");}
 	}
 };
 
@@ -1422,7 +1538,8 @@ class MAT_DataMapOfIntegerArc : public TCollection_BasicMap {
 };
 %extend MAT_DataMapOfIntegerArc {
 	~MAT_DataMapOfIntegerArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapOfIntegerArc\n");}
 	}
 };
 
@@ -1445,8 +1562,14 @@ class MAT_DataMapNodeOfDataMapOfIntegerNode : public TCollection_MapNode {
 	}
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_DataMapNodeOfDataMapOfIntegerNode {
 	~MAT_DataMapNodeOfDataMapOfIntegerNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_DataMapNodeOfDataMapOfIntegerNode\n");}
 	}
 };
 
@@ -1523,7 +1646,13 @@ class MAT_Bisector : public MMgt_TShared {
 	}
 };
 %extend MAT_Bisector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MAT_Bisector {
 	~MAT_Bisector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MAT_Bisector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MAT_Bisector\n");}
 	}
 };

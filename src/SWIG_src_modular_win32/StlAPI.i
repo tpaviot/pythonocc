@@ -124,7 +124,8 @@ class StlAPI {
 };
 %extend StlAPI {
 	~StlAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlAPI\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StlAPI\n");}
 	}
 };
 
@@ -147,7 +148,8 @@ class StlAPI_Writer {
 };
 %extend StlAPI_Writer {
 	~StlAPI_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlAPI_Writer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StlAPI_Writer\n");}
 	}
 };
 
@@ -162,6 +164,7 @@ class StlAPI_Reader {
 };
 %extend StlAPI_Reader {
 	~StlAPI_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StlAPI_Reader\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StlAPI_Reader\n");}
 	}
 };

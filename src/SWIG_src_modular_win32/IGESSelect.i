@@ -131,7 +131,8 @@ class Handle_IGESSelect_SignLevelNumber : public Handle_IFSelect_Signature {
 };
 %extend Handle_IGESSelect_SignLevelNumber {
 	~Handle_IGESSelect_SignLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignLevelNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignLevelNumber\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_IGESSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 };
 %extend Handle_IGESSelect_FileModifier {
 	~Handle_IGESSelect_FileModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_FileModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_FileModifier\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_IGESSelect_FloatFormat : public Handle_IGESSelect_FileModifier {
 };
 %extend Handle_IGESSelect_FloatFormat {
 	~Handle_IGESSelect_FloatFormat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_FloatFormat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_FloatFormat\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_IGESSelect_SelectPCurves : public Handle_IFSelect_SelectExplore {
 };
 %extend Handle_IGESSelect_SelectPCurves {
 	~Handle_IGESSelect_SelectPCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectPCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectPCurves\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
 };
 %extend Handle_IGESSelect_ModelModifier {
 	~Handle_IGESSelect_ModelModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ModelModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ModelModifier\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModif
 };
 %extend Handle_IGESSelect_UpdateCreationDate {
 	~Handle_IGESSelect_UpdateCreationDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateCreationDate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateCreationDate\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDedu
 };
 %extend Handle_IGESSelect_SelectFromSingleView {
 	~Handle_IGESSelect_SelectFromSingleView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFromSingleView\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFromSingleView\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
 };
 %extend Handle_IGESSelect_RemoveCurves {
 	~Handle_IGESSelect_RemoveCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RemoveCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RemoveCurves\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 };
 %extend Handle_IGESSelect_IGESTypeForm {
 	~Handle_IGESSelect_IGESTypeForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_IGESTypeForm\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_IGESTypeForm\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModif
 };
 %extend Handle_IGESSelect_SetGlobalParameter {
 	~Handle_IGESSelect_SetGlobalParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetGlobalParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetGlobalParameter\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
 };
 %extend Handle_IGESSelect_SelectName {
 	~Handle_IGESSelect_SelectName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectName\n");}
 	}
 };
 
@@ -395,7 +406,8 @@ class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 };
 %extend Handle_IGESSelect_WorkLibrary {
 	~Handle_IGESSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_WorkLibrary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_WorkLibrary\n");}
 	}
 };
 
@@ -419,7 +431,8 @@ class Handle_IGESSelect_RebuildGroups : public Handle_IGESSelect_ModelModifier {
 };
 %extend Handle_IGESSelect_RebuildGroups {
 	~Handle_IGESSelect_RebuildGroups() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RebuildGroups\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RebuildGroups\n");}
 	}
 };
 
@@ -443,7 +456,8 @@ class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 };
 %extend Handle_IGESSelect_DispPerDrawing {
 	~Handle_IGESSelect_DispPerDrawing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_DispPerDrawing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_DispPerDrawing\n");}
 	}
 };
 
@@ -467,7 +481,8 @@ class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore
 };
 %extend Handle_IGESSelect_SelectBypassGroup {
 	~Handle_IGESSelect_SelectBypassGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBypassGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBypassGroup\n");}
 	}
 };
 
@@ -491,7 +506,8 @@ class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifi
 };
 %extend Handle_IGESSelect_ChangeLevelNumber {
 	~Handle_IGESSelect_ChangeLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ChangeLevelNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ChangeLevelNumber\n");}
 	}
 };
 
@@ -515,7 +531,8 @@ class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract
 };
 %extend Handle_IGESSelect_SelectLevelNumber {
 	~Handle_IGESSelect_SelectLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectLevelNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectLevelNumber\n");}
 	}
 };
 
@@ -539,7 +556,8 @@ class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDedu
 };
 %extend Handle_IGESSelect_SelectSingleViewFrom {
 	~Handle_IGESSelect_SelectSingleViewFrom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectSingleViewFrom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectSingleViewFrom\n");}
 	}
 };
 
@@ -563,7 +581,8 @@ class Handle_IGESSelect_EditHeader : public Handle_IFSelect_Editor {
 };
 %extend Handle_IGESSelect_EditHeader {
 	~Handle_IGESSelect_EditHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_EditHeader\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_EditHeader\n");}
 	}
 };
 
@@ -587,7 +606,8 @@ class Handle_IGESSelect_AddFileComment : public Handle_IGESSelect_FileModifier {
 };
 %extend Handle_IGESSelect_AddFileComment {
 	~Handle_IGESSelect_AddFileComment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AddFileComment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AddFileComment\n");}
 	}
 };
 
@@ -611,7 +631,8 @@ class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
 };
 %extend Handle_IGESSelect_SetVersion5 {
 	~Handle_IGESSelect_SetVersion5() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetVersion5\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetVersion5\n");}
 	}
 };
 
@@ -635,7 +656,8 @@ class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 };
 %extend Handle_IGESSelect_ComputeStatus {
 	~Handle_IGESSelect_ComputeStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ComputeStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ComputeStatus\n");}
 	}
 };
 
@@ -659,7 +681,8 @@ class Handle_IGESSelect_SelectFromDrawing : public Handle_IFSelect_SelectDeduct 
 };
 %extend Handle_IGESSelect_SelectFromDrawing {
 	~Handle_IGESSelect_SelectFromDrawing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFromDrawing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFromDrawing\n");}
 	}
 };
 
@@ -683,7 +706,8 @@ class Handle_IGESSelect_RebuildDrawings : public Handle_IGESSelect_ModelModifier
 };
 %extend Handle_IGESSelect_RebuildDrawings {
 	~Handle_IGESSelect_RebuildDrawings() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RebuildDrawings\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RebuildDrawings\n");}
 	}
 };
 
@@ -707,7 +731,8 @@ class Handle_IGESSelect_ChangeLevelList : public Handle_IGESSelect_ModelModifier
 };
 %extend Handle_IGESSelect_ChangeLevelList {
 	~Handle_IGESSelect_ChangeLevelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ChangeLevelList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ChangeLevelList\n");}
 	}
 };
 
@@ -731,7 +756,8 @@ class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounte
 };
 %extend Handle_IGESSelect_CounterOfLevelNumber {
 	~Handle_IGESSelect_CounterOfLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_CounterOfLevelNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_CounterOfLevelNumber\n");}
 	}
 };
 
@@ -755,7 +781,8 @@ class Handle_IGESSelect_SetLabel : public Handle_IGESSelect_ModelModifier {
 };
 %extend Handle_IGESSelect_SetLabel {
 	~Handle_IGESSelect_SetLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetLabel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetLabel\n");}
 	}
 };
 
@@ -779,7 +806,8 @@ class Handle_IGESSelect_SplineToBSpline : public Handle_IFSelect_Transformer {
 };
 %extend Handle_IGESSelect_SplineToBSpline {
 	~Handle_IGESSelect_SplineToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SplineToBSpline\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SplineToBSpline\n");}
 	}
 };
 
@@ -803,7 +831,8 @@ class Handle_IGESSelect_IGESName : public Handle_IFSelect_Signature {
 };
 %extend Handle_IGESSelect_IGESName {
 	~Handle_IGESSelect_IGESName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_IGESName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_IGESName\n");}
 	}
 };
 
@@ -827,7 +856,8 @@ class Handle_IGESSelect_SelectBasicGeom : public Handle_IFSelect_SelectExplore {
 };
 %extend Handle_IGESSelect_SelectBasicGeom {
 	~Handle_IGESSelect_SelectBasicGeom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBasicGeom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBasicGeom\n");}
 	}
 };
 
@@ -851,7 +881,8 @@ class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 };
 %extend Handle_IGESSelect_Dumper {
 	~Handle_IGESSelect_Dumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_Dumper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_Dumper\n");}
 	}
 };
 
@@ -875,7 +906,8 @@ class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESSelect_ViewSorter {
 	~Handle_IGESSelect_ViewSorter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ViewSorter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ViewSorter\n");}
 	}
 };
 
@@ -899,7 +931,8 @@ class Handle_IGESSelect_SelectFaces : public Handle_IFSelect_SelectExplore {
 };
 %extend Handle_IGESSelect_SelectFaces {
 	~Handle_IGESSelect_SelectFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFaces\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFaces\n");}
 	}
 };
 
@@ -923,7 +956,8 @@ class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract
 };
 %extend Handle_IGESSelect_SelectSubordinate {
 	~Handle_IGESSelect_SelectSubordinate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectSubordinate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectSubordinate\n");}
 	}
 };
 
@@ -947,7 +981,8 @@ class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 };
 %extend Handle_IGESSelect_EditDirPart {
 	~Handle_IGESSelect_EditDirPart() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_EditDirPart\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_EditDirPart\n");}
 	}
 };
 
@@ -971,7 +1006,8 @@ class Handle_IGESSelect_AddGroup : public Handle_IGESSelect_ModelModifier {
 };
 %extend Handle_IGESSelect_AddGroup {
 	~Handle_IGESSelect_AddGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AddGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AddGroup\n");}
 	}
 };
 
@@ -995,7 +1031,8 @@ class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
 };
 %extend Handle_IGESSelect_DispPerSingleView {
 	~Handle_IGESSelect_DispPerSingleView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_DispPerSingleView\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_DispPerSingleView\n");}
 	}
 };
 
@@ -1019,7 +1056,8 @@ class Handle_IGESSelect_UpdateLastChange : public Handle_IGESSelect_ModelModifie
 };
 %extend Handle_IGESSelect_UpdateLastChange {
 	~Handle_IGESSelect_UpdateLastChange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateLastChange\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateLastChange\n");}
 	}
 };
 
@@ -1043,7 +1081,8 @@ class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExp
 };
 %extend Handle_IGESSelect_SelectBypassSubfigure {
 	~Handle_IGESSelect_SelectBypassSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBypassSubfigure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBypassSubfigure\n");}
 	}
 };
 
@@ -1067,7 +1106,8 @@ class Handle_IGESSelect_AutoCorrect : public Handle_IGESSelect_ModelModifier {
 };
 %extend Handle_IGESSelect_AutoCorrect {
 	~Handle_IGESSelect_AutoCorrect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AutoCorrect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_AutoCorrect\n");}
 	}
 };
 
@@ -1091,7 +1131,8 @@ class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtra
 };
 %extend Handle_IGESSelect_SelectVisibleStatus {
 	~Handle_IGESSelect_SelectVisibleStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectVisibleStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectVisibleStatus\n");}
 	}
 };
 
@@ -1115,7 +1156,8 @@ class Handle_IGESSelect_UpdateFileName : public Handle_IGESSelect_ModelModifier 
 };
 %extend Handle_IGESSelect_UpdateFileName {
 	~Handle_IGESSelect_UpdateFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateFileName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateFileName\n");}
 	}
 };
 
@@ -1139,7 +1181,8 @@ class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
 };
 %extend Handle_IGESSelect_SignColor {
 	~Handle_IGESSelect_SignColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignColor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignColor\n");}
 	}
 };
 
@@ -1163,7 +1206,8 @@ class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
 };
 %extend Handle_IGESSelect_SignStatus {
 	~Handle_IGESSelect_SignStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignStatus\n");}
 	}
 };
 
@@ -1187,7 +1231,8 @@ class Handle_IGESSelect_Activator : public Handle_IFSelect_Activator {
 };
 %extend Handle_IGESSelect_Activator {
 	~Handle_IGESSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_Activator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_Activator\n");}
 	}
 };
 
@@ -1211,7 +1256,8 @@ class Handle_IGESSelect_SelectDrawingFrom : public Handle_IFSelect_SelectDeduct 
 };
 %extend Handle_IGESSelect_SelectDrawingFrom {
 	~Handle_IGESSelect_SelectDrawingFrom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectDrawingFrom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectDrawingFrom\n");}
 	}
 };
 
@@ -1234,8 +1280,14 @@ class IGESSelect_ModelModifier : public IFSelect_Modifier {
 	}
 };
 %extend IGESSelect_ModelModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_ModelModifier {
 	~IGESSelect_ModelModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_ModelModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_ModelModifier\n");}
 	}
 };
 
@@ -1254,8 +1306,14 @@ class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_UpdateLastChange {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_UpdateLastChange {
 	~IGESSelect_UpdateLastChange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateLastChange\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateLastChange\n");}
 	}
 };
 
@@ -1278,8 +1336,14 @@ class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_UpdateCreationDate {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_UpdateCreationDate {
 	~IGESSelect_UpdateCreationDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateCreationDate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateCreationDate\n");}
 	}
 };
 
@@ -1302,8 +1366,14 @@ class IGESSelect_SelectDrawingFrom : public IFSelect_SelectDeduct {
 	}
 };
 %extend IGESSelect_SelectDrawingFrom {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectDrawingFrom {
 	~IGESSelect_SelectDrawingFrom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectDrawingFrom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectDrawingFrom\n");}
 	}
 };
 
@@ -1330,8 +1400,14 @@ class IGESSelect_SelectName : public IFSelect_SelectExtract {
 	}
 };
 %extend IGESSelect_SelectName {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectName {
 	~IGESSelect_SelectName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectName\n");}
 	}
 };
 
@@ -1354,8 +1430,14 @@ class IGESSelect_IGESTypeForm : public IFSelect_Signature {
 	}
 };
 %extend IGESSelect_IGESTypeForm {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_IGESTypeForm {
 	~IGESSelect_IGESTypeForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_IGESTypeForm\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_IGESTypeForm\n");}
 	}
 };
 
@@ -1378,8 +1460,14 @@ class IGESSelect_SignStatus : public IFSelect_Signature {
 	}
 };
 %extend IGESSelect_SignStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SignStatus {
 	~IGESSelect_SignStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SignStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignStatus\n");}
 	}
 };
 
@@ -1408,8 +1496,14 @@ class IGESSelect_SetGlobalParameter : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_SetGlobalParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SetGlobalParameter {
 	~IGESSelect_SetGlobalParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SetGlobalParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SetGlobalParameter\n");}
 	}
 };
 
@@ -1432,8 +1526,14 @@ class IGESSelect_RebuildGroups : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_RebuildGroups {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_RebuildGroups {
 	~IGESSelect_RebuildGroups() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_RebuildGroups\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_RebuildGroups\n");}
 	}
 };
 
@@ -1456,8 +1556,14 @@ class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_AddGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_AddGroup {
 	~IGESSelect_AddGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_AddGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_AddGroup\n");}
 	}
 };
 
@@ -1480,8 +1586,14 @@ class IGESSelect_SelectSingleViewFrom : public IFSelect_SelectDeduct {
 	}
 };
 %extend IGESSelect_SelectSingleViewFrom {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectSingleViewFrom {
 	~IGESSelect_SelectSingleViewFrom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectSingleViewFrom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectSingleViewFrom\n");}
 	}
 };
 
@@ -1504,8 +1616,14 @@ class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_ComputeStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_ComputeStatus {
 	~IGESSelect_ComputeStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_ComputeStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_ComputeStatus\n");}
 	}
 };
 
@@ -1528,8 +1646,14 @@ class IGESSelect_RemoveCurves : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_RemoveCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_RemoveCurves {
 	~IGESSelect_RemoveCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_RemoveCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_RemoveCurves\n");}
 	}
 };
 
@@ -1562,8 +1686,14 @@ class IGESSelect_ChangeLevelNumber : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_ChangeLevelNumber {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_ChangeLevelNumber {
 	~IGESSelect_ChangeLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_ChangeLevelNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_ChangeLevelNumber\n");}
 	}
 };
 
@@ -1586,8 +1716,14 @@ class IGESSelect_SelectBypassGroup : public IFSelect_SelectExplore {
 	}
 };
 %extend IGESSelect_SelectBypassGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectBypassGroup {
 	~IGESSelect_SelectBypassGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBypassGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBypassGroup\n");}
 	}
 };
 
@@ -1610,8 +1746,14 @@ class IGESSelect_SelectPCurves : public IFSelect_SelectExplore {
 	}
 };
 %extend IGESSelect_SelectPCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectPCurves {
 	~IGESSelect_SelectPCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectPCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectPCurves\n");}
 	}
 };
 
@@ -1634,8 +1776,14 @@ class IGESSelect_SelectFromDrawing : public IFSelect_SelectDeduct {
 	}
 };
 %extend IGESSelect_SelectFromDrawing {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectFromDrawing {
 	~IGESSelect_SelectFromDrawing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFromDrawing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFromDrawing\n");}
 	}
 };
 
@@ -1666,8 +1814,14 @@ class IGESSelect_EditHeader : public IFSelect_Editor {
 	}
 };
 %extend IGESSelect_EditHeader {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_EditHeader {
 	~IGESSelect_EditHeader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_EditHeader\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_EditHeader\n");}
 	}
 };
 
@@ -1694,8 +1848,14 @@ class IGESSelect_WorkLibrary : public IFSelect_WorkLibrary {
 	}
 };
 %extend IGESSelect_WorkLibrary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_WorkLibrary {
 	~IGESSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_WorkLibrary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_WorkLibrary\n");}
 	}
 };
 
@@ -1714,8 +1874,14 @@ class IGESSelect_FileModifier : public IFSelect_GeneralModifier {
 	}
 };
 %extend IGESSelect_FileModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_FileModifier {
 	~IGESSelect_FileModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_FileModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_FileModifier\n");}
 	}
 };
 
@@ -1750,8 +1916,14 @@ class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
 	}
 };
 %extend IGESSelect_CounterOfLevelNumber {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_CounterOfLevelNumber {
 	~IGESSelect_CounterOfLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_CounterOfLevelNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_CounterOfLevelNumber\n");}
 	}
 };
 
@@ -1774,8 +1946,14 @@ class IGESSelect_SelectFaces : public IFSelect_SelectExplore {
 	}
 };
 %extend IGESSelect_SelectFaces {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectFaces {
 	~IGESSelect_SelectFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFaces\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFaces\n");}
 	}
 };
 
@@ -1806,8 +1984,14 @@ class IGESSelect_EditDirPart : public IFSelect_Editor {
 	}
 };
 %extend IGESSelect_EditDirPart {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_EditDirPart {
 	~IGESSelect_EditDirPart() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_EditDirPart\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_EditDirPart\n");}
 	}
 };
 
@@ -1832,8 +2016,14 @@ class IGESSelect_SelectSubordinate : public IFSelect_SelectExtract {
 	}
 };
 %extend IGESSelect_SelectSubordinate {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectSubordinate {
 	~IGESSelect_SelectSubordinate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectSubordinate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectSubordinate\n");}
 	}
 };
 
@@ -1854,8 +2044,14 @@ class IGESSelect_IGESName : public IFSelect_Signature {
 	}
 };
 %extend IGESSelect_IGESName {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_IGESName {
 	~IGESSelect_IGESName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_IGESName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_IGESName\n");}
 	}
 };
 
@@ -1878,8 +2074,14 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 	}
 };
 %extend IGESSelect_Dumper {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_Dumper {
 	~IGESSelect_Dumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_Dumper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_Dumper\n");}
 	}
 };
 
@@ -1896,7 +2098,8 @@ class IGESSelect {
 };
 %extend IGESSelect {
 	~IGESSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect\n");}
 	}
 };
 
@@ -1919,8 +2122,14 @@ class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_AutoCorrect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_AutoCorrect {
 	~IGESSelect_AutoCorrect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_AutoCorrect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_AutoCorrect\n");}
 	}
 };
 
@@ -1943,8 +2152,14 @@ class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
 	}
 };
 %extend IGESSelect_SelectVisibleStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectVisibleStatus {
 	~IGESSelect_SelectVisibleStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectVisibleStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectVisibleStatus\n");}
 	}
 };
 
@@ -1967,8 +2182,14 @@ class IGESSelect_Activator : public IFSelect_Activator {
 	}
 };
 %extend IGESSelect_Activator {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_Activator {
 	~IGESSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_Activator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_Activator\n");}
 	}
 };
 
@@ -1991,8 +2212,14 @@ class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_UpdateFileName {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_UpdateFileName {
 	~IGESSelect_UpdateFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateFileName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateFileName\n");}
 	}
 };
 
@@ -2035,8 +2262,14 @@ class IGESSelect_ViewSorter : public MMgt_TShared {
 	}
 };
 %extend IGESSelect_ViewSorter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_ViewSorter {
 	~IGESSelect_ViewSorter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_ViewSorter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_ViewSorter\n");}
 	}
 };
 
@@ -2069,8 +2302,14 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 	}
 };
 %extend IGESSelect_FloatFormat {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_FloatFormat {
 	~IGESSelect_FloatFormat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_FloatFormat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_FloatFormat\n");}
 	}
 };
 
@@ -2091,8 +2330,14 @@ class IGESSelect_SignLevelNumber : public IFSelect_Signature {
 	}
 };
 %extend IGESSelect_SignLevelNumber {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SignLevelNumber {
 	~IGESSelect_SignLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SignLevelNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignLevelNumber\n");}
 	}
 };
 
@@ -2119,8 +2364,14 @@ class IGESSelect_DispPerSingleView : public IFSelect_Dispatch {
 	}
 };
 %extend IGESSelect_DispPerSingleView {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_DispPerSingleView {
 	~IGESSelect_DispPerSingleView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_DispPerSingleView\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_DispPerSingleView\n");}
 	}
 };
 
@@ -2145,8 +2396,14 @@ class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
 	}
 };
 %extend IGESSelect_SelectBasicGeom {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectBasicGeom {
 	~IGESSelect_SelectBasicGeom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBasicGeom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBasicGeom\n");}
 	}
 };
 
@@ -2169,8 +2426,14 @@ class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_SetVersion5 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SetVersion5 {
 	~IGESSelect_SetVersion5() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SetVersion5\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SetVersion5\n");}
 	}
 };
 
@@ -2193,8 +2456,14 @@ class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 	}
 };
 %extend IGESSelect_SelectBypassSubfigure {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectBypassSubfigure {
 	~IGESSelect_SelectBypassSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBypassSubfigure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBypassSubfigure\n");}
 	}
 };
 
@@ -2221,8 +2490,14 @@ class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
 	}
 };
 %extend IGESSelect_SplineToBSpline {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SplineToBSpline {
 	~IGESSelect_SplineToBSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SplineToBSpline\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SplineToBSpline\n");}
 	}
 };
 
@@ -2257,8 +2532,14 @@ class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_ChangeLevelList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_ChangeLevelList {
 	~IGESSelect_ChangeLevelList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_ChangeLevelList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_ChangeLevelList\n");}
 	}
 };
 
@@ -2281,8 +2562,14 @@ class IGESSelect_SelectFromSingleView : public IFSelect_SelectDeduct {
 	}
 };
 %extend IGESSelect_SelectFromSingleView {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectFromSingleView {
 	~IGESSelect_SelectFromSingleView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFromSingleView\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFromSingleView\n");}
 	}
 };
 
@@ -2305,8 +2592,14 @@ class IGESSelect_RebuildDrawings : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_RebuildDrawings {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_RebuildDrawings {
 	~IGESSelect_RebuildDrawings() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_RebuildDrawings\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_RebuildDrawings\n");}
 	}
 };
 
@@ -2329,8 +2622,14 @@ class IGESSelect_SetLabel : public IGESSelect_ModelModifier {
 	}
 };
 %extend IGESSelect_SetLabel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SetLabel {
 	~IGESSelect_SetLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SetLabel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SetLabel\n");}
 	}
 };
 
@@ -2365,8 +2664,14 @@ class IGESSelect_AddFileComment : public IGESSelect_FileModifier {
 	}
 };
 %extend IGESSelect_AddFileComment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_AddFileComment {
 	~IGESSelect_AddFileComment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_AddFileComment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_AddFileComment\n");}
 	}
 };
 
@@ -2393,8 +2698,14 @@ class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
 	}
 };
 %extend IGESSelect_DispPerDrawing {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_DispPerDrawing {
 	~IGESSelect_DispPerDrawing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_DispPerDrawing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_DispPerDrawing\n");}
 	}
 };
 
@@ -2421,8 +2732,14 @@ class IGESSelect_SelectLevelNumber : public IFSelect_SelectExtract {
 	}
 };
 %extend IGESSelect_SelectLevelNumber {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SelectLevelNumber {
 	~IGESSelect_SelectLevelNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectLevelNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectLevelNumber\n");}
 	}
 };
 
@@ -2443,7 +2760,13 @@ class IGESSelect_SignColor : public IFSelect_Signature {
 	}
 };
 %extend IGESSelect_SignColor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESSelect_SignColor {
 	~IGESSelect_SignColor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESSelect_SignColor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignColor\n");}
 	}
 };

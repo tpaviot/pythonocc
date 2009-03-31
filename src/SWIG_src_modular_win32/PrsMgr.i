@@ -143,7 +143,8 @@ class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 };
 %extend Handle_PrsMgr_Prs {
 	~Handle_PrsMgr_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Prs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Prs\n");}
 	}
 };
 
@@ -167,7 +168,8 @@ class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 };
 %extend Handle_PrsMgr_Presentation {
 	~Handle_PrsMgr_Presentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation\n");}
 	}
 };
 
@@ -191,7 +193,8 @@ class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
 };
 %extend Handle_PrsMgr_Presentation2d {
 	~Handle_PrsMgr_Presentation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation2d\n");}
 	}
 };
 
@@ -215,7 +218,8 @@ class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 };
 %extend Handle_PrsMgr_Presentation3d {
 	~Handle_PrsMgr_Presentation3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation3d\n");}
 	}
 };
 
@@ -239,7 +243,8 @@ class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
 };
 %extend Handle_PrsMgr_PresentableObject {
 	~Handle_PrsMgr_PresentableObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentableObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentableObject\n");}
 	}
 };
 
@@ -263,7 +268,8 @@ class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 };
 %extend Handle_PrsMgr_PresentationManager {
 	~Handle_PrsMgr_PresentationManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager\n");}
 	}
 };
 
@@ -287,7 +293,8 @@ class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationMan
 };
 %extend Handle_PrsMgr_PresentationManager2d {
 	~Handle_PrsMgr_PresentationManager2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager2d\n");}
 	}
 };
 
@@ -311,7 +318,8 @@ class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationMan
 };
 %extend Handle_PrsMgr_PresentationManager3d {
 	~Handle_PrsMgr_PresentationManager3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager3d\n");}
 	}
 };
 
@@ -335,7 +343,8 @@ class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqN
 };
 %extend Handle_PrsMgr_SequenceNodeOfPresentations {
 	~Handle_PrsMgr_SequenceNodeOfPresentations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_SequenceNodeOfPresentations\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_SequenceNodeOfPresentations\n");}
 	}
 };
 
@@ -354,7 +363,8 @@ class PrsMgr_ModedPresentation {
 };
 %extend PrsMgr_ModedPresentation {
 	~PrsMgr_ModedPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_ModedPresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_ModedPresentation\n");}
 	}
 };
 
@@ -379,8 +389,14 @@ class PrsMgr_Presentation : public MMgt_TShared {
 	}
 };
 %extend PrsMgr_Presentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_Presentation {
 	~PrsMgr_Presentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation\n");}
 	}
 };
 
@@ -433,7 +449,8 @@ class PrsMgr_Presentations : public TCollection_BaseSequence {
 };
 %extend PrsMgr_Presentations {
 	~PrsMgr_Presentations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentations\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentations\n");}
 	}
 };
 
@@ -454,8 +471,14 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 	}
 };
 %extend PrsMgr_SequenceNodeOfPresentations {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_SequenceNodeOfPresentations {
 	~PrsMgr_SequenceNodeOfPresentations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_SequenceNodeOfPresentations\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_SequenceNodeOfPresentations\n");}
 	}
 };
 
@@ -502,8 +525,14 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 	}
 };
 %extend PrsMgr_PresentableObject {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_PresentableObject {
 	~PrsMgr_PresentableObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentableObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentableObject\n");}
 	}
 };
 
@@ -530,8 +559,14 @@ class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 	}
 };
 %extend PrsMgr_Presentation2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_Presentation2d {
 	~PrsMgr_Presentation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation2d\n");}
 	}
 };
 
@@ -558,8 +593,14 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 	}
 };
 %extend PrsMgr_Prs {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_Prs {
 	~PrsMgr_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_Prs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_Prs\n");}
 	}
 };
 
@@ -612,8 +653,14 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 	}
 };
 %extend PrsMgr_PresentationManager {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_PresentationManager {
 	~PrsMgr_PresentationManager() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager\n");}
 	}
 };
 
@@ -668,8 +715,14 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 	}
 };
 %extend PrsMgr_PresentationManager2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_PresentationManager2d {
 	~PrsMgr_PresentationManager2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager2d\n");}
 	}
 };
 
@@ -718,8 +771,14 @@ class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
 	}
 };
 %extend PrsMgr_PresentationManager3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_PresentationManager3d {
 	~PrsMgr_PresentationManager3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager3d\n");}
 	}
 };
 
@@ -740,7 +799,13 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 	}
 };
 %extend PrsMgr_Presentation3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PrsMgr_Presentation3d {
 	~PrsMgr_Presentation3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation3d\n");}
 	}
 };

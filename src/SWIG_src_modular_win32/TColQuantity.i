@@ -131,7 +131,8 @@ class Handle_TColQuantity_HArray1OfLength : public Handle_MMgt_TShared {
 };
 %extend Handle_TColQuantity_HArray1OfLength {
 	~Handle_TColQuantity_HArray1OfLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColQuantity_HArray1OfLength\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColQuantity_HArray1OfLength\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_TColQuantity_HArray2OfLength : public Handle_MMgt_TShared {
 };
 %extend Handle_TColQuantity_HArray2OfLength {
 	~Handle_TColQuantity_HArray2OfLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColQuantity_HArray2OfLength\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColQuantity_HArray2OfLength\n");}
 	}
 };
 
@@ -194,8 +196,14 @@ class TColQuantity_HArray1OfLength : public MMgt_TShared {
 	}
 };
 %extend TColQuantity_HArray1OfLength {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColQuantity_HArray1OfLength {
 	~TColQuantity_HArray1OfLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColQuantity_HArray1OfLength\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColQuantity_HArray1OfLength\n");}
 	}
 };
 
@@ -234,7 +242,8 @@ class TColQuantity_Array1OfLength {
 };
 %extend TColQuantity_Array1OfLength {
 	~TColQuantity_Array1OfLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColQuantity_Array1OfLength\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColQuantity_Array1OfLength\n");}
 	}
 };
 
@@ -279,8 +288,14 @@ class TColQuantity_HArray2OfLength : public MMgt_TShared {
 	}
 };
 %extend TColQuantity_HArray2OfLength {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColQuantity_HArray2OfLength {
 	~TColQuantity_HArray2OfLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColQuantity_HArray2OfLength\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColQuantity_HArray2OfLength\n");}
 	}
 };
 
@@ -323,6 +338,7 @@ class TColQuantity_Array2OfLength {
 };
 %extend TColQuantity_Array2OfLength {
 	~TColQuantity_Array2OfLength() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColQuantity_Array2OfLength\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColQuantity_Array2OfLength\n");}
 	}
 };

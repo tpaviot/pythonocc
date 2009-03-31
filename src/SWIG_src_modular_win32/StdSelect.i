@@ -158,7 +158,8 @@ class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity 
 };
 %extend Handle_StdSelect_SensitiveText2d {
 	~Handle_StdSelect_SensitiveText2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_SensitiveText2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_SensitiveText2d\n");}
 	}
 };
 
@@ -182,7 +183,8 @@ class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 };
 %extend Handle_StdSelect_TextProjector2d {
 	~Handle_StdSelect_TextProjector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_TextProjector2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_TextProjector2d\n");}
 	}
 };
 
@@ -206,7 +208,8 @@ class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_StdSelect_EdgeFilter {
 	~Handle_StdSelect_EdgeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_EdgeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_EdgeFilter\n");}
 	}
 };
 
@@ -230,7 +233,8 @@ class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 };
 %extend Handle_StdSelect_BRepOwner {
 	~Handle_StdSelect_BRepOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_BRepOwner\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_BRepOwner\n");}
 	}
 };
 
@@ -254,7 +258,8 @@ class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Han
 };
 %extend Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	~Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
 	}
 };
 
@@ -278,7 +283,8 @@ class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
 };
 %extend Handle_StdSelect_Shape {
 	~Handle_StdSelect_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_Shape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_Shape\n");}
 	}
 };
 
@@ -302,7 +308,8 @@ class Handle_StdSelect_FaceFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_StdSelect_FaceFilter {
 	~Handle_StdSelect_FaceFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_FaceFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_FaceFilter\n");}
 	}
 };
 
@@ -326,7 +333,8 @@ class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector
 };
 %extend Handle_StdSelect_ViewerSelector2d {
 	~Handle_StdSelect_ViewerSelector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ViewerSelector2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ViewerSelector2d\n");}
 	}
 };
 
@@ -350,7 +358,8 @@ class Handle_StdSelect_ViewerSelector3d : public Handle_SelectMgr_ViewerSelector
 };
 %extend Handle_StdSelect_ViewerSelector3d {
 	~Handle_StdSelect_ViewerSelector3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ViewerSelector3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ViewerSelector3d\n");}
 	}
 };
 
@@ -374,7 +383,8 @@ class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_StdSelect_ShapeTypeFilter {
 	~Handle_StdSelect_ShapeTypeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ShapeTypeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ShapeTypeFilter\n");}
 	}
 };
 
@@ -398,7 +408,8 @@ class Handle_StdSelect_Prs : public Handle_Prs3d_Presentation {
 };
 %extend Handle_StdSelect_Prs {
 	~Handle_StdSelect_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_Prs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_Prs\n");}
 	}
 };
 
@@ -441,7 +452,8 @@ class StdSelect_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 };
 %extend StdSelect_IndexedDataMapOfOwnerPrs {
 	~StdSelect_IndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_IndexedDataMapOfOwnerPrs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_IndexedDataMapOfOwnerPrs\n");}
 	}
 };
 
@@ -466,8 +478,14 @@ class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 	}
 };
 %extend StdSelect_ShapeTypeFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_ShapeTypeFilter {
 	~StdSelect_ShapeTypeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_ShapeTypeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_ShapeTypeFilter\n");}
 	}
 };
 
@@ -484,7 +502,8 @@ class StdSelect {
 };
 %extend StdSelect {
 	~StdSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect\n");}
 	}
 };
 
@@ -507,7 +526,8 @@ class StdSelect_BRepSelectionTool {
 };
 %extend StdSelect_BRepSelectionTool {
 	~StdSelect_BRepSelectionTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_BRepSelectionTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_BRepSelectionTool\n");}
 	}
 };
 
@@ -534,8 +554,14 @@ class StdSelect_FaceFilter : public SelectMgr_Filter {
 	}
 };
 %extend StdSelect_FaceFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_FaceFilter {
 	~StdSelect_FaceFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_FaceFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_FaceFilter\n");}
 	}
 };
 
@@ -562,8 +588,14 @@ class StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollectio
 	}
 };
 %extend StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	~StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
 	}
 };
 
@@ -594,8 +626,14 @@ class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
 	}
 };
 %extend StdSelect_SensitiveText2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_SensitiveText2d {
 	~StdSelect_SensitiveText2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_SensitiveText2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_SensitiveText2d\n");}
 	}
 };
 
@@ -618,8 +656,14 @@ class StdSelect_Shape : public PrsMgr_PresentableObject {
 	}
 };
 %extend StdSelect_Shape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_Shape {
 	~StdSelect_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_Shape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_Shape\n");}
 	}
 };
 
@@ -640,8 +684,14 @@ class StdSelect_Prs : public Prs3d_Presentation {
 	}
 };
 %extend StdSelect_Prs {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_Prs {
 	~StdSelect_Prs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_Prs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_Prs\n");}
 	}
 };
 
@@ -668,8 +718,14 @@ class StdSelect_TextProjector2d : public Select2D_Projector {
 	}
 };
 %extend StdSelect_TextProjector2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_TextProjector2d {
 	~StdSelect_TextProjector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_TextProjector2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_TextProjector2d\n");}
 	}
 };
 
@@ -706,8 +762,14 @@ class StdSelect_ViewerSelector2d : public SelectMgr_ViewerSelector {
 	}
 };
 %extend StdSelect_ViewerSelector2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_ViewerSelector2d {
 	~StdSelect_ViewerSelector2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_ViewerSelector2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_ViewerSelector2d\n");}
 	}
 };
 
@@ -758,8 +820,14 @@ class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
 	}
 };
 %extend StdSelect_ViewerSelector3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_ViewerSelector3d {
 	~StdSelect_ViewerSelector3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_ViewerSelector3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_ViewerSelector3d\n");}
 	}
 };
 
@@ -812,8 +880,14 @@ class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 	}
 };
 %extend StdSelect_BRepOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_BRepOwner {
 	~StdSelect_BRepOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_BRepOwner\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_BRepOwner\n");}
 	}
 };
 
@@ -844,7 +918,8 @@ class StdSelect_BRepHilighter {
 };
 %extend StdSelect_BRepHilighter {
 	~StdSelect_BRepHilighter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_BRepHilighter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_BRepHilighter\n");}
 	}
 };
 
@@ -871,7 +946,13 @@ class StdSelect_EdgeFilter : public SelectMgr_Filter {
 	}
 };
 %extend StdSelect_EdgeFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdSelect_EdgeFilter {
 	~StdSelect_EdgeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdSelect_EdgeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdSelect_EdgeFilter\n");}
 	}
 };

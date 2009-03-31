@@ -132,7 +132,8 @@ class BRepLProp_SurfaceTool {
 };
 %extend BRepLProp_SurfaceTool {
 	~BRepLProp_SurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLProp_SurfaceTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepLProp_SurfaceTool\n");}
 	}
 };
 
@@ -191,7 +192,8 @@ class BRepLProp_SLProps {
 };
 %extend BRepLProp_SLProps {
 	~BRepLProp_SLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLProp_SLProps\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepLProp_SLProps\n");}
 	}
 };
 
@@ -218,7 +220,8 @@ class BRepLProp_CurveTool {
 };
 %extend BRepLProp_CurveTool {
 	~BRepLProp_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLProp_CurveTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepLProp_CurveTool\n");}
 	}
 };
 
@@ -257,7 +260,8 @@ class BRepLProp_CLProps {
 };
 %extend BRepLProp_CLProps {
 	~BRepLProp_CLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLProp_CLProps\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepLProp_CLProps\n");}
 	}
 };
 
@@ -274,6 +278,7 @@ class BRepLProp {
 };
 %extend BRepLProp {
 	~BRepLProp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepLProp\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepLProp\n");}
 	}
 };

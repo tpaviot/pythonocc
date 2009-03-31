@@ -131,7 +131,8 @@ class Handle_PPrsStd_AISPresentation : public Handle_PDF_Attribute {
 };
 %extend Handle_PPrsStd_AISPresentation {
 	~Handle_PPrsStd_AISPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPrsStd_AISPresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPrsStd_AISPresentation\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_PPrsStd_AISPresentation_1 : public Handle_PDF_Attribute {
 };
 %extend Handle_PPrsStd_AISPresentation_1 {
 	~Handle_PPrsStd_AISPresentation_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPrsStd_AISPresentation_1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPrsStd_AISPresentation_1\n");}
 	}
 };
 
@@ -232,8 +234,14 @@ class PPrsStd_AISPresentation_1 : public PDF_Attribute {
 	}
 };
 %extend PPrsStd_AISPresentation_1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PPrsStd_AISPresentation_1 {
 	~PPrsStd_AISPresentation_1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPrsStd_AISPresentation_1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPrsStd_AISPresentation_1\n");}
 	}
 };
 
@@ -302,7 +310,13 @@ class PPrsStd_AISPresentation : public PDF_Attribute {
 	}
 };
 %extend PPrsStd_AISPresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PPrsStd_AISPresentation {
 	~PPrsStd_AISPresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPrsStd_AISPresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPrsStd_AISPresentation\n");}
 	}
 };

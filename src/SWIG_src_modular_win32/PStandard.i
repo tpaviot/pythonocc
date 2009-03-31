@@ -131,7 +131,8 @@ class Handle_PStandard_ArrayNode : public Handle_Standard_Persistent {
 };
 %extend Handle_PStandard_ArrayNode {
 	~Handle_PStandard_ArrayNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PStandard_ArrayNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PStandard_ArrayNode\n");}
 	}
 };
 
@@ -152,7 +153,13 @@ class PStandard_ArrayNode : public Standard_Persistent {
 	}
 };
 %extend PStandard_ArrayNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PStandard_ArrayNode {
 	~PStandard_ArrayNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PStandard_ArrayNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PStandard_ArrayNode\n");}
 	}
 };

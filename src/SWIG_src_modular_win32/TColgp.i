@@ -131,7 +131,8 @@ class Handle_TColgp_HArray2OfPnt : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfPnt {
 	~Handle_TColgp_HArray2OfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfPnt\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_TColgp_HSequenceOfXYZ : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HSequenceOfXYZ {
 	~Handle_TColgp_HSequenceOfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfXYZ\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_TColgp_HArray2OfXYZ : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfXYZ {
 	~Handle_TColgp_HArray2OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfXYZ\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_TColgp_HArray2OfDir2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfDir2d {
 	~Handle_TColgp_HArray2OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfDir2d\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfLin2d {
 	~Handle_TColgp_HArray2OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfLin2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfLin2d\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_TColgp_HArray1OfXY : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfXY {
 	~Handle_TColgp_HArray1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfXY\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_TColgp_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqN
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfPnt {
 	~Handle_TColgp_SequenceNodeOfSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_TColgp_SequenceNodeOfSequenceOfDir2d : public Handle_TCollection_Se
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfDir2d {
 	~Handle_TColgp_SequenceNodeOfSequenceOfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfDir2d\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_TColgp_HArray1OfDir2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfDir2d {
 	~Handle_TColgp_HArray1OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir2d\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_TColgp_HArray1OfLin2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfLin2d {
 	~Handle_TColgp_HArray1OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfLin2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfLin2d\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_TColgp_SequenceNodeOfSequenceOfVec : public Handle_TCollection_SeqN
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfVec {
 	~Handle_TColgp_SequenceNodeOfSequenceOfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfVec\n");}
 	}
 };
 
@@ -395,7 +406,8 @@ class Handle_TColgp_SequenceNodeOfSequenceOfVec2d : public Handle_TCollection_Se
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfVec2d {
 	~Handle_TColgp_SequenceNodeOfSequenceOfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfVec2d\n");}
 	}
 };
 
@@ -419,7 +431,8 @@ class Handle_TColgp_HArray1OfVec2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfVec2d {
 	~Handle_TColgp_HArray1OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfVec2d\n");}
 	}
 };
 
@@ -443,7 +456,8 @@ class Handle_TColgp_SequenceNodeOfSequenceOfDir : public Handle_TCollection_SeqN
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfDir {
 	~Handle_TColgp_SequenceNodeOfSequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfDir\n");}
 	}
 };
 
@@ -467,7 +481,8 @@ class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfCirc2d {
 	~Handle_TColgp_HArray2OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfCirc2d\n");}
 	}
 };
 
@@ -491,7 +506,8 @@ class Handle_TColgp_HArray1OfVec : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfVec {
 	~Handle_TColgp_HArray1OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfVec\n");}
 	}
 };
 
@@ -515,7 +531,8 @@ class Handle_TColgp_HSequenceOfVec : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HSequenceOfVec {
 	~Handle_TColgp_HSequenceOfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfVec\n");}
 	}
 };
 
@@ -539,7 +556,8 @@ class Handle_TColgp_HArray2OfPnt2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfPnt2d {
 	~Handle_TColgp_HArray2OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfPnt2d\n");}
 	}
 };
 
@@ -563,7 +581,8 @@ class Handle_TColgp_HArray1OfDir : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfDir {
 	~Handle_TColgp_HArray1OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir\n");}
 	}
 };
 
@@ -587,7 +606,8 @@ class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfXY {
 	~Handle_TColgp_HArray2OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfXY\n");}
 	}
 };
 
@@ -611,7 +631,8 @@ class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNo
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfXY {
 	~Handle_TColgp_SequenceNodeOfSequenceOfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXY\n");}
 	}
 };
 
@@ -635,7 +656,8 @@ class Handle_TColgp_HArray1OfCirc2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfCirc2d {
 	~Handle_TColgp_HArray1OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfCirc2d\n");}
 	}
 };
 
@@ -659,7 +681,8 @@ class Handle_TColgp_HArray2OfDir : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfDir {
 	~Handle_TColgp_HArray2OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfDir\n");}
 	}
 };
 
@@ -683,7 +706,8 @@ class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_Se
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfPnt2d {
 	~Handle_TColgp_SequenceNodeOfSequenceOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt2d\n");}
 	}
 };
 
@@ -707,7 +731,8 @@ class Handle_TColgp_HArray1OfPnt2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfPnt2d {
 	~Handle_TColgp_HArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfPnt2d\n");}
 	}
 };
 
@@ -731,7 +756,8 @@ class Handle_TColgp_HArray2OfVec : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfVec {
 	~Handle_TColgp_HArray2OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfVec\n");}
 	}
 };
 
@@ -755,7 +781,8 @@ class Handle_TColgp_HSequenceOfDir2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HSequenceOfDir2d {
 	~Handle_TColgp_HSequenceOfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfDir2d\n");}
 	}
 };
 
@@ -779,7 +806,8 @@ class Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public Handle_TCollect
 };
 %extend Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
 	~Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d\n");}
 	}
 };
 
@@ -803,7 +831,8 @@ class Handle_TColgp_HArray1OfXYZ : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfXYZ {
 	~Handle_TColgp_HArray1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfXYZ\n");}
 	}
 };
 
@@ -827,7 +856,8 @@ class Handle_TColgp_HSequenceOfXY : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HSequenceOfXY {
 	~Handle_TColgp_HSequenceOfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfXY\n");}
 	}
 };
 
@@ -851,7 +881,8 @@ class Handle_TColgp_SequenceNodeOfSequenceOfXYZ : public Handle_TCollection_SeqN
 };
 %extend Handle_TColgp_SequenceNodeOfSequenceOfXYZ {
 	~Handle_TColgp_SequenceNodeOfSequenceOfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfXYZ\n");}
 	}
 };
 
@@ -875,7 +906,8 @@ class Handle_TColgp_HArray2OfVec2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray2OfVec2d {
 	~Handle_TColgp_HArray2OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfVec2d\n");}
 	}
 };
 
@@ -899,7 +931,8 @@ class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HSequenceOfDir {
 	~Handle_TColgp_HSequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfDir\n");}
 	}
 };
 
@@ -923,7 +956,8 @@ class Handle_TColgp_HSequenceOfVec2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HSequenceOfVec2d {
 	~Handle_TColgp_HSequenceOfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfVec2d\n");}
 	}
 };
 
@@ -947,7 +981,8 @@ class Handle_TColgp_HArray1OfPnt : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HArray1OfPnt {
 	~Handle_TColgp_HArray1OfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfPnt\n");}
 	}
 };
 
@@ -971,7 +1006,8 @@ class Handle_TColgp_HSequenceOfPnt2d : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HSequenceOfPnt2d {
 	~Handle_TColgp_HSequenceOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt2d\n");}
 	}
 };
 
@@ -995,7 +1031,8 @@ class Handle_TColgp_HSequenceOfPnt : public Handle_MMgt_TShared {
 };
 %extend Handle_TColgp_HSequenceOfPnt {
 	~Handle_TColgp_HSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt\n");}
 	}
 };
 
@@ -1058,8 +1095,14 @@ class TColgp_HSequenceOfXYZ : public MMgt_TShared {
 	}
 };
 %extend TColgp_HSequenceOfXYZ {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HSequenceOfXYZ {
 	~TColgp_HSequenceOfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfXYZ\n");}
 	}
 };
 
@@ -1098,7 +1141,8 @@ class TColgp_Array1OfDir2d {
 };
 %extend TColgp_Array1OfDir2d {
 	~TColgp_Array1OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfDir2d\n");}
 	}
 };
 
@@ -1151,7 +1195,8 @@ class TColgp_SequenceOfPnt2d : public TCollection_BaseSequence {
 };
 %extend TColgp_SequenceOfPnt2d {
 	~TColgp_SequenceOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfPnt2d\n");}
 	}
 };
 
@@ -1190,8 +1235,14 @@ class TColgp_HArray1OfDir : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfDir {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfDir {
 	~TColgp_HArray1OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfDir\n");}
 	}
 };
 
@@ -1236,8 +1287,14 @@ class TColgp_HArray2OfVec : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfVec {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfVec {
 	~TColgp_HArray2OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfVec\n");}
 	}
 };
 
@@ -1282,8 +1339,14 @@ class TColgp_HArray2OfDir2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfDir2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfDir2d {
 	~TColgp_HArray2OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfDir2d\n");}
 	}
 };
 
@@ -1328,8 +1391,14 @@ class TColgp_HArray2OfPnt : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfPnt {
 	~TColgp_HArray2OfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfPnt\n");}
 	}
 };
 
@@ -1382,7 +1451,8 @@ class TColgp_SequenceOfXY : public TCollection_BaseSequence {
 };
 %extend TColgp_SequenceOfXY {
 	~TColgp_SequenceOfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfXY\n");}
 	}
 };
 
@@ -1435,7 +1505,8 @@ class TColgp_SequenceOfVec : public TCollection_BaseSequence {
 };
 %extend TColgp_SequenceOfVec {
 	~TColgp_SequenceOfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfVec\n");}
 	}
 };
 
@@ -1456,8 +1527,14 @@ class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfVec {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec {
 	~TColgp_SequenceNodeOfSequenceOfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec\n");}
 	}
 };
 
@@ -1502,8 +1579,14 @@ class TColgp_HArray2OfLin2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfLin2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfLin2d {
 	~TColgp_HArray2OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfLin2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfLin2d\n");}
 	}
 };
 
@@ -1548,8 +1631,14 @@ class TColgp_HArray2OfDir : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfDir {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfDir {
 	~TColgp_HArray2OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfDir\n");}
 	}
 };
 
@@ -1588,7 +1677,8 @@ class TColgp_Array1OfLin2d {
 };
 %extend TColgp_Array1OfLin2d {
 	~TColgp_Array1OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfLin2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfLin2d\n");}
 	}
 };
 
@@ -1609,8 +1699,14 @@ class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfXY {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfXY {
 	~TColgp_SequenceNodeOfSequenceOfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfXY\n");}
 	}
 };
 
@@ -1653,7 +1749,8 @@ class TColgp_Array2OfXY {
 };
 %extend TColgp_Array2OfXY {
 	~TColgp_Array2OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfXY\n");}
 	}
 };
 
@@ -1706,7 +1803,8 @@ class TColgp_SequenceOfDir2d : public TCollection_BaseSequence {
 };
 %extend TColgp_SequenceOfDir2d {
 	~TColgp_SequenceOfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfDir2d\n");}
 	}
 };
 
@@ -1745,7 +1843,8 @@ class TColgp_Array1OfVec2d {
 };
 %extend TColgp_Array1OfVec2d {
 	~TColgp_Array1OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfVec2d\n");}
 	}
 };
 
@@ -1790,8 +1889,14 @@ class TColgp_HArray2OfCirc2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfCirc2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfCirc2d {
 	~TColgp_HArray2OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfCirc2d\n");}
 	}
 };
 
@@ -1812,7 +1917,8 @@ class TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d : public TCollection_BasicM
 };
 %extend TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d {
 	~TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d\n");}
 	}
 };
 
@@ -1875,8 +1981,14 @@ class TColgp_HSequenceOfPnt2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HSequenceOfPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HSequenceOfPnt2d {
 	~TColgp_HSequenceOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfPnt2d\n");}
 	}
 };
 
@@ -1915,7 +2027,8 @@ class TColgp_Array1OfDir {
 };
 %extend TColgp_Array1OfDir {
 	~TColgp_Array1OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfDir\n");}
 	}
 };
 
@@ -1960,8 +2073,14 @@ class TColgp_HArray2OfVec2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfVec2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfVec2d {
 	~TColgp_HArray2OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfVec2d\n");}
 	}
 };
 
@@ -2000,7 +2119,8 @@ class TColgp_Array1OfXY {
 };
 %extend TColgp_Array1OfXY {
 	~TColgp_Array1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfXY\n");}
 	}
 };
 
@@ -2039,8 +2159,14 @@ class TColgp_HArray1OfLin2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfLin2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfLin2d {
 	~TColgp_HArray1OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfLin2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfLin2d\n");}
 	}
 };
 
@@ -2079,8 +2205,14 @@ class TColgp_HArray1OfVec : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfVec {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfVec {
 	~TColgp_HArray1OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfVec\n");}
 	}
 };
 
@@ -2119,8 +2251,14 @@ class TColgp_HArray1OfDir2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfDir2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfDir2d {
 	~TColgp_HArray1OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfDir2d\n");}
 	}
 };
 
@@ -2163,7 +2301,8 @@ class TColgp_Array2OfPnt2d {
 };
 %extend TColgp_Array2OfPnt2d {
 	~TColgp_Array2OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfPnt2d\n");}
 	}
 };
 
@@ -2202,8 +2341,14 @@ class TColgp_HArray1OfPnt : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfPnt {
 	~TColgp_HArray1OfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfPnt\n");}
 	}
 };
 
@@ -2246,7 +2391,8 @@ class TColgp_Array2OfVec {
 };
 %extend TColgp_Array2OfVec {
 	~TColgp_Array2OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfVec\n");}
 	}
 };
 
@@ -2299,7 +2445,8 @@ class TColgp_SequenceOfDir : public TCollection_BaseSequence {
 };
 %extend TColgp_SequenceOfDir {
 	~TColgp_SequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfDir\n");}
 	}
 };
 
@@ -2320,8 +2467,14 @@ class TColgp_SequenceNodeOfSequenceOfDir : public TCollection_SeqNode {
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfDir {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfDir {
 	~TColgp_SequenceNodeOfSequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir\n");}
 	}
 };
 
@@ -2374,7 +2527,8 @@ class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
 };
 %extend TColgp_SequenceOfXYZ {
 	~TColgp_SequenceOfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfXYZ\n");}
 	}
 };
 
@@ -2413,8 +2567,14 @@ class TColgp_HArray1OfVec2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfVec2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfVec2d {
 	~TColgp_HArray1OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfVec2d\n");}
 	}
 };
 
@@ -2453,8 +2613,14 @@ class TColgp_HArray1OfCirc2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfCirc2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfCirc2d {
 	~TColgp_HArray1OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfCirc2d\n");}
 	}
 };
 
@@ -2493,8 +2659,14 @@ class TColgp_HArray1OfXYZ : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfXYZ {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfXYZ {
 	~TColgp_HArray1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXYZ\n");}
 	}
 };
 
@@ -2533,7 +2705,8 @@ class TColgp_Array1OfPnt2d {
 };
 %extend TColgp_Array1OfPnt2d {
 	~TColgp_Array1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfPnt2d\n");}
 	}
 };
 
@@ -2576,7 +2749,8 @@ class TColgp_Array2OfDir {
 };
 %extend TColgp_Array2OfDir {
 	~TColgp_Array2OfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir\n");}
 	}
 };
 
@@ -2639,8 +2813,14 @@ class TColgp_HSequenceOfVec : public MMgt_TShared {
 	}
 };
 %extend TColgp_HSequenceOfVec {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HSequenceOfVec {
 	~TColgp_HSequenceOfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfVec\n");}
 	}
 };
 
@@ -2679,8 +2859,14 @@ class TColgp_HArray1OfXY : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfXY {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfXY {
 	~TColgp_HArray1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXY\n");}
 	}
 };
 
@@ -2701,8 +2887,14 @@ class TColgp_SequenceNodeOfSequenceOfDir2d : public TCollection_SeqNode {
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfDir2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfDir2d {
 	~TColgp_SequenceNodeOfSequenceOfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir2d\n");}
 	}
 };
 
@@ -2747,8 +2939,14 @@ class TColgp_HArray2OfPnt2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfPnt2d {
 	~TColgp_HArray2OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfPnt2d\n");}
 	}
 };
 
@@ -2793,8 +2991,14 @@ class TColgp_HArray2OfXYZ : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfXYZ {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfXYZ {
 	~TColgp_HArray2OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfXYZ\n");}
 	}
 };
 
@@ -2815,8 +3019,14 @@ class TColgp_SequenceNodeOfSequenceOfVec2d : public TCollection_SeqNode {
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfVec2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfVec2d {
 	~TColgp_SequenceNodeOfSequenceOfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec2d\n");}
 	}
 };
 
@@ -2869,7 +3079,8 @@ class TColgp_SequenceOfVec2d : public TCollection_BaseSequence {
 };
 %extend TColgp_SequenceOfVec2d {
 	~TColgp_SequenceOfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfVec2d\n");}
 	}
 };
 
@@ -2932,8 +3143,14 @@ class TColgp_HSequenceOfDir : public MMgt_TShared {
 	}
 };
 %extend TColgp_HSequenceOfDir {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HSequenceOfDir {
 	~TColgp_HSequenceOfDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfDir\n");}
 	}
 };
 
@@ -2972,7 +3189,8 @@ class TColgp_Array1OfPnt {
 };
 %extend TColgp_Array1OfPnt {
 	~TColgp_Array1OfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfPnt\n");}
 	}
 };
 
@@ -3011,7 +3229,8 @@ class TColgp_Array1OfVec {
 };
 %extend TColgp_Array1OfVec {
 	~TColgp_Array1OfVec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfVec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfVec\n");}
 	}
 };
 
@@ -3064,7 +3283,8 @@ class TColgp_SequenceOfPnt : public TCollection_BaseSequence {
 };
 %extend TColgp_SequenceOfPnt {
 	~TColgp_SequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceOfPnt\n");}
 	}
 };
 
@@ -3085,8 +3305,14 @@ class TColgp_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfPnt {
 	~TColgp_SequenceNodeOfSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
 
@@ -3129,7 +3355,8 @@ class TColgp_Array2OfCirc2d {
 };
 %extend TColgp_Array2OfCirc2d {
 	~TColgp_Array2OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfCirc2d\n");}
 	}
 };
 
@@ -3152,8 +3379,14 @@ class TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public TCollection_MapNode {
 	}
 };
 %extend TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
 	~TColgp_DataMapNodeOfDataMapOfIntegerCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_DataMapNodeOfDataMapOfIntegerCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_DataMapNodeOfDataMapOfIntegerCirc2d\n");}
 	}
 };
 
@@ -3192,8 +3425,14 @@ class TColgp_HArray1OfPnt2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray1OfPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray1OfPnt2d {
 	~TColgp_HArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfPnt2d\n");}
 	}
 };
 
@@ -3214,8 +3453,14 @@ class TColgp_SequenceNodeOfSequenceOfPnt2d : public TCollection_SeqNode {
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfPnt2d {
 	~TColgp_SequenceNodeOfSequenceOfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfPnt2d\n");}
 	}
 };
 
@@ -3258,7 +3503,8 @@ class TColgp_Array2OfLin2d {
 };
 %extend TColgp_Array2OfLin2d {
 	~TColgp_Array2OfLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfLin2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfLin2d\n");}
 	}
 };
 
@@ -3321,8 +3567,14 @@ class TColgp_HSequenceOfDir2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HSequenceOfDir2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HSequenceOfDir2d {
 	~TColgp_HSequenceOfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfDir2d\n");}
 	}
 };
 
@@ -3365,7 +3617,8 @@ class TColgp_Array2OfPnt {
 };
 %extend TColgp_Array2OfPnt {
 	~TColgp_Array2OfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfPnt\n");}
 	}
 };
 
@@ -3404,7 +3657,8 @@ class TColgp_Array1OfXYZ {
 };
 %extend TColgp_Array1OfXYZ {
 	~TColgp_Array1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfXYZ\n");}
 	}
 };
 
@@ -3425,8 +3679,14 @@ class TColgp_SequenceNodeOfSequenceOfXYZ : public TCollection_SeqNode {
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfXYZ {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_SequenceNodeOfSequenceOfXYZ {
 	~TColgp_SequenceNodeOfSequenceOfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfXYZ\n");}
 	}
 };
 
@@ -3459,7 +3719,8 @@ class TColgp_DataMapOfIntegerCirc2d : public TCollection_BasicMap {
 };
 %extend TColgp_DataMapOfIntegerCirc2d {
 	~TColgp_DataMapOfIntegerCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_DataMapOfIntegerCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_DataMapOfIntegerCirc2d\n");}
 	}
 };
 
@@ -3502,7 +3763,8 @@ class TColgp_Array2OfDir2d {
 };
 %extend TColgp_Array2OfDir2d {
 	~TColgp_Array2OfDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir2d\n");}
 	}
 };
 
@@ -3545,7 +3807,8 @@ class TColgp_Array2OfXYZ {
 };
 %extend TColgp_Array2OfXYZ {
 	~TColgp_Array2OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfXYZ\n");}
 	}
 };
 
@@ -3608,8 +3871,14 @@ class TColgp_HSequenceOfXY : public MMgt_TShared {
 	}
 };
 %extend TColgp_HSequenceOfXY {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HSequenceOfXY {
 	~TColgp_HSequenceOfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfXY\n");}
 	}
 };
 
@@ -3672,8 +3941,14 @@ class TColgp_HSequenceOfVec2d : public MMgt_TShared {
 	}
 };
 %extend TColgp_HSequenceOfVec2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HSequenceOfVec2d {
 	~TColgp_HSequenceOfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfVec2d\n");}
 	}
 };
 
@@ -3736,8 +4011,14 @@ class TColgp_HSequenceOfPnt : public MMgt_TShared {
 	}
 };
 %extend TColgp_HSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HSequenceOfPnt {
 	~TColgp_HSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfPnt\n");}
 	}
 };
 
@@ -3776,7 +4057,8 @@ class TColgp_Array1OfCirc2d {
 };
 %extend TColgp_Array1OfCirc2d {
 	~TColgp_Array1OfCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfCirc2d\n");}
 	}
 };
 
@@ -3819,7 +4101,8 @@ class TColgp_Array2OfVec2d {
 };
 %extend TColgp_Array2OfVec2d {
 	~TColgp_Array2OfVec2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfVec2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfVec2d\n");}
 	}
 };
 
@@ -3864,7 +4147,13 @@ class TColgp_HArray2OfXY : public MMgt_TShared {
 	}
 };
 %extend TColgp_HArray2OfXY {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TColgp_HArray2OfXY {
 	~TColgp_HArray2OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TColgp_HArray2OfXY\n");}
 	}
 };

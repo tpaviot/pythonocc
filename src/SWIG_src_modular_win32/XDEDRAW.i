@@ -122,7 +122,8 @@ class XDEDRAW_Common {
 };
 %extend XDEDRAW_Common {
 	~XDEDRAW_Common() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Common\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Common\n");}
 	}
 };
 
@@ -137,7 +138,8 @@ class XDEDRAW_Layers {
 };
 %extend XDEDRAW_Layers {
 	~XDEDRAW_Layers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Layers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Layers\n");}
 	}
 };
 
@@ -154,7 +156,8 @@ class XDEDRAW {
 };
 %extend XDEDRAW {
 	~XDEDRAW() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XDEDRAW\n");}
 	}
 };
 
@@ -169,7 +172,8 @@ class XDEDRAW_Colors {
 };
 %extend XDEDRAW_Colors {
 	~XDEDRAW_Colors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Colors\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Colors\n");}
 	}
 };
 
@@ -184,7 +188,8 @@ class XDEDRAW_Shapes {
 };
 %extend XDEDRAW_Shapes {
 	~XDEDRAW_Shapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Shapes\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Shapes\n");}
 	}
 };
 
@@ -199,6 +204,7 @@ class XDEDRAW_Props {
 };
 %extend XDEDRAW_Props {
 	~XDEDRAW_Props() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XDEDRAW_Props\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Props\n");}
 	}
 };

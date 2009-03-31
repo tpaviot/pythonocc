@@ -144,6 +144,7 @@ class BRepIntCurveSurface_Inter {
 };
 %extend BRepIntCurveSurface_Inter {
 	~BRepIntCurveSurface_Inter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepIntCurveSurface_Inter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepIntCurveSurface_Inter\n");}
 	}
 };

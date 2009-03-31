@@ -139,7 +139,8 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethods : public Handle_TCollection_SeqN
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfMethods {
 	~Handle_Dynamic_SequenceNodeOfSeqOfMethods() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethods\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethods\n");}
 	}
 };
 
@@ -163,7 +164,8 @@ class Handle_Dynamic_Parameter : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_Parameter {
 	~Handle_Dynamic_Parameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Parameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Parameter\n");}
 	}
 };
 
@@ -187,7 +189,8 @@ class Handle_Dynamic_StringParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_StringParameter {
 	~Handle_Dynamic_StringParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_StringParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_StringParameter\n");}
 	}
 };
 
@@ -211,7 +214,8 @@ class Handle_Dynamic_VariableNode : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_VariableNode {
 	~Handle_Dynamic_VariableNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableNode\n");}
 	}
 };
 
@@ -235,7 +239,8 @@ class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_DynamicClass {
 	~Handle_Dynamic_DynamicClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicClass\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicClass\n");}
 	}
 };
 
@@ -259,7 +264,8 @@ class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_FuzzyDefinitionsDictionary {
 	~Handle_Dynamic_FuzzyDefinitionsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinitionsDictionary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinitionsDictionary\n");}
 	}
 };
 
@@ -283,7 +289,8 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TColle
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
 	~Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");}
 	}
 };
 
@@ -307,7 +314,8 @@ class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqN
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfClasses {
 	~Handle_Dynamic_SequenceNodeOfSeqOfClasses() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfClasses\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfClasses\n");}
 	}
 };
 
@@ -331,7 +339,8 @@ class Handle_Dynamic_FuzzyClass : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_FuzzyClass {
 	~Handle_Dynamic_FuzzyClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyClass\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyClass\n");}
 	}
 };
 
@@ -355,7 +364,8 @@ class Handle_Dynamic_FuzzyDefinition : public Handle_Dynamic_FuzzyClass {
 };
 %extend Handle_Dynamic_FuzzyDefinition {
 	~Handle_Dynamic_FuzzyDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinition\n");}
 	}
 };
 
@@ -379,7 +389,8 @@ class Handle_Dynamic_Method : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_Method {
 	~Handle_Dynamic_Method() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Method\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Method\n");}
 	}
 };
 
@@ -403,7 +414,8 @@ class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_Variable {
 	~Handle_Dynamic_Variable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Variable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Variable\n");}
 	}
 };
 
@@ -427,7 +439,8 @@ class Handle_Dynamic_AbstractVariableInstance : public Handle_Dynamic_Variable {
 };
 %extend Handle_Dynamic_AbstractVariableInstance {
 	~Handle_Dynamic_AbstractVariableInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_AbstractVariableInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_AbstractVariableInstance\n");}
 	}
 };
 
@@ -451,7 +464,8 @@ class Handle_Dynamic_RealParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_RealParameter {
 	~Handle_Dynamic_RealParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_RealParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_RealParameter\n");}
 	}
 };
 
@@ -475,7 +489,8 @@ class Handle_Dynamic_SequenceOfClasses : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_SequenceOfClasses {
 	~Handle_Dynamic_SequenceOfClasses() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfClasses\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfClasses\n");}
 	}
 };
 
@@ -499,7 +514,8 @@ class Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public Handle_TCollec
 };
 %extend Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
 	~Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -523,7 +539,8 @@ class Handle_Dynamic_MethodDefinition : public Handle_Dynamic_Method {
 };
 %extend Handle_Dynamic_MethodDefinition {
 	~Handle_Dynamic_MethodDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_MethodDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_MethodDefinition\n");}
 	}
 };
 
@@ -547,7 +564,8 @@ class Handle_Dynamic_CompiledMethod : public Handle_Dynamic_MethodDefinition {
 };
 %extend Handle_Dynamic_CompiledMethod {
 	~Handle_Dynamic_CompiledMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompiledMethod\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompiledMethod\n");}
 	}
 };
 
@@ -571,7 +589,8 @@ class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_DynamicInstance {
 	~Handle_Dynamic_DynamicInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicInstance\n");}
 	}
 };
 
@@ -595,7 +614,8 @@ class Handle_Dynamic_InterpretedMethod : public Handle_Dynamic_MethodDefinition 
 };
 %extend Handle_Dynamic_InterpretedMethod {
 	~Handle_Dynamic_InterpretedMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_InterpretedMethod\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_InterpretedMethod\n");}
 	}
 };
 
@@ -619,7 +639,8 @@ class Handle_Dynamic_BooleanParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_BooleanParameter {
 	~Handle_Dynamic_BooleanParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_BooleanParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_BooleanParameter\n");}
 	}
 };
 
@@ -643,7 +664,8 @@ class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_SequenceOfFuzzyDefinitions {
 	~Handle_Dynamic_SequenceOfFuzzyDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfFuzzyDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -667,7 +689,8 @@ class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableIn
 };
 %extend Handle_Dynamic_VariableInstance {
 	~Handle_Dynamic_VariableInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableInstance\n");}
 	}
 };
 
@@ -691,7 +714,8 @@ class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 };
 %extend Handle_Dynamic_VariableGroup {
 	~Handle_Dynamic_VariableGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableGroup\n");}
 	}
 };
 
@@ -715,7 +739,8 @@ class Handle_Dynamic_IntegerParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_IntegerParameter {
 	~Handle_Dynamic_IntegerParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_IntegerParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_IntegerParameter\n");}
 	}
 };
 
@@ -739,7 +764,8 @@ class Handle_Dynamic_CompositVariableInstance : public Handle_Dynamic_AbstractVa
 };
 %extend Handle_Dynamic_CompositVariableInstance {
 	~Handle_Dynamic_CompositVariableInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositVariableInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositVariableInstance\n");}
 	}
 };
 
@@ -763,7 +789,8 @@ class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_InstanceParameter {
 	~Handle_Dynamic_InstanceParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_InstanceParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_InstanceParameter\n");}
 	}
 };
 
@@ -787,7 +814,8 @@ class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transi
 };
 %extend Handle_Dynamic_MethodDefinitionsDictionary {
 	~Handle_Dynamic_MethodDefinitionsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_MethodDefinitionsDictionary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_MethodDefinitionsDictionary\n");}
 	}
 };
 
@@ -811,7 +839,8 @@ class Handle_Dynamic_ParameterNode : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_ParameterNode {
 	~Handle_Dynamic_ParameterNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ParameterNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ParameterNode\n");}
 	}
 };
 
@@ -835,7 +864,8 @@ class Handle_Dynamic_SequenceOfMethods : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_SequenceOfMethods {
 	~Handle_Dynamic_SequenceOfMethods() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethods\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethods\n");}
 	}
 };
 
@@ -859,7 +889,8 @@ class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
 };
 %extend Handle_Dynamic_SequenceOfMethodDefinitions {
 	~Handle_Dynamic_SequenceOfMethodDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethodDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethodDefinitions\n");}
 	}
 };
 
@@ -883,7 +914,8 @@ class Handle_Dynamic_DynamicDerivedClass : public Handle_Dynamic_DynamicClass {
 };
 %extend Handle_Dynamic_DynamicDerivedClass {
 	~Handle_Dynamic_DynamicDerivedClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicDerivedClass\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicDerivedClass\n");}
 	}
 };
 
@@ -907,7 +939,8 @@ class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 };
 %extend Handle_Dynamic_CompositMethod {
 	~Handle_Dynamic_CompositMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositMethod\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositMethod\n");}
 	}
 };
 
@@ -931,7 +964,8 @@ class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
 };
 %extend Handle_Dynamic_ObjectParameter {
 	~Handle_Dynamic_ObjectParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ObjectParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ObjectParameter\n");}
 	}
 };
 
@@ -962,8 +996,14 @@ class Dynamic_Method : public MMgt_TShared {
 	}
 };
 %extend Dynamic_Method {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_Method {
 	~Dynamic_Method() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_Method\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_Method\n");}
 	}
 };
 
@@ -980,8 +1020,14 @@ class Dynamic_MethodDefinition : public Dynamic_Method {
 	}
 };
 %extend Dynamic_MethodDefinition {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_MethodDefinition {
 	~Dynamic_MethodDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinition\n");}
 	}
 };
 
@@ -1004,8 +1050,14 @@ class Dynamic_InterpretedMethod : public Dynamic_MethodDefinition {
 	}
 };
 %extend Dynamic_InterpretedMethod {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_InterpretedMethod {
 	~Dynamic_InterpretedMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_InterpretedMethod\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_InterpretedMethod\n");}
 	}
 };
 
@@ -1068,8 +1120,14 @@ class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
 	}
 };
 %extend Dynamic_SequenceOfMethodDefinitions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_SequenceOfMethodDefinitions {
 	~Dynamic_SequenceOfMethodDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfMethodDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfMethodDefinitions\n");}
 	}
 };
 
@@ -1116,8 +1174,14 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 	}
 };
 %extend Dynamic_FuzzyClass {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_FuzzyClass {
 	~Dynamic_FuzzyClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyClass\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyClass\n");}
 	}
 };
 
@@ -1148,8 +1212,14 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 	}
 };
 %extend Dynamic_DynamicClass {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_DynamicClass {
 	~Dynamic_DynamicClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicClass\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicClass\n");}
 	}
 };
 
@@ -1164,7 +1234,8 @@ class Dynamic {
 };
 %extend Dynamic {
 	~Dynamic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic\n");}
 	}
 };
 
@@ -1187,8 +1258,14 @@ class Dynamic_CompiledMethod : public Dynamic_MethodDefinition {
 	}
 };
 %extend Dynamic_CompiledMethod {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_CompiledMethod {
 	~Dynamic_CompiledMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_CompiledMethod\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_CompiledMethod\n");}
 	}
 };
 
@@ -1209,8 +1286,14 @@ class Dynamic_Parameter : public MMgt_TShared {
 	}
 };
 %extend Dynamic_Parameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_Parameter {
 	~Dynamic_Parameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_Parameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_Parameter\n");}
 	}
 };
 
@@ -1233,8 +1316,14 @@ class Dynamic_StringParameter : public Dynamic_Parameter {
 	}
 };
 %extend Dynamic_StringParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_StringParameter {
 	~Dynamic_StringParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_StringParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_StringParameter\n");}
 	}
 };
 
@@ -1255,8 +1344,14 @@ class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 	}
 };
 %extend Dynamic_SequenceNodeOfSeqOfClasses {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_SequenceNodeOfSeqOfClasses {
 	~Dynamic_SequenceNodeOfSeqOfClasses() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfClasses\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfClasses\n");}
 	}
 };
 
@@ -1283,8 +1378,14 @@ class Dynamic_InstanceParameter : public Dynamic_Parameter {
 	}
 };
 %extend Dynamic_InstanceParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_InstanceParameter {
 	~Dynamic_InstanceParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_InstanceParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_InstanceParameter\n");}
 	}
 };
 
@@ -1313,8 +1414,14 @@ class Dynamic_VariableNode : public MMgt_TShared {
 	}
 };
 %extend Dynamic_VariableNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_VariableNode {
 	~Dynamic_VariableNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_VariableNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_VariableNode\n");}
 	}
 };
 
@@ -1367,7 +1474,8 @@ class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
 };
 %extend Dynamic_SeqOfMethodDefinitions {
 	~Dynamic_SeqOfMethodDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfMethodDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfMethodDefinitions\n");}
 	}
 };
 
@@ -1420,7 +1528,8 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 };
 %extend Dynamic_SeqOfMethods {
 	~Dynamic_SeqOfMethods() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfMethods\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfMethods\n");}
 	}
 };
 
@@ -1483,8 +1592,14 @@ class Dynamic_SequenceOfMethods : public MMgt_TShared {
 	}
 };
 %extend Dynamic_SequenceOfMethods {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_SequenceOfMethods {
 	~Dynamic_SequenceOfMethods() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfMethods\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfMethods\n");}
 	}
 };
 
@@ -1511,8 +1626,14 @@ class Dynamic_RealParameter : public Dynamic_Parameter {
 	}
 };
 %extend Dynamic_RealParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_RealParameter {
 	~Dynamic_RealParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_RealParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_RealParameter\n");}
 	}
 };
 
@@ -1575,8 +1696,14 @@ class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
 	}
 };
 %extend Dynamic_SequenceOfFuzzyDefinitions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_SequenceOfFuzzyDefinitions {
 	~Dynamic_SequenceOfFuzzyDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfFuzzyDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -1605,8 +1732,14 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 	}
 };
 %extend Dynamic_BooleanParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_BooleanParameter {
 	~Dynamic_BooleanParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_BooleanParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_BooleanParameter\n");}
 	}
 };
 
@@ -1637,8 +1770,14 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 	}
 };
 %extend Dynamic_FuzzyDefinitionsDictionary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_FuzzyDefinitionsDictionary {
 	~Dynamic_FuzzyDefinitionsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyDefinitionsDictionary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyDefinitionsDictionary\n");}
 	}
 };
 
@@ -1675,8 +1814,14 @@ class Dynamic_DynamicInstance : public MMgt_TShared {
 	}
 };
 %extend Dynamic_DynamicInstance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_DynamicInstance {
 	~Dynamic_DynamicInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicInstance\n");}
 	}
 };
 
@@ -1729,7 +1874,8 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 };
 %extend Dynamic_SeqOfClasses {
 	~Dynamic_SeqOfClasses() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfClasses\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfClasses\n");}
 	}
 };
 
@@ -1792,8 +1938,14 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 	}
 };
 %extend Dynamic_SequenceOfClasses {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_SequenceOfClasses {
 	~Dynamic_SequenceOfClasses() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfClasses\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceOfClasses\n");}
 	}
 };
 
@@ -1822,8 +1974,14 @@ class Dynamic_Variable : public MMgt_TShared {
 	}
 };
 %extend Dynamic_Variable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_Variable {
 	~Dynamic_Variable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_Variable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_Variable\n");}
 	}
 };
 
@@ -1840,8 +1998,14 @@ class Dynamic_VariableGroup : public Dynamic_Variable {
 	}
 };
 %extend Dynamic_VariableGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_VariableGroup {
 	~Dynamic_VariableGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_VariableGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_VariableGroup\n");}
 	}
 };
 
@@ -1868,8 +2032,14 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 	}
 };
 %extend Dynamic_CompositMethod {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_CompositMethod {
 	~Dynamic_CompositMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_CompositMethod\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_CompositMethod\n");}
 	}
 };
 
@@ -1898,8 +2068,14 @@ class Dynamic_ParameterNode : public MMgt_TShared {
 	}
 };
 %extend Dynamic_ParameterNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_ParameterNode {
 	~Dynamic_ParameterNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_ParameterNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_ParameterNode\n");}
 	}
 };
 
@@ -1918,8 +2094,14 @@ class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 	}
 };
 %extend Dynamic_AbstractVariableInstance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_AbstractVariableInstance {
 	~Dynamic_AbstractVariableInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_AbstractVariableInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_AbstractVariableInstance\n");}
 	}
 };
 
@@ -1946,8 +2128,14 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 	}
 };
 %extend Dynamic_ObjectParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_ObjectParameter {
 	~Dynamic_ObjectParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_ObjectParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_ObjectParameter\n");}
 	}
 };
 
@@ -1968,8 +2156,14 @@ class Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public TCollection_SeqNode {
 	}
 };
 %extend Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
 	~Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -1990,8 +2184,14 @@ class Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public TCollection_SeqNode 
 	}
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
 	~Dynamic_SequenceNodeOfSeqOfMethodDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");}
 	}
 };
 
@@ -2014,8 +2214,14 @@ class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 	}
 };
 %extend Dynamic_FuzzyDefinition {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_FuzzyDefinition {
 	~Dynamic_FuzzyDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyDefinition\n");}
 	}
 };
 
@@ -2038,8 +2244,14 @@ class Dynamic_VariableInstance : public Dynamic_AbstractVariableInstance {
 	}
 };
 %extend Dynamic_VariableInstance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_VariableInstance {
 	~Dynamic_VariableInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_VariableInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_VariableInstance\n");}
 	}
 };
 
@@ -2066,8 +2278,14 @@ class Dynamic_IntegerParameter : public Dynamic_Parameter {
 	}
 };
 %extend Dynamic_IntegerParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_IntegerParameter {
 	~Dynamic_IntegerParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_IntegerParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_IntegerParameter\n");}
 	}
 };
 
@@ -2092,8 +2310,14 @@ class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
 	}
 };
 %extend Dynamic_DynamicDerivedClass {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_DynamicDerivedClass {
 	~Dynamic_DynamicDerivedClass() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicDerivedClass\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicDerivedClass\n");}
 	}
 };
 
@@ -2126,8 +2350,14 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 	}
 };
 %extend Dynamic_MethodDefinitionsDictionary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_MethodDefinitionsDictionary {
 	~Dynamic_MethodDefinitionsDictionary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinitionsDictionary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinitionsDictionary\n");}
 	}
 };
 
@@ -2148,8 +2378,14 @@ class Dynamic_SequenceNodeOfSeqOfMethods : public TCollection_SeqNode {
 	}
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethods {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_SequenceNodeOfSeqOfMethods {
 	~Dynamic_SequenceNodeOfSeqOfMethods() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethods\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethods\n");}
 	}
 };
 
@@ -2202,7 +2438,8 @@ class Dynamic_SeqOfFuzzyDefinitions : public TCollection_BaseSequence {
 };
 %extend Dynamic_SeqOfFuzzyDefinitions {
 	~Dynamic_SeqOfFuzzyDefinitions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfFuzzyDefinitions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_SeqOfFuzzyDefinitions\n");}
 	}
 };
 
@@ -2225,7 +2462,13 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 	}
 };
 %extend Dynamic_CompositVariableInstance {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Dynamic_CompositVariableInstance {
 	~Dynamic_CompositVariableInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Dynamic_CompositVariableInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Dynamic_CompositVariableInstance\n");}
 	}
 };

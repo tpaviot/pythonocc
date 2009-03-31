@@ -131,7 +131,8 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation : public Handle_TCollec
 };
 %extend Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation {
 	~Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_ExprIntrp_Generator : public Handle_MMgt_TShared {
 };
 %extend Handle_ExprIntrp_Generator {
 	~Handle_ExprIntrp_Generator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_Generator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_Generator\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_ExprIntrp_GenExp : public Handle_ExprIntrp_Generator {
 };
 %extend Handle_ExprIntrp_GenExp {
 	~Handle_ExprIntrp_GenExp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenExp\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenExp\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_ExprIntrp_SyntaxError : public Handle_Standard_Failure {
 };
 %extend Handle_ExprIntrp_SyntaxError {
 	~Handle_ExprIntrp_SyntaxError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SyntaxError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SyntaxError\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollec
 };
 %extend Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction {
 	~Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
 };
 %extend Handle_ExprIntrp_GenFct {
 	~Handle_ExprIntrp_GenFct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenFct\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenFct\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TColl
 };
 %extend Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression {
 	~Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCo
 };
 %extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
 	~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNo
 };
 %extend Handle_ExprIntrp_StackNodeOfStackOfNames {
 	~Handle_ExprIntrp_StackNodeOfStackOfNames() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfNames\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_StackNodeOfStackOfNames\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 };
 %extend Handle_ExprIntrp_GenRel {
 	~Handle_ExprIntrp_GenRel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenRel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenRel\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_T
 };
 %extend Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
 	~Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");}
 	}
 };
 
@@ -400,8 +411,14 @@ class ExprIntrp_Generator : public MMgt_TShared {
 	}
 };
 %extend ExprIntrp_Generator {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_Generator {
 	~ExprIntrp_Generator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_Generator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_Generator\n");}
 	}
 };
 
@@ -422,8 +439,14 @@ class ExprIntrp_GenFct : public ExprIntrp_Generator {
 	}
 };
 %extend ExprIntrp_GenFct {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_GenFct {
 	~ExprIntrp_GenFct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_GenFct\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_GenFct\n");}
 	}
 };
 
@@ -444,8 +467,14 @@ class ExprIntrp_StackNodeOfStackOfNames : public TCollection_MapNode {
 	}
 };
 %extend ExprIntrp_StackNodeOfStackOfNames {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfNames {
 	~ExprIntrp_StackNodeOfStackOfNames() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfNames\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfNames\n");}
 	}
 };
 
@@ -498,7 +527,8 @@ class ExprIntrp_SequenceOfNamedFunction : public TCollection_BaseSequence {
 };
 %extend ExprIntrp_SequenceOfNamedFunction {
 	~ExprIntrp_SequenceOfNamedFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceOfNamedFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceOfNamedFunction\n");}
 	}
 };
 
@@ -527,7 +557,8 @@ class ExprIntrp_StackOfNames {
 };
 %extend ExprIntrp_StackOfNames {
 	~ExprIntrp_StackOfNames() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfNames\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfNames\n");}
 	}
 };
 
@@ -554,8 +585,14 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 	}
 };
 %extend ExprIntrp_SyntaxError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_SyntaxError {
 	~ExprIntrp_SyntaxError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_SyntaxError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_SyntaxError\n");}
 	}
 };
 
@@ -576,8 +613,14 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_Seq
 	}
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
 	~ExprIntrp_SequenceNodeOfSequenceOfNamedExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");}
 	}
 };
 
@@ -600,7 +643,8 @@ class ExprIntrp_StackIteratorOfStackOfNames {
 };
 %extend ExprIntrp_StackIteratorOfStackOfNames {
 	~ExprIntrp_StackIteratorOfStackOfNames() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfNames\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfNames\n");}
 	}
 };
 
@@ -613,7 +657,8 @@ class ExprIntrp {
 };
 %extend ExprIntrp {
 	~ExprIntrp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp\n");}
 	}
 };
 
@@ -638,8 +683,14 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 	}
 };
 %extend ExprIntrp_GenRel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_GenRel {
 	~ExprIntrp_GenRel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_GenRel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_GenRel\n");}
 	}
 };
 
@@ -662,7 +713,8 @@ class ExprIntrp_StackIteratorOfStackOfGeneralRelation {
 };
 %extend ExprIntrp_StackIteratorOfStackOfGeneralRelation {
 	~ExprIntrp_StackIteratorOfStackOfGeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralRelation\n");}
 	}
 };
 
@@ -685,7 +737,8 @@ class ExprIntrp_StackIteratorOfStackOfGeneralFunction {
 };
 %extend ExprIntrp_StackIteratorOfStackOfGeneralFunction {
 	~ExprIntrp_StackIteratorOfStackOfGeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralFunction\n");}
 	}
 };
 
@@ -706,8 +759,14 @@ class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
 	}
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
 	~ExprIntrp_StackNodeOfStackOfGeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralRelation\n");}
 	}
 };
 
@@ -736,7 +795,8 @@ class ExprIntrp_StackOfGeneralRelation {
 };
 %extend ExprIntrp_StackOfGeneralRelation {
 	~ExprIntrp_StackOfGeneralRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfGeneralRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfGeneralRelation\n");}
 	}
 };
 
@@ -757,8 +817,14 @@ class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode
 	}
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
 	~ExprIntrp_StackNodeOfStackOfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
 	}
 };
 
@@ -811,7 +877,8 @@ class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
 };
 %extend ExprIntrp_SequenceOfNamedExpression {
 	~ExprIntrp_SequenceOfNamedExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceOfNamedExpression\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceOfNamedExpression\n");}
 	}
 };
 
@@ -832,8 +899,14 @@ class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 	}
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
 	~ExprIntrp_StackNodeOfStackOfGeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralFunction\n");}
 	}
 };
 
@@ -862,7 +935,8 @@ class ExprIntrp_StackOfGeneralFunction {
 };
 %extend ExprIntrp_StackOfGeneralFunction {
 	~ExprIntrp_StackOfGeneralFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfGeneralFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfGeneralFunction\n");}
 	}
 };
 
@@ -891,7 +965,8 @@ class ExprIntrp_StackOfGeneralExpression {
 };
 %extend ExprIntrp_StackOfGeneralExpression {
 	~ExprIntrp_StackOfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfGeneralExpression\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfGeneralExpression\n");}
 	}
 };
 
@@ -912,8 +987,14 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 	}
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
 	~ExprIntrp_SequenceNodeOfSequenceOfNamedFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");}
 	}
 };
 
@@ -936,7 +1017,8 @@ class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 };
 %extend ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 	~ExprIntrp_StackIteratorOfStackOfGeneralExpression() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralExpression\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralExpression\n");}
 	}
 };
 
@@ -961,8 +1043,14 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 	}
 };
 %extend ExprIntrp_GenExp {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ExprIntrp_GenExp {
 	~ExprIntrp_GenExp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_GenExp\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_GenExp\n");}
 	}
 };
 
@@ -1011,6 +1099,7 @@ class ExprIntrp_Analysis {
 };
 %extend ExprIntrp_Analysis {
 	~ExprIntrp_Analysis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ExprIntrp_Analysis\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ExprIntrp_Analysis\n");}
 	}
 };

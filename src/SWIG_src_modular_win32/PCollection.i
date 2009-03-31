@@ -141,7 +141,8 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 };
 %extend Handle_PCollection_HAsciiString {
 	~Handle_PCollection_HAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HAsciiString\n");}
 	}
 };
 
@@ -165,7 +166,8 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 };
 %extend Handle_PCollection_HExtendedString {
 	~Handle_PCollection_HExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HExtendedString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HExtendedString\n");}
 	}
 };
 
@@ -189,7 +191,8 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 };
 %extend Handle_PCollection_IsNotRoot {
 	~Handle_PCollection_IsNotRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsNotRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsNotRoot\n");}
 	}
 };
 
@@ -213,7 +216,8 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 };
 %extend Handle_PCollection_IsContained {
 	~Handle_PCollection_IsContained() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsContained\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsContained\n");}
 	}
 };
 
@@ -237,7 +241,8 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 };
 %extend Handle_PCollection_IsNullTree {
 	~Handle_PCollection_IsNullTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsNullTree\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsNullTree\n");}
 	}
 };
 
@@ -264,8 +269,14 @@ class PCollection_IsNullTree : public Standard_Failure {
 	}
 };
 %extend PCollection_IsNullTree {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PCollection_IsNullTree {
 	~PCollection_IsNullTree() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_IsNullTree\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_IsNullTree\n");}
 	}
 };
 
@@ -284,7 +295,8 @@ class PCollection_PrivCompareOfInteger {
 };
 %extend PCollection_PrivCompareOfInteger {
 	~PCollection_PrivCompareOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfInteger\n");}
 	}
 };
 
@@ -311,8 +323,14 @@ class PCollection_IsNotRoot : public Standard_Failure {
 	}
 };
 %extend PCollection_IsNotRoot {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PCollection_IsNotRoot {
 	~PCollection_IsNotRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_IsNotRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_IsNotRoot\n");}
 	}
 };
 
@@ -339,8 +357,14 @@ class PCollection_IsContained : public Standard_Failure {
 	}
 };
 %extend PCollection_IsContained {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PCollection_IsContained {
 	~PCollection_IsContained() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_IsContained\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_IsContained\n");}
 	}
 };
 
@@ -441,8 +465,14 @@ class PCollection_HExtendedString : public Standard_Persistent {
 	}
 };
 %extend PCollection_HExtendedString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PCollection_HExtendedString {
 	~PCollection_HExtendedString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_HExtendedString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_HExtendedString\n");}
 	}
 };
 
@@ -563,8 +593,14 @@ class PCollection_HAsciiString : public Standard_Persistent {
 	}
 };
 %extend PCollection_HAsciiString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PCollection_HAsciiString {
 	~PCollection_HAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_HAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_HAsciiString\n");}
 	}
 };
 
@@ -581,7 +617,8 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 };
 %extend PCollection_CompareOfInteger {
 	~PCollection_CompareOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfInteger\n");}
 	}
 };
 
@@ -600,7 +637,8 @@ class PCollection_PrivCompareOfReal {
 };
 %extend PCollection_PrivCompareOfReal {
 	~PCollection_PrivCompareOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfReal\n");}
 	}
 };
 
@@ -613,6 +651,7 @@ class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {
 };
 %extend PCollection_CompareOfReal {
 	~PCollection_CompareOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfReal\n");}
 	}
 };

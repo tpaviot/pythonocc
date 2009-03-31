@@ -131,7 +131,8 @@ class Handle_PS_Driver : public Handle_PlotMgt_PlotterDriver {
 };
 %extend Handle_PS_Driver {
 	~Handle_PS_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PS_Driver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PS_Driver\n");}
 	}
 };
 
@@ -162,7 +163,13 @@ class PS_Driver : public PlotMgt_PlotterDriver {
 	}
 };
 %extend PS_Driver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PS_Driver {
 	~PS_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PS_Driver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PS_Driver\n");}
 	}
 };

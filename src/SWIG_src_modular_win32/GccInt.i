@@ -140,7 +140,8 @@ class Handle_GccInt_Bisec : public Handle_MMgt_TShared {
 };
 %extend Handle_GccInt_Bisec {
 	~Handle_GccInt_Bisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccInt_Bisec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_Bisec\n");}
 	}
 };
 
@@ -164,7 +165,8 @@ class Handle_GccInt_BLine : public Handle_GccInt_Bisec {
 };
 %extend Handle_GccInt_BLine {
 	~Handle_GccInt_BLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BLine\n");}
 	}
 };
 
@@ -188,7 +190,8 @@ class Handle_GccInt_BParab : public Handle_GccInt_Bisec {
 };
 %extend Handle_GccInt_BParab {
 	~Handle_GccInt_BParab() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BParab\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BParab\n");}
 	}
 };
 
@@ -212,7 +215,8 @@ class Handle_GccInt_BElips : public Handle_GccInt_Bisec {
 };
 %extend Handle_GccInt_BElips {
 	~Handle_GccInt_BElips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BElips\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BElips\n");}
 	}
 };
 
@@ -236,7 +240,8 @@ class Handle_GccInt_BHyper : public Handle_GccInt_Bisec {
 };
 %extend Handle_GccInt_BHyper {
 	~Handle_GccInt_BHyper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BHyper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BHyper\n");}
 	}
 };
 
@@ -260,7 +265,8 @@ class Handle_GccInt_BPoint : public Handle_GccInt_Bisec {
 };
 %extend Handle_GccInt_BPoint {
 	~Handle_GccInt_BPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BPoint\n");}
 	}
 };
 
@@ -284,7 +290,8 @@ class Handle_GccInt_BCirc : public Handle_GccInt_Bisec {
 };
 %extend Handle_GccInt_BCirc {
 	~Handle_GccInt_BCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BCirc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BCirc\n");}
 	}
 };
 
@@ -315,8 +322,14 @@ class GccInt_Bisec : public MMgt_TShared {
 	}
 };
 %extend GccInt_Bisec {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccInt_Bisec {
 	~GccInt_Bisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccInt_Bisec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccInt_Bisec\n");}
 	}
 };
 
@@ -333,8 +346,14 @@ class GccInt_BParab : public GccInt_Bisec {
 	}
 };
 %extend GccInt_BParab {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccInt_BParab {
 	~GccInt_BParab() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccInt_BParab\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccInt_BParab\n");}
 	}
 };
 
@@ -357,8 +376,14 @@ class GccInt_BElips : public GccInt_Bisec {
 	}
 };
 %extend GccInt_BElips {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccInt_BElips {
 	~GccInt_BElips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccInt_BElips\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccInt_BElips\n");}
 	}
 };
 
@@ -381,8 +406,14 @@ class GccInt_BCirc : public GccInt_Bisec {
 	}
 };
 %extend GccInt_BCirc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccInt_BCirc {
 	~GccInt_BCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccInt_BCirc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccInt_BCirc\n");}
 	}
 };
 
@@ -405,8 +436,14 @@ class GccInt_BPoint : public GccInt_Bisec {
 	}
 };
 %extend GccInt_BPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccInt_BPoint {
 	~GccInt_BPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccInt_BPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccInt_BPoint\n");}
 	}
 };
 
@@ -429,8 +466,14 @@ class GccInt_BLine : public GccInt_Bisec {
 	}
 };
 %extend GccInt_BLine {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccInt_BLine {
 	~GccInt_BLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccInt_BLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccInt_BLine\n");}
 	}
 };
 
@@ -453,7 +496,13 @@ class GccInt_BHyper : public GccInt_Bisec {
 	}
 };
 %extend GccInt_BHyper {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccInt_BHyper {
 	~GccInt_BHyper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccInt_BHyper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccInt_BHyper\n");}
 	}
 };

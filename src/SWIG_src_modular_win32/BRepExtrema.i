@@ -137,7 +137,8 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 };
 %extend Handle_BRepExtrema_SequenceNodeOfSeqOfSolution {
 	~Handle_BRepExtrema_SequenceNodeOfSeqOfSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
 	}
 };
 
@@ -161,7 +162,8 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 };
 %extend Handle_BRepExtrema_UnCompatibleShape {
 	~Handle_BRepExtrema_UnCompatibleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_UnCompatibleShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_UnCompatibleShape\n");}
 	}
 };
 
@@ -214,7 +216,8 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 };
 %extend BRepExtrema_SeqOfSolution {
 	~BRepExtrema_SeqOfSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_SeqOfSolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_SeqOfSolution\n");}
 	}
 };
 
@@ -229,7 +232,8 @@ class BRepExtrema_Poly {
 };
 %extend BRepExtrema_Poly {
 	~BRepExtrema_Poly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_Poly\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_Poly\n");}
 	}
 };
 
@@ -258,7 +262,8 @@ class BRepExtrema_ExtPF {
 };
 %extend BRepExtrema_ExtPF {
 	~BRepExtrema_ExtPF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPF\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPF\n");}
 	}
 };
 
@@ -281,7 +286,8 @@ class BRepExtrema_DistanceSS {
 };
 %extend BRepExtrema_DistanceSS {
 	~BRepExtrema_DistanceSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistanceSS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistanceSS\n");}
 	}
 };
 
@@ -318,7 +324,8 @@ class BRepExtrema_ExtCC {
 };
 %extend BRepExtrema_ExtCC {
 	~BRepExtrema_ExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtCC\n");}
 	}
 };
 
@@ -339,8 +346,14 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 	}
 };
 %extend BRepExtrema_SequenceNodeOfSeqOfSolution {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRepExtrema_SequenceNodeOfSeqOfSolution {
 	~BRepExtrema_SequenceNodeOfSeqOfSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_SequenceNodeOfSeqOfSolution\n");}
 	}
 };
 
@@ -375,7 +388,8 @@ class BRepExtrema_ExtCF {
 };
 %extend BRepExtrema_ExtCF {
 	~BRepExtrema_ExtCF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtCF\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtCF\n");}
 	}
 };
 
@@ -410,7 +424,8 @@ class BRepExtrema_ExtFF {
 };
 %extend BRepExtrema_ExtFF {
 	~BRepExtrema_ExtFF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtFF\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtFF\n");}
 	}
 };
 
@@ -443,7 +458,8 @@ class BRepExtrema_ExtPC {
 };
 %extend BRepExtrema_ExtPC {
 	~BRepExtrema_ExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPC\n");}
 	}
 };
 
@@ -470,8 +486,14 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 	}
 };
 %extend BRepExtrema_UnCompatibleShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRepExtrema_UnCompatibleShape {
 	~BRepExtrema_UnCompatibleShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_UnCompatibleShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_UnCompatibleShape\n");}
 	}
 };
 
@@ -526,7 +548,8 @@ class BRepExtrema_DistShapeShape {
 };
 %extend BRepExtrema_DistShapeShape {
 	~BRepExtrema_DistShapeShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistShapeShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistShapeShape\n");}
 	}
 };
 
@@ -561,6 +584,7 @@ class BRepExtrema_SolutionElem {
 };
 %extend BRepExtrema_SolutionElem {
 	~BRepExtrema_SolutionElem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepExtrema_SolutionElem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepExtrema_SolutionElem\n");}
 	}
 };

@@ -131,7 +131,8 @@ class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 };
 %extend Handle_Poly_CoherentTriangulation {
 	~Handle_Poly_CoherentTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Poly_CoherentTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Poly_CoherentTriangulation\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 };
 %extend Handle_Poly_PolygonOnTriangulation {
 	~Handle_Poly_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Poly_PolygonOnTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Poly_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 };
 %extend Handle_Poly_Polygon3D {
 	~Handle_Poly_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Poly_Polygon3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Poly_Polygon3D\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 };
 %extend Handle_Poly_Polygon2D {
 	~Handle_Poly_Polygon2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Poly_Polygon2D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Poly_Polygon2D\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 };
 %extend Handle_Poly_HArray1OfTriangle {
 	~Handle_Poly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Poly_HArray1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Poly_HArray1OfTriangle\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 };
 %extend Handle_Poly_Triangulation {
 	~Handle_Poly_Triangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Poly_Triangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Poly_Triangulation\n");}
 	}
 };
 
@@ -280,7 +286,8 @@ class Poly_Connect {
 };
 %extend Poly_Connect {
 	~Poly_Connect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_Connect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_Connect\n");}
 	}
 };
 
@@ -313,8 +320,14 @@ class Poly_PolygonOnTriangulation : public MMgt_TShared {
 	}
 };
 %extend Poly_PolygonOnTriangulation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Poly_PolygonOnTriangulation {
 	~Poly_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_PolygonOnTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -353,7 +366,8 @@ class Poly_Array1OfTriangle {
 };
 %extend Poly_Array1OfTriangle {
 	~Poly_Array1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_Array1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_Array1OfTriangle\n");}
 	}
 };
 
@@ -408,8 +422,14 @@ class Poly_Triangulation : public MMgt_TShared {
 	}
 };
 %extend Poly_Triangulation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Poly_Triangulation {
 	~Poly_Triangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_Triangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_Triangulation\n");}
 	}
 };
 
@@ -450,7 +470,8 @@ class Poly_CoherentNode : public gp_XYZ {
 };
 %extend Poly_CoherentNode {
 	~Poly_CoherentNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_CoherentNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_CoherentNode\n");}
 	}
 };
 
@@ -487,7 +508,8 @@ class Poly_CoherentTriangle {
 };
 %extend Poly_CoherentTriangle {
 	~Poly_CoherentTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_CoherentTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_CoherentTriangle\n");}
 	}
 };
 
@@ -516,7 +538,8 @@ class Poly_Triangle {
 };
 %extend Poly_Triangle {
 	~Poly_Triangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_Triangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_Triangle\n");}
 	}
 };
 
@@ -555,8 +578,14 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 	}
 };
 %extend Poly_HArray1OfTriangle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Poly_HArray1OfTriangle {
 	~Poly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_HArray1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_HArray1OfTriangle\n");}
 	}
 };
 
@@ -589,7 +618,8 @@ class Poly {
 };
 %extend Poly {
 	~Poly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly\n");}
 	}
 };
 
@@ -618,7 +648,8 @@ class Poly_CoherentLink {
 };
 %extend Poly_CoherentLink {
 	~Poly_CoherentLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_CoherentLink\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_CoherentLink\n");}
 	}
 };
 
@@ -645,8 +676,14 @@ class Poly_Polygon2D : public MMgt_TShared {
 	}
 };
 %extend Poly_Polygon2D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Poly_Polygon2D {
 	~Poly_Polygon2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_Polygon2D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_Polygon2D\n");}
 	}
 };
 
@@ -681,7 +718,13 @@ class Poly_Polygon3D : public MMgt_TShared {
 	}
 };
 %extend Poly_Polygon3D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Poly_Polygon3D {
 	~Poly_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Poly_Polygon3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Poly_Polygon3D\n");}
 	}
 };

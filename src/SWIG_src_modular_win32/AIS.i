@@ -292,7 +292,8 @@ class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection
 };
 %extend Handle_AIS_SequenceNodeOfSequenceOfInteractive {
 	~Handle_AIS_SequenceNodeOfSequenceOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_SequenceNodeOfSequenceOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SequenceNodeOfSequenceOfInteractive\n");}
 	}
 };
 
@@ -316,7 +317,8 @@ class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_AIS_C0RegularityFilter {
 	~Handle_AIS_C0RegularityFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_C0RegularityFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_C0RegularityFilter\n");}
 	}
 };
 
@@ -340,7 +342,8 @@ class Handle_AIS_InteractiveObject : public Handle_SelectMgr_SelectableObject {
 };
 %extend Handle_AIS_InteractiveObject {
 	~Handle_AIS_InteractiveObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_InteractiveObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_InteractiveObject\n");}
 	}
 };
 
@@ -364,7 +367,8 @@ class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_Relation {
 	~Handle_AIS_Relation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Relation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Relation\n");}
 	}
 };
 
@@ -388,7 +392,8 @@ class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_OffsetDimension {
 	~Handle_AIS_OffsetDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_OffsetDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_OffsetDimension\n");}
 	}
 };
 
@@ -412,7 +417,8 @@ class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_MidPointRelation {
 	~Handle_AIS_MidPointRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_MidPointRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MidPointRelation\n");}
 	}
 };
 
@@ -436,7 +442,8 @@ class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_DiameterDimension {
 	~Handle_AIS_DiameterDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_DiameterDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DiameterDimension\n");}
 	}
 };
 
@@ -460,7 +467,8 @@ class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObj
 };
 %extend Handle_AIS_MultipleConnectedInteractive {
 	~Handle_AIS_MultipleConnectedInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_MultipleConnectedInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MultipleConnectedInteractive\n");}
 	}
 };
 
@@ -484,7 +492,8 @@ class Handle_AIS_LengthDimension : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_LengthDimension {
 	~Handle_AIS_LengthDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_LengthDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_LengthDimension\n");}
 	}
 };
 
@@ -508,7 +517,8 @@ class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_Point {
 	~Handle_AIS_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Point\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Point\n");}
 	}
 };
 
@@ -532,7 +542,8 @@ class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS_LocalContext {
 	~Handle_AIS_LocalContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_LocalContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_LocalContext\n");}
 	}
 };
 
@@ -556,7 +567,8 @@ class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_
 };
 %extend Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
 	~Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive\n");}
 	}
 };
 
@@ -580,7 +592,8 @@ class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNod
 };
 %extend Handle_AIS_StdMapNodeOfMapOfInteractive {
 	~Handle_AIS_StdMapNodeOfMapOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_StdMapNodeOfMapOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_StdMapNodeOfMapOfInteractive\n");}
 	}
 };
 
@@ -604,7 +617,8 @@ class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
 };
 %extend Handle_AIS_Drawer {
 	~Handle_AIS_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Drawer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Drawer\n");}
 	}
 };
 
@@ -628,7 +642,8 @@ class Handle_AIS_EqualDistanceRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_EqualDistanceRelation {
 	~Handle_AIS_EqualDistanceRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_EqualDistanceRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_EqualDistanceRelation\n");}
 	}
 };
 
@@ -652,7 +667,8 @@ class Handle_AIS_LocalStatus : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS_LocalStatus {
 	~Handle_AIS_LocalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_LocalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_LocalStatus\n");}
 	}
 };
 
@@ -676,7 +692,8 @@ class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_ParallelRelation {
 	~Handle_AIS_ParallelRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_ParallelRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ParallelRelation\n");}
 	}
 };
 
@@ -700,7 +717,8 @@ class Handle_AIS_ExclusionFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_AIS_ExclusionFilter {
 	~Handle_AIS_ExclusionFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_ExclusionFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ExclusionFilter\n");}
 	}
 };
 
@@ -724,7 +742,8 @@ class Handle_AIS_ConnectedInteractive : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_ConnectedInteractive {
 	~Handle_AIS_ConnectedInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_ConnectedInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ConnectedInteractive\n");}
 	}
 };
 
@@ -748,7 +767,8 @@ class Handle_AIS_ConnectedShape : public Handle_AIS_ConnectedInteractive {
 };
 %extend Handle_AIS_ConnectedShape {
 	~Handle_AIS_ConnectedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_ConnectedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ConnectedShape\n");}
 	}
 };
 
@@ -772,7 +792,8 @@ class Handle_AIS_Chamf3dDimension : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_Chamf3dDimension {
 	~Handle_AIS_Chamf3dDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Chamf3dDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Chamf3dDimension\n");}
 	}
 };
 
@@ -796,7 +817,8 @@ class Handle_AIS_Trihedron : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_Trihedron {
 	~Handle_AIS_Trihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Trihedron\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Trihedron\n");}
 	}
 };
 
@@ -820,7 +842,8 @@ class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfILC {
 	~Handle_AIS_DataMapNodeOfDataMapOfILC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfILC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfILC\n");}
 	}
 };
 
@@ -844,7 +867,8 @@ class Handle_AIS_RadiusDimension : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_RadiusDimension {
 	~Handle_AIS_RadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_RadiusDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_RadiusDimension\n");}
 	}
 };
 
@@ -868,7 +892,8 @@ class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_AngleDimension {
 	~Handle_AIS_AngleDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_AngleDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_AngleDimension\n");}
 	}
 };
 
@@ -892,7 +917,8 @@ class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_SymmetricRelation {
 	~Handle_AIS_SymmetricRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_SymmetricRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SymmetricRelation\n");}
 	}
 };
 
@@ -916,7 +942,8 @@ class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_AIS_BadEdgeFilter {
 	~Handle_AIS_BadEdgeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_BadEdgeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_BadEdgeFilter\n");}
 	}
 };
 
@@ -940,7 +967,8 @@ class Handle_AIS_Circle : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_Circle {
 	~Handle_AIS_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Circle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Circle\n");}
 	}
 };
 
@@ -964,7 +992,8 @@ class Handle_AIS_Shape : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_Shape {
 	~Handle_AIS_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Shape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Shape\n");}
 	}
 };
 
@@ -988,7 +1017,8 @@ class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
 };
 %extend Handle_AIS_TexturedShape {
 	~Handle_AIS_TexturedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_TexturedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_TexturedShape\n");}
 	}
 };
 
@@ -1012,7 +1042,8 @@ class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_EllipseRadiusDimension {
 	~Handle_AIS_EllipseRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_EllipseRadiusDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_EllipseRadiusDimension\n");}
 	}
 };
 
@@ -1036,7 +1067,8 @@ class Handle_AIS_MinRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 };
 %extend Handle_AIS_MinRadiusDimension {
 	~Handle_AIS_MinRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_MinRadiusDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MinRadiusDimension\n");}
 	}
 };
 
@@ -1060,7 +1092,8 @@ class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInt
 };
 %extend Handle_AIS_MultipleConnectedShape {
 	~Handle_AIS_MultipleConnectedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_MultipleConnectedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MultipleConnectedShape\n");}
 	}
 };
 
@@ -1084,7 +1117,8 @@ class Handle_AIS_DataMapNodeOfDataMapOfTransientTransient : public Handle_TColle
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfTransientTransient {
 	~Handle_AIS_DataMapNodeOfDataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfTransientTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfTransientTransient\n");}
 	}
 };
 
@@ -1108,7 +1142,8 @@ class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_TangentRelation {
 	~Handle_AIS_TangentRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_TangentRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_TangentRelation\n");}
 	}
 };
 
@@ -1132,7 +1167,8 @@ class Handle_AIS_Selection : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS_Selection {
 	~Handle_AIS_Selection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Selection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Selection\n");}
 	}
 };
 
@@ -1156,7 +1192,8 @@ class Handle_AIS_FixRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_FixRelation {
 	~Handle_AIS_FixRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_FixRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_FixRelation\n");}
 	}
 };
 
@@ -1180,7 +1217,8 @@ class Handle_AIS_TypeFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_AIS_TypeFilter {
 	~Handle_AIS_TypeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_TypeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_TypeFilter\n");}
 	}
 };
 
@@ -1204,7 +1242,8 @@ class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_ConcentricRelation {
 	~Handle_AIS_ConcentricRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_ConcentricRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ConcentricRelation\n");}
 	}
 };
 
@@ -1228,7 +1267,8 @@ class Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TC
 };
 %extend Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	~Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
 	}
 };
 
@@ -1252,7 +1292,8 @@ class Handle_AIS_Chamf2dDimension : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_Chamf2dDimension {
 	~Handle_AIS_Chamf2dDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Chamf2dDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Chamf2dDimension\n");}
 	}
 };
 
@@ -1276,7 +1317,8 @@ class Handle_AIS_MaxRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 };
 %extend Handle_AIS_MaxRadiusDimension {
 	~Handle_AIS_MaxRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_MaxRadiusDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MaxRadiusDimension\n");}
 	}
 };
 
@@ -1300,7 +1342,8 @@ class Handle_AIS_DataMapNodeOfDataMapOfSelStat : public Handle_TCollection_MapNo
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfSelStat {
 	~Handle_AIS_DataMapNodeOfDataMapOfSelStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfSelStat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfSelStat\n");}
 	}
 };
 
@@ -1324,7 +1367,8 @@ class Handle_AIS_Plane : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_Plane {
 	~Handle_AIS_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Plane\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Plane\n");}
 	}
 };
 
@@ -1348,7 +1392,8 @@ class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 };
 %extend Handle_AIS_AttributeFilter {
 	~Handle_AIS_AttributeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_AttributeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_AttributeFilter\n");}
 	}
 };
 
@@ -1372,7 +1417,8 @@ class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_S
 };
 %extend Handle_AIS_SequenceNodeOfSequenceOfDimension {
 	~Handle_AIS_SequenceNodeOfSequenceOfDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_SequenceNodeOfSequenceOfDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SequenceNodeOfSequenceOfDimension\n");}
 	}
 };
 
@@ -1396,7 +1442,8 @@ class Handle_AIS_EqualRadiusRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_EqualRadiusRelation {
 	~Handle_AIS_EqualRadiusRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_EqualRadiusRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_EqualRadiusRelation\n");}
 	}
 };
 
@@ -1420,7 +1467,8 @@ class Handle_AIS_GlobalStatus : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS_GlobalStatus {
 	~Handle_AIS_GlobalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_GlobalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_GlobalStatus\n");}
 	}
 };
 
@@ -1444,7 +1492,8 @@ class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_Line {
 	~Handle_AIS_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Line\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Line\n");}
 	}
 };
 
@@ -1468,7 +1517,8 @@ class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 };
 %extend Handle_AIS_DimensionOwner {
 	~Handle_AIS_DimensionOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_DimensionOwner\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DimensionOwner\n");}
 	}
 };
 
@@ -1492,7 +1542,8 @@ class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_PerpendicularRelation {
 	~Handle_AIS_PerpendicularRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_PerpendicularRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_PerpendicularRelation\n");}
 	}
 };
 
@@ -1516,7 +1567,8 @@ class Handle_AIS_SignatureFilter : public Handle_AIS_TypeFilter {
 };
 %extend Handle_AIS_SignatureFilter {
 	~Handle_AIS_SignatureFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_SignatureFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SignatureFilter\n");}
 	}
 };
 
@@ -1540,7 +1592,8 @@ class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
 };
 %extend Handle_AIS_IdenticRelation {
 	~Handle_AIS_IdenticRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_IdenticRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_IdenticRelation\n");}
 	}
 };
 
@@ -1564,7 +1617,8 @@ class Handle_AIS_InteractiveContext : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS_InteractiveContext {
 	~Handle_AIS_InteractiveContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_InteractiveContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_InteractiveContext\n");}
 	}
 };
 
@@ -1588,7 +1642,8 @@ class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode
 };
 %extend Handle_AIS_ListNodeOfListOfInteractive {
 	~Handle_AIS_ListNodeOfListOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_ListNodeOfListOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ListNodeOfListOfInteractive\n");}
 	}
 };
 
@@ -1612,7 +1667,8 @@ class Handle_AIS_PlaneTrihedron : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_PlaneTrihedron {
 	~Handle_AIS_PlaneTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_PlaneTrihedron\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_PlaneTrihedron\n");}
 	}
 };
 
@@ -1636,7 +1692,8 @@ class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
 };
 %extend Handle_AIS_Axis {
 	~Handle_AIS_Axis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_Axis\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Axis\n");}
 	}
 };
 
@@ -1660,7 +1717,8 @@ class Handle_AIS_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapN
 };
 %extend Handle_AIS_DataMapNodeOfDataMapOfIOStatus {
 	~Handle_AIS_DataMapNodeOfDataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfIOStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfIOStatus\n");}
 	}
 };
 
@@ -1809,8 +1867,14 @@ class AIS_Drawer : public Prs3d_Drawer {
 	}
 };
 %extend AIS_Drawer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Drawer {
 	~AIS_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Drawer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Drawer\n");}
 	}
 };
 
@@ -1831,8 +1895,14 @@ class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 	}
 };
 %extend AIS_StdMapNodeOfMapOfInteractive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_StdMapNodeOfMapOfInteractive {
 	~AIS_StdMapNodeOfMapOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_StdMapNodeOfMapOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_StdMapNodeOfMapOfInteractive\n");}
 	}
 };
 
@@ -1853,7 +1923,8 @@ class AIS_DataMapIteratorOfDataMapOfILC : public TCollection_BasicMapIterator {
 };
 %extend AIS_DataMapIteratorOfDataMapOfILC {
 	~AIS_DataMapIteratorOfDataMapOfILC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfILC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfILC\n");}
 	}
 };
 
@@ -1874,7 +1945,8 @@ class AIS_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_Basi
 };
 %extend AIS_DataMapIteratorOfDataMapOfTransientTransient {
 	~AIS_DataMapIteratorOfDataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfTransientTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfTransientTransient\n");}
 	}
 };
 
@@ -2037,8 +2109,14 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 	}
 };
 %extend AIS_InteractiveObject {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_InteractiveObject {
 	~AIS_InteractiveObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_InteractiveObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_InteractiveObject\n");}
 	}
 };
 
@@ -2101,8 +2179,14 @@ class AIS_Relation : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_Relation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Relation {
 	~AIS_Relation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Relation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Relation\n");}
 	}
 };
 
@@ -2127,8 +2211,14 @@ class AIS_DiameterDimension : public AIS_Relation {
 	}
 };
 %extend AIS_DiameterDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_DiameterDimension {
 	~AIS_DiameterDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DiameterDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DiameterDimension\n");}
 	}
 };
 
@@ -2151,8 +2241,14 @@ class AIS_DataMapNodeOfDataMapOfSelStat : public TCollection_MapNode {
 	}
 };
 %extend AIS_DataMapNodeOfDataMapOfSelStat {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_DataMapNodeOfDataMapOfSelStat {
 	~AIS_DataMapNodeOfDataMapOfSelStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfSelStat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfSelStat\n");}
 	}
 };
 
@@ -2185,7 +2281,8 @@ class AIS_DataMapOfSelStat : public TCollection_BasicMap {
 };
 %extend AIS_DataMapOfSelStat {
 	~AIS_DataMapOfSelStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfSelStat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfSelStat\n");}
 	}
 };
 
@@ -2230,8 +2327,14 @@ class AIS_ExclusionFilter : public SelectMgr_Filter {
 	}
 };
 %extend AIS_ExclusionFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_ExclusionFilter {
 	~AIS_ExclusionFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_ExclusionFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ExclusionFilter\n");}
 	}
 };
 
@@ -2258,8 +2361,14 @@ class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapN
 	}
 };
 %extend AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	~AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
 	}
 };
 
@@ -2280,8 +2389,14 @@ class AIS_SequenceNodeOfSequenceOfDimension : public TCollection_SeqNode {
 	}
 };
 %extend AIS_SequenceNodeOfSequenceOfDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_SequenceNodeOfSequenceOfDimension {
 	~AIS_SequenceNodeOfSequenceOfDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_SequenceNodeOfSequenceOfDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_SequenceNodeOfSequenceOfDimension\n");}
 	}
 };
 
@@ -2304,8 +2419,14 @@ class AIS_EllipseRadiusDimension : public AIS_Relation {
 	}
 };
 %extend AIS_EllipseRadiusDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_EllipseRadiusDimension {
 	~AIS_EllipseRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_EllipseRadiusDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_EllipseRadiusDimension\n");}
 	}
 };
 
@@ -2326,8 +2447,14 @@ class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
 	}
 };
 %extend AIS_MaxRadiusDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_MaxRadiusDimension {
 	~AIS_MaxRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_MaxRadiusDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MaxRadiusDimension\n");}
 	}
 };
 
@@ -2404,8 +2531,14 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_Trihedron {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Trihedron {
 	~AIS_Trihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Trihedron\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Trihedron\n");}
 	}
 };
 
@@ -2438,8 +2571,14 @@ class AIS_RadiusDimension : public AIS_Relation {
 	}
 };
 %extend AIS_RadiusDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_RadiusDimension {
 	~AIS_RadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_RadiusDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_RadiusDimension\n");}
 	}
 };
 
@@ -2492,7 +2631,8 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 };
 %extend AIS_SequenceOfInteractive {
 	~AIS_SequenceOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_SequenceOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_SequenceOfInteractive\n");}
 	}
 };
 
@@ -2537,8 +2677,14 @@ class AIS_Line : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_Line {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Line {
 	~AIS_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Line\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Line\n");}
 	}
 };
 
@@ -2571,7 +2717,8 @@ class AIS_DataMapOfILC : public TCollection_BasicMap {
 };
 %extend AIS_DataMapOfILC {
 	~AIS_DataMapOfILC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfILC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfILC\n");}
 	}
 };
 
@@ -2598,8 +2745,14 @@ class AIS_OffsetDimension : public AIS_Relation {
 	}
 };
 %extend AIS_OffsetDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_OffsetDimension {
 	~AIS_OffsetDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_OffsetDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_OffsetDimension\n");}
 	}
 };
 
@@ -2644,8 +2797,14 @@ class AIS_ConnectedInteractive : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_ConnectedInteractive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_ConnectedInteractive {
 	~AIS_ConnectedInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_ConnectedInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ConnectedInteractive\n");}
 	}
 };
 
@@ -2668,8 +2827,14 @@ class AIS_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode 
 	}
 };
 %extend AIS_DataMapNodeOfDataMapOfTransientTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_DataMapNodeOfDataMapOfTransientTransient {
 	~AIS_DataMapNodeOfDataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfTransientTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfTransientTransient\n");}
 	}
 };
 
@@ -2728,8 +2893,14 @@ class AIS_Selection : public MMgt_TShared {
 	}
 };
 %extend AIS_Selection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Selection {
 	~AIS_Selection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Selection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Selection\n");}
 	}
 };
 
@@ -2750,8 +2921,14 @@ class AIS_ConcentricRelation : public AIS_Relation {
 	}
 };
 %extend AIS_ConcentricRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_ConcentricRelation {
 	~AIS_ConcentricRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_ConcentricRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ConcentricRelation\n");}
 	}
 };
 
@@ -2780,8 +2957,14 @@ class AIS_BadEdgeFilter : public SelectMgr_Filter {
 	}
 };
 %extend AIS_BadEdgeFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_BadEdgeFilter {
 	~AIS_BadEdgeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_BadEdgeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_BadEdgeFilter\n");}
 	}
 };
 
@@ -2828,8 +3011,14 @@ class AIS_Circle : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_Circle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Circle {
 	~AIS_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Circle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Circle\n");}
 	}
 };
 
@@ -2852,8 +3041,14 @@ class AIS_IdenticRelation : public AIS_Relation {
 	}
 };
 %extend AIS_IdenticRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_IdenticRelation {
 	~AIS_IdenticRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_IdenticRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_IdenticRelation\n");}
 	}
 };
 
@@ -2876,7 +3071,8 @@ class AIS_ListIteratorOfListOfInteractive {
 };
 %extend AIS_ListIteratorOfListOfInteractive {
 	~AIS_ListIteratorOfListOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_ListIteratorOfListOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ListIteratorOfListOfInteractive\n");}
 	}
 };
 
@@ -2919,7 +3115,8 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 };
 %extend AIS_IndexedDataMapOfOwnerPrs {
 	~AIS_IndexedDataMapOfOwnerPrs() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_IndexedDataMapOfOwnerPrs\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_IndexedDataMapOfOwnerPrs\n");}
 	}
 };
 
@@ -2976,8 +3173,14 @@ class AIS_Axis : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_Axis {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Axis {
 	~AIS_Axis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Axis\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Axis\n");}
 	}
 };
 
@@ -3042,8 +3245,14 @@ class AIS_LocalStatus : public MMgt_TShared {
 	}
 };
 %extend AIS_LocalStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_LocalStatus {
 	~AIS_LocalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_LocalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_LocalStatus\n");}
 	}
 };
 
@@ -3076,8 +3285,14 @@ class AIS_FixRelation : public AIS_Relation {
 	}
 };
 %extend AIS_FixRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_FixRelation {
 	~AIS_FixRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_FixRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_FixRelation\n");}
 	}
 };
 
@@ -3102,8 +3317,14 @@ class AIS_ParallelRelation : public AIS_Relation {
 	}
 };
 %extend AIS_ParallelRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_ParallelRelation {
 	~AIS_ParallelRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_ParallelRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ParallelRelation\n");}
 	}
 };
 
@@ -3124,7 +3345,8 @@ class AIS_DataMapIteratorOfDataMapOfSelStat : public TCollection_BasicMapIterato
 };
 %extend AIS_DataMapIteratorOfDataMapOfSelStat {
 	~AIS_DataMapIteratorOfDataMapOfSelStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfSelStat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfSelStat\n");}
 	}
 };
 
@@ -3201,8 +3423,14 @@ class AIS_Plane : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_Plane {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Plane {
 	~AIS_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Plane\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Plane\n");}
 	}
 };
 
@@ -3225,8 +3453,14 @@ class AIS_PerpendicularRelation : public AIS_Relation {
 	}
 };
 %extend AIS_PerpendicularRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_PerpendicularRelation {
 	~AIS_PerpendicularRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_PerpendicularRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_PerpendicularRelation\n");}
 	}
 };
 
@@ -3253,8 +3487,14 @@ class AIS_Chamf3dDimension : public AIS_Relation {
 	}
 };
 %extend AIS_Chamf3dDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Chamf3dDimension {
 	~AIS_Chamf3dDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Chamf3dDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Chamf3dDimension\n");}
 	}
 };
 
@@ -3275,8 +3515,14 @@ class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 	}
 };
 %extend AIS_SequenceNodeOfSequenceOfInteractive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_SequenceNodeOfSequenceOfInteractive {
 	~AIS_SequenceNodeOfSequenceOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_SequenceNodeOfSequenceOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_SequenceNodeOfSequenceOfInteractive\n");}
 	}
 };
 
@@ -3303,8 +3549,14 @@ class AIS_SymmetricRelation : public AIS_Relation {
 	}
 };
 %extend AIS_SymmetricRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_SymmetricRelation {
 	~AIS_SymmetricRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_SymmetricRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_SymmetricRelation\n");}
 	}
 };
 
@@ -3341,8 +3593,14 @@ class AIS_AttributeFilter : public SelectMgr_Filter {
 	}
 };
 %extend AIS_AttributeFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_AttributeFilter {
 	~AIS_AttributeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_AttributeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_AttributeFilter\n");}
 	}
 };
 
@@ -3375,7 +3633,8 @@ class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
 };
 %extend AIS_DataMapOfTransientTransient {
 	~AIS_DataMapOfTransientTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfTransientTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfTransientTransient\n");}
 	}
 };
 
@@ -3414,8 +3673,14 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_MultipleConnectedInteractive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_MultipleConnectedInteractive {
 	~AIS_MultipleConnectedInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_MultipleConnectedInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MultipleConnectedInteractive\n");}
 	}
 };
 
@@ -3510,8 +3775,14 @@ class AIS_Shape : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_Shape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Shape {
 	~AIS_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Shape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Shape\n");}
 	}
 };
 
@@ -3532,7 +3803,8 @@ class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollectio
 };
 %extend AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive {
 	~AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive\n");}
 	}
 };
 
@@ -3559,8 +3831,14 @@ class AIS_MidPointRelation : public AIS_Relation {
 	}
 };
 %extend AIS_MidPointRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_MidPointRelation {
 	~AIS_MidPointRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_MidPointRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MidPointRelation\n");}
 	}
 };
 
@@ -3609,7 +3887,8 @@ class AIS_ListOfInteractive {
 };
 %extend AIS_ListOfInteractive {
 	~AIS_ListOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_ListOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ListOfInteractive\n");}
 	}
 };
 
@@ -4110,8 +4389,14 @@ class AIS_InteractiveContext : public MMgt_TShared {
 	}
 };
 %extend AIS_InteractiveContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_InteractiveContext {
 	~AIS_InteractiveContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_InteractiveContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_InteractiveContext\n");}
 	}
 };
 
@@ -4140,7 +4425,8 @@ class AIS_GraphicTool {
 };
 %extend AIS_GraphicTool {
 	~AIS_GraphicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_GraphicTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_GraphicTool\n");}
 	}
 };
 
@@ -4161,8 +4447,14 @@ class AIS_TypeFilter : public SelectMgr_Filter {
 	}
 };
 %extend AIS_TypeFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_TypeFilter {
 	~AIS_TypeFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_TypeFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_TypeFilter\n");}
 	}
 };
 
@@ -4195,7 +4487,8 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 };
 %extend AIS_DataMapofIntegerListOfinteractive {
 	~AIS_DataMapofIntegerListOfinteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapofIntegerListOfinteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapofIntegerListOfinteractive\n");}
 	}
 };
 
@@ -4216,7 +4509,8 @@ class AIS_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterat
 };
 %extend AIS_DataMapIteratorOfDataMapOfIOStatus {
 	~AIS_DataMapIteratorOfDataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfIOStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfIOStatus\n");}
 	}
 };
 
@@ -4243,8 +4537,14 @@ class AIS_Chamf2dDimension : public AIS_Relation {
 	}
 };
 %extend AIS_Chamf2dDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Chamf2dDimension {
 	~AIS_Chamf2dDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Chamf2dDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Chamf2dDimension\n");}
 	}
 };
 
@@ -4311,8 +4611,14 @@ class AIS_TexturedShape : public AIS_Shape {
 	}
 };
 %extend AIS_TexturedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_TexturedShape {
 	~AIS_TexturedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_TexturedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_TexturedShape\n");}
 	}
 };
 
@@ -4345,7 +4651,8 @@ class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 };
 %extend AIS_DataMapOfIOStatus {
 	~AIS_DataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfIOStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfIOStatus\n");}
 	}
 };
 
@@ -4376,8 +4683,14 @@ class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 	}
 };
 %extend AIS_MultipleConnectedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_MultipleConnectedShape {
 	~AIS_MultipleConnectedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_MultipleConnectedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MultipleConnectedShape\n");}
 	}
 };
 
@@ -4434,7 +4747,8 @@ class AIS {
 };
 %extend AIS {
 	~AIS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS\n");}
 	}
 };
 
@@ -4457,8 +4771,14 @@ class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_Ma
 	}
 };
 %extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
 	~AIS_DataMapNodeOfDataMapofIntegerListOfinteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapofIntegerListOfinteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapofIntegerListOfinteractive\n");}
 	}
 };
 
@@ -4507,8 +4827,14 @@ class AIS_AngleDimension : public AIS_Relation {
 	}
 };
 %extend AIS_AngleDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_AngleDimension {
 	~AIS_AngleDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_AngleDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_AngleDimension\n");}
 	}
 };
 
@@ -4529,8 +4855,14 @@ class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 	}
 };
 %extend AIS_ListNodeOfListOfInteractive {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_ListNodeOfListOfInteractive {
 	~AIS_ListNodeOfListOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_ListNodeOfListOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ListNodeOfListOfInteractive\n");}
 	}
 };
 
@@ -4555,8 +4887,14 @@ class AIS_TangentRelation : public AIS_Relation {
 	}
 };
 %extend AIS_TangentRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_TangentRelation {
 	~AIS_TangentRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_TangentRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_TangentRelation\n");}
 	}
 };
 
@@ -4579,8 +4917,14 @@ class AIS_C0RegularityFilter : public SelectMgr_Filter {
 	}
 };
 %extend AIS_C0RegularityFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_C0RegularityFilter {
 	~AIS_C0RegularityFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_C0RegularityFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_C0RegularityFilter\n");}
 	}
 };
 
@@ -4601,8 +4945,14 @@ class AIS_EqualRadiusRelation : public AIS_Relation {
 	}
 };
 %extend AIS_EqualRadiusRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_EqualRadiusRelation {
 	~AIS_EqualRadiusRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_EqualRadiusRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_EqualRadiusRelation\n");}
 	}
 };
 
@@ -4647,8 +4997,14 @@ class AIS_Point : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_Point {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_Point {
 	~AIS_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_Point\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_Point\n");}
 	}
 };
 
@@ -4667,7 +5023,8 @@ class AIS_MapIteratorOfMapOfInteractive : public TCollection_BasicMapIterator {
 };
 %extend AIS_MapIteratorOfMapOfInteractive {
 	~AIS_MapIteratorOfMapOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_MapIteratorOfMapOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MapIteratorOfMapOfInteractive\n");}
 	}
 };
 
@@ -4702,8 +5059,14 @@ class AIS_EqualDistanceRelation : public AIS_Relation {
 	}
 };
 %extend AIS_EqualDistanceRelation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_EqualDistanceRelation {
 	~AIS_EqualDistanceRelation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_EqualDistanceRelation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_EqualDistanceRelation\n");}
 	}
 };
 
@@ -4742,8 +5105,14 @@ class AIS_ConnectedShape : public AIS_ConnectedInteractive {
 	}
 };
 %extend AIS_ConnectedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_ConnectedShape {
 	~AIS_ConnectedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_ConnectedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_ConnectedShape\n");}
 	}
 };
 
@@ -4766,8 +5135,14 @@ class AIS_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 	}
 };
 %extend AIS_DataMapNodeOfDataMapOfIOStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_DataMapNodeOfDataMapOfIOStatus {
 	~AIS_DataMapNodeOfDataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfIOStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfIOStatus\n");}
 	}
 };
 
@@ -4790,8 +5165,14 @@ class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 	}
 };
 %extend AIS_DimensionOwner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_DimensionOwner {
 	~AIS_DimensionOwner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DimensionOwner\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DimensionOwner\n");}
 	}
 };
 
@@ -4838,8 +5219,14 @@ class AIS_LengthDimension : public AIS_Relation {
 	}
 };
 %extend AIS_LengthDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_LengthDimension {
 	~AIS_LengthDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_LengthDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_LengthDimension\n");}
 	}
 };
 
@@ -4888,8 +5275,14 @@ class AIS_PlaneTrihedron : public AIS_InteractiveObject {
 	}
 };
 %extend AIS_PlaneTrihedron {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_PlaneTrihedron {
 	~AIS_PlaneTrihedron() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_PlaneTrihedron\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_PlaneTrihedron\n");}
 	}
 };
 
@@ -4942,7 +5335,8 @@ class AIS_SequenceOfDimension : public TCollection_BaseSequence {
 };
 %extend AIS_SequenceOfDimension {
 	~AIS_SequenceOfDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_SequenceOfDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_SequenceOfDimension\n");}
 	}
 };
 
@@ -5153,8 +5547,14 @@ class AIS_LocalContext : public MMgt_TShared {
 	}
 };
 %extend AIS_LocalContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_LocalContext {
 	~AIS_LocalContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_LocalContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_LocalContext\n");}
 	}
 };
 
@@ -5175,8 +5575,14 @@ class AIS_SignatureFilter : public AIS_TypeFilter {
 	}
 };
 %extend AIS_SignatureFilter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_SignatureFilter {
 	~AIS_SignatureFilter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_SignatureFilter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_SignatureFilter\n");}
 	}
 };
 
@@ -5235,8 +5641,14 @@ class AIS_GlobalStatus : public MMgt_TShared {
 	}
 };
 %extend AIS_GlobalStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_GlobalStatus {
 	~AIS_GlobalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_GlobalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_GlobalStatus\n");}
 	}
 };
 
@@ -5259,8 +5671,14 @@ class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
 	}
 };
 %extend AIS_MinRadiusDimension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_MinRadiusDimension {
 	~AIS_MinRadiusDimension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_MinRadiusDimension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MinRadiusDimension\n");}
 	}
 };
 
@@ -5283,8 +5701,14 @@ class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
 	}
 };
 %extend AIS_DataMapNodeOfDataMapOfILC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS_DataMapNodeOfDataMapOfILC {
 	~AIS_DataMapNodeOfDataMapOfILC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfILC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfILC\n");}
 	}
 };
 
@@ -5309,6 +5733,7 @@ class AIS_MapOfInteractive : public TCollection_BasicMap {
 };
 %extend AIS_MapOfInteractive {
 	~AIS_MapOfInteractive() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS_MapOfInteractive\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS_MapOfInteractive\n");}
 	}
 };

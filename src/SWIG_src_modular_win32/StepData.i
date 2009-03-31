@@ -137,7 +137,8 @@ class Handle_StepData_EDescr : public Handle_MMgt_TShared {
 };
 %extend Handle_StepData_EDescr {
 	~Handle_StepData_EDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_EDescr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_EDescr\n");}
 	}
 };
 
@@ -161,7 +162,8 @@ class Handle_StepData_GeneralModule : public Handle_Interface_GeneralModule {
 };
 %extend Handle_StepData_GeneralModule {
 	~Handle_StepData_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_GeneralModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_GeneralModule\n");}
 	}
 };
 
@@ -185,7 +187,8 @@ class Handle_StepData_DefaultGeneral : public Handle_StepData_GeneralModule {
 };
 %extend Handle_StepData_DefaultGeneral {
 	~Handle_StepData_DefaultGeneral() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_DefaultGeneral\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_DefaultGeneral\n");}
 	}
 };
 
@@ -209,7 +212,8 @@ class Handle_StepData_Described : public Handle_MMgt_TShared {
 };
 %extend Handle_StepData_Described {
 	~Handle_StepData_Described() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_Described\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_Described\n");}
 	}
 };
 
@@ -233,7 +237,8 @@ class Handle_StepData_Plex : public Handle_StepData_Described {
 };
 %extend Handle_StepData_Plex {
 	~Handle_StepData_Plex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_Plex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_Plex\n");}
 	}
 };
 
@@ -257,7 +262,8 @@ class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
 };
 %extend Handle_StepData_SelectMember {
 	~Handle_StepData_SelectMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectMember\n");}
 	}
 };
 
@@ -281,7 +287,8 @@ class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
 };
 %extend Handle_StepData_SelectNamed {
 	~Handle_StepData_SelectNamed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectNamed\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectNamed\n");}
 	}
 };
 
@@ -305,7 +312,8 @@ class Handle_StepData_ReadWriteModule : public Handle_Interface_ReaderModule {
 };
 %extend Handle_StepData_ReadWriteModule {
 	~Handle_StepData_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_ReadWriteModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_ReadWriteModule\n");}
 	}
 };
 
@@ -329,7 +337,8 @@ class Handle_StepData_DescrReadWrite : public Handle_StepData_ReadWriteModule {
 };
 %extend Handle_StepData_DescrReadWrite {
 	~Handle_StepData_DescrReadWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_DescrReadWrite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_DescrReadWrite\n");}
 	}
 };
 
@@ -353,7 +362,8 @@ class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 };
 %extend Handle_StepData_PDescr {
 	~Handle_StepData_PDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_PDescr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_PDescr\n");}
 	}
 };
 
@@ -377,7 +387,8 @@ class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
 };
 %extend Handle_StepData_SelectReal {
 	~Handle_StepData_SelectReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectReal\n");}
 	}
 };
 
@@ -401,7 +412,8 @@ class Handle_StepData_ESDescr : public Handle_StepData_EDescr {
 };
 %extend Handle_StepData_ESDescr {
 	~Handle_StepData_ESDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_ESDescr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_ESDescr\n");}
 	}
 };
 
@@ -425,7 +437,8 @@ class Handle_StepData_ECDescr : public Handle_StepData_EDescr {
 };
 %extend Handle_StepData_ECDescr {
 	~Handle_StepData_ECDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_ECDescr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_ECDescr\n");}
 	}
 };
 
@@ -449,7 +462,8 @@ class Handle_StepData_DescrGeneral : public Handle_StepData_GeneralModule {
 };
 %extend Handle_StepData_DescrGeneral {
 	~Handle_StepData_DescrGeneral() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_DescrGeneral\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_DescrGeneral\n");}
 	}
 };
 
@@ -473,7 +487,8 @@ class Handle_StepData_SelectInt : public Handle_StepData_SelectMember {
 };
 %extend Handle_StepData_SelectInt {
 	~Handle_StepData_SelectInt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectInt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectInt\n");}
 	}
 };
 
@@ -497,7 +512,8 @@ class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
 };
 %extend Handle_StepData_UndefinedEntity {
 	~Handle_StepData_UndefinedEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_UndefinedEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_UndefinedEntity\n");}
 	}
 };
 
@@ -521,7 +537,8 @@ class Handle_StepData_FreeFormEntity : public Handle_MMgt_TShared {
 };
 %extend Handle_StepData_FreeFormEntity {
 	~Handle_StepData_FreeFormEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_FreeFormEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_FreeFormEntity\n");}
 	}
 };
 
@@ -545,7 +562,8 @@ class Handle_StepData_StepModel : public Handle_Interface_InterfaceModel {
 };
 %extend Handle_StepData_StepModel {
 	~Handle_StepData_StepModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_StepModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_StepModel\n");}
 	}
 };
 
@@ -569,7 +587,8 @@ class Handle_StepData_StepReaderData : public Handle_Interface_FileReaderData {
 };
 %extend Handle_StepData_StepReaderData {
 	~Handle_StepData_StepReaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_StepReaderData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_StepReaderData\n");}
 	}
 };
 
@@ -593,7 +612,8 @@ class Handle_StepData_Protocol : public Handle_Interface_Protocol {
 };
 %extend Handle_StepData_Protocol {
 	~Handle_StepData_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_Protocol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_Protocol\n");}
 	}
 };
 
@@ -617,7 +637,8 @@ class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
 };
 %extend Handle_StepData_FileProtocol {
 	~Handle_StepData_FileProtocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_FileProtocol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_FileProtocol\n");}
 	}
 };
 
@@ -641,7 +662,8 @@ class Handle_StepData_DescrProtocol : public Handle_StepData_FileProtocol {
 };
 %extend Handle_StepData_DescrProtocol {
 	~Handle_StepData_DescrProtocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_DescrProtocol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_DescrProtocol\n");}
 	}
 };
 
@@ -665,7 +687,8 @@ class Handle_StepData_SelectArrReal : public Handle_StepData_SelectNamed {
 };
 %extend Handle_StepData_SelectArrReal {
 	~Handle_StepData_SelectArrReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectArrReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectArrReal\n");}
 	}
 };
 
@@ -689,7 +712,8 @@ class Handle_StepData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 };
 %extend Handle_StepData_GlobalNodeOfWriterLib {
 	~Handle_StepData_GlobalNodeOfWriterLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_GlobalNodeOfWriterLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_GlobalNodeOfWriterLib\n");}
 	}
 };
 
@@ -713,7 +737,8 @@ class Handle_StepData_HArray1OfField : public Handle_MMgt_TShared {
 };
 %extend Handle_StepData_HArray1OfField {
 	~Handle_StepData_HArray1OfField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_HArray1OfField\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_HArray1OfField\n");}
 	}
 };
 
@@ -737,7 +762,8 @@ class Handle_StepData_NodeOfWriterLib : public Handle_MMgt_TShared {
 };
 %extend Handle_StepData_NodeOfWriterLib {
 	~Handle_StepData_NodeOfWriterLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_NodeOfWriterLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_NodeOfWriterLib\n");}
 	}
 };
 
@@ -761,7 +787,8 @@ class Handle_StepData_Simple : public Handle_StepData_Described {
 };
 %extend Handle_StepData_Simple {
 	~Handle_StepData_Simple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_Simple\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_Simple\n");}
 	}
 };
 
@@ -785,7 +812,8 @@ class Handle_StepData_FileRecognizer : public Handle_Standard_Transient {
 };
 %extend Handle_StepData_FileRecognizer {
 	~Handle_StepData_FileRecognizer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepData_FileRecognizer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepData_FileRecognizer\n");}
 	}
 };
 
@@ -812,8 +840,14 @@ class StepData_NodeOfWriterLib : public MMgt_TShared {
 	}
 };
 %extend StepData_NodeOfWriterLib {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_NodeOfWriterLib {
 	~StepData_NodeOfWriterLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_NodeOfWriterLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_NodeOfWriterLib\n");}
 	}
 };
 
@@ -854,8 +888,14 @@ class StepData_FreeFormEntity : public MMgt_TShared {
 	}
 };
 %extend StepData_FreeFormEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_FreeFormEntity {
 	~StepData_FreeFormEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_FreeFormEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_FreeFormEntity\n");}
 	}
 };
 
@@ -874,7 +914,8 @@ class StepData_StepDumper {
 };
 %extend StepData_StepDumper {
 	~StepData_StepDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_StepDumper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_StepDumper\n");}
 	}
 };
 
@@ -939,8 +980,14 @@ class StepData_SelectMember : public MMgt_TShared {
 	}
 };
 %extend StepData_SelectMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_SelectMember {
 	~StepData_SelectMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_SelectMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_SelectMember\n");}
 	}
 };
 
@@ -957,8 +1004,14 @@ class StepData_SelectInt : public StepData_SelectMember {
 	}
 };
 %extend StepData_SelectInt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_SelectInt {
 	~StepData_SelectInt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_SelectInt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_SelectInt\n");}
 	}
 };
 
@@ -989,8 +1042,14 @@ class StepData_FileProtocol : public StepData_Protocol {
 	}
 };
 %extend StepData_FileProtocol {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_FileProtocol {
 	~StepData_FileProtocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_FileProtocol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_FileProtocol\n");}
 	}
 };
 
@@ -1011,8 +1070,14 @@ class StepData_DescrProtocol : public StepData_FileProtocol {
 	}
 };
 %extend StepData_DescrProtocol {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_DescrProtocol {
 	~StepData_DescrProtocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_DescrProtocol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_DescrProtocol\n");}
 	}
 };
 
@@ -1063,8 +1128,14 @@ class StepData_StepModel : public Interface_InterfaceModel {
 	}
 };
 %extend StepData_StepModel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_StepModel {
 	~StepData_StepModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_StepModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_StepModel\n");}
 	}
 };
 
@@ -1087,8 +1158,14 @@ class StepData_FileRecognizer : public Standard_Transient {
 	}
 };
 %extend StepData_FileRecognizer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_FileRecognizer {
 	~StepData_FileRecognizer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_FileRecognizer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_FileRecognizer\n");}
 	}
 };
 
@@ -1185,7 +1262,8 @@ class StepData_Field {
 };
 %extend StepData_Field {
 	~StepData_Field() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_Field\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_Field\n");}
 	}
 };
 
@@ -1214,7 +1292,8 @@ class StepData_EnumTool {
 };
 %extend StepData_EnumTool {
 	~StepData_EnumTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_EnumTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_EnumTool\n");}
 	}
 };
 
@@ -1321,8 +1400,14 @@ class StepData_PDescr : public MMgt_TShared {
 	}
 };
 %extend StepData_PDescr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_PDescr {
 	~StepData_PDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_PDescr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_PDescr\n");}
 	}
 };
 
@@ -1359,8 +1444,14 @@ class StepData_ReadWriteModule : public Interface_ReaderModule {
 	}
 };
 %extend StepData_ReadWriteModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_ReadWriteModule {
 	~StepData_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_ReadWriteModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_ReadWriteModule\n");}
 	}
 };
 
@@ -1377,8 +1468,14 @@ class StepData_DescrReadWrite : public StepData_ReadWriteModule {
 	}
 };
 %extend StepData_DescrReadWrite {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_DescrReadWrite {
 	~StepData_DescrReadWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_DescrReadWrite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_DescrReadWrite\n");}
 	}
 };
 
@@ -1405,8 +1502,14 @@ class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 	}
 };
 %extend StepData_GlobalNodeOfWriterLib {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_GlobalNodeOfWriterLib {
 	~StepData_GlobalNodeOfWriterLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_GlobalNodeOfWriterLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_GlobalNodeOfWriterLib\n");}
 	}
 };
 
@@ -1429,8 +1532,14 @@ class StepData_GeneralModule : public Interface_GeneralModule {
 	}
 };
 %extend StepData_GeneralModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_GeneralModule {
 	~StepData_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_GeneralModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_GeneralModule\n");}
 	}
 };
 
@@ -1455,8 +1564,14 @@ class StepData_DescrGeneral : public StepData_GeneralModule {
 	}
 };
 %extend StepData_DescrGeneral {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_DescrGeneral {
 	~StepData_DescrGeneral() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_DescrGeneral\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_DescrGeneral\n");}
 	}
 };
 
@@ -1547,8 +1662,14 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 	}
 };
 %extend StepData_StepReaderData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_StepReaderData {
 	~StepData_StepReaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_StepReaderData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_StepReaderData\n");}
 	}
 };
 
@@ -1569,7 +1690,8 @@ class StepData_FieldList {
 };
 %extend StepData_FieldList {
 	~StepData_FieldList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_FieldList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_FieldList\n");}
 	}
 };
 
@@ -1584,7 +1706,8 @@ class StepData_FieldList1 : public StepData_FieldList {
 };
 %extend StepData_FieldList1 {
 	~StepData_FieldList1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_FieldList1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_FieldList1\n");}
 	}
 };
 
@@ -1607,7 +1730,8 @@ class StepData_FieldListD : public StepData_FieldList {
 };
 %extend StepData_FieldListD {
 	~StepData_FieldListD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_FieldListD\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_FieldListD\n");}
 	}
 };
 
@@ -1628,7 +1752,8 @@ class StepData_FieldListN : public StepData_FieldList {
 };
 %extend StepData_FieldListN {
 	~StepData_FieldListN() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_FieldListN\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_FieldListN\n");}
 	}
 };
 
@@ -1673,8 +1798,14 @@ class StepData_SelectNamed : public StepData_SelectMember {
 	}
 };
 %extend StepData_SelectNamed {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_SelectNamed {
 	~StepData_SelectNamed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_SelectNamed\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_SelectNamed\n");}
 	}
 };
 
@@ -1695,7 +1826,8 @@ class StepData {
 };
 %extend StepData {
 	~StepData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData\n");}
 	}
 };
 
@@ -1718,8 +1850,14 @@ class StepData_EDescr : public MMgt_TShared {
 	}
 };
 %extend StepData_EDescr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_EDescr {
 	~StepData_EDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_EDescr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_EDescr\n");}
 	}
 };
 
@@ -1764,8 +1902,14 @@ class StepData_ESDescr : public StepData_EDescr {
 	}
 };
 %extend StepData_ESDescr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_ESDescr {
 	~StepData_ESDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_ESDescr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_ESDescr\n");}
 	}
 };
 
@@ -1804,7 +1948,8 @@ class StepData_Array1OfField {
 };
 %extend StepData_Array1OfField {
 	~StepData_Array1OfField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_Array1OfField\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_Array1OfField\n");}
 	}
 };
 
@@ -1829,8 +1974,14 @@ class StepData_SelectArrReal : public StepData_SelectNamed {
 	}
 };
 %extend StepData_SelectArrReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_SelectArrReal {
 	~StepData_SelectArrReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_SelectArrReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_SelectArrReal\n");}
 	}
 };
 
@@ -1863,7 +2014,8 @@ class StepData_HeaderTool {
 };
 %extend StepData_HeaderTool {
 	~StepData_HeaderTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_HeaderTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_HeaderTool\n");}
 	}
 };
 
@@ -1898,8 +2050,14 @@ class StepData_Described : public MMgt_TShared {
 	}
 };
 %extend StepData_Described {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_Described {
 	~StepData_Described() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_Described\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_Described\n");}
 	}
 };
 
@@ -1930,8 +2088,14 @@ class StepData_Simple : public StepData_Described {
 	}
 };
 %extend StepData_Simple {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_Simple {
 	~StepData_Simple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_Simple\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_Simple\n");}
 	}
 };
 
@@ -1970,8 +2134,14 @@ class StepData_HArray1OfField : public MMgt_TShared {
 	}
 };
 %extend StepData_HArray1OfField {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_HArray1OfField {
 	~StepData_HArray1OfField() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_HArray1OfField\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_HArray1OfField\n");}
 	}
 };
 
@@ -2006,7 +2176,8 @@ class StepData_WriterLib {
 };
 %extend StepData_WriterLib {
 	~StepData_WriterLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_WriterLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_WriterLib\n");}
 	}
 };
 
@@ -2115,7 +2286,8 @@ class StepData_StepWriter {
 };
 %extend StepData_StepWriter {
 	~StepData_StepWriter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_StepWriter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_StepWriter\n");}
 	}
 };
 
@@ -2160,8 +2332,14 @@ class StepData_Plex : public StepData_Described {
 	}
 };
 %extend StepData_Plex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_Plex {
 	~StepData_Plex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_Plex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_Plex\n");}
 	}
 };
 
@@ -2194,8 +2372,14 @@ class StepData_ECDescr : public StepData_EDescr {
 	}
 };
 %extend StepData_ECDescr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_ECDescr {
 	~StepData_ECDescr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_ECDescr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_ECDescr\n");}
 	}
 };
 
@@ -2220,8 +2404,14 @@ class StepData_SelectReal : public StepData_SelectMember {
 	}
 };
 %extend StepData_SelectReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_SelectReal {
 	~StepData_SelectReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_SelectReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_SelectReal\n");}
 	}
 };
 
@@ -2282,7 +2472,8 @@ class StepData_SelectType {
 };
 %extend StepData_SelectType {
 	~StepData_SelectType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_SelectType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_SelectType\n");}
 	}
 };
 
@@ -2321,8 +2512,14 @@ class StepData_UndefinedEntity : public MMgt_TShared {
 	}
 };
 %extend StepData_UndefinedEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_UndefinedEntity {
 	~StepData_UndefinedEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_UndefinedEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_UndefinedEntity\n");}
 	}
 };
 
@@ -2349,7 +2546,8 @@ class StepData_StepReaderTool : public Interface_FileReaderTool {
 };
 %extend StepData_StepReaderTool {
 	~StepData_StepReaderTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_StepReaderTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_StepReaderTool\n");}
 	}
 };
 
@@ -2376,7 +2574,13 @@ class StepData_DefaultGeneral : public StepData_GeneralModule {
 	}
 };
 %extend StepData_DefaultGeneral {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepData_DefaultGeneral {
 	~StepData_DefaultGeneral() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepData_DefaultGeneral\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepData_DefaultGeneral\n");}
 	}
 };

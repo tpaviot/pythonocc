@@ -131,7 +131,8 @@ class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 };
 %extend Handle_STEPEdit_EditSDR {
 	~Handle_STEPEdit_EditSDR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPEdit_EditSDR\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPEdit_EditSDR\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 };
 %extend Handle_STEPEdit_EditContext {
 	~Handle_STEPEdit_EditContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPEdit_EditContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPEdit_EditContext\n");}
 	}
 };
 
@@ -180,7 +182,8 @@ class STEPEdit {
 };
 %extend STEPEdit {
 	~STEPEdit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPEdit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPEdit\n");}
 	}
 };
 
@@ -209,8 +212,14 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 	}
 };
 %extend STEPEdit_EditContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPEdit_EditContext {
 	~STEPEdit_EditContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPEdit_EditContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPEdit_EditContext\n");}
 	}
 };
 
@@ -239,7 +248,13 @@ class STEPEdit_EditSDR : public IFSelect_Editor {
 	}
 };
 %extend STEPEdit_EditSDR {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPEdit_EditSDR {
 	~STEPEdit_EditSDR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPEdit_EditSDR\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPEdit_EditSDR\n");}
 	}
 };

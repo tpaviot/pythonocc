@@ -131,7 +131,8 @@ class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 };
 %extend Handle_PDF_Attribute {
 	~Handle_PDF_Attribute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PDF_Attribute\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Attribute\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 };
 %extend Handle_PDF_TagSource {
 	~Handle_PDF_TagSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PDF_TagSource\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PDF_TagSource\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 };
 %extend Handle_PDF_Reference {
 	~Handle_PDF_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PDF_Reference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Reference\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 };
 %extend Handle_PDF_Data {
 	~Handle_PDF_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PDF_Data\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Data\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_A
 };
 %extend Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 {
 	~Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 };
 %extend Handle_PDF_HAttributeArray1 {
 	~Handle_PDF_HAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PDF_HAttributeArray1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PDF_HAttributeArray1\n");}
 	}
 };
 
@@ -272,8 +278,14 @@ class PDF_Attribute : public Standard_Persistent {
 	}
 };
 %extend PDF_Attribute {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PDF_Attribute {
 	~PDF_Attribute() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PDF_Attribute\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_Attribute\n");}
 	}
 };
 
@@ -302,8 +314,14 @@ class PDF_TagSource : public PDF_Attribute {
 	}
 };
 %extend PDF_TagSource {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PDF_TagSource {
 	~PDF_TagSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PDF_TagSource\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_TagSource\n");}
 	}
 };
 
@@ -332,7 +350,8 @@ class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
 };
 %extend PDF_FieldOfHAttributeArray1 {
 	~PDF_FieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PDF_FieldOfHAttributeArray1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_FieldOfHAttributeArray1\n");}
 	}
 };
 
@@ -363,8 +382,14 @@ class PDF_Reference : public PDF_Attribute {
 	}
 };
 %extend PDF_Reference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PDF_Reference {
 	~PDF_Reference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PDF_Reference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_Reference\n");}
 	}
 };
 
@@ -395,8 +420,14 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 	}
 };
 %extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
 	~PDF_VArrayNodeOfFieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PDF_VArrayNodeOfFieldOfHAttributeArray1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_VArrayNodeOfFieldOfHAttributeArray1\n");}
 	}
 };
 
@@ -441,8 +472,14 @@ class PDF_Data : public Standard_Persistent {
 	}
 };
 %extend PDF_Data {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PDF_Data {
 	~PDF_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PDF_Data\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_Data\n");}
 	}
 };
 
@@ -491,8 +528,14 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 	}
 };
 %extend PDF_HAttributeArray1 {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PDF_HAttributeArray1 {
 	~PDF_HAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PDF_HAttributeArray1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_HAttributeArray1\n");}
 	}
 };
 
@@ -511,6 +554,7 @@ class PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
 };
 %extend PDF_VArrayTNodeOfFieldOfHAttributeArray1 {
 	~PDF_VArrayTNodeOfFieldOfHAttributeArray1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PDF_VArrayTNodeOfFieldOfHAttributeArray1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PDF_VArrayTNodeOfFieldOfHAttributeArray1\n");}
 	}
 };

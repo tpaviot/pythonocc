@@ -174,7 +174,8 @@ class Handle_IFSelect_SignatureList : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_SignatureList {
 	~Handle_IFSelect_SignatureList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignatureList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignatureList\n");}
 	}
 };
 
@@ -198,7 +199,8 @@ class Handle_IFSelect_Selection : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_Selection {
 	~Handle_IFSelect_Selection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Selection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Selection\n");}
 	}
 };
 
@@ -222,7 +224,8 @@ class Handle_IFSelect_SelectDeduct : public Handle_IFSelect_Selection {
 };
 %extend Handle_IFSelect_SelectDeduct {
 	~Handle_IFSelect_SelectDeduct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectDeduct\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectDeduct\n");}
 	}
 };
 
@@ -246,7 +249,8 @@ class Handle_IFSelect_SelectExtract : public Handle_IFSelect_SelectDeduct {
 };
 %extend Handle_IFSelect_SelectExtract {
 	~Handle_IFSelect_SelectExtract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectExtract\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectExtract\n");}
 	}
 };
 
@@ -270,7 +274,8 @@ class Handle_IFSelect_SelectAnyType : public Handle_IFSelect_SelectExtract {
 };
 %extend Handle_IFSelect_SelectAnyType {
 	~Handle_IFSelect_SelectAnyType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectAnyType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectAnyType\n");}
 	}
 };
 
@@ -294,7 +299,8 @@ class Handle_IFSelect_SelectType : public Handle_IFSelect_SelectAnyType {
 };
 %extend Handle_IFSelect_SelectType {
 	~Handle_IFSelect_SelectType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectType\n");}
 	}
 };
 
@@ -318,7 +324,8 @@ class Handle_IFSelect_Transformer : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_Transformer {
 	~Handle_IFSelect_Transformer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Transformer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Transformer\n");}
 	}
 };
 
@@ -342,7 +349,8 @@ class Handle_IFSelect_TransformStandard : public Handle_IFSelect_Transformer {
 };
 %extend Handle_IFSelect_TransformStandard {
 	~Handle_IFSelect_TransformStandard() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_TransformStandard\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_TransformStandard\n");}
 	}
 };
 
@@ -366,7 +374,8 @@ class Handle_IFSelect_Signature : public Handle_Interface_SignType {
 };
 %extend Handle_IFSelect_Signature {
 	~Handle_IFSelect_Signature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Signature\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Signature\n");}
 	}
 };
 
@@ -390,7 +399,8 @@ class Handle_IFSelect_SignCategory : public Handle_IFSelect_Signature {
 };
 %extend Handle_IFSelect_SignCategory {
 	~Handle_IFSelect_SignCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignCategory\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignCategory\n");}
 	}
 };
 
@@ -414,7 +424,8 @@ class Handle_IFSelect_GeneralModifier : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_GeneralModifier {
 	~Handle_IFSelect_GeneralModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_GeneralModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_GeneralModifier\n");}
 	}
 };
 
@@ -438,7 +449,8 @@ class Handle_IFSelect_Modifier : public Handle_IFSelect_GeneralModifier {
 };
 %extend Handle_IFSelect_Modifier {
 	~Handle_IFSelect_Modifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Modifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Modifier\n");}
 	}
 };
 
@@ -462,7 +474,8 @@ class Handle_IFSelect_ModifReorder : public Handle_IFSelect_Modifier {
 };
 %extend Handle_IFSelect_ModifReorder {
 	~Handle_IFSelect_ModifReorder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ModifReorder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ModifReorder\n");}
 	}
 };
 
@@ -486,7 +499,8 @@ class Handle_IFSelect_Activator : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_Activator {
 	~Handle_IFSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Activator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Activator\n");}
 	}
 };
 
@@ -510,7 +524,8 @@ class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
 };
 %extend Handle_IFSelect_SelectAnyList {
 	~Handle_IFSelect_SelectAnyList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectAnyList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectAnyList\n");}
 	}
 };
 
@@ -534,7 +549,8 @@ class Handle_IFSelect_AppliedModifiers : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_AppliedModifiers {
 	~Handle_IFSelect_AppliedModifiers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_AppliedModifiers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_AppliedModifiers\n");}
 	}
 };
 
@@ -558,7 +574,8 @@ class Handle_IFSelect_SignMultiple : public Handle_IFSelect_Signature {
 };
 %extend Handle_IFSelect_SignMultiple {
 	~Handle_IFSelect_SignMultiple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignMultiple\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignMultiple\n");}
 	}
 };
 
@@ -582,7 +599,8 @@ class Handle_IFSelect_Dispatch : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_Dispatch {
 	~Handle_IFSelect_Dispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Dispatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Dispatch\n");}
 	}
 };
 
@@ -606,7 +624,8 @@ class Handle_IFSelect_DispGlobal : public Handle_IFSelect_Dispatch {
 };
 %extend Handle_IFSelect_DispGlobal {
 	~Handle_IFSelect_DispGlobal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispGlobal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispGlobal\n");}
 	}
 };
 
@@ -630,7 +649,8 @@ class Handle_IFSelect_SessionDumper : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_SessionDumper {
 	~Handle_IFSelect_SessionDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SessionDumper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SessionDumper\n");}
 	}
 };
 
@@ -654,7 +674,8 @@ class Handle_IFSelect_SelectControl : public Handle_IFSelect_Selection {
 };
 %extend Handle_IFSelect_SelectControl {
 	~Handle_IFSelect_SelectControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectControl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectControl\n");}
 	}
 };
 
@@ -678,7 +699,8 @@ class Handle_IFSelect_SelectErrorEntities : public Handle_IFSelect_SelectExtract
 };
 %extend Handle_IFSelect_SelectErrorEntities {
 	~Handle_IFSelect_SelectErrorEntities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectErrorEntities\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectErrorEntities\n");}
 	}
 };
 
@@ -702,7 +724,8 @@ class Handle_IFSelect_SelectFlag : public Handle_IFSelect_SelectExtract {
 };
 %extend Handle_IFSelect_SelectFlag {
 	~Handle_IFSelect_SelectFlag() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectFlag\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectFlag\n");}
 	}
 };
 
@@ -726,7 +749,8 @@ class Handle_IFSelect_SignCounter : public Handle_IFSelect_SignatureList {
 };
 %extend Handle_IFSelect_SignCounter {
 	~Handle_IFSelect_SignCounter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignCounter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignCounter\n");}
 	}
 };
 
@@ -750,7 +774,8 @@ class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
 };
 %extend Handle_IFSelect_SelectSent {
 	~Handle_IFSelect_SelectSent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSent\n");}
 	}
 };
 
@@ -774,7 +799,8 @@ class Handle_IFSelect_PacketList : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_PacketList {
 	~Handle_IFSelect_PacketList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_PacketList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_PacketList\n");}
 	}
 };
 
@@ -798,7 +824,8 @@ class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtra
 };
 %extend Handle_IFSelect_SelectUnknownEntities {
 	~Handle_IFSelect_SelectUnknownEntities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectUnknownEntities\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectUnknownEntities\n");}
 	}
 };
 
@@ -822,7 +849,8 @@ class Handle_IFSelect_SelectSuite : public Handle_IFSelect_SelectDeduct {
 };
 %extend Handle_IFSelect_SelectSuite {
 	~Handle_IFSelect_SelectSuite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSuite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSuite\n");}
 	}
 };
 
@@ -846,7 +874,8 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public Handle_TC
 };
 %extend Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
 	~Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier\n");}
 	}
 };
 
@@ -870,7 +899,8 @@ class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
 };
 %extend Handle_IFSelect_SignType {
 	~Handle_IFSelect_SignType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignType\n");}
 	}
 };
 
@@ -894,7 +924,8 @@ class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_Editor {
 	~Handle_IFSelect_Editor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Editor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Editor\n");}
 	}
 };
 
@@ -918,7 +949,8 @@ class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
 };
 %extend Handle_IFSelect_ParamEditor {
 	~Handle_IFSelect_ParamEditor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ParamEditor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ParamEditor\n");}
 	}
 };
 
@@ -942,7 +974,8 @@ class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
 };
 %extend Handle_IFSelect_WorkLibrary {
 	~Handle_IFSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_WorkLibrary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_WorkLibrary\n");}
 	}
 };
 
@@ -966,7 +999,8 @@ class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
 };
 %extend Handle_IFSelect_SelectCombine {
 	~Handle_IFSelect_SelectCombine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectCombine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectCombine\n");}
 	}
 };
 
@@ -990,7 +1024,8 @@ class Handle_IFSelect_SelectIntersection : public Handle_IFSelect_SelectCombine 
 };
 %extend Handle_IFSelect_SelectIntersection {
 	~Handle_IFSelect_SelectIntersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectIntersection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectIntersection\n");}
 	}
 };
 
@@ -1014,7 +1049,8 @@ class Handle_IFSelect_DispPerCount : public Handle_IFSelect_Dispatch {
 };
 %extend Handle_IFSelect_DispPerCount {
 	~Handle_IFSelect_DispPerCount() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerCount\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerCount\n");}
 	}
 };
 
@@ -1038,7 +1074,8 @@ class Handle_IFSelect_CheckCounter : public Handle_IFSelect_SignatureList {
 };
 %extend Handle_IFSelect_CheckCounter {
 	~Handle_IFSelect_CheckCounter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_CheckCounter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_CheckCounter\n");}
 	}
 };
 
@@ -1062,7 +1099,8 @@ class Handle_IFSelect_HSeqOfSelection : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_HSeqOfSelection {
 	~Handle_IFSelect_HSeqOfSelection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_HSeqOfSelection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_HSeqOfSelection\n");}
 	}
 };
 
@@ -1086,7 +1124,8 @@ class Handle_IFSelect_SelectExplore : public Handle_IFSelect_SelectDeduct {
 };
 %extend Handle_IFSelect_SelectExplore {
 	~Handle_IFSelect_SelectExplore() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectExplore\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectExplore\n");}
 	}
 };
 
@@ -1110,7 +1149,8 @@ class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
 };
 %extend Handle_IFSelect_SelectBase {
 	~Handle_IFSelect_SelectBase() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectBase\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectBase\n");}
 	}
 };
 
@@ -1134,7 +1174,8 @@ class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
 };
 %extend Handle_IFSelect_SelectModelRoots {
 	~Handle_IFSelect_SelectModelRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectModelRoots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectModelRoots\n");}
 	}
 };
 
@@ -1158,7 +1199,8 @@ class Handle_IFSelect_ModelCopier : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_ModelCopier {
 	~Handle_IFSelect_ModelCopier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ModelCopier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ModelCopier\n");}
 	}
 };
 
@@ -1182,7 +1224,8 @@ class Handle_IFSelect_DispPerOne : public Handle_IFSelect_Dispatch {
 };
 %extend Handle_IFSelect_DispPerOne {
 	~Handle_IFSelect_DispPerOne() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerOne\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerOne\n");}
 	}
 };
 
@@ -1206,7 +1249,8 @@ class Handle_IFSelect_SelectShared : public Handle_IFSelect_SelectDeduct {
 };
 %extend Handle_IFSelect_SelectShared {
 	~Handle_IFSelect_SelectShared() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectShared\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectShared\n");}
 	}
 };
 
@@ -1230,7 +1274,8 @@ class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
 };
 %extend Handle_IFSelect_SelectSignature {
 	~Handle_IFSelect_SelectSignature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignature\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignature\n");}
 	}
 };
 
@@ -1254,7 +1299,8 @@ class Handle_IFSelect_SelectSignedSharing : public Handle_IFSelect_SelectExplore
 };
 %extend Handle_IFSelect_SelectSignedSharing {
 	~Handle_IFSelect_SelectSignedSharing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignedSharing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignedSharing\n");}
 	}
 };
 
@@ -1278,7 +1324,8 @@ class Handle_IFSelect_EditForm : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_EditForm {
 	~Handle_IFSelect_EditForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_EditForm\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_EditForm\n");}
 	}
 };
 
@@ -1302,7 +1349,8 @@ class Handle_IFSelect_DispPerFiles : public Handle_IFSelect_Dispatch {
 };
 %extend Handle_IFSelect_DispPerFiles {
 	~Handle_IFSelect_DispPerFiles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerFiles\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerFiles\n");}
 	}
 };
 
@@ -1326,7 +1374,8 @@ class Handle_IFSelect_SelectIncorrectEntities : public Handle_IFSelect_SelectFla
 };
 %extend Handle_IFSelect_SelectIncorrectEntities {
 	~Handle_IFSelect_SelectIncorrectEntities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectIncorrectEntities\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectIncorrectEntities\n");}
 	}
 };
 
@@ -1350,7 +1399,8 @@ class Handle_IFSelect_SelectRange : public Handle_IFSelect_SelectExtract {
 };
 %extend Handle_IFSelect_SelectRange {
 	~Handle_IFSelect_SelectRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectRange\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectRange\n");}
 	}
 };
 
@@ -1374,7 +1424,8 @@ class Handle_IFSelect_DispPerSignature : public Handle_IFSelect_Dispatch {
 };
 %extend Handle_IFSelect_DispPerSignature {
 	~Handle_IFSelect_DispPerSignature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerSignature\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerSignature\n");}
 	}
 };
 
@@ -1398,7 +1449,8 @@ class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
 };
 %extend Handle_IFSelect_SelectInList {
 	~Handle_IFSelect_SelectInList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectInList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectInList\n");}
 	}
 };
 
@@ -1422,7 +1474,8 @@ class Handle_IFSelect_ShareOut : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_ShareOut {
 	~Handle_IFSelect_ShareOut() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ShareOut\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ShareOut\n");}
 	}
 };
 
@@ -1446,7 +1499,8 @@ class Handle_IFSelect_BasicDumper : public Handle_IFSelect_SessionDumper {
 };
 %extend Handle_IFSelect_BasicDumper {
 	~Handle_IFSelect_BasicDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_BasicDumper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_BasicDumper\n");}
 	}
 };
 
@@ -1470,7 +1524,8 @@ class Handle_IFSelect_SelectModelEntities : public Handle_IFSelect_SelectBase {
 };
 %extend Handle_IFSelect_SelectModelEntities {
 	~Handle_IFSelect_SelectModelEntities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectModelEntities\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectModelEntities\n");}
 	}
 };
 
@@ -1494,7 +1549,8 @@ class Handle_IFSelect_SelectUnion : public Handle_IFSelect_SelectCombine {
 };
 %extend Handle_IFSelect_SelectUnion {
 	~Handle_IFSelect_SelectUnion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectUnion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectUnion\n");}
 	}
 };
 
@@ -1518,7 +1574,8 @@ class Handle_IFSelect_GraphCounter : public Handle_IFSelect_SignCounter {
 };
 %extend Handle_IFSelect_GraphCounter {
 	~Handle_IFSelect_GraphCounter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_GraphCounter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_GraphCounter\n");}
 	}
 };
 
@@ -1542,7 +1599,8 @@ class Handle_IFSelect_SelectDiff : public Handle_IFSelect_SelectControl {
 };
 %extend Handle_IFSelect_SelectDiff {
 	~Handle_IFSelect_SelectDiff() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectDiff\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectDiff\n");}
 	}
 };
 
@@ -1566,7 +1624,8 @@ class Handle_IFSelect_ListEditor : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_ListEditor {
 	~Handle_IFSelect_ListEditor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ListEditor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ListEditor\n");}
 	}
 };
 
@@ -1590,7 +1649,8 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfDispatch : public Handle_TCollection_S
 };
 %extend Handle_IFSelect_SequenceNodeOfTSeqOfDispatch {
 	~Handle_IFSelect_SequenceNodeOfTSeqOfDispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfTSeqOfDispatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfTSeqOfDispatch\n");}
 	}
 };
 
@@ -1614,7 +1674,8 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public Handle_T
 };
 %extend Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
 	~Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers\n");}
 	}
 };
 
@@ -1638,7 +1699,8 @@ class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_IntParam {
 	~Handle_IFSelect_IntParam() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_IntParam\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_IntParam\n");}
 	}
 };
 
@@ -1662,7 +1724,8 @@ class Handle_IFSelect_Act : public Handle_IFSelect_Activator {
 };
 %extend Handle_IFSelect_Act {
 	~Handle_IFSelect_Act() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Act\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Act\n");}
 	}
 };
 
@@ -1686,7 +1749,8 @@ class Handle_IFSelect_SignAncestor : public Handle_IFSelect_SignType {
 };
 %extend Handle_IFSelect_SignAncestor {
 	~Handle_IFSelect_SignAncestor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignAncestor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignAncestor\n");}
 	}
 };
 
@@ -1710,7 +1774,8 @@ class Handle_IFSelect_SelectRootComps : public Handle_IFSelect_SelectExtract {
 };
 %extend Handle_IFSelect_SelectRootComps {
 	~Handle_IFSelect_SelectRootComps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectRootComps\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectRootComps\n");}
 	}
 };
 
@@ -1734,7 +1799,8 @@ class Handle_IFSelect_SignValidity : public Handle_IFSelect_Signature {
 };
 %extend Handle_IFSelect_SignValidity {
 	~Handle_IFSelect_SignValidity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignValidity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignValidity\n");}
 	}
 };
 
@@ -1758,7 +1824,8 @@ class Handle_IFSelect_ModifEditForm : public Handle_IFSelect_Modifier {
 };
 %extend Handle_IFSelect_ModifEditForm {
 	~Handle_IFSelect_ModifEditForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ModifEditForm\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ModifEditForm\n");}
 	}
 };
 
@@ -1782,7 +1849,8 @@ class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
 };
 %extend Handle_IFSelect_WorkSession {
 	~Handle_IFSelect_WorkSession() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_WorkSession\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_WorkSession\n");}
 	}
 };
 
@@ -1806,7 +1874,8 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public Handle_TCo
 };
 %extend Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
 	~Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel\n");}
 	}
 };
 
@@ -1830,7 +1899,8 @@ class Handle_IFSelect_SelectRoots : public Handle_IFSelect_SelectExtract {
 };
 %extend Handle_IFSelect_SelectRoots {
 	~Handle_IFSelect_SelectRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectRoots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectRoots\n");}
 	}
 };
 
@@ -1854,7 +1924,8 @@ class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
 };
 %extend Handle_IFSelect_SelectSharing {
 	~Handle_IFSelect_SelectSharing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSharing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSharing\n");}
 	}
 };
 
@@ -1878,7 +1949,8 @@ class Handle_IFSelect_SelectSignedShared : public Handle_IFSelect_SelectExplore 
 };
 %extend Handle_IFSelect_SelectSignedShared {
 	~Handle_IFSelect_SelectSignedShared() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignedShared\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignedShared\n");}
 	}
 };
 
@@ -1902,7 +1974,8 @@ class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
 };
 %extend Handle_IFSelect_SessionPilot {
 	~Handle_IFSelect_SessionPilot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SessionPilot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SessionPilot\n");}
 	}
 };
 
@@ -1926,7 +1999,8 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfSelection : public Handle_TCollection_
 };
 %extend Handle_IFSelect_SequenceNodeOfTSeqOfSelection {
 	~Handle_IFSelect_SequenceNodeOfTSeqOfSelection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfTSeqOfSelection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfTSeqOfSelection\n");}
 	}
 };
 
@@ -1950,7 +2024,8 @@ class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
 };
 %extend Handle_IFSelect_SelectEntityNumber {
 	~Handle_IFSelect_SelectEntityNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectEntityNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectEntityNumber\n");}
 	}
 };
 
@@ -1974,7 +2049,8 @@ class Handle_IFSelect_SelectPointed : public Handle_IFSelect_SelectBase {
 };
 %extend Handle_IFSelect_SelectPointed {
 	~Handle_IFSelect_SelectPointed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectPointed\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectPointed\n");}
 	}
 };
 
@@ -2001,8 +2077,14 @@ class IFSelect_Selection : public MMgt_TShared {
 	}
 };
 %extend IFSelect_Selection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_Selection {
 	~IFSelect_Selection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Selection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Selection\n");}
 	}
 };
 
@@ -2029,8 +2111,14 @@ class IFSelect_SelectDeduct : public IFSelect_Selection {
 	}
 };
 %extend IFSelect_SelectDeduct {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectDeduct {
 	~IFSelect_SelectDeduct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectDeduct\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectDeduct\n");}
 	}
 };
 
@@ -2055,8 +2143,14 @@ class IFSelect_SelectExtract : public IFSelect_SelectDeduct {
 	}
 };
 %extend IFSelect_SelectExtract {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectExtract {
 	~IFSelect_SelectExtract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectExtract\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectExtract\n");}
 	}
 };
 
@@ -2079,8 +2173,14 @@ class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectUnknownEntities {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectUnknownEntities {
 	~IFSelect_SelectUnknownEntities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectUnknownEntities\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectUnknownEntities\n");}
 	}
 };
 
@@ -2115,8 +2215,14 @@ class IFSelect_Signature : public Interface_SignType {
 	}
 };
 %extend IFSelect_Signature {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_Signature {
 	~IFSelect_Signature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Signature\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Signature\n");}
 	}
 };
 
@@ -2137,8 +2243,14 @@ class IFSelect_SignMultiple : public IFSelect_Signature {
 	}
 };
 %extend IFSelect_SignMultiple {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SignMultiple {
 	~IFSelect_SignMultiple() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SignMultiple\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SignMultiple\n");}
 	}
 };
 
@@ -2165,8 +2277,14 @@ class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
 	}
 };
 %extend IFSelect_SelectExplore {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectExplore {
 	~IFSelect_SelectExplore() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectExplore\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectExplore\n");}
 	}
 };
 
@@ -2189,8 +2307,14 @@ class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectErrorEntities {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectErrorEntities {
 	~IFSelect_SelectErrorEntities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectErrorEntities\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectErrorEntities\n");}
 	}
 };
 
@@ -2217,7 +2341,8 @@ class IFSelect_SelectionIterator {
 };
 %extend IFSelect_SelectionIterator {
 	~IFSelect_SelectionIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectionIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectionIterator\n");}
 	}
 };
 
@@ -2264,8 +2389,14 @@ class IFSelect_Activator : public MMgt_TShared {
 	}
 };
 %extend IFSelect_Activator {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_Activator {
 	~IFSelect_Activator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Activator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Activator\n");}
 	}
 };
 
@@ -2284,8 +2415,14 @@ class IFSelect_Act : public IFSelect_Activator {
 	}
 };
 %extend IFSelect_Act {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_Act {
 	~IFSelect_Act() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Act\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Act\n");}
 	}
 };
 
@@ -2314,8 +2451,14 @@ class IFSelect_SelectControl : public IFSelect_Selection {
 	}
 };
 %extend IFSelect_SelectControl {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectControl {
 	~IFSelect_SelectControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectControl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectControl\n");}
 	}
 };
 
@@ -2336,8 +2479,14 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 	}
 };
 %extend IFSelect_SelectDiff {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectDiff {
 	~IFSelect_SelectDiff() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectDiff\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectDiff\n");}
 	}
 };
 
@@ -2354,7 +2503,8 @@ class IFSelect {
 };
 %extend IFSelect {
 	~IFSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect\n");}
 	}
 };
 
@@ -2373,8 +2523,14 @@ class IFSelect_SelectBase : public IFSelect_Selection {
 	}
 };
 %extend IFSelect_SelectBase {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectBase {
 	~IFSelect_SelectBase() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectBase\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectBase\n");}
 	}
 };
 
@@ -2425,8 +2581,14 @@ class IFSelect_SelectPointed : public IFSelect_SelectBase {
 	}
 };
 %extend IFSelect_SelectPointed {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectPointed {
 	~IFSelect_SelectPointed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectPointed\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectPointed\n");}
 	}
 };
 
@@ -2471,8 +2633,14 @@ class IFSelect_Dispatch : public MMgt_TShared {
 	}
 };
 %extend IFSelect_Dispatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_Dispatch {
 	~IFSelect_Dispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Dispatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Dispatch\n");}
 	}
 };
 
@@ -2495,8 +2663,14 @@ class IFSelect_DispPerSignature : public IFSelect_Dispatch {
 	}
 };
 %extend IFSelect_DispPerSignature {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_DispPerSignature {
 	~IFSelect_DispPerSignature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerSignature\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerSignature\n");}
 	}
 };
 
@@ -2549,7 +2723,8 @@ class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
 };
 %extend IFSelect_SequenceOfGeneralModifier {
 	~IFSelect_SequenceOfGeneralModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceOfGeneralModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceOfGeneralModifier\n");}
 	}
 };
 
@@ -2570,8 +2745,14 @@ class IFSelect_SequenceNodeOfTSeqOfSelection : public TCollection_SeqNode {
 	}
 };
 %extend IFSelect_SequenceNodeOfTSeqOfSelection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SequenceNodeOfTSeqOfSelection {
 	~IFSelect_SequenceNodeOfTSeqOfSelection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfTSeqOfSelection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfTSeqOfSelection\n");}
 	}
 };
 
@@ -2592,8 +2773,14 @@ class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_Seq
 	}
 };
 %extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
 	~IFSelect_SequenceNodeOfSequenceOfAppliedModifiers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfAppliedModifiers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfAppliedModifiers\n");}
 	}
 };
 
@@ -2654,8 +2841,14 @@ class IFSelect_Editor : public MMgt_TShared {
 	}
 };
 %extend IFSelect_Editor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_Editor {
 	~IFSelect_Editor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Editor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Editor\n");}
 	}
 };
 
@@ -2708,7 +2901,8 @@ class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
 };
 %extend IFSelect_TSeqOfDispatch {
 	~IFSelect_TSeqOfDispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_TSeqOfDispatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_TSeqOfDispatch\n");}
 	}
 };
 
@@ -2733,8 +2927,14 @@ class IFSelect_Transformer : public MMgt_TShared {
 	}
 };
 %extend IFSelect_Transformer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_Transformer {
 	~IFSelect_Transformer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Transformer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Transformer\n");}
 	}
 };
 
@@ -2779,8 +2979,14 @@ class IFSelect_TransformStandard : public IFSelect_Transformer {
 	}
 };
 %extend IFSelect_TransformStandard {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_TransformStandard {
 	~IFSelect_TransformStandard() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_TransformStandard\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_TransformStandard\n");}
 	}
 };
 
@@ -2811,8 +3017,14 @@ class IFSelect_SelectCombine : public IFSelect_Selection {
 	}
 };
 %extend IFSelect_SelectCombine {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectCombine {
 	~IFSelect_SelectCombine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectCombine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectCombine\n");}
 	}
 };
 
@@ -2833,8 +3045,14 @@ class IFSelect_SignType : public IFSelect_Signature {
 	}
 };
 %extend IFSelect_SignType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SignType {
 	~IFSelect_SignType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SignType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SignType\n");}
 	}
 };
 
@@ -2905,7 +3123,8 @@ class IFSelect_ContextModif {
 };
 %extend IFSelect_ContextModif {
 	~IFSelect_ContextModif() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ContextModif\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ContextModif\n");}
 	}
 };
 
@@ -2948,8 +3167,14 @@ class IFSelect_PacketList : public MMgt_TShared {
 	}
 };
 %extend IFSelect_PacketList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_PacketList {
 	~IFSelect_PacketList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_PacketList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_PacketList\n");}
 	}
 };
 
@@ -2970,8 +3195,14 @@ class IFSelect_SelectAnyType : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectAnyType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectAnyType {
 	~IFSelect_SelectAnyType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectAnyType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectAnyType\n");}
 	}
 };
 
@@ -2994,8 +3225,14 @@ class IFSelect_SelectType : public IFSelect_SelectAnyType {
 	}
 };
 %extend IFSelect_SelectType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectType {
 	~IFSelect_SelectType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectType\n");}
 	}
 };
 
@@ -3056,8 +3293,14 @@ class IFSelect_ModelCopier : public MMgt_TShared {
 	}
 };
 %extend IFSelect_ModelCopier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_ModelCopier {
 	~IFSelect_ModelCopier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ModelCopier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ModelCopier\n");}
 	}
 };
 
@@ -3092,8 +3335,14 @@ class IFSelect_GeneralModifier : public MMgt_TShared {
 	}
 };
 %extend IFSelect_GeneralModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_GeneralModifier {
 	~IFSelect_GeneralModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_GeneralModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_GeneralModifier\n");}
 	}
 };
 
@@ -3110,8 +3359,14 @@ class IFSelect_Modifier : public IFSelect_GeneralModifier {
 	}
 };
 %extend IFSelect_Modifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_Modifier {
 	~IFSelect_Modifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Modifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Modifier\n");}
 	}
 };
 
@@ -3144,8 +3399,14 @@ class IFSelect_DispPerCount : public IFSelect_Dispatch {
 	}
 };
 %extend IFSelect_DispPerCount {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_DispPerCount {
 	~IFSelect_DispPerCount() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerCount\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerCount\n");}
 	}
 };
 
@@ -3166,8 +3427,14 @@ class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
 	}
 };
 %extend IFSelect_SequenceNodeOfTSeqOfDispatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SequenceNodeOfTSeqOfDispatch {
 	~IFSelect_SequenceNodeOfTSeqOfDispatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfTSeqOfDispatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfTSeqOfDispatch\n");}
 	}
 };
 
@@ -3218,7 +3485,8 @@ class IFSelect_ShareOutResult {
 };
 %extend IFSelect_ShareOutResult {
 	~IFSelect_ShareOutResult() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ShareOutResult\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ShareOutResult\n");}
 	}
 };
 
@@ -3269,8 +3537,14 @@ class IFSelect_SignatureList : public MMgt_TShared {
 	}
 };
 %extend IFSelect_SignatureList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SignatureList {
 	~IFSelect_SignatureList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SignatureList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SignatureList\n");}
 	}
 };
 
@@ -3293,8 +3567,14 @@ class IFSelect_CheckCounter : public IFSelect_SignatureList {
 	}
 };
 %extend IFSelect_CheckCounter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_CheckCounter {
 	~IFSelect_CheckCounter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_CheckCounter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_CheckCounter\n");}
 	}
 };
 
@@ -3321,8 +3601,14 @@ class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
 	}
 };
 %extend IFSelect_SelectEntityNumber {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectEntityNumber {
 	~IFSelect_SelectEntityNumber() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectEntityNumber\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectEntityNumber\n");}
 	}
 };
 
@@ -3427,8 +3713,14 @@ class IFSelect_EditForm : public MMgt_TShared {
 	}
 };
 %extend IFSelect_EditForm {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_EditForm {
 	~IFSelect_EditForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_EditForm\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_EditForm\n");}
 	}
 };
 
@@ -3457,8 +3749,14 @@ class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
 	}
 };
 %extend IFSelect_SelectSignedShared {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectSignedShared {
 	~IFSelect_SelectSignedShared() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSignedShared\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSignedShared\n");}
 	}
 };
 
@@ -3493,8 +3791,14 @@ class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
 	}
 };
 %extend IFSelect_SelectSuite {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectSuite {
 	~IFSelect_SelectSuite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSuite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSuite\n");}
 	}
 };
 
@@ -3523,8 +3827,14 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 	}
 };
 %extend IFSelect_SelectSignedSharing {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectSignedSharing {
 	~IFSelect_SelectSignedSharing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSignedSharing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSignedSharing\n");}
 	}
 };
 
@@ -3547,7 +3857,8 @@ class IFSelect_Functions {
 };
 %extend IFSelect_Functions {
 	~IFSelect_Functions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_Functions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_Functions\n");}
 	}
 };
 
@@ -3570,8 +3881,14 @@ class IFSelect_SelectShared : public IFSelect_SelectDeduct {
 	}
 };
 %extend IFSelect_SelectShared {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectShared {
 	~IFSelect_SelectShared() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectShared\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectShared\n");}
 	}
 };
 
@@ -3600,8 +3917,14 @@ class IFSelect_SelectSent : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectSent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectSent {
 	~IFSelect_SelectSent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSent\n");}
 	}
 };
 
@@ -3636,8 +3959,14 @@ class IFSelect_WorkLibrary : public Standard_Transient {
 	}
 };
 %extend IFSelect_WorkLibrary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_WorkLibrary {
 	~IFSelect_WorkLibrary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_WorkLibrary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_WorkLibrary\n");}
 	}
 };
 
@@ -3660,8 +3989,14 @@ class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
 	}
 };
 %extend IFSelect_SelectModelRoots {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectModelRoots {
 	~IFSelect_SelectModelRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectModelRoots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectModelRoots\n");}
 	}
 };
 
@@ -3710,8 +4045,14 @@ class IFSelect_SelectAnyList : public IFSelect_SelectDeduct {
 	}
 };
 %extend IFSelect_SelectAnyList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectAnyList {
 	~IFSelect_SelectAnyList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectAnyList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectAnyList\n");}
 	}
 };
 
@@ -3744,8 +4085,14 @@ class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 	}
 };
 %extend IFSelect_DispPerFiles {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_DispPerFiles {
 	~IFSelect_DispPerFiles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerFiles\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerFiles\n");}
 	}
 };
 
@@ -3770,8 +4117,14 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 	}
 };
 %extend IFSelect_ModifEditForm {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_ModifEditForm {
 	~IFSelect_ModifEditForm() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ModifEditForm\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ModifEditForm\n");}
 	}
 };
 
@@ -3822,8 +4175,14 @@ class IFSelect_SignCounter : public IFSelect_SignatureList {
 	}
 };
 %extend IFSelect_SignCounter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SignCounter {
 	~IFSelect_SignCounter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SignCounter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SignCounter\n");}
 	}
 };
 
@@ -3876,7 +4235,8 @@ class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
 };
 %extend IFSelect_TSeqOfSelection {
 	~IFSelect_TSeqOfSelection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_TSeqOfSelection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_TSeqOfSelection\n");}
 	}
 };
 
@@ -3901,8 +4261,14 @@ class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 	}
 };
 %extend IFSelect_SelectModelEntities {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectModelEntities {
 	~IFSelect_SelectModelEntities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectModelEntities\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectModelEntities\n");}
 	}
 };
 
@@ -3929,8 +4295,14 @@ class IFSelect_DispGlobal : public IFSelect_Dispatch {
 	}
 };
 %extend IFSelect_DispGlobal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_DispGlobal {
 	~IFSelect_DispGlobal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_DispGlobal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_DispGlobal\n");}
 	}
 };
 
@@ -3983,7 +4355,8 @@ class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 };
 %extend IFSelect_SequenceOfInterfaceModel {
 	~IFSelect_SequenceOfInterfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceOfInterfaceModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceOfInterfaceModel\n");}
 	}
 };
 
@@ -4008,8 +4381,14 @@ class IFSelect_IntParam : public MMgt_TShared {
 	}
 };
 %extend IFSelect_IntParam {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_IntParam {
 	~IFSelect_IntParam() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_IntParam\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_IntParam\n");}
 	}
 };
 
@@ -4052,8 +4431,14 @@ class IFSelect_SelectRange : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectRange {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectRange {
 	~IFSelect_SelectRange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRange\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRange\n");}
 	}
 };
 
@@ -4078,8 +4463,14 @@ class IFSelect_GraphCounter : public IFSelect_SignCounter {
 	}
 };
 %extend IFSelect_GraphCounter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_GraphCounter {
 	~IFSelect_GraphCounter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_GraphCounter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_GraphCounter\n");}
 	}
 };
 
@@ -4106,8 +4497,14 @@ class IFSelect_SelectFlag : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectFlag {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectFlag {
 	~IFSelect_SelectFlag() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectFlag\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectFlag\n");}
 	}
 };
 
@@ -4160,8 +4557,14 @@ class IFSelect_ListEditor : public MMgt_TShared {
 	}
 };
 %extend IFSelect_ListEditor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_ListEditor {
 	~IFSelect_ListEditor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ListEditor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ListEditor\n");}
 	}
 };
 
@@ -4186,8 +4589,14 @@ class IFSelect_SessionDumper : public MMgt_TShared {
 	}
 };
 %extend IFSelect_SessionDumper {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SessionDumper {
 	~IFSelect_SessionDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SessionDumper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SessionDumper\n");}
 	}
 };
 
@@ -4204,8 +4613,14 @@ class IFSelect_BasicDumper : public IFSelect_SessionDumper {
 	}
 };
 %extend IFSelect_BasicDumper {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_BasicDumper {
 	~IFSelect_BasicDumper() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_BasicDumper\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_BasicDumper\n");}
 	}
 };
 
@@ -4238,8 +4653,14 @@ class IFSelect_AppliedModifiers : public MMgt_TShared {
 	}
 };
 %extend IFSelect_AppliedModifiers {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_AppliedModifiers {
 	~IFSelect_AppliedModifiers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_AppliedModifiers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_AppliedModifiers\n");}
 	}
 };
 
@@ -4262,8 +4683,14 @@ class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
 	}
 };
 %extend IFSelect_SelectIntersection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectIntersection {
 	~IFSelect_SelectIntersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectIntersection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectIntersection\n");}
 	}
 };
 
@@ -4342,8 +4769,14 @@ class IFSelect_ShareOut : public MMgt_TShared {
 	}
 };
 %extend IFSelect_ShareOut {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_ShareOut {
 	~IFSelect_ShareOut() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ShareOut\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ShareOut\n");}
 	}
 };
 
@@ -4428,7 +4861,8 @@ class IFSelect_SessionFile {
 };
 %extend IFSelect_SessionFile {
 	~IFSelect_SessionFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SessionFile\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SessionFile\n");}
 	}
 };
 
@@ -4451,8 +4885,14 @@ class IFSelect_SelectUnion : public IFSelect_SelectCombine {
 	}
 };
 %extend IFSelect_SelectUnion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectUnion {
 	~IFSelect_SelectUnion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectUnion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectUnion\n");}
 	}
 };
 
@@ -4473,8 +4913,14 @@ class IFSelect_SignAncestor : public IFSelect_SignType {
 	}
 };
 %extend IFSelect_SignAncestor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SignAncestor {
 	~IFSelect_SignAncestor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SignAncestor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SignAncestor\n");}
 	}
 };
 
@@ -4497,8 +4943,14 @@ class IFSelect_SignValidity : public IFSelect_Signature {
 	}
 };
 %extend IFSelect_SignValidity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SignValidity {
 	~IFSelect_SignValidity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SignValidity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SignValidity\n");}
 	}
 };
 
@@ -4519,8 +4971,14 @@ class IFSelect_SignCategory : public IFSelect_Signature {
 	}
 };
 %extend IFSelect_SignCategory {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SignCategory {
 	~IFSelect_SignCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SignCategory\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SignCategory\n");}
 	}
 };
 
@@ -4557,8 +5015,14 @@ class IFSelect_SelectSignature : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectSignature {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectSignature {
 	~IFSelect_SelectSignature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSignature\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSignature\n");}
 	}
 };
 
@@ -4593,8 +5057,14 @@ class IFSelect_ParamEditor : public IFSelect_Editor {
 	}
 };
 %extend IFSelect_ParamEditor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_ParamEditor {
 	~IFSelect_ParamEditor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ParamEditor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ParamEditor\n");}
 	}
 };
 
@@ -4619,8 +5089,14 @@ class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectRoots {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectRoots {
 	~IFSelect_SelectRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRoots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRoots\n");}
 	}
 };
 
@@ -4677,7 +5153,8 @@ class IFSelect_ContextWrite {
 };
 %extend IFSelect_ContextWrite {
 	~IFSelect_ContextWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ContextWrite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ContextWrite\n");}
 	}
 };
 
@@ -4698,8 +5175,14 @@ class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqN
 	}
 };
 %extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
 	~IFSelect_SequenceNodeOfSequenceOfGeneralModifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfGeneralModifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfGeneralModifier\n");}
 	}
 };
 
@@ -4762,8 +5245,14 @@ class IFSelect_HSeqOfSelection : public MMgt_TShared {
 	}
 };
 %extend IFSelect_HSeqOfSelection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_HSeqOfSelection {
 	~IFSelect_HSeqOfSelection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_HSeqOfSelection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_HSeqOfSelection\n");}
 	}
 };
 
@@ -4790,8 +5279,14 @@ class IFSelect_DispPerOne : public IFSelect_Dispatch {
 	}
 };
 %extend IFSelect_DispPerOne {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_DispPerOne {
 	~IFSelect_DispPerOne() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerOne\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerOne\n");}
 	}
 };
 
@@ -5132,8 +5627,14 @@ class IFSelect_WorkSession : public MMgt_TShared {
 	}
 };
 %extend IFSelect_WorkSession {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_WorkSession {
 	~IFSelect_WorkSession() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_WorkSession\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_WorkSession\n");}
 	}
 };
 
@@ -5152,8 +5653,14 @@ class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
 	}
 };
 %extend IFSelect_SelectIncorrectEntities {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectIncorrectEntities {
 	~IFSelect_SelectIncorrectEntities() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectIncorrectEntities\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectIncorrectEntities\n");}
 	}
 };
 
@@ -5224,8 +5731,14 @@ class IFSelect_SessionPilot : public IFSelect_Activator {
 	}
 };
 %extend IFSelect_SessionPilot {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SessionPilot {
 	~IFSelect_SessionPilot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SessionPilot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SessionPilot\n");}
 	}
 };
 
@@ -5278,7 +5791,8 @@ class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
 };
 %extend IFSelect_SequenceOfAppliedModifiers {
 	~IFSelect_SequenceOfAppliedModifiers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceOfAppliedModifiers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceOfAppliedModifiers\n");}
 	}
 };
 
@@ -5299,8 +5813,14 @@ class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNo
 	}
 };
 %extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
 	~IFSelect_SequenceNodeOfSequenceOfInterfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfInterfaceModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfInterfaceModel\n");}
 	}
 };
 
@@ -5325,8 +5845,14 @@ class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 	}
 };
 %extend IFSelect_SelectRootComps {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectRootComps {
 	~IFSelect_SelectRootComps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRootComps\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRootComps\n");}
 	}
 };
 
@@ -5349,8 +5875,14 @@ class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
 	}
 };
 %extend IFSelect_SelectSharing {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectSharing {
 	~IFSelect_SelectSharing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSharing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSharing\n");}
 	}
 };
 
@@ -5371,8 +5903,14 @@ class IFSelect_SelectInList : public IFSelect_SelectAnyList {
 	}
 };
 %extend IFSelect_SelectInList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_SelectInList {
 	~IFSelect_SelectInList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_SelectInList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectInList\n");}
 	}
 };
 
@@ -5395,7 +5933,13 @@ class IFSelect_ModifReorder : public IFSelect_Modifier {
 	}
 };
 %extend IFSelect_ModifReorder {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IFSelect_ModifReorder {
 	~IFSelect_ModifReorder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IFSelect_ModifReorder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IFSelect_ModifReorder\n");}
 	}
 };

@@ -131,7 +131,8 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 };
 %extend Handle_GGraphic2d_Curve {
 	~Handle_GGraphic2d_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_Curve\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 };
 %extend Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve {
 	~Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange
 };
 %extend Handle_GGraphic2d_CurveDefinitionError {
 	~Handle_GGraphic2d_CurveDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_CurveDefinitionError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_CurveDefinitionError\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 };
 %extend Handle_GGraphic2d_SetOfCurves {
 	~Handle_GGraphic2d_SetOfCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SetOfCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SetOfCurves\n");}
 	}
 };
 
@@ -224,8 +228,14 @@ class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 	}
 };
 %extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
 	~GGraphic2d_SequenceNodeOfSequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GGraphic2d_SequenceNodeOfSequenceOfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GGraphic2d_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
 
@@ -250,8 +260,14 @@ class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 	}
 };
 %extend GGraphic2d_SetOfCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GGraphic2d_SetOfCurves {
 	~GGraphic2d_SetOfCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GGraphic2d_SetOfCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GGraphic2d_SetOfCurves\n");}
 	}
 };
 
@@ -304,7 +320,8 @@ class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
 };
 %extend GGraphic2d_SequenceOfCurve {
 	~GGraphic2d_SequenceOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GGraphic2d_SequenceOfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GGraphic2d_SequenceOfCurve\n");}
 	}
 };
 
@@ -327,8 +344,14 @@ class GGraphic2d_Curve : public Graphic2d_Line {
 	}
 };
 %extend GGraphic2d_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GGraphic2d_Curve {
 	~GGraphic2d_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GGraphic2d_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GGraphic2d_Curve\n");}
 	}
 };
 
@@ -355,7 +378,13 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 	}
 };
 %extend GGraphic2d_CurveDefinitionError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GGraphic2d_CurveDefinitionError {
 	~GGraphic2d_CurveDefinitionError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GGraphic2d_CurveDefinitionError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GGraphic2d_CurveDefinitionError\n");}
 	}
 };

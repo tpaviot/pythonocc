@@ -192,6 +192,7 @@ class UnitsAPI {
 };
 %extend UnitsAPI {
 	~UnitsAPI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of UnitsAPI\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of UnitsAPI\n");}
 	}
 };

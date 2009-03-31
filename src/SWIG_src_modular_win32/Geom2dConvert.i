@@ -138,7 +138,8 @@ class Geom2dConvert {
 };
 %extend Geom2dConvert {
 	~Geom2dConvert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dConvert\n");}
 	}
 };
 
@@ -157,7 +158,8 @@ class Geom2dConvert_BSplineCurveKnotSplitting {
 };
 %extend Geom2dConvert_BSplineCurveKnotSplitting {
 	~Geom2dConvert_BSplineCurveKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");}
 	}
 };
 
@@ -180,7 +182,8 @@ class Geom2dConvert_BSplineCurveToBezierCurve {
 };
 %extend Geom2dConvert_BSplineCurveToBezierCurve {
 	~Geom2dConvert_BSplineCurveToBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveToBezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveToBezierCurve\n");}
 	}
 };
 
@@ -197,7 +200,8 @@ class Geom2dConvert_CompCurveToBSplineCurve {
 };
 %extend Geom2dConvert_CompCurveToBSplineCurve {
 	~Geom2dConvert_CompCurveToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert_CompCurveToBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_CompCurveToBSplineCurve\n");}
 	}
 };
 
@@ -220,6 +224,7 @@ class Geom2dConvert_ApproxCurve {
 };
 %extend Geom2dConvert_ApproxCurve {
 	~Geom2dConvert_ApproxCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dConvert_ApproxCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_ApproxCurve\n");}
 	}
 };

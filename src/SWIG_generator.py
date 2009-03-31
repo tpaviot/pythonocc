@@ -583,6 +583,7 @@ class ModularBuilder(object):
             for other_classes in class_declaration.derived:
                 print "\t\t%s"%other_classes.related_class.name
         print "\t### Member functions for class %s ###"%class_declaration.name
+        HAVE_HASHCODE = False
         for mem_fun in class_declaration.public_members:#member_functions():
             # Member functions to exclude
             function_name = mem_fun.name
@@ -590,6 +591,10 @@ class ModularBuilder(object):
 #                print "Destructor found for a Handle_* class: ignored."
 #            elif (function_name.startswith('~') and (('Handle_%s'%class_name) in self.ALREADY_EXPOSED)):
 #                print "Destructor found for a smart pointer managed class."
+            if function_name == 'HashCode': #function that have a special HashCode
+                nb_arguments = len(mem_fun.arguments)
+                if nb_arguments == 1:
+                    HAVE_HASHCODE = True
             if (function_name.startswith('~')):#ignore destructor
                 pass
             elif not self.MEMBER_FUNCTIONS_TO_EXCLUDE.has_key(class_name):
@@ -630,11 +635,23 @@ class ModularBuilder(object):
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\t%s GetHandle() {\n"%handle_class_name)
             self.fp.write("\treturn *(%s*) &$self;\n\t}\n};"%handle_class_name)
+        #
+        # Overload __hash__() method for objects that inherits from Standard_Transient
+        #
+        if (('Handle_%s'%class_name in self.ALREADY_EXPOSED) or HAVE_HASHCODE):
+            self.fp.write("\n%")
+            self.fp.write("extend %s {\n"%class_name)
+            handle_class_name = 'Handle_%s'%class_name
+            self.fp.write("\tStandard_Integer __hash__() {\n")
+            self.fp.write("\treturn $self->HashCode(LONG_MAX);\n\t}\n};")
+        #
+        # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
+        #
 #        if NEED_CUSTOMIZED_DESTRUCTOR: TEST: ALL OBJECTS NEED A CUSTOM DESTRUCTOR
         # Customize destructor
         self.fp.write('\n%')
         self.fp.write('extend %s {\n'%class_name)
-        self.fp.write('\t~%s() {\n\tchar *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of %s\\n");}'%(class_name,class_name))
+        self.fp.write('\t~%s() {\n\tchar *__env=getenv("PYTHONOCC_VERBOSE");\n\tif (__env){printf("## Call custom destructor for instance of %s\\n");}'%(class_name,class_name))
         self.fp.write('\n\t}\n};')
         #
         # On l'ajoute a la liste des classes deja exposees
@@ -710,7 +727,6 @@ class ModularBuilder(object):
                           'Standard_Atomic.hxx',
                           'WNT_FontTable.hxx',
                           'AlienImage_GIFLZWDict.hxx','Image_PixelFieldOfDIndexedImage.hxx',
-                          'MeshVS_DataMapIteratorOfDataMapOfIntegerTwoColors.hxx',
                           'Standard_Transient_proto.hxx',
                           'TopOpeBRepBuild_Builder.hxx','TopOpeBRepBuild_Fill.hxx',
                           'TopOpeBRepBuild_SplitSolid.hxx','TopOpeBRepBuild_SplitShapes.hxx',

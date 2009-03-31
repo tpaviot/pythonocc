@@ -131,7 +131,8 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 };
 %extend Handle_Bnd_SequenceNodeOfSeqOfBox {
 	~Handle_Bnd_SequenceNodeOfSeqOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Bnd_SequenceNodeOfSeqOfBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Bnd_SequenceNodeOfSeqOfBox\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 };
 %extend Handle_Bnd_HArray1OfBox2d {
 	~Handle_Bnd_HArray1OfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Bnd_HArray1OfBox2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Bnd_HArray1OfBox2d\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 };
 %extend Handle_Bnd_HArray1OfBox {
 	~Handle_Bnd_HArray1OfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Bnd_HArray1OfBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Bnd_HArray1OfBox\n");}
 	}
 };
 
@@ -236,7 +239,8 @@ class Bnd_B2d {
 };
 %extend Bnd_B2d {
 	~Bnd_B2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_B2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_B2d\n");}
 	}
 };
 
@@ -293,7 +297,8 @@ class Bnd_B2f {
 };
 %extend Bnd_B2f {
 	~Bnd_B2f() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_B2f\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_B2f\n");}
 	}
 };
 
@@ -314,8 +319,14 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 	}
 };
 %extend Bnd_SequenceNodeOfSeqOfBox {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Bnd_SequenceNodeOfSeqOfBox {
 	~Bnd_SequenceNodeOfSeqOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_SequenceNodeOfSeqOfBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_SequenceNodeOfSeqOfBox\n");}
 	}
 };
 
@@ -368,7 +379,8 @@ class Bnd_SeqOfBox : public TCollection_BaseSequence {
 };
 %extend Bnd_SeqOfBox {
 	~Bnd_SeqOfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_SeqOfBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_SeqOfBox\n");}
 	}
 };
 
@@ -467,7 +479,8 @@ class Bnd_Box {
 };
 %extend Bnd_Box {
 	~Bnd_Box() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_Box\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_Box\n");}
 	}
 };
 
@@ -492,7 +505,8 @@ class Bnd_BoundSortBox2d {
 };
 %extend Bnd_BoundSortBox2d {
 	~Bnd_BoundSortBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox2d\n");}
 	}
 };
 
@@ -549,7 +563,8 @@ class Bnd_B3d {
 };
 %extend Bnd_B3d {
 	~Bnd_B3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_B3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_B3d\n");}
 	}
 };
 
@@ -606,7 +621,8 @@ class Bnd_B3f {
 };
 %extend Bnd_B3f {
 	~Bnd_B3f() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_B3f\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_B3f\n");}
 	}
 };
 
@@ -645,8 +661,14 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 	}
 };
 %extend Bnd_HArray1OfBox2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Bnd_HArray1OfBox2d {
 	~Bnd_HArray1OfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox2d\n");}
 	}
 };
 
@@ -685,8 +707,14 @@ class Bnd_HArray1OfBox : public MMgt_TShared {
 	}
 };
 %extend Bnd_HArray1OfBox {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Bnd_HArray1OfBox {
 	~Bnd_HArray1OfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox\n");}
 	}
 };
 
@@ -715,7 +743,8 @@ class Bnd_BoundSortBox {
 };
 %extend Bnd_BoundSortBox {
 	~Bnd_BoundSortBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox\n");}
 	}
 };
 
@@ -788,7 +817,8 @@ class Bnd_Box2d {
 };
 %extend Bnd_Box2d {
 	~Bnd_Box2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_Box2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_Box2d\n");}
 	}
 };
 
@@ -827,7 +857,8 @@ class Bnd_Array1OfBox2d {
 };
 %extend Bnd_Array1OfBox2d {
 	~Bnd_Array1OfBox2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox2d\n");}
 	}
 };
 
@@ -866,6 +897,7 @@ class Bnd_Array1OfBox {
 };
 %extend Bnd_Array1OfBox {
 	~Bnd_Array1OfBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox\n");}
 	}
 };

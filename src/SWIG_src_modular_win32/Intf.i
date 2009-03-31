@@ -138,7 +138,8 @@ class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_Seq
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfTangentZone {
 	~Handle_Intf_SequenceNodeOfSeqOfTangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfTangentZone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfTangentZone\n");}
 	}
 };
 
@@ -162,7 +163,8 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_Seq
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionLine {
 	~Handle_Intf_SequenceNodeOfSeqOfSectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionLine\n");}
 	}
 };
 
@@ -186,7 +188,8 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_Se
 };
 %extend Handle_Intf_SequenceNodeOfSeqOfSectionPoint {
 	~Handle_Intf_SequenceNodeOfSeqOfSectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionPoint\n");}
 	}
 };
 
@@ -207,8 +210,14 @@ class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
 	}
 };
 %extend Intf_SequenceNodeOfSeqOfSectionPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfSectionPoint {
 	~Intf_SequenceNodeOfSeqOfSectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionPoint\n");}
 	}
 };
 
@@ -229,8 +238,14 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 	}
 };
 %extend Intf_SequenceNodeOfSeqOfSectionLine {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfSectionLine {
 	~Intf_SequenceNodeOfSeqOfSectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionLine\n");}
 	}
 };
 
@@ -277,7 +292,8 @@ class Intf_SectionPoint {
 };
 %extend Intf_SectionPoint {
 	~Intf_SectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_SectionPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SectionPoint\n");}
 	}
 };
 
@@ -330,7 +346,8 @@ class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 };
 %extend Intf_SeqOfTangentZone {
 	~Intf_SeqOfTangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_SeqOfTangentZone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SeqOfTangentZone\n");}
 	}
 };
 
@@ -383,7 +400,8 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 };
 %extend Intf_SeqOfSectionLine {
 	~Intf_SeqOfSectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_SeqOfSectionLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SeqOfSectionLine\n");}
 	}
 };
 
@@ -416,7 +434,8 @@ class Intf_Interference {
 };
 %extend Intf_Interference {
 	~Intf_Interference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_Interference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_Interference\n");}
 	}
 };
 
@@ -437,8 +456,14 @@ class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
 	}
 };
 %extend Intf_SequenceNodeOfSeqOfTangentZone {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Intf_SequenceNodeOfSeqOfTangentZone {
 	~Intf_SequenceNodeOfSeqOfTangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfTangentZone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfTangentZone\n");}
 	}
 };
 
@@ -491,7 +516,8 @@ class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
 };
 %extend Intf_SeqOfSectionPoint {
 	~Intf_SeqOfSectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_SeqOfSectionPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SeqOfSectionPoint\n");}
 	}
 };
 
@@ -530,7 +556,8 @@ class Intf_Array1OfLin {
 };
 %extend Intf_Array1OfLin {
 	~Intf_Array1OfLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_Array1OfLin\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_Array1OfLin\n");}
 	}
 };
 
@@ -581,7 +608,8 @@ class Intf_TangentZone {
 };
 %extend Intf_TangentZone {
 	~Intf_TangentZone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_TangentZone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_TangentZone\n");}
 	}
 };
 
@@ -624,7 +652,8 @@ class Intf_SectionLine {
 };
 %extend Intf_SectionLine {
 	~Intf_SectionLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_SectionLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_SectionLine\n");}
 	}
 };
 
@@ -655,7 +684,8 @@ class Intf_Tool {
 };
 %extend Intf_Tool {
 	~Intf_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf_Tool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf_Tool\n");}
 	}
 };
 
@@ -672,6 +702,7 @@ class Intf {
 };
 %extend Intf {
 	~Intf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Intf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Intf\n");}
 	}
 };

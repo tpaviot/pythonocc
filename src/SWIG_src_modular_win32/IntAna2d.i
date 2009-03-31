@@ -138,7 +138,8 @@ class IntAna2d_Conic {
 };
 %extend IntAna2d_Conic {
 	~IntAna2d_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna2d_Conic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntAna2d_Conic\n");}
 	}
 };
 
@@ -195,7 +196,8 @@ class IntAna2d_AnaIntersection {
 };
 %extend IntAna2d_AnaIntersection {
 	~IntAna2d_AnaIntersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna2d_AnaIntersection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntAna2d_AnaIntersection\n");}
 	}
 };
 
@@ -238,6 +240,7 @@ class IntAna2d_IntPoint {
 };
 %extend IntAna2d_IntPoint {
 	~IntAna2d_IntPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntAna2d_IntPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntAna2d_IntPoint\n");}
 	}
 };

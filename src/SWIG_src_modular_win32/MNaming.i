@@ -131,7 +131,8 @@ class Handle_MNaming_NamingRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %extend Handle_MNaming_NamingRetrievalDriver {
 	~Handle_MNaming_NamingRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamingRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamingRetrievalDriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
 };
 %extend Handle_MNaming_NamedShapeStorageDriver {
 	~Handle_MNaming_NamedShapeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamedShapeStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamedShapeStorageDriver\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_MNaming_NamingStorageDriver : public Handle_MDF_ASDriver {
 };
 %extend Handle_MNaming_NamingStorageDriver {
 	~Handle_MNaming_NamingStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamingStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamingStorageDriver\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_MNaming_NamedShapeRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %extend Handle_MNaming_NamedShapeRetrievalDriver {
 	~Handle_MNaming_NamedShapeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamedShapeRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamedShapeRetrievalDriver\n");}
 	}
 };
 
@@ -230,8 +234,14 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 	}
 };
 %extend MNaming_NamedShapeStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MNaming_NamedShapeStorageDriver {
 	~MNaming_NamedShapeStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MNaming_NamedShapeStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MNaming_NamedShapeStorageDriver\n");}
 	}
 };
 
@@ -248,7 +258,8 @@ class MNaming {
 };
 %extend MNaming {
 	~MNaming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MNaming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MNaming\n");}
 	}
 };
 
@@ -275,8 +286,14 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 	}
 };
 %extend MNaming_NamedShapeRetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MNaming_NamedShapeRetrievalDriver {
 	~MNaming_NamedShapeRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MNaming_NamedShapeRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MNaming_NamedShapeRetrievalDriver\n");}
 	}
 };
 
@@ -303,8 +320,14 @@ class MNaming_NamingStorageDriver : public MDF_ASDriver {
 	}
 };
 %extend MNaming_NamingStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MNaming_NamingStorageDriver {
 	~MNaming_NamingStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MNaming_NamingStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MNaming_NamingStorageDriver\n");}
 	}
 };
 
@@ -331,7 +354,13 @@ class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 	}
 };
 %extend MNaming_NamingRetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MNaming_NamingRetrievalDriver {
 	~MNaming_NamingRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MNaming_NamingRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MNaming_NamingRetrievalDriver\n");}
 	}
 };

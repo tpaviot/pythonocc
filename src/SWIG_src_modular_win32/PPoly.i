@@ -131,7 +131,8 @@ class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 };
 %extend Handle_PPoly_Polygon2D {
 	~Handle_PPoly_Polygon2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Polygon2D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Polygon2D\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 };
 %extend Handle_PPoly_HArray1OfTriangle {
 	~Handle_PPoly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPoly_HArray1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_HArray1OfTriangle\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 };
 %extend Handle_PPoly_Polygon3D {
 	~Handle_PPoly_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Polygon3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Polygon3D\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 };
 %extend Handle_PPoly_Triangulation {
 	~Handle_PPoly_Triangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Triangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Triangulation\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandar
 };
 %extend Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
 	~Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 };
 %extend Handle_PPoly_PolygonOnTriangulation {
 	~Handle_PPoly_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PPoly_PolygonOnTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -270,7 +276,8 @@ class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 };
 %extend PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 	~PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");}
 	}
 };
 
@@ -323,8 +330,14 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 	}
 };
 %extend PPoly_PolygonOnTriangulation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PPoly_PolygonOnTriangulation {
 	~PPoly_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_PolygonOnTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -373,8 +386,14 @@ class PPoly_HArray1OfTriangle : public Standard_Persistent {
 	}
 };
 %extend PPoly_HArray1OfTriangle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PPoly_HArray1OfTriangle {
 	~PPoly_HArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_HArray1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_HArray1OfTriangle\n");}
 	}
 };
 
@@ -431,8 +450,14 @@ class PPoly_Triangulation : public Standard_Persistent {
 	}
 };
 %extend PPoly_Triangulation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PPoly_Triangulation {
 	~PPoly_Triangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_Triangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_Triangulation\n");}
 	}
 };
 
@@ -473,8 +498,14 @@ class PPoly_Polygon2D : public Standard_Persistent {
 	}
 };
 %extend PPoly_Polygon2D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PPoly_Polygon2D {
 	~PPoly_Polygon2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_Polygon2D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_Polygon2D\n");}
 	}
 };
 
@@ -527,8 +558,14 @@ class PPoly_Polygon3D : public Standard_Persistent {
 	}
 };
 %extend PPoly_Polygon3D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PPoly_Polygon3D {
 	~PPoly_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_Polygon3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_Polygon3D\n");}
 	}
 };
 
@@ -557,7 +594,8 @@ class PPoly_FieldOfHArray1OfTriangle : public DBC_BaseArray {
 };
 %extend PPoly_FieldOfHArray1OfTriangle {
 	~PPoly_FieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_FieldOfHArray1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_FieldOfHArray1OfTriangle\n");}
 	}
 };
 
@@ -586,8 +624,14 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 	}
 };
 %extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
 	~PPoly_VArrayNodeOfFieldOfHArray1OfTriangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayNodeOfFieldOfHArray1OfTriangle\n");}
 	}
 };
 
@@ -608,6 +652,7 @@ class PPoly_Triangle {
 };
 %extend PPoly_Triangle {
 	~PPoly_Triangle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PPoly_Triangle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PPoly_Triangle\n");}
 	}
 };

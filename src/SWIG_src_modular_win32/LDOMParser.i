@@ -124,6 +124,7 @@ class LDOMParser {
 };
 %extend LDOMParser {
 	~LDOMParser() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LDOMParser\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LDOMParser\n");}
 	}
 };

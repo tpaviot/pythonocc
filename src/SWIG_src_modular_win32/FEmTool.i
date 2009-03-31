@@ -131,7 +131,8 @@ class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
 };
 %extend Handle_FEmTool_SparseMatrix {
 	~Handle_FEmTool_SparseMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_SparseMatrix\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_SparseMatrix\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 };
 %extend Handle_FEmTool_ProfileMatrix {
 	~Handle_FEmTool_ProfileMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ProfileMatrix\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ProfileMatrix\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 };
 %extend Handle_FEmTool_ElementaryCriterion {
 	~Handle_FEmTool_ElementaryCriterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ElementaryCriterion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ElementaryCriterion\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 };
 %extend Handle_FEmTool_LinearTension {
 	~Handle_FEmTool_LinearTension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearTension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearTension\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 };
 %extend Handle_FEmTool_LinearJerk {
 	~Handle_FEmTool_LinearJerk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearJerk\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearJerk\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_Se
 };
 %extend Handle_FEmTool_SequenceNodeOfSeqOfLinConstr {
 	~Handle_FEmTool_SequenceNodeOfSeqOfLinConstr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 };
 %extend Handle_FEmTool_Curve {
 	~Handle_FEmTool_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_Curve\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 };
 %extend Handle_FEmTool_LinearFlexion {
 	~Handle_FEmTool_LinearFlexion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearFlexion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearFlexion\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 };
 %extend Handle_FEmTool_HAssemblyTable {
 	~Handle_FEmTool_HAssemblyTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_HAssemblyTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_HAssemblyTable\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode
 };
 %extend Handle_FEmTool_ListNodeOfListOfVectors {
 	~Handle_FEmTool_ListNodeOfListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ListNodeOfListOfVectors\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ListNodeOfListOfVectors\n");}
 	}
 };
 
@@ -368,8 +378,14 @@ class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 	}
 };
 %extend FEmTool_ListNodeOfListOfVectors {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_ListNodeOfListOfVectors {
 	~FEmTool_ListNodeOfListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_ListNodeOfListOfVectors\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_ListNodeOfListOfVectors\n");}
 	}
 };
 
@@ -398,8 +414,14 @@ class FEmTool_ElementaryCriterion : public MMgt_TShared {
 	}
 };
 %extend FEmTool_ElementaryCriterion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_ElementaryCriterion {
 	~FEmTool_ElementaryCriterion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_ElementaryCriterion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_ElementaryCriterion\n");}
 	}
 };
 
@@ -426,8 +448,14 @@ class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
 	}
 };
 %extend FEmTool_LinearFlexion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_LinearFlexion {
 	~FEmTool_LinearFlexion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_LinearFlexion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearFlexion\n");}
 	}
 };
 
@@ -454,8 +482,14 @@ class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 	}
 };
 %extend FEmTool_LinearJerk {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_LinearJerk {
 	~FEmTool_LinearJerk() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_LinearJerk\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearJerk\n");}
 	}
 };
 
@@ -498,7 +532,8 @@ class FEmTool_AssemblyTable {
 };
 %extend FEmTool_AssemblyTable {
 	~FEmTool_AssemblyTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_AssemblyTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_AssemblyTable\n");}
 	}
 };
 
@@ -533,7 +568,8 @@ class FEmTool_Assembly {
 };
 %extend FEmTool_Assembly {
 	~FEmTool_Assembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_Assembly\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_Assembly\n");}
 	}
 };
 
@@ -560,8 +596,14 @@ class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 	}
 };
 %extend FEmTool_LinearTension {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_LinearTension {
 	~FEmTool_LinearTension() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_LinearTension\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearTension\n");}
 	}
 };
 
@@ -584,7 +626,8 @@ class FEmTool_ListIteratorOfListOfVectors {
 };
 %extend FEmTool_ListIteratorOfListOfVectors {
 	~FEmTool_ListIteratorOfListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_ListIteratorOfListOfVectors\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_ListIteratorOfListOfVectors\n");}
 	}
 };
 
@@ -631,8 +674,14 @@ class FEmTool_Curve : public MMgt_TShared {
 	}
 };
 %extend FEmTool_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_Curve {
 	~FEmTool_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_Curve\n");}
 	}
 };
 
@@ -667,8 +716,14 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 	}
 };
 %extend FEmTool_SparseMatrix {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_SparseMatrix {
 	~FEmTool_SparseMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_SparseMatrix\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_SparseMatrix\n");}
 	}
 };
 
@@ -691,8 +746,14 @@ class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 	}
 };
 %extend FEmTool_ProfileMatrix {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_ProfileMatrix {
 	~FEmTool_ProfileMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_ProfileMatrix\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_ProfileMatrix\n");}
 	}
 };
 
@@ -741,7 +802,8 @@ class FEmTool_ListOfVectors {
 };
 %extend FEmTool_ListOfVectors {
 	~FEmTool_ListOfVectors() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_ListOfVectors\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_ListOfVectors\n");}
 	}
 };
 
@@ -786,8 +848,14 @@ class FEmTool_HAssemblyTable : public MMgt_TShared {
 	}
 };
 %extend FEmTool_HAssemblyTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_HAssemblyTable {
 	~FEmTool_HAssemblyTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_HAssemblyTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_HAssemblyTable\n");}
 	}
 };
 
@@ -806,7 +874,8 @@ class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
 };
 %extend FEmTool_ElementsOfRefMatrix {
 	~FEmTool_ElementsOfRefMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_ElementsOfRefMatrix\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_ElementsOfRefMatrix\n");}
 	}
 };
 
@@ -859,7 +928,8 @@ class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
 };
 %extend FEmTool_SeqOfLinConstr {
 	~FEmTool_SeqOfLinConstr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_SeqOfLinConstr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_SeqOfLinConstr\n");}
 	}
 };
 
@@ -880,7 +950,13 @@ class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
 	}
 };
 %extend FEmTool_SequenceNodeOfSeqOfLinConstr {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend FEmTool_SequenceNodeOfSeqOfLinConstr {
 	~FEmTool_SequenceNodeOfSeqOfLinConstr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
 	}
 };

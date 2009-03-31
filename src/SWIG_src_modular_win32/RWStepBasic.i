@@ -126,7 +126,8 @@ class RWStepBasic_RWActionAssignment {
 };
 %extend RWStepBasic_RWActionAssignment {
 	~RWStepBasic_RWActionAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionAssignment\n");}
 	}
 };
 
@@ -145,7 +146,8 @@ class RWStepBasic_RWMassMeasureWithUnit {
 };
 %extend RWStepBasic_RWMassMeasureWithUnit {
 	~RWStepBasic_RWMassMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassMeasureWithUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassMeasureWithUnit\n");}
 	}
 };
 
@@ -164,7 +166,8 @@ class RWStepBasic_RWEffectivityAssignment {
 };
 %extend RWStepBasic_RWEffectivityAssignment {
 	~RWStepBasic_RWEffectivityAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivityAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivityAssignment\n");}
 	}
 };
 
@@ -183,7 +186,8 @@ class RWStepBasic_RWPlaneAngleMeasureWithUnit {
 };
 %extend RWStepBasic_RWPlaneAngleMeasureWithUnit {
 	~RWStepBasic_RWPlaneAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleMeasureWithUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleMeasureWithUnit\n");}
 	}
 };
 
@@ -202,7 +206,8 @@ class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 	~RWStepBasic_RWConversionBasedUnitAndLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndLengthUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndLengthUnit\n");}
 	}
 };
 
@@ -219,7 +224,8 @@ class RWStepBasic_RWSecurityClassificationLevel {
 };
 %extend RWStepBasic_RWSecurityClassificationLevel {
 	~RWStepBasic_RWSecurityClassificationLevel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSecurityClassificationLevel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSecurityClassificationLevel\n");}
 	}
 };
 
@@ -238,7 +244,8 @@ class RWStepBasic_RWThermodynamicTemperatureUnit {
 };
 %extend RWStepBasic_RWThermodynamicTemperatureUnit {
 	~RWStepBasic_RWThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWThermodynamicTemperatureUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWThermodynamicTemperatureUnit\n");}
 	}
 };
 
@@ -257,7 +264,8 @@ class RWStepBasic_RWDerivedUnitElement {
 };
 %extend RWStepBasic_RWDerivedUnitElement {
 	~RWStepBasic_RWDerivedUnitElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDerivedUnitElement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDerivedUnitElement\n");}
 	}
 };
 
@@ -276,7 +284,8 @@ class RWStepBasic_RWExternalSource {
 };
 %extend RWStepBasic_RWExternalSource {
 	~RWStepBasic_RWExternalSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternalSource\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternalSource\n");}
 	}
 };
 
@@ -301,7 +310,8 @@ class RWStepBasic_RWSiUnit {
 };
 %extend RWStepBasic_RWSiUnit {
 	~RWStepBasic_RWSiUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnit\n");}
 	}
 };
 
@@ -320,7 +330,8 @@ class RWStepBasic_RWProductDefinitionContext {
 };
 %extend RWStepBasic_RWProductDefinitionContext {
 	~RWStepBasic_RWProductDefinitionContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionContext\n");}
 	}
 };
 
@@ -339,7 +350,8 @@ class RWStepBasic_RWLengthUnit {
 };
 %extend RWStepBasic_RWLengthUnit {
 	~RWStepBasic_RWLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthUnit\n");}
 	}
 };
 
@@ -358,7 +370,8 @@ class RWStepBasic_RWObjectRole {
 };
 %extend RWStepBasic_RWObjectRole {
 	~RWStepBasic_RWObjectRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWObjectRole\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWObjectRole\n");}
 	}
 };
 
@@ -377,7 +390,8 @@ class RWStepBasic_RWApprovalRelationship {
 };
 %extend RWStepBasic_RWApprovalRelationship {
 	~RWStepBasic_RWApprovalRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalRelationship\n");}
 	}
 };
 
@@ -396,7 +410,8 @@ class RWStepBasic_RWProductDefinition {
 };
 %extend RWStepBasic_RWProductDefinition {
 	~RWStepBasic_RWProductDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinition\n");}
 	}
 };
 
@@ -415,7 +430,8 @@ class RWStepBasic_RWRoleAssociation {
 };
 %extend RWStepBasic_RWRoleAssociation {
 	~RWStepBasic_RWRoleAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWRoleAssociation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWRoleAssociation\n");}
 	}
 };
 
@@ -434,7 +450,8 @@ class RWStepBasic_RWDocumentRepresentationType {
 };
 %extend RWStepBasic_RWDocumentRepresentationType {
 	~RWStepBasic_RWDocumentRepresentationType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentRepresentationType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentRepresentationType\n");}
 	}
 };
 
@@ -453,7 +470,8 @@ class RWStepBasic_RWDocumentProductAssociation {
 };
 %extend RWStepBasic_RWDocumentProductAssociation {
 	~RWStepBasic_RWDocumentProductAssociation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentProductAssociation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentProductAssociation\n");}
 	}
 };
 
@@ -470,7 +488,8 @@ class RWStepBasic_RWCalendarDate {
 };
 %extend RWStepBasic_RWCalendarDate {
 	~RWStepBasic_RWCalendarDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCalendarDate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCalendarDate\n");}
 	}
 };
 
@@ -489,7 +508,8 @@ class RWStepBasic_RWVersionedActionRequest {
 };
 %extend RWStepBasic_RWVersionedActionRequest {
 	~RWStepBasic_RWVersionedActionRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWVersionedActionRequest\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWVersionedActionRequest\n");}
 	}
 };
 
@@ -508,7 +528,8 @@ class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 };
 %extend RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 	~RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource\n");}
 	}
 };
 
@@ -527,7 +548,8 @@ class RWStepBasic_RWSolidAngleUnit {
 };
 %extend RWStepBasic_RWSolidAngleUnit {
 	~RWStepBasic_RWSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleUnit\n");}
 	}
 };
 
@@ -546,7 +568,8 @@ class RWStepBasic_RWContractAssignment {
 };
 %extend RWStepBasic_RWContractAssignment {
 	~RWStepBasic_RWContractAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractAssignment\n");}
 	}
 };
 
@@ -565,7 +588,8 @@ class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 	~RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit\n");}
 	}
 };
 
@@ -584,7 +608,8 @@ class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
 	~RWStepBasic_RWConversionBasedUnitAndVolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndVolumeUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndVolumeUnit\n");}
 	}
 };
 
@@ -603,7 +628,8 @@ class RWStepBasic_RWPersonAndOrganization {
 };
 %extend RWStepBasic_RWPersonAndOrganization {
 	~RWStepBasic_RWPersonAndOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganization\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganization\n");}
 	}
 };
 
@@ -620,7 +646,8 @@ class RWStepBasic_RWOrganizationRole {
 };
 %extend RWStepBasic_RWOrganizationRole {
 	~RWStepBasic_RWOrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationRole\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationRole\n");}
 	}
 };
 
@@ -639,7 +666,8 @@ class RWStepBasic_RWSolidAngleMeasureWithUnit {
 };
 %extend RWStepBasic_RWSolidAngleMeasureWithUnit {
 	~RWStepBasic_RWSolidAngleMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleMeasureWithUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleMeasureWithUnit\n");}
 	}
 };
 
@@ -656,7 +684,8 @@ class RWStepBasic_RWSiUnitAndRatioUnit {
 };
 %extend RWStepBasic_RWSiUnitAndRatioUnit {
 	~RWStepBasic_RWSiUnitAndRatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndRatioUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndRatioUnit\n");}
 	}
 };
 
@@ -675,7 +704,8 @@ class RWStepBasic_RWConversionBasedUnitAndMassUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnitAndMassUnit {
 	~RWStepBasic_RWConversionBasedUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndMassUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndMassUnit\n");}
 	}
 };
 
@@ -694,7 +724,8 @@ class RWStepBasic_RWEffectivity {
 };
 %extend RWStepBasic_RWEffectivity {
 	~RWStepBasic_RWEffectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEffectivity\n");}
 	}
 };
 
@@ -713,7 +744,8 @@ class RWStepBasic_RWNamedUnit {
 };
 %extend RWStepBasic_RWNamedUnit {
 	~RWStepBasic_RWNamedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWNamedUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWNamedUnit\n");}
 	}
 };
 
@@ -730,7 +762,8 @@ class RWStepBasic_RWApplicationContext {
 };
 %extend RWStepBasic_RWApplicationContext {
 	~RWStepBasic_RWApplicationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationContext\n");}
 	}
 };
 
@@ -749,7 +782,8 @@ class RWStepBasic_RWActionMethod {
 };
 %extend RWStepBasic_RWActionMethod {
 	~RWStepBasic_RWActionMethod() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionMethod\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionMethod\n");}
 	}
 };
 
@@ -768,7 +802,8 @@ class RWStepBasic_RWLocalTime {
 };
 %extend RWStepBasic_RWLocalTime {
 	~RWStepBasic_RWLocalTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLocalTime\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLocalTime\n");}
 	}
 };
 
@@ -787,7 +822,8 @@ class RWStepBasic_RWActionRequestAssignment {
 };
 %extend RWStepBasic_RWActionRequestAssignment {
 	~RWStepBasic_RWActionRequestAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionRequestAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionRequestAssignment\n");}
 	}
 };
 
@@ -806,7 +842,8 @@ class RWStepBasic_RWConversionBasedUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnit {
 	~RWStepBasic_RWConversionBasedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnit\n");}
 	}
 };
 
@@ -825,7 +862,8 @@ class RWStepBasic_RWOrganizationalAddress {
 };
 %extend RWStepBasic_RWOrganizationalAddress {
 	~RWStepBasic_RWOrganizationalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationalAddress\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationalAddress\n");}
 	}
 };
 
@@ -844,7 +882,8 @@ class RWStepBasic_RWProductDefinitionFormationRelationship {
 };
 %extend RWStepBasic_RWProductDefinitionFormationRelationship {
 	~RWStepBasic_RWProductDefinitionFormationRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationRelationship\n");}
 	}
 };
 
@@ -863,7 +902,8 @@ class RWStepBasic_RWIdentificationAssignment {
 };
 %extend RWStepBasic_RWIdentificationAssignment {
 	~RWStepBasic_RWIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationAssignment\n");}
 	}
 };
 
@@ -882,7 +922,8 @@ class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 	~RWStepBasic_RWConversionBasedUnitAndTimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndTimeUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndTimeUnit\n");}
 	}
 };
 
@@ -901,7 +942,8 @@ class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 	~RWStepBasic_RWConversionBasedUnitAndRatioUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndRatioUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndRatioUnit\n");}
 	}
 };
 
@@ -920,7 +962,8 @@ class RWStepBasic_RWGroup {
 };
 %extend RWStepBasic_RWGroup {
 	~RWStepBasic_RWGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroup\n");}
 	}
 };
 
@@ -939,7 +982,8 @@ class RWStepBasic_RWDocumentRelationship {
 };
 %extend RWStepBasic_RWDocumentRelationship {
 	~RWStepBasic_RWDocumentRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentRelationship\n");}
 	}
 };
 
@@ -956,7 +1000,8 @@ class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 };
 %extend RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 	~RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit\n");}
 	}
 };
 
@@ -975,7 +1020,8 @@ class RWStepBasic_RWDocumentFile {
 };
 %extend RWStepBasic_RWDocumentFile {
 	~RWStepBasic_RWDocumentFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentFile\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentFile\n");}
 	}
 };
 
@@ -992,7 +1038,8 @@ class RWStepBasic_RWDateRole {
 };
 %extend RWStepBasic_RWDateRole {
 	~RWStepBasic_RWDateRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateRole\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateRole\n");}
 	}
 };
 
@@ -1011,7 +1058,8 @@ class RWStepBasic_RWProductDefinitionFormation {
 };
 %extend RWStepBasic_RWProductDefinitionFormation {
 	~RWStepBasic_RWProductDefinitionFormation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormation\n");}
 	}
 };
 
@@ -1030,7 +1078,8 @@ class RWStepBasic_RWDerivedUnit {
 };
 %extend RWStepBasic_RWDerivedUnit {
 	~RWStepBasic_RWDerivedUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDerivedUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDerivedUnit\n");}
 	}
 };
 
@@ -1047,7 +1096,8 @@ class RWStepBasic_RWSiUnitAndAreaUnit {
 };
 %extend RWStepBasic_RWSiUnitAndAreaUnit {
 	~RWStepBasic_RWSiUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndAreaUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndAreaUnit\n");}
 	}
 };
 
@@ -1066,7 +1116,8 @@ class RWStepBasic_RWAction {
 };
 %extend RWStepBasic_RWAction {
 	~RWStepBasic_RWAction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAction\n");}
 	}
 };
 
@@ -1083,7 +1134,8 @@ class RWStepBasic_RWAddress {
 };
 %extend RWStepBasic_RWAddress {
 	~RWStepBasic_RWAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAddress\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAddress\n");}
 	}
 };
 
@@ -1102,7 +1154,8 @@ class RWStepBasic_RWExternallyDefinedItem {
 };
 %extend RWStepBasic_RWExternallyDefinedItem {
 	~RWStepBasic_RWExternallyDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternallyDefinedItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternallyDefinedItem\n");}
 	}
 };
 
@@ -1121,7 +1174,8 @@ class RWStepBasic_RWIdentificationRole {
 };
 %extend RWStepBasic_RWIdentificationRole {
 	~RWStepBasic_RWIdentificationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationRole\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationRole\n");}
 	}
 };
 
@@ -1138,7 +1192,8 @@ class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 };
 %extend RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 	~RWStepBasic_RWSiUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndPlaneAngleUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndPlaneAngleUnit\n");}
 	}
 };
 
@@ -1157,7 +1212,8 @@ class RWStepBasic_RWExternalIdentificationAssignment {
 };
 %extend RWStepBasic_RWExternalIdentificationAssignment {
 	~RWStepBasic_RWExternalIdentificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternalIdentificationAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWExternalIdentificationAssignment\n");}
 	}
 };
 
@@ -1176,7 +1232,8 @@ class RWStepBasic_RWDateAndTime {
 };
 %extend RWStepBasic_RWDateAndTime {
 	~RWStepBasic_RWDateAndTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateAndTime\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateAndTime\n");}
 	}
 };
 
@@ -1193,7 +1250,8 @@ class RWStepBasic_RWSiUnitAndLengthUnit {
 };
 %extend RWStepBasic_RWSiUnitAndLengthUnit {
 	~RWStepBasic_RWSiUnitAndLengthUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndLengthUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndLengthUnit\n");}
 	}
 };
 
@@ -1212,7 +1270,8 @@ class RWStepBasic_RWLengthMeasureWithUnit {
 };
 %extend RWStepBasic_RWLengthMeasureWithUnit {
 	~RWStepBasic_RWLengthMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthMeasureWithUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLengthMeasureWithUnit\n");}
 	}
 };
 
@@ -1229,7 +1288,8 @@ class RWStepBasic_RWSiUnitAndVolumeUnit {
 };
 %extend RWStepBasic_RWSiUnitAndVolumeUnit {
 	~RWStepBasic_RWSiUnitAndVolumeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndVolumeUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndVolumeUnit\n");}
 	}
 };
 
@@ -1248,7 +1308,8 @@ class RWStepBasic_RWCertification {
 };
 %extend RWStepBasic_RWCertification {
 	~RWStepBasic_RWCertification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertification\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertification\n");}
 	}
 };
 
@@ -1267,7 +1328,8 @@ class RWStepBasic_RWContractType {
 };
 %extend RWStepBasic_RWContractType {
 	~RWStepBasic_RWContractType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractType\n");}
 	}
 };
 
@@ -1286,7 +1348,8 @@ class RWStepBasic_RWPlaneAngleUnit {
 };
 %extend RWStepBasic_RWPlaneAngleUnit {
 	~RWStepBasic_RWPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPlaneAngleUnit\n");}
 	}
 };
 
@@ -1305,7 +1368,8 @@ class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
 	~RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit\n");}
 	}
 };
 
@@ -1324,7 +1388,8 @@ class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 };
 %extend RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 	~RWStepBasic_RWProductDefinitionWithAssociatedDocuments() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionWithAssociatedDocuments\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionWithAssociatedDocuments\n");}
 	}
 };
 
@@ -1343,7 +1408,8 @@ class RWStepBasic_RWApprovalPersonOrganization {
 };
 %extend RWStepBasic_RWApprovalPersonOrganization {
 	~RWStepBasic_RWApprovalPersonOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalPersonOrganization\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalPersonOrganization\n");}
 	}
 };
 
@@ -1360,7 +1426,8 @@ class RWStepBasic_RWApprovalRole {
 };
 %extend RWStepBasic_RWApprovalRole {
 	~RWStepBasic_RWApprovalRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalRole\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalRole\n");}
 	}
 };
 
@@ -1377,7 +1444,8 @@ class RWStepBasic_RWCoordinatedUniversalTimeOffset {
 };
 %extend RWStepBasic_RWCoordinatedUniversalTimeOffset {
 	~RWStepBasic_RWCoordinatedUniversalTimeOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCoordinatedUniversalTimeOffset\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCoordinatedUniversalTimeOffset\n");}
 	}
 };
 
@@ -1394,7 +1462,8 @@ class RWStepBasic_RWApprovalStatus {
 };
 %extend RWStepBasic_RWApprovalStatus {
 	~RWStepBasic_RWApprovalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalStatus\n");}
 	}
 };
 
@@ -1413,7 +1482,8 @@ class RWStepBasic_RWDocumentProductEquivalence {
 };
 %extend RWStepBasic_RWDocumentProductEquivalence {
 	~RWStepBasic_RWDocumentProductEquivalence() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentProductEquivalence\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentProductEquivalence\n");}
 	}
 };
 
@@ -1432,7 +1502,8 @@ class RWStepBasic_RWCharacterizedObject {
 };
 %extend RWStepBasic_RWCharacterizedObject {
 	~RWStepBasic_RWCharacterizedObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCharacterizedObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCharacterizedObject\n");}
 	}
 };
 
@@ -1451,7 +1522,8 @@ class RWStepBasic_RWGroupRelationship {
 };
 %extend RWStepBasic_RWGroupRelationship {
 	~RWStepBasic_RWGroupRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroupRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroupRelationship\n");}
 	}
 };
 
@@ -1470,7 +1542,8 @@ class RWStepBasic_RWProductContext {
 };
 %extend RWStepBasic_RWProductContext {
 	~RWStepBasic_RWProductContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductContext\n");}
 	}
 };
 
@@ -1487,7 +1560,8 @@ class RWStepBasic_RWOrdinalDate {
 };
 %extend RWStepBasic_RWOrdinalDate {
 	~RWStepBasic_RWOrdinalDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrdinalDate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrdinalDate\n");}
 	}
 };
 
@@ -1506,7 +1580,8 @@ class RWStepBasic_RWPersonalAddress {
 };
 %extend RWStepBasic_RWPersonalAddress {
 	~RWStepBasic_RWPersonalAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonalAddress\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonalAddress\n");}
 	}
 };
 
@@ -1525,7 +1600,8 @@ class RWStepBasic_RWMechanicalContext {
 };
 %extend RWStepBasic_RWMechanicalContext {
 	~RWStepBasic_RWMechanicalContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMechanicalContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMechanicalContext\n");}
 	}
 };
 
@@ -1544,7 +1620,8 @@ class RWStepBasic_RWApproval {
 };
 %extend RWStepBasic_RWApproval {
 	~RWStepBasic_RWApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApproval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApproval\n");}
 	}
 };
 
@@ -1563,7 +1640,8 @@ class RWStepBasic_RWProduct {
 };
 %extend RWStepBasic_RWProduct {
 	~RWStepBasic_RWProduct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProduct\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProduct\n");}
 	}
 };
 
@@ -1580,7 +1658,8 @@ class RWStepBasic_RWDimensionalExponents {
 };
 %extend RWStepBasic_RWDimensionalExponents {
 	~RWStepBasic_RWDimensionalExponents() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDimensionalExponents\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDimensionalExponents\n");}
 	}
 };
 
@@ -1599,7 +1678,8 @@ class RWStepBasic_RWRatioMeasureWithUnit {
 };
 %extend RWStepBasic_RWRatioMeasureWithUnit {
 	~RWStepBasic_RWRatioMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWRatioMeasureWithUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWRatioMeasureWithUnit\n");}
 	}
 };
 
@@ -1618,7 +1698,8 @@ class RWStepBasic_RWNameAssignment {
 };
 %extend RWStepBasic_RWNameAssignment {
 	~RWStepBasic_RWNameAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWNameAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWNameAssignment\n");}
 	}
 };
 
@@ -1637,7 +1718,8 @@ class RWStepBasic_RWUncertaintyMeasureWithUnit {
 };
 %extend RWStepBasic_RWUncertaintyMeasureWithUnit {
 	~RWStepBasic_RWUncertaintyMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWUncertaintyMeasureWithUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWUncertaintyMeasureWithUnit\n");}
 	}
 };
 
@@ -1656,7 +1738,8 @@ class RWStepBasic_RWDocumentType {
 };
 %extend RWStepBasic_RWDocumentType {
 	~RWStepBasic_RWDocumentType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentType\n");}
 	}
 };
 
@@ -1673,7 +1756,8 @@ class RWStepBasic_RWOrganization {
 };
 %extend RWStepBasic_RWOrganization {
 	~RWStepBasic_RWOrganization() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganization\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganization\n");}
 	}
 };
 
@@ -1692,7 +1776,8 @@ class RWStepBasic_RWSecurityClassification {
 };
 %extend RWStepBasic_RWSecurityClassification {
 	~RWStepBasic_RWSecurityClassification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSecurityClassification\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSecurityClassification\n");}
 	}
 };
 
@@ -1711,7 +1796,8 @@ class RWStepBasic_RWProductConceptContext {
 };
 %extend RWStepBasic_RWProductConceptContext {
 	~RWStepBasic_RWProductConceptContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductConceptContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductConceptContext\n");}
 	}
 };
 
@@ -1730,7 +1816,8 @@ class RWStepBasic_RWProductDefinitionRelationship {
 };
 %extend RWStepBasic_RWProductDefinitionRelationship {
 	~RWStepBasic_RWProductDefinitionRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionRelationship\n");}
 	}
 };
 
@@ -1749,7 +1836,8 @@ class RWStepBasic_RWMeasureWithUnit {
 };
 %extend RWStepBasic_RWMeasureWithUnit {
 	~RWStepBasic_RWMeasureWithUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMeasureWithUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMeasureWithUnit\n");}
 	}
 };
 
@@ -1768,7 +1856,8 @@ class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 };
 %extend RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 	~RWStepBasic_RWConversionBasedUnitAndAreaUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndAreaUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWConversionBasedUnitAndAreaUnit\n");}
 	}
 };
 
@@ -1785,7 +1874,8 @@ class RWStepBasic_RWPersonAndOrganizationRole {
 };
 %extend RWStepBasic_RWPersonAndOrganizationRole {
 	~RWStepBasic_RWPersonAndOrganizationRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganizationRole\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganizationRole\n");}
 	}
 };
 
@@ -1802,7 +1892,8 @@ class RWStepBasic_RWDateTimeRole {
 };
 %extend RWStepBasic_RWDateTimeRole {
 	~RWStepBasic_RWDateTimeRole() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateTimeRole\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateTimeRole\n");}
 	}
 };
 
@@ -1821,7 +1912,8 @@ class RWStepBasic_RWProductType {
 };
 %extend RWStepBasic_RWProductType {
 	~RWStepBasic_RWProductType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductType\n");}
 	}
 };
 
@@ -1838,7 +1930,8 @@ class RWStepBasic_RWWeekOfYearAndDayDate {
 };
 %extend RWStepBasic_RWWeekOfYearAndDayDate {
 	~RWStepBasic_RWWeekOfYearAndDayDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWWeekOfYearAndDayDate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWWeekOfYearAndDayDate\n");}
 	}
 };
 
@@ -1855,7 +1948,8 @@ class RWStepBasic_RWPerson {
 };
 %extend RWStepBasic_RWPerson {
 	~RWStepBasic_RWPerson() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPerson\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPerson\n");}
 	}
 };
 
@@ -1874,7 +1968,8 @@ class RWStepBasic_RWApplicationProtocolDefinition {
 };
 %extend RWStepBasic_RWApplicationProtocolDefinition {
 	~RWStepBasic_RWApplicationProtocolDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationProtocolDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationProtocolDefinition\n");}
 	}
 };
 
@@ -1893,7 +1988,8 @@ class RWStepBasic_RWProductDefinitionEffectivity {
 };
 %extend RWStepBasic_RWProductDefinitionEffectivity {
 	~RWStepBasic_RWProductDefinitionEffectivity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionEffectivity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionEffectivity\n");}
 	}
 };
 
@@ -1910,7 +2006,8 @@ class RWStepBasic_RWDate {
 };
 %extend RWStepBasic_RWDate {
 	~RWStepBasic_RWDate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDate\n");}
 	}
 };
 
@@ -1929,7 +2026,8 @@ class RWStepBasic_RWCertificationAssignment {
 };
 %extend RWStepBasic_RWCertificationAssignment {
 	~RWStepBasic_RWCertificationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertificationAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertificationAssignment\n");}
 	}
 };
 
@@ -1948,7 +2046,8 @@ class RWStepBasic_RWContract {
 };
 %extend RWStepBasic_RWContract {
 	~RWStepBasic_RWContract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContract\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContract\n");}
 	}
 };
 
@@ -1967,7 +2066,8 @@ class RWStepBasic_RWApprovalDateTime {
 };
 %extend RWStepBasic_RWApprovalDateTime {
 	~RWStepBasic_RWApprovalDateTime() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalDateTime\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalDateTime\n");}
 	}
 };
 
@@ -1984,7 +2084,8 @@ class RWStepBasic_RWSiUnitAndSolidAngleUnit {
 };
 %extend RWStepBasic_RWSiUnitAndSolidAngleUnit {
 	~RWStepBasic_RWSiUnitAndSolidAngleUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndSolidAngleUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndSolidAngleUnit\n");}
 	}
 };
 
@@ -2003,7 +2104,8 @@ class RWStepBasic_RWProductRelatedProductCategory {
 };
 %extend RWStepBasic_RWProductRelatedProductCategory {
 	~RWStepBasic_RWProductRelatedProductCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductRelatedProductCategory\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductRelatedProductCategory\n");}
 	}
 };
 
@@ -2020,7 +2122,8 @@ class RWStepBasic_RWSiUnitAndMassUnit {
 };
 %extend RWStepBasic_RWSiUnitAndMassUnit {
 	~RWStepBasic_RWSiUnitAndMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndMassUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndMassUnit\n");}
 	}
 };
 
@@ -2039,7 +2142,8 @@ class RWStepBasic_RWCertificationType {
 };
 %extend RWStepBasic_RWCertificationType {
 	~RWStepBasic_RWCertificationType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertificationType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertificationType\n");}
 	}
 };
 
@@ -2058,7 +2162,8 @@ class RWStepBasic_RWDocument {
 };
 %extend RWStepBasic_RWDocument {
 	~RWStepBasic_RWDocument() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocument\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocument\n");}
 	}
 };
 
@@ -2077,7 +2182,8 @@ class RWStepBasic_RWEulerAngles {
 };
 %extend RWStepBasic_RWEulerAngles {
 	~RWStepBasic_RWEulerAngles() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEulerAngles\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEulerAngles\n");}
 	}
 };
 
@@ -2096,7 +2202,8 @@ class RWStepBasic_RWMassUnit {
 };
 %extend RWStepBasic_RWMassUnit {
 	~RWStepBasic_RWMassUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassUnit\n");}
 	}
 };
 
@@ -2115,7 +2222,8 @@ class RWStepBasic_RWGeneralProperty {
 };
 %extend RWStepBasic_RWGeneralProperty {
 	~RWStepBasic_RWGeneralProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGeneralProperty\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGeneralProperty\n");}
 	}
 };
 
@@ -2134,7 +2242,8 @@ class RWStepBasic_RWApplicationContextElement {
 };
 %extend RWStepBasic_RWApplicationContextElement {
 	~RWStepBasic_RWApplicationContextElement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationContextElement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationContextElement\n");}
 	}
 };
 
@@ -2151,7 +2260,8 @@ class RWStepBasic_RWSiUnitAndTimeUnit {
 };
 %extend RWStepBasic_RWSiUnitAndTimeUnit {
 	~RWStepBasic_RWSiUnitAndTimeUnit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndTimeUnit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndTimeUnit\n");}
 	}
 };
 
@@ -2168,7 +2278,8 @@ class RWStepBasic_RWProductCategory {
 };
 %extend RWStepBasic_RWProductCategory {
 	~RWStepBasic_RWProductCategory() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductCategory\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductCategory\n");}
 	}
 };
 
@@ -2187,7 +2298,8 @@ class RWStepBasic_RWProductCategoryRelationship {
 };
 %extend RWStepBasic_RWProductCategoryRelationship {
 	~RWStepBasic_RWProductCategoryRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductCategoryRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductCategoryRelationship\n");}
 	}
 };
 
@@ -2206,7 +2318,8 @@ class RWStepBasic_RWGroupAssignment {
 };
 %extend RWStepBasic_RWGroupAssignment {
 	~RWStepBasic_RWGroupAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroupAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroupAssignment\n");}
 	}
 };
 
@@ -2225,7 +2338,8 @@ class RWStepBasic_RWActionRequestSolution {
 };
 %extend RWStepBasic_RWActionRequestSolution {
 	~RWStepBasic_RWActionRequestSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionRequestSolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWActionRequestSolution\n");}
 	}
 };
 
@@ -2244,6 +2358,7 @@ class RWStepBasic_RWDocumentUsageConstraint {
 };
 %extend RWStepBasic_RWDocumentUsageConstraint {
 	~RWStepBasic_RWDocumentUsageConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentUsageConstraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentUsageConstraint\n");}
 	}
 };

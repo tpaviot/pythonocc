@@ -139,7 +139,8 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 };
 %extend Handle_math_NotSquare {
 	~Handle_math_NotSquare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_math_NotSquare\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_math_NotSquare\n");}
 	}
 };
 
@@ -163,7 +164,8 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 };
 %extend Handle_math_SingularMatrix {
 	~Handle_math_SingularMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_math_SingularMatrix\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_math_SingularMatrix\n");}
 	}
 };
 
@@ -182,7 +184,8 @@ class math_GaussLeastSquare {
 };
 %extend math_GaussLeastSquare {
 	~math_GaussLeastSquare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_GaussLeastSquare\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_GaussLeastSquare\n");}
 	}
 };
 
@@ -213,7 +216,8 @@ class math_DoubleTabOfReal {
 };
 %extend math_DoubleTabOfReal {
 	~math_DoubleTabOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_DoubleTabOfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_DoubleTabOfReal\n");}
 	}
 };
 
@@ -240,8 +244,14 @@ class math_SingularMatrix : public Standard_Failure {
 	}
 };
 %extend math_SingularMatrix {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend math_SingularMatrix {
 	~math_SingularMatrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_SingularMatrix\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_SingularMatrix\n");}
 	}
 };
 
@@ -268,7 +278,8 @@ class math_TrigonometricFunctionRoots {
 };
 %extend math_TrigonometricFunctionRoots {
 	~math_TrigonometricFunctionRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_TrigonometricFunctionRoots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_TrigonometricFunctionRoots\n");}
 	}
 };
 
@@ -293,7 +304,8 @@ class math_BissecNewton {
 };
 %extend math_BissecNewton {
 	~math_BissecNewton() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_BissecNewton\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_BissecNewton\n");}
 	}
 };
 
@@ -310,7 +322,8 @@ class math_MultipleVarFunction {
 };
 %extend math_MultipleVarFunction {
 	~math_MultipleVarFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunction\n");}
 	}
 };
 
@@ -327,7 +340,8 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 };
 %extend math_MultipleVarFunctionWithGradient {
 	~math_MultipleVarFunctionWithGradient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithGradient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithGradient\n");}
 	}
 };
 
@@ -340,7 +354,8 @@ class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithG
 };
 %extend math_MultipleVarFunctionWithHessian {
 	~math_MultipleVarFunctionWithHessian() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithHessian\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithHessian\n");}
 	}
 };
 
@@ -377,7 +392,8 @@ class math_BFGS {
 };
 %extend math_BFGS {
 	~math_BFGS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_BFGS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_BFGS\n");}
 	}
 };
 
@@ -406,7 +422,8 @@ class math_DirectPolynomialRoots {
 };
 %extend math_DirectPolynomialRoots {
 	~math_DirectPolynomialRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_DirectPolynomialRoots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_DirectPolynomialRoots\n");}
 	}
 };
 
@@ -423,7 +440,8 @@ class math_IntegerRandom {
 };
 %extend math_IntegerRandom {
 	~math_IntegerRandom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_IntegerRandom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_IntegerRandom\n");}
 	}
 };
 
@@ -448,7 +466,8 @@ class math_Jacobi {
 };
 %extend math_Jacobi {
 	~math_Jacobi() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Jacobi\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Jacobi\n");}
 	}
 };
 
@@ -473,7 +492,8 @@ class math {
 };
 %extend math {
 	~math() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math\n");}
 	}
 };
 
@@ -506,7 +526,8 @@ class math_Powell {
 };
 %extend math_Powell {
 	~math_Powell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Powell\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Powell\n");}
 	}
 };
 
@@ -533,7 +554,8 @@ class math_FunctionRoot {
 };
 %extend math_FunctionRoot {
 	~math_FunctionRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FunctionRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionRoot\n");}
 	}
 };
 
@@ -572,7 +594,8 @@ class math_Array1OfValueAndWeight {
 };
 %extend math_Array1OfValueAndWeight {
 	~math_Array1OfValueAndWeight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Array1OfValueAndWeight\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Array1OfValueAndWeight\n");}
 	}
 };
 
@@ -597,7 +620,8 @@ class math_Householder {
 };
 %extend math_Householder {
 	~math_Householder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Householder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Householder\n");}
 	}
 };
 
@@ -626,7 +650,8 @@ class math_FunctionAllRoots {
 };
 %extend math_FunctionAllRoots {
 	~math_FunctionAllRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FunctionAllRoots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionAllRoots\n");}
 	}
 };
 
@@ -647,7 +672,8 @@ class math_EigenValuesSearcher {
 };
 %extend math_EigenValuesSearcher {
 	~math_EigenValuesSearcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_EigenValuesSearcher\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_EigenValuesSearcher\n");}
 	}
 };
 
@@ -662,7 +688,8 @@ class math_QuickSortOfValueAndWeight {
 };
 %extend math_QuickSortOfValueAndWeight {
 	~math_QuickSortOfValueAndWeight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_QuickSortOfValueAndWeight\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_QuickSortOfValueAndWeight\n");}
 	}
 };
 
@@ -681,7 +708,8 @@ class math_ComputeGaussPointsAndWeights {
 };
 %extend math_ComputeGaussPointsAndWeights {
 	~math_ComputeGaussPointsAndWeights() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_ComputeGaussPointsAndWeights\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_ComputeGaussPointsAndWeights\n");}
 	}
 };
 
@@ -702,7 +730,8 @@ class math_FunctionSet {
 };
 %extend math_FunctionSet {
 	~math_FunctionSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FunctionSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionSet\n");}
 	}
 };
 
@@ -717,7 +746,8 @@ class math_FunctionSetWithDerivatives : public math_FunctionSet {
 };
 %extend math_FunctionSetWithDerivatives {
 	~math_FunctionSetWithDerivatives() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FunctionSetWithDerivatives\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionSetWithDerivatives\n");}
 	}
 };
 
@@ -740,7 +770,8 @@ class math_GaussSingleIntegration {
 };
 %extend math_GaussSingleIntegration {
 	~math_GaussSingleIntegration() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_GaussSingleIntegration\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_GaussSingleIntegration\n");}
 	}
 };
 
@@ -869,7 +900,8 @@ class math_Matrix {
 };
 %extend math_Matrix {
 	~math_Matrix() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Matrix\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Matrix\n");}
 	}
 };
 
@@ -894,7 +926,8 @@ class math_Gauss {
 };
 %extend math_Gauss {
 	~math_Gauss() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Gauss\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Gauss\n");}
 	}
 };
 
@@ -909,7 +942,8 @@ class math_Function {
 };
 %extend math_Function {
 	~math_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Function\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Function\n");}
 	}
 };
 
@@ -928,7 +962,8 @@ class math_GaussSetIntegration {
 };
 %extend math_GaussSetIntegration {
 	~math_GaussSetIntegration() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_GaussSetIntegration\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_GaussSetIntegration\n");}
 	}
 };
 
@@ -1043,7 +1078,8 @@ class math_Vector {
 };
 %extend math_Vector {
 	~math_Vector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Vector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Vector\n");}
 	}
 };
 
@@ -1068,7 +1104,8 @@ class math_Crout {
 };
 %extend math_Crout {
 	~math_Crout() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Crout\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Crout\n");}
 	}
 };
 
@@ -1089,7 +1126,8 @@ class math_SVD {
 };
 %extend math_SVD {
 	~math_SVD() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_SVD\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_SVD\n");}
 	}
 };
 
@@ -1112,7 +1150,8 @@ class math_BracketedRoot {
 };
 %extend math_BracketedRoot {
 	~math_BracketedRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_BracketedRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_BracketedRoot\n");}
 	}
 };
 
@@ -1131,7 +1170,8 @@ class math_GaussMultipleIntegration {
 };
 %extend math_GaussMultipleIntegration {
 	~math_GaussMultipleIntegration() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_GaussMultipleIntegration\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_GaussMultipleIntegration\n");}
 	}
 };
 
@@ -1158,8 +1198,14 @@ class math_NotSquare : public Standard_DimensionError {
 	}
 };
 %extend math_NotSquare {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend math_NotSquare {
 	~math_NotSquare() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_NotSquare\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_NotSquare\n");}
 	}
 };
 
@@ -1178,7 +1224,8 @@ class math_ComputeKronrodPointsAndWeights {
 };
 %extend math_ComputeKronrodPointsAndWeights {
 	~math_ComputeKronrodPointsAndWeights() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_ComputeKronrodPointsAndWeights\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_ComputeKronrodPointsAndWeights\n");}
 	}
 };
 
@@ -1209,7 +1256,8 @@ class math_BrentMinimum {
 };
 %extend math_BrentMinimum {
 	~math_BrentMinimum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_BrentMinimum\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_BrentMinimum\n");}
 	}
 };
 
@@ -1256,7 +1304,8 @@ class math_FunctionSetRoot {
 };
 %extend math_FunctionSetRoot {
 	~math_FunctionSetRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FunctionSetRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionSetRoot\n");}
 	}
 };
 
@@ -1347,7 +1396,8 @@ class math_IntegerVector {
 };
 %extend math_IntegerVector {
 	~math_IntegerVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_IntegerVector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_IntegerVector\n");}
 	}
 };
 
@@ -1372,7 +1422,8 @@ class math_BracketMinimum {
 };
 %extend math_BracketMinimum {
 	~math_BracketMinimum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_BracketMinimum\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_BracketMinimum\n");}
 	}
 };
 
@@ -1401,7 +1452,8 @@ class math_SingleTabOfReal {
 };
 %extend math_SingleTabOfReal {
 	~math_SingleTabOfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_SingleTabOfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_SingleTabOfReal\n");}
 	}
 };
 
@@ -1420,7 +1472,8 @@ class math_ValueAndWeight {
 };
 %extend math_ValueAndWeight {
 	~math_ValueAndWeight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_ValueAndWeight\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_ValueAndWeight\n");}
 	}
 };
 
@@ -1439,7 +1492,8 @@ class math_CompareOfValueAndWeight {
 };
 %extend math_CompareOfValueAndWeight {
 	~math_CompareOfValueAndWeight() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_CompareOfValueAndWeight\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_CompareOfValueAndWeight\n");}
 	}
 };
 
@@ -1458,7 +1512,8 @@ class math_FunctionWithDerivative : public math_Function {
 };
 %extend math_FunctionWithDerivative {
 	~math_FunctionWithDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FunctionWithDerivative\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionWithDerivative\n");}
 	}
 };
 
@@ -1483,7 +1538,8 @@ class math_FunctionRoots {
 };
 %extend math_FunctionRoots {
 	~math_FunctionRoots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FunctionRoots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionRoots\n");}
 	}
 };
 
@@ -1518,7 +1574,8 @@ class math_KronrodSingleIntegration {
 };
 %extend math_KronrodSingleIntegration {
 	~math_KronrodSingleIntegration() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_KronrodSingleIntegration\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_KronrodSingleIntegration\n");}
 	}
 };
 
@@ -1549,7 +1606,8 @@ class math_Uzawa {
 };
 %extend math_Uzawa {
 	~math_Uzawa() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_Uzawa\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_Uzawa\n");}
 	}
 };
 
@@ -1586,7 +1644,8 @@ class math_FRPR {
 };
 %extend math_FRPR {
 	~math_FRPR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FRPR\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FRPR\n");}
 	}
 };
 
@@ -1605,7 +1664,8 @@ class math_FunctionSample {
 };
 %extend math_FunctionSample {
 	~math_FunctionSample() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_FunctionSample\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_FunctionSample\n");}
 	}
 };
 
@@ -1636,7 +1696,8 @@ class math_NewtonFunctionRoot {
 };
 %extend math_NewtonFunctionRoot {
 	~math_NewtonFunctionRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_NewtonFunctionRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_NewtonFunctionRoot\n");}
 	}
 };
 
@@ -1653,7 +1714,8 @@ class math_RealRandom {
 };
 %extend math_RealRandom {
 	~math_RealRandom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_RealRandom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_RealRandom\n");}
 	}
 };
 
@@ -1682,6 +1744,7 @@ class math_SingleTabOfInteger {
 };
 %extend math_SingleTabOfInteger {
 	~math_SingleTabOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of math_SingleTabOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of math_SingleTabOfInteger\n");}
 	}
 };

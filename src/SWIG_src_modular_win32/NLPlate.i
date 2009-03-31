@@ -131,7 +131,8 @@ class Handle_NLPlate_HGPPConstraint : public Handle_MMgt_TShared {
 };
 %extend Handle_NLPlate_HGPPConstraint {
 	~Handle_NLPlate_HGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HGPPConstraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HGPPConstraint\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_NLPlate_HPG0Constraint : public Handle_NLPlate_HGPPConstraint {
 };
 %extend Handle_NLPlate_HPG0Constraint {
 	~Handle_NLPlate_HPG0Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0Constraint\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_NLPlate_HPG0G1Constraint : public Handle_NLPlate_HPG0Constraint {
 };
 %extend Handle_NLPlate_HPG0G1Constraint {
 	~Handle_NLPlate_HPG0G1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G1Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G1Constraint\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCol
 };
 %extend Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
 	~Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_NLPlate_HPG1Constraint : public Handle_NLPlate_HGPPConstraint {
 };
 %extend Handle_NLPlate_HPG1Constraint {
 	~Handle_NLPlate_HPG1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG1Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG1Constraint\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_NLPlate_HPG2Constraint : public Handle_NLPlate_HPG1Constraint {
 };
 %extend Handle_NLPlate_HPG2Constraint {
 	~Handle_NLPlate_HPG2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG2Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG2Constraint\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_NLPlate_HPG3Constraint : public Handle_NLPlate_HPG2Constraint {
 };
 %extend Handle_NLPlate_HPG3Constraint {
 	~Handle_NLPlate_HPG3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG3Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG3Constraint\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_NLPlate_StackNodeOfStackOfPlate : public Handle_TCollection_MapNode
 };
 %extend Handle_NLPlate_StackNodeOfStackOfPlate {
 	~Handle_NLPlate_StackNodeOfStackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_StackNodeOfStackOfPlate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_StackNodeOfStackOfPlate\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_NLPlate_HPG0G2Constraint : public Handle_NLPlate_HPG0G1Constraint {
 };
 %extend Handle_NLPlate_HPG0G2Constraint {
 	~Handle_NLPlate_HPG0G2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G2Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G2Constraint\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_NLPlate_HPG0G3Constraint : public Handle_NLPlate_HPG0G2Constraint {
 };
 %extend Handle_NLPlate_HPG0G3Constraint {
 	~Handle_NLPlate_HPG0G3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G3Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0G3Constraint\n");}
 	}
 };
 
@@ -370,7 +380,8 @@ class NLPlate_StackIteratorOfStackOfPlate {
 };
 %extend NLPlate_StackIteratorOfStackOfPlate {
 	~NLPlate_StackIteratorOfStackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_StackIteratorOfStackOfPlate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_StackIteratorOfStackOfPlate\n");}
 	}
 };
 
@@ -423,7 +434,8 @@ class NLPlate_SequenceOfHGPPConstraint : public TCollection_BaseSequence {
 };
 %extend NLPlate_SequenceOfHGPPConstraint {
 	~NLPlate_SequenceOfHGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceOfHGPPConstraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceOfHGPPConstraint\n");}
 	}
 };
 
@@ -486,8 +498,14 @@ class NLPlate_HGPPConstraint : public MMgt_TShared {
 	}
 };
 %extend NLPlate_HGPPConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_HGPPConstraint {
 	~NLPlate_HGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_HGPPConstraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HGPPConstraint\n");}
 	}
 };
 
@@ -504,8 +522,14 @@ class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 	}
 };
 %extend NLPlate_HPG0Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_HPG0Constraint {
 	~NLPlate_HPG0Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0Constraint\n");}
 	}
 };
 
@@ -522,8 +546,14 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 	}
 };
 %extend NLPlate_HPG0G1Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_HPG0G1Constraint {
 	~NLPlate_HPG0G1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G1Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G1Constraint\n");}
 	}
 };
 
@@ -540,8 +570,14 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	}
 };
 %extend NLPlate_HPG0G2Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_HPG0G2Constraint {
 	~NLPlate_HPG0G2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G2Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G2Constraint\n");}
 	}
 };
 
@@ -574,8 +610,14 @@ class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 	}
 };
 %extend NLPlate_HPG1Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_HPG1Constraint {
 	~NLPlate_HPG1Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_HPG1Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG1Constraint\n");}
 	}
 };
 
@@ -594,8 +636,14 @@ class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 	}
 };
 %extend NLPlate_HPG2Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_HPG2Constraint {
 	~NLPlate_HPG2Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_HPG2Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG2Constraint\n");}
 	}
 };
 
@@ -618,8 +666,14 @@ class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 	}
 };
 %extend NLPlate_HPG3Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_HPG3Constraint {
 	~NLPlate_HPG3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_HPG3Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG3Constraint\n");}
 	}
 };
 
@@ -640,8 +694,14 @@ class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
 	}
 };
 %extend NLPlate_StackNodeOfStackOfPlate {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_StackNodeOfStackOfPlate {
 	~NLPlate_StackNodeOfStackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_StackNodeOfStackOfPlate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_StackNodeOfStackOfPlate\n");}
 	}
 };
 
@@ -662,8 +722,14 @@ class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNod
 	}
 };
 %extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
 	~NLPlate_SequenceNodeOfSequenceOfHGPPConstraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
 	}
 };
 
@@ -700,7 +766,8 @@ class NLPlate_NLPlate {
 };
 %extend NLPlate_NLPlate {
 	~NLPlate_NLPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_NLPlate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_NLPlate\n");}
 	}
 };
 
@@ -723,8 +790,14 @@ class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 	}
 };
 %extend NLPlate_HPG0G3Constraint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend NLPlate_HPG0G3Constraint {
 	~NLPlate_HPG0G3Constraint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G3Constraint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G3Constraint\n");}
 	}
 };
 
@@ -753,6 +826,7 @@ class NLPlate_StackOfPlate {
 };
 %extend NLPlate_StackOfPlate {
 	~NLPlate_StackOfPlate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of NLPlate_StackOfPlate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of NLPlate_StackOfPlate\n");}
 	}
 };

@@ -130,6 +130,7 @@ class TopCnx_EdgeFaceTransition {
 };
 %extend TopCnx_EdgeFaceTransition {
 	~TopCnx_EdgeFaceTransition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopCnx_EdgeFaceTransition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopCnx_EdgeFaceTransition\n");}
 	}
 };

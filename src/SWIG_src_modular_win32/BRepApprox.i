@@ -131,7 +131,8 @@ class Handle_BRepApprox_ApproxLine : public Handle_MMgt_TShared {
 };
 %extend Handle_BRepApprox_ApproxLine {
 	~Handle_BRepApprox_ApproxLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepApprox_ApproxLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepApprox_ApproxLine\n");}
 	}
 };
 
@@ -184,7 +185,8 @@ class BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
 };
 %extend BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox {
 	~BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfApprox\n");}
 	}
 };
 
@@ -199,7 +201,8 @@ class BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox : public m
 };
 %extend BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox {
 	~BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -224,7 +227,8 @@ class BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
 };
 %extend BRepApprox_MyGradientbisOfTheComputeLineOfApprox {
 	~BRepApprox_MyGradientbisOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_MyGradientbisOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_MyGradientbisOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -249,7 +253,8 @@ class BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
 };
 %extend BRepApprox_MyGradientOfTheComputeLineBezierOfApprox {
 	~BRepApprox_MyGradientOfTheComputeLineBezierOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_MyGradientOfTheComputeLineBezierOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_MyGradientOfTheComputeLineBezierOfApprox\n");}
 	}
 };
 
@@ -272,7 +277,8 @@ class BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 };
 %extend BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox {
 	~BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ResConstraintOfMyGradientbisOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -297,8 +303,14 @@ class BRepApprox_ApproxLine : public MMgt_TShared {
 	}
 };
 %extend BRepApprox_ApproxLine {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRepApprox_ApproxLine {
 	~BRepApprox_ApproxLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_ApproxLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ApproxLine\n");}
 	}
 };
 
@@ -325,7 +337,8 @@ class BRepApprox_Approx {
 };
 %extend BRepApprox_Approx {
 	~BRepApprox_Approx() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_Approx\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_Approx\n");}
 	}
 };
 
@@ -360,7 +373,8 @@ class BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox : public mat
 };
 %extend BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox {
 	~BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ParFunctionOfMyGradientbisOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -397,7 +411,8 @@ class BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 };
 %extend BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox {
 	~BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheInt2SOfThePrmPrmSvSurfacesOfApprox\n");}
 	}
 };
 
@@ -450,7 +465,8 @@ class BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
 };
 %extend BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox {
 	~BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ParLeastSquareOfMyGradientbisOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -503,7 +519,8 @@ class BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
 };
 %extend BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox {
 	~BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -526,7 +543,8 @@ class BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 };
 %extend BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox {
 	~BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ResConstraintOfMyGradientOfTheComputeLineBezierOfApprox\n");}
 	}
 };
 
@@ -577,7 +595,8 @@ class BRepApprox_TheComputeLineOfApprox {
 };
 %extend BRepApprox_TheComputeLineOfApprox {
 	~BRepApprox_TheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_TheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheComputeLineOfApprox\n");}
 	}
 };
 
@@ -622,7 +641,8 @@ class BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox : public
 };
 %extend BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox {
 	~BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -645,7 +665,8 @@ class BRepApprox_ThePrmPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 };
 %extend BRepApprox_ThePrmPrmSvSurfacesOfApprox {
 	~BRepApprox_ThePrmPrmSvSurfacesOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_ThePrmPrmSvSurfacesOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ThePrmPrmSvSurfacesOfApprox\n");}
 	}
 };
 
@@ -680,7 +701,8 @@ class BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox : public 
 };
 %extend BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox {
 	~BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_ParFunctionOfMyGradientOfTheComputeLineBezierOfApprox\n");}
 	}
 };
 
@@ -727,7 +749,8 @@ class BRepApprox_TheComputeLineBezierOfApprox {
 };
 %extend BRepApprox_TheComputeLineBezierOfApprox {
 	~BRepApprox_TheComputeLineBezierOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_TheComputeLineBezierOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheComputeLineBezierOfApprox\n");}
 	}
 };
 
@@ -742,7 +765,8 @@ class BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox : publi
 };
 %extend BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox {
 	~BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfApprox\n");}
 	}
 };
 
@@ -781,7 +805,8 @@ class BRepApprox_TheMultiLineOfApprox {
 };
 %extend BRepApprox_TheMultiLineOfApprox {
 	~BRepApprox_TheMultiLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineOfApprox\n");}
 	}
 };
 
@@ -872,7 +897,8 @@ class BRepApprox_SurfaceTool {
 };
 %extend BRepApprox_SurfaceTool {
 	~BRepApprox_SurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_SurfaceTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_SurfaceTool\n");}
 	}
 };
 
@@ -915,7 +941,8 @@ class BRepApprox_TheMultiLineToolOfApprox {
 };
 %extend BRepApprox_TheMultiLineToolOfApprox {
 	~BRepApprox_TheMultiLineToolOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineToolOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheMultiLineToolOfApprox\n");}
 	}
 };
 
@@ -958,7 +985,8 @@ class BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox : public mat
 };
 %extend BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox {
 	~BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfApprox\n");}
 	}
 };
 
@@ -983,7 +1011,8 @@ class BRepApprox_TheImpPrmSvSurfacesOfApprox : public ApproxInt_SvSurfaces {
 };
 %extend BRepApprox_TheImpPrmSvSurfacesOfApprox {
 	~BRepApprox_TheImpPrmSvSurfacesOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_TheImpPrmSvSurfacesOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheImpPrmSvSurfacesOfApprox\n");}
 	}
 };
 
@@ -1010,7 +1039,8 @@ class BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
 };
 %extend BRepApprox_MyBSplGradientOfTheComputeLineOfApprox {
 	~BRepApprox_MyBSplGradientOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_MyBSplGradientOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_MyBSplGradientOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -1025,7 +1055,8 @@ class BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox : publ
 };
 %extend BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox {
 	~BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfApprox\n");}
 	}
 };
 
@@ -1074,6 +1105,7 @@ class BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox : public math_Functi
 };
 %extend BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox {
 	~BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepApprox_TheZerImpFuncOfTheImpPrmSvSurfacesOfApprox\n");}
 	}
 };

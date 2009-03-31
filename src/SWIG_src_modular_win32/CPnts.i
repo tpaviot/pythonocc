@@ -146,7 +146,8 @@ class CPnts_UniformDeflection {
 };
 %extend CPnts_UniformDeflection {
 	~CPnts_UniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CPnts_UniformDeflection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CPnts_UniformDeflection\n");}
 	}
 };
 
@@ -161,7 +162,8 @@ class CPnts_MyGaussFunction : public math_Function {
 };
 %extend CPnts_MyGaussFunction {
 	~CPnts_MyGaussFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CPnts_MyGaussFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CPnts_MyGaussFunction\n");}
 	}
 };
 
@@ -226,7 +228,8 @@ class CPnts_AbscissaPoint {
 };
 %extend CPnts_AbscissaPoint {
 	~CPnts_AbscissaPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CPnts_AbscissaPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CPnts_AbscissaPoint\n");}
 	}
 };
 
@@ -249,6 +252,7 @@ class CPnts_MyRootFunction : public math_FunctionWithDerivative {
 };
 %extend CPnts_MyRootFunction {
 	~CPnts_MyRootFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CPnts_MyRootFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CPnts_MyRootFunction\n");}
 	}
 };

@@ -131,7 +131,8 @@ class Handle_XmlXCAFDrivers_DocumentRetrievalDriver : public Handle_XmlDrivers_D
 };
 %extend Handle_XmlXCAFDrivers_DocumentRetrievalDriver {
 	~Handle_XmlXCAFDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlXCAFDrivers_DocumentRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlXCAFDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_XmlXCAFDrivers_DocumentStorageDriver : public Handle_XmlDrivers_Doc
 };
 %extend Handle_XmlXCAFDrivers_DocumentStorageDriver {
 	~Handle_XmlXCAFDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlXCAFDrivers_DocumentStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlXCAFDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -176,8 +178,14 @@ class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetriev
 	}
 };
 %extend XmlXCAFDrivers_DocumentRetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlXCAFDrivers_DocumentRetrievalDriver {
 	~XmlXCAFDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlXCAFDrivers_DocumentRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlXCAFDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -198,8 +206,14 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 	}
 };
 %extend XmlXCAFDrivers_DocumentStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlXCAFDrivers_DocumentStorageDriver {
 	~XmlXCAFDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlXCAFDrivers_DocumentStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlXCAFDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -214,6 +228,7 @@ class XmlXCAFDrivers {
 };
 %extend XmlXCAFDrivers {
 	~XmlXCAFDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlXCAFDrivers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlXCAFDrivers\n");}
 	}
 };

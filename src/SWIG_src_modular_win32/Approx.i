@@ -143,7 +143,8 @@ class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 };
 %extend Handle_Approx_CurvlinFunc {
 	~Handle_Approx_CurvlinFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Approx_CurvlinFunc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Approx_CurvlinFunc\n");}
 	}
 };
 
@@ -167,7 +168,8 @@ class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 };
 %extend Handle_Approx_HArray1OfAdHSurface {
 	~Handle_Approx_HArray1OfAdHSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Approx_HArray1OfAdHSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Approx_HArray1OfAdHSurface\n");}
 	}
 };
 
@@ -191,7 +193,8 @@ class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 };
 %extend Handle_Approx_SweepFunction {
 	~Handle_Approx_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Approx_SweepFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Approx_SweepFunction\n");}
 	}
 };
 
@@ -215,7 +218,8 @@ class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 };
 %extend Handle_Approx_HArray1OfGTrsf2d {
 	~Handle_Approx_HArray1OfGTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Approx_HArray1OfGTrsf2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Approx_HArray1OfGTrsf2d\n");}
 	}
 };
 
@@ -239,7 +243,8 @@ class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TColle
 };
 %extend Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	~Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
 	}
 };
 
@@ -263,7 +268,8 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 };
 %extend Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal {
 	~Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
 	}
 };
 
@@ -298,7 +304,8 @@ class Approx_CurvilinearParameter {
 };
 %extend Approx_CurvilinearParameter {
 	~Approx_CurvilinearParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_CurvilinearParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_CurvilinearParameter\n");}
 	}
 };
 
@@ -317,7 +324,8 @@ class Approx_MyLeastSquareOfFitAndDivide {
 };
 %extend Approx_MyLeastSquareOfFitAndDivide {
 	~Approx_MyLeastSquareOfFitAndDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide\n");}
 	}
 };
 
@@ -370,7 +378,8 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 };
 %extend Approx_SequenceOfHArray1OfReal {
 	~Approx_SequenceOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfHArray1OfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfHArray1OfReal\n");}
 	}
 };
 
@@ -393,7 +402,8 @@ class Approx_Curve2d {
 };
 %extend Approx_Curve2d {
 	~Approx_Curve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_Curve2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_Curve2d\n");}
 	}
 };
 
@@ -416,7 +426,8 @@ class Approx_Curve3d {
 };
 %extend Approx_Curve3d {
 	~Approx_Curve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_Curve3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_Curve3d\n");}
 	}
 };
 
@@ -437,8 +448,14 @@ class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode 
 	}
 };
 %extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	~Approx_SequenceNodeOfSequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
 	}
 };
 
@@ -463,7 +480,8 @@ class Approx_MCurvesToBSpCurve {
 };
 %extend Approx_MCurvesToBSpCurve {
 	~Approx_MCurvesToBSpCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_MCurvesToBSpCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_MCurvesToBSpCurve\n");}
 	}
 };
 
@@ -502,7 +520,8 @@ class Approx_Array1OfGTrsf2d {
 };
 %extend Approx_Array1OfGTrsf2d {
 	~Approx_Array1OfGTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_Array1OfGTrsf2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_Array1OfGTrsf2d\n");}
 	}
 };
 
@@ -541,8 +560,14 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 	}
 };
 %extend Approx_HArray1OfAdHSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Approx_HArray1OfAdHSurface {
 	~Approx_HArray1OfAdHSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfAdHSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfAdHSurface\n");}
 	}
 };
 
@@ -593,8 +618,14 @@ class Approx_SweepFunction : public MMgt_TShared {
 	}
 };
 %extend Approx_SweepFunction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Approx_SweepFunction {
 	~Approx_SweepFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_SweepFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SweepFunction\n");}
 	}
 };
 
@@ -629,7 +660,8 @@ class Approx_FitAndDivide {
 };
 %extend Approx_FitAndDivide {
 	~Approx_FitAndDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_FitAndDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_FitAndDivide\n");}
 	}
 };
 
@@ -668,8 +700,14 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 	}
 };
 %extend Approx_HArray1OfGTrsf2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Approx_HArray1OfGTrsf2d {
 	~Approx_HArray1OfGTrsf2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfGTrsf2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfGTrsf2d\n");}
 	}
 };
 
@@ -694,7 +732,8 @@ class Approx_SameParameter {
 };
 %extend Approx_SameParameter {
 	~Approx_SameParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_SameParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SameParameter\n");}
 	}
 };
 
@@ -715,8 +754,14 @@ class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode 
 	}
 };
 %extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
 	~Approx_SequenceNodeOfSequenceOfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
 	}
 };
 
@@ -751,7 +796,8 @@ class Approx_FitAndDivide2d {
 };
 %extend Approx_FitAndDivide2d {
 	~Approx_FitAndDivide2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_FitAndDivide2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_FitAndDivide2d\n");}
 	}
 };
 
@@ -778,7 +824,8 @@ class Approx_CurveOnSurface {
 };
 %extend Approx_CurveOnSurface {
 	~Approx_CurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_CurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_CurveOnSurface\n");}
 	}
 };
 
@@ -829,8 +876,14 @@ class Approx_CurvlinFunc : public MMgt_TShared {
 	}
 };
 %extend Approx_CurvlinFunc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Approx_CurvlinFunc {
 	~Approx_CurvlinFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_CurvlinFunc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_CurvlinFunc\n");}
 	}
 };
 
@@ -869,7 +922,8 @@ class Approx_Array1OfAdHSurface {
 };
 %extend Approx_Array1OfAdHSurface {
 	~Approx_Array1OfAdHSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_Array1OfAdHSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_Array1OfAdHSurface\n");}
 	}
 };
 
@@ -888,7 +942,8 @@ class Approx_MyLeastSquareOfFitAndDivide2d {
 };
 %extend Approx_MyLeastSquareOfFitAndDivide2d {
 	~Approx_MyLeastSquareOfFitAndDivide2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide2d\n");}
 	}
 };
 
@@ -941,7 +996,8 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 };
 %extend Approx_SequenceOfArray1OfPnt2d {
 	~Approx_SequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfArray1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfArray1OfPnt2d\n");}
 	}
 };
 
@@ -1006,6 +1062,7 @@ class Approx_SweepApproximation {
 };
 %extend Approx_SweepApproximation {
 	~Approx_SweepApproximation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Approx_SweepApproximation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Approx_SweepApproximation\n");}
 	}
 };

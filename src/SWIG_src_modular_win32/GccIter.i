@@ -160,7 +160,8 @@ class Handle_GccIter_IsParallel : public Handle_Standard_DomainError {
 };
 %extend Handle_GccIter_IsParallel {
 	~Handle_GccIter_IsParallel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccIter_IsParallel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccIter_IsParallel\n");}
 	}
 };
 
@@ -187,7 +188,13 @@ class GccIter_IsParallel : public Standard_DomainError {
 	}
 };
 %extend GccIter_IsParallel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccIter_IsParallel {
 	~GccIter_IsParallel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccIter_IsParallel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccIter_IsParallel\n");}
 	}
 };

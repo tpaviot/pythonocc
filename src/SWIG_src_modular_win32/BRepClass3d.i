@@ -131,7 +131,8 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 };
 %extend Handle_BRepClass3d_DataMapNodeOfMapOfInter {
 	~Handle_BRepClass3d_DataMapNodeOfMapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRepClass3d_DataMapNodeOfMapOfInter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRepClass3d_DataMapNodeOfMapOfInter\n");}
 	}
 };
 
@@ -158,7 +159,8 @@ class BRepClass3d_SClassifier {
 };
 %extend BRepClass3d_SClassifier {
 	~BRepClass3d_SClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass3d_SClassifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SClassifier\n");}
 	}
 };
 
@@ -191,7 +193,8 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 };
 %extend BRepClass3d_MapOfInter {
 	~BRepClass3d_MapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass3d_MapOfInter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_MapOfInter\n");}
 	}
 };
 
@@ -262,7 +265,8 @@ class BRepClass3d_SolidExplorer {
 };
 %extend BRepClass3d_SolidExplorer {
 	~BRepClass3d_SolidExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidExplorer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidExplorer\n");}
 	}
 };
 
@@ -287,7 +291,8 @@ class BRepClass3d_SolidPassiveClassifier {
 };
 %extend BRepClass3d_SolidPassiveClassifier {
 	~BRepClass3d_SolidPassiveClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");}
 	}
 };
 
@@ -308,7 +313,8 @@ class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapItera
 };
 %extend BRepClass3d_DataMapIteratorOfMapOfInter {
 	~BRepClass3d_DataMapIteratorOfMapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
 	}
 };
 
@@ -333,7 +339,8 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 };
 %extend BRepClass3d_SolidClassifier {
 	~BRepClass3d_SolidClassifier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidClassifier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidClassifier\n");}
 	}
 };
 
@@ -356,8 +363,14 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 	}
 };
 %extend BRepClass3d_DataMapNodeOfMapOfInter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRepClass3d_DataMapNodeOfMapOfInter {
 	~BRepClass3d_DataMapNodeOfMapOfInter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapNodeOfMapOfInter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapNodeOfMapOfInter\n");}
 	}
 };
 
@@ -390,6 +403,7 @@ class BRepClass3d_Intersector3d {
 };
 %extend BRepClass3d_Intersector3d {
 	~BRepClass3d_Intersector3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepClass3d_Intersector3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepClass3d_Intersector3d\n");}
 	}
 };

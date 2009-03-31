@@ -131,7 +131,8 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
 	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
 	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 };
 %extend Handle_Extrema_HArray1OfPOnSurf {
 	~Handle_Extrema_HArray1OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnSurf\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
 	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
 	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCol
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
 	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
 	~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public H
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
 	~Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 };
 %extend Handle_Extrema_HArray2OfPOnCurv {
 	~Handle_Extrema_HArray2OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnCurv\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 };
 %extend Handle_Extrema_HArray2OfPOnSurf {
 	~Handle_Extrema_HArray2OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnSurf\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv {
 	~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
 	}
 };
 
@@ -395,7 +406,8 @@ class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 };
 %extend Handle_Extrema_HArray1OfPOnCurv2d {
 	~Handle_Extrema_HArray1OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv2d\n");}
 	}
 };
 
@@ -419,7 +431,8 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public 
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
 	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -443,7 +456,8 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public H
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
 	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
 	}
 };
 
@@ -467,7 +481,8 @@ class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 };
 %extend Handle_Extrema_HArray1OfPOnCurv {
 	~Handle_Extrema_HArray1OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv\n");}
 	}
 };
 
@@ -491,7 +506,8 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollecti
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
 	~Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");}
 	}
 };
 
@@ -515,7 +531,8 @@ class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfBoolean {
 	~Handle_Extrema_SequenceNodeOfSequenceOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfBoolean\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfBoolean\n");}
 	}
 };
 
@@ -539,7 +556,8 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
 	~Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
 	}
 };
 
@@ -563,7 +581,8 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
 	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
 	}
 };
 
@@ -587,7 +606,8 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 };
 %extend Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
 	~Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
 	}
 };
 
@@ -611,7 +631,8 @@ class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 };
 %extend Handle_Extrema_HArray2OfPOnCurv2d {
 	~Handle_Extrema_HArray2OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnCurv2d\n");}
 	}
 };
 
@@ -635,7 +656,8 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 };
 %extend Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf {
 	~Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
 	}
 };
 
@@ -662,7 +684,8 @@ class Extrema_POnCurv2d {
 };
 %extend Extrema_POnCurv2d {
 	~Extrema_POnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_POnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_POnCurv2d\n");}
 	}
 };
 
@@ -715,7 +738,8 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 };
 %extend Extrema_SequenceOfBoolean {
 	~Extrema_SequenceOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfBoolean\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfBoolean\n");}
 	}
 };
 
@@ -736,8 +760,14 @@ class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 	}
 };
 %extend Extrema_SequenceNodeOfSequenceOfBoolean {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfBoolean {
 	~Extrema_SequenceNodeOfSequenceOfBoolean() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfBoolean\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfBoolean\n");}
 	}
 };
 
@@ -756,7 +786,8 @@ class Extrema_LocECC2dOfLocateExtCC2d {
 };
 %extend Extrema_LocECC2dOfLocateExtCC2d {
 	~Extrema_LocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_LocECC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocECC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -809,7 +840,8 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 };
 %extend Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC {
 	~Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
 	}
 };
 
@@ -842,7 +874,8 @@ class Extrema_ExtPC {
 };
 %extend Extrema_ExtPC {
 	~Extrema_ExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPC\n");}
 	}
 };
 
@@ -873,7 +906,8 @@ class Extrema_ExtPS {
 };
 %extend Extrema_ExtPS {
 	~Extrema_ExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtPS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPS\n");}
 	}
 };
 
@@ -926,7 +960,8 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 };
 %extend Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
 	~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -957,7 +992,8 @@ class Extrema_ExtSS {
 };
 %extend Extrema_ExtSS {
 	~Extrema_ExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtSS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtSS\n");}
 	}
 };
 
@@ -988,7 +1024,8 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 };
 %extend Extrema_CCFOfELCCOfLocateExtCC {
 	~Extrema_CCFOfELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfELCCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfELCCOfLocateExtCC\n");}
 	}
 };
 
@@ -1013,7 +1050,8 @@ class Extrema_ECC2dOfExtCC2d {
 };
 %extend Extrema_ECC2dOfExtCC2d {
 	~Extrema_ECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ECC2dOfExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ECC2dOfExtCC2d\n");}
 	}
 };
 
@@ -1046,7 +1084,8 @@ class Extrema_ExtCC2d {
 };
 %extend Extrema_ExtCC2d {
 	~Extrema_ExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC2d\n");}
 	}
 };
 
@@ -1105,7 +1144,8 @@ class Extrema_CurveTool {
 };
 %extend Extrema_CurveTool {
 	~Extrema_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_CurveTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CurveTool\n");}
 	}
 };
 
@@ -1144,7 +1184,8 @@ class Extrema_Array1OfPOnSurf {
 };
 %extend Extrema_Array1OfPOnSurf {
 	~Extrema_Array1OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnSurf\n");}
 	}
 };
 
@@ -1197,7 +1238,8 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequ
 };
 %extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
 	~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -1264,7 +1306,8 @@ class Extrema_ExtElCS {
 };
 %extend Extrema_ExtElCS {
 	~Extrema_ExtElCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtElCS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElCS\n");}
 	}
 };
 
@@ -1301,7 +1344,8 @@ class Extrema_EPCOfELPCOfLocateExtPC {
 };
 %extend Extrema_EPCOfELPCOfLocateExtPC {
 	~Extrema_EPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfELPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfELPCOfLocateExtPC\n");}
 	}
 };
 
@@ -1326,7 +1370,8 @@ class Extrema_GenLocateExtSS {
 };
 %extend Extrema_GenLocateExtSS {
 	~Extrema_GenLocateExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtSS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtSS\n");}
 	}
 };
 
@@ -1361,7 +1406,8 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 };
 %extend Extrema_PCFOfEPCOfELPCOfLocateExtPC {
 	~Extrema_PCFOfEPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC\n");}
 	}
 };
 
@@ -1406,8 +1452,14 @@ class Extrema_HArray2OfPOnCurv2d : public MMgt_TShared {
 	}
 };
 %extend Extrema_HArray2OfPOnCurv2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_HArray2OfPOnCurv2d {
 	~Extrema_HArray2OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnCurv2d\n");}
 	}
 };
 
@@ -1446,8 +1498,14 @@ class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 	}
 };
 %extend Extrema_HArray1OfPOnSurf {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_HArray1OfPOnSurf {
 	~Extrema_HArray1OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnSurf\n");}
 	}
 };
 
@@ -1466,7 +1524,8 @@ class Extrema_LocateExtCC {
 };
 %extend Extrema_LocateExtCC {
 	~Extrema_LocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC\n");}
 	}
 };
 
@@ -1513,7 +1572,8 @@ class Extrema_ExtElSS {
 };
 %extend Extrema_ExtElSS {
 	~Extrema_ExtElSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtElSS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElSS\n");}
 	}
 };
 
@@ -1566,7 +1626,8 @@ class Extrema_ExtElC2d {
 };
 %extend Extrema_ExtElC2d {
 	~Extrema_ExtElC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtElC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElC2d\n");}
 	}
 };
 
@@ -1605,8 +1666,14 @@ class Extrema_HArray1OfPOnCurv : public MMgt_TShared {
 	}
 };
 %extend Extrema_HArray1OfPOnCurv {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_HArray1OfPOnCurv {
 	~Extrema_HArray1OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnCurv\n");}
 	}
 };
 
@@ -1627,8 +1694,14 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public TCollection_SeqNod
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
 	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
 	}
 };
 
@@ -1649,8 +1722,14 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TColle
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
 	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -1685,7 +1764,8 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 };
 %extend Extrema_PCFOfEPCOfExtPC2d {
 	~Extrema_PCFOfEPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC2d\n");}
 	}
 };
 
@@ -1706,8 +1786,14 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
 	}
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
 	~Extrema_SequenceNodeOfSequenceOfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
 	}
 };
 
@@ -1750,7 +1836,8 @@ class Extrema_Array2OfPOnCurv {
 };
 %extend Extrema_Array2OfPOnCurv {
 	~Extrema_Array2OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv\n");}
 	}
 };
 
@@ -1785,7 +1872,8 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 };
 %extend Extrema_PCLocFOfLocEPCOfLocateExtPC {
 	~Extrema_PCLocFOfLocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC\n");}
 	}
 };
 
@@ -1838,7 +1926,8 @@ class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSeque
 };
 %extend Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
 	~Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -1891,7 +1980,8 @@ class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequ
 };
 %extend Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
 	~Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
 
@@ -1926,7 +2016,8 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative
 };
 %extend Extrema_PCLocFOfLocEPCOfLocateExtPC2d {
 	~Extrema_PCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -1963,7 +2054,8 @@ class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
 };
 %extend Extrema_FuncExtSS {
 	~Extrema_FuncExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtSS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtSS\n");}
 	}
 };
 
@@ -2008,8 +2100,14 @@ class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 	}
 };
 %extend Extrema_HArray2OfPOnSurf {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_HArray2OfPOnSurf {
 	~Extrema_HArray2OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnSurf\n");}
 	}
 };
 
@@ -2034,7 +2132,8 @@ class Extrema_ELCC2dOfLocateExtCC2d {
 };
 %extend Extrema_ELCC2dOfLocateExtCC2d {
 	~Extrema_ELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ELCC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ELCC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -2073,7 +2172,8 @@ class Extrema_Array1OfPOnCurv {
 };
 %extend Extrema_Array1OfPOnCurv {
 	~Extrema_Array1OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnCurv\n");}
 	}
 };
 
@@ -2108,7 +2208,8 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 };
 %extend Extrema_PCFOfEPCOfELPCOfLocateExtPC2d {
 	~Extrema_PCFOfEPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -2161,7 +2262,8 @@ class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
 };
 %extend Extrema_SequenceOfPOnSurf {
 	~Extrema_SequenceOfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnSurf\n");}
 	}
 };
 
@@ -2190,7 +2292,8 @@ class Extrema_LocateExtPC2d {
 };
 %extend Extrema_LocateExtPC2d {
 	~Extrema_LocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtPC2d\n");}
 	}
 };
 
@@ -2211,8 +2314,14 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TColle
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
 	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
 
@@ -2241,7 +2350,8 @@ class Extrema_LocateExtPC {
 };
 %extend Extrema_LocateExtPC {
 	~Extrema_LocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtPC\n");}
 	}
 };
 
@@ -2266,7 +2376,8 @@ class Extrema_GenLocateExtCS {
 };
 %extend Extrema_GenLocateExtCS {
 	~Extrema_GenLocateExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtCS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtCS\n");}
 	}
 };
 
@@ -2319,7 +2430,8 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 };
 %extend Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d {
 	~Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
 	}
 };
 
@@ -2352,7 +2464,8 @@ class Extrema_ExtCC {
 };
 %extend Extrema_ExtCC {
 	~Extrema_ExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC\n");}
 	}
 };
 
@@ -2373,8 +2486,14 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_Se
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
 	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
 	}
 };
 
@@ -2403,7 +2522,8 @@ class Extrema_LocEPCOfLocateExtPC2d {
 };
 %extend Extrema_LocEPCOfLocateExtPC2d {
 	~Extrema_LocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -2446,7 +2566,8 @@ class Extrema_ExtPElC {
 };
 %extend Extrema_ExtPElC {
 	~Extrema_ExtPElC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElC\n");}
 	}
 };
 
@@ -2487,7 +2608,8 @@ class Extrema_ExtPElS {
 };
 %extend Extrema_ExtPElS {
 	~Extrema_ExtPElS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElS\n");}
 	}
 };
 
@@ -2508,8 +2630,14 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollec
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
 	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -2562,7 +2690,8 @@ class Extrema_ExtElC {
 };
 %extend Extrema_ExtElC {
 	~Extrema_ExtElC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtElC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElC\n");}
 	}
 };
 
@@ -2615,7 +2744,8 @@ class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 };
 %extend Extrema_SeqPOnCOfCCFOfECCOfExtCC {
 	~Extrema_SeqPOnCOfCCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECCOfExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCFOfECCOfExtCC\n");}
 	}
 };
 
@@ -2646,7 +2776,8 @@ class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 };
 %extend Extrema_CCFOfECC2dOfExtCC2d {
 	~Extrema_CCFOfECC2dOfExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfECC2dOfExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfECC2dOfExtCC2d\n");}
 	}
 };
 
@@ -2699,7 +2830,8 @@ class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
 };
 %extend Extrema_SequenceOfPOnCurv2d {
 	~Extrema_SequenceOfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnCurv2d\n");}
 	}
 };
 
@@ -2744,8 +2876,14 @@ class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
 	}
 };
 %extend Extrema_HArray2OfPOnCurv {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_HArray2OfPOnCurv {
 	~Extrema_HArray2OfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray2OfPOnCurv\n");}
 	}
 };
 
@@ -2780,7 +2918,8 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 };
 %extend Extrema_PCFOfEPCOfExtPC {
 	~Extrema_PCFOfEPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfExtPC\n");}
 	}
 };
 
@@ -2809,7 +2948,8 @@ class Extrema_POnSurf {
 };
 %extend Extrema_POnSurf {
 	~Extrema_POnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_POnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_POnSurf\n");}
 	}
 };
 
@@ -2830,8 +2970,14 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TColle
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
 	~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -2852,7 +2998,8 @@ class Extrema_GenLocateExtPS {
 };
 %extend Extrema_GenLocateExtPS {
 	~Extrema_GenLocateExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtPS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtPS\n");}
 	}
 };
 
@@ -2883,7 +3030,8 @@ class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivative
 };
 %extend Extrema_CCFOfELCC2dOfLocateExtCC2d {
 	~Extrema_CCFOfELCC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfELCC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfELCC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -2914,7 +3062,8 @@ class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivativ
 };
 %extend Extrema_CCLocFOfLocECCOfLocateExtCC {
 	~Extrema_CCLocFOfLocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
 
@@ -2953,7 +3102,8 @@ class Extrema_Array1OfPOnCurv2d {
 };
 %extend Extrema_Array1OfPOnCurv2d {
 	~Extrema_Array1OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnCurv2d\n");}
 	}
 };
 
@@ -2990,7 +3140,8 @@ class Extrema_EPCOfExtPC {
 };
 %extend Extrema_EPCOfExtPC {
 	~Extrema_EPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC\n");}
 	}
 };
 
@@ -3025,7 +3176,8 @@ class Extrema_GenExtCS {
 };
 %extend Extrema_GenExtCS {
 	~Extrema_GenExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_GenExtCS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtCS\n");}
 	}
 };
 
@@ -3054,7 +3206,8 @@ class Extrema_LocEPCOfLocateExtPC {
 };
 %extend Extrema_LocEPCOfLocateExtPC {
 	~Extrema_LocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC\n");}
 	}
 };
 
@@ -3097,7 +3250,8 @@ class Extrema_Array2OfPOnSurf {
 };
 %extend Extrema_Array2OfPOnSurf {
 	~Extrema_Array2OfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnSurf\n");}
 	}
 };
 
@@ -3130,7 +3284,8 @@ class Extrema_ExtPC2d {
 };
 %extend Extrema_ExtPC2d {
 	~Extrema_ExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPC2d\n");}
 	}
 };
 
@@ -3159,7 +3314,8 @@ class Extrema_ExtPExtS {
 };
 %extend Extrema_ExtPExtS {
 	~Extrema_ExtPExtS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtPExtS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPExtS\n");}
 	}
 };
 
@@ -3188,7 +3344,8 @@ class Extrema_ExtPRevS {
 };
 %extend Extrema_ExtPRevS {
 	~Extrema_ExtPRevS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtPRevS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPRevS\n");}
 	}
 };
 
@@ -3219,7 +3376,8 @@ class Extrema_GenExtPS {
 };
 %extend Extrema_GenExtPS {
 	~Extrema_GenExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_GenExtPS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtPS\n");}
 	}
 };
 
@@ -3250,7 +3408,8 @@ class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDeriv
 };
 %extend Extrema_CCLocFOfLocECC2dOfLocateExtCC2d {
 	~Extrema_CCLocFOfLocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -3269,7 +3428,8 @@ class Extrema_LocateExtCC2d {
 };
 %extend Extrema_LocateExtCC2d {
 	~Extrema_LocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC2d\n");}
 	}
 };
 
@@ -3304,7 +3464,8 @@ class Extrema_GenExtSS {
 };
 %extend Extrema_GenExtSS {
 	~Extrema_GenExtSS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_GenExtSS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtSS\n");}
 	}
 };
 
@@ -3371,7 +3532,8 @@ class Extrema_Curve2dTool {
 };
 %extend Extrema_Curve2dTool {
 	~Extrema_Curve2dTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_Curve2dTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_Curve2dTool\n");}
 	}
 };
 
@@ -3396,7 +3558,8 @@ class Extrema_ECCOfExtCC {
 };
 %extend Extrema_ECCOfExtCC {
 	~Extrema_ECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ECCOfExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ECCOfExtCC\n");}
 	}
 };
 
@@ -3433,7 +3596,8 @@ class Extrema_EPCOfExtPC2d {
 };
 %extend Extrema_EPCOfExtPC2d {
 	~Extrema_EPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC2d\n");}
 	}
 };
 
@@ -3472,8 +3636,14 @@ class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
 	}
 };
 %extend Extrema_HArray1OfPOnCurv2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_HArray1OfPOnCurv2d {
 	~Extrema_HArray1OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_HArray1OfPOnCurv2d\n");}
 	}
 };
 
@@ -3492,7 +3662,8 @@ class Extrema_LocECCOfLocateExtCC {
 };
 %extend Extrema_LocECCOfLocateExtCC {
 	~Extrema_LocECCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_LocECCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_LocECCOfLocateExtCC\n");}
 	}
 };
 
@@ -3513,8 +3684,14 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TC
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
 	~Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -3567,7 +3744,8 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_BaseSequen
 };
 %extend Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC {
 	~Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
 	}
 };
 
@@ -3620,7 +3798,8 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequen
 };
 %extend Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
 	~Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
 	}
 };
 
@@ -3673,7 +3852,8 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 };
 %extend Extrema_SeqPCOfPCFOfEPCOfExtPC {
 	~Extrema_SeqPCOfPCFOfEPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfExtPC\n");}
 	}
 };
 
@@ -3706,7 +3886,8 @@ class Extrema_ELPCOfLocateExtPC {
 };
 %extend Extrema_ELPCOfLocateExtPC {
 	~Extrema_ELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ELPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ELPCOfLocateExtPC\n");}
 	}
 };
 
@@ -3727,8 +3908,14 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
 	~Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC\n");}
 	}
 };
 
@@ -3753,7 +3940,8 @@ class Extrema_ELCCOfLocateExtCC {
 };
 %extend Extrema_ELCCOfLocateExtCC {
 	~Extrema_ELCCOfLocateExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ELCCOfLocateExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ELCCOfLocateExtCC\n");}
 	}
 };
 
@@ -3806,7 +3994,8 @@ class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 };
 %extend Extrema_SequenceOfPOnCurv {
 	~Extrema_SequenceOfPOnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceOfPOnCurv\n");}
 	}
 };
 
@@ -3839,7 +4028,8 @@ class Extrema_ELPCOfLocateExtPC2d {
 };
 %extend Extrema_ELPCOfLocateExtPC2d {
 	~Extrema_ELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ELPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ELPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -3866,7 +4056,8 @@ class Extrema_POnCurv {
 };
 %extend Extrema_POnCurv {
 	~Extrema_POnCurv() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_POnCurv\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_POnCurv\n");}
 	}
 };
 
@@ -3887,8 +4078,14 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode 
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
 	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");}
 	}
 };
 
@@ -3909,8 +4106,14 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollect
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
 	~Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
 	}
 };
 
@@ -3931,8 +4134,14 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollect
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
 	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
 	}
 };
 
@@ -3963,7 +4172,8 @@ class Extrema_ExtCS {
 };
 %extend Extrema_ExtCS {
 	~Extrema_ExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtCS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCS\n");}
 	}
 };
 
@@ -4006,7 +4216,8 @@ class Extrema_ExtPElC2d {
 };
 %extend Extrema_ExtPElC2d {
 	~Extrema_ExtPElC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPElC2d\n");}
 	}
 };
 
@@ -4043,7 +4254,8 @@ class Extrema_EPCOfELPCOfLocateExtPC2d {
 };
 %extend Extrema_EPCOfELPCOfLocateExtPC2d {
 	~Extrema_EPCOfELPCOfLocateExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfELPCOfLocateExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfELPCOfLocateExtPC2d\n");}
 	}
 };
 
@@ -4064,8 +4276,14 @@ class Extrema_SequenceNodeOfSequenceOfPOnSurf : public TCollection_SeqNode {
 	}
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnSurf {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnSurf {
 	~Extrema_SequenceNodeOfSequenceOfPOnSurf() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
 	}
 };
 
@@ -4104,7 +4322,8 @@ class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
 };
 %extend Extrema_FuncExtPS {
 	~Extrema_FuncExtPS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtPS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtPS\n");}
 	}
 };
 
@@ -4125,8 +4344,14 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
 	}
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
 	~Extrema_SequenceNodeOfSequenceOfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");}
 	}
 };
 
@@ -4179,7 +4404,8 @@ class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_Base
 };
 %extend Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
 	~Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
 	}
 };
 
@@ -4200,8 +4426,14 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNod
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
 	~Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
 	}
 };
 
@@ -4254,7 +4486,8 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC2d : public TCollection_BaseSequence {
 };
 %extend Extrema_SeqPCOfPCFOfEPCOfExtPC2d {
 	~Extrema_SeqPCOfPCFOfEPCOfExtPC2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfExtPC2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfExtPC2d\n");}
 	}
 };
 
@@ -4291,7 +4524,8 @@ class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 };
 %extend Extrema_FuncExtCS {
 	~Extrema_FuncExtCS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtCS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtCS\n");}
 	}
 };
 
@@ -4334,7 +4568,8 @@ class Extrema_Array2OfPOnCurv2d {
 };
 %extend Extrema_Array2OfPOnCurv2d {
 	~Extrema_Array2OfPOnCurv2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv2d\n");}
 	}
 };
 
@@ -4365,6 +4600,7 @@ class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {
 };
 %extend Extrema_CCFOfECCOfExtCC {
 	~Extrema_CCFOfECCOfExtCC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfECCOfExtCC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfECCOfExtCC\n");}
 	}
 };

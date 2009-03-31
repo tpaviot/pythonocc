@@ -128,7 +128,8 @@ class BRepPrimAPI_MakeOneAxis : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepPrimAPI_MakeOneAxis {
 	~BRepPrimAPI_MakeOneAxis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeOneAxis\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeOneAxis\n");}
 	}
 };
 
@@ -157,7 +158,8 @@ class BRepPrimAPI_MakeTorus : public BRepPrimAPI_MakeOneAxis {
 };
 %extend BRepPrimAPI_MakeTorus {
 	~BRepPrimAPI_MakeTorus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeTorus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeTorus\n");}
 	}
 };
 
@@ -172,7 +174,8 @@ class BRepPrimAPI_MakeSweep : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepPrimAPI_MakeSweep {
 	~BRepPrimAPI_MakeSweep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeSweep\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeSweep\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 };
 %extend BRepPrimAPI_MakeRevolution {
 	~BRepPrimAPI_MakeRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeRevolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeRevolution\n");}
 	}
 };
 
@@ -226,7 +230,8 @@ class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 };
 %extend BRepPrimAPI_MakeCylinder {
 	~BRepPrimAPI_MakeCylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCylinder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCylinder\n");}
 	}
 };
 
@@ -265,7 +270,8 @@ class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
 };
 %extend BRepPrimAPI_MakeSphere {
 	~BRepPrimAPI_MakeSphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeSphere\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeSphere\n");}
 	}
 };
 
@@ -292,7 +298,8 @@ class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepPrimAPI_MakeWedge {
 	~BRepPrimAPI_MakeWedge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeWedge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeWedge\n");}
 	}
 };
 
@@ -309,7 +316,8 @@ class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepPrimAPI_MakeHalfSpace {
 	~BRepPrimAPI_MakeHalfSpace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeHalfSpace\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeHalfSpace\n");}
 	}
 };
 
@@ -348,7 +356,8 @@ class BRepPrimAPI_MakeBox : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepPrimAPI_MakeBox {
 	~BRepPrimAPI_MakeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeBox\n");}
 	}
 };
 
@@ -381,7 +390,8 @@ class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 };
 %extend BRepPrimAPI_MakeRevol {
 	~BRepPrimAPI_MakeRevol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeRevol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeRevol\n");}
 	}
 };
 
@@ -404,7 +414,8 @@ class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
 };
 %extend BRepPrimAPI_MakeCone {
 	~BRepPrimAPI_MakeCone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCone\n");}
 	}
 };
 
@@ -433,6 +444,7 @@ class BRepPrimAPI_MakePrism : public BRepPrimAPI_MakeSweep {
 };
 %extend BRepPrimAPI_MakePrism {
 	~BRepPrimAPI_MakePrism() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakePrism\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakePrism\n");}
 	}
 };

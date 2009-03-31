@@ -405,6 +405,7 @@ class BSplCLib {
 };
 %extend BSplCLib {
 	~BSplCLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BSplCLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BSplCLib\n");}
 	}
 };

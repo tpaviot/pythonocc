@@ -145,7 +145,8 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 };
 %extend Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
 	~Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
 	}
 };
 
@@ -166,7 +167,8 @@ class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_
 };
 %extend MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger {
 	~MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger\n");}
 	}
 };
 
@@ -189,8 +191,14 @@ class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapN
 	}
 };
 %extend MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger {
 	~MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
 	}
 };
 
@@ -223,6 +231,7 @@ class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {
 };
 %extend MeshDS_DataMapOfIntegerMapOfInteger {
 	~MeshDS_DataMapOfIntegerMapOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapOfIntegerMapOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapOfIntegerMapOfInteger\n");}
 	}
 };

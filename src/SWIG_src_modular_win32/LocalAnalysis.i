@@ -172,7 +172,8 @@ class LocalAnalysis_SurfaceContinuity {
 };
 %extend LocalAnalysis_SurfaceContinuity {
 	~LocalAnalysis_SurfaceContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LocalAnalysis_SurfaceContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocalAnalysis_SurfaceContinuity\n");}
 	}
 };
 
@@ -189,7 +190,8 @@ class LocalAnalysis {
 };
 %extend LocalAnalysis {
 	~LocalAnalysis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LocalAnalysis\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocalAnalysis\n");}
 	}
 };
 
@@ -234,6 +236,7 @@ class LocalAnalysis_CurveContinuity {
 };
 %extend LocalAnalysis_CurveContinuity {
 	~LocalAnalysis_CurveContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of LocalAnalysis_CurveContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of LocalAnalysis_CurveContinuity\n");}
 	}
 };

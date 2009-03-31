@@ -163,7 +163,8 @@ class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
 };
 %extend Handle_Storage_StreamReadError {
 	~Handle_Storage_StreamReadError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamReadError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamReadError\n");}
 	}
 };
 
@@ -187,7 +188,8 @@ class Handle_Storage_StreamExtCharParityError : public Handle_Storage_StreamRead
 };
 %extend Handle_Storage_StreamExtCharParityError {
 	~Handle_Storage_StreamExtCharParityError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamExtCharParityError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamExtCharParityError\n");}
 	}
 };
 
@@ -211,7 +213,8 @@ class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadE
 };
 %extend Handle_Storage_StreamTypeMismatchError {
 	~Handle_Storage_StreamTypeMismatchError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamTypeMismatchError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamTypeMismatchError\n");}
 	}
 };
 
@@ -235,7 +238,8 @@ class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_HArrayOfCallBack {
 	~Handle_Storage_HArrayOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfCallBack\n");}
 	}
 };
 
@@ -259,7 +263,8 @@ class Handle_Storage_InternalData : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_InternalData {
 	~Handle_Storage_InternalData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_InternalData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_InternalData\n");}
 	}
 };
 
@@ -283,7 +288,8 @@ class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 };
 %extend Handle_Storage_StreamWriteError {
 	~Handle_Storage_StreamWriteError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamWriteError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamWriteError\n");}
 	}
 };
 
@@ -307,7 +313,8 @@ class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode 
 };
 %extend Handle_Storage_DataMapNodeOfMapOfPers {
 	~Handle_Storage_DataMapNodeOfMapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfPers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfPers\n");}
 	}
 };
 
@@ -331,7 +338,8 @@ class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_S
 };
 %extend Handle_Storage_SequenceNodeOfSeqOfPersistent {
 	~Handle_Storage_SequenceNodeOfSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfPersistent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfPersistent\n");}
 	}
 };
 
@@ -355,7 +363,8 @@ class Handle_Storage_StreamModeError : public Handle_Standard_Failure {
 };
 %extend Handle_Storage_StreamModeError {
 	~Handle_Storage_StreamModeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamModeError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamModeError\n");}
 	}
 };
 
@@ -379,7 +388,8 @@ class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_HSeqOfPersistent {
 	~Handle_Storage_HSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfPersistent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfPersistent\n");}
 	}
 };
 
@@ -403,7 +413,8 @@ class Handle_Storage_HPArray : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_HPArray {
 	~Handle_Storage_HPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_HPArray\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HPArray\n");}
 	}
 };
 
@@ -427,7 +438,8 @@ class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
 };
 %extend Handle_Storage_StreamFormatError {
 	~Handle_Storage_StreamFormatError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamFormatError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamFormatError\n");}
 	}
 };
 
@@ -451,7 +463,8 @@ class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_TypedCallBack {
 	~Handle_Storage_TypedCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_TypedCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_TypedCallBack\n");}
 	}
 };
 
@@ -475,7 +488,8 @@ class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_Seq
 };
 %extend Handle_Storage_SequenceNodeOfSeqOfCallBack {
 	~Handle_Storage_SequenceNodeOfSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfCallBack\n");}
 	}
 };
 
@@ -499,7 +513,8 @@ class Handle_Storage_Root : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_Root {
 	~Handle_Storage_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_Root\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Root\n");}
 	}
 };
 
@@ -523,7 +538,8 @@ class Handle_Storage_HSeqOfCallBack : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_HSeqOfCallBack {
 	~Handle_Storage_HSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfCallBack\n");}
 	}
 };
 
@@ -547,7 +563,8 @@ class Handle_Storage_Schema : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_Schema {
 	~Handle_Storage_Schema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_Schema\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Schema\n");}
 	}
 };
 
@@ -571,7 +588,8 @@ class Handle_Storage_Data : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_Data {
 	~Handle_Storage_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_Data\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Data\n");}
 	}
 };
 
@@ -595,7 +613,8 @@ class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_HArrayOfSchema {
 	~Handle_Storage_HArrayOfSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfSchema\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfSchema\n");}
 	}
 };
 
@@ -619,7 +638,8 @@ class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapN
 };
 %extend Handle_Storage_DataMapNodeOfMapOfCallBack {
 	~Handle_Storage_DataMapNodeOfMapOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfCallBack\n");}
 	}
 };
 
@@ -643,7 +663,8 @@ class Handle_Storage_RootData : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_RootData {
 	~Handle_Storage_RootData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_RootData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_RootData\n");}
 	}
 };
 
@@ -667,7 +688,8 @@ class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNo
 };
 %extend Handle_Storage_IndexedDataMapNodeOfPType {
 	~Handle_Storage_IndexedDataMapNodeOfPType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_IndexedDataMapNodeOfPType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_IndexedDataMapNodeOfPType\n");}
 	}
 };
 
@@ -691,7 +713,8 @@ class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode
 };
 %extend Handle_Storage_SequenceNodeOfSeqOfRoot {
 	~Handle_Storage_SequenceNodeOfSeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_SequenceNodeOfSeqOfRoot\n");}
 	}
 };
 
@@ -715,7 +738,8 @@ class Handle_Storage_TypeData : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_TypeData {
 	~Handle_Storage_TypeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_TypeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_TypeData\n");}
 	}
 };
 
@@ -739,7 +763,8 @@ class Handle_Storage_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_Ma
 };
 %extend Handle_Storage_StdMapNodeOfMapOfAsciiString {
 	~Handle_Storage_StdMapNodeOfMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_StdMapNodeOfMapOfAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StdMapNodeOfMapOfAsciiString\n");}
 	}
 };
 
@@ -763,7 +788,8 @@ class Handle_Storage_HeaderData : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_HeaderData {
 	~Handle_Storage_HeaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_HeaderData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HeaderData\n");}
 	}
 };
 
@@ -787,7 +813,8 @@ class Handle_Storage_CallBack : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_CallBack {
 	~Handle_Storage_CallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_CallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_CallBack\n");}
 	}
 };
 
@@ -811,7 +838,8 @@ class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
 };
 %extend Handle_Storage_DefaultCallBack {
 	~Handle_Storage_DefaultCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_DefaultCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DefaultCallBack\n");}
 	}
 };
 
@@ -835,7 +863,8 @@ class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadEr
 };
 %extend Handle_Storage_StreamUnknownTypeError {
 	~Handle_Storage_StreamUnknownTypeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamUnknownTypeError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamUnknownTypeError\n");}
 	}
 };
 
@@ -859,7 +888,8 @@ class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 };
 %extend Handle_Storage_HSeqOfRoot {
 	~Handle_Storage_HSeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfRoot\n");}
 	}
 };
 
@@ -878,7 +908,8 @@ class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterato
 };
 %extend Storage_MapIteratorOfMapOfAsciiString {
 	~Storage_MapIteratorOfMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_MapIteratorOfMapOfAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_MapIteratorOfMapOfAsciiString\n");}
 	}
 };
 
@@ -909,8 +940,14 @@ class Storage_Root : public MMgt_TShared {
 	}
 };
 %extend Storage_Root {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_Root {
 	~Storage_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_Root\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_Root\n");}
 	}
 };
 
@@ -949,8 +986,14 @@ class Storage_HArrayOfCallBack : public MMgt_TShared {
 	}
 };
 %extend Storage_HArrayOfCallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_HArrayOfCallBack {
 	~Storage_HArrayOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_HArrayOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HArrayOfCallBack\n");}
 	}
 };
 
@@ -965,7 +1008,8 @@ class Storage {
 };
 %extend Storage {
 	~Storage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage\n");}
 	}
 };
 
@@ -1004,7 +1048,8 @@ class Storage_ArrayOfCallBack {
 };
 %extend Storage_ArrayOfCallBack {
 	~Storage_ArrayOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_ArrayOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_ArrayOfCallBack\n");}
 	}
 };
 
@@ -1041,8 +1086,14 @@ class Storage_RootData : public MMgt_TShared {
 	}
 };
 %extend Storage_RootData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_RootData {
 	~Storage_RootData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_RootData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_RootData\n");}
 	}
 };
 
@@ -1105,8 +1156,14 @@ class Storage_HSeqOfCallBack : public MMgt_TShared {
 	}
 };
 %extend Storage_HSeqOfCallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_HSeqOfCallBack {
 	~Storage_HSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfCallBack\n");}
 	}
 };
 
@@ -1139,7 +1196,8 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 };
 %extend Storage_MapOfCallBack {
 	~Storage_MapOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_MapOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_MapOfCallBack\n");}
 	}
 };
 
@@ -1160,8 +1218,14 @@ class Storage_InternalData : public MMgt_TShared {
 	}
 };
 %extend Storage_InternalData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_InternalData {
 	~Storage_InternalData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_InternalData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_InternalData\n");}
 	}
 };
 
@@ -1236,8 +1300,14 @@ class Storage_Data : public MMgt_TShared {
 	}
 };
 %extend Storage_Data {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_Data {
 	~Storage_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_Data\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_Data\n");}
 	}
 };
 
@@ -1264,8 +1334,14 @@ class Storage_StreamReadError : public Standard_Failure {
 	}
 };
 %extend Storage_StreamReadError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_StreamReadError {
 	~Storage_StreamReadError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_StreamReadError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamReadError\n");}
 	}
 };
 
@@ -1290,8 +1366,14 @@ class Storage_CallBack : public MMgt_TShared {
 	}
 };
 %extend Storage_CallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_CallBack {
 	~Storage_CallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_CallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_CallBack\n");}
 	}
 };
 
@@ -1308,8 +1390,14 @@ class Storage_DefaultCallBack : public Storage_CallBack {
 	}
 };
 %extend Storage_DefaultCallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_DefaultCallBack {
 	~Storage_DefaultCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_DefaultCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_DefaultCallBack\n");}
 	}
 };
 
@@ -1348,8 +1436,14 @@ class Storage_HArrayOfSchema : public MMgt_TShared {
 	}
 };
 %extend Storage_HArrayOfSchema {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_HArrayOfSchema {
 	~Storage_HArrayOfSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_HArrayOfSchema\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HArrayOfSchema\n");}
 	}
 };
 
@@ -1402,7 +1496,8 @@ class Storage_SeqOfCallBack : public TCollection_BaseSequence {
 };
 %extend Storage_SeqOfCallBack {
 	~Storage_SeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_SeqOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_SeqOfCallBack\n");}
 	}
 };
 
@@ -1425,8 +1520,14 @@ class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
 	}
 };
 %extend Storage_DataMapNodeOfMapOfPers {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_DataMapNodeOfMapOfPers {
 	~Storage_DataMapNodeOfMapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_DataMapNodeOfMapOfPers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_DataMapNodeOfMapOfPers\n");}
 	}
 };
 
@@ -1459,8 +1560,14 @@ class Storage_TypedCallBack : public MMgt_TShared {
 	}
 };
 %extend Storage_TypedCallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_TypedCallBack {
 	~Storage_TypedCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_TypedCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_TypedCallBack\n");}
 	}
 };
 
@@ -1487,8 +1594,14 @@ class Storage_StreamExtCharParityError : public Storage_StreamReadError {
 	}
 };
 %extend Storage_StreamExtCharParityError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_StreamExtCharParityError {
 	~Storage_StreamExtCharParityError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_StreamExtCharParityError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamExtCharParityError\n");}
 	}
 };
 
@@ -1515,8 +1628,14 @@ class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 	}
 };
 %extend Storage_IndexedDataMapNodeOfPType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_IndexedDataMapNodeOfPType {
 	~Storage_IndexedDataMapNodeOfPType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_IndexedDataMapNodeOfPType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_IndexedDataMapNodeOfPType\n");}
 	}
 };
 
@@ -1541,7 +1660,8 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 };
 %extend Storage_MapOfAsciiString {
 	~Storage_MapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_MapOfAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_MapOfAsciiString\n");}
 	}
 };
 
@@ -1580,8 +1700,14 @@ class Storage_HPArray : public MMgt_TShared {
 	}
 };
 %extend Storage_HPArray {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_HPArray {
 	~Storage_HPArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_HPArray\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HPArray\n");}
 	}
 };
 
@@ -1602,7 +1728,8 @@ class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterat
 };
 %extend Storage_DataMapIteratorOfMapOfCallBack {
 	~Storage_DataMapIteratorOfMapOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfCallBack\n");}
 	}
 };
 
@@ -1635,7 +1762,8 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 };
 %extend Storage_MapOfPers {
 	~Storage_MapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_MapOfPers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_MapOfPers\n");}
 	}
 };
 
@@ -1722,8 +1850,14 @@ class Storage_Schema : public MMgt_TShared {
 	}
 };
 %extend Storage_Schema {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_Schema {
 	~Storage_Schema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_Schema\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_Schema\n");}
 	}
 };
 
@@ -1736,7 +1870,8 @@ class Storage_stCONSTclCOM {
 };
 %extend Storage_stCONSTclCOM {
 	~Storage_stCONSTclCOM() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_stCONSTclCOM\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_stCONSTclCOM\n");}
 	}
 };
 
@@ -1763,8 +1898,14 @@ class Storage_StreamWriteError : public Standard_Failure {
 	}
 };
 %extend Storage_StreamWriteError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_StreamWriteError {
 	~Storage_StreamWriteError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_StreamWriteError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamWriteError\n");}
 	}
 };
 
@@ -1803,7 +1944,8 @@ class Storage_ArrayOfSchema {
 };
 %extend Storage_ArrayOfSchema {
 	~Storage_ArrayOfSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_ArrayOfSchema\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_ArrayOfSchema\n");}
 	}
 };
 
@@ -1856,7 +1998,8 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 };
 %extend Storage_SeqOfRoot {
 	~Storage_SeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_SeqOfRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_SeqOfRoot\n");}
 	}
 };
 
@@ -1877,7 +2020,8 @@ class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
 };
 %extend Storage_DataMapIteratorOfMapOfPers {
 	~Storage_DataMapIteratorOfMapOfPers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfPers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfPers\n");}
 	}
 };
 
@@ -1900,8 +2044,14 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 	}
 };
 %extend Storage_DataMapNodeOfMapOfCallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_DataMapNodeOfMapOfCallBack {
 	~Storage_DataMapNodeOfMapOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_DataMapNodeOfMapOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_DataMapNodeOfMapOfCallBack\n");}
 	}
 };
 
@@ -1928,8 +2078,14 @@ class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 	}
 };
 %extend Storage_StreamTypeMismatchError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_StreamTypeMismatchError {
 	~Storage_StreamTypeMismatchError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_StreamTypeMismatchError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamTypeMismatchError\n");}
 	}
 };
 
@@ -1946,7 +2102,8 @@ class Storage_MapPSDHasher {
 };
 %extend Storage_MapPSDHasher {
 	~Storage_MapPSDHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_MapPSDHasher\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_MapPSDHasher\n");}
 	}
 };
 
@@ -1973,8 +2130,14 @@ class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
 	}
 };
 %extend Storage_StreamUnknownTypeError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_StreamUnknownTypeError {
 	~Storage_StreamUnknownTypeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_StreamUnknownTypeError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamUnknownTypeError\n");}
 	}
 };
 
@@ -2037,8 +2200,14 @@ class Storage_HSeqOfPersistent : public MMgt_TShared {
 	}
 };
 %extend Storage_HSeqOfPersistent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_HSeqOfPersistent {
 	~Storage_HSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfPersistent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfPersistent\n");}
 	}
 };
 
@@ -2193,7 +2362,8 @@ class Storage_BaseDriver {
 };
 %extend Storage_BaseDriver {
 	~Storage_BaseDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_BaseDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_BaseDriver\n");}
 	}
 };
 
@@ -2214,8 +2384,14 @@ class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
 	}
 };
 %extend Storage_SequenceNodeOfSeqOfCallBack {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfCallBack {
 	~Storage_SequenceNodeOfSeqOfCallBack() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfCallBack\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfCallBack\n");}
 	}
 };
 
@@ -2278,8 +2454,14 @@ class Storage_HSeqOfRoot : public MMgt_TShared {
 	}
 };
 %extend Storage_HSeqOfRoot {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_HSeqOfRoot {
 	~Storage_HSeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfRoot\n");}
 	}
 };
 
@@ -2300,8 +2482,14 @@ class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
 	}
 };
 %extend Storage_SequenceNodeOfSeqOfRoot {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfRoot {
 	~Storage_SequenceNodeOfSeqOfRoot() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfRoot\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfRoot\n");}
 	}
 };
 
@@ -2354,7 +2542,8 @@ class Storage_SeqOfPersistent : public TCollection_BaseSequence {
 };
 %extend Storage_SeqOfPersistent {
 	~Storage_SeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_SeqOfPersistent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_SeqOfPersistent\n");}
 	}
 };
 
@@ -2393,7 +2582,8 @@ class Storage_PArray {
 };
 %extend Storage_PArray {
 	~Storage_PArray() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_PArray\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_PArray\n");}
 	}
 };
 
@@ -2420,8 +2610,14 @@ class Storage_StreamModeError : public Standard_Failure {
 	}
 };
 %extend Storage_StreamModeError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_StreamModeError {
 	~Storage_StreamModeError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_StreamModeError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamModeError\n");}
 	}
 };
 
@@ -2442,8 +2638,14 @@ class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
 	}
 };
 %extend Storage_SequenceNodeOfSeqOfPersistent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_SequenceNodeOfSeqOfPersistent {
 	~Storage_SequenceNodeOfSeqOfPersistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfPersistent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfPersistent\n");}
 	}
 };
 
@@ -2476,8 +2678,14 @@ class Storage_TypeData : public MMgt_TShared {
 	}
 };
 %extend Storage_TypeData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_TypeData {
 	~Storage_TypeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_TypeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_TypeData\n");}
 	}
 };
 
@@ -2520,7 +2728,8 @@ class Storage_PType : public TCollection_BasicMap {
 };
 %extend Storage_PType {
 	~Storage_PType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_PType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_PType\n");}
 	}
 };
 
@@ -2575,8 +2784,14 @@ class Storage_HeaderData : public MMgt_TShared {
 	}
 };
 %extend Storage_HeaderData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_HeaderData {
 	~Storage_HeaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_HeaderData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_HeaderData\n");}
 	}
 };
 
@@ -2603,8 +2818,14 @@ class Storage_StreamFormatError : public Standard_Failure {
 	}
 };
 %extend Storage_StreamFormatError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_StreamFormatError {
 	~Storage_StreamFormatError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_StreamFormatError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StreamFormatError\n");}
 	}
 };
 
@@ -2625,7 +2846,13 @@ class Storage_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 	}
 };
 %extend Storage_StdMapNodeOfMapOfAsciiString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Storage_StdMapNodeOfMapOfAsciiString {
 	~Storage_StdMapNodeOfMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Storage_StdMapNodeOfMapOfAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Storage_StdMapNodeOfMapOfAsciiString\n");}
 	}
 };

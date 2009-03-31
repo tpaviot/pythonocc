@@ -180,7 +180,8 @@ class Handle_StepGeom_GeometricRepresentationItem : public Handle_StepRepr_Repre
 };
 %extend Handle_StepGeom_GeometricRepresentationItem {
 	~Handle_StepGeom_GeometricRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationItem\n");}
 	}
 };
 
@@ -204,7 +205,8 @@ class Handle_StepGeom_Curve : public Handle_StepGeom_GeometricRepresentationItem
 };
 %extend Handle_StepGeom_Curve {
 	~Handle_StepGeom_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Curve\n");}
 	}
 };
 
@@ -228,7 +230,8 @@ class Handle_StepGeom_SurfaceCurve : public Handle_StepGeom_Curve {
 };
 %extend Handle_StepGeom_SurfaceCurve {
 	~Handle_StepGeom_SurfaceCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceCurve\n");}
 	}
 };
 
@@ -252,7 +255,8 @@ class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationIt
 };
 %extend Handle_StepGeom_Surface {
 	~Handle_StepGeom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Surface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Surface\n");}
 	}
 };
 
@@ -276,7 +280,8 @@ class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
 };
 %extend Handle_StepGeom_BoundedSurface {
 	~Handle_StepGeom_BoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BoundedSurface\n");}
 	}
 };
 
@@ -300,7 +305,8 @@ class Handle_StepGeom_BSplineSurface : public Handle_StepGeom_BoundedSurface {
 };
 %extend Handle_StepGeom_BSplineSurface {
 	~Handle_StepGeom_BSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurface\n");}
 	}
 };
 
@@ -324,7 +330,8 @@ class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSu
 };
 %extend Handle_StepGeom_BSplineSurfaceWithKnots {
 	~Handle_StepGeom_BSplineSurfaceWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnots\n");}
 	}
 };
 
@@ -348,7 +355,8 @@ class Handle_StepGeom_BoundedCurve : public Handle_StepGeom_Curve {
 };
 %extend Handle_StepGeom_BoundedCurve {
 	~Handle_StepGeom_BoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BoundedCurve\n");}
 	}
 };
 
@@ -372,7 +380,8 @@ class Handle_StepGeom_CompositeCurve : public Handle_StepGeom_BoundedCurve {
 };
 %extend Handle_StepGeom_CompositeCurve {
 	~Handle_StepGeom_CompositeCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CompositeCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CompositeCurve\n");}
 	}
 };
 
@@ -396,7 +405,8 @@ class Handle_StepGeom_CompositeCurveOnSurface : public Handle_StepGeom_Composite
 };
 %extend Handle_StepGeom_CompositeCurveOnSurface {
 	~Handle_StepGeom_CompositeCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CompositeCurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CompositeCurveOnSurface\n");}
 	}
 };
 
@@ -420,7 +430,8 @@ class Handle_StepGeom_BoundaryCurve : public Handle_StepGeom_CompositeCurveOnSur
 };
 %extend Handle_StepGeom_BoundaryCurve {
 	~Handle_StepGeom_BoundaryCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BoundaryCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BoundaryCurve\n");}
 	}
 };
 
@@ -444,7 +455,8 @@ class Handle_StepGeom_OuterBoundaryCurve : public Handle_StepGeom_BoundaryCurve 
 };
 %extend Handle_StepGeom_OuterBoundaryCurve {
 	~Handle_StepGeom_OuterBoundaryCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OuterBoundaryCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OuterBoundaryCurve\n");}
 	}
 };
 
@@ -468,7 +480,8 @@ class Handle_StepGeom_Point : public Handle_StepGeom_GeometricRepresentationItem
 };
 %extend Handle_StepGeom_Point {
 	~Handle_StepGeom_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Point\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Point\n");}
 	}
 };
 
@@ -492,7 +505,8 @@ class Handle_StepGeom_DegeneratePcurve : public Handle_StepGeom_Point {
 };
 %extend Handle_StepGeom_DegeneratePcurve {
 	~Handle_StepGeom_DegeneratePcurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_DegeneratePcurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_DegeneratePcurve\n");}
 	}
 };
 
@@ -516,7 +530,8 @@ class Handle_StepGeom_EvaluatedDegeneratePcurve : public Handle_StepGeom_Degener
 };
 %extend Handle_StepGeom_EvaluatedDegeneratePcurve {
 	~Handle_StepGeom_EvaluatedDegeneratePcurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_EvaluatedDegeneratePcurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_EvaluatedDegeneratePcurve\n");}
 	}
 };
 
@@ -540,7 +555,8 @@ class Handle_StepGeom_BSplineCurve : public Handle_StepGeom_BoundedCurve {
 };
 %extend Handle_StepGeom_BSplineCurve {
 	~Handle_StepGeom_BSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurve\n");}
 	}
 };
 
@@ -564,7 +580,8 @@ class Handle_StepGeom_QuasiUniformCurve : public Handle_StepGeom_BSplineCurve {
 };
 %extend Handle_StepGeom_QuasiUniformCurve {
 	~Handle_StepGeom_QuasiUniformCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurve\n");}
 	}
 };
 
@@ -588,7 +605,8 @@ class Handle_StepGeom_HArray2OfCartesianPoint : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_HArray2OfCartesianPoint {
 	~Handle_StepGeom_HArray2OfCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray2OfCartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray2OfCartesianPoint\n");}
 	}
 };
 
@@ -612,7 +630,8 @@ class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
 };
 %extend Handle_StepGeom_BezierSurface {
 	~Handle_StepGeom_BezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurface\n");}
 	}
 };
 
@@ -636,7 +655,8 @@ class Handle_StepGeom_PointOnSurface : public Handle_StepGeom_Point {
 };
 %extend Handle_StepGeom_PointOnSurface {
 	~Handle_StepGeom_PointOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_PointOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_PointOnSurface\n");}
 	}
 };
 
@@ -660,7 +680,8 @@ class Handle_StepGeom_BezierCurveAndRationalBSplineCurve : public Handle_StepGeo
 };
 %extend Handle_StepGeom_BezierCurveAndRationalBSplineCurve {
 	~Handle_StepGeom_BezierCurveAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierCurveAndRationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierCurveAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -684,7 +705,8 @@ class Handle_StepGeom_HArray1OfCompositeCurveSegment : public Handle_MMgt_TShare
 };
 %extend Handle_StepGeom_HArray1OfCompositeCurveSegment {
 	~Handle_StepGeom_HArray1OfCompositeCurveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfCompositeCurveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfCompositeCurveSegment\n");}
 	}
 };
 
@@ -708,7 +730,8 @@ class Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationC
 };
 %extend Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
 	~Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext\n");}
 	}
 };
 
@@ -732,7 +755,8 @@ class Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext
 };
 %extend Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext {
 	~Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext\n");}
 	}
 };
 
@@ -756,7 +780,8 @@ class Handle_StepGeom_Conic : public Handle_StepGeom_Curve {
 };
 %extend Handle_StepGeom_Conic {
 	~Handle_StepGeom_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Conic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Conic\n");}
 	}
 };
 
@@ -780,7 +805,8 @@ class Handle_StepGeom_Hyperbola : public Handle_StepGeom_Conic {
 };
 %extend Handle_StepGeom_Hyperbola {
 	~Handle_StepGeom_Hyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Hyperbola\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Hyperbola\n");}
 	}
 };
 
@@ -804,7 +830,8 @@ class Handle_StepGeom_SurfaceCurveAndBoundedCurve : public Handle_StepGeom_Surfa
 };
 %extend Handle_StepGeom_SurfaceCurveAndBoundedCurve {
 	~Handle_StepGeom_SurfaceCurveAndBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceCurveAndBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceCurveAndBoundedCurve\n");}
 	}
 };
 
@@ -828,7 +855,8 @@ class Handle_StepGeom_Direction : public Handle_StepGeom_GeometricRepresentation
 };
 %extend Handle_StepGeom_Direction {
 	~Handle_StepGeom_Direction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Direction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Direction\n");}
 	}
 };
 
@@ -852,7 +880,8 @@ class Handle_StepGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_HArray1OfCurve {
 	~Handle_StepGeom_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfCurve\n");}
 	}
 };
 
@@ -876,7 +905,8 @@ class Handle_StepGeom_Placement : public Handle_StepGeom_GeometricRepresentation
 };
 %extend Handle_StepGeom_Placement {
 	~Handle_StepGeom_Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Placement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Placement\n");}
 	}
 };
 
@@ -900,7 +930,8 @@ class Handle_StepGeom_Axis2Placement2d : public Handle_StepGeom_Placement {
 };
 %extend Handle_StepGeom_Axis2Placement2d {
 	~Handle_StepGeom_Axis2Placement2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Axis2Placement2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Axis2Placement2d\n");}
 	}
 };
 
@@ -924,7 +955,8 @@ class Handle_StepGeom_ElementarySurface : public Handle_StepGeom_Surface {
 };
 %extend Handle_StepGeom_ElementarySurface {
 	~Handle_StepGeom_ElementarySurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ElementarySurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ElementarySurface\n");}
 	}
 };
 
@@ -948,7 +980,8 @@ class Handle_StepGeom_SphericalSurface : public Handle_StepGeom_ElementarySurfac
 };
 %extend Handle_StepGeom_SphericalSurface {
 	~Handle_StepGeom_SphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SphericalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SphericalSurface\n");}
 	}
 };
 
@@ -972,7 +1005,8 @@ class Handle_StepGeom_Axis2Placement3d : public Handle_StepGeom_Placement {
 };
 %extend Handle_StepGeom_Axis2Placement3d {
 	~Handle_StepGeom_Axis2Placement3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Axis2Placement3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Axis2Placement3d\n");}
 	}
 };
 
@@ -996,7 +1030,8 @@ class Handle_StepGeom_SurfaceReplica : public Handle_StepGeom_Surface {
 };
 %extend Handle_StepGeom_SurfaceReplica {
 	~Handle_StepGeom_SurfaceReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceReplica\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceReplica\n");}
 	}
 };
 
@@ -1020,7 +1055,8 @@ class Handle_StepGeom_HArray1OfTrimmingSelect : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_HArray1OfTrimmingSelect {
 	~Handle_StepGeom_HArray1OfTrimmingSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfTrimmingSelect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfTrimmingSelect\n");}
 	}
 };
 
@@ -1044,7 +1080,8 @@ class Handle_StepGeom_RectangularCompositeSurface : public Handle_StepGeom_Bound
 };
 %extend Handle_StepGeom_RectangularCompositeSurface {
 	~Handle_StepGeom_RectangularCompositeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RectangularCompositeSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RectangularCompositeSurface\n");}
 	}
 };
 
@@ -1068,7 +1105,8 @@ class Handle_StepGeom_BSplineCurveWithKnots : public Handle_StepGeom_BSplineCurv
 };
 %extend Handle_StepGeom_BSplineCurveWithKnots {
 	~Handle_StepGeom_BSplineCurveWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurveWithKnots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurveWithKnots\n");}
 	}
 };
 
@@ -1092,7 +1130,8 @@ class Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : 
 };
 %extend Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 	~Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");}
 	}
 };
 
@@ -1116,7 +1155,8 @@ class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_HArray2OfSurfacePatch {
 	~Handle_StepGeom_HArray2OfSurfacePatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray2OfSurfacePatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray2OfSurfacePatch\n");}
 	}
 };
 
@@ -1140,7 +1180,8 @@ class Handle_StepGeom_CartesianTransformationOperator : public Handle_StepGeom_G
 };
 %extend Handle_StepGeom_CartesianTransformationOperator {
 	~Handle_StepGeom_CartesianTransformationOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator\n");}
 	}
 };
 
@@ -1164,7 +1205,8 @@ class Handle_StepGeom_CartesianTransformationOperator3d : public Handle_StepGeom
 };
 %extend Handle_StepGeom_CartesianTransformationOperator3d {
 	~Handle_StepGeom_CartesianTransformationOperator3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator3d\n");}
 	}
 };
 
@@ -1188,7 +1230,8 @@ class Handle_StepGeom_HArray1OfCartesianPoint : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_HArray1OfCartesianPoint {
 	~Handle_StepGeom_HArray1OfCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfCartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfCartesianPoint\n");}
 	}
 };
 
@@ -1212,7 +1255,8 @@ class Handle_StepGeom_TrimmedCurve : public Handle_StepGeom_BoundedCurve {
 };
 %extend Handle_StepGeom_TrimmedCurve {
 	~Handle_StepGeom_TrimmedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_TrimmedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_TrimmedCurve\n");}
 	}
 };
 
@@ -1236,7 +1280,8 @@ class Handle_StepGeom_OrientedSurface : public Handle_StepGeom_Surface {
 };
 %extend Handle_StepGeom_OrientedSurface {
 	~Handle_StepGeom_OrientedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OrientedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OrientedSurface\n");}
 	}
 };
 
@@ -1260,7 +1305,8 @@ class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
 };
 %extend Handle_StepGeom_OffsetSurface {
 	~Handle_StepGeom_OffsetSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OffsetSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OffsetSurface\n");}
 	}
 };
 
@@ -1284,7 +1330,8 @@ class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurfac
 };
 %extend Handle_StepGeom_CurveBoundedSurface {
 	~Handle_StepGeom_CurveBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CurveBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CurveBoundedSurface\n");}
 	}
 };
 
@@ -1308,7 +1355,8 @@ class Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface : public Handle_St
 };
 %extend Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface {
 	~Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -1332,7 +1380,8 @@ class Handle_StepGeom_Axis1Placement : public Handle_StepGeom_Placement {
 };
 %extend Handle_StepGeom_Axis1Placement {
 	~Handle_StepGeom_Axis1Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Axis1Placement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Axis1Placement\n");}
 	}
 };
 
@@ -1356,7 +1405,8 @@ class Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public Handle_S
 };
 %extend Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
 	~Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -1380,7 +1430,8 @@ class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
 };
 %extend Handle_StepGeom_CurveReplica {
 	~Handle_StepGeom_CurveReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CurveReplica\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CurveReplica\n");}
 	}
 };
 
@@ -1404,7 +1455,8 @@ class Handle_StepGeom_CylindricalSurface : public Handle_StepGeom_ElementarySurf
 };
 %extend Handle_StepGeom_CylindricalSurface {
 	~Handle_StepGeom_CylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CylindricalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CylindricalSurface\n");}
 	}
 };
 
@@ -1428,7 +1480,8 @@ class Handle_StepGeom_SweptSurface : public Handle_StepGeom_Surface {
 };
 %extend Handle_StepGeom_SweptSurface {
 	~Handle_StepGeom_SweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SweptSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SweptSurface\n");}
 	}
 };
 
@@ -1452,7 +1505,8 @@ class Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public Hand
 };
 %extend Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
 	~Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -1476,7 +1530,8 @@ class Handle_StepGeom_HArray1OfPcurveOrSurface : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_HArray1OfPcurveOrSurface {
 	~Handle_StepGeom_HArray1OfPcurveOrSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfPcurveOrSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfPcurveOrSurface\n");}
 	}
 };
 
@@ -1500,7 +1555,8 @@ class Handle_StepGeom_Ellipse : public Handle_StepGeom_Conic {
 };
 %extend Handle_StepGeom_Ellipse {
 	~Handle_StepGeom_Ellipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Ellipse\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Ellipse\n");}
 	}
 };
 
@@ -1524,7 +1580,8 @@ class Handle_StepGeom_CompositeCurveSegment : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_CompositeCurveSegment {
 	~Handle_StepGeom_CompositeCurveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CompositeCurveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CompositeCurveSegment\n");}
 	}
 };
 
@@ -1548,7 +1605,8 @@ class Handle_StepGeom_UniformCurve : public Handle_StepGeom_BSplineCurve {
 };
 %extend Handle_StepGeom_UniformCurve {
 	~Handle_StepGeom_UniformCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformCurve\n");}
 	}
 };
 
@@ -1572,7 +1630,8 @@ class Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface : public Handle_Ste
 };
 %extend Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface {
 	~Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -1596,7 +1655,8 @@ class Handle_StepGeom_ToroidalSurface : public Handle_StepGeom_ElementarySurface
 };
 %extend Handle_StepGeom_ToroidalSurface {
 	~Handle_StepGeom_ToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ToroidalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ToroidalSurface\n");}
 	}
 };
 
@@ -1620,7 +1680,8 @@ class Handle_StepGeom_PointOnCurve : public Handle_StepGeom_Point {
 };
 %extend Handle_StepGeom_PointOnCurve {
 	~Handle_StepGeom_PointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_PointOnCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_PointOnCurve\n");}
 	}
 };
 
@@ -1644,7 +1705,8 @@ class Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public 
 };
 %extend Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	~Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -1668,7 +1730,8 @@ class Handle_StepGeom_CartesianPoint : public Handle_StepGeom_Point {
 };
 %extend Handle_StepGeom_CartesianPoint {
 	~Handle_StepGeom_CartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianPoint\n");}
 	}
 };
 
@@ -1692,7 +1755,8 @@ class Handle_StepGeom_Vector : public Handle_StepGeom_GeometricRepresentationIte
 };
 %extend Handle_StepGeom_Vector {
 	~Handle_StepGeom_Vector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Vector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Vector\n");}
 	}
 };
 
@@ -1716,7 +1780,8 @@ class Handle_StepGeom_ConicalSurface : public Handle_StepGeom_ElementarySurface 
 };
 %extend Handle_StepGeom_ConicalSurface {
 	~Handle_StepGeom_ConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ConicalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ConicalSurface\n");}
 	}
 };
 
@@ -1740,7 +1805,8 @@ class Handle_StepGeom_CartesianTransformationOperator2d : public Handle_StepGeom
 };
 %extend Handle_StepGeom_CartesianTransformationOperator2d {
 	~Handle_StepGeom_CartesianTransformationOperator2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator2d\n");}
 	}
 };
 
@@ -1764,7 +1830,8 @@ class Handle_StepGeom_ReparametrisedCompositeCurveSegment : public Handle_StepGe
 };
 %extend Handle_StepGeom_ReparametrisedCompositeCurveSegment {
 	~Handle_StepGeom_ReparametrisedCompositeCurveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ReparametrisedCompositeCurveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ReparametrisedCompositeCurveSegment\n");}
 	}
 };
 
@@ -1788,7 +1855,8 @@ class Handle_StepGeom_TrimmingMember : public Handle_StepData_SelectReal {
 };
 %extend Handle_StepGeom_TrimmingMember {
 	~Handle_StepGeom_TrimmingMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_TrimmingMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_TrimmingMember\n");}
 	}
 };
 
@@ -1812,7 +1880,8 @@ class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface 
 };
 %extend Handle_StepGeom_SurfaceOfRevolution {
 	~Handle_StepGeom_SurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceOfRevolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceOfRevolution\n");}
 	}
 };
 
@@ -1836,7 +1905,8 @@ class Handle_StepGeom_SeamCurve : public Handle_StepGeom_SurfaceCurve {
 };
 %extend Handle_StepGeom_SeamCurve {
 	~Handle_StepGeom_SeamCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SeamCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SeamCurve\n");}
 	}
 };
 
@@ -1860,7 +1930,8 @@ class Handle_StepGeom_HArray1OfSurfaceBoundary : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_HArray1OfSurfaceBoundary {
 	~Handle_StepGeom_HArray1OfSurfaceBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfSurfaceBoundary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfSurfaceBoundary\n");}
 	}
 };
 
@@ -1884,7 +1955,8 @@ class Handle_StepGeom_RationalBSplineCurve : public Handle_StepGeom_BSplineCurve
 };
 %extend Handle_StepGeom_RationalBSplineCurve {
 	~Handle_StepGeom_RationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RationalBSplineCurve\n");}
 	}
 };
 
@@ -1908,7 +1980,8 @@ class Handle_StepGeom_Parabola : public Handle_StepGeom_Conic {
 };
 %extend Handle_StepGeom_Parabola {
 	~Handle_StepGeom_Parabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Parabola\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Parabola\n");}
 	}
 };
 
@@ -1932,7 +2005,8 @@ class Handle_StepGeom_QuasiUniformSurface : public Handle_StepGeom_BSplineSurfac
 };
 %extend Handle_StepGeom_QuasiUniformSurface {
 	~Handle_StepGeom_QuasiUniformSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformSurface\n");}
 	}
 };
 
@@ -1956,7 +2030,8 @@ class Handle_StepGeom_Circle : public Handle_StepGeom_Conic {
 };
 %extend Handle_StepGeom_Circle {
 	~Handle_StepGeom_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Circle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Circle\n");}
 	}
 };
 
@@ -1980,7 +2055,8 @@ class Handle_StepGeom_UniformSurface : public Handle_StepGeom_BSplineSurface {
 };
 %extend Handle_StepGeom_UniformSurface {
 	~Handle_StepGeom_UniformSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurface\n");}
 	}
 };
 
@@ -2004,7 +2080,8 @@ class Handle_StepGeom_RectangularTrimmedSurface : public Handle_StepGeom_Bounded
 };
 %extend Handle_StepGeom_RectangularTrimmedSurface {
 	~Handle_StepGeom_RectangularTrimmedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RectangularTrimmedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RectangularTrimmedSurface\n");}
 	}
 };
 
@@ -2028,7 +2105,8 @@ class Handle_StepGeom_DegenerateToroidalSurface : public Handle_StepGeom_Toroida
 };
 %extend Handle_StepGeom_DegenerateToroidalSurface {
 	~Handle_StepGeom_DegenerateToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_DegenerateToroidalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_DegenerateToroidalSurface\n");}
 	}
 };
 
@@ -2052,7 +2130,8 @@ class Handle_StepGeom_SurfaceOfLinearExtrusion : public Handle_StepGeom_SweptSur
 };
 %extend Handle_StepGeom_SurfaceOfLinearExtrusion {
 	~Handle_StepGeom_SurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceOfLinearExtrusion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfaceOfLinearExtrusion\n");}
 	}
 };
 
@@ -2076,7 +2155,8 @@ class Handle_StepGeom_Plane : public Handle_StepGeom_ElementarySurface {
 };
 %extend Handle_StepGeom_Plane {
 	~Handle_StepGeom_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Plane\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Plane\n");}
 	}
 };
 
@@ -2100,7 +2180,8 @@ class Handle_StepGeom_PointReplica : public Handle_StepGeom_Point {
 };
 %extend Handle_StepGeom_PointReplica {
 	~Handle_StepGeom_PointReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_PointReplica\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_PointReplica\n");}
 	}
 };
 
@@ -2124,7 +2205,8 @@ class Handle_StepGeom_RationalBSplineSurface : public Handle_StepGeom_BSplineSur
 };
 %extend Handle_StepGeom_RationalBSplineSurface {
 	~Handle_StepGeom_RationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RationalBSplineSurface\n");}
 	}
 };
 
@@ -2148,7 +2230,8 @@ class Handle_StepGeom_BezierCurve : public Handle_StepGeom_BSplineCurve {
 };
 %extend Handle_StepGeom_BezierCurve {
 	~Handle_StepGeom_BezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierCurve\n");}
 	}
 };
 
@@ -2172,7 +2255,8 @@ class Handle_StepGeom_OffsetCurve3d : public Handle_StepGeom_Curve {
 };
 %extend Handle_StepGeom_OffsetCurve3d {
 	~Handle_StepGeom_OffsetCurve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OffsetCurve3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OffsetCurve3d\n");}
 	}
 };
 
@@ -2196,7 +2280,8 @@ class Handle_StepGeom_IntersectionCurve : public Handle_StepGeom_SurfaceCurve {
 };
 %extend Handle_StepGeom_IntersectionCurve {
 	~Handle_StepGeom_IntersectionCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_IntersectionCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_IntersectionCurve\n");}
 	}
 };
 
@@ -2220,7 +2305,8 @@ class Handle_StepGeom_HArray1OfBoundaryCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_HArray1OfBoundaryCurve {
 	~Handle_StepGeom_HArray1OfBoundaryCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfBoundaryCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfBoundaryCurve\n");}
 	}
 };
 
@@ -2244,7 +2330,8 @@ class Handle_StepGeom_Polyline : public Handle_StepGeom_BoundedCurve {
 };
 %extend Handle_StepGeom_Polyline {
 	~Handle_StepGeom_Polyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Polyline\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Polyline\n");}
 	}
 };
 
@@ -2268,7 +2355,8 @@ class Handle_StepGeom_SurfacePatch : public Handle_MMgt_TShared {
 };
 %extend Handle_StepGeom_SurfacePatch {
 	~Handle_StepGeom_SurfacePatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfacePatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SurfacePatch\n");}
 	}
 };
 
@@ -2292,7 +2380,8 @@ class Handle_StepGeom_Pcurve : public Handle_StepGeom_Curve {
 };
 %extend Handle_StepGeom_Pcurve {
 	~Handle_StepGeom_Pcurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Pcurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Pcurve\n");}
 	}
 };
 
@@ -2316,7 +2405,8 @@ class Handle_StepGeom_UniformCurveAndRationalBSplineCurve : public Handle_StepGe
 };
 %extend Handle_StepGeom_UniformCurveAndRationalBSplineCurve {
 	~Handle_StepGeom_UniformCurveAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformCurveAndRationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformCurveAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -2340,7 +2430,8 @@ class Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public Hand
 };
 %extend Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface {
 	~Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -2364,7 +2455,8 @@ class Handle_StepGeom_GeometricRepresentationContext : public Handle_StepRepr_Re
 };
 %extend Handle_StepGeom_GeometricRepresentationContext {
 	~Handle_StepGeom_GeometricRepresentationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContext\n");}
 	}
 };
 
@@ -2388,7 +2480,8 @@ class Handle_StepGeom_Line : public Handle_StepGeom_Curve {
 };
 %extend Handle_StepGeom_Line {
 	~Handle_StepGeom_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Line\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Line\n");}
 	}
 };
 
@@ -2427,8 +2520,14 @@ class StepGeom_HArray1OfCompositeCurveSegment : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray1OfCompositeCurveSegment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray1OfCompositeCurveSegment {
 	~StepGeom_HArray1OfCompositeCurveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCompositeCurveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCompositeCurveSegment\n");}
 	}
 };
 
@@ -2467,7 +2566,8 @@ class StepGeom_Array1OfSurfaceBoundary {
 };
 %extend StepGeom_Array1OfSurfaceBoundary {
 	~StepGeom_Array1OfSurfaceBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfSurfaceBoundary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfSurfaceBoundary\n");}
 	}
 };
 
@@ -2486,8 +2586,14 @@ class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem 
 	}
 };
 %extend StepGeom_GeometricRepresentationItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_GeometricRepresentationItem {
 	~StepGeom_GeometricRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_GeometricRepresentationItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_GeometricRepresentationItem\n");}
 	}
 };
 
@@ -2504,8 +2610,14 @@ class StepGeom_Point : public StepGeom_GeometricRepresentationItem {
 	}
 };
 %extend StepGeom_Point {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Point {
 	~StepGeom_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Point\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Point\n");}
 	}
 };
 
@@ -2534,8 +2646,14 @@ class StepGeom_PointOnCurve : public StepGeom_Point {
 	}
 };
 %extend StepGeom_PointOnCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_PointOnCurve {
 	~StepGeom_PointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_PointOnCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_PointOnCurve\n");}
 	}
 };
 
@@ -2562,8 +2680,14 @@ class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 	}
 };
 %extend StepGeom_Placement {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Placement {
 	~StepGeom_Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Placement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Placement\n");}
 	}
 };
 
@@ -2582,8 +2706,14 @@ class StepGeom_Surface : public StepGeom_GeometricRepresentationItem {
 	}
 };
 %extend StepGeom_Surface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Surface {
 	~StepGeom_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Surface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Surface\n");}
 	}
 };
 
@@ -2606,8 +2736,14 @@ class StepGeom_OrientedSurface : public StepGeom_Surface {
 	}
 };
 %extend StepGeom_OrientedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_OrientedSurface {
 	~StepGeom_OrientedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_OrientedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_OrientedSurface\n");}
 	}
 };
 
@@ -2642,8 +2778,14 @@ class StepGeom_CartesianPoint : public StepGeom_Point {
 	}
 };
 %extend StepGeom_CartesianPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CartesianPoint {
 	~StepGeom_CartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianPoint\n");}
 	}
 };
 
@@ -2662,8 +2804,14 @@ class StepGeom_BoundedSurface : public StepGeom_Surface {
 	}
 };
 %extend StepGeom_BoundedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BoundedSurface {
 	~StepGeom_BoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundedSurface\n");}
 	}
 };
 
@@ -2718,8 +2866,14 @@ class StepGeom_BSplineSurface : public StepGeom_BoundedSurface {
 	}
 };
 %extend StepGeom_BSplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BSplineSurface {
 	~StepGeom_BSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineSurface\n");}
 	}
 };
 
@@ -2736,8 +2890,14 @@ class StepGeom_UniformSurface : public StepGeom_BSplineSurface {
 	}
 };
 %extend StepGeom_UniformSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_UniformSurface {
 	~StepGeom_UniformSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_UniformSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformSurface\n");}
 	}
 };
 
@@ -2780,7 +2940,8 @@ class StepGeom_Array2OfSurfacePatch {
 };
 %extend StepGeom_Array2OfSurfacePatch {
 	~StepGeom_Array2OfSurfacePatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array2OfSurfacePatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array2OfSurfacePatch\n");}
 	}
 };
 
@@ -2811,8 +2972,14 @@ class StepGeom_PointReplica : public StepGeom_Point {
 	}
 };
 %extend StepGeom_PointReplica {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_PointReplica {
 	~StepGeom_PointReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_PointReplica\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_PointReplica\n");}
 	}
 };
 
@@ -2831,8 +2998,14 @@ class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
 	}
 };
 %extend StepGeom_Curve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Curve {
 	~StepGeom_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Curve\n");}
 	}
 };
 
@@ -2857,8 +3030,14 @@ class StepGeom_Conic : public StepGeom_Curve {
 	}
 };
 %extend StepGeom_Conic {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Conic {
 	~StepGeom_Conic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Conic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Conic\n");}
 	}
 };
 
@@ -2885,8 +3064,14 @@ class StepGeom_Ellipse : public StepGeom_Conic {
 	}
 };
 %extend StepGeom_Ellipse {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Ellipse {
 	~StepGeom_Ellipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Ellipse\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Ellipse\n");}
 	}
 };
 
@@ -2925,8 +3110,14 @@ class StepGeom_HArray1OfSurfaceBoundary : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray1OfSurfaceBoundary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray1OfSurfaceBoundary {
 	~StepGeom_HArray1OfSurfaceBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfSurfaceBoundary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfSurfaceBoundary\n");}
 	}
 };
 
@@ -2963,8 +3154,14 @@ class StepGeom_GeometricRepresentationContextAndParametricRepresentationContext 
 	}
 };
 %extend StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_GeometricRepresentationContextAndParametricRepresentationContext {
 	~StepGeom_GeometricRepresentationContextAndParametricRepresentationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_GeometricRepresentationContextAndParametricRepresentationContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_GeometricRepresentationContextAndParametricRepresentationContext\n");}
 	}
 };
 
@@ -2983,8 +3180,14 @@ class StepGeom_BoundedCurve : public StepGeom_Curve {
 	}
 };
 %extend StepGeom_BoundedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BoundedCurve {
 	~StepGeom_BoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundedCurve\n");}
 	}
 };
 
@@ -3017,8 +3220,14 @@ class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 	}
 };
 %extend StepGeom_CompositeCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CompositeCurve {
 	~StepGeom_CompositeCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurve\n");}
 	}
 };
 
@@ -3035,8 +3244,14 @@ class StepGeom_CompositeCurveOnSurface : public StepGeom_CompositeCurve {
 	}
 };
 %extend StepGeom_CompositeCurveOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CompositeCurveOnSurface {
 	~StepGeom_CompositeCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurveOnSurface\n");}
 	}
 };
 
@@ -3053,8 +3268,14 @@ class StepGeom_BoundaryCurve : public StepGeom_CompositeCurveOnSurface {
 	}
 };
 %extend StepGeom_BoundaryCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BoundaryCurve {
 	~StepGeom_BoundaryCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BoundaryCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundaryCurve\n");}
 	}
 };
 
@@ -3105,8 +3326,14 @@ class StepGeom_TrimmedCurve : public StepGeom_BoundedCurve {
 	}
 };
 %extend StepGeom_TrimmedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_TrimmedCurve {
 	~StepGeom_TrimmedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmedCurve\n");}
 	}
 };
 
@@ -3137,8 +3364,14 @@ class StepGeom_SurfaceReplica : public StepGeom_Surface {
 	}
 };
 %extend StepGeom_SurfaceReplica {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SurfaceReplica {
 	~StepGeom_SurfaceReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceReplica\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceReplica\n");}
 	}
 };
 
@@ -3217,8 +3450,14 @@ class StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public StepGeo
 	}
 };
 %extend StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	~StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -3251,8 +3490,14 @@ class StepGeom_CompositeCurveSegment : public MMgt_TShared {
 	}
 };
 %extend StepGeom_CompositeCurveSegment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CompositeCurveSegment {
 	~StepGeom_CompositeCurveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurveSegment\n");}
 	}
 };
 
@@ -3291,7 +3536,8 @@ class StepGeom_Array1OfTrimmingSelect {
 };
 %extend StepGeom_Array1OfTrimmingSelect {
 	~StepGeom_Array1OfTrimmingSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfTrimmingSelect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfTrimmingSelect\n");}
 	}
 };
 
@@ -3310,7 +3556,8 @@ class StepGeom_PcurveOrSurface : public StepData_SelectType {
 };
 %extend StepGeom_PcurveOrSurface {
 	~StepGeom_PcurveOrSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_PcurveOrSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_PcurveOrSurface\n");}
 	}
 };
 
@@ -3337,8 +3584,14 @@ class StepGeom_ElementarySurface : public StepGeom_Surface {
 	}
 };
 %extend StepGeom_ElementarySurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_ElementarySurface {
 	~StepGeom_ElementarySurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_ElementarySurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_ElementarySurface\n");}
 	}
 };
 
@@ -3361,8 +3614,14 @@ class StepGeom_SphericalSurface : public StepGeom_ElementarySurface {
 	}
 };
 %extend StepGeom_SphericalSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SphericalSurface {
 	~StepGeom_SphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SphericalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SphericalSurface\n");}
 	}
 };
 
@@ -3409,8 +3668,14 @@ class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
 	}
 };
 %extend StepGeom_BSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BSplineCurve {
 	~StepGeom_BSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurve\n");}
 	}
 };
 
@@ -3467,8 +3732,14 @@ class StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public StepGeom_BS
 	}
 };
 %extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve {
 	~StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -3519,8 +3790,14 @@ class StepGeom_CartesianTransformationOperator : public StepGeom_GeometricRepres
 	}
 };
 %extend StepGeom_CartesianTransformationOperator {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CartesianTransformationOperator {
 	~StepGeom_CartesianTransformationOperator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator\n");}
 	}
 };
 
@@ -3551,8 +3828,14 @@ class StepGeom_Pcurve : public StepGeom_Curve {
 	}
 };
 %extend StepGeom_Pcurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Pcurve {
 	~StepGeom_Pcurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Pcurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Pcurve\n");}
 	}
 };
 
@@ -3591,8 +3874,14 @@ class StepGeom_HArray1OfCartesianPoint : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray1OfCartesianPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray1OfCartesianPoint {
 	~StepGeom_HArray1OfCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCartesianPoint\n");}
 	}
 };
 
@@ -3611,7 +3900,8 @@ class StepGeom_VectorOrDirection : public StepData_SelectType {
 };
 %extend StepGeom_VectorOrDirection {
 	~StepGeom_VectorOrDirection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_VectorOrDirection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_VectorOrDirection\n");}
 	}
 };
 
@@ -3638,8 +3928,14 @@ class StepGeom_SweptSurface : public StepGeom_Surface {
 	}
 };
 %extend StepGeom_SweptSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SweptSurface {
 	~StepGeom_SweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SweptSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SweptSurface\n");}
 	}
 };
 
@@ -3662,8 +3958,14 @@ class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
 	}
 };
 %extend StepGeom_SurfaceOfLinearExtrusion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SurfaceOfLinearExtrusion {
 	~StepGeom_SurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceOfLinearExtrusion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceOfLinearExtrusion\n");}
 	}
 };
 
@@ -3696,8 +3998,14 @@ class StepGeom_CurveBoundedSurface : public StepGeom_BoundedSurface {
 	}
 };
 %extend StepGeom_CurveBoundedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CurveBoundedSurface {
 	~StepGeom_CurveBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CurveBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CurveBoundedSurface\n");}
 	}
 };
 
@@ -3756,8 +4064,14 @@ class StepGeom_BSplineSurfaceWithKnots : public StepGeom_BSplineSurface {
 	}
 };
 %extend StepGeom_BSplineSurfaceWithKnots {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BSplineSurfaceWithKnots {
 	~StepGeom_BSplineSurfaceWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineSurfaceWithKnots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineSurfaceWithKnots\n");}
 	}
 };
 
@@ -3796,8 +4110,14 @@ class StepGeom_SurfaceCurve : public StepGeom_Curve {
 	}
 };
 %extend StepGeom_SurfaceCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SurfaceCurve {
 	~StepGeom_SurfaceCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceCurve\n");}
 	}
 };
 
@@ -3816,8 +4136,14 @@ class StepGeom_SurfaceCurveAndBoundedCurve : public StepGeom_SurfaceCurve {
 	}
 };
 %extend StepGeom_SurfaceCurveAndBoundedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SurfaceCurveAndBoundedCurve {
 	~StepGeom_SurfaceCurveAndBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceCurveAndBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceCurveAndBoundedCurve\n");}
 	}
 };
 
@@ -3852,8 +4178,14 @@ class StepGeom_PointOnSurface : public StepGeom_Point {
 	}
 };
 %extend StepGeom_PointOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_PointOnSurface {
 	~StepGeom_PointOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_PointOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_PointOnSurface\n");}
 	}
 };
 
@@ -3872,7 +4204,8 @@ class StepGeom_SurfaceBoundary : public StepData_SelectType {
 };
 %extend StepGeom_SurfaceBoundary {
 	~StepGeom_SurfaceBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceBoundary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceBoundary\n");}
 	}
 };
 
@@ -3899,8 +4232,14 @@ class StepGeom_Circle : public StepGeom_Conic {
 	}
 };
 %extend StepGeom_Circle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Circle {
 	~StepGeom_Circle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Circle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Circle\n");}
 	}
 };
 
@@ -3939,7 +4278,8 @@ class StepGeom_Array1OfCartesianPoint {
 };
 %extend StepGeom_Array1OfCartesianPoint {
 	~StepGeom_Array1OfCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfCartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfCartesianPoint\n");}
 	}
 };
 
@@ -3966,8 +4306,14 @@ class StepGeom_ReparametrisedCompositeCurveSegment : public StepGeom_CompositeCu
 	}
 };
 %extend StepGeom_ReparametrisedCompositeCurveSegment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_ReparametrisedCompositeCurveSegment {
 	~StepGeom_ReparametrisedCompositeCurveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_ReparametrisedCompositeCurveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_ReparametrisedCompositeCurveSegment\n");}
 	}
 };
 
@@ -4000,8 +4346,14 @@ class StepGeom_RectangularCompositeSurface : public StepGeom_BoundedSurface {
 	}
 };
 %extend StepGeom_RectangularCompositeSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_RectangularCompositeSurface {
 	~StepGeom_RectangularCompositeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_RectangularCompositeSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_RectangularCompositeSurface\n");}
 	}
 };
 
@@ -4020,8 +4372,14 @@ class StepGeom_OuterBoundaryCurve : public StepGeom_BoundaryCurve {
 	}
 };
 %extend StepGeom_OuterBoundaryCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_OuterBoundaryCurve {
 	~StepGeom_OuterBoundaryCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_OuterBoundaryCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_OuterBoundaryCurve\n");}
 	}
 };
 
@@ -4062,8 +4420,14 @@ class StepGeom_BezierCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve
 	}
 };
 %extend StepGeom_BezierCurveAndRationalBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BezierCurveAndRationalBSplineCurve {
 	~StepGeom_BezierCurveAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BezierCurveAndRationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BezierCurveAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -4102,7 +4466,8 @@ class StepGeom_Array1OfCurve {
 };
 %extend StepGeom_Array1OfCurve {
 	~StepGeom_Array1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfCurve\n");}
 	}
 };
 
@@ -4145,7 +4510,8 @@ class StepGeom_Array2OfCartesianPoint {
 };
 %extend StepGeom_Array2OfCartesianPoint {
 	~StepGeom_Array2OfCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array2OfCartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array2OfCartesianPoint\n");}
 	}
 };
 
@@ -4186,8 +4552,14 @@ class StepGeom_SurfacePatch : public MMgt_TShared {
 	}
 };
 %extend StepGeom_SurfacePatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SurfacePatch {
 	~StepGeom_SurfacePatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SurfacePatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfacePatch\n");}
 	}
 };
 
@@ -4218,8 +4590,14 @@ class StepGeom_Axis1Placement : public StepGeom_Placement {
 	}
 };
 %extend StepGeom_Axis1Placement {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Axis1Placement {
 	~StepGeom_Axis1Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Axis1Placement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Axis1Placement\n");}
 	}
 };
 
@@ -4258,7 +4636,8 @@ class StepGeom_Array1OfBoundaryCurve {
 };
 %extend StepGeom_Array1OfBoundaryCurve {
 	~StepGeom_Array1OfBoundaryCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfBoundaryCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfBoundaryCurve\n");}
 	}
 };
 
@@ -4279,7 +4658,8 @@ class StepGeom_CurveOnSurface : public StepData_SelectType {
 };
 %extend StepGeom_CurveOnSurface {
 	~StepGeom_CurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CurveOnSurface\n");}
 	}
 };
 
@@ -4318,7 +4698,8 @@ class StepGeom_Array1OfCompositeCurveSegment {
 };
 %extend StepGeom_Array1OfCompositeCurveSegment {
 	~StepGeom_Array1OfCompositeCurveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfCompositeCurveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfCompositeCurveSegment\n");}
 	}
 };
 
@@ -4337,8 +4718,14 @@ class StepGeom_SeamCurve : public StepGeom_SurfaceCurve {
 	}
 };
 %extend StepGeom_SeamCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SeamCurve {
 	~StepGeom_SeamCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SeamCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SeamCurve\n");}
 	}
 };
 
@@ -4369,8 +4756,14 @@ class StepGeom_DegeneratePcurve : public StepGeom_Point {
 	}
 };
 %extend StepGeom_DegeneratePcurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_DegeneratePcurve {
 	~StepGeom_DegeneratePcurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_DegeneratePcurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_DegeneratePcurve\n");}
 	}
 };
 
@@ -4393,8 +4786,14 @@ class StepGeom_EvaluatedDegeneratePcurve : public StepGeom_DegeneratePcurve {
 	}
 };
 %extend StepGeom_EvaluatedDegeneratePcurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_EvaluatedDegeneratePcurve {
 	~StepGeom_EvaluatedDegeneratePcurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_EvaluatedDegeneratePcurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_EvaluatedDegeneratePcurve\n");}
 	}
 };
 
@@ -4433,8 +4832,14 @@ class StepGeom_HArray1OfTrimmingSelect : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray1OfTrimmingSelect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray1OfTrimmingSelect {
 	~StepGeom_HArray1OfTrimmingSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfTrimmingSelect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfTrimmingSelect\n");}
 	}
 };
 
@@ -4465,8 +4870,14 @@ class StepGeom_ConicalSurface : public StepGeom_ElementarySurface {
 	}
 };
 %extend StepGeom_ConicalSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_ConicalSurface {
 	~StepGeom_ConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_ConicalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_ConicalSurface\n");}
 	}
 };
 
@@ -4493,8 +4904,14 @@ class StepGeom_SurfaceOfRevolution : public StepGeom_SweptSurface {
 	}
 };
 %extend StepGeom_SurfaceOfRevolution {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_SurfaceOfRevolution {
 	~StepGeom_SurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceOfRevolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceOfRevolution\n");}
 	}
 };
 
@@ -4521,8 +4938,14 @@ class StepGeom_Parabola : public StepGeom_Conic {
 	}
 };
 %extend StepGeom_Parabola {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Parabola {
 	~StepGeom_Parabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Parabola\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Parabola\n");}
 	}
 };
 
@@ -4553,8 +4976,14 @@ class StepGeom_CurveReplica : public StepGeom_Curve {
 	}
 };
 %extend StepGeom_CurveReplica {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CurveReplica {
 	~StepGeom_CurveReplica() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CurveReplica\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CurveReplica\n");}
 	}
 };
 
@@ -4579,8 +5008,14 @@ class StepGeom_TrimmingMember : public StepData_SelectReal {
 	}
 };
 %extend StepGeom_TrimmingMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_TrimmingMember {
 	~StepGeom_TrimmingMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmingMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmingMember\n");}
 	}
 };
 
@@ -4599,8 +5034,14 @@ class StepGeom_CartesianTransformationOperator2d : public StepGeom_CartesianTran
 	}
 };
 %extend StepGeom_CartesianTransformationOperator2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CartesianTransformationOperator2d {
 	~StepGeom_CartesianTransformationOperator2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator2d\n");}
 	}
 };
 
@@ -4631,8 +5072,14 @@ class StepGeom_CartesianTransformationOperator3d : public StepGeom_CartesianTran
 	}
 };
 %extend StepGeom_CartesianTransformationOperator3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CartesianTransformationOperator3d {
 	~StepGeom_CartesianTransformationOperator3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator3d\n");}
 	}
 };
 
@@ -4677,8 +5124,14 @@ class StepGeom_HArray2OfSurfacePatch : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray2OfSurfacePatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray2OfSurfacePatch {
 	~StepGeom_HArray2OfSurfacePatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray2OfSurfacePatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray2OfSurfacePatch\n");}
 	}
 };
 
@@ -4703,7 +5156,8 @@ class StepGeom_TrimmingSelect : public StepData_SelectType {
 };
 %extend StepGeom_TrimmingSelect {
 	~StepGeom_TrimmingSelect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmingSelect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmingSelect\n");}
 	}
 };
 
@@ -4744,8 +5198,14 @@ class StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public StepGeom_BSplin
 	}
 };
 %extend StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_QuasiUniformCurveAndRationalBSplineCurve {
 	~StepGeom_QuasiUniformCurveAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformCurveAndRationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformCurveAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -4764,8 +5224,14 @@ class StepGeom_QuasiUniformSurface : public StepGeom_BSplineSurface {
 	}
 };
 %extend StepGeom_QuasiUniformSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_QuasiUniformSurface {
 	~StepGeom_QuasiUniformSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformSurface\n");}
 	}
 };
 
@@ -4816,8 +5282,14 @@ class StepGeom_RectangularTrimmedSurface : public StepGeom_BoundedSurface {
 	}
 };
 %extend StepGeom_RectangularTrimmedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_RectangularTrimmedSurface {
 	~StepGeom_RectangularTrimmedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_RectangularTrimmedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_RectangularTrimmedSurface\n");}
 	}
 };
 
@@ -4858,8 +5330,14 @@ class StepGeom_UniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurv
 	}
 };
 %extend StepGeom_UniformCurveAndRationalBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_UniformCurveAndRationalBSplineCurve {
 	~StepGeom_UniformCurveAndRationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_UniformCurveAndRationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformCurveAndRationalBSplineCurve\n");}
 	}
 };
 
@@ -4904,8 +5382,14 @@ class StepGeom_HArray2OfCartesianPoint : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray2OfCartesianPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray2OfCartesianPoint {
 	~StepGeom_HArray2OfCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray2OfCartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray2OfCartesianPoint\n");}
 	}
 };
 
@@ -4924,8 +5408,14 @@ class StepGeom_QuasiUniformCurve : public StepGeom_BSplineCurve {
 	}
 };
 %extend StepGeom_QuasiUniformCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_QuasiUniformCurve {
 	~StepGeom_QuasiUniformCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformCurve\n");}
 	}
 };
 
@@ -4952,8 +5442,14 @@ class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
 	}
 };
 %extend StepGeom_CylindricalSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_CylindricalSurface {
 	~StepGeom_CylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_CylindricalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_CylindricalSurface\n");}
 	}
 };
 
@@ -4984,8 +5480,14 @@ class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
 	}
 };
 %extend StepGeom_ToroidalSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_ToroidalSurface {
 	~StepGeom_ToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_ToroidalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_ToroidalSurface\n");}
 	}
 };
 
@@ -5008,8 +5510,14 @@ class StepGeom_DegenerateToroidalSurface : public StepGeom_ToroidalSurface {
 	}
 };
 %extend StepGeom_DegenerateToroidalSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_DegenerateToroidalSurface {
 	~StepGeom_DegenerateToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_DegenerateToroidalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_DegenerateToroidalSurface\n");}
 	}
 };
 
@@ -5048,8 +5556,14 @@ class StepGeom_HArray1OfCurve : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray1OfCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray1OfCurve {
 	~StepGeom_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfCurve\n");}
 	}
 };
 
@@ -5080,8 +5594,14 @@ class StepGeom_Vector : public StepGeom_GeometricRepresentationItem {
 	}
 };
 %extend StepGeom_Vector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Vector {
 	~StepGeom_Vector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Vector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Vector\n");}
 	}
 };
 
@@ -5112,8 +5632,14 @@ class StepGeom_Axis2Placement2d : public StepGeom_Placement {
 	}
 };
 %extend StepGeom_Axis2Placement2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Axis2Placement2d {
 	~StepGeom_Axis2Placement2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Axis2Placement2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Axis2Placement2d\n");}
 	}
 };
 
@@ -5132,8 +5658,14 @@ class StepGeom_BezierSurface : public StepGeom_BSplineSurface {
 	}
 };
 %extend StepGeom_BezierSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BezierSurface {
 	~StepGeom_BezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BezierSurface\n");}
 	}
 };
 
@@ -5172,8 +5704,14 @@ class StepGeom_Axis2Placement3d : public StepGeom_Placement {
 	}
 };
 %extend StepGeom_Axis2Placement3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Axis2Placement3d {
 	~StepGeom_Axis2Placement3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Axis2Placement3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Axis2Placement3d\n");}
 	}
 };
 
@@ -5216,8 +5754,14 @@ class StepGeom_BezierSurfaceAndRationalBSplineSurface : public StepGeom_BSplineS
 	}
 };
 %extend StepGeom_BezierSurfaceAndRationalBSplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BezierSurfaceAndRationalBSplineSurface {
 	~StepGeom_BezierSurfaceAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BezierSurfaceAndRationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BezierSurfaceAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -5260,8 +5804,14 @@ class StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public StepGeom_BS
 	}
 };
 %extend StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface {
 	~StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -5294,8 +5844,14 @@ class StepGeom_RationalBSplineSurface : public StepGeom_BSplineSurface {
 	}
 };
 %extend StepGeom_RationalBSplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_RationalBSplineSurface {
 	~StepGeom_RationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_RationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_RationalBSplineSurface\n");}
 	}
 };
 
@@ -5334,8 +5890,14 @@ class StepGeom_OffsetCurve3d : public StepGeom_Curve {
 	}
 };
 %extend StepGeom_OffsetCurve3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_OffsetCurve3d {
 	~StepGeom_OffsetCurve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_OffsetCurve3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_OffsetCurve3d\n");}
 	}
 };
 
@@ -5380,8 +5942,14 @@ class StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext : publ
 	}
 };
 %extend StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext {
 	~StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext\n");}
 	}
 };
 
@@ -5412,8 +5980,14 @@ class StepGeom_Hyperbola : public StepGeom_Conic {
 	}
 };
 %extend StepGeom_Hyperbola {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Hyperbola {
 	~StepGeom_Hyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Hyperbola\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Hyperbola\n");}
 	}
 };
 
@@ -5452,8 +6026,14 @@ class StepGeom_HArray1OfBoundaryCurve : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray1OfBoundaryCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray1OfBoundaryCurve {
 	~StepGeom_HArray1OfBoundaryCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfBoundaryCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfBoundaryCurve\n");}
 	}
 };
 
@@ -5484,8 +6064,14 @@ class StepGeom_Polyline : public StepGeom_BoundedCurve {
 	}
 };
 %extend StepGeom_Polyline {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Polyline {
 	~StepGeom_Polyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Polyline\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Polyline\n");}
 	}
 };
 
@@ -5504,8 +6090,14 @@ class StepGeom_Plane : public StepGeom_ElementarySurface {
 	}
 };
 %extend StepGeom_Plane {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Plane {
 	~StepGeom_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Plane\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Plane\n");}
 	}
 };
 
@@ -5536,8 +6128,14 @@ class StepGeom_Line : public StepGeom_Curve {
 	}
 };
 %extend StepGeom_Line {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Line {
 	~StepGeom_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Line\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Line\n");}
 	}
 };
 
@@ -5556,8 +6154,14 @@ class StepGeom_IntersectionCurve : public StepGeom_SurfaceCurve {
 	}
 };
 %extend StepGeom_IntersectionCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_IntersectionCurve {
 	~StepGeom_IntersectionCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_IntersectionCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_IntersectionCurve\n");}
 	}
 };
 
@@ -5600,8 +6204,14 @@ class StepGeom_UniformSurfaceAndRationalBSplineSurface : public StepGeom_BSpline
 	}
 };
 %extend StepGeom_UniformSurfaceAndRationalBSplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_UniformSurfaceAndRationalBSplineSurface {
 	~StepGeom_UniformSurfaceAndRationalBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_UniformSurfaceAndRationalBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformSurfaceAndRationalBSplineSurface\n");}
 	}
 };
 
@@ -5632,8 +6242,14 @@ class StepGeom_RationalBSplineCurve : public StepGeom_BSplineCurve {
 	}
 };
 %extend StepGeom_RationalBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_RationalBSplineCurve {
 	~StepGeom_RationalBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_RationalBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_RationalBSplineCurve\n");}
 	}
 };
 
@@ -5652,8 +6268,14 @@ class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
 	}
 };
 %extend StepGeom_UniformCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_UniformCurve {
 	~StepGeom_UniformCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_UniformCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformCurve\n");}
 	}
 };
 
@@ -5692,8 +6314,14 @@ class StepGeom_HArray1OfPcurveOrSurface : public MMgt_TShared {
 	}
 };
 %extend StepGeom_HArray1OfPcurveOrSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_HArray1OfPcurveOrSurface {
 	~StepGeom_HArray1OfPcurveOrSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfPcurveOrSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_HArray1OfPcurveOrSurface\n");}
 	}
 };
 
@@ -5724,8 +6352,14 @@ class StepGeom_Direction : public StepGeom_GeometricRepresentationItem {
 	}
 };
 %extend StepGeom_Direction {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_Direction {
 	~StepGeom_Direction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Direction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Direction\n");}
 	}
 };
 
@@ -5752,8 +6386,14 @@ class StepGeom_GeometricRepresentationContext : public StepRepr_RepresentationCo
 	}
 };
 %extend StepGeom_GeometricRepresentationContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_GeometricRepresentationContext {
 	~StepGeom_GeometricRepresentationContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_GeometricRepresentationContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_GeometricRepresentationContext\n");}
 	}
 };
 
@@ -5772,8 +6412,14 @@ class StepGeom_BezierCurve : public StepGeom_BSplineCurve {
 	}
 };
 %extend StepGeom_BezierCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BezierCurve {
 	~StepGeom_BezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BezierCurve\n");}
 	}
 };
 
@@ -5816,8 +6462,14 @@ class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
 	}
 };
 %extend StepGeom_BSplineCurveWithKnots {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_BSplineCurveWithKnots {
 	~StepGeom_BSplineCurveWithKnots() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurveWithKnots\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurveWithKnots\n");}
 	}
 };
 
@@ -5836,7 +6488,8 @@ class StepGeom_Axis2Placement : public StepData_SelectType {
 };
 %extend StepGeom_Axis2Placement {
 	~StepGeom_Axis2Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Axis2Placement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Axis2Placement\n");}
 	}
 };
 
@@ -5893,8 +6546,14 @@ class StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public 
 	}
 };
 %extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 	~StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");}
 	}
 };
 
@@ -5933,7 +6592,8 @@ class StepGeom_Array1OfPcurveOrSurface {
 };
 %extend StepGeom_Array1OfPcurveOrSurface {
 	~StepGeom_Array1OfPcurveOrSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfPcurveOrSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfPcurveOrSurface\n");}
 	}
 };
 
@@ -5968,7 +6628,13 @@ class StepGeom_OffsetSurface : public StepGeom_Surface {
 	}
 };
 %extend StepGeom_OffsetSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepGeom_OffsetSurface {
 	~StepGeom_OffsetSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepGeom_OffsetSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepGeom_OffsetSurface\n");}
 	}
 };

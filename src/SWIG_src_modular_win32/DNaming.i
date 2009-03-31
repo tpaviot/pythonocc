@@ -131,7 +131,8 @@ class Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName : public Handle_TCollecti
 };
 %extend Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName {
 	~Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName\n");}
 	}
 };
 
@@ -162,7 +163,8 @@ class DNaming {
 };
 %extend DNaming {
 	~DNaming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DNaming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DNaming\n");}
 	}
 };
 
@@ -183,7 +185,8 @@ class DNaming_DataMapIteratorOfDataMapOfShapeOfName : public TCollection_BasicMa
 };
 %extend DNaming_DataMapIteratorOfDataMapOfShapeOfName {
 	~DNaming_DataMapIteratorOfDataMapOfShapeOfName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DNaming_DataMapIteratorOfDataMapOfShapeOfName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DNaming_DataMapIteratorOfDataMapOfShapeOfName\n");}
 	}
 };
 
@@ -206,8 +209,14 @@ class DNaming_DataMapNodeOfDataMapOfShapeOfName : public TCollection_MapNode {
 	}
 };
 %extend DNaming_DataMapNodeOfDataMapOfShapeOfName {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend DNaming_DataMapNodeOfDataMapOfShapeOfName {
 	~DNaming_DataMapNodeOfDataMapOfShapeOfName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DNaming_DataMapNodeOfDataMapOfShapeOfName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DNaming_DataMapNodeOfDataMapOfShapeOfName\n");}
 	}
 };
 
@@ -240,6 +249,7 @@ class DNaming_DataMapOfShapeOfName : public TCollection_BasicMap {
 };
 %extend DNaming_DataMapOfShapeOfName {
 	~DNaming_DataMapOfShapeOfName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of DNaming_DataMapOfShapeOfName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of DNaming_DataMapOfShapeOfName\n");}
 	}
 };

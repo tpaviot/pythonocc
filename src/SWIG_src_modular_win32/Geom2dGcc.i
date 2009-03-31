@@ -146,7 +146,8 @@ class Geom2dGcc_Circ2d2TanOn {
 };
 %extend Geom2dGcc_Circ2d2TanOn {
 	~Geom2dGcc_Circ2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d2TanOn\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d2TanOn\n");}
 	}
 };
 
@@ -171,7 +172,8 @@ class Geom2dGcc_MyL2dTanObl {
 };
 %extend Geom2dGcc_MyL2dTanObl {
 	~Geom2dGcc_MyL2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2dTanObl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2dTanObl\n");}
 	}
 };
 
@@ -190,7 +192,8 @@ class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 };
 %extend Geom2dGcc_FuncTOblOfMyL2dTanObl {
 	~Geom2dGcc_FuncTOblOfMyL2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTOblOfMyL2dTanObl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTOblOfMyL2dTanObl\n");}
 	}
 };
 
@@ -237,7 +240,8 @@ class Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn : public math_FunctionSetWithDerivati
 };
 %extend Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn {
 	~Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn\n");}
 	}
 };
 
@@ -262,7 +266,8 @@ class Geom2dGcc_QualifiedCurve {
 };
 %extend Geom2dGcc_QualifiedCurve {
 	~Geom2dGcc_QualifiedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_QualifiedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_QualifiedCurve\n");}
 	}
 };
 
@@ -285,7 +290,8 @@ class Geom2dGcc_MyCirc2dTanCen {
 };
 %extend Geom2dGcc_MyCirc2dTanCen {
 	~Geom2dGcc_MyCirc2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2dTanCen\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2dTanCen\n");}
 	}
 };
 
@@ -304,7 +310,8 @@ class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
 };
 %extend Geom2dGcc_FuncTCirCuOfMyL2d2Tan {
 	~Geom2dGcc_FuncTCirCuOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCirCuOfMyL2d2Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCirCuOfMyL2d2Tan\n");}
 	}
 };
 
@@ -329,7 +336,8 @@ class Geom2dGcc_MyQCurve {
 };
 %extend Geom2dGcc_MyQCurve {
 	~Geom2dGcc_MyQCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyQCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyQCurve\n");}
 	}
 };
 
@@ -370,7 +378,8 @@ class Geom2dGcc_Circ2d3Tan {
 };
 %extend Geom2dGcc_Circ2d3Tan {
 	~Geom2dGcc_Circ2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d3Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d3Tan\n");}
 	}
 };
 
@@ -389,7 +398,8 @@ class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 };
 %extend Geom2dGcc_FuncTCuPtOfMyL2d2Tan {
 	~Geom2dGcc_FuncTCuPtOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuPtOfMyL2d2Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuPtOfMyL2d2Tan\n");}
 	}
 };
 
@@ -436,7 +446,8 @@ class Geom2dGcc_MyCurveTool {
 };
 %extend Geom2dGcc_MyCurveTool {
 	~Geom2dGcc_MyCurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCurveTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCurveTool\n");}
 	}
 };
 
@@ -467,7 +478,8 @@ class Geom2dGcc_Lin2d2Tan {
 };
 %extend Geom2dGcc_Lin2d2Tan {
 	~Geom2dGcc_Lin2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2d2Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2d2Tan\n");}
 	}
 };
 
@@ -502,7 +514,8 @@ class Geom2dGcc_MyCirc2d2TanRad {
 };
 %extend Geom2dGcc_MyCirc2d2TanRad {
 	~Geom2dGcc_MyCirc2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanRad\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanRad\n");}
 	}
 };
 
@@ -543,7 +556,8 @@ class Geom2dGcc_MyCirc2d2TanOn {
 };
 %extend Geom2dGcc_MyCirc2d2TanOn {
 	~Geom2dGcc_MyCirc2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanOn\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanOn\n");}
 	}
 };
 
@@ -568,7 +582,8 @@ class Geom2dGcc_Circ2dTanCen {
 };
 %extend Geom2dGcc_Circ2dTanCen {
 	~Geom2dGcc_Circ2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanCen\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanCen\n");}
 	}
 };
 
@@ -595,7 +610,8 @@ class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
 };
 %extend Geom2dGcc_FuncTCuCuOfMyL2d2Tan {
 	~Geom2dGcc_FuncTCuCuOfMyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOfMyL2d2Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOfMyL2d2Tan\n");}
 	}
 };
 
@@ -644,7 +660,8 @@ class Geom2dGcc_MyC2d3Tan {
 };
 %extend Geom2dGcc_MyC2d3Tan {
 	~Geom2dGcc_MyC2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d3Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d3Tan\n");}
 	}
 };
 
@@ -695,7 +712,8 @@ class Geom2dGcc_MyC2d2TanOn {
 };
 %extend Geom2dGcc_MyC2d2TanOn {
 	~Geom2dGcc_MyC2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d2TanOn\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d2TanOn\n");}
 	}
 };
 
@@ -722,7 +740,8 @@ class Geom2dGcc_MyL2d2Tan {
 };
 %extend Geom2dGcc_MyL2d2Tan {
 	~Geom2dGcc_MyL2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2d2Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2d2Tan\n");}
 	}
 };
 
@@ -759,7 +778,8 @@ class Geom2dGcc_MyCirc2dTanOnRad {
 };
 %extend Geom2dGcc_MyCirc2dTanOnRad {
 	~Geom2dGcc_MyCirc2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2dTanOnRad\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2dTanOnRad\n");}
 	}
 };
 
@@ -796,7 +816,8 @@ class Geom2dGcc_Circ2d2TanRad {
 };
 %extend Geom2dGcc_Circ2d2TanRad {
 	~Geom2dGcc_Circ2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d2TanRad\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2d2TanRad\n");}
 	}
 };
 
@@ -823,7 +844,8 @@ class Geom2dGcc_Lin2dTanObl {
 };
 %extend Geom2dGcc_Lin2dTanObl {
 	~Geom2dGcc_Lin2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2dTanObl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2dTanObl\n");}
 	}
 };
 
@@ -852,7 +874,8 @@ class Geom2dGcc_CurveTool {
 };
 %extend Geom2dGcc_CurveTool {
 	~Geom2dGcc_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_CurveTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_CurveTool\n");}
 	}
 };
 
@@ -885,7 +908,8 @@ class Geom2dGcc_Circ2dTanOnRad {
 };
 %extend Geom2dGcc_Circ2dTanOnRad {
 	~Geom2dGcc_Circ2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanOnRad\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanOnRad\n");}
 	}
 };
 
@@ -906,6 +930,7 @@ class Geom2dGcc {
 };
 %extend Geom2dGcc {
 	~Geom2dGcc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Geom2dGcc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Geom2dGcc\n");}
 	}
 };
