@@ -356,7 +356,7 @@ MODULES = [
             ('FairCurve',[],[]),
             #('FSD',[],[]), DONT WORK
             ('ExprIntrp',[],[]),
-            #('Expr',[],[]), DONT WORK
+            ('Expr',[],['Expr_Sign']),
             ('GGraphic2d',['Quantity'],[]),
             ('LocalAnalysis',[],[]),
             ('LDOMParser',[],[],{'LDOMParser':['parse']}),
