@@ -825,7 +825,7 @@ class ModularBuilder(object):
                 gccxml_path=environment.GCC_XML_PATH,
                 define_symbols=environment.PYGCCXML_DEFINES,
                 #cache = os.path.join(os.getcwd(),'gccxml_cache','%s.xml'%self.MODULE_NAME),
-                include_paths=[environment.OCC_INC])
+                include_paths=[environment.OCC_INC, environment.SWIG_FILES_PATH_MODULAR])
         # Excluding member functions that cause compilation fail
         if self.MODULE_NAME == 'ShapeSchema':
             member_functions = self._mb.member_functions(lambda decl : decl.name.startswith('SAdd'))
