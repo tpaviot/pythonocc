@@ -131,7 +131,8 @@ class Handle_AppStd_Application : public Handle_TDocStd_Application {
 };
 %extend Handle_AppStd_Application {
 	~Handle_AppStd_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppStd_Application\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AppStd_Application\n");}
 	}
 };
 
@@ -156,7 +157,13 @@ class AppStd_Application : public TDocStd_Application {
 	}
 };
 %extend AppStd_Application {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AppStd_Application {
 	~AppStd_Application() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppStd_Application\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppStd_Application\n");}
 	}
 };

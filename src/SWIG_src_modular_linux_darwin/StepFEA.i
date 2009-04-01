@@ -159,7 +159,8 @@ class Handle_StepFEA_NodeRepresentation : public Handle_StepRepr_Representation 
 };
 %extend Handle_StepFEA_NodeRepresentation {
 	~Handle_StepFEA_NodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeRepresentation\n");}
 	}
 };
 
@@ -183,7 +184,8 @@ class Handle_StepFEA_DummyNode : public Handle_StepFEA_NodeRepresentation {
 };
 %extend Handle_StepFEA_DummyNode {
 	~Handle_StepFEA_DummyNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_DummyNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_DummyNode\n");}
 	}
 };
 
@@ -207,7 +209,8 @@ class Handle_StepFEA_FeaGroup : public Handle_StepBasic_Group {
 };
 %extend Handle_StepFEA_FeaGroup {
 	~Handle_StepFEA_FeaGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaGroup\n");}
 	}
 };
 
@@ -231,7 +234,8 @@ class Handle_StepFEA_NodeGroup : public Handle_StepFEA_FeaGroup {
 };
 %extend Handle_StepFEA_NodeGroup {
 	~Handle_StepFEA_NodeGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeGroup\n");}
 	}
 };
 
@@ -255,7 +259,8 @@ class Handle_StepFEA_FeaMaterialPropertyRepresentationItem : public Handle_StepR
 };
 %extend Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	~Handle_StepFEA_FeaMaterialPropertyRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMaterialPropertyRepresentationItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMaterialPropertyRepresentationItem\n");}
 	}
 };
 
@@ -279,7 +284,8 @@ class Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness : public Handle_St
 };
 %extend Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness {
 	~Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness\n");}
 	}
 };
 
@@ -303,7 +309,8 @@ class Handle_StepFEA_FeaLinearElasticity : public Handle_StepFEA_FeaMaterialProp
 };
 %extend Handle_StepFEA_FeaLinearElasticity {
 	~Handle_StepFEA_FeaLinearElasticity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaLinearElasticity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaLinearElasticity\n");}
 	}
 };
 
@@ -327,7 +334,8 @@ class Handle_StepFEA_FeaShellShearStiffness : public Handle_StepFEA_FeaMaterialP
 };
 %extend Handle_StepFEA_FeaShellShearStiffness {
 	~Handle_StepFEA_FeaShellShearStiffness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellShearStiffness\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellShearStiffness\n");}
 	}
 };
 
@@ -351,7 +359,8 @@ class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TSha
 };
 %extend Handle_StepFEA_HSequenceOfCurve3dElementProperty {
 	~Handle_StepFEA_HSequenceOfCurve3dElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfCurve3dElementProperty\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfCurve3dElementProperty\n");}
 	}
 };
 
@@ -375,7 +384,8 @@ class Handle_StepFEA_FeaModel : public Handle_StepRepr_Representation {
 };
 %extend Handle_StepFEA_FeaModel {
 	~Handle_StepFEA_FeaModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaModel\n");}
 	}
 };
 
@@ -399,7 +409,8 @@ class Handle_StepFEA_FeaModel3d : public Handle_StepFEA_FeaModel {
 };
 %extend Handle_StepFEA_FeaModel3d {
 	~Handle_StepFEA_FeaModel3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaModel3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaModel3d\n");}
 	}
 };
 
@@ -423,7 +434,8 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public Hand
 };
 %extend Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
 	~Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation\n");}
 	}
 };
 
@@ -447,7 +459,8 @@ class Handle_StepFEA_FeaSurfaceSectionGeometricRelationship : public Handle_MMgt
 };
 %extend Handle_StepFEA_FeaSurfaceSectionGeometricRelationship {
 	~Handle_StepFEA_FeaSurfaceSectionGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaSurfaceSectionGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaSurfaceSectionGeometricRelationship\n");}
 	}
 };
 
@@ -471,7 +484,8 @@ class Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public H
 };
 %extend Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
 	~Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion\n");}
 	}
 };
 
@@ -495,7 +509,8 @@ class Handle_StepFEA_ElementRepresentation : public Handle_StepRepr_Representati
 };
 %extend Handle_StepFEA_ElementRepresentation {
 	~Handle_StepFEA_ElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ElementRepresentation\n");}
 	}
 };
 
@@ -519,7 +534,8 @@ class Handle_StepFEA_FeaRepresentationItem : public Handle_StepRepr_Representati
 };
 %extend Handle_StepFEA_FeaRepresentationItem {
 	~Handle_StepFEA_FeaRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaRepresentationItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaRepresentationItem\n");}
 	}
 };
 
@@ -543,7 +559,8 @@ class Handle_StepFEA_AlignedSurface3dElementCoordinateSystem : public Handle_Ste
 };
 %extend Handle_StepFEA_AlignedSurface3dElementCoordinateSystem {
 	~Handle_StepFEA_AlignedSurface3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_AlignedSurface3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_AlignedSurface3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -567,7 +584,8 @@ class Handle_StepFEA_FeaMoistureAbsorption : public Handle_StepFEA_FeaMaterialPr
 };
 %extend Handle_StepFEA_FeaMoistureAbsorption {
 	~Handle_StepFEA_FeaMoistureAbsorption() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMoistureAbsorption\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMoistureAbsorption\n");}
 	}
 };
 
@@ -591,7 +609,8 @@ class Handle_StepFEA_NodeDefinition : public Handle_StepRepr_ShapeAspect {
 };
 %extend Handle_StepFEA_NodeDefinition {
 	~Handle_StepFEA_NodeDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeDefinition\n");}
 	}
 };
 
@@ -615,7 +634,8 @@ class Handle_StepFEA_Surface3dElementRepresentation : public Handle_StepFEA_Elem
 };
 %extend Handle_StepFEA_Surface3dElementRepresentation {
 	~Handle_StepFEA_Surface3dElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Surface3dElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Surface3dElementRepresentation\n");}
 	}
 };
 
@@ -639,7 +659,8 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateSystem : public Handle_St
 };
 %extend Handle_StepFEA_ParametricCurve3dElementCoordinateSystem {
 	~Handle_StepFEA_ParametricCurve3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ParametricCurve3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ParametricCurve3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -663,7 +684,8 @@ class Handle_StepFEA_HArray1OfCurveElementEndOffset : public Handle_MMgt_TShared
 };
 %extend Handle_StepFEA_HArray1OfCurveElementEndOffset {
 	~Handle_StepFEA_HArray1OfCurveElementEndOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfCurveElementEndOffset\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfCurveElementEndOffset\n");}
 	}
 };
 
@@ -687,7 +709,8 @@ class Handle_StepFEA_HArray1OfCurveElementInterval : public Handle_MMgt_TShared 
 };
 %extend Handle_StepFEA_HArray1OfCurveElementInterval {
 	~Handle_StepFEA_HArray1OfCurveElementInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfCurveElementInterval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfCurveElementInterval\n");}
 	}
 };
 
@@ -711,7 +734,8 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : publ
 };
 %extend Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
 	~Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship\n");}
 	}
 };
 
@@ -735,7 +759,8 @@ class Handle_StepFEA_FeaShellMembraneStiffness : public Handle_StepFEA_FeaMateri
 };
 %extend Handle_StepFEA_FeaShellMembraneStiffness {
 	~Handle_StepFEA_FeaShellMembraneStiffness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellMembraneStiffness\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellMembraneStiffness\n");}
 	}
 };
 
@@ -759,7 +784,8 @@ class Handle_StepFEA_FeaMaterialPropertyRepresentation : public Handle_StepRepr_
 };
 %extend Handle_StepFEA_FeaMaterialPropertyRepresentation {
 	~Handle_StepFEA_FeaMaterialPropertyRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMaterialPropertyRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -783,7 +809,8 @@ class Handle_StepFEA_ConstantSurface3dElementCoordinateSystem : public Handle_St
 };
 %extend Handle_StepFEA_ConstantSurface3dElementCoordinateSystem {
 	~Handle_StepFEA_ConstantSurface3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ConstantSurface3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ConstantSurface3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -807,7 +834,8 @@ class Handle_StepFEA_FeaCurveSectionGeometricRelationship : public Handle_MMgt_T
 };
 %extend Handle_StepFEA_FeaCurveSectionGeometricRelationship {
 	~Handle_StepFEA_FeaCurveSectionGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaCurveSectionGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaCurveSectionGeometricRelationship\n");}
 	}
 };
 
@@ -831,7 +859,8 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public Han
 };
 %extend Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
 	~Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty\n");}
 	}
 };
 
@@ -855,7 +884,8 @@ class Handle_StepFEA_Curve3dElementRepresentation : public Handle_StepFEA_Elemen
 };
 %extend Handle_StepFEA_Curve3dElementRepresentation {
 	~Handle_StepFEA_Curve3dElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Curve3dElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Curve3dElementRepresentation\n");}
 	}
 };
 
@@ -879,7 +909,8 @@ class Handle_StepFEA_GeometricNode : public Handle_StepFEA_NodeRepresentation {
 };
 %extend Handle_StepFEA_GeometricNode {
 	~Handle_StepFEA_GeometricNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_GeometricNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_GeometricNode\n");}
 	}
 };
 
@@ -903,7 +934,8 @@ class Handle_StepFEA_FeaAreaDensity : public Handle_StepFEA_FeaMaterialPropertyR
 };
 %extend Handle_StepFEA_FeaAreaDensity {
 	~Handle_StepFEA_FeaAreaDensity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaAreaDensity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaAreaDensity\n");}
 	}
 };
 
@@ -927,7 +959,8 @@ class Handle_StepFEA_HArray1OfElementRepresentation : public Handle_MMgt_TShared
 };
 %extend Handle_StepFEA_HArray1OfElementRepresentation {
 	~Handle_StepFEA_HArray1OfElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfElementRepresentation\n");}
 	}
 };
 
@@ -951,7 +984,8 @@ class Handle_StepFEA_AlignedCurve3dElementCoordinateSystem : public Handle_StepF
 };
 %extend Handle_StepFEA_AlignedCurve3dElementCoordinateSystem {
 	~Handle_StepFEA_AlignedCurve3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_AlignedCurve3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_AlignedCurve3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -975,7 +1009,8 @@ class Handle_StepFEA_NodeSet : public Handle_StepGeom_GeometricRepresentationIte
 };
 %extend Handle_StepFEA_NodeSet {
 	~Handle_StepFEA_NodeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeSet\n");}
 	}
 };
 
@@ -999,7 +1034,8 @@ class Handle_StepFEA_CurveElementInterval : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_CurveElementInterval {
 	~Handle_StepFEA_CurveElementInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementInterval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementInterval\n");}
 	}
 };
 
@@ -1023,7 +1059,8 @@ class Handle_StepFEA_CurveElementIntervalLinearlyVarying : public Handle_StepFEA
 };
 %extend Handle_StepFEA_CurveElementIntervalLinearlyVarying {
 	~Handle_StepFEA_CurveElementIntervalLinearlyVarying() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementIntervalLinearlyVarying\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementIntervalLinearlyVarying\n");}
 	}
 };
 
@@ -1047,7 +1084,8 @@ class Handle_StepFEA_Node : public Handle_StepFEA_NodeRepresentation {
 };
 %extend Handle_StepFEA_Node {
 	~Handle_StepFEA_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Node\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Node\n");}
 	}
 };
 
@@ -1071,7 +1109,8 @@ class Handle_StepFEA_NodeWithSolutionCoordinateSystem : public Handle_StepFEA_No
 };
 %extend Handle_StepFEA_NodeWithSolutionCoordinateSystem {
 	~Handle_StepFEA_NodeWithSolutionCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeWithSolutionCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeWithSolutionCoordinateSystem\n");}
 	}
 };
 
@@ -1095,7 +1134,8 @@ class Handle_StepFEA_CurveElementEndRelease : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_CurveElementEndRelease {
 	~Handle_StepFEA_CurveElementEndRelease() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementEndRelease\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementEndRelease\n");}
 	}
 };
 
@@ -1119,7 +1159,8 @@ class Handle_StepFEA_NodeWithVector : public Handle_StepFEA_Node {
 };
 %extend Handle_StepFEA_NodeWithVector {
 	~Handle_StepFEA_NodeWithVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeWithVector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeWithVector\n");}
 	}
 };
 
@@ -1143,7 +1184,8 @@ class Handle_StepFEA_FreedomAndCoefficient : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_FreedomAndCoefficient {
 	~Handle_StepFEA_FreedomAndCoefficient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FreedomAndCoefficient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FreedomAndCoefficient\n");}
 	}
 };
 
@@ -1167,7 +1209,8 @@ class Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public Handl
 };
 %extend Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
 	~Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion\n");}
 	}
 };
 
@@ -1191,7 +1234,8 @@ class Handle_StepFEA_CurveElementIntervalConstant : public Handle_StepFEA_CurveE
 };
 %extend Handle_StepFEA_CurveElementIntervalConstant {
 	~Handle_StepFEA_CurveElementIntervalConstant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementIntervalConstant\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementIntervalConstant\n");}
 	}
 };
 
@@ -1215,7 +1259,8 @@ class Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem : public Handle_St
 };
 %extend Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem {
 	~Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -1239,7 +1284,8 @@ class Handle_StepFEA_FeaMassDensity : public Handle_StepFEA_FeaMaterialPropertyR
 };
 %extend Handle_StepFEA_FeaMassDensity {
 	~Handle_StepFEA_FeaMassDensity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMassDensity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMassDensity\n");}
 	}
 };
 
@@ -1263,7 +1309,8 @@ class Handle_StepFEA_SymmetricTensor23dMember : public Handle_StepData_SelectArr
 };
 %extend Handle_StepFEA_SymmetricTensor23dMember {
 	~Handle_StepFEA_SymmetricTensor23dMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SymmetricTensor23dMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SymmetricTensor23dMember\n");}
 	}
 };
 
@@ -1287,7 +1334,8 @@ class Handle_StepFEA_CurveElementEndOffset : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_CurveElementEndOffset {
 	~Handle_StepFEA_CurveElementEndOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementEndOffset\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementEndOffset\n");}
 	}
 };
 
@@ -1311,7 +1359,8 @@ class Handle_StepFEA_HSequenceOfElementGeometricRelationship : public Handle_MMg
 };
 %extend Handle_StepFEA_HSequenceOfElementGeometricRelationship {
 	~Handle_StepFEA_HSequenceOfElementGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfElementGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfElementGeometricRelationship\n");}
 	}
 };
 
@@ -1335,7 +1384,8 @@ class Handle_StepFEA_ElementGroup : public Handle_StepFEA_FeaGroup {
 };
 %extend Handle_StepFEA_ElementGroup {
 	~Handle_StepFEA_ElementGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ElementGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ElementGroup\n");}
 	}
 };
 
@@ -1359,7 +1409,8 @@ class Handle_StepFEA_ParametricSurface3dElementCoordinateSystem : public Handle_
 };
 %extend Handle_StepFEA_ParametricSurface3dElementCoordinateSystem {
 	~Handle_StepFEA_ParametricSurface3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ParametricSurface3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ParametricSurface3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -1383,7 +1434,8 @@ class Handle_StepFEA_Curve3dElementProperty : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_Curve3dElementProperty {
 	~Handle_StepFEA_Curve3dElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Curve3dElementProperty\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Curve3dElementProperty\n");}
 	}
 };
 
@@ -1407,7 +1459,8 @@ class Handle_StepFEA_HSequenceOfElementRepresentation : public Handle_MMgt_TShar
 };
 %extend Handle_StepFEA_HSequenceOfElementRepresentation {
 	~Handle_StepFEA_HSequenceOfElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfElementRepresentation\n");}
 	}
 };
 
@@ -1431,7 +1484,8 @@ class Handle_StepFEA_HSequenceOfNodeRepresentation : public Handle_MMgt_TShared 
 };
 %extend Handle_StepFEA_HSequenceOfNodeRepresentation {
 	~Handle_StepFEA_HSequenceOfNodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfNodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfNodeRepresentation\n");}
 	}
 };
 
@@ -1455,7 +1509,8 @@ class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMateria
 };
 %extend Handle_StepFEA_FeaShellBendingStiffness {
 	~Handle_StepFEA_FeaShellBendingStiffness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellBendingStiffness\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellBendingStiffness\n");}
 	}
 };
 
@@ -1479,7 +1534,8 @@ class Handle_StepFEA_HArray1OfDegreeOfFreedom : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_HArray1OfDegreeOfFreedom {
 	~Handle_StepFEA_HArray1OfDegreeOfFreedom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfDegreeOfFreedom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfDegreeOfFreedom\n");}
 	}
 };
 
@@ -1503,7 +1559,8 @@ class Handle_StepFEA_FeaAxis2Placement3d : public Handle_StepGeom_Axis2Placement
 };
 %extend Handle_StepFEA_FeaAxis2Placement3d {
 	~Handle_StepFEA_FeaAxis2Placement3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaAxis2Placement3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaAxis2Placement3d\n");}
 	}
 };
 
@@ -1527,7 +1584,8 @@ class Handle_StepFEA_HArray1OfNodeRepresentation : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_HArray1OfNodeRepresentation {
 	~Handle_StepFEA_HArray1OfNodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfNodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfNodeRepresentation\n");}
 	}
 };
 
@@ -1551,7 +1609,8 @@ class Handle_StepFEA_FreedomsList : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_FreedomsList {
 	~Handle_StepFEA_FreedomsList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FreedomsList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FreedomsList\n");}
 	}
 };
 
@@ -1575,7 +1634,8 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public Handle_
 };
 %extend Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
 	~Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation\n");}
 	}
 };
 
@@ -1599,7 +1659,8 @@ class Handle_StepFEA_Volume3dElementRepresentation : public Handle_StepFEA_Eleme
 };
 %extend Handle_StepFEA_Volume3dElementRepresentation {
 	~Handle_StepFEA_Volume3dElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Volume3dElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Volume3dElementRepresentation\n");}
 	}
 };
 
@@ -1623,7 +1684,8 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateDirection : public Handle
 };
 %extend Handle_StepFEA_ParametricCurve3dElementCoordinateDirection {
 	~Handle_StepFEA_ParametricCurve3dElementCoordinateDirection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ParametricCurve3dElementCoordinateDirection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ParametricCurve3dElementCoordinateDirection\n");}
 	}
 };
 
@@ -1647,7 +1709,8 @@ class Handle_StepFEA_SymmetricTensor43dMember : public Handle_StepData_SelectArr
 };
 %extend Handle_StepFEA_SymmetricTensor43dMember {
 	~Handle_StepFEA_SymmetricTensor43dMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SymmetricTensor43dMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SymmetricTensor43dMember\n");}
 	}
 };
 
@@ -1671,7 +1734,8 @@ class Handle_StepFEA_CurveElementLocation : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_CurveElementLocation {
 	~Handle_StepFEA_CurveElementLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementLocation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementLocation\n");}
 	}
 };
 
@@ -1695,7 +1759,8 @@ class Handle_StepFEA_HArray1OfCurveElementEndRelease : public Handle_MMgt_TShare
 };
 %extend Handle_StepFEA_HArray1OfCurveElementEndRelease {
 	~Handle_StepFEA_HArray1OfCurveElementEndRelease() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfCurveElementEndRelease\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfCurveElementEndRelease\n");}
 	}
 };
 
@@ -1719,7 +1784,8 @@ class Handle_StepFEA_ElementGeometricRelationship : public Handle_MMgt_TShared {
 };
 %extend Handle_StepFEA_ElementGeometricRelationship {
 	~Handle_StepFEA_ElementGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ElementGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ElementGeometricRelationship\n");}
 	}
 };
 
@@ -1743,7 +1809,8 @@ class Handle_StepFEA_DegreeOfFreedomMember : public Handle_StepData_SelectNamed 
 };
 %extend Handle_StepFEA_DegreeOfFreedomMember {
 	~Handle_StepFEA_DegreeOfFreedomMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_DegreeOfFreedomMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_DegreeOfFreedomMember\n");}
 	}
 };
 
@@ -1767,7 +1834,8 @@ class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
 };
 %extend Handle_StepFEA_FeaModelDefinition {
 	~Handle_StepFEA_FeaModelDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaModelDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaModelDefinition\n");}
 	}
 };
 
@@ -1791,7 +1859,8 @@ class Handle_StepFEA_FeaParametricPoint : public Handle_StepGeom_Point {
 };
 %extend Handle_StepFEA_FeaParametricPoint {
 	~Handle_StepFEA_FeaParametricPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaParametricPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaParametricPoint\n");}
 	}
 };
 
@@ -1810,8 +1879,14 @@ class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_Representa
 	}
 };
 %extend StepFEA_FeaMaterialPropertyRepresentationItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaMaterialPropertyRepresentationItem {
 	~StepFEA_FeaMaterialPropertyRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMaterialPropertyRepresentationItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMaterialPropertyRepresentationItem\n");}
 	}
 };
 
@@ -1834,8 +1909,14 @@ class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMater
 	}
 };
 %extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
 	~StepFEA_FeaShellMembraneBendingCouplingStiffness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellMembraneBendingCouplingStiffness\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellMembraneBendingCouplingStiffness\n");}
 	}
 };
 
@@ -1872,8 +1953,14 @@ class StepFEA_FeaModel : public StepRepr_Representation {
 	}
 };
 %extend StepFEA_FeaModel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaModel {
 	~StepFEA_FeaModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaModel\n");}
 	}
 };
 
@@ -1898,8 +1985,14 @@ class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 	}
 };
 %extend StepFEA_FeaMassDensity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaMassDensity {
 	~StepFEA_FeaMassDensity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMassDensity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMassDensity\n");}
 	}
 };
 
@@ -1924,8 +2017,14 @@ class StepFEA_ElementRepresentation : public StepRepr_Representation {
 	}
 };
 %extend StepFEA_ElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_ElementRepresentation {
 	~StepFEA_ElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ElementRepresentation\n");}
 	}
 };
 
@@ -1954,8 +2053,14 @@ class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
 	}
 };
 %extend StepFEA_FeaSurfaceSectionGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaSurfaceSectionGeometricRelationship {
 	~StepFEA_FeaSurfaceSectionGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaSurfaceSectionGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaSurfaceSectionGeometricRelationship\n");}
 	}
 };
 
@@ -1974,8 +2079,14 @@ class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
 	}
 };
 %extend StepFEA_FeaRepresentationItem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaRepresentationItem {
 	~StepFEA_FeaRepresentationItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaRepresentationItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaRepresentationItem\n");}
 	}
 };
 
@@ -2002,8 +2113,14 @@ class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepre
 	}
 };
 %extend StepFEA_ConstantSurface3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_ConstantSurface3dElementCoordinateSystem {
 	~StepFEA_ConstantSurface3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ConstantSurface3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ConstantSurface3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -2066,8 +2183,14 @@ class StepFEA_HSequenceOfElementRepresentation : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HSequenceOfElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HSequenceOfElementRepresentation {
 	~StepFEA_HSequenceOfElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfElementRepresentation\n");}
 	}
 };
 
@@ -2106,7 +2229,8 @@ class StepFEA_Array1OfElementRepresentation {
 };
 %extend StepFEA_Array1OfElementRepresentation {
 	~StepFEA_Array1OfElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfElementRepresentation\n");}
 	}
 };
 
@@ -2131,8 +2255,14 @@ class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresen
 	}
 };
 %extend StepFEA_FeaMoistureAbsorption {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaMoistureAbsorption {
 	~StepFEA_FeaMoistureAbsorption() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMoistureAbsorption\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMoistureAbsorption\n");}
 	}
 };
 
@@ -2157,8 +2287,14 @@ class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRe
 	}
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateDirection {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_ParametricCurve3dElementCoordinateDirection {
 	~StepFEA_ParametricCurve3dElementCoordinateDirection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ParametricCurve3dElementCoordinateDirection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ParametricCurve3dElementCoordinateDirection\n");}
 	}
 };
 
@@ -2187,8 +2323,14 @@ class StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public StepFEA_FeaM
 	}
 };
 %extend StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
 	~StepFEA_FeaSecantCoefficientOfLinearThermalExpansion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaSecantCoefficientOfLinearThermalExpansion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaSecantCoefficientOfLinearThermalExpansion\n");}
 	}
 };
 
@@ -2209,8 +2351,14 @@ class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollectio
 	}
 };
 %extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
 	~StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty\n");}
 	}
 };
 
@@ -2239,8 +2387,14 @@ class StepFEA_ParametricSurface3dElementCoordinateSystem : public StepFEA_FeaRep
 	}
 };
 %extend StepFEA_ParametricSurface3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_ParametricSurface3dElementCoordinateSystem {
 	~StepFEA_ParametricSurface3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ParametricSurface3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ParametricSurface3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -2265,8 +2419,14 @@ class StepFEA_CurveElementLocation : public MMgt_TShared {
 	}
 };
 %extend StepFEA_CurveElementLocation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_CurveElementLocation {
 	~StepFEA_CurveElementLocation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementLocation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementLocation\n");}
 	}
 };
 
@@ -2305,8 +2465,14 @@ class StepFEA_HArray1OfDegreeOfFreedom : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HArray1OfDegreeOfFreedom {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HArray1OfDegreeOfFreedom {
 	~StepFEA_HArray1OfDegreeOfFreedom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfDegreeOfFreedom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfDegreeOfFreedom\n");}
 	}
 };
 
@@ -2333,8 +2499,14 @@ class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
 	}
 };
 %extend StepFEA_DegreeOfFreedomMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_DegreeOfFreedomMember {
 	~StepFEA_DegreeOfFreedomMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_DegreeOfFreedomMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_DegreeOfFreedomMember\n");}
 	}
 };
 
@@ -2359,8 +2531,14 @@ class StepFEA_NodeRepresentation : public StepRepr_Representation {
 	}
 };
 %extend StepFEA_NodeRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_NodeRepresentation {
 	~StepFEA_NodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_NodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeRepresentation\n");}
 	}
 };
 
@@ -2377,8 +2555,14 @@ class StepFEA_Node : public StepFEA_NodeRepresentation {
 	}
 };
 %extend StepFEA_Node {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_Node {
 	~StepFEA_Node() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Node\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Node\n");}
 	}
 };
 
@@ -2431,7 +2615,8 @@ class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
 };
 %extend StepFEA_SequenceOfNodeRepresentation {
 	~StepFEA_SequenceOfNodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfNodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfNodeRepresentation\n");}
 	}
 };
 
@@ -2470,8 +2655,14 @@ class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HArray1OfCurveElementInterval {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HArray1OfCurveElementInterval {
 	~StepFEA_HArray1OfCurveElementInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfCurveElementInterval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfCurveElementInterval\n");}
 	}
 };
 
@@ -2510,8 +2701,14 @@ class StepFEA_HArray1OfElementRepresentation : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HArray1OfElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HArray1OfElementRepresentation {
 	~StepFEA_HArray1OfElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfElementRepresentation\n");}
 	}
 };
 
@@ -2536,8 +2733,14 @@ class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepres
 	}
 };
 %extend StepFEA_AlignedSurface3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_AlignedSurface3dElementCoordinateSystem {
 	~StepFEA_AlignedSurface3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_AlignedSurface3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_AlignedSurface3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -2568,7 +2771,8 @@ class StepFEA_SymmetricTensor23d : public StepData_SelectType {
 };
 %extend StepFEA_SymmetricTensor23d {
 	~StepFEA_SymmetricTensor23d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor23d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor23d\n");}
 	}
 };
 
@@ -2601,8 +2805,14 @@ class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
 	}
 };
 %extend StepFEA_ElementGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_ElementGeometricRelationship {
 	~StepFEA_ElementGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ElementGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ElementGeometricRelationship\n");}
 	}
 };
 
@@ -2627,8 +2837,14 @@ class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresenta
 	}
 };
 %extend StepFEA_FeaLinearElasticity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaLinearElasticity {
 	~StepFEA_FeaLinearElasticity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaLinearElasticity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaLinearElasticity\n");}
 	}
 };
 
@@ -2667,8 +2883,14 @@ class StepFEA_HArray1OfCurveElementEndRelease : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HArray1OfCurveElementEndRelease {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HArray1OfCurveElementEndRelease {
 	~StepFEA_HArray1OfCurveElementEndRelease() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfCurveElementEndRelease\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfCurveElementEndRelease\n");}
 	}
 };
 
@@ -2697,8 +2919,14 @@ class StepFEA_CurveElementInterval : public MMgt_TShared {
 	}
 };
 %extend StepFEA_CurveElementInterval {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_CurveElementInterval {
 	~StepFEA_CurveElementInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementInterval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementInterval\n");}
 	}
 };
 
@@ -2717,8 +2945,14 @@ class StepFEA_NodeDefinition : public StepRepr_ShapeAspect {
 	}
 };
 %extend StepFEA_NodeDefinition {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_NodeDefinition {
 	~StepFEA_NodeDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_NodeDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeDefinition\n");}
 	}
 };
 
@@ -2755,8 +2989,14 @@ class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentatio
 	}
 };
 %extend StepFEA_Curve3dElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_Curve3dElementRepresentation {
 	~StepFEA_Curve3dElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Curve3dElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Curve3dElementRepresentation\n");}
 	}
 };
 
@@ -2795,7 +3035,8 @@ class StepFEA_Array1OfNodeRepresentation {
 };
 %extend StepFEA_Array1OfNodeRepresentation {
 	~StepFEA_Array1OfNodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfNodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfNodeRepresentation\n");}
 	}
 };
 
@@ -2834,8 +3075,14 @@ class StepFEA_HArray1OfNodeRepresentation : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HArray1OfNodeRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HArray1OfNodeRepresentation {
 	~StepFEA_HArray1OfNodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfNodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfNodeRepresentation\n");}
 	}
 };
 
@@ -2874,7 +3121,8 @@ class StepFEA_Array1OfCurveElementEndRelease {
 };
 %extend StepFEA_Array1OfCurveElementEndRelease {
 	~StepFEA_Array1OfCurveElementEndRelease() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfCurveElementEndRelease\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfCurveElementEndRelease\n");}
 	}
 };
 
@@ -2893,8 +3141,14 @@ class StepFEA_NodeWithSolutionCoordinateSystem : public StepFEA_Node {
 	}
 };
 %extend StepFEA_NodeWithSolutionCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_NodeWithSolutionCoordinateSystem {
 	~StepFEA_NodeWithSolutionCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_NodeWithSolutionCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeWithSolutionCoordinateSystem\n");}
 	}
 };
 
@@ -2913,7 +3167,8 @@ class StepFEA_ElementOrElementGroup : public StepData_SelectType {
 };
 %extend StepFEA_ElementOrElementGroup {
 	~StepFEA_ElementOrElementGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ElementOrElementGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ElementOrElementGroup\n");}
 	}
 };
 
@@ -2954,8 +3209,14 @@ class StepFEA_Curve3dElementProperty : public MMgt_TShared {
 	}
 };
 %extend StepFEA_Curve3dElementProperty {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_Curve3dElementProperty {
 	~StepFEA_Curve3dElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Curve3dElementProperty\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Curve3dElementProperty\n");}
 	}
 };
 
@@ -2980,8 +3241,14 @@ class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepr
 	}
 };
 %extend StepFEA_FeaShellMembraneStiffness {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaShellMembraneStiffness {
 	~StepFEA_FeaShellMembraneStiffness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellMembraneStiffness\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellMembraneStiffness\n");}
 	}
 };
 
@@ -3000,8 +3267,14 @@ class StepFEA_FeaModelDefinition : public StepRepr_ShapeAspect {
 	}
 };
 %extend StepFEA_FeaModelDefinition {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaModelDefinition {
 	~StepFEA_FeaModelDefinition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaModelDefinition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaModelDefinition\n");}
 	}
 };
 
@@ -3026,8 +3299,14 @@ class StepFEA_FeaParametricPoint : public StepGeom_Point {
 	}
 };
 %extend StepFEA_FeaParametricPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaParametricPoint {
 	~StepFEA_FeaParametricPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaParametricPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaParametricPoint\n");}
 	}
 };
 
@@ -3066,7 +3345,8 @@ class StepFEA_Array1OfCurveElementInterval {
 };
 %extend StepFEA_Array1OfCurveElementInterval {
 	~StepFEA_Array1OfCurveElementInterval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfCurveElementInterval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfCurveElementInterval\n");}
 	}
 };
 
@@ -3091,8 +3371,14 @@ class StepFEA_FeaGroup : public StepBasic_Group {
 	}
 };
 %extend StepFEA_FeaGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaGroup {
 	~StepFEA_FeaGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaGroup\n");}
 	}
 };
 
@@ -3113,7 +3399,8 @@ class StepFEA_CurveElementEndCoordinateSystem : public StepData_SelectType {
 };
 %extend StepFEA_CurveElementEndCoordinateSystem {
 	~StepFEA_CurveElementEndCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndCoordinateSystem\n");}
 	}
 };
 
@@ -3138,8 +3425,14 @@ class StepFEA_NodeSet : public StepGeom_GeometricRepresentationItem {
 	}
 };
 %extend StepFEA_NodeSet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_NodeSet {
 	~StepFEA_NodeSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_NodeSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeSet\n");}
 	}
 };
 
@@ -3158,8 +3451,14 @@ class StepFEA_FeaMaterialPropertyRepresentation : public StepRepr_MaterialProper
 	}
 };
 %extend StepFEA_FeaMaterialPropertyRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaMaterialPropertyRepresentation {
 	~StepFEA_FeaMaterialPropertyRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMaterialPropertyRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMaterialPropertyRepresentation\n");}
 	}
 };
 
@@ -3198,8 +3497,14 @@ class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HArray1OfCurveElementEndOffset {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HArray1OfCurveElementEndOffset {
 	~StepFEA_HArray1OfCurveElementEndOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfCurveElementEndOffset\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfCurveElementEndOffset\n");}
 	}
 };
 
@@ -3216,7 +3521,8 @@ class StepFEA_SymmetricTensor42d : public StepData_SelectType {
 };
 %extend StepFEA_SymmetricTensor42d {
 	~StepFEA_SymmetricTensor42d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor42d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor42d\n");}
 	}
 };
 
@@ -3245,8 +3551,14 @@ class StepFEA_CurveElementEndRelease : public MMgt_TShared {
 	}
 };
 %extend StepFEA_CurveElementEndRelease {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_CurveElementEndRelease {
 	~StepFEA_CurveElementEndRelease() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndRelease\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndRelease\n");}
 	}
 };
 
@@ -3271,8 +3583,14 @@ class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval
 	}
 };
 %extend StepFEA_CurveElementIntervalConstant {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_CurveElementIntervalConstant {
 	~StepFEA_CurveElementIntervalConstant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementIntervalConstant\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementIntervalConstant\n");}
 	}
 };
 
@@ -3291,8 +3609,14 @@ class StepFEA_NodeWithVector : public StepFEA_Node {
 	}
 };
 %extend StepFEA_NodeWithVector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_NodeWithVector {
 	~StepFEA_NodeWithVector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_NodeWithVector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeWithVector\n");}
 	}
 };
 
@@ -3345,7 +3669,8 @@ class StepFEA_SequenceOfElementGeometricRelationship : public TCollection_BaseSe
 };
 %extend StepFEA_SequenceOfElementGeometricRelationship {
 	~StepFEA_SequenceOfElementGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfElementGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfElementGeometricRelationship\n");}
 	}
 };
 
@@ -3370,8 +3695,14 @@ class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementI
 	}
 };
 %extend StepFEA_CurveElementIntervalLinearlyVarying {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_CurveElementIntervalLinearlyVarying {
 	~StepFEA_CurveElementIntervalLinearlyVarying() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementIntervalLinearlyVarying\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementIntervalLinearlyVarying\n");}
 	}
 };
 
@@ -3408,8 +3739,14 @@ class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentat
 	}
 };
 %extend StepFEA_Surface3dElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_Surface3dElementRepresentation {
 	~StepFEA_Surface3dElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Surface3dElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Surface3dElementRepresentation\n");}
 	}
 };
 
@@ -3434,8 +3771,14 @@ class StepFEA_ElementGroup : public StepFEA_FeaGroup {
 	}
 };
 %extend StepFEA_ElementGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_ElementGroup {
 	~StepFEA_ElementGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ElementGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ElementGroup\n");}
 	}
 };
 
@@ -3468,8 +3811,14 @@ class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentati
 	}
 };
 %extend StepFEA_Volume3dElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_Volume3dElementRepresentation {
 	~StepFEA_Volume3dElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Volume3dElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Volume3dElementRepresentation\n");}
 	}
 };
 
@@ -3498,8 +3847,14 @@ class StepFEA_FreedomAndCoefficient : public MMgt_TShared {
 	}
 };
 %extend StepFEA_FreedomAndCoefficient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FreedomAndCoefficient {
 	~StepFEA_FreedomAndCoefficient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FreedomAndCoefficient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FreedomAndCoefficient\n");}
 	}
 };
 
@@ -3538,7 +3893,8 @@ class StepFEA_Array1OfDegreeOfFreedom {
 };
 %extend StepFEA_Array1OfDegreeOfFreedom {
 	~StepFEA_Array1OfDegreeOfFreedom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfDegreeOfFreedom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfDegreeOfFreedom\n");}
 	}
 };
 
@@ -3559,8 +3915,14 @@ class StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public TCol
 	}
 };
 %extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
 	~StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship\n");}
 	}
 };
 
@@ -3623,8 +3985,14 @@ class StepFEA_HSequenceOfNodeRepresentation : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HSequenceOfNodeRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HSequenceOfNodeRepresentation {
 	~StepFEA_HSequenceOfNodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfNodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfNodeRepresentation\n");}
 	}
 };
 
@@ -3687,8 +4055,14 @@ class StepFEA_HSequenceOfCurve3dElementProperty : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HSequenceOfCurve3dElementProperty {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HSequenceOfCurve3dElementProperty {
 	~StepFEA_HSequenceOfCurve3dElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfCurve3dElementProperty\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfCurve3dElementProperty\n");}
 	}
 };
 
@@ -3717,8 +4091,14 @@ class StepFEA_CurveElementEndOffset : public MMgt_TShared {
 	}
 };
 %extend StepFEA_CurveElementEndOffset {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_CurveElementEndOffset {
 	~StepFEA_CurveElementEndOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndOffset\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndOffset\n");}
 	}
 };
 
@@ -3747,8 +4127,14 @@ class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
 	}
 };
 %extend StepFEA_FeaAxis2Placement3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaAxis2Placement3d {
 	~StepFEA_FeaAxis2Placement3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaAxis2Placement3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaAxis2Placement3d\n");}
 	}
 };
 
@@ -3773,8 +4159,14 @@ class StepFEA_NodeGroup : public StepFEA_FeaGroup {
 	}
 };
 %extend StepFEA_NodeGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_NodeGroup {
 	~StepFEA_NodeGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_NodeGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeGroup\n");}
 	}
 };
 
@@ -3799,8 +4191,14 @@ class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_
 	}
 };
 %extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
 	~StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion\n");}
 	}
 };
 
@@ -3825,8 +4223,14 @@ class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepre
 	}
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_ParametricCurve3dElementCoordinateSystem {
 	~StepFEA_ParametricCurve3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ParametricCurve3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ParametricCurve3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -3851,8 +4255,14 @@ class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyReprese
 	}
 };
 %extend StepFEA_FeaShellShearStiffness {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaShellShearStiffness {
 	~StepFEA_FeaShellShearStiffness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellShearStiffness\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellShearStiffness\n");}
 	}
 };
 
@@ -3879,8 +4289,14 @@ class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
 	}
 };
 %extend StepFEA_SymmetricTensor23dMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_SymmetricTensor23dMember {
 	~StepFEA_SymmetricTensor23dMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor23dMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor23dMember\n");}
 	}
 };
 
@@ -3943,8 +4359,14 @@ class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
 	}
 };
 %extend StepFEA_HSequenceOfElementGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_HSequenceOfElementGeometricRelationship {
 	~StepFEA_HSequenceOfElementGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfElementGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_HSequenceOfElementGeometricRelationship\n");}
 	}
 };
 
@@ -3961,7 +4383,8 @@ class StepFEA_SymmetricTensor22d : public StepData_SelectType {
 };
 %extend StepFEA_SymmetricTensor22d {
 	~StepFEA_SymmetricTensor22d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor22d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor22d\n");}
 	}
 };
 
@@ -3980,8 +4403,14 @@ class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
 	}
 };
 %extend StepFEA_DummyNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_DummyNode {
 	~StepFEA_DummyNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_DummyNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_DummyNode\n");}
 	}
 };
 
@@ -4006,8 +4435,14 @@ class StepFEA_FreedomsList : public MMgt_TShared {
 	}
 };
 %extend StepFEA_FreedomsList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FreedomsList {
 	~StepFEA_FreedomsList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FreedomsList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FreedomsList\n");}
 	}
 };
 
@@ -4032,8 +4467,14 @@ class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 	}
 };
 %extend StepFEA_FeaAreaDensity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaAreaDensity {
 	~StepFEA_FeaAreaDensity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaAreaDensity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaAreaDensity\n");}
 	}
 };
 
@@ -4054,8 +4495,14 @@ class StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public TCollection
 	}
 };
 %extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
 	~StepFEA_SequenceNodeOfSequenceOfElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfElementRepresentation\n");}
 	}
 };
 
@@ -4082,8 +4529,14 @@ class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
 	}
 };
 %extend StepFEA_SymmetricTensor43dMember {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_SymmetricTensor43dMember {
 	~StepFEA_SymmetricTensor43dMember() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor43dMember\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor43dMember\n");}
 	}
 };
 
@@ -4104,8 +4557,14 @@ class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_Se
 	}
 };
 %extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
 	~StepFEA_SequenceNodeOfSequenceOfNodeRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfNodeRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfNodeRepresentation\n");}
 	}
 };
 
@@ -4130,8 +4589,14 @@ class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepre
 	}
 };
 %extend StepFEA_FeaShellBendingStiffness {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaShellBendingStiffness {
 	~StepFEA_FeaShellBendingStiffness() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellBendingStiffness\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellBendingStiffness\n");}
 	}
 };
 
@@ -4150,8 +4615,14 @@ class StepFEA_FeaModel3d : public StepFEA_FeaModel {
 	}
 };
 %extend StepFEA_FeaModel3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaModel3d {
 	~StepFEA_FeaModel3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaModel3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaModel3d\n");}
 	}
 };
 
@@ -4204,7 +4675,8 @@ class StepFEA_SequenceOfCurve3dElementProperty : public TCollection_BaseSequence
 };
 %extend StepFEA_SequenceOfCurve3dElementProperty {
 	~StepFEA_SequenceOfCurve3dElementProperty() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfCurve3dElementProperty\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfCurve3dElementProperty\n");}
 	}
 };
 
@@ -4231,7 +4703,8 @@ class StepFEA_DegreeOfFreedom : public StepData_SelectType {
 };
 %extend StepFEA_DegreeOfFreedom {
 	~StepFEA_DegreeOfFreedom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_DegreeOfFreedom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_DegreeOfFreedom\n");}
 	}
 };
 
@@ -4260,8 +4733,14 @@ class StepFEA_FeaCurveSectionGeometricRelationship : public MMgt_TShared {
 	}
 };
 %extend StepFEA_FeaCurveSectionGeometricRelationship {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_FeaCurveSectionGeometricRelationship {
 	~StepFEA_FeaCurveSectionGeometricRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_FeaCurveSectionGeometricRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaCurveSectionGeometricRelationship\n");}
 	}
 };
 
@@ -4300,7 +4779,8 @@ class StepFEA_Array1OfCurveElementEndOffset {
 };
 %extend StepFEA_Array1OfCurveElementEndOffset {
 	~StepFEA_Array1OfCurveElementEndOffset() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfCurveElementEndOffset\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfCurveElementEndOffset\n");}
 	}
 };
 
@@ -4353,7 +4833,8 @@ class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence 
 };
 %extend StepFEA_SequenceOfElementRepresentation {
 	~StepFEA_SequenceOfElementRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfElementRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceOfElementRepresentation\n");}
 	}
 };
 
@@ -4372,8 +4853,14 @@ class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
 	}
 };
 %extend StepFEA_GeometricNode {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_GeometricNode {
 	~StepFEA_GeometricNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_GeometricNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_GeometricNode\n");}
 	}
 };
 
@@ -4398,8 +4885,14 @@ class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresen
 	}
 };
 %extend StepFEA_AlignedCurve3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_AlignedCurve3dElementCoordinateSystem {
 	~StepFEA_AlignedCurve3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_AlignedCurve3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_AlignedCurve3dElementCoordinateSystem\n");}
 	}
 };
 
@@ -4424,7 +4917,13 @@ class StepFEA_ArbitraryVolume3dElementCoordinateSystem : public StepFEA_FeaRepre
 	}
 };
 %extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
 	~StepFEA_ArbitraryVolume3dElementCoordinateSystem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepFEA_ArbitraryVolume3dElementCoordinateSystem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepFEA_ArbitraryVolume3dElementCoordinateSystem\n");}
 	}
 };

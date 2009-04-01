@@ -133,7 +133,8 @@ class BlendFunc {
 };
 %extend BlendFunc {
 	~BlendFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BlendFunc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BlendFunc\n");}
 	}
 };
 
@@ -158,6 +159,7 @@ class BlendFunc_Tensor {
 };
 %extend BlendFunc_Tensor {
 	~BlendFunc_Tensor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BlendFunc_Tensor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BlendFunc_Tensor\n");}
 	}
 };

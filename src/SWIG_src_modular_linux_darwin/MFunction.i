@@ -131,7 +131,8 @@ class Handle_MFunction_FunctionRetrievalDriver : public Handle_MDF_ARDriver {
 };
 %extend Handle_MFunction_FunctionRetrievalDriver {
 	~Handle_MFunction_FunctionRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFunction_FunctionRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MFunction_FunctionRetrievalDriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_MFunction_FunctionStorageDriver : public Handle_MDF_ASDriver {
 };
 %extend Handle_MFunction_FunctionStorageDriver {
 	~Handle_MFunction_FunctionStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MFunction_FunctionStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MFunction_FunctionStorageDriver\n");}
 	}
 };
 
@@ -182,8 +184,14 @@ class MFunction_FunctionStorageDriver : public MDF_ASDriver {
 	}
 };
 %extend MFunction_FunctionStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MFunction_FunctionStorageDriver {
 	~MFunction_FunctionStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFunction_FunctionStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MFunction_FunctionStorageDriver\n");}
 	}
 };
 
@@ -210,8 +218,14 @@ class MFunction_FunctionRetrievalDriver : public MDF_ARDriver {
 	}
 };
 %extend MFunction_FunctionRetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MFunction_FunctionRetrievalDriver {
 	~MFunction_FunctionRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFunction_FunctionRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MFunction_FunctionRetrievalDriver\n");}
 	}
 };
 
@@ -228,6 +242,7 @@ class MFunction {
 };
 %extend MFunction {
 	~MFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MFunction\n");}
 	}
 };

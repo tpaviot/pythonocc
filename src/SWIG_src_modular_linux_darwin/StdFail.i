@@ -131,7 +131,8 @@ class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 };
 %extend Handle_StdFail_UndefinedValue {
 	~Handle_StdFail_UndefinedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdFail_UndefinedValue\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_UndefinedValue\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 };
 %extend Handle_StdFail_NotDone {
 	~Handle_StdFail_NotDone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdFail_NotDone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_NotDone\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 };
 %extend Handle_StdFail_UndefinedDerivative {
 	~Handle_StdFail_UndefinedDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdFail_UndefinedDerivative\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_UndefinedDerivative\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 };
 %extend Handle_StdFail_InfiniteSolutions {
 	~Handle_StdFail_InfiniteSolutions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdFail_InfiniteSolutions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_InfiniteSolutions\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 };
 %extend Handle_StdFail_Undefined {
 	~Handle_StdFail_Undefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdFail_Undefined\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_Undefined\n");}
 	}
 };
 
@@ -254,8 +259,14 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 	}
 };
 %extend StdFail_UndefinedDerivative {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdFail_UndefinedDerivative {
 	~StdFail_UndefinedDerivative() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdFail_UndefinedDerivative\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdFail_UndefinedDerivative\n");}
 	}
 };
 
@@ -282,8 +293,14 @@ class StdFail_UndefinedValue : public Standard_DomainError {
 	}
 };
 %extend StdFail_UndefinedValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdFail_UndefinedValue {
 	~StdFail_UndefinedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdFail_UndefinedValue\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdFail_UndefinedValue\n");}
 	}
 };
 
@@ -310,8 +327,14 @@ class StdFail_NotDone : public Standard_Failure {
 	}
 };
 %extend StdFail_NotDone {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdFail_NotDone {
 	~StdFail_NotDone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdFail_NotDone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdFail_NotDone\n");}
 	}
 };
 
@@ -338,8 +361,14 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 	}
 };
 %extend StdFail_InfiniteSolutions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdFail_InfiniteSolutions {
 	~StdFail_InfiniteSolutions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdFail_InfiniteSolutions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdFail_InfiniteSolutions\n");}
 	}
 };
 
@@ -366,7 +395,13 @@ class StdFail_Undefined : public Standard_Failure {
 	}
 };
 %extend StdFail_Undefined {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdFail_Undefined {
 	~StdFail_Undefined() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdFail_Undefined\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdFail_Undefined\n");}
 	}
 };

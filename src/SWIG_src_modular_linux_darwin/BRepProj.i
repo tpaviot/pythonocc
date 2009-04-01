@@ -134,6 +134,7 @@ class BRepProj_Projection {
 };
 %extend BRepProj_Projection {
 	~BRepProj_Projection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepProj_Projection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepProj_Projection\n");}
 	}
 };

@@ -131,7 +131,8 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 };
 %extend Handle_GeomTools_UndefinedTypeHandler {
 	~Handle_GeomTools_UndefinedTypeHandler() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GeomTools_UndefinedTypeHandler\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GeomTools_UndefinedTypeHandler\n");}
 	}
 };
 
@@ -166,7 +167,8 @@ class GeomTools_Curve2dSet {
 };
 %extend GeomTools_Curve2dSet {
 	~GeomTools_Curve2dSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomTools_Curve2dSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomTools_Curve2dSet\n");}
 	}
 };
 
@@ -201,7 +203,8 @@ class GeomTools_CurveSet {
 };
 %extend GeomTools_CurveSet {
 	~GeomTools_CurveSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomTools_CurveSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomTools_CurveSet\n");}
 	}
 };
 
@@ -236,7 +239,8 @@ class GeomTools {
 };
 %extend GeomTools {
 	~GeomTools() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomTools\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomTools\n");}
 	}
 };
 
@@ -271,7 +275,8 @@ class GeomTools_SurfaceSet {
 };
 %extend GeomTools_SurfaceSet {
 	~GeomTools_SurfaceSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomTools_SurfaceSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomTools_SurfaceSet\n");}
 	}
 };
 
@@ -302,7 +307,13 @@ class GeomTools_UndefinedTypeHandler : public MMgt_TShared {
 	}
 };
 %extend GeomTools_UndefinedTypeHandler {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GeomTools_UndefinedTypeHandler {
 	~GeomTools_UndefinedTypeHandler() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomTools_UndefinedTypeHandler\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomTools_UndefinedTypeHandler\n");}
 	}
 };

@@ -130,7 +130,8 @@ class IGESConvGeom {
 };
 %extend IGESConvGeom {
 	~IGESConvGeom() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESConvGeom\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESConvGeom\n");}
 	}
 };
 
@@ -181,6 +182,7 @@ class IGESConvGeom_GeomBuilder {
 };
 %extend IGESConvGeom_GeomBuilder {
 	~IGESConvGeom_GeomBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESConvGeom_GeomBuilder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESConvGeom_GeomBuilder\n");}
 	}
 };

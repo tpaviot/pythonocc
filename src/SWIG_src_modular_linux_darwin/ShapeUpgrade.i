@@ -131,7 +131,8 @@ class Handle_ShapeUpgrade_Tool : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeUpgrade_Tool {
 	~Handle_ShapeUpgrade_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_Tool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_Tool\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_ShapeUpgrade_FixSmallCurves : public Handle_ShapeUpgrade_Tool {
 };
 %extend Handle_ShapeUpgrade_FixSmallCurves {
 	~Handle_ShapeUpgrade_FixSmallCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallCurves\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_ShapeUpgrade_FixSmallBezierCurves : public Handle_ShapeUpgrade_FixS
 };
 %extend Handle_ShapeUpgrade_FixSmallBezierCurves {
 	~Handle_ShapeUpgrade_FixSmallBezierCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallBezierCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallBezierCurves\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
 };
 %extend Handle_ShapeUpgrade_WireDivide {
 	~Handle_ShapeUpgrade_WireDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_WireDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_WireDivide\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_ShapeUpgrade_EdgeDivide : public Handle_ShapeUpgrade_Tool {
 };
 %extend Handle_ShapeUpgrade_EdgeDivide {
 	~Handle_ShapeUpgrade_EdgeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_EdgeDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_EdgeDivide\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_ShapeUpgrade_ClosedEdgeDivide : public Handle_ShapeUpgrade_EdgeDivi
 };
 %extend Handle_ShapeUpgrade_ClosedEdgeDivide {
 	~Handle_ShapeUpgrade_ClosedEdgeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ClosedEdgeDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ClosedEdgeDivide\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_ShapeUpgrade_SplitSurface : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeUpgrade_SplitSurface {
 	~Handle_ShapeUpgrade_SplitSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurface\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_ShapeUpgrade_SplitSurfaceAngle : public Handle_ShapeUpgrade_SplitSu
 };
 %extend Handle_ShapeUpgrade_SplitSurfaceAngle {
 	~Handle_ShapeUpgrade_SplitSurfaceAngle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceAngle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceAngle\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis : public Handle_ShapeUpgra
 };
 %extend Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis {
 	~Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_ShapeUpgrade_RemoveLocations : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeUpgrade_RemoveLocations {
 	~Handle_ShapeUpgrade_RemoveLocations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_RemoveLocations\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_RemoveLocations\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_ShapeUpgrade_FaceDivide : public Handle_ShapeUpgrade_Tool {
 };
 %extend Handle_ShapeUpgrade_FaceDivide {
 	~Handle_ShapeUpgrade_FaceDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivide\n");}
 	}
 };
 
@@ -395,7 +406,8 @@ class Handle_ShapeUpgrade_SplitCurve : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeUpgrade_SplitCurve {
 	~Handle_ShapeUpgrade_SplitCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve\n");}
 	}
 };
 
@@ -419,7 +431,8 @@ class Handle_ShapeUpgrade_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve {
 };
 %extend Handle_ShapeUpgrade_SplitCurve2d {
 	~Handle_ShapeUpgrade_SplitCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve2d\n");}
 	}
 };
 
@@ -443,7 +456,8 @@ class Handle_ShapeUpgrade_SplitCurve2dContinuity : public Handle_ShapeUpgrade_Sp
 };
 %extend Handle_ShapeUpgrade_SplitCurve2dContinuity {
 	~Handle_ShapeUpgrade_SplitCurve2dContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve2dContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve2dContinuity\n");}
 	}
 };
 
@@ -467,7 +481,8 @@ class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSur
 };
 %extend Handle_ShapeUpgrade_SplitSurfaceArea {
 	~Handle_ShapeUpgrade_SplitSurfaceArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceArea\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceArea\n");}
 	}
 };
 
@@ -491,7 +506,8 @@ class Handle_ShapeUpgrade_FaceDivideArea : public Handle_ShapeUpgrade_FaceDivide
 };
 %extend Handle_ShapeUpgrade_FaceDivideArea {
 	~Handle_ShapeUpgrade_FaceDivideArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivideArea\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivideArea\n");}
 	}
 };
 
@@ -515,7 +531,8 @@ class Handle_ShapeUpgrade_ConvertCurve2dToBezier : public Handle_ShapeUpgrade_Sp
 };
 %extend Handle_ShapeUpgrade_ConvertCurve2dToBezier {
 	~Handle_ShapeUpgrade_ConvertCurve2dToBezier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve2dToBezier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve2dToBezier\n");}
 	}
 };
 
@@ -539,7 +556,8 @@ class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
 };
 %extend Handle_ShapeUpgrade_SplitCurve3d {
 	~Handle_ShapeUpgrade_SplitCurve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve3d\n");}
 	}
 };
 
@@ -563,7 +581,8 @@ class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_Sp
 };
 %extend Handle_ShapeUpgrade_ConvertCurve3dToBezier {
 	~Handle_ShapeUpgrade_ConvertCurve3dToBezier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve3dToBezier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve3dToBezier\n");}
 	}
 };
 
@@ -587,7 +606,8 @@ class Handle_ShapeUpgrade_RemoveInternalWires : public Handle_ShapeUpgrade_Tool 
 };
 %extend Handle_ShapeUpgrade_RemoveInternalWires {
 	~Handle_ShapeUpgrade_RemoveInternalWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_RemoveInternalWires\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_RemoveInternalWires\n");}
 	}
 };
 
@@ -611,7 +631,8 @@ class Handle_ShapeUpgrade_SplitCurve3dContinuity : public Handle_ShapeUpgrade_Sp
 };
 %extend Handle_ShapeUpgrade_SplitCurve3dContinuity {
 	~Handle_ShapeUpgrade_SplitCurve3dContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve3dContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve3dContinuity\n");}
 	}
 };
 
@@ -635,7 +656,8 @@ class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_Sp
 };
 %extend Handle_ShapeUpgrade_SplitSurfaceContinuity {
 	~Handle_ShapeUpgrade_SplitSurfaceContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceContinuity\n");}
 	}
 };
 
@@ -659,7 +681,8 @@ class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivi
 };
 %extend Handle_ShapeUpgrade_ClosedFaceDivide {
 	~Handle_ShapeUpgrade_ClosedFaceDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ClosedFaceDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ClosedFaceDivide\n");}
 	}
 };
 
@@ -688,8 +711,14 @@ class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
 	}
 };
 %extend ShapeUpgrade_RemoveLocations {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_RemoveLocations {
 	~ShapeUpgrade_RemoveLocations() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveLocations\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveLocations\n");}
 	}
 };
 
@@ -728,8 +757,14 @@ class ShapeUpgrade_Tool : public MMgt_TShared {
 	}
 };
 %extend ShapeUpgrade_Tool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_Tool {
 	~ShapeUpgrade_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_Tool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_Tool\n");}
 	}
 };
 
@@ -768,8 +803,14 @@ class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 	}
 };
 %extend ShapeUpgrade_FaceDivide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_FaceDivide {
 	~ShapeUpgrade_FaceDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivide\n");}
 	}
 };
 
@@ -810,7 +851,8 @@ class ShapeUpgrade_ShapeDivide {
 };
 %extend ShapeUpgrade_ShapeDivide {
 	~ShapeUpgrade_ShapeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivide\n");}
 	}
 };
 
@@ -825,7 +867,8 @@ class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 };
 %extend ShapeUpgrade_ShapeDivideClosedEdges {
 	~ShapeUpgrade_ShapeDivideClosedEdges() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosedEdges\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosedEdges\n");}
 	}
 };
 
@@ -866,8 +909,14 @@ class ShapeUpgrade_SplitSurface : public MMgt_TShared {
 	}
 };
 %extend ShapeUpgrade_SplitSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitSurface {
 	~ShapeUpgrade_SplitSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurface\n");}
 	}
 };
 
@@ -900,8 +949,14 @@ class ShapeUpgrade_SplitCurve : public MMgt_TShared {
 	}
 };
 %extend ShapeUpgrade_SplitCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitCurve {
 	~ShapeUpgrade_SplitCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve\n");}
 	}
 };
 
@@ -924,8 +979,14 @@ class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 	}
 };
 %extend ShapeUpgrade_SplitCurve3d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitCurve3d {
 	~ShapeUpgrade_SplitCurve3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve3d\n");}
 	}
 };
 
@@ -956,8 +1017,14 @@ class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 	}
 };
 %extend ShapeUpgrade_ConvertCurve3dToBezier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_ConvertCurve3dToBezier {
 	~ShapeUpgrade_ConvertCurve3dToBezier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertCurve3dToBezier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertCurve3dToBezier\n");}
 	}
 };
 
@@ -984,8 +1051,14 @@ class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 	}
 };
 %extend ShapeUpgrade_SplitCurve2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitCurve2d {
 	~ShapeUpgrade_SplitCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2d\n");}
 	}
 };
 
@@ -1008,8 +1081,14 @@ class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
 	}
 };
 %extend ShapeUpgrade_SplitCurve2dContinuity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitCurve2dContinuity {
 	~ShapeUpgrade_SplitCurve2dContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2dContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2dContinuity\n");}
 	}
 };
 
@@ -1038,8 +1117,14 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 	}
 };
 %extend ShapeUpgrade_FixSmallCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_FixSmallCurves {
 	~ShapeUpgrade_FixSmallCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FixSmallCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FixSmallCurves\n");}
 	}
 };
 
@@ -1080,8 +1165,14 @@ class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 	}
 };
 %extend ShapeUpgrade_EdgeDivide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_EdgeDivide {
 	~ShapeUpgrade_EdgeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_EdgeDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_EdgeDivide\n");}
 	}
 };
 
@@ -1100,8 +1191,14 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 	}
 };
 %extend ShapeUpgrade_ClosedEdgeDivide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_ClosedEdgeDivide {
 	~ShapeUpgrade_ClosedEdgeDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ClosedEdgeDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ClosedEdgeDivide\n");}
 	}
 };
 
@@ -1118,7 +1215,8 @@ class ShapeUpgrade {
 };
 %extend ShapeUpgrade {
 	~ShapeUpgrade() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade\n");}
 	}
 };
 
@@ -1133,7 +1231,8 @@ class ShapeUpgrade_ShellSewing {
 };
 %extend ShapeUpgrade_ShellSewing {
 	~ShapeUpgrade_ShellSewing() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShellSewing\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShellSewing\n");}
 	}
 };
 
@@ -1158,8 +1257,14 @@ class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 	}
 };
 %extend ShapeUpgrade_FaceDivideArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_FaceDivideArea {
 	~ShapeUpgrade_FaceDivideArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivideArea\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivideArea\n");}
 	}
 };
 
@@ -1184,7 +1289,8 @@ class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 };
 %extend ShapeUpgrade_ShapeDivideContinuity {
 	~ShapeUpgrade_ShapeDivideContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideContinuity\n");}
 	}
 };
 
@@ -1205,8 +1311,14 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 	}
 };
 %extend ShapeUpgrade_FixSmallBezierCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_FixSmallBezierCurves {
 	~ShapeUpgrade_FixSmallBezierCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FixSmallBezierCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FixSmallBezierCurves\n");}
 	}
 };
 
@@ -1263,8 +1375,14 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 	}
 };
 %extend ShapeUpgrade_WireDivide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_WireDivide {
 	~ShapeUpgrade_WireDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_WireDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_WireDivide\n");}
 	}
 };
 
@@ -1287,8 +1405,14 @@ class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 	}
 };
 %extend ShapeUpgrade_SplitSurfaceArea {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitSurfaceArea {
 	~ShapeUpgrade_SplitSurfaceArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceArea\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceArea\n");}
 	}
 };
 
@@ -1305,7 +1429,8 @@ class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 };
 %extend ShapeUpgrade_ShapeDivideArea {
 	~ShapeUpgrade_ShapeDivideArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideArea\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideArea\n");}
 	}
 };
 
@@ -1330,8 +1455,14 @@ class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 	}
 };
 %extend ShapeUpgrade_SplitSurfaceAngle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitSurfaceAngle {
 	~ShapeUpgrade_SplitSurfaceAngle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceAngle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceAngle\n");}
 	}
 };
 
@@ -1388,7 +1519,8 @@ class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
 };
 %extend ShapeUpgrade_ShapeConvertToBezier {
 	~ShapeUpgrade_ShapeConvertToBezier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeConvertToBezier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeConvertToBezier\n");}
 	}
 };
 
@@ -1415,8 +1547,14 @@ class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 	}
 };
 %extend ShapeUpgrade_ClosedFaceDivide {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_ClosedFaceDivide {
 	~ShapeUpgrade_ClosedFaceDivide() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ClosedFaceDivide\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ClosedFaceDivide\n");}
 	}
 };
 
@@ -1441,8 +1579,14 @@ class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
 	}
 };
 %extend ShapeUpgrade_SplitSurfaceContinuity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitSurfaceContinuity {
 	~ShapeUpgrade_SplitSurfaceContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceContinuity\n");}
 	}
 };
 
@@ -1469,8 +1613,14 @@ class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 	}
 };
 %extend ShapeUpgrade_SplitCurve3dContinuity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_SplitCurve3dContinuity {
 	~ShapeUpgrade_SplitCurve3dContinuity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve3dContinuity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve3dContinuity\n");}
 	}
 };
 
@@ -1491,7 +1641,8 @@ class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 };
 %extend ShapeUpgrade_ShapeDivideAngle {
 	~ShapeUpgrade_ShapeDivideAngle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideAngle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideAngle\n");}
 	}
 };
 
@@ -1506,7 +1657,8 @@ class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 };
 %extend ShapeUpgrade_ShapeDivideClosed {
 	~ShapeUpgrade_ShapeDivideClosed() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosed\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosed\n");}
 	}
 };
 
@@ -1545,8 +1697,14 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 	}
 };
 %extend ShapeUpgrade_RemoveInternalWires {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_RemoveInternalWires {
 	~ShapeUpgrade_RemoveInternalWires() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveInternalWires\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_RemoveInternalWires\n");}
 	}
 };
 
@@ -1587,8 +1745,14 @@ class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurfac
 	}
 };
 %extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
 	~ShapeUpgrade_ConvertSurfaceToBezierBasis() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertSurfaceToBezierBasis\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertSurfaceToBezierBasis\n");}
 	}
 };
 
@@ -1613,7 +1777,13 @@ class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 	}
 };
 %extend ShapeUpgrade_ConvertCurve2dToBezier {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeUpgrade_ConvertCurve2dToBezier {
 	~ShapeUpgrade_ConvertCurve2dToBezier() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertCurve2dToBezier\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertCurve2dToBezier\n");}
 	}
 };

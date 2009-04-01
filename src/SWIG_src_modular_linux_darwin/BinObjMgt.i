@@ -138,7 +138,8 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 };
 %extend Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress {
 	~Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
 
@@ -162,7 +163,8 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 };
 %extend Handle_BinObjMgt_DataMapNodeOfRRelocationTable {
 	~Handle_BinObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_DataMapNodeOfRRelocationTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_DataMapNodeOfRRelocationTable\n");}
 	}
 };
 
@@ -215,7 +217,8 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 };
 %extend BinObjMgt_SequenceOfAddress {
 	~BinObjMgt_SequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceOfAddress\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceOfAddress\n");}
 	}
 };
 
@@ -328,7 +331,8 @@ class BinObjMgt_Persistent {
 };
 %extend BinObjMgt_Persistent {
 	~BinObjMgt_Persistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinObjMgt_Persistent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_Persistent\n");}
 	}
 };
 
@@ -351,8 +355,14 @@ class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	}
 };
 %extend BinObjMgt_DataMapNodeOfRRelocationTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinObjMgt_DataMapNodeOfRRelocationTable {
 	~BinObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapNodeOfRRelocationTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapNodeOfRRelocationTable\n");}
 	}
 };
 
@@ -373,7 +383,8 @@ class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 };
 %extend BinObjMgt_DataMapIteratorOfRRelocationTable {
 	~BinObjMgt_DataMapIteratorOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapIteratorOfRRelocationTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapIteratorOfRRelocationTable\n");}
 	}
 };
 
@@ -406,7 +417,8 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 };
 %extend BinObjMgt_RRelocationTable {
 	~BinObjMgt_RRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinObjMgt_RRelocationTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_RRelocationTable\n");}
 	}
 };
 
@@ -427,7 +439,13 @@ class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 	}
 };
 %extend BinObjMgt_SequenceNodeOfSequenceOfAddress {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinObjMgt_SequenceNodeOfSequenceOfAddress {
 	~BinObjMgt_SequenceNodeOfSequenceOfAddress() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };

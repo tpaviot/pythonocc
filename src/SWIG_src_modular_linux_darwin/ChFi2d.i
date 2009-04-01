@@ -136,7 +136,8 @@ class ChFi2d {
 };
 %extend ChFi2d {
 	~ChFi2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ChFi2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFi2d\n");}
 	}
 };
 
@@ -191,6 +192,7 @@ class ChFi2d_Builder {
 };
 %extend ChFi2d_Builder {
 	~ChFi2d_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ChFi2d_Builder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ChFi2d_Builder\n");}
 	}
 };

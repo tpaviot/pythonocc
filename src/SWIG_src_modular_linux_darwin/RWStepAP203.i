@@ -126,7 +126,8 @@ class RWStepAP203_RWChangeRequest {
 };
 %extend RWStepAP203_RWChangeRequest {
 	~RWStepAP203_RWChangeRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChangeRequest\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChangeRequest\n");}
 	}
 };
 
@@ -145,7 +146,8 @@ class RWStepAP203_RWCcDesignSecurityClassification {
 };
 %extend RWStepAP203_RWCcDesignSecurityClassification {
 	~RWStepAP203_RWCcDesignSecurityClassification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSecurityClassification\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSecurityClassification\n");}
 	}
 };
 
@@ -164,7 +166,8 @@ class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 };
 %extend RWStepAP203_RWCcDesignDateAndTimeAssignment {
 	~RWStepAP203_RWCcDesignDateAndTimeAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignDateAndTimeAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignDateAndTimeAssignment\n");}
 	}
 };
 
@@ -183,7 +186,8 @@ class RWStepAP203_RWStartRequest {
 };
 %extend RWStepAP203_RWStartRequest {
 	~RWStepAP203_RWStartRequest() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartRequest\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartRequest\n");}
 	}
 };
 
@@ -202,7 +206,8 @@ class RWStepAP203_RWCcDesignCertification {
 };
 %extend RWStepAP203_RWCcDesignCertification {
 	~RWStepAP203_RWCcDesignCertification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignCertification\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignCertification\n");}
 	}
 };
 
@@ -221,7 +226,8 @@ class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 };
 %extend RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 	~RWStepAP203_RWCcDesignPersonAndOrganizationAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignPersonAndOrganizationAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignPersonAndOrganizationAssignment\n");}
 	}
 };
 
@@ -240,7 +246,8 @@ class RWStepAP203_RWStartWork {
 };
 %extend RWStepAP203_RWStartWork {
 	~RWStepAP203_RWStartWork() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartWork\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartWork\n");}
 	}
 };
 
@@ -259,7 +266,8 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 };
 %extend RWStepAP203_RWCcDesignSpecificationReference {
 	~RWStepAP203_RWCcDesignSpecificationReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSpecificationReference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSpecificationReference\n");}
 	}
 };
 
@@ -278,7 +286,8 @@ class RWStepAP203_RWCcDesignContract {
 };
 %extend RWStepAP203_RWCcDesignContract {
 	~RWStepAP203_RWCcDesignContract() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignContract\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignContract\n");}
 	}
 };
 
@@ -297,7 +306,8 @@ class RWStepAP203_RWCcDesignApproval {
 };
 %extend RWStepAP203_RWCcDesignApproval {
 	~RWStepAP203_RWCcDesignApproval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignApproval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignApproval\n");}
 	}
 };
 
@@ -316,6 +326,7 @@ class RWStepAP203_RWChange {
 };
 %extend RWStepAP203_RWChange {
 	~RWStepAP203_RWChange() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChange\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChange\n");}
 	}
 };

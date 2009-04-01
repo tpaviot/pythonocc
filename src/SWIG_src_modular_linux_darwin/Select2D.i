@@ -136,7 +136,8 @@ class Handle_Select2D_Projector : public Handle_MMgt_TShared {
 };
 %extend Handle_Select2D_Projector {
 	~Handle_Select2D_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select2D_Projector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_Projector\n");}
 	}
 };
 
@@ -160,7 +161,8 @@ class Handle_Select2D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 };
 %extend Handle_Select2D_SensitiveEntity {
 	~Handle_Select2D_SensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveEntity\n");}
 	}
 };
 
@@ -184,7 +186,8 @@ class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
 };
 %extend Handle_Select2D_SensitiveBox {
 	~Handle_Select2D_SensitiveBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveBox\n");}
 	}
 };
 
@@ -208,7 +211,8 @@ class Handle_Select2D_SensitiveArc : public Handle_Select2D_SensitiveEntity {
 };
 %extend Handle_Select2D_SensitiveArc {
 	~Handle_Select2D_SensitiveArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveArc\n");}
 	}
 };
 
@@ -232,7 +236,8 @@ class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
 };
 %extend Handle_Select2D_SensitivePoint {
 	~Handle_Select2D_SensitivePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitivePoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitivePoint\n");}
 	}
 };
 
@@ -256,7 +261,8 @@ class Handle_Select2D_SensitiveSegment : public Handle_Select2D_SensitiveEntity 
 };
 %extend Handle_Select2D_SensitiveSegment {
 	~Handle_Select2D_SensitiveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveSegment\n");}
 	}
 };
 
@@ -280,7 +286,8 @@ class Handle_Select2D_SensitiveCircle : public Handle_Select2D_SensitiveEntity {
 };
 %extend Handle_Select2D_SensitiveCircle {
 	~Handle_Select2D_SensitiveCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveCircle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveCircle\n");}
 	}
 };
 
@@ -315,8 +322,14 @@ class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 	}
 };
 %extend Select2D_SensitiveEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Select2D_SensitiveEntity {
 	~Select2D_SensitiveEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveEntity\n");}
 	}
 };
 
@@ -345,8 +358,14 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 	}
 };
 %extend Select2D_SensitiveCircle {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Select2D_SensitiveCircle {
 	~Select2D_SensitiveCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveCircle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveCircle\n");}
 	}
 };
 
@@ -371,8 +390,14 @@ class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 	}
 };
 %extend Select2D_SensitiveArc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Select2D_SensitiveArc {
 	~Select2D_SensitiveArc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveArc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveArc\n");}
 	}
 };
 
@@ -409,8 +434,14 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 	}
 };
 %extend Select2D_SensitiveSegment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Select2D_SensitiveSegment {
 	~Select2D_SensitiveSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveSegment\n");}
 	}
 };
 
@@ -437,8 +468,14 @@ class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 	}
 };
 %extend Select2D_SensitiveBox {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Select2D_SensitiveBox {
 	~Select2D_SensitiveBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveBox\n");}
 	}
 };
 
@@ -457,8 +494,14 @@ class Select2D_Projector : public MMgt_TShared {
 	}
 };
 %extend Select2D_Projector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Select2D_Projector {
 	~Select2D_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select2D_Projector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select2D_Projector\n");}
 	}
 };
 
@@ -487,7 +530,13 @@ class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 	}
 };
 %extend Select2D_SensitivePoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Select2D_SensitivePoint {
 	~Select2D_SensitivePoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Select2D_SensitivePoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Select2D_SensitivePoint\n");}
 	}
 };

@@ -131,7 +131,8 @@ class Handle_TopoDS_TShape : public Handle_MMgt_TShared {
 };
 %extend Handle_TopoDS_TShape {
 	~Handle_TopoDS_TShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TShape\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_TopoDS_TVertex : public Handle_TopoDS_TShape {
 };
 %extend Handle_TopoDS_TVertex {
 	~Handle_TopoDS_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TVertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TVertex\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_TopoDS_FrozenShape : public Handle_Standard_DomainError {
 };
 %extend Handle_TopoDS_FrozenShape {
 	~Handle_TopoDS_FrozenShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_FrozenShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_FrozenShape\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_TopoDS_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 };
 %extend Handle_TopoDS_ListNodeOfListOfShape {
 	~Handle_TopoDS_ListNodeOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_ListNodeOfListOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_ListNodeOfListOfShape\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
 };
 %extend Handle_TopoDS_TFace {
 	~Handle_TopoDS_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TFace\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TFace\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 };
 %extend Handle_TopoDS_TCompound {
 	~Handle_TopoDS_TCompound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompound\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompound\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
 };
 %extend Handle_TopoDS_UnCompatibleShapes {
 	~Handle_TopoDS_UnCompatibleShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_UnCompatibleShapes\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_UnCompatibleShapes\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 };
 %extend Handle_TopoDS_HShape {
 	~Handle_TopoDS_HShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_HShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_HShape\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
 };
 %extend Handle_TopoDS_TEdge {
 	~Handle_TopoDS_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TEdge\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 };
 %extend Handle_TopoDS_TShell {
 	~Handle_TopoDS_TShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TShell\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TShell\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
 };
 %extend Handle_TopoDS_TCompSolid {
 	~Handle_TopoDS_TCompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompSolid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompSolid\n");}
 	}
 };
 
@@ -395,7 +406,8 @@ class Handle_TopoDS_TSolid : public Handle_TopoDS_TShape {
 };
 %extend Handle_TopoDS_TSolid {
 	~Handle_TopoDS_TSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TSolid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TSolid\n");}
 	}
 };
 
@@ -419,7 +431,8 @@ class Handle_TopoDS_TWire : public Handle_TopoDS_TShape {
 };
 %extend Handle_TopoDS_TWire {
 	~Handle_TopoDS_TWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TWire\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TWire\n");}
 	}
 };
 
@@ -515,8 +528,14 @@ class TopoDS_Shape {
 
 };
 %extend TopoDS_Shape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_Shape {
 	~TopoDS_Shape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Shape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Shape\n");}
 	}
 };
 
@@ -529,7 +548,8 @@ class TopoDS_Compound : public TopoDS_Shape {
 };
 %extend TopoDS_Compound {
 	~TopoDS_Compound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Compound\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Compound\n");}
 	}
 };
 
@@ -556,8 +576,14 @@ class TopoDS_HShape : public MMgt_TShared {
 	}
 };
 %extend TopoDS_HShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_HShape {
 	~TopoDS_HShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_HShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_HShape\n");}
 	}
 };
 
@@ -578,8 +604,14 @@ class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 	}
 };
 %extend TopoDS_ListNodeOfListOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_ListNodeOfListOfShape {
 	~TopoDS_ListNodeOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_ListNodeOfListOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_ListNodeOfListOfShape\n");}
 	}
 };
 
@@ -606,8 +638,14 @@ class TopoDS_FrozenShape : public Standard_DomainError {
 	}
 };
 %extend TopoDS_FrozenShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_FrozenShape {
 	~TopoDS_FrozenShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_FrozenShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_FrozenShape\n");}
 	}
 };
 
@@ -620,7 +658,8 @@ class TopoDS_Vertex : public TopoDS_Shape {
 };
 %extend TopoDS_Vertex {
 	~TopoDS_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Vertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Vertex\n");}
 	}
 };
 
@@ -643,7 +682,8 @@ class TopoDS_Iterator {
 };
 %extend TopoDS_Iterator {
 	~TopoDS_Iterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Iterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Iterator\n");}
 	}
 };
 
@@ -692,8 +732,14 @@ class TopoDS_TShape : public MMgt_TShared {
 	}
 };
 %extend TopoDS_TShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TShape {
 	~TopoDS_TShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TShape\n");}
 	}
 };
 
@@ -712,7 +758,8 @@ class TopoDS_Builder {
 };
 %extend TopoDS_Builder {
 	~TopoDS_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Builder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Builder\n");}
 	}
 };
 
@@ -725,7 +772,8 @@ class TopoDS_CompSolid : public TopoDS_Shape {
 };
 %extend TopoDS_CompSolid {
 	~TopoDS_CompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_CompSolid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_CompSolid\n");}
 	}
 };
 
@@ -774,7 +822,8 @@ class TopoDS_ListOfShape {
 };
 %extend TopoDS_ListOfShape {
 	~TopoDS_ListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_ListOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_ListOfShape\n");}
 	}
 };
 
@@ -797,8 +846,14 @@ class TopoDS_TWire : public TopoDS_TShape {
 	}
 };
 %extend TopoDS_TWire {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TWire {
 	~TopoDS_TWire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TWire\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TWire\n");}
 	}
 };
 
@@ -811,7 +866,8 @@ class TopoDS_Edge : public TopoDS_Shape {
 };
 %extend TopoDS_Edge {
 	~TopoDS_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Edge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Edge\n");}
 	}
 };
 
@@ -824,7 +880,8 @@ class TopoDS_Shell : public TopoDS_Shape {
 };
 %extend TopoDS_Shell {
 	~TopoDS_Shell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Shell\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Shell\n");}
 	}
 };
 
@@ -851,8 +908,14 @@ class TopoDS_UnCompatibleShapes : public Standard_DomainError {
 	}
 };
 %extend TopoDS_UnCompatibleShapes {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_UnCompatibleShapes {
 	~TopoDS_UnCompatibleShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_UnCompatibleShapes\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_UnCompatibleShapes\n");}
 	}
 };
 
@@ -875,7 +938,8 @@ class TopoDS_ListIteratorOfListOfShape {
 };
 %extend TopoDS_ListIteratorOfListOfShape {
 	~TopoDS_ListIteratorOfListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_ListIteratorOfListOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_ListIteratorOfListOfShape\n");}
 	}
 };
 
@@ -888,7 +952,8 @@ class TopoDS_Solid : public TopoDS_Shape {
 };
 %extend TopoDS_Solid {
 	~TopoDS_Solid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Solid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Solid\n");}
 	}
 };
 
@@ -911,8 +976,14 @@ class TopoDS_TCompound : public TopoDS_TShape {
 	}
 };
 %extend TopoDS_TCompound {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TCompound {
 	~TopoDS_TCompound() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TCompound\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TCompound\n");}
 	}
 };
 
@@ -931,8 +1002,14 @@ class TopoDS_TEdge : public TopoDS_TShape {
 	}
 };
 %extend TopoDS_TEdge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TEdge {
 	~TopoDS_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TEdge\n");}
 	}
 };
 
@@ -977,7 +1054,8 @@ class TopoDS {
 };
 %extend TopoDS {
 	~TopoDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS\n");}
 	}
 };
 
@@ -1000,8 +1078,14 @@ class TopoDS_TShell : public TopoDS_TShape {
 	}
 };
 %extend TopoDS_TShell {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TShell {
 	~TopoDS_TShell() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TShell\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TShell\n");}
 	}
 };
 
@@ -1024,8 +1108,14 @@ class TopoDS_TFace : public TopoDS_TShape {
 	}
 };
 %extend TopoDS_TFace {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TFace {
 	~TopoDS_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TFace\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TFace\n");}
 	}
 };
 
@@ -1042,7 +1132,8 @@ class TopoDS_Builder3D : public TopoDS_Builder {
 };
 %extend TopoDS_Builder3D {
 	~TopoDS_Builder3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Builder3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Builder3D\n");}
 	}
 };
 
@@ -1065,8 +1156,14 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 	}
 };
 %extend TopoDS_TCompSolid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TCompSolid {
 	~TopoDS_TCompSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TCompSolid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TCompSolid\n");}
 	}
 };
 
@@ -1079,7 +1176,8 @@ class TopoDS_Wire : public TopoDS_Shape {
 };
 %extend TopoDS_Wire {
 	~TopoDS_Wire() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Wire\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Wire\n");}
 	}
 };
 
@@ -1098,8 +1196,14 @@ class TopoDS_TVertex : public TopoDS_TShape {
 	}
 };
 %extend TopoDS_TVertex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TVertex {
 	~TopoDS_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TVertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TVertex\n");}
 	}
 };
 
@@ -1112,7 +1216,8 @@ class TopoDS_Face : public TopoDS_Shape {
 };
 %extend TopoDS_Face {
 	~TopoDS_Face() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_Face\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_Face\n");}
 	}
 };
 
@@ -1135,7 +1240,13 @@ class TopoDS_TSolid : public TopoDS_TShape {
 	}
 };
 %extend TopoDS_TSolid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopoDS_TSolid {
 	~TopoDS_TSolid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopoDS_TSolid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopoDS_TSolid\n");}
 	}
 };

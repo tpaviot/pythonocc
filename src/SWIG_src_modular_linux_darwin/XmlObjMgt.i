@@ -135,7 +135,8 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 };
 %extend Handle_XmlObjMgt_DataMapNodeOfRRelocationTable {
 	~Handle_XmlObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlObjMgt_DataMapNodeOfRRelocationTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlObjMgt_DataMapNodeOfRRelocationTable\n");}
 	}
 };
 
@@ -172,7 +173,8 @@ class XmlObjMgt {
 };
 %extend XmlObjMgt {
 	~XmlObjMgt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlObjMgt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlObjMgt\n");}
 	}
 };
 
@@ -197,7 +199,8 @@ class XmlObjMgt_GP {
 };
 %extend XmlObjMgt_GP {
 	~XmlObjMgt_GP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlObjMgt_GP\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_GP\n");}
 	}
 };
 
@@ -218,7 +221,8 @@ class XmlObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 };
 %extend XmlObjMgt_DataMapIteratorOfRRelocationTable {
 	~XmlObjMgt_DataMapIteratorOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapIteratorOfRRelocationTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapIteratorOfRRelocationTable\n");}
 	}
 };
 
@@ -241,8 +245,14 @@ class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	}
 };
 %extend XmlObjMgt_DataMapNodeOfRRelocationTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlObjMgt_DataMapNodeOfRRelocationTable {
 	~XmlObjMgt_DataMapNodeOfRRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapNodeOfRRelocationTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapNodeOfRRelocationTable\n");}
 	}
 };
 
@@ -269,7 +279,8 @@ class XmlObjMgt_Persistent {
 };
 %extend XmlObjMgt_Persistent {
 	~XmlObjMgt_Persistent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlObjMgt_Persistent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_Persistent\n");}
 	}
 };
 
@@ -302,6 +313,7 @@ class XmlObjMgt_RRelocationTable : public TCollection_BasicMap {
 };
 %extend XmlObjMgt_RRelocationTable {
 	~XmlObjMgt_RRelocationTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlObjMgt_RRelocationTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_RRelocationTable\n");}
 	}
 };

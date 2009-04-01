@@ -131,7 +131,8 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMNaming_NamingDriver {
 	~Handle_XmlMNaming_NamingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamingDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamingDriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMNaming_NamedShapeDriver {
 	~Handle_XmlMNaming_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamedShapeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamedShapeDriver\n");}
 	}
 };
 
@@ -186,8 +188,14 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMNaming_NamedShapeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMNaming_NamedShapeDriver {
 	~XmlMNaming_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamedShapeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamedShapeDriver\n");}
 	}
 };
 
@@ -216,7 +224,8 @@ class XmlMNaming_Array1OfShape1 {
 };
 %extend XmlMNaming_Array1OfShape1 {
 	~XmlMNaming_Array1OfShape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming_Array1OfShape1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMNaming_Array1OfShape1\n");}
 	}
 };
 
@@ -263,7 +272,8 @@ class XmlMNaming_Shape1 {
 };
 %extend XmlMNaming_Shape1 {
 	~XmlMNaming_Shape1() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming_Shape1\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMNaming_Shape1\n");}
 	}
 };
 
@@ -288,8 +298,14 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMNaming_NamingDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMNaming_NamingDriver {
 	~XmlMNaming_NamingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamingDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamingDriver\n");}
 	}
 };
 
@@ -304,6 +320,7 @@ class XmlMNaming {
 };
 %extend XmlMNaming {
 	~XmlMNaming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMNaming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMNaming\n");}
 	}
 };

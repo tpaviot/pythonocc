@@ -131,7 +131,8 @@ class Handle_TopBas_ListNodeOfListOfTestInterference : public Handle_TCollection
 };
 %extend Handle_TopBas_ListNodeOfListOfTestInterference {
 	~Handle_TopBas_ListNodeOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopBas_ListNodeOfListOfTestInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopBas_ListNodeOfListOfTestInterference\n");}
 	}
 };
 
@@ -180,7 +181,8 @@ class TopBas_ListOfTestInterference {
 };
 %extend TopBas_ListOfTestInterference {
 	~TopBas_ListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopBas_ListOfTestInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopBas_ListOfTestInterference\n");}
 	}
 };
 
@@ -203,7 +205,8 @@ class TopBas_ListIteratorOfListOfTestInterference {
 };
 %extend TopBas_ListIteratorOfListOfTestInterference {
 	~TopBas_ListIteratorOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopBas_ListIteratorOfListOfTestInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopBas_ListIteratorOfListOfTestInterference\n");}
 	}
 };
 
@@ -224,8 +227,14 @@ class TopBas_ListNodeOfListOfTestInterference : public TCollection_MapNode {
 	}
 };
 %extend TopBas_ListNodeOfListOfTestInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopBas_ListNodeOfListOfTestInterference {
 	~TopBas_ListNodeOfListOfTestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopBas_ListNodeOfListOfTestInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopBas_ListNodeOfListOfTestInterference\n");}
 	}
 };
 
@@ -264,6 +273,7 @@ class TopBas_TestInterference {
 };
 %extend TopBas_TestInterference {
 	~TopBas_TestInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopBas_TestInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopBas_TestInterference\n");}
 	}
 };

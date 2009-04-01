@@ -141,7 +141,8 @@ class gce_MakeScale {
 };
 %extend gce_MakeScale {
 	~gce_MakeScale() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeScale\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeScale\n");}
 	}
 };
 
@@ -158,7 +159,8 @@ class gce_Root {
 };
 %extend gce_Root {
 	~gce_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_Root\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_Root\n");}
 	}
 };
 
@@ -183,7 +185,8 @@ class gce_MakeParab2d : public gce_Root {
 };
 %extend gce_MakeParab2d {
 	~gce_MakeParab2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeParab2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeParab2d\n");}
 	}
 };
 
@@ -210,7 +213,8 @@ class gce_MakeLin2d : public gce_Root {
 };
 %extend gce_MakeLin2d {
 	~gce_MakeLin2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeLin2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeLin2d\n");}
 	}
 };
 
@@ -233,7 +237,8 @@ class gce_MakeMirror2d {
 };
 %extend gce_MakeMirror2d {
 	~gce_MakeMirror2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeMirror2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeMirror2d\n");}
 	}
 };
 
@@ -254,7 +259,8 @@ class gce_MakeRotation {
 };
 %extend gce_MakeRotation {
 	~gce_MakeRotation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeRotation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation\n");}
 	}
 };
 
@@ -283,7 +289,8 @@ class gce_MakeCirc2d : public gce_Root {
 };
 %extend gce_MakeCirc2d {
 	~gce_MakeCirc2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeCirc2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeCirc2d\n");}
 	}
 };
 
@@ -304,7 +311,8 @@ class gce_MakeHypr2d : public gce_Root {
 };
 %extend gce_MakeHypr2d {
 	~gce_MakeHypr2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeHypr2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeHypr2d\n");}
 	}
 };
 
@@ -325,7 +333,8 @@ class gce_MakeElips2d : public gce_Root {
 };
 %extend gce_MakeElips2d {
 	~gce_MakeElips2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeElips2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeElips2d\n");}
 	}
 };
 
@@ -356,7 +365,8 @@ class gce_MakeCirc : public gce_Root {
 };
 %extend gce_MakeCirc {
 	~gce_MakeCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeCirc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeCirc\n");}
 	}
 };
 
@@ -375,7 +385,8 @@ class gce_MakeHypr : public gce_Root {
 };
 %extend gce_MakeHypr {
 	~gce_MakeHypr() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeHypr\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeHypr\n");}
 	}
 };
 
@@ -394,7 +405,8 @@ class gce_MakeTranslation {
 };
 %extend gce_MakeTranslation {
 	~gce_MakeTranslation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeTranslation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeTranslation\n");}
 	}
 };
 
@@ -413,7 +425,8 @@ class gce_MakeParab : public gce_Root {
 };
 %extend gce_MakeParab {
 	~gce_MakeParab() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeParab\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeParab\n");}
 	}
 };
 
@@ -440,7 +453,8 @@ class gce_MakeCylinder : public gce_Root {
 };
 %extend gce_MakeCylinder {
 	~gce_MakeCylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeCylinder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeCylinder\n");}
 	}
 };
 
@@ -463,7 +477,8 @@ class gce_MakeDir : public gce_Root {
 };
 %extend gce_MakeDir {
 	~gce_MakeDir() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeDir\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeDir\n");}
 	}
 };
 
@@ -480,7 +495,8 @@ class gce_MakeRotation2d {
 };
 %extend gce_MakeRotation2d {
 	~gce_MakeRotation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeRotation2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeRotation2d\n");}
 	}
 };
 
@@ -499,7 +515,8 @@ class gce_MakeTranslation2d {
 };
 %extend gce_MakeTranslation2d {
 	~gce_MakeTranslation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeTranslation2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeTranslation2d\n");}
 	}
 };
 
@@ -522,7 +539,8 @@ class gce_MakeDir2d : public gce_Root {
 };
 %extend gce_MakeDir2d {
 	~gce_MakeDir2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeDir2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeDir2d\n");}
 	}
 };
 
@@ -541,7 +559,8 @@ class gce_MakeElips : public gce_Root {
 };
 %extend gce_MakeElips {
 	~gce_MakeElips() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeElips\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeElips\n");}
 	}
 };
 
@@ -558,7 +577,8 @@ class gce_MakeScale2d {
 };
 %extend gce_MakeScale2d {
 	~gce_MakeScale2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeScale2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeScale2d\n");}
 	}
 };
 
@@ -585,7 +605,8 @@ class gce_MakeMirror {
 };
 %extend gce_MakeMirror {
 	~gce_MakeMirror() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeMirror\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeMirror\n");}
 	}
 };
 
@@ -616,7 +637,8 @@ class gce_MakePln : public gce_Root {
 };
 %extend gce_MakePln {
 	~gce_MakePln() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakePln\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakePln\n");}
 	}
 };
 
@@ -639,7 +661,8 @@ class gce_MakeLin : public gce_Root {
 };
 %extend gce_MakeLin {
 	~gce_MakeLin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeLin\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeLin\n");}
 	}
 };
 
@@ -668,6 +691,7 @@ class gce_MakeCone : public gce_Root {
 };
 %extend gce_MakeCone {
 	~gce_MakeCone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of gce_MakeCone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of gce_MakeCone\n");}
 	}
 };

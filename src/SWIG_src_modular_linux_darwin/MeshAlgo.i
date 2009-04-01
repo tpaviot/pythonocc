@@ -132,7 +132,8 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 };
 %extend Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
 	~Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc\n");}
 	}
 };
 
@@ -149,7 +150,8 @@ class MeshAlgo {
 };
 %extend MeshAlgo {
 	~MeshAlgo() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshAlgo\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshAlgo\n");}
 	}
 };
 
@@ -182,7 +184,8 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 };
 %extend MeshAlgo_DataMapOfIntegerCirc {
 	~MeshAlgo_DataMapOfIntegerCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapOfIntegerCirc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapOfIntegerCirc\n");}
 	}
 };
 
@@ -217,7 +220,8 @@ class MeshAlgo_CircleTool {
 };
 %extend MeshAlgo_CircleTool {
 	~MeshAlgo_CircleTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshAlgo_CircleTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshAlgo_CircleTool\n");}
 	}
 };
 
@@ -238,7 +242,8 @@ class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicM
 };
 %extend MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc {
 	~MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc\n");}
 	}
 };
 
@@ -261,7 +266,8 @@ class MeshAlgo_Circ {
 };
 %extend MeshAlgo_Circ {
 	~MeshAlgo_Circ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshAlgo_Circ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshAlgo_Circ\n");}
 	}
 };
 
@@ -284,7 +290,13 @@ class MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public TCollection_MapNode {
 	}
 };
 %extend MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc {
 	~MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc\n");}
 	}
 };

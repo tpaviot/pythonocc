@@ -131,7 +131,8 @@ class Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCol
 };
 %extend Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	~Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
 	}
 };
 
@@ -152,8 +153,14 @@ class AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNod
 	}
 };
 %extend AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	~AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d\n");}
 	}
 };
 
@@ -206,7 +213,8 @@ class AppBlend_Approx {
 };
 %extend AppBlend_Approx {
 	~AppBlend_Approx() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppBlend_Approx\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppBlend_Approx\n");}
 	}
 };
 
@@ -259,6 +267,7 @@ class AppBlend_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 };
 %extend AppBlend_SequenceOfArray1OfPnt2d {
 	~AppBlend_SequenceOfArray1OfPnt2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AppBlend_SequenceOfArray1OfPnt2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AppBlend_SequenceOfArray1OfPnt2d\n");}
 	}
 };

@@ -154,7 +154,8 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 };
 %extend BRepAlgoAPI_BooleanOperation {
 	~BRepAlgoAPI_BooleanOperation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_BooleanOperation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_BooleanOperation\n");}
 	}
 };
 
@@ -169,7 +170,8 @@ class BRepAlgoAPI_Fuse : public BRepAlgoAPI_BooleanOperation {
 };
 %extend BRepAlgoAPI_Fuse {
 	~BRepAlgoAPI_Fuse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Fuse\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Fuse\n");}
 	}
 };
 
@@ -220,7 +222,8 @@ class BRepAlgoAPI_Section : public BRepAlgoAPI_BooleanOperation {
 };
 %extend BRepAlgoAPI_Section {
 	~BRepAlgoAPI_Section() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Section\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Section\n");}
 	}
 };
 
@@ -235,7 +238,8 @@ class BRepAlgoAPI_Cut : public BRepAlgoAPI_BooleanOperation {
 };
 %extend BRepAlgoAPI_Cut {
 	~BRepAlgoAPI_Cut() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Cut\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Cut\n");}
 	}
 };
 
@@ -250,6 +254,7 @@ class BRepAlgoAPI_Common : public BRepAlgoAPI_BooleanOperation {
 };
 %extend BRepAlgoAPI_Common {
 	~BRepAlgoAPI_Common() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Common\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_Common\n");}
 	}
 };

@@ -144,7 +144,8 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 };
 %extend Handle_VrmlConverter_ShadingAspect {
 	~Handle_VrmlConverter_ShadingAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_ShadingAspect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_ShadingAspect\n");}
 	}
 };
 
@@ -168,7 +169,8 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 };
 %extend Handle_VrmlConverter_LineAspect {
 	~Handle_VrmlConverter_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_LineAspect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_LineAspect\n");}
 	}
 };
 
@@ -192,7 +194,8 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 };
 %extend Handle_VrmlConverter_PointAspect {
 	~Handle_VrmlConverter_PointAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_PointAspect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_PointAspect\n");}
 	}
 };
 
@@ -216,7 +219,8 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 };
 %extend Handle_VrmlConverter_Projector {
 	~Handle_VrmlConverter_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Projector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Projector\n");}
 	}
 };
 
@@ -240,7 +244,8 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 };
 %extend Handle_VrmlConverter_IsoAspect {
 	~Handle_VrmlConverter_IsoAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_IsoAspect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_IsoAspect\n");}
 	}
 };
 
@@ -264,7 +269,8 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 };
 %extend Handle_VrmlConverter_Drawer {
 	~Handle_VrmlConverter_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Drawer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Drawer\n");}
 	}
 };
 
@@ -279,7 +285,8 @@ class VrmlConverter_WFShape {
 };
 %extend VrmlConverter_WFShape {
 	~VrmlConverter_WFShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFShape\n");}
 	}
 };
 
@@ -294,7 +301,8 @@ class VrmlConverter_WFDeflectionShape {
 };
 %extend VrmlConverter_WFDeflectionShape {
 	~VrmlConverter_WFDeflectionShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFDeflectionShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFDeflectionShape\n");}
 	}
 };
 
@@ -323,8 +331,14 @@ class VrmlConverter_LineAspect : public MMgt_TShared {
 	}
 };
 %extend VrmlConverter_LineAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend VrmlConverter_LineAspect {
 	~VrmlConverter_LineAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_LineAspect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_LineAspect\n");}
 	}
 };
 
@@ -349,8 +363,14 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 	}
 };
 %extend VrmlConverter_IsoAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend VrmlConverter_IsoAspect {
 	~VrmlConverter_IsoAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_IsoAspect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_IsoAspect\n");}
 	}
 };
 
@@ -371,7 +391,8 @@ class VrmlConverter_WFRestrictedFace {
 };
 %extend VrmlConverter_WFRestrictedFace {
 	~VrmlConverter_WFRestrictedFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFRestrictedFace\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFRestrictedFace\n");}
 	}
 };
 
@@ -388,7 +409,8 @@ class VrmlConverter_ShadedShape {
 };
 %extend VrmlConverter_ShadedShape {
 	~VrmlConverter_ShadedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadedShape\n");}
 	}
 };
 
@@ -409,7 +431,8 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 };
 %extend VrmlConverter_WFDeflectionRestrictedFace {
 	~VrmlConverter_WFDeflectionRestrictedFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFDeflectionRestrictedFace\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFDeflectionRestrictedFace\n");}
 	}
 };
 
@@ -440,8 +463,14 @@ class VrmlConverter_Projector : public MMgt_TShared {
 	}
 };
 %extend VrmlConverter_Projector {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend VrmlConverter_Projector {
 	~VrmlConverter_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_Projector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Projector\n");}
 	}
 };
 
@@ -460,7 +489,8 @@ class VrmlConverter_Curve {
 };
 %extend VrmlConverter_Curve {
 	~VrmlConverter_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Curve\n");}
 	}
 };
 
@@ -489,8 +519,14 @@ class VrmlConverter_PointAspect : public MMgt_TShared {
 	}
 };
 %extend VrmlConverter_PointAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend VrmlConverter_PointAspect {
 	~VrmlConverter_PointAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_PointAspect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_PointAspect\n");}
 	}
 };
 
@@ -591,8 +627,14 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 	}
 };
 %extend VrmlConverter_Drawer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend VrmlConverter_Drawer {
 	~VrmlConverter_Drawer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_Drawer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Drawer\n");}
 	}
 };
 
@@ -615,7 +657,8 @@ class VrmlConverter_DeflectionCurve {
 };
 %extend VrmlConverter_DeflectionCurve {
 	~VrmlConverter_DeflectionCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_DeflectionCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_DeflectionCurve\n");}
 	}
 };
 
@@ -650,8 +693,14 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 	}
 };
 %extend VrmlConverter_ShadingAspect {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend VrmlConverter_ShadingAspect {
 	~VrmlConverter_ShadingAspect() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadingAspect\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadingAspect\n");}
 	}
 };
 
@@ -666,6 +715,7 @@ class VrmlConverter_HLRShape {
 };
 %extend VrmlConverter_HLRShape {
 	~VrmlConverter_HLRShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of VrmlConverter_HLRShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of VrmlConverter_HLRShape\n");}
 	}
 };

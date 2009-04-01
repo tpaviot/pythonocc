@@ -131,7 +131,8 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 };
 %extend Handle_Law_Function {
 	~Handle_Law_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_Function\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Function\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_Law_Linear : public Handle_Law_Function {
 };
 %extend Handle_Law_Linear {
 	~Handle_Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_Law_Constant : public Handle_Law_Function {
 };
 %extend Handle_Law_Constant {
 	~Handle_Law_Constant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_Constant\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Constant\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 };
 %extend Handle_Law_ListNodeOfLaws {
 	~Handle_Law_ListNodeOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_ListNodeOfLaws\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_ListNodeOfLaws\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 };
 %extend Handle_Law_BSpFunc {
 	~Handle_Law_BSpFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpFunc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpFunc\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 };
 %extend Handle_Law_Interpol {
 	~Handle_Law_Interpol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_Interpol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Interpol\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 };
 %extend Handle_Law_BSpline {
 	~Handle_Law_BSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpline\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_BSpline\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 };
 %extend Handle_Law_S {
 	~Handle_Law_S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_S\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_S\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_Law_Composite : public Handle_Law_Function {
 };
 %extend Handle_Law_Composite {
 	~Handle_Law_Composite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Law_Composite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Law_Composite\n");}
 	}
 };
 
@@ -346,7 +355,8 @@ class Law_ListIteratorOfLaws {
 };
 %extend Law_ListIteratorOfLaws {
 	~Law_ListIteratorOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_ListIteratorOfLaws\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_ListIteratorOfLaws\n");}
 	}
 };
 
@@ -379,8 +389,14 @@ class Law_Function : public MMgt_TShared {
 	}
 };
 %extend Law_Function {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_Function {
 	~Law_Function() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_Function\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Function\n");}
 	}
 };
 
@@ -403,8 +419,14 @@ class Law_BSpFunc : public Law_Function {
 	}
 };
 %extend Law_BSpFunc {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_BSpFunc {
 	~Law_BSpFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_BSpFunc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_BSpFunc\n");}
 	}
 };
 
@@ -425,8 +447,14 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 	}
 };
 %extend Law_ListNodeOfLaws {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_ListNodeOfLaws {
 	~Law_ListNodeOfLaws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_ListNodeOfLaws\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_ListNodeOfLaws\n");}
 	}
 };
 
@@ -453,8 +481,14 @@ class Law_Interpol : public Law_BSpFunc {
 	}
 };
 %extend Law_Interpol {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_Interpol {
 	~Law_Interpol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_Interpol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Interpol\n");}
 	}
 };
 
@@ -499,8 +533,14 @@ class Law_Composite : public Law_Function {
 	}
 };
 %extend Law_Composite {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_Composite {
 	~Law_Composite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_Composite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Composite\n");}
 	}
 };
 
@@ -519,7 +559,8 @@ class Law_BSplineKnotSplitting {
 };
 %extend Law_BSplineKnotSplitting {
 	~Law_BSplineKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_BSplineKnotSplitting\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_BSplineKnotSplitting\n");}
 	}
 };
 
@@ -542,8 +583,14 @@ class Law_S : public Law_BSpFunc {
 	}
 };
 %extend Law_S {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_S {
 	~Law_S() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_S\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_S\n");}
 	}
 };
 
@@ -580,8 +627,14 @@ class Law_Constant : public Law_Function {
 	}
 };
 %extend Law_Constant {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_Constant {
 	~Law_Constant() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_Constant\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Constant\n");}
 	}
 };
 
@@ -618,8 +671,14 @@ class Law_Linear : public Law_Function {
 	}
 };
 %extend Law_Linear {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_Linear {
 	~Law_Linear() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_Linear\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Linear\n");}
 	}
 };
 
@@ -668,7 +727,8 @@ class Law_Laws {
 };
 %extend Law_Laws {
 	~Law_Laws() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_Laws\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Laws\n");}
 	}
 };
 
@@ -693,7 +753,8 @@ class Law {
 };
 %extend Law {
 	~Law() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law\n");}
 	}
 };
 
@@ -718,7 +779,8 @@ class Law_Interpolate {
 };
 %extend Law_Interpolate {
 	~Law_Interpolate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_Interpolate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_Interpolate\n");}
 	}
 };
 
@@ -861,7 +923,13 @@ class Law_BSpline : public MMgt_TShared {
 	}
 };
 %extend Law_BSpline {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Law_BSpline {
 	~Law_BSpline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Law_BSpline\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Law_BSpline\n");}
 	}
 };

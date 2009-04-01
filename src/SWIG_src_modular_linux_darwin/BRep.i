@@ -131,7 +131,8 @@ class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
 };
 %extend Handle_BRep_PointRepresentation {
 	~Handle_BRep_PointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointRepresentation\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 };
 %extend Handle_BRep_PointsOnSurface {
 	~Handle_BRep_PointsOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointsOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointsOnSurface\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_BRep_PointOnSurface : public Handle_BRep_PointsOnSurface {
 };
 %extend Handle_BRep_PointOnSurface {
 	~Handle_BRep_PointOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointOnSurface\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_BRep_ListNodeOfListOfCurveRepresentation : public Handle_TCollectio
 };
 %extend Handle_BRep_ListNodeOfListOfCurveRepresentation {
 	~Handle_BRep_ListNodeOfListOfCurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_ListNodeOfListOfCurveRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_ListNodeOfListOfCurveRepresentation\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_BRep_CurveRepresentation : public Handle_MMgt_TShared {
 };
 %extend Handle_BRep_CurveRepresentation {
 	~Handle_BRep_CurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveRepresentation\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_BRep_GCurve : public Handle_BRep_CurveRepresentation {
 };
 %extend Handle_BRep_GCurve {
 	~Handle_BRep_GCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_GCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_GCurve\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
 };
 %extend Handle_BRep_Curve3D {
 	~Handle_BRep_Curve3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_Curve3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_Curve3D\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 };
 %extend Handle_BRep_Polygon3D {
 	~Handle_BRep_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_Polygon3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_Polygon3D\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
 };
 %extend Handle_BRep_TVertex {
 	~Handle_BRep_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_TVertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_TVertex\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
 };
 %extend Handle_BRep_CurveOn2Surfaces {
 	~Handle_BRep_CurveOn2Surfaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveOn2Surfaces\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveOn2Surfaces\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollectio
 };
 %extend Handle_BRep_ListNodeOfListOfPointRepresentation {
 	~Handle_BRep_ListNodeOfListOfPointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_ListNodeOfListOfPointRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_ListNodeOfListOfPointRepresentation\n");}
 	}
 };
 
@@ -395,7 +406,8 @@ class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 };
 %extend Handle_BRep_PolygonOnSurface {
 	~Handle_BRep_PolygonOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnSurface\n");}
 	}
 };
 
@@ -419,7 +431,8 @@ class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
 };
 %extend Handle_BRep_PolygonOnClosedSurface {
 	~Handle_BRep_PolygonOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnClosedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnClosedSurface\n");}
 	}
 };
 
@@ -443,7 +456,8 @@ class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
 };
 %extend Handle_BRep_PointOnCurve {
 	~Handle_BRep_PointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointOnCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointOnCurve\n");}
 	}
 };
 
@@ -467,7 +481,8 @@ class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
 };
 %extend Handle_BRep_PointOnCurveOnSurface {
 	~Handle_BRep_PointOnCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointOnCurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointOnCurveOnSurface\n");}
 	}
 };
 
@@ -491,7 +506,8 @@ class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
 };
 %extend Handle_BRep_CurveOnSurface {
 	~Handle_BRep_CurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveOnSurface\n");}
 	}
 };
 
@@ -515,7 +531,8 @@ class Handle_BRep_PolygonOnTriangulation : public Handle_BRep_CurveRepresentatio
 };
 %extend Handle_BRep_PolygonOnTriangulation {
 	~Handle_BRep_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -539,7 +556,8 @@ class Handle_BRep_PolygonOnClosedTriangulation : public Handle_BRep_PolygonOnTri
 };
 %extend Handle_BRep_PolygonOnClosedTriangulation {
 	~Handle_BRep_PolygonOnClosedTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnClosedTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnClosedTriangulation\n");}
 	}
 };
 
@@ -563,7 +581,8 @@ class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
 };
 %extend Handle_BRep_CurveOnClosedSurface {
 	~Handle_BRep_CurveOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveOnClosedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveOnClosedSurface\n");}
 	}
 };
 
@@ -587,7 +606,8 @@ class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
 };
 %extend Handle_BRep_TEdge {
 	~Handle_BRep_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_TEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_TEdge\n");}
 	}
 };
 
@@ -611,7 +631,8 @@ class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 };
 %extend Handle_BRep_TFace {
 	~Handle_BRep_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BRep_TFace\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BRep_TFace\n");}
 	}
 };
 
@@ -664,8 +685,14 @@ class BRep_PointRepresentation : public MMgt_TShared {
 	}
 };
 %extend BRep_PointRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PointRepresentation {
 	~BRep_PointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PointRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PointRepresentation\n");}
 	}
 };
 
@@ -758,8 +785,14 @@ class BRep_CurveRepresentation : public MMgt_TShared {
 	}
 };
 %extend BRep_CurveRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_CurveRepresentation {
 	~BRep_CurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_CurveRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_CurveRepresentation\n");}
 	}
 };
 
@@ -790,8 +823,14 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 	}
 };
 %extend BRep_GCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_GCurve {
 	~BRep_GCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_GCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_GCurve\n");}
 	}
 };
 
@@ -816,8 +855,14 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 	}
 };
 %extend BRep_CurveOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_CurveOnSurface {
 	~BRep_CurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_CurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_CurveOnSurface\n");}
 	}
 };
 
@@ -838,8 +883,14 @@ class BRep_PointsOnSurface : public BRep_PointRepresentation {
 	}
 };
 %extend BRep_PointsOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PointsOnSurface {
 	~BRep_PointsOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PointsOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PointsOnSurface\n");}
 	}
 };
 
@@ -864,8 +915,14 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 	}
 };
 %extend BRep_PointOnCurveOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PointOnCurveOnSurface {
 	~BRep_PointOnCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PointOnCurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PointOnCurveOnSurface\n");}
 	}
 };
 
@@ -888,7 +945,8 @@ class BRep_ListIteratorOfListOfCurveRepresentation {
 };
 %extend BRep_ListIteratorOfListOfCurveRepresentation {
 	~BRep_ListIteratorOfListOfCurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_ListIteratorOfListOfCurveRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_ListIteratorOfListOfCurveRepresentation\n");}
 	}
 };
 
@@ -999,7 +1057,8 @@ class BRep_Tool {
 };
 %extend BRep_Tool {
 	~BRep_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_Tool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_Tool\n");}
 	}
 };
 
@@ -1048,7 +1107,8 @@ class BRep_ListOfPointRepresentation {
 };
 %extend BRep_ListOfPointRepresentation {
 	~BRep_ListOfPointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_ListOfPointRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_ListOfPointRepresentation\n");}
 	}
 };
 
@@ -1075,8 +1135,14 @@ class BRep_PointOnSurface : public BRep_PointsOnSurface {
 	}
 };
 %extend BRep_PointOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PointOnSurface {
 	~BRep_PointOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PointOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PointOnSurface\n");}
 	}
 };
 
@@ -1107,8 +1173,14 @@ class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
 	}
 };
 %extend BRep_PolygonOnTriangulation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PolygonOnTriangulation {
 	~BRep_PolygonOnTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnTriangulation\n");}
 	}
 };
 
@@ -1131,8 +1203,14 @@ class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
 	}
 };
 %extend BRep_PolygonOnClosedTriangulation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PolygonOnClosedTriangulation {
 	~BRep_PolygonOnClosedTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnClosedTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnClosedTriangulation\n");}
 	}
 };
 
@@ -1159,8 +1237,14 @@ class BRep_PointOnCurve : public BRep_PointRepresentation {
 	}
 };
 %extend BRep_PointOnCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PointOnCurve {
 	~BRep_PointOnCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PointOnCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PointOnCurve\n");}
 	}
 };
 
@@ -1203,8 +1287,14 @@ class BRep_TEdge : public TopoDS_TEdge {
 	}
 };
 %extend BRep_TEdge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_TEdge {
 	~BRep_TEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_TEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_TEdge\n");}
 	}
 };
 
@@ -1241,8 +1331,14 @@ class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 	}
 };
 %extend BRep_CurveOn2Surfaces {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_CurveOn2Surfaces {
 	~BRep_CurveOn2Surfaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_CurveOn2Surfaces\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_CurveOn2Surfaces\n");}
 	}
 };
 
@@ -1271,8 +1367,14 @@ class BRep_Curve3D : public BRep_GCurve {
 	}
 };
 %extend BRep_Curve3D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_Curve3D {
 	~BRep_Curve3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_Curve3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_Curve3D\n");}
 	}
 };
 
@@ -1387,7 +1489,8 @@ class BRep_Builder : public TopoDS_Builder3D {
 };
 %extend BRep_Builder {
 	~BRep_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_Builder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_Builder\n");}
 	}
 };
 
@@ -1418,8 +1521,14 @@ class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 	}
 };
 %extend BRep_PolygonOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PolygonOnSurface {
 	~BRep_PolygonOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnSurface\n");}
 	}
 };
 
@@ -1442,7 +1551,8 @@ class BRep_ListIteratorOfListOfPointRepresentation {
 };
 %extend BRep_ListIteratorOfListOfPointRepresentation {
 	~BRep_ListIteratorOfListOfPointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_ListIteratorOfListOfPointRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_ListIteratorOfListOfPointRepresentation\n");}
 	}
 };
 
@@ -1491,8 +1601,14 @@ class BRep_CurveOnClosedSurface : public BRep_CurveOnSurface {
 	}
 };
 %extend BRep_CurveOnClosedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_CurveOnClosedSurface {
 	~BRep_CurveOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_CurveOnClosedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_CurveOnClosedSurface\n");}
 	}
 };
 
@@ -1533,8 +1649,14 @@ class BRep_TFace : public TopoDS_TFace {
 	}
 };
 %extend BRep_TFace {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_TFace {
 	~BRep_TFace() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_TFace\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_TFace\n");}
 	}
 };
 
@@ -1583,7 +1705,8 @@ class BRep_ListOfCurveRepresentation {
 };
 %extend BRep_ListOfCurveRepresentation {
 	~BRep_ListOfCurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_ListOfCurveRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_ListOfCurveRepresentation\n");}
 	}
 };
 
@@ -1604,8 +1727,14 @@ class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
 	}
 };
 %extend BRep_ListNodeOfListOfPointRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_ListNodeOfListOfPointRepresentation {
 	~BRep_ListNodeOfListOfPointRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfPointRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfPointRepresentation\n");}
 	}
 };
 
@@ -1632,8 +1761,14 @@ class BRep_PolygonOnClosedSurface : public BRep_PolygonOnSurface {
 	}
 };
 %extend BRep_PolygonOnClosedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_PolygonOnClosedSurface {
 	~BRep_PolygonOnClosedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnClosedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnClosedSurface\n");}
 	}
 };
 
@@ -1660,8 +1795,14 @@ class BRep_Polygon3D : public BRep_CurveRepresentation {
 	}
 };
 %extend BRep_Polygon3D {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_Polygon3D {
 	~BRep_Polygon3D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_Polygon3D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_Polygon3D\n");}
 	}
 };
 
@@ -1682,8 +1823,14 @@ class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
 	}
 };
 %extend BRep_ListNodeOfListOfCurveRepresentation {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_ListNodeOfListOfCurveRepresentation {
 	~BRep_ListNodeOfListOfCurveRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfCurveRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfCurveRepresentation\n");}
 	}
 };
 
@@ -1718,7 +1865,13 @@ class BRep_TVertex : public TopoDS_TVertex {
 	}
 };
 %extend BRep_TVertex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BRep_TVertex {
 	~BRep_TVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRep_TVertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRep_TVertex\n");}
 	}
 };

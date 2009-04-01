@@ -134,7 +134,8 @@ class GeomLProp_CurveTool {
 };
 %extend GeomLProp_CurveTool {
 	~GeomLProp_CurveTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp_CurveTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLProp_CurveTool\n");}
 	}
 };
 
@@ -193,7 +194,8 @@ class GeomLProp_SLProps {
 };
 %extend GeomLProp_SLProps {
 	~GeomLProp_SLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp_SLProps\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLProp_SLProps\n");}
 	}
 };
 
@@ -232,7 +234,8 @@ class GeomLProp_CLProps {
 };
 %extend GeomLProp_CLProps {
 	~GeomLProp_CLProps() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp_CLProps\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLProp_CLProps\n");}
 	}
 };
 
@@ -249,7 +252,8 @@ class GeomLProp {
 };
 %extend GeomLProp {
 	~GeomLProp() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLProp\n");}
 	}
 };
 
@@ -274,6 +278,7 @@ class GeomLProp_SurfaceTool {
 };
 %extend GeomLProp_SurfaceTool {
 	~GeomLProp_SurfaceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomLProp_SurfaceTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomLProp_SurfaceTool\n");}
 	}
 };

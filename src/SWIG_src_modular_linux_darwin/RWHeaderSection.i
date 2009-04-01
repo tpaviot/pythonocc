@@ -131,7 +131,8 @@ class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteM
 };
 %extend Handle_RWHeaderSection_ReadWriteModule {
 	~Handle_RWHeaderSection_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_RWHeaderSection_ReadWriteModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_RWHeaderSection_ReadWriteModule\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 };
 %extend Handle_RWHeaderSection_GeneralModule {
 	~Handle_RWHeaderSection_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_RWHeaderSection_GeneralModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_RWHeaderSection_GeneralModule\n");}
 	}
 };
 
@@ -172,7 +174,8 @@ class RWHeaderSection_RWFileSchema {
 };
 %extend RWHeaderSection_RWFileSchema {
 	~RWHeaderSection_RWFileSchema() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileSchema\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileSchema\n");}
 	}
 };
 
@@ -189,7 +192,8 @@ class RWHeaderSection_RWFileDescription {
 };
 %extend RWHeaderSection_RWFileDescription {
 	~RWHeaderSection_RWFileDescription() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileDescription\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileDescription\n");}
 	}
 };
 
@@ -220,8 +224,14 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 	}
 };
 %extend RWHeaderSection_ReadWriteModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend RWHeaderSection_ReadWriteModule {
 	~RWHeaderSection_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWHeaderSection_ReadWriteModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWHeaderSection_ReadWriteModule\n");}
 	}
 };
 
@@ -238,7 +248,8 @@ class RWHeaderSection_RWFileName {
 };
 %extend RWHeaderSection_RWFileName {
 	~RWHeaderSection_RWFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileName\n");}
 	}
 };
 
@@ -253,7 +264,8 @@ class RWHeaderSection {
 };
 %extend RWHeaderSection {
 	~RWHeaderSection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWHeaderSection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWHeaderSection\n");}
 	}
 };
 
@@ -280,7 +292,13 @@ class RWHeaderSection_GeneralModule : public StepData_GeneralModule {
 	}
 };
 %extend RWHeaderSection_GeneralModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend RWHeaderSection_GeneralModule {
 	~RWHeaderSection_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWHeaderSection_GeneralModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWHeaderSection_GeneralModule\n");}
 	}
 };

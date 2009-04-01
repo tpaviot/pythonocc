@@ -126,7 +126,8 @@ class RWStepVisual_RWPresentationLayerUsage {
 };
 %extend RWStepVisual_RWPresentationLayerUsage {
 	~RWStepVisual_RWPresentationLayerUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationLayerUsage\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationLayerUsage\n");}
 	}
 };
 
@@ -145,7 +146,8 @@ class RWStepVisual_RWAreaInSet {
 };
 %extend RWStepVisual_RWAreaInSet {
 	~RWStepVisual_RWAreaInSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWAreaInSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWAreaInSet\n");}
 	}
 };
 
@@ -162,7 +164,8 @@ class RWStepVisual_RWPreDefinedItem {
 };
 %extend RWStepVisual_RWPreDefinedItem {
 	~RWStepVisual_RWPreDefinedItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedItem\n");}
 	}
 };
 
@@ -181,7 +184,8 @@ class RWStepVisual_RWCompositeTextWithExtent {
 };
 %extend RWStepVisual_RWCompositeTextWithExtent {
 	~RWStepVisual_RWCompositeTextWithExtent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCompositeTextWithExtent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCompositeTextWithExtent\n");}
 	}
 };
 
@@ -198,7 +202,8 @@ class RWStepVisual_RWCurveStyleFontPattern {
 };
 %extend RWStepVisual_RWCurveStyleFontPattern {
 	~RWStepVisual_RWCurveStyleFontPattern() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyleFontPattern\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyleFontPattern\n");}
 	}
 };
 
@@ -217,7 +222,8 @@ class RWStepVisual_RWBackgroundColour {
 };
 %extend RWStepVisual_RWBackgroundColour {
 	~RWStepVisual_RWBackgroundColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWBackgroundColour\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWBackgroundColour\n");}
 	}
 };
 
@@ -236,7 +242,8 @@ class RWStepVisual_RWContextDependentInvisibility {
 };
 %extend RWStepVisual_RWContextDependentInvisibility {
 	~RWStepVisual_RWContextDependentInvisibility() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWContextDependentInvisibility\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWContextDependentInvisibility\n");}
 	}
 };
 
@@ -255,7 +262,8 @@ class RWStepVisual_RWFillAreaStyle {
 };
 %extend RWStepVisual_RWFillAreaStyle {
 	~RWStepVisual_RWFillAreaStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWFillAreaStyle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWFillAreaStyle\n");}
 	}
 };
 
@@ -274,7 +282,8 @@ class RWStepVisual_RWCameraModelD2 {
 };
 %extend RWStepVisual_RWCameraModelD2 {
 	~RWStepVisual_RWCameraModelD2() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD2\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD2\n");}
 	}
 };
 
@@ -293,7 +302,8 @@ class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 };
 %extend RWStepVisual_RWTextStyleWithBoxCharacteristics {
 	~RWStepVisual_RWTextStyleWithBoxCharacteristics() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyleWithBoxCharacteristics\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyleWithBoxCharacteristics\n");}
 	}
 };
 
@@ -312,7 +322,8 @@ class RWStepVisual_RWDraughtingModel {
 };
 %extend RWStepVisual_RWDraughtingModel {
 	~RWStepVisual_RWDraughtingModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingModel\n");}
 	}
 };
 
@@ -331,7 +342,8 @@ class RWStepVisual_RWPresentedItemRepresentation {
 };
 %extend RWStepVisual_RWPresentedItemRepresentation {
 	~RWStepVisual_RWPresentedItemRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentedItemRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentedItemRepresentation\n");}
 	}
 };
 
@@ -350,7 +362,8 @@ class RWStepVisual_RWSurfaceStyleUsage {
 };
 %extend RWStepVisual_RWSurfaceStyleUsage {
 	~RWStepVisual_RWSurfaceStyleUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleUsage\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleUsage\n");}
 	}
 };
 
@@ -367,7 +380,8 @@ class RWStepVisual_RWPreDefinedColour {
 };
 %extend RWStepVisual_RWPreDefinedColour {
 	~RWStepVisual_RWPreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedColour\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedColour\n");}
 	}
 };
 
@@ -384,7 +398,8 @@ class RWStepVisual_RWColourSpecification {
 };
 %extend RWStepVisual_RWColourSpecification {
 	~RWStepVisual_RWColourSpecification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColourSpecification\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColourSpecification\n");}
 	}
 };
 
@@ -401,7 +416,8 @@ class RWStepVisual_RWPreDefinedCurveFont {
 };
 %extend RWStepVisual_RWPreDefinedCurveFont {
 	~RWStepVisual_RWPreDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedCurveFont\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedCurveFont\n");}
 	}
 };
 
@@ -420,7 +436,8 @@ class RWStepVisual_RWSurfaceStyleControlGrid {
 };
 %extend RWStepVisual_RWSurfaceStyleControlGrid {
 	~RWStepVisual_RWSurfaceStyleControlGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleControlGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleControlGrid\n");}
 	}
 };
 
@@ -439,7 +456,8 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 };
 %extend RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 	~RWStepVisual_RWMechanicalDesignGeometricPresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationArea\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationArea\n");}
 	}
 };
 
@@ -458,7 +476,8 @@ class RWStepVisual_RWPresentationView {
 };
 %extend RWStepVisual_RWPresentationView {
 	~RWStepVisual_RWPresentationView() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationView\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationView\n");}
 	}
 };
 
@@ -477,7 +496,8 @@ class RWStepVisual_RWPresentationSize {
 };
 %extend RWStepVisual_RWPresentationSize {
 	~RWStepVisual_RWPresentationSize() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationSize\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationSize\n");}
 	}
 };
 
@@ -496,7 +516,8 @@ class RWStepVisual_RWPresentationStyleByContext {
 };
 %extend RWStepVisual_RWPresentationStyleByContext {
 	~RWStepVisual_RWPresentationStyleByContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationStyleByContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationStyleByContext\n");}
 	}
 };
 
@@ -515,7 +536,8 @@ class RWStepVisual_RWSurfaceStyleFillArea {
 };
 %extend RWStepVisual_RWSurfaceStyleFillArea {
 	~RWStepVisual_RWSurfaceStyleFillArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleFillArea\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleFillArea\n");}
 	}
 };
 
@@ -532,7 +554,8 @@ class RWStepVisual_RWPresentationSet {
 };
 %extend RWStepVisual_RWPresentationSet {
 	~RWStepVisual_RWPresentationSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationSet\n");}
 	}
 };
 
@@ -551,7 +574,8 @@ class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 };
 %extend RWStepVisual_RWSurfaceStyleSegmentationCurve {
 	~RWStepVisual_RWSurfaceStyleSegmentationCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSegmentationCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSegmentationCurve\n");}
 	}
 };
 
@@ -570,7 +594,8 @@ class RWStepVisual_RWCurveStyle {
 };
 %extend RWStepVisual_RWCurveStyle {
 	~RWStepVisual_RWCurveStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyle\n");}
 	}
 };
 
@@ -589,7 +614,8 @@ class RWStepVisual_RWPresentationArea {
 };
 %extend RWStepVisual_RWPresentationArea {
 	~RWStepVisual_RWPresentationArea() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationArea\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationArea\n");}
 	}
 };
 
@@ -608,7 +634,8 @@ class RWStepVisual_RWOverRidingStyledItem {
 };
 %extend RWStepVisual_RWOverRidingStyledItem {
 	~RWStepVisual_RWOverRidingStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWOverRidingStyledItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWOverRidingStyledItem\n");}
 	}
 };
 
@@ -627,7 +654,8 @@ class RWStepVisual_RWSurfaceSideStyle {
 };
 %extend RWStepVisual_RWSurfaceSideStyle {
 	~RWStepVisual_RWSurfaceSideStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceSideStyle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceSideStyle\n");}
 	}
 };
 
@@ -646,7 +674,8 @@ class RWStepVisual_RWCompositeText {
 };
 %extend RWStepVisual_RWCompositeText {
 	~RWStepVisual_RWCompositeText() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCompositeText\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCompositeText\n");}
 	}
 };
 
@@ -665,7 +694,8 @@ class RWStepVisual_RWSurfaceStyleParameterLine {
 };
 %extend RWStepVisual_RWSurfaceStyleParameterLine {
 	~RWStepVisual_RWSurfaceStyleParameterLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleParameterLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleParameterLine\n");}
 	}
 };
 
@@ -684,7 +714,8 @@ class RWStepVisual_RWTextStyle {
 };
 %extend RWStepVisual_RWTextStyle {
 	~RWStepVisual_RWTextStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyle\n");}
 	}
 };
 
@@ -703,7 +734,8 @@ class RWStepVisual_RWCameraUsage {
 };
 %extend RWStepVisual_RWCameraUsage {
 	~RWStepVisual_RWCameraUsage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraUsage\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraUsage\n");}
 	}
 };
 
@@ -722,7 +754,8 @@ class RWStepVisual_RWExternallyDefinedCurveFont {
 };
 %extend RWStepVisual_RWExternallyDefinedCurveFont {
 	~RWStepVisual_RWExternallyDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWExternallyDefinedCurveFont\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWExternallyDefinedCurveFont\n");}
 	}
 };
 
@@ -741,7 +774,8 @@ class RWStepVisual_RWPresentationLayerAssignment {
 };
 %extend RWStepVisual_RWPresentationLayerAssignment {
 	~RWStepVisual_RWPresentationLayerAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationLayerAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationLayerAssignment\n");}
 	}
 };
 
@@ -758,7 +792,8 @@ class RWStepVisual_RWPlanarExtent {
 };
 %extend RWStepVisual_RWPlanarExtent {
 	~RWStepVisual_RWPlanarExtent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPlanarExtent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPlanarExtent\n");}
 	}
 };
 
@@ -777,7 +812,8 @@ class RWStepVisual_RWInvisibility {
 };
 %extend RWStepVisual_RWInvisibility {
 	~RWStepVisual_RWInvisibility() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWInvisibility\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWInvisibility\n");}
 	}
 };
 
@@ -796,7 +832,8 @@ class RWStepVisual_RWStyledItem {
 };
 %extend RWStepVisual_RWStyledItem {
 	~RWStepVisual_RWStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWStyledItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWStyledItem\n");}
 	}
 };
 
@@ -815,7 +852,8 @@ class RWStepVisual_RWPlanarBox {
 };
 %extend RWStepVisual_RWPlanarBox {
 	~RWStepVisual_RWPlanarBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPlanarBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPlanarBox\n");}
 	}
 };
 
@@ -834,7 +872,8 @@ class RWStepVisual_RWSurfaceStyleBoundary {
 };
 %extend RWStepVisual_RWSurfaceStyleBoundary {
 	~RWStepVisual_RWSurfaceStyleBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleBoundary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleBoundary\n");}
 	}
 };
 
@@ -853,7 +892,8 @@ class RWStepVisual_RWContextDependentOverRidingStyledItem {
 };
 %extend RWStepVisual_RWContextDependentOverRidingStyledItem {
 	~RWStepVisual_RWContextDependentOverRidingStyledItem() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWContextDependentOverRidingStyledItem\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWContextDependentOverRidingStyledItem\n");}
 	}
 };
 
@@ -872,7 +912,8 @@ class RWStepVisual_RWCameraImage {
 };
 %extend RWStepVisual_RWCameraImage {
 	~RWStepVisual_RWCameraImage() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraImage\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraImage\n");}
 	}
 };
 
@@ -891,7 +932,8 @@ class RWStepVisual_RWFillAreaStyleColour {
 };
 %extend RWStepVisual_RWFillAreaStyleColour {
 	~RWStepVisual_RWFillAreaStyleColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWFillAreaStyleColour\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWFillAreaStyleColour\n");}
 	}
 };
 
@@ -910,7 +952,8 @@ class RWStepVisual_RWTemplateInstance {
 };
 %extend RWStepVisual_RWTemplateInstance {
 	~RWStepVisual_RWTemplateInstance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTemplateInstance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTemplateInstance\n");}
 	}
 };
 
@@ -929,7 +972,8 @@ class RWStepVisual_RWTextLiteral {
 };
 %extend RWStepVisual_RWTextLiteral {
 	~RWStepVisual_RWTextLiteral() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextLiteral\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextLiteral\n");}
 	}
 };
 
@@ -948,7 +992,8 @@ class RWStepVisual_RWTemplate {
 };
 %extend RWStepVisual_RWTemplate {
 	~RWStepVisual_RWTemplate() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTemplate\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTemplate\n");}
 	}
 };
 
@@ -967,7 +1012,8 @@ class RWStepVisual_RWViewVolume {
 };
 %extend RWStepVisual_RWViewVolume {
 	~RWStepVisual_RWViewVolume() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWViewVolume\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWViewVolume\n");}
 	}
 };
 
@@ -984,7 +1030,8 @@ class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 };
 %extend RWStepVisual_RWDraughtingPreDefinedCurveFont {
 	~RWStepVisual_RWDraughtingPreDefinedCurveFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedCurveFont\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedCurveFont\n");}
 	}
 };
 
@@ -1003,7 +1050,8 @@ class RWStepVisual_RWPointStyle {
 };
 %extend RWStepVisual_RWPointStyle {
 	~RWStepVisual_RWPointStyle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPointStyle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPointStyle\n");}
 	}
 };
 
@@ -1020,7 +1068,8 @@ class RWStepVisual_RWColourRgb {
 };
 %extend RWStepVisual_RWColourRgb {
 	~RWStepVisual_RWColourRgb() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColourRgb\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColourRgb\n");}
 	}
 };
 
@@ -1037,7 +1086,8 @@ class RWStepVisual_RWCameraModel {
 };
 %extend RWStepVisual_RWCameraModel {
 	~RWStepVisual_RWCameraModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModel\n");}
 	}
 };
 
@@ -1056,7 +1106,8 @@ class RWStepVisual_RWTextStyleForDefinedFont {
 };
 %extend RWStepVisual_RWTextStyleForDefinedFont {
 	~RWStepVisual_RWTextStyleForDefinedFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyleForDefinedFont\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyleForDefinedFont\n");}
 	}
 };
 
@@ -1073,7 +1124,8 @@ class RWStepVisual_RWColour {
 };
 %extend RWStepVisual_RWColour {
 	~RWStepVisual_RWColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColour\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColour\n");}
 	}
 };
 
@@ -1092,7 +1144,8 @@ class RWStepVisual_RWPresentationRepresentation {
 };
 %extend RWStepVisual_RWPresentationRepresentation {
 	~RWStepVisual_RWPresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationRepresentation\n");}
 	}
 };
 
@@ -1111,7 +1164,8 @@ class RWStepVisual_RWCurveStyleFont {
 };
 %extend RWStepVisual_RWCurveStyleFont {
 	~RWStepVisual_RWCurveStyleFont() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyleFont\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyleFont\n");}
 	}
 };
 
@@ -1130,7 +1184,8 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 };
 %extend RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 	~RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation\n");}
 	}
 };
 
@@ -1149,7 +1204,8 @@ class RWStepVisual_RWSurfaceStyleSilhouette {
 };
 %extend RWStepVisual_RWSurfaceStyleSilhouette {
 	~RWStepVisual_RWSurfaceStyleSilhouette() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSilhouette\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSilhouette\n");}
 	}
 };
 
@@ -1168,7 +1224,8 @@ class RWStepVisual_RWPresentationStyleAssignment {
 };
 %extend RWStepVisual_RWPresentationStyleAssignment {
 	~RWStepVisual_RWPresentationStyleAssignment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationStyleAssignment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationStyleAssignment\n");}
 	}
 };
 
@@ -1187,7 +1244,8 @@ class RWStepVisual_RWCameraModelD3 {
 };
 %extend RWStepVisual_RWCameraModelD3 {
 	~RWStepVisual_RWCameraModelD3() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD3\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD3\n");}
 	}
 };
 
@@ -1204,6 +1262,7 @@ class RWStepVisual_RWDraughtingPreDefinedColour {
 };
 %extend RWStepVisual_RWDraughtingPreDefinedColour {
 	~RWStepVisual_RWDraughtingPreDefinedColour() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedColour\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedColour\n");}
 	}
 };

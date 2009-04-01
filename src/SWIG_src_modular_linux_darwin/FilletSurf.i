@@ -183,7 +183,8 @@ class FilletSurf_InternalBuilder : public ChFi3d_FilBuilder {
 };
 %extend FilletSurf_InternalBuilder {
 	~FilletSurf_InternalBuilder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FilletSurf_InternalBuilder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FilletSurf_InternalBuilder\n");}
 	}
 };
 
@@ -238,6 +239,7 @@ class FilletSurf_Builder {
 };
 %extend FilletSurf_Builder {
 	~FilletSurf_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of FilletSurf_Builder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of FilletSurf_Builder\n");}
 	}
 };

@@ -131,7 +131,8 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 };
 %extend Handle_IGESToBRep_Actor {
 	~Handle_IGESToBRep_Actor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_Actor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_Actor\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESToBRep_AlgoContainer {
 	~Handle_IGESToBRep_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_AlgoContainer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_AlgoContainer\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESToBRep_IGESBoundary {
 	~Handle_IGESToBRep_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_IGESBoundary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_IGESBoundary\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESToBRep_ToolContainer {
 	~Handle_IGESToBRep_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_ToolContainer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_ToolContainer\n");}
 	}
 };
 
@@ -302,7 +306,8 @@ class IGESToBRep_CurveAndSurface {
 };
 %extend IGESToBRep_CurveAndSurface {
 	~IGESToBRep_CurveAndSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_CurveAndSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_CurveAndSurface\n");}
 	}
 };
 
@@ -365,7 +370,8 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 };
 %extend IGESToBRep_TopoCurve {
 	~IGESToBRep_TopoCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_TopoCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_TopoCurve\n");}
 	}
 };
 
@@ -386,8 +392,14 @@ class IGESToBRep_ToolContainer : public MMgt_TShared {
 	}
 };
 %extend IGESToBRep_ToolContainer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESToBRep_ToolContainer {
 	~IGESToBRep_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_ToolContainer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_ToolContainer\n");}
 	}
 };
 
@@ -418,8 +430,14 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 	}
 };
 %extend IGESToBRep_Actor {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESToBRep_Actor {
 	~IGESToBRep_Actor() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_Actor\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_Actor\n");}
 	}
 };
 
@@ -456,7 +474,8 @@ class IGESToBRep {
 };
 %extend IGESToBRep {
 	~IGESToBRep() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep\n");}
 	}
 };
 
@@ -491,8 +510,14 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 	}
 };
 %extend IGESToBRep_IGESBoundary {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESToBRep_IGESBoundary {
 	~IGESToBRep_IGESBoundary() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_IGESBoundary\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_IGESBoundary\n");}
 	}
 };
 
@@ -523,7 +548,8 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 };
 %extend IGESToBRep_BRepEntity {
 	~IGESToBRep_BRepEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_BRepEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BRepEntity\n");}
 	}
 };
 
@@ -570,7 +596,8 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 };
 %extend IGESToBRep_BasicCurve {
 	~IGESToBRep_BasicCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_BasicCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BasicCurve\n");}
 	}
 };
 
@@ -609,7 +636,8 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 };
 %extend IGESToBRep_TopoSurface {
 	~IGESToBRep_TopoSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_TopoSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_TopoSurface\n");}
 	}
 };
 
@@ -652,7 +680,8 @@ class IGESToBRep_Reader {
 };
 %extend IGESToBRep_Reader {
 	~IGESToBRep_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_Reader\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_Reader\n");}
 	}
 };
 
@@ -685,6 +714,7 @@ class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {
 };
 %extend IGESToBRep_BasicSurface {
 	~IGESToBRep_BasicSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESToBRep_BasicSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BasicSurface\n");}
 	}
 };

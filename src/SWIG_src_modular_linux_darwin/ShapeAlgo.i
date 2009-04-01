@@ -131,7 +131,8 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeAlgo_ToolContainer {
 	~Handle_ShapeAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_ToolContainer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_ToolContainer\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeAlgo_AlgoContainer {
 	~Handle_ShapeAlgo_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_AlgoContainer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_AlgoContainer\n");}
 	}
 };
 
@@ -202,8 +204,14 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 	}
 };
 %extend ShapeAlgo_AlgoContainer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeAlgo_AlgoContainer {
 	~ShapeAlgo_AlgoContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAlgo_AlgoContainer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeAlgo_AlgoContainer\n");}
 	}
 };
 
@@ -226,7 +234,13 @@ class ShapeAlgo_ToolContainer : public MMgt_TShared {
 	}
 };
 %extend ShapeAlgo_ToolContainer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeAlgo_ToolContainer {
 	~ShapeAlgo_ToolContainer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeAlgo_ToolContainer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeAlgo_ToolContainer\n");}
 	}
 };

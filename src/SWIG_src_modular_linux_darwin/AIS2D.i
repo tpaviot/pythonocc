@@ -250,7 +250,8 @@ class Handle_AIS2D_ListNodeOfListOfIO : public Handle_TCollection_MapNode {
 };
 %extend Handle_AIS2D_ListNodeOfListOfIO {
 	~Handle_AIS2D_ListNodeOfListOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_ListNodeOfListOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_ListNodeOfListOfIO\n");}
 	}
 };
 
@@ -274,7 +275,8 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit : public Handle_TCollectio
 };
 %extend Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit {
 	~Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit\n");}
 	}
 };
 
@@ -298,7 +300,8 @@ class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS2D_GlobalStatus {
 	~Handle_AIS2D_GlobalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_GlobalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_GlobalStatus\n");}
 	}
 };
 
@@ -322,7 +325,8 @@ class Handle_AIS2D_LocalContext : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS2D_LocalContext {
 	~Handle_AIS2D_LocalContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_LocalContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_LocalContext\n");}
 	}
 };
 
@@ -346,7 +350,8 @@ class Handle_AIS2D_InteractiveObject : public Handle_Graphic2d_GraphicObject {
 };
 %extend Handle_AIS2D_InteractiveObject {
 	~Handle_AIS2D_InteractiveObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_InteractiveObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_InteractiveObject\n");}
 	}
 };
 
@@ -370,7 +375,8 @@ class Handle_AIS2D_ProjShape : public Handle_AIS2D_InteractiveObject {
 };
 %extend Handle_AIS2D_ProjShape {
 	~Handle_AIS2D_ProjShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_ProjShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_ProjShape\n");}
 	}
 };
 
@@ -394,7 +400,8 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode 
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfLC {
 	~Handle_AIS2D_DataMapNodeOfDataMapOfLC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfLC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfLC\n");}
 	}
 };
 
@@ -418,7 +425,8 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfIO : public Handle_TCollection_SeqNod
 };
 %extend Handle_AIS2D_SequenceNodeOfSequenceOfIO {
 	~Handle_AIS2D_SequenceNodeOfSequenceOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_SequenceNodeOfSequenceOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_SequenceNodeOfSequenceOfIO\n");}
 	}
 };
 
@@ -442,7 +450,8 @@ class Handle_AIS2D_LocalStatus : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS2D_LocalStatus {
 	~Handle_AIS2D_LocalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_LocalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_LocalStatus\n");}
 	}
 };
 
@@ -466,7 +475,8 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLocStat : public Handle_TCollection_Map
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfLocStat {
 	~Handle_AIS2D_DataMapNodeOfDataMapOfLocStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfLocStat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfLocStat\n");}
 	}
 };
 
@@ -490,7 +500,8 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects : public Handle_TCollection
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects {
 	~Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects\n");}
 	}
 };
 
@@ -514,7 +525,8 @@ class Handle_AIS2D_PrimitiveArchit : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS2D_PrimitiveArchit {
 	~Handle_AIS2D_PrimitiveArchit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_PrimitiveArchit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_PrimitiveArchit\n");}
 	}
 };
 
@@ -538,7 +550,8 @@ class Handle_AIS2D_HSequenceOfIO : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS2D_HSequenceOfIO {
 	~Handle_AIS2D_HSequenceOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_HSequenceOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_HSequenceOfIO\n");}
 	}
 };
 
@@ -562,7 +575,8 @@ class Handle_AIS2D_HSequenceOfPrimArchit : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS2D_HSequenceOfPrimArchit {
 	~Handle_AIS2D_HSequenceOfPrimArchit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_HSequenceOfPrimArchit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_HSequenceOfPrimArchit\n");}
 	}
 };
 
@@ -586,7 +600,8 @@ class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
 };
 %extend Handle_AIS2D_InteractiveContext {
 	~Handle_AIS2D_InteractiveContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_InteractiveContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_InteractiveContext\n");}
 	}
 };
 
@@ -610,7 +625,8 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_Ma
 };
 %extend Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus {
 	~Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus\n");}
 	}
 };
 
@@ -633,7 +649,8 @@ class AIS2D_ListIteratorOfListOfIO {
 };
 %extend AIS2D_ListIteratorOfListOfIO {
 	~AIS2D_ListIteratorOfListOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_ListIteratorOfListOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_ListIteratorOfListOfIO\n");}
 	}
 };
 
@@ -686,7 +703,8 @@ class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
 };
 %extend AIS2D_SequenceOfPrimArchit {
 	~AIS2D_SequenceOfPrimArchit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceOfPrimArchit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceOfPrimArchit\n");}
 	}
 };
 
@@ -719,7 +737,8 @@ class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 };
 %extend AIS2D_DataMapOfLC {
 	~AIS2D_DataMapOfLC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfLC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfLC\n");}
 	}
 };
 
@@ -784,8 +803,14 @@ class AIS2D_LocalStatus : public MMgt_TShared {
 	}
 };
 %extend AIS2D_LocalStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_LocalStatus {
 	~AIS2D_LocalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_LocalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_LocalStatus\n");}
 	}
 };
 
@@ -866,8 +891,14 @@ class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
 	}
 };
 %extend AIS2D_InteractiveObject {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_InteractiveObject {
 	~AIS2D_InteractiveObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_InteractiveObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_InteractiveObject\n");}
 	}
 };
 
@@ -888,7 +919,8 @@ class AIS2D_DataMapIteratorOfDataMapOfLC : public TCollection_BasicMapIterator {
 };
 %extend AIS2D_DataMapIteratorOfDataMapOfLC {
 	~AIS2D_DataMapIteratorOfDataMapOfLC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfLC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfLC\n");}
 	}
 };
 
@@ -937,7 +969,8 @@ class AIS2D_ListOfIO {
 };
 %extend AIS2D_ListOfIO {
 	~AIS2D_ListOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_ListOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_ListOfIO\n");}
 	}
 };
 
@@ -960,8 +993,14 @@ class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 	}
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLocStat {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLocStat {
 	~AIS2D_DataMapNodeOfDataMapOfLocStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLocStat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLocStat\n");}
 	}
 };
 
@@ -982,8 +1021,14 @@ class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 	}
 };
 %extend AIS2D_ListNodeOfListOfIO {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_ListNodeOfListOfIO {
 	~AIS2D_ListNodeOfListOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_ListNodeOfListOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_ListNodeOfListOfIO\n");}
 	}
 };
 
@@ -1006,8 +1051,14 @@ class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
 	}
 };
 %extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
 	~AIS2D_DataMapNodeOfDataMapOfPrimAspects() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfPrimAspects\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfPrimAspects\n");}
 	}
 };
 
@@ -1050,8 +1101,14 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 	}
 };
 %extend AIS2D_ProjShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_ProjShape {
 	~AIS2D_ProjShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_ProjShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_ProjShape\n");}
 	}
 };
 
@@ -1072,7 +1129,8 @@ class AIS2D_DataMapIteratorOfDataMapOfPrimAspects : public TCollection_BasicMapI
 };
 %extend AIS2D_DataMapIteratorOfDataMapOfPrimAspects {
 	~AIS2D_DataMapIteratorOfDataMapOfPrimAspects() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfPrimAspects\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfPrimAspects\n");}
 	}
 };
 
@@ -1135,8 +1193,14 @@ class AIS2D_HSequenceOfIO : public MMgt_TShared {
 	}
 };
 %extend AIS2D_HSequenceOfIO {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_HSequenceOfIO {
 	~AIS2D_HSequenceOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_HSequenceOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_HSequenceOfIO\n");}
 	}
 };
 
@@ -1333,8 +1397,14 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 	}
 };
 %extend AIS2D_InteractiveContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_InteractiveContext {
 	~AIS2D_InteractiveContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_InteractiveContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_InteractiveContext\n");}
 	}
 };
 
@@ -1387,7 +1457,8 @@ class AIS2D_SequenceOfIO : public TCollection_BaseSequence {
 };
 %extend AIS2D_SequenceOfIO {
 	~AIS2D_SequenceOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceOfIO\n");}
 	}
 };
 
@@ -1446,8 +1517,14 @@ class AIS2D_GlobalStatus : public MMgt_TShared {
 	}
 };
 %extend AIS2D_GlobalStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_GlobalStatus {
 	~AIS2D_GlobalStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_GlobalStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_GlobalStatus\n");}
 	}
 };
 
@@ -1480,7 +1557,8 @@ class AIS2D_DataMapOfIOStatus : public TCollection_BasicMap {
 };
 %extend AIS2D_DataMapOfIOStatus {
 	~AIS2D_DataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfIOStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfIOStatus\n");}
 	}
 };
 
@@ -1501,8 +1579,14 @@ class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 	}
 };
 %extend AIS2D_SequenceNodeOfSequenceOfIO {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_SequenceNodeOfSequenceOfIO {
 	~AIS2D_SequenceNodeOfSequenceOfIO() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceNodeOfSequenceOfIO\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceNodeOfSequenceOfIO\n");}
 	}
 };
 
@@ -1525,8 +1609,14 @@ class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
 	}
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfLC {
 	~AIS2D_DataMapNodeOfDataMapOfLC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLC\n");}
 	}
 };
 
@@ -1559,7 +1649,8 @@ class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
 };
 %extend AIS2D_DataMapOfPrimAspects {
 	~AIS2D_DataMapOfPrimAspects() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfPrimAspects\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfPrimAspects\n");}
 	}
 };
 
@@ -1582,8 +1673,14 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 	}
 };
 %extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
 	~AIS2D_DataMapNodeOfDataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfIOStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfIOStatus\n");}
 	}
 };
 
@@ -1600,7 +1697,8 @@ class AIS2D {
 };
 %extend AIS2D {
 	~AIS2D() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D\n");}
 	}
 };
 
@@ -1621,8 +1719,14 @@ class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
 	}
 };
 %extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
 	~AIS2D_SequenceNodeOfSequenceOfPrimArchit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceNodeOfSequenceOfPrimArchit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceNodeOfSequenceOfPrimArchit\n");}
 	}
 };
 
@@ -1643,7 +1747,8 @@ class AIS2D_DataMapIteratorOfDataMapOfLocStat : public TCollection_BasicMapItera
 };
 %extend AIS2D_DataMapIteratorOfDataMapOfLocStat {
 	~AIS2D_DataMapIteratorOfDataMapOfLocStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfLocStat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfLocStat\n");}
 	}
 };
 
@@ -1666,8 +1771,14 @@ class AIS2D_PrimitiveArchit : public MMgt_TShared {
 	}
 };
 %extend AIS2D_PrimitiveArchit {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_PrimitiveArchit {
 	~AIS2D_PrimitiveArchit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_PrimitiveArchit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_PrimitiveArchit\n");}
 	}
 };
 
@@ -1730,8 +1841,14 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 	}
 };
 %extend AIS2D_HSequenceOfPrimArchit {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_HSequenceOfPrimArchit {
 	~AIS2D_HSequenceOfPrimArchit() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_HSequenceOfPrimArchit\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_HSequenceOfPrimArchit\n");}
 	}
 };
 
@@ -1812,8 +1929,14 @@ class AIS2D_LocalContext : public MMgt_TShared {
 	}
 };
 %extend AIS2D_LocalContext {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend AIS2D_LocalContext {
 	~AIS2D_LocalContext() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_LocalContext\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_LocalContext\n");}
 	}
 };
 
@@ -1846,7 +1969,8 @@ class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 };
 %extend AIS2D_DataMapOfLocStat {
 	~AIS2D_DataMapOfLocStat() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfLocStat\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfLocStat\n");}
 	}
 };
 
@@ -1867,6 +1991,7 @@ class AIS2D_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIter
 };
 %extend AIS2D_DataMapIteratorOfDataMapOfIOStatus {
 	~AIS2D_DataMapIteratorOfDataMapOfIOStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfIOStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfIOStatus\n");}
 	}
 };

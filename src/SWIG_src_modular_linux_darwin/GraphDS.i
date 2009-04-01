@@ -143,7 +143,8 @@ class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapN
 };
 %extend Handle_GraphDS_DataMapNodeOfEntityRoleMap {
 	~Handle_GraphDS_DataMapNodeOfEntityRoleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GraphDS_DataMapNodeOfEntityRoleMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GraphDS_DataMapNodeOfEntityRoleMap\n");}
 	}
 };
 
@@ -176,7 +177,8 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 };
 %extend GraphDS_EntityRoleMap {
 	~GraphDS_EntityRoleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphDS_EntityRoleMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphDS_EntityRoleMap\n");}
 	}
 };
 
@@ -199,8 +201,14 @@ class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 	}
 };
 %extend GraphDS_DataMapNodeOfEntityRoleMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GraphDS_DataMapNodeOfEntityRoleMap {
 	~GraphDS_DataMapNodeOfEntityRoleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphDS_DataMapNodeOfEntityRoleMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphDS_DataMapNodeOfEntityRoleMap\n");}
 	}
 };
 
@@ -221,6 +229,7 @@ class GraphDS_DataMapIteratorOfEntityRoleMap : public TCollection_BasicMapIterat
 };
 %extend GraphDS_DataMapIteratorOfEntityRoleMap {
 	~GraphDS_DataMapIteratorOfEntityRoleMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphDS_DataMapIteratorOfEntityRoleMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphDS_DataMapIteratorOfEntityRoleMap\n");}
 	}
 };

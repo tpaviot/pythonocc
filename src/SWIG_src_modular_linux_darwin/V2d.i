@@ -137,7 +137,8 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 };
 %extend Handle_V2d_BackgroundGraphicObject {
 	~Handle_V2d_BackgroundGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V2d_BackgroundGraphicObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_BackgroundGraphicObject\n");}
 	}
 };
 
@@ -161,7 +162,8 @@ class Handle_V2d_View : public Handle_Viewer_View {
 };
 %extend Handle_V2d_View {
 	~Handle_V2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V2d_View\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_View\n");}
 	}
 };
 
@@ -185,7 +187,8 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 };
 %extend Handle_V2d_RectangularGrid {
 	~Handle_V2d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGrid\n");}
 	}
 };
 
@@ -209,7 +212,8 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 };
 %extend Handle_V2d_CircularGraphicGrid {
 	~Handle_V2d_CircularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGraphicGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGraphicGrid\n");}
 	}
 };
 
@@ -233,7 +237,8 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 };
 %extend Handle_V2d_CircularGrid {
 	~Handle_V2d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGrid\n");}
 	}
 };
 
@@ -257,7 +262,8 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 };
 %extend Handle_V2d_Viewer {
 	~Handle_V2d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V2d_Viewer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_Viewer\n");}
 	}
 };
 
@@ -281,7 +287,8 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 };
 %extend Handle_V2d_RectangularGraphicGrid {
 	~Handle_V2d_RectangularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGraphicGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGraphicGrid\n");}
 	}
 };
 
@@ -296,7 +303,8 @@ class V2d {
 };
 %extend V2d {
 	~V2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d\n");}
 	}
 };
 
@@ -323,8 +331,14 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 	}
 };
 %extend V2d_CircularGrid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend V2d_CircularGrid {
 	~V2d_CircularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d_CircularGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_CircularGrid\n");}
 	}
 };
 
@@ -461,8 +475,14 @@ class V2d_View : public Viewer_View {
 	}
 };
 %extend V2d_View {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend V2d_View {
 	~V2d_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d_View\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_View\n");}
 	}
 };
 
@@ -485,8 +505,14 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 	}
 };
 %extend V2d_CircularGraphicGrid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend V2d_CircularGraphicGrid {
 	~V2d_CircularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d_CircularGraphicGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_CircularGraphicGrid\n");}
 	}
 };
 
@@ -507,8 +533,14 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 	}
 };
 %extend V2d_BackgroundGraphicObject {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend V2d_BackgroundGraphicObject {
 	~V2d_BackgroundGraphicObject() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d_BackgroundGraphicObject\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_BackgroundGraphicObject\n");}
 	}
 };
 
@@ -531,7 +563,8 @@ class V2d_DefaultMap {
 };
 %extend V2d_DefaultMap {
 	~V2d_DefaultMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d_DefaultMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_DefaultMap\n");}
 	}
 };
 
@@ -616,8 +649,14 @@ class V2d_Viewer : public Viewer_Viewer {
 	}
 };
 %extend V2d_Viewer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend V2d_Viewer {
 	~V2d_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d_Viewer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_Viewer\n");}
 	}
 };
 
@@ -644,8 +683,14 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 	}
 };
 %extend V2d_RectangularGrid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend V2d_RectangularGrid {
 	~V2d_RectangularGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d_RectangularGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGrid\n");}
 	}
 };
 
@@ -668,7 +713,13 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 	}
 };
 %extend V2d_RectangularGraphicGrid {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend V2d_RectangularGraphicGrid {
 	~V2d_RectangularGraphicGrid() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of V2d_RectangularGraphicGrid\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGraphicGrid\n");}
 	}
 };

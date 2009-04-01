@@ -130,7 +130,8 @@ class GeomConvert_ApproxCurve {
 };
 %extend GeomConvert_ApproxCurve {
 	~GeomConvert_ApproxCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxCurve\n");}
 	}
 };
 
@@ -153,7 +154,8 @@ class GeomConvert_BSplineSurfaceKnotSplitting {
 };
 %extend GeomConvert_BSplineSurfaceKnotSplitting {
 	~GeomConvert_BSplineSurfaceKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceKnotSplitting\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceKnotSplitting\n");}
 	}
 };
 
@@ -172,7 +174,8 @@ class GeomConvert_BSplineCurveKnotSplitting {
 };
 %extend GeomConvert_BSplineCurveKnotSplitting {
 	~GeomConvert_BSplineCurveKnotSplitting() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineCurveKnotSplitting\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineCurveKnotSplitting\n");}
 	}
 };
 
@@ -213,7 +216,8 @@ class GeomConvert {
 };
 %extend GeomConvert {
 	~GeomConvert() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert\n");}
 	}
 };
 
@@ -236,7 +240,8 @@ class GeomConvert_ApproxSurface {
 };
 %extend GeomConvert_ApproxSurface {
 	~GeomConvert_ApproxSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxSurface\n");}
 	}
 };
 
@@ -253,7 +258,8 @@ class GeomConvert_CompCurveToBSplineCurve {
 };
 %extend GeomConvert_CompCurveToBSplineCurve {
 	~GeomConvert_CompCurveToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert_CompCurveToBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompCurveToBSplineCurve\n");}
 	}
 };
 
@@ -276,7 +282,8 @@ class GeomConvert_BSplineCurveToBezierCurve {
 };
 %extend GeomConvert_BSplineCurveToBezierCurve {
 	~GeomConvert_BSplineCurveToBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineCurveToBezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineCurveToBezierCurve\n");}
 	}
 };
 
@@ -303,7 +310,8 @@ class GeomConvert_BSplineSurfaceToBezierSurface {
 };
 %extend GeomConvert_BSplineSurfaceToBezierSurface {
 	~GeomConvert_BSplineSurfaceToBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceToBezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceToBezierSurface\n");}
 	}
 };
 
@@ -344,6 +352,7 @@ class GeomConvert_CompBezierSurfacesToBSplineSurface {
 };
 %extend GeomConvert_CompBezierSurfacesToBSplineSurface {
 	~GeomConvert_CompBezierSurfacesToBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomConvert_CompBezierSurfacesToBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompBezierSurfacesToBSplineSurface\n");}
 	}
 };

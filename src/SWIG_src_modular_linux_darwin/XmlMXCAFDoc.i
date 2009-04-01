@@ -131,7 +131,8 @@ class Handle_XmlMXCAFDoc_LocationDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_LocationDriver {
 	~Handle_XmlMXCAFDoc_LocationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_LocationDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_LocationDriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_ColorToolDriver {
 	~Handle_XmlMXCAFDoc_ColorToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorToolDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorToolDriver\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_CentroidDriver {
 	~Handle_XmlMXCAFDoc_CentroidDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_CentroidDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_CentroidDriver\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_GraphNodeDriver {
 	~Handle_XmlMXCAFDoc_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_GraphNodeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_GraphNodeDriver\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_XmlMXCAFDoc_VolumeDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_VolumeDriver {
 	~Handle_XmlMXCAFDoc_VolumeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_VolumeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_VolumeDriver\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_XmlMXCAFDoc_DocumentToolDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_DocumentToolDriver {
 	~Handle_XmlMXCAFDoc_DocumentToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_DocumentToolDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_DocumentToolDriver\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_XmlMXCAFDoc_ColorDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_ColorDriver {
 	~Handle_XmlMXCAFDoc_ColorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ColorDriver\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_XmlMXCAFDoc_LayerToolDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_LayerToolDriver {
 	~Handle_XmlMXCAFDoc_LayerToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_LayerToolDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_LayerToolDriver\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_XmlMXCAFDoc_ShapeToolDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_ShapeToolDriver {
 	~Handle_XmlMXCAFDoc_ShapeToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ShapeToolDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ShapeToolDriver\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMXCAFDoc_AreaDriver {
 	~Handle_XmlMXCAFDoc_AreaDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_AreaDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_AreaDriver\n");}
 	}
 };
 
@@ -372,8 +382,14 @@ class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_DocumentToolDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_DocumentToolDriver {
 	~XmlMXCAFDoc_DocumentToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_DocumentToolDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_DocumentToolDriver\n");}
 	}
 };
 
@@ -402,8 +418,14 @@ class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_LocationDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_LocationDriver {
 	~XmlMXCAFDoc_LocationDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_LocationDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_LocationDriver\n");}
 	}
 };
 
@@ -428,8 +450,14 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_ColorDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_ColorDriver {
 	~XmlMXCAFDoc_ColorDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ColorDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ColorDriver\n");}
 	}
 };
 
@@ -444,7 +472,8 @@ class XmlMXCAFDoc {
 };
 %extend XmlMXCAFDoc {
 	~XmlMXCAFDoc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc\n");}
 	}
 };
 
@@ -469,8 +498,14 @@ class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_VolumeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_VolumeDriver {
 	~XmlMXCAFDoc_VolumeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_VolumeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_VolumeDriver\n");}
 	}
 };
 
@@ -495,8 +530,14 @@ class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_ColorToolDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_ColorToolDriver {
 	~XmlMXCAFDoc_ColorToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ColorToolDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ColorToolDriver\n");}
 	}
 };
 
@@ -521,8 +562,14 @@ class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_GraphNodeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_GraphNodeDriver {
 	~XmlMXCAFDoc_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_GraphNodeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_GraphNodeDriver\n");}
 	}
 };
 
@@ -547,8 +594,14 @@ class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_LayerToolDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_LayerToolDriver {
 	~XmlMXCAFDoc_LayerToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_LayerToolDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_LayerToolDriver\n");}
 	}
 };
 
@@ -573,8 +626,14 @@ class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_ShapeToolDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_ShapeToolDriver {
 	~XmlMXCAFDoc_ShapeToolDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ShapeToolDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ShapeToolDriver\n");}
 	}
 };
 
@@ -599,8 +658,14 @@ class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_AreaDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_AreaDriver {
 	~XmlMXCAFDoc_AreaDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_AreaDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_AreaDriver\n");}
 	}
 };
 
@@ -625,7 +690,13 @@ class XmlMXCAFDoc_CentroidDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMXCAFDoc_CentroidDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMXCAFDoc_CentroidDriver {
 	~XmlMXCAFDoc_CentroidDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_CentroidDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_CentroidDriver\n");}
 	}
 };

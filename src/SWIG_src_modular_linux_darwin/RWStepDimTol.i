@@ -126,7 +126,8 @@ class RWStepDimTol_RWDatumFeature {
 };
 %extend RWStepDimTol_RWDatumFeature {
 	~RWStepDimTol_RWDatumFeature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumFeature\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumFeature\n");}
 	}
 };
 
@@ -145,7 +146,8 @@ class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 };
 %extend RWStepDimTol_RWGeometricToleranceWithDatumReference {
 	~RWStepDimTol_RWGeometricToleranceWithDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceWithDatumReference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceWithDatumReference\n");}
 	}
 };
 
@@ -164,7 +166,8 @@ class RWStepDimTol_RWPlacedDatumTargetFeature {
 };
 %extend RWStepDimTol_RWPlacedDatumTargetFeature {
 	~RWStepDimTol_RWPlacedDatumTargetFeature() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPlacedDatumTargetFeature\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPlacedDatumTargetFeature\n");}
 	}
 };
 
@@ -183,7 +186,8 @@ class RWStepDimTol_RWDatumReference {
 };
 %extend RWStepDimTol_RWDatumReference {
 	~RWStepDimTol_RWDatumReference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumReference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumReference\n");}
 	}
 };
 
@@ -202,7 +206,8 @@ class RWStepDimTol_RWRoundnessTolerance {
 };
 %extend RWStepDimTol_RWRoundnessTolerance {
 	~RWStepDimTol_RWRoundnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWRoundnessTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWRoundnessTolerance\n");}
 	}
 };
 
@@ -221,7 +226,8 @@ class RWStepDimTol_RWAngularityTolerance {
 };
 %extend RWStepDimTol_RWAngularityTolerance {
 	~RWStepDimTol_RWAngularityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWAngularityTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWAngularityTolerance\n");}
 	}
 };
 
@@ -240,7 +246,8 @@ class RWStepDimTol_RWPerpendicularityTolerance {
 };
 %extend RWStepDimTol_RWPerpendicularityTolerance {
 	~RWStepDimTol_RWPerpendicularityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPerpendicularityTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPerpendicularityTolerance\n");}
 	}
 };
 
@@ -259,7 +266,8 @@ class RWStepDimTol_RWSymmetryTolerance {
 };
 %extend RWStepDimTol_RWSymmetryTolerance {
 	~RWStepDimTol_RWSymmetryTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWSymmetryTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWSymmetryTolerance\n");}
 	}
 };
 
@@ -278,7 +286,8 @@ class RWStepDimTol_RWCircularRunoutTolerance {
 };
 %extend RWStepDimTol_RWCircularRunoutTolerance {
 	~RWStepDimTol_RWCircularRunoutTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCircularRunoutTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCircularRunoutTolerance\n");}
 	}
 };
 
@@ -297,7 +306,8 @@ class RWStepDimTol_RWParallelismTolerance {
 };
 %extend RWStepDimTol_RWParallelismTolerance {
 	~RWStepDimTol_RWParallelismTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWParallelismTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWParallelismTolerance\n");}
 	}
 };
 
@@ -316,7 +326,8 @@ class RWStepDimTol_RWPositionTolerance {
 };
 %extend RWStepDimTol_RWPositionTolerance {
 	~RWStepDimTol_RWPositionTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPositionTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWPositionTolerance\n");}
 	}
 };
 
@@ -335,7 +346,8 @@ class RWStepDimTol_RWSurfaceProfileTolerance {
 };
 %extend RWStepDimTol_RWSurfaceProfileTolerance {
 	~RWStepDimTol_RWSurfaceProfileTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWSurfaceProfileTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWSurfaceProfileTolerance\n");}
 	}
 };
 
@@ -354,7 +366,8 @@ class RWStepDimTol_RWLineProfileTolerance {
 };
 %extend RWStepDimTol_RWLineProfileTolerance {
 	~RWStepDimTol_RWLineProfileTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWLineProfileTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWLineProfileTolerance\n");}
 	}
 };
 
@@ -373,7 +386,8 @@ class RWStepDimTol_RWDatumTarget {
 };
 %extend RWStepDimTol_RWDatumTarget {
 	~RWStepDimTol_RWDatumTarget() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumTarget\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumTarget\n");}
 	}
 };
 
@@ -392,7 +406,8 @@ class RWStepDimTol_RWFlatnessTolerance {
 };
 %extend RWStepDimTol_RWFlatnessTolerance {
 	~RWStepDimTol_RWFlatnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWFlatnessTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWFlatnessTolerance\n");}
 	}
 };
 
@@ -411,7 +426,8 @@ class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 };
 %extend RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	~RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");}
 	}
 };
 
@@ -430,7 +446,8 @@ class RWStepDimTol_RWGeometricTolerance {
 };
 %extend RWStepDimTol_RWGeometricTolerance {
 	~RWStepDimTol_RWGeometricTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricTolerance\n");}
 	}
 };
 
@@ -449,7 +466,8 @@ class RWStepDimTol_RWStraightnessTolerance {
 };
 %extend RWStepDimTol_RWStraightnessTolerance {
 	~RWStepDimTol_RWStraightnessTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWStraightnessTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWStraightnessTolerance\n");}
 	}
 };
 
@@ -468,7 +486,8 @@ class RWStepDimTol_RWCylindricityTolerance {
 };
 %extend RWStepDimTol_RWCylindricityTolerance {
 	~RWStepDimTol_RWCylindricityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCylindricityTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCylindricityTolerance\n");}
 	}
 };
 
@@ -487,7 +506,8 @@ class RWStepDimTol_RWGeometricToleranceRelationship {
 };
 %extend RWStepDimTol_RWGeometricToleranceRelationship {
 	~RWStepDimTol_RWGeometricToleranceRelationship() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceRelationship\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceRelationship\n");}
 	}
 };
 
@@ -506,7 +526,8 @@ class RWStepDimTol_RWCoaxialityTolerance {
 };
 %extend RWStepDimTol_RWCoaxialityTolerance {
 	~RWStepDimTol_RWCoaxialityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCoaxialityTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCoaxialityTolerance\n");}
 	}
 };
 
@@ -525,7 +546,8 @@ class RWStepDimTol_RWTotalRunoutTolerance {
 };
 %extend RWStepDimTol_RWTotalRunoutTolerance {
 	~RWStepDimTol_RWTotalRunoutTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWTotalRunoutTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWTotalRunoutTolerance\n");}
 	}
 };
 
@@ -544,7 +566,8 @@ class RWStepDimTol_RWModifiedGeometricTolerance {
 };
 %extend RWStepDimTol_RWModifiedGeometricTolerance {
 	~RWStepDimTol_RWModifiedGeometricTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWModifiedGeometricTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWModifiedGeometricTolerance\n");}
 	}
 };
 
@@ -563,7 +586,8 @@ class RWStepDimTol_RWConcentricityTolerance {
 };
 %extend RWStepDimTol_RWConcentricityTolerance {
 	~RWStepDimTol_RWConcentricityTolerance() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWConcentricityTolerance\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWConcentricityTolerance\n");}
 	}
 };
 
@@ -582,7 +606,8 @@ class RWStepDimTol_RWDatum {
 };
 %extend RWStepDimTol_RWDatum {
 	~RWStepDimTol_RWDatum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatum\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatum\n");}
 	}
 };
 
@@ -601,6 +626,7 @@ class RWStepDimTol_RWCommonDatum {
 };
 %extend RWStepDimTol_RWCommonDatum {
 	~RWStepDimTol_RWCommonDatum() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCommonDatum\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWCommonDatum\n");}
 	}
 };

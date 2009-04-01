@@ -131,7 +131,8 @@ class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Document
 };
 %extend Handle_StdDrivers_DocumentRetrievalDriver {
 	~Handle_StdDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentRetrievalDriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentSt
 };
 %extend Handle_StdDrivers_DocumentStorageDriver {
 	~Handle_StdDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_StdDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -178,8 +180,14 @@ class StdDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 	}
 };
 %extend StdDrivers_DocumentStorageDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdDrivers_DocumentStorageDriver {
 	~StdDrivers_DocumentStorageDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdDrivers_DocumentStorageDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdDrivers_DocumentStorageDriver\n");}
 	}
 };
 
@@ -194,7 +202,8 @@ class StdDrivers {
 };
 %extend StdDrivers {
 	~StdDrivers() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdDrivers\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdDrivers\n");}
 	}
 };
 
@@ -215,7 +224,13 @@ class StdDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDrive
 	}
 };
 %extend StdDrivers_DocumentRetrievalDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend StdDrivers_DocumentRetrievalDriver {
 	~StdDrivers_DocumentRetrievalDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StdDrivers_DocumentRetrievalDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StdDrivers_DocumentRetrievalDriver\n");}
 	}
 };

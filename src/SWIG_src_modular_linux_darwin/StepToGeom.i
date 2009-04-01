@@ -122,7 +122,8 @@ class StepToGeom_Root {
 };
 %extend StepToGeom_Root {
 	~StepToGeom_Root() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_Root\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_Root\n");}
 	}
 };
 
@@ -137,7 +138,8 @@ class StepToGeom_MakeTrimmedCurve2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeTrimmedCurve2d {
 	~StepToGeom_MakeTrimmedCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTrimmedCurve2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTrimmedCurve2d\n");}
 	}
 };
 
@@ -152,7 +154,8 @@ class StepToGeom_MakeParabola : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeParabola {
 	~StepToGeom_MakeParabola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeParabola\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeParabola\n");}
 	}
 };
 
@@ -167,7 +170,8 @@ class StepToGeom_MakePolyline : public StepToGeom_Root {
 };
 %extend StepToGeom_MakePolyline {
 	~StepToGeom_MakePolyline() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakePolyline\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakePolyline\n");}
 	}
 };
 
@@ -182,7 +186,8 @@ class StepToGeom_MakePolyline2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakePolyline2d {
 	~StepToGeom_MakePolyline2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakePolyline2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakePolyline2d\n");}
 	}
 };
 
@@ -197,7 +202,8 @@ class StepToGeom_MakeAxis1Placement : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeAxis1Placement {
 	~StepToGeom_MakeAxis1Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeAxis1Placement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeAxis1Placement\n");}
 	}
 };
 
@@ -212,7 +218,8 @@ class StepToGeom_MakeBoundedCurve2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeBoundedCurve2d {
 	~StepToGeom_MakeBoundedCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBoundedCurve2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBoundedCurve2d\n");}
 	}
 };
 
@@ -227,7 +234,8 @@ class StepToGeom_MakeSweptSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeSweptSurface {
 	~StepToGeom_MakeSweptSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSweptSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSweptSurface\n");}
 	}
 };
 
@@ -242,7 +250,8 @@ class StepToGeom_MakeElementarySurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeElementarySurface {
 	~StepToGeom_MakeElementarySurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeElementarySurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeElementarySurface\n");}
 	}
 };
 
@@ -257,7 +266,8 @@ class StepToGeom_MakeHyperbola : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeHyperbola {
 	~StepToGeom_MakeHyperbola() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeHyperbola\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeHyperbola\n");}
 	}
 };
 
@@ -272,7 +282,8 @@ class StepToGeom_MakeSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeSurface {
 	~StepToGeom_MakeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSurface\n");}
 	}
 };
 
@@ -287,7 +298,8 @@ class StepToGeom_MakeConicalSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeConicalSurface {
 	~StepToGeom_MakeConicalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConicalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConicalSurface\n");}
 	}
 };
 
@@ -302,7 +314,8 @@ class StepToGeom_MakeConic : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeConic {
 	~StepToGeom_MakeConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConic\n");}
 	}
 };
 
@@ -317,7 +330,8 @@ class StepToGeom_MakeBoundedSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeBoundedSurface {
 	~StepToGeom_MakeBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBoundedSurface\n");}
 	}
 };
 
@@ -332,7 +346,8 @@ class StepToGeom_MakeCartesianPoint2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeCartesianPoint2d {
 	~StepToGeom_MakeCartesianPoint2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCartesianPoint2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCartesianPoint2d\n");}
 	}
 };
 
@@ -347,7 +362,8 @@ class StepToGeom_MakeBSplineSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeBSplineSurface {
 	~StepToGeom_MakeBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineSurface\n");}
 	}
 };
 
@@ -362,7 +378,8 @@ class StepToGeom_MakeConic2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeConic2d {
 	~StepToGeom_MakeConic2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConic2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConic2d\n");}
 	}
 };
 
@@ -377,7 +394,8 @@ class StepToGeom_MakePlane : public StepToGeom_Root {
 };
 %extend StepToGeom_MakePlane {
 	~StepToGeom_MakePlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakePlane\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakePlane\n");}
 	}
 };
 
@@ -392,7 +410,8 @@ class StepToGeom_MakeCircle2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeCircle2d {
 	~StepToGeom_MakeCircle2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCircle2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCircle2d\n");}
 	}
 };
 
@@ -407,7 +426,8 @@ class StepToGeom_MakeLine : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeLine {
 	~StepToGeom_MakeLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeLine\n");}
 	}
 };
 
@@ -422,7 +442,8 @@ class StepToGeom_MakeCurve : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeCurve {
 	~StepToGeom_MakeCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCurve\n");}
 	}
 };
 
@@ -437,7 +458,8 @@ class StepToGeom_MakeLine2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeLine2d {
 	~StepToGeom_MakeLine2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeLine2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeLine2d\n");}
 	}
 };
 
@@ -452,7 +474,8 @@ class StepToGeom_MakeParabola2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeParabola2d {
 	~StepToGeom_MakeParabola2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeParabola2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeParabola2d\n");}
 	}
 };
 
@@ -467,7 +490,8 @@ class StepToGeom_MakeAxisPlacement : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeAxisPlacement {
 	~StepToGeom_MakeAxisPlacement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeAxisPlacement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeAxisPlacement\n");}
 	}
 };
 
@@ -482,7 +506,8 @@ class StepToGeom_MakeVectorWithMagnitude2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeVectorWithMagnitude2d {
 	~StepToGeom_MakeVectorWithMagnitude2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude2d\n");}
 	}
 };
 
@@ -497,7 +522,8 @@ class StepToGeom_MakeEllipse2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeEllipse2d {
 	~StepToGeom_MakeEllipse2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeEllipse2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeEllipse2d\n");}
 	}
 };
 
@@ -512,7 +538,8 @@ class StepToGeom_MakeTrimmedCurve : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeTrimmedCurve {
 	~StepToGeom_MakeTrimmedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTrimmedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTrimmedCurve\n");}
 	}
 };
 
@@ -527,7 +554,8 @@ class StepToGeom_MakeSurfaceOfRevolution : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeSurfaceOfRevolution {
 	~StepToGeom_MakeSurfaceOfRevolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSurfaceOfRevolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSurfaceOfRevolution\n");}
 	}
 };
 
@@ -542,7 +570,8 @@ class StepToGeom_MakeCartesianPoint : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeCartesianPoint {
 	~StepToGeom_MakeCartesianPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCartesianPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCartesianPoint\n");}
 	}
 };
 
@@ -557,7 +586,8 @@ class StepToGeom_MakeBSplineCurve2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeBSplineCurve2d {
 	~StepToGeom_MakeBSplineCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineCurve2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineCurve2d\n");}
 	}
 };
 
@@ -572,7 +602,8 @@ class StepToGeom_MakeSphericalSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeSphericalSurface {
 	~StepToGeom_MakeSphericalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSphericalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSphericalSurface\n");}
 	}
 };
 
@@ -587,7 +618,8 @@ class StepToGeom_MakeTransformation2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeTransformation2d {
 	~StepToGeom_MakeTransformation2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTransformation2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTransformation2d\n");}
 	}
 };
 
@@ -602,7 +634,8 @@ class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeTransformation3d {
 	~StepToGeom_MakeTransformation3d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTransformation3d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTransformation3d\n");}
 	}
 };
 
@@ -617,7 +650,8 @@ class StepToGeom_MakeBSplineCurve : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeBSplineCurve {
 	~StepToGeom_MakeBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineCurve\n");}
 	}
 };
 
@@ -632,7 +666,8 @@ class StepToGeom_MakeRectangularTrimmedSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeRectangularTrimmedSurface {
 	~StepToGeom_MakeRectangularTrimmedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeRectangularTrimmedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeRectangularTrimmedSurface\n");}
 	}
 };
 
@@ -647,7 +682,8 @@ class StepToGeom_MakeDirection : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeDirection {
 	~StepToGeom_MakeDirection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeDirection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeDirection\n");}
 	}
 };
 
@@ -662,7 +698,8 @@ class StepToGeom_MakeCircle : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeCircle {
 	~StepToGeom_MakeCircle() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCircle\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCircle\n");}
 	}
 };
 
@@ -677,7 +714,8 @@ class StepToGeom_MakeEllipse : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeEllipse {
 	~StepToGeom_MakeEllipse() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeEllipse\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeEllipse\n");}
 	}
 };
 
@@ -692,7 +730,8 @@ class StepToGeom_MakeBoundedCurve : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeBoundedCurve {
 	~StepToGeom_MakeBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBoundedCurve\n");}
 	}
 };
 
@@ -707,7 +746,8 @@ class StepToGeom_MakeVectorWithMagnitude : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeVectorWithMagnitude {
 	~StepToGeom_MakeVectorWithMagnitude() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude\n");}
 	}
 };
 
@@ -722,7 +762,8 @@ class StepToGeom_MakeHyperbola2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeHyperbola2d {
 	~StepToGeom_MakeHyperbola2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeHyperbola2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeHyperbola2d\n");}
 	}
 };
 
@@ -737,7 +778,8 @@ class StepToGeom_MakeAxis2Placement : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeAxis2Placement {
 	~StepToGeom_MakeAxis2Placement() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeAxis2Placement\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeAxis2Placement\n");}
 	}
 };
 
@@ -752,7 +794,8 @@ class StepToGeom_MakeCurve2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeCurve2d {
 	~StepToGeom_MakeCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCurve2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCurve2d\n");}
 	}
 };
 
@@ -767,7 +810,8 @@ class StepToGeom_MakeToroidalSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeToroidalSurface {
 	~StepToGeom_MakeToroidalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeToroidalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeToroidalSurface\n");}
 	}
 };
 
@@ -782,7 +826,8 @@ class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeCylindricalSurface {
 	~StepToGeom_MakeCylindricalSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCylindricalSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCylindricalSurface\n");}
 	}
 };
 
@@ -797,7 +842,8 @@ class StepToGeom_MakeDirection2d : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeDirection2d {
 	~StepToGeom_MakeDirection2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeDirection2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeDirection2d\n");}
 	}
 };
 
@@ -812,6 +858,7 @@ class StepToGeom_MakeSurfaceOfLinearExtrusion : public StepToGeom_Root {
 };
 %extend StepToGeom_MakeSurfaceOfLinearExtrusion {
 	~StepToGeom_MakeSurfaceOfLinearExtrusion() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSurfaceOfLinearExtrusion\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSurfaceOfLinearExtrusion\n");}
 	}
 };

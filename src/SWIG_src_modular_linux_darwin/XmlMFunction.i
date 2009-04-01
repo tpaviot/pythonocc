@@ -131,7 +131,8 @@ class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMFunction_GraphNodeDriver {
 	~Handle_XmlMFunction_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_GraphNodeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_GraphNodeDriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMFunction_FunctionDriver {
 	~Handle_XmlMFunction_FunctionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_FunctionDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_FunctionDriver\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_XmlMFunction_ScopeDriver : public Handle_XmlMDF_ADriver {
 };
 %extend Handle_XmlMFunction_ScopeDriver {
 	~Handle_XmlMFunction_ScopeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_ScopeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_ScopeDriver\n");}
 	}
 };
 
@@ -204,8 +207,14 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMFunction_ScopeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMFunction_ScopeDriver {
 	~XmlMFunction_ScopeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMFunction_ScopeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMFunction_ScopeDriver\n");}
 	}
 };
 
@@ -220,7 +229,8 @@ class XmlMFunction {
 };
 %extend XmlMFunction {
 	~XmlMFunction() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMFunction\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMFunction\n");}
 	}
 };
 
@@ -245,8 +255,14 @@ class XmlMFunction_GraphNodeDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMFunction_GraphNodeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMFunction_GraphNodeDriver {
 	~XmlMFunction_GraphNodeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMFunction_GraphNodeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMFunction_GraphNodeDriver\n");}
 	}
 };
 
@@ -271,7 +287,13 @@ class XmlMFunction_FunctionDriver : public XmlMDF_ADriver {
 	}
 };
 %extend XmlMFunction_FunctionDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend XmlMFunction_FunctionDriver {
 	~XmlMFunction_FunctionDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of XmlMFunction_FunctionDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XmlMFunction_FunctionDriver\n");}
 	}
 };

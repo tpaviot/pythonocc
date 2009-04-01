@@ -131,7 +131,8 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 };
 %extend Handle_PNaming_Name {
 	~Handle_PNaming_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_Name\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_Name\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 };
 %extend Handle_PNaming_HArray1OfNamedShape {
 	~Handle_PNaming_HArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_HArray1OfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_HArray1OfNamedShape\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 };
 %extend Handle_PNaming_NamedShape {
 	~Handle_PNaming_NamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_NamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_NamedShape\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 };
 %extend Handle_PNaming_Naming {
 	~Handle_PNaming_Naming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_Naming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_Naming\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 };
 %extend Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	~Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
 	}
 };
 
@@ -258,8 +263,14 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 	}
 };
 %extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	~PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
 	}
 };
 
@@ -288,8 +299,14 @@ class PNaming_Naming : public PDF_Attribute {
 	}
 };
 %extend PNaming_Naming {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PNaming_Naming {
 	~PNaming_Naming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_Naming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_Naming\n");}
 	}
 };
 
@@ -344,8 +361,14 @@ class PNaming_NamedShape : public PDF_Attribute {
 	}
 };
 %extend PNaming_NamedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PNaming_NamedShape {
 	~PNaming_NamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_NamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_NamedShape\n");}
 	}
 };
 
@@ -394,8 +417,14 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 	}
 };
 %extend PNaming_HArray1OfNamedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PNaming_HArray1OfNamedShape {
 	~PNaming_HArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_HArray1OfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_HArray1OfNamedShape\n");}
 	}
 };
 
@@ -424,7 +453,8 @@ class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
 };
 %extend PNaming_FieldOfHArray1OfNamedShape {
 	~PNaming_FieldOfHArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_FieldOfHArray1OfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_FieldOfHArray1OfNamedShape\n");}
 	}
 };
 
@@ -485,8 +515,14 @@ class PNaming_Name : public Standard_Persistent {
 	}
 };
 %extend PNaming_Name {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PNaming_Name {
 	~PNaming_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_Name\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_Name\n");}
 	}
 };
 
@@ -505,6 +541,7 @@ class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 };
 %extend PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {
 	~PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape\n");}
 	}
 };

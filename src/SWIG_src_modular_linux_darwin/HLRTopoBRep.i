@@ -131,7 +131,8 @@ class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCol
 };
 %extend Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
 	~Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCo
 };
 %extend Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
 	~Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
 };
 %extend Handle_HLRTopoBRep_OutLiner {
 	~Handle_HLRTopoBRep_OutLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_OutLiner\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_OutLiner\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNo
 };
 %extend Handle_HLRTopoBRep_ListNodeOfListOfVData {
 	~Handle_HLRTopoBRep_ListNodeOfListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_ListNodeOfListOfVData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_ListNodeOfListOfVData\n");}
 	}
 };
 
@@ -226,8 +230,14 @@ class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNo
 	}
 };
 %extend HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData {
 	~HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
 	}
 };
 
@@ -260,7 +270,8 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 };
 %extend HLRTopoBRep_MapOfShapeListOfVData {
 	~HLRTopoBRep_MapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_MapOfShapeListOfVData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_MapOfShapeListOfVData\n");}
 	}
 };
 
@@ -309,7 +320,8 @@ class HLRTopoBRep_ListOfVData {
 };
 %extend HLRTopoBRep_ListOfVData {
 	~HLRTopoBRep_ListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListOfVData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListOfVData\n");}
 	}
 };
 
@@ -330,7 +342,8 @@ class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_B
 };
 %extend HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData {
 	~HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData\n");}
 	}
 };
 
@@ -365,8 +378,14 @@ class HLRTopoBRep_OutLiner : public MMgt_TShared {
 	}
 };
 %extend HLRTopoBRep_OutLiner {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend HLRTopoBRep_OutLiner {
 	~HLRTopoBRep_OutLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_OutLiner\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_OutLiner\n");}
 	}
 };
 
@@ -449,7 +468,8 @@ class HLRTopoBRep_Data {
 };
 %extend HLRTopoBRep_Data {
 	~HLRTopoBRep_Data() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_Data\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_Data\n");}
 	}
 };
 
@@ -474,7 +494,8 @@ class HLRTopoBRep_FaceData {
 };
 %extend HLRTopoBRep_FaceData {
 	~HLRTopoBRep_FaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceData\n");}
 	}
 };
 
@@ -495,8 +516,14 @@ class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
 	}
 };
 %extend HLRTopoBRep_ListNodeOfListOfVData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend HLRTopoBRep_ListNodeOfListOfVData {
 	~HLRTopoBRep_ListNodeOfListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListNodeOfListOfVData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListNodeOfListOfVData\n");}
 	}
 };
 
@@ -515,7 +542,8 @@ class HLRTopoBRep_VData {
 };
 %extend HLRTopoBRep_VData {
 	~HLRTopoBRep_VData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_VData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_VData\n");}
 	}
 };
 
@@ -538,7 +566,8 @@ class HLRTopoBRep_ListIteratorOfListOfVData {
 };
 %extend HLRTopoBRep_ListIteratorOfListOfVData {
 	~HLRTopoBRep_ListIteratorOfListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListIteratorOfListOfVData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_ListIteratorOfListOfVData\n");}
 	}
 };
 
@@ -559,7 +588,8 @@ class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_Ba
 };
 %extend HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData {
 	~HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData\n");}
 	}
 };
 
@@ -592,7 +622,8 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 };
 %extend HLRTopoBRep_DataMapOfShapeFaceData {
 	~HLRTopoBRep_DataMapOfShapeFaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapOfShapeFaceData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapOfShapeFaceData\n");}
 	}
 };
 
@@ -611,7 +642,8 @@ class HLRTopoBRep_FaceIsoLiner {
 };
 %extend HLRTopoBRep_FaceIsoLiner {
 	~HLRTopoBRep_FaceIsoLiner() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");}
 	}
 };
 
@@ -634,8 +666,14 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 	}
 };
 %extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData {
 	~HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
 	}
 };
 
@@ -650,6 +688,7 @@ class HLRTopoBRep_DSFiller {
 };
 %extend HLRTopoBRep_DSFiller {
 	~HLRTopoBRep_DSFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DSFiller\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DSFiller\n");}
 	}
 };

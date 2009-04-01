@@ -131,7 +131,8 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 };
 %extend Handle_ShapeBuild_ReShape {
 	~Handle_ShapeBuild_ReShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeBuild_ReShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeBuild_ReShape\n");}
 	}
 };
 
@@ -146,7 +147,8 @@ class ShapeBuild {
 };
 %extend ShapeBuild {
 	~ShapeBuild() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeBuild\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeBuild\n");}
 	}
 };
 
@@ -173,8 +175,14 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 	}
 };
 %extend ShapeBuild_ReShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeBuild_ReShape {
 	~ShapeBuild_ReShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeBuild_ReShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeBuild_ReShape\n");}
 	}
 };
 
@@ -225,7 +233,8 @@ class ShapeBuild_Edge {
 };
 %extend ShapeBuild_Edge {
 	~ShapeBuild_Edge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeBuild_Edge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeBuild_Edge\n");}
 	}
 };
 
@@ -242,6 +251,7 @@ class ShapeBuild_Vertex {
 };
 %extend ShapeBuild_Vertex {
 	~ShapeBuild_Vertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeBuild_Vertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeBuild_Vertex\n");}
 	}
 };

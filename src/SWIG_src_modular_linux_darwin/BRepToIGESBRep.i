@@ -152,6 +152,7 @@ class BRepToIGESBRep_Entity : public BRepToIGES_BREntity {
 };
 %extend BRepToIGESBRep_Entity {
 	~BRepToIGESBRep_Entity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BRepToIGESBRep_Entity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BRepToIGESBRep_Entity\n");}
 	}
 };

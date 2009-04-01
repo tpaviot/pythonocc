@@ -148,7 +148,8 @@ class CSLib_NormalPolyDef : public math_FunctionWithDerivative {
 };
 %extend CSLib_NormalPolyDef {
 	~CSLib_NormalPolyDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CSLib_NormalPolyDef\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CSLib_NormalPolyDef\n");}
 	}
 };
 
@@ -173,7 +174,8 @@ class CSLib_Class2d {
 };
 %extend CSLib_Class2d {
 	~CSLib_Class2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CSLib_Class2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CSLib_Class2d\n");}
 	}
 };
 
@@ -200,6 +202,7 @@ class CSLib {
 };
 %extend CSLib {
 	~CSLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of CSLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of CSLib\n");}
 	}
 };

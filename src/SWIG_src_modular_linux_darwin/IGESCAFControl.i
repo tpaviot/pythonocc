@@ -124,7 +124,8 @@ class IGESCAFControl {
 };
 %extend IGESCAFControl {
 	~IGESCAFControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESCAFControl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESCAFControl\n");}
 	}
 };
 
@@ -157,7 +158,8 @@ class IGESCAFControl_Writer : public IGESControl_Writer {
 };
 %extend IGESCAFControl_Writer {
 	~IGESCAFControl_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESCAFControl_Writer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESCAFControl_Writer\n");}
 	}
 };
 
@@ -190,6 +192,7 @@ class IGESCAFControl_Reader : public IGESControl_Reader {
 };
 %extend IGESCAFControl_Reader {
 	~IGESCAFControl_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESCAFControl_Reader\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESCAFControl_Reader\n");}
 	}
 };

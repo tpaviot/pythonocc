@@ -136,6 +136,7 @@ class GeomProjLib {
 };
 %extend GeomProjLib {
 	~GeomProjLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GeomProjLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GeomProjLib\n");}
 	}
 };

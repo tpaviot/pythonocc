@@ -158,7 +158,8 @@ class Handle_TopOpeBRepDS_Association : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRepDS_Association {
 	~Handle_TopOpeBRepDS_Association() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Association\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Association\n");}
 	}
 };
 
@@ -182,7 +183,8 @@ class Handle_TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference : public H
 };
 %extend Handle_TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference {
 	~Handle_TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference\n");}
 	}
 };
 
@@ -206,7 +208,8 @@ class Handle_TopOpeBRepDS_Interference : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRepDS_Interference {
 	~Handle_TopOpeBRepDS_Interference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Interference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Interference\n");}
 	}
 };
 
@@ -230,7 +233,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState : public Handle_TColl
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
 	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState\n");}
 	}
 };
 
@@ -254,7 +258,8 @@ class Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public Handle_TCo
 };
 %extend Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData {
 	~Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData\n");}
 	}
 };
 
@@ -278,7 +283,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus : public Handle_TCol
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus {
 	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus\n");}
 	}
 };
 
@@ -302,7 +308,8 @@ class Handle_TopOpeBRepDS_ShapeShapeInterference : public Handle_TopOpeBRepDS_In
 };
 %extend Handle_TopOpeBRepDS_ShapeShapeInterference {
 	~Handle_TopOpeBRepDS_ShapeShapeInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_ShapeShapeInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_ShapeShapeInterference\n");}
 	}
 };
 
@@ -326,7 +333,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape : public Handl
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
 	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape\n");}
 	}
 };
 
@@ -350,7 +358,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference :
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference {
 	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference\n");}
 	}
 };
 
@@ -374,7 +383,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface : public Handle_TCollection_
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface {
 	~Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfSurface\n");}
 	}
 };
 
@@ -398,7 +408,8 @@ class Handle_TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape : public Handle
 };
 %extend Handle_TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape {
 	~Handle_TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape\n");}
 	}
 };
 
@@ -422,7 +433,8 @@ class Handle_TopOpeBRepDS_SolidSurfaceInterference : public Handle_TopOpeBRepDS_
 };
 %extend Handle_TopOpeBRepDS_SolidSurfaceInterference {
 	~Handle_TopOpeBRepDS_SolidSurfaceInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_SolidSurfaceInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_SolidSurfaceInterference\n");}
 	}
 };
 
@@ -446,7 +458,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve : public Handle_TCollection_Ma
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve {
 	~Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfCurve\n");}
 	}
 };
 
@@ -470,7 +483,8 @@ class Handle_TopOpeBRepDS_ListNodeOfListOfInterference : public Handle_TCollecti
 };
 %extend Handle_TopOpeBRepDS_ListNodeOfListOfInterference {
 	~Handle_TopOpeBRepDS_ListNodeOfListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_ListNodeOfListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_ListNodeOfListOfInterference\n");}
 	}
 };
 
@@ -494,7 +508,8 @@ class Handle_TopOpeBRepDS_Check : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRepDS_Check {
 	~Handle_TopOpeBRepDS_Check() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Check\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Check\n");}
 	}
 };
 
@@ -518,7 +533,8 @@ class Handle_TopOpeBRepDS_FaceEdgeInterference : public Handle_TopOpeBRepDS_Shap
 };
 %extend Handle_TopOpeBRepDS_FaceEdgeInterference {
 	~Handle_TopOpeBRepDS_FaceEdgeInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_FaceEdgeInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_FaceEdgeInterference\n");}
 	}
 };
 
@@ -542,7 +558,8 @@ class Handle_TopOpeBRepDS_GapTool : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRepDS_GapTool {
 	~Handle_TopOpeBRepDS_GapTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_GapTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_GapTool\n");}
 	}
 };
 
@@ -566,7 +583,8 @@ class Handle_TopOpeBRepDS_EdgeVertexInterference : public Handle_TopOpeBRepDS_Sh
 };
 %extend Handle_TopOpeBRepDS_EdgeVertexInterference {
 	~Handle_TopOpeBRepDS_EdgeVertexInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_EdgeVertexInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_EdgeVertexInterference\n");}
 	}
 };
 
@@ -590,7 +608,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint : public Handle_TCollection_Ma
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint {
 	~Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfPoint\n");}
 	}
 };
 
@@ -614,7 +633,8 @@ class Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : p
 };
 %extend Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	~Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
 	}
 };
 
@@ -638,7 +658,8 @@ class Handle_TopOpeBRepDS_SurfaceCurveInterference : public Handle_TopOpeBRepDS_
 };
 %extend Handle_TopOpeBRepDS_SurfaceCurveInterference {
 	~Handle_TopOpeBRepDS_SurfaceCurveInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_SurfaceCurveInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_SurfaceCurveInterference\n");}
 	}
 };
 
@@ -662,7 +683,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface : public Handle_TCollection_
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface {
 	~Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfShapeSurface\n");}
 	}
 };
 
@@ -686,7 +708,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference : publ
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference {
 	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference\n");}
 	}
 };
 
@@ -710,7 +733,8 @@ class Handle_TopOpeBRepDS_HDataStructure : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRepDS_HDataStructure {
 	~Handle_TopOpeBRepDS_HDataStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_HDataStructure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_HDataStructure\n");}
 	}
 };
 
@@ -734,7 +758,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData : public Handle_TCo
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData {
 	~Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData\n");}
 	}
 };
 
@@ -758,7 +783,8 @@ class Handle_TopOpeBRepDS_Marker : public Handle_MMgt_TShared {
 };
 %extend Handle_TopOpeBRepDS_Marker {
 	~Handle_TopOpeBRepDS_Marker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Marker\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_Marker\n");}
 	}
 };
 
@@ -782,7 +808,8 @@ class Handle_TopOpeBRepDS_CurvePointInterference : public Handle_TopOpeBRepDS_In
 };
 %extend Handle_TopOpeBRepDS_CurvePointInterference {
 	~Handle_TopOpeBRepDS_CurvePointInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_CurvePointInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_CurvePointInterference\n");}
 	}
 };
 
@@ -806,7 +833,8 @@ class Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint : publ
 };
 %extend Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
 	~Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint\n");}
 	}
 };
 
@@ -830,7 +858,8 @@ class Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State : publi
 };
 %extend Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State {
 	~Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State\n");}
 	}
 };
 
@@ -867,7 +896,8 @@ class TopOpeBRepDS_InterferenceIterator {
 };
 %extend TopOpeBRepDS_InterferenceIterator {
 	~TopOpeBRepDS_InterferenceIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_InterferenceIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_InterferenceIterator\n");}
 	}
 };
 
@@ -896,7 +926,8 @@ class TopOpeBRepDS_PointIterator : public TopOpeBRepDS_InterferenceIterator {
 };
 %extend TopOpeBRepDS_PointIterator {
 	~TopOpeBRepDS_PointIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_PointIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_PointIterator\n");}
 	}
 };
 
@@ -919,7 +950,8 @@ class TopOpeBRepDS_TOOL {
 };
 %extend TopOpeBRepDS_TOOL {
 	~TopOpeBRepDS_TOOL() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_TOOL\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_TOOL\n");}
 	}
 };
 
@@ -952,7 +984,8 @@ class TopOpeBRepDS_ShapeSurface : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_ShapeSurface {
 	~TopOpeBRepDS_ShapeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeSurface\n");}
 	}
 };
 
@@ -1021,7 +1054,8 @@ class TopOpeBRepDS_Transition {
 };
 %extend TopOpeBRepDS_Transition {
 	~TopOpeBRepDS_Transition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Transition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Transition\n");}
 	}
 };
 
@@ -1044,8 +1078,14 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape : public TCollection_
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape {
 	~TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceShape\n");}
 	}
 };
 
@@ -1250,7 +1290,8 @@ class TopOpeBRepDS_DataStructure {
 };
 %extend TopOpeBRepDS_DataStructure {
 	~TopOpeBRepDS_DataStructure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataStructure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataStructure\n");}
 	}
 };
 
@@ -1271,7 +1312,8 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference : pu
 };
 %extend TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference {
 	~TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceListOfInterference\n");}
 	}
 };
 
@@ -1292,7 +1334,8 @@ class TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape : public TCollecti
 };
 %extend TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape {
 	~TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DoubleMapIteratorOfDoubleMapOfIntegerShape\n");}
 	}
 };
 
@@ -1315,8 +1358,14 @@ class TopOpeBRepDS_DataMapNodeOfMapOfPoint : public TCollection_MapNode {
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfMapOfPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfMapOfPoint {
 	~TopOpeBRepDS_DataMapNodeOfMapOfPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfPoint\n");}
 	}
 };
 
@@ -1341,8 +1390,14 @@ class TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape : public TCollection_M
 	}
 };
 %extend TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape {
 	~TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DoubleMapNodeOfDoubleMapOfIntegerShape\n");}
 	}
 };
 
@@ -1403,8 +1458,14 @@ class TopOpeBRepDS_Interference : public MMgt_TShared {
 	}
 };
 %extend TopOpeBRepDS_Interference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_Interference {
 	~TopOpeBRepDS_Interference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Interference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Interference\n");}
 	}
 };
 
@@ -1425,8 +1486,14 @@ class TopOpeBRepDS_CurvePointInterference : public TopOpeBRepDS_Interference {
 	}
 };
 %extend TopOpeBRepDS_CurvePointInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_CurvePointInterference {
 	~TopOpeBRepDS_CurvePointInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurvePointInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurvePointInterference\n");}
 	}
 };
 
@@ -1447,7 +1514,8 @@ class TopOpeBRepDS_ShapeData {
 };
 %extend TopOpeBRepDS_ShapeData {
 	~TopOpeBRepDS_ShapeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeData\n");}
 	}
 };
 
@@ -1468,7 +1536,8 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData : public TCollection_B
 };
 %extend TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData {
 	~TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfIntegerShapeData\n");}
 	}
 };
 
@@ -1501,7 +1570,8 @@ class TopOpeBRepDS_DataMapOfInterferenceShape : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_DataMapOfInterferenceShape {
 	~TopOpeBRepDS_DataMapOfInterferenceShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfInterferenceShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfInterferenceShape\n");}
 	}
 };
 
@@ -1534,7 +1604,8 @@ class TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State : public TCollection_BasicM
 };
 %extend TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State {
 	~TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfShapeListOfShapeOn1State\n");}
 	}
 };
 
@@ -1557,8 +1628,14 @@ class TopOpeBRepDS_DataMapNodeOfShapeSurface : public TCollection_MapNode {
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfShapeSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfShapeSurface {
 	~TopOpeBRepDS_DataMapNodeOfShapeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfShapeSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfShapeSurface\n");}
 	}
 };
 
@@ -1579,7 +1656,8 @@ class TopOpeBRepDS_EdgeInterferenceTool {
 };
 %extend TopOpeBRepDS_EdgeInterferenceTool {
 	~TopOpeBRepDS_EdgeInterferenceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_EdgeInterferenceTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_EdgeInterferenceTool\n");}
 	}
 };
 
@@ -1600,7 +1678,8 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfPoint : public TCollection_BasicMapIter
 };
 %extend TopOpeBRepDS_DataMapIteratorOfMapOfPoint {
 	~TopOpeBRepDS_DataMapIteratorOfMapOfPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfPoint\n");}
 	}
 };
 
@@ -1645,8 +1724,14 @@ class TopOpeBRepDS_Check : public MMgt_TShared {
 	}
 };
 %extend TopOpeBRepDS_Check {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_Check {
 	~TopOpeBRepDS_Check() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Check\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Check\n");}
 	}
 };
 
@@ -1669,8 +1754,14 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus : public TCollection_MapNod
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus {
 	~TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfCheckStatus\n");}
 	}
 };
 
@@ -1699,7 +1790,8 @@ class TopOpeBRepDS_Surface {
 };
 %extend TopOpeBRepDS_Surface {
 	~TopOpeBRepDS_Surface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Surface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Surface\n");}
 	}
 };
 
@@ -1720,7 +1812,8 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape : public TCollect
 };
 %extend TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape {
 	~TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfInterferenceShape\n");}
 	}
 };
 
@@ -1753,7 +1846,8 @@ class TopOpeBRepDS_CurveExplorer {
 };
 %extend TopOpeBRepDS_CurveExplorer {
 	~TopOpeBRepDS_CurveExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurveExplorer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurveExplorer\n");}
 	}
 };
 
@@ -1780,8 +1874,14 @@ class TopOpeBRepDS_ShapeShapeInterference : public TopOpeBRepDS_Interference {
 	}
 };
 %extend TopOpeBRepDS_ShapeShapeInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_ShapeShapeInterference {
 	~TopOpeBRepDS_ShapeShapeInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeShapeInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeShapeInterference\n");}
 	}
 };
 
@@ -1802,7 +1902,8 @@ class TopOpeBRepDS_Edge3dInterferenceTool {
 };
 %extend TopOpeBRepDS_Edge3dInterferenceTool {
 	~TopOpeBRepDS_Edge3dInterferenceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Edge3dInterferenceTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Edge3dInterferenceTool\n");}
 	}
 };
 
@@ -1835,7 +1936,8 @@ class TopOpeBRepDS_MapOfCurve : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_MapOfCurve {
 	~TopOpeBRepDS_MapOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfCurve\n");}
 	}
 };
 
@@ -1862,8 +1964,14 @@ class TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData : public TCollection_MapNo
 	}
 };
 %extend TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData {
 	~TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfMapOfShapeData\n");}
 	}
 };
 
@@ -1880,7 +1988,8 @@ class TopOpeBRepDS_EIR {
 };
 %extend TopOpeBRepDS_EIR {
 	~TopOpeBRepDS_EIR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_EIR\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_EIR\n");}
 	}
 };
 
@@ -1957,7 +2066,8 @@ class TopOpeBRepDS_Curve {
 };
 %extend TopOpeBRepDS_Curve {
 	~TopOpeBRepDS_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Curve\n");}
 	}
 };
 
@@ -1978,7 +2088,8 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference : public 
 };
 %extend TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference {
 	~TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfIntegerListOfInterference\n");}
 	}
 };
 
@@ -2001,7 +2112,8 @@ class TopOpeBRepDS_GeometryData {
 };
 %extend TopOpeBRepDS_GeometryData {
 	~TopOpeBRepDS_GeometryData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_GeometryData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_GeometryData\n");}
 	}
 };
 
@@ -2016,7 +2128,8 @@ class TopOpeBRepDS_SurfaceData : public TopOpeBRepDS_GeometryData {
 };
 %extend TopOpeBRepDS_SurfaceData {
 	~TopOpeBRepDS_SurfaceData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceData\n");}
 	}
 };
 
@@ -2049,7 +2162,8 @@ class TopOpeBRepDS_SurfaceExplorer {
 };
 %extend TopOpeBRepDS_SurfaceExplorer {
 	~TopOpeBRepDS_SurfaceExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceExplorer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceExplorer\n");}
 	}
 };
 
@@ -2076,8 +2190,14 @@ class TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public T
 	}
 };
 %extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	~TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
 	}
 };
 
@@ -2118,8 +2238,14 @@ class TopOpeBRepDS_GapTool : public MMgt_TShared {
 	}
 };
 %extend TopOpeBRepDS_GapTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_GapTool {
 	~TopOpeBRepDS_GapTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_GapTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_GapTool\n");}
 	}
 };
 
@@ -2142,7 +2268,8 @@ class TopOpeBRepDS_ListOfShapeOn1State {
 };
 %extend TopOpeBRepDS_ListOfShapeOn1State {
 	~TopOpeBRepDS_ListOfShapeOn1State() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListOfShapeOn1State\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListOfShapeOn1State\n");}
 	}
 };
 
@@ -2171,8 +2298,14 @@ class TopOpeBRepDS_Marker : public MMgt_TShared {
 	}
 };
 %extend TopOpeBRepDS_Marker {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_Marker {
 	~TopOpeBRepDS_Marker() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Marker\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Marker\n");}
 	}
 };
 
@@ -2223,7 +2356,8 @@ class TopOpeBRepDS_TKI {
 };
 %extend TopOpeBRepDS_TKI {
 	~TopOpeBRepDS_TKI() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_TKI\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_TKI\n");}
 	}
 };
 
@@ -2244,7 +2378,8 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State : public T
 };
 %extend TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State {
 	~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeListOfShapeOn1State\n");}
 	}
 };
 
@@ -2289,7 +2424,8 @@ class TopOpeBRepDS {
 };
 %extend TopOpeBRepDS {
 	~TopOpeBRepDS() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS\n");}
 	}
 };
 
@@ -2306,7 +2442,8 @@ class TopOpeBRepDS_Reducer {
 };
 %extend TopOpeBRepDS_Reducer {
 	~TopOpeBRepDS_Reducer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Reducer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Reducer\n");}
 	}
 };
 
@@ -2329,7 +2466,8 @@ class TopOpeBRepDS_ListIteratorOfListOfInterference {
 };
 %extend TopOpeBRepDS_ListIteratorOfListOfInterference {
 	~TopOpeBRepDS_ListIteratorOfListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListIteratorOfListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListIteratorOfListOfInterference\n");}
 	}
 };
 
@@ -2360,7 +2498,8 @@ class TopOpeBRepDS_InterferenceTool {
 };
 %extend TopOpeBRepDS_InterferenceTool {
 	~TopOpeBRepDS_InterferenceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_InterferenceTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_InterferenceTool\n");}
 	}
 };
 
@@ -2381,7 +2520,8 @@ class TopOpeBRepDS_CurveIterator : public TopOpeBRepDS_InterferenceIterator {
 };
 %extend TopOpeBRepDS_CurveIterator {
 	~TopOpeBRepDS_CurveIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurveIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurveIterator\n");}
 	}
 };
 
@@ -2398,7 +2538,8 @@ class TopOpeBRepDS_FIR {
 };
 %extend TopOpeBRepDS_FIR {
 	~TopOpeBRepDS_FIR() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FIR\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FIR\n");}
 	}
 };
 
@@ -2431,7 +2572,8 @@ class TopOpeBRepDS_DataMapOfShapeState : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_DataMapOfShapeState {
 	~TopOpeBRepDS_DataMapOfShapeState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfShapeState\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfShapeState\n");}
 	}
 };
 
@@ -2452,8 +2594,14 @@ class TopOpeBRepDS_ListNodeOfListOfInterference : public TCollection_MapNode {
 	}
 };
 %extend TopOpeBRepDS_ListNodeOfListOfInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_ListNodeOfListOfInterference {
 	~TopOpeBRepDS_ListNodeOfListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListNodeOfListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListNodeOfListOfInterference\n");}
 	}
 };
 
@@ -2486,7 +2634,8 @@ class TopOpeBRepDS_MapOfPoint : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_MapOfPoint {
 	~TopOpeBRepDS_MapOfPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfPoint\n");}
 	}
 };
 
@@ -2507,7 +2656,8 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfSurface : public TCollection_BasicMapIt
 };
 %extend TopOpeBRepDS_DataMapIteratorOfMapOfSurface {
 	~TopOpeBRepDS_DataMapIteratorOfMapOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfSurface\n");}
 	}
 };
 
@@ -2542,7 +2692,8 @@ class TopOpeBRepDS_DoubleMapOfIntegerShape : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_DoubleMapOfIntegerShape {
 	~TopOpeBRepDS_DoubleMapOfIntegerShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DoubleMapOfIntegerShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DoubleMapOfIntegerShape\n");}
 	}
 };
 
@@ -2563,8 +2714,14 @@ class TopOpeBRepDS_SolidSurfaceInterference : public TopOpeBRepDS_Interference {
 	}
 };
 %extend TopOpeBRepDS_SolidSurfaceInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_SolidSurfaceInterference {
 	~TopOpeBRepDS_SolidSurfaceInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SolidSurfaceInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SolidSurfaceInterference\n");}
 	}
 };
 
@@ -2595,7 +2752,8 @@ class TopOpeBRepDS_Point {
 };
 %extend TopOpeBRepDS_Point {
 	~TopOpeBRepDS_Point() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Point\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Point\n");}
 	}
 };
 
@@ -2628,7 +2786,8 @@ class TopOpeBRepDS_MapOfSurface : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_MapOfSurface {
 	~TopOpeBRepDS_MapOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfSurface\n");}
 	}
 };
 
@@ -2645,7 +2804,8 @@ class TopOpeBRepDS_SurfaceIterator : public TopOpeBRepDS_InterferenceIterator {
 };
 %extend TopOpeBRepDS_SurfaceIterator {
 	~TopOpeBRepDS_SurfaceIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceIterator\n");}
 	}
 };
 
@@ -2672,8 +2832,14 @@ class TopOpeBRepDS_EdgeVertexInterference : public TopOpeBRepDS_ShapeShapeInterf
 	}
 };
 %extend TopOpeBRepDS_EdgeVertexInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_EdgeVertexInterference {
 	~TopOpeBRepDS_EdgeVertexInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_EdgeVertexInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_EdgeVertexInterference\n");}
 	}
 };
 
@@ -2706,7 +2872,8 @@ class TopOpeBRepDS_Explorer {
 };
 %extend TopOpeBRepDS_Explorer {
 	~TopOpeBRepDS_Explorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Explorer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Explorer\n");}
 	}
 };
 
@@ -2807,7 +2974,8 @@ class TopOpeBRepDS_BuildTool {
 };
 %extend TopOpeBRepDS_BuildTool {
 	~TopOpeBRepDS_BuildTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_BuildTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_BuildTool\n");}
 	}
 };
 
@@ -2830,8 +2998,14 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State : public TColl
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State {
 	~TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfShapeListOfShapeOn1State\n");}
 	}
 };
 
@@ -2858,7 +3032,8 @@ class TopOpeBRepDS_Filter {
 };
 %extend TopOpeBRepDS_Filter {
 	~TopOpeBRepDS_Filter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Filter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Filter\n");}
 	}
 };
 
@@ -2887,8 +3062,14 @@ class TopOpeBRepDS_Association : public MMgt_TShared {
 	}
 };
 %extend TopOpeBRepDS_Association {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_Association {
 	~TopOpeBRepDS_Association() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Association\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Association\n");}
 	}
 };
 
@@ -2911,8 +3092,14 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference : public
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference {
 	~TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfInterferenceListOfInterference\n");}
 	}
 };
 
@@ -2955,7 +3142,8 @@ class TopOpeBRepDS_IndexedDataMapOfShapeWithState : public TCollection_BasicMap 
 };
 %extend TopOpeBRepDS_IndexedDataMapOfShapeWithState {
 	~TopOpeBRepDS_IndexedDataMapOfShapeWithState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapOfShapeWithState\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapOfShapeWithState\n");}
 	}
 };
 
@@ -2978,8 +3166,14 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState : public TCollection_MapNode
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState {
 	~TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfShapeState\n");}
 	}
 };
 
@@ -3012,7 +3206,8 @@ class TopOpeBRepDS_DataMapOfCheckStatus : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_DataMapOfCheckStatus {
 	~TopOpeBRepDS_DataMapOfCheckStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfCheckStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfCheckStatus\n");}
 	}
 };
 
@@ -3055,7 +3250,8 @@ class TopOpeBRepDS_IndexedDataMapOfVertexPoint : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_IndexedDataMapOfVertexPoint {
 	~TopOpeBRepDS_IndexedDataMapOfVertexPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapOfVertexPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapOfVertexPoint\n");}
 	}
 };
 
@@ -3078,8 +3274,14 @@ class TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference : public TCol
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference {
 	~TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfDataMapOfIntegerListOfInterference\n");}
 	}
 };
 
@@ -3100,7 +3302,8 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState : public TCollection_Bas
 };
 %extend TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState {
 	~TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfShapeState\n");}
 	}
 };
 
@@ -3143,7 +3346,8 @@ class TopOpeBRepDS_MapOfShapeData : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_MapOfShapeData {
 	~TopOpeBRepDS_MapOfShapeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfShapeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfShapeData\n");}
 	}
 };
 
@@ -3192,7 +3396,8 @@ class TopOpeBRepDS_ListOfInterference {
 };
 %extend TopOpeBRepDS_ListOfInterference {
 	~TopOpeBRepDS_ListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ListOfInterference\n");}
 	}
 };
 
@@ -3225,7 +3430,8 @@ class TopOpeBRepDS_PointExplorer {
 };
 %extend TopOpeBRepDS_PointExplorer {
 	~TopOpeBRepDS_PointExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_PointExplorer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_PointExplorer\n");}
 	}
 };
 
@@ -3252,7 +3458,8 @@ class TopOpeBRepDS_ShapeWithState {
 };
 %extend TopOpeBRepDS_ShapeWithState {
 	~TopOpeBRepDS_ShapeWithState() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeWithState\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_ShapeWithState\n");}
 	}
 };
 
@@ -3279,7 +3486,8 @@ class TopOpeBRepDS_FaceInterferenceTool {
 };
 %extend TopOpeBRepDS_FaceInterferenceTool {
 	~TopOpeBRepDS_FaceInterferenceTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FaceInterferenceTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FaceInterferenceTool\n");}
 	}
 };
 
@@ -3310,8 +3518,14 @@ class TopOpeBRepDS_SurfaceCurveInterference : public TopOpeBRepDS_Interference {
 	}
 };
 %extend TopOpeBRepDS_SurfaceCurveInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_SurfaceCurveInterference {
 	~TopOpeBRepDS_SurfaceCurveInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceCurveInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_SurfaceCurveInterference\n");}
 	}
 };
 
@@ -3334,8 +3548,14 @@ class TopOpeBRepDS_DataMapNodeOfMapOfSurface : public TCollection_MapNode {
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfMapOfSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfMapOfSurface {
 	~TopOpeBRepDS_DataMapNodeOfMapOfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfSurface\n");}
 	}
 };
 
@@ -3358,8 +3578,14 @@ class TopOpeBRepDS_DataMapNodeOfMapOfCurve : public TCollection_MapNode {
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfMapOfCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfMapOfCurve {
 	~TopOpeBRepDS_DataMapNodeOfMapOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfCurve\n");}
 	}
 };
 
@@ -3380,7 +3606,8 @@ class TopOpeBRepDS_DataMapIteratorOfMapOfCurve : public TCollection_BasicMapIter
 };
 %extend TopOpeBRepDS_DataMapIteratorOfMapOfCurve {
 	~TopOpeBRepDS_DataMapIteratorOfMapOfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfMapOfCurve\n");}
 	}
 };
 
@@ -3403,8 +3630,14 @@ class TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData : public TCollection_MapNo
 	}
 };
 %extend TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData {
 	~TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapNodeOfMapOfIntegerShapeData\n");}
 	}
 };
 
@@ -3425,8 +3658,14 @@ class TopOpeBRepDS_FaceEdgeInterference : public TopOpeBRepDS_ShapeShapeInterfer
 	}
 };
 %extend TopOpeBRepDS_FaceEdgeInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_FaceEdgeInterference {
 	~TopOpeBRepDS_FaceEdgeInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FaceEdgeInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_FaceEdgeInterference\n");}
 	}
 };
 
@@ -3463,7 +3702,8 @@ class TopOpeBRepDS_GapFiller {
 };
 %extend TopOpeBRepDS_GapFiller {
 	~TopOpeBRepDS_GapFiller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_GapFiller\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_GapFiller\n");}
 	}
 };
 
@@ -3502,8 +3742,14 @@ class TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference : public MMgt_TSh
 	}
 };
 %extend TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference {
 	~TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_HArray1OfDataMapOfIntegerListOfInterference\n");}
 	}
 };
 
@@ -3518,7 +3764,8 @@ class TopOpeBRepDS_CurveData : public TopOpeBRepDS_GeometryData {
 };
 %extend TopOpeBRepDS_CurveData {
 	~TopOpeBRepDS_CurveData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurveData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_CurveData\n");}
 	}
 };
 
@@ -3551,7 +3798,8 @@ class TopOpeBRepDS_DataMapOfInterferenceListOfInterference : public TCollection_
 };
 %extend TopOpeBRepDS_DataMapOfInterferenceListOfInterference {
 	~TopOpeBRepDS_DataMapOfInterferenceListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfInterferenceListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfInterferenceListOfInterference\n");}
 	}
 };
 
@@ -3584,7 +3832,8 @@ class TopOpeBRepDS_MapOfIntegerShapeData : public TCollection_BasicMap {
 };
 %extend TopOpeBRepDS_MapOfIntegerShapeData {
 	~TopOpeBRepDS_MapOfIntegerShapeData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfIntegerShapeData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_MapOfIntegerShapeData\n");}
 	}
 };
 
@@ -3605,7 +3854,8 @@ class TopOpeBRepDS_PointData : public TopOpeBRepDS_GeometryData {
 };
 %extend TopOpeBRepDS_PointData {
 	~TopOpeBRepDS_PointData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_PointData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_PointData\n");}
 	}
 };
 
@@ -3626,7 +3876,8 @@ class TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus : public TCollection_Ba
 };
 %extend TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus {
 	~TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfDataMapOfCheckStatus\n");}
 	}
 };
 
@@ -3653,8 +3904,14 @@ class TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint : public TCol
 	}
 };
 %extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint {
 	~TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_IndexedDataMapNodeOfIndexedDataMapOfVertexPoint\n");}
 	}
 };
 
@@ -3687,7 +3944,8 @@ class TopOpeBRepDS_DataMapOfIntegerListOfInterference : public TCollection_Basic
 };
 %extend TopOpeBRepDS_DataMapOfIntegerListOfInterference {
 	~TopOpeBRepDS_DataMapOfIntegerListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfIntegerListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapOfIntegerListOfInterference\n");}
 	}
 };
 
@@ -3708,7 +3966,8 @@ class TopOpeBRepDS_DataMapIteratorOfShapeSurface : public TCollection_BasicMapIt
 };
 %extend TopOpeBRepDS_DataMapIteratorOfShapeSurface {
 	~TopOpeBRepDS_DataMapIteratorOfShapeSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfShapeSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_DataMapIteratorOfShapeSurface\n");}
 	}
 };
 
@@ -3747,6 +4006,7 @@ class TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference {
 };
 %extend TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference {
 	~TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TopOpeBRepDS_Array1OfDataMapOfIntegerListOfInterference\n");}
 	}
 };

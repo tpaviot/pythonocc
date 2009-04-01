@@ -132,7 +132,8 @@ class IntCurve_PConicTool {
 };
 %extend IntCurve_PConicTool {
 	~IntCurve_PConicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurve_PConicTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_PConicTool\n");}
 	}
 };
 
@@ -151,7 +152,8 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 };
 %extend IntCurve_MyImpParToolOfIntImpConicParConic {
 	~IntCurve_MyImpParToolOfIntImpConicParConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurve_MyImpParToolOfIntImpConicParConic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_MyImpParToolOfIntImpConicParConic\n");}
 	}
 };
 
@@ -174,7 +176,8 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 };
 %extend IntCurve_IntImpConicParConic {
 	~IntCurve_IntImpConicParConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurve_IntImpConicParConic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_IntImpConicParConic\n");}
 	}
 };
 
@@ -247,7 +250,8 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 };
 %extend IntCurve_IntConicConic {
 	~IntCurve_IntConicConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurve_IntConicConic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_IntConicConic\n");}
 	}
 };
 
@@ -284,7 +288,8 @@ class IntCurve_IConicTool {
 };
 %extend IntCurve_IConicTool {
 	~IntCurve_IConicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurve_IConicTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_IConicTool\n");}
 	}
 };
 
@@ -301,7 +306,8 @@ class IntCurve_ProjectOnPConicTool {
 };
 %extend IntCurve_ProjectOnPConicTool {
 	~IntCurve_ProjectOnPConicTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurve_ProjectOnPConicTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_ProjectOnPConicTool\n");}
 	}
 };
 
@@ -340,6 +346,7 @@ class IntCurve_PConic {
 };
 %extend IntCurve_PConic {
 	~IntCurve_PConic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntCurve_PConic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntCurve_PConic\n");}
 	}
 };

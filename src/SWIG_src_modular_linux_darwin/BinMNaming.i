@@ -131,7 +131,8 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMNaming_NamingDriver {
 	~Handle_BinMNaming_NamingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMNaming_NamingDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMNaming_NamingDriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMNaming_NamedShapeDriver {
 	~Handle_BinMNaming_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMNaming_NamedShapeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMNaming_NamedShapeDriver\n");}
 	}
 };
 
@@ -190,8 +192,14 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 	}
 };
 %extend BinMNaming_NamedShapeDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMNaming_NamedShapeDriver {
 	~BinMNaming_NamedShapeDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMNaming_NamedShapeDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamedShapeDriver\n");}
 	}
 };
 
@@ -216,8 +224,14 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 	}
 };
 %extend BinMNaming_NamingDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMNaming_NamingDriver {
 	~BinMNaming_NamingDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMNaming_NamingDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamingDriver\n");}
 	}
 };
 
@@ -232,6 +246,7 @@ class BinMNaming {
 };
 %extend BinMNaming {
 	~BinMNaming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMNaming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMNaming\n");}
 	}
 };

@@ -131,7 +131,8 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 };
 %extend Handle_ShapeConstruct_ProjectCurveOnSurface {
 	~Handle_ShapeConstruct_ProjectCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ShapeConstruct_ProjectCurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ShapeConstruct_ProjectCurveOnSurface\n");}
 	}
 };
 
@@ -156,7 +157,8 @@ class ShapeConstruct {
 };
 %extend ShapeConstruct {
 	~ShapeConstruct() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeConstruct\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct\n");}
 	}
 };
 
@@ -183,7 +185,8 @@ class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 };
 %extend ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {
 	~ShapeConstruct_CompBezierCurves2dToBSplineCurve2d() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurves2dToBSplineCurve2d\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurves2dToBSplineCurve2d\n");}
 	}
 };
 
@@ -210,7 +213,8 @@ class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 };
 %extend ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	~ShapeConstruct_CompBezierCurvesToBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurvesToBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurvesToBSplineCurve\n");}
 	}
 };
 
@@ -237,7 +241,8 @@ class ShapeConstruct_Curve {
 };
 %extend ShapeConstruct_Curve {
 	~ShapeConstruct_Curve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeConstruct_Curve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_Curve\n");}
 	}
 };
 
@@ -256,7 +261,8 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 };
 %extend ShapeConstruct_MakeTriangulation {
 	~ShapeConstruct_MakeTriangulation() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");}
 	}
 };
 
@@ -297,7 +303,13 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 	}
 };
 %extend ShapeConstruct_ProjectCurveOnSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ShapeConstruct_ProjectCurveOnSurface {
 	~ShapeConstruct_ProjectCurveOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ShapeConstruct_ProjectCurveOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_ProjectCurveOnSurface\n");}
 	}
 };

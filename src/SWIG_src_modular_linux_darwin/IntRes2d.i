@@ -150,7 +150,8 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 };
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
 	~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
 	}
 };
 
@@ -174,7 +175,8 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 };
 %extend Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
 	~Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");}
 	}
 };
 
@@ -227,7 +229,8 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 };
 %extend IntRes2d_SequenceOfIntersectionSegment {
 	~IntRes2d_SequenceOfIntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionSegment\n");}
 	}
 };
 
@@ -284,7 +287,8 @@ class IntRes2d_Transition {
 };
 %extend IntRes2d_Transition {
 	~IntRes2d_Transition() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_Transition\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_Transition\n");}
 	}
 };
 
@@ -329,7 +333,8 @@ class IntRes2d_IntersectionSegment {
 };
 %extend IntRes2d_IntersectionSegment {
 	~IntRes2d_IntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_IntersectionSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_IntersectionSegment\n");}
 	}
 };
 
@@ -370,7 +375,8 @@ class IntRes2d_IntersectionPoint {
 };
 %extend IntRes2d_IntersectionPoint {
 	~IntRes2d_IntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_IntersectionPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_IntersectionPoint\n");}
 	}
 };
 
@@ -391,8 +397,14 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 	}
 };
 %extend IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment {
 	~IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment\n");}
 	}
 };
 
@@ -417,7 +429,8 @@ class IntRes2d_Intersection {
 };
 %extend IntRes2d_Intersection {
 	~IntRes2d_Intersection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_Intersection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_Intersection\n");}
 	}
 };
 
@@ -462,7 +475,8 @@ class IntRes2d_Domain {
 };
 %extend IntRes2d_Domain {
 	~IntRes2d_Domain() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_Domain\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_Domain\n");}
 	}
 };
 
@@ -515,7 +529,8 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 };
 %extend IntRes2d_SequenceOfIntersectionPoint {
 	~IntRes2d_SequenceOfIntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionPoint\n");}
 	}
 };
 
@@ -536,7 +551,13 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_Se
 	}
 };
 %extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint {
 	~IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
 	}
 };

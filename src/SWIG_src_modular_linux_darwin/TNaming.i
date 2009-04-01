@@ -156,7 +156,8 @@ class Handle_TNaming_DeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 };
 %extend Handle_TNaming_DeltaOnRemoval {
 	~Handle_TNaming_DeltaOnRemoval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DeltaOnRemoval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DeltaOnRemoval\n");}
 	}
 };
 
@@ -180,7 +181,8 @@ class Handle_TNaming_ListNodeOfListOfNamedShape : public Handle_TCollection_MapN
 };
 %extend Handle_TNaming_ListNodeOfListOfNamedShape {
 	~Handle_TNaming_ListNodeOfListOfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_ListNodeOfListOfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_ListNodeOfListOfNamedShape\n");}
 	}
 };
 
@@ -204,7 +206,8 @@ class Handle_TNaming_TranslateTool : public Handle_MMgt_TShared {
 };
 %extend Handle_TNaming_TranslateTool {
 	~Handle_TNaming_TranslateTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_TranslateTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_TranslateTool\n");}
 	}
 };
 
@@ -228,7 +231,8 @@ class Handle_TNaming_DeltaOnModification : public Handle_TDF_DeltaOnModification
 };
 %extend Handle_TNaming_DeltaOnModification {
 	~Handle_TNaming_DeltaOnModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DeltaOnModification\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DeltaOnModification\n");}
 	}
 };
 
@@ -252,7 +256,8 @@ class Handle_TNaming_NamedShape : public Handle_TDF_Attribute {
 };
 %extend Handle_TNaming_NamedShape {
 	~Handle_TNaming_NamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_NamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_NamedShape\n");}
 	}
 };
 
@@ -276,7 +281,8 @@ class Handle_TNaming_Naming : public Handle_TDF_Attribute {
 };
 %extend Handle_TNaming_Naming {
 	~Handle_TNaming_Naming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_Naming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_Naming\n");}
 	}
 };
 
@@ -300,7 +306,8 @@ class Handle_TNaming_StdMapNodeOfMapOfNamedShape : public Handle_TCollection_Map
 };
 %extend Handle_TNaming_StdMapNodeOfMapOfNamedShape {
 	~Handle_TNaming_StdMapNodeOfMapOfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_StdMapNodeOfMapOfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_StdMapNodeOfMapOfNamedShape\n");}
 	}
 };
 
@@ -324,7 +331,8 @@ class Handle_TNaming_UsedShapes : public Handle_TDF_Attribute {
 };
 %extend Handle_TNaming_UsedShapes {
 	~Handle_TNaming_UsedShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_UsedShapes\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_UsedShapes\n");}
 	}
 };
 
@@ -348,7 +356,8 @@ class Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public H
 };
 %extend Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
 	~Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape\n");}
 	}
 };
 
@@ -372,7 +381,8 @@ class Handle_TNaming_ListNodeOfListOfMapOfShape : public Handle_TCollection_MapN
 };
 %extend Handle_TNaming_ListNodeOfListOfMapOfShape {
 	~Handle_TNaming_ListNodeOfListOfMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_ListNodeOfListOfMapOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_ListNodeOfListOfMapOfShape\n");}
 	}
 };
 
@@ -396,7 +406,8 @@ class Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public Handle_TColle
 };
 %extend Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
 	~Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet\n");}
 	}
 };
 
@@ -420,7 +431,8 @@ class Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public Handle_TCol
 };
 %extend Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
 	~Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape\n");}
 	}
 };
 
@@ -437,7 +449,8 @@ class TNaming_NamedShapeHasher {
 };
 %extend TNaming_NamedShapeHasher {
 	~TNaming_NamedShapeHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_NamedShapeHasher\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_NamedShapeHasher\n");}
 	}
 };
 
@@ -478,7 +491,8 @@ class TNaming_Tool {
 };
 %extend TNaming_Tool {
 	~TNaming_Tool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Tool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Tool\n");}
 	}
 };
 
@@ -519,7 +533,8 @@ class TNaming_Name {
 };
 %extend TNaming_Name {
 	~TNaming_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Name\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Name\n");}
 	}
 };
 
@@ -560,8 +575,14 @@ class TNaming_UsedShapes : public TDF_Attribute {
 	}
 };
 %extend TNaming_UsedShapes {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_UsedShapes {
 	~TNaming_UsedShapes() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_UsedShapes\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_UsedShapes\n");}
 	}
 };
 
@@ -606,8 +627,14 @@ class TNaming_TranslateTool : public MMgt_TShared {
 	}
 };
 %extend TNaming_TranslateTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_TranslateTool {
 	~TNaming_TranslateTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_TranslateTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_TranslateTool\n");}
 	}
 };
 
@@ -632,7 +659,8 @@ class TNaming_MapOfNamedShape : public TCollection_BasicMap {
 };
 %extend TNaming_MapOfNamedShape {
 	~TNaming_MapOfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_MapOfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_MapOfNamedShape\n");}
 	}
 };
 
@@ -681,7 +709,8 @@ class TNaming_ListOfMapOfShape {
 };
 %extend TNaming_ListOfMapOfShape {
 	~TNaming_ListOfMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListOfMapOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListOfMapOfShape\n");}
 	}
 };
 
@@ -704,7 +733,8 @@ class TNaming_IteratorOnShapesSet {
 };
 %extend TNaming_IteratorOnShapesSet {
 	~TNaming_IteratorOnShapesSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_IteratorOnShapesSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_IteratorOnShapesSet\n");}
 	}
 };
 
@@ -731,7 +761,8 @@ class TNaming_Builder {
 };
 %extend TNaming_Builder {
 	~TNaming_Builder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Builder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Builder\n");}
 	}
 };
 
@@ -758,7 +789,8 @@ class TNaming_RefShape {
 };
 %extend TNaming_RefShape {
 	~TNaming_RefShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_RefShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_RefShape\n");}
 	}
 };
 
@@ -779,8 +811,14 @@ class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 	}
 };
 %extend TNaming_StdMapNodeOfMapOfNamedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_StdMapNodeOfMapOfNamedShape {
 	~TNaming_StdMapNodeOfMapOfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_StdMapNodeOfMapOfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_StdMapNodeOfMapOfNamedShape\n");}
 	}
 };
 
@@ -817,7 +855,8 @@ class TNaming_ShapesSet {
 };
 %extend TNaming_ShapesSet {
 	~TNaming_ShapesSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ShapesSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ShapesSet\n");}
 	}
 };
 
@@ -866,7 +905,8 @@ class TNaming_ListOfIndexedDataMapOfShapeListOfShape {
 };
 %extend TNaming_ListOfIndexedDataMapOfShapeListOfShape {
 	~TNaming_ListOfIndexedDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListOfIndexedDataMapOfShapeListOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListOfIndexedDataMapOfShapeListOfShape\n");}
 	}
 };
 
@@ -891,7 +931,8 @@ class TNaming_Translator {
 };
 %extend TNaming_Translator {
 	~TNaming_Translator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Translator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Translator\n");}
 	}
 };
 
@@ -916,7 +957,8 @@ class TNaming_Selector {
 };
 %extend TNaming_Selector {
 	~TNaming_Selector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Selector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Selector\n");}
 	}
 };
 
@@ -937,7 +979,8 @@ class TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape : public TCollection_Ba
 };
 %extend TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape {
 	~TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape\n");}
 	}
 };
 
@@ -970,7 +1013,8 @@ class TNaming_Localizer {
 };
 %extend TNaming_Localizer {
 	~TNaming_Localizer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Localizer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Localizer\n");}
 	}
 };
 
@@ -999,7 +1043,8 @@ class TNaming_Iterator {
 };
 %extend TNaming_Iterator {
 	~TNaming_Iterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Iterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Iterator\n");}
 	}
 };
 
@@ -1018,7 +1063,8 @@ class TNaming_SameShapeIterator {
 };
 %extend TNaming_SameShapeIterator {
 	~TNaming_SameShapeIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_SameShapeIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_SameShapeIterator\n");}
 	}
 };
 
@@ -1039,8 +1085,14 @@ class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollect
 	}
 };
 %extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
 	~TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape\n");}
 	}
 };
 
@@ -1061,8 +1113,14 @@ class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 	}
 };
 %extend TNaming_DeltaOnRemoval {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_DeltaOnRemoval {
 	~TNaming_DeltaOnRemoval() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_DeltaOnRemoval\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_DeltaOnRemoval\n");}
 	}
 };
 
@@ -1085,7 +1143,8 @@ class TNaming_ListIteratorOfListOfNamedShape {
 };
 %extend TNaming_ListIteratorOfListOfNamedShape {
 	~TNaming_ListIteratorOfListOfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListIteratorOfListOfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListIteratorOfListOfNamedShape\n");}
 	}
 };
 
@@ -1104,7 +1163,8 @@ class TNaming_CopyShape {
 };
 %extend TNaming_CopyShape {
 	~TNaming_CopyShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_CopyShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_CopyShape\n");}
 	}
 };
 
@@ -1123,7 +1183,8 @@ class TNaming_NamingTool {
 };
 %extend TNaming_NamingTool {
 	~TNaming_NamingTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_NamingTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_NamingTool\n");}
 	}
 };
 
@@ -1146,8 +1207,14 @@ class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode 
 	}
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
 	~TNaming_DataMapNodeOfDataMapOfShapeShapesSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_DataMapNodeOfDataMapOfShapeShapesSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapNodeOfDataMapOfShapeShapesSet\n");}
 	}
 };
 
@@ -1208,8 +1275,14 @@ class TNaming_NamedShape : public TDF_Attribute {
 	}
 };
 %extend TNaming_NamedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_NamedShape {
 	~TNaming_NamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_NamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_NamedShape\n");}
 	}
 };
 
@@ -1230,8 +1303,14 @@ class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 	}
 };
 %extend TNaming_DeltaOnModification {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_DeltaOnModification {
 	~TNaming_DeltaOnModification() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_DeltaOnModification\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_DeltaOnModification\n");}
 	}
 };
 
@@ -1252,8 +1331,14 @@ class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
 	}
 };
 %extend TNaming_ListNodeOfListOfNamedShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_ListNodeOfListOfNamedShape {
 	~TNaming_ListNodeOfListOfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListNodeOfListOfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListNodeOfListOfNamedShape\n");}
 	}
 };
 
@@ -1274,8 +1359,14 @@ class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 	}
 };
 %extend TNaming_ListNodeOfListOfMapOfShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_ListNodeOfListOfMapOfShape {
 	~TNaming_ListNodeOfListOfMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListNodeOfListOfMapOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListNodeOfListOfMapOfShape\n");}
 	}
 };
 
@@ -1314,7 +1405,8 @@ class TNaming_Scope {
 };
 %extend TNaming_Scope {
 	~TNaming_Scope() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Scope\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Scope\n");}
 	}
 };
 
@@ -1337,7 +1429,8 @@ class TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
 };
 %extend TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
 	~TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape\n");}
 	}
 };
 
@@ -1386,7 +1479,8 @@ class TNaming_ListOfNamedShape {
 };
 %extend TNaming_ListOfNamedShape {
 	~TNaming_ListOfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListOfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListOfNamedShape\n");}
 	}
 };
 
@@ -1409,7 +1503,8 @@ class TNaming_ListIteratorOfListOfMapOfShape {
 };
 %extend TNaming_ListIteratorOfListOfMapOfShape {
 	~TNaming_ListIteratorOfListOfMapOfShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_ListIteratorOfListOfMapOfShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_ListIteratorOfListOfMapOfShape\n");}
 	}
 };
 
@@ -1440,7 +1535,8 @@ class TNaming_OldShapeIterator {
 };
 %extend TNaming_OldShapeIterator {
 	~TNaming_OldShapeIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_OldShapeIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_OldShapeIterator\n");}
 	}
 };
 
@@ -1459,7 +1555,8 @@ class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator
 };
 %extend TNaming_MapIteratorOfMapOfNamedShape {
 	~TNaming_MapIteratorOfMapOfNamedShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_MapIteratorOfMapOfNamedShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_MapIteratorOfMapOfNamedShape\n");}
 	}
 };
 
@@ -1482,8 +1579,14 @@ class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNod
 	}
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
 	~TNaming_DataMapNodeOfDataMapOfShapePtrRefShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_DataMapNodeOfDataMapOfShapePtrRefShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapNodeOfDataMapOfShapePtrRefShape\n");}
 	}
 };
 
@@ -1504,7 +1607,8 @@ class TNaming_DataMapIteratorOfDataMapOfShapeShapesSet : public TCollection_Basi
 };
 %extend TNaming_DataMapIteratorOfDataMapOfShapeShapesSet {
 	~TNaming_DataMapIteratorOfDataMapOfShapeShapesSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_DataMapIteratorOfDataMapOfShapeShapesSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapIteratorOfDataMapOfShapeShapesSet\n");}
 	}
 };
 
@@ -1537,7 +1641,8 @@ class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 };
 %extend TNaming_DataMapOfShapePtrRefShape {
 	~TNaming_DataMapOfShapePtrRefShape() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_DataMapOfShapePtrRefShape\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapOfShapePtrRefShape\n");}
 	}
 };
 
@@ -1568,7 +1673,8 @@ class TNaming_NewShapeIterator {
 };
 %extend TNaming_NewShapeIterator {
 	~TNaming_NewShapeIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_NewShapeIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_NewShapeIterator\n");}
 	}
 };
 
@@ -1617,8 +1723,14 @@ class TNaming_Naming : public TDF_Attribute {
 	}
 };
 %extend TNaming_Naming {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend TNaming_Naming {
 	~TNaming_Naming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_Naming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_Naming\n");}
 	}
 };
 
@@ -1653,7 +1765,8 @@ class TNaming {
 };
 %extend TNaming {
 	~TNaming() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming\n");}
 	}
 };
 
@@ -1686,6 +1799,7 @@ class TNaming_DataMapOfShapeShapesSet : public TCollection_BasicMap {
 };
 %extend TNaming_DataMapOfShapeShapesSet {
 	~TNaming_DataMapOfShapeShapesSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of TNaming_DataMapOfShapeShapesSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapOfShapeShapesSet\n");}
 	}
 };

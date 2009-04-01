@@ -155,7 +155,8 @@ class GCPnts_TangentialDeflection {
 };
 %extend GCPnts_TangentialDeflection {
 	~GCPnts_TangentialDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCPnts_TangentialDeflection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCPnts_TangentialDeflection\n");}
 	}
 };
 
@@ -208,7 +209,8 @@ class GCPnts_UniformAbscissa {
 };
 %extend GCPnts_UniformAbscissa {
 	~GCPnts_UniformAbscissa() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCPnts_UniformAbscissa\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCPnts_UniformAbscissa\n");}
 	}
 };
 
@@ -247,7 +249,8 @@ class GCPnts_UniformDeflection {
 };
 %extend GCPnts_UniformDeflection {
 	~GCPnts_UniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCPnts_UniformDeflection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCPnts_UniformDeflection\n");}
 	}
 };
 
@@ -282,7 +285,8 @@ class GCPnts_QuasiUniformAbscissa {
 };
 %extend GCPnts_QuasiUniformAbscissa {
 	~GCPnts_QuasiUniformAbscissa() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformAbscissa\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformAbscissa\n");}
 	}
 };
 
@@ -321,7 +325,8 @@ class GCPnts_QuasiUniformDeflection {
 };
 %extend GCPnts_QuasiUniformDeflection {
 	~GCPnts_QuasiUniformDeflection() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformDeflection\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformDeflection\n");}
 	}
 };
 
@@ -370,6 +375,7 @@ class GCPnts_AbscissaPoint {
 };
 %extend GCPnts_AbscissaPoint {
 	~GCPnts_AbscissaPoint() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GCPnts_AbscissaPoint\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GCPnts_AbscissaPoint\n");}
 	}
 };

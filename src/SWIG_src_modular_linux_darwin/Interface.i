@@ -165,7 +165,8 @@ class Handle_Interface_EntityCluster : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_EntityCluster {
 	~Handle_Interface_EntityCluster() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_EntityCluster\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_EntityCluster\n");}
 	}
 };
 
@@ -189,7 +190,8 @@ class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_ReportEntity {
 	~Handle_Interface_ReportEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_ReportEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ReportEntity\n");}
 	}
 };
 
@@ -213,7 +215,8 @@ class Handle_Interface_GlobalNodeOfReaderLib : public Handle_Standard_Transient 
 };
 %extend Handle_Interface_GlobalNodeOfReaderLib {
 	~Handle_Interface_GlobalNodeOfReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfReaderLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfReaderLib\n");}
 	}
 };
 
@@ -237,7 +240,8 @@ class Handle_Interface_ParamSet : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_ParamSet {
 	~Handle_Interface_ParamSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamSet\n");}
 	}
 };
 
@@ -261,7 +265,8 @@ class Handle_Interface_ParamList : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_ParamList {
 	~Handle_Interface_ParamList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamList\n");}
 	}
 };
 
@@ -285,7 +290,8 @@ class Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient : public Handle_TC
 };
 %extend Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient {
 	~Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
 	}
 };
 
@@ -309,7 +315,8 @@ class Handle_Interface_InterfaceError : public Handle_Standard_Failure {
 };
 %extend Handle_Interface_InterfaceError {
 	~Handle_Interface_InterfaceError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceError\n");}
 	}
 };
 
@@ -333,7 +340,8 @@ class Handle_Interface_CheckFailure : public Handle_Interface_InterfaceError {
 };
 %extend Handle_Interface_CheckFailure {
 	~Handle_Interface_CheckFailure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_CheckFailure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CheckFailure\n");}
 	}
 };
 
@@ -357,7 +365,8 @@ class Handle_Interface_Check : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_Check {
 	~Handle_Interface_Check() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_Check\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_Check\n");}
 	}
 };
 
@@ -381,7 +390,8 @@ class Handle_Interface_SignType : public Handle_MoniTool_SignText {
 };
 %extend Handle_Interface_SignType {
 	~Handle_Interface_SignType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignType\n");}
 	}
 };
 
@@ -405,7 +415,8 @@ class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_CopyControl {
 	~Handle_Interface_CopyControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyControl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyControl\n");}
 	}
 };
 
@@ -429,7 +440,8 @@ class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_GeneralModule {
 	~Handle_Interface_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_GeneralModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GeneralModule\n");}
 	}
 };
 
@@ -453,7 +465,8 @@ class Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public Handle_T
 };
 %extend Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
 	~Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");}
 	}
 };
 
@@ -477,7 +490,8 @@ class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_NodeOfReaderLib {
 	~Handle_Interface_NodeOfReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfReaderLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfReaderLib\n");}
 	}
 };
 
@@ -501,7 +515,8 @@ class Handle_Interface_TypedValue : public Handle_MoniTool_TypedValue {
 };
 %extend Handle_Interface_TypedValue {
 	~Handle_Interface_TypedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_TypedValue\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_TypedValue\n");}
 	}
 };
 
@@ -525,7 +540,8 @@ class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
 };
 %extend Handle_Interface_CopyMap {
 	~Handle_Interface_CopyMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyMap\n");}
 	}
 };
 
@@ -549,7 +565,8 @@ class Handle_Interface_ReaderModule : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_ReaderModule {
 	~Handle_Interface_ReaderModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_ReaderModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ReaderModule\n");}
 	}
 };
 
@@ -573,7 +590,8 @@ class Handle_Interface_GTool : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_GTool {
 	~Handle_Interface_GTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_GTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GTool\n");}
 	}
 };
 
@@ -597,7 +615,8 @@ class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceErro
 };
 %extend Handle_Interface_InterfaceMismatch {
 	~Handle_Interface_InterfaceMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceMismatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceMismatch\n");}
 	}
 };
 
@@ -621,7 +640,8 @@ class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_InterfaceModel {
 	~Handle_Interface_InterfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceModel\n");}
 	}
 };
 
@@ -645,7 +665,8 @@ class Handle_Interface_SequenceNodeOfSequenceOfCheck : public Handle_TCollection
 };
 %extend Handle_Interface_SequenceNodeOfSequenceOfCheck {
 	~Handle_Interface_SequenceNodeOfSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_SequenceNodeOfSequenceOfCheck\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SequenceNodeOfSequenceOfCheck\n");}
 	}
 };
 
@@ -669,7 +690,8 @@ class Handle_Interface_HSequenceOfCheck : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_HSequenceOfCheck {
 	~Handle_Interface_HSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_HSequenceOfCheck\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HSequenceOfCheck\n");}
 	}
 };
 
@@ -693,7 +715,8 @@ class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_NodeOfGeneralLib {
 	~Handle_Interface_NodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfGeneralLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfGeneralLib\n");}
 	}
 };
 
@@ -717,7 +740,8 @@ class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_FileReaderData {
 	~Handle_Interface_FileReaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_FileReaderData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_FileReaderData\n");}
 	}
 };
 
@@ -741,7 +765,8 @@ class Handle_Interface_IntVal : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_IntVal {
 	~Handle_Interface_IntVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_IntVal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_IntVal\n");}
 	}
 };
 
@@ -765,7 +790,8 @@ class Handle_Interface_HArray1OfHAsciiString : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_HArray1OfHAsciiString {
 	~Handle_Interface_HArray1OfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_HArray1OfHAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HArray1OfHAsciiString\n");}
 	}
 };
 
@@ -789,7 +815,8 @@ class Handle_Interface_Static : public Handle_Interface_TypedValue {
 };
 %extend Handle_Interface_Static {
 	~Handle_Interface_Static() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_Static\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_Static\n");}
 	}
 };
 
@@ -813,7 +840,8 @@ class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient
 };
 %extend Handle_Interface_GlobalNodeOfGeneralLib {
 	~Handle_Interface_GlobalNodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfGeneralLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfGeneralLib\n");}
 	}
 };
 
@@ -837,7 +865,8 @@ class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
 };
 %extend Handle_Interface_SignLabel {
 	~Handle_Interface_SignLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignLabel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignLabel\n");}
 	}
 };
 
@@ -861,7 +890,8 @@ class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_UndefinedContent {
 	~Handle_Interface_UndefinedContent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_UndefinedContent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_UndefinedContent\n");}
 	}
 };
 
@@ -885,7 +915,8 @@ class Handle_Interface_HGraph : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_HGraph {
 	~Handle_Interface_HGraph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_HGraph\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HGraph\n");}
 	}
 };
 
@@ -909,7 +940,8 @@ class Handle_Interface_Protocol : public Handle_MMgt_TShared {
 };
 %extend Handle_Interface_Protocol {
 	~Handle_Interface_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_Protocol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_Protocol\n");}
 	}
 };
 
@@ -933,7 +965,8 @@ class Handle_Interface_DataMapNodeOfDataMapOfTransientInteger : public Handle_TC
 };
 %extend Handle_Interface_DataMapNodeOfDataMapOfTransientInteger {
 	~Handle_Interface_DataMapNodeOfDataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
 	}
 };
 
@@ -966,7 +999,8 @@ class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 };
 %extend Interface_IndexedMapOfAsciiString {
 	~Interface_IndexedMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapOfAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapOfAsciiString\n");}
 	}
 };
 
@@ -993,8 +1027,14 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 	}
 };
 %extend Interface_GlobalNodeOfReaderLib {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_GlobalNodeOfReaderLib {
 	~Interface_GlobalNodeOfReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfReaderLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfReaderLib\n");}
 	}
 };
 
@@ -1029,7 +1069,8 @@ class Interface_ReaderLib {
 };
 %extend Interface_ReaderLib {
 	~Interface_ReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_ReaderLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_ReaderLib\n");}
 	}
 };
 
@@ -1062,7 +1103,8 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 };
 %extend Interface_DataMapOfIntegerTransient {
 	~Interface_DataMapOfIntegerTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfIntegerTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfIntegerTransient\n");}
 	}
 };
 
@@ -1109,8 +1151,14 @@ class Interface_GeneralModule : public MMgt_TShared {
 	}
 };
 %extend Interface_GeneralModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_GeneralModule {
 	~Interface_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_GeneralModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_GeneralModule\n");}
 	}
 };
 
@@ -1133,8 +1181,14 @@ class Interface_CopyControl : public MMgt_TShared {
 	}
 };
 %extend Interface_CopyControl {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_CopyControl {
 	~Interface_CopyControl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_CopyControl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_CopyControl\n");}
 	}
 };
 
@@ -1201,8 +1255,14 @@ class Interface_FileReaderData : public MMgt_TShared {
 	}
 };
 %extend Interface_FileReaderData {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_FileReaderData {
 	~Interface_FileReaderData() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_FileReaderData\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_FileReaderData\n");}
 	}
 };
 
@@ -1223,7 +1283,8 @@ class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_
 };
 %extend Interface_DataMapIteratorOfDataMapOfIntegerTransient {
 	~Interface_DataMapIteratorOfDataMapOfIntegerTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfIntegerTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfIntegerTransient\n");}
 	}
 };
 
@@ -1250,8 +1311,14 @@ class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
 	}
 };
 %extend Interface_GlobalNodeOfGeneralLib {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_GlobalNodeOfGeneralLib {
 	~Interface_GlobalNodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfGeneralLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfGeneralLib\n");}
 	}
 };
 
@@ -1282,7 +1349,8 @@ class Interface_ShareFlags {
 };
 %extend Interface_ShareFlags {
 	~Interface_ShareFlags() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_ShareFlags\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_ShareFlags\n");}
 	}
 };
 
@@ -1305,8 +1373,14 @@ class Interface_ReaderModule : public MMgt_TShared {
 	}
 };
 %extend Interface_ReaderModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_ReaderModule {
 	~Interface_ReaderModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_ReaderModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_ReaderModule\n");}
 	}
 };
 
@@ -1329,8 +1403,14 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 	}
 };
 %extend Interface_DataMapNodeOfDataMapOfTransientInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_DataMapNodeOfDataMapOfTransientInteger {
 	~Interface_DataMapNodeOfDataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
 	}
 };
 
@@ -1355,8 +1435,14 @@ class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_Map
 	}
 };
 %extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_IndexedMapNodeOfIndexedMapOfAsciiString {
 	~Interface_IndexedMapNodeOfIndexedMapOfAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_IndexedMapNodeOfIndexedMapOfAsciiString\n");}
 	}
 };
 
@@ -1379,8 +1465,14 @@ class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapN
 	}
 };
 %extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_DataMapNodeOfDataMapOfIntegerTransient {
 	~Interface_DataMapNodeOfDataMapOfIntegerTransient() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
 	}
 };
 
@@ -1407,8 +1499,14 @@ class Interface_CopyMap : public Interface_CopyControl {
 	}
 };
 %extend Interface_CopyMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_CopyMap {
 	~Interface_CopyMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_CopyMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_CopyMap\n");}
 	}
 };
 
@@ -1425,7 +1523,8 @@ class Interface_MapAsciiStringHasher {
 };
 %extend Interface_MapAsciiStringHasher {
 	~Interface_MapAsciiStringHasher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_MapAsciiStringHasher\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_MapAsciiStringHasher\n");}
 	}
 };
 
@@ -1474,7 +1573,8 @@ class Interface_CopyTool {
 };
 %extend Interface_CopyTool {
 	~Interface_CopyTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_CopyTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_CopyTool\n");}
 	}
 };
 
@@ -1513,7 +1613,8 @@ class Interface_Array1OfFileParameter {
 };
 %extend Interface_Array1OfFileParameter {
 	~Interface_Array1OfFileParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_Array1OfFileParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Array1OfFileParameter\n");}
 	}
 };
 
@@ -1548,7 +1649,8 @@ class Interface_GeneralLib {
 };
 %extend Interface_GeneralLib {
 	~Interface_GeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_GeneralLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_GeneralLib\n");}
 	}
 };
 
@@ -1585,8 +1687,14 @@ class Interface_ParamList : public MMgt_TShared {
 	}
 };
 %extend Interface_ParamList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_ParamList {
 	~Interface_ParamList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_ParamList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_ParamList\n");}
 	}
 };
 
@@ -1623,7 +1731,8 @@ class Interface_EntityList {
 };
 %extend Interface_EntityList {
 	~Interface_EntityList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_EntityList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_EntityList\n");}
 	}
 };
 
@@ -1668,7 +1777,8 @@ class Interface_ShareTool {
 };
 %extend Interface_ShareTool {
 	~Interface_ShareTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_ShareTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_ShareTool\n");}
 	}
 };
 
@@ -1731,8 +1841,14 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 	}
 };
 %extend Interface_HSequenceOfCheck {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_HSequenceOfCheck {
 	~Interface_HSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_HSequenceOfCheck\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_HSequenceOfCheck\n");}
 	}
 };
 
@@ -1757,8 +1873,14 @@ class Interface_TypedValue : public MoniTool_TypedValue {
 	}
 };
 %extend Interface_TypedValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_TypedValue {
 	~Interface_TypedValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_TypedValue\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_TypedValue\n");}
 	}
 };
 
@@ -1825,8 +1947,14 @@ class Interface_Static : public Interface_TypedValue {
 	}
 };
 %extend Interface_Static {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_Static {
 	~Interface_Static() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_Static\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Static\n");}
 	}
 };
 
@@ -1857,7 +1985,8 @@ class Interface_FloatWriter {
 };
 %extend Interface_FloatWriter {
 	~Interface_FloatWriter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_FloatWriter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_FloatWriter\n");}
 	}
 };
 
@@ -1880,8 +2009,14 @@ class Interface_IntVal : public MMgt_TShared {
 	}
 };
 %extend Interface_IntVal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_IntVal {
 	~Interface_IntVal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_IntVal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_IntVal\n");}
 	}
 };
 
@@ -1908,8 +2043,14 @@ class Interface_NodeOfGeneralLib : public MMgt_TShared {
 	}
 };
 %extend Interface_NodeOfGeneralLib {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_NodeOfGeneralLib {
 	~Interface_NodeOfGeneralLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_NodeOfGeneralLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_NodeOfGeneralLib\n");}
 	}
 };
 
@@ -1936,8 +2077,14 @@ class Interface_InterfaceError : public Standard_Failure {
 	}
 };
 %extend Interface_InterfaceError {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_InterfaceError {
 	~Interface_InterfaceError() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_InterfaceError\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_InterfaceError\n");}
 	}
 };
 
@@ -1958,7 +2105,8 @@ class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_
 };
 %extend Interface_DataMapIteratorOfDataMapOfTransientInteger {
 	~Interface_DataMapIteratorOfDataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfTransientInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfTransientInteger\n");}
 	}
 };
 
@@ -2009,8 +2157,14 @@ class Interface_UndefinedContent : public MMgt_TShared {
 	}
 };
 %extend Interface_UndefinedContent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_UndefinedContent {
 	~Interface_UndefinedContent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_UndefinedContent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_UndefinedContent\n");}
 	}
 };
 
@@ -2059,7 +2213,8 @@ class Interface_IntList {
 };
 %extend Interface_IntList {
 	~Interface_IntList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_IntList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_IntList\n");}
 	}
 };
 
@@ -2080,8 +2235,14 @@ class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 	}
 };
 %extend Interface_SequenceNodeOfSequenceOfCheck {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_SequenceNodeOfSequenceOfCheck {
 	~Interface_SequenceNodeOfSequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_SequenceNodeOfSequenceOfCheck\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_SequenceNodeOfSequenceOfCheck\n");}
 	}
 };
 
@@ -2132,7 +2293,8 @@ class Interface_BitMap {
 };
 %extend Interface_BitMap {
 	~Interface_BitMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_BitMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_BitMap\n");}
 	}
 };
 
@@ -2187,7 +2349,8 @@ class Interface_FileReaderTool {
 };
 %extend Interface_FileReaderTool {
 	~Interface_FileReaderTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_FileReaderTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_FileReaderTool\n");}
 	}
 };
 
@@ -2226,8 +2389,14 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 	}
 };
 %extend Interface_HArray1OfHAsciiString {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_HArray1OfHAsciiString {
 	~Interface_HArray1OfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_HArray1OfHAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_HArray1OfHAsciiString\n");}
 	}
 };
 
@@ -2268,7 +2437,8 @@ class Interface_CheckTool {
 };
 %extend Interface_CheckTool {
 	~Interface_CheckTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_CheckTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_CheckTool\n");}
 	}
 };
 
@@ -2371,7 +2541,8 @@ class Interface_Graph {
 };
 %extend Interface_Graph {
 	~Interface_Graph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_Graph\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Graph\n");}
 	}
 };
 
@@ -2394,8 +2565,14 @@ class Interface_SignType : public MoniTool_SignText {
 	}
 };
 %extend Interface_SignType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_SignType {
 	~Interface_SignType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_SignType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_SignType\n");}
 	}
 };
 
@@ -2456,7 +2633,8 @@ class Interface_MSG {
 };
 %extend Interface_MSG {
 	~Interface_MSG() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_MSG\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_MSG\n");}
 	}
 };
 
@@ -2495,8 +2673,14 @@ class Interface_ReportEntity : public MMgt_TShared {
 	}
 };
 %extend Interface_ReportEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_ReportEntity {
 	~Interface_ReportEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_ReportEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_ReportEntity\n");}
 	}
 };
 
@@ -2519,8 +2703,14 @@ class Interface_SignLabel : public MoniTool_SignText {
 	}
 };
 %extend Interface_SignLabel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_SignLabel {
 	~Interface_SignLabel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_SignLabel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_SignLabel\n");}
 	}
 };
 
@@ -2551,8 +2741,14 @@ class Interface_HGraph : public MMgt_TShared {
 	}
 };
 %extend Interface_HGraph {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_HGraph {
 	~Interface_HGraph() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_HGraph\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_HGraph\n");}
 	}
 };
 
@@ -2617,7 +2813,8 @@ class Interface_CheckIterator {
 };
 %extend Interface_CheckIterator {
 	~Interface_CheckIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_CheckIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_CheckIterator\n");}
 	}
 };
 
@@ -2664,8 +2861,14 @@ class Interface_Protocol : public MMgt_TShared {
 	}
 };
 %extend Interface_Protocol {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_Protocol {
 	~Interface_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_Protocol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Protocol\n");}
 	}
 };
 
@@ -2718,7 +2921,8 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 };
 %extend Interface_SequenceOfCheck {
 	~Interface_SequenceOfCheck() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_SequenceOfCheck\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_SequenceOfCheck\n");}
 	}
 };
 
@@ -2821,8 +3025,14 @@ class Interface_Check : public MMgt_TShared {
 	}
 };
 %extend Interface_Check {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_Check {
 	~Interface_Check() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_Check\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Check\n");}
 	}
 };
 
@@ -2863,8 +3073,14 @@ class Interface_GTool : public MMgt_TShared {
 	}
 };
 %extend Interface_GTool {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_GTool {
 	~Interface_GTool() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_GTool\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_GTool\n");}
 	}
 };
 
@@ -2901,7 +3117,8 @@ class Interface_Category {
 };
 %extend Interface_Category {
 	~Interface_Category() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_Category\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Category\n");}
 	}
 };
 
@@ -2942,7 +3159,8 @@ class Interface_EntityIterator {
 };
 %extend Interface_EntityIterator {
 	~Interface_EntityIterator() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_EntityIterator\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_EntityIterator\n");}
 	}
 };
 
@@ -2971,7 +3189,8 @@ class Interface_GraphContent : public Interface_EntityIterator {
 };
 %extend Interface_GraphContent {
 	~Interface_GraphContent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_GraphContent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_GraphContent\n");}
 	}
 };
 
@@ -3004,7 +3223,8 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 };
 %extend Interface_DataMapOfTransientInteger {
 	~Interface_DataMapOfTransientInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfTransientInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfTransientInteger\n");}
 	}
 };
 
@@ -3141,8 +3361,14 @@ class Interface_InterfaceModel : public MMgt_TShared {
 	}
 };
 %extend Interface_InterfaceModel {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_InterfaceModel {
 	~Interface_InterfaceModel() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_InterfaceModel\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_InterfaceModel\n");}
 	}
 };
 
@@ -3169,8 +3395,14 @@ class Interface_CheckFailure : public Interface_InterfaceError {
 	}
 };
 %extend Interface_CheckFailure {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_CheckFailure {
 	~Interface_CheckFailure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_CheckFailure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_CheckFailure\n");}
 	}
 };
 
@@ -3209,7 +3441,8 @@ class Interface_Array1OfHAsciiString {
 };
 %extend Interface_Array1OfHAsciiString {
 	~Interface_Array1OfHAsciiString() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_Array1OfHAsciiString\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_Array1OfHAsciiString\n");}
 	}
 };
 
@@ -3236,8 +3469,14 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 	}
 };
 %extend Interface_NodeOfReaderLib {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_NodeOfReaderLib {
 	~Interface_NodeOfReaderLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_NodeOfReaderLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_NodeOfReaderLib\n");}
 	}
 };
 
@@ -3264,8 +3503,14 @@ class Interface_InterfaceMismatch : public Interface_InterfaceError {
 	}
 };
 %extend Interface_InterfaceMismatch {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_InterfaceMismatch {
 	~Interface_InterfaceMismatch() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_InterfaceMismatch\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_InterfaceMismatch\n");}
 	}
 };
 
@@ -3308,7 +3553,8 @@ class Interface_LineBuffer {
 };
 %extend Interface_LineBuffer {
 	~Interface_LineBuffer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_LineBuffer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_LineBuffer\n");}
 	}
 };
 
@@ -3343,8 +3589,14 @@ class Interface_ParamSet : public MMgt_TShared {
 	}
 };
 %extend Interface_ParamSet {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_ParamSet {
 	~Interface_ParamSet() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_ParamSet\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_ParamSet\n");}
 	}
 };
 
@@ -3383,8 +3635,14 @@ class Interface_EntityCluster : public MMgt_TShared {
 	}
 };
 %extend Interface_EntityCluster {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Interface_EntityCluster {
 	~Interface_EntityCluster() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_EntityCluster\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_EntityCluster\n");}
 	}
 };
 
@@ -3413,6 +3671,7 @@ class Interface_FileParameter {
 };
 %extend Interface_FileParameter {
 	~Interface_FileParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Interface_FileParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Interface_FileParameter\n");}
 	}
 };

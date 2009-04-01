@@ -131,7 +131,8 @@ class Handle_PColPGeom_HArray1OfSurface : public Handle_Standard_Persistent {
 };
 %extend Handle_PColPGeom_HArray1OfSurface {
 	~Handle_PColPGeom_HArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfSurface\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persisten
 };
 %extend Handle_PColPGeom_HArray2OfBezierSurface {
 	~Handle_PColPGeom_HArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBezierSurface\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public Handle
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_PColPGeom_HArray1OfBoundedSurface : public Handle_Standard_Persiste
 };
 %extend Handle_PColPGeom_HArray1OfBoundedSurface {
 	~Handle_PColPGeom_HArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBoundedSurface\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_PColPGeom_HArray2OfBoundedSurface : public Handle_Standard_Persiste
 };
 %extend Handle_PColPGeom_HArray2OfBoundedSurface {
 	~Handle_PColPGeom_HArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBoundedSurface\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public Handl
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_PColPGeom_HArray2OfBSplineSurface : public Handle_Standard_Persiste
 };
 %extend Handle_PColPGeom_HArray2OfBSplineSurface {
 	~Handle_PColPGeom_HArray2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBSplineSurface\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_PColPGeom_HArray1OfBSplineCurve : public Handle_Standard_Persistent
 };
 %extend Handle_PColPGeom_HArray1OfBSplineCurve {
 	~Handle_PColPGeom_HArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent 
 };
 %extend Handle_PColPGeom_HArray1OfBezierCurve {
 	~Handle_PColPGeom_HArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBezierCurve\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_PColPGeom_HArray1OfCurve : public Handle_Standard_Persistent {
 };
 %extend Handle_PColPGeom_HArray1OfCurve {
 	~Handle_PColPGeom_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfCurve\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public Handl
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface\n");}
 	}
 };
 
@@ -395,7 +406,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handle_
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -419,7 +431,8 @@ class Handle_PColPGeom_HArray1OfBoundedCurve : public Handle_Standard_Persistent
 };
 %extend Handle_PColPGeom_HArray1OfBoundedCurve {
 	~Handle_PColPGeom_HArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBoundedCurve\n");}
 	}
 };
 
@@ -443,7 +456,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public Handle_PStan
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface\n");}
 	}
 };
 
@@ -467,7 +481,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle_P
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve\n");}
 	}
 };
 
@@ -491,7 +506,8 @@ class Handle_PColPGeom_HArray2OfSurface : public Handle_Standard_Persistent {
 };
 %extend Handle_PColPGeom_HArray2OfSurface {
 	~Handle_PColPGeom_HArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfSurface\n");}
 	}
 };
 
@@ -515,7 +531,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handle_
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve\n");}
 	}
 };
 
@@ -539,7 +556,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStanda
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve\n");}
 	}
 };
 
@@ -563,7 +581,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public Handle_PStan
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface\n");}
 	}
 };
 
@@ -587,7 +606,8 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public Handl
 };
 %extend Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
 	~Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface\n");}
 	}
 };
 
@@ -618,8 +638,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public PStandard_Ar
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
 	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface\n");}
 	}
 };
 
@@ -638,7 +664,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -667,7 +694,8 @@ class PColPGeom_FieldOfHArray1OfCurve : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray1OfCurve {
 	~PColPGeom_FieldOfHArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfCurve\n");}
 	}
 };
 
@@ -716,8 +744,14 @@ class PColPGeom_HArray1OfBezierCurve : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray1OfBezierCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray1OfBezierCurve {
 	~PColPGeom_HArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfBezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfBezierCurve\n");}
 	}
 };
 
@@ -766,8 +800,14 @@ class PColPGeom_HArray1OfCurve : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray1OfCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray1OfCurve {
 	~PColPGeom_HArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfCurve\n");}
 	}
 };
 
@@ -816,8 +856,14 @@ class PColPGeom_HArray1OfSurface : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray1OfSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray1OfSurface {
 	~PColPGeom_HArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfSurface\n");}
 	}
 };
 
@@ -848,8 +894,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public PStandard_Ar
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {
 	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface\n");}
 	}
 };
 
@@ -880,8 +932,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public PStandard_Arr
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
 	~PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");}
 	}
 };
 
@@ -912,8 +970,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode {
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
 	~PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve\n");}
 	}
 };
 
@@ -932,7 +996,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface\n");}
 	}
 };
 
@@ -961,7 +1026,8 @@ class PColPGeom_FieldOfHArray2OfBezierSurface : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray2OfBezierSurface {
 	~PColPGeom_FieldOfHArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBezierSurface\n");}
 	}
 };
 
@@ -990,7 +1056,8 @@ class PColPGeom_FieldOfHArray2OfBoundedSurface : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray2OfBoundedSurface {
 	~PColPGeom_FieldOfHArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBoundedSurface\n");}
 	}
 };
 
@@ -1021,8 +1088,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Array
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
 	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve\n");}
 	}
 };
 
@@ -1053,8 +1126,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public PStandard_ArrayNode
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
 	~PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface\n");}
 	}
 };
 
@@ -1085,8 +1164,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public PStandard_ArrayNode
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {
 	~PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface\n");}
 	}
 };
 
@@ -1135,8 +1220,14 @@ class PColPGeom_HArray1OfBSplineCurve : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray1OfBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray1OfBSplineCurve {
 	~PColPGeom_HArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -1165,7 +1256,8 @@ class PColPGeom_FieldOfHArray2OfBSplineSurface : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray2OfBSplineSurface {
 	~PColPGeom_FieldOfHArray2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBSplineSurface\n");}
 	}
 };
 
@@ -1196,8 +1288,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public PStandard_Ar
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
 	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
 	}
 };
 
@@ -1216,7 +1314,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface\n");}
 	}
 };
 
@@ -1235,7 +1334,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface\n");}
 	}
 };
 
@@ -1266,8 +1366,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Arra
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
 	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -1296,7 +1402,8 @@ class PColPGeom_FieldOfHArray1OfBSplineCurve : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray1OfBSplineCurve {
 	~PColPGeom_FieldOfHArray1OfBSplineCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBSplineCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBSplineCurve\n");}
 	}
 };
 
@@ -1315,7 +1422,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve\n");}
 	}
 };
 
@@ -1334,7 +1442,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface\n");}
 	}
 };
 
@@ -1363,7 +1472,8 @@ class PColPGeom_FieldOfHArray2OfSurface : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray2OfSurface {
 	~PColPGeom_FieldOfHArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfSurface\n");}
 	}
 };
 
@@ -1426,8 +1536,14 @@ class PColPGeom_HArray2OfBezierSurface : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray2OfBezierSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray2OfBezierSurface {
 	~PColPGeom_HArray2OfBezierSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfBezierSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfBezierSurface\n");}
 	}
 };
 
@@ -1476,8 +1592,14 @@ class PColPGeom_HArray1OfBoundedSurface : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray1OfBoundedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray1OfBoundedSurface {
 	~PColPGeom_HArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfBoundedSurface\n");}
 	}
 };
 
@@ -1540,8 +1662,14 @@ class PColPGeom_HArray2OfBoundedSurface : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray2OfBoundedSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray2OfBoundedSurface {
 	~PColPGeom_HArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfBoundedSurface\n");}
 	}
 };
 
@@ -1560,7 +1688,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve\n");}
 	}
 };
 
@@ -1609,8 +1738,14 @@ class PColPGeom_HArray1OfBoundedCurve : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray1OfBoundedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray1OfBoundedCurve {
 	~PColPGeom_HArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfBoundedCurve\n");}
 	}
 };
 
@@ -1639,7 +1774,8 @@ class PColPGeom_FieldOfHArray1OfSurface : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray1OfSurface {
 	~PColPGeom_FieldOfHArray1OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfSurface\n");}
 	}
 };
 
@@ -1702,8 +1838,14 @@ class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray2OfBSplineSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray2OfBSplineSurface {
 	~PColPGeom_HArray2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfBSplineSurface\n");}
 	}
 };
 
@@ -1732,7 +1874,8 @@ class PColPGeom_FieldOfHArray1OfBoundedSurface : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray1OfBoundedSurface {
 	~PColPGeom_FieldOfHArray1OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBoundedSurface\n");}
 	}
 };
 
@@ -1795,8 +1938,14 @@ class PColPGeom_HArray2OfSurface : public Standard_Persistent {
 	}
 };
 %extend PColPGeom_HArray2OfSurface {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_HArray2OfSurface {
 	~PColPGeom_HArray2OfSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray2OfSurface\n");}
 	}
 };
 
@@ -1825,7 +1974,8 @@ class PColPGeom_FieldOfHArray1OfBoundedCurve : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray1OfBoundedCurve {
 	~PColPGeom_FieldOfHArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBoundedCurve\n");}
 	}
 };
 
@@ -1856,8 +2006,14 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Arra
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
 	~PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve\n");}
 	}
 };
 
@@ -1876,7 +2032,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface\n");}
 	}
 };
 
@@ -1895,7 +2052,8 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface\n");}
 	}
 };
 
@@ -1924,7 +2082,8 @@ class PColPGeom_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 };
 %extend PColPGeom_FieldOfHArray1OfBezierCurve {
 	~PColPGeom_FieldOfHArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBezierCurve\n");}
 	}
 };
 
@@ -1943,6 +2102,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 };
 %extend PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 	~PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve\n");}
 	}
 };

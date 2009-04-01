@@ -137,7 +137,8 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 };
 %extend Handle_Hatch_SequenceNodeOfSequenceOfLine {
 	~Handle_Hatch_SequenceNodeOfSequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfLine\n");}
 	}
 };
 
@@ -161,7 +162,8 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 };
 %extend Handle_Hatch_SequenceNodeOfSequenceOfParameter {
 	~Handle_Hatch_SequenceNodeOfSequenceOfParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfParameter\n");}
 	}
 };
 
@@ -182,8 +184,14 @@ class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {
 	}
 };
 %extend Hatch_SequenceNodeOfSequenceOfParameter {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Hatch_SequenceNodeOfSequenceOfParameter {
 	~Hatch_SequenceNodeOfSequenceOfParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfParameter\n");}
 	}
 };
 
@@ -200,7 +208,8 @@ class Hatch_Line {
 };
 %extend Hatch_Line {
 	~Hatch_Line() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_Line\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Hatch_Line\n");}
 	}
 };
 
@@ -253,7 +262,8 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 };
 %extend Hatch_SequenceOfParameter {
 	~Hatch_SequenceOfParameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfParameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfParameter\n");}
 	}
 };
 
@@ -308,7 +318,8 @@ class Hatch_Hatcher {
 };
 %extend Hatch_Hatcher {
 	~Hatch_Hatcher() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_Hatcher\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Hatch_Hatcher\n");}
 	}
 };
 
@@ -361,7 +372,8 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 };
 %extend Hatch_SequenceOfLine {
 	~Hatch_SequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceOfLine\n");}
 	}
 };
 
@@ -376,7 +388,8 @@ class Hatch_Parameter {
 };
 %extend Hatch_Parameter {
 	~Hatch_Parameter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_Parameter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Hatch_Parameter\n");}
 	}
 };
 
@@ -397,7 +410,13 @@ class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	}
 };
 %extend Hatch_SequenceNodeOfSequenceOfLine {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Hatch_SequenceNodeOfSequenceOfLine {
 	~Hatch_SequenceNodeOfSequenceOfLine() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfLine\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfLine\n");}
 	}
 };

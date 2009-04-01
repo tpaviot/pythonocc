@@ -140,7 +140,8 @@ class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 };
 %extend Handle_BiTgte_HCurveOnEdge {
 	~Handle_BiTgte_HCurveOnEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_HCurveOnEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_HCurveOnEdge\n");}
 	}
 };
 
@@ -164,7 +165,8 @@ class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 };
 %extend Handle_BiTgte_HCurveOnVertex {
 	~Handle_BiTgte_HCurveOnVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_HCurveOnVertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_HCurveOnVertex\n");}
 	}
 };
 
@@ -188,7 +190,8 @@ class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_M
 };
 %extend Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	~Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
 	}
 };
 
@@ -217,8 +220,14 @@ class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 	}
 };
 %extend BiTgte_HCurveOnEdge {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BiTgte_HCurveOnEdge {
 	~BiTgte_HCurveOnEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BiTgte_HCurveOnEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_HCurveOnEdge\n");}
 	}
 };
 
@@ -247,8 +256,14 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 	}
 };
 %extend BiTgte_HCurveOnVertex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BiTgte_HCurveOnVertex {
 	~BiTgte_HCurveOnVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BiTgte_HCurveOnVertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_HCurveOnVertex\n");}
 	}
 };
 
@@ -321,7 +336,8 @@ class BiTgte_CurveOnVertex : public Adaptor3d_Curve {
 };
 %extend BiTgte_CurveOnVertex {
 	~BiTgte_CurveOnVertex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BiTgte_CurveOnVertex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_CurveOnVertex\n");}
 	}
 };
 
@@ -388,7 +404,8 @@ class BiTgte_Blend {
 };
 %extend BiTgte_Blend {
 	~BiTgte_Blend() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BiTgte_Blend\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_Blend\n");}
 	}
 };
 
@@ -411,8 +428,14 @@ class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 	}
 };
 %extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	~BiTgte_DataMapNodeOfDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
 	}
 };
 
@@ -445,7 +468,8 @@ class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {
 };
 %extend BiTgte_DataMapOfShapeBox {
 	~BiTgte_DataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapOfShapeBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapOfShapeBox\n");}
 	}
 };
 
@@ -466,7 +490,8 @@ class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIte
 };
 %extend BiTgte_DataMapIteratorOfDataMapOfShapeBox {
 	~BiTgte_DataMapIteratorOfDataMapOfShapeBox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapIteratorOfDataMapOfShapeBox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapIteratorOfDataMapOfShapeBox\n");}
 	}
 };
 
@@ -539,6 +564,7 @@ class BiTgte_CurveOnEdge : public Adaptor3d_Curve {
 };
 %extend BiTgte_CurveOnEdge {
 	~BiTgte_CurveOnEdge() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BiTgte_CurveOnEdge\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BiTgte_CurveOnEdge\n");}
 	}
 };

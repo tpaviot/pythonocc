@@ -131,7 +131,8 @@ class Handle_IGESBasic_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 };
 %extend Handle_IGESBasic_ReadWriteModule {
 	~Handle_IGESBasic_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ReadWriteModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ReadWriteModule\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_IGESBasic_SingleParent : public Handle_IGESData_SingleParentEntity 
 };
 %extend Handle_IGESBasic_SingleParent {
 	~Handle_IGESBasic_SingleParent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SingleParent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SingleParent\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_IGESBasic_ExternalRefLibName : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_ExternalRefLibName {
 	~Handle_IGESBasic_ExternalRefLibName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefLibName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefLibName\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_IGESBasic_Protocol : public Handle_IGESData_Protocol {
 };
 %extend Handle_IGESBasic_Protocol {
 	~Handle_IGESBasic_Protocol() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Protocol\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Protocol\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESBasic_HArray1OfHArray1OfXYZ {
 	~Handle_IGESBasic_HArray1OfHArray1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXYZ\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_IGESBasic_Group : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_Group {
 	~Handle_IGESBasic_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Group\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Group\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_IGESBasic_GroupWithoutBackP : public Handle_IGESBasic_Group {
 };
 %extend Handle_IGESBasic_GroupWithoutBackP {
 	~Handle_IGESBasic_GroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_GroupWithoutBackP\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_GroupWithoutBackP\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_IGESBasic_Hierarchy : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_Hierarchy {
 	~Handle_IGESBasic_Hierarchy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Hierarchy\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Hierarchy\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESBasic_HArray1OfHArray1OfInteger {
 	~Handle_IGESBasic_HArray1OfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfInteger\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_IGESBasic_SingularSubfigure : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_SingularSubfigure {
 	~Handle_IGESBasic_SingularSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SingularSubfigure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SingularSubfigure\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_IGESBasic_HArray1OfLineFontEntity : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESBasic_HArray1OfLineFontEntity {
 	~Handle_IGESBasic_HArray1OfLineFontEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfLineFontEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfLineFontEntity\n");}
 	}
 };
 
@@ -395,7 +406,8 @@ class Handle_IGESBasic_ExternalRefFileName : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_ExternalRefFileName {
 	~Handle_IGESBasic_ExternalRefFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFileName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFileName\n");}
 	}
 };
 
@@ -419,7 +431,8 @@ class Handle_IGESBasic_HArray2OfHArray1OfReal : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESBasic_HArray2OfHArray1OfReal {
 	~Handle_IGESBasic_HArray2OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray2OfHArray1OfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray2OfHArray1OfReal\n");}
 	}
 };
 
@@ -443,7 +456,8 @@ class Handle_IGESBasic_AssocGroupType : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_AssocGroupType {
 	~Handle_IGESBasic_AssocGroupType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_AssocGroupType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_AssocGroupType\n");}
 	}
 };
 
@@ -467,7 +481,8 @@ class Handle_IGESBasic_HArray1OfHArray1OfXY : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESBasic_HArray1OfHArray1OfXY {
 	~Handle_IGESBasic_HArray1OfHArray1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXY\n");}
 	}
 };
 
@@ -491,7 +506,8 @@ class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
 };
 %extend Handle_IGESBasic_Name {
 	~Handle_IGESBasic_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Name\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Name\n");}
 	}
 };
 
@@ -515,7 +531,8 @@ class Handle_IGESBasic_OrderedGroup : public Handle_IGESBasic_Group {
 };
 %extend Handle_IGESBasic_OrderedGroup {
 	~Handle_IGESBasic_OrderedGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_OrderedGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_OrderedGroup\n");}
 	}
 };
 
@@ -539,7 +556,8 @@ class Handle_IGESBasic_ExternalRefName : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_ExternalRefName {
 	~Handle_IGESBasic_ExternalRefName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefName\n");}
 	}
 };
 
@@ -563,7 +581,8 @@ class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_ExternalRefFile {
 	~Handle_IGESBasic_ExternalRefFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFile\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFile\n");}
 	}
 };
 
@@ -587,7 +606,8 @@ class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
 };
 %extend Handle_IGESBasic_SubfigureDef {
 	~Handle_IGESBasic_SubfigureDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SubfigureDef\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SubfigureDef\n");}
 	}
 };
 
@@ -611,7 +631,8 @@ class Handle_IGESBasic_ExternalReferenceFile : public Handle_IGESData_IGESEntity
 };
 %extend Handle_IGESBasic_ExternalReferenceFile {
 	~Handle_IGESBasic_ExternalReferenceFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalReferenceFile\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalReferenceFile\n");}
 	}
 };
 
@@ -635,7 +656,8 @@ class Handle_IGESBasic_HArray1OfHArray1OfReal : public Handle_MMgt_TShared {
 };
 %extend Handle_IGESBasic_HArray1OfHArray1OfReal {
 	~Handle_IGESBasic_HArray1OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfReal\n");}
 	}
 };
 
@@ -659,7 +681,8 @@ class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity 
 };
 %extend Handle_IGESBasic_ExternalRefFileIndex {
 	~Handle_IGESBasic_ExternalRefFileIndex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFileIndex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFileIndex\n");}
 	}
 };
 
@@ -683,7 +706,8 @@ class Handle_IGESBasic_SpecificModule : public Handle_IGESData_SpecificModule {
 };
 %extend Handle_IGESBasic_SpecificModule {
 	~Handle_IGESBasic_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SpecificModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SpecificModule\n");}
 	}
 };
 
@@ -707,7 +731,8 @@ class Handle_IGESBasic_HArray1OfHArray1OfIGESEntity : public Handle_MMgt_TShared
 };
 %extend Handle_IGESBasic_HArray1OfHArray1OfIGESEntity {
 	~Handle_IGESBasic_HArray1OfHArray1OfIGESEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfIGESEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfIGESEntity\n");}
 	}
 };
 
@@ -731,7 +756,8 @@ class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group 
 };
 %extend Handle_IGESBasic_OrderedGroupWithoutBackP {
 	~Handle_IGESBasic_OrderedGroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_OrderedGroupWithoutBackP\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_OrderedGroupWithoutBackP\n");}
 	}
 };
 
@@ -755,7 +781,8 @@ class Handle_IGESBasic_GeneralModule : public Handle_IGESData_GeneralModule {
 };
 %extend Handle_IGESBasic_GeneralModule {
 	~Handle_IGESBasic_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_GeneralModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_GeneralModule\n");}
 	}
 };
 
@@ -784,7 +811,8 @@ class IGESBasic_ToolAssocGroupType {
 };
 %extend IGESBasic_ToolAssocGroupType {
 	~IGESBasic_ToolAssocGroupType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolAssocGroupType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolAssocGroupType\n");}
 	}
 };
 
@@ -807,8 +835,14 @@ class IGESBasic_SpecificModule : public IGESData_SpecificModule {
 	}
 };
 %extend IGESBasic_SpecificModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_SpecificModule {
 	~IGESBasic_SpecificModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_SpecificModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_SpecificModule\n");}
 	}
 };
 
@@ -837,7 +871,8 @@ class IGESBasic_ToolSingleParent {
 };
 %extend IGESBasic_ToolSingleParent {
 	~IGESBasic_ToolSingleParent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSingleParent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSingleParent\n");}
 	}
 };
 
@@ -868,8 +903,14 @@ class IGESBasic_GeneralModule : public IGESData_GeneralModule {
 	}
 };
 %extend IGESBasic_GeneralModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_GeneralModule {
 	~IGESBasic_GeneralModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_GeneralModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_GeneralModule\n");}
 	}
 };
 
@@ -896,7 +937,8 @@ class IGESBasic_ToolExternalRefFileIndex {
 };
 %extend IGESBasic_ToolExternalRefFileIndex {
 	~IGESBasic_ToolExternalRefFileIndex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFileIndex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFileIndex\n");}
 	}
 };
 
@@ -941,8 +983,14 @@ class IGESBasic_HArray2OfHArray1OfReal : public MMgt_TShared {
 	}
 };
 %extend IGESBasic_HArray2OfHArray1OfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_HArray2OfHArray1OfReal {
 	~IGESBasic_HArray2OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray2OfHArray1OfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray2OfHArray1OfReal\n");}
 	}
 };
 
@@ -965,8 +1013,14 @@ class IGESBasic_ExternalRefName : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_ExternalRefName {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_ExternalRefName {
 	~IGESBasic_ExternalRefName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefName\n");}
 	}
 };
 
@@ -1009,7 +1063,8 @@ class IGESBasic_Array2OfHArray1OfReal {
 };
 %extend IGESBasic_Array2OfHArray1OfReal {
 	~IGESBasic_Array2OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_Array2OfHArray1OfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_Array2OfHArray1OfReal\n");}
 	}
 };
 
@@ -1038,8 +1093,14 @@ class IGESBasic_HArray1OfHArray1OfReal : public MMgt_TShared {
 	}
 };
 %extend IGESBasic_HArray1OfHArray1OfReal {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfReal {
 	~IGESBasic_HArray1OfHArray1OfReal() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfReal\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfReal\n");}
 	}
 };
 
@@ -1066,7 +1127,8 @@ class IGESBasic_ToolExternalReferenceFile {
 };
 %extend IGESBasic_ToolExternalReferenceFile {
 	~IGESBasic_ToolExternalReferenceFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalReferenceFile\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalReferenceFile\n");}
 	}
 };
 
@@ -1109,8 +1171,14 @@ class IGESBasic_Group : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_Group {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_Group {
 	~IGESBasic_Group() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_Group\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_Group\n");}
 	}
 };
 
@@ -1129,8 +1197,14 @@ class IGESBasic_GroupWithoutBackP : public IGESBasic_Group {
 	}
 };
 %extend IGESBasic_GroupWithoutBackP {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_GroupWithoutBackP {
 	~IGESBasic_GroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_GroupWithoutBackP\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_GroupWithoutBackP\n");}
 	}
 };
 
@@ -1159,7 +1233,8 @@ class IGESBasic_ToolGroup {
 };
 %extend IGESBasic_ToolGroup {
 	~IGESBasic_ToolGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolGroup\n");}
 	}
 };
 
@@ -1184,8 +1259,14 @@ class IGESBasic_Name : public IGESData_NameEntity {
 	}
 };
 %extend IGESBasic_Name {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_Name {
 	~IGESBasic_Name() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_Name\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_Name\n");}
 	}
 };
 
@@ -1214,7 +1295,8 @@ class IGESBasic_ToolOrderedGroupWithoutBackP {
 };
 %extend IGESBasic_ToolOrderedGroupWithoutBackP {
 	~IGESBasic_ToolOrderedGroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolOrderedGroupWithoutBackP\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolOrderedGroupWithoutBackP\n");}
 	}
 };
 
@@ -1231,7 +1313,8 @@ class IGESBasic {
 };
 %extend IGESBasic {
 	~IGESBasic() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic\n");}
 	}
 };
 
@@ -1260,8 +1343,14 @@ class IGESBasic_HArray1OfHArray1OfIGESEntity : public MMgt_TShared {
 	}
 };
 %extend IGESBasic_HArray1OfHArray1OfIGESEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfIGESEntity {
 	~IGESBasic_HArray1OfHArray1OfIGESEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfIGESEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfIGESEntity\n");}
 	}
 };
 
@@ -1290,7 +1379,8 @@ class IGESBasic_ToolGroupWithoutBackP {
 };
 %extend IGESBasic_ToolGroupWithoutBackP {
 	~IGESBasic_ToolGroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolGroupWithoutBackP\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolGroupWithoutBackP\n");}
 	}
 };
 
@@ -1317,7 +1407,8 @@ class IGESBasic_ToolSingularSubfigure {
 };
 %extend IGESBasic_ToolSingularSubfigure {
 	~IGESBasic_ToolSingularSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSingularSubfigure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSingularSubfigure\n");}
 	}
 };
 
@@ -1346,7 +1437,8 @@ class IGESBasic_ToolOrderedGroup {
 };
 %extend IGESBasic_ToolOrderedGroup {
 	~IGESBasic_ToolOrderedGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolOrderedGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolOrderedGroup\n");}
 	}
 };
 
@@ -1375,8 +1467,14 @@ class IGESBasic_HArray1OfHArray1OfInteger : public MMgt_TShared {
 	}
 };
 %extend IGESBasic_HArray1OfHArray1OfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfInteger {
 	~IGESBasic_HArray1OfHArray1OfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfInteger\n");}
 	}
 };
 
@@ -1403,8 +1501,14 @@ class IGESBasic_AssocGroupType : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_AssocGroupType {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_AssocGroupType {
 	~IGESBasic_AssocGroupType() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_AssocGroupType\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_AssocGroupType\n");}
 	}
 };
 
@@ -1435,8 +1539,14 @@ class IGESBasic_SingularSubfigure : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_SingularSubfigure {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_SingularSubfigure {
 	~IGESBasic_SingularSubfigure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_SingularSubfigure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_SingularSubfigure\n");}
 	}
 };
 
@@ -1475,7 +1585,8 @@ class IGESBasic_Array1OfLineFontEntity {
 };
 %extend IGESBasic_Array1OfLineFontEntity {
 	~IGESBasic_Array1OfLineFontEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_Array1OfLineFontEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_Array1OfLineFontEntity\n");}
 	}
 };
 
@@ -1498,8 +1609,14 @@ class IGESBasic_ExternalRefFile : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_ExternalRefFile {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_ExternalRefFile {
 	~IGESBasic_ExternalRefFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFile\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFile\n");}
 	}
 };
 
@@ -1524,8 +1641,14 @@ class IGESBasic_ReadWriteModule : public IGESData_ReadWriteModule {
 	}
 };
 %extend IGESBasic_ReadWriteModule {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_ReadWriteModule {
 	~IGESBasic_ReadWriteModule() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ReadWriteModule\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ReadWriteModule\n");}
 	}
 };
 
@@ -1552,7 +1675,8 @@ class IGESBasic_ToolExternalRefLibName {
 };
 %extend IGESBasic_ToolExternalRefLibName {
 	~IGESBasic_ToolExternalRefLibName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefLibName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefLibName\n");}
 	}
 };
 
@@ -1591,8 +1715,14 @@ class IGESBasic_HArray1OfLineFontEntity : public MMgt_TShared {
 	}
 };
 %extend IGESBasic_HArray1OfLineFontEntity {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_HArray1OfLineFontEntity {
 	~IGESBasic_HArray1OfLineFontEntity() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfLineFontEntity\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfLineFontEntity\n");}
 	}
 };
 
@@ -1619,8 +1749,14 @@ class IGESBasic_ExternalRefFileName : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_ExternalRefFileName {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_ExternalRefFileName {
 	~IGESBasic_ExternalRefFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFileName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFileName\n");}
 	}
 };
 
@@ -1655,8 +1791,14 @@ class IGESBasic_Hierarchy : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_Hierarchy {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_Hierarchy {
 	~IGESBasic_Hierarchy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_Hierarchy\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_Hierarchy\n");}
 	}
 };
 
@@ -1683,8 +1825,14 @@ class IGESBasic_ExternalRefFileIndex : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_ExternalRefFileIndex {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_ExternalRefFileIndex {
 	~IGESBasic_ExternalRefFileIndex() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFileIndex\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFileIndex\n");}
 	}
 };
 
@@ -1709,8 +1857,14 @@ class IGESBasic_ExternalReferenceFile : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_ExternalReferenceFile {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_ExternalReferenceFile {
 	~IGESBasic_ExternalReferenceFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalReferenceFile\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalReferenceFile\n");}
 	}
 };
 
@@ -1729,8 +1883,14 @@ class IGESBasic_OrderedGroup : public IGESBasic_Group {
 	}
 };
 %extend IGESBasic_OrderedGroup {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_OrderedGroup {
 	~IGESBasic_OrderedGroup() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_OrderedGroup\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_OrderedGroup\n");}
 	}
 };
 
@@ -1759,8 +1919,14 @@ class IGESBasic_SingleParent : public IGESData_SingleParentEntity {
 	}
 };
 %extend IGESBasic_SingleParent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_SingleParent {
 	~IGESBasic_SingleParent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_SingleParent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_SingleParent\n");}
 	}
 };
 
@@ -1791,8 +1957,14 @@ class IGESBasic_SubfigureDef : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_SubfigureDef {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_SubfigureDef {
 	~IGESBasic_SubfigureDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_SubfigureDef\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_SubfigureDef\n");}
 	}
 };
 
@@ -1819,7 +1991,8 @@ class IGESBasic_ToolExternalRefName {
 };
 %extend IGESBasic_ToolExternalRefName {
 	~IGESBasic_ToolExternalRefName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefName\n");}
 	}
 };
 
@@ -1846,7 +2019,8 @@ class IGESBasic_ToolExternalRefFileName {
 };
 %extend IGESBasic_ToolExternalRefFileName {
 	~IGESBasic_ToolExternalRefFileName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFileName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFileName\n");}
 	}
 };
 
@@ -1875,8 +2049,14 @@ class IGESBasic_HArray1OfHArray1OfXYZ : public MMgt_TShared {
 	}
 };
 %extend IGESBasic_HArray1OfHArray1OfXYZ {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfXYZ {
 	~IGESBasic_HArray1OfHArray1OfXYZ() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfXYZ\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfXYZ\n");}
 	}
 };
 
@@ -1895,8 +2075,14 @@ class IGESBasic_OrderedGroupWithoutBackP : public IGESBasic_Group {
 	}
 };
 %extend IGESBasic_OrderedGroupWithoutBackP {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_OrderedGroupWithoutBackP {
 	~IGESBasic_OrderedGroupWithoutBackP() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_OrderedGroupWithoutBackP\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_OrderedGroupWithoutBackP\n");}
 	}
 };
 
@@ -1923,7 +2109,8 @@ class IGESBasic_ToolExternalRefFile {
 };
 %extend IGESBasic_ToolExternalRefFile {
 	~IGESBasic_ToolExternalRefFile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFile\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFile\n");}
 	}
 };
 
@@ -1952,8 +2139,14 @@ class IGESBasic_HArray1OfHArray1OfXY : public MMgt_TShared {
 	}
 };
 %extend IGESBasic_HArray1OfHArray1OfXY {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_HArray1OfHArray1OfXY {
 	~IGESBasic_HArray1OfHArray1OfXY() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfXY\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfXY\n");}
 	}
 };
 
@@ -1980,7 +2173,8 @@ class IGESBasic_ToolSubfigureDef {
 };
 %extend IGESBasic_ToolSubfigureDef {
 	~IGESBasic_ToolSubfigureDef() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSubfigureDef\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSubfigureDef\n");}
 	}
 };
 
@@ -2005,8 +2199,14 @@ class IGESBasic_ExternalRefLibName : public IGESData_IGESEntity {
 	}
 };
 %extend IGESBasic_ExternalRefLibName {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend IGESBasic_ExternalRefLibName {
 	~IGESBasic_ExternalRefLibName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefLibName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefLibName\n");}
 	}
 };
 
@@ -2035,7 +2235,8 @@ class IGESBasic_ToolName {
 };
 %extend IGESBasic_ToolName {
 	~IGESBasic_ToolName() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolName\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolName\n");}
 	}
 };
 
@@ -2064,6 +2265,7 @@ class IGESBasic_ToolHierarchy {
 };
 %extend IGESBasic_ToolHierarchy {
 	~IGESBasic_ToolHierarchy() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolHierarchy\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolHierarchy\n");}
 	}
 };

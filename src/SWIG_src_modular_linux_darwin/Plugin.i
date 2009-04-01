@@ -131,7 +131,8 @@ class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapN
 };
 %extend Handle_Plugin_DataMapNodeOfMapOfFunctions {
 	~Handle_Plugin_DataMapNodeOfMapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Plugin_DataMapNodeOfMapOfFunctions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Plugin_DataMapNodeOfMapOfFunctions\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 };
 %extend Handle_Plugin_Failure {
 	~Handle_Plugin_Failure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Plugin_Failure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Plugin_Failure\n");}
 	}
 };
 
@@ -174,7 +176,8 @@ class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterat
 };
 %extend Plugin_DataMapIteratorOfMapOfFunctions {
 	~Plugin_DataMapIteratorOfMapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plugin_DataMapIteratorOfMapOfFunctions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plugin_DataMapIteratorOfMapOfFunctions\n");}
 	}
 };
 
@@ -195,8 +198,14 @@ class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
 	}
 };
 %extend Plugin_DataMapNodeOfMapOfFunctions {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Plugin_DataMapNodeOfMapOfFunctions {
 	~Plugin_DataMapNodeOfMapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plugin_DataMapNodeOfMapOfFunctions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plugin_DataMapNodeOfMapOfFunctions\n");}
 	}
 };
 
@@ -223,8 +232,14 @@ class Plugin_Failure : public Standard_Failure {
 	}
 };
 %extend Plugin_Failure {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Plugin_Failure {
 	~Plugin_Failure() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plugin_Failure\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plugin_Failure\n");}
 	}
 };
 
@@ -247,7 +262,8 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 };
 %extend Plugin_MapOfFunctions {
 	~Plugin_MapOfFunctions() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plugin_MapOfFunctions\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plugin_MapOfFunctions\n");}
 	}
 };
 
@@ -262,6 +278,7 @@ class Plugin {
 };
 %extend Plugin {
 	~Plugin() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Plugin\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Plugin\n");}
 	}
 };

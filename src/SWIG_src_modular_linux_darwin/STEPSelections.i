@@ -131,7 +131,8 @@ class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared
 };
 %extend Handle_STEPSelections_HSequenceOfAssemblyLink {
 	~Handle_STEPSelections_HSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_HSequenceOfAssemblyLink\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_HSequenceOfAssemblyLink\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 };
 %extend Handle_STEPSelections_AssemblyLink {
 	~Handle_STEPSelections_AssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_AssemblyLink\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_AssemblyLink\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public H
 };
 %extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
 	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_STEPSelections_SelectForTransfer : public Handle_XSControl_SelectFo
 };
 %extend Handle_STEPSelections_SelectForTransfer {
 	~Handle_STEPSelections_SelectForTransfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectForTransfer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectForTransfer\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplor
 };
 %extend Handle_STEPSelections_SelectGSCurves {
 	~Handle_STEPSelections_SelectGSCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectGSCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectGSCurves\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 };
 %extend Handle_STEPSelections_SelectDerived {
 	~Handle_STEPSelections_SelectDerived() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectDerived\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectDerived\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplo
 };
 %extend Handle_STEPSelections_SelectInstances {
 	~Handle_STEPSelections_SelectInstances() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectInstances\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectInstances\n");}
 	}
 };
 
@@ -299,7 +306,8 @@ class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplor
 };
 %extend Handle_STEPSelections_SelectAssembly {
 	~Handle_STEPSelections_SelectAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectAssembly\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectAssembly\n");}
 	}
 };
 
@@ -323,7 +331,8 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle
 };
 %extend Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
 	~Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
 	}
 };
 
@@ -347,7 +356,8 @@ class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
 };
 %extend Handle_STEPSelections_AssemblyComponent {
 	~Handle_STEPSelections_AssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_AssemblyComponent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_AssemblyComponent\n");}
 	}
 };
 
@@ -371,7 +381,8 @@ class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 };
 %extend Handle_STEPSelections_SelectFaces {
 	~Handle_STEPSelections_SelectFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectFaces\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectFaces\n");}
 	}
 };
 
@@ -398,7 +409,8 @@ class STEPSelections_AssemblyExplorer {
 };
 %extend STEPSelections_AssemblyExplorer {
 	~STEPSelections_AssemblyExplorer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyExplorer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyExplorer\n");}
 	}
 };
 
@@ -427,8 +439,14 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 	}
 };
 %extend STEPSelections_AssemblyComponent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_AssemblyComponent {
 	~STEPSelections_AssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyComponent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyComponent\n");}
 	}
 };
 
@@ -451,8 +469,14 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 	}
 };
 %extend STEPSelections_SelectGSCurves {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_SelectGSCurves {
 	~STEPSelections_SelectGSCurves() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectGSCurves\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectGSCurves\n");}
 	}
 };
 
@@ -475,8 +499,14 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 	}
 };
 %extend STEPSelections_SelectForTransfer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_SelectForTransfer {
 	~STEPSelections_SelectForTransfer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectForTransfer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectForTransfer\n");}
 	}
 };
 
@@ -497,8 +527,14 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 	}
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
 	~STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent\n");}
 	}
 };
 
@@ -535,7 +571,8 @@ class STEPSelections_Counter {
 };
 %extend STEPSelections_Counter {
 	~STEPSelections_Counter() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_Counter\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_Counter\n");}
 	}
 };
 
@@ -560,8 +597,14 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 	}
 };
 %extend STEPSelections_SelectInstances {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_SelectInstances {
 	~STEPSelections_SelectInstances() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectInstances\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectInstances\n");}
 	}
 };
 
@@ -624,8 +667,14 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 	}
 };
 %extend STEPSelections_HSequenceOfAssemblyLink {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_HSequenceOfAssemblyLink {
 	~STEPSelections_HSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_HSequenceOfAssemblyLink\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_HSequenceOfAssemblyLink\n");}
 	}
 };
 
@@ -646,8 +695,14 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 	}
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
 	~STEPSelections_SequenceNodeOfSequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
 	}
 };
 
@@ -700,7 +755,8 @@ class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequen
 };
 %extend STEPSelections_SequenceOfAssemblyComponent {
 	~STEPSelections_SequenceOfAssemblyComponent() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceOfAssemblyComponent\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceOfAssemblyComponent\n");}
 	}
 };
 
@@ -721,8 +777,14 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 	}
 };
 %extend STEPSelections_SelectDerived {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_SelectDerived {
 	~STEPSelections_SelectDerived() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectDerived\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectDerived\n");}
 	}
 };
 
@@ -775,7 +837,8 @@ class STEPSelections_SequenceOfAssemblyLink : public TCollection_BaseSequence {
 };
 %extend STEPSelections_SequenceOfAssemblyLink {
 	~STEPSelections_SequenceOfAssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceOfAssemblyLink\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceOfAssemblyLink\n");}
 	}
 };
 
@@ -798,8 +861,14 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 	}
 };
 %extend STEPSelections_SelectAssembly {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_SelectAssembly {
 	~STEPSelections_SelectAssembly() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectAssembly\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectAssembly\n");}
 	}
 };
 
@@ -832,8 +901,14 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 	}
 };
 %extend STEPSelections_AssemblyLink {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_AssemblyLink {
 	~STEPSelections_AssemblyLink() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyLink\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyLink\n");}
 	}
 };
 
@@ -856,7 +931,13 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 	}
 };
 %extend STEPSelections_SelectFaces {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPSelections_SelectFaces {
 	~STEPSelections_SelectFaces() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectFaces\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectFaces\n");}
 	}
 };

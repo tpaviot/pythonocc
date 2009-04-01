@@ -131,7 +131,8 @@ class Handle_BinMDF_ADriver : public Handle_MMgt_TShared {
 };
 %extend Handle_BinMDF_ADriver {
 	~Handle_BinMDF_ADriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ADriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ADriver\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDF_TagSourceDriver {
 	~Handle_BinMDF_TagSourceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_TagSourceDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_TagSourceDriver\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode
 };
 %extend Handle_BinMDF_DoubleMapNodeOfTypeIdMap {
 	~Handle_BinMDF_DoubleMapNodeOfTypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DoubleMapNodeOfTypeIdMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DoubleMapNodeOfTypeIdMap\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 };
 %extend Handle_BinMDF_ReferenceDriver {
 	~Handle_BinMDF_ReferenceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ReferenceDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ReferenceDriver\n");}
 	}
 };
 
@@ -227,7 +231,8 @@ class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode
 };
 %extend Handle_BinMDF_DataMapNodeOfStringIdMap {
 	~Handle_BinMDF_DataMapNodeOfStringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DataMapNodeOfStringIdMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DataMapNodeOfStringIdMap\n");}
 	}
 };
 
@@ -251,7 +256,8 @@ class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 };
 %extend Handle_BinMDF_ADriverTable {
 	~Handle_BinMDF_ADriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ADriverTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ADriverTable\n");}
 	}
 };
 
@@ -275,7 +281,8 @@ class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 };
 %extend Handle_BinMDF_DataMapNodeOfTypeADriverMap {
 	~Handle_BinMDF_DataMapNodeOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DataMapNodeOfTypeADriverMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_DataMapNodeOfTypeADriverMap\n");}
 	}
 };
 
@@ -304,8 +311,14 @@ class BinMDF_ADriver : public MMgt_TShared {
 	}
 };
 %extend BinMDF_ADriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMDF_ADriver {
 	~BinMDF_ADriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_ADriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_ADriver\n");}
 	}
 };
 
@@ -326,8 +339,14 @@ class BinMDF_TagSourceDriver : public BinMDF_ADriver {
 	}
 };
 %extend BinMDF_TagSourceDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMDF_TagSourceDriver {
 	~BinMDF_TagSourceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_TagSourceDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_TagSourceDriver\n");}
 	}
 };
 
@@ -356,8 +375,14 @@ class BinMDF_ADriverTable : public MMgt_TShared {
 	}
 };
 %extend BinMDF_ADriverTable {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMDF_ADriverTable {
 	~BinMDF_ADriverTable() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_ADriverTable\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_ADriverTable\n");}
 	}
 };
 
@@ -378,7 +403,8 @@ class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator 
 };
 %extend BinMDF_DataMapIteratorOfStringIdMap {
 	~BinMDF_DataMapIteratorOfStringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfStringIdMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfStringIdMap\n");}
 	}
 };
 
@@ -403,8 +429,14 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 	}
 };
 %extend BinMDF_DoubleMapNodeOfTypeIdMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMDF_DoubleMapNodeOfTypeIdMap {
 	~BinMDF_DoubleMapNodeOfTypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_DoubleMapNodeOfTypeIdMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_DoubleMapNodeOfTypeIdMap\n");}
 	}
 };
 
@@ -437,7 +469,8 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 };
 %extend BinMDF_StringIdMap {
 	~BinMDF_StringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_StringIdMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_StringIdMap\n");}
 	}
 };
 
@@ -458,7 +491,8 @@ class BinMDF_DoubleMapIteratorOfTypeIdMap : public TCollection_BasicMapIterator 
 };
 %extend BinMDF_DoubleMapIteratorOfTypeIdMap {
 	~BinMDF_DoubleMapIteratorOfTypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_DoubleMapIteratorOfTypeIdMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_DoubleMapIteratorOfTypeIdMap\n");}
 	}
 };
 
@@ -483,8 +517,14 @@ class BinMDF_ReferenceDriver : public BinMDF_ADriver {
 	}
 };
 %extend BinMDF_ReferenceDriver {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMDF_ReferenceDriver {
 	~BinMDF_ReferenceDriver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_ReferenceDriver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_ReferenceDriver\n");}
 	}
 };
 
@@ -517,7 +557,8 @@ class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 };
 %extend BinMDF_TypeADriverMap {
 	~BinMDF_TypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_TypeADriverMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_TypeADriverMap\n");}
 	}
 };
 
@@ -552,7 +593,8 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 };
 %extend BinMDF_TypeIdMap {
 	~BinMDF_TypeIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_TypeIdMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_TypeIdMap\n");}
 	}
 };
 
@@ -573,7 +615,8 @@ class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 };
 %extend BinMDF_DataMapIteratorOfTypeADriverMap {
 	~BinMDF_DataMapIteratorOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfTypeADriverMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfTypeADriverMap\n");}
 	}
 };
 
@@ -588,7 +631,8 @@ class BinMDF {
 };
 %extend BinMDF {
 	~BinMDF() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF\n");}
 	}
 };
 
@@ -611,8 +655,14 @@ class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 	}
 };
 %extend BinMDF_DataMapNodeOfTypeADriverMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMDF_DataMapNodeOfTypeADriverMap {
 	~BinMDF_DataMapNodeOfTypeADriverMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfTypeADriverMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfTypeADriverMap\n");}
 	}
 };
 
@@ -635,7 +685,13 @@ class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
 	}
 };
 %extend BinMDF_DataMapNodeOfStringIdMap {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend BinMDF_DataMapNodeOfStringIdMap {
 	~BinMDF_DataMapNodeOfStringIdMap() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfStringIdMap\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfStringIdMap\n");}
 	}
 };

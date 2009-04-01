@@ -131,7 +131,8 @@ class Handle_Viewer_BadValue : public Handle_Standard_OutOfRange {
 };
 %extend Handle_Viewer_BadValue {
 	~Handle_Viewer_BadValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Viewer_BadValue\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Viewer_BadValue\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_Viewer_Viewer : public Handle_MMgt_TShared {
 };
 %extend Handle_Viewer_Viewer {
 	~Handle_Viewer_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Viewer_Viewer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Viewer_Viewer\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_Viewer_View : public Handle_MMgt_TShared {
 };
 %extend Handle_Viewer_View {
 	~Handle_Viewer_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_Viewer_View\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_Viewer_View\n");}
 	}
 };
 
@@ -204,8 +207,14 @@ class Viewer_View : public MMgt_TShared {
 	}
 };
 %extend Viewer_View {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Viewer_View {
 	~Viewer_View() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Viewer_View\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Viewer_View\n");}
 	}
 };
 
@@ -230,8 +239,14 @@ class Viewer_Viewer : public MMgt_TShared {
 	}
 };
 %extend Viewer_Viewer {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Viewer_Viewer {
 	~Viewer_Viewer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Viewer_Viewer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Viewer_Viewer\n");}
 	}
 };
 
@@ -258,7 +273,13 @@ class Viewer_BadValue : public Standard_OutOfRange {
 	}
 };
 %extend Viewer_BadValue {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend Viewer_BadValue {
 	~Viewer_BadValue() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Viewer_BadValue\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Viewer_BadValue\n");}
 	}
 };

@@ -131,7 +131,8 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 };
 %extend Handle_GccAna_NoSolution {
 	~Handle_GccAna_NoSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GccAna_NoSolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GccAna_NoSolution\n");}
 	}
 };
 
@@ -150,7 +151,8 @@ class GccAna_CircLin2dBisec {
 };
 %extend GccAna_CircLin2dBisec {
 	~GccAna_CircLin2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_CircLin2dBisec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_CircLin2dBisec\n");}
 	}
 };
 
@@ -177,7 +179,8 @@ class GccAna_Lin2dTanObl {
 };
 %extend GccAna_Lin2dTanObl {
 	~GccAna_Lin2dTanObl() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanObl\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanObl\n");}
 	}
 };
 
@@ -200,7 +203,8 @@ class GccAna_Lin2dBisec {
 };
 %extend GccAna_Lin2dBisec {
 	~GccAna_Lin2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dBisec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dBisec\n");}
 	}
 };
 
@@ -219,7 +223,8 @@ class GccAna_Pnt2dBisec {
 };
 %extend GccAna_Pnt2dBisec {
 	~GccAna_Pnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Pnt2dBisec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Pnt2dBisec\n");}
 	}
 };
 
@@ -248,7 +253,8 @@ class GccAna_Circ2dTanCen {
 };
 %extend GccAna_Circ2dTanCen {
 	~GccAna_Circ2dTanCen() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanCen\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanCen\n");}
 	}
 };
 
@@ -279,7 +285,8 @@ class GccAna_Lin2dTanPer {
 };
 %extend GccAna_Lin2dTanPer {
 	~GccAna_Lin2dTanPer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPer\n");}
 	}
 };
 
@@ -316,7 +323,8 @@ class GccAna_Circ2dTanOnRad {
 };
 %extend GccAna_Circ2dTanOnRad {
 	~GccAna_Circ2dTanOnRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanOnRad\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanOnRad\n");}
 	}
 };
 
@@ -367,7 +375,8 @@ class GccAna_Circ2d3Tan {
 };
 %extend GccAna_Circ2d3Tan {
 	~GccAna_Circ2d3Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d3Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d3Tan\n");}
 	}
 };
 
@@ -394,8 +403,14 @@ class GccAna_NoSolution : public Standard_Failure {
 	}
 };
 %extend GccAna_NoSolution {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GccAna_NoSolution {
 	~GccAna_NoSolution() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_NoSolution\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_NoSolution\n");}
 	}
 };
 
@@ -412,7 +427,8 @@ class GccAna_LinPnt2dBisec {
 };
 %extend GccAna_LinPnt2dBisec {
 	~GccAna_LinPnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_LinPnt2dBisec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_LinPnt2dBisec\n");}
 	}
 };
 
@@ -451,7 +467,8 @@ class GccAna_Circ2d2TanRad {
 };
 %extend GccAna_Circ2d2TanRad {
 	~GccAna_Circ2d2TanRad() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanRad\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanRad\n");}
 	}
 };
 
@@ -480,7 +497,8 @@ class GccAna_Lin2d2Tan {
 };
 %extend GccAna_Lin2d2Tan {
 	~GccAna_Lin2d2Tan() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Lin2d2Tan\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2d2Tan\n");}
 	}
 };
 
@@ -505,7 +523,8 @@ class GccAna_Lin2dTanPar {
 };
 %extend GccAna_Lin2dTanPar {
 	~GccAna_Lin2dTanPar() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPar\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPar\n");}
 	}
 };
 
@@ -524,7 +543,8 @@ class GccAna_CircPnt2dBisec {
 };
 %extend GccAna_CircPnt2dBisec {
 	~GccAna_CircPnt2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_CircPnt2dBisec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_CircPnt2dBisec\n");}
 	}
 };
 
@@ -577,7 +597,8 @@ class GccAna_Circ2d2TanOn {
 };
 %extend GccAna_Circ2d2TanOn {
 	~GccAna_Circ2d2TanOn() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanOn\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanOn\n");}
 	}
 };
 
@@ -596,6 +617,7 @@ class GccAna_Circ2dBisec {
 };
 %extend GccAna_Circ2dBisec {
 	~GccAna_Circ2dBisec() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dBisec\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dBisec\n");}
 	}
 };

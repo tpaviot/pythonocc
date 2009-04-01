@@ -131,7 +131,8 @@ class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 };
 %extend Handle_GraphTools_SC {
 	~Handle_GraphTools_SC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_SC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_SC\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 };
 %extend Handle_GraphTools_ListNodeOfListOfSequenceOfInteger {
 	~Handle_GraphTools_ListNodeOfListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 };
 %extend Handle_GraphTools_ListNodeOfSCList {
 	~Handle_GraphTools_ListNodeOfSCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfSCList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfSCList\n");}
 	}
 };
 
@@ -214,8 +217,14 @@ class GraphTools_SC : public MMgt_TShared {
 	}
 };
 %extend GraphTools_SC {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GraphTools_SC {
 	~GraphTools_SC() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_SC\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_SC\n");}
 	}
 };
 
@@ -264,7 +273,8 @@ class GraphTools_SCList {
 };
 %extend GraphTools_SCList {
 	~GraphTools_SCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_SCList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_SCList\n");}
 	}
 };
 
@@ -287,7 +297,8 @@ class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 };
 %extend GraphTools_ListIteratorOfListOfSequenceOfInteger {
 	~GraphTools_ListIteratorOfListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfListOfSequenceOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfListOfSequenceOfInteger\n");}
 	}
 };
 
@@ -310,7 +321,8 @@ class GraphTools_ListIteratorOfSCList {
 };
 %extend GraphTools_ListIteratorOfSCList {
 	~GraphTools_ListIteratorOfSCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfSCList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfSCList\n");}
 	}
 };
 
@@ -337,7 +349,8 @@ class GraphTools_TSNode {
 };
 %extend GraphTools_TSNode {
 	~GraphTools_TSNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_TSNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_TSNode\n");}
 	}
 };
 
@@ -358,8 +371,14 @@ class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 	}
 };
 %extend GraphTools_ListNodeOfSCList {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GraphTools_ListNodeOfSCList {
 	~GraphTools_ListNodeOfSCList() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_ListNodeOfSCList\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_ListNodeOfSCList\n");}
 	}
 };
 
@@ -388,7 +407,8 @@ class GraphTools_RGNode {
 };
 %extend GraphTools_RGNode {
 	~GraphTools_RGNode() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_RGNode\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_RGNode\n");}
 	}
 };
 
@@ -437,7 +457,8 @@ class GraphTools_ListOfSequenceOfInteger {
 };
 %extend GraphTools_ListOfSequenceOfInteger {
 	~GraphTools_ListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_ListOfSequenceOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_ListOfSequenceOfInteger\n");}
 	}
 };
 
@@ -458,7 +479,13 @@ class GraphTools_ListNodeOfListOfSequenceOfInteger : public TCollection_MapNode 
 	}
 };
 %extend GraphTools_ListNodeOfListOfSequenceOfInteger {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend GraphTools_ListNodeOfListOfSequenceOfInteger {
 	~GraphTools_ListNodeOfListOfSequenceOfInteger() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of GraphTools_ListNodeOfListOfSequenceOfInteger\n");}
 	}
 };

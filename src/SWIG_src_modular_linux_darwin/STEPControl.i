@@ -142,7 +142,8 @@ class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 };
 %extend Handle_STEPControl_Controller {
 	~Handle_STEPControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_Controller\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_Controller\n");}
 	}
 };
 
@@ -166,7 +167,8 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 };
 %extend Handle_STEPControl_ActorRead {
 	~Handle_STEPControl_ActorRead() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_ActorRead\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_ActorRead\n");}
 	}
 };
 
@@ -190,7 +192,8 @@ class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 };
 %extend Handle_STEPControl_ActorWrite {
 	~Handle_STEPControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_ActorWrite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_ActorWrite\n");}
 	}
 };
 
@@ -211,7 +214,8 @@ class STEPControl_Reader : public XSControl_Reader {
 };
 %extend STEPControl_Reader {
 	~STEPControl_Reader() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPControl_Reader\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPControl_Reader\n");}
 	}
 };
 
@@ -244,8 +248,14 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 	}
 };
 %extend STEPControl_ActorRead {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPControl_ActorRead {
 	~STEPControl_ActorRead() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPControl_ActorRead\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPControl_ActorRead\n");}
 	}
 };
 
@@ -274,8 +284,14 @@ class STEPControl_Controller : public XSControl_Controller {
 	}
 };
 %extend STEPControl_Controller {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPControl_Controller {
 	~STEPControl_Controller() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPControl_Controller\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPControl_Controller\n");}
 	}
 };
 
@@ -316,8 +332,14 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	}
 };
 %extend STEPControl_ActorWrite {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend STEPControl_ActorWrite {
 	~STEPControl_ActorWrite() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPControl_ActorWrite\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPControl_ActorWrite\n");}
 	}
 };
 
@@ -348,6 +370,7 @@ class STEPControl_Writer {
 };
 %extend STEPControl_Writer {
 	~STEPControl_Writer() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of STEPControl_Writer\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of STEPControl_Writer\n");}
 	}
 };

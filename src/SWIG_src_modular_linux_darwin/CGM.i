@@ -131,6 +131,7 @@ class Handle_CGM_Driver : public Handle_PlotMgt_PlotterDriver {
 };
 %extend Handle_CGM_Driver {
 	~Handle_CGM_Driver() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_CGM_Driver\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_CGM_Driver\n");}
 	}
 };

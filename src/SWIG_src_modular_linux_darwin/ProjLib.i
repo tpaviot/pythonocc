@@ -131,7 +131,8 @@ class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 };
 %extend Handle_ProjLib_HCompProjectedCurve {
 	~Handle_ProjLib_HCompProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HCompProjectedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HCompProjectedCurve\n");}
 	}
 };
 
@@ -155,7 +156,8 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 };
 %extend Handle_ProjLib_HProjectedCurve {
 	~Handle_ProjLib_HProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HProjectedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HProjectedCurve\n");}
 	}
 };
 
@@ -179,7 +181,8 @@ class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCol
 };
 %extend Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
 	~Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -203,7 +206,8 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 };
 %extend Handle_ProjLib_HSequenceOfHSequenceOfPnt {
 	~Handle_ProjLib_HSequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HSequenceOfHSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HSequenceOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -256,7 +260,8 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 };
 %extend ProjLib_SequenceOfHSequenceOfPnt {
 	~ProjLib_SequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceOfHSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -315,7 +320,8 @@ class ProjLib_Projector {
 };
 %extend ProjLib_Projector {
 	~ProjLib_Projector() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_Projector\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Projector\n");}
 	}
 };
 
@@ -338,7 +344,8 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 };
 %extend ProjLib_Cylinder {
 	~ProjLib_Cylinder() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_Cylinder\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Cylinder\n");}
 	}
 };
 
@@ -403,7 +410,8 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 };
 %extend ProjLib_CompProjectedCurve {
 	~ProjLib_CompProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_CompProjectedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_CompProjectedCurve\n");}
 	}
 };
 
@@ -484,7 +492,8 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 };
 %extend ProjLib_ProjectedCurve {
 	~ProjLib_ProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectedCurve\n");}
 	}
 };
 
@@ -515,7 +524,8 @@ class ProjLib_Sphere : public ProjLib_Projector {
 };
 %extend ProjLib_Sphere {
 	~ProjLib_Sphere() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_Sphere\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Sphere\n");}
 	}
 };
 
@@ -560,7 +570,8 @@ class ProjLib {
 };
 %extend ProjLib {
 	~ProjLib() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib\n");}
 	}
 };
 
@@ -581,7 +592,8 @@ class ProjLib_ProjectOnSurface {
 };
 %extend ProjLib_ProjectOnSurface {
 	~ProjLib_ProjectOnSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectOnSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectOnSurface\n");}
 	}
 };
 
@@ -618,7 +630,8 @@ class ProjLib_Plane : public ProjLib_Projector {
 };
 %extend ProjLib_Plane {
 	~ProjLib_Plane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_Plane\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Plane\n");}
 	}
 };
 
@@ -647,7 +660,8 @@ class ProjLib_Torus : public ProjLib_Projector {
 };
 %extend ProjLib_Torus {
 	~ProjLib_Torus() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_Torus\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Torus\n");}
 	}
 };
 
@@ -668,8 +682,14 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 	}
 };
 %extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
 	~ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -688,7 +708,8 @@ class ProjLib_ComputeApprox {
 };
 %extend ProjLib_ComputeApprox {
 	~ProjLib_ComputeApprox() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApprox\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApprox\n");}
 	}
 };
 
@@ -769,7 +790,8 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 };
 %extend ProjLib_ProjectOnPlane {
 	~ProjLib_ProjectOnPlane() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectOnPlane\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectOnPlane\n");}
 	}
 };
 
@@ -788,7 +810,8 @@ class ProjLib_PrjResolve {
 };
 %extend ProjLib_PrjResolve {
 	~ProjLib_PrjResolve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_PrjResolve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_PrjResolve\n");}
 	}
 };
 
@@ -815,8 +838,14 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 	}
 };
 %extend ProjLib_HCompProjectedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ProjLib_HCompProjectedCurve {
 	~ProjLib_HCompProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_HCompProjectedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_HCompProjectedCurve\n");}
 	}
 };
 
@@ -847,7 +876,8 @@ class ProjLib_ComputeApproxOnPolarSurface {
 };
 %extend ProjLib_ComputeApproxOnPolarSurface {
 	~ProjLib_ComputeApproxOnPolarSurface() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApproxOnPolarSurface\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApproxOnPolarSurface\n");}
 	}
 };
 
@@ -872,7 +902,8 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 };
 %extend ProjLib_PrjFunc {
 	~ProjLib_PrjFunc() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_PrjFunc\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_PrjFunc\n");}
 	}
 };
 
@@ -935,8 +966,14 @@ class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 	}
 };
 %extend ProjLib_HSequenceOfHSequenceOfPnt {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ProjLib_HSequenceOfHSequenceOfPnt {
 	~ProjLib_HSequenceOfHSequenceOfPnt() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_HSequenceOfHSequenceOfPnt\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_HSequenceOfHSequenceOfPnt\n");}
 	}
 };
 
@@ -963,8 +1000,14 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 	}
 };
 %extend ProjLib_HProjectedCurve {
+	Standard_Integer __hash__() {
+	return $self->HashCode(LONG_MAX);
+	}
+};
+%extend ProjLib_HProjectedCurve {
 	~ProjLib_HProjectedCurve() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_HProjectedCurve\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_HProjectedCurve\n");}
 	}
 };
 
@@ -995,6 +1038,7 @@ class ProjLib_Cone : public ProjLib_Projector {
 };
 %extend ProjLib_Cone {
 	~ProjLib_Cone() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");if (__env){printf("## Call custom destructor for instance of ProjLib_Cone\n");}
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of ProjLib_Cone\n");}
 	}
 };
