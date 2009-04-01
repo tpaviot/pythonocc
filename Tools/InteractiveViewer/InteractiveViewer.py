@@ -264,10 +264,10 @@ class AppFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnDisplayModeShaded, id=d_shaded)
         displaymode_menu.AppendSeparator()
         d_qhlr = wx.NewId()
-        displaymode_menu.Append(s_face, u'Quick HLR', 'Switch to Quick Hidden Line Removal mode.')
+        displaymode_menu.Append(d_qhlr, u'Quick HLR', 'Switch to Quick Hidden Line Removal mode.')
         self.Bind(wx.EVT_MENU, self.OnDisplayModeQHLR, id=d_qhlr)
         d_ehlr = wx.NewId()
-        displaymode_menu.Append(s_neutral, u'Exact HLR', 'Switch to Exact Hidden Line Removal mode.')
+        displaymode_menu.Append(d_ehlr, u'Exact HLR', 'Switch to Exact Hidden Line Removal mode.')
         self.Bind(wx.EVT_MENU, self.OnDisplayModeEHLR, id=d_ehlr)
         displaymode_menu.AppendSeparator()
         d_aon = wx.NewId()
@@ -275,7 +275,7 @@ class AppFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnAntialiasingOn, id=d_aon)
         d_aoff = wx.NewId()
         displaymode_menu.Append(d_aoff, u'Antialiasing Off', 'Disable antialiasing.')
-        self.Bind(wx.EVT_MENU, self.OnAntialiasingOff, id=d_aon)
+        self.Bind(wx.EVT_MENU, self.OnAntialiasingOff, id=d_aoff)
         menuBar.Append(displaymode_menu, "&Display mode")
         
         # About menu
@@ -474,6 +474,7 @@ class AppFrame(wx.Frame):
         self.canva._3dDisplay.View_Rear()
         
     def View_Iso(self, event):
+        print "View Iso!!"
         self.canva._3dDisplay.View_Iso()
 
     def OnSelectionVertex(self, event):
@@ -495,9 +496,11 @@ class AppFrame(wx.Frame):
         self.canva._3dDisplay.SetModeShaded()
     
     def OnDisplayModeQHLR(self, event):
+        print "Display QHLR"
         self.canva._3dDisplay.SetModeQuickHLR()
     
     def OnDisplayModeEHLR(self, event):
+        print "Display EHLR"
         self.canva._3dDisplay.SetModeExactHLR()
     
     def OnAntialiasingOn(self, event):
