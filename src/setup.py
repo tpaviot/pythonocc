@@ -112,17 +112,17 @@ if GENERATE_SWIG:#a small things to do before building
     #
     if not os.path.isdir(SWIG_FILES_PATH_MODULAR):
         os.mkdir(SWIG_FILES_PATH_MODULAR)
-#
-# OCC header file TopOpeBRepDS_tools.hxx maybe missing, causing a gccxml error.
-#
-if not os.path.isfile(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx')):
-    try:
-        f = open(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx'),'w')
-        f.close()
-        print "TopOpeBRepDS_tools.hxx created in %s"%OCC_INC
-    except:
-        print "You don't have write acces to %s directory. Please use 'sudo python setup.py build'."%OCC_INC
-        sys.exit(0)
+##
+## OCC header file TopOpeBRepDS_tools.hxx maybe missing, causing a gccxml error.
+##
+#if not os.path.isfile(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx')):
+#    try:
+#        f = open(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx'),'w')
+#        f.close()
+#        print "TopOpeBRepDS_tools.hxx created in %s"%OCC_INC
+#    except:
+#        print "You don't have write acces to %s directory. Please use 'sudo python setup.py build'."%OCC_INC
+#        sys.exit(0)
 #
 # Package Name
 #
@@ -202,7 +202,7 @@ for module in MODULES:
         builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
     module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
-                    include_dirs=[OCC_INC],
+                    include_dirs=[OCC_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
                     library_dirs=[OCC_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,

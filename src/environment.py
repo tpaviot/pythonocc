@@ -27,7 +27,7 @@ from distutils import sysconfig
 #
 # Define pythonOCC version
 #
-VERSION = 'rev197'
+VERSION = 'rev202'
 #
 # Define paths
 #
