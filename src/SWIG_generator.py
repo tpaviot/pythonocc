@@ -35,6 +35,20 @@ except ImportError:
 import environment
 import BuildDocstring
 
+def CaseSensitiveGlob(wildcard):
+    """
+    Case sensitive glob for Windows.
+    Designed for handling of GEOM and Geom modules
+    This function makes the difference between GEOM_* and Geom_* under Windows
+    """
+    flist = glob.glob(wildcard)
+    pattern = wildcard.split('*')[0]
+    f = []
+    for file in flist:
+        if pattern in file:
+            f.append(file)
+    return f
+
 def WriteDisclaimerHeader(fp):
     header = """/*
 READ CAREFULLY the OpenCascade and CeCILL-A licenses before redistributing this package.
@@ -277,10 +291,10 @@ class ModularBuilder(object):
         if not module_name in self.module_dependencies:
             self.module_dependencies.append(module_name)
             if module_name=='TCollection':
-                self.dependencies_headers_to_write += glob.glob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%module_name))
+                self.dependencies_headers_to_write += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%module_name))
             else:
-                self.dependencies_headers_to_write += glob.glob(os.path.join(environment.OCC_INC,'%s_*.hxx'%module_name))+\
-                glob.glob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%module_name))
+                self.dependencies_headers_to_write += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s_*.hxx'%module_name))+\
+                CaseSensitiveGlob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%module_name))
             self.dependencies_headers_to_write = self.OSFilterHeaders(self.dependencies_headers_to_write)
     
     def WriteDepencyFile(self):
@@ -751,7 +765,7 @@ class ModularBuilder(object):
                 if ('X11' in hxx_file) or ('XWD' in hxx_file):
                     HXX_TO_EXCLUDE.append(hxx_file)
         if len(HXX_FILES)==0:
-            HXX_FILES = glob.glob(os.path.join(environment.OCC_INC,'%s*.hxx'%self.MODULE_NAME))
+            HXX_FILES = CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s*.hxx'%self.MODULE_NAME))
         # Exclude undesired hxx for OS specific or pygccxml issues
         for hxx_to_exclude in HXX_TO_EXCLUDE:
             to_exclude = os.path.join(environment.OCC_INC,'%s'%hxx_to_exclude)
@@ -763,14 +777,14 @@ class ModularBuilder(object):
         """
         Module builder initialization
         """        
-        self.HXX_FILES = glob.glob(os.path.join(environment.OCC_INC,'%s_*.hxx'%self.MODULE_NAME))+\
-                         glob.glob(os.path.join(environment.OCC_INC,'%s.hxx'%self.MODULE_NAME))+\
-                         glob.glob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%self.MODULE_NAME))
+        self.HXX_FILES = CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s_*.hxx'%self.MODULE_NAME))+\
+                         CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s.hxx'%self.MODULE_NAME))+\
+                         CaseSensitiveGlob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%self.MODULE_NAME))
         self.HXX_FILES = self.OSFilterHeaders(self.HXX_FILES)
         print " %i headers - GCCXML parsing"%len(self.HXX_FILES)
         # Include additionnal headers
         for additional_header in self.ADDITIONAL_HEADERS:
-            self.ADDITIONAL_HXX += glob.glob(os.path.join(environment.OCC_INC,'%s*.hxx'%additional_header))       
+            self.ADDITIONAL_HXX += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s*.hxx'%additional_header))       
         self.ADDITIONAL_HXX = self.OSFilterHeaders(self.ADDITIONAL_HXX)
         # Sorting headers
         self.HXX_FILES.sort()
@@ -830,4 +844,10 @@ class ModularBuilder(object):
         if self.MODULE_NAME == 'ShapeSchema':
             member_functions = self._mb.member_functions(lambda decl : decl.name.startswith('SAdd'))
             member_functions.exclude()
+    
+if __name__ == '__main__':
+    a = glob.glob(os.path.join(environment.OCC_INC,'STandard_*.hxx'))
+    b = CaseSensitiveGlob(os.path.join(environment.OCC_INC,'STandard_*.hxx'))
+    assert a == 76
+    assert b == 0
     
