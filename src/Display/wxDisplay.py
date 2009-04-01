@@ -156,7 +156,6 @@ class wxViewer3d(wxBaseViewer):
         self._display.DisplayTriedron()
         self._display.SetModeShaded()
         self._inited = True
-        print "Inited!!"
 
     def OnKeyDown(self,evt):
         key_code = evt.GetKeyCode()
