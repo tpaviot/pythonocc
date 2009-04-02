@@ -208,7 +208,6 @@ class ModularBuilder(object):
         self.InitBaseSwigFile()
         self.FindClasseToExclude()
         self.FindMemberFunctionsToExclude()     
-        #print " === Processing module %s === "%module[0]
         self.Init()     
         self.GenerateSWIGSourceFile()
         self.WriteDepencyFile()
@@ -356,20 +355,6 @@ class ModularBuilder(object):
                 header_to_add = '%s.hxx'%return_type
                 if not (header_to_add in self.NEEDED_HXX):
                     self.NEEDED_HXX.append('%s.hxx'%return_type)
-        
-#    def CheckClassReturnAHandle(self,class_declaration):
-#        """
-#        Check whether a method in the class returns a Handle_* smart pointer
-#        """
-#        RETURN_TYPES = []
-#        for mem_fun in class_declaration.public_members:#member_functions():
-#            if hasattr(mem_fun,"return_type"):
-#                return_type = "%s"%mem_fun.return_type
-#                RETURN_TYPES.append(return_type)
-#        for return_type in RETURN_TYPES:
-#            if 'Handle_' in return_type:
-#                return True
-#        return False
     
     def write_function( self , mem_fun , parent_is_abstract):
         """
@@ -470,9 +455,6 @@ class ModularBuilder(object):
             if t:
                 if (t!=self.MODULE_NAME):# and (t!='Standard'):
                     self.AddDependency(t)#print "Dependency with module %s"%t
-                    
-                    #self.dependencies_fp.write("%%import %s.i"%t)
-                    #sys.exit(0)
             else:#it's not a type def
                 if (not argument_type_name.startswith('%s_'%self.MODULE_NAME)) and \
                 (not argument_type_name.startswith('Handle_%s_'%self.MODULE_NAME)) and\
@@ -506,7 +488,7 @@ class ModularBuilder(object):
                 to_write = to_write.replace('Standard_CString','char *')
             
             if argument_default_value!="None" and next_argument_default_value!="None":
-                # default value may be "1u"or "::AspectCenterd" etc.
+                # default value may be "1u"or "::AspectCentered" etc.
                 if argument_default_value=="1u":
                     argument_default_value = "1"
                 elif argument_default_value=="0u":
@@ -536,7 +518,6 @@ class ModularBuilder(object):
         """
         # list with exposed member functions decl_strings
         CURRENT_CLASS_IS_ABSTRACT = False
-        #self.CURRENT_CLASS_METHODS_RETURN_TYPES = []
         self._CURRENT_CLASS_EXPOSED_METHODS = []
         class_name = class_declaration.name
         if class_name in self.ALREADY_EXPOSED:
@@ -549,18 +530,6 @@ class ModularBuilder(object):
         if from_package!=self.MODULE_NAME:
             self.AddDependency(from_package)
             return True
-        #
-        # Check whether a method of the class returns a Handle_* type
-        #
-        #HAVE_HANDLE_RETURN_TYPE = self.CheckClassReturnAHandle(class_declaration)
-        #
-        # Filter classes that need a customized destructor
-        #
-#        if (HAVE_HANDLE_RETURN_TYPE or (('Handle_%s'%class_name) in self.ALREADY_EXPOSED))\
-#        or class_name.startswith('Handle_'):
-#            NEED_CUSTOMIZED_DESTRUCTOR = True
-#        else:
-#            NEED_CUSTOMIZED_DESTRUCTOR = False
         if class_declaration.is_abstract: #cannot instanciate abstract class
             CURRENT_CLASS_IS_ABSTRACT = True
 
@@ -584,8 +553,7 @@ class ModularBuilder(object):
         if self._generate_doc and not ('Handle' in class_name):
             self.fp.write('%feature("docstring") ')
             self.fp.write('%s '%class_name)
-            self.fp.write('"%s";\n'%self.ClassDocstring)
-        
+            self.fp.write('"%s";\n'%self.ClassDocstring)        
         # On verifie si cette classe est derivee d'une autre
         if not self.DERIVED.has_key(class_name):
             self.fp.write("class %s {\n"%class_name)
@@ -593,7 +561,6 @@ class ModularBuilder(object):
             self.fp.write("class %s : public %s {\n"%(class_name,self.DERIVED[class_name]))
         self.fp.write("\tpublic:\n")
         if len(class_declaration.derived)>0:
-            #print "\t### Following classes are derived from %s ###"%class_declaration.name
             for other_classes in class_declaration.derived:
                 print "\t\t%s"%other_classes.related_class.name
         print "\t### Member functions for class %s ###"%class_declaration.name
@@ -601,10 +568,6 @@ class ModularBuilder(object):
         for mem_fun in class_declaration.public_members:#member_functions():
             # Member functions to exclude
             function_name = mem_fun.name
-#            if (function_name.startswith('~') and NEED_CUSTOMIZED_DESTRUCTOR):#class_name.startswith('Handle_')):#DESTRUCTOR
-#                print "Destructor found for a Handle_* class: ignored."
-#            elif (function_name.startswith('~') and (('Handle_%s'%class_name) in self.ALREADY_EXPOSED)):
-#                print "Destructor found for a smart pointer managed class."
             if function_name == 'HashCode': #function that have a special HashCode
                 nb_arguments = len(mem_fun.arguments)
                 if nb_arguments == 1:
@@ -625,21 +588,6 @@ class ModularBuilder(object):
             pointed_class = class_name[7:]
             self.fp.write("\t%s* GetObject() {\n"%pointed_class)
             self.fp.write("\treturn (%s*)$self->Access();\n\t}\n};"%pointed_class)
-            # Customize destructor
-#            self.fp.write('\n%')
-#            self.fp.write('extend %s {\n'%class_name)
-#            self.fp.write('\t~%s() {\n\tprintf("Call custom destructor for instance of %s\\n");'%(class_name,class_name))
-#            self.fp.write('\n\t}\n};')
-#        if (class_name == 'Handle_Standard_Transient'):
-#            #
-#            # Add a method to prevent deletion from Python
-#            #
-#            self.fp.write('\n%extend Handle_Standard_Transient {\nvoid __swig_destroy__() {\nprintf("Trying to delete Handle_Standard_Transient based object\\n");}};')
-#        if (class_name  == 'Standard_Transient'):
-#            #
-#            # Add a method to prevent deletion from Python
-#            #
-#            self.fp.write('\n%extend Standard_Transient {\nvoid __del__() {\nprintf("Trying to delete Standard_Transient based object\\n");}};')
         #
         # Adding a method GetHandle() to objects managed by handles
         #
@@ -657,7 +605,8 @@ class ModularBuilder(object):
             self.fp.write("extend %s {\n"%class_name)
             handle_class_name = 'Handle_%s'%class_name
             self.fp.write("\tStandard_Integer __hash__() {\n")
-            self.fp.write("\treturn $self->HashCode(LONG_MAX);\n\t}\n};")
+            #self.fp.write("\treturn $self->HashCode(LONG_MAX);\n\t}\n};")
+            self.fp.write("\treturn $self->HashCode(__PYTHONOCC_MAXINT__);\n\t}\n};")
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
@@ -749,11 +698,8 @@ class ModularBuilder(object):
                           'Message_ExecStatus.hxx',
                           ]
         if sys.platform!='win32':
-            #HXX_TO_EXCLUDE.append('TNaming_IteratorOnShapesSet.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('Xw_Cextern.hxx')
-            #HXX_TO_EXCLUDE.append('Interface_STAT.hxx')
-            #HXX_TO_EXCLUDE.append('Interface_CheckIterator.hxx')
         # Under Linux, remove all *WNT* classes
         if sys.platform != 'win32':
             for hxx_file in HXX_FILES:
@@ -838,12 +784,11 @@ class ModularBuilder(object):
                 files=[self._wrapper_filename],
                 gccxml_path=environment.GCC_XML_PATH,
                 define_symbols=environment.PYGCCXML_DEFINES,
-                #cache = os.path.join(os.getcwd(),'gccxml_cache','%s.xml'%self.MODULE_NAME),
                 include_paths=[environment.OCC_INC, environment.SWIG_FILES_PATH_MODULAR])
         # Excluding member functions that cause compilation fail
-        if self.MODULE_NAME == 'ShapeSchema':
-            member_functions = self._mb.member_functions(lambda decl : decl.name.startswith('SAdd'))
-            member_functions.exclude()
+        #if self.MODULE_NAME == 'ShapeSchema':
+        #    member_functions = self._mb.member_functions(lambda decl : decl.name.startswith('SAdd'))
+        #    member_functions.exclude()
     
 if __name__ == '__main__':
     a = glob.glob(os.path.join(environment.OCC_INC,'STandard_*.hxx'))
