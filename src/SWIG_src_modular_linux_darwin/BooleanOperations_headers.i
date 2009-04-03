@@ -42,21 +42,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BooleanOperations_AncestorsAndSuccessors.hxx>
-#include<BooleanOperations_AncestorsSeqAndSuccessorsSeq.hxx>
-#include<BooleanOperations_Explorer.hxx>
-#include<BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors.hxx>
-#include<BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger.hxx>
-#include<BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors.hxx>
-#include<BooleanOperations_IndexedDataMapOfShapeInteger.hxx>
-#include<BooleanOperations_KindOfInterference.hxx>
-#include<BooleanOperations_KindOfIntersection.hxx>
-#include<BooleanOperations_OnceExplorer.hxx>
-#include<BooleanOperations_PShapeAndInterferences.hxx>
-#include<BooleanOperations_PShapesDataStructure.hxx>
-#include<BooleanOperations_ShapeAndInterferences.hxx>
-#include<BooleanOperations_ShapesDataStructure.hxx>
-#include<BooleanOperations_StateOfShape.hxx>
 
 // Needed headers necessary for compilation.
 

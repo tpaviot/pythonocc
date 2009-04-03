@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -419,7 +421,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public T
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
@@ -453,7 +455,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : publi
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
@@ -635,7 +637,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TColl
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox {
@@ -887,7 +889,7 @@ class TopOpeBRepTool_ListNodeOfListOfC2DF : public TCollection_MapNode {
 };
 %extend TopOpeBRepTool_ListNodeOfListOfC2DF {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_ListNodeOfListOfC2DF {
@@ -921,7 +923,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity {
@@ -1181,7 +1183,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public TCo
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d {
@@ -1257,7 +1259,7 @@ class TopOpeBRepTool_HBoxTool : public MMgt_TShared {
 };
 %extend TopOpeBRepTool_HBoxTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_HBoxTool {
@@ -1385,7 +1387,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNod
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal {
@@ -1475,7 +1477,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public TCollection_MapNod
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface {
@@ -1663,7 +1665,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public TCollectio
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF {
@@ -2099,7 +2101,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public TCollection_
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF {

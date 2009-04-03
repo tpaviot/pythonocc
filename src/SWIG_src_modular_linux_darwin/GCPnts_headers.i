@@ -33,14 +33,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GCPnts_AbscissaPoint.hxx>
-#include<GCPnts_AbscissaType.hxx>
-#include<GCPnts_DeflectionType.hxx>
-#include<GCPnts_QuasiUniformAbscissa.hxx>
-#include<GCPnts_QuasiUniformDeflection.hxx>
-#include<GCPnts_TangentialDeflection.hxx>
-#include<GCPnts_UniformAbscissa.hxx>
-#include<GCPnts_UniformDeflection.hxx>
 
 // Needed headers necessary for compilation.
 

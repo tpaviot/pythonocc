@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -686,7 +688,7 @@ class BRep_PointRepresentation : public MMgt_TShared {
 };
 %extend BRep_PointRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PointRepresentation {
@@ -786,7 +788,7 @@ class BRep_CurveRepresentation : public MMgt_TShared {
 };
 %extend BRep_CurveRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_CurveRepresentation {
@@ -824,7 +826,7 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 };
 %extend BRep_GCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_GCurve {
@@ -856,7 +858,7 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 };
 %extend BRep_CurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_CurveOnSurface {
@@ -884,7 +886,7 @@ class BRep_PointsOnSurface : public BRep_PointRepresentation {
 };
 %extend BRep_PointsOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PointsOnSurface {
@@ -916,7 +918,7 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 };
 %extend BRep_PointOnCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PointOnCurveOnSurface {
@@ -1136,7 +1138,7 @@ class BRep_PointOnSurface : public BRep_PointsOnSurface {
 };
 %extend BRep_PointOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PointOnSurface {
@@ -1174,7 +1176,7 @@ class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
 };
 %extend BRep_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PolygonOnTriangulation {
@@ -1204,7 +1206,7 @@ class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
 };
 %extend BRep_PolygonOnClosedTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PolygonOnClosedTriangulation {
@@ -1238,7 +1240,7 @@ class BRep_PointOnCurve : public BRep_PointRepresentation {
 };
 %extend BRep_PointOnCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PointOnCurve {
@@ -1288,7 +1290,7 @@ class BRep_TEdge : public TopoDS_TEdge {
 };
 %extend BRep_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_TEdge {
@@ -1332,7 +1334,7 @@ class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 };
 %extend BRep_CurveOn2Surfaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_CurveOn2Surfaces {
@@ -1368,7 +1370,7 @@ class BRep_Curve3D : public BRep_GCurve {
 };
 %extend BRep_Curve3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_Curve3D {
@@ -1522,7 +1524,7 @@ class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 };
 %extend BRep_PolygonOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PolygonOnSurface {
@@ -1602,7 +1604,7 @@ class BRep_CurveOnClosedSurface : public BRep_CurveOnSurface {
 };
 %extend BRep_CurveOnClosedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_CurveOnClosedSurface {
@@ -1650,7 +1652,7 @@ class BRep_TFace : public TopoDS_TFace {
 };
 %extend BRep_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_TFace {
@@ -1728,7 +1730,7 @@ class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
 };
 %extend BRep_ListNodeOfListOfPointRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_ListNodeOfListOfPointRepresentation {
@@ -1762,7 +1764,7 @@ class BRep_PolygonOnClosedSurface : public BRep_PolygonOnSurface {
 };
 %extend BRep_PolygonOnClosedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_PolygonOnClosedSurface {
@@ -1796,7 +1798,7 @@ class BRep_Polygon3D : public BRep_CurveRepresentation {
 };
 %extend BRep_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_Polygon3D {
@@ -1824,7 +1826,7 @@ class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
 };
 %extend BRep_ListNodeOfListOfCurveRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_ListNodeOfListOfCurveRepresentation {
@@ -1866,7 +1868,7 @@ class BRep_TVertex : public TopoDS_TVertex {
 };
 %extend BRep_TVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRep_TVertex {

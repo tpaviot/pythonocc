@@ -39,14 +39,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PDF_Attribute.hxx>
-#include<PDF_Data.hxx>
-#include<PDF_FieldOfHAttributeArray1.hxx>
-#include<PDF_HAttributeArray1.hxx>
-#include<PDF_Reference.hxx>
-#include<PDF_TagSource.hxx>
-#include<PDF_VArrayNodeOfFieldOfHAttributeArray1.hxx>
-#include<PDF_VArrayTNodeOfFieldOfHAttributeArray1.hxx>
 
 // Needed headers necessary for compilation.
 

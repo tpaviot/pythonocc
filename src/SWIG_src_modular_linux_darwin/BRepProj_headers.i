@@ -26,7 +26,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepProj_Projection.hxx>
 
 // Needed headers necessary for compilation.
 

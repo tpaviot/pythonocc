@@ -29,10 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepFilletAPI_LocalOperation.hxx>
-#include<BRepFilletAPI_MakeChamfer.hxx>
-#include<BRepFilletAPI_MakeFillet.hxx>
-#include<BRepFilletAPI_MakeFillet2d.hxx>
 
 // Needed headers necessary for compilation.
 

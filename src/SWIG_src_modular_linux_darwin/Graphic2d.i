@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1472,7 +1474,7 @@ class Graphic2d_Primitive : public MMgt_TShared {
 };
 %extend Graphic2d_Primitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Primitive {
@@ -1518,7 +1520,7 @@ class Graphic2d_Image : public Graphic2d_Primitive {
 };
 %extend Graphic2d_Image {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Image {
@@ -1552,7 +1554,7 @@ class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_InfiniteLineDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_InfiniteLineDefinitionError {
@@ -1622,7 +1624,7 @@ class Graphic2d_Text : public Graphic2d_Primitive {
 };
 %extend Graphic2d_Text {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Text {
@@ -1660,7 +1662,7 @@ class Graphic2d_HidingText : public Graphic2d_Text {
 };
 %extend Graphic2d_HidingText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_HidingText {
@@ -1704,7 +1706,7 @@ class Graphic2d_ViewMapping : public MMgt_TShared {
 };
 %extend Graphic2d_ViewMapping {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_ViewMapping {
@@ -1732,7 +1734,7 @@ class Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public TCollection_SeqNo
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfGraphicObject {
@@ -1838,7 +1840,7 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 };
 %extend Graphic2d_GraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_GraphicObject {
@@ -1872,7 +1874,7 @@ class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_SegmentDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SegmentDefinitionError {
@@ -1970,7 +1972,7 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 };
 %extend Graphic2d_ImageFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_ImageFile {
@@ -2020,7 +2022,7 @@ class Graphic2d_Line : public Graphic2d_Primitive {
 };
 %extend Graphic2d_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Line {
@@ -2050,7 +2052,7 @@ class Graphic2d_InfiniteLine : public Graphic2d_Line {
 };
 %extend Graphic2d_InfiniteLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_InfiniteLine {
@@ -2120,7 +2122,7 @@ class Graphic2d_HSequenceOfPrimitives : public MMgt_TShared {
 };
 %extend Graphic2d_HSequenceOfPrimitives {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_HSequenceOfPrimitives {
@@ -2150,7 +2152,7 @@ class Graphic2d_VectorialMarker : public Graphic2d_Line {
 };
 %extend Graphic2d_VectorialMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_VectorialMarker {
@@ -2220,7 +2222,7 @@ class Graphic2d_HSequenceOfVertex : public MMgt_TShared {
 };
 %extend Graphic2d_HSequenceOfVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_HSequenceOfVertex {
@@ -2258,7 +2260,7 @@ class Graphic2d_Ellips : public Graphic2d_Line {
 };
 %extend Graphic2d_Ellips {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Ellips {
@@ -2294,7 +2296,7 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 };
 %extend Graphic2d_PolylineMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_PolylineMarker {
@@ -2376,7 +2378,7 @@ class Graphic2d_SequenceNodeOfSequenceOfPolyline : public TCollection_SeqNode {
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfPolyline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfPolyline {
@@ -2404,7 +2406,7 @@ class Graphic2d_SequenceNodeOfSequenceOfPrimitives : public TCollection_SeqNode 
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfPrimitives {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfPrimitives {
@@ -2474,7 +2476,7 @@ class Graphic2d_BufferList : public MMgt_TShared {
 };
 %extend Graphic2d_BufferList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_BufferList {
@@ -2566,7 +2568,7 @@ class Graphic2d_Marker : public Graphic2d_Line {
 };
 %extend Graphic2d_Marker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Marker {
@@ -2616,7 +2618,7 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 };
 %extend Graphic2d_SetOfMarkers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SetOfMarkers {
@@ -2708,7 +2710,7 @@ class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 };
 %extend Graphic2d_HidingGraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_HidingGraphicObject {
@@ -2866,7 +2868,7 @@ class Graphic2d_Drawer : public Standard_Transient {
 };
 %extend Graphic2d_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Drawer {
@@ -2900,7 +2902,7 @@ class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 };
 %extend Graphic2d_DetectionColorError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_DetectionColorError {
@@ -2990,7 +2992,7 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 };
 %extend Graphic2d_Paragraph {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Paragraph {
@@ -3018,7 +3020,7 @@ class Graphic2d_SequenceNodeOfSequenceOfVertex : public TCollection_SeqNode {
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfVertex {
@@ -3056,7 +3058,7 @@ class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
 };
 %extend Graphic2d_EllipsMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_EllipsMarker {
@@ -3102,7 +3104,7 @@ class Graphic2d_HArray1OfVertex : public MMgt_TShared {
 };
 %extend Graphic2d_HArray1OfVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_HArray1OfVertex {
@@ -3160,7 +3162,7 @@ class Graphic2d_FramedText : public Graphic2d_Text {
 };
 %extend Graphic2d_FramedText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_FramedText {
@@ -3206,7 +3208,7 @@ class Graphic2d_Circle : public Graphic2d_Line {
 };
 %extend Graphic2d_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Circle {
@@ -3240,7 +3242,7 @@ class Graphic2d_MarkerDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_MarkerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_MarkerDefinitionError {
@@ -3274,7 +3276,7 @@ class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_PolylineDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_PolylineDefinitionError {
@@ -3310,7 +3312,7 @@ class Graphic2d_Polyline : public Graphic2d_Line {
 };
 %extend Graphic2d_Polyline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Polyline {
@@ -3344,7 +3346,7 @@ class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_TextDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_TextDefinitionError {
@@ -3378,7 +3380,7 @@ class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_ImageDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_ImageDefinitionError {
@@ -3412,7 +3414,7 @@ class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_CircleDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_CircleDefinitionError {
@@ -3446,7 +3448,7 @@ class Graphic2d_Segment : public Graphic2d_Line {
 };
 %extend Graphic2d_Segment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Segment {
@@ -3534,7 +3536,7 @@ class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 };
 %extend Graphic2d_OverrideColorError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_OverrideColorError {
@@ -3572,7 +3574,7 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 };
 %extend Graphic2d_SetOfPolylines {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SetOfPolylines {
@@ -3606,7 +3608,7 @@ class Graphic2d_SetOfSegments : public Graphic2d_Line {
 };
 %extend Graphic2d_SetOfSegments {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SetOfSegments {
@@ -3680,7 +3682,7 @@ class Graphic2d_Buffer : public MMgt_TShared {
 };
 %extend Graphic2d_Buffer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_Buffer {
@@ -3750,7 +3752,7 @@ class Graphic2d_DisplayList : public MMgt_TShared {
 };
 %extend Graphic2d_DisplayList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_DisplayList {
@@ -3834,7 +3836,7 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 };
 %extend Graphic2d_TransientManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_TransientManager {
@@ -3862,7 +3864,7 @@ class Graphic2d_SequenceNodeOfSequenceOfBuffer : public TCollection_SeqNode {
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfBuffer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_SequenceNodeOfSequenceOfBuffer {
@@ -3902,7 +3904,7 @@ class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 };
 %extend Graphic2d_CircleMarker {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_CircleMarker {
@@ -3936,7 +3938,7 @@ class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_TransientDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_TransientDefinitionError {
@@ -3970,7 +3972,7 @@ class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_DrawerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_DrawerDefinitionError {
@@ -4058,7 +4060,7 @@ class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic2d_EllipsDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_EllipsDefinitionError {
@@ -4144,7 +4146,7 @@ class Graphic2d_View : public MMgt_TShared {
 };
 %extend Graphic2d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic2d_View {

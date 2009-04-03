@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -336,7 +338,7 @@ class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode 
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfPointOnRst {
@@ -522,7 +524,7 @@ class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepBlend_SequenceNodeOfSequenceOfLine {
@@ -1112,7 +1114,7 @@ class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 };
 %extend BRepBlend_AppFuncRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepBlend_AppFuncRoot {
@@ -1136,7 +1138,7 @@ class BRepBlend_AppFuncRst : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFuncRst {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepBlend_AppFuncRst {
@@ -1488,7 +1490,7 @@ class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepBlend_AppFunc {
@@ -1626,7 +1628,7 @@ class BRepBlend_Line : public MMgt_TShared {
 };
 %extend BRepBlend_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepBlend_Line {
@@ -1740,7 +1742,7 @@ class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 };
 %extend BRepBlend_AppFuncRstRst {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepBlend_AppFuncRstRst {

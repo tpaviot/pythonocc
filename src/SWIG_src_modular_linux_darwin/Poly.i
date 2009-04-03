@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -363,7 +365,7 @@ class Poly_PolygonOnTriangulation : public MMgt_TShared {
 };
 %extend Poly_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Poly_PolygonOnTriangulation {
@@ -465,7 +467,7 @@ class Poly_Triangulation : public MMgt_TShared {
 };
 %extend Poly_Triangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Poly_Triangulation {
@@ -567,7 +569,7 @@ class Poly_Polygon2D : public MMgt_TShared {
 };
 %extend Poly_Polygon2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Poly_Polygon2D {
@@ -647,7 +649,7 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 };
 %extend Poly_HArray1OfTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Poly_HArray1OfTriangle {
@@ -719,7 +721,7 @@ class Poly_Polygon3D : public MMgt_TShared {
 };
 %extend Poly_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Poly_Polygon3D {

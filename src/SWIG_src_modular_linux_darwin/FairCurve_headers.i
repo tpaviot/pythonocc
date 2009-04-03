@@ -37,18 +37,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<FairCurve_AnalysisCode.hxx>
-#include<FairCurve_Batten.hxx>
-#include<FairCurve_BattenLaw.hxx>
-#include<FairCurve_DistributionOfEnergy.hxx>
-#include<FairCurve_DistributionOfJerk.hxx>
-#include<FairCurve_DistributionOfSagging.hxx>
-#include<FairCurve_DistributionOfTension.hxx>
-#include<FairCurve_Energy.hxx>
-#include<FairCurve_EnergyOfBatten.hxx>
-#include<FairCurve_EnergyOfMVC.hxx>
-#include<FairCurve_MinimalVariation.hxx>
-#include<FairCurve_Newton.hxx>
 
 // Needed headers necessary for compilation.
 

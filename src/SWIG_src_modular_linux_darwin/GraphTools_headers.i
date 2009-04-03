@@ -37,15 +37,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GraphTools_ListIteratorOfListOfSequenceOfInteger.hxx>
-#include<GraphTools_ListIteratorOfSCList.hxx>
-#include<GraphTools_ListNodeOfListOfSequenceOfInteger.hxx>
-#include<GraphTools_ListNodeOfSCList.hxx>
-#include<GraphTools_ListOfSequenceOfInteger.hxx>
-#include<GraphTools_RGNode.hxx>
-#include<GraphTools_SC.hxx>
-#include<GraphTools_SCList.hxx>
-#include<GraphTools_TSNode.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -335,7 +337,7 @@ class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 };
 %extend TransferBRep_OrientedShapeMapper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TransferBRep_OrientedShapeMapper {
@@ -453,7 +455,7 @@ class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
 };
 %extend TransferBRep_HSequenceOfTransferResultInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TransferBRep_HSequenceOfTransferResultInfo {
@@ -491,7 +493,7 @@ class TransferBRep_BinderOfShape : public Transfer_Binder {
 };
 %extend TransferBRep_BinderOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TransferBRep_BinderOfShape {
@@ -537,7 +539,7 @@ class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 };
 %extend TransferBRep_ShapeBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TransferBRep_ShapeBinder {
@@ -653,7 +655,7 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 };
 %extend TransferBRep_ShapeListBinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TransferBRep_ShapeListBinder {
@@ -715,7 +717,7 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 };
 %extend TransferBRep_TransferResultInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TransferBRep_TransferResultInfo {
@@ -743,7 +745,7 @@ class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollecti
 };
 %extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo {

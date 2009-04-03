@@ -41,17 +41,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PCollection_AccessMode.hxx>
-#include<PCollection_CompareOfInteger.hxx>
-#include<PCollection_CompareOfReal.hxx>
-#include<PCollection_HAsciiString.hxx>
-#include<PCollection_HExtendedString.hxx>
-#include<PCollection_IsContained.hxx>
-#include<PCollection_IsNotRoot.hxx>
-#include<PCollection_IsNullTree.hxx>
-#include<PCollection_PrivCompareOfInteger.hxx>
-#include<PCollection_PrivCompareOfReal.hxx>
-#include<PCollection_Side.hxx>
 
 // Needed headers necessary for compilation.
 

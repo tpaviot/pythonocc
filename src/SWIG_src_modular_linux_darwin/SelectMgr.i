@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -621,7 +623,7 @@ class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
 };
 %extend SelectMgr_ListNodeOfListOfFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_ListNodeOfListOfFilter {
@@ -649,7 +651,7 @@ class SelectMgr_Filter : public MMgt_TShared {
 };
 %extend SelectMgr_Filter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_Filter {
@@ -683,7 +685,7 @@ class SelectMgr_CompositionFilter : public SelectMgr_Filter {
 };
 %extend SelectMgr_CompositionFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_CompositionFilter {
@@ -709,7 +711,7 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 };
 %extend SelectMgr_AndFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_AndFilter {
@@ -739,7 +741,7 @@ class SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public TCollection_MapN
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive {
@@ -869,7 +871,7 @@ class SelectMgr_SelectionManager : public MMgt_TShared {
 };
 %extend SelectMgr_SelectionManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_SelectionManager {
@@ -993,7 +995,7 @@ class SelectMgr_ViewerSelector : public MMgt_TShared {
 };
 %extend SelectMgr_ViewerSelector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_ViewerSelector {
@@ -1023,7 +1025,7 @@ class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_M
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfSelectionActivation {
@@ -1087,7 +1089,7 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 };
 %extend SelectMgr_SelectableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_SelectableObject {
@@ -1117,7 +1119,7 @@ class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNo
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_DataMapNodeOfDataMapOfObjectSelectors {
@@ -1179,7 +1181,7 @@ class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfOwner {
@@ -1301,7 +1303,7 @@ class SelectMgr_Selection : public MMgt_TShared {
 };
 %extend SelectMgr_Selection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_Selection {
@@ -1531,7 +1533,7 @@ class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfFilter {
@@ -1559,7 +1561,7 @@ class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
 };
 %extend SelectMgr_OrFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_OrFilter {
@@ -1641,7 +1643,7 @@ class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelection {
@@ -1757,7 +1759,7 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 };
 %extend SelectMgr_EntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_EntityOwner {
@@ -1887,7 +1889,7 @@ class SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public TCol
 };
 %extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion {
@@ -1915,7 +1917,7 @@ class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_SequenceNodeOfSequenceOfSelector {
@@ -1947,7 +1949,7 @@ class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {
 };
 %extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectMgr_IndexedMapNodeOfIndexedMapOfOwner {

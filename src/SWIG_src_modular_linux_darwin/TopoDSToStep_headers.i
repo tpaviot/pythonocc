@@ -47,28 +47,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TopoDSToStep.hxx>
-#include<TopoDSToStep_Builder.hxx>
-#include<TopoDSToStep_BuilderError.hxx>
-#include<TopoDSToStep_FacetedError.hxx>
-#include<TopoDSToStep_FacetedTool.hxx>
-#include<TopoDSToStep_MakeBrepWithVoids.hxx>
-#include<TopoDSToStep_MakeEdgeError.hxx>
-#include<TopoDSToStep_MakeFaceError.hxx>
-#include<TopoDSToStep_MakeFacetedBrep.hxx>
-#include<TopoDSToStep_MakeFacetedBrepAndBrepWithVoids.hxx>
-#include<TopoDSToStep_MakeGeometricCurveSet.hxx>
-#include<TopoDSToStep_MakeManifoldSolidBrep.hxx>
-#include<TopoDSToStep_MakeShellBasedSurfaceModel.hxx>
-#include<TopoDSToStep_MakeStepEdge.hxx>
-#include<TopoDSToStep_MakeStepFace.hxx>
-#include<TopoDSToStep_MakeStepVertex.hxx>
-#include<TopoDSToStep_MakeStepWire.hxx>
-#include<TopoDSToStep_MakeVertexError.hxx>
-#include<TopoDSToStep_MakeWireError.hxx>
-#include<TopoDSToStep_Root.hxx>
-#include<TopoDSToStep_Tool.hxx>
-#include<TopoDSToStep_WireframeBuilder.hxx>
 
 // Needed headers necessary for compilation.
 

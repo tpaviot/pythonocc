@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -3745,7 +3747,7 @@ class StepBasic_NameAssignment : public MMgt_TShared {
 };
 %extend StepBasic_NameAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_NameAssignment {
@@ -3777,7 +3779,7 @@ class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassificationLevel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SecurityClassificationLevel {
@@ -3819,7 +3821,7 @@ class StepBasic_GeneralProperty : public MMgt_TShared {
 };
 %extend StepBasic_GeneralProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_GeneralProperty {
@@ -3855,7 +3857,7 @@ class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
 };
 %extend StepBasic_DateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DateAndTimeAssignment {
@@ -3887,7 +3889,7 @@ class StepBasic_NamedUnit : public MMgt_TShared {
 };
 %extend StepBasic_NamedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_NamedUnit {
@@ -3921,7 +3923,7 @@ class StepBasic_ConversionBasedUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_ConversionBasedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnit {
@@ -3949,7 +3951,7 @@ class StepBasic_ConversionBasedUnitAndAreaUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndAreaUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnitAndAreaUnit {
@@ -3989,7 +3991,7 @@ class StepBasic_MeasureWithUnit : public MMgt_TShared {
 };
 %extend StepBasic_MeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_MeasureWithUnit {
@@ -4013,7 +4015,7 @@ class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_MassMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_MassMeasureWithUnit {
@@ -4053,7 +4055,7 @@ class StepBasic_DocumentUsageConstraint : public MMgt_TShared {
 };
 %extend StepBasic_DocumentUsageConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DocumentUsageConstraint {
@@ -4125,7 +4127,7 @@ class StepBasic_SizeMember : public StepData_SelectReal {
 };
 %extend StepBasic_SizeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SizeMember {
@@ -4151,7 +4153,7 @@ class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_TimeMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_TimeMeasureWithUnit {
@@ -4191,7 +4193,7 @@ class StepBasic_ProductCategory : public MMgt_TShared {
 };
 %extend StepBasic_ProductCategory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductCategory {
@@ -4223,7 +4225,7 @@ class StepBasic_DateRole : public MMgt_TShared {
 };
 %extend StepBasic_DateRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DateRole {
@@ -4269,7 +4271,7 @@ class StepBasic_HArray1OfOrganization : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfOrganization {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfOrganization {
@@ -4375,7 +4377,7 @@ class StepBasic_VersionedActionRequest : public MMgt_TShared {
 };
 %extend StepBasic_VersionedActionRequest {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_VersionedActionRequest {
@@ -4401,7 +4403,7 @@ class StepBasic_RatioUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_RatioUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_RatioUnit {
@@ -4473,7 +4475,7 @@ class StepBasic_Date : public MMgt_TShared {
 };
 %extend StepBasic_Date {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Date {
@@ -4509,7 +4511,7 @@ class StepBasic_ApplicationContextElement : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationContextElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApplicationContextElement {
@@ -4539,7 +4541,7 @@ class StepBasic_ProductDefinitionContext : public StepBasic_ApplicationContextEl
 };
 %extend StepBasic_ProductDefinitionContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductDefinitionContext {
@@ -4563,7 +4565,7 @@ class StepBasic_DesignContext : public StepBasic_ProductDefinitionContext {
 };
 %extend StepBasic_DesignContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DesignContext {
@@ -4599,7 +4601,7 @@ class StepBasic_ActionRequestSolution : public MMgt_TShared {
 };
 %extend StepBasic_ActionRequestSolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ActionRequestSolution {
@@ -4645,7 +4647,7 @@ class StepBasic_SiUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_SiUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnit {
@@ -4673,7 +4675,7 @@ class StepBasic_SiUnitAndPlaneAngleUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndPlaneAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndPlaneAngleUnit {
@@ -4717,7 +4719,7 @@ class StepBasic_DocumentRelationship : public MMgt_TShared {
 };
 %extend StepBasic_DocumentRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DocumentRelationship {
@@ -4743,7 +4745,7 @@ class StepBasic_LengthUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_LengthUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_LengthUnit {
@@ -4777,7 +4779,7 @@ class StepBasic_ConversionBasedUnitAndMassUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndMassUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnitAndMassUnit {
@@ -4803,7 +4805,7 @@ class StepBasic_AreaUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_AreaUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_AreaUnit {
@@ -4889,7 +4891,7 @@ class StepBasic_HArray1OfProductContext : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProductContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfProductContext {
@@ -4933,7 +4935,7 @@ class StepBasic_ApplicationProtocolDefinition : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationProtocolDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApplicationProtocolDefinition {
@@ -4999,7 +5001,7 @@ class StepBasic_PlaneAngleUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_PlaneAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_PlaneAngleUnit {
@@ -5123,7 +5125,7 @@ class StepBasic_Address : public MMgt_TShared {
 };
 %extend StepBasic_Address {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Address {
@@ -5167,7 +5169,7 @@ class StepBasic_Organization : public MMgt_TShared {
 };
 %extend StepBasic_Organization {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Organization {
@@ -5199,7 +5201,7 @@ class StepBasic_ApplicationContext : public MMgt_TShared {
 };
 %extend StepBasic_ApplicationContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApplicationContext {
@@ -5233,7 +5235,7 @@ class StepBasic_ConversionBasedUnitAndTimeUnit : public StepBasic_ConversionBase
 };
 %extend StepBasic_ConversionBasedUnitAndTimeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnitAndTimeUnit {
@@ -5269,7 +5271,7 @@ class StepBasic_Approval : public MMgt_TShared {
 };
 %extend StepBasic_Approval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Approval {
@@ -5307,7 +5309,7 @@ class StepBasic_ProductRelatedProductCategory : public StepBasic_ProductCategory
 };
 %extend StepBasic_ProductRelatedProductCategory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductRelatedProductCategory {
@@ -5333,7 +5335,7 @@ class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 };
 %extend StepBasic_ProductType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductType {
@@ -5369,7 +5371,7 @@ class StepBasic_DateAndTime : public MMgt_TShared {
 };
 %extend StepBasic_DateAndTime {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DateAndTime {
@@ -5401,7 +5403,7 @@ class StepBasic_DocumentType : public MMgt_TShared {
 };
 %extend StepBasic_DocumentType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DocumentType {
@@ -5433,7 +5435,7 @@ class StepBasic_Effectivity : public MMgt_TShared {
 };
 %extend StepBasic_Effectivity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Effectivity {
@@ -5465,7 +5467,7 @@ class StepBasic_EulerAngles : public MMgt_TShared {
 };
 %extend StepBasic_EulerAngles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_EulerAngles {
@@ -5503,7 +5505,7 @@ class StepBasic_CalendarDate : public StepBasic_Date {
 };
 %extend StepBasic_CalendarDate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_CalendarDate {
@@ -5535,7 +5537,7 @@ class StepBasic_ActionAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ActionAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ActionAssignment {
@@ -5567,7 +5569,7 @@ class StepBasic_OrganizationRole : public MMgt_TShared {
 };
 %extend StepBasic_OrganizationRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_OrganizationRole {
@@ -5603,7 +5605,7 @@ class StepBasic_DerivedUnitElement : public MMgt_TShared {
 };
 %extend StepBasic_DerivedUnitElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DerivedUnitElement {
@@ -5637,7 +5639,7 @@ class StepBasic_SiUnitAndThermodynamicTemperatureUnit : public StepBasic_SiUnit 
 };
 %extend StepBasic_SiUnitAndThermodynamicTemperatureUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndThermodynamicTemperatureUnit {
@@ -5695,7 +5697,7 @@ class StepBasic_IdentificationRole : public MMgt_TShared {
 };
 %extend StepBasic_IdentificationRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_IdentificationRole {
@@ -5727,7 +5729,7 @@ class StepBasic_ApprovalStatus : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApprovalStatus {
@@ -5779,7 +5781,7 @@ class StepBasic_LocalTime : public MMgt_TShared {
 };
 %extend StepBasic_LocalTime {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_LocalTime {
@@ -5805,7 +5807,7 @@ class StepBasic_PlaneAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_PlaneAngleMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_PlaneAngleMeasureWithUnit {
@@ -5839,7 +5841,7 @@ class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndMassUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndMassUnit {
@@ -5881,7 +5883,7 @@ class StepBasic_PersonalAddress : public StepBasic_Address {
 };
 %extend StepBasic_PersonalAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_PersonalAddress {
@@ -5913,7 +5915,7 @@ class StepBasic_CertificationType : public MMgt_TShared {
 };
 %extend StepBasic_CertificationType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_CertificationType {
@@ -5945,7 +5947,7 @@ class StepBasic_MeasureValueMember : public StepData_SelectReal {
 };
 %extend StepBasic_MeasureValueMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_MeasureValueMember {
@@ -5995,7 +5997,7 @@ class StepBasic_ProductDefinitionRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductDefinitionRelationship {
@@ -6043,7 +6045,7 @@ class StepBasic_Product : public MMgt_TShared {
 };
 %extend StepBasic_Product {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Product {
@@ -6073,7 +6075,7 @@ class StepBasic_ConversionBasedUnitAndVolumeUnit : public StepBasic_ConversionBa
 };
 %extend StepBasic_ConversionBasedUnitAndVolumeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnitAndVolumeUnit {
@@ -6117,7 +6119,7 @@ class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
 };
 %extend StepBasic_CoordinatedUniversalTimeOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_CoordinatedUniversalTimeOffset {
@@ -6155,7 +6157,7 @@ class StepBasic_Group : public MMgt_TShared {
 };
 %extend StepBasic_Group {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Group {
@@ -6187,7 +6189,7 @@ class StepBasic_ApprovalRole : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApprovalRole {
@@ -6233,7 +6235,7 @@ class StepBasic_GroupRelationship : public MMgt_TShared {
 };
 %extend StepBasic_GroupRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_GroupRelationship {
@@ -6265,7 +6267,7 @@ class StepBasic_CertificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_CertificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_CertificationAssignment {
@@ -6299,7 +6301,7 @@ class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
 };
 %extend StepBasic_ProductContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductContext {
@@ -6323,7 +6325,7 @@ class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 };
 %extend StepBasic_MechanicalContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_MechanicalContext {
@@ -6349,7 +6351,7 @@ class StepBasic_MassUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_MassUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_MassUnit {
@@ -6381,7 +6383,7 @@ class StepBasic_SecurityClassificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SecurityClassificationAssignment {
@@ -6415,7 +6417,7 @@ class StepBasic_SiUnitAndSolidAngleUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndSolidAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndSolidAngleUnit {
@@ -6441,7 +6443,7 @@ class StepBasic_ThermodynamicTemperatureUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_ThermodynamicTemperatureUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ThermodynamicTemperatureUnit {
@@ -6487,7 +6489,7 @@ class StepBasic_Document : public MMgt_TShared {
 };
 %extend StepBasic_Document {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Document {
@@ -6513,7 +6515,7 @@ class StepBasic_SolidAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_SolidAngleMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SolidAngleMeasureWithUnit {
@@ -6555,7 +6557,7 @@ class StepBasic_OrganizationalAddress : public StepBasic_Address {
 };
 %extend StepBasic_OrganizationalAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_OrganizationalAddress {
@@ -6587,7 +6589,7 @@ class StepBasic_DocumentFile : public StepBasic_Document {
 };
 %extend StepBasic_DocumentFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DocumentFile {
@@ -6621,7 +6623,7 @@ class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndRatioUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndRatioUnit {
@@ -6661,7 +6663,7 @@ class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalPersonOrganization {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApprovalPersonOrganization {
@@ -6709,7 +6711,7 @@ class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionFormationRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductDefinitionFormationRelationship {
@@ -6745,7 +6747,7 @@ class StepBasic_DocumentRepresentationType : public MMgt_TShared {
 };
 %extend StepBasic_DocumentRepresentationType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DocumentRepresentationType {
@@ -6779,7 +6781,7 @@ class StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public StepBasic_Conversi
 };
 %extend StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnitAndPlaneAngleUnit {
@@ -6813,7 +6815,7 @@ class StepBasic_SiUnitAndAreaUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndAreaUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndAreaUnit {
@@ -6851,7 +6853,7 @@ class StepBasic_ObjectRole : public MMgt_TShared {
 };
 %extend StepBasic_ObjectRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ObjectRole {
@@ -6923,7 +6925,7 @@ class StepBasic_PersonAndOrganizationRole : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganizationRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_PersonAndOrganizationRole {
@@ -6965,7 +6967,7 @@ class StepBasic_Action : public MMgt_TShared {
 };
 %extend StepBasic_Action {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Action {
@@ -7001,7 +7003,7 @@ class StepBasic_DocumentReference : public MMgt_TShared {
 };
 %extend StepBasic_DocumentReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DocumentReference {
@@ -7027,7 +7029,7 @@ class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_SolidAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SolidAngleUnit {
@@ -7053,7 +7055,7 @@ class StepBasic_DigitalDocument : public StepBasic_Document {
 };
 %extend StepBasic_DigitalDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DigitalDocument {
@@ -7107,7 +7109,7 @@ class StepBasic_ProductDefinitionEffectivity : public StepBasic_Effectivity {
 };
 %extend StepBasic_ProductDefinitionEffectivity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductDefinitionEffectivity {
@@ -7147,7 +7149,7 @@ class StepBasic_Certification : public MMgt_TShared {
 };
 %extend StepBasic_Certification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Certification {
@@ -7179,7 +7181,7 @@ class StepBasic_GroupAssignment : public MMgt_TShared {
 };
 %extend StepBasic_GroupAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_GroupAssignment {
@@ -7219,7 +7221,7 @@ class StepBasic_ProductDefinitionFormation : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinitionFormation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductDefinitionFormation {
@@ -7249,7 +7251,7 @@ class StepBasic_ProductDefinitionFormationWithSpecifiedSource : public StepBasic
 };
 %extend StepBasic_ProductDefinitionFormationWithSpecifiedSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductDefinitionFormationWithSpecifiedSource {
@@ -7283,7 +7285,7 @@ class StepBasic_ConversionBasedUnitAndRatioUnit : public StepBasic_ConversionBas
 };
 %extend StepBasic_ConversionBasedUnitAndRatioUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnitAndRatioUnit {
@@ -7329,7 +7331,7 @@ class StepBasic_HArray1OfNamedUnit : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfNamedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfNamedUnit {
@@ -7363,7 +7365,7 @@ class StepBasic_ConversionBasedUnitAndLengthUnit : public StepBasic_ConversionBa
 };
 %extend StepBasic_ConversionBasedUnitAndLengthUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnitAndLengthUnit {
@@ -7397,7 +7399,7 @@ class StepBasic_OrdinalDate : public StepBasic_Date {
 };
 %extend StepBasic_OrdinalDate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_OrdinalDate {
@@ -7433,7 +7435,7 @@ class StepBasic_OrganizationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_OrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_OrganizationAssignment {
@@ -7479,7 +7481,7 @@ class StepBasic_HArray1OfDocument : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfDocument {
@@ -7511,7 +7513,7 @@ class StepBasic_ExternalSource : public MMgt_TShared {
 };
 %extend StepBasic_ExternalSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ExternalSource {
@@ -7543,7 +7545,7 @@ class StepBasic_DateTimeRole : public MMgt_TShared {
 };
 %extend StepBasic_DateTimeRole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DateTimeRole {
@@ -7577,7 +7579,7 @@ class StepBasic_SiUnitAndTimeUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndTimeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndTimeUnit {
@@ -7613,7 +7615,7 @@ class StepBasic_ExternallyDefinedItem : public MMgt_TShared {
 };
 %extend StepBasic_ExternallyDefinedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ExternallyDefinedItem {
@@ -7653,7 +7655,7 @@ class StepBasic_SecurityClassification : public MMgt_TShared {
 };
 %extend StepBasic_SecurityClassification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SecurityClassification {
@@ -7709,7 +7711,7 @@ class StepBasic_DimensionalExponents : public MMgt_TShared {
 };
 %extend StepBasic_DimensionalExponents {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DimensionalExponents {
@@ -7741,7 +7743,7 @@ class StepBasic_ContractAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ContractAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ContractAssignment {
@@ -7777,7 +7779,7 @@ class StepBasic_ApprovalDateTime : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalDateTime {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApprovalDateTime {
@@ -7803,7 +7805,7 @@ class StepBasic_LengthMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_LengthMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_LengthMeasureWithUnit {
@@ -7847,7 +7849,7 @@ class StepBasic_ProductDefinition : public MMgt_TShared {
 };
 %extend StepBasic_ProductDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductDefinition {
@@ -7883,7 +7885,7 @@ class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_Prod
 };
 %extend StepBasic_ProductDefinitionWithAssociatedDocuments {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductDefinitionWithAssociatedDocuments {
@@ -7915,7 +7917,7 @@ class StepBasic_EffectivityAssignment : public MMgt_TShared {
 };
 %extend StepBasic_EffectivityAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_EffectivityAssignment {
@@ -7951,7 +7953,7 @@ class StepBasic_PersonAndOrganization : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganization {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_PersonAndOrganization {
@@ -8037,7 +8039,7 @@ class StepBasic_HArray1OfProductDefinition : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProductDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfProductDefinition {
@@ -8071,7 +8073,7 @@ class StepBasic_SiUnitAndVolumeUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndVolumeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndVolumeUnit {
@@ -8103,7 +8105,7 @@ class StepBasic_ContractType : public MMgt_TShared {
 };
 %extend StepBasic_ContractType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ContractType {
@@ -8149,7 +8151,7 @@ class StepBasic_ActionMethod : public MMgt_TShared {
 };
 %extend StepBasic_ActionMethod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ActionMethod {
@@ -8183,7 +8185,7 @@ class StepBasic_ConversionBasedUnitAndSolidAngleUnit : public StepBasic_Conversi
 };
 %extend StepBasic_ConversionBasedUnitAndSolidAngleUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ConversionBasedUnitAndSolidAngleUnit {
@@ -8209,7 +8211,7 @@ class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_VolumeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_VolumeUnit {
@@ -8255,7 +8257,7 @@ class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ProductCategoryRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductCategoryRelationship {
@@ -8291,7 +8293,7 @@ class StepBasic_IdentificationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_IdentificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_IdentificationAssignment {
@@ -8335,7 +8337,7 @@ class StepBasic_ApprovalRelationship : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApprovalRelationship {
@@ -8371,7 +8373,7 @@ class StepBasic_RoleAssociation : public MMgt_TShared {
 };
 %extend StepBasic_RoleAssociation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_RoleAssociation {
@@ -8403,7 +8405,7 @@ class StepBasic_ApprovalAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ApprovalAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ApprovalAssignment {
@@ -8439,7 +8441,7 @@ class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
 };
 %extend StepBasic_PersonAndOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_PersonAndOrganizationAssignment {
@@ -8475,7 +8477,7 @@ class StepBasic_DateAssignment : public MMgt_TShared {
 };
 %extend StepBasic_DateAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DateAssignment {
@@ -8517,7 +8519,7 @@ class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
 };
 %extend StepBasic_WeekOfYearAndDayDate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_WeekOfYearAndDayDate {
@@ -8553,7 +8555,7 @@ class StepBasic_DerivedUnit : public MMgt_TShared {
 };
 %extend StepBasic_DerivedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DerivedUnit {
@@ -8585,7 +8587,7 @@ class StepBasic_ExternalIdentificationAssignment : public StepBasic_Identificati
 };
 %extend StepBasic_ExternalIdentificationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ExternalIdentificationAssignment {
@@ -8631,7 +8633,7 @@ class StepBasic_DocumentProductAssociation : public MMgt_TShared {
 };
 %extend StepBasic_DocumentProductAssociation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DocumentProductAssociation {
@@ -8655,7 +8657,7 @@ class StepBasic_DocumentProductEquivalence : public StepBasic_DocumentProductAss
 };
 %extend StepBasic_DocumentProductEquivalence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_DocumentProductEquivalence {
@@ -8801,7 +8803,7 @@ class StepBasic_HArray1OfProduct : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfProduct {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfProduct {
@@ -8847,7 +8849,7 @@ class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfUncertaintyMeasureWithUnit {
@@ -8893,7 +8895,7 @@ class StepBasic_HArray1OfPerson : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfPerson {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfPerson {
@@ -8919,7 +8921,7 @@ class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDef
 };
 %extend StepBasic_PhysicallyModeledProductDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_PhysicallyModeledProductDefinition {
@@ -9003,7 +9005,7 @@ class StepBasic_Person : public MMgt_TShared {
 };
 %extend StepBasic_Person {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Person {
@@ -9041,7 +9043,7 @@ class StepBasic_UncertaintyMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_UncertaintyMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_UncertaintyMeasureWithUnit {
@@ -9073,7 +9075,7 @@ class StepBasic_ProductConceptContext : public StepBasic_ApplicationContextEleme
 };
 %extend StepBasic_ProductConceptContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ProductConceptContext {
@@ -9121,7 +9123,7 @@ class StepBasic_RatioMeasureWithUnit : public StepBasic_MeasureWithUnit {
 };
 %extend StepBasic_RatioMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_RatioMeasureWithUnit {
@@ -9191,7 +9193,7 @@ class StepBasic_HArray1OfApproval : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfApproval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfApproval {
@@ -9217,7 +9219,7 @@ class StepBasic_TimeUnit : public StepBasic_NamedUnit {
 };
 %extend StepBasic_TimeUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_TimeUnit {
@@ -9263,7 +9265,7 @@ class StepBasic_HArray1OfDerivedUnitElement : public MMgt_TShared {
 };
 %extend StepBasic_HArray1OfDerivedUnitElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_HArray1OfDerivedUnitElement {
@@ -9295,7 +9297,7 @@ class StepBasic_ActionRequestAssignment : public MMgt_TShared {
 };
 %extend StepBasic_ActionRequestAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_ActionRequestAssignment {
@@ -9375,7 +9377,7 @@ class StepBasic_Contract : public MMgt_TShared {
 };
 %extend StepBasic_Contract {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_Contract {
@@ -9453,7 +9455,7 @@ class StepBasic_CharacterizedObject : public MMgt_TShared {
 };
 %extend StepBasic_CharacterizedObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_CharacterizedObject {
@@ -9487,7 +9489,7 @@ class StepBasic_SiUnitAndLengthUnit : public StepBasic_SiUnit {
 };
 %extend StepBasic_SiUnitAndLengthUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepBasic_SiUnitAndLengthUnit {

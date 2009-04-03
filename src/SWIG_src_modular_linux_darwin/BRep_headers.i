@@ -546,7 +546,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepSweep_Tool.hxx>
 #include<BRepSweep_Translation.hxx>
 #include<BRepSweep_Trsf.hxx>
-#include<BRepTest.hxx>
 #include<BRepToIGESBRep_Entity.hxx>
 #include<BRepToIGES_BREntity.hxx>
 #include<BRepToIGES_BRShell.hxx>
@@ -575,33 +574,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepTopAdaptor_SequenceNodeOfSeqOfPtr.hxx>
 #include<BRepTopAdaptor_Tool.hxx>
 #include<BRepTopAdaptor_TopolTool.hxx>
-#include<BRep_Builder.hxx>
-#include<BRep_Curve3D.hxx>
-#include<BRep_CurveOn2Surfaces.hxx>
-#include<BRep_CurveOnClosedSurface.hxx>
-#include<BRep_CurveOnSurface.hxx>
-#include<BRep_CurveRepresentation.hxx>
-#include<BRep_GCurve.hxx>
-#include<BRep_ListIteratorOfListOfCurveRepresentation.hxx>
-#include<BRep_ListIteratorOfListOfPointRepresentation.hxx>
-#include<BRep_ListNodeOfListOfCurveRepresentation.hxx>
-#include<BRep_ListNodeOfListOfPointRepresentation.hxx>
-#include<BRep_ListOfCurveRepresentation.hxx>
-#include<BRep_ListOfPointRepresentation.hxx>
-#include<BRep_PointOnCurve.hxx>
-#include<BRep_PointOnCurveOnSurface.hxx>
-#include<BRep_PointOnSurface.hxx>
-#include<BRep_PointRepresentation.hxx>
-#include<BRep_PointsOnSurface.hxx>
-#include<BRep_Polygon3D.hxx>
-#include<BRep_PolygonOnClosedSurface.hxx>
-#include<BRep_PolygonOnClosedTriangulation.hxx>
-#include<BRep_PolygonOnSurface.hxx>
-#include<BRep_PolygonOnTriangulation.hxx>
-#include<BRep_TEdge.hxx>
-#include<BRep_TFace.hxx>
-#include<BRep_TVertex.hxx>
-#include<BRep_Tool.hxx>
 
 // Needed headers necessary for compilation.
 

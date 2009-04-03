@@ -59,28 +59,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TDocStd.hxx>
-#include<TDocStd_Application.hxx>
-#include<TDocStd_ApplicationDelta.hxx>
-#include<TDocStd_CompoundDelta.hxx>
-#include<TDocStd_Context.hxx>
-#include<TDocStd_DataMapIteratorOfLabelIDMapDataMap.hxx>
-#include<TDocStd_DataMapNodeOfLabelIDMapDataMap.hxx>
-#include<TDocStd_Document.hxx>
-#include<TDocStd_LabelIDMapDataMap.hxx>
-#include<TDocStd_Modified.hxx>
-#include<TDocStd_MultiTransactionManager.hxx>
-#include<TDocStd_Owner.hxx>
-#include<TDocStd_PathParser.hxx>
-#include<TDocStd_SequenceNodeOfSequenceOfApplicationDelta.hxx>
-#include<TDocStd_SequenceNodeOfSequenceOfDocument.hxx>
-#include<TDocStd_SequenceOfApplicationDelta.hxx>
-#include<TDocStd_SequenceOfDocument.hxx>
-#include<TDocStd_XLink.hxx>
-#include<TDocStd_XLinkIterator.hxx>
-#include<TDocStd_XLinkPtr.hxx>
-#include<TDocStd_XLinkRoot.hxx>
-#include<TDocStd_XLinkTool.hxx>
 
 // Needed headers necessary for compilation.
 

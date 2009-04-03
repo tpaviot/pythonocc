@@ -31,11 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Intrv_Interval.hxx>
-#include<Intrv_Intervals.hxx>
-#include<Intrv_Position.hxx>
-#include<Intrv_SequenceNodeOfSequenceOfInterval.hxx>
-#include<Intrv_SequenceOfInterval.hxx>
 
 // Needed headers necessary for compilation.
 

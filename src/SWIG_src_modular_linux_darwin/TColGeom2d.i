@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -404,7 +406,7 @@ class TColGeom2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfCurve {
@@ -514,7 +516,7 @@ class TColGeom2d_HSequenceOfBoundedCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HSequenceOfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_HSequenceOfBoundedCurve {
@@ -654,7 +656,7 @@ class TColGeom2d_HArray1OfBSplineCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_HArray1OfBSplineCurve {
@@ -700,7 +702,7 @@ class TColGeom2d_HArray1OfGeometry : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_HArray1OfGeometry {
@@ -746,7 +748,7 @@ class TColGeom2d_HArray1OfBezierCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfBezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_HArray1OfBezierCurve {
@@ -856,7 +858,7 @@ class TColGeom2d_HSequenceOfGeometry : public MMgt_TShared {
 };
 %extend TColGeom2d_HSequenceOfGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_HSequenceOfGeometry {
@@ -884,7 +886,7 @@ class TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNo
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve {
@@ -1102,7 +1104,7 @@ class TColGeom2d_HSequenceOfCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_HSequenceOfCurve {
@@ -1170,7 +1172,7 @@ class TColGeom2d_SequenceNodeOfSequenceOfGeometry : public TCollection_SeqNode {
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_SequenceNodeOfSequenceOfGeometry {
@@ -1216,7 +1218,7 @@ class TColGeom2d_HArray1OfCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_HArray1OfCurve {
@@ -1262,7 +1264,7 @@ class TColGeom2d_HArray1OfBoundedCurve : public MMgt_TShared {
 };
 %extend TColGeom2d_HArray1OfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColGeom2d_HArray1OfBoundedCurve {

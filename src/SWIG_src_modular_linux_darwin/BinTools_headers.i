@@ -31,12 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BinTools.hxx>
-#include<BinTools_Curve2dSet.hxx>
-#include<BinTools_CurveSet.hxx>
-#include<BinTools_LocationSet.hxx>
-#include<BinTools_ShapeSet.hxx>
-#include<BinTools_SurfaceSet.hxx>
 
 // Needed headers necessary for compilation.
 

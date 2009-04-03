@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -287,7 +289,7 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 };
 %extend StepSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepSelect_WorkLibrary {
@@ -313,7 +315,7 @@ class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 };
 %extend StepSelect_FileModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepSelect_FileModifier {
@@ -343,7 +345,7 @@ class StepSelect_StepType : public IFSelect_Signature {
 };
 %extend StepSelect_StepType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepSelect_StepType {
@@ -383,7 +385,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 };
 %extend StepSelect_FloatFormat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepSelect_FloatFormat {
@@ -413,7 +415,7 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 };
 %extend StepSelect_ModelModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepSelect_ModelModifier {
@@ -443,7 +445,7 @@ class StepSelect_Activator : public IFSelect_Activator {
 };
 %extend StepSelect_Activator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepSelect_Activator {

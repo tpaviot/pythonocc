@@ -35,12 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Dico_DictionaryOfInteger.hxx>
-#include<Dico_DictionaryOfTransient.hxx>
-#include<Dico_IteratorOfDictionaryOfInteger.hxx>
-#include<Dico_IteratorOfDictionaryOfTransient.hxx>
-#include<Dico_StackItemOfDictionaryOfInteger.hxx>
-#include<Dico_StackItemOfDictionaryOfTransient.hxx>
 
 // Needed headers necessary for compilation.
 

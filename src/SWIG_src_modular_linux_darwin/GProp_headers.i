@@ -37,17 +37,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GProp.hxx>
-#include<GProp_CelGProps.hxx>
-#include<GProp_EquaType.hxx>
-#include<GProp_GProps.hxx>
-#include<GProp_PEquation.hxx>
-#include<GProp_PGProps.hxx>
-#include<GProp_PrincipalProps.hxx>
-#include<GProp_SelGProps.hxx>
-#include<GProp_UndefinedAxis.hxx>
-#include<GProp_ValueType.hxx>
-#include<GProp_VelGProps.hxx>
 
 // Needed headers necessary for compilation.
 

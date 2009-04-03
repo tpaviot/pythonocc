@@ -29,10 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntAna2d_AnaIntersection.hxx>
-#include<IntAna2d_Conic.hxx>
-#include<IntAna2d_IntPoint.hxx>
-#include<IntAna2d_Outils.hxx>
 
 // Needed headers necessary for compilation.
 

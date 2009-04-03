@@ -27,7 +27,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PStandard_ArrayNode.hxx>
 
 // Needed headers necessary for compilation.
 

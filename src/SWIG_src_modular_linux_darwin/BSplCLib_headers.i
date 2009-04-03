@@ -29,10 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BSplCLib.hxx>
-#include<BSplCLib_EvaluatorFunction.hxx>
-#include<BSplCLib_KnotDistribution.hxx>
-#include<BSplCLib_MultDistribution.hxx>
 
 // Needed headers necessary for compilation.
 

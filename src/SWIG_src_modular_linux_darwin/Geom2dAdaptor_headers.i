@@ -31,10 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Geom2dAdaptor.hxx>
-#include<Geom2dAdaptor_Curve.hxx>
-#include<Geom2dAdaptor_GHCurve.hxx>
-#include<Geom2dAdaptor_HCurve.hxx>
 
 // Needed headers necessary for compilation.
 

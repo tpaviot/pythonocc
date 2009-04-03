@@ -32,12 +32,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GccEnt.hxx>
-#include<GccEnt_Array1OfPosition.hxx>
-#include<GccEnt_BadQualifier.hxx>
-#include<GccEnt_Position.hxx>
-#include<GccEnt_QualifiedCirc.hxx>
-#include<GccEnt_QualifiedLin.hxx>
 
 // Needed headers necessary for compilation.
 

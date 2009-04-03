@@ -41,18 +41,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntPoly_IndexedMapNodeOfIndexedMapOfPnt.hxx>
-#include<IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d.hxx>
-#include<IntPoly_IndexedMapOfPnt.hxx>
-#include<IntPoly_IndexedMapOfPnt2d.hxx>
-#include<IntPoly_PlaneSection.hxx>
-#include<IntPoly_Pnt2dHasher.hxx>
-#include<IntPoly_PntHasher.hxx>
-#include<IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt.hxx>
-#include<IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d.hxx>
-#include<IntPoly_SequenceOfSequenceOfPnt.hxx>
-#include<IntPoly_SequenceOfSequenceOfPnt2d.hxx>
-#include<IntPoly_ShapeSection.hxx>
 #include<IntPolyh_ArrayOfCouples.hxx>
 #include<IntPolyh_ArrayOfEdges.hxx>
 #include<IntPolyh_ArrayOfPoints.hxx>

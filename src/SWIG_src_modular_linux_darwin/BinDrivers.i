@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -184,7 +186,7 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 };
 %extend BinDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinDrivers_DocumentStorageDriver {
@@ -212,7 +214,7 @@ class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalD
 };
 %extend BinDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinDrivers_DocumentRetrievalDriver {

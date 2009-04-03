@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -408,7 +410,7 @@ class Draft_Modification : public BRepTools_Modification {
 };
 %extend Draft_Modification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Draft_Modification {
@@ -438,7 +440,7 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 };
 %extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Draft_DataMapNodeOfDataMapOfVertexVertexInfo {
@@ -468,7 +470,7 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo {
@@ -574,7 +576,7 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 };
 %extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Draft_DataMapNodeOfDataMapOfFaceFaceInfo {

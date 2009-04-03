@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -562,7 +564,7 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 };
 %extend HLRBRep_InternalAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_InternalAlgo {
@@ -1284,7 +1286,7 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 };
 %extend HLRBRep_Algo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_Algo {
@@ -1352,7 +1354,7 @@ class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
 };
 %extend HLRBRep_ListNodeOfListOfBPnt2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_ListNodeOfListOfBPnt2D {
@@ -1380,7 +1382,7 @@ class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 };
 %extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_SequenceNodeOfSeqOfShapeBounds {
@@ -1806,7 +1808,7 @@ class HLRBRep_Data : public MMgt_TShared {
 };
 %extend HLRBRep_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_Data {
@@ -2146,7 +2148,7 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 };
 %extend HLRBRep_AreaLimit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_AreaLimit {
@@ -2252,7 +2254,7 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 };
 %extend HLRBRep_PolyAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_PolyAlgo {
@@ -2594,7 +2596,7 @@ class HLRBRep_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 %extend HLRBRep_ListNodeOfListOfBPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_ListNodeOfListOfBPoint {
@@ -2850,7 +2852,7 @@ class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter :
 };
 %extend HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter {

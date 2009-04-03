@@ -45,22 +45,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BOPTColStd_CArray1OfInteger.hxx>
-#include<BOPTColStd_CArray1OfPnt2d.hxx>
-#include<BOPTColStd_CArray1OfShape.hxx>
-#include<BOPTColStd_Dump.hxx>
-#include<BOPTColStd_Failure.hxx>
-#include<BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger.hxx>
-#include<BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger.hxx>
-#include<BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger.hxx>
-#include<BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger.hxx>
-#include<BOPTColStd_IndexedDataMapOfIntegerInteger.hxx>
-#include<BOPTColStd_IndexedDataMapOfSWRInteger.hxx>
-#include<BOPTColStd_ListIteratorOfListOfListOfShape.hxx>
-#include<BOPTColStd_ListNodeOfListOfListOfShape.hxx>
-#include<BOPTColStd_ListOfListOfShape.hxx>
-#include<BOPTColStd_ShapeWithRank.hxx>
-#include<BOPTColStd_ShapeWithRankHasher.hxx>
 
 // Needed headers necessary for compilation.
 

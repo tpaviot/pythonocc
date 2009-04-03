@@ -30,10 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TopBas_ListIteratorOfListOfTestInterference.hxx>
-#include<TopBas_ListNodeOfListOfTestInterference.hxx>
-#include<TopBas_ListOfTestInterference.hxx>
-#include<TopBas_TestInterference.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -259,7 +261,7 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 };
 %extend ObjMgt_ExternRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ObjMgt_ExternRef {
@@ -317,7 +319,7 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 };
 %extend ObjMgt_SeqNodeOfPSeqOfExtRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ObjMgt_SeqNodeOfPSeqOfExtRef {
@@ -411,7 +413,7 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 };
 %extend ObjMgt_PSeqOfExtRef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ObjMgt_PSeqOfExtRef {
@@ -443,7 +445,7 @@ class ObjMgt_ExternShareable : public Standard_Persistent {
 };
 %extend ObjMgt_ExternShareable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ObjMgt_ExternShareable {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -783,7 +785,7 @@ class IGESAppli_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESAppli_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_ReadWriteModule {
@@ -887,7 +889,7 @@ class IGESAppli_FiniteElement : public IGESData_IGESEntity {
 };
 %extend IGESAppli_FiniteElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_FiniteElement {
@@ -933,7 +935,7 @@ class IGESAppli_HArray1OfNode : public MMgt_TShared {
 };
 %extend IGESAppli_HArray1OfNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_HArray1OfNode {
@@ -993,7 +995,7 @@ class IGESAppli_Flow : public IGESData_IGESEntity {
 };
 %extend IGESAppli_Flow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_Flow {
@@ -1067,7 +1069,7 @@ class IGESAppli_NodalResults : public IGESData_IGESEntity {
 };
 %extend IGESAppli_NodalResults {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_NodalResults {
@@ -1101,7 +1103,7 @@ class IGESAppli_FlowLineSpec : public IGESData_IGESEntity {
 };
 %extend IGESAppli_FlowLineSpec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_FlowLineSpec {
@@ -1159,7 +1161,7 @@ class IGESAppli_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESAppli_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_SpecificModule {
@@ -1199,7 +1201,7 @@ class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
 };
 %extend IGESAppli_LevelToPWBLayerMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_LevelToPWBLayerMap {
@@ -1407,7 +1409,7 @@ class IGESAppli_PWBDrilledHole : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PWBDrilledHole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_PWBDrilledHole {
@@ -1477,7 +1479,7 @@ class IGESAppli_DrilledHole : public IGESData_IGESEntity {
 };
 %extend IGESAppli_DrilledHole {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_DrilledHole {
@@ -1511,7 +1513,7 @@ class IGESAppli_LevelFunction : public IGESData_IGESEntity {
 };
 %extend IGESAppli_LevelFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_LevelFunction {
@@ -1625,7 +1627,7 @@ class IGESAppli_HArray1OfFlow : public MMgt_TShared {
 };
 %extend IGESAppli_HArray1OfFlow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_HArray1OfFlow {
@@ -1691,7 +1693,7 @@ class IGESAppli_PWBArtworkStackup : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PWBArtworkStackup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_PWBArtworkStackup {
@@ -1765,7 +1767,7 @@ class IGESAppli_HArray1OfFiniteElement : public MMgt_TShared {
 };
 %extend IGESAppli_HArray1OfFiniteElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_HArray1OfFiniteElement {
@@ -1797,7 +1799,7 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PinNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_PinNumber {
@@ -1891,7 +1893,7 @@ class IGESAppli_ElementResults : public IGESData_IGESEntity {
 };
 %extend IGESAppli_ElementResults {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_ElementResults {
@@ -1927,7 +1929,7 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 };
 %extend IGESAppli_NodalConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_NodalConstraint {
@@ -1993,7 +1995,7 @@ class IGESAppli_Node : public IGESData_IGESEntity {
 };
 %extend IGESAppli_Node {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_Node {
@@ -2061,7 +2063,7 @@ class IGESAppli_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESAppli_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_GeneralModule {
@@ -2123,7 +2125,7 @@ class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 };
 %extend IGESAppli_ReferenceDesignator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_ReferenceDesignator {
@@ -2159,7 +2161,7 @@ class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
 };
 %extend IGESAppli_RegionRestriction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_RegionRestriction {
@@ -2247,7 +2249,7 @@ class IGESAppli_PipingFlow : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PipingFlow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_PipingFlow {
@@ -2289,7 +2291,7 @@ class IGESAppli_NodalDisplAndRot : public IGESData_IGESEntity {
 };
 %extend IGESAppli_NodalDisplAndRot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_NodalDisplAndRot {
@@ -2357,7 +2359,7 @@ class IGESAppli_PartNumber : public IGESData_IGESEntity {
 };
 %extend IGESAppli_PartNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_PartNumber {
@@ -2397,7 +2399,7 @@ class IGESAppli_LineWidening : public IGESData_IGESEntity {
 };
 %extend IGESAppli_LineWidening {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESAppli_LineWidening {

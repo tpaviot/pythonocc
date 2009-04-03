@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -528,7 +530,7 @@ class Xw_HListOfMFTFonts : public MMgt_TShared {
 };
 %extend Xw_HListOfMFTFonts {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_HListOfMFTFonts {
@@ -732,7 +734,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 };
 %extend Xw_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_Driver {
@@ -806,7 +808,7 @@ class Xw_ColorMap : public MMgt_TShared {
 };
 %extend Xw_ColorMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_ColorMap {
@@ -840,7 +842,7 @@ class Xw_FontMap : public Standard_Transient {
 };
 %extend Xw_FontMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_FontMap {
@@ -886,7 +888,7 @@ class Xw_HListOfIndexs : public MMgt_TShared {
 };
 %extend Xw_HListOfIndexs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_HListOfIndexs {
@@ -918,7 +920,7 @@ class Xw_PixMap : public Aspect_PixMap {
 };
 %extend Xw_PixMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_PixMap {
@@ -990,11 +992,11 @@ class Xw_Window : public Aspect_Window {
 		%feature("autodoc", "1");
 		virtual		Quantity_Ratio Ratio() const;
 		%feature("autodoc", "1");
-		virtual		void Position(Quantity_Parameter & X1, Quantity_Parameter & Y1, Quantity_Parameter & X2, Quantity_Parameter & Y2) const;
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Position(Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		void Size(Quantity_Parameter & Width, Quantity_Parameter & Height) const;
+		virtual		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Size(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
@@ -1004,7 +1006,7 @@ class Xw_Window : public Aspect_Window {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Parameter DV) const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Quantity_Parameter & DX, Quantity_Parameter & DY) const;
+		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Convert(const Quantity_Parameter DX, const Quantity_Parameter DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
@@ -1058,7 +1060,7 @@ class Xw_Window : public Aspect_Window {
 };
 %extend Xw_Window {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_Window {
@@ -1102,7 +1104,7 @@ class Xw_IconBox : public Xw_Window {
 };
 %extend Xw_IconBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_IconBox {
@@ -1148,7 +1150,7 @@ class Xw_TextManager : public MFT_TextManager {
 };
 %extend Xw_TextManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_TextManager {
@@ -1182,7 +1184,7 @@ class Xw_WidthMap : public Standard_Transient {
 };
 %extend Xw_WidthMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_WidthMap {
@@ -1216,7 +1218,7 @@ class Xw_TypeMap : public Standard_Transient {
 };
 %extend Xw_TypeMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_TypeMap {
@@ -1316,7 +1318,7 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 };
 %extend Xw_GraphicDevice {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_GraphicDevice {
@@ -1362,7 +1364,7 @@ class Xw_HListOfMFTSizes : public MMgt_TShared {
 };
 %extend Xw_HListOfMFTSizes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_HListOfMFTSizes {
@@ -1396,7 +1398,7 @@ class Xw_MarkMap : public Standard_Transient {
 };
 %extend Xw_MarkMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Xw_MarkMap {

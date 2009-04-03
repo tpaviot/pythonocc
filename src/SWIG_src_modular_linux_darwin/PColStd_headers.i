@@ -110,61 +110,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PColStd_FieldOfHArray1OfExtendedString.hxx>
-#include<PColStd_FieldOfHArray1OfInteger.hxx>
-#include<PColStd_FieldOfHArray1OfPersistent.hxx>
-#include<PColStd_FieldOfHArray1OfReal.hxx>
-#include<PColStd_FieldOfHArray2OfInteger.hxx>
-#include<PColStd_FieldOfHArray2OfPersistent.hxx>
-#include<PColStd_FieldOfHArray2OfReal.hxx>
-#include<PColStd_HArray1OfExtendedString.hxx>
-#include<PColStd_HArray1OfInteger.hxx>
-#include<PColStd_HArray1OfPersistent.hxx>
-#include<PColStd_HArray1OfReal.hxx>
-#include<PColStd_HArray2OfInteger.hxx>
-#include<PColStd_HArray2OfPersistent.hxx>
-#include<PColStd_HArray2OfReal.hxx>
-#include<PColStd_HDoubleListOfInteger.hxx>
-#include<PColStd_HDoubleListOfPersistent.hxx>
-#include<PColStd_HDoubleListOfReal.hxx>
-#include<PColStd_HOfAsciiString.hxx>
-#include<PColStd_HOfExtendedString.hxx>
-#include<PColStd_HOfInteger.hxx>
-#include<PColStd_HOfReal.hxx>
-#include<PColStd_HSequenceOfHAsciiString.hxx>
-#include<PColStd_HSequenceOfHExtendedString.hxx>
-#include<PColStd_HSequenceOfInteger.hxx>
-#include<PColStd_HSequenceOfPersistent.hxx>
-#include<PColStd_HSequenceOfReal.hxx>
-#include<PColStd_HSingleListOfInteger.hxx>
-#include<PColStd_HSingleListOfPersistent.hxx>
-#include<PColStd_HSingleListOfReal.hxx>
-#include<PColStd_HashAsciiString.hxx>
-#include<PColStd_HashExtendedString.hxx>
-#include<PColStd_SeqExplorerOfHSequenceOfHAsciiString.hxx>
-#include<PColStd_SeqExplorerOfHSequenceOfHExtendedString.hxx>
-#include<PColStd_SeqExplorerOfHSequenceOfInteger.hxx>
-#include<PColStd_SeqExplorerOfHSequenceOfPersistent.hxx>
-#include<PColStd_SeqExplorerOfHSequenceOfReal.hxx>
-#include<PColStd_SeqNodeOfHSequenceOfHAsciiString.hxx>
-#include<PColStd_SeqNodeOfHSequenceOfHExtendedString.hxx>
-#include<PColStd_SeqNodeOfHSequenceOfInteger.hxx>
-#include<PColStd_SeqNodeOfHSequenceOfPersistent.hxx>
-#include<PColStd_SeqNodeOfHSequenceOfReal.hxx>
-#include<PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString.hxx>
-#include<PColStd_VArrayNodeOfFieldOfHArray1OfInteger.hxx>
-#include<PColStd_VArrayNodeOfFieldOfHArray1OfPersistent.hxx>
-#include<PColStd_VArrayNodeOfFieldOfHArray1OfReal.hxx>
-#include<PColStd_VArrayNodeOfFieldOfHArray2OfInteger.hxx>
-#include<PColStd_VArrayNodeOfFieldOfHArray2OfPersistent.hxx>
-#include<PColStd_VArrayNodeOfFieldOfHArray2OfReal.hxx>
-#include<PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString.hxx>
-#include<PColStd_VArrayTNodeOfFieldOfHArray1OfInteger.hxx>
-#include<PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent.hxx>
-#include<PColStd_VArrayTNodeOfFieldOfHArray1OfReal.hxx>
-#include<PColStd_VArrayTNodeOfFieldOfHArray2OfInteger.hxx>
-#include<PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent.hxx>
-#include<PColStd_VArrayTNodeOfFieldOfHArray2OfReal.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -46,20 +46,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BinMDF.hxx>
-#include<BinMDF_ADriver.hxx>
-#include<BinMDF_ADriverTable.hxx>
-#include<BinMDF_DataMapIteratorOfStringIdMap.hxx>
-#include<BinMDF_DataMapIteratorOfTypeADriverMap.hxx>
-#include<BinMDF_DataMapNodeOfStringIdMap.hxx>
-#include<BinMDF_DataMapNodeOfTypeADriverMap.hxx>
-#include<BinMDF_DoubleMapIteratorOfTypeIdMap.hxx>
-#include<BinMDF_DoubleMapNodeOfTypeIdMap.hxx>
-#include<BinMDF_ReferenceDriver.hxx>
-#include<BinMDF_StringIdMap.hxx>
-#include<BinMDF_TagSourceDriver.hxx>
-#include<BinMDF_TypeADriverMap.hxx>
-#include<BinMDF_TypeIdMap.hxx>
 
 // Needed headers necessary for compilation.
 

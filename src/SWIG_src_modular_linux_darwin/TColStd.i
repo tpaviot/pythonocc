@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1454,7 +1456,7 @@ class TColStd_StdMapNodeOfMapOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_StdMapNodeOfMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_StdMapNodeOfMapOfInteger {
@@ -1542,7 +1544,7 @@ class TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public TC
 };
 %extend TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient {
@@ -1574,7 +1576,7 @@ class TColStd_HPackedMapOfInteger : public MMgt_TShared {
 };
 %extend TColStd_HPackedMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HPackedMapOfInteger {
@@ -1676,7 +1678,7 @@ class TColStd_StackNodeOfStackOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_StackNodeOfStackOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_StackNodeOfStackOfTransient {
@@ -1756,7 +1758,7 @@ class TColStd_StackNodeOfStackOfReal : public TCollection_MapNode {
 };
 %extend TColStd_StackNodeOfStackOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_StackNodeOfStackOfReal {
@@ -1808,7 +1810,7 @@ class TColStd_HArray2OfInteger : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray2OfInteger {
@@ -1878,7 +1880,7 @@ class TColStd_HArray1OfListOfInteger : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray1OfListOfInteger {
@@ -1948,7 +1950,7 @@ class TColStd_HSequenceOfExtendedString : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSequenceOfExtendedString {
@@ -2024,7 +2026,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfReal : public TCollection_MapNode {
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfReal {
@@ -2120,7 +2122,7 @@ class TColStd_SequenceNodeOfSequenceOfReal : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_SequenceNodeOfSequenceOfReal {
@@ -2284,7 +2286,7 @@ class TColStd_HSequenceOfInteger : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSequenceOfInteger {
@@ -2312,7 +2314,7 @@ class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfSetListOfSetOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_ListNodeOfSetListOfSetOfReal {
@@ -2380,7 +2382,7 @@ class TColStd_ListNodeOfSetListOfSetOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfSetListOfSetOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_ListNodeOfSetListOfSetOfInteger {
@@ -2538,7 +2540,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfInteger {
@@ -2566,7 +2568,7 @@ class TColStd_SequenceNodeOfSequenceOfHExtendedString : public TCollection_SeqNo
 };
 %extend TColStd_SequenceNodeOfSequenceOfHExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_SequenceNodeOfSequenceOfHExtendedString {
@@ -2744,7 +2746,7 @@ class TColStd_HSequenceOfReal : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSequenceOfReal {
@@ -2790,7 +2792,7 @@ class TColStd_QueueNodeOfQueueOfReal : public TCollection_MapNode {
 };
 %extend TColStd_QueueNodeOfQueueOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_QueueNodeOfQueueOfReal {
@@ -2836,7 +2838,7 @@ class TColStd_HArray1OfCharacter : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfCharacter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray1OfCharacter {
@@ -2866,7 +2868,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerInteger : public TCollection_MapNode 
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerInteger {
@@ -3162,7 +3164,7 @@ class TColStd_HSequenceOfAsciiString : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSequenceOfAsciiString {
@@ -3214,7 +3216,7 @@ class TColStd_HArray2OfBoolean : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray2OfBoolean {
@@ -3412,7 +3414,7 @@ class TColStd_HArray1OfAsciiString : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray1OfAsciiString {
@@ -3570,7 +3572,7 @@ class TColStd_StackNodeOfStackOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_StackNodeOfStackOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_StackNodeOfStackOfInteger {
@@ -3622,7 +3624,7 @@ class TColStd_HArray2OfReal : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray2OfReal {
@@ -3730,7 +3732,7 @@ class TColStd_HArray1OfExtendedString : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray1OfExtendedString {
@@ -3762,7 +3764,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfTransient : public TCollection_MapNode
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_IndexedMapNodeOfIndexedMapOfTransient {
@@ -3830,7 +3832,7 @@ class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_QueueNodeOfQueueOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_QueueNodeOfQueueOfInteger {
@@ -3884,7 +3886,7 @@ class TColStd_HSetOfReal : public MMgt_TShared {
 };
 %extend TColStd_HSetOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSetOfReal {
@@ -4064,7 +4066,7 @@ class TColStd_HArray1OfInteger : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray1OfInteger {
@@ -4168,7 +4170,7 @@ class TColStd_HSequenceOfHExtendedString : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfHExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSequenceOfHExtendedString {
@@ -4196,7 +4198,7 @@ class TColStd_SequenceNodeOfSequenceOfTransient : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_SequenceNodeOfSequenceOfTransient {
@@ -4242,7 +4244,7 @@ class TColStd_HArray1OfBoolean : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray1OfBoolean {
@@ -4338,7 +4340,7 @@ class TColStd_HArray1OfReal : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray1OfReal {
@@ -4366,7 +4368,7 @@ class TColStd_ListNodeOfListOfInteger : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_ListNodeOfListOfInteger {
@@ -4394,7 +4396,7 @@ class TColStd_ListNodeOfSetListOfSetOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfSetListOfSetOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_ListNodeOfSetListOfSetOfTransient {
@@ -4424,7 +4426,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerReal : public TCollection_MapNode {
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerReal {
@@ -4534,7 +4536,7 @@ class TColStd_HSequenceOfHAsciiString : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSequenceOfHAsciiString {
@@ -4620,7 +4622,7 @@ class TColStd_SequenceNodeOfSequenceOfAsciiString : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_SequenceNodeOfSequenceOfAsciiString {
@@ -4766,7 +4768,7 @@ class TColStd_HArray1OfTransient : public MMgt_TShared {
 };
 %extend TColStd_HArray1OfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray1OfTransient {
@@ -4820,7 +4822,7 @@ class TColStd_HSetOfInteger : public MMgt_TShared {
 };
 %extend TColStd_HSetOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSetOfInteger {
@@ -4898,7 +4900,7 @@ class TColStd_SequenceNodeOfSequenceOfExtendedString : public TCollection_SeqNod
 };
 %extend TColStd_SequenceNodeOfSequenceOfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_SequenceNodeOfSequenceOfExtendedString {
@@ -5086,7 +5088,7 @@ class TColStd_HSequenceOfTransient : public MMgt_TShared {
 };
 %extend TColStd_HSequenceOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSequenceOfTransient {
@@ -5332,7 +5334,7 @@ class TColStd_HArray2OfCharacter : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfCharacter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray2OfCharacter {
@@ -5360,7 +5362,7 @@ class TColStd_SequenceNodeOfSequenceOfHAsciiString : public TCollection_SeqNode 
 };
 %extend TColStd_SequenceNodeOfSequenceOfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_SequenceNodeOfSequenceOfHAsciiString {
@@ -5454,7 +5456,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public TCollection_Ma
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger {
@@ -5506,7 +5508,7 @@ class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
 };
 %extend TColStd_SequenceNodeOfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_SequenceNodeOfSequenceOfInteger {
@@ -5570,7 +5572,7 @@ class TColStd_ListNodeOfListOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfListOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_ListNodeOfListOfTransient {
@@ -5642,7 +5644,7 @@ class TColStd_StdMapNodeOfMapOfReal : public TCollection_MapNode {
 };
 %extend TColStd_StdMapNodeOfMapOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_StdMapNodeOfMapOfReal {
@@ -5670,7 +5672,7 @@ class TColStd_QueueNodeOfQueueOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_QueueNodeOfQueueOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_QueueNodeOfQueueOfTransient {
@@ -5698,7 +5700,7 @@ class TColStd_ListNodeOfListOfReal : public TCollection_MapNode {
 };
 %extend TColStd_ListNodeOfListOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_ListNodeOfListOfReal {
@@ -5726,7 +5728,7 @@ class TColStd_StdMapNodeOfMapOfTransient : public TCollection_MapNode {
 };
 %extend TColStd_StdMapNodeOfMapOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_StdMapNodeOfMapOfTransient {
@@ -5830,7 +5832,7 @@ class TColStd_HSetOfTransient : public MMgt_TShared {
 };
 %extend TColStd_HSetOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HSetOfTransient {
@@ -5956,7 +5958,7 @@ class TColStd_HArray2OfTransient : public MMgt_TShared {
 };
 %extend TColStd_HArray2OfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColStd_HArray2OfTransient {

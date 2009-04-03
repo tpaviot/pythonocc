@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -567,7 +569,7 @@ class AlienImage_AlienImage : public MMgt_TShared {
 };
 %extend AlienImage_AlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_AlienImage {
@@ -593,7 +595,7 @@ class AlienImage_AlienImageData : public AlienImage_AlienImage {
 };
 %extend AlienImage_AlienImageData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_AlienImageData {
@@ -619,7 +621,7 @@ class AlienImage_SGIRGBAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_SGIRGBAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_SGIRGBAlienData {
@@ -683,7 +685,7 @@ class AlienImage_AlienUserImage : public AlienImage_AlienImage {
 };
 %extend AlienImage_AlienUserImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_AlienUserImage {
@@ -713,7 +715,7 @@ class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_SGIRGBAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_SGIRGBAlienImage {
@@ -771,7 +773,7 @@ class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_SunRFAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_SunRFAlienImage {
@@ -811,7 +813,7 @@ class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_X11XWDAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_X11XWDAlienData {
@@ -851,7 +853,7 @@ class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_XAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_XAlienImage {
@@ -901,7 +903,7 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_BMPAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_BMPAlienData {
@@ -961,7 +963,7 @@ class AlienImage_AidaAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_AidaAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_AidaAlienImage {
@@ -997,7 +999,7 @@ class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_EuclidAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_EuclidAlienImage {
@@ -1037,7 +1039,7 @@ class AlienImage_EuclidAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_EuclidAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_EuclidAlienData {
@@ -1075,7 +1077,7 @@ class AlienImage_AidaAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_AidaAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_AidaAlienData {
@@ -1125,7 +1127,7 @@ class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_SunRFAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_SunRFAlienData {
@@ -1175,7 +1177,7 @@ class AlienImage_GIFAlienData : public AlienImage_AlienImageData {
 };
 %extend AlienImage_GIFAlienData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_GIFAlienData {
@@ -1215,7 +1217,7 @@ class AlienImage_BMPAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_BMPAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_BMPAlienImage {
@@ -1255,7 +1257,7 @@ class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {
 };
 %extend AlienImage_GIFAlienImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AlienImage_GIFAlienImage {

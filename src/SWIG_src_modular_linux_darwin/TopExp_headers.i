@@ -32,12 +32,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TopExp.hxx>
-#include<TopExp_Explorer.hxx>
-#include<TopExp_Stack.hxx>
-#include<TopExp_StackIteratorOfStackOfIterator.hxx>
-#include<TopExp_StackNodeOfStackOfIterator.hxx>
-#include<TopExp_StackOfIterator.hxx>
 
 // Needed headers necessary for compilation.
 

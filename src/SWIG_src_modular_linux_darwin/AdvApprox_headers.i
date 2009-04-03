@@ -32,13 +32,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<AdvApprox_ApproxAFunction.hxx>
-#include<AdvApprox_Cutting.hxx>
-#include<AdvApprox_DichoCutting.hxx>
-#include<AdvApprox_EvaluatorFunction.hxx>
-#include<AdvApprox_PrefAndRec.hxx>
-#include<AdvApprox_PrefCutting.hxx>
-#include<AdvApprox_SimpleApprox.hxx>
 
 // Needed headers necessary for compilation.
 

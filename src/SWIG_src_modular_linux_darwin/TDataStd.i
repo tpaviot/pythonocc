@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1651,7 +1653,7 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 };
 %extend TDataStd_ListNodeOfListOfByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_ListNodeOfListOfByte {
@@ -1719,7 +1721,7 @@ class TDataStd_NoteBook : public TDF_Attribute {
 };
 %extend TDataStd_NoteBook {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_NoteBook {
@@ -1749,7 +1751,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringString {
@@ -1777,7 +1779,7 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 };
 %extend TDataStd_DeltaOnModificationOfIntPackedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DeltaOnModificationOfIntPackedMap {
@@ -1871,7 +1873,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringReal {
@@ -1959,7 +1961,7 @@ class TDataStd_Constraint : public TDF_Attribute {
 };
 %extend TDataStd_Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Constraint {
@@ -2033,7 +2035,7 @@ class TDataStd_Pattern : public TDF_Attribute {
 };
 %extend TDataStd_Pattern {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Pattern {
@@ -2111,7 +2113,7 @@ class TDataStd_PatternStd : public TDataStd_Pattern {
 };
 %extend TDataStd_PatternStd {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_PatternStd {
@@ -2151,7 +2153,7 @@ class TDataStd_Placement : public TDF_Attribute {
 };
 %extend TDataStd_Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Placement {
@@ -2217,7 +2219,7 @@ class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringHArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HDataMapOfStringHArray1OfInteger {
@@ -2329,7 +2331,7 @@ class TDataStd_NamedData : public TDF_Attribute {
 };
 %extend TDataStd_NamedData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_NamedData {
@@ -2375,7 +2377,7 @@ class TDataStd_Integer : public TDF_Attribute {
 };
 %extend TDataStd_Integer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Integer {
@@ -2453,7 +2455,7 @@ class TDataStd_BooleanList : public TDF_Attribute {
 };
 %extend TDataStd_BooleanList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_BooleanList {
@@ -2551,7 +2553,7 @@ class TDataStd_Relation : public TDF_Attribute {
 };
 %extend TDataStd_Relation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Relation {
@@ -2579,7 +2581,7 @@ class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 };
 %extend TDataStd_ListNodeOfListOfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_ListNodeOfListOfExtendedString {
@@ -2625,7 +2627,7 @@ class TDataStd_AsciiString : public TDF_Attribute {
 };
 %extend TDataStd_AsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_AsciiString {
@@ -2673,7 +2675,7 @@ class TDataStd_Expression : public TDF_Attribute {
 };
 %extend TDataStd_Expression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Expression {
@@ -2701,7 +2703,7 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 };
 %extend TDataStd_DeltaOnModificationOfExtStringArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DeltaOnModificationOfExtStringArray {
@@ -2731,7 +2733,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode 
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringInteger {
@@ -2795,7 +2797,7 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 };
 %extend TDataStd_IntegerArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_IntegerArray {
@@ -2841,7 +2843,7 @@ class TDataStd_Position : public TDF_Attribute {
 };
 %extend TDataStd_Position {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Position {
@@ -2869,7 +2871,7 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfRealArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DeltaOnModificationOfRealArray {
@@ -2977,7 +2979,7 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 };
 %extend TDataStd_BooleanArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_BooleanArray {
@@ -3041,7 +3043,7 @@ class TDataStd_ByteArray : public TDF_Attribute {
 };
 %extend TDataStd_ByteArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_ByteArray {
@@ -3105,7 +3107,7 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 };
 %extend TDataStd_IntPackedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_IntPackedMap {
@@ -3177,7 +3179,7 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfByteArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DeltaOnModificationOfByteArray {
@@ -3273,7 +3275,7 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 };
 %extend TDataStd_ExtStringList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_ExtStringList {
@@ -3377,7 +3379,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringByte {
@@ -3409,7 +3411,7 @@ class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HDataMapOfStringReal {
@@ -3451,7 +3453,7 @@ class TDataStd_Point : public TDF_Attribute {
 };
 %extend TDataStd_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Point {
@@ -3519,7 +3521,7 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 };
 %extend TDataStd_HArray1OfTrsf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HArray1OfTrsf {
@@ -3581,7 +3583,7 @@ class TDataStd_IntegerList : public TDF_Attribute {
 };
 %extend TDataStd_IntegerList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_IntegerList {
@@ -3609,7 +3611,7 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 };
 %extend TDataStd_DeltaOnModificationOfIntArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DeltaOnModificationOfIntArray {
@@ -3697,7 +3699,7 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 };
 %extend TDataStd_ReferenceList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_ReferenceList {
@@ -3727,7 +3729,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_Ma
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal {
@@ -3803,7 +3805,7 @@ class TDataStd_Plane : public TDF_Attribute {
 };
 %extend TDataStd_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Plane {
@@ -3851,7 +3853,7 @@ class TDataStd_Current : public TDF_Attribute {
 };
 %extend TDataStd_Current {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Current {
@@ -3883,7 +3885,7 @@ class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HDataMapOfStringByte {
@@ -3915,7 +3917,7 @@ class TDataStd_HDataMapOfStringString : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HDataMapOfStringString {
@@ -3957,7 +3959,7 @@ class TDataStd_UAttribute : public TDF_Attribute {
 };
 %extend TDataStd_UAttribute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_UAttribute {
@@ -4003,7 +4005,7 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 };
 %extend TDataStd_HLabelArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HLabelArray1 {
@@ -4171,7 +4173,7 @@ class TDataStd_TreeNode : public TDF_Attribute {
 };
 %extend TDataStd_TreeNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_TreeNode {
@@ -4201,7 +4203,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger {
@@ -4241,7 +4243,7 @@ class TDataStd_Tick : public TDF_Attribute {
 };
 %extend TDataStd_Tick {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Tick {
@@ -4301,7 +4303,7 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 };
 %extend TDataStd_ReferenceArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_ReferenceArray {
@@ -4345,7 +4347,7 @@ class TDataStd_Name : public TDF_Attribute {
 };
 %extend TDataStd_Name {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Name {
@@ -4409,7 +4411,7 @@ class TDataStd_RealArray : public TDF_Attribute {
 };
 %extend TDataStd_RealArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_RealArray {
@@ -4483,7 +4485,7 @@ class TDataStd_Directory : public TDF_Attribute {
 };
 %extend TDataStd_Directory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Directory {
@@ -4545,7 +4547,7 @@ class TDataStd_RealList : public TDF_Attribute {
 };
 %extend TDataStd_RealList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_RealList {
@@ -4577,7 +4579,7 @@ class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HDataMapOfStringInteger {
@@ -4659,7 +4661,7 @@ class TDataStd_Comment : public TDF_Attribute {
 };
 %extend TDataStd_Comment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Comment {
@@ -4731,7 +4733,7 @@ class TDataStd_Variable : public TDF_Attribute {
 };
 %extend TDataStd_Variable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Variable {
@@ -4777,7 +4779,7 @@ class TDataStd_HArray1OfByte : public MMgt_TShared {
 };
 %extend TDataStd_HArray1OfByte {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HArray1OfByte {
@@ -4827,7 +4829,7 @@ class TDataStd_Real : public TDF_Attribute {
 };
 %extend TDataStd_Real {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Real {
@@ -4897,7 +4899,7 @@ class TDataStd_Shape : public TDF_Attribute {
 };
 %extend TDataStd_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Shape {
@@ -4973,7 +4975,7 @@ class TDataStd_Geometry : public TDF_Attribute {
 };
 %extend TDataStd_Geometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Geometry {
@@ -5015,7 +5017,7 @@ class TDataStd_Axis : public TDF_Attribute {
 };
 %extend TDataStd_Axis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_Axis {
@@ -5079,7 +5081,7 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 };
 %extend TDataStd_ExtStringArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_ExtStringArray {
@@ -5111,7 +5113,7 @@ class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
 };
 %extend TDataStd_HDataMapOfStringHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDataStd_HDataMapOfStringHArray1OfReal {

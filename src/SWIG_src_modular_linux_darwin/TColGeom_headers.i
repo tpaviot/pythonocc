@@ -94,38 +94,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TColGeom2d_SequenceOfBoundedCurve.hxx>
 #include<TColGeom2d_SequenceOfCurve.hxx>
 #include<TColGeom2d_SequenceOfGeometry.hxx>
-#include<TColGeom_Array1OfBSplineCurve.hxx>
-#include<TColGeom_Array1OfBezierCurve.hxx>
-#include<TColGeom_Array1OfBoundedCurve.hxx>
-#include<TColGeom_Array1OfBoundedSurface.hxx>
-#include<TColGeom_Array1OfCurve.hxx>
-#include<TColGeom_Array1OfSurface.hxx>
-#include<TColGeom_Array2OfBSplineSurface.hxx>
-#include<TColGeom_Array2OfBezierSurface.hxx>
-#include<TColGeom_Array2OfBoundedSurface.hxx>
-#include<TColGeom_Array2OfSurface.hxx>
-#include<TColGeom_HArray1OfBSplineCurve.hxx>
-#include<TColGeom_HArray1OfBezierCurve.hxx>
-#include<TColGeom_HArray1OfBoundedCurve.hxx>
-#include<TColGeom_HArray1OfBoundedSurface.hxx>
-#include<TColGeom_HArray1OfCurve.hxx>
-#include<TColGeom_HArray1OfSurface.hxx>
-#include<TColGeom_HArray2OfBSplineSurface.hxx>
-#include<TColGeom_HArray2OfBezierSurface.hxx>
-#include<TColGeom_HArray2OfBoundedSurface.hxx>
-#include<TColGeom_HArray2OfSurface.hxx>
-#include<TColGeom_HSequenceOfBoundedCurve.hxx>
-#include<TColGeom_HSequenceOfBoundedSurface.hxx>
-#include<TColGeom_HSequenceOfCurve.hxx>
-#include<TColGeom_HSequenceOfSurface.hxx>
-#include<TColGeom_SequenceNodeOfSequenceOfBoundedCurve.hxx>
-#include<TColGeom_SequenceNodeOfSequenceOfBoundedSurface.hxx>
-#include<TColGeom_SequenceNodeOfSequenceOfCurve.hxx>
-#include<TColGeom_SequenceNodeOfSequenceOfSurface.hxx>
-#include<TColGeom_SequenceOfBoundedCurve.hxx>
-#include<TColGeom_SequenceOfBoundedSurface.hxx>
-#include<TColGeom_SequenceOfCurve.hxx>
-#include<TColGeom_SequenceOfSurface.hxx>
 
 // Needed headers necessary for compilation.
 

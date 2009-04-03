@@ -29,9 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<AppBlend_Approx.hxx>
-#include<AppBlend_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
-#include<AppBlend_SequenceOfArray1OfPnt2d.hxx>
 
 // Needed headers necessary for compilation.
 

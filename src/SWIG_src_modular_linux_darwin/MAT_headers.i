@@ -109,34 +109,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<MAT2d_SequenceOfSequenceOfGeometry.hxx>
 #include<MAT2d_SketchExplorer.hxx>
 #include<MAT2d_Tool2d.hxx>
-#include<MAT_Arc.hxx>
-#include<MAT_BasicElt.hxx>
-#include<MAT_Bisector.hxx>
-#include<MAT_DataMapIteratorOfDataMapOfIntegerArc.hxx>
-#include<MAT_DataMapIteratorOfDataMapOfIntegerBasicElt.hxx>
-#include<MAT_DataMapIteratorOfDataMapOfIntegerBisector.hxx>
-#include<MAT_DataMapIteratorOfDataMapOfIntegerNode.hxx>
-#include<MAT_DataMapNodeOfDataMapOfIntegerArc.hxx>
-#include<MAT_DataMapNodeOfDataMapOfIntegerBasicElt.hxx>
-#include<MAT_DataMapNodeOfDataMapOfIntegerBisector.hxx>
-#include<MAT_DataMapNodeOfDataMapOfIntegerNode.hxx>
-#include<MAT_DataMapOfIntegerArc.hxx>
-#include<MAT_DataMapOfIntegerBasicElt.hxx>
-#include<MAT_DataMapOfIntegerBisector.hxx>
-#include<MAT_DataMapOfIntegerNode.hxx>
-#include<MAT_Edge.hxx>
-#include<MAT_Graph.hxx>
-#include<MAT_ListOfBisector.hxx>
-#include<MAT_ListOfEdge.hxx>
-#include<MAT_Node.hxx>
-#include<MAT_SequenceNodeOfSequenceOfArc.hxx>
-#include<MAT_SequenceNodeOfSequenceOfBasicElt.hxx>
-#include<MAT_SequenceOfArc.hxx>
-#include<MAT_SequenceOfBasicElt.hxx>
-#include<MAT_Side.hxx>
-#include<MAT_TListNodeOfListOfBisector.hxx>
-#include<MAT_TListNodeOfListOfEdge.hxx>
-#include<MAT_Zone.hxx>
 
 // Needed headers necessary for compilation.
 

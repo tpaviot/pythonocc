@@ -52,25 +52,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Message.hxx>
-#include<Message_Gravity.hxx>
-#include<Message_ListIteratorOfListOfMsg.hxx>
-#include<Message_ListNodeOfListOfMsg.hxx>
-#include<Message_ListOfMsg.hxx>
-#include<Message_Messenger.hxx>
-#include<Message_Msg.hxx>
-#include<Message_MsgFile.hxx>
-#include<Message_Printer.hxx>
-#include<Message_PrinterOStream.hxx>
-#include<Message_ProgressIndicator.hxx>
-#include<Message_ProgressScale.hxx>
-#include<Message_ProgressSentry.hxx>
-#include<Message_SequenceNodeOfSequenceOfPrinters.hxx>
-#include<Message_SequenceNodeOfSequenceOfProgressScale.hxx>
-#include<Message_SequenceOfPrinters.hxx>
-#include<Message_SequenceOfProgressScale.hxx>
-#include<Message_Status.hxx>
-#include<Message_StatusType.hxx>
 
 // Needed headers necessary for compilation.
 

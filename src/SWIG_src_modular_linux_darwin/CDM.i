@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -490,7 +492,7 @@ class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfNamesDirectory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_DataMapNodeOfNamesDirectory {
@@ -542,7 +544,7 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfPresentationDirectory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_DataMapNodeOfPresentationDirectory {
@@ -624,7 +626,7 @@ class CDM_Application : public Standard_Transient {
 };
 %extend CDM_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_Application {
@@ -784,7 +786,7 @@ class CDM_MetaData : public Standard_Transient {
 };
 %extend CDM_MetaData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_MetaData {
@@ -812,7 +814,7 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 };
 %extend CDM_StdMapNodeOfMapOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_StdMapNodeOfMapOfDocument {
@@ -838,7 +840,7 @@ class CDM_MessageDriver : public Standard_Transient {
 };
 %extend CDM_MessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_MessageDriver {
@@ -862,7 +864,7 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 };
 %extend CDM_COutMessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_COutMessageDriver {
@@ -924,7 +926,7 @@ class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 };
 %extend CDM_StackNodeOfStackOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_StackNodeOfStackOfDocument {
@@ -952,7 +954,7 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 };
 %extend CDM_NullMessageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_NullMessageDriver {
@@ -1040,7 +1042,7 @@ class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 };
 %extend CDM_DataMapNodeOfMetaDataLookUpTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_DataMapNodeOfMetaDataLookUpTable {
@@ -1134,7 +1136,7 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 };
 %extend CDM_ListNodeOfListOfReferences {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_ListNodeOfListOfReferences {
@@ -1256,7 +1258,7 @@ class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 };
 %extend CDM_ListNodeOfListOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_ListNodeOfListOfDocument {
@@ -1320,7 +1322,7 @@ class CDM_Reference : public Standard_Transient {
 };
 %extend CDM_Reference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDM_Reference {

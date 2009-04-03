@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -208,7 +210,7 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_FunctionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMFunction_FunctionDriver {
@@ -256,7 +258,7 @@ class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMFunction_GraphNodeDriver {
@@ -288,7 +290,7 @@ class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 };
 %extend BinMFunction_ScopeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMFunction_ScopeDriver {

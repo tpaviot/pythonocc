@@ -55,25 +55,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TColGeom2d_Array1OfBSplineCurve.hxx>
-#include<TColGeom2d_Array1OfBezierCurve.hxx>
-#include<TColGeom2d_Array1OfBoundedCurve.hxx>
-#include<TColGeom2d_Array1OfCurve.hxx>
-#include<TColGeom2d_Array1OfGeometry.hxx>
-#include<TColGeom2d_HArray1OfBSplineCurve.hxx>
-#include<TColGeom2d_HArray1OfBezierCurve.hxx>
-#include<TColGeom2d_HArray1OfBoundedCurve.hxx>
-#include<TColGeom2d_HArray1OfCurve.hxx>
-#include<TColGeom2d_HArray1OfGeometry.hxx>
-#include<TColGeom2d_HSequenceOfBoundedCurve.hxx>
-#include<TColGeom2d_HSequenceOfCurve.hxx>
-#include<TColGeom2d_HSequenceOfGeometry.hxx>
-#include<TColGeom2d_SequenceNodeOfSequenceOfBoundedCurve.hxx>
-#include<TColGeom2d_SequenceNodeOfSequenceOfCurve.hxx>
-#include<TColGeom2d_SequenceNodeOfSequenceOfGeometry.hxx>
-#include<TColGeom2d_SequenceOfBoundedCurve.hxx>
-#include<TColGeom2d_SequenceOfCurve.hxx>
-#include<TColGeom2d_SequenceOfGeometry.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -295,7 +297,7 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 };
 %extend StlMesh_MeshDomain {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StlMesh_MeshDomain {
@@ -411,7 +413,7 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 };
 %extend StlMesh_MeshTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StlMesh_MeshTriangle {
@@ -439,7 +441,7 @@ class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMesh {
@@ -467,7 +469,7 @@ class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshDomain {
@@ -549,7 +551,7 @@ class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode 
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StlMesh_SequenceNodeOfSequenceOfMeshTriangle {
@@ -677,7 +679,7 @@ class StlMesh_Mesh : public MMgt_TShared {
 };
 %extend StlMesh_Mesh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StlMesh_Mesh {

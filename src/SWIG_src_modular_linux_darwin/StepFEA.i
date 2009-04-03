@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1880,7 +1882,7 @@ class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_Representa
 };
 %extend StepFEA_FeaMaterialPropertyRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -1910,7 +1912,7 @@ class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMater
 };
 %extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaShellMembraneBendingCouplingStiffness {
@@ -1954,7 +1956,7 @@ class StepFEA_FeaModel : public StepRepr_Representation {
 };
 %extend StepFEA_FeaModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaModel {
@@ -1986,7 +1988,7 @@ class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 };
 %extend StepFEA_FeaMassDensity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaMassDensity {
@@ -2018,7 +2020,7 @@ class StepFEA_ElementRepresentation : public StepRepr_Representation {
 };
 %extend StepFEA_ElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_ElementRepresentation {
@@ -2054,7 +2056,7 @@ class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_FeaSurfaceSectionGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaSurfaceSectionGeometricRelationship {
@@ -2080,7 +2082,7 @@ class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepFEA_FeaRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaRepresentationItem {
@@ -2114,7 +2116,7 @@ class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %extend StepFEA_ConstantSurface3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_ConstantSurface3dElementCoordinateSystem {
@@ -2184,7 +2186,7 @@ class StepFEA_HSequenceOfElementRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HSequenceOfElementRepresentation {
@@ -2256,7 +2258,7 @@ class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresen
 };
 %extend StepFEA_FeaMoistureAbsorption {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaMoistureAbsorption {
@@ -2288,7 +2290,7 @@ class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRe
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateDirection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateDirection {
@@ -2324,7 +2326,7 @@ class StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public StepFEA_FeaM
 };
 %extend StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaSecantCoefficientOfLinearThermalExpansion {
@@ -2352,7 +2354,7 @@ class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollectio
 };
 %extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty {
@@ -2388,7 +2390,7 @@ class StepFEA_ParametricSurface3dElementCoordinateSystem : public StepFEA_FeaRep
 };
 %extend StepFEA_ParametricSurface3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_ParametricSurface3dElementCoordinateSystem {
@@ -2420,7 +2422,7 @@ class StepFEA_CurveElementLocation : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_CurveElementLocation {
@@ -2466,7 +2468,7 @@ class StepFEA_HArray1OfDegreeOfFreedom : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfDegreeOfFreedom {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HArray1OfDegreeOfFreedom {
@@ -2500,7 +2502,7 @@ class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
 };
 %extend StepFEA_DegreeOfFreedomMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_DegreeOfFreedomMember {
@@ -2532,7 +2534,7 @@ class StepFEA_NodeRepresentation : public StepRepr_Representation {
 };
 %extend StepFEA_NodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_NodeRepresentation {
@@ -2556,7 +2558,7 @@ class StepFEA_Node : public StepFEA_NodeRepresentation {
 };
 %extend StepFEA_Node {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_Node {
@@ -2656,7 +2658,7 @@ class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfCurveElementInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HArray1OfCurveElementInterval {
@@ -2702,7 +2704,7 @@ class StepFEA_HArray1OfElementRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HArray1OfElementRepresentation {
@@ -2734,7 +2736,7 @@ class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepres
 };
 %extend StepFEA_AlignedSurface3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_AlignedSurface3dElementCoordinateSystem {
@@ -2806,7 +2808,7 @@ class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_ElementGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_ElementGeometricRelationship {
@@ -2838,7 +2840,7 @@ class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresenta
 };
 %extend StepFEA_FeaLinearElasticity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaLinearElasticity {
@@ -2884,7 +2886,7 @@ class StepFEA_HArray1OfCurveElementEndRelease : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfCurveElementEndRelease {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HArray1OfCurveElementEndRelease {
@@ -2920,7 +2922,7 @@ class StepFEA_CurveElementInterval : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_CurveElementInterval {
@@ -2946,7 +2948,7 @@ class StepFEA_NodeDefinition : public StepRepr_ShapeAspect {
 };
 %extend StepFEA_NodeDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_NodeDefinition {
@@ -2990,7 +2992,7 @@ class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentatio
 };
 %extend StepFEA_Curve3dElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_Curve3dElementRepresentation {
@@ -3076,7 +3078,7 @@ class StepFEA_HArray1OfNodeRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfNodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HArray1OfNodeRepresentation {
@@ -3142,7 +3144,7 @@ class StepFEA_NodeWithSolutionCoordinateSystem : public StepFEA_Node {
 };
 %extend StepFEA_NodeWithSolutionCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_NodeWithSolutionCoordinateSystem {
@@ -3210,7 +3212,7 @@ class StepFEA_Curve3dElementProperty : public MMgt_TShared {
 };
 %extend StepFEA_Curve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_Curve3dElementProperty {
@@ -3242,7 +3244,7 @@ class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepr
 };
 %extend StepFEA_FeaShellMembraneStiffness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaShellMembraneStiffness {
@@ -3268,7 +3270,7 @@ class StepFEA_FeaModelDefinition : public StepRepr_ShapeAspect {
 };
 %extend StepFEA_FeaModelDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaModelDefinition {
@@ -3300,7 +3302,7 @@ class StepFEA_FeaParametricPoint : public StepGeom_Point {
 };
 %extend StepFEA_FeaParametricPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaParametricPoint {
@@ -3372,7 +3374,7 @@ class StepFEA_FeaGroup : public StepBasic_Group {
 };
 %extend StepFEA_FeaGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaGroup {
@@ -3426,7 +3428,7 @@ class StepFEA_NodeSet : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepFEA_NodeSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_NodeSet {
@@ -3452,7 +3454,7 @@ class StepFEA_FeaMaterialPropertyRepresentation : public StepRepr_MaterialProper
 };
 %extend StepFEA_FeaMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaMaterialPropertyRepresentation {
@@ -3498,7 +3500,7 @@ class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
 };
 %extend StepFEA_HArray1OfCurveElementEndOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HArray1OfCurveElementEndOffset {
@@ -3552,7 +3554,7 @@ class StepFEA_CurveElementEndRelease : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementEndRelease {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_CurveElementEndRelease {
@@ -3584,7 +3586,7 @@ class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval
 };
 %extend StepFEA_CurveElementIntervalConstant {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_CurveElementIntervalConstant {
@@ -3610,7 +3612,7 @@ class StepFEA_NodeWithVector : public StepFEA_Node {
 };
 %extend StepFEA_NodeWithVector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_NodeWithVector {
@@ -3696,7 +3698,7 @@ class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementI
 };
 %extend StepFEA_CurveElementIntervalLinearlyVarying {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_CurveElementIntervalLinearlyVarying {
@@ -3740,7 +3742,7 @@ class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentat
 };
 %extend StepFEA_Surface3dElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_Surface3dElementRepresentation {
@@ -3772,7 +3774,7 @@ class StepFEA_ElementGroup : public StepFEA_FeaGroup {
 };
 %extend StepFEA_ElementGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_ElementGroup {
@@ -3812,7 +3814,7 @@ class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentati
 };
 %extend StepFEA_Volume3dElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_Volume3dElementRepresentation {
@@ -3848,7 +3850,7 @@ class StepFEA_FreedomAndCoefficient : public MMgt_TShared {
 };
 %extend StepFEA_FreedomAndCoefficient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FreedomAndCoefficient {
@@ -3916,7 +3918,7 @@ class StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public TCol
 };
 %extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship {
@@ -3986,7 +3988,7 @@ class StepFEA_HSequenceOfNodeRepresentation : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfNodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HSequenceOfNodeRepresentation {
@@ -4056,7 +4058,7 @@ class StepFEA_HSequenceOfCurve3dElementProperty : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfCurve3dElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HSequenceOfCurve3dElementProperty {
@@ -4092,7 +4094,7 @@ class StepFEA_CurveElementEndOffset : public MMgt_TShared {
 };
 %extend StepFEA_CurveElementEndOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_CurveElementEndOffset {
@@ -4128,7 +4130,7 @@ class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
 };
 %extend StepFEA_FeaAxis2Placement3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaAxis2Placement3d {
@@ -4160,7 +4162,7 @@ class StepFEA_NodeGroup : public StepFEA_FeaGroup {
 };
 %extend StepFEA_NodeGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_NodeGroup {
@@ -4192,7 +4194,7 @@ class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_
 };
 %extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion {
@@ -4224,7 +4226,7 @@ class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_ParametricCurve3dElementCoordinateSystem {
@@ -4256,7 +4258,7 @@ class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyReprese
 };
 %extend StepFEA_FeaShellShearStiffness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaShellShearStiffness {
@@ -4290,7 +4292,7 @@ class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
 };
 %extend StepFEA_SymmetricTensor23dMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_SymmetricTensor23dMember {
@@ -4360,7 +4362,7 @@ class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_HSequenceOfElementGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_HSequenceOfElementGeometricRelationship {
@@ -4404,7 +4406,7 @@ class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
 };
 %extend StepFEA_DummyNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_DummyNode {
@@ -4436,7 +4438,7 @@ class StepFEA_FreedomsList : public MMgt_TShared {
 };
 %extend StepFEA_FreedomsList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FreedomsList {
@@ -4468,7 +4470,7 @@ class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 };
 %extend StepFEA_FeaAreaDensity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaAreaDensity {
@@ -4496,7 +4498,7 @@ class StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public TCollection
 };
 %extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_SequenceNodeOfSequenceOfElementRepresentation {
@@ -4530,7 +4532,7 @@ class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
 };
 %extend StepFEA_SymmetricTensor43dMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_SymmetricTensor43dMember {
@@ -4558,7 +4560,7 @@ class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_Se
 };
 %extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_SequenceNodeOfSequenceOfNodeRepresentation {
@@ -4590,7 +4592,7 @@ class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepre
 };
 %extend StepFEA_FeaShellBendingStiffness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaShellBendingStiffness {
@@ -4616,7 +4618,7 @@ class StepFEA_FeaModel3d : public StepFEA_FeaModel {
 };
 %extend StepFEA_FeaModel3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaModel3d {
@@ -4734,7 +4736,7 @@ class StepFEA_FeaCurveSectionGeometricRelationship : public MMgt_TShared {
 };
 %extend StepFEA_FeaCurveSectionGeometricRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_FeaCurveSectionGeometricRelationship {
@@ -4854,7 +4856,7 @@ class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
 };
 %extend StepFEA_GeometricNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_GeometricNode {
@@ -4886,7 +4888,7 @@ class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresen
 };
 %extend StepFEA_AlignedCurve3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_AlignedCurve3dElementCoordinateSystem {
@@ -4918,7 +4920,7 @@ class StepFEA_ArbitraryVolume3dElementCoordinateSystem : public StepFEA_FeaRepre
 };
 %extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepFEA_ArbitraryVolume3dElementCoordinateSystem {

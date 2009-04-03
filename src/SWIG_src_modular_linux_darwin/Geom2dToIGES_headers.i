@@ -29,10 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Geom2dToIGES_Geom2dCurve.hxx>
-#include<Geom2dToIGES_Geom2dEntity.hxx>
-#include<Geom2dToIGES_Geom2dPoint.hxx>
-#include<Geom2dToIGES_Geom2dVector.hxx>
 
 // Needed headers necessary for compilation.
 

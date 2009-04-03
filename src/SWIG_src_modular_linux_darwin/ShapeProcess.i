@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -277,7 +279,7 @@ class ShapeProcess_Operator : public MMgt_TShared {
 };
 %extend ShapeProcess_Operator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeProcess_Operator {
@@ -301,7 +303,7 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 };
 %extend ShapeProcess_UOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeProcess_UOperator {
@@ -355,7 +357,7 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeProcess_StackItemOfDictionaryOfOperator {
@@ -465,7 +467,7 @@ class ShapeProcess_Context : public MMgt_TShared {
 };
 %extend ShapeProcess_Context {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeProcess_Context {
@@ -525,7 +527,7 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 };
 %extend ShapeProcess_ShapeContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeProcess_ShapeContext {
@@ -585,7 +587,7 @@ class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {
 };
 %extend ShapeProcess_DictionaryOfOperator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeProcess_DictionaryOfOperator {

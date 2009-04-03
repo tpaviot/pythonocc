@@ -44,21 +44,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<HLRTopoBRep_DSFiller.hxx>
-#include<HLRTopoBRep_Data.hxx>
-#include<HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData.hxx>
-#include<HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData.hxx>
-#include<HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData.hxx>
-#include<HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData.hxx>
-#include<HLRTopoBRep_DataMapOfShapeFaceData.hxx>
-#include<HLRTopoBRep_FaceData.hxx>
-#include<HLRTopoBRep_FaceIsoLiner.hxx>
-#include<HLRTopoBRep_ListIteratorOfListOfVData.hxx>
-#include<HLRTopoBRep_ListNodeOfListOfVData.hxx>
-#include<HLRTopoBRep_ListOfVData.hxx>
-#include<HLRTopoBRep_MapOfShapeListOfVData.hxx>
-#include<HLRTopoBRep_OutLiner.hxx>
-#include<HLRTopoBRep_VData.hxx>
 
 // Needed headers necessary for compilation.
 

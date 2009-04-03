@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -631,7 +633,7 @@ class MDF_DataMapNodeOfTypeARDriverMap : public TCollection_MapNode {
 };
 %extend MDF_DataMapNodeOfTypeARDriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_DataMapNodeOfTypeARDriverMap {
@@ -665,7 +667,7 @@ class MDF_ASDriver : public MMgt_TShared {
 };
 %extend MDF_ASDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ASDriver {
@@ -691,7 +693,7 @@ class MDF_TagSourceStorageDriver : public MDF_ASDriver {
 };
 %extend MDF_TagSourceStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_TagSourceStorageDriver {
@@ -733,7 +735,7 @@ class MDF_SRelocationTable : public MMgt_TShared {
 };
 %extend MDF_SRelocationTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_SRelocationTable {
@@ -761,7 +763,7 @@ class MDF_ListNodeOfDriverListOfARDriverTable : public TCollection_MapNode {
 };
 %extend MDF_ListNodeOfDriverListOfARDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ListNodeOfDriverListOfARDriverTable {
@@ -1085,7 +1087,7 @@ class MDF_ARDriver : public MMgt_TShared {
 };
 %extend MDF_ARDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ARDriver {
@@ -1111,7 +1113,7 @@ class MDF_TagSourceRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDF_TagSourceRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_TagSourceRetrievalDriver {
@@ -1145,7 +1147,7 @@ class MDF_ASDriverTable : public MMgt_TShared {
 };
 %extend MDF_ASDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ASDriverTable {
@@ -1199,7 +1201,7 @@ class MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public TCollection_Map
 };
 %extend MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable {
@@ -1227,7 +1229,7 @@ class MDF_ListNodeOfDriverListOfASDriverTable : public TCollection_MapNode {
 };
 %extend MDF_ListNodeOfDriverListOfASDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ListNodeOfDriverListOfASDriverTable {
@@ -1261,7 +1263,7 @@ class MDF_ReferenceStorageDriver : public MDF_ASDriver {
 };
 %extend MDF_ReferenceStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ReferenceStorageDriver {
@@ -1289,7 +1291,7 @@ class MDF_SequenceNodeOfARDriverSequence : public TCollection_SeqNode {
 };
 %extend MDF_SequenceNodeOfARDriverSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_SequenceNodeOfARDriverSequence {
@@ -1319,7 +1321,7 @@ class MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public TCollection_Map
 };
 %extend MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable {
@@ -1423,7 +1425,7 @@ class MDF_ReferenceRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDF_ReferenceRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ReferenceRetrievalDriver {
@@ -1485,7 +1487,7 @@ class MDF_SequenceNodeOfASDriverSequence : public TCollection_SeqNode {
 };
 %extend MDF_SequenceNodeOfASDriverSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_SequenceNodeOfASDriverSequence {
@@ -1561,7 +1563,7 @@ class MDF_RRelocationTable : public MMgt_TShared {
 };
 %extend MDF_RRelocationTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_RRelocationTable {
@@ -1591,7 +1593,7 @@ class MDF_DataMapNodeOfTypeASDriverMap : public TCollection_MapNode {
 };
 %extend MDF_DataMapNodeOfTypeASDriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_DataMapNodeOfTypeASDriverMap {
@@ -1679,7 +1681,7 @@ class MDF_ARDriverTable : public MMgt_TShared {
 };
 %extend MDF_ARDriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ARDriverTable {
@@ -1749,7 +1751,7 @@ class MDF_ARDriverHSequence : public MMgt_TShared {
 };
 %extend MDF_ARDriverHSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ARDriverHSequence {
@@ -1819,7 +1821,7 @@ class MDF_ASDriverHSequence : public MMgt_TShared {
 };
 %extend MDF_ASDriverHSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDF_ASDriverHSequence {

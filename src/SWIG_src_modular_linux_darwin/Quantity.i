@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -954,7 +956,7 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_ColorDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Quantity_ColorDefinitionError {
@@ -1156,7 +1158,7 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_PeriodDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Quantity_PeriodDefinitionError {
@@ -1186,7 +1188,7 @@ class Quantity_Color {
 		%feature("autodoc", "1");
 		void SetValues(const Quantity_Parameter R1, const Quantity_Parameter R2, const Quantity_Parameter R3, const Quantity_TypeOfColor AType);
 		%feature("autodoc", "1");
-		void Delta(const Quantity_Color &AColor, Quantity_Parameter & DC, Quantity_Parameter & DI) const;
+		void Delta(const Quantity_Color &AColor, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real Distance(const Quantity_Color &AColor) const;
 		%feature("autodoc", "1");
@@ -1214,7 +1216,7 @@ class Quantity_Color {
 		%feature("autodoc", "1");
 		Quantity_Parameter Saturation() const;
 		%feature("autodoc", "1");
-		void Values(Quantity_Parameter & R1, Quantity_Parameter & R2, Quantity_Parameter & R3, const Quantity_TypeOfColor AType) const;
+		void Values(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, const Quantity_TypeOfColor AType) const;
 		%feature("autodoc", "1");
 		void SetEpsilon(const Quantity_Parameter AnEpsilon);
 		%feature("autodoc", "1");
@@ -1224,9 +1226,9 @@ class Quantity_Color {
 		%feature("autodoc", "1");
 		char * StringName(const Quantity_NameOfColor AColor);
 		%feature("autodoc", "1");
-		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Quantity_Parameter & R, Quantity_Parameter & G, Quantity_Parameter & B);
+		void HlsRgb(const Quantity_Parameter H, const Quantity_Parameter L, const Quantity_Parameter S, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Quantity_Parameter & H, Quantity_Parameter & L, Quantity_Parameter & S);
+		void RgbHls(const Quantity_Parameter R, const Quantity_Parameter G, const Quantity_Parameter B, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		void Test();
 		%feature("autodoc", "1");
@@ -1314,7 +1316,7 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 };
 %extend Quantity_DateDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Quantity_DateDefinitionError {
@@ -1360,7 +1362,7 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 };
 %extend Quantity_HArray1OfColor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Quantity_HArray1OfColor {

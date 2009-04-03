@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -208,7 +210,7 @@ class Viewer_View : public MMgt_TShared {
 };
 %extend Viewer_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Viewer_View {
@@ -240,7 +242,7 @@ class Viewer_Viewer : public MMgt_TShared {
 };
 %extend Viewer_Viewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Viewer_Viewer {
@@ -274,7 +276,7 @@ class Viewer_BadValue : public Standard_OutOfRange {
 };
 %extend Viewer_BadValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Viewer_BadValue {

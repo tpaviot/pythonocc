@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -318,7 +320,7 @@ class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCol
 };
 %extend Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour {
@@ -748,7 +750,7 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 };
 %extend Contap_TheHSequenceOfPointOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Contap_TheHSequenceOfPointOfContour {
@@ -826,7 +828,7 @@ class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNo
 };
 %extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Contap_SequenceNodeOfTheSequenceOfLineOfContour {
@@ -960,7 +962,7 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 };
 %extend Contap_TheIWLineOfTheIWalkingOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Contap_TheIWLineOfTheIWalkingOfContour {
@@ -1030,7 +1032,7 @@ class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TColl
 };
 %extend Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour {
@@ -1382,7 +1384,7 @@ class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TColle
 };
 %extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour {
@@ -1444,7 +1446,7 @@ class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqN
 };
 %extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Contap_SequenceNodeOfTheSequenceOfPointOfContour {

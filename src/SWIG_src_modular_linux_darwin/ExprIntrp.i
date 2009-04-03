@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -412,7 +414,7 @@ class ExprIntrp_Generator : public MMgt_TShared {
 };
 %extend ExprIntrp_Generator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_Generator {
@@ -440,7 +442,7 @@ class ExprIntrp_GenFct : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenFct {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_GenFct {
@@ -468,7 +470,7 @@ class ExprIntrp_StackNodeOfStackOfNames : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfNames {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_StackNodeOfStackOfNames {
@@ -502,7 +504,7 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 };
 %extend ExprIntrp_SyntaxError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_SyntaxError {
@@ -554,7 +556,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralFunction {
@@ -582,7 +584,7 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_Seq
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedExpression {
@@ -706,7 +708,7 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenRel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_GenRel {
@@ -808,7 +810,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralRelation {
@@ -866,7 +868,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_StackNodeOfStackOfGeneralExpression {
@@ -1062,7 +1064,7 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_SequenceNodeOfSequenceOfNamedFunction {
@@ -1094,7 +1096,7 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 };
 %extend ExprIntrp_GenExp {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ExprIntrp_GenExp {

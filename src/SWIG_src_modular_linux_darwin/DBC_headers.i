@@ -44,21 +44,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<DBC_BaseArray.hxx>
-#include<DBC_BaseArray_objs.hxx>
-#include<DBC_DBVArray.hxx>
-#include<DBC_VArrayNodeOfVArrayOfCharacter.hxx>
-#include<DBC_VArrayNodeOfVArrayOfExtCharacter.hxx>
-#include<DBC_VArrayNodeOfVArrayOfInteger.hxx>
-#include<DBC_VArrayNodeOfVArrayOfReal.hxx>
-#include<DBC_VArrayOfCharacter.hxx>
-#include<DBC_VArrayOfExtCharacter.hxx>
-#include<DBC_VArrayOfInteger.hxx>
-#include<DBC_VArrayOfReal.hxx>
-#include<DBC_VArrayTNodeOfVArrayOfCharacter.hxx>
-#include<DBC_VArrayTNodeOfVArrayOfExtCharacter.hxx>
-#include<DBC_VArrayTNodeOfVArrayOfInteger.hxx>
-#include<DBC_VArrayTNodeOfVArrayOfReal.hxx>
 
 // Needed headers necessary for compilation.
 

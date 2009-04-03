@@ -92,42 +92,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PTopoDS_CompSolid.hxx>
-#include<PTopoDS_Compound.hxx>
-#include<PTopoDS_Edge.hxx>
-#include<PTopoDS_Face.hxx>
-#include<PTopoDS_FieldOfHArray1OfHShape.hxx>
-#include<PTopoDS_FieldOfHArray1OfShape1.hxx>
-#include<PTopoDS_HArray1OfHShape.hxx>
-#include<PTopoDS_HArray1OfShape1.hxx>
-#include<PTopoDS_HShape.hxx>
-#include<PTopoDS_Shape1.hxx>
-#include<PTopoDS_Shell.hxx>
-#include<PTopoDS_Solid.hxx>
-#include<PTopoDS_TCompSolid.hxx>
-#include<PTopoDS_TCompSolid1.hxx>
-#include<PTopoDS_TCompound.hxx>
-#include<PTopoDS_TCompound1.hxx>
-#include<PTopoDS_TEdge.hxx>
-#include<PTopoDS_TEdge1.hxx>
-#include<PTopoDS_TFace.hxx>
-#include<PTopoDS_TFace1.hxx>
-#include<PTopoDS_TShape.hxx>
-#include<PTopoDS_TShape1.hxx>
-#include<PTopoDS_TShell.hxx>
-#include<PTopoDS_TShell1.hxx>
-#include<PTopoDS_TSolid.hxx>
-#include<PTopoDS_TSolid1.hxx>
-#include<PTopoDS_TVertex.hxx>
-#include<PTopoDS_TVertex1.hxx>
-#include<PTopoDS_TWire.hxx>
-#include<PTopoDS_TWire1.hxx>
-#include<PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape.hxx>
-#include<PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1.hxx>
-#include<PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape.hxx>
-#include<PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1.hxx>
-#include<PTopoDS_Vertex.hxx>
-#include<PTopoDS_Wire.hxx>
 
 // Needed headers necessary for compilation.
 

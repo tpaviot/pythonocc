@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -390,7 +392,7 @@ class PrsMgr_Presentation : public MMgt_TShared {
 };
 %extend PrsMgr_Presentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_Presentation {
@@ -444,7 +446,7 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 };
 %extend PrsMgr_PresentableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_PresentableObject {
@@ -478,7 +480,7 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 };
 %extend PrsMgr_Prs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_Prs {
@@ -506,7 +508,7 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 };
 %extend PrsMgr_Presentation3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_Presentation3d {
@@ -588,7 +590,7 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 };
 %extend PrsMgr_SequenceNodeOfPresentations {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_SequenceNodeOfPresentations {
@@ -622,7 +624,7 @@ class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 };
 %extend PrsMgr_Presentation2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_Presentation2d {
@@ -682,7 +684,7 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 };
 %extend PrsMgr_PresentationManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_PresentationManager {
@@ -744,7 +746,7 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 };
 %extend PrsMgr_PresentationManager2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_PresentationManager2d {
@@ -800,7 +802,7 @@ class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {
 };
 %extend PrsMgr_PresentationManager3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PrsMgr_PresentationManager3d {

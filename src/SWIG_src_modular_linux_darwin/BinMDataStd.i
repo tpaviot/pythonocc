@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -983,7 +985,7 @@ class BinMDataStd_IntegerArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_IntegerArrayDriver {
@@ -1015,7 +1017,7 @@ class BinMDataStd_UAttributeDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_UAttributeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_UAttributeDriver {
@@ -1047,7 +1049,7 @@ class BinMDataStd_TreeNodeDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_TreeNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_TreeNodeDriver {
@@ -1079,7 +1081,7 @@ class BinMDataStd_TickDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_TickDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_TickDriver {
@@ -1111,7 +1113,7 @@ class BinMDataStd_PointDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_PointDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_PointDriver {
@@ -1143,7 +1145,7 @@ class BinMDataStd_GeometryDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_GeometryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_GeometryDriver {
@@ -1175,7 +1177,7 @@ class BinMDataStd_AsciiStringDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_AsciiStringDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_AsciiStringDriver {
@@ -1207,7 +1209,7 @@ class BinMDataStd_NoteBookDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NoteBookDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_NoteBookDriver {
@@ -1239,7 +1241,7 @@ class BinMDataStd_ConstraintDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ConstraintDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_ConstraintDriver {
@@ -1271,7 +1273,7 @@ class BinMDataStd_ExpressionDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExpressionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_ExpressionDriver {
@@ -1303,7 +1305,7 @@ class BinMDataStd_CommentDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_CommentDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_CommentDriver {
@@ -1335,7 +1337,7 @@ class BinMDataStd_ReferenceArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ReferenceArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_ReferenceArrayDriver {
@@ -1367,7 +1369,7 @@ class BinMDataStd_IntegerDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_IntegerDriver {
@@ -1399,7 +1401,7 @@ class BinMDataStd_ReferenceListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ReferenceListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_ReferenceListDriver {
@@ -1431,7 +1433,7 @@ class BinMDataStd_RealArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_RealArrayDriver {
@@ -1463,7 +1465,7 @@ class BinMDataStd_PatternStdDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_PatternStdDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_PatternStdDriver {
@@ -1495,7 +1497,7 @@ class BinMDataStd_BooleanArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_BooleanArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_BooleanArrayDriver {
@@ -1527,7 +1529,7 @@ class BinMDataStd_RealListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_RealListDriver {
@@ -1559,7 +1561,7 @@ class BinMDataStd_IntPackedMapDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntPackedMapDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_IntPackedMapDriver {
@@ -1591,7 +1593,7 @@ class BinMDataStd_ByteArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ByteArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_ByteArrayDriver {
@@ -1623,7 +1625,7 @@ class BinMDataStd_NameDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NameDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_NameDriver {
@@ -1655,7 +1657,7 @@ class BinMDataStd_RealDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RealDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_RealDriver {
@@ -1687,7 +1689,7 @@ class BinMDataStd_ExtStringListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExtStringListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_ExtStringListDriver {
@@ -1719,7 +1721,7 @@ class BinMDataStd_BooleanListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_BooleanListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_BooleanListDriver {
@@ -1751,7 +1753,7 @@ class BinMDataStd_VariableDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_VariableDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_VariableDriver {
@@ -1783,7 +1785,7 @@ class BinMDataStd_DirectoryDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_DirectoryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_DirectoryDriver {
@@ -1815,7 +1817,7 @@ class BinMDataStd_ShapeDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_ShapeDriver {
@@ -1847,7 +1849,7 @@ class BinMDataStd_ExtStringArrayDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_ExtStringArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_ExtStringArrayDriver {
@@ -1879,7 +1881,7 @@ class BinMDataStd_AxisDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_AxisDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_AxisDriver {
@@ -1911,7 +1913,7 @@ class BinMDataStd_NamedDataDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_NamedDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_NamedDataDriver {
@@ -1943,7 +1945,7 @@ class BinMDataStd_IntegerListDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_IntegerListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_IntegerListDriver {
@@ -1995,7 +1997,7 @@ class BinMDataStd_PlacementDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_PlacementDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_PlacementDriver {
@@ -2027,7 +2029,7 @@ class BinMDataStd_PlaneDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_PlaneDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_PlaneDriver {
@@ -2059,7 +2061,7 @@ class BinMDataStd_RelationDriver : public BinMDF_ADriver {
 };
 %extend BinMDataStd_RelationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDataStd_RelationDriver {

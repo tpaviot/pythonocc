@@ -30,11 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GeomToIGES_GeomCurve.hxx>
-#include<GeomToIGES_GeomEntity.hxx>
-#include<GeomToIGES_GeomPoint.hxx>
-#include<GeomToIGES_GeomSurface.hxx>
-#include<GeomToIGES_GeomVector.hxx>
 
 // Needed headers necessary for compilation.
 

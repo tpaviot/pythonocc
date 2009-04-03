@@ -31,11 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GraphDS_DataMapIteratorOfEntityRoleMap.hxx>
-#include<GraphDS_DataMapNodeOfEntityRoleMap.hxx>
-#include<GraphDS_EntityRole.hxx>
-#include<GraphDS_EntityRoleMap.hxx>
-#include<GraphDS_RelationRole.hxx>
 
 // Needed headers necessary for compilation.
 

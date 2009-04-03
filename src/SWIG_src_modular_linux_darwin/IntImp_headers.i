@@ -30,14 +30,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<IntImpParGen.hxx>
 #include<IntImpParGen_ImpTool.hxx>
 #include<IntImpParGen_Tool.hxx>
-#include<IntImp_ComputeTangence.hxx>
-#include<IntImp_ConstIsoparametric.hxx>
 
 // Needed headers necessary for compilation.
 
-#include<IntImpParGen_Tool.hxx>
-#include<IntImp_ComputeTangence.hxx>
-#include<IntImpParGen.hxx>
-#include<IntImp_ConstIsoparametric.hxx>
-#include<IntImpParGen_ImpTool.hxx>
 %}

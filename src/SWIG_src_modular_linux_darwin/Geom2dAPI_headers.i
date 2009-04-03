@@ -30,11 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Geom2dAPI_ExtremaCurveCurve.hxx>
-#include<Geom2dAPI_InterCurveCurve.hxx>
-#include<Geom2dAPI_Interpolate.hxx>
-#include<Geom2dAPI_PointsToBSpline.hxx>
-#include<Geom2dAPI_ProjectPointOnCurve.hxx>
 
 // Needed headers necessary for compilation.
 

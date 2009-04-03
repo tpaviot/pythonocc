@@ -55,29 +55,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 // Additional headers necessary for compilation.
 
 #include<ApproxInt_SvSurfaces.hxx>
-#include<Approx_Array1OfAdHSurface.hxx>
-#include<Approx_Array1OfGTrsf2d.hxx>
-#include<Approx_Curve2d.hxx>
-#include<Approx_Curve3d.hxx>
-#include<Approx_CurveOnSurface.hxx>
-#include<Approx_CurvilinearParameter.hxx>
-#include<Approx_CurvlinFunc.hxx>
-#include<Approx_FitAndDivide.hxx>
-#include<Approx_FitAndDivide2d.hxx>
-#include<Approx_HArray1OfAdHSurface.hxx>
-#include<Approx_HArray1OfGTrsf2d.hxx>
-#include<Approx_MCurvesToBSpCurve.hxx>
-#include<Approx_MyLeastSquareOfFitAndDivide.hxx>
-#include<Approx_MyLeastSquareOfFitAndDivide2d.hxx>
-#include<Approx_ParametrizationType.hxx>
-#include<Approx_SameParameter.hxx>
-#include<Approx_SequenceNodeOfSequenceOfArray1OfPnt2d.hxx>
-#include<Approx_SequenceNodeOfSequenceOfHArray1OfReal.hxx>
-#include<Approx_SequenceOfArray1OfPnt2d.hxx>
-#include<Approx_SequenceOfHArray1OfReal.hxx>
-#include<Approx_Status.hxx>
-#include<Approx_SweepApproximation.hxx>
-#include<Approx_SweepFunction.hxx>
 
 // Needed headers necessary for compilation.
 

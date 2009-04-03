@@ -49,20 +49,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<NLPlate_HGPPConstraint.hxx>
-#include<NLPlate_HPG0Constraint.hxx>
-#include<NLPlate_HPG0G1Constraint.hxx>
-#include<NLPlate_HPG0G2Constraint.hxx>
-#include<NLPlate_HPG0G3Constraint.hxx>
-#include<NLPlate_HPG1Constraint.hxx>
-#include<NLPlate_HPG2Constraint.hxx>
-#include<NLPlate_HPG3Constraint.hxx>
-#include<NLPlate_NLPlate.hxx>
-#include<NLPlate_SequenceNodeOfSequenceOfHGPPConstraint.hxx>
-#include<NLPlate_SequenceOfHGPPConstraint.hxx>
-#include<NLPlate_StackIteratorOfStackOfPlate.hxx>
-#include<NLPlate_StackNodeOfStackOfPlate.hxx>
-#include<NLPlate_StackOfPlate.hxx>
 
 // Needed headers necessary for compilation.
 

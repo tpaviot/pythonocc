@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -556,7 +558,7 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPISeg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_HArray1OfPISeg {
@@ -586,7 +588,7 @@ class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyInternalNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_PolyInternalNode {
@@ -828,7 +830,7 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 };
 %extend HLRAlgo_EdgesBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_EdgesBlock {
@@ -856,7 +858,7 @@ class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 };
 %extend HLRAlgo_ListNodeOfListOfBPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_ListNodeOfListOfBPoint {
@@ -902,7 +904,7 @@ class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPHDat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_HArray1OfPHDat {
@@ -970,7 +972,7 @@ class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 };
 %extend HLRAlgo_ListNodeOfInterferenceList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_ListNodeOfInterferenceList {
@@ -1006,7 +1008,7 @@ class HLRAlgo_WiresBlock : public MMgt_TShared {
 };
 %extend HLRAlgo_WiresBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_WiresBlock {
@@ -1056,7 +1058,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyAlgo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_PolyAlgo {
@@ -1096,7 +1098,7 @@ class HLRAlgo_PolyShellData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyShellData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_PolyShellData {
@@ -1186,7 +1188,7 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_PolyData {
@@ -1346,7 +1348,7 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfPINod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_HArray1OfPINod {
@@ -1456,7 +1458,7 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 };
 %extend HLRAlgo_PolyInternalData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_PolyInternalData {
@@ -1548,7 +1550,7 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 };
 %extend HLRAlgo_HArray1OfTData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HLRAlgo_HArray1OfTData {

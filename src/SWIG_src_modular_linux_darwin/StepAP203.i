@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -672,7 +674,7 @@ class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfSpecifiedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfSpecifiedItem {
@@ -834,7 +836,7 @@ class StepAP203_HArray1OfChangeRequestItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfChangeRequestItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfChangeRequestItem {
@@ -866,7 +868,7 @@ class StepAP203_ChangeRequest : public StepBasic_ActionRequestAssignment {
 };
 %extend StepAP203_ChangeRequest {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_ChangeRequest {
@@ -898,7 +900,7 @@ class StepAP203_CcDesignDateAndTimeAssignment : public StepBasic_DateAndTimeAssi
 };
 %extend StepAP203_CcDesignDateAndTimeAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_CcDesignDateAndTimeAssignment {
@@ -1002,7 +1004,7 @@ class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfContractedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfContractedItem {
@@ -1088,7 +1090,7 @@ class StepAP203_HArray1OfCertifiedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfCertifiedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfCertifiedItem {
@@ -1260,7 +1262,7 @@ class StepAP203_CcDesignSecurityClassification : public StepBasic_SecurityClassi
 };
 %extend StepAP203_CcDesignSecurityClassification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_CcDesignSecurityClassification {
@@ -1306,7 +1308,7 @@ class StepAP203_HArray1OfApprovedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfApprovedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfApprovedItem {
@@ -1352,7 +1354,7 @@ class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfClassifiedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfClassifiedItem {
@@ -1456,7 +1458,7 @@ class StepAP203_StartWork : public StepBasic_ActionAssignment {
 };
 %extend StepAP203_StartWork {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_StartWork {
@@ -1488,7 +1490,7 @@ class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
 };
 %extend StepAP203_CcDesignApproval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_CcDesignApproval {
@@ -1534,7 +1536,7 @@ class StepAP203_HArray1OfPersonOrganizationItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfPersonOrganizationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfPersonOrganizationItem {
@@ -1566,7 +1568,7 @@ class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
 };
 %extend StepAP203_CcDesignContract {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_CcDesignContract {
@@ -1598,7 +1600,7 @@ class StepAP203_CcDesignPersonAndOrganizationAssignment : public StepBasic_Perso
 };
 %extend StepAP203_CcDesignPersonAndOrganizationAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_CcDesignPersonAndOrganizationAssignment {
@@ -1704,7 +1706,7 @@ class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfWorkItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfWorkItem {
@@ -1750,7 +1752,7 @@ class StepAP203_HArray1OfStartRequestItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfStartRequestItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfStartRequestItem {
@@ -1782,7 +1784,7 @@ class StepAP203_StartRequest : public StepBasic_ActionRequestAssignment {
 };
 %extend StepAP203_StartRequest {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_StartRequest {
@@ -1814,7 +1816,7 @@ class StepAP203_Change : public StepBasic_ActionAssignment {
 };
 %extend StepAP203_Change {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_Change {
@@ -1924,7 +1926,7 @@ class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment
 };
 %extend StepAP203_CcDesignCertification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_CcDesignCertification {
@@ -1956,7 +1958,7 @@ class StepAP203_CcDesignSpecificationReference : public StepBasic_DocumentRefere
 };
 %extend StepAP203_CcDesignSpecificationReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_CcDesignSpecificationReference {
@@ -2002,7 +2004,7 @@ class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
 };
 %extend StepAP203_HArray1OfDateTimeItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepAP203_HArray1OfDateTimeItem {

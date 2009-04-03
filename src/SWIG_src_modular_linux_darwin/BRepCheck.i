@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -391,7 +393,7 @@ class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
 };
 %extend BRepCheck_ListNodeOfListOfStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_ListNodeOfListOfStatus {
@@ -465,7 +467,7 @@ class BRepCheck_Result : public MMgt_TShared {
 };
 %extend BRepCheck_Result {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_Result {
@@ -499,7 +501,7 @@ class BRepCheck_Shell : public BRepCheck_Result {
 };
 %extend BRepCheck_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_Shell {
@@ -577,7 +579,7 @@ class BRepCheck_Wire : public BRepCheck_Result {
 };
 %extend BRepCheck_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_Wire {
@@ -623,7 +625,7 @@ class BRepCheck_Face : public BRepCheck_Result {
 };
 %extend BRepCheck_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_Face {
@@ -653,7 +655,7 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeResult {
@@ -745,7 +747,7 @@ class BRepCheck_Edge : public BRepCheck_Result {
 };
 %extend BRepCheck_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_Edge {
@@ -775,7 +777,7 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_Map
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus {
@@ -927,7 +929,7 @@ class BRepCheck_Vertex : public BRepCheck_Result {
 };
 %extend BRepCheck_Vertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepCheck_Vertex {

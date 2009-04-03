@@ -32,11 +32,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Adaptor2d_Curve2d.hxx>
-#include<Adaptor2d_Curve2dPtr.hxx>
-#include<Adaptor2d_HCurve2d.hxx>
-#include<Adaptor2d_HLine2d.hxx>
-#include<Adaptor2d_Line2d.hxx>
 
 // Needed headers necessary for compilation.
 

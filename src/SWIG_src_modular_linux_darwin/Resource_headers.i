@@ -43,20 +43,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Resource_Array1OfAsciiString.hxx>
-#include<Resource_ConvertUnicode.hxx>
-#include<Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString.hxx>
-#include<Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString.hxx>
-#include<Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString.hxx>
-#include<Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString.hxx>
-#include<Resource_DataMapOfAsciiStringAsciiString.hxx>
-#include<Resource_DataMapOfAsciiStringExtendedString.hxx>
-#include<Resource_FormatType.hxx>
-#include<Resource_LexicalCompare.hxx>
-#include<Resource_Manager.hxx>
-#include<Resource_NoSuchResource.hxx>
-#include<Resource_QuickSortOfArray1.hxx>
-#include<Resource_Unicode.hxx>
 
 // Needed headers necessary for compilation.
 

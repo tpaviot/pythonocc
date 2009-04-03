@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -380,7 +382,7 @@ class Image_Image : public MMgt_TShared {
 };
 %extend Image_Image {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Image_Image {
@@ -640,7 +642,7 @@ class Image_DColorImage : public Image_Image {
 };
 %extend Image_DColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Image_DColorImage {
@@ -672,7 +674,7 @@ class Image_ColorImage : public Image_DColorImage {
 };
 %extend Image_ColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Image_ColorImage {
@@ -702,7 +704,7 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfColorPixelDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Image_DataMapNodeOfColorPixelDataMap {
@@ -786,7 +788,7 @@ class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
 };
 %extend Image_DataMapNodeOfLookupTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Image_DataMapNodeOfLookupTable {
@@ -894,7 +896,7 @@ class Image_DIndexedImage : public Image_Image {
 };
 %extend Image_DIndexedImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Image_DIndexedImage {
@@ -1122,7 +1124,7 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 };
 %extend Image_PseudoColorImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Image_PseudoColorImage {

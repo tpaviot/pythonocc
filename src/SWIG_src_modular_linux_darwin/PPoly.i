@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -315,7 +317,7 @@ class PPoly_Triangulation : public Standard_Persistent {
 };
 %extend PPoly_Triangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PPoly_Triangulation {
@@ -395,7 +397,7 @@ class PPoly_Polygon3D : public Standard_Persistent {
 };
 %extend PPoly_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PPoly_Polygon3D {
@@ -465,7 +467,7 @@ class PPoly_Polygon2D : public Standard_Persistent {
 };
 %extend PPoly_Polygon2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PPoly_Polygon2D {
@@ -531,7 +533,7 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 };
 %extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PPoly_VArrayNodeOfFieldOfHArray1OfTriangle {
@@ -587,7 +589,7 @@ class PPoly_HArray1OfTriangle : public Standard_Persistent {
 };
 %extend PPoly_HArray1OfTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PPoly_HArray1OfTriangle {
@@ -647,7 +649,7 @@ class PPoly_PolygonOnTriangulation : public Standard_Persistent {
 };
 %extend PPoly_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PPoly_PolygonOnTriangulation {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -439,7 +441,7 @@ class PXCAFDoc_Volume : public PDF_Attribute {
 };
 %extend PXCAFDoc_Volume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_Volume {
@@ -533,7 +535,7 @@ class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
 };
 %extend PXCAFDoc_GraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_GraphNodeSequence {
@@ -591,7 +593,7 @@ class PXCAFDoc_Location : public PDF_Attribute {
 };
 %extend PXCAFDoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_Location {
@@ -649,7 +651,7 @@ class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
 };
 %extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_SeqNodeOfGraphNodeSequence {
@@ -685,7 +687,7 @@ class PXCAFDoc_Color : public PDF_Attribute {
 };
 %extend PXCAFDoc_Color {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_Color {
@@ -713,7 +715,7 @@ class PXCAFDoc_ShapeTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_ShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_ShapeTool {
@@ -771,7 +773,7 @@ class PXCAFDoc_GraphNode : public PDF_Attribute {
 };
 %extend PXCAFDoc_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_GraphNode {
@@ -807,7 +809,7 @@ class PXCAFDoc_Centroid : public PDF_Attribute {
 };
 %extend PXCAFDoc_Centroid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_Centroid {
@@ -845,7 +847,7 @@ class PXCAFDoc_Area : public PDF_Attribute {
 };
 %extend PXCAFDoc_Area {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_Area {
@@ -873,7 +875,7 @@ class PXCAFDoc_ColorTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_ColorTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_ColorTool {
@@ -901,7 +903,7 @@ class PXCAFDoc_DocumentTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_DocumentTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_DocumentTool {
@@ -929,7 +931,7 @@ class PXCAFDoc_LayerTool : public PDF_Attribute {
 };
 %extend PXCAFDoc_LayerTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PXCAFDoc_LayerTool {

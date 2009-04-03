@@ -52,33 +52,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<DsgPrs.hxx>
-#include<DsgPrs_AnglePresentation.hxx>
-#include<DsgPrs_ArrowSide.hxx>
-#include<DsgPrs_Chamf2dPresentation.hxx>
-#include<DsgPrs_ConcentricPresentation.hxx>
-#include<DsgPrs_DatumPrs.hxx>
-#include<DsgPrs_DatumTool.hxx>
-#include<DsgPrs_DiameterPresentation.hxx>
-#include<DsgPrs_EllipseRadiusPresentation.hxx>
-#include<DsgPrs_EqualDistancePresentation.hxx>
-#include<DsgPrs_EqualRadiusPresentation.hxx>
-#include<DsgPrs_FilletRadiusPresentation.hxx>
-#include<DsgPrs_FixPresentation.hxx>
-#include<DsgPrs_IdenticPresentation.hxx>
-#include<DsgPrs_LengthPresentation.hxx>
-#include<DsgPrs_MidPointPresentation.hxx>
-#include<DsgPrs_OffsetPresentation.hxx>
-#include<DsgPrs_ParalPresentation.hxx>
-#include<DsgPrs_PerpenPresentation.hxx>
-#include<DsgPrs_RadiusPresentation.hxx>
-#include<DsgPrs_ShadedPlanePresentation.hxx>
-#include<DsgPrs_ShapeDirPresentation.hxx>
-#include<DsgPrs_SymbPresentation.hxx>
-#include<DsgPrs_SymmetricPresentation.hxx>
-#include<DsgPrs_TangentPresentation.hxx>
-#include<DsgPrs_XYZAxisPresentation.hxx>
-#include<DsgPrs_XYZPlanePresentation.hxx>
 
 // Needed headers necessary for compilation.
 

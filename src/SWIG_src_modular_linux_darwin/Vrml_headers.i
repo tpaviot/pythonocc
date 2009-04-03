@@ -87,7 +87,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Vrml.hxx>
 #include<VrmlAPI.hxx>
 #include<VrmlAPI_RepresentationOfShape.hxx>
 #include<VrmlAPI_Writer.hxx>
@@ -137,58 +136,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<VrmlData_TextureTransform.hxx>
 #include<VrmlData_UnknownNode.hxx>
 #include<VrmlData_WorldInfo.hxx>
-#include<Vrml_AsciiText.hxx>
-#include<Vrml_AsciiTextJustification.hxx>
-#include<Vrml_Cone.hxx>
-#include<Vrml_ConeParts.hxx>
-#include<Vrml_Coordinate3.hxx>
-#include<Vrml_Cube.hxx>
-#include<Vrml_Cylinder.hxx>
-#include<Vrml_CylinderParts.hxx>
-#include<Vrml_DirectionalLight.hxx>
-#include<Vrml_FaceType.hxx>
-#include<Vrml_FontStyle.hxx>
-#include<Vrml_FontStyleFamily.hxx>
-#include<Vrml_FontStyleStyle.hxx>
-#include<Vrml_Group.hxx>
-#include<Vrml_IndexedFaceSet.hxx>
-#include<Vrml_IndexedLineSet.hxx>
-#include<Vrml_Info.hxx>
-#include<Vrml_Instancing.hxx>
-#include<Vrml_LOD.hxx>
-#include<Vrml_Material.hxx>
-#include<Vrml_MaterialBinding.hxx>
-#include<Vrml_MaterialBindingAndNormalBinding.hxx>
-#include<Vrml_MatrixTransform.hxx>
-#include<Vrml_Normal.hxx>
-#include<Vrml_NormalBinding.hxx>
-#include<Vrml_OrthographicCamera.hxx>
-#include<Vrml_PerspectiveCamera.hxx>
-#include<Vrml_PointLight.hxx>
-#include<Vrml_PointSet.hxx>
-#include<Vrml_Rotation.hxx>
-#include<Vrml_SFImage.hxx>
-#include<Vrml_SFImageNumber.hxx>
-#include<Vrml_SFRotation.hxx>
-#include<Vrml_Scale.hxx>
-#include<Vrml_Separator.hxx>
-#include<Vrml_SeparatorRenderCulling.hxx>
-#include<Vrml_ShapeHints.hxx>
-#include<Vrml_ShapeType.hxx>
-#include<Vrml_Sphere.hxx>
-#include<Vrml_SpotLight.hxx>
-#include<Vrml_Switch.hxx>
-#include<Vrml_Texture2.hxx>
-#include<Vrml_Texture2Transform.hxx>
-#include<Vrml_Texture2Wrap.hxx>
-#include<Vrml_TextureCoordinate2.hxx>
-#include<Vrml_Transform.hxx>
-#include<Vrml_TransformSeparator.hxx>
-#include<Vrml_Translation.hxx>
-#include<Vrml_VertexOrdering.hxx>
-#include<Vrml_WWWAnchor.hxx>
-#include<Vrml_WWWAnchorMap.hxx>
-#include<Vrml_WWWInline.hxx>
 
 // Needed headers necessary for compilation.
 

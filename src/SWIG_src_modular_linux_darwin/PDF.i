@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -279,7 +281,7 @@ class PDF_Attribute : public Standard_Persistent {
 };
 %extend PDF_Attribute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PDF_Attribute {
@@ -315,7 +317,7 @@ class PDF_Reference : public PDF_Attribute {
 };
 %extend PDF_Reference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PDF_Reference {
@@ -353,7 +355,7 @@ class PDF_TagSource : public PDF_Attribute {
 };
 %extend PDF_TagSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PDF_TagSource {
@@ -391,7 +393,7 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 };
 %extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PDF_VArrayNodeOfFieldOfHAttributeArray1 {
@@ -443,7 +445,7 @@ class PDF_Data : public Standard_Persistent {
 };
 %extend PDF_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PDF_Data {
@@ -499,7 +501,7 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 };
 %extend PDF_HAttributeArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PDF_HAttributeArray1 {

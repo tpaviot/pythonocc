@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -264,7 +266,7 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 };
 %extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape {
@@ -300,7 +302,7 @@ class PNaming_Naming : public PDF_Attribute {
 };
 %extend PNaming_Naming {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PNaming_Naming {
@@ -362,7 +364,7 @@ class PNaming_NamedShape : public PDF_Attribute {
 };
 %extend PNaming_NamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PNaming_NamedShape {
@@ -418,7 +420,7 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 };
 %extend PNaming_HArray1OfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PNaming_HArray1OfNamedShape {
@@ -516,7 +518,7 @@ class PNaming_Name : public Standard_Persistent {
 };
 %extend PNaming_Name {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PNaming_Name {

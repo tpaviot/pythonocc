@@ -71,38 +71,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<CDM_Application.hxx>
-#include<CDM_COutMessageDriver.hxx>
-#include<CDM_CanCloseStatus.hxx>
-#include<CDM_DataMapIteratorOfMetaDataLookUpTable.hxx>
-#include<CDM_DataMapIteratorOfNamesDirectory.hxx>
-#include<CDM_DataMapIteratorOfPresentationDirectory.hxx>
-#include<CDM_DataMapNodeOfMetaDataLookUpTable.hxx>
-#include<CDM_DataMapNodeOfNamesDirectory.hxx>
-#include<CDM_DataMapNodeOfPresentationDirectory.hxx>
-#include<CDM_Document.hxx>
-#include<CDM_DocumentHasher.hxx>
-#include<CDM_DocumentPointer.hxx>
-#include<CDM_ListIteratorOfListOfDocument.hxx>
-#include<CDM_ListIteratorOfListOfReferences.hxx>
-#include<CDM_ListNodeOfListOfDocument.hxx>
-#include<CDM_ListNodeOfListOfReferences.hxx>
-#include<CDM_ListOfDocument.hxx>
-#include<CDM_ListOfReferences.hxx>
-#include<CDM_MapIteratorOfMapOfDocument.hxx>
-#include<CDM_MapOfDocument.hxx>
-#include<CDM_MessageDriver.hxx>
-#include<CDM_MetaData.hxx>
-#include<CDM_MetaDataLookUpTable.hxx>
-#include<CDM_NamesDirectory.hxx>
-#include<CDM_NullMessageDriver.hxx>
-#include<CDM_PresentationDirectory.hxx>
-#include<CDM_Reference.hxx>
-#include<CDM_ReferenceIterator.hxx>
-#include<CDM_StackIteratorOfStackOfDocument.hxx>
-#include<CDM_StackNodeOfStackOfDocument.hxx>
-#include<CDM_StackOfDocument.hxx>
-#include<CDM_StdMapNodeOfMapOfDocument.hxx>
 
 // Needed headers necessary for compilation.
 

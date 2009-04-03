@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -523,7 +525,7 @@ class IntTools_SequenceNodeOfSequenceOfRoots : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfRoots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_SequenceNodeOfSequenceOfRoots {
@@ -643,7 +645,7 @@ class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_ListNodeOfListOfBox {
@@ -1023,7 +1025,7 @@ class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode 
 };
 %extend IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_SequenceNodeOfSequenceOfPntOn2Faces {
@@ -1265,7 +1267,7 @@ class IntTools_StdMapNodeOfMapOfSurfaceSample : public TCollection_MapNode {
 };
 %extend IntTools_StdMapNodeOfMapOfSurfaceSample {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_StdMapNodeOfMapOfSurfaceSample {
@@ -1755,7 +1757,7 @@ class IntTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_SequenceNodeOfSequenceOfCurves {
@@ -1783,7 +1785,7 @@ class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfSurfaceRangeSample {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_ListNodeOfListOfSurfaceRangeSample {
@@ -1829,7 +1831,7 @@ class IntTools_SequenceNodeOfSequenceOfCommonPrts : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfCommonPrts {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_SequenceNodeOfSequenceOfCommonPrts {
@@ -1901,7 +1903,7 @@ class IntTools_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend IntTools_TopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_TopolTool {
@@ -2137,7 +2139,7 @@ class IntTools_SequenceNodeOfSequenceOfRanges : public TCollection_SeqNode {
 };
 %extend IntTools_SequenceNodeOfSequenceOfRanges {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_SequenceNodeOfSequenceOfRanges {
@@ -2207,7 +2209,7 @@ class IntTools_StdMapNodeOfMapOfCurveSample : public TCollection_MapNode {
 };
 %extend IntTools_StdMapNodeOfMapOfCurveSample {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_StdMapNodeOfMapOfCurveSample {
@@ -2235,7 +2237,7 @@ class IntTools_ListNodeOfListOfCurveRangeSample : public TCollection_MapNode {
 };
 %extend IntTools_ListNodeOfListOfCurveRangeSample {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_ListNodeOfListOfCurveRangeSample {
@@ -2265,7 +2267,7 @@ class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNo
 };
 %extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox {
@@ -2327,7 +2329,7 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollec
 };
 %extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress {
@@ -2815,7 +2817,7 @@ class IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public TCollection_MapNode
 };
 %extend IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_DataMapNodeOfDataMapOfCurveSampleBox {
@@ -2875,7 +2877,7 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : public TCo
 };
 %extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress {

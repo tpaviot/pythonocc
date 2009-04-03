@@ -37,17 +37,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<MeshAlgo.hxx>
-#include<MeshAlgo_CellFilter.hxx>
-#include<MeshAlgo_Circ.hxx>
-#include<MeshAlgo_CircleInspector.hxx>
-#include<MeshAlgo_CircleTool.hxx>
-#include<MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc.hxx>
-#include<MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc.hxx>
-#include<MeshAlgo_DataMapOfIntegerCirc.hxx>
-#include<MeshAlgo_Edge.hxx>
-#include<MeshAlgo_Triangle.hxx>
-#include<MeshAlgo_Vertex.hxx>
 
 // Needed headers necessary for compilation.
 

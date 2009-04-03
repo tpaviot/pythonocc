@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -301,7 +303,7 @@ class MDocStd_ListNodeOfDocEntryList : public TCollection_MapNode {
 };
 %extend MDocStd_ListNodeOfDocEntryList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDocStd_ListNodeOfDocEntryList {
@@ -329,7 +331,7 @@ class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
 };
 %extend MDocStd_StdMapNodeOfPersistentMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDocStd_StdMapNodeOfPersistentMap {
@@ -365,7 +367,7 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend MDocStd_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDocStd_DocumentRetrievalDriver {
@@ -423,7 +425,7 @@ class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDocStd_XLinkRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDocStd_XLinkRetrievalDriver {
@@ -479,7 +481,7 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend MDocStd_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDocStd_DocumentStorageDriver {
@@ -513,7 +515,7 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 };
 %extend MDocStd_XLinkStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDocStd_XLinkStorageDriver {

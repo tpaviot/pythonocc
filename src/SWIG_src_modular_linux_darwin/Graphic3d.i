@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1708,7 +1710,7 @@ class Graphic3d_InitialisationError : public Standard_OutOfRange {
 };
 %extend Graphic3d_InitialisationError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_InitialisationError {
@@ -1844,7 +1846,7 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 };
 %extend Graphic3d_ArrayOfPrimitives {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfPrimitives {
@@ -1872,7 +1874,7 @@ class Graphic3d_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfAddress {
@@ -1992,7 +1994,7 @@ class Graphic3d_ArrayOfPoints : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPoints {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfPoints {
@@ -2026,7 +2028,7 @@ class Graphic3d_GroupDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_GroupDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_GroupDefinitionError {
@@ -2060,7 +2062,7 @@ class Graphic3d_PlotterDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_PlotterDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_PlotterDefinitionError {
@@ -2130,7 +2132,7 @@ class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
 };
 %extend Graphic3d_HSequenceOfStructure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_HSequenceOfStructure {
@@ -2258,7 +2260,7 @@ class Graphic3d_TextureRoot : public MMgt_TShared {
 };
 %extend Graphic3d_TextureRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_TextureRoot {
@@ -2298,7 +2300,7 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 };
 %extend Graphic3d_TextureMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_TextureMap {
@@ -2326,7 +2328,7 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 };
 %extend Graphic3d_Texture2D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Texture2D {
@@ -2384,7 +2386,7 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 };
 %extend Graphic3d_Texture2Dplane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Texture2Dplane {
@@ -2664,7 +2666,7 @@ class Graphic3d_Structure : public MMgt_TShared {
 };
 %extend Graphic3d_Structure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Structure {
@@ -2698,7 +2700,7 @@ class Graphic3d_VectorError : public Standard_OutOfRange {
 };
 %extend Graphic3d_VectorError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_VectorError {
@@ -2952,7 +2954,7 @@ class Graphic3d_HSetOfGroup : public MMgt_TShared {
 };
 %extend Graphic3d_HSetOfGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_HSetOfGroup {
@@ -3022,7 +3024,7 @@ class Graphic3d_HSequenceOfGroup : public MMgt_TShared {
 };
 %extend Graphic3d_HSequenceOfGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_HSequenceOfGroup {
@@ -3098,7 +3100,7 @@ class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfTriangleStrips {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfTriangleStrips {
@@ -3280,7 +3282,7 @@ class Graphic3d_MaterialDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_MaterialDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_MaterialDefinitionError {
@@ -3308,7 +3310,7 @@ class Graphic3d_ListNodeOfListOfShortReal : public TCollection_MapNode {
 };
 %extend Graphic3d_ListNodeOfListOfShortReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ListNodeOfListOfShortReal {
@@ -3342,7 +3344,7 @@ class Graphic3d_AspectTextDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_AspectTextDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_AspectTextDefinitionError {
@@ -3368,7 +3370,7 @@ class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfSegments {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfSegments {
@@ -3394,7 +3396,7 @@ class Graphic3d_DataStructureManager : public MMgt_TShared {
 };
 %extend Graphic3d_DataStructureManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_DataStructureManager {
@@ -3420,7 +3422,7 @@ class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfTriangles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfTriangles {
@@ -3552,7 +3554,7 @@ class Graphic3d_PriorityDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_PriorityDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_PriorityDefinitionError {
@@ -3580,7 +3582,7 @@ class Graphic3d_ListNodeOfListOfPArray : public TCollection_MapNode {
 };
 %extend Graphic3d_ListNodeOfListOfPArray {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ListNodeOfListOfPArray {
@@ -3616,7 +3618,7 @@ class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
 };
 %extend Graphic3d_AspectMarker3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_AspectMarker3d {
@@ -3642,7 +3644,7 @@ class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfQuadrangleStrips {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfQuadrangleStrips {
@@ -3716,7 +3718,7 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 };
 %extend Graphic3d_TextureEnv {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_TextureEnv {
@@ -3840,7 +3842,7 @@ class Graphic3d_AspectLine3d : public Aspect_AspectLine {
 };
 %extend Graphic3d_AspectLine3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_AspectLine3d {
@@ -3936,7 +3938,7 @@ class Graphic3d_HArray1OfBytes : public MMgt_TShared {
 };
 %extend Graphic3d_HArray1OfBytes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_HArray1OfBytes {
@@ -3962,7 +3964,7 @@ class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfTriangleFans {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfTriangleFans {
@@ -4104,7 +4106,7 @@ class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 };
 %extend Graphic3d_Texture1D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Texture1D {
@@ -4134,7 +4136,7 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 };
 %extend Graphic3d_Texture1Dsegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Texture1Dsegment {
@@ -4162,7 +4164,7 @@ class Graphic3d_SequenceNodeOfSequenceOfStructure : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfStructure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfStructure {
@@ -4194,7 +4196,7 @@ class Graphic3d_Plotter : public MMgt_TShared {
 };
 %extend Graphic3d_Plotter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Plotter {
@@ -4308,7 +4310,7 @@ class Graphic3d_StructureManager : public MMgt_TShared {
 };
 %extend Graphic3d_StructureManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_StructureManager {
@@ -4360,7 +4362,7 @@ class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 };
 %extend Graphic3d_Texture2Dmanual {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Texture2Dmanual {
@@ -4436,7 +4438,7 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 };
 %extend Graphic3d_AspectFillArea3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_AspectFillArea3d {
@@ -4596,7 +4598,7 @@ class Graphic3d_Group : public MMgt_TShared {
 };
 %extend Graphic3d_Group {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Group {
@@ -4624,7 +4626,7 @@ class Graphic3d_ListNodeOfSetListOfSetOfGroup : public TCollection_MapNode {
 };
 %extend Graphic3d_ListNodeOfSetListOfSetOfGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ListNodeOfSetListOfSetOfGroup {
@@ -4652,7 +4654,7 @@ class Graphic3d_SequenceNodeOfSequenceOfGroup : public TCollection_SeqNode {
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_SequenceNodeOfSequenceOfGroup {
@@ -4678,7 +4680,7 @@ class Graphic3d_ArrayOfQuadrangles : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfQuadrangles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfQuadrangles {
@@ -4704,7 +4706,7 @@ class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPolylines {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfPolylines {
@@ -4822,7 +4824,7 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 };
 %extend Graphic3d_Texture1Dmanual {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_Texture1Dmanual {
@@ -4856,7 +4858,7 @@ class Graphic3d_TransformError : public Standard_OutOfRange {
 };
 %extend Graphic3d_TransformError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_TransformError {
@@ -4882,7 +4884,7 @@ class Graphic3d_ArrayOfPolygons : public Graphic3d_ArrayOfPrimitives {
 };
 %extend Graphic3d_ArrayOfPolygons {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_ArrayOfPolygons {
@@ -4910,7 +4912,7 @@ class Graphic3d_StdMapNodeOfMapOfStructure : public TCollection_MapNode {
 };
 %extend Graphic3d_StdMapNodeOfMapOfStructure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_StdMapNodeOfMapOfStructure {
@@ -5364,7 +5366,7 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 };
 %extend Graphic3d_GraphicDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_GraphicDriver {
@@ -5398,7 +5400,7 @@ class Graphic3d_PickIdDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_PickIdDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_PickIdDefinitionError {
@@ -5430,7 +5432,7 @@ class Graphic3d_GraphicDevice : public Xw_GraphicDevice {
 };
 %extend Graphic3d_GraphicDevice {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_GraphicDevice {
@@ -5464,7 +5466,7 @@ class Graphic3d_CycleError : public Standard_DomainError {
 };
 %extend Graphic3d_CycleError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_CycleError {
@@ -5518,7 +5520,7 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 };
 %extend Graphic3d_AspectText3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_AspectText3d {
@@ -5552,7 +5554,7 @@ class Graphic3d_StructureDefinitionError : public Standard_OutOfRange {
 };
 %extend Graphic3d_StructureDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Graphic3d_StructureDefinitionError {

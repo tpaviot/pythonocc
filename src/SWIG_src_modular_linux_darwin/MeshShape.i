@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -287,7 +289,7 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 };
 %extend MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MeshShape_DataMapNodeOfDataMapOfIntegerPnt {
@@ -314,7 +316,7 @@ class MeshShape_Couple {
 };
 %extend MeshShape_Couple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MeshShape_Couple {
@@ -516,7 +518,7 @@ class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
 };
 %extend MeshShape_ListNodeOfPolygon {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MeshShape_ListNodeOfPolygon {
@@ -632,7 +634,7 @@ class MeshShape_StdMapNodeOfMapOfCouple : public TCollection_MapNode {
 };
 %extend MeshShape_StdMapNodeOfMapOfCouple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MeshShape_StdMapNodeOfMapOfCouple {
@@ -720,7 +722,7 @@ class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_
 };
 %extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient {
@@ -800,7 +802,7 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerXY : public TCollection_MapNode {
 };
 %extend MeshShape_DataMapNodeOfDataMapOfIntegerXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MeshShape_DataMapNodeOfDataMapOfIntegerXY {
@@ -900,7 +902,7 @@ class MeshShape_ListNodeOfListOfSurfacePoint : public TCollection_MapNode {
 };
 %extend MeshShape_ListNodeOfListOfSurfacePoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MeshShape_ListNodeOfListOfSurfacePoint {

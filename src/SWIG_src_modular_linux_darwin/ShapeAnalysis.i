@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -357,7 +359,7 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal {
@@ -427,7 +429,7 @@ class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 };
 %extend ShapeAnalysis_TransferParameters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_TransferParameters {
@@ -647,7 +649,7 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal {
@@ -767,7 +769,7 @@ class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqN
 };
 %extend ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds {
@@ -935,7 +937,7 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 };
 %extend ShapeAnalysis_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_Wire {
@@ -1295,7 +1297,7 @@ class ShapeAnalysis_FreeBoundData : public MMgt_TShared {
 };
 %extend ShapeAnalysis_FreeBoundData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_FreeBoundData {
@@ -1365,7 +1367,7 @@ class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
 };
 %extend ShapeAnalysis_HSequenceOfFreeBounds {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_HSequenceOfFreeBounds {
@@ -1519,7 +1521,7 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 };
 %extend ShapeAnalysis_TransferParametersProj {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_TransferParametersProj {
@@ -1649,7 +1651,7 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 };
 %extend ShapeAnalysis_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeAnalysis_Surface {

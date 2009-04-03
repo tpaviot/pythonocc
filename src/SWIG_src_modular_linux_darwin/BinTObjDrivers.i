@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -308,7 +310,7 @@ class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ModelDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinTObjDrivers_ModelDriver {
@@ -340,7 +342,7 @@ class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_IntSparseArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinTObjDrivers_IntSparseArrayDriver {
@@ -372,7 +374,7 @@ class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinTObjDrivers_ReferenceDriver {
@@ -404,7 +406,7 @@ class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_ObjectDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinTObjDrivers_ObjectDriver {
@@ -450,7 +452,7 @@ class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrie
 };
 %extend BinTObjDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinTObjDrivers_DocumentRetrievalDriver {
@@ -478,7 +480,7 @@ class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageD
 };
 %extend BinTObjDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinTObjDrivers_DocumentStorageDriver {
@@ -510,7 +512,7 @@ class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
 };
 %extend BinTObjDrivers_XYZDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinTObjDrivers_XYZDriver {

@@ -45,20 +45,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Poly.hxx>
-#include<Poly_Array1OfTriangle.hxx>
-#include<Poly_CoherentLink.hxx>
-#include<Poly_CoherentNode.hxx>
-#include<Poly_CoherentTriPtr.hxx>
-#include<Poly_CoherentTriangle.hxx>
-#include<Poly_CoherentTriangulation.hxx>
-#include<Poly_Connect.hxx>
-#include<Poly_HArray1OfTriangle.hxx>
-#include<Poly_Polygon2D.hxx>
-#include<Poly_Polygon3D.hxx>
-#include<Poly_PolygonOnTriangulation.hxx>
-#include<Poly_Triangle.hxx>
-#include<Poly_Triangulation.hxx>
 
 // Needed headers necessary for compilation.
 

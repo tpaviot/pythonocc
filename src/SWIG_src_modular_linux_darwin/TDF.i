@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1010,7 +1012,7 @@ class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
 };
 %extend TDF_DoubleMapNodeOfGUIDProgIDMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DoubleMapNodeOfGUIDProgIDMap {
@@ -1044,7 +1046,7 @@ class TDF_AttributeDelta : public MMgt_TShared {
 };
 %extend TDF_AttributeDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_AttributeDelta {
@@ -1068,7 +1070,7 @@ class TDF_DeltaOnForget : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnForget {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DeltaOnForget {
@@ -1266,7 +1268,7 @@ class TDF_Attribute : public MMgt_TShared {
 };
 %extend TDF_Attribute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_Attribute {
@@ -1294,7 +1296,7 @@ class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnAddition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DeltaOnAddition {
@@ -1344,7 +1346,7 @@ class TDF_DeltaOnModification : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DeltaOnModification {
@@ -1396,7 +1398,7 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 };
 %extend TDF_StdMapNodeOfIDMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_StdMapNodeOfIDMap {
@@ -1574,7 +1576,7 @@ class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
 };
 %extend TDF_DataMapNodeOfLabelLabelMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DataMapNodeOfLabelLabelMap {
@@ -1602,7 +1604,7 @@ class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfDeltaList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_ListNodeOfDeltaList {
@@ -1634,7 +1636,7 @@ class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 };
 %extend TDF_DoubleMapNodeOfAttributeDoubleMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DoubleMapNodeOfAttributeDoubleMap {
@@ -1930,7 +1932,7 @@ class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
 };
 %extend TDF_DefaultDeltaOnModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DefaultDeltaOnModification {
@@ -1998,7 +2000,7 @@ class TDF_ListNodeOfIDList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfIDList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_ListNodeOfIDList {
@@ -2080,7 +2082,7 @@ class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfAttributeDeltaList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_ListNodeOfAttributeDeltaList {
@@ -2112,7 +2114,7 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 };
 %extend TDF_IndexedMapNodeOfLabelIndexedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_IndexedMapNodeOfLabelIndexedMap {
@@ -2160,7 +2162,7 @@ class TDF_TagSource : public TDF_Attribute {
 };
 %extend TDF_TagSource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_TagSource {
@@ -2242,7 +2244,7 @@ class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
 };
 %extend TDF_DoubleMapNodeOfLabelDoubleMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DoubleMapNodeOfLabelDoubleMap {
@@ -2270,7 +2272,7 @@ class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 };
 %extend TDF_SequenceNodeOfLabelSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_SequenceNodeOfLabelSequence {
@@ -2346,7 +2348,7 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 };
 %extend TDF_DataMapNodeOfAttributeDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DataMapNodeOfAttributeDataMap {
@@ -2580,7 +2582,7 @@ class TDF_Data : public MMgt_TShared {
 };
 %extend TDF_Data {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_Data {
@@ -2666,7 +2668,7 @@ class TDF_DeltaOnResume : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnResume {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DeltaOnResume {
@@ -2748,7 +2750,7 @@ class TDF_DataSet : public MMgt_TShared {
 };
 %extend TDF_DataSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DataSet {
@@ -2776,7 +2778,7 @@ class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 };
 %extend TDF_StdMapNodeOfLabelMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_StdMapNodeOfLabelMap {
@@ -2892,7 +2894,7 @@ class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
 };
 %extend TDF_DataMapNodeOfLabelDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DataMapNodeOfLabelDataMap {
@@ -2922,7 +2924,7 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 };
 %extend TDF_DataMapNodeOfLabelIntegerMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DataMapNodeOfLabelIntegerMap {
@@ -2950,7 +2952,7 @@ class TDF_SequenceNodeOfAttributeSequence : public TCollection_SeqNode {
 };
 %extend TDF_SequenceNodeOfAttributeSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_SequenceNodeOfAttributeSequence {
@@ -3116,7 +3118,7 @@ class TDF_ListNodeOfLabelList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfLabelList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_ListNodeOfLabelList {
@@ -3144,7 +3146,7 @@ class TDF_StdMapNodeOfAttributeMap : public TCollection_MapNode {
 };
 %extend TDF_StdMapNodeOfAttributeMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_StdMapNodeOfAttributeMap {
@@ -3206,7 +3208,7 @@ class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 };
 %extend TDF_IndexedMapNodeOfAttributeIndexedMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_IndexedMapNodeOfAttributeIndexedMap {
@@ -3360,7 +3362,7 @@ class TDF_HAttributeArray1 : public MMgt_TShared {
 };
 %extend TDF_HAttributeArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_HAttributeArray1 {
@@ -3420,7 +3422,7 @@ class TDF_RelocationTable : public MMgt_TShared {
 };
 %extend TDF_RelocationTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_RelocationTable {
@@ -3506,7 +3508,7 @@ class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 };
 %extend TDF_ListNodeOfAttributeList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_ListNodeOfAttributeList {
@@ -3586,7 +3588,7 @@ class TDF_Reference : public TDF_Attribute {
 };
 %extend TDF_Reference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_Reference {
@@ -3630,7 +3632,7 @@ class TDF_Delta : public MMgt_TShared {
 };
 %extend TDF_Delta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_Delta {
@@ -3678,7 +3680,7 @@ class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 };
 %extend TDF_DeltaOnRemoval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DeltaOnRemoval {
@@ -3704,7 +3706,7 @@ class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 };
 %extend TDF_DefaultDeltaOnRemoval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDF_DefaultDeltaOnRemoval {

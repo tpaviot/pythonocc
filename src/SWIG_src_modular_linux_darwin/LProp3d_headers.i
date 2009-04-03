@@ -29,10 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<LProp3d_CLProps.hxx>
-#include<LProp3d_CurveTool.hxx>
-#include<LProp3d_SLProps.hxx>
-#include<LProp3d_SurfaceTool.hxx>
 
 // Needed headers necessary for compilation.
 

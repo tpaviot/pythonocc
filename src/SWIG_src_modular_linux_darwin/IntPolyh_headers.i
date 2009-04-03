@@ -44,24 +44,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntPolyh_ArrayOfCouples.hxx>
-#include<IntPolyh_ArrayOfEdges.hxx>
-#include<IntPolyh_ArrayOfPoints.hxx>
-#include<IntPolyh_ArrayOfSectionLines.hxx>
-#include<IntPolyh_ArrayOfStartPoints.hxx>
-#include<IntPolyh_ArrayOfTangentZones.hxx>
-#include<IntPolyh_ArrayOfTriangles.hxx>
-#include<IntPolyh_Couple.hxx>
-#include<IntPolyh_Edge.hxx>
-#include<IntPolyh_Intersection.hxx>
-#include<IntPolyh_MaillageAffinage.hxx>
-#include<IntPolyh_PMaillageAffinage.hxx>
-#include<IntPolyh_Point.hxx>
-#include<IntPolyh_SectionLine.hxx>
-#include<IntPolyh_SeqOfStartPoints.hxx>
-#include<IntPolyh_SequenceNodeOfSeqOfStartPoints.hxx>
-#include<IntPolyh_StartPoint.hxx>
-#include<IntPolyh_Triangle.hxx>
 
 // Needed headers necessary for compilation.
 

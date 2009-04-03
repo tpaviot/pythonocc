@@ -40,18 +40,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<HatchGen_Domain.hxx>
-#include<HatchGen_Domains.hxx>
-#include<HatchGen_ErrorStatus.hxx>
-#include<HatchGen_IntersectionPoint.hxx>
-#include<HatchGen_IntersectionType.hxx>
-#include<HatchGen_PointOnElement.hxx>
-#include<HatchGen_PointOnHatching.hxx>
-#include<HatchGen_PointsOnElement.hxx>
-#include<HatchGen_PointsOnHatching.hxx>
-#include<HatchGen_SequenceNodeOfDomains.hxx>
-#include<HatchGen_SequenceNodeOfPointsOnElement.hxx>
-#include<HatchGen_SequenceNodeOfPointsOnHatching.hxx>
 
 // Needed headers necessary for compilation.
 

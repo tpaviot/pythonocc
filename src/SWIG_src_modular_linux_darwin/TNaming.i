@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -576,7 +578,7 @@ class TNaming_UsedShapes : public TDF_Attribute {
 };
 %extend TNaming_UsedShapes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_UsedShapes {
@@ -628,7 +630,7 @@ class TNaming_TranslateTool : public MMgt_TShared {
 };
 %extend TNaming_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_TranslateTool {
@@ -812,7 +814,7 @@ class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 };
 %extend TNaming_StdMapNodeOfMapOfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_StdMapNodeOfMapOfNamedShape {
@@ -1086,7 +1088,7 @@ class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollect
 };
 %extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape {
@@ -1114,7 +1116,7 @@ class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 };
 %extend TNaming_DeltaOnRemoval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_DeltaOnRemoval {
@@ -1208,7 +1210,7 @@ class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode 
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapeShapesSet {
@@ -1276,7 +1278,7 @@ class TNaming_NamedShape : public TDF_Attribute {
 };
 %extend TNaming_NamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_NamedShape {
@@ -1304,7 +1306,7 @@ class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 };
 %extend TNaming_DeltaOnModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_DeltaOnModification {
@@ -1332,7 +1334,7 @@ class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
 };
 %extend TNaming_ListNodeOfListOfNamedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_ListNodeOfListOfNamedShape {
@@ -1360,7 +1362,7 @@ class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 };
 %extend TNaming_ListNodeOfListOfMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_ListNodeOfListOfMapOfShape {
@@ -1580,7 +1582,7 @@ class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNod
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_DataMapNodeOfDataMapOfShapePtrRefShape {
@@ -1724,7 +1726,7 @@ class TNaming_Naming : public TDF_Attribute {
 };
 %extend TNaming_Naming {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TNaming_Naming {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1286,7 +1288,7 @@ class StepElement_SequenceNodeOfSequenceOfElementMaterial : public TCollection_S
 };
 %extend StepElement_SequenceNodeOfSequenceOfElementMaterial {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SequenceNodeOfSequenceOfElementMaterial {
@@ -1332,7 +1334,7 @@ class StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : public MMgt_
 };
 %extend StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember {
@@ -1456,7 +1458,7 @@ class StepElement_HSequenceOfSurfaceElementPurposeMember : public MMgt_TShared {
 };
 %extend StepElement_HSequenceOfSurfaceElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HSequenceOfSurfaceElementPurposeMember {
@@ -1496,7 +1498,7 @@ class StepElement_SurfaceSection : public MMgt_TShared {
 };
 %extend StepElement_SurfaceSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SurfaceSection {
@@ -1534,7 +1536,7 @@ class StepElement_UniformSurfaceSection : public StepElement_SurfaceSection {
 };
 %extend StepElement_UniformSurfaceSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_UniformSurfaceSection {
@@ -1580,7 +1582,7 @@ class StepElement_HArray1OfVolumeElementPurposeMember : public MMgt_TShared {
 };
 %extend StepElement_HArray1OfVolumeElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray1OfVolumeElementPurposeMember {
@@ -1626,7 +1628,7 @@ class StepElement_HArray1OfMeasureOrUnspecifiedValue : public MMgt_TShared {
 };
 %extend StepElement_HArray1OfMeasureOrUnspecifiedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray1OfMeasureOrUnspecifiedValue {
@@ -1758,7 +1760,7 @@ class StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public T
 };
 %extend StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember {
@@ -1794,7 +1796,7 @@ class StepElement_ElementDescriptor : public MMgt_TShared {
 };
 %extend StepElement_ElementDescriptor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_ElementDescriptor {
@@ -1828,7 +1830,7 @@ class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescript
 };
 %extend StepElement_Volume3dElementDescriptor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_Volume3dElementDescriptor {
@@ -1862,7 +1864,7 @@ class StepElement_ElementAspectMember : public StepData_SelectNamed {
 };
 %extend StepElement_ElementAspectMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_ElementAspectMember {
@@ -1940,7 +1942,7 @@ class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
 };
 %extend StepElement_VolumeElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_VolumeElementPurposeMember {
@@ -1980,7 +1982,7 @@ class StepElement_SurfaceElementProperty : public MMgt_TShared {
 };
 %extend StepElement_SurfaceElementProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SurfaceElementProperty {
@@ -2090,7 +2092,7 @@ class StepElement_HSequenceOfCurveElementPurposeMember : public MMgt_TShared {
 };
 %extend StepElement_HSequenceOfCurveElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HSequenceOfCurveElementPurposeMember {
@@ -2136,7 +2138,7 @@ class StepElement_HArray1OfCurveElementEndReleasePacket : public MMgt_TShared {
 };
 %extend StepElement_HArray1OfCurveElementEndReleasePacket {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray1OfCurveElementEndReleasePacket {
@@ -2182,7 +2184,7 @@ class StepElement_HArray1OfVolumeElementPurpose : public MMgt_TShared {
 };
 %extend StepElement_HArray1OfVolumeElementPurpose {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray1OfVolumeElementPurpose {
@@ -2268,7 +2270,7 @@ class StepElement_HArray1OfSurfaceSection : public MMgt_TShared {
 };
 %extend StepElement_HArray1OfSurfaceSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray1OfSurfaceSection {
@@ -2330,7 +2332,7 @@ class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
 };
 %extend StepElement_CurveElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_CurveElementPurposeMember {
@@ -2452,7 +2454,7 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public
 };
 %extend StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition {
@@ -2522,7 +2524,7 @@ class StepElement_HSequenceOfCurveElementSectionDefinition : public MMgt_TShared
 };
 %extend StepElement_HSequenceOfCurveElementSectionDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HSequenceOfCurveElementSectionDefinition {
@@ -2556,7 +2558,7 @@ class StepElement_MeasureOrUnspecifiedValueMember : public StepData_SelectNamed 
 };
 %extend StepElement_MeasureOrUnspecifiedValueMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_MeasureOrUnspecifiedValueMember {
@@ -2592,7 +2594,7 @@ class StepElement_CurveElementSectionDefinition : public MMgt_TShared {
 };
 %extend StepElement_CurveElementSectionDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_CurveElementSectionDefinition {
@@ -2706,7 +2708,7 @@ class StepElement_HSequenceOfElementMaterial : public MMgt_TShared {
 };
 %extend StepElement_HSequenceOfElementMaterial {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HSequenceOfElementMaterial {
@@ -2760,7 +2762,7 @@ class StepElement_SurfaceSectionField : public MMgt_TShared {
 };
 %extend StepElement_SurfaceSectionField {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SurfaceSectionField {
@@ -2804,7 +2806,7 @@ class StepElement_AnalysisItemWithinRepresentation : public MMgt_TShared {
 };
 %extend StepElement_AnalysisItemWithinRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_AnalysisItemWithinRepresentation {
@@ -2836,7 +2838,7 @@ class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescripto
 };
 %extend StepElement_Curve3dElementDescriptor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_Curve3dElementDescriptor {
@@ -2928,7 +2930,7 @@ class StepElement_HArray2OfSurfaceElementPurpose : public MMgt_TShared {
 };
 %extend StepElement_HArray2OfSurfaceElementPurpose {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray2OfSurfaceElementPurpose {
@@ -3112,7 +3114,7 @@ class StepElement_SurfaceElementPurposeMember : public StepData_SelectNamed {
 };
 %extend StepElement_SurfaceElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SurfaceElementPurposeMember {
@@ -3220,7 +3222,7 @@ class StepElement_CurveElementSectionDerivedDefinitions : public StepElement_Cur
 };
 %extend StepElement_CurveElementSectionDerivedDefinitions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_CurveElementSectionDerivedDefinitions {
@@ -3300,7 +3302,7 @@ class StepElement_ElementMaterial : public MMgt_TShared {
 };
 %extend StepElement_ElementMaterial {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_ElementMaterial {
@@ -3328,7 +3330,7 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public TCo
 };
 %extend StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember {
@@ -3374,7 +3376,7 @@ class StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public MMgt_TS
 };
 %extend StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray1OfHSequenceOfCurveElementPurposeMember {
@@ -3408,7 +3410,7 @@ class StepElement_CurveElementFreedomMember : public StepData_SelectNamed {
 };
 %extend StepElement_CurveElementFreedomMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_CurveElementFreedomMember {
@@ -3444,7 +3446,7 @@ class StepElement_SurfaceSectionFieldVarying : public StepElement_SurfaceSection
 };
 %extend StepElement_SurfaceSectionFieldVarying {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SurfaceSectionFieldVarying {
@@ -3496,7 +3498,7 @@ class StepElement_HArray2OfCurveElementPurposeMember : public MMgt_TShared {
 };
 %extend StepElement_HArray2OfCurveElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray2OfCurveElementPurposeMember {
@@ -3548,7 +3550,7 @@ class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
 };
 %extend StepElement_HArray2OfSurfaceElementPurposeMember {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray2OfSurfaceElementPurposeMember {
@@ -3580,7 +3582,7 @@ class StepElement_SurfaceSectionFieldConstant : public StepElement_SurfaceSectio
 };
 %extend StepElement_SurfaceSectionFieldConstant {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_SurfaceSectionFieldConstant {
@@ -3654,7 +3656,7 @@ class StepElement_HArray1OfCurveElementSectionDefinition : public MMgt_TShared {
 };
 %extend StepElement_HArray1OfCurveElementSectionDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_HArray1OfCurveElementSectionDefinition {
@@ -3690,7 +3692,7 @@ class StepElement_Surface3dElementDescriptor : public StepElement_ElementDescrip
 };
 %extend StepElement_Surface3dElementDescriptor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_Surface3dElementDescriptor {
@@ -3726,7 +3728,7 @@ class StepElement_CurveElementEndReleasePacket : public MMgt_TShared {
 };
 %extend StepElement_CurveElementEndReleasePacket {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepElement_CurveElementEndReleasePacket {

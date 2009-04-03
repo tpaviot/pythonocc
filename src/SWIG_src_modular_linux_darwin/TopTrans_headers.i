@@ -28,9 +28,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TopTrans_Array2OfOrientation.hxx>
-#include<TopTrans_CurveTransition.hxx>
-#include<TopTrans_SurfaceTransition.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -35,11 +35,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<StdFail_InfiniteSolutions.hxx>
-#include<StdFail_NotDone.hxx>
-#include<StdFail_Undefined.hxx>
-#include<StdFail_UndefinedDerivative.hxx>
-#include<StdFail_UndefinedValue.hxx>
 
 // Needed headers necessary for compilation.
 

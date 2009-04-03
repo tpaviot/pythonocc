@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -276,7 +278,7 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles {
@@ -580,7 +582,7 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNo
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Convert_SequenceNodeOfSequenceOfArray1OfPoles2d {

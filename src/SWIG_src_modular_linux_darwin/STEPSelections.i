@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -440,7 +442,7 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 };
 %extend STEPSelections_AssemblyComponent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_AssemblyComponent {
@@ -470,7 +472,7 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectGSCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_SelectGSCurves {
@@ -500,7 +502,7 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 };
 %extend STEPSelections_SelectForTransfer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_SelectForTransfer {
@@ -528,7 +530,7 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent {
@@ -598,7 +600,7 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectInstances {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_SelectInstances {
@@ -668,7 +670,7 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 };
 %extend STEPSelections_HSequenceOfAssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_HSequenceOfAssemblyLink {
@@ -696,7 +698,7 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_SequenceNodeOfSequenceOfAssemblyLink {
@@ -778,7 +780,7 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 };
 %extend STEPSelections_SelectDerived {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_SelectDerived {
@@ -862,7 +864,7 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectAssembly {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_SelectAssembly {
@@ -902,7 +904,7 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 };
 %extend STEPSelections_AssemblyLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_AssemblyLink {
@@ -932,7 +934,7 @@ class STEPSelections_SelectFaces : public IFSelect_SelectExplore {
 };
 %extend STEPSelections_SelectFaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPSelections_SelectFaces {

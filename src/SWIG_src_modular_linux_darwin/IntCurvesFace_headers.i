@@ -27,8 +27,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntCurvesFace_Intersector.hxx>
-#include<IntCurvesFace_ShapeIntersector.hxx>
 
 // Needed headers necessary for compilation.
 

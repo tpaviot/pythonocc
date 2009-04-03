@@ -30,11 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GeomLProp.hxx>
-#include<GeomLProp_CLProps.hxx>
-#include<GeomLProp_CurveTool.hxx>
-#include<GeomLProp_SLProps.hxx>
-#include<GeomLProp_SurfaceTool.hxx>
 
 // Needed headers necessary for compilation.
 

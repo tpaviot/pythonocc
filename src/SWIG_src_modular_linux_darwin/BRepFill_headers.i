@@ -561,8 +561,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Geom_UndefinedValue.hxx>
 #include<Geom_Vector.hxx>
 #include<Geom_VectorWithMagnitude.hxx>
-#include<GeometryTest.hxx>
-#include<GeomliteTest.hxx>
 #include<Handle_math_NotSquare.hxx>
 #include<Handle_math_SingularMatrix.hxx>
 

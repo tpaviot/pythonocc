@@ -30,9 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PTopLoc_Datum3D.hxx>
-#include<PTopLoc_ItemLocation.hxx>
-#include<PTopLoc_Location.hxx>
 
 // Needed headers necessary for compilation.
 

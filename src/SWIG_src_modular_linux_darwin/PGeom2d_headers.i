@@ -65,26 +65,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PGeom2d_AxisPlacement.hxx>
-#include<PGeom2d_BSplineCurve.hxx>
-#include<PGeom2d_BezierCurve.hxx>
-#include<PGeom2d_BoundedCurve.hxx>
-#include<PGeom2d_CartesianPoint.hxx>
-#include<PGeom2d_Circle.hxx>
-#include<PGeom2d_Conic.hxx>
-#include<PGeom2d_Curve.hxx>
-#include<PGeom2d_Direction.hxx>
-#include<PGeom2d_Ellipse.hxx>
-#include<PGeom2d_Geometry.hxx>
-#include<PGeom2d_Hyperbola.hxx>
-#include<PGeom2d_Line.hxx>
-#include<PGeom2d_OffsetCurve.hxx>
-#include<PGeom2d_Parabola.hxx>
-#include<PGeom2d_Point.hxx>
-#include<PGeom2d_Transformation.hxx>
-#include<PGeom2d_TrimmedCurve.hxx>
-#include<PGeom2d_Vector.hxx>
-#include<PGeom2d_VectorWithMagnitude.hxx>
 
 // Needed headers necessary for compilation.
 

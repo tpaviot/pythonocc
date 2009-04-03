@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -787,7 +789,7 @@ class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 };
 %extend Extrema_SequenceNodeOfSequenceOfBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSequenceOfBoolean {
@@ -1007,7 +1009,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TColle
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d {
@@ -1213,7 +1215,7 @@ class Extrema_HArray2OfPOnCurv2d : public MMgt_TShared {
 };
 %extend Extrema_HArray2OfPOnCurv2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_HArray2OfPOnCurv2d {
@@ -1325,7 +1327,7 @@ class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 };
 %extend Extrema_HArray1OfPOnSurf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_HArray1OfPOnSurf {
@@ -1683,7 +1685,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public TCollection_SeqNod
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC {
@@ -1711,7 +1713,7 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv2d {
@@ -1739,7 +1741,7 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnCurv {
@@ -1845,7 +1847,7 @@ class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 };
 %extend Extrema_HArray2OfPOnSurf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_HArray2OfPOnSurf {
@@ -2227,7 +2229,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TColle
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC {
@@ -2447,7 +2449,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollec
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d {
@@ -2923,7 +2925,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TColle
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d {
@@ -3055,7 +3057,7 @@ class Extrema_HArray1OfPOnCurv : public MMgt_TShared {
 };
 %extend Extrema_HArray1OfPOnCurv {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_HArray1OfPOnCurv {
@@ -3497,7 +3499,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode 
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC {
@@ -3619,7 +3621,7 @@ class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
 };
 %extend Extrema_HArray1OfPOnCurv2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_HArray1OfPOnCurv2d {
@@ -3853,7 +3855,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC {
@@ -3907,7 +3909,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TC
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d {
@@ -4017,7 +4019,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_Se
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d {
@@ -4065,7 +4067,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollect
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC {
@@ -4093,7 +4095,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollect
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC {
@@ -4267,7 +4269,7 @@ class Extrema_SequenceNodeOfSequenceOfPOnSurf : public TCollection_SeqNode {
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnSurf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSequenceOfPOnSurf {
@@ -4357,7 +4359,7 @@ class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
 };
 %extend Extrema_HArray2OfPOnCurv {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_HArray2OfPOnCurv {
@@ -4563,7 +4565,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNod
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d {

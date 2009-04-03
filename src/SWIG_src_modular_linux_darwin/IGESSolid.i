@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -945,7 +947,7 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidOfRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_SolidOfRevolution {
@@ -991,7 +993,7 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_HArray1OfShell {
@@ -1099,7 +1101,7 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Ellipsoid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_Ellipsoid {
@@ -1169,7 +1171,7 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ConeFrustum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_ConeFrustum {
@@ -1205,7 +1207,7 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidOfLinearExtrusion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_SolidOfLinearExtrusion {
@@ -1241,7 +1243,7 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 };
 %extend IGESSolid_BooleanTree {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_BooleanTree {
@@ -1347,7 +1349,7 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_CylindricalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_CylindricalSurface {
@@ -1387,7 +1389,7 @@ class IGESSolid_Torus : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Torus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_Torus {
@@ -1441,7 +1443,7 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 };
 %extend IGESSolid_RightAngularWedge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_RightAngularWedge {
@@ -1475,7 +1477,7 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SelectedComponent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_SelectedComponent {
@@ -1549,7 +1551,7 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_HArray1OfLoop {
@@ -1671,7 +1673,7 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_Shell {
@@ -1741,7 +1743,7 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ToroidalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_ToroidalSurface {
@@ -1797,7 +1799,7 @@ class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESSolid_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_SpecificModule {
@@ -1831,7 +1833,7 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_SolidInstance {
@@ -1995,7 +1997,7 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Cylinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_Cylinder {
@@ -2147,7 +2149,7 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Sphere {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_Sphere {
@@ -2207,7 +2209,7 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 };
 %extend IGESSolid_VertexList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_VertexList {
@@ -2281,7 +2283,7 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_HArray1OfFace {
@@ -2335,7 +2337,7 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_PlaneSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_PlaneSurface {
@@ -2455,7 +2457,7 @@ class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SphericalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_SphericalSurface {
@@ -2491,7 +2493,7 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_Face {
@@ -2537,7 +2539,7 @@ class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
 };
 %extend IGESSolid_HArray1OfVertexList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_HArray1OfVertexList {
@@ -2585,7 +2587,7 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_Loop {
@@ -2653,7 +2655,7 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ConicalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_ConicalSurface {
@@ -2691,7 +2693,7 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 };
 %extend IGESSolid_ManifoldSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_ManifoldSolid {
@@ -2815,7 +2817,7 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 };
 %extend IGESSolid_EdgeList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_EdgeList {
@@ -2931,7 +2933,7 @@ class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESSolid_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_ReadWriteModule {
@@ -2969,7 +2971,7 @@ class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 };
 %extend IGESSolid_SolidAssembly {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_SolidAssembly {
@@ -3007,7 +3009,7 @@ class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESSolid_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_GeneralModule {
@@ -3059,7 +3061,7 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 };
 %extend IGESSolid_Block {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESSolid_Block {

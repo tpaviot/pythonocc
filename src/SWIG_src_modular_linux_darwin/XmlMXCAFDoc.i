@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -383,7 +385,7 @@ class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_DocumentToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_DocumentToolDriver {
@@ -419,7 +421,7 @@ class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_LocationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_LocationDriver {
@@ -451,7 +453,7 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_ColorDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_ColorDriver {
@@ -499,7 +501,7 @@ class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_VolumeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_VolumeDriver {
@@ -531,7 +533,7 @@ class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_ColorToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_ColorToolDriver {
@@ -563,7 +565,7 @@ class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_GraphNodeDriver {
@@ -595,7 +597,7 @@ class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_LayerToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_LayerToolDriver {
@@ -627,7 +629,7 @@ class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_ShapeToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_ShapeToolDriver {
@@ -659,7 +661,7 @@ class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_AreaDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_AreaDriver {
@@ -691,7 +693,7 @@ class XmlMXCAFDoc_CentroidDriver : public XmlMDF_ADriver {
 };
 %extend XmlMXCAFDoc_CentroidDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMXCAFDoc_CentroidDriver {

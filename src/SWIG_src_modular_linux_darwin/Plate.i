@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -513,7 +515,7 @@ class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_
 };
 %extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Plate_SequenceNodeOfSequenceOfLinearScalarConstraint {
@@ -589,7 +591,7 @@ class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
 };
 %extend Plate_HArray1OfPinpointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Plate_HArray1OfPinpointConstraint {
@@ -641,7 +643,7 @@ class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_Seq
 };
 %extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Plate_SequenceNodeOfSequenceOfLinearXYZConstraint {
@@ -765,7 +767,7 @@ class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqN
 };
 %extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Plate_SequenceNodeOfSequenceOfPinpointConstraint {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -348,7 +350,7 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 };
 %extend MFT_FontManagerError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MFT_FontManagerError {
@@ -382,7 +384,7 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 };
 %extend MFT_FontManagerDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MFT_FontManagerDefinitionError {
@@ -424,7 +426,7 @@ class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 };
 %extend MFT_SequenceNodeOfListOfFontName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MFT_SequenceNodeOfListOfFontName {
@@ -614,7 +616,7 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 };
 %extend MFT_SequenceNodeOfListOfFontReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MFT_SequenceNodeOfListOfFontReference {
@@ -642,7 +644,7 @@ class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 };
 %extend MFT_SequenceNodeOfListOfFontHandle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MFT_SequenceNodeOfListOfFontHandle {
@@ -688,7 +690,7 @@ class MFT_TextManager : public MMgt_TShared {
 };
 %extend MFT_TextManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MFT_TextManager {
@@ -808,7 +810,7 @@ class MFT_FontManager : public MMgt_TShared {
 };
 %extend MFT_FontManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MFT_FontManager {

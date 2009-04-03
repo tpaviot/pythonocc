@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -2708,7 +2710,7 @@ class StepShape_DimensionalSize : public MMgt_TShared {
 };
 %extend StepShape_DimensionalSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_DimensionalSize {
@@ -2754,7 +2756,7 @@ class StepShape_HArray1OfEdge : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfEdge {
@@ -2780,7 +2782,7 @@ class StepShape_TopologicalRepresentationItem : public StepRepr_RepresentationIt
 };
 %extend StepShape_TopologicalRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_TopologicalRepresentationItem {
@@ -2804,7 +2806,7 @@ class StepShape_Loop : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Loop {
@@ -2840,7 +2842,7 @@ class StepShape_PolyLoop : public StepShape_Loop {
 };
 %extend StepShape_PolyLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_PolyLoop {
@@ -2866,7 +2868,7 @@ class StepShape_ShapeRepresentation : public StepRepr_Representation {
 };
 %extend StepShape_ShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ShapeRepresentation {
@@ -2890,7 +2892,7 @@ class StepShape_GeometricallyBoundedWireframeShapeRepresentation : public StepSh
 };
 %extend StepShape_GeometricallyBoundedWireframeShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_GeometricallyBoundedWireframeShapeRepresentation {
@@ -2936,7 +2938,7 @@ class StepShape_SolidModel : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_SolidModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_SolidModel {
@@ -2972,7 +2974,7 @@ class StepShape_SolidReplica : public StepShape_SolidModel {
 };
 %extend StepShape_SolidReplica {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_SolidReplica {
@@ -3006,7 +3008,7 @@ class StepShape_SweptFaceSolid : public StepShape_SolidModel {
 };
 %extend StepShape_SweptFaceSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_SweptFaceSolid {
@@ -3040,7 +3042,7 @@ class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 };
 %extend StepShape_ExtrudedFaceSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ExtrudedFaceSolid {
@@ -3074,7 +3076,7 @@ class StepShape_ManifoldSolidBrep : public StepShape_SolidModel {
 };
 %extend StepShape_ManifoldSolidBrep {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ManifoldSolidBrep {
@@ -3108,7 +3110,7 @@ class StepShape_BrepWithVoids : public StepShape_ManifoldSolidBrep {
 };
 %extend StepShape_BrepWithVoids {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_BrepWithVoids {
@@ -3134,7 +3136,7 @@ class StepShape_FacetedBrepShapeRepresentation : public StepShape_ShapeRepresent
 };
 %extend StepShape_FacetedBrepShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_FacetedBrepShapeRepresentation {
@@ -3168,7 +3170,7 @@ class StepShape_CsgSolid : public StepShape_SolidModel {
 };
 %extend StepShape_CsgSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_CsgSolid {
@@ -3228,7 +3230,7 @@ class StepShape_FaceBound : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_FaceBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_FaceBound {
@@ -3264,7 +3266,7 @@ class StepShape_ToleranceValue : public MMgt_TShared {
 };
 %extend StepShape_ToleranceValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ToleranceValue {
@@ -3290,7 +3292,7 @@ class StepShape_CsgShapeRepresentation : public StepShape_ShapeRepresentation {
 };
 %extend StepShape_CsgShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_CsgShapeRepresentation {
@@ -3316,7 +3318,7 @@ class StepShape_NonManifoldSurfaceShapeRepresentation : public StepShape_ShapeRe
 };
 %extend StepShape_NonManifoldSurfaceShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_NonManifoldSurfaceShapeRepresentation {
@@ -3354,7 +3356,7 @@ class StepShape_HalfSpaceSolid : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_HalfSpaceSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HalfSpaceSolid {
@@ -3392,7 +3394,7 @@ class StepShape_Face : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Face {
@@ -3422,7 +3424,7 @@ class StepShape_Subface : public StepShape_Face {
 };
 %extend StepShape_Subface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Subface {
@@ -3456,7 +3458,7 @@ class StepShape_SweptAreaSolid : public StepShape_SolidModel {
 };
 %extend StepShape_SweptAreaSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_SweptAreaSolid {
@@ -3490,7 +3492,7 @@ class StepShape_ExtrudedAreaSolid : public StepShape_SweptAreaSolid {
 };
 %extend StepShape_ExtrudedAreaSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ExtrudedAreaSolid {
@@ -3522,7 +3524,7 @@ class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentatio
 };
 %extend StepShape_EdgeBasedWireframeModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_EdgeBasedWireframeModel {
@@ -3572,7 +3574,7 @@ class StepShape_RightAngularWedge : public StepGeom_GeometricRepresentationItem 
 };
 %extend StepShape_RightAngularWedge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_RightAngularWedge {
@@ -3610,7 +3612,7 @@ class StepShape_ConnectedFaceSet : public StepShape_TopologicalRepresentationIte
 };
 %extend StepShape_ConnectedFaceSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ConnectedFaceSet {
@@ -3634,7 +3636,7 @@ class StepShape_OpenShell : public StepShape_ConnectedFaceSet {
 };
 %extend StepShape_OpenShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_OpenShell {
@@ -3668,7 +3670,7 @@ class StepShape_OrientedOpenShell : public StepShape_OpenShell {
 };
 %extend StepShape_OrientedOpenShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_OrientedOpenShell {
@@ -3746,7 +3748,7 @@ class StepShape_Path : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Path {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Path {
@@ -3782,7 +3784,7 @@ class StepShape_DimensionalCharacteristicRepresentation : public MMgt_TShared {
 };
 %extend StepShape_DimensionalCharacteristicRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_DimensionalCharacteristicRepresentation {
@@ -3854,7 +3856,7 @@ class StepShape_HArray1OfShell : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfShell {
@@ -3880,7 +3882,7 @@ class StepShape_CompoundShapeRepresentation : public StepShape_ShapeRepresentati
 };
 %extend StepShape_CompoundShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_CompoundShapeRepresentation {
@@ -3926,7 +3928,7 @@ class StepShape_OrientedFace : public StepShape_Face {
 };
 %extend StepShape_OrientedFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_OrientedFace {
@@ -3974,7 +3976,7 @@ class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_LoopAndPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_LoopAndPath {
@@ -4012,7 +4014,7 @@ class StepShape_ShellBasedSurfaceModel : public StepGeom_GeometricRepresentation
 };
 %extend StepShape_ShellBasedSurfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ShellBasedSurfaceModel {
@@ -4038,7 +4040,7 @@ class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentat
 };
 %extend StepShape_ShapeDimensionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ShapeDimensionRepresentation {
@@ -4076,7 +4078,7 @@ class StepShape_Edge : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Edge {
@@ -4110,7 +4112,7 @@ class StepShape_OrientedEdge : public StepShape_Edge {
 };
 %extend StepShape_OrientedEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_OrientedEdge {
@@ -4156,7 +4158,7 @@ class StepShape_HArray1OfFaceBound : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfFaceBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfFaceBound {
@@ -4182,7 +4184,7 @@ class StepShape_DimensionalLocation : public StepRepr_ShapeAspectRelationship {
 };
 %extend StepShape_DimensionalLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_DimensionalLocation {
@@ -4214,7 +4216,7 @@ class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationIte
 };
 %extend StepShape_ConnectedEdgeSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ConnectedEdgeSet {
@@ -4246,7 +4248,7 @@ class StepShape_PrecisionQualifier : public MMgt_TShared {
 };
 %extend StepShape_PrecisionQualifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_PrecisionQualifier {
@@ -4282,7 +4284,7 @@ class StepShape_ContextDependentShapeRepresentation : public MMgt_TShared {
 };
 %extend StepShape_ContextDependentShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ContextDependentShapeRepresentation {
@@ -4328,7 +4330,7 @@ class StepShape_HArray1OfOrientedClosedShell : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfOrientedClosedShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfOrientedClosedShell {
@@ -4370,7 +4372,7 @@ class StepShape_BooleanResult : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_BooleanResult {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_BooleanResult {
@@ -4402,7 +4404,7 @@ class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 };
 %extend StepShape_ConnectedFaceSubSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ConnectedFaceSubSet {
@@ -4428,7 +4430,7 @@ class StepShape_PointRepresentation : public StepShape_ShapeRepresentation {
 };
 %extend StepShape_PointRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_PointRepresentation {
@@ -4514,7 +4516,7 @@ class StepShape_FacetedBrepAndBrepWithVoids : public StepShape_ManifoldSolidBrep
 };
 %extend StepShape_FacetedBrepAndBrepWithVoids {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_FacetedBrepAndBrepWithVoids {
@@ -4560,7 +4562,7 @@ class StepShape_HArray1OfFace : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfFace {
@@ -4586,7 +4588,7 @@ class StepShape_Vertex : public StepShape_TopologicalRepresentationItem {
 };
 %extend StepShape_Vertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Vertex {
@@ -4624,7 +4626,7 @@ class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_GeometricSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_GeometricSet {
@@ -4750,7 +4752,7 @@ class StepShape_HArray1OfValueQualifier : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfValueQualifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfValueQualifier {
@@ -4782,7 +4784,7 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 };
 %extend StepShape_FaceBasedSurfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_FaceBasedSurfaceModel {
@@ -4820,7 +4822,7 @@ class StepShape_FaceSurface : public StepShape_Face {
 };
 %extend StepShape_FaceSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_FaceSurface {
@@ -4844,7 +4846,7 @@ class StepShape_AdvancedFace : public StepShape_FaceSurface {
 };
 %extend StepShape_AdvancedFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_AdvancedFace {
@@ -4878,7 +4880,7 @@ class StepShape_BoxedHalfSpace : public StepShape_HalfSpaceSolid {
 };
 %extend StepShape_BoxedHalfSpace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_BoxedHalfSpace {
@@ -4996,7 +4998,7 @@ class StepShape_RevolvedFaceSolid : public StepShape_SweptFaceSolid {
 };
 %extend StepShape_RevolvedFaceSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_RevolvedFaceSolid {
@@ -5034,7 +5036,7 @@ class StepShape_QualifiedRepresentationItem : public StepRepr_RepresentationItem
 };
 %extend StepShape_QualifiedRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_QualifiedRepresentationItem {
@@ -5060,7 +5062,7 @@ class StepShape_ShapeRepresentationWithParameters : public StepShape_ShapeRepres
 };
 %extend StepShape_ShapeRepresentationWithParameters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ShapeRepresentationWithParameters {
@@ -5106,7 +5108,7 @@ class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem 
 };
 %extend StepShape_RightCircularCone {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_RightCircularCone {
@@ -5144,7 +5146,7 @@ class StepShape_EdgeLoop : public StepShape_Loop {
 };
 %extend StepShape_EdgeLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_EdgeLoop {
@@ -5190,7 +5192,7 @@ class StepShape_HArray1OfOrientedEdge : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfOrientedEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfOrientedEdge {
@@ -5256,7 +5258,7 @@ class StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public StepShap
 };
 %extend StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_GeometricallyBoundedSurfaceShapeRepresentation {
@@ -5298,7 +5300,7 @@ class StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public
 };
 %extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem {
@@ -5332,7 +5334,7 @@ class StepShape_VertexLoop : public StepShape_Loop {
 };
 %extend StepShape_VertexLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_VertexLoop {
@@ -5370,7 +5372,7 @@ class StepShape_EdgeCurve : public StepShape_Edge {
 };
 %extend StepShape_EdgeCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_EdgeCurve {
@@ -5396,7 +5398,7 @@ class StepShape_ConnectedFaceShapeRepresentation : public StepRepr_Representatio
 };
 %extend StepShape_ConnectedFaceShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ConnectedFaceShapeRepresentation {
@@ -5422,7 +5424,7 @@ class StepShape_GeometricCurveSet : public StepShape_GeometricSet {
 };
 %extend StepShape_GeometricCurveSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_GeometricCurveSet {
@@ -5448,7 +5450,7 @@ class StepShape_AdvancedBrepShapeRepresentation : public StepShape_ShapeRepresen
 };
 %extend StepShape_AdvancedBrepShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_AdvancedBrepShapeRepresentation {
@@ -5486,7 +5488,7 @@ class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 };
 %extend StepShape_RevolvedAreaSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_RevolvedAreaSolid {
@@ -5518,7 +5520,7 @@ class StepShape_AngularSize : public StepShape_DimensionalSize {
 };
 %extend StepShape_AngularSize {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_AngularSize {
@@ -5632,7 +5634,7 @@ class StepShape_VertexPoint : public StepShape_Vertex {
 };
 %extend StepShape_VertexPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_VertexPoint {
@@ -5706,7 +5708,7 @@ class StepShape_HArray1OfGeometricSetSelect : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfGeometricSetSelect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfGeometricSetSelect {
@@ -5732,7 +5734,7 @@ class StepShape_ShapeDefinitionRepresentation : public StepRepr_PropertyDefiniti
 };
 %extend StepShape_ShapeDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ShapeDefinitionRepresentation {
@@ -5764,7 +5766,7 @@ class StepShape_Subedge : public StepShape_Edge {
 };
 %extend StepShape_Subedge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Subedge {
@@ -5790,7 +5792,7 @@ class StepShape_ClosedShell : public StepShape_ConnectedFaceSet {
 };
 %extend StepShape_ClosedShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ClosedShell {
@@ -5816,7 +5818,7 @@ class StepShape_EdgeBasedWireframeShapeRepresentation : public StepShape_ShapeRe
 };
 %extend StepShape_EdgeBasedWireframeShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_EdgeBasedWireframeShapeRepresentation {
@@ -5842,7 +5844,7 @@ class StepShape_FacetedBrep : public StepShape_ManifoldSolidBrep {
 };
 %extend StepShape_FacetedBrep {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_FacetedBrep {
@@ -5888,7 +5890,7 @@ class StepShape_HArray1OfConnectedEdgeSet : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfConnectedEdgeSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfConnectedEdgeSet {
@@ -5942,7 +5944,7 @@ class StepShape_ManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepre
 };
 %extend StepShape_ManifoldSurfaceShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_ManifoldSurfaceShapeRepresentation {
@@ -5968,7 +5970,7 @@ class StepShape_DirectedDimensionalLocation : public StepShape_DimensionalLocati
 };
 %extend StepShape_DirectedDimensionalLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_DirectedDimensionalLocation {
@@ -6010,7 +6012,7 @@ class StepShape_Torus : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_Torus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Torus {
@@ -6042,7 +6044,7 @@ class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
 };
 %extend StepShape_DimensionalSizeWithPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_DimensionalSizeWithPath {
@@ -6068,7 +6070,7 @@ class StepShape_FaceOuterBound : public StepShape_FaceBound {
 };
 %extend StepShape_FaceOuterBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_FaceOuterBound {
@@ -6114,7 +6116,7 @@ class StepShape_HArray1OfConnectedFaceSet : public MMgt_TShared {
 };
 %extend StepShape_HArray1OfConnectedFaceSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_HArray1OfConnectedFaceSet {
@@ -6160,7 +6162,7 @@ class StepShape_Block : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_Block {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Block {
@@ -6186,7 +6188,7 @@ class StepShape_DefinitionalRepresentationAndShapeRepresentation : public StepRe
 };
 %extend StepShape_DefinitionalRepresentationAndShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_DefinitionalRepresentationAndShapeRepresentation {
@@ -6250,7 +6252,7 @@ class StepShape_LimitsAndFits : public MMgt_TShared {
 };
 %extend StepShape_LimitsAndFits {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_LimitsAndFits {
@@ -6276,7 +6278,7 @@ class StepShape_TransitionalShapeRepresentation : public StepShape_ShapeRepresen
 };
 %extend StepShape_TransitionalShapeRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_TransitionalShapeRepresentation {
@@ -6342,7 +6344,7 @@ class StepShape_OrientedClosedShell : public StepShape_ClosedShell {
 };
 %extend StepShape_OrientedClosedShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_OrientedClosedShell {
@@ -6374,7 +6376,7 @@ class StepShape_SeamEdge : public StepShape_OrientedEdge {
 };
 %extend StepShape_SeamEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_SeamEdge {
@@ -6412,7 +6414,7 @@ class StepShape_Sphere : public StepGeom_GeometricRepresentationItem {
 };
 %extend StepShape_Sphere {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_Sphere {
@@ -6444,7 +6446,7 @@ class StepShape_TypeQualifier : public MMgt_TShared {
 };
 %extend StepShape_TypeQualifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_TypeQualifier {
@@ -6476,7 +6478,7 @@ class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocati
 };
 %extend StepShape_DimensionalLocationWithPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_DimensionalLocationWithPath {
@@ -6552,7 +6554,7 @@ class StepShape_PlusMinusTolerance : public MMgt_TShared {
 };
 %extend StepShape_PlusMinusTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_PlusMinusTolerance {
@@ -6602,7 +6604,7 @@ class StepShape_MeasureQualification : public MMgt_TShared {
 };
 %extend StepShape_MeasureQualification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_MeasureQualification {
@@ -6634,7 +6636,7 @@ class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 };
 %extend StepShape_AngularLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_AngularLocation {
@@ -6680,7 +6682,7 @@ class StepShape_OrientedPath : public StepShape_Path {
 };
 %extend StepShape_OrientedPath {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_OrientedPath {
@@ -6722,7 +6724,7 @@ class StepShape_RightCircularCylinder : public StepGeom_GeometricRepresentationI
 };
 %extend StepShape_RightCircularCylinder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_RightCircularCylinder {
@@ -6806,7 +6808,7 @@ class StepShape_BoxDomain : public MMgt_TShared {
 };
 %extend StepShape_BoxDomain {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepShape_BoxDomain {

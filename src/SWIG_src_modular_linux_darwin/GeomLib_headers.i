@@ -38,19 +38,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GeomLib.hxx>
-#include<GeomLib_Array1OfMat.hxx>
-#include<GeomLib_Check2dBSplineCurve.hxx>
-#include<GeomLib_CheckBSplineCurve.hxx>
-#include<GeomLib_DenominatorMultiplier.hxx>
-#include<GeomLib_DenominatorMultiplierPtr.hxx>
-#include<GeomLib_Interpolate.hxx>
-#include<GeomLib_InterpolationErrors.hxx>
-#include<GeomLib_IsPlanarSurface.hxx>
-#include<GeomLib_LogSample.hxx>
-#include<GeomLib_MakeCurvefromApprox.hxx>
-#include<GeomLib_PolyFunc.hxx>
-#include<GeomLib_Tool.hxx>
 
 // Needed headers necessary for compilation.
 

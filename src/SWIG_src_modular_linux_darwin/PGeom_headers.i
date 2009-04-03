@@ -119,43 +119,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<PGeom2d_TrimmedCurve.hxx>
 #include<PGeom2d_Vector.hxx>
 #include<PGeom2d_VectorWithMagnitude.hxx>
-#include<PGeom_Axis1Placement.hxx>
-#include<PGeom_Axis2Placement.hxx>
-#include<PGeom_AxisPlacement.hxx>
-#include<PGeom_BSplineCurve.hxx>
-#include<PGeom_BSplineSurface.hxx>
-#include<PGeom_BezierCurve.hxx>
-#include<PGeom_BezierSurface.hxx>
-#include<PGeom_BoundedCurve.hxx>
-#include<PGeom_BoundedSurface.hxx>
-#include<PGeom_CartesianPoint.hxx>
-#include<PGeom_Circle.hxx>
-#include<PGeom_Conic.hxx>
-#include<PGeom_ConicalSurface.hxx>
-#include<PGeom_Curve.hxx>
-#include<PGeom_CylindricalSurface.hxx>
-#include<PGeom_Direction.hxx>
-#include<PGeom_ElementarySurface.hxx>
-#include<PGeom_Ellipse.hxx>
-#include<PGeom_Geometry.hxx>
-#include<PGeom_Hyperbola.hxx>
-#include<PGeom_Line.hxx>
-#include<PGeom_OffsetCurve.hxx>
-#include<PGeom_OffsetSurface.hxx>
-#include<PGeom_Parabola.hxx>
-#include<PGeom_Plane.hxx>
-#include<PGeom_Point.hxx>
-#include<PGeom_RectangularTrimmedSurface.hxx>
-#include<PGeom_SphericalSurface.hxx>
-#include<PGeom_Surface.hxx>
-#include<PGeom_SurfaceOfLinearExtrusion.hxx>
-#include<PGeom_SurfaceOfRevolution.hxx>
-#include<PGeom_SweptSurface.hxx>
-#include<PGeom_ToroidalSurface.hxx>
-#include<PGeom_Transformation.hxx>
-#include<PGeom_TrimmedCurve.hxx>
-#include<PGeom_Vector.hxx>
-#include<PGeom_VectorWithMagnitude.hxx>
 
 // Needed headers necessary for compilation.
 

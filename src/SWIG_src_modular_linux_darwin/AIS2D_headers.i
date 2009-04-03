@@ -81,46 +81,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<AIS2D.hxx>
-#include<AIS2D_ClearMode.hxx>
-#include<AIS2D_DataMapIteratorOfDataMapOfIOStatus.hxx>
-#include<AIS2D_DataMapIteratorOfDataMapOfLC.hxx>
-#include<AIS2D_DataMapIteratorOfDataMapOfLocStat.hxx>
-#include<AIS2D_DataMapIteratorOfDataMapOfPrimAspects.hxx>
-#include<AIS2D_DataMapNodeOfDataMapOfIOStatus.hxx>
-#include<AIS2D_DataMapNodeOfDataMapOfLC.hxx>
-#include<AIS2D_DataMapNodeOfDataMapOfLocStat.hxx>
-#include<AIS2D_DataMapNodeOfDataMapOfPrimAspects.hxx>
-#include<AIS2D_DataMapOfIOStatus.hxx>
-#include<AIS2D_DataMapOfLC.hxx>
-#include<AIS2D_DataMapOfLocStat.hxx>
-#include<AIS2D_DataMapOfPrimAspects.hxx>
-#include<AIS2D_DisplayStatus.hxx>
-#include<AIS2D_GlobalStatus.hxx>
-#include<AIS2D_HSequenceOfIO.hxx>
-#include<AIS2D_HSequenceOfPrimArchit.hxx>
-#include<AIS2D_InteractiveContext.hxx>
-#include<AIS2D_InteractiveObject.hxx>
-#include<AIS2D_KindOfDimension.hxx>
-#include<AIS2D_KindOfIO.hxx>
-#include<AIS2D_KindOfPrimitive.hxx>
-#include<AIS2D_ListIteratorOfListOfIO.hxx>
-#include<AIS2D_ListNodeOfListOfIO.hxx>
-#include<AIS2D_ListOfIO.hxx>
-#include<AIS2D_LocalContext.hxx>
-#include<AIS2D_LocalStatus.hxx>
-#include<AIS2D_PToListOfInt.hxx>
-#include<AIS2D_PrimitiveArchit.hxx>
-#include<AIS2D_ProjShape.hxx>
-#include<AIS2D_SelectStatus.hxx>
-#include<AIS2D_SequenceNodeOfSequenceOfIO.hxx>
-#include<AIS2D_SequenceNodeOfSequenceOfPrimArchit.hxx>
-#include<AIS2D_SequenceOfIO.hxx>
-#include<AIS2D_SequenceOfPrimArchit.hxx>
-#include<AIS2D_StatusOfDetection.hxx>
-#include<AIS2D_StatusOfPick.hxx>
-#include<AIS2D_TypeOfAxis.hxx>
-#include<AIS2D_TypeOfDetection.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -34,11 +34,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<ObjMgt_ExternRef.hxx>
-#include<ObjMgt_ExternShareable.hxx>
-#include<ObjMgt_PSeqOfExtRef.hxx>
-#include<ObjMgt_SeqExplorerOfPSeqOfExtRef.hxx>
-#include<ObjMgt_SeqNodeOfPSeqOfExtRef.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -312,7 +314,7 @@ class BinMDF_ADriver : public MMgt_TShared {
 };
 %extend BinMDF_ADriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDF_ADriver {
@@ -340,7 +342,7 @@ class BinMDF_TagSourceDriver : public BinMDF_ADriver {
 };
 %extend BinMDF_TagSourceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDF_TagSourceDriver {
@@ -376,7 +378,7 @@ class BinMDF_ADriverTable : public MMgt_TShared {
 };
 %extend BinMDF_ADriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDF_ADriverTable {
@@ -430,7 +432,7 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 };
 %extend BinMDF_DoubleMapNodeOfTypeIdMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDF_DoubleMapNodeOfTypeIdMap {
@@ -518,7 +520,7 @@ class BinMDF_ReferenceDriver : public BinMDF_ADriver {
 };
 %extend BinMDF_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDF_ReferenceDriver {
@@ -656,7 +658,7 @@ class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 };
 %extend BinMDF_DataMapNodeOfTypeADriverMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDF_DataMapNodeOfTypeADriverMap {
@@ -686,7 +688,7 @@ class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
 };
 %extend BinMDF_DataMapNodeOfStringIdMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMDF_DataMapNodeOfStringIdMap {

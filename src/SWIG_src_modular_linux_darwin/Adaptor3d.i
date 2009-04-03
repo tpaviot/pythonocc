@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -449,7 +451,7 @@ class Adaptor3d_HSurface : public MMgt_TShared {
 };
 %extend Adaptor3d_HSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_HSurface {
@@ -479,7 +481,7 @@ class Adaptor3d_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 };
 %extend Adaptor3d_HSurfaceOfLinearExtrusion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_HSurfaceOfLinearExtrusion {
@@ -571,7 +573,7 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 };
 %extend Adaptor3d_TopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_TopolTool {
@@ -655,7 +657,7 @@ class Adaptor3d_HCurve : public MMgt_TShared {
 };
 %extend Adaptor3d_HCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_HCurve {
@@ -685,7 +687,7 @@ class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 };
 %extend Adaptor3d_HIsoCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_HIsoCurve {
@@ -739,7 +741,7 @@ class Adaptor3d_HOffsetCurve : public Adaptor2d_HCurve2d {
 };
 %extend Adaptor3d_HOffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_HOffsetCurve {
@@ -773,7 +775,7 @@ class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {
 };
 %extend Adaptor3d_HSurfaceOfRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_HSurfaceOfRevolution {
@@ -993,7 +995,7 @@ class Adaptor3d_HVertex : public MMgt_TShared {
 };
 %extend Adaptor3d_HVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_HVertex {
@@ -1229,7 +1231,7 @@ class Adaptor3d_HCurveOnSurface : public Adaptor3d_HCurve {
 };
 %extend Adaptor3d_HCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Adaptor3d_HCurveOnSurface {

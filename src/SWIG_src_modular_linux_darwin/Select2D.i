@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -323,7 +325,7 @@ class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend Select2D_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select2D_SensitiveEntity {
@@ -359,7 +361,7 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveCircle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select2D_SensitiveCircle {
@@ -391,7 +393,7 @@ class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select2D_SensitiveArc {
@@ -435,7 +437,7 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select2D_SensitiveSegment {
@@ -469,7 +471,7 @@ class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitiveBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select2D_SensitiveBox {
@@ -495,7 +497,7 @@ class Select2D_Projector : public MMgt_TShared {
 };
 %extend Select2D_Projector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select2D_Projector {
@@ -531,7 +533,7 @@ class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 };
 %extend Select2D_SensitivePoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select2D_SensitivePoint {

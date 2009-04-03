@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -270,7 +272,7 @@ class PCollection_IsNullTree : public Standard_Failure {
 };
 %extend PCollection_IsNullTree {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCollection_IsNullTree {
@@ -324,7 +326,7 @@ class PCollection_IsNotRoot : public Standard_Failure {
 };
 %extend PCollection_IsNotRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCollection_IsNotRoot {
@@ -358,7 +360,7 @@ class PCollection_IsContained : public Standard_Failure {
 };
 %extend PCollection_IsContained {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCollection_IsContained {
@@ -486,7 +488,7 @@ class PCollection_HAsciiString : public Standard_Persistent {
 };
 %extend PCollection_HAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCollection_HAsciiString {
@@ -646,7 +648,7 @@ class PCollection_HExtendedString : public Standard_Persistent {
 };
 %extend PCollection_HExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCollection_HExtendedString {

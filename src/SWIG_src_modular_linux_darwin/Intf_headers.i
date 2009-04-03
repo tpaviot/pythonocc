@@ -42,20 +42,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Intf.hxx>
-#include<Intf_Array1OfLin.hxx>
-#include<Intf_Interference.hxx>
-#include<Intf_PIType.hxx>
-#include<Intf_SectionLine.hxx>
-#include<Intf_SectionPoint.hxx>
-#include<Intf_SeqOfSectionLine.hxx>
-#include<Intf_SeqOfSectionPoint.hxx>
-#include<Intf_SeqOfTangentZone.hxx>
-#include<Intf_SequenceNodeOfSeqOfSectionLine.hxx>
-#include<Intf_SequenceNodeOfSeqOfSectionPoint.hxx>
-#include<Intf_SequenceNodeOfSeqOfTangentZone.hxx>
-#include<Intf_TangentZone.hxx>
-#include<Intf_Tool.hxx>
 
 // Needed headers necessary for compilation.
 

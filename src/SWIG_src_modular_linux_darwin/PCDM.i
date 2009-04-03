@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -428,7 +430,7 @@ class PCDM_Writer : public Standard_Transient {
 };
 %extend PCDM_Writer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_Writer {
@@ -462,7 +464,7 @@ class PCDM_DriverError : public Standard_Failure {
 };
 %extend PCDM_DriverError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_DriverError {
@@ -490,7 +492,7 @@ class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 };
 %extend PCDM_SequenceNodeOfSequenceOfReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_SequenceNodeOfSequenceOfReference {
@@ -542,7 +544,7 @@ class PCDM_ReadWriter : public Standard_Transient {
 };
 %extend PCDM_ReadWriter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_ReadWriter {
@@ -568,7 +570,7 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 };
 %extend PCDM_ReadWriter_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_ReadWriter_1 {
@@ -598,7 +600,7 @@ class PCDM_Reader : public Standard_Transient {
 };
 %extend PCDM_Reader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_Reader {
@@ -788,7 +790,7 @@ class PCDM_RetrievalDriver : public PCDM_Reader {
 };
 %extend PCDM_RetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_RetrievalDriver {
@@ -816,7 +818,7 @@ class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 };
 %extend PCDM_SequenceNodeOfSequenceOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_SequenceNodeOfSequenceOfDocument {
@@ -844,7 +846,7 @@ class PCDM_Document : public Standard_Persistent {
 };
 %extend PCDM_Document {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_Document {
@@ -874,7 +876,7 @@ class PCDM_ReferenceIterator : public Standard_Transient {
 };
 %extend PCDM_ReferenceIterator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PCDM_ReferenceIterator {

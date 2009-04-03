@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -332,7 +334,7 @@ class VrmlConverter_LineAspect : public MMgt_TShared {
 };
 %extend VrmlConverter_LineAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend VrmlConverter_LineAspect {
@@ -364,7 +366,7 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 };
 %extend VrmlConverter_IsoAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend VrmlConverter_IsoAspect {
@@ -464,7 +466,7 @@ class VrmlConverter_Projector : public MMgt_TShared {
 };
 %extend VrmlConverter_Projector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend VrmlConverter_Projector {
@@ -520,7 +522,7 @@ class VrmlConverter_PointAspect : public MMgt_TShared {
 };
 %extend VrmlConverter_PointAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend VrmlConverter_PointAspect {
@@ -628,7 +630,7 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 };
 %extend VrmlConverter_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend VrmlConverter_Drawer {
@@ -694,7 +696,7 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 };
 %extend VrmlConverter_ShadingAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend VrmlConverter_ShadingAspect {

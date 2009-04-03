@@ -26,9 +26,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntWalk_StatusDeflection.hxx>
 
 // Needed headers necessary for compilation.
 
-#include<IntWalk_StatusDeflection.hxx>
 %}

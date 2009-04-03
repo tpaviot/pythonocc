@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -513,7 +515,7 @@ class ShapeFix_Root : public MMgt_TShared {
 };
 %extend ShapeFix_Root {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_Root {
@@ -557,7 +559,7 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 };
 %extend ShapeFix_ComposeShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_ComposeShell {
@@ -599,7 +601,7 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 };
 %extend ShapeFix_EdgeProjAux {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_EdgeProjAux {
@@ -761,7 +763,7 @@ class ShapeFix_Solid : public ShapeFix_Root {
 };
 %extend ShapeFix_Solid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_Solid {
@@ -869,7 +871,7 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 };
 %extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_DataMapNodeOfDataMapOfShapeBox2d {
@@ -897,7 +899,7 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 };
 %extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_SequenceNodeOfSequenceOfWireSegment {
@@ -949,7 +951,7 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 };
 %extend ShapeFix_Wireframe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_Wireframe {
@@ -1037,7 +1039,7 @@ class ShapeFix_Shape : public ShapeFix_Root {
 };
 %extend ShapeFix_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_Shape {
@@ -1069,7 +1071,7 @@ class ShapeFix_SplitCommonVertex : public ShapeFix_Root {
 };
 %extend ShapeFix_SplitCommonVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_SplitCommonVertex {
@@ -1151,7 +1153,7 @@ class ShapeFix_Shell : public ShapeFix_Root {
 };
 %extend ShapeFix_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_Shell {
@@ -1211,7 +1213,7 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 };
 %extend ShapeFix_FixSmallFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_FixSmallFace {
@@ -1419,7 +1421,7 @@ class ShapeFix_Wire : public ShapeFix_Root {
 };
 %extend ShapeFix_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_Wire {
@@ -1517,7 +1519,7 @@ class ShapeFix_Edge : public MMgt_TShared {
 };
 %extend ShapeFix_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_Edge {
@@ -1607,7 +1609,7 @@ class ShapeFix_Face : public ShapeFix_Root {
 };
 %extend ShapeFix_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeFix_Face {

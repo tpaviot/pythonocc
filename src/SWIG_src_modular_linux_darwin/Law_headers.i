@@ -48,20 +48,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Law.hxx>
-#include<Law_BSpFunc.hxx>
-#include<Law_BSpline.hxx>
-#include<Law_BSplineKnotSplitting.hxx>
-#include<Law_Composite.hxx>
-#include<Law_Constant.hxx>
-#include<Law_Function.hxx>
-#include<Law_Interpol.hxx>
-#include<Law_Interpolate.hxx>
-#include<Law_Laws.hxx>
-#include<Law_Linear.hxx>
-#include<Law_ListIteratorOfLaws.hxx>
-#include<Law_ListNodeOfLaws.hxx>
-#include<Law_S.hxx>
 
 // Needed headers necessary for compilation.
 

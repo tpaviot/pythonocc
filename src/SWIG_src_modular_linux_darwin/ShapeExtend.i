@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -386,7 +388,7 @@ class ShapeExtend_WireData : public MMgt_TShared {
 };
 %extend ShapeExtend_WireData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeExtend_WireData {
@@ -472,7 +474,7 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 };
 %extend ShapeExtend_BasicMsgRegistrator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeExtend_BasicMsgRegistrator {
@@ -602,7 +604,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 };
 %extend ShapeExtend_CompositeSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeExtend_CompositeSurface {
@@ -636,7 +638,7 @@ class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 };
 %extend ShapeExtend_MsgRegistrator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeExtend_MsgRegistrator {
@@ -666,7 +668,7 @@ class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapN
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg {
@@ -696,7 +698,7 @@ class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg {
@@ -814,7 +816,7 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 };
 %extend ShapeExtend_ComplexCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeExtend_ComplexCurve {

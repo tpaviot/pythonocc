@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -486,7 +488,7 @@ class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
 };
 %extend IGESDefs_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_ReadWriteModule {
@@ -538,7 +540,7 @@ class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AttributeTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_AttributeTable {
@@ -586,7 +588,7 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_GenericData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_GenericData {
@@ -708,7 +710,7 @@ class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 };
 %extend IGESDefs_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_GeneralModule {
@@ -782,7 +784,7 @@ class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 };
 %extend IGESDefs_HArray1OfTabularData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_HArray1OfTabularData {
@@ -870,7 +872,7 @@ class IGESDefs_AttributeDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AttributeDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_AttributeDef {
@@ -916,7 +918,7 @@ class IGESDefs_SpecificModule : public IGESData_SpecificModule {
 };
 %extend IGESDefs_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_SpecificModule {
@@ -954,7 +956,7 @@ class IGESDefs_MacroDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_MacroDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_MacroDef {
@@ -990,7 +992,7 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_UnitsData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_UnitsData {
@@ -1054,7 +1056,7 @@ class IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public MMgt_TShared {
 };
 %extend IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_HArray1OfHArray1OfTextDisplayTemplate {
@@ -1104,7 +1106,7 @@ class IGESDefs_TabularData : public IGESData_IGESEntity {
 };
 %extend IGESDefs_TabularData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_TabularData {
@@ -1188,7 +1190,7 @@ class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
 };
 %extend IGESDefs_AssociativityDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESDefs_AssociativityDef {

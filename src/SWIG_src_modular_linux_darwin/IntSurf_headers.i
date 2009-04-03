@@ -55,30 +55,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntSurf.hxx>
-#include<IntSurf_Couple.hxx>
-#include<IntSurf_InteriorPoint.hxx>
-#include<IntSurf_InteriorPointTool.hxx>
-#include<IntSurf_LineOn2S.hxx>
-#include<IntSurf_ListIteratorOfListOfPntOn2S.hxx>
-#include<IntSurf_ListNodeOfListOfPntOn2S.hxx>
-#include<IntSurf_ListOfPntOn2S.hxx>
-#include<IntSurf_PathPoint.hxx>
-#include<IntSurf_PathPointTool.hxx>
-#include<IntSurf_PntOn2S.hxx>
-#include<IntSurf_Quadric.hxx>
-#include<IntSurf_QuadricTool.hxx>
-#include<IntSurf_SequenceNodeOfSequenceOfCouple.hxx>
-#include<IntSurf_SequenceNodeOfSequenceOfInteriorPoint.hxx>
-#include<IntSurf_SequenceNodeOfSequenceOfPathPoint.hxx>
-#include<IntSurf_SequenceNodeOfSequenceOfPntOn2S.hxx>
-#include<IntSurf_SequenceOfCouple.hxx>
-#include<IntSurf_SequenceOfInteriorPoint.hxx>
-#include<IntSurf_SequenceOfPathPoint.hxx>
-#include<IntSurf_SequenceOfPntOn2S.hxx>
-#include<IntSurf_Situation.hxx>
-#include<IntSurf_Transition.hxx>
-#include<IntSurf_TypeTrans.hxx>
 
 // Needed headers necessary for compilation.
 

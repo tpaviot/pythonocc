@@ -101,46 +101,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve.hxx>
 #include<PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve.hxx>
 #include<PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve.hxx>
-#include<PColPGeom_FieldOfHArray1OfBSplineCurve.hxx>
-#include<PColPGeom_FieldOfHArray1OfBezierCurve.hxx>
-#include<PColPGeom_FieldOfHArray1OfBoundedCurve.hxx>
-#include<PColPGeom_FieldOfHArray1OfBoundedSurface.hxx>
-#include<PColPGeom_FieldOfHArray1OfCurve.hxx>
-#include<PColPGeom_FieldOfHArray1OfSurface.hxx>
-#include<PColPGeom_FieldOfHArray2OfBSplineSurface.hxx>
-#include<PColPGeom_FieldOfHArray2OfBezierSurface.hxx>
-#include<PColPGeom_FieldOfHArray2OfBoundedSurface.hxx>
-#include<PColPGeom_FieldOfHArray2OfSurface.hxx>
-#include<PColPGeom_HArray1OfBSplineCurve.hxx>
-#include<PColPGeom_HArray1OfBezierCurve.hxx>
-#include<PColPGeom_HArray1OfBoundedCurve.hxx>
-#include<PColPGeom_HArray1OfBoundedSurface.hxx>
-#include<PColPGeom_HArray1OfCurve.hxx>
-#include<PColPGeom_HArray1OfSurface.hxx>
-#include<PColPGeom_HArray2OfBSplineSurface.hxx>
-#include<PColPGeom_HArray2OfBezierSurface.hxx>
-#include<PColPGeom_HArray2OfBoundedSurface.hxx>
-#include<PColPGeom_HArray2OfSurface.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface.hxx>
-#include<PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface.hxx>
-#include<PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface.hxx>
 
 // Needed headers necessary for compilation.
 

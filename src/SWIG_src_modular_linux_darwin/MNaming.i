@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -235,7 +237,7 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 };
 %extend MNaming_NamedShapeRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MNaming_NamedShapeRetrievalDriver {
@@ -287,7 +289,7 @@ class MNaming_NamingStorageDriver : public MDF_ASDriver {
 };
 %extend MNaming_NamingStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MNaming_NamingStorageDriver {
@@ -321,7 +323,7 @@ class MNaming_NamingRetrievalDriver : public MDF_ARDriver {
 };
 %extend MNaming_NamingRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MNaming_NamingRetrievalDriver {
@@ -355,7 +357,7 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 };
 %extend MNaming_NamedShapeStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MNaming_NamedShapeStorageDriver {

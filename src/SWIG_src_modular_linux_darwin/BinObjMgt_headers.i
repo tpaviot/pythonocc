@@ -40,19 +40,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BinObjMgt_DataMapIteratorOfRRelocationTable.hxx>
-#include<BinObjMgt_DataMapNodeOfRRelocationTable.hxx>
-#include<BinObjMgt_PByte.hxx>
-#include<BinObjMgt_PChar.hxx>
-#include<BinObjMgt_PExtChar.hxx>
-#include<BinObjMgt_PInteger.hxx>
-#include<BinObjMgt_PReal.hxx>
-#include<BinObjMgt_PShortReal.hxx>
-#include<BinObjMgt_Persistent.hxx>
-#include<BinObjMgt_RRelocationTable.hxx>
-#include<BinObjMgt_SRelocationTable.hxx>
-#include<BinObjMgt_SequenceNodeOfSequenceOfAddress.hxx>
-#include<BinObjMgt_SequenceOfAddress.hxx>
 
 // Needed headers necessary for compilation.
 

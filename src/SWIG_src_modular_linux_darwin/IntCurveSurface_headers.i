@@ -47,26 +47,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntCurveSurface_HInter.hxx>
-#include<IntCurveSurface_Intersection.hxx>
-#include<IntCurveSurface_IntersectionPoint.hxx>
-#include<IntCurveSurface_IntersectionSegment.hxx>
-#include<IntCurveSurface_SequenceNodeOfSequenceOfPnt.hxx>
-#include<IntCurveSurface_SequenceNodeOfSequenceOfSeg.hxx>
-#include<IntCurveSurface_SequenceOfPnt.hxx>
-#include<IntCurveSurface_SequenceOfSeg.hxx>
-#include<IntCurveSurface_TheCSFunctionOfHInter.hxx>
-#include<IntCurveSurface_TheExactHInter.hxx>
-#include<IntCurveSurface_TheHCurveTool.hxx>
-#include<IntCurveSurface_TheHSurfaceTool.hxx>
-#include<IntCurveSurface_TheInterferenceOfHInter.hxx>
-#include<IntCurveSurface_ThePolygonOfHInter.hxx>
-#include<IntCurveSurface_ThePolygonToolOfHInter.hxx>
-#include<IntCurveSurface_ThePolyhedronOfHInter.hxx>
-#include<IntCurveSurface_ThePolyhedronToolOfHInter.hxx>
-#include<IntCurveSurface_TheQuadCurvExactHInter.hxx>
-#include<IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter.hxx>
-#include<IntCurveSurface_TransitionOnCurve.hxx>
 
 // Needed headers necessary for compilation.
 

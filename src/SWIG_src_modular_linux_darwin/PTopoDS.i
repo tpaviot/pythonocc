@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -906,7 +908,7 @@ class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TCompound1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TCompound1 {
@@ -944,7 +946,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public PStandard_ArrayNode {
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape {
@@ -974,7 +976,7 @@ class PTopoDS_TShell : public PTopoDS_TShape {
 };
 %extend PTopoDS_TShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TShell {
@@ -1004,7 +1006,7 @@ class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TEdge1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TEdge1 {
@@ -1040,7 +1042,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 {
@@ -1090,7 +1092,7 @@ class PTopoDS_HShape : public ObjMgt_ExternShareable {
 };
 %extend PTopoDS_HShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_HShape {
@@ -1116,7 +1118,7 @@ class PTopoDS_Shell : public PTopoDS_HShape {
 };
 %extend PTopoDS_Shell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_Shell {
@@ -1144,7 +1146,7 @@ class PTopoDS_Wire : public PTopoDS_HShape {
 };
 %extend PTopoDS_Wire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_Wire {
@@ -1174,7 +1176,7 @@ class PTopoDS_TEdge : public PTopoDS_TShape {
 };
 %extend PTopoDS_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TEdge {
@@ -1230,7 +1232,7 @@ class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 };
 %extend PTopoDS_HArray1OfShape1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_HArray1OfShape1 {
@@ -1260,7 +1262,7 @@ class PTopoDS_TShell1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TShell1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TShell1 {
@@ -1288,7 +1290,7 @@ class PTopoDS_Compound : public PTopoDS_HShape {
 };
 %extend PTopoDS_Compound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_Compound {
@@ -1316,7 +1318,7 @@ class PTopoDS_Face : public PTopoDS_HShape {
 };
 %extend PTopoDS_Face {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_Face {
@@ -1344,7 +1346,7 @@ class PTopoDS_Edge : public PTopoDS_HShape {
 };
 %extend PTopoDS_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_Edge {
@@ -1394,7 +1396,7 @@ class PTopoDS_TSolid : public PTopoDS_TShape {
 };
 %extend PTopoDS_TSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TSolid {
@@ -1424,7 +1426,7 @@ class PTopoDS_TCompound : public PTopoDS_TShape {
 };
 %extend PTopoDS_TCompound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TCompound {
@@ -1454,7 +1456,7 @@ class PTopoDS_TSolid1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TSolid1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TSolid1 {
@@ -1484,7 +1486,7 @@ class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TVertex1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TVertex1 {
@@ -1512,7 +1514,7 @@ class PTopoDS_Solid : public PTopoDS_HShape {
 };
 %extend PTopoDS_Solid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_Solid {
@@ -1542,7 +1544,7 @@ class PTopoDS_TWire : public PTopoDS_TShape {
 };
 %extend PTopoDS_TWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TWire {
@@ -1600,7 +1602,7 @@ class PTopoDS_Vertex : public PTopoDS_HShape {
 };
 %extend PTopoDS_Vertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_Vertex {
@@ -1676,7 +1678,7 @@ class PTopoDS_HArray1OfHShape : public Standard_Persistent {
 };
 %extend PTopoDS_HArray1OfHShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_HArray1OfHShape {
@@ -1706,7 +1708,7 @@ class PTopoDS_TWire1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TWire1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TWire1 {
@@ -1764,7 +1766,7 @@ class PTopoDS_CompSolid : public PTopoDS_HShape {
 };
 %extend PTopoDS_CompSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_CompSolid {
@@ -1794,7 +1796,7 @@ class PTopoDS_TVertex : public PTopoDS_TShape {
 };
 %extend PTopoDS_TVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TVertex {
@@ -1824,7 +1826,7 @@ class PTopoDS_TFace : public PTopoDS_TShape {
 };
 %extend PTopoDS_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TFace {
@@ -1854,7 +1856,7 @@ class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TCompSolid1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TCompSolid1 {
@@ -1922,7 +1924,7 @@ class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 };
 %extend PTopoDS_TFace1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TFace1 {
@@ -1952,7 +1954,7 @@ class PTopoDS_TCompSolid : public PTopoDS_TShape {
 };
 %extend PTopoDS_TCompSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopoDS_TCompSolid {

@@ -61,31 +61,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<ExprIntrp.hxx>
-#include<ExprIntrp_Analysis.hxx>
-#include<ExprIntrp_GenExp.hxx>
-#include<ExprIntrp_GenFct.hxx>
-#include<ExprIntrp_GenRel.hxx>
-#include<ExprIntrp_Generator.hxx>
-#include<ExprIntrp_SequenceNodeOfSequenceOfNamedExpression.hxx>
-#include<ExprIntrp_SequenceNodeOfSequenceOfNamedFunction.hxx>
-#include<ExprIntrp_SequenceOfNamedExpression.hxx>
-#include<ExprIntrp_SequenceOfNamedFunction.hxx>
-#include<ExprIntrp_StackIteratorOfStackOfGeneralExpression.hxx>
-#include<ExprIntrp_StackIteratorOfStackOfGeneralFunction.hxx>
-#include<ExprIntrp_StackIteratorOfStackOfGeneralRelation.hxx>
-#include<ExprIntrp_StackIteratorOfStackOfNames.hxx>
-#include<ExprIntrp_StackNodeOfStackOfGeneralExpression.hxx>
-#include<ExprIntrp_StackNodeOfStackOfGeneralFunction.hxx>
-#include<ExprIntrp_StackNodeOfStackOfGeneralRelation.hxx>
-#include<ExprIntrp_StackNodeOfStackOfNames.hxx>
-#include<ExprIntrp_StackOfGeneralExpression.hxx>
-#include<ExprIntrp_StackOfGeneralFunction.hxx>
-#include<ExprIntrp_StackOfGeneralRelation.hxx>
-#include<ExprIntrp_StackOfNames.hxx>
-#include<ExprIntrp_SyntaxError.hxx>
-#include<ExprIntrp_yaccanal.hxx>
-#include<ExprIntrp_yaccintrf.hxx>
 
 // Needed headers necessary for compilation.
 

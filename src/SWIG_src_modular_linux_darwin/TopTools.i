@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -706,7 +708,7 @@ class TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public TCollection_Map
 };
 %extend TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_DataMapNodeOfDataMapOfIntegerListOfShape {
@@ -870,7 +872,7 @@ class TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public TCollection_Ma
 };
 %extend TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape {
@@ -1000,7 +1002,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeInteger {
@@ -1030,7 +1032,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeListOfInteger {
@@ -1082,7 +1084,7 @@ class TopTools_HArray2OfShape : public MMgt_TShared {
 };
 %extend TopTools_HArray2OfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_HArray2OfShape {
@@ -1330,7 +1332,7 @@ class TopTools_IndexedMapNodeOfIndexedMapOfShape : public TCollection_MapNode {
 };
 %extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_IndexedMapNodeOfIndexedMapOfShape {
@@ -1364,7 +1366,7 @@ class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public TCollecti
 };
 %extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape {
@@ -1450,7 +1452,7 @@ class TopTools_HArray1OfListOfShape : public MMgt_TShared {
 };
 %extend TopTools_HArray1OfListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_HArray1OfListOfShape {
@@ -1480,7 +1482,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeShape : public TCollection_MapNode {
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeShape {
@@ -1554,7 +1556,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public TCollection_MapNo
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_DataMapNodeOfDataMapOfShapeListOfShape {
@@ -1604,7 +1606,7 @@ class TopTools_DataMapNodeOfDataMapOfIntegerShape : public TCollection_MapNode {
 };
 %extend TopTools_DataMapNodeOfDataMapOfIntegerShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_DataMapNodeOfDataMapOfIntegerShape {
@@ -1826,7 +1828,7 @@ class TopTools_HSequenceOfShape : public MMgt_TShared {
 };
 %extend TopTools_HSequenceOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_HSequenceOfShape {
@@ -1876,7 +1878,7 @@ class TopTools_StdMapNodeOfMapOfOrientedShape : public TCollection_MapNode {
 };
 %extend TopTools_StdMapNodeOfMapOfOrientedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_StdMapNodeOfMapOfOrientedShape {
@@ -1904,7 +1906,7 @@ class TopTools_ListNodeOfListOfShape : public TCollection_MapNode {
 };
 %extend TopTools_ListNodeOfListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_ListNodeOfListOfShape {
@@ -2006,7 +2008,7 @@ class TopTools_HArray1OfShape : public MMgt_TShared {
 };
 %extend TopTools_HArray1OfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_HArray1OfShape {
@@ -2036,7 +2038,7 @@ class TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public TCollection_M
 };
 %extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger {
@@ -2070,7 +2072,7 @@ class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public TCo
 };
 %extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape {
@@ -2186,7 +2188,7 @@ class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
 };
 %extend TopTools_SequenceNodeOfSequenceOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_SequenceNodeOfSequenceOfShape {
@@ -2294,7 +2296,7 @@ class TopTools_StdMapNodeOfMapOfShape : public TCollection_MapNode {
 };
 %extend TopTools_StdMapNodeOfMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopTools_StdMapNodeOfMapOfShape {

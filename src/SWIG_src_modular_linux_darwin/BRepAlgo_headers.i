@@ -59,39 +59,11 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepAlgo.hxx>
 #include<BRepAlgoAPI_BooleanOperation.hxx>
 #include<BRepAlgoAPI_Common.hxx>
 #include<BRepAlgoAPI_Cut.hxx>
 #include<BRepAlgoAPI_Fuse.hxx>
 #include<BRepAlgoAPI_Section.hxx>
-#include<BRepAlgo_AsDes.hxx>
-#include<BRepAlgo_BooleanOperation.hxx>
-#include<BRepAlgo_BooleanOperations.hxx>
-#include<BRepAlgo_CheckStatus.hxx>
-#include<BRepAlgo_Common.hxx>
-#include<BRepAlgo_Cut.hxx>
-#include<BRepAlgo_DSAccess.hxx>
-#include<BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean.hxx>
-#include<BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference.hxx>
-#include<BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger.hxx>
-#include<BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean.hxx>
-#include<BRepAlgo_DataMapNodeOfDataMapOfShapeInterference.hxx>
-#include<BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger.hxx>
-#include<BRepAlgo_DataMapOfShapeBoolean.hxx>
-#include<BRepAlgo_DataMapOfShapeInterference.hxx>
-#include<BRepAlgo_DataMapOfShapeListOfInteger.hxx>
-#include<BRepAlgo_EdgeConnector.hxx>
-#include<BRepAlgo_FaceRestrictor.hxx>
-#include<BRepAlgo_Fuse.hxx>
-#include<BRepAlgo_Image.hxx>
-#include<BRepAlgo_Loop.hxx>
-#include<BRepAlgo_NormalProjection.hxx>
-#include<BRepAlgo_Section.hxx>
-#include<BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger.hxx>
-#include<BRepAlgo_SequenceOfSequenceOfInteger.hxx>
-#include<BRepAlgo_Tool.hxx>
-#include<BRepAlgo_TopOpe.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -66,7 +66,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TopoDS.hxx>
 #include<TopoDSToStep.hxx>
 #include<TopoDSToStep_Builder.hxx>
 #include<TopoDSToStep_BuilderError.hxx>
@@ -89,33 +88,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<TopoDSToStep_Root.hxx>
 #include<TopoDSToStep_Tool.hxx>
 #include<TopoDSToStep_WireframeBuilder.hxx>
-#include<TopoDS_Builder.hxx>
-#include<TopoDS_Builder3D.hxx>
-#include<TopoDS_CompSolid.hxx>
-#include<TopoDS_Compound.hxx>
-#include<TopoDS_Edge.hxx>
-#include<TopoDS_Face.hxx>
-#include<TopoDS_FrozenShape.hxx>
-#include<TopoDS_HShape.hxx>
-#include<TopoDS_Iterator.hxx>
-#include<TopoDS_ListIteratorOfListOfShape.hxx>
-#include<TopoDS_ListNodeOfListOfShape.hxx>
-#include<TopoDS_ListOfShape.hxx>
-#include<TopoDS_Shape.hxx>
-#include<TopoDS_Shell.hxx>
-#include<TopoDS_Solid.hxx>
-#include<TopoDS_TCompSolid.hxx>
-#include<TopoDS_TCompound.hxx>
-#include<TopoDS_TEdge.hxx>
-#include<TopoDS_TFace.hxx>
-#include<TopoDS_TShape.hxx>
-#include<TopoDS_TShell.hxx>
-#include<TopoDS_TSolid.hxx>
-#include<TopoDS_TVertex.hxx>
-#include<TopoDS_TWire.hxx>
-#include<TopoDS_UnCompatibleShapes.hxx>
-#include<TopoDS_Vertex.hxx>
-#include<TopoDS_Wire.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -262,7 +264,7 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 };
 %extend BRepAdaptor_HCompCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAdaptor_HCompCurve {
@@ -360,7 +362,7 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 };
 %extend BRepAdaptor_HCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAdaptor_HCurve {
@@ -406,7 +408,7 @@ class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 };
 %extend BRepAdaptor_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAdaptor_HArray1OfCurve {
@@ -440,7 +442,7 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 };
 %extend BRepAdaptor_HCurve2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAdaptor_HCurve2d {
@@ -772,7 +774,7 @@ class BRepAdaptor_HSurface : public Adaptor3d_HSurface {
 };
 %extend BRepAdaptor_HSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAdaptor_HSurface {

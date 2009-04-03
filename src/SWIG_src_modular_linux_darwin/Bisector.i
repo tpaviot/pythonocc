@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -261,7 +263,7 @@ class Bisector_Curve : public Geom2d_Curve {
 };
 %extend Bisector_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Bisector_Curve {
@@ -339,7 +341,7 @@ class Bisector_BisecCC : public Bisector_Curve {
 };
 %extend Bisector_BisecCC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Bisector_BisecCC {
@@ -425,7 +427,7 @@ class Bisector_BisecPC : public Bisector_Curve {
 };
 %extend Bisector_BisecPC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Bisector_BisecPC {
@@ -515,7 +517,7 @@ class Bisector_BisecAna : public Bisector_Curve {
 };
 %extend Bisector_BisecAna {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Bisector_BisecAna {

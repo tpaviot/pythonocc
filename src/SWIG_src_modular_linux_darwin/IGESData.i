@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -836,7 +838,7 @@ class IGESData_SpecificModule : public Standard_Transient {
 };
 %extend IGESData_SpecificModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_SpecificModule {
@@ -860,7 +862,7 @@ class IGESData_DefaultSpecific : public IGESData_SpecificModule {
 };
 %extend IGESData_DefaultSpecific {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_DefaultSpecific {
@@ -894,7 +896,7 @@ class IGESData_GlobalNodeOfWriterLib : public Standard_Transient {
 };
 %extend IGESData_GlobalNodeOfWriterLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_GlobalNodeOfWriterLib {
@@ -928,7 +930,7 @@ class IGESData_ReadWriteModule : public Interface_ReaderModule {
 };
 %extend IGESData_ReadWriteModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_ReadWriteModule {
@@ -982,7 +984,7 @@ class IGESData_IGESReaderData : public Interface_FileReaderData {
 };
 %extend IGESData_IGESReaderData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_IGESReaderData {
@@ -1136,7 +1138,7 @@ class IGESData_IGESEntity : public MMgt_TShared {
 };
 %extend IGESData_IGESEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_IGESEntity {
@@ -1160,7 +1162,7 @@ class IGESData_ColorEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_ColorEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_ColorEntity {
@@ -1252,7 +1254,7 @@ class IGESData_TransfEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_TransfEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_TransfEntity {
@@ -1314,7 +1316,7 @@ class IGESData_ToolLocation : public MMgt_TShared {
 };
 %extend IGESData_ToolLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_ToolLocation {
@@ -1538,7 +1540,7 @@ class IGESData_UndefinedEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_UndefinedEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_UndefinedEntity {
@@ -1644,7 +1646,7 @@ class IGESData_GlobalNodeOfSpecificLib : public Standard_Transient {
 };
 %extend IGESData_GlobalNodeOfSpecificLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_GlobalNodeOfSpecificLib {
@@ -1676,7 +1678,7 @@ class IGESData_FileProtocol : public IGESData_Protocol {
 };
 %extend IGESData_FileProtocol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_FileProtocol {
@@ -1742,7 +1744,7 @@ class IGESData_LevelListEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_LevelListEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_LevelListEntity {
@@ -1776,7 +1778,7 @@ class IGESData_NodeOfSpecificLib : public MMgt_TShared {
 };
 %extend IGESData_NodeOfSpecificLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_NodeOfSpecificLib {
@@ -1802,7 +1804,7 @@ class IGESData_NameEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_NameEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_NameEntity {
@@ -2028,7 +2030,7 @@ class IGESData_HArray1OfIGESEntity : public MMgt_TShared {
 };
 %extend IGESData_HArray1OfIGESEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_HArray1OfIGESEntity {
@@ -2114,7 +2116,7 @@ class IGESData_GeneralModule : public Interface_GeneralModule {
 };
 %extend IGESData_GeneralModule {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_GeneralModule {
@@ -2140,7 +2142,7 @@ class IGESData_LabelDisplayEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_LabelDisplayEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_LabelDisplayEntity {
@@ -2170,7 +2172,7 @@ class IGESData_FileRecognizer : public Standard_Transient {
 };
 %extend IGESData_FileRecognizer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_FileRecognizer {
@@ -2204,7 +2206,7 @@ class IGESData_NodeOfWriterLib : public MMgt_TShared {
 };
 %extend IGESData_NodeOfWriterLib {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_NodeOfWriterLib {
@@ -2302,7 +2304,7 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 };
 %extend IGESData_IGESModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_IGESModel {
@@ -2372,7 +2374,7 @@ class IGESData_ViewKindEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_ViewKindEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_ViewKindEntity {
@@ -2408,7 +2410,7 @@ class IGESData_DefaultGeneral : public IGESData_GeneralModule {
 };
 %extend IGESData_DefaultGeneral {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_DefaultGeneral {
@@ -2490,7 +2492,7 @@ class IGESData_LineFontEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_LineFontEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_LineFontEntity {
@@ -2566,7 +2568,7 @@ class IGESData_SingleParentEntity : public IGESData_IGESEntity {
 };
 %extend IGESData_SingleParentEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_SingleParentEntity {
@@ -2626,7 +2628,7 @@ class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
 };
 %extend IGESData_FreeFormatEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESData_FreeFormatEntity {

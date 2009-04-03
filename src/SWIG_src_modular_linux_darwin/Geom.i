@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1288,7 +1290,7 @@ class Geom_Geometry : public MMgt_TShared {
 };
 %extend Geom_Geometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Geometry {
@@ -1346,7 +1348,7 @@ class Geom_Curve : public Geom_Geometry {
 };
 %extend Geom_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Curve {
@@ -1372,7 +1374,7 @@ class Geom_BoundedCurve : public Geom_Curve {
 };
 %extend Geom_BoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_BoundedCurve {
@@ -1448,7 +1450,7 @@ class Geom_Surface : public Geom_Geometry {
 };
 %extend Geom_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Surface {
@@ -1506,7 +1508,7 @@ class Geom_OffsetSurface : public Geom_Surface {
 };
 %extend Geom_OffsetSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_OffsetSurface {
@@ -1530,7 +1532,7 @@ class Geom_BoundedSurface : public Geom_Surface {
 };
 %extend Geom_BoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_BoundedSurface {
@@ -1568,7 +1570,7 @@ class Geom_AxisPlacement : public Geom_Geometry {
 };
 %extend Geom_AxisPlacement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_AxisPlacement {
@@ -1604,7 +1606,7 @@ class Geom_Axis1Placement : public Geom_AxisPlacement {
 };
 %extend Geom_Axis1Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Axis1Placement {
@@ -1654,7 +1656,7 @@ class Geom_ElementarySurface : public Geom_Surface {
 };
 %extend Geom_ElementarySurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_ElementarySurface {
@@ -1722,7 +1724,7 @@ class Geom_Plane : public Geom_ElementarySurface {
 };
 %extend Geom_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Plane {
@@ -1860,7 +1862,7 @@ class Geom_BezierSurface : public Geom_BoundedSurface {
 };
 %extend Geom_BezierSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_BezierSurface {
@@ -1910,7 +1912,7 @@ class Geom_Conic : public Geom_Curve {
 };
 %extend Geom_Conic {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Conic {
@@ -1992,7 +1994,7 @@ class Geom_Hyperbola : public Geom_Conic {
 };
 %extend Geom_Hyperbola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Hyperbola {
@@ -2050,7 +2052,7 @@ class Geom_Vector : public Geom_Geometry {
 };
 %extend Geom_Vector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Vector {
@@ -2092,7 +2094,7 @@ class Geom_Direction : public Geom_Vector {
 };
 %extend Geom_Direction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Direction {
@@ -2154,7 +2156,7 @@ class Geom_Circle : public Geom_Conic {
 };
 %extend Geom_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Circle {
@@ -2182,7 +2184,7 @@ class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 };
 %extend Geom_SequenceNodeOfSequenceOfBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_SequenceNodeOfSequenceOfBSplineSurface {
@@ -2210,7 +2212,7 @@ class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 };
 %extend Geom_SequenceNodeOfSequenceOfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_SequenceNodeOfSequenceOfSurface {
@@ -2256,7 +2258,7 @@ class Geom_Axis2Placement : public Geom_AxisPlacement {
 };
 %extend Geom_Axis2Placement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Axis2Placement {
@@ -2338,7 +2340,7 @@ class Geom_OffsetCurve : public Geom_Curve {
 };
 %extend Geom_OffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_OffsetCurve {
@@ -2394,7 +2396,7 @@ class Geom_SweptSurface : public Geom_Surface {
 };
 %extend Geom_SweptSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_SweptSurface {
@@ -2470,7 +2472,7 @@ class Geom_VectorWithMagnitude : public Geom_Vector {
 };
 %extend Geom_VectorWithMagnitude {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_VectorWithMagnitude {
@@ -2562,7 +2564,7 @@ class Geom_Point : public Geom_Geometry {
 };
 %extend Geom_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Point {
@@ -2656,7 +2658,7 @@ class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
 };
 %extend Geom_SurfaceOfRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_SurfaceOfRevolution {
@@ -2690,7 +2692,7 @@ class Geom_UndefinedValue : public Standard_DomainError {
 };
 %extend Geom_UndefinedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_UndefinedValue {
@@ -2774,7 +2776,7 @@ class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 };
 %extend Geom_RectangularTrimmedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_RectangularTrimmedSurface {
@@ -2850,7 +2852,7 @@ class Geom_Line : public Geom_Curve {
 };
 %extend Geom_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Line {
@@ -2924,7 +2926,7 @@ class Geom_CylindricalSurface : public Geom_ElementarySurface {
 };
 %extend Geom_CylindricalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_CylindricalSurface {
@@ -3002,7 +3004,7 @@ class Geom_Ellipse : public Geom_Conic {
 };
 %extend Geom_Ellipse {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Ellipse {
@@ -3072,7 +3074,7 @@ class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 };
 %extend Geom_HSequenceOfBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_HSequenceOfBSplineSurface {
@@ -3146,7 +3148,7 @@ class Geom_Parabola : public Geom_Conic {
 };
 %extend Geom_Parabola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Parabola {
@@ -3228,7 +3230,7 @@ class Geom_ConicalSurface : public Geom_ElementarySurface {
 };
 %extend Geom_ConicalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_ConicalSurface {
@@ -3312,7 +3314,7 @@ class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 };
 %extend Geom_SurfaceOfLinearExtrusion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_SurfaceOfLinearExtrusion {
@@ -3382,7 +3384,7 @@ class Geom_TrimmedCurve : public Geom_BoundedCurve {
 };
 %extend Geom_TrimmedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_TrimmedCurve {
@@ -3460,7 +3462,7 @@ class Geom_ToroidalSurface : public Geom_ElementarySurface {
 };
 %extend Geom_ToroidalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_ToroidalSurface {
@@ -3494,7 +3496,7 @@ class Geom_UndefinedDerivative : public Standard_DomainError {
 };
 %extend Geom_UndefinedDerivative {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_UndefinedDerivative {
@@ -3648,7 +3650,7 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 };
 %extend Geom_BSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_BSplineCurve {
@@ -3718,7 +3720,7 @@ class Geom_HSequenceOfSurface : public MMgt_TShared {
 };
 %extend Geom_HSequenceOfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_HSequenceOfSurface {
@@ -3794,7 +3796,7 @@ class Geom_Transformation : public MMgt_TShared {
 };
 %extend Geom_Transformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_Transformation {
@@ -3894,7 +3896,7 @@ class Geom_BezierCurve : public Geom_BoundedCurve {
 };
 %extend Geom_BezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_BezierCurve {
@@ -3946,7 +3948,7 @@ class Geom_CartesianPoint : public Geom_Point {
 };
 %extend Geom_CartesianPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_CartesianPoint {
@@ -4176,7 +4178,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 };
 %extend Geom_BSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_BSplineSurface {
@@ -4250,7 +4252,7 @@ class Geom_SphericalSurface : public Geom_ElementarySurface {
 };
 %extend Geom_SphericalSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Geom_SphericalSurface {

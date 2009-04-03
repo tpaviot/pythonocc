@@ -42,22 +42,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GccAna_Circ2d2TanOn.hxx>
-#include<GccAna_Circ2d2TanRad.hxx>
-#include<GccAna_Circ2d3Tan.hxx>
-#include<GccAna_Circ2dBisec.hxx>
-#include<GccAna_Circ2dTanCen.hxx>
-#include<GccAna_Circ2dTanOnRad.hxx>
-#include<GccAna_CircLin2dBisec.hxx>
-#include<GccAna_CircPnt2dBisec.hxx>
-#include<GccAna_Lin2d2Tan.hxx>
-#include<GccAna_Lin2dBisec.hxx>
-#include<GccAna_Lin2dTanObl.hxx>
-#include<GccAna_Lin2dTanPar.hxx>
-#include<GccAna_Lin2dTanPer.hxx>
-#include<GccAna_LinPnt2dBisec.hxx>
-#include<GccAna_NoSolution.hxx>
-#include<GccAna_Pnt2dBisec.hxx>
 
 // Needed headers necessary for compilation.
 

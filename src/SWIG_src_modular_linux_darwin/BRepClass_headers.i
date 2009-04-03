@@ -40,13 +40,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepClass3d_SolidClassifier.hxx>
 #include<BRepClass3d_SolidExplorer.hxx>
 #include<BRepClass3d_SolidPassiveClassifier.hxx>
-#include<BRepClass_Edge.hxx>
-#include<BRepClass_FClass2dOfFClassifier.hxx>
-#include<BRepClass_FClassifier.hxx>
-#include<BRepClass_FaceClassifier.hxx>
-#include<BRepClass_FaceExplorer.hxx>
-#include<BRepClass_FacePassiveClassifier.hxx>
-#include<BRepClass_Intersector.hxx>
 
 // Needed headers necessary for compilation.
 

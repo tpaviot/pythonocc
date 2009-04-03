@@ -66,32 +66,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Select3D_Box2d.hxx>
-#include<Select3D_ListIteratorOfListOfSensitive.hxx>
-#include<Select3D_ListIteratorOfListOfSensitiveTriangle.hxx>
-#include<Select3D_ListNodeOfListOfSensitive.hxx>
-#include<Select3D_ListNodeOfListOfSensitiveTriangle.hxx>
-#include<Select3D_ListOfSensitive.hxx>
-#include<Select3D_ListOfSensitiveTriangle.hxx>
-#include<Select3D_Macro.hxx>
-#include<Select3D_Pnt.hxx>
-#include<Select3D_Pnt2d.hxx>
-#include<Select3D_Projector.hxx>
-#include<Select3D_SensitiveBox.hxx>
-#include<Select3D_SensitiveCircle.hxx>
-#include<Select3D_SensitiveCurve.hxx>
-#include<Select3D_SensitiveEntity.hxx>
-#include<Select3D_SensitiveEntitySequence.hxx>
-#include<Select3D_SensitiveFace.hxx>
-#include<Select3D_SensitiveGroup.hxx>
-#include<Select3D_SensitivePoint.hxx>
-#include<Select3D_SensitivePoly.hxx>
-#include<Select3D_SensitiveSegment.hxx>
-#include<Select3D_SensitiveTriangle.hxx>
-#include<Select3D_SensitiveTriangulation.hxx>
-#include<Select3D_SensitiveWire.hxx>
-#include<Select3D_SequenceNodeOfSensitiveEntitySequence.hxx>
-#include<Select3D_TypeOfSensitivity.hxx>
 
 // Needed headers necessary for compilation.
 

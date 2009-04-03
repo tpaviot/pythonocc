@@ -32,13 +32,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<AppCont_ContMatrices.hxx>
-#include<AppCont_FitFunction.hxx>
-#include<AppCont_FitFunction2d.hxx>
-#include<AppCont_Function.hxx>
-#include<AppCont_Function2d.hxx>
-#include<AppCont_FunctionTool.hxx>
-#include<AppCont_FunctionTool2d.hxx>
 
 // Needed headers necessary for compilation.
 

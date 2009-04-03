@@ -31,10 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TColQuantity_Array1OfLength.hxx>
-#include<TColQuantity_Array2OfLength.hxx>
-#include<TColQuantity_HArray1OfLength.hxx>
-#include<TColQuantity_HArray2OfLength.hxx>
 
 // Needed headers necessary for compilation.
 
