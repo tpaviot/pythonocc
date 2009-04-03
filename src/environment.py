@@ -27,11 +27,11 @@ from distutils import sysconfig
 #
 # Define pythonOCC version
 #
-VERSION = 'rev202'
+VERSION = 'rev218'
 #
 # Wrap SalomeGEOM?
 #
-WRAP_SALOME_GEOM = False
+WRAP_SALOME_GEOM = True
 #
 # Define paths
 #
@@ -50,7 +50,6 @@ if sys.platform=='win32':
     else:
         OCC_INC='C:/OCC/ros/inc'
         OCC_LIB='C:/OCC/ros/win32/lib'
-    if WRAP_SALOME_GEOM:
         SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc')
         SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
     GCC_XML_PATH = os.path.join(os.getcwd(),'pygccxml','gccxml_bin','v09','win32','bin')
@@ -70,6 +69,8 @@ elif sys.platform=='linux2':
     os.environ['CPP'] = 'g++'
     OCC_INC = '/usr/local/inc' # Ubuntu 8.04 Hardy default installation path for headers
     OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
+    SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc')
+    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
@@ -91,6 +92,8 @@ elif sys.platform=='darwin':
     os.environ['CPP'] = 'g++'
     OCC_INC = '/usr/local/inc'
     OCC_LIB = '/usr/local/lib'
+    SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc')
+    SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
     GCC_XML_PATH = '/usr/bin' 
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
