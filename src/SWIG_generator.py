@@ -87,6 +87,8 @@ PYOCC_HEADER_TEMPLATE = """
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -173,9 +175,10 @@ class ModularBuilder(object):
     This class generates a set of .i files integrated in one OCC.i script. The result is
     a simple _OCC.pyd and OCC.py script that enable better handliing of different OCC classes.
     """
-    def __init__( self , module, generate_doc = False):
+    def __init__( self , module, generate_doc = False, INC_PATH = environment.OCC_INC):
         self.MODULES = module
         self.MODULE_NAME = module[0]
+        self.INC_PATH = INC_PATH #the path where are the headers to parse can be OCC_INC or SALOME_GEOM_INC
         self._generate_doc = generate_doc
         if self._generate_doc:
             self.WriteLicenseHeader = WriteDisclaimerHeader
@@ -281,7 +284,11 @@ class ModularBuilder(object):
         """
         Add a dependency with other module.
         """
+        if module_name=='GEOM':
+            module_name='SGEOM'
         if 'XW' in module_name: #TODO: better handling of XW.i dependency with Xw module under Linux
+            return True
+        if module_name == 'Selector': #SalomeGEOM
             return True
         if sys.platform=='win32' and module_name=='WNT':
             return True
@@ -290,16 +297,23 @@ class ModularBuilder(object):
         if not module_name in self.module_dependencies:
             self.module_dependencies.append(module_name)
             if module_name=='TCollection':
-                self.dependencies_headers_to_write += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%module_name))
+                self.dependencies_headers_to_write += CaseSensitiveGlob(os.path.join(self.INC_PATH,'Handle_%s_*.hxx'%module_name))
+                if self.INC_PATH == environment.SALOME_GEOM_INC:
+                    self.dependencies_headers_to_write += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%module_name))
             else:
-                self.dependencies_headers_to_write += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s_*.hxx'%module_name))+\
-                CaseSensitiveGlob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%module_name))
+                self.dependencies_headers_to_write += CaseSensitiveGlob(os.path.join(self.INC_PATH,'%s_*.hxx'%module_name))+\
+                CaseSensitiveGlob(os.path.join(self.INC_PATH,'Handle_%s_*.hxx'%module_name))
+                if self.INC_PATH == environment.SALOME_GEOM_INC:
+                    self.dependencies_headers_to_write += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s_*.hxx'%module_name))+\
+                CaseSensitiveGlob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%module_name))                    
             self.dependencies_headers_to_write = self.OSFilterHeaders(self.dependencies_headers_to_write)
     
     def WriteDepencyFile(self):
         """
         Generate the file for dependencies.
         """
+        if self.MODULE_NAME=='GEOM':
+            self.MODULE_NAME='SGEOM'#back to the good name
         dependencies_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_dependencies.i'%self.MODULE_NAME),"w")
         WriteLicenseHeader(dependencies_fp)
         self.dependencies_headers_to_write.sort()
@@ -318,23 +332,33 @@ class ModularBuilder(object):
         """
         Write the SWIG file that contains all required headers for compilation.
         """
+        print self.MODULE_NAME
+        if self.MODULE_NAME=='GEOM':
+            self.MODULE_NAME='SGEOM'#back to the good name
+        already_written = []
         headers_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_headers.i'%self.MODULE_NAME),"w")
         WriteLicenseHeader(headers_fp)
          # Write includes
         headers_fp.write("%{\n")
         headers_fp.write("\n// Headers necessary to define wrapped classes.\n\n")
         for hxx_file in self.HXX_FILES:
-            headers_fp.write("#include<%s>\n"%os.path.basename(hxx_file))
+            if not hxx_file in already_written:
+                headers_fp.write("#include<%s>\n"%os.path.basename(hxx_file))
+                already_written.append(hxx_file)
         headers_fp.write("\n// Additional headers necessary for compilation.\n\n")
         self.ADDITIONAL_HXX = self.OSFilterHeaders(self.ADDITIONAL_HXX)
         for hxx_file in self.ADDITIONAL_HXX:
-            headers_fp.write("#include<%s>\n"%os.path.basename(hxx_file))
+            if not hxx_file in already_written:
+                headers_fp.write("#include<%s>\n"%os.path.basename(hxx_file))
+                already_written.append(hxx_file)
         # NEEDED_HXX:
         headers_fp.write("\n// Needed headers necessary for compilation.\n\n")
         self.NEEDED_HXX = self.OSFilterHeaders(self.NEEDED_HXX)
         for hxx_file in self.NEEDED_HXX:
-            if os.path.isfile(os.path.join(environment.OCC_INC,hxx_file)):
-                headers_fp.write("#include<%s>\n"%os.path.basename(hxx_file))
+            if os.path.isfile(os.path.join(self.INC_PATH,hxx_file)):
+                if not hxx_file in already_written:
+                    headers_fp.write("#include<%s>\n"%os.path.basename(hxx_file))
+                    already_written.append(hxx_file)
         headers_fp.write("%}\n")
         headers_fp.close()
 
@@ -467,10 +491,28 @@ class ModularBuilder(object):
             # Find argument default value
             #
             argument_default_value = "%s"%argument.default_value
-            
+            #print argument_types, len(argument_types)
             #print argument_default_value
+#            if argument_types[0]=='GEOM_Engine':
+#                print argument_types, argument_name
+#                sys.exit(0)
             if len(argument_types)==1:
                 to_write += "%s "%argument_types[0]
+            elif argument_types[0].startswith('std::list'):
+                #We have something like:
+                #['std::list<Handle_GEOM_Object,std::allocator<Handle_GEOM_Object>', '>'] 2
+                #
+                tmp = argument_types[0]
+                tmp = tmp.split('<')[1]
+                tmp = tmp.split(',')[0]
+                if tmp=='std::basic_string':
+                    tmp='std::string'
+                argument_types[0] = 'std::list'
+                argument_types[1] = tmp                
+                to_write += "%s<%s>"%(argument_types[0],argument_types[1])
+            elif argument_types[1]=='*' and len(argument_types)==2:
+                #Case: GEOM_Engine* theEngine
+                to_write += "%s%s %s"%(argument_types[0],argument_types[1],argument_name)
             elif len(argument_types)==3: #ex: Handle_WNT_GraphicDevice const &
                 to_write += "%s %s %s%s"%(argument_types[1],argument_types[0],argument_types[2],argument_name)
             elif (len(argument_types)==2 and argument_types[1]!="&"):#ex: Aspect_Handle const
@@ -478,7 +520,7 @@ class ModularBuilder(object):
             elif len(argument_types)==4:
                 to_write += "%s %s%s"%(argument_types[0],argument_types[1],argument_name)
             else:
-                if 'Standard_Real &' in argument_type: # byref Standard_Float parameter
+                if ('Standard_Real &' in argument_type) or ('Quantity_Parameter &' in argument_type): # byref Standard_Float parameter
                     to_write += "Standard_Real &OutValue"
                 elif 'Standard_Integer &' in argument_type:# byref Standard_Integer parameter
                     to_write += "Standard_Integer &OutValue"
@@ -610,7 +652,6 @@ class ModularBuilder(object):
         #
         # Or for functions that have a special HashCode function (TopoDS, Standard_GUID etc.)
         #
-#        if NEED_CUSTOMIZED_DESTRUCTOR: TEST: ALL OBJECTS NEED A CUSTOM DESTRUCTOR
         # Customize destructor
         self.fp.write('\n%')
         self.fp.write('extend %s {\n'%class_name)
@@ -700,6 +741,12 @@ class ModularBuilder(object):
         if sys.platform!='win32':
             HXX_TO_EXCLUDE.append('InterfaceGraphic_Visual3d.hxx') #error with gccxml under Linux
             HXX_TO_EXCLUDE.append('Xw_Cextern.hxx')
+        # Also remove all headers that contain 'Test' (for instance BOPTest.hxx').
+        # These are just unit tests and missing from Debian Package
+        if self.MODULE_NAME!='TopBas':
+            for hxx_file in HXX_FILES:
+                if 'Test' in hxx_file:
+                    HXX_TO_EXCLUDE.append(hxx_file)
         # Under Linux, remove all *WNT* classes
         if sys.platform != 'win32':
             for hxx_file in HXX_FILES:
@@ -711,10 +758,10 @@ class ModularBuilder(object):
                 if ('X11' in hxx_file) or ('XWD' in hxx_file):
                     HXX_TO_EXCLUDE.append(hxx_file)
         if len(HXX_FILES)==0:
-            HXX_FILES = CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s*.hxx'%self.MODULE_NAME))
+            HXX_FILES = CaseSensitiveGlob(os.path.join(self.INC_PATH,'%s*.hxx'%self.MODULE_NAME))
         # Exclude undesired hxx for OS specific or pygccxml issues
         for hxx_to_exclude in HXX_TO_EXCLUDE:
-            to_exclude = os.path.join(environment.OCC_INC,'%s'%hxx_to_exclude)
+            to_exclude = os.path.join(self.INC_PATH,'%s'%hxx_to_exclude)
             if to_exclude in HXX_FILES:
                 HXX_FILES.remove(to_exclude)
         return HXX_FILES
@@ -723,15 +770,22 @@ class ModularBuilder(object):
         """
         Module builder initialization
         """        
-        self.HXX_FILES = CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s_*.hxx'%self.MODULE_NAME))+\
-                         CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s.hxx'%self.MODULE_NAME))+\
-                         CaseSensitiveGlob(os.path.join(environment.OCC_INC,'Handle_%s_*.hxx'%self.MODULE_NAME))
+        self.HXX_FILES = CaseSensitiveGlob(os.path.join(self.INC_PATH,'%s_*.hxx'%self.MODULE_NAME))+\
+                         CaseSensitiveGlob(os.path.join(self.INC_PATH,'%s.hxx'%self.MODULE_NAME))+\
+                         CaseSensitiveGlob(os.path.join(self.INC_PATH,'Handle_%s_*.hxx'%self.MODULE_NAME))
         self.HXX_FILES = self.OSFilterHeaders(self.HXX_FILES)
         print " %i headers - GCCXML parsing"%len(self.HXX_FILES)
         # Include additionnal headers
+        print self.ADDITIONAL_HEADERS
         for additional_header in self.ADDITIONAL_HEADERS:
-            self.ADDITIONAL_HXX += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s*.hxx'%additional_header))       
+            self.ADDITIONAL_HXX += CaseSensitiveGlob(os.path.join(self.INC_PATH,'%s*.hxx'%additional_header))       
         self.ADDITIONAL_HXX = self.OSFilterHeaders(self.ADDITIONAL_HXX)
+        ### TO OPTIMIZE
+        if self.INC_PATH == environment.SALOME_GEOM_INC:
+            # Include additionnal headers
+            for additional_header in self.ADDITIONAL_HEADERS:
+                self.ADDITIONAL_HXX += CaseSensitiveGlob(os.path.join(environment.OCC_INC,'%s*.hxx'%additional_header))       
+                self.ADDITIONAL_HXX = self.OSFilterHeaders(self.ADDITIONAL_HXX)
         # Sorting headers
         self.HXX_FILES.sort()
         self.ADDITIONAL_HXX.sort()
@@ -747,6 +801,11 @@ class ModularBuilder(object):
             hxx_wrapper.write('#include "%s"\n'%hxx_file)
         hxx_wrapper.write("\n#endif __%s_wrapper__\n"%(self.MODULE_NAME))
         hxx_wrapper.close()
+        #
+        # Careful: if the module to parse is SGEOM then must parse GEOM classes
+        #
+        if self.MODULE_NAME == 'SGEOM':
+            self.MODULE_NAME = 'GEOM'
         
     def WriteModuleEnums(self):
         """
@@ -784,15 +843,15 @@ class ModularBuilder(object):
                 files=[self._wrapper_filename],
                 gccxml_path=environment.GCC_XML_PATH,
                 define_symbols=environment.PYGCCXML_DEFINES,
-                include_paths=[environment.OCC_INC, environment.SWIG_FILES_PATH_MODULAR])
+                include_paths=[self.INC_PATH, environment.SWIG_FILES_PATH_MODULAR, environment.OCC_INC])
         # Excluding member functions that cause compilation fail
         #if self.MODULE_NAME == 'ShapeSchema':
         #    member_functions = self._mb.member_functions(lambda decl : decl.name.startswith('SAdd'))
         #    member_functions.exclude()
     
 if __name__ == '__main__':
-    a = glob.glob(os.path.join(environment.OCC_INC,'STandard_*.hxx'))
-    b = CaseSensitiveGlob(os.path.join(environment.OCC_INC,'STandard_*.hxx'))
+    a = glob.glob(os.path.join(self.INC_PATH,'STandard_*.hxx'))
+    b = CaseSensitiveGlob(os.path.join(self.INC_PATH,'STandard_*.hxx'))
     assert a == 76
     assert b == 0
     

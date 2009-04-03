@@ -22,7 +22,8 @@ import os,os.path
 import sys
 import shutil
 import time
-from Modules import MODULES
+import Modules
+#from Modules import MODULES
 
 init_time = time.time()
 print "Building pythonOCC"
@@ -147,12 +148,12 @@ def Create__init__():
     #MMGT_OPT=1 //use the optimised memory manager
     #MMGT_CLEAR=1 //this is important , at least in my case.Many problems could rise if i did not set this variable.Sets all bits of new allocated memory to NULL.
     #MMGT_REENTRANT=0 //My application is not multi threaded , so i do not need this.
-    init_fp.write('import os\n')
-    init_fp.write('#\n#Define OpenCascade behaviour settings\n#\n')
-    init_fp.write("os.environ['MMGT_CLEAR']='1'\n")
-    init_fp.write("os.environ['MMGT_OPT']='1'\n")
-    init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
-    init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
+    #init_fp.write('import os\n')
+    #init_fp.write('#\n#Define OpenCascade behaviour settings\n#\n')
+    #init_fp.write("os.environ['MMGT_CLEAR']='1'\n")
+    #init_fp.write("os.environ['MMGT_OPT']='1'\n")
+    #init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
+    #init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
     #
     # Include Version number
     #
@@ -161,7 +162,7 @@ def Create__init__():
     #
     #
     init_fp.write('__all__=[')
-    for module_tuple in MODULES:
+    for module_tuple in Modules.MODULES:
         module_name = module_tuple[0]
         init_fp.write("'%s',\n"%module_name)
     init_fp.write("'Visualization',\n'Misc'\n")
@@ -169,7 +170,7 @@ def Create__init__():
     init_fp.close()
     print "__init__.py script created."      
 #
-# Building libraries list
+# OpenCascade libs
 #
 libraries = ['BinLPlugin', 'BinPlugin', 'BinXCAFPlugin', 'FWOSPlugin', 'mscmd', 'PTKernel',\
              'StdLPlugin', 'StdPlugin', 'TKAdvTools', 'TKBin', 'TKBinL', 'TKBinTObj', 'TKBinXCAF',\
@@ -192,18 +193,24 @@ for library in libraries:
     if len(found)>0:
         LIBS.append(library)                 
 #
-# Setup
+# Salome Geom libs
 #
-Create__init__()
+if environment.WRAP_SALOME_GEOM:
+    LIBS.extend(['Sketcher','ShHealOper','Partition','NMTTools',\
+                        'NMTDS','GEOM','GEOMImpl',
+                        'GEOMAlgo','Archimede'])
+#
+# OpenCascade wrapper extensions
+#
 extension = []
-for module in MODULES:
+for module in Modules.MODULES:
     SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
     if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
         builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC)
     module_extension = Extension("OCC._%s"%module[0],
                     sources = [SWIG_source_file],
                     include_dirs=[OCC_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
-                    library_dirs=[OCC_LIB],
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
@@ -219,7 +226,7 @@ extension.append(Extension("OCC._Visualization",
                                os.path.join(os.getcwd(),'Visualization','NISDisplay3d.cpp'),
                                ],
                     include_dirs=[OCC_INC,os.path.join(os.getcwd(),'Visualization')],
-                    library_dirs=[OCC_LIB],
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
@@ -230,13 +237,34 @@ extension.append(Extension("OCC._Visualization",
 extension.append(Extension("OCC._Misc",
                     sources = [os.path.join(os.getcwd(),'Misc','Misc.i')],
                     include_dirs=[OCC_INC],
-                    library_dirs=[OCC_LIB],
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
                     define_macros= DEFINE_MACROS,
                     swig_opts = SWIG_OPTS,
                     libraries = LIBS,
                     extra_compile_args = ECA,
                     extra_link_args = ELA,
                     ))
+#
+# Salome Geom extensions
+#
+if environment.WRAP_SALOME_GEOM:
+    for module in Modules.SALOME_GEOM_MODULES:
+        SWIG_source_file = os.path.join(os.getcwd(),environment.SWIG_FILES_PATH_MODULAR,"%s.i"%module[0])
+        if GENERATE_SWIG or not (os.path.isfile(SWIG_source_file)):
+            print SWIG_source_file
+            builder = SWIG_generator.ModularBuilder(module, GENERATE_DOC, environment.SALOME_GEOM_INC)
+        module_extension = Extension("OCC._%s"%module[0],
+                    sources = [SWIG_source_file],
+                    include_dirs=[OCC_INC,environment.SALOME_GEOM_INC,SWIG_FILES_PATH_MODULAR], #for TopOpeBRep_tools.hxx
+                    library_dirs=[OCC_LIB,environment.SALOME_GEOM_LIB],
+                    define_macros= DEFINE_MACROS,
+                    swig_opts = SWIG_OPTS,
+                    libraries = LIBS,
+                    extra_compile_args = ECA,
+                    extra_link_args = ELA,
+                    )
+        extension.append(module_extension)
+
 install_dir = os.path.join(sysconfig.get_python_lib(),'OCC')
 data = (install_dir,\
         [os.path.join(os.getcwd(),'AUTHORS'),
@@ -268,7 +296,10 @@ This version is built against OpenCascade 6.3.0""",
       data_files = [data],
       **KARGS
       )
-   
+#
+# At the end of the build process, create __init__ script
+#
+Create__init__()
 if GENERATE_SWIG:
     print "%i exported classes"%SWIG_generator.nb_exported_classes
 final_time = time.time()

@@ -29,6 +29,10 @@ from distutils import sysconfig
 #
 VERSION = 'rev202'
 #
+# Wrap SalomeGEOM?
+#
+WRAP_SALOME_GEOM = False
+#
 # Define paths
 #
 try:
@@ -46,9 +50,14 @@ if sys.platform=='win32':
     else:
         OCC_INC='C:/OCC/ros/inc'
         OCC_LIB='C:/OCC/ros/win32/lib'
+    if WRAP_SALOME_GEOM:
+        SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc')
+        SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
     GCC_XML_PATH = os.path.join(os.getcwd(),'pygccxml','gccxml_bin','v09','win32','bin')
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
-    DEFINE_MACROS = [('WNT', None),('WIN32',None),('_WINDOWS',None),('CSFDB',None)]
+    DEFINE_MACROS = [('WNT', None),('WIN32',None),\
+                     ('_WINDOWS',None),('CSFDB',None),\
+                     ('__PYTHONOCC_MAXINT__',sys.maxint)]
     #ECA = ['/D"WNT"','/D"WIN32"','/D"_WINDOWS"','/D"CSFDB"','/link /MACHINE:X86 /SUBSYSTEM:WINDOWS']
     ECA = ['/link']#,'/SUBSYSTEM:CONSOLE']#,'/Os'] #space optimization '/MACHINE:X86',
     #SWIG_OPTS = ['-modern','-small','-fastdispatch','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS']
@@ -63,7 +72,10 @@ elif sys.platform=='linux2':
     OCC_LIB = '/usr/local/lib' # Ubuntu 8.04 Hardy default installation path for libraries
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
-    DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None),('LIN',None),('LININTEL',None),('_GNU_SOURCE','1')]
+    DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
+                     ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
+                     ('LIN',None),('LININTEL',None),('_GNU_SOURCE','1'),\
+                     ('__PYTHONOCC_MAXINT__',sys.maxint)]
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
@@ -81,7 +93,9 @@ elif sys.platform=='darwin':
     OCC_LIB = '/usr/local/lib'
     GCC_XML_PATH = '/usr/bin' 
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
-    DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]
+    DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
+                     ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
+                     ('__PYTHONOCC_MAXINT__',sys.maxint)]
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]

@@ -1,3 +1,12 @@
+2009/4/02:
+	- Beginning of SalomeGEOM integration
+	- Bugfix: Quantity_Parameter & byref parameter fix
+	- New geomplate sample
+2009/4/01:
+	- Added Expr module
+	- Added CaseSensitiveGlob for Windows
+	- TopOpeBRep_tools.hxx is now in SWIG_FILES_PATH_MODULAR directory
+	- Interactive.py bugfixes (HLR/antialiasing)
 2009/3/31:
 	- overloaded __hash__() with HashCode() for *almost* all pythonOCC objects
 2009/3/27:
