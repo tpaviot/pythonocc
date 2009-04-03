@@ -61,35 +61,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Contap_ContAna.hxx>
-#include<Contap_Contour.hxx>
-#include<Contap_HContTool.hxx>
-#include<Contap_HCurve2dTool.hxx>
-#include<Contap_HSurfaceTool.hxx>
-#include<Contap_IType.hxx>
-#include<Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour.hxx>
-#include<Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour.hxx>
-#include<Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour.hxx>
-#include<Contap_SequenceNodeOfTheSequenceOfLineOfContour.hxx>
-#include<Contap_SequenceNodeOfTheSequenceOfPointOfContour.hxx>
-#include<Contap_SequenceOfIWLineOfTheIWalkingOfContour.hxx>
-#include<Contap_SequenceOfPathPointOfTheSearchOfContour.hxx>
-#include<Contap_SequenceOfSegmentOfTheSearchOfContour.hxx>
-#include<Contap_TFunction.hxx>
-#include<Contap_TheArcFunctionOfContour.hxx>
-#include<Contap_TheHSequenceOfPointOfContour.hxx>
-#include<Contap_TheIWLineOfTheIWalkingOfContour.hxx>
-#include<Contap_TheIWalkingOfContour.hxx>
-#include<Contap_TheLineOfContour.hxx>
-#include<Contap_ThePathPointOfTheSearchOfContour.hxx>
-#include<Contap_ThePointOfContour.hxx>
-#include<Contap_TheSearchInsideOfContour.hxx>
-#include<Contap_TheSearchOfContour.hxx>
-#include<Contap_TheSegmentOfTheSearchOfContour.hxx>
-#include<Contap_TheSequenceOfLineOfContour.hxx>
-#include<Contap_TheSequenceOfPointOfContour.hxx>
-#include<Contap_TheSurfFunctionOfContour.hxx>
-#include<Contap_TheSurfPropsOfContour.hxx>
 
 // Needed headers necessary for compilation.
 

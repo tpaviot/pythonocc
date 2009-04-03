@@ -30,11 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepLProp.hxx>
-#include<BRepLProp_CLProps.hxx>
-#include<BRepLProp_CurveTool.hxx>
-#include<BRepLProp_SLProps.hxx>
-#include<BRepLProp_SurfaceTool.hxx>
 
 // Needed headers necessary for compilation.
 

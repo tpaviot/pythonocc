@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -522,7 +524,7 @@ class Message_ProgressIndicator : public MMgt_TShared {
 };
 %extend Message_ProgressIndicator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Message_ProgressIndicator {
@@ -552,7 +554,7 @@ class Message_Printer : public MMgt_TShared {
 };
 %extend Message_Printer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Message_Printer {
@@ -580,7 +582,7 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 };
 %extend Message_SequenceNodeOfSequenceOfPrinters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Message_SequenceNodeOfSequenceOfPrinters {
@@ -624,7 +626,7 @@ class Message_Messenger : public MMgt_TShared {
 };
 %extend Message_Messenger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Message_Messenger {
@@ -850,7 +852,7 @@ class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode
 };
 %extend Message_SequenceNodeOfSequenceOfProgressScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Message_SequenceNodeOfSequenceOfProgressScale {
@@ -878,7 +880,7 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 };
 %extend Message_ListNodeOfListOfMsg {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Message_ListNodeOfListOfMsg {
@@ -978,7 +980,7 @@ class Message_PrinterOStream : public Message_Printer {
 };
 %extend Message_PrinterOStream {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Message_PrinterOStream {

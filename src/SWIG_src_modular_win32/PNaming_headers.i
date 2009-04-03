@@ -37,13 +37,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PNaming_FieldOfHArray1OfNamedShape.hxx>
-#include<PNaming_HArray1OfNamedShape.hxx>
-#include<PNaming_Name.hxx>
-#include<PNaming_NamedShape.hxx>
-#include<PNaming_Naming.hxx>
-#include<PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape.hxx>
-#include<PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape.hxx>
 
 // Needed headers necessary for compilation.
 

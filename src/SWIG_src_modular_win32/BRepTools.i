@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -367,7 +369,7 @@ class BRepTools_Modification : public MMgt_TShared {
 };
 %extend BRepTools_Modification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTools_Modification {
@@ -513,7 +515,7 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_GTrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTools_GTrsfModification {
@@ -579,7 +581,7 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 };
 %extend BRepTools_TrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTools_TrsfModification {
@@ -659,7 +661,7 @@ class BRepTools_ReShape : public MMgt_TShared {
 };
 %extend BRepTools_ReShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTools_ReShape {
@@ -697,7 +699,7 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 };
 %extend BRepTools_NurbsConvertModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTools_NurbsConvertModification {
@@ -773,7 +775,7 @@ class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {
 };
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTools_DataMapNodeOfMapOfVertexPnt2d {

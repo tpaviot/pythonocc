@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -199,7 +201,7 @@ class XmlMPrsStd_AISPresentationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMPrsStd_AISPresentationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMPrsStd_AISPresentationDriver {
@@ -231,7 +233,7 @@ class XmlMPrsStd_PositionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMPrsStd_PositionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMPrsStd_PositionDriver {

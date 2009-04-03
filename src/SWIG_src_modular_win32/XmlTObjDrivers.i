@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -308,7 +310,7 @@ class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ReferenceDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlTObjDrivers_ReferenceDriver {
@@ -336,7 +338,7 @@ class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrie
 };
 %extend XmlTObjDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlTObjDrivers_DocumentRetrievalDriver {
@@ -386,7 +388,7 @@ class XmlTObjDrivers_ModelDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ModelDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlTObjDrivers_ModelDriver {
@@ -418,7 +420,7 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_IntSparseArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlTObjDrivers_IntSparseArrayDriver {
@@ -446,7 +448,7 @@ class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageD
 };
 %extend XmlTObjDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlTObjDrivers_DocumentStorageDriver {
@@ -478,7 +480,7 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_ObjectDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlTObjDrivers_ObjectDriver {
@@ -510,7 +512,7 @@ class XmlTObjDrivers_XYZDriver : public XmlMDF_ADriver {
 };
 %extend XmlTObjDrivers_XYZDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlTObjDrivers_XYZDriver {

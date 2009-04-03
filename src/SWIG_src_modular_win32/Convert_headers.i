@@ -48,27 +48,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Convert_CircleToBSplineCurve.hxx>
-#include<Convert_CompBezierCurves2dToBSplineCurve2d.hxx>
-#include<Convert_CompBezierCurvesToBSplineCurve.hxx>
-#include<Convert_CompPolynomialToPoles.hxx>
-#include<Convert_ConeToBSplineSurface.hxx>
-#include<Convert_ConicToBSplineCurve.hxx>
-#include<Convert_CosAndSinEvalFunction.hxx>
-#include<Convert_CylinderToBSplineSurface.hxx>
-#include<Convert_ElementarySurfaceToBSplineSurface.hxx>
-#include<Convert_EllipseToBSplineCurve.hxx>
-#include<Convert_GridPolynomialToPoles.hxx>
-#include<Convert_HyperbolaToBSplineCurve.hxx>
-#include<Convert_ParabolaToBSplineCurve.hxx>
-#include<Convert_ParameterisationType.hxx>
-#include<Convert_PolynomialCosAndSin.hxx>
-#include<Convert_SequenceNodeOfSequenceOfArray1OfPoles.hxx>
-#include<Convert_SequenceNodeOfSequenceOfArray1OfPoles2d.hxx>
-#include<Convert_SequenceOfArray1OfPoles.hxx>
-#include<Convert_SequenceOfArray1OfPoles2d.hxx>
-#include<Convert_SphereToBSplineSurface.hxx>
-#include<Convert_TorusToBSplineSurface.hxx>
 
 // Needed headers necessary for compilation.
 

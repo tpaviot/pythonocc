@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -663,7 +665,7 @@ class ChFiDS_Spine : public MMgt_TShared {
 };
 %extend ChFiDS_Spine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_Spine {
@@ -849,7 +851,7 @@ class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
 };
 %extend ChFiDS_ListNodeOfListOfStripe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_ListNodeOfListOfStripe {
@@ -903,7 +905,7 @@ class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 };
 %extend ChFiDS_ListNodeOfRegularities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_ListNodeOfRegularities {
@@ -1015,7 +1017,7 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 };
 %extend ChFiDS_FilSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_FilSpine {
@@ -1111,7 +1113,7 @@ class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 };
 %extend ChFiDS_ChamfSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_ChamfSpine {
@@ -1241,7 +1243,7 @@ class ChFiDS_SurfData : public MMgt_TShared {
 };
 %extend ChFiDS_SurfData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_SurfData {
@@ -1341,7 +1343,7 @@ class ChFiDS_HData : public MMgt_TShared {
 };
 %extend ChFiDS_HData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_HData {
@@ -1369,7 +1371,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSurfData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSurfData {
@@ -1497,7 +1499,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_SequenceNodeOfSequenceOfSpine {
@@ -1533,7 +1535,7 @@ class ChFiDS_HElSpine : public Adaptor3d_HCurve {
 };
 %extend ChFiDS_HElSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_HElSpine {
@@ -1731,7 +1733,7 @@ class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCo
 };
 %extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe {
@@ -1859,7 +1861,7 @@ class ChFiDS_Stripe : public MMgt_TShared {
 };
 %extend ChFiDS_Stripe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_Stripe {
@@ -1911,7 +1913,7 @@ class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 };
 %extend ChFiDS_ListNodeOfListOfHElSpine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_ListNodeOfListOfHElSpine {
@@ -2051,7 +2053,7 @@ class ChFiDS_SecHArray1 : public MMgt_TShared {
 };
 %extend ChFiDS_SecHArray1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ChFiDS_SecHArray1 {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -2078,7 +2080,7 @@ class IFSelect_Selection : public MMgt_TShared {
 };
 %extend IFSelect_Selection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_Selection {
@@ -2112,7 +2114,7 @@ class IFSelect_SelectDeduct : public IFSelect_Selection {
 };
 %extend IFSelect_SelectDeduct {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectDeduct {
@@ -2144,7 +2146,7 @@ class IFSelect_SelectExtract : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectExtract {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectExtract {
@@ -2174,7 +2176,7 @@ class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectUnknownEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectUnknownEntities {
@@ -2216,7 +2218,7 @@ class IFSelect_Signature : public Interface_SignType {
 };
 %extend IFSelect_Signature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_Signature {
@@ -2244,7 +2246,7 @@ class IFSelect_SignMultiple : public IFSelect_Signature {
 };
 %extend IFSelect_SignMultiple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SignMultiple {
@@ -2278,7 +2280,7 @@ class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectExplore {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectExplore {
@@ -2308,7 +2310,7 @@ class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectErrorEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectErrorEntities {
@@ -2390,7 +2392,7 @@ class IFSelect_Activator : public MMgt_TShared {
 };
 %extend IFSelect_Activator {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_Activator {
@@ -2416,7 +2418,7 @@ class IFSelect_Act : public IFSelect_Activator {
 };
 %extend IFSelect_Act {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_Act {
@@ -2452,7 +2454,7 @@ class IFSelect_SelectControl : public IFSelect_Selection {
 };
 %extend IFSelect_SelectControl {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectControl {
@@ -2480,7 +2482,7 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 };
 %extend IFSelect_SelectDiff {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectDiff {
@@ -2524,7 +2526,7 @@ class IFSelect_SelectBase : public IFSelect_Selection {
 };
 %extend IFSelect_SelectBase {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectBase {
@@ -2582,7 +2584,7 @@ class IFSelect_SelectPointed : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectPointed {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectPointed {
@@ -2634,7 +2636,7 @@ class IFSelect_Dispatch : public MMgt_TShared {
 };
 %extend IFSelect_Dispatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_Dispatch {
@@ -2664,7 +2666,7 @@ class IFSelect_DispPerSignature : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerSignature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_DispPerSignature {
@@ -2746,7 +2748,7 @@ class IFSelect_SequenceNodeOfTSeqOfSelection : public TCollection_SeqNode {
 };
 %extend IFSelect_SequenceNodeOfTSeqOfSelection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SequenceNodeOfTSeqOfSelection {
@@ -2774,7 +2776,7 @@ class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_Seq
 };
 %extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SequenceNodeOfSequenceOfAppliedModifiers {
@@ -2842,7 +2844,7 @@ class IFSelect_Editor : public MMgt_TShared {
 };
 %extend IFSelect_Editor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_Editor {
@@ -2928,7 +2930,7 @@ class IFSelect_Transformer : public MMgt_TShared {
 };
 %extend IFSelect_Transformer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_Transformer {
@@ -2980,7 +2982,7 @@ class IFSelect_TransformStandard : public IFSelect_Transformer {
 };
 %extend IFSelect_TransformStandard {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_TransformStandard {
@@ -3018,7 +3020,7 @@ class IFSelect_SelectCombine : public IFSelect_Selection {
 };
 %extend IFSelect_SelectCombine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectCombine {
@@ -3046,7 +3048,7 @@ class IFSelect_SignType : public IFSelect_Signature {
 };
 %extend IFSelect_SignType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SignType {
@@ -3168,7 +3170,7 @@ class IFSelect_PacketList : public MMgt_TShared {
 };
 %extend IFSelect_PacketList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_PacketList {
@@ -3196,7 +3198,7 @@ class IFSelect_SelectAnyType : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectAnyType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectAnyType {
@@ -3226,7 +3228,7 @@ class IFSelect_SelectType : public IFSelect_SelectAnyType {
 };
 %extend IFSelect_SelectType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectType {
@@ -3294,7 +3296,7 @@ class IFSelect_ModelCopier : public MMgt_TShared {
 };
 %extend IFSelect_ModelCopier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_ModelCopier {
@@ -3336,7 +3338,7 @@ class IFSelect_GeneralModifier : public MMgt_TShared {
 };
 %extend IFSelect_GeneralModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_GeneralModifier {
@@ -3360,7 +3362,7 @@ class IFSelect_Modifier : public IFSelect_GeneralModifier {
 };
 %extend IFSelect_Modifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_Modifier {
@@ -3400,7 +3402,7 @@ class IFSelect_DispPerCount : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerCount {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_DispPerCount {
@@ -3428,7 +3430,7 @@ class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
 };
 %extend IFSelect_SequenceNodeOfTSeqOfDispatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SequenceNodeOfTSeqOfDispatch {
@@ -3538,7 +3540,7 @@ class IFSelect_SignatureList : public MMgt_TShared {
 };
 %extend IFSelect_SignatureList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SignatureList {
@@ -3568,7 +3570,7 @@ class IFSelect_CheckCounter : public IFSelect_SignatureList {
 };
 %extend IFSelect_CheckCounter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_CheckCounter {
@@ -3602,7 +3604,7 @@ class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectEntityNumber {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectEntityNumber {
@@ -3714,7 +3716,7 @@ class IFSelect_EditForm : public MMgt_TShared {
 };
 %extend IFSelect_EditForm {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_EditForm {
@@ -3750,7 +3752,7 @@ class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
 };
 %extend IFSelect_SelectSignedShared {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectSignedShared {
@@ -3792,7 +3794,7 @@ class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectSuite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectSuite {
@@ -3828,7 +3830,7 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 };
 %extend IFSelect_SelectSignedSharing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectSignedSharing {
@@ -3882,7 +3884,7 @@ class IFSelect_SelectShared : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectShared {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectShared {
@@ -3918,7 +3920,7 @@ class IFSelect_SelectSent : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectSent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectSent {
@@ -3960,7 +3962,7 @@ class IFSelect_WorkLibrary : public Standard_Transient {
 };
 %extend IFSelect_WorkLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_WorkLibrary {
@@ -3990,7 +3992,7 @@ class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectModelRoots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectModelRoots {
@@ -4046,7 +4048,7 @@ class IFSelect_SelectAnyList : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectAnyList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectAnyList {
@@ -4086,7 +4088,7 @@ class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerFiles {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_DispPerFiles {
@@ -4118,7 +4120,7 @@ class IFSelect_ModifEditForm : public IFSelect_Modifier {
 };
 %extend IFSelect_ModifEditForm {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_ModifEditForm {
@@ -4176,7 +4178,7 @@ class IFSelect_SignCounter : public IFSelect_SignatureList {
 };
 %extend IFSelect_SignCounter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SignCounter {
@@ -4262,7 +4264,7 @@ class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 };
 %extend IFSelect_SelectModelEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectModelEntities {
@@ -4296,7 +4298,7 @@ class IFSelect_DispGlobal : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispGlobal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_DispGlobal {
@@ -4382,7 +4384,7 @@ class IFSelect_IntParam : public MMgt_TShared {
 };
 %extend IFSelect_IntParam {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_IntParam {
@@ -4432,7 +4434,7 @@ class IFSelect_SelectRange : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectRange {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectRange {
@@ -4464,7 +4466,7 @@ class IFSelect_GraphCounter : public IFSelect_SignCounter {
 };
 %extend IFSelect_GraphCounter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_GraphCounter {
@@ -4498,7 +4500,7 @@ class IFSelect_SelectFlag : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectFlag {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectFlag {
@@ -4558,7 +4560,7 @@ class IFSelect_ListEditor : public MMgt_TShared {
 };
 %extend IFSelect_ListEditor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_ListEditor {
@@ -4590,7 +4592,7 @@ class IFSelect_SessionDumper : public MMgt_TShared {
 };
 %extend IFSelect_SessionDumper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SessionDumper {
@@ -4614,7 +4616,7 @@ class IFSelect_BasicDumper : public IFSelect_SessionDumper {
 };
 %extend IFSelect_BasicDumper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_BasicDumper {
@@ -4654,7 +4656,7 @@ class IFSelect_AppliedModifiers : public MMgt_TShared {
 };
 %extend IFSelect_AppliedModifiers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_AppliedModifiers {
@@ -4684,7 +4686,7 @@ class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
 };
 %extend IFSelect_SelectIntersection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectIntersection {
@@ -4770,7 +4772,7 @@ class IFSelect_ShareOut : public MMgt_TShared {
 };
 %extend IFSelect_ShareOut {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_ShareOut {
@@ -4886,7 +4888,7 @@ class IFSelect_SelectUnion : public IFSelect_SelectCombine {
 };
 %extend IFSelect_SelectUnion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectUnion {
@@ -4914,7 +4916,7 @@ class IFSelect_SignAncestor : public IFSelect_SignType {
 };
 %extend IFSelect_SignAncestor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SignAncestor {
@@ -4944,7 +4946,7 @@ class IFSelect_SignValidity : public IFSelect_Signature {
 };
 %extend IFSelect_SignValidity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SignValidity {
@@ -4972,7 +4974,7 @@ class IFSelect_SignCategory : public IFSelect_Signature {
 };
 %extend IFSelect_SignCategory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SignCategory {
@@ -5016,7 +5018,7 @@ class IFSelect_SelectSignature : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectSignature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectSignature {
@@ -5058,7 +5060,7 @@ class IFSelect_ParamEditor : public IFSelect_Editor {
 };
 %extend IFSelect_ParamEditor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_ParamEditor {
@@ -5090,7 +5092,7 @@ class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectRoots {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectRoots {
@@ -5176,7 +5178,7 @@ class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqN
 };
 %extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SequenceNodeOfSequenceOfGeneralModifier {
@@ -5246,7 +5248,7 @@ class IFSelect_HSeqOfSelection : public MMgt_TShared {
 };
 %extend IFSelect_HSeqOfSelection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_HSeqOfSelection {
@@ -5280,7 +5282,7 @@ class IFSelect_DispPerOne : public IFSelect_Dispatch {
 };
 %extend IFSelect_DispPerOne {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_DispPerOne {
@@ -5628,7 +5630,7 @@ class IFSelect_WorkSession : public MMgt_TShared {
 };
 %extend IFSelect_WorkSession {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_WorkSession {
@@ -5654,7 +5656,7 @@ class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
 };
 %extend IFSelect_SelectIncorrectEntities {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectIncorrectEntities {
@@ -5732,7 +5734,7 @@ class IFSelect_SessionPilot : public IFSelect_Activator {
 };
 %extend IFSelect_SessionPilot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SessionPilot {
@@ -5814,7 +5816,7 @@ class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNo
 };
 %extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SequenceNodeOfSequenceOfInterfaceModel {
@@ -5846,7 +5848,7 @@ class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 };
 %extend IFSelect_SelectRootComps {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectRootComps {
@@ -5876,7 +5878,7 @@ class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
 };
 %extend IFSelect_SelectSharing {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectSharing {
@@ -5904,7 +5906,7 @@ class IFSelect_SelectInList : public IFSelect_SelectAnyList {
 };
 %extend IFSelect_SelectInList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_SelectInList {
@@ -5934,7 +5936,7 @@ class IFSelect_ModifReorder : public IFSelect_Modifier {
 };
 %extend IFSelect_ModifReorder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IFSelect_ModifReorder {

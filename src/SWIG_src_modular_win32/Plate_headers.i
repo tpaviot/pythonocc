@@ -50,27 +50,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Plate_Array1OfPinpointConstraint.hxx>
-#include<Plate_D1.hxx>
-#include<Plate_D2.hxx>
-#include<Plate_D3.hxx>
-#include<Plate_FreeGtoCConstraint.hxx>
-#include<Plate_GlobalTranslationConstraint.hxx>
-#include<Plate_GtoCConstraint.hxx>
-#include<Plate_HArray1OfPinpointConstraint.hxx>
-#include<Plate_LineConstraint.hxx>
-#include<Plate_LinearScalarConstraint.hxx>
-#include<Plate_LinearXYZConstraint.hxx>
-#include<Plate_PinpointConstraint.hxx>
-#include<Plate_PlaneConstraint.hxx>
-#include<Plate_Plate.hxx>
-#include<Plate_SampledCurveConstraint.hxx>
-#include<Plate_SequenceNodeOfSequenceOfLinearScalarConstraint.hxx>
-#include<Plate_SequenceNodeOfSequenceOfLinearXYZConstraint.hxx>
-#include<Plate_SequenceNodeOfSequenceOfPinpointConstraint.hxx>
-#include<Plate_SequenceOfLinearScalarConstraint.hxx>
-#include<Plate_SequenceOfLinearXYZConstraint.hxx>
-#include<Plate_SequenceOfPinpointConstraint.hxx>
 
 // Needed headers necessary for compilation.
 

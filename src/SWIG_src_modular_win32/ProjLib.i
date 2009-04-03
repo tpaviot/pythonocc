@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -589,7 +591,7 @@ class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 };
 %extend ProjLib_HSequenceOfHSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ProjLib_HSequenceOfHSequenceOfPnt {
@@ -623,7 +625,7 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 };
 %extend ProjLib_HProjectedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ProjLib_HProjectedCurve {
@@ -681,7 +683,7 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 };
 %extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt {
@@ -955,7 +957,7 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 };
 %extend ProjLib_HCompProjectedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ProjLib_HCompProjectedCurve {

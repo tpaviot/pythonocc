@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -997,7 +999,7 @@ class Dynamic_Method : public MMgt_TShared {
 };
 %extend Dynamic_Method {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_Method {
@@ -1021,7 +1023,7 @@ class Dynamic_MethodDefinition : public Dynamic_Method {
 };
 %extend Dynamic_MethodDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_MethodDefinition {
@@ -1051,7 +1053,7 @@ class Dynamic_InterpretedMethod : public Dynamic_MethodDefinition {
 };
 %extend Dynamic_InterpretedMethod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_InterpretedMethod {
@@ -1121,7 +1123,7 @@ class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
 };
 %extend Dynamic_SequenceOfMethodDefinitions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_SequenceOfMethodDefinitions {
@@ -1175,7 +1177,7 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 };
 %extend Dynamic_FuzzyClass {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_FuzzyClass {
@@ -1213,7 +1215,7 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 };
 %extend Dynamic_DynamicClass {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_DynamicClass {
@@ -1259,7 +1261,7 @@ class Dynamic_CompiledMethod : public Dynamic_MethodDefinition {
 };
 %extend Dynamic_CompiledMethod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_CompiledMethod {
@@ -1287,7 +1289,7 @@ class Dynamic_Parameter : public MMgt_TShared {
 };
 %extend Dynamic_Parameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_Parameter {
@@ -1317,7 +1319,7 @@ class Dynamic_StringParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_StringParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_StringParameter {
@@ -1345,7 +1347,7 @@ class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 };
 %extend Dynamic_SequenceNodeOfSeqOfClasses {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_SequenceNodeOfSeqOfClasses {
@@ -1379,7 +1381,7 @@ class Dynamic_InstanceParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_InstanceParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_InstanceParameter {
@@ -1415,7 +1417,7 @@ class Dynamic_VariableNode : public MMgt_TShared {
 };
 %extend Dynamic_VariableNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_VariableNode {
@@ -1593,7 +1595,7 @@ class Dynamic_SequenceOfMethods : public MMgt_TShared {
 };
 %extend Dynamic_SequenceOfMethods {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_SequenceOfMethods {
@@ -1627,7 +1629,7 @@ class Dynamic_RealParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_RealParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_RealParameter {
@@ -1697,7 +1699,7 @@ class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
 };
 %extend Dynamic_SequenceOfFuzzyDefinitions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_SequenceOfFuzzyDefinitions {
@@ -1733,7 +1735,7 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_BooleanParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_BooleanParameter {
@@ -1771,7 +1773,7 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 };
 %extend Dynamic_FuzzyDefinitionsDictionary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_FuzzyDefinitionsDictionary {
@@ -1815,7 +1817,7 @@ class Dynamic_DynamicInstance : public MMgt_TShared {
 };
 %extend Dynamic_DynamicInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_DynamicInstance {
@@ -1939,7 +1941,7 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 };
 %extend Dynamic_SequenceOfClasses {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_SequenceOfClasses {
@@ -1975,7 +1977,7 @@ class Dynamic_Variable : public MMgt_TShared {
 };
 %extend Dynamic_Variable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_Variable {
@@ -1999,7 +2001,7 @@ class Dynamic_VariableGroup : public Dynamic_Variable {
 };
 %extend Dynamic_VariableGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_VariableGroup {
@@ -2033,7 +2035,7 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 };
 %extend Dynamic_CompositMethod {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_CompositMethod {
@@ -2069,7 +2071,7 @@ class Dynamic_ParameterNode : public MMgt_TShared {
 };
 %extend Dynamic_ParameterNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_ParameterNode {
@@ -2095,7 +2097,7 @@ class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 };
 %extend Dynamic_AbstractVariableInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_AbstractVariableInstance {
@@ -2129,7 +2131,7 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_ObjectParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_ObjectParameter {
@@ -2157,7 +2159,7 @@ class Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public TCollection_SeqNode {
 };
 %extend Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions {
@@ -2185,7 +2187,7 @@ class Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public TCollection_SeqNode 
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethodDefinitions {
@@ -2215,7 +2217,7 @@ class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 };
 %extend Dynamic_FuzzyDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_FuzzyDefinition {
@@ -2245,7 +2247,7 @@ class Dynamic_VariableInstance : public Dynamic_AbstractVariableInstance {
 };
 %extend Dynamic_VariableInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_VariableInstance {
@@ -2279,7 +2281,7 @@ class Dynamic_IntegerParameter : public Dynamic_Parameter {
 };
 %extend Dynamic_IntegerParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_IntegerParameter {
@@ -2311,7 +2313,7 @@ class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
 };
 %extend Dynamic_DynamicDerivedClass {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_DynamicDerivedClass {
@@ -2351,7 +2353,7 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 };
 %extend Dynamic_MethodDefinitionsDictionary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_MethodDefinitionsDictionary {
@@ -2379,7 +2381,7 @@ class Dynamic_SequenceNodeOfSeqOfMethods : public TCollection_SeqNode {
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethods {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_SequenceNodeOfSeqOfMethods {
@@ -2463,7 +2465,7 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 };
 %extend Dynamic_CompositVariableInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dynamic_CompositVariableInstance {

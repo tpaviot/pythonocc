@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -716,7 +718,7 @@ class ShapeUpgrade_SplitCurve : public MMgt_TShared {
 };
 %extend ShapeUpgrade_SplitCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitCurve {
@@ -746,7 +748,7 @@ class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 };
 %extend ShapeUpgrade_SplitCurve3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitCurve3d {
@@ -784,7 +786,7 @@ class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 };
 %extend ShapeUpgrade_ConvertCurve3dToBezier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_ConvertCurve3dToBezier {
@@ -830,7 +832,7 @@ class ShapeUpgrade_Tool : public MMgt_TShared {
 };
 %extend ShapeUpgrade_Tool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_Tool {
@@ -874,7 +876,7 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_RemoveInternalWires {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_RemoveInternalWires {
@@ -908,7 +910,7 @@ class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 };
 %extend ShapeUpgrade_SplitCurve3dContinuity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitCurve3dContinuity {
@@ -956,7 +958,7 @@ class ShapeUpgrade_SplitSurface : public MMgt_TShared {
 };
 %extend ShapeUpgrade_SplitSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitSurface {
@@ -986,7 +988,7 @@ class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 };
 %extend ShapeUpgrade_SplitSurfaceAngle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitSurfaceAngle {
@@ -1090,7 +1092,7 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_FixSmallCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_FixSmallCurves {
@@ -1138,7 +1140,7 @@ class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_EdgeDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_EdgeDivide {
@@ -1164,7 +1166,7 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 };
 %extend ShapeUpgrade_ClosedEdgeDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_ClosedEdgeDivide {
@@ -1246,7 +1248,7 @@ class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_FaceDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_FaceDivide {
@@ -1274,7 +1276,7 @@ class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 };
 %extend ShapeUpgrade_FaceDivideArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_FaceDivideArea {
@@ -1302,7 +1304,7 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 };
 %extend ShapeUpgrade_FixSmallBezierCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_FixSmallBezierCurves {
@@ -1348,7 +1350,7 @@ class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 };
 %extend ShapeUpgrade_SplitSurfaceArea {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitSurfaceArea {
@@ -1382,7 +1384,7 @@ class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 };
 %extend ShapeUpgrade_SplitCurve2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitCurve2d {
@@ -1410,7 +1412,7 @@ class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 };
 %extend ShapeUpgrade_ConvertCurve2dToBezier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_ConvertCurve2dToBezier {
@@ -1444,7 +1446,7 @@ class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 };
 %extend ShapeUpgrade_ClosedFaceDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_ClosedFaceDivide {
@@ -1534,7 +1536,7 @@ class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
 };
 %extend ShapeUpgrade_SplitSurfaceContinuity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitSurfaceContinuity {
@@ -1598,7 +1600,7 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 };
 %extend ShapeUpgrade_WireDivide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_WireDivide {
@@ -1652,7 +1654,7 @@ class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
 };
 %extend ShapeUpgrade_SplitCurve2dContinuity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_SplitCurve2dContinuity {
@@ -1700,7 +1702,7 @@ class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurfac
 };
 %extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_ConvertSurfaceToBezierBasis {
@@ -1770,7 +1772,7 @@ class ShapeUpgrade_RemoveLocations : public MMgt_TShared {
 };
 %extend ShapeUpgrade_RemoveLocations {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeUpgrade_RemoveLocations {

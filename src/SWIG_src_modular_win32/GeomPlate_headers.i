@@ -56,27 +56,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GeomPlate_Aij.hxx>
-#include<GeomPlate_Array1OfHCurveOnSurface.hxx>
-#include<GeomPlate_Array1OfSequenceOfReal.hxx>
-#include<GeomPlate_BuildAveragePlane.hxx>
-#include<GeomPlate_BuildPlateSurface.hxx>
-#include<GeomPlate_CurveConstraint.hxx>
-#include<GeomPlate_HArray1OfHCurveOnSurface.hxx>
-#include<GeomPlate_HArray1OfSequenceOfReal.hxx>
-#include<GeomPlate_HSequenceOfCurveConstraint.hxx>
-#include<GeomPlate_HSequenceOfPointConstraint.hxx>
-#include<GeomPlate_MakeApprox.hxx>
-#include<GeomPlate_PlateG0Criterion.hxx>
-#include<GeomPlate_PlateG1Criterion.hxx>
-#include<GeomPlate_PointConstraint.hxx>
-#include<GeomPlate_SequenceNodeOfSequenceOfAij.hxx>
-#include<GeomPlate_SequenceNodeOfSequenceOfCurveConstraint.hxx>
-#include<GeomPlate_SequenceNodeOfSequenceOfPointConstraint.hxx>
-#include<GeomPlate_SequenceOfAij.hxx>
-#include<GeomPlate_SequenceOfCurveConstraint.hxx>
-#include<GeomPlate_SequenceOfPointConstraint.hxx>
-#include<GeomPlate_Surface.hxx>
 
 // Needed headers necessary for compilation.
 

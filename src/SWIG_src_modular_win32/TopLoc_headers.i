@@ -41,18 +41,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TopLoc_Datum3D.hxx>
-#include<TopLoc_IndexedMapNodeOfIndexedMapOfLocation.hxx>
-#include<TopLoc_IndexedMapOfLocation.hxx>
-#include<TopLoc_ItemLocation.hxx>
-#include<TopLoc_Location.hxx>
-#include<TopLoc_MapIteratorOfMapOfLocation.hxx>
-#include<TopLoc_MapLocationHasher.hxx>
-#include<TopLoc_MapOfLocation.hxx>
-#include<TopLoc_SListNodeOfSListOfItemLocation.hxx>
-#include<TopLoc_SListOfItemLocation.hxx>
-#include<TopLoc_StdMapNodeOfMapOfLocation.hxx>
-#include<TopLoc_TrsfPtr.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -208,7 +210,7 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_ScopeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMFunction_ScopeDriver {
@@ -256,7 +258,7 @@ class XmlMFunction_GraphNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMFunction_GraphNodeDriver {
@@ -288,7 +290,7 @@ class XmlMFunction_FunctionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMFunction_FunctionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMFunction_FunctionDriver {

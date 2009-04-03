@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -386,7 +388,7 @@ class NIS_InteractiveObject : public Standard_Transient {
 };
 %extend NIS_InteractiveObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_InteractiveObject {
@@ -470,7 +472,7 @@ class NIS_Triangulated : public NIS_InteractiveObject {
 };
 %extend NIS_Triangulated {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_Triangulated {
@@ -548,7 +550,7 @@ class NIS_Drawer : public Standard_Transient {
 };
 %extend NIS_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_Drawer {
@@ -590,7 +592,7 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 };
 %extend NIS_SurfaceDrawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_SurfaceDrawer {
@@ -670,7 +672,7 @@ class NIS_InteractiveContext : public Standard_Transient {
 };
 %extend NIS_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_InteractiveContext {
@@ -722,7 +724,7 @@ class NIS_Surface : public NIS_InteractiveObject {
 };
 %extend NIS_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_Surface {
@@ -774,7 +776,7 @@ class NIS_SelectFilter : public Standard_Transient {
 };
 %extend NIS_SelectFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_SelectFilter {
@@ -814,7 +816,7 @@ class NIS_View : public V3d_OrthographicView {
 };
 %extend NIS_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_View {
@@ -850,7 +852,7 @@ class NIS_TriangulatedDrawer : public NIS_Drawer {
 };
 %extend NIS_TriangulatedDrawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NIS_TriangulatedDrawer {

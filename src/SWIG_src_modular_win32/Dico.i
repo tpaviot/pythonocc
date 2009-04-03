@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -261,7 +263,7 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 };
 %extend Dico_DictionaryOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dico_DictionaryOfInteger {
@@ -323,7 +325,7 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 };
 %extend Dico_StackItemOfDictionaryOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dico_StackItemOfDictionaryOfInteger {
@@ -357,7 +359,7 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 };
 %extend Dico_StackItemOfDictionaryOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dico_StackItemOfDictionaryOfTransient {
@@ -445,7 +447,7 @@ class Dico_DictionaryOfTransient : public MMgt_TShared {
 };
 %extend Dico_DictionaryOfTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Dico_DictionaryOfTransient {

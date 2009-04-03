@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -889,7 +891,7 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_Arra
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString {
@@ -973,7 +975,7 @@ class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
 };
 %extend PColStd_HDoubleListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HDoubleListOfInteger {
@@ -1255,7 +1257,7 @@ class PColStd_HSequenceOfHAsciiString : public Standard_Persistent {
 };
 %extend PColStd_HSequenceOfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HSequenceOfHAsciiString {
@@ -1349,7 +1351,7 @@ class PColStd_HSequenceOfReal : public Standard_Persistent {
 };
 %extend PColStd_HSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HSequenceOfReal {
@@ -1407,7 +1409,7 @@ class PColStd_SeqNodeOfHSequenceOfReal : public PMMgt_PManaged {
 };
 %extend PColStd_SeqNodeOfHSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_SeqNodeOfHSequenceOfReal {
@@ -1465,7 +1467,7 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfInteger {
@@ -1519,7 +1521,7 @@ class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
 };
 %extend PColStd_HSingleListOfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HSingleListOfPersistent {
@@ -1557,7 +1559,7 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public PStandard_ArrayNod
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfPersistent {
@@ -1651,7 +1653,7 @@ class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
 };
 %extend PColStd_HSequenceOfHExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HSequenceOfHExtendedString {
@@ -1727,7 +1729,7 @@ class PColStd_HArray1OfReal : public Standard_Persistent {
 };
 %extend PColStd_HArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HArray1OfReal {
@@ -1797,7 +1799,7 @@ class PColStd_HArray2OfPersistent : public Standard_Persistent {
 };
 %extend PColStd_HArray2OfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HArray2OfPersistent {
@@ -1835,7 +1837,7 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public PStandard_ArrayNod
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfPersistent {
@@ -1987,7 +1989,7 @@ class PColStd_SeqNodeOfHSequenceOfInteger : public PMMgt_PManaged {
 };
 %extend PColStd_SeqNodeOfHSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_SeqNodeOfHSequenceOfInteger {
@@ -2063,7 +2065,7 @@ class PColStd_SeqNodeOfHSequenceOfHAsciiString : public PMMgt_PManaged {
 };
 %extend PColStd_SeqNodeOfHSequenceOfHAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_SeqNodeOfHSequenceOfHAsciiString {
@@ -2127,7 +2129,7 @@ class PColStd_HDoubleListOfPersistent : public PMMgt_PManaged {
 };
 %extend PColStd_HDoubleListOfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HDoubleListOfPersistent {
@@ -2165,7 +2167,7 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray2OfReal {
@@ -2203,7 +2205,7 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfReal : public PStandard_ArrayNode {
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfReal {
@@ -2257,7 +2259,7 @@ class PColStd_HSingleListOfReal : public PMMgt_PManaged {
 };
 %extend PColStd_HSingleListOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HSingleListOfReal {
@@ -2343,7 +2345,7 @@ class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
 };
 %extend PColStd_HDoubleListOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HDoubleListOfReal {
@@ -2437,7 +2439,7 @@ class PColStd_HSequenceOfInteger : public Standard_Persistent {
 };
 %extend PColStd_HSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HSequenceOfInteger {
@@ -2575,7 +2577,7 @@ class PColStd_HArray1OfInteger : public Standard_Persistent {
 };
 %extend PColStd_HArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HArray1OfInteger {
@@ -2669,7 +2671,7 @@ class PColStd_HSequenceOfPersistent : public Standard_Persistent {
 };
 %extend PColStd_HSequenceOfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HSequenceOfPersistent {
@@ -2745,7 +2747,7 @@ class PColStd_HArray1OfPersistent : public Standard_Persistent {
 };
 %extend PColStd_HArray1OfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HArray1OfPersistent {
@@ -2815,7 +2817,7 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public PStandard_ArrayNode {
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_VArrayNodeOfFieldOfHArray1OfInteger {
@@ -2899,7 +2901,7 @@ class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
 };
 %extend PColStd_HSingleListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HSingleListOfInteger {
@@ -2957,7 +2959,7 @@ class PColStd_SeqNodeOfHSequenceOfHExtendedString : public PMMgt_PManaged {
 };
 %extend PColStd_SeqNodeOfHSequenceOfHExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_SeqNodeOfHSequenceOfHExtendedString {
@@ -3027,7 +3029,7 @@ class PColStd_HArray2OfInteger : public Standard_Persistent {
 };
 %extend PColStd_HArray2OfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HArray2OfInteger {
@@ -3097,7 +3099,7 @@ class PColStd_HArray2OfReal : public Standard_Persistent {
 };
 %extend PColStd_HArray2OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HArray2OfReal {
@@ -3173,7 +3175,7 @@ class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
 };
 %extend PColStd_SeqNodeOfHSequenceOfPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_SeqNodeOfHSequenceOfPersistent {
@@ -3229,7 +3231,7 @@ class PColStd_HArray1OfExtendedString : public Standard_Persistent {
 };
 %extend PColStd_HArray1OfExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColStd_HArray1OfExtendedString {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1667,7 +1669,7 @@ class StepRepr_ShapeAspectRelationship : public MMgt_TShared {
 };
 %extend StepRepr_ShapeAspectRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ShapeAspectRelationship {
@@ -1691,7 +1693,7 @@ class StepRepr_ShapeAspectTransition : public StepRepr_ShapeAspectRelationship {
 };
 %extend StepRepr_ShapeAspectTransition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ShapeAspectTransition {
@@ -1727,7 +1729,7 @@ class StepRepr_ConfigurationDesign : public MMgt_TShared {
 };
 %extend StepRepr_ConfigurationDesign {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ConfigurationDesign {
@@ -1771,7 +1773,7 @@ class StepRepr_RepresentationRelationship : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_RepresentationRelationship {
@@ -1795,7 +1797,7 @@ class StepRepr_ShapeRepresentationRelationship : public StepRepr_RepresentationR
 };
 %extend StepRepr_ShapeRepresentationRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ShapeRepresentationRelationship {
@@ -1825,7 +1827,7 @@ class StepRepr_RepresentationRelationshipWithTransformation : public StepRepr_Sh
 };
 %extend StepRepr_RepresentationRelationshipWithTransformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_RepresentationRelationshipWithTransformation {
@@ -1895,7 +1897,7 @@ class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_HSequenceOfRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_HSequenceOfRepresentationItem {
@@ -1939,7 +1941,7 @@ class StepRepr_Representation : public MMgt_TShared {
 };
 %extend StepRepr_Representation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_Representation {
@@ -1983,7 +1985,7 @@ class StepRepr_PropertyDefinitionRelationship : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinitionRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_PropertyDefinitionRelationship {
@@ -2029,7 +2031,7 @@ class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_HArray1OfMaterialPropertyRepresentation {
@@ -2075,7 +2077,7 @@ class StepRepr_ProductConcept : public MMgt_TShared {
 };
 %extend StepRepr_ProductConcept {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ProductConcept {
@@ -2127,7 +2129,7 @@ class StepRepr_SuppliedPartRelationship : public StepBasic_ProductDefinitionRela
 };
 %extend StepRepr_SuppliedPartRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_SuppliedPartRelationship {
@@ -2171,7 +2173,7 @@ class StepRepr_ShapeAspect : public MMgt_TShared {
 };
 %extend StepRepr_ShapeAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ShapeAspect {
@@ -2195,7 +2197,7 @@ class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 };
 %extend StepRepr_DerivedShapeAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_DerivedShapeAspect {
@@ -2219,7 +2221,7 @@ class StepRepr_Extension : public StepRepr_DerivedShapeAspect {
 };
 %extend StepRepr_Extension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_Extension {
@@ -2247,7 +2249,7 @@ class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_S
 };
 %extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_SequenceNodeOfSequenceOfRepresentationItem {
@@ -2273,7 +2275,7 @@ class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelati
 };
 %extend StepRepr_ProductDefinitionUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ProductDefinitionUsage {
@@ -2309,7 +2311,7 @@ class StepRepr_RepresentationContext : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_RepresentationContext {
@@ -2333,7 +2335,7 @@ class StepRepr_ParametricRepresentationContext : public StepRepr_RepresentationC
 };
 %extend StepRepr_ParametricRepresentationContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ParametricRepresentationContext {
@@ -2359,7 +2361,7 @@ class StepRepr_ShapeRepresentationRelationshipWithTransformation : public StepRe
 };
 %extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ShapeRepresentationRelationshipWithTransformation {
@@ -2405,7 +2407,7 @@ class StepRepr_HArray1OfRepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_HArray1OfRepresentationItem {
@@ -2441,7 +2443,7 @@ class StepRepr_MaterialDesignation : public MMgt_TShared {
 };
 %extend StepRepr_MaterialDesignation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_MaterialDesignation {
@@ -2477,7 +2479,7 @@ class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
 };
 %extend StepRepr_FunctionallyDefinedTransformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_FunctionallyDefinedTransformation {
@@ -2503,7 +2505,7 @@ class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
 };
 %extend StepRepr_CompositeShapeAspect {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_CompositeShapeAspect {
@@ -2537,7 +2539,7 @@ class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
 };
 %extend StepRepr_AssemblyComponentUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_AssemblyComponentUsage {
@@ -2583,7 +2585,7 @@ class StepRepr_HArray1OfPropertyDefinitionRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_HArray1OfPropertyDefinitionRepresentation {
@@ -2615,7 +2617,7 @@ class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffe
 };
 %extend StepRepr_ConfigurationEffectivity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ConfigurationEffectivity {
@@ -2653,7 +2655,7 @@ class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_Representation
 };
 %extend StepRepr_GlobalUncertaintyAssignedContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_GlobalUncertaintyAssignedContext {
@@ -2689,7 +2691,7 @@ class StepRepr_PropertyDefinitionRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_PropertyDefinitionRepresentation {
@@ -2719,7 +2721,7 @@ class StepRepr_MaterialPropertyRepresentation : public StepRepr_PropertyDefiniti
 };
 %extend StepRepr_MaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_MaterialPropertyRepresentation {
@@ -2755,7 +2757,7 @@ class StepRepr_SpecifiedHigherUsageOccurrence : public StepRepr_AssemblyComponen
 };
 %extend StepRepr_SpecifiedHigherUsageOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_SpecifiedHigherUsageOccurrence {
@@ -2787,7 +2789,7 @@ class StepRepr_RepresentationItem : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_RepresentationItem {
@@ -2821,7 +2823,7 @@ class StepRepr_MappedItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_MappedItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_MappedItem {
@@ -2847,7 +2849,7 @@ class StepRepr_StructuralResponsePropertyDefinitionRepresentation : public StepR
 };
 %extend StepRepr_StructuralResponsePropertyDefinitionRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_StructuralResponsePropertyDefinitionRepresentation {
@@ -2887,7 +2889,7 @@ class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_Representation
 };
 %extend StepRepr_ReprItemAndLengthMeasureWithUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ReprItemAndLengthMeasureWithUnit {
@@ -2967,7 +2969,7 @@ class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRela
 };
 %extend StepRepr_ShapeAspectDerivingRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ShapeAspectDerivingRelationship {
@@ -3023,7 +3025,7 @@ class StepRepr_RepresentationMap : public MMgt_TShared {
 };
 %extend StepRepr_RepresentationMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_RepresentationMap {
@@ -3105,7 +3107,7 @@ class StepRepr_PropertyDefinition : public MMgt_TShared {
 };
 %extend StepRepr_PropertyDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_PropertyDefinition {
@@ -3129,7 +3131,7 @@ class StepRepr_ProductDefinitionShape : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_ProductDefinitionShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ProductDefinitionShape {
@@ -3167,7 +3169,7 @@ class StepRepr_CompoundRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_CompoundRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_CompoundRepresentationItem {
@@ -3193,7 +3195,7 @@ class StepRepr_NextAssemblyUsageOccurrence : public StepRepr_AssemblyComponentUs
 };
 %extend StepRepr_NextAssemblyUsageOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_NextAssemblyUsageOccurrence {
@@ -3231,7 +3233,7 @@ class StepRepr_GlobalUnitAssignedContext : public StepRepr_RepresentationContext
 };
 %extend StepRepr_GlobalUnitAssignedContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_GlobalUnitAssignedContext {
@@ -3259,7 +3261,7 @@ class StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public T
 };
 %extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation {
@@ -3285,7 +3287,7 @@ class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
 };
 %extend StepRepr_ValueRange {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ValueRange {
@@ -3365,7 +3367,7 @@ class StepRepr_ExternallyDefinedRepresentation : public StepRepr_Representation 
 };
 %extend StepRepr_ExternallyDefinedRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ExternallyDefinedRepresentation {
@@ -3391,7 +3393,7 @@ class StepRepr_DefinitionalRepresentation : public StepRepr_Representation {
 };
 %extend StepRepr_DefinitionalRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_DefinitionalRepresentation {
@@ -3435,7 +3437,7 @@ class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
 };
 %extend StepRepr_AssemblyComponentUsageSubstitute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_AssemblyComponentUsageSubstitute {
@@ -3467,7 +3469,7 @@ class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyCompon
 };
 %extend StepRepr_QuantifiedAssemblyComponentUsage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_QuantifiedAssemblyComponentUsage {
@@ -3523,7 +3525,7 @@ class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationIte
 };
 %extend StepRepr_DescriptiveRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_DescriptiveRepresentationItem {
@@ -3593,7 +3595,7 @@ class StepRepr_HSequenceOfMaterialPropertyRepresentation : public MMgt_TShared {
 };
 %extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_HSequenceOfMaterialPropertyRepresentation {
@@ -3633,7 +3635,7 @@ class StepRepr_DataEnvironment : public MMgt_TShared {
 };
 %extend StepRepr_DataEnvironment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_DataEnvironment {
@@ -3725,7 +3727,7 @@ class StepRepr_MeasureRepresentationItem : public StepRepr_RepresentationItem {
 };
 %extend StepRepr_MeasureRepresentationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_MeasureRepresentationItem {
@@ -3751,7 +3753,7 @@ class StepRepr_MaterialProperty : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_MaterialProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_MaterialProperty {
@@ -3795,7 +3797,7 @@ class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
 };
 %extend StepRepr_ItemDefinedTransformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ItemDefinedTransformation {
@@ -3821,7 +3823,7 @@ class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsag
 };
 %extend StepRepr_PromissoryUsageOccurrence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_PromissoryUsageOccurrence {
@@ -3847,7 +3849,7 @@ class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
 };
 %extend StepRepr_StructuralResponseProperty {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_StructuralResponseProperty {
@@ -3887,7 +3889,7 @@ class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
 };
 %extend StepRepr_MakeFromUsageOption {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_MakeFromUsageOption {
@@ -3939,7 +3941,7 @@ class StepRepr_ConfigurationItem : public MMgt_TShared {
 };
 %extend StepRepr_ConfigurationItem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepRepr_ConfigurationItem {

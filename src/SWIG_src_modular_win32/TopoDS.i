@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -529,7 +531,7 @@ class TopoDS_Shape {
 };
 %extend TopoDS_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_Shape {
@@ -571,7 +573,7 @@ class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 };
 %extend TopoDS_ListNodeOfListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_ListNodeOfListOfShape {
@@ -619,7 +621,7 @@ class TopoDS_FrozenShape : public Standard_DomainError {
 };
 %extend TopoDS_FrozenShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_FrozenShape {
@@ -675,7 +677,7 @@ class TopoDS_TShape : public MMgt_TShared {
 };
 %extend TopoDS_TShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TShape {
@@ -859,7 +861,7 @@ class TopoDS_TWire : public TopoDS_TShape {
 };
 %extend TopoDS_TWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TWire {
@@ -945,7 +947,7 @@ class TopoDS_HShape : public MMgt_TShared {
 };
 %extend TopoDS_HShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_HShape {
@@ -989,7 +991,7 @@ class TopoDS_TCompound : public TopoDS_TShape {
 };
 %extend TopoDS_TCompound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TCompound {
@@ -1015,7 +1017,7 @@ class TopoDS_TEdge : public TopoDS_TShape {
 };
 %extend TopoDS_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TEdge {
@@ -1045,7 +1047,7 @@ class TopoDS_TShell : public TopoDS_TShape {
 };
 %extend TopoDS_TShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TShell {
@@ -1097,7 +1099,7 @@ class TopoDS_UnCompatibleShapes : public Standard_DomainError {
 };
 %extend TopoDS_UnCompatibleShapes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_UnCompatibleShapes {
@@ -1123,7 +1125,7 @@ class TopoDS_TVertex : public TopoDS_TShape {
 };
 %extend TopoDS_TVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TVertex {
@@ -1153,7 +1155,7 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 };
 %extend TopoDS_TCompSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TCompSolid {
@@ -1197,7 +1199,7 @@ class TopoDS_TFace : public TopoDS_TShape {
 };
 %extend TopoDS_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TFace {
@@ -1241,7 +1243,7 @@ class TopoDS_TSolid : public TopoDS_TShape {
 };
 %extend TopoDS_TSolid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopoDS_TSolid {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -606,7 +608,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval {
@@ -636,7 +638,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeReal {
@@ -714,7 +716,7 @@ class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 };
 %extend BRepOffset_ListNodeOfListOfInterval {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepOffset_ListNodeOfListOfInterval {
@@ -820,7 +822,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeOffset {
@@ -942,7 +944,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapN
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape {

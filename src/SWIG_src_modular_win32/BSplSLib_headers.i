@@ -27,8 +27,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BSplSLib.hxx>
-#include<BSplSLib_EvaluatorFunction.hxx>
 
 // Needed headers necessary for compilation.
 

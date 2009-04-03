@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -335,7 +337,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfNode {
@@ -617,7 +619,7 @@ class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfStrip {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AdvApp2Var_SequenceNodeOfStrip {
@@ -699,7 +701,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfPatch {
@@ -775,7 +777,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AdvApp2Var_SequenceNodeOfSequenceOfStrip {

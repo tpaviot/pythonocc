@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -380,7 +382,7 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 };
 %extend TFunction_HArray1OfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_HArray1OfDataMapOfGUIDDriver {
@@ -410,7 +412,7 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 };
 %extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_DataMapNodeOfDataMapOfLabelListOfLabel {
@@ -512,7 +514,7 @@ class TFunction_Scope : public TDF_Attribute {
 };
 %extend TFunction_Scope {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_Scope {
@@ -688,7 +690,7 @@ class TFunction_Function : public TDF_Attribute {
 };
 %extend TFunction_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_Function {
@@ -820,7 +822,7 @@ class TFunction_DriverTable : public MMgt_TShared {
 };
 %extend TFunction_DriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_DriverTable {
@@ -872,7 +874,7 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 };
 %extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_DataMapNodeOfDataMapOfGUIDDriver {
@@ -904,7 +906,7 @@ class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapN
 };
 %extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel {
@@ -974,7 +976,7 @@ class TFunction_GraphNode : public TDF_Attribute {
 };
 %extend TFunction_GraphNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_GraphNode {
@@ -1012,7 +1014,7 @@ class TFunction_Driver : public MMgt_TShared {
 };
 %extend TFunction_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TFunction_Driver {

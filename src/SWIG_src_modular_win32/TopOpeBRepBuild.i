@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -549,7 +551,7 @@ class TopOpeBRepBuild_Loop : public MMgt_TShared {
 };
 %extend TopOpeBRepBuild_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_Loop {
@@ -591,7 +593,7 @@ class TopOpeBRepBuild_Pave : public TopOpeBRepBuild_Loop {
 };
 %extend TopOpeBRepBuild_Pave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_Pave {
@@ -1069,7 +1071,7 @@ class TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfListOfLoop {
@@ -1261,7 +1263,7 @@ class TopOpeBRepBuild_ListNodeOfListOfPave : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfPave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfPave {
@@ -1879,7 +1881,7 @@ class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
 };
 %extend TopOpeBRepBuild_HBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_HBuilder {
@@ -2057,7 +2059,7 @@ class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : publ
 };
 %extend TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo {
@@ -2085,7 +2087,7 @@ class TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public TCollection_MapN
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape {
@@ -2231,7 +2233,7 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape {
@@ -2289,7 +2291,7 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNo
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal {
@@ -2685,7 +2687,7 @@ class TopOpeBRepBuild_ListNodeOfListOfLoop : public TCollection_MapNode {
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_ListNodeOfListOfLoop {
@@ -2809,7 +2811,7 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public TCollection_Ma
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger {

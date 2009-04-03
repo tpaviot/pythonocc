@@ -42,17 +42,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PShort_FieldOfHArray1OfShortReal.hxx>
-#include<PShort_FieldOfHArray2OfShortReal.hxx>
-#include<PShort_HArray1OfShortReal.hxx>
-#include<PShort_HArray2OfShortReal.hxx>
-#include<PShort_HSequenceOfShortReal.hxx>
-#include<PShort_SeqExplorerOfHSequenceOfShortReal.hxx>
-#include<PShort_SeqNodeOfHSequenceOfShortReal.hxx>
-#include<PShort_VArrayNodeOfFieldOfHArray1OfShortReal.hxx>
-#include<PShort_VArrayNodeOfFieldOfHArray2OfShortReal.hxx>
-#include<PShort_VArrayTNodeOfFieldOfHArray1OfShortReal.hxx>
-#include<PShort_VArrayTNodeOfFieldOfHArray2OfShortReal.hxx>
 
 // Needed headers necessary for compilation.
 

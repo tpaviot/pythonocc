@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -449,7 +451,7 @@ class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode 
 };
 %extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Approx_SequenceNodeOfSequenceOfArray1OfPnt2d {
@@ -561,7 +563,7 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 };
 %extend Approx_HArray1OfAdHSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Approx_HArray1OfAdHSurface {
@@ -619,7 +621,7 @@ class Approx_SweepFunction : public MMgt_TShared {
 };
 %extend Approx_SweepFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Approx_SweepFunction {
@@ -701,7 +703,7 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 };
 %extend Approx_HArray1OfGTrsf2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Approx_HArray1OfGTrsf2d {
@@ -755,7 +757,7 @@ class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode 
 };
 %extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Approx_SequenceNodeOfSequenceOfHArray1OfReal {
@@ -877,7 +879,7 @@ class Approx_CurvlinFunc : public MMgt_TShared {
 };
 %extend Approx_CurvlinFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Approx_CurvlinFunc {

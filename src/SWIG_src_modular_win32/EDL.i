@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -434,7 +436,7 @@ class EDL_API : public MMgt_TShared {
 };
 %extend EDL_API {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_API {
@@ -464,7 +466,7 @@ class EDL_DataMapNodeOfMapOfFile : public TCollection_MapNode {
 };
 %extend EDL_DataMapNodeOfMapOfFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_DataMapNodeOfMapOfFile {
@@ -494,7 +496,7 @@ class EDL_DataMapNodeOfMapOfLibrary : public TCollection_MapNode {
 };
 %extend EDL_DataMapNodeOfMapOfLibrary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_DataMapNodeOfMapOfLibrary {
@@ -608,7 +610,7 @@ class EDL_Interpretor : public MMgt_TShared {
 };
 %extend EDL_Interpretor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_Interpretor {
@@ -636,7 +638,7 @@ class EDL_SequenceNodeOfSequenceOfVariable : public TCollection_SeqNode {
 };
 %extend EDL_SequenceNodeOfSequenceOfVariable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_SequenceNodeOfSequenceOfVariable {
@@ -696,7 +698,7 @@ class EDL_DataMapNodeOfMapOfTemplate : public TCollection_MapNode {
 };
 %extend EDL_DataMapNodeOfMapOfTemplate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_DataMapNodeOfMapOfTemplate {
@@ -822,7 +824,7 @@ class EDL_StackNodeOfStackOfBoolean : public TCollection_MapNode {
 };
 %extend EDL_StackNodeOfStackOfBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_StackNodeOfStackOfBoolean {
@@ -952,7 +954,7 @@ class EDL_HSequenceOfVariable : public MMgt_TShared {
 };
 %extend EDL_HSequenceOfVariable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_HSequenceOfVariable {
@@ -1248,7 +1250,7 @@ class EDL_DataMapNodeOfMapOfVariable : public TCollection_MapNode {
 };
 %extend EDL_DataMapNodeOfMapOfVariable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend EDL_DataMapNodeOfMapOfVariable {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -728,7 +730,7 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_DataMapNodeOfDataMapOfIOStatus {
@@ -856,7 +858,7 @@ class AIS2D_LocalStatus : public MMgt_TShared {
 };
 %extend AIS2D_LocalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_LocalStatus {
@@ -886,7 +888,7 @@ class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLocStat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLocStat {
@@ -970,7 +972,7 @@ class AIS2D_PrimitiveArchit : public MMgt_TShared {
 };
 %extend AIS2D_PrimitiveArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_PrimitiveArchit {
@@ -1092,7 +1094,7 @@ class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 };
 %extend AIS2D_ListNodeOfListOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_ListNodeOfListOfIO {
@@ -1122,7 +1124,7 @@ class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_DataMapNodeOfDataMapOfPrimAspects {
@@ -1348,7 +1350,7 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 };
 %extend AIS2D_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_InteractiveContext {
@@ -1436,7 +1438,7 @@ class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
 };
 %extend AIS2D_InteractiveObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_InteractiveObject {
@@ -1484,7 +1486,7 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 };
 %extend AIS2D_ProjShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_ProjShape {
@@ -1550,7 +1552,7 @@ class AIS2D_GlobalStatus : public MMgt_TShared {
 };
 %extend AIS2D_GlobalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_GlobalStatus {
@@ -1612,7 +1614,7 @@ class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 };
 %extend AIS2D_SequenceNodeOfSequenceOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_SequenceNodeOfSequenceOfIO {
@@ -1682,7 +1684,7 @@ class AIS2D_HSequenceOfIO : public MMgt_TShared {
 };
 %extend AIS2D_HSequenceOfIO {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_HSequenceOfIO {
@@ -1712,7 +1714,7 @@ class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_DataMapNodeOfDataMapOfLC {
@@ -1792,7 +1794,7 @@ class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
 };
 %extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_SequenceNodeOfSequenceOfPrimArchit {
@@ -1862,7 +1864,7 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 };
 %extend AIS2D_HSequenceOfPrimArchit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_HSequenceOfPrimArchit {
@@ -1950,7 +1952,7 @@ class AIS2D_LocalContext : public MMgt_TShared {
 };
 %extend AIS2D_LocalContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS2D_LocalContext {

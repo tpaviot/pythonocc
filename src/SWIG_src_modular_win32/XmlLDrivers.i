@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -212,7 +214,7 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 };
 %extend XmlLDrivers_DocumentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlLDrivers_DocumentRetrievalDriver {
@@ -246,7 +248,7 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 };
 %extend XmlLDrivers_DocumentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlLDrivers_DocumentStorageDriver {
@@ -328,7 +330,7 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 };
 %extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef {

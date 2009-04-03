@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1960,7 +1962,7 @@ class MDataStd_RealStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_RealStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RealStorageDriver {
@@ -1994,7 +1996,7 @@ class MDataStd_ReferenceArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ReferenceArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ReferenceArrayRetrievalDriver {
@@ -2028,7 +2030,7 @@ class MDataStd_TreeNodeRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_TreeNodeRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_TreeNodeRetrievalDriver {
@@ -2062,7 +2064,7 @@ class MDataStd_BooleanArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_BooleanArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_BooleanArrayRetrievalDriver {
@@ -2096,7 +2098,7 @@ class MDataStd_ConstraintRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ConstraintRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ConstraintRetrievalDriver {
@@ -2130,7 +2132,7 @@ class MDataStd_RelationRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_RelationRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RelationRetrievalDriver {
@@ -2164,7 +2166,7 @@ class MDataStd_ExtStringArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ExtStringArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ExtStringArrayStorageDriver {
@@ -2198,7 +2200,7 @@ class MDataStd_ConstraintStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ConstraintStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ConstraintStorageDriver {
@@ -2232,7 +2234,7 @@ class MDataStd_AxisStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_AxisStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_AxisStorageDriver {
@@ -2266,7 +2268,7 @@ class MDataStd_PlacementRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_PlacementRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_PlacementRetrievalDriver {
@@ -2300,7 +2302,7 @@ class MDataStd_ExpressionRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ExpressionRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ExpressionRetrievalDriver {
@@ -2334,7 +2336,7 @@ class MDataStd_TickRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_TickRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_TickRetrievalDriver {
@@ -2368,7 +2370,7 @@ class MDataStd_CommentStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_CommentStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_CommentStorageDriver {
@@ -2402,7 +2404,7 @@ class MDataStd_UAttributeRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_UAttributeRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_UAttributeRetrievalDriver {
@@ -2436,7 +2438,7 @@ class MDataStd_PlaneRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_PlaneRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_PlaneRetrievalDriver {
@@ -2470,7 +2472,7 @@ class MDataStd_RealArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_RealArrayRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RealArrayRetrievalDriver_1 {
@@ -2504,7 +2506,7 @@ class MDataStd_ByteArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_ByteArrayRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ByteArrayRetrievalDriver_1 {
@@ -2538,7 +2540,7 @@ class MDataStd_ReferenceListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ReferenceListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ReferenceListRetrievalDriver {
@@ -2572,7 +2574,7 @@ class MDataStd_ReferenceListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ReferenceListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ReferenceListStorageDriver {
@@ -2606,7 +2608,7 @@ class MDataStd_BooleanListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_BooleanListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_BooleanListRetrievalDriver {
@@ -2640,7 +2642,7 @@ class MDataStd_RealArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_RealArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RealArrayRetrievalDriver {
@@ -2674,7 +2676,7 @@ class MDataStd_NamedDataRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_NamedDataRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_NamedDataRetrievalDriver {
@@ -2708,7 +2710,7 @@ class MDataStd_IntegerListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_IntegerListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntegerListRetrievalDriver {
@@ -2742,7 +2744,7 @@ class MDataStd_DirectoryRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_DirectoryRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_DirectoryRetrievalDriver {
@@ -2776,7 +2778,7 @@ class MDataStd_AsciiStringRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_AsciiStringRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_AsciiStringRetrievalDriver {
@@ -2810,7 +2812,7 @@ class MDataStd_AxisRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_AxisRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_AxisRetrievalDriver {
@@ -2844,7 +2846,7 @@ class MDataStd_RelationStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_RelationStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RelationStorageDriver {
@@ -2878,7 +2880,7 @@ class MDataStd_BooleanListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_BooleanListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_BooleanListStorageDriver {
@@ -2912,7 +2914,7 @@ class MDataStd_NameRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_NameRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_NameRetrievalDriver {
@@ -2946,7 +2948,7 @@ class MDataStd_ShapeStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ShapeStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ShapeStorageDriver {
@@ -2980,7 +2982,7 @@ class MDataStd_PatternStdStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_PatternStdStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_PatternStdStorageDriver {
@@ -3014,7 +3016,7 @@ class MDataStd_PatternStdRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_PatternStdRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_PatternStdRetrievalDriver {
@@ -3048,7 +3050,7 @@ class MDataStd_IntegerListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_IntegerListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntegerListStorageDriver {
@@ -3082,7 +3084,7 @@ class MDataStd_IntPackedMapRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_IntPackedMapRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntPackedMapRetrievalDriver_1 {
@@ -3116,7 +3118,7 @@ class MDataStd_IntegerArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_IntegerArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntegerArrayStorageDriver {
@@ -3150,7 +3152,7 @@ class MDataStd_NoteBookRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_NoteBookRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_NoteBookRetrievalDriver {
@@ -3184,7 +3186,7 @@ class MDataStd_IntegerRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_IntegerRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntegerRetrievalDriver {
@@ -3218,7 +3220,7 @@ class MDataStd_BooleanArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_BooleanArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_BooleanArrayStorageDriver {
@@ -3252,7 +3254,7 @@ class MDataStd_ReferenceArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ReferenceArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ReferenceArrayStorageDriver {
@@ -3286,7 +3288,7 @@ class MDataStd_IntPackedMapStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_IntPackedMapStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntPackedMapStorageDriver {
@@ -3320,7 +3322,7 @@ class MDataStd_IntPackedMapRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_IntPackedMapRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntPackedMapRetrievalDriver {
@@ -3354,7 +3356,7 @@ class MDataStd_NamedDataStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_NamedDataStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_NamedDataStorageDriver {
@@ -3388,7 +3390,7 @@ class MDataStd_IntegerStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_IntegerStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntegerStorageDriver {
@@ -3422,7 +3424,7 @@ class MDataStd_TreeNodeStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_TreeNodeStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_TreeNodeStorageDriver {
@@ -3456,7 +3458,7 @@ class MDataStd_NoteBookStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_NoteBookStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_NoteBookStorageDriver {
@@ -3490,7 +3492,7 @@ class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_UAttributeStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_UAttributeStorageDriver {
@@ -3524,7 +3526,7 @@ class MDataStd_PointRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_PointRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_PointRetrievalDriver {
@@ -3558,7 +3560,7 @@ class MDataStd_VariableRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_VariableRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_VariableRetrievalDriver {
@@ -3592,7 +3594,7 @@ class MDataStd_ExtStringArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ExtStringArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ExtStringArrayRetrievalDriver {
@@ -3626,7 +3628,7 @@ class MDataStd_ByteArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ByteArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ByteArrayRetrievalDriver {
@@ -3660,7 +3662,7 @@ class MDataStd_NameStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_NameStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_NameStorageDriver {
@@ -3694,7 +3696,7 @@ class MDataStd_ExtStringListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ExtStringListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ExtStringListRetrievalDriver {
@@ -3728,7 +3730,7 @@ class MDataStd_RealListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_RealListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RealListStorageDriver {
@@ -3762,7 +3764,7 @@ class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ExtStringListStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ExtStringListStorageDriver {
@@ -3796,7 +3798,7 @@ class MDataStd_RealRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_RealRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RealRetrievalDriver {
@@ -3830,7 +3832,7 @@ class MDataStd_TickStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_TickStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_TickStorageDriver {
@@ -3864,7 +3866,7 @@ class MDataStd_ExtStringArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_ExtStringArrayRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ExtStringArrayRetrievalDriver_1 {
@@ -3898,7 +3900,7 @@ class MDataStd_PlacementStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_PlacementStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_PlacementStorageDriver {
@@ -3932,7 +3934,7 @@ class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_RealArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RealArrayStorageDriver {
@@ -3966,7 +3968,7 @@ class MDataStd_CommentRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_CommentRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_CommentRetrievalDriver {
@@ -4000,7 +4002,7 @@ class MDataStd_AsciiStringStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_AsciiStringStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_AsciiStringStorageDriver {
@@ -4034,7 +4036,7 @@ class MDataStd_VariableStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_VariableStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_VariableStorageDriver {
@@ -4068,7 +4070,7 @@ class MDataStd_ExpressionStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ExpressionStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ExpressionStorageDriver {
@@ -4102,7 +4104,7 @@ class MDataStd_PointStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_PointStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_PointStorageDriver {
@@ -4136,7 +4138,7 @@ class MDataStd_GeometryStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_GeometryStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_GeometryStorageDriver {
@@ -4204,7 +4206,7 @@ class MDataStd_ByteArrayStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_ByteArrayStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ByteArrayStorageDriver {
@@ -4238,7 +4240,7 @@ class MDataStd_IntegerArrayRetrievalDriver_1 : public MDF_ARDriver {
 };
 %extend MDataStd_IntegerArrayRetrievalDriver_1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntegerArrayRetrievalDriver_1 {
@@ -4272,7 +4274,7 @@ class MDataStd_RealListRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_RealListRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_RealListRetrievalDriver {
@@ -4306,7 +4308,7 @@ class MDataStd_ShapeRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_ShapeRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_ShapeRetrievalDriver {
@@ -4340,7 +4342,7 @@ class MDataStd_DirectoryStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_DirectoryStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_DirectoryStorageDriver {
@@ -4374,7 +4376,7 @@ class MDataStd_IntegerArrayRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_IntegerArrayRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_IntegerArrayRetrievalDriver {
@@ -4408,7 +4410,7 @@ class MDataStd_GeometryRetrievalDriver : public MDF_ARDriver {
 };
 %extend MDataStd_GeometryRetrievalDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_GeometryRetrievalDriver {
@@ -4442,7 +4444,7 @@ class MDataStd_PlaneStorageDriver : public MDF_ASDriver {
 };
 %extend MDataStd_PlaneStorageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MDataStd_PlaneStorageDriver {

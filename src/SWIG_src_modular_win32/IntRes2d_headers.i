@@ -39,18 +39,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntRes2d_Domain.hxx>
-#include<IntRes2d_Intersection.hxx>
-#include<IntRes2d_IntersectionPoint.hxx>
-#include<IntRes2d_IntersectionSegment.hxx>
-#include<IntRes2d_Position.hxx>
-#include<IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint.hxx>
-#include<IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment.hxx>
-#include<IntRes2d_SequenceOfIntersectionPoint.hxx>
-#include<IntRes2d_SequenceOfIntersectionSegment.hxx>
-#include<IntRes2d_Situation.hxx>
-#include<IntRes2d_Transition.hxx>
-#include<IntRes2d_TypeTrans.hxx>
 
 // Needed headers necessary for compilation.
 

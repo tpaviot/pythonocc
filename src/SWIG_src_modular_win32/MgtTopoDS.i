@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -245,7 +247,7 @@ class MgtTopoDS_TranslateTool : public MMgt_TShared {
 };
 %extend MgtTopoDS_TranslateTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MgtTopoDS_TranslateTool {
@@ -339,7 +341,7 @@ class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 };
 %extend MgtTopoDS_TranslateTool1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MgtTopoDS_TranslateTool1 {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -432,7 +434,7 @@ class TPrsStd_AISViewer : public TDF_Attribute {
 };
 %extend TPrsStd_AISViewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_AISViewer {
@@ -458,7 +460,7 @@ class TPrsStd_Driver : public MMgt_TShared {
 };
 %extend TPrsStd_Driver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_Driver {
@@ -484,7 +486,7 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_PlaneDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_PlaneDriver {
@@ -514,7 +516,7 @@ class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 };
 %extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_DataMapNodeOfDataMapOfGUIDDriver {
@@ -694,7 +696,7 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 };
 %extend TPrsStd_AISPresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_AISPresentation {
@@ -744,7 +746,7 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_PointDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_PointDriver {
@@ -772,7 +774,7 @@ class TPrsStd_AxisDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_AxisDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_AxisDriver {
@@ -810,7 +812,7 @@ class TPrsStd_DriverTable : public MMgt_TShared {
 };
 %extend TPrsStd_DriverTable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_DriverTable {
@@ -838,7 +840,7 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_GeometryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_GeometryDriver {
@@ -900,7 +902,7 @@ class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_NamedShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_NamedShapeDriver {
@@ -928,7 +930,7 @@ class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 };
 %extend TPrsStd_ConstraintDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TPrsStd_ConstraintDriver {

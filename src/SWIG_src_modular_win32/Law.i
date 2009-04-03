@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -366,7 +368,7 @@ class Law_Function : public MMgt_TShared {
 };
 %extend Law_Function {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_Function {
@@ -396,7 +398,7 @@ class Law_BSpFunc : public Law_Function {
 };
 %extend Law_BSpFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_BSpFunc {
@@ -424,7 +426,7 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 };
 %extend Law_ListNodeOfLaws {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_ListNodeOfLaws {
@@ -468,7 +470,7 @@ class Law_Constant : public Law_Function {
 };
 %extend Law_Constant {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_Constant {
@@ -502,7 +504,7 @@ class Law_Interpol : public Law_BSpFunc {
 };
 %extend Law_Interpol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_Interpol {
@@ -628,7 +630,7 @@ class Law_Composite : public Law_Function {
 };
 %extend Law_Composite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_Composite {
@@ -678,7 +680,7 @@ class Law_S : public Law_BSpFunc {
 };
 %extend Law_S {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_S {
@@ -748,7 +750,7 @@ class Law_Linear : public Law_Function {
 };
 %extend Law_Linear {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_Linear {
@@ -924,7 +926,7 @@ class Law_BSpline : public MMgt_TShared {
 };
 %extend Law_BSpline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Law_BSpline {

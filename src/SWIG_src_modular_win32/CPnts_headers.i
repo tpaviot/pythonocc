@@ -30,11 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<CPnts_AbscissaPoint.hxx>
-#include<CPnts_MyGaussFunction.hxx>
-#include<CPnts_MyRootFunction.hxx>
-#include<CPnts_RealFunction.hxx>
-#include<CPnts_UniformDeflection.hxx>
 
 // Needed headers necessary for compilation.
 

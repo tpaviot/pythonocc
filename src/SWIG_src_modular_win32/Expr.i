@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1558,7 +1560,7 @@ class Expr_IndexedMapNodeOfMapOfNamedUnknown : public TCollection_MapNode {
 };
 %extend Expr_IndexedMapNodeOfMapOfNamedUnknown {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_IndexedMapNodeOfMapOfNamedUnknown {
@@ -1614,7 +1616,7 @@ class Expr_GeneralExpression : public MMgt_TShared {
 };
 %extend Expr_GeneralExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_GeneralExpression {
@@ -1644,7 +1646,7 @@ class Expr_BinaryExpression : public Expr_GeneralExpression {
 };
 %extend Expr_BinaryExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_BinaryExpression {
@@ -1668,7 +1670,7 @@ class Expr_Division : public Expr_BinaryExpression {
 };
 %extend Expr_Division {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Division {
@@ -1702,7 +1704,7 @@ class Expr_ExprFailure : public Standard_Failure {
 };
 %extend Expr_ExprFailure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_ExprFailure {
@@ -1730,7 +1732,7 @@ class Expr_NotEvaluable : public Expr_ExprFailure {
 };
 %extend Expr_NotEvaluable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_NotEvaluable {
@@ -1770,7 +1772,7 @@ class Expr_UnaryExpression : public Expr_GeneralExpression {
 };
 %extend Expr_UnaryExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_UnaryExpression {
@@ -1808,7 +1810,7 @@ class Expr_Exponential : public Expr_UnaryExpression {
 };
 %extend Expr_Exponential {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Exponential {
@@ -1848,7 +1850,7 @@ class Expr_Exponentiate : public Expr_BinaryExpression {
 };
 %extend Expr_Exponentiate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Exponentiate {
@@ -1882,7 +1884,7 @@ class Expr_NotAssigned : public Expr_ExprFailure {
 };
 %extend Expr_NotAssigned {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_NotAssigned {
@@ -1922,7 +1924,7 @@ class Expr_ArcCosine : public Expr_UnaryExpression {
 };
 %extend Expr_ArcCosine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_ArcCosine {
@@ -1956,7 +1958,7 @@ class Expr_InvalidFunction : public Expr_ExprFailure {
 };
 %extend Expr_InvalidFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_InvalidFunction {
@@ -2002,7 +2004,7 @@ class Expr_GeneralRelation : public MMgt_TShared {
 };
 %extend Expr_GeneralRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_GeneralRelation {
@@ -2032,7 +2034,7 @@ class Expr_SingleRelation : public Expr_GeneralRelation {
 };
 %extend Expr_SingleRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_SingleRelation {
@@ -2056,7 +2058,7 @@ class Expr_LessThan : public Expr_SingleRelation {
 };
 %extend Expr_LessThan {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_LessThan {
@@ -2098,7 +2100,7 @@ class Expr_UnaryMinus : public Expr_UnaryExpression {
 };
 %extend Expr_UnaryMinus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_UnaryMinus {
@@ -2138,7 +2140,7 @@ class Expr_LogOfe : public Expr_UnaryExpression {
 };
 %extend Expr_LogOfe {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_LogOfe {
@@ -2180,7 +2182,7 @@ class Expr_BinaryFunction : public Expr_BinaryExpression {
 };
 %extend Expr_BinaryFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_BinaryFunction {
@@ -2250,7 +2252,7 @@ class Expr_SequenceNodeOfSequenceOfGeneralRelation : public TCollection_SeqNode 
 };
 %extend Expr_SequenceNodeOfSequenceOfGeneralRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_SequenceNodeOfSequenceOfGeneralRelation {
@@ -2290,7 +2292,7 @@ class Expr_Absolute : public Expr_UnaryExpression {
 };
 %extend Expr_Absolute {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Absolute {
@@ -2324,7 +2326,7 @@ class Expr_NamedExpression : public Expr_GeneralExpression {
 };
 %extend Expr_NamedExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_NamedExpression {
@@ -2374,7 +2376,7 @@ class Expr_NamedConstant : public Expr_NamedExpression {
 };
 %extend Expr_NamedConstant {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_NamedConstant {
@@ -2416,7 +2418,7 @@ class Expr_UnaryFunction : public Expr_UnaryExpression {
 };
 %extend Expr_UnaryFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_UnaryFunction {
@@ -2458,7 +2460,7 @@ class Expr_PolyExpression : public Expr_GeneralExpression {
 };
 %extend Expr_PolyExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_PolyExpression {
@@ -2498,7 +2500,7 @@ class Expr_PolyFunction : public Expr_PolyExpression {
 };
 %extend Expr_PolyFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_PolyFunction {
@@ -2534,7 +2536,7 @@ class Expr_Different : public Expr_SingleRelation {
 };
 %extend Expr_Different {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Different {
@@ -2574,7 +2576,7 @@ class Expr_SquareRoot : public Expr_UnaryExpression {
 };
 %extend Expr_SquareRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_SquareRoot {
@@ -2684,7 +2686,7 @@ class Expr_NamedUnknown : public Expr_NamedExpression {
 };
 %extend Expr_NamedUnknown {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_NamedUnknown {
@@ -2724,7 +2726,7 @@ class Expr_ArgCosh : public Expr_UnaryExpression {
 };
 %extend Expr_ArgCosh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_ArgCosh {
@@ -2760,7 +2762,7 @@ class Expr_GreaterThanOrEqual : public Expr_SingleRelation {
 };
 %extend Expr_GreaterThanOrEqual {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_GreaterThanOrEqual {
@@ -2846,7 +2848,7 @@ class Expr_SystemRelation : public Expr_GeneralRelation {
 };
 %extend Expr_SystemRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_SystemRelation {
@@ -2886,7 +2888,7 @@ class Expr_ArgSinh : public Expr_UnaryExpression {
 };
 %extend Expr_ArgSinh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_ArgSinh {
@@ -2968,7 +2970,7 @@ class Expr_Product : public Expr_PolyExpression {
 };
 %extend Expr_Product {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Product {
@@ -3004,7 +3006,7 @@ class Expr_Equal : public Expr_SingleRelation {
 };
 %extend Expr_Equal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Equal {
@@ -3044,7 +3046,7 @@ class Expr_Square : public Expr_UnaryExpression {
 };
 %extend Expr_Square {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Square {
@@ -3078,7 +3080,7 @@ class Expr_InvalidOperand : public Expr_ExprFailure {
 };
 %extend Expr_InvalidOperand {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_InvalidOperand {
@@ -3118,7 +3120,7 @@ class Expr_ArgTanh : public Expr_UnaryExpression {
 };
 %extend Expr_ArgTanh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_ArgTanh {
@@ -3158,7 +3160,7 @@ class Expr_Cosine : public Expr_UnaryExpression {
 };
 %extend Expr_Cosine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Cosine {
@@ -3198,7 +3200,7 @@ class Expr_Tangent : public Expr_UnaryExpression {
 };
 %extend Expr_Tangent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Tangent {
@@ -3318,7 +3320,7 @@ class Expr_Tanh : public Expr_UnaryExpression {
 };
 %extend Expr_Tanh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Tanh {
@@ -3452,7 +3454,7 @@ class Expr_ArcSine : public Expr_UnaryExpression {
 };
 %extend Expr_ArcSine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_ArcSine {
@@ -3496,7 +3498,7 @@ class Expr_Sum : public Expr_PolyExpression {
 };
 %extend Expr_Sum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Sum {
@@ -3532,7 +3534,7 @@ class Expr_GreaterThan : public Expr_SingleRelation {
 };
 %extend Expr_GreaterThan {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_GreaterThan {
@@ -3560,7 +3562,7 @@ class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNod
 };
 %extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_SequenceNodeOfSequenceOfGeneralExpression {
@@ -3594,7 +3596,7 @@ class Expr_InvalidAssignment : public Expr_ExprFailure {
 };
 %extend Expr_InvalidAssignment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_InvalidAssignment {
@@ -3636,7 +3638,7 @@ class Expr_Difference : public Expr_BinaryExpression {
 };
 %extend Expr_Difference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Difference {
@@ -3676,7 +3678,7 @@ class Expr_ArcTangent : public Expr_UnaryExpression {
 };
 %extend Expr_ArcTangent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_ArcTangent {
@@ -3716,7 +3718,7 @@ class Expr_Cosh : public Expr_UnaryExpression {
 };
 %extend Expr_Cosh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Cosh {
@@ -3758,7 +3760,7 @@ class Expr_GeneralFunction : public MMgt_TShared {
 };
 %extend Expr_GeneralFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_GeneralFunction {
@@ -3794,7 +3796,7 @@ class Expr_FunctionDerivative : public Expr_GeneralFunction {
 };
 %extend Expr_FunctionDerivative {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_FunctionDerivative {
@@ -3834,7 +3836,7 @@ class Expr_LogOf10 : public Expr_UnaryExpression {
 };
 %extend Expr_LogOf10 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_LogOf10 {
@@ -3892,7 +3894,7 @@ class Expr_NumericValue : public Expr_GeneralExpression {
 };
 %extend Expr_NumericValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_NumericValue {
@@ -3944,7 +3946,7 @@ class Expr_NamedFunction : public Expr_GeneralFunction {
 };
 %extend Expr_NamedFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_NamedFunction {
@@ -3984,7 +3986,7 @@ class Expr_Sine : public Expr_UnaryExpression {
 };
 %extend Expr_Sine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Sine {
@@ -4024,7 +4026,7 @@ class Expr_Sinh : public Expr_UnaryExpression {
 };
 %extend Expr_Sinh {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_Sinh {
@@ -4060,7 +4062,7 @@ class Expr_LessThanOrEqual : public Expr_SingleRelation {
 };
 %extend Expr_LessThanOrEqual {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Expr_LessThanOrEqual {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -583,7 +585,7 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_ListNodeOfListOfListOfLoop {
@@ -621,7 +623,7 @@ class BOP_HistoryCollector : public MMgt_TShared {
 };
 %extend BOP_HistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_HistoryCollector {
@@ -645,7 +647,7 @@ class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_SectionHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_SectionHistoryCollector {
@@ -725,7 +727,7 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_WireSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_WireSolidHistoryCollector {
@@ -785,7 +787,7 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_SolidSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_SolidSolidHistoryCollector {
@@ -971,7 +973,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo {
@@ -1183,7 +1185,7 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfFaceInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_ListNodeOfListOfFaceInfo {
@@ -1217,7 +1219,7 @@ class BOP_Loop : public MMgt_TShared {
 };
 %extend BOP_Loop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_Loop {
@@ -1327,7 +1329,7 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_ListNodeOfListOfEdgeInfo {
@@ -1583,7 +1585,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollecti
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier {
@@ -1617,7 +1619,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TColle
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo {
@@ -1695,7 +1697,7 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfCheckResult {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_ListNodeOfListOfCheckResult {
@@ -1813,7 +1815,7 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 };
 %extend BOP_SequenceNodeOfSeqOfSeqOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_SequenceNodeOfSeqOfSeqOfShape {
@@ -2191,7 +2193,7 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfLoop {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_ListNodeOfListOfLoop {
@@ -2499,7 +2501,7 @@ class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 };
 %extend BOP_ShellSolidHistoryCollector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_ShellSolidHistoryCollector {
@@ -2749,7 +2751,7 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 };
 %extend BOP_ListNodeOfListOfConnexityBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOP_ListNodeOfListOfConnexityBlock {

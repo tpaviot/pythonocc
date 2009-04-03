@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -215,7 +217,7 @@ class Geom2dAPI_ProjectPointOnCurve {
 		%feature("autodoc", "1");
 		Quantity_Parameter Parameter(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Parameter(const Standard_Integer Index, Quantity_Parameter & U) const;
+		void Parameter(const Standard_Integer Index, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
@@ -245,13 +247,13 @@ class Geom2dAPI_ExtremaCurveCurve {
 		%feature("autodoc", "1");
 		void Points(const Standard_Integer Index, gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 		%feature("autodoc", "1");
-		void Parameters(const Standard_Integer Index, Quantity_Parameter & U1, Quantity_Parameter & U2) const;
+		void Parameters(const Standard_Integer Index, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Distance(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
 		void NearestPoints(gp_Pnt2d & P1, gp_Pnt2d & P2) const;
 		%feature("autodoc", "1");
-		void LowerDistanceParameters(Quantity_Parameter & U1, Quantity_Parameter & U2) const;
+		void LowerDistanceParameters(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length LowerDistance() const;
 		%feature("autodoc", "1");

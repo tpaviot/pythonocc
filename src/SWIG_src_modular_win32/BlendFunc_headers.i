@@ -28,9 +28,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BlendFunc.hxx>
-#include<BlendFunc_SectionShape.hxx>
-#include<BlendFunc_Tensor.hxx>
 
 // Needed headers necessary for compilation.
 

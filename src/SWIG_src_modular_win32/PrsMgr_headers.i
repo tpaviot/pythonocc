@@ -171,17 +171,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Aspect_WindowDriver.hxx>
 #include<Aspect_WindowDriverPtr.hxx>
 #include<Aspect_WindowError.hxx>
-#include<GProp.hxx>
-#include<GProp_CelGProps.hxx>
-#include<GProp_EquaType.hxx>
-#include<GProp_GProps.hxx>
-#include<GProp_PEquation.hxx>
-#include<GProp_PGProps.hxx>
-#include<GProp_PrincipalProps.hxx>
-#include<GProp_SelGProps.hxx>
-#include<GProp_UndefinedAxis.hxx>
-#include<GProp_ValueType.hxx>
-#include<GProp_VelGProps.hxx>
 #include<Graphic3d_Array1OfBytes.hxx>
 #include<Graphic3d_Array1OfVector.hxx>
 #include<Graphic3d_Array1OfVertex.hxx>

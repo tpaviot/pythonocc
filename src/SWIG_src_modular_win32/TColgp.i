@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1096,7 +1098,7 @@ class TColgp_HSequenceOfXYZ : public MMgt_TShared {
 };
 %extend TColgp_HSequenceOfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HSequenceOfXYZ {
@@ -1236,7 +1238,7 @@ class TColgp_HArray1OfDir : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfDir {
@@ -1288,7 +1290,7 @@ class TColgp_HArray2OfVec : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfVec {
@@ -1340,7 +1342,7 @@ class TColgp_HArray2OfDir2d : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfDir2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfDir2d {
@@ -1392,7 +1394,7 @@ class TColgp_HArray2OfPnt : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfPnt {
@@ -1528,7 +1530,7 @@ class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
 };
 %extend TColgp_SequenceNodeOfSequenceOfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfVec {
@@ -1580,7 +1582,7 @@ class TColgp_HArray2OfLin2d : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfLin2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfLin2d {
@@ -1632,7 +1634,7 @@ class TColgp_HArray2OfDir : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfDir {
@@ -1700,7 +1702,7 @@ class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
 };
 %extend TColgp_SequenceNodeOfSequenceOfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfXY {
@@ -1890,7 +1892,7 @@ class TColgp_HArray2OfCirc2d : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfCirc2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfCirc2d {
@@ -1982,7 +1984,7 @@ class TColgp_HSequenceOfPnt2d : public MMgt_TShared {
 };
 %extend TColgp_HSequenceOfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HSequenceOfPnt2d {
@@ -2074,7 +2076,7 @@ class TColgp_HArray2OfVec2d : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfVec2d {
@@ -2160,7 +2162,7 @@ class TColgp_HArray1OfLin2d : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfLin2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfLin2d {
@@ -2206,7 +2208,7 @@ class TColgp_HArray1OfVec : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfVec {
@@ -2252,7 +2254,7 @@ class TColgp_HArray1OfDir2d : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfDir2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfDir2d {
@@ -2342,7 +2344,7 @@ class TColgp_HArray1OfPnt : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfPnt {
@@ -2468,7 +2470,7 @@ class TColgp_SequenceNodeOfSequenceOfDir : public TCollection_SeqNode {
 };
 %extend TColgp_SequenceNodeOfSequenceOfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfDir {
@@ -2568,7 +2570,7 @@ class TColgp_HArray1OfVec2d : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfVec2d {
@@ -2614,7 +2616,7 @@ class TColgp_HArray1OfCirc2d : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfCirc2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfCirc2d {
@@ -2660,7 +2662,7 @@ class TColgp_HArray1OfXYZ : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfXYZ {
@@ -2814,7 +2816,7 @@ class TColgp_HSequenceOfVec : public MMgt_TShared {
 };
 %extend TColgp_HSequenceOfVec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HSequenceOfVec {
@@ -2860,7 +2862,7 @@ class TColgp_HArray1OfXY : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfXY {
@@ -2888,7 +2890,7 @@ class TColgp_SequenceNodeOfSequenceOfDir2d : public TCollection_SeqNode {
 };
 %extend TColgp_SequenceNodeOfSequenceOfDir2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfDir2d {
@@ -2940,7 +2942,7 @@ class TColgp_HArray2OfPnt2d : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfPnt2d {
@@ -2992,7 +2994,7 @@ class TColgp_HArray2OfXYZ : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfXYZ {
@@ -3020,7 +3022,7 @@ class TColgp_SequenceNodeOfSequenceOfVec2d : public TCollection_SeqNode {
 };
 %extend TColgp_SequenceNodeOfSequenceOfVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfVec2d {
@@ -3144,7 +3146,7 @@ class TColgp_HSequenceOfDir : public MMgt_TShared {
 };
 %extend TColgp_HSequenceOfDir {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HSequenceOfDir {
@@ -3306,7 +3308,7 @@ class TColgp_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 };
 %extend TColgp_SequenceNodeOfSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfPnt {
@@ -3380,7 +3382,7 @@ class TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public TCollection_MapNode {
 };
 %extend TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_DataMapNodeOfDataMapOfIntegerCirc2d {
@@ -3426,7 +3428,7 @@ class TColgp_HArray1OfPnt2d : public MMgt_TShared {
 };
 %extend TColgp_HArray1OfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray1OfPnt2d {
@@ -3454,7 +3456,7 @@ class TColgp_SequenceNodeOfSequenceOfPnt2d : public TCollection_SeqNode {
 };
 %extend TColgp_SequenceNodeOfSequenceOfPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfPnt2d {
@@ -3568,7 +3570,7 @@ class TColgp_HSequenceOfDir2d : public MMgt_TShared {
 };
 %extend TColgp_HSequenceOfDir2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HSequenceOfDir2d {
@@ -3680,7 +3682,7 @@ class TColgp_SequenceNodeOfSequenceOfXYZ : public TCollection_SeqNode {
 };
 %extend TColgp_SequenceNodeOfSequenceOfXYZ {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_SequenceNodeOfSequenceOfXYZ {
@@ -3872,7 +3874,7 @@ class TColgp_HSequenceOfXY : public MMgt_TShared {
 };
 %extend TColgp_HSequenceOfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HSequenceOfXY {
@@ -3942,7 +3944,7 @@ class TColgp_HSequenceOfVec2d : public MMgt_TShared {
 };
 %extend TColgp_HSequenceOfVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HSequenceOfVec2d {
@@ -4012,7 +4014,7 @@ class TColgp_HSequenceOfPnt : public MMgt_TShared {
 };
 %extend TColgp_HSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HSequenceOfPnt {
@@ -4148,7 +4150,7 @@ class TColgp_HArray2OfXY : public MMgt_TShared {
 };
 %extend TColgp_HArray2OfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TColgp_HArray2OfXY {

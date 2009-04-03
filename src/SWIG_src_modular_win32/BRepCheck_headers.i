@@ -52,24 +52,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepCheck.hxx>
-#include<BRepCheck_Analyzer.hxx>
-#include<BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus.hxx>
-#include<BRepCheck_DataMapIteratorOfDataMapOfShapeResult.hxx>
-#include<BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus.hxx>
-#include<BRepCheck_DataMapNodeOfDataMapOfShapeResult.hxx>
-#include<BRepCheck_DataMapOfShapeListOfStatus.hxx>
-#include<BRepCheck_DataMapOfShapeResult.hxx>
-#include<BRepCheck_Edge.hxx>
-#include<BRepCheck_Face.hxx>
-#include<BRepCheck_ListIteratorOfListOfStatus.hxx>
-#include<BRepCheck_ListNodeOfListOfStatus.hxx>
-#include<BRepCheck_ListOfStatus.hxx>
-#include<BRepCheck_Result.hxx>
-#include<BRepCheck_Shell.hxx>
-#include<BRepCheck_Status.hxx>
-#include<BRepCheck_Vertex.hxx>
-#include<BRepCheck_Wire.hxx>
 
 // Needed headers necessary for compilation.
 

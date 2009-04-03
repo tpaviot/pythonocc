@@ -26,9 +26,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Primitives_Direction.hxx>
 
 // Needed headers necessary for compilation.
 
-#include<Primitives_Direction.hxx>
 %}

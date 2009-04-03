@@ -29,10 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BndLib.hxx>
-#include<BndLib_Add2dCurve.hxx>
-#include<BndLib_Add3dCurve.hxx>
-#include<BndLib_AddSurface.hxx>
 
 // Needed headers necessary for compilation.
 

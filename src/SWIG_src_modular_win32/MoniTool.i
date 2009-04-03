@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -545,7 +547,7 @@ class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode
 };
 %extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_DataMapNodeOfDataMapOfShapeTransient {
@@ -615,7 +617,7 @@ class MoniTool_HSequenceOfElement : public MMgt_TShared {
 };
 %extend MoniTool_HSequenceOfElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_HSequenceOfElement {
@@ -695,7 +697,7 @@ class MoniTool_Timer : public MMgt_TShared {
 };
 %extend MoniTool_Timer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_Timer {
@@ -723,7 +725,7 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 };
 %extend MoniTool_SequenceNodeOfSequenceOfElement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_SequenceNodeOfSequenceOfElement {
@@ -797,7 +799,7 @@ class MoniTool_Profile : public MMgt_TShared {
 };
 %extend MoniTool_Profile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_Profile {
@@ -883,7 +885,7 @@ class MoniTool_IntVal : public MMgt_TShared {
 };
 %extend MoniTool_IntVal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_IntVal {
@@ -913,7 +915,7 @@ class MoniTool_RealVal : public MMgt_TShared {
 };
 %extend MoniTool_RealVal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_RealVal {
@@ -971,7 +973,7 @@ class MoniTool_Element : public MMgt_TShared {
 };
 %extend MoniTool_Element {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_Element {
@@ -1005,7 +1007,7 @@ class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TColl
 };
 %extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient {
@@ -1121,7 +1123,7 @@ class MoniTool_CaseData : public MMgt_TShared {
 };
 %extend MoniTool_CaseData {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_CaseData {
@@ -1191,7 +1193,7 @@ class MoniTool_TransientElem : public MoniTool_Element {
 };
 %extend MoniTool_TransientElem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_TransientElem {
@@ -1315,7 +1317,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 };
 %extend MoniTool_TypedValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_TypedValue {
@@ -1345,7 +1347,7 @@ class MoniTool_SignText : public MMgt_TShared {
 };
 %extend MoniTool_SignText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_SignText {
@@ -1369,7 +1371,7 @@ class MoniTool_SignShape : public MoniTool_SignText {
 };
 %extend MoniTool_SignShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_SignShape {
@@ -1399,7 +1401,7 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 };
 %extend MoniTool_DataMapNodeOfDataMapOfTimer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_DataMapNodeOfDataMapOfTimer {
@@ -1697,7 +1699,7 @@ class MoniTool_Option : public MMgt_TShared {
 };
 %extend MoniTool_Option {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MoniTool_Option {

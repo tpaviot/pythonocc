@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -983,7 +985,7 @@ class XmlMDataStd_DirectoryDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_DirectoryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_DirectoryDriver {
@@ -1015,7 +1017,7 @@ class XmlMDataStd_IntegerListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntegerListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_IntegerListDriver {
@@ -1047,7 +1049,7 @@ class XmlMDataStd_ExpressionDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExpressionDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_ExpressionDriver {
@@ -1079,7 +1081,7 @@ class XmlMDataStd_BooleanListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_BooleanListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_BooleanListDriver {
@@ -1111,7 +1113,7 @@ class XmlMDataStd_VariableDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_VariableDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_VariableDriver {
@@ -1143,7 +1145,7 @@ class XmlMDataStd_NamedDataDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NamedDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_NamedDataDriver {
@@ -1175,7 +1177,7 @@ class XmlMDataStd_IntegerDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntegerDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_IntegerDriver {
@@ -1207,7 +1209,7 @@ class XmlMDataStd_ConstraintDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ConstraintDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_ConstraintDriver {
@@ -1239,7 +1241,7 @@ class XmlMDataStd_RealArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RealArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_RealArrayDriver {
@@ -1271,7 +1273,7 @@ class XmlMDataStd_PatternStdDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_PatternStdDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_PatternStdDriver {
@@ -1303,7 +1305,7 @@ class XmlMDataStd_ExtStringListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExtStringListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_ExtStringListDriver {
@@ -1335,7 +1337,7 @@ class XmlMDataStd_RelationDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RelationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_RelationDriver {
@@ -1367,7 +1369,7 @@ class XmlMDataStd_PlacementDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_PlacementDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_PlacementDriver {
@@ -1399,7 +1401,7 @@ class XmlMDataStd_IntegerArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntegerArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_IntegerArrayDriver {
@@ -1431,7 +1433,7 @@ class XmlMDataStd_PointDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_PointDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_PointDriver {
@@ -1463,7 +1465,7 @@ class XmlMDataStd_TickDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_TickDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_TickDriver {
@@ -1495,7 +1497,7 @@ class XmlMDataStd_ShapeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ShapeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_ShapeDriver {
@@ -1527,7 +1529,7 @@ class XmlMDataStd_PlaneDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_PlaneDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_PlaneDriver {
@@ -1559,7 +1561,7 @@ class XmlMDataStd_RealListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RealListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_RealListDriver {
@@ -1591,7 +1593,7 @@ class XmlMDataStd_AsciiStringDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_AsciiStringDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_AsciiStringDriver {
@@ -1623,7 +1625,7 @@ class XmlMDataStd_GeometryDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_GeometryDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_GeometryDriver {
@@ -1655,7 +1657,7 @@ class XmlMDataStd_UAttributeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_UAttributeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_UAttributeDriver {
@@ -1707,7 +1709,7 @@ class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ReferenceListDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_ReferenceListDriver {
@@ -1739,7 +1741,7 @@ class XmlMDataStd_ReferenceArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ReferenceArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_ReferenceArrayDriver {
@@ -1771,7 +1773,7 @@ class XmlMDataStd_RealDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_RealDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_RealDriver {
@@ -1803,7 +1805,7 @@ class XmlMDataStd_BooleanArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_BooleanArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_BooleanArrayDriver {
@@ -1835,7 +1837,7 @@ class XmlMDataStd_ByteArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ByteArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_ByteArrayDriver {
@@ -1867,7 +1869,7 @@ class XmlMDataStd_IntPackedMapDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_IntPackedMapDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_IntPackedMapDriver {
@@ -1899,7 +1901,7 @@ class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_ExtStringArrayDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_ExtStringArrayDriver {
@@ -1931,7 +1933,7 @@ class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NameDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_NameDriver {
@@ -1963,7 +1965,7 @@ class XmlMDataStd_NoteBookDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_NoteBookDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_NoteBookDriver {
@@ -1995,7 +1997,7 @@ class XmlMDataStd_CommentDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_CommentDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_CommentDriver {
@@ -2027,7 +2029,7 @@ class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_TreeNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_TreeNodeDriver {
@@ -2059,7 +2061,7 @@ class XmlMDataStd_AxisDriver : public XmlMDF_ADriver {
 };
 %extend XmlMDataStd_AxisDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XmlMDataStd_AxisDriver {

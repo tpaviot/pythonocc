@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -826,7 +828,7 @@ class StepDimTol_GeometricTolerance : public MMgt_TShared {
 };
 %extend StepDimTol_GeometricTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_GeometricTolerance {
@@ -850,7 +852,7 @@ class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_StraightnessTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_StraightnessTolerance {
@@ -876,7 +878,7 @@ class StepDimTol_LineProfileTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_LineProfileTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_LineProfileTolerance {
@@ -902,7 +904,7 @@ class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance 
 };
 %extend StepDimTol_SurfaceProfileTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_SurfaceProfileTolerance {
@@ -928,7 +930,7 @@ class StepDimTol_CylindricityTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_CylindricityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_CylindricityTolerance {
@@ -954,7 +956,7 @@ class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_RoundnessTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_RoundnessTolerance {
@@ -1026,7 +1028,7 @@ class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 };
 %extend StepDimTol_DatumTarget {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_DatumTarget {
@@ -1058,7 +1060,7 @@ class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_Geomet
 };
 %extend StepDimTol_GeometricToleranceWithDatumReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_GeometricToleranceWithDatumReference {
@@ -1082,7 +1084,7 @@ class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithD
 };
 %extend StepDimTol_AngularityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_AngularityTolerance {
@@ -1108,7 +1110,7 @@ class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWi
 };
 %extend StepDimTol_ConcentricityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_ConcentricityTolerance {
@@ -1134,7 +1136,7 @@ class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
 };
 %extend StepDimTol_PlacedDatumTargetFeature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_PlacedDatumTargetFeature {
@@ -1160,7 +1162,7 @@ class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWith
 };
 %extend StepDimTol_TotalRunoutTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_TotalRunoutTolerance {
@@ -1186,7 +1188,7 @@ class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWith
 };
 %extend StepDimTol_ParallelismTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_ParallelismTolerance {
@@ -1212,7 +1214,7 @@ class StepDimTol_PerpendicularityTolerance : public StepDimTol_GeometricToleranc
 };
 %extend StepDimTol_PerpendicularityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_PerpendicularityTolerance {
@@ -1252,7 +1254,7 @@ class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimT
 };
 %extend StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
@@ -1284,7 +1286,7 @@ class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
 };
 %extend StepDimTol_CommonDatum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_CommonDatum {
@@ -1316,7 +1318,7 @@ class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricToleran
 };
 %extend StepDimTol_ModifiedGeometricTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_ModifiedGeometricTolerance {
@@ -1342,7 +1344,7 @@ class StepDimTol_CircularRunoutTolerance : public StepDimTol_GeometricToleranceW
 };
 %extend StepDimTol_CircularRunoutTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_CircularRunoutTolerance {
@@ -1368,7 +1370,7 @@ class StepDimTol_CoaxialityTolerance : public StepDimTol_GeometricToleranceWithD
 };
 %extend StepDimTol_CoaxialityTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_CoaxialityTolerance {
@@ -1394,7 +1396,7 @@ class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_FlatnessTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_FlatnessTolerance {
@@ -1440,7 +1442,7 @@ class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
 };
 %extend StepDimTol_DatumFeature {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_DatumFeature {
@@ -1466,7 +1468,7 @@ class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDat
 };
 %extend StepDimTol_SymmetryTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_SymmetryTolerance {
@@ -1502,7 +1504,7 @@ class StepDimTol_DatumReference : public MMgt_TShared {
 };
 %extend StepDimTol_DatumReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_DatumReference {
@@ -1534,7 +1536,7 @@ class StepDimTol_Datum : public StepRepr_ShapeAspect {
 };
 %extend StepDimTol_Datum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_Datum {
@@ -1560,7 +1562,7 @@ class StepDimTol_PositionTolerance : public StepDimTol_GeometricTolerance {
 };
 %extend StepDimTol_PositionTolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_PositionTolerance {
@@ -1604,7 +1606,7 @@ class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
 };
 %extend StepDimTol_GeometricToleranceRelationship {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_GeometricToleranceRelationship {
@@ -1650,7 +1652,7 @@ class StepDimTol_HArray1OfDatumReference : public MMgt_TShared {
 };
 %extend StepDimTol_HArray1OfDatumReference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StepDimTol_HArray1OfDatumReference {

@@ -58,7 +58,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepOffset.hxx>
 #include<BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape.hxx>
 #include<BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape.hxx>
 #include<BRepOffsetAPI_DataMapOfShapeSequenceOfShape.hxx>
@@ -79,33 +78,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepOffsetAPI_SequenceOfSequenceOfShape.hxx>
 #include<BRepOffsetAPI_Sewing.hxx>
 #include<BRepOffsetAPI_ThruSections.hxx>
-#include<BRepOffset_Analyse.hxx>
-#include<BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval.hxx>
-#include<BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape.hxx>
-#include<BRepOffset_DataMapIteratorOfDataMapOfShapeOffset.hxx>
-#include<BRepOffset_DataMapIteratorOfDataMapOfShapeReal.hxx>
-#include<BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval.hxx>
-#include<BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape.hxx>
-#include<BRepOffset_DataMapNodeOfDataMapOfShapeOffset.hxx>
-#include<BRepOffset_DataMapNodeOfDataMapOfShapeReal.hxx>
-#include<BRepOffset_DataMapOfShapeListOfInterval.hxx>
-#include<BRepOffset_DataMapOfShapeMapOfShape.hxx>
-#include<BRepOffset_DataMapOfShapeOffset.hxx>
-#include<BRepOffset_DataMapOfShapeReal.hxx>
-#include<BRepOffset_Error.hxx>
-#include<BRepOffset_Inter2d.hxx>
-#include<BRepOffset_Inter3d.hxx>
-#include<BRepOffset_Interval.hxx>
-#include<BRepOffset_ListIteratorOfListOfInterval.hxx>
-#include<BRepOffset_ListNodeOfListOfInterval.hxx>
-#include<BRepOffset_ListOfInterval.hxx>
-#include<BRepOffset_MakeLoops.hxx>
-#include<BRepOffset_MakeOffset.hxx>
-#include<BRepOffset_Mode.hxx>
-#include<BRepOffset_Offset.hxx>
-#include<BRepOffset_Status.hxx>
-#include<BRepOffset_Tool.hxx>
-#include<BRepOffset_Type.hxx>
 
 // Needed headers necessary for compilation.
 

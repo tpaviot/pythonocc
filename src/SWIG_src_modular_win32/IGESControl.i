@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -280,7 +282,7 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 };
 %extend IGESControl_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESControl_ToolContainer {
@@ -316,7 +318,7 @@ class IGESControl_Controller : public XSControl_Controller {
 };
 %extend IGESControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESControl_Controller {
@@ -342,7 +344,7 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 };
 %extend IGESControl_AlgoContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESControl_AlgoContainer {
@@ -372,7 +374,7 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 };
 %extend IGESControl_IGESBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESControl_IGESBoundary {
@@ -440,7 +442,7 @@ class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 };
 %extend IGESControl_ActorWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESControl_ActorWrite {

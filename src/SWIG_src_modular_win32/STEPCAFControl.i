@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -532,7 +534,7 @@ class STEPCAFControl_ExternFile : public MMgt_TShared {
 };
 %extend STEPCAFControl_ExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_ExternFile {
@@ -630,7 +632,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR {
@@ -686,7 +688,7 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 };
 %extend STEPCAFControl_ActorWrite {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_ActorWrite {
@@ -716,7 +718,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNo
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel {
@@ -744,7 +746,7 @@ class STEPCAFControl_Controller : public STEPControl_Controller {
 };
 %extend STEPCAFControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_Controller {
@@ -812,7 +814,7 @@ class STEPCAFControl_StackItemOfDictionaryOfExternFile : public MMgt_TShared {
 };
 %extend STEPCAFControl_StackItemOfDictionaryOfExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_StackItemOfDictionaryOfExternFile {
@@ -842,7 +844,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public TCollection_
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile {
@@ -872,7 +874,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public TCollection_MapNode 
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapePD {
@@ -902,7 +904,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public TCollection_M
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient {
@@ -1078,7 +1080,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public TCollection_Ma
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile {
@@ -1172,7 +1174,7 @@ class STEPCAFControl_DictionaryOfExternFile : public MMgt_TShared {
 };
 %extend STEPCAFControl_DictionaryOfExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DictionaryOfExternFile {
@@ -1320,7 +1322,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNo
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfLabelShape {
@@ -1350,7 +1352,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_Map
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile {

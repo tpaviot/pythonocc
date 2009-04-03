@@ -33,14 +33,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<SortTools_HeapSortOfInteger.hxx>
-#include<SortTools_HeapSortOfReal.hxx>
-#include<SortTools_QuickSortOfInteger.hxx>
-#include<SortTools_QuickSortOfReal.hxx>
-#include<SortTools_ShellSortOfInteger.hxx>
-#include<SortTools_ShellSortOfReal.hxx>
-#include<SortTools_StraightInsertionSortOfInteger.hxx>
-#include<SortTools_StraightInsertionSortOfReal.hxx>
 
 // Needed headers necessary for compilation.
 

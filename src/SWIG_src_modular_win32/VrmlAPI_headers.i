@@ -28,9 +28,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<VrmlAPI.hxx>
-#include<VrmlAPI_RepresentationOfShape.hxx>
-#include<VrmlAPI_Writer.hxx>
 
 // Needed headers necessary for compilation.
 

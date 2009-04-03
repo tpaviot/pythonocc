@@ -31,12 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<XDEDRAW.hxx>
-#include<XDEDRAW_Colors.hxx>
-#include<XDEDRAW_Common.hxx>
-#include<XDEDRAW_Layers.hxx>
-#include<XDEDRAW_Props.hxx>
-#include<XDEDRAW_Shapes.hxx>
 
 // Needed headers necessary for compilation.
 

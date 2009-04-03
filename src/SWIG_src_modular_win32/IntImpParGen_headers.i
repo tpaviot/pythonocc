@@ -28,9 +28,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<IntImpParGen.hxx>
-#include<IntImpParGen_ImpTool.hxx>
-#include<IntImpParGen_Tool.hxx>
 
 // Needed headers necessary for compilation.
 

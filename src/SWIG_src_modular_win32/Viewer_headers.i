@@ -31,23 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Viewer2dTest.hxx>
-#include<Viewer2dTest_DataMapIteratorOfDataMapOfText.hxx>
-#include<Viewer2dTest_DataMapNodeOfDataMapOfText.hxx>
-#include<Viewer2dTest_DataMapOfText.hxx>
-#include<Viewer2dTest_DoubleMapIteratorOfDoubleMapOfInteractiveAndName.hxx>
-#include<Viewer2dTest_DoubleMapNodeOfDoubleMapOfInteractiveAndName.hxx>
-#include<Viewer2dTest_DoubleMapOfInteractiveAndName.hxx>
-#include<Viewer2dTest_EventManager.hxx>
-#include<ViewerTest.hxx>
-#include<ViewerTest_DoubleMapIteratorOfDoubleMapOfInteractiveAndName.hxx>
-#include<ViewerTest_DoubleMapNodeOfDoubleMapOfInteractiveAndName.hxx>
-#include<ViewerTest_DoubleMapOfInteractiveAndName.hxx>
-#include<ViewerTest_EventManager.hxx>
-#include<ViewerTest_Tool.hxx>
-#include<Viewer_BadValue.hxx>
-#include<Viewer_View.hxx>
-#include<Viewer_Viewer.hxx>
 
 // Needed headers necessary for compilation.
 

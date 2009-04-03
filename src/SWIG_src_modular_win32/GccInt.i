@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -323,7 +325,7 @@ class GccInt_Bisec : public MMgt_TShared {
 };
 %extend GccInt_Bisec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GccInt_Bisec {
@@ -347,7 +349,7 @@ class GccInt_BParab : public GccInt_Bisec {
 };
 %extend GccInt_BParab {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GccInt_BParab {
@@ -377,7 +379,7 @@ class GccInt_BElips : public GccInt_Bisec {
 };
 %extend GccInt_BElips {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GccInt_BElips {
@@ -407,7 +409,7 @@ class GccInt_BCirc : public GccInt_Bisec {
 };
 %extend GccInt_BCirc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GccInt_BCirc {
@@ -437,7 +439,7 @@ class GccInt_BPoint : public GccInt_Bisec {
 };
 %extend GccInt_BPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GccInt_BPoint {
@@ -467,7 +469,7 @@ class GccInt_BLine : public GccInt_Bisec {
 };
 %extend GccInt_BLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GccInt_BLine {
@@ -497,7 +499,7 @@ class GccInt_BHyper : public GccInt_Bisec {
 };
 %extend GccInt_BHyper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GccInt_BHyper {

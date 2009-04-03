@@ -47,14 +47,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<HatchGen_SequenceNodeOfDomains.hxx>
 #include<HatchGen_SequenceNodeOfPointsOnElement.hxx>
 #include<HatchGen_SequenceNodeOfPointsOnHatching.hxx>
-#include<Hatch_Hatcher.hxx>
-#include<Hatch_Line.hxx>
-#include<Hatch_LineForm.hxx>
-#include<Hatch_Parameter.hxx>
-#include<Hatch_SequenceNodeOfSequenceOfLine.hxx>
-#include<Hatch_SequenceNodeOfSequenceOfParameter.hxx>
-#include<Hatch_SequenceOfLine.hxx>
-#include<Hatch_SequenceOfParameter.hxx>
 
 // Needed headers necessary for compilation.
 

@@ -40,15 +40,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PPoly_FieldOfHArray1OfTriangle.hxx>
-#include<PPoly_HArray1OfTriangle.hxx>
-#include<PPoly_Polygon2D.hxx>
-#include<PPoly_Polygon3D.hxx>
-#include<PPoly_PolygonOnTriangulation.hxx>
-#include<PPoly_Triangle.hxx>
-#include<PPoly_Triangulation.hxx>
-#include<PPoly_VArrayNodeOfFieldOfHArray1OfTriangle.hxx>
-#include<PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle.hxx>
 
 // Needed headers necessary for compilation.
 

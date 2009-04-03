@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -479,7 +481,7 @@ class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 };
 %extend StdSelect_ShapeTypeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_ShapeTypeFilter {
@@ -555,7 +557,7 @@ class StdSelect_FaceFilter : public SelectMgr_Filter {
 };
 %extend StdSelect_FaceFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_FaceFilter {
@@ -589,7 +591,7 @@ class StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollectio
 };
 %extend StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
@@ -627,7 +629,7 @@ class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
 };
 %extend StdSelect_SensitiveText2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_SensitiveText2d {
@@ -657,7 +659,7 @@ class StdSelect_Shape : public PrsMgr_PresentableObject {
 };
 %extend StdSelect_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_Shape {
@@ -685,7 +687,7 @@ class StdSelect_Prs : public Prs3d_Presentation {
 };
 %extend StdSelect_Prs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_Prs {
@@ -719,7 +721,7 @@ class StdSelect_TextProjector2d : public Select2D_Projector {
 };
 %extend StdSelect_TextProjector2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_TextProjector2d {
@@ -763,7 +765,7 @@ class StdSelect_ViewerSelector2d : public SelectMgr_ViewerSelector {
 };
 %extend StdSelect_ViewerSelector2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_ViewerSelector2d {
@@ -821,7 +823,7 @@ class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
 };
 %extend StdSelect_ViewerSelector3d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_ViewerSelector3d {
@@ -881,7 +883,7 @@ class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 };
 %extend StdSelect_BRepOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_BRepOwner {
@@ -947,7 +949,7 @@ class StdSelect_EdgeFilter : public SelectMgr_Filter {
 };
 %extend StdSelect_EdgeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend StdSelect_EdgeFilter {

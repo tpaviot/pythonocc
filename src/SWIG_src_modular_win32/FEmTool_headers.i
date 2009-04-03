@@ -51,22 +51,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<FEmTool_Assembly.hxx>
-#include<FEmTool_AssemblyTable.hxx>
-#include<FEmTool_Curve.hxx>
-#include<FEmTool_ElementaryCriterion.hxx>
-#include<FEmTool_ElementsOfRefMatrix.hxx>
-#include<FEmTool_HAssemblyTable.hxx>
-#include<FEmTool_LinearFlexion.hxx>
-#include<FEmTool_LinearJerk.hxx>
-#include<FEmTool_LinearTension.hxx>
-#include<FEmTool_ListIteratorOfListOfVectors.hxx>
-#include<FEmTool_ListNodeOfListOfVectors.hxx>
-#include<FEmTool_ListOfVectors.hxx>
-#include<FEmTool_ProfileMatrix.hxx>
-#include<FEmTool_SeqOfLinConstr.hxx>
-#include<FEmTool_SequenceNodeOfSeqOfLinConstr.hxx>
-#include<FEmTool_SparseMatrix.hxx>
 
 // Needed headers necessary for compilation.
 

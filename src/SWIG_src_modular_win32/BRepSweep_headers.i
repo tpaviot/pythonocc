@@ -38,18 +38,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepSweep_Array2OfShapesOfNumLinearRegularSweep.hxx>
-#include<BRepSweep_Builder.hxx>
-#include<BRepSweep_Iterator.hxx>
-#include<BRepSweep_NumLinearRegularSweep.hxx>
-#include<BRepSweep_Prism.hxx>
-#include<BRepSweep_Revol.hxx>
-#include<BRepSweep_Rotation.hxx>
-#include<BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep.hxx>
-#include<BRepSweep_SequenceOfShapesOfNumLinearRegularSweep.hxx>
-#include<BRepSweep_Tool.hxx>
-#include<BRepSweep_Translation.hxx>
-#include<BRepSweep_Trsf.hxx>
 
 // Needed headers necessary for compilation.
 

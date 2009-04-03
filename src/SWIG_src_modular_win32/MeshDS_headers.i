@@ -34,14 +34,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<MeshDS_BaseAllocator.hxx>
-#include<MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger.hxx>
-#include<MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger.hxx>
-#include<MeshDS_DataMapOfInteger.hxx>
-#include<MeshDS_DataMapOfIntegerMapOfInteger.hxx>
-#include<MeshDS_DegreeOfFreedom.hxx>
-#include<MeshDS_ListOfInteger.hxx>
-#include<MeshDS_MapOfInteger.hxx>
 
 // Needed headers necessary for compilation.
 

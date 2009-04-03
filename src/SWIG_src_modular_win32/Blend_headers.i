@@ -43,20 +43,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BlendFunc.hxx>
 #include<BlendFunc_SectionShape.hxx>
 #include<BlendFunc_Tensor.hxx>
-#include<Blend_AppFunction.hxx>
-#include<Blend_CSFunction.hxx>
-#include<Blend_CurvPointFuncInv.hxx>
-#include<Blend_DecrochStatus.hxx>
-#include<Blend_FuncInv.hxx>
-#include<Blend_Function.hxx>
-#include<Blend_Point.hxx>
-#include<Blend_RstRstFunction.hxx>
-#include<Blend_SequenceNodeOfSequenceOfPoint.hxx>
-#include<Blend_SequenceOfPoint.hxx>
-#include<Blend_Status.hxx>
-#include<Blend_SurfCurvFuncInv.hxx>
-#include<Blend_SurfPointFuncInv.hxx>
-#include<Blend_SurfRstFunction.hxx>
 
 // Needed headers necessary for compilation.
 

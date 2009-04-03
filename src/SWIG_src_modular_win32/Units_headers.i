@@ -76,40 +76,9 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Units.hxx>
 #include<UnitsAPI.hxx>
 #include<UnitsAPI_SystemUnits.hxx>
 #include<UnitsMethods.hxx>
-#include<Units_Dimensions.hxx>
-#include<Units_Explorer.hxx>
-#include<Units_Lexicon.hxx>
-#include<Units_MathSentence.hxx>
-#include<Units_Measurement.hxx>
-#include<Units_NoSuchType.hxx>
-#include<Units_NoSuchUnit.hxx>
-#include<Units_Operators.hxx>
-#include<Units_QtsSequence.hxx>
-#include<Units_QuantitiesSequence.hxx>
-#include<Units_Quantity.hxx>
-#include<Units_Sentence.hxx>
-#include<Units_SequenceNodeOfQtsSequence.hxx>
-#include<Units_SequenceNodeOfStrgSequence.hxx>
-#include<Units_SequenceNodeOfTksSequence.hxx>
-#include<Units_SequenceNodeOfUtsSequence.hxx>
-#include<Units_ShiftedToken.hxx>
-#include<Units_ShiftedUnit.hxx>
-#include<Units_StrgSequence.hxx>
-#include<Units_StringsSequence.hxx>
-#include<Units_TksSequence.hxx>
-#include<Units_Token.hxx>
-#include<Units_TokensSequence.hxx>
-#include<Units_Unit.hxx>
-#include<Units_UnitSentence.hxx>
-#include<Units_UnitsDictionary.hxx>
-#include<Units_UnitsLexicon.hxx>
-#include<Units_UnitsSequence.hxx>
-#include<Units_UnitsSystem.hxx>
-#include<Units_UtsSequence.hxx>
 
 // Needed headers necessary for compilation.
 

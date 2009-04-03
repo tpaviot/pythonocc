@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -430,7 +432,7 @@ class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqN
 };
 %extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_SequenceNodeOfSequenceOfApplicationDelta {
@@ -476,7 +478,7 @@ class TDocStd_Owner : public TDF_Attribute {
 };
 %extend TDocStd_Owner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_Owner {
@@ -528,7 +530,7 @@ class TDocStd_CompoundDelta : public TDF_Delta {
 };
 %extend TDocStd_CompoundDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_CompoundDelta {
@@ -558,7 +560,7 @@ class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 };
 %extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_DataMapNodeOfLabelIDMapDataMap {
@@ -602,7 +604,7 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 };
 %extend TDocStd_XLinkRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_XLinkRoot {
@@ -762,7 +764,7 @@ class TDocStd_Document : public CDM_Document {
 };
 %extend TDocStd_Document {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_Document {
@@ -918,7 +920,7 @@ class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 };
 %extend TDocStd_SequenceNodeOfSequenceOfDocument {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_SequenceNodeOfSequenceOfDocument {
@@ -978,7 +980,7 @@ class TDocStd_Modified : public TDF_Attribute {
 };
 %extend TDocStd_Modified {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_Modified {
@@ -1040,7 +1042,7 @@ class TDocStd_XLink : public TDF_Attribute {
 };
 %extend TDocStd_XLink {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_XLink {
@@ -1110,7 +1112,7 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 };
 %extend TDocStd_MultiTransactionManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_MultiTransactionManager {
@@ -1164,7 +1166,7 @@ class TDocStd_Application : public CDF_Application {
 };
 %extend TDocStd_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_Application {
@@ -1198,7 +1200,7 @@ class TDocStd_ApplicationDelta : public MMgt_TShared {
 };
 %extend TDocStd_ApplicationDelta {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TDocStd_ApplicationDelta {

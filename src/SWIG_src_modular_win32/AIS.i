@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1868,7 +1870,7 @@ class AIS_Drawer : public Prs3d_Drawer {
 };
 %extend AIS_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Drawer {
@@ -1896,7 +1898,7 @@ class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 };
 %extend AIS_StdMapNodeOfMapOfInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_StdMapNodeOfMapOfInteractive {
@@ -2110,7 +2112,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 };
 %extend AIS_InteractiveObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_InteractiveObject {
@@ -2180,7 +2182,7 @@ class AIS_Relation : public AIS_InteractiveObject {
 };
 %extend AIS_Relation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Relation {
@@ -2212,7 +2214,7 @@ class AIS_DiameterDimension : public AIS_Relation {
 };
 %extend AIS_DiameterDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_DiameterDimension {
@@ -2242,7 +2244,7 @@ class AIS_DataMapNodeOfDataMapOfSelStat : public TCollection_MapNode {
 };
 %extend AIS_DataMapNodeOfDataMapOfSelStat {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_DataMapNodeOfDataMapOfSelStat {
@@ -2328,7 +2330,7 @@ class AIS_ExclusionFilter : public SelectMgr_Filter {
 };
 %extend AIS_ExclusionFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_ExclusionFilter {
@@ -2362,7 +2364,7 @@ class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapN
 };
 %extend AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs {
@@ -2390,7 +2392,7 @@ class AIS_SequenceNodeOfSequenceOfDimension : public TCollection_SeqNode {
 };
 %extend AIS_SequenceNodeOfSequenceOfDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_SequenceNodeOfSequenceOfDimension {
@@ -2420,7 +2422,7 @@ class AIS_EllipseRadiusDimension : public AIS_Relation {
 };
 %extend AIS_EllipseRadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_EllipseRadiusDimension {
@@ -2448,7 +2450,7 @@ class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
 };
 %extend AIS_MaxRadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_MaxRadiusDimension {
@@ -2532,7 +2534,7 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 };
 %extend AIS_Trihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Trihedron {
@@ -2572,7 +2574,7 @@ class AIS_RadiusDimension : public AIS_Relation {
 };
 %extend AIS_RadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_RadiusDimension {
@@ -2678,7 +2680,7 @@ class AIS_Line : public AIS_InteractiveObject {
 };
 %extend AIS_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Line {
@@ -2746,7 +2748,7 @@ class AIS_OffsetDimension : public AIS_Relation {
 };
 %extend AIS_OffsetDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_OffsetDimension {
@@ -2798,7 +2800,7 @@ class AIS_ConnectedInteractive : public AIS_InteractiveObject {
 };
 %extend AIS_ConnectedInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_ConnectedInteractive {
@@ -2828,7 +2830,7 @@ class AIS_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode 
 };
 %extend AIS_DataMapNodeOfDataMapOfTransientTransient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_DataMapNodeOfDataMapOfTransientTransient {
@@ -2894,7 +2896,7 @@ class AIS_Selection : public MMgt_TShared {
 };
 %extend AIS_Selection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Selection {
@@ -2922,7 +2924,7 @@ class AIS_ConcentricRelation : public AIS_Relation {
 };
 %extend AIS_ConcentricRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_ConcentricRelation {
@@ -2958,7 +2960,7 @@ class AIS_BadEdgeFilter : public SelectMgr_Filter {
 };
 %extend AIS_BadEdgeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_BadEdgeFilter {
@@ -3012,7 +3014,7 @@ class AIS_Circle : public AIS_InteractiveObject {
 };
 %extend AIS_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Circle {
@@ -3042,7 +3044,7 @@ class AIS_IdenticRelation : public AIS_Relation {
 };
 %extend AIS_IdenticRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_IdenticRelation {
@@ -3174,7 +3176,7 @@ class AIS_Axis : public AIS_InteractiveObject {
 };
 %extend AIS_Axis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Axis {
@@ -3246,7 +3248,7 @@ class AIS_LocalStatus : public MMgt_TShared {
 };
 %extend AIS_LocalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_LocalStatus {
@@ -3286,7 +3288,7 @@ class AIS_FixRelation : public AIS_Relation {
 };
 %extend AIS_FixRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_FixRelation {
@@ -3318,7 +3320,7 @@ class AIS_ParallelRelation : public AIS_Relation {
 };
 %extend AIS_ParallelRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_ParallelRelation {
@@ -3424,7 +3426,7 @@ class AIS_Plane : public AIS_InteractiveObject {
 };
 %extend AIS_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Plane {
@@ -3454,7 +3456,7 @@ class AIS_PerpendicularRelation : public AIS_Relation {
 };
 %extend AIS_PerpendicularRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_PerpendicularRelation {
@@ -3488,7 +3490,7 @@ class AIS_Chamf3dDimension : public AIS_Relation {
 };
 %extend AIS_Chamf3dDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Chamf3dDimension {
@@ -3516,7 +3518,7 @@ class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 };
 %extend AIS_SequenceNodeOfSequenceOfInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_SequenceNodeOfSequenceOfInteractive {
@@ -3550,7 +3552,7 @@ class AIS_SymmetricRelation : public AIS_Relation {
 };
 %extend AIS_SymmetricRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_SymmetricRelation {
@@ -3594,7 +3596,7 @@ class AIS_AttributeFilter : public SelectMgr_Filter {
 };
 %extend AIS_AttributeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_AttributeFilter {
@@ -3674,7 +3676,7 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 };
 %extend AIS_MultipleConnectedInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_MultipleConnectedInteractive {
@@ -3776,7 +3778,7 @@ class AIS_Shape : public AIS_InteractiveObject {
 };
 %extend AIS_Shape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Shape {
@@ -3832,7 +3834,7 @@ class AIS_MidPointRelation : public AIS_Relation {
 };
 %extend AIS_MidPointRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_MidPointRelation {
@@ -4390,7 +4392,7 @@ class AIS_InteractiveContext : public MMgt_TShared {
 };
 %extend AIS_InteractiveContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_InteractiveContext {
@@ -4448,7 +4450,7 @@ class AIS_TypeFilter : public SelectMgr_Filter {
 };
 %extend AIS_TypeFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_TypeFilter {
@@ -4538,7 +4540,7 @@ class AIS_Chamf2dDimension : public AIS_Relation {
 };
 %extend AIS_Chamf2dDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Chamf2dDimension {
@@ -4612,7 +4614,7 @@ class AIS_TexturedShape : public AIS_Shape {
 };
 %extend AIS_TexturedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_TexturedShape {
@@ -4684,7 +4686,7 @@ class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 };
 %extend AIS_MultipleConnectedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_MultipleConnectedShape {
@@ -4772,7 +4774,7 @@ class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_Ma
 };
 %extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_DataMapNodeOfDataMapofIntegerListOfinteractive {
@@ -4828,7 +4830,7 @@ class AIS_AngleDimension : public AIS_Relation {
 };
 %extend AIS_AngleDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_AngleDimension {
@@ -4856,7 +4858,7 @@ class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 };
 %extend AIS_ListNodeOfListOfInteractive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_ListNodeOfListOfInteractive {
@@ -4888,7 +4890,7 @@ class AIS_TangentRelation : public AIS_Relation {
 };
 %extend AIS_TangentRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_TangentRelation {
@@ -4918,7 +4920,7 @@ class AIS_C0RegularityFilter : public SelectMgr_Filter {
 };
 %extend AIS_C0RegularityFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_C0RegularityFilter {
@@ -4946,7 +4948,7 @@ class AIS_EqualRadiusRelation : public AIS_Relation {
 };
 %extend AIS_EqualRadiusRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_EqualRadiusRelation {
@@ -4998,7 +5000,7 @@ class AIS_Point : public AIS_InteractiveObject {
 };
 %extend AIS_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_Point {
@@ -5060,7 +5062,7 @@ class AIS_EqualDistanceRelation : public AIS_Relation {
 };
 %extend AIS_EqualDistanceRelation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_EqualDistanceRelation {
@@ -5106,7 +5108,7 @@ class AIS_ConnectedShape : public AIS_ConnectedInteractive {
 };
 %extend AIS_ConnectedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_ConnectedShape {
@@ -5136,7 +5138,7 @@ class AIS_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 };
 %extend AIS_DataMapNodeOfDataMapOfIOStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_DataMapNodeOfDataMapOfIOStatus {
@@ -5166,7 +5168,7 @@ class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 };
 %extend AIS_DimensionOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_DimensionOwner {
@@ -5220,7 +5222,7 @@ class AIS_LengthDimension : public AIS_Relation {
 };
 %extend AIS_LengthDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_LengthDimension {
@@ -5276,7 +5278,7 @@ class AIS_PlaneTrihedron : public AIS_InteractiveObject {
 };
 %extend AIS_PlaneTrihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_PlaneTrihedron {
@@ -5548,7 +5550,7 @@ class AIS_LocalContext : public MMgt_TShared {
 };
 %extend AIS_LocalContext {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_LocalContext {
@@ -5576,7 +5578,7 @@ class AIS_SignatureFilter : public AIS_TypeFilter {
 };
 %extend AIS_SignatureFilter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_SignatureFilter {
@@ -5642,7 +5644,7 @@ class AIS_GlobalStatus : public MMgt_TShared {
 };
 %extend AIS_GlobalStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_GlobalStatus {
@@ -5672,7 +5674,7 @@ class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
 };
 %extend AIS_MinRadiusDimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_MinRadiusDimension {
@@ -5702,7 +5704,7 @@ class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
 };
 %extend AIS_DataMapNodeOfDataMapOfILC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AIS_DataMapNodeOfDataMapOfILC {

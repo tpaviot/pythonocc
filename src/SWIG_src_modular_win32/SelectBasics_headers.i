@@ -46,21 +46,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<SelectBasics.hxx>
-#include<SelectBasics_BasicTool.hxx>
-#include<SelectBasics_EntityOwner.hxx>
-#include<SelectBasics_ListIteratorOfListOfBox2d.hxx>
-#include<SelectBasics_ListIteratorOfListOfSensitive.hxx>
-#include<SelectBasics_ListNodeOfListOfBox2d.hxx>
-#include<SelectBasics_ListNodeOfListOfSensitive.hxx>
-#include<SelectBasics_ListOfBox2d.hxx>
-#include<SelectBasics_ListOfSensitive.hxx>
-#include<SelectBasics_SensitiveEntity.hxx>
-#include<SelectBasics_SequenceNodeOfSequenceOfAddress.hxx>
-#include<SelectBasics_SequenceNodeOfSequenceOfOwner.hxx>
-#include<SelectBasics_SequenceOfAddress.hxx>
-#include<SelectBasics_SequenceOfOwner.hxx>
-#include<SelectBasics_SortAlgo.hxx>
 
 // Needed headers necessary for compilation.
 

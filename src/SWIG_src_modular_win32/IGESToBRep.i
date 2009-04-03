@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -393,7 +395,7 @@ class IGESToBRep_ToolContainer : public MMgt_TShared {
 };
 %extend IGESToBRep_ToolContainer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESToBRep_ToolContainer {
@@ -431,7 +433,7 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 };
 %extend IGESToBRep_Actor {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESToBRep_Actor {
@@ -555,7 +557,7 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 };
 %extend IGESToBRep_IGESBoundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IGESToBRep_IGESBoundary {

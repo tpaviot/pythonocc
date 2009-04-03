@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -367,7 +369,7 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 };
 %extend CDF_MetaDataDriverError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDF_MetaDataDriverError {
@@ -445,7 +447,7 @@ class CDF_Application : public CDM_Application {
 };
 %extend CDF_Application {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDF_Application {
@@ -503,7 +505,7 @@ class CDF_StoreList : public Standard_Transient {
 };
 %extend CDF_StoreList {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDF_StoreList {
@@ -559,7 +561,7 @@ class CDF_MetaDataDriver : public Standard_Transient {
 };
 %extend CDF_MetaDataDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDF_MetaDataDriver {
@@ -585,7 +587,7 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 };
 %extend CDF_MetaDataDriverFactory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDF_MetaDataDriverFactory {
@@ -623,7 +625,7 @@ class CDF_Directory : public Standard_Transient {
 };
 %extend CDF_Directory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDF_Directory {
@@ -667,7 +669,7 @@ class CDF_Session : public Standard_Transient {
 };
 %extend CDF_Session {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend CDF_Session {

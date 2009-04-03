@@ -40,19 +40,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepExtrema_DistShapeShape.hxx>
-#include<BRepExtrema_DistanceSS.hxx>
-#include<BRepExtrema_ExtCC.hxx>
-#include<BRepExtrema_ExtCF.hxx>
-#include<BRepExtrema_ExtFF.hxx>
-#include<BRepExtrema_ExtPC.hxx>
-#include<BRepExtrema_ExtPF.hxx>
-#include<BRepExtrema_Poly.hxx>
-#include<BRepExtrema_SeqOfSolution.hxx>
-#include<BRepExtrema_SequenceNodeOfSeqOfSolution.hxx>
-#include<BRepExtrema_SolutionElem.hxx>
-#include<BRepExtrema_SupportType.hxx>
-#include<BRepExtrema_UnCompatibleShape.hxx>
 
 // Needed headers necessary for compilation.
 

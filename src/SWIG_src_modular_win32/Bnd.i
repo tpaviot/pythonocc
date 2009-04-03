@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -320,7 +322,7 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 };
 %extend Bnd_SequenceNodeOfSeqOfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Bnd_SequenceNodeOfSeqOfBox {
@@ -662,7 +664,7 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 };
 %extend Bnd_HArray1OfBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Bnd_HArray1OfBox2d {
@@ -708,7 +710,7 @@ class Bnd_HArray1OfBox : public MMgt_TShared {
 };
 %extend Bnd_HArray1OfBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Bnd_HArray1OfBox {

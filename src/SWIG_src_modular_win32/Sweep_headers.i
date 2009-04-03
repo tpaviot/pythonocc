@@ -28,13 +28,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Sweep_NumShape.hxx>
-#include<Sweep_NumShapeIterator.hxx>
-#include<Sweep_NumShapeTool.hxx>
 
 // Needed headers necessary for compilation.
 
-#include<Sweep_NumShape.hxx>
-#include<Sweep_NumShapeIterator.hxx>
-#include<Sweep_NumShapeTool.hxx>
 %}

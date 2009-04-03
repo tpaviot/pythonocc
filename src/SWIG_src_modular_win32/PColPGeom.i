@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -639,7 +641,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public PStandard_ArrayNode
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface {
@@ -735,7 +737,7 @@ class PColPGeom_HArray1OfBSplineCurve : public Standard_Persistent {
 };
 %extend PColPGeom_HArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray1OfBSplineCurve {
@@ -791,7 +793,7 @@ class PColPGeom_HArray1OfBezierCurve : public Standard_Persistent {
 };
 %extend PColPGeom_HArray1OfBezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray1OfBezierCurve {
@@ -847,7 +849,7 @@ class PColPGeom_HArray1OfCurve : public Standard_Persistent {
 };
 %extend PColPGeom_HArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray1OfCurve {
@@ -953,7 +955,7 @@ class PColPGeom_HArray1OfSurface : public Standard_Persistent {
 };
 %extend PColPGeom_HArray1OfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray1OfSurface {
@@ -991,7 +993,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public PStandard_Ar
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface {
@@ -1049,7 +1051,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode {
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve {
@@ -1087,7 +1089,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public PStandard_Ar
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface {
@@ -1175,7 +1177,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Array
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve {
@@ -1213,7 +1215,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public PStandard_Ar
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface {
@@ -1311,7 +1313,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Arra
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve {
@@ -1397,7 +1399,7 @@ class PColPGeom_HArray1OfBoundedSurface : public Standard_Persistent {
 };
 %extend PColPGeom_HArray1OfBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray1OfBoundedSurface {
@@ -1467,7 +1469,7 @@ class PColPGeom_HArray2OfBoundedSurface : public Standard_Persistent {
 };
 %extend PColPGeom_HArray2OfBoundedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray2OfBoundedSurface {
@@ -1543,7 +1545,7 @@ class PColPGeom_HArray1OfBoundedCurve : public Standard_Persistent {
 };
 %extend PColPGeom_HArray1OfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray1OfBoundedCurve {
@@ -1613,7 +1615,7 @@ class PColPGeom_HArray2OfBezierSurface : public Standard_Persistent {
 };
 %extend PColPGeom_HArray2OfBezierSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray2OfBezierSurface {
@@ -1761,7 +1763,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public PStandard_Arr
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface {
@@ -1831,7 +1833,7 @@ class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 };
 %extend PColPGeom_HArray2OfBSplineSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray2OfBSplineSurface {
@@ -1921,7 +1923,7 @@ class PColPGeom_HArray2OfSurface : public Standard_Persistent {
 };
 %extend PColPGeom_HArray2OfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_HArray2OfSurface {
@@ -1989,7 +1991,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Arra
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve {
@@ -2027,7 +2029,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public PStandard_ArrayNode
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface {

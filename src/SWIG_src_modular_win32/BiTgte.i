@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -295,7 +297,7 @@ class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 };
 %extend BiTgte_HCurveOnEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BiTgte_HCurveOnEdge {
@@ -325,7 +327,7 @@ class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 };
 %extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BiTgte_DataMapNodeOfDataMapOfShapeBox {
@@ -361,7 +363,7 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 };
 %extend BiTgte_HCurveOnVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BiTgte_HCurveOnVertex {

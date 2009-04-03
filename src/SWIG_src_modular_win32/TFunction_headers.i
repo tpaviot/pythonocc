@@ -54,26 +54,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TFunction_Array1OfDataMapOfGUIDDriver.hxx>
-#include<TFunction_DataMapIteratorOfDataMapOfGUIDDriver.hxx>
-#include<TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel.hxx>
-#include<TFunction_DataMapNodeOfDataMapOfGUIDDriver.hxx>
-#include<TFunction_DataMapNodeOfDataMapOfLabelListOfLabel.hxx>
-#include<TFunction_DataMapOfGUIDDriver.hxx>
-#include<TFunction_DataMapOfLabelListOfLabel.hxx>
-#include<TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel.hxx>
-#include<TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel.hxx>
-#include<TFunction_DoubleMapOfIntegerLabel.hxx>
-#include<TFunction_Driver.hxx>
-#include<TFunction_DriverTable.hxx>
-#include<TFunction_ExecutionStatus.hxx>
-#include<TFunction_Function.hxx>
-#include<TFunction_GraphNode.hxx>
-#include<TFunction_HArray1OfDataMapOfGUIDDriver.hxx>
-#include<TFunction_IFunction.hxx>
-#include<TFunction_Iterator.hxx>
-#include<TFunction_Logbook.hxx>
-#include<TFunction_Scope.hxx>
 
 // Needed headers necessary for compilation.
 

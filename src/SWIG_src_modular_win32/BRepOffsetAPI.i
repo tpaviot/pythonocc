@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -349,7 +351,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape {
@@ -461,7 +463,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal {
@@ -599,7 +601,7 @@ class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollect
 };
 %extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape {

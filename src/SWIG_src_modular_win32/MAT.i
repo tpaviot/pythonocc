@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -593,7 +595,7 @@ class MAT_SequenceNodeOfSequenceOfArc : public TCollection_SeqNode {
 };
 %extend MAT_SequenceNodeOfSequenceOfArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_SequenceNodeOfSequenceOfArc {
@@ -645,7 +647,7 @@ class MAT_Graph : public MMgt_TShared {
 };
 %extend MAT_Graph {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_Graph {
@@ -743,7 +745,7 @@ class MAT_TListNodeOfListOfBisector : public MMgt_TShared {
 };
 %extend MAT_TListNodeOfListOfBisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_TListNodeOfListOfBisector {
@@ -805,7 +807,7 @@ class MAT_Arc : public MMgt_TShared {
 };
 %extend MAT_Arc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_Arc {
@@ -881,7 +883,7 @@ class MAT_ListOfBisector : public MMgt_TShared {
 };
 %extend MAT_ListOfBisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_ListOfBisector {
@@ -929,7 +931,7 @@ class MAT_Edge : public MMgt_TShared {
 };
 %extend MAT_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_Edge {
@@ -1057,7 +1059,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerBasicElt : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBasicElt {
@@ -1103,7 +1105,7 @@ class MAT_Node : public MMgt_TShared {
 };
 %extend MAT_Node {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_Node {
@@ -1209,7 +1211,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerBisector : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerBisector {
@@ -1239,7 +1241,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerArc : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerArc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerArc {
@@ -1315,7 +1317,7 @@ class MAT_ListOfEdge : public MMgt_TShared {
 };
 %extend MAT_ListOfEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_ListOfEdge {
@@ -1343,7 +1345,7 @@ class MAT_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 };
 %extend MAT_SequenceNodeOfSequenceOfBasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_SequenceNodeOfSequenceOfBasicElt {
@@ -1419,7 +1421,7 @@ class MAT_BasicElt : public MMgt_TShared {
 };
 %extend MAT_BasicElt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_BasicElt {
@@ -1457,7 +1459,7 @@ class MAT_Zone : public MMgt_TShared {
 };
 %extend MAT_Zone {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_Zone {
@@ -1499,7 +1501,7 @@ class MAT_TListNodeOfListOfEdge : public MMgt_TShared {
 };
 %extend MAT_TListNodeOfListOfEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_TListNodeOfListOfEdge {
@@ -1563,7 +1565,7 @@ class MAT_DataMapNodeOfDataMapOfIntegerNode : public TCollection_MapNode {
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerNode {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_DataMapNodeOfDataMapOfIntegerNode {
@@ -1647,7 +1649,7 @@ class MAT_Bisector : public MMgt_TShared {
 };
 %extend MAT_Bisector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT_Bisector {

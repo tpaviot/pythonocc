@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -339,7 +341,7 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 };
 %extend XSControl_SignTransferStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XSControl_SignTransferStatus {
@@ -423,7 +425,7 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 };
 %extend XSControl_WorkSession {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XSControl_WorkSession {
@@ -525,7 +527,7 @@ class XSControl_Controller : public MMgt_TShared {
 };
 %extend XSControl_Controller {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XSControl_Controller {
@@ -675,7 +677,7 @@ class XSControl_SelectForTransfer : public IFSelect_SelectExtract {
 };
 %extend XSControl_SelectForTransfer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XSControl_SelectForTransfer {
@@ -829,7 +831,7 @@ class XSControl_TransferWriter : public MMgt_TShared {
 };
 %extend XSControl_TransferWriter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XSControl_TransferWriter {
@@ -865,7 +867,7 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 };
 %extend XSControl_ConnectedShapes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XSControl_ConnectedShapes {
@@ -983,7 +985,7 @@ class XSControl_TransferReader : public MMgt_TShared {
 };
 %extend XSControl_TransferReader {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend XSControl_TransferReader {

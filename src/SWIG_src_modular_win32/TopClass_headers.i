@@ -27,8 +27,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<TopClass_Intersection3d.hxx>
-#include<TopClass_SolidExplorer.hxx>
 
 // Needed headers necessary for compilation.
 

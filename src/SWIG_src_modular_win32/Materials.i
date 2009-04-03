@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -314,7 +316,7 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 };
 %extend Materials_MaterialsDictionary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Materials_MaterialsDictionary {
@@ -342,7 +344,7 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 };
 %extend Materials_SequenceNodeOfMtsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Materials_SequenceNodeOfMtsSequence {
@@ -426,7 +428,7 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 };
 %extend Materials_FuzzyInstance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Materials_FuzzyInstance {
@@ -454,7 +456,7 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 };
 %extend Materials_MaterialDefinition {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Materials_MaterialDefinition {
@@ -484,7 +486,7 @@ class Materials_Material : public Materials_FuzzyInstance {
 };
 %extend Materials_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Materials_Material {
@@ -608,7 +610,7 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 };
 %extend Materials_MaterialsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Materials_MaterialsSequence {
@@ -648,7 +650,7 @@ class Materials_Color : public Standard_Transient {
 };
 %extend Materials_Color {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Materials_Color {

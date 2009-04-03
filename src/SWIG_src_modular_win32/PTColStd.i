@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -228,7 +230,7 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfPersistentTransientMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTColStd_DataMapNodeOfPersistentTransientMap {
@@ -368,7 +370,7 @@ class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollectio
 };
 %extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent {
@@ -420,7 +422,7 @@ class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode 
 };
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTColStd_DataMapNodeOfTransientPersistentMap {

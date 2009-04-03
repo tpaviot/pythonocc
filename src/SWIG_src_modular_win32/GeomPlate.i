@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -421,7 +423,7 @@ class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_HSequenceOfCurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_HSequenceOfCurveConstraint {
@@ -449,7 +451,7 @@ class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_Seq
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfCurveConstraint {
@@ -495,7 +497,7 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 };
 %extend GeomPlate_HArray1OfHCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_HArray1OfHCurveOnSurface {
@@ -595,7 +597,7 @@ class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 };
 %extend GeomPlate_HArray1OfSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_HArray1OfSequenceOfReal {
@@ -665,7 +667,7 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_HSequenceOfPointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_HSequenceOfPointConstraint {
@@ -715,7 +717,7 @@ class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_Seq
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfPointConstraint {
@@ -789,7 +791,7 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_CurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_CurveConstraint {
@@ -845,7 +847,7 @@ class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfAij {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_SequenceNodeOfSequenceOfAij {
@@ -929,7 +931,7 @@ class GeomPlate_Surface : public Geom_Surface {
 };
 %extend GeomPlate_Surface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_Surface {
@@ -1059,7 +1061,7 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 };
 %extend GeomPlate_PointConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomPlate_PointConstraint {

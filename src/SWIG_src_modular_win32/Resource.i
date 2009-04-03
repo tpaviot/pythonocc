@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -334,7 +336,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString {
@@ -382,7 +384,7 @@ class Resource_Manager : public MMgt_TShared {
 };
 %extend Resource_Manager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Resource_Manager {
@@ -448,7 +450,7 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 };
 %extend Resource_NoSuchResource {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Resource_NoSuchResource {
@@ -552,7 +554,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString {

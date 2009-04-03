@@ -30,11 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<BRepAlgoAPI_BooleanOperation.hxx>
-#include<BRepAlgoAPI_Common.hxx>
-#include<BRepAlgoAPI_Cut.hxx>
-#include<BRepAlgoAPI_Fuse.hxx>
-#include<BRepAlgoAPI_Section.hxx>
 
 // Needed headers necessary for compilation.
 

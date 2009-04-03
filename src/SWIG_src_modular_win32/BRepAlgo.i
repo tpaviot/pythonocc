@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -302,7 +304,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger {
@@ -454,7 +456,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapN
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeInterference {
@@ -624,7 +626,7 @@ class BRepAlgo_AsDes : public MMgt_TShared {
 };
 %extend BRepAlgo_AsDes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAlgo_AsDes {
@@ -668,7 +670,7 @@ class BRepAlgo_EdgeConnector : public MMgt_TShared {
 };
 %extend BRepAlgo_EdgeConnector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAlgo_EdgeConnector {
@@ -698,7 +700,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean {
@@ -1160,7 +1162,7 @@ class BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public TCollection_Se
 };
 %extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger {

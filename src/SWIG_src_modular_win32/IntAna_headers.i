@@ -41,17 +41,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<IntAna2d_Conic.hxx>
 #include<IntAna2d_IntPoint.hxx>
 #include<IntAna2d_Outils.hxx>
-#include<IntAna_Curve.hxx>
-#include<IntAna_Int3Pln.hxx>
-#include<IntAna_IntConicQuad.hxx>
-#include<IntAna_IntLinTorus.hxx>
-#include<IntAna_IntQuadQuad.hxx>
-#include<IntAna_ListIteratorOfListOfCurve.hxx>
-#include<IntAna_ListNodeOfListOfCurve.hxx>
-#include<IntAna_ListOfCurve.hxx>
-#include<IntAna_QuadQuadGeo.hxx>
-#include<IntAna_Quadric.hxx>
-#include<IntAna_ResultType.hxx>
 
 // Needed headers necessary for compilation.
 

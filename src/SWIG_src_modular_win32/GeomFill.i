@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -965,7 +967,7 @@ class GeomFill_TgtField : public MMgt_TShared {
 };
 %extend GeomFill_TgtField {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_TgtField {
@@ -997,7 +999,7 @@ class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 };
 %extend GeomFill_TgtOnCoons {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_TgtOnCoons {
@@ -1047,7 +1049,7 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 };
 %extend GeomFill_TrihedronLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_TrihedronLaw {
@@ -1073,7 +1075,7 @@ class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_Frenet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_Frenet {
@@ -1213,7 +1215,7 @@ class GeomFill_Boundary : public MMgt_TShared {
 };
 %extend GeomFill_Boundary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_Boundary {
@@ -1237,7 +1239,7 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 };
 %extend GeomFill_DegeneratedBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_DegeneratedBound {
@@ -1281,7 +1283,7 @@ class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_Darboux {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_Darboux {
@@ -1419,7 +1421,7 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 };
 %extend GeomFill_CoonsAlgPatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_CoonsAlgPatch {
@@ -1525,7 +1527,7 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 };
 %extend GeomFill_LocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_LocationLaw {
@@ -1557,7 +1559,7 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 };
 %extend GeomFill_LocationDraft {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_LocationDraft {
@@ -1609,7 +1611,7 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_TrihedronWithGuide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_TrihedronWithGuide {
@@ -1657,7 +1659,7 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 };
 %extend GeomFill_GuideTrihedronAC {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_GuideTrihedronAC {
@@ -1779,7 +1781,7 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 };
 %extend GeomFill_CircularBlendFunc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_CircularBlendFunc {
@@ -1851,7 +1853,7 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 };
 %extend GeomFill_SectionLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_SectionLaw {
@@ -1897,7 +1899,7 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 };
 %extend GeomFill_HArray1OfLocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_HArray1OfLocationLaw {
@@ -1991,7 +1993,7 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 };
 %extend GeomFill_CurveAndTrihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_CurveAndTrihedron {
@@ -2019,7 +2021,7 @@ class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 };
 %extend GeomFill_SequenceNodeOfSequenceOfTrsf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_SequenceNodeOfSequenceOfTrsf {
@@ -2079,7 +2081,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 };
 %extend GeomFill_SweepFunction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_SweepFunction {
@@ -2121,7 +2123,7 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 };
 %extend GeomFill_BoundWithSurf {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_BoundWithSurf {
@@ -2279,7 +2281,7 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 };
 %extend GeomFill_GuideTrihedronPlan {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_GuideTrihedronPlan {
@@ -2395,7 +2397,7 @@ class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %extend GeomFill_SequenceNodeOfSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_SequenceNodeOfSequenceOfCurve {
@@ -2499,7 +2501,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 };
 %extend GeomFill_UniformSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_UniformSection {
@@ -2583,7 +2585,7 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 };
 %extend GeomFill_SimpleBound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_SimpleBound {
@@ -2757,7 +2759,7 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_ConstantBiNormal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_ConstantBiNormal {
@@ -2803,7 +2805,7 @@ class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 };
 %extend GeomFill_HArray1OfSectionLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_HArray1OfSectionLaw {
@@ -2933,7 +2935,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 };
 %extend GeomFill_EvolvedSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_EvolvedSection {
@@ -2979,7 +2981,7 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_DraftTrihedron {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_DraftTrihedron {
@@ -3061,7 +3063,7 @@ class GeomFill_Line : public MMgt_TShared {
 };
 %extend GeomFill_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_Line {
@@ -3103,7 +3105,7 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_Fixed {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_Fixed {
@@ -3213,7 +3215,7 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 };
 %extend GeomFill_CorrectedFrenet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_CorrectedFrenet {
@@ -3375,7 +3377,7 @@ class GeomFill_LocationGuide : public GeomFill_LocationLaw {
 };
 %extend GeomFill_LocationGuide {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GeomFill_LocationGuide {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -544,7 +546,7 @@ class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 };
 %extend Select3D_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveEntity {
@@ -574,7 +576,7 @@ class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveBox {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveBox {
@@ -618,7 +620,7 @@ class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitivePoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitivePoint {
@@ -840,7 +842,7 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveGroup {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveGroup {
@@ -874,7 +876,7 @@ class Select3D_SensitivePoly : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitivePoly {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitivePoly {
@@ -910,7 +912,7 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveFace {
@@ -956,7 +958,7 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveTriangle {
@@ -1072,7 +1074,7 @@ class Select3D_ListNodeOfListOfSensitiveTriangle : public TCollection_MapNode {
 };
 %extend Select3D_ListNodeOfListOfSensitiveTriangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_ListNodeOfListOfSensitiveTriangle {
@@ -1126,7 +1128,7 @@ class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveSegment {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveSegment {
@@ -1154,7 +1156,7 @@ class Select3D_SequenceNodeOfSensitiveEntitySequence : public TCollection_SeqNod
 };
 %extend Select3D_SequenceNodeOfSensitiveEntitySequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SequenceNodeOfSensitiveEntitySequence {
@@ -1200,7 +1202,7 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveCircle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveCircle {
@@ -1260,7 +1262,7 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveTriangulation {
@@ -1362,7 +1364,7 @@ class Select3D_SensitiveWire : public Select3D_SensitiveEntity {
 };
 %extend Select3D_SensitiveWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveWire {
@@ -1402,7 +1404,7 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 };
 %extend Select3D_SensitiveCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_SensitiveCurve {
@@ -1430,7 +1432,7 @@ class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
 };
 %extend Select3D_ListNodeOfListOfSensitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Select3D_ListNodeOfListOfSensitive {

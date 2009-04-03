@@ -76,17 +76,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<Adaptor3d_SurfaceOfRevolution.hxx>
 #include<Adaptor3d_SurfacePtr.hxx>
 #include<Adaptor3d_TopolTool.hxx>
-#include<GProp.hxx>
-#include<GProp_CelGProps.hxx>
-#include<GProp_EquaType.hxx>
-#include<GProp_GProps.hxx>
-#include<GProp_PEquation.hxx>
-#include<GProp_PGProps.hxx>
-#include<GProp_PrincipalProps.hxx>
-#include<GProp_SelGProps.hxx>
-#include<GProp_UndefinedAxis.hxx>
-#include<GProp_ValueType.hxx>
-#include<GProp_VelGProps.hxx>
 #include<gp.hxx>
 #include<gp_Ax1.hxx>
 #include<gp_Ax2.hxx>

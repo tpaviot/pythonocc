@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -725,7 +727,7 @@ class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 };
 %extend BOPTools_SequenceNodeOfSequenceOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_SequenceNodeOfSequenceOfPaveBlock {
@@ -959,7 +961,7 @@ class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfPave {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_ListNodeOfListOfPave {
@@ -1243,7 +1245,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public TColl
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet {
@@ -1341,7 +1343,7 @@ class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_
 };
 %extend BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger {
@@ -1375,7 +1377,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollec
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState {
@@ -1551,7 +1553,7 @@ class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 };
 %extend BOPTools_SequenceNodeOfSequenceOfCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_SequenceNodeOfSequenceOfCurves {
@@ -1585,7 +1587,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public TColle
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger {
@@ -1613,7 +1615,7 @@ class BOPTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCommonBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_ListNodeOfListOfCommonBlock {
@@ -1733,7 +1735,7 @@ class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfInterference {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_ListNodeOfListOfInterference {
@@ -1761,7 +1763,7 @@ class BOPTools_ListNodeOfListOfCoupleOfInteger : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCoupleOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_ListNodeOfListOfCoupleOfInteger {
@@ -2393,7 +2395,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TColle
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo {
@@ -2617,7 +2619,7 @@ class BOPTools_HArray2OfIntersectionStatus : public MMgt_TShared {
 };
 %extend BOPTools_HArray2OfIntersectionStatus {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_HArray2OfIntersectionStatus {
@@ -2757,7 +2759,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TColl
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState {
@@ -2843,7 +2845,7 @@ class BOPTools_ListNodeOfListOfPaveBlock : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_ListNodeOfListOfPaveBlock {
@@ -2992,7 +2994,7 @@ class BOPTools_CoupleOfInteger {
 };
 %extend BOPTools_CoupleOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_CoupleOfInteger {
@@ -3020,7 +3022,7 @@ class BOPTools_ListNodeOfListOfCheckResults : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfCheckResults {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_ListNodeOfListOfCheckResults {
@@ -3338,7 +3340,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public TCol
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock {
@@ -3632,7 +3634,7 @@ class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
 };
 %extend BOPTools_ListNodeOfListOfShapeEnum {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_ListNodeOfListOfShapeEnum {
@@ -3878,7 +3880,7 @@ class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
 };
 %extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BOPTools_IndexedMapNodeOfIMapOfPaveBlock {

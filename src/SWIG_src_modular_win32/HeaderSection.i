@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -266,7 +268,7 @@ class HeaderSection_FileDescription : public MMgt_TShared {
 };
 %extend HeaderSection_FileDescription {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HeaderSection_FileDescription {
@@ -302,7 +304,7 @@ class HeaderSection_FileSchema : public MMgt_TShared {
 };
 %extend HeaderSection_FileSchema {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HeaderSection_FileSchema {
@@ -366,7 +368,7 @@ class HeaderSection_FileName : public MMgt_TShared {
 };
 %extend HeaderSection_FileName {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HeaderSection_FileName {
@@ -408,7 +410,7 @@ class HeaderSection_HeaderRecognizer : public StepData_FileRecognizer {
 };
 %extend HeaderSection_HeaderRecognizer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend HeaderSection_HeaderRecognizer {

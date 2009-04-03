@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -292,7 +294,7 @@ class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
 };
 %extend IntSurf_ListNodeOfListOfPntOn2S {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntSurf_ListNodeOfListOfPntOn2S {
@@ -368,7 +370,7 @@ class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 };
 %extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntSurf_SequenceNodeOfSequenceOfPntOn2S {
@@ -632,7 +634,7 @@ class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
 };
 %extend IntSurf_SequenceNodeOfSequenceOfCouple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntSurf_SequenceNodeOfSequenceOfCouple {
@@ -710,7 +712,7 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 };
 %extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntSurf_SequenceNodeOfSequenceOfPathPoint {
@@ -768,7 +770,7 @@ class IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public TCollection_SeqNode
 };
 %extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntSurf_SequenceNodeOfSequenceOfInteriorPoint {
@@ -922,7 +924,7 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 };
 %extend IntSurf_LineOn2S {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend IntSurf_LineOn2S {

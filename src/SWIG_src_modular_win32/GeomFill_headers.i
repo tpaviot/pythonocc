@@ -142,17 +142,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<AppParCurves_SequenceOfMultiBSpCurve.hxx>
 #include<AppParCurves_SequenceOfMultiCurve.hxx>
 #include<AppParCurves_SmoothCriterion.hxx>
-#include<GProp.hxx>
-#include<GProp_CelGProps.hxx>
-#include<GProp_EquaType.hxx>
-#include<GProp_GProps.hxx>
-#include<GProp_PEquation.hxx>
-#include<GProp_PGProps.hxx>
-#include<GProp_PrincipalProps.hxx>
-#include<GProp_SelGProps.hxx>
-#include<GProp_UndefinedAxis.hxx>
-#include<GProp_ValueType.hxx>
-#include<GProp_VelGProps.hxx>
 #include<Geom2dHatch_ClassifierOfHatcher.hxx>
 #include<Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher.hxx>
 #include<Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher.hxx>

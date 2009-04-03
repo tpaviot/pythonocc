@@ -54,15 +54,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<IntCurveSurface_TheQuadCurvExactHInter.hxx>
 #include<IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter.hxx>
 #include<IntCurveSurface_TransitionOnCurve.hxx>
-#include<IntCurve_IConicTool.hxx>
-#include<IntCurve_IntConicConic.hxx>
-#include<IntCurve_IntConicConic_1.hxx>
-#include<IntCurve_IntConicConic_Tool.hxx>
-#include<IntCurve_IntImpConicParConic.hxx>
-#include<IntCurve_MyImpParToolOfIntImpConicParConic.hxx>
-#include<IntCurve_PConic.hxx>
-#include<IntCurve_PConicTool.hxx>
-#include<IntCurve_ProjectOnPConicTool.hxx>
 #include<IntCurvesFace_Intersector.hxx>
 #include<IntCurvesFace_ShapeIntersector.hxx>
 

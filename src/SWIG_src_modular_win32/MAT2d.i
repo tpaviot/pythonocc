@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -456,7 +458,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntInteger {
@@ -486,7 +488,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_Ma
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger {
@@ -538,7 +540,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerBisec {
@@ -610,7 +612,7 @@ class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 };
 %extend MAT2d_SequenceNodeOfSequenceOfConnexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_SequenceNodeOfSequenceOfConnexion {
@@ -692,7 +694,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqN
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry {
@@ -754,7 +756,7 @@ class MAT2d_Circuit : public MMgt_TShared {
 };
 %extend MAT2d_Circuit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_Circuit {
@@ -872,7 +874,7 @@ class MAT2d_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 };
 %extend MAT2d_SequenceNodeOfSequenceOfBoolean {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_SequenceNodeOfSequenceOfBoolean {
@@ -1000,7 +1002,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollectio
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion {
@@ -1098,7 +1100,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerVec2d {
@@ -1184,7 +1186,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode 
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerConnexion {
@@ -1276,7 +1278,7 @@ class MAT2d_Connexion : public MMgt_TShared {
 };
 %extend MAT2d_Connexion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_Connexion {
@@ -1304,7 +1306,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve {
@@ -1584,7 +1586,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d {

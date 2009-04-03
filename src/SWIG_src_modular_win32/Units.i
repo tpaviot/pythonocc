@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -635,7 +637,7 @@ class Units_NoSuchType : public Standard_NoSuchObject {
 };
 %extend Units_NoSuchType {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_NoSuchType {
@@ -663,7 +665,7 @@ class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
 };
 %extend Units_SequenceNodeOfTksSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_SequenceNodeOfTksSequence {
@@ -861,7 +863,7 @@ class Units_Unit : public MMgt_TShared {
 };
 %extend Units_Unit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_Unit {
@@ -899,7 +901,7 @@ class Units_ShiftedUnit : public Units_Unit {
 };
 %extend Units_ShiftedUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_ShiftedUnit {
@@ -969,7 +971,7 @@ class Units_UnitsSequence : public MMgt_TShared {
 };
 %extend Units_UnitsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_UnitsSequence {
@@ -1123,7 +1125,7 @@ class Units_Token : public MMgt_TShared {
 };
 %extend Units_Token {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_Token {
@@ -1149,7 +1151,7 @@ class Units_ShiftedToken : public Units_Token {
 };
 %extend Units_ShiftedToken {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_ShiftedToken {
@@ -1187,7 +1189,7 @@ class Units_UnitsDictionary : public MMgt_TShared {
 };
 %extend Units_UnitsDictionary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_UnitsDictionary {
@@ -1257,7 +1259,7 @@ class Units_QuantitiesSequence : public MMgt_TShared {
 };
 %extend Units_QuantitiesSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_QuantitiesSequence {
@@ -1291,7 +1293,7 @@ class Units_NoSuchUnit : public Standard_NoSuchObject {
 };
 %extend Units_NoSuchUnit {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_NoSuchUnit {
@@ -1329,7 +1331,7 @@ class Units_Lexicon : public MMgt_TShared {
 };
 %extend Units_Lexicon {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_Lexicon {
@@ -1381,7 +1383,7 @@ class Units_UnitsSystem : public MMgt_TShared {
 };
 %extend Units_UnitsSystem {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_UnitsSystem {
@@ -1415,7 +1417,7 @@ class Units_UnitsLexicon : public Units_Lexicon {
 };
 %extend Units_UnitsLexicon {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_UnitsLexicon {
@@ -1485,7 +1487,7 @@ class Units_StringsSequence : public MMgt_TShared {
 };
 %extend Units_StringsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_StringsSequence {
@@ -1695,7 +1697,7 @@ class Units_TokensSequence : public MMgt_TShared {
 };
 %extend Units_TokensSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_TokensSequence {
@@ -1797,7 +1799,7 @@ class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
 };
 %extend Units_SequenceNodeOfUtsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_SequenceNodeOfUtsSequence {
@@ -1825,7 +1827,7 @@ class Units_SequenceNodeOfStrgSequence : public TCollection_SeqNode {
 };
 %extend Units_SequenceNodeOfStrgSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_SequenceNodeOfStrgSequence {
@@ -1853,7 +1855,7 @@ class Units_SequenceNodeOfQtsSequence : public TCollection_SeqNode {
 };
 %extend Units_SequenceNodeOfQtsSequence {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Units_SequenceNodeOfQtsSequence {

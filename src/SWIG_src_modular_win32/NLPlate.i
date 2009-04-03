@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -499,7 +501,7 @@ class NLPlate_HGPPConstraint : public MMgt_TShared {
 };
 %extend NLPlate_HGPPConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_HGPPConstraint {
@@ -523,7 +525,7 @@ class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 };
 %extend NLPlate_HPG0Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_HPG0Constraint {
@@ -547,7 +549,7 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 };
 %extend NLPlate_HPG0G1Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_HPG0G1Constraint {
@@ -571,7 +573,7 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 };
 %extend NLPlate_HPG0G2Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_HPG0G2Constraint {
@@ -611,7 +613,7 @@ class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 };
 %extend NLPlate_HPG1Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_HPG1Constraint {
@@ -637,7 +639,7 @@ class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 };
 %extend NLPlate_HPG2Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_HPG2Constraint {
@@ -667,7 +669,7 @@ class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 };
 %extend NLPlate_HPG3Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_HPG3Constraint {
@@ -695,7 +697,7 @@ class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
 };
 %extend NLPlate_StackNodeOfStackOfPlate {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_StackNodeOfStackOfPlate {
@@ -723,7 +725,7 @@ class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNod
 };
 %extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_SequenceNodeOfSequenceOfHGPPConstraint {
@@ -791,7 +793,7 @@ class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 };
 %extend NLPlate_HPG0G3Constraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend NLPlate_HPG0G3Constraint {

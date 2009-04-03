@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -466,7 +468,7 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 };
 %extend PlotMgt_PlotterDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_PlotterDefinitionError {
@@ -512,7 +514,7 @@ class PlotMgt_TextManager : public MFT_TextManager {
 };
 %extend PlotMgt_TextManager {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_TextManager {
@@ -632,7 +634,7 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 };
 %extend PlotMgt_PlotterDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_PlotterDriver {
@@ -660,7 +662,7 @@ class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode 
 };
 %extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_SequenceNodeOfListOfPlotterParameter {
@@ -784,7 +786,7 @@ class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfPlotterParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_HListOfPlotterParameter {
@@ -1176,7 +1178,7 @@ class PlotMgt_Plotter : public MMgt_TShared {
 };
 %extend PlotMgt_Plotter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_Plotter {
@@ -1222,7 +1224,7 @@ class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfMFTSizes {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_HListOfMFTSizes {
@@ -1254,7 +1256,7 @@ class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 };
 %extend PlotMgt_ImageDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_ImageDriver {
@@ -1330,7 +1332,7 @@ class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
 };
 %extend PlotMgt_PlotterAccessError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_PlotterAccessError {
@@ -1394,7 +1396,7 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 };
 %extend PlotMgt_PlotterParameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_PlotterParameter {
@@ -1440,7 +1442,7 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 };
 %extend PlotMgt_HListOfMFTFonts {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PlotMgt_HListOfMFTFonts {

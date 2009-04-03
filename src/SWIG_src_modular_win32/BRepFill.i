@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -682,7 +684,7 @@ class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 };
 %extend BRepFill_CurveConstraint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_CurveConstraint {
@@ -898,7 +900,7 @@ class BRepFill_SectionLaw : public MMgt_TShared {
 };
 %extend BRepFill_SectionLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_SectionLaw {
@@ -926,7 +928,7 @@ class BRepFill_NSections : public BRepFill_SectionLaw {
 };
 %extend BRepFill_NSections {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_NSections {
@@ -1066,7 +1068,7 @@ class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode
 };
 %extend BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_SequenceNodeOfSequenceOfFaceAndOrder {
@@ -1118,7 +1120,7 @@ class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollecti
 };
 %extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape {
@@ -1354,7 +1356,7 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 };
 %extend BRepFill_LocationLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_LocationLaw {
@@ -1378,7 +1380,7 @@ class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_Edge3DLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_Edge3DLaw {
@@ -1404,7 +1406,7 @@ class BRepFill_DraftLaw : public BRepFill_Edge3DLaw {
 };
 %extend BRepFill_DraftLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_DraftLaw {
@@ -1600,7 +1602,7 @@ class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 };
 %extend BRepFill_ListNodeOfListOfOffsetWire {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_ListNodeOfListOfOffsetWire {
@@ -1664,7 +1666,7 @@ class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_ACRLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_ACRLaw {
@@ -1692,7 +1694,7 @@ class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
 };
 %extend BRepFill_EdgeOnSurfLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_EdgeOnSurfLaw {
@@ -1722,7 +1724,7 @@ class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollectio
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape {
@@ -1790,7 +1792,7 @@ class BRepFill_PipeShell : public MMgt_TShared {
 };
 %extend BRepFill_PipeShell {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_PipeShell {
@@ -1860,7 +1862,7 @@ class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 };
 %extend BRepFill_ShapeLaw {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_ShapeLaw {
@@ -1976,7 +1978,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCo
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape {
@@ -2108,7 +2110,7 @@ class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_DataMapNodeOfDataMapOfNodeShape {
@@ -2212,7 +2214,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_M
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape {
@@ -2242,7 +2244,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_Map
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt {
@@ -2370,7 +2372,7 @@ class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
 };
 %extend BRepFill_SequenceNodeOfSequenceOfSection {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_SequenceNodeOfSequenceOfSection {
@@ -2450,7 +2452,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal {
@@ -2570,7 +2572,7 @@ class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_Seq
 };
 %extend BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder {

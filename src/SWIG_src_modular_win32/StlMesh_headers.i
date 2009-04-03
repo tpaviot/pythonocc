@@ -42,17 +42,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<StlMesh.hxx>
-#include<StlMesh_Mesh.hxx>
-#include<StlMesh_MeshDomain.hxx>
-#include<StlMesh_MeshExplorer.hxx>
-#include<StlMesh_MeshTriangle.hxx>
-#include<StlMesh_SequenceNodeOfSequenceOfMesh.hxx>
-#include<StlMesh_SequenceNodeOfSequenceOfMeshDomain.hxx>
-#include<StlMesh_SequenceNodeOfSequenceOfMeshTriangle.hxx>
-#include<StlMesh_SequenceOfMesh.hxx>
-#include<StlMesh_SequenceOfMeshDomain.hxx>
-#include<StlMesh_SequenceOfMeshTriangle.hxx>
 
 // Needed headers necessary for compilation.
 

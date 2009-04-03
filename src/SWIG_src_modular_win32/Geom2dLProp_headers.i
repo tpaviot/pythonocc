@@ -31,12 +31,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Geom2dLProp_CLProps2d.hxx>
-#include<Geom2dLProp_CurAndInf2d.hxx>
-#include<Geom2dLProp_Curve2dTool.hxx>
-#include<Geom2dLProp_FCurExtOfNumericCurInf2d.hxx>
-#include<Geom2dLProp_FCurNulOfNumericCurInf2d.hxx>
-#include<Geom2dLProp_NumericCurInf2d.hxx>
 
 // Needed headers necessary for compilation.
 

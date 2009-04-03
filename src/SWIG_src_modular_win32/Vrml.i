@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -688,7 +690,7 @@ class Vrml_AsciiText : public MMgt_TShared {
 };
 %extend Vrml_AsciiText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_AsciiText {
@@ -734,7 +736,7 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 };
 %extend Vrml_IndexedLineSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_IndexedLineSet {
@@ -814,7 +816,7 @@ class Vrml_SFImage : public MMgt_TShared {
 };
 %extend Vrml_SFImage {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_SFImage {
@@ -926,7 +928,7 @@ class Vrml_Normal : public MMgt_TShared {
 };
 %extend Vrml_Normal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_Normal {
@@ -1032,7 +1034,7 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 };
 %extend Vrml_Coordinate3 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_Coordinate3 {
@@ -1132,7 +1134,7 @@ class Vrml_LOD : public MMgt_TShared {
 };
 %extend Vrml_LOD {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_LOD {
@@ -1364,7 +1366,7 @@ class Vrml_Material : public MMgt_TShared {
 };
 %extend Vrml_Material {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_Material {
@@ -1568,7 +1570,7 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 };
 %extend Vrml_TextureCoordinate2 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_TextureCoordinate2 {
@@ -1614,7 +1616,7 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 };
 %extend Vrml_IndexedFaceSet {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Vrml_IndexedFaceSet {

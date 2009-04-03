@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -544,7 +546,7 @@ class LocOpe_GeneratedShape : public MMgt_TShared {
 };
 %extend LocOpe_GeneratedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_GeneratedShape {
@@ -584,7 +586,7 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 };
 %extend LocOpe_ProjectedWires {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_ProjectedWires {
@@ -620,7 +622,7 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 };
 %extend LocOpe_WiresOnShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_WiresOnShape {
@@ -682,7 +684,7 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfCirc {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_SequenceNodeOfSequenceOfCirc {
@@ -744,7 +746,7 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 };
 %extend LocOpe_GluedShape {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_GluedShape {
@@ -774,7 +776,7 @@ class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 };
 %extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_DataMapNodeOfDataMapOfShapePnt {
@@ -836,7 +838,7 @@ class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfLin {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_SequenceNodeOfSequenceOfLin {
@@ -866,7 +868,7 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 };
 %extend LocOpe_HBuilder {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_HBuilder {
@@ -1408,7 +1410,7 @@ class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {
 };
 %extend LocOpe_SequenceNodeOfSequenceOfPntFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend LocOpe_SequenceNodeOfSequenceOfPntFace {

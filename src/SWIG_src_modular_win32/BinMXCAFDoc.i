@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -383,7 +385,7 @@ class BinMXCAFDoc_VolumeDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_VolumeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_VolumeDriver {
@@ -415,7 +417,7 @@ class BinMXCAFDoc_GraphNodeDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_GraphNodeDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_GraphNodeDriver {
@@ -447,7 +449,7 @@ class BinMXCAFDoc_ColorToolDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_ColorToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_ColorToolDriver {
@@ -479,7 +481,7 @@ class BinMXCAFDoc_ShapeToolDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_ShapeToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_ShapeToolDriver {
@@ -511,7 +513,7 @@ class BinMXCAFDoc_LayerToolDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_LayerToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_LayerToolDriver {
@@ -547,7 +549,7 @@ class BinMXCAFDoc_LocationDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_LocationDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_LocationDriver {
@@ -579,7 +581,7 @@ class BinMXCAFDoc_CentroidDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_CentroidDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_CentroidDriver {
@@ -611,7 +613,7 @@ class BinMXCAFDoc_ColorDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_ColorDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_ColorDriver {
@@ -659,7 +661,7 @@ class BinMXCAFDoc_DocumentToolDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_DocumentToolDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_DocumentToolDriver {
@@ -691,7 +693,7 @@ class BinMXCAFDoc_AreaDriver : public BinMDF_ADriver {
 };
 %extend BinMXCAFDoc_AreaDriver {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BinMXCAFDoc_AreaDriver {

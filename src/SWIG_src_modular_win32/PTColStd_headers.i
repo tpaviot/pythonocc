@@ -38,16 +38,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<PTColStd_DataMapIteratorOfPersistentTransientMap.hxx>
-#include<PTColStd_DataMapIteratorOfTransientPersistentMap.hxx>
-#include<PTColStd_DataMapNodeOfPersistentTransientMap.hxx>
-#include<PTColStd_DataMapNodeOfTransientPersistentMap.hxx>
-#include<PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent.hxx>
-#include<PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent.hxx>
-#include<PTColStd_DoubleMapOfTransientPersistent.hxx>
-#include<PTColStd_MapPersistentHasher.hxx>
-#include<PTColStd_PersistentTransientMap.hxx>
-#include<PTColStd_TransientPersistentMap.hxx>
 
 // Needed headers necessary for compilation.
 

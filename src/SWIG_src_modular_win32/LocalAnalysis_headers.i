@@ -29,10 +29,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<LocalAnalysis.hxx>
-#include<LocalAnalysis_CurveContinuity.hxx>
-#include<LocalAnalysis_StatusErrorType.hxx>
-#include<LocalAnalysis_SurfaceContinuity.hxx>
 
 // Needed headers necessary for compilation.
 

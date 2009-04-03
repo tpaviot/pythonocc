@@ -34,15 +34,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GeomConvert.hxx>
-#include<GeomConvert_ApproxCurve.hxx>
-#include<GeomConvert_ApproxSurface.hxx>
-#include<GeomConvert_BSplineCurveKnotSplitting.hxx>
-#include<GeomConvert_BSplineCurveToBezierCurve.hxx>
-#include<GeomConvert_BSplineSurfaceKnotSplitting.hxx>
-#include<GeomConvert_BSplineSurfaceToBezierSurface.hxx>
-#include<GeomConvert_CompBezierSurfacesToBSplineSurface.hxx>
-#include<GeomConvert_CompCurveToBSplineCurve.hxx>
 
 // Needed headers necessary for compilation.
 

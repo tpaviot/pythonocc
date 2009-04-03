@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -713,7 +715,7 @@ class V3d_Camera : public MMgt_TShared {
 };
 %extend V3d_Camera {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_Camera {
@@ -733,7 +735,7 @@ class V3d_Light : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetColor(const Quantity_Color &Name);
 		%feature("autodoc", "1");
-		void Color(const Quantity_TypeOfColor Type, Quantity_Parameter & V1, Quantity_Parameter & V2, Quantity_Parameter & V3) const;
+		void Color(const Quantity_TypeOfColor Type, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Color(Quantity_NameOfColor & Name) const;
 		%feature("autodoc", "1");
@@ -755,7 +757,7 @@ class V3d_Light : public MMgt_TShared {
 };
 %extend V3d_Light {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_Light {
@@ -805,7 +807,7 @@ class V3d_PositionLight : public V3d_Light {
 };
 %extend V3d_PositionLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_PositionLight {
@@ -831,7 +833,7 @@ class V3d_AmbientLight : public V3d_Light {
 };
 %extend V3d_AmbientLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_AmbientLight {
@@ -869,7 +871,7 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %extend V3d_RectangularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_RectangularGrid {
@@ -901,7 +903,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 		%feature("autodoc", "1");
 		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
 		%feature("autodoc", "1");
-		void Direction(Quantity_Parameter & Vx, Quantity_Parameter & Vy, Quantity_Parameter & Vz) const;
+		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Position(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
 		%feature("autodoc", "1");
@@ -921,7 +923,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 };
 %extend V3d_SpotLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_SpotLight {
@@ -1055,7 +1057,7 @@ class V3d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		void ClearCurrentSelectedLight();
 		%feature("autodoc", "1");
-		void DefaultBackgroundColor(const Quantity_TypeOfColor Type, Quantity_Parameter & V1, Quantity_Parameter & V2, Quantity_Parameter & V3) const;
+		void DefaultBackgroundColor(const Quantity_TypeOfColor Type, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Color DefaultBackgroundColor() const;
 		%feature("autodoc", "1");
@@ -1175,7 +1177,7 @@ class V3d_Viewer : public Viewer_Viewer {
 };
 %extend V3d_Viewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_Viewer {
@@ -1213,7 +1215,7 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 };
 %extend V3d_CircularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_CircularGrid {
@@ -1425,7 +1427,7 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void Convert(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
 		%feature("autodoc", "1");
-		void ConvertWithProj(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z, Quantity_Parameter & Vx, Quantity_Parameter & Vy, Quantity_Parameter & Vz) const;
+		void ConvertWithProj(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void ConvertToGrid(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & Xg, V3d_Coordinate & Yg, V3d_Coordinate & Zg) const;
 		%feature("autodoc", "1");
@@ -1435,7 +1437,7 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void Project(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, V3d_Coordinate & Xp, V3d_Coordinate & Yp) const;
 		%feature("autodoc", "1");
-		void BackgroundColor(const Quantity_TypeOfColor Type, Quantity_Parameter & V1, Quantity_Parameter & V2, Quantity_Parameter & V3) const;
+		void BackgroundColor(const Quantity_TypeOfColor Type, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Color BackgroundColor() const;
 		%feature("autodoc", "1");
@@ -1457,11 +1459,11 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Quantity_Length Depth() const;
 		%feature("autodoc", "1");
-		void Proj(Quantity_Parameter & Vx, Quantity_Parameter & Vy, Quantity_Parameter & Vz) const;
+		void Proj(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void At(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
 		%feature("autodoc", "1");
-		void Up(Quantity_Parameter & Vx, Quantity_Parameter & Vy, Quantity_Parameter & Vz) const;
+		void Up(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle Twist() const;
 		%feature("autodoc", "1");
@@ -1607,7 +1609,7 @@ class V3d_View : public Viewer_View {
 };
 %extend V3d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_View {
@@ -1637,7 +1639,7 @@ class V3d_OrthographicView : public V3d_View {
 };
 %extend V3d_OrthographicView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_OrthographicView {
@@ -1671,7 +1673,7 @@ class V3d_UnMapped : public Standard_DomainError {
 };
 %extend V3d_UnMapped {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_UnMapped {
@@ -1693,7 +1695,7 @@ class V3d_Plane : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Erase();
 		%feature("autodoc", "1");
-		void Plane(Quantity_Parameter & A, Quantity_Parameter & B, Quantity_Parameter & C, Quantity_Parameter & D) const;
+		void Plane(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IsDisplayed() const;
 		%feature("autodoc", "1");
@@ -1707,7 +1709,7 @@ class V3d_Plane : public MMgt_TShared {
 };
 %extend V3d_Plane {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_Plane {
@@ -1745,7 +1747,7 @@ class V3d_PositionalLight : public V3d_PositionLight {
 };
 %extend V3d_PositionalLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_PositionalLight {
@@ -1789,7 +1791,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 };
 %extend V3d_ColorScale {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_ColorScale {
@@ -1827,7 +1829,7 @@ class V3d_PerspectiveView : public V3d_View {
 };
 %extend V3d_PerspectiveView {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_PerspectiveView {
@@ -1869,7 +1871,7 @@ class V3d_LayerMgr : public MMgt_TShared {
 };
 %extend V3d_LayerMgr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_LayerMgr {
@@ -1901,7 +1903,7 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 		%feature("autodoc", "1");
 		void DisplayPosition(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
 		%feature("autodoc", "1");
-		void Direction(Quantity_Parameter & Vx, Quantity_Parameter & Vy, Quantity_Parameter & Vz) const;
+		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1913,7 +1915,7 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 };
 %extend V3d_DirectionalLight {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V3d_DirectionalLight {

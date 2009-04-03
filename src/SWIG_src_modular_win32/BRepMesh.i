@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -734,7 +736,7 @@ class BRepMesh_DataStructureOfDelaun : public MMgt_TShared {
 };
 %extend BRepMesh_DataStructureOfDelaun {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataStructureOfDelaun {
@@ -890,7 +892,7 @@ class BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun : public TCo
 };
 %extend BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_IndexedMapNodeOfIMapOfElementOfDataStructureOfDelaun {
@@ -994,7 +996,7 @@ class BRepMesh_HArray1OfVertexOfDelaun : public MMgt_TShared {
 };
 %extend BRepMesh_HArray1OfVertexOfDelaun {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_HArray1OfVertexOfDelaun {
@@ -1186,7 +1188,7 @@ class BRepMesh_EdgeDiscret : public MMgt_TShared {
 };
 %extend BRepMesh_EdgeDiscret {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_EdgeDiscret {
@@ -1216,7 +1218,7 @@ class BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY : public TCollection_MapNod
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfIntegerListOfXY {
@@ -1244,7 +1246,7 @@ class BRepMesh_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 };
 %extend BRepMesh_StdMapNodeOfMapOfAsciiString {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_StdMapNodeOfMapOfAsciiString {
@@ -1274,7 +1276,7 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid : public TCollection_MapNo
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeSurfaceGrid {
@@ -1370,7 +1372,7 @@ class BRepMesh_ListNodeOfListOfVertex : public TCollection_MapNode {
 };
 %extend BRepMesh_ListNodeOfListOfVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_ListNodeOfListOfVertex {
@@ -1444,7 +1446,7 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeReal {
@@ -1575,7 +1577,7 @@ class BRepMesh_Vertex {
 };
 %extend BRepMesh_Vertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_Vertex {
@@ -1653,7 +1655,7 @@ class BRepMesh_ListNodeOfListOfSurfaceGrid : public TCollection_MapNode {
 };
 %extend BRepMesh_ListNodeOfListOfSurfaceGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_ListNodeOfListOfSurfaceGrid {
@@ -1751,7 +1753,7 @@ class BRepMesh_ListNodeOfListOfXY : public TCollection_MapNode {
 };
 %extend BRepMesh_ListNodeOfListOfXY {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_ListNodeOfListOfXY {
@@ -1783,7 +1785,7 @@ class BRepMesh_IndexedMapNodeOfIndexedMapOfVertex : public TCollection_MapNode {
 };
 %extend BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_IndexedMapNodeOfIndexedMapOfVertex {
@@ -1813,7 +1815,7 @@ class BRepMesh_DataMapNodeOfDataMapOfCouplePnt : public TCollection_MapNode {
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfCouplePnt {
@@ -1869,7 +1871,7 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun : public T
 };
 %extend BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_IndexedDataMapNodeOfIDMapOfLinkOfDataStructureOfDelaun {
@@ -2047,7 +2049,7 @@ class BRepMesh_FastDiscret : public MMgt_TShared {
 };
 %extend BRepMesh_FastDiscret {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_FastDiscret {
@@ -2105,7 +2107,7 @@ class BRepMesh_DataMapNodeOfDataMapOfIntegerFace : public TCollection_MapNode {
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfIntegerFace {
@@ -2291,7 +2293,7 @@ class BRepMesh_SurfaceGrid : public MMgt_TShared {
 };
 %extend BRepMesh_SurfaceGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_SurfaceGrid {
@@ -2455,7 +2457,7 @@ class BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun : public T
 };
 %extend BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_IndexedDataMapNodeOfIDMapOfNodeOfDataStructureOfDelaun {
@@ -2633,7 +2635,7 @@ class BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret : public TCollection_MapNo
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfShapeEdgeDiscret {
@@ -2683,7 +2685,7 @@ class BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger : public TCollection_MapN
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfMeshVertexInteger {
@@ -2811,7 +2813,7 @@ class BRepMesh_DataMapNodeOfDataMapOfVertexInteger : public TCollection_MapNode 
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_DataMapNodeOfDataMapOfVertexInteger {
@@ -2848,7 +2850,7 @@ class BRepMesh_Edge {
 };
 %extend BRepMesh_Edge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_Edge {
@@ -2911,7 +2913,7 @@ class BRepMesh_Triangle {
 };
 %extend BRepMesh_Triangle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepMesh_Triangle {

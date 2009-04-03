@@ -114,17 +114,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 #include<BRepFilletAPI_MakeChamfer.hxx>
 #include<BRepFilletAPI_MakeFillet.hxx>
 #include<BRepFilletAPI_MakeFillet2d.hxx>
-#include<GProp.hxx>
-#include<GProp_CelGProps.hxx>
-#include<GProp_EquaType.hxx>
-#include<GProp_GProps.hxx>
-#include<GProp_PEquation.hxx>
-#include<GProp_PGProps.hxx>
-#include<GProp_PrincipalProps.hxx>
-#include<GProp_SelGProps.hxx>
-#include<GProp_UndefinedAxis.hxx>
-#include<GProp_ValueType.hxx>
-#include<GProp_VelGProps.hxx>
 #include<TopoDS.hxx>
 #include<TopoDSToStep.hxx>
 #include<TopoDSToStep_Builder.hxx>

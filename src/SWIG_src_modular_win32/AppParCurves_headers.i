@@ -51,25 +51,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<AppParCurves.hxx>
-#include<AppParCurves_Array1OfConstraintCouple.hxx>
-#include<AppParCurves_Array1OfMultiBSpCurve.hxx>
-#include<AppParCurves_Array1OfMultiCurve.hxx>
-#include<AppParCurves_Array1OfMultiPoint.hxx>
-#include<AppParCurves_Constraint.hxx>
-#include<AppParCurves_ConstraintCouple.hxx>
-#include<AppParCurves_HArray1OfConstraintCouple.hxx>
-#include<AppParCurves_HArray1OfMultiBSpCurve.hxx>
-#include<AppParCurves_HArray1OfMultiCurve.hxx>
-#include<AppParCurves_HArray1OfMultiPoint.hxx>
-#include<AppParCurves_MultiBSpCurve.hxx>
-#include<AppParCurves_MultiCurve.hxx>
-#include<AppParCurves_MultiPoint.hxx>
-#include<AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve.hxx>
-#include<AppParCurves_SequenceNodeOfSequenceOfMultiCurve.hxx>
-#include<AppParCurves_SequenceOfMultiBSpCurve.hxx>
-#include<AppParCurves_SequenceOfMultiCurve.hxx>
-#include<AppParCurves_SmoothCriterion.hxx>
 
 // Needed headers necessary for compilation.
 

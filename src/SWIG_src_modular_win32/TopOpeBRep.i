@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -415,7 +417,7 @@ class TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public TCollection_SeqNode {
 };
 %extend TopOpeBRep_SequenceNodeOfSequenceOfPoint2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_SequenceNodeOfSequenceOfPoint2d {
@@ -461,7 +463,7 @@ class TopOpeBRep_HArray1OfLineInter : public MMgt_TShared {
 };
 %extend TopOpeBRep_HArray1OfLineInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_HArray1OfLineInter {
@@ -669,7 +671,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 };
 %extend TopOpeBRep_Hctxff2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_Hctxff2d {
@@ -811,7 +813,7 @@ class TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public TCollection_MapNode {
 };
 %extend TopOpeBRep_DataMapNodeOfDataMapOfTopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_DataMapNodeOfDataMapOfTopolTool {
@@ -1097,7 +1099,7 @@ class TopOpeBRep_ListNodeOfListOfBipoint : public TCollection_MapNode {
 };
 %extend TopOpeBRep_ListNodeOfListOfBipoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_ListNodeOfListOfBipoint {
@@ -1331,7 +1333,7 @@ class TopOpeBRep_FFDumper : public MMgt_TShared {
 };
 %extend TopOpeBRep_FFDumper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_FFDumper {
@@ -1701,7 +1703,7 @@ class TopOpeBRep_Hctxee2d : public MMgt_TShared {
 };
 %extend TopOpeBRep_Hctxee2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_Hctxee2d {
@@ -1869,7 +1871,7 @@ class TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode
 };
 %extend TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger {
@@ -1915,7 +1917,7 @@ class TopOpeBRep_HArray1OfVPointInter : public MMgt_TShared {
 };
 %extend TopOpeBRep_HArray1OfVPointInter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopOpeBRep_HArray1OfVPointInter {

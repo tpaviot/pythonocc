@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -503,7 +505,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiCurve {
@@ -549,7 +551,7 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AppParCurves_HArray1OfMultiCurve {
@@ -605,7 +607,7 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 };
 %extend AppParCurves_SmoothCriterion {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AppParCurves_SmoothCriterion {
@@ -825,7 +827,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_Se
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve {
@@ -911,7 +913,7 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfConstraintCouple {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AppParCurves_HArray1OfConstraintCouple {
@@ -957,7 +959,7 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AppParCurves_HArray1OfMultiPoint {
@@ -1025,7 +1027,7 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 };
 %extend AppParCurves_HArray1OfMultiBSpCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend AppParCurves_HArray1OfMultiBSpCurve {

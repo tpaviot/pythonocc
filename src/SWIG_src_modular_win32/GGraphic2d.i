@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -229,7 +231,7 @@ class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 };
 %extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GGraphic2d_SequenceNodeOfSequenceOfCurve {
@@ -261,7 +263,7 @@ class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 };
 %extend GGraphic2d_SetOfCurves {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GGraphic2d_SetOfCurves {
@@ -345,7 +347,7 @@ class GGraphic2d_Curve : public Graphic2d_Line {
 };
 %extend GGraphic2d_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GGraphic2d_Curve {
@@ -379,7 +381,7 @@ class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {
 };
 %extend GGraphic2d_CurveDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend GGraphic2d_CurveDefinitionError {

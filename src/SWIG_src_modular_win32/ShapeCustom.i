@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -360,7 +362,7 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 };
 %extend ShapeCustom_BSplineRestriction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeCustom_BSplineRestriction {
@@ -396,7 +398,7 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 };
 %extend ShapeCustom_TrsfModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeCustom_TrsfModification {
@@ -446,7 +448,7 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 };
 %extend ShapeCustom_RestrictionParameters {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeCustom_RestrictionParameters {
@@ -484,7 +486,7 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 };
 %extend ShapeCustom_SweptToElementary {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeCustom_SweptToElementary {
@@ -586,7 +588,7 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 };
 %extend ShapeCustom_ConvertToRevolution {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeCustom_ConvertToRevolution {
@@ -644,7 +646,7 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 };
 %extend ShapeCustom_DirectModification {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeCustom_DirectModification {
@@ -688,7 +690,7 @@ class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {
 };
 %extend ShapeCustom_ConvertToBSpline {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend ShapeCustom_ConvertToBSpline {

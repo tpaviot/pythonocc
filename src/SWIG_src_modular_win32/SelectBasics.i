@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -339,7 +341,7 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 };
 %extend SelectBasics_EntityOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectBasics_EntityOwner {
@@ -367,7 +369,7 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfBox2d {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectBasics_ListNodeOfListOfBox2d {
@@ -395,7 +397,7 @@ class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode 
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfAddress {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfAddress {
@@ -535,7 +537,7 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfOwner {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectBasics_SequenceNodeOfSequenceOfOwner {
@@ -687,7 +689,7 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 };
 %extend SelectBasics_SensitiveEntity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectBasics_SensitiveEntity {
@@ -769,7 +771,7 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 };
 %extend SelectBasics_ListNodeOfListOfSensitive {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend SelectBasics_ListNodeOfListOfSensitive {

@@ -30,11 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<Geom2dConvert.hxx>
-#include<Geom2dConvert_ApproxCurve.hxx>
-#include<Geom2dConvert_BSplineCurveKnotSplitting.hxx>
-#include<Geom2dConvert_BSplineCurveToBezierCurve.hxx>
-#include<Geom2dConvert_CompCurveToBSplineCurve.hxx>
 
 // Needed headers necessary for compilation.
 

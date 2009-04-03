@@ -42,17 +42,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<XmlMDF.hxx>
-#include<XmlMDF_ADriver.hxx>
-#include<XmlMDF_ADriverTable.hxx>
-#include<XmlMDF_DataMapIteratorOfMapOfDriver.hxx>
-#include<XmlMDF_DataMapIteratorOfTypeADriverMap.hxx>
-#include<XmlMDF_DataMapNodeOfMapOfDriver.hxx>
-#include<XmlMDF_DataMapNodeOfTypeADriverMap.hxx>
-#include<XmlMDF_MapOfDriver.hxx>
-#include<XmlMDF_ReferenceDriver.hxx>
-#include<XmlMDF_TagSourceDriver.hxx>
-#include<XmlMDF_TypeADriverMap.hxx>
 
 // Needed headers necessary for compilation.
 

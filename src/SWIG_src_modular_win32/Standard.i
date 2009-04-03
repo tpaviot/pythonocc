@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1004,7 +1006,7 @@ class Standard_Transient {
 };
 %extend Standard_Transient {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_Transient {
@@ -1054,7 +1056,7 @@ class Standard_Failure : public Standard_Transient {
 };
 %extend Standard_Failure {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_Failure {
@@ -1082,7 +1084,7 @@ class Standard_NumericError : public Standard_Failure {
 };
 %extend Standard_NumericError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_NumericError {
@@ -1110,7 +1112,7 @@ class Standard_DivideByZero : public Standard_NumericError {
 };
 %extend Standard_DivideByZero {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_DivideByZero {
@@ -1144,7 +1146,7 @@ class Standard_ProgramError : public Standard_Failure {
 };
 %extend Standard_ProgramError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_ProgramError {
@@ -1204,7 +1206,7 @@ class Standard_DomainError : public Standard_Failure {
 };
 %extend Standard_DomainError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_DomainError {
@@ -1232,7 +1234,7 @@ class Standard_NoSuchObject : public Standard_DomainError {
 };
 %extend Standard_NoSuchObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_NoSuchObject {
@@ -1266,7 +1268,7 @@ class Standard_RangeError : public Standard_DomainError {
 };
 %extend Standard_RangeError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_RangeError {
@@ -1300,7 +1302,7 @@ class Standard_NotImplemented : public Standard_ProgramError {
 };
 %extend Standard_NotImplemented {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_NotImplemented {
@@ -1334,7 +1336,7 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 };
 %extend Standard_AbortiveTransaction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_AbortiveTransaction {
@@ -1412,7 +1414,7 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 };
 %extend Standard_MultiplyDefined {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_MultiplyDefined {
@@ -1446,7 +1448,7 @@ class Standard_Overflow : public Standard_NumericError {
 };
 %extend Standard_Overflow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_Overflow {
@@ -1486,7 +1488,7 @@ class Standard_Persistent {
 };
 %extend Standard_Persistent {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_Persistent {
@@ -1520,7 +1522,7 @@ class Standard_NullValue : public Standard_RangeError {
 };
 %extend Standard_NullValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_NullValue {
@@ -1554,7 +1556,7 @@ class Standard_NoMoreObject : public Standard_DomainError {
 };
 %extend Standard_NoMoreObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_NoMoreObject {
@@ -1588,7 +1590,7 @@ class Standard_DimensionError : public Standard_DomainError {
 };
 %extend Standard_DimensionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_DimensionError {
@@ -1616,7 +1618,7 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 };
 %extend Standard_DimensionMismatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_DimensionMismatch {
@@ -1650,7 +1652,7 @@ class Standard_TypeMismatch : public Standard_DomainError {
 };
 %extend Standard_TypeMismatch {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_TypeMismatch {
@@ -1684,7 +1686,7 @@ class Standard_LicenseError : public Standard_Failure {
 };
 %extend Standard_LicenseError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_LicenseError {
@@ -1712,7 +1714,7 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 };
 %extend Standard_LicenseNotFound {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_LicenseNotFound {
@@ -1743,7 +1745,7 @@ class Standard_Storable {
 };
 %extend Standard_Storable {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_Storable {
@@ -1777,7 +1779,7 @@ class Standard_ImmutableObject : public Standard_DomainError {
 };
 %extend Standard_ImmutableObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_ImmutableObject {
@@ -1949,7 +1951,7 @@ class Standard_TooManyUsers : public Standard_LicenseError {
 };
 %extend Standard_TooManyUsers {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_TooManyUsers {
@@ -1983,7 +1985,7 @@ class Standard_NegativeValue : public Standard_RangeError {
 };
 %extend Standard_NegativeValue {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_NegativeValue {
@@ -2017,7 +2019,7 @@ class Standard_NullObject : public Standard_DomainError {
 };
 %extend Standard_NullObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_NullObject {
@@ -2075,7 +2077,7 @@ class Standard_Type : public Standard_Transient {
 };
 %extend Standard_Type {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_Type {
@@ -2109,7 +2111,7 @@ class Standard_ConstructionError : public Standard_DomainError {
 };
 %extend Standard_ConstructionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_ConstructionError {
@@ -2143,7 +2145,7 @@ class Standard_OutOfRange : public Standard_RangeError {
 };
 %extend Standard_OutOfRange {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_OutOfRange {
@@ -2197,7 +2199,7 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 };
 %extend Standard_OutOfMemory {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_OutOfMemory {
@@ -2231,7 +2233,7 @@ class Standard_Underflow : public Standard_NumericError {
 };
 %extend Standard_Underflow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Standard_Underflow {

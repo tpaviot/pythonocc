@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -234,7 +236,7 @@ class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
 };
 %extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopLoc_IndexedMapNodeOfIndexedMapOfLocation {
@@ -393,7 +395,7 @@ class TopLoc_Location {
 };
 %extend TopLoc_Location {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopLoc_Location {
@@ -421,7 +423,7 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 };
 %extend TopLoc_StdMapNodeOfMapOfLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopLoc_StdMapNodeOfMapOfLocation {
@@ -521,7 +523,7 @@ class TopLoc_Datum3D : public MMgt_TShared {
 };
 %extend TopLoc_Datum3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend TopLoc_Datum3D {

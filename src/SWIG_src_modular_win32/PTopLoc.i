@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -197,7 +199,7 @@ class PTopLoc_ItemLocation : public Standard_Persistent {
 };
 %extend PTopLoc_ItemLocation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopLoc_ItemLocation {
@@ -231,7 +233,7 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 };
 %extend PTopLoc_Datum3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PTopLoc_Datum3D {

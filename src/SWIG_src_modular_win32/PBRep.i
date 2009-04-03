@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -711,7 +713,7 @@ class PBRep_CurveRepresentation : public Standard_Persistent {
 };
 %extend PBRep_CurveRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_CurveRepresentation {
@@ -751,7 +753,7 @@ class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 };
 %extend PBRep_PolygonOnTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PolygonOnTriangulation {
@@ -785,7 +787,7 @@ class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 };
 %extend PBRep_PolygonOnClosedTriangulation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PolygonOnClosedTriangulation {
@@ -835,7 +837,7 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 };
 %extend PBRep_TVertex1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_TVertex1 {
@@ -895,7 +897,7 @@ class PBRep_TEdge1 : public PTopoDS_TEdge1 {
 };
 %extend PBRep_TEdge1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_TEdge1 {
@@ -941,7 +943,7 @@ class PBRep_GCurve : public PBRep_CurveRepresentation {
 };
 %extend PBRep_GCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_GCurve {
@@ -993,7 +995,7 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 };
 %extend PBRep_CurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_CurveOnSurface {
@@ -1053,7 +1055,7 @@ class PBRep_TEdge : public PTopoDS_TEdge {
 };
 %extend PBRep_TEdge {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_TEdge {
@@ -1107,7 +1109,7 @@ class PBRep_PointRepresentation : public Standard_Persistent {
 };
 %extend PBRep_PointRepresentation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PointRepresentation {
@@ -1139,7 +1141,7 @@ class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 };
 %extend PBRep_PointsOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PointsOnSurface {
@@ -1193,7 +1195,7 @@ class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
 };
 %extend PBRep_CurveOn2Surfaces {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_CurveOn2Surfaces {
@@ -1231,7 +1233,7 @@ class PBRep_Curve3D : public PBRep_GCurve {
 };
 %extend PBRep_Curve3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_Curve3D {
@@ -1269,7 +1271,7 @@ class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 };
 %extend PBRep_PointOnCurveOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PointOnCurveOnSurface {
@@ -1319,7 +1321,7 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 };
 %extend PBRep_TVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_TVertex {
@@ -1363,7 +1365,7 @@ class PBRep_PolygonOnSurface : public PBRep_CurveRepresentation {
 };
 %extend PBRep_PolygonOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PolygonOnSurface {
@@ -1399,7 +1401,7 @@ class PBRep_PolygonOnClosedSurface : public PBRep_PolygonOnSurface {
 };
 %extend PBRep_PolygonOnClosedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PolygonOnClosedSurface {
@@ -1437,7 +1439,7 @@ class PBRep_Polygon3D : public PBRep_CurveRepresentation {
 };
 %extend PBRep_Polygon3D {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_Polygon3D {
@@ -1475,7 +1477,7 @@ class PBRep_PointOnSurface : public PBRep_PointsOnSurface {
 };
 %extend PBRep_PointOnSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PointOnSurface {
@@ -1531,7 +1533,7 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 };
 %extend PBRep_CurveOnClosedSurface {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_CurveOnClosedSurface {
@@ -1597,7 +1599,7 @@ class PBRep_TFace1 : public PTopoDS_TFace1 {
 };
 %extend PBRep_TFace1 {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_TFace1 {
@@ -1663,7 +1665,7 @@ class PBRep_TFace : public PTopoDS_TFace {
 };
 %extend PBRep_TFace {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_TFace {
@@ -1701,7 +1703,7 @@ class PBRep_PointOnCurve : public PBRep_PointRepresentation {
 };
 %extend PBRep_PointOnCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PBRep_PointOnCurve {

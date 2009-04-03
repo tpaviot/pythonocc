@@ -63,35 +63,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<EDL.hxx>
-#include<EDL_API.hxx>
-#include<EDL_DataMapIteratorOfMapOfFile.hxx>
-#include<EDL_DataMapIteratorOfMapOfLibrary.hxx>
-#include<EDL_DataMapIteratorOfMapOfTemplate.hxx>
-#include<EDL_DataMapIteratorOfMapOfVariable.hxx>
-#include<EDL_DataMapNodeOfMapOfFile.hxx>
-#include<EDL_DataMapNodeOfMapOfLibrary.hxx>
-#include<EDL_DataMapNodeOfMapOfTemplate.hxx>
-#include<EDL_DataMapNodeOfMapOfVariable.hxx>
-#include<EDL_Error.hxx>
-#include<EDL_File.hxx>
-#include<EDL_FunctionSignature.hxx>
-#include<EDL_HSequenceOfVariable.hxx>
-#include<EDL_Interpretor.hxx>
-#include<EDL_Library.hxx>
-#include<EDL_MapOfFile.hxx>
-#include<EDL_MapOfLibrary.hxx>
-#include<EDL_MapOfTemplate.hxx>
-#include<EDL_MapOfVariable.hxx>
-#include<EDL_ParameterMode.hxx>
-#include<EDL_ProcedureSignature.hxx>
-#include<EDL_SequenceNodeOfSequenceOfVariable.hxx>
-#include<EDL_SequenceOfVariable.hxx>
-#include<EDL_StackIteratorOfStackOfBoolean.hxx>
-#include<EDL_StackNodeOfStackOfBoolean.hxx>
-#include<EDL_StackOfBoolean.hxx>
-#include<EDL_Template.hxx>
-#include<EDL_Variable.hxx>
 
 // Needed headers necessary for compilation.
 

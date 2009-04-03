@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -275,7 +277,7 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 };
 %extend BRepTopAdaptor_HVertex {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTopAdaptor_HVertex {
@@ -403,7 +405,7 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 };
 %extend BRepTopAdaptor_TopolTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTopAdaptor_TopolTool {
@@ -515,7 +517,7 @@ class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
 };
 %extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTopAdaptor_SequenceNodeOfSeqOfPtr {
@@ -545,7 +547,7 @@ class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {
 };
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend BRepTopAdaptor_DataMapNodeOfMapOfShapeTool {

@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -629,7 +631,7 @@ class PGeom2d_Geometry : public Standard_Persistent {
 };
 %extend PGeom2d_Geometry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Geometry {
@@ -655,7 +657,7 @@ class PGeom2d_Curve : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Curve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Curve {
@@ -681,7 +683,7 @@ class PGeom2d_BoundedCurve : public PGeom2d_Curve {
 };
 %extend PGeom2d_BoundedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_BoundedCurve {
@@ -713,7 +715,7 @@ class PGeom2d_Conic : public PGeom2d_Curve {
 };
 %extend PGeom2d_Conic {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Conic {
@@ -767,7 +769,7 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_TrimmedCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_TrimmedCurve {
@@ -799,7 +801,7 @@ class PGeom2d_Vector : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Vector {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Vector {
@@ -827,7 +829,7 @@ class PGeom2d_Direction : public PGeom2d_Vector {
 };
 %extend PGeom2d_Direction {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Direction {
@@ -865,7 +867,7 @@ class PGeom2d_Parabola : public PGeom2d_Conic {
 };
 %extend PGeom2d_Parabola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Parabola {
@@ -911,7 +913,7 @@ class PGeom2d_Ellipse : public PGeom2d_Conic {
 };
 %extend PGeom2d_Ellipse {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Ellipse {
@@ -947,7 +949,7 @@ class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
 };
 %extend PGeom2d_AxisPlacement {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_AxisPlacement {
@@ -985,7 +987,7 @@ class PGeom2d_Circle : public PGeom2d_Conic {
 };
 %extend PGeom2d_Circle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Circle {
@@ -1031,7 +1033,7 @@ class PGeom2d_Hyperbola : public PGeom2d_Conic {
 };
 %extend PGeom2d_Hyperbola {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Hyperbola {
@@ -1077,7 +1079,7 @@ class PGeom2d_OffsetCurve : public PGeom2d_Curve {
 };
 %extend PGeom2d_OffsetCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_OffsetCurve {
@@ -1113,7 +1115,7 @@ class PGeom2d_Transformation : public Standard_Persistent {
 };
 %extend PGeom2d_Transformation {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Transformation {
@@ -1143,7 +1145,7 @@ class PGeom2d_VectorWithMagnitude : public PGeom2d_Vector {
 };
 %extend PGeom2d_VectorWithMagnitude {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_VectorWithMagnitude {
@@ -1197,7 +1199,7 @@ class PGeom2d_BezierCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_BezierCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_BezierCurve {
@@ -1233,7 +1235,7 @@ class PGeom2d_Line : public PGeom2d_Curve {
 };
 %extend PGeom2d_Line {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Line {
@@ -1261,7 +1263,7 @@ class PGeom2d_Point : public PGeom2d_Geometry {
 };
 %extend PGeom2d_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_Point {
@@ -1295,7 +1297,7 @@ class PGeom2d_CartesianPoint : public PGeom2d_Point {
 };
 %extend PGeom2d_CartesianPoint {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_CartesianPoint {
@@ -1381,7 +1383,7 @@ class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {
 };
 %extend PGeom2d_BSplineCurve {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend PGeom2d_BSplineCurve {

@@ -30,10 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<GccIter_IsParallel.hxx>
-#include<GccIter_Type1.hxx>
-#include<GccIter_Type2.hxx>
-#include<GccIter_Type3.hxx>
 
 // Needed headers necessary for compilation.
 

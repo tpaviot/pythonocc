@@ -30,10 +30,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<DNaming.hxx>
-#include<DNaming_DataMapIteratorOfDataMapOfShapeOfName.hxx>
-#include<DNaming_DataMapNodeOfDataMapOfShapeOfName.hxx>
-#include<DNaming_DataMapOfShapeOfName.hxx>
 
 // Needed headers necessary for compilation.
 

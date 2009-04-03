@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -1141,7 +1143,7 @@ class Prs2d_Tolerance : public Graphic2d_Line {
 };
 %extend Prs2d_Tolerance {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Tolerance {
@@ -1167,7 +1169,7 @@ class Prs2d_LineProfile : public Prs2d_Tolerance {
 };
 %extend Prs2d_LineProfile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_LineProfile {
@@ -1193,7 +1195,7 @@ class Prs2d_AspectRoot : public MMgt_TShared {
 };
 %extend Prs2d_AspectRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_AspectRoot {
@@ -1237,7 +1239,7 @@ class Prs2d_AspectHidingText : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectHidingText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_AspectHidingText {
@@ -1379,7 +1381,7 @@ class Prs2d_Dimension : public Graphic2d_Line {
 };
 %extend Prs2d_Dimension {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Dimension {
@@ -1407,7 +1409,7 @@ class Prs2d_Radius : public Prs2d_Dimension {
 };
 %extend Prs2d_Radius {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Radius {
@@ -1435,7 +1437,7 @@ class Prs2d_Concentric : public Prs2d_Tolerance {
 };
 %extend Prs2d_Concentric {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Concentric {
@@ -1463,7 +1465,7 @@ class Prs2d_SymCircular : public Prs2d_Tolerance {
 };
 %extend Prs2d_SymCircular {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_SymCircular {
@@ -1491,7 +1493,7 @@ class Prs2d_Angularity : public Prs2d_Tolerance {
 };
 %extend Prs2d_Angularity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Angularity {
@@ -1533,7 +1535,7 @@ class Prs2d_Axis : public Graphic2d_Line {
 };
 %extend Prs2d_Axis {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Axis {
@@ -1571,7 +1573,7 @@ class Prs2d_Point : public Graphic2d_Line {
 };
 %extend Prs2d_Point {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Point {
@@ -1607,7 +1609,7 @@ class Prs2d_AspectHidingPoly : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectHidingPoly {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_AspectHidingPoly {
@@ -1635,7 +1637,7 @@ class Prs2d_Cylindric : public Prs2d_Tolerance {
 };
 %extend Prs2d_Cylindric {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Cylindric {
@@ -1663,7 +1665,7 @@ class Prs2d_Straightness : public Prs2d_Tolerance {
 };
 %extend Prs2d_Straightness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Straightness {
@@ -1691,7 +1693,7 @@ class Prs2d_Position : public Prs2d_Tolerance {
 };
 %extend Prs2d_Position {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Position {
@@ -1721,7 +1723,7 @@ class Prs2d_DataMapNodeOfDataMapOfAspectRoot : public TCollection_MapNode {
 };
 %extend Prs2d_DataMapNodeOfDataMapOfAspectRoot {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_DataMapNodeOfDataMapOfAspectRoot {
@@ -1771,7 +1773,7 @@ class Prs2d_RadiusIndep : public Graphic2d_Line {
 };
 %extend Prs2d_RadiusIndep {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_RadiusIndep {
@@ -1799,7 +1801,7 @@ class Prs2d_Flatness : public Prs2d_Tolerance {
 };
 %extend Prs2d_Flatness {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Flatness {
@@ -1827,7 +1829,7 @@ class Prs2d_Circularity : public Prs2d_Tolerance {
 };
 %extend Prs2d_Circularity {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Circularity {
@@ -1855,7 +1857,7 @@ class Prs2d_Parallelism : public Prs2d_Tolerance {
 };
 %extend Prs2d_Parallelism {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Parallelism {
@@ -1883,7 +1885,7 @@ class Prs2d_DrawSymbol : public Graphic2d_Line {
 };
 %extend Prs2d_DrawSymbol {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_DrawSymbol {
@@ -1937,7 +1939,7 @@ class Prs2d_AspectText : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_AspectText {
@@ -1965,7 +1967,7 @@ class Prs2d_Symmetry : public Prs2d_Tolerance {
 };
 %extend Prs2d_Symmetry {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Symmetry {
@@ -2033,7 +2035,7 @@ class Prs2d_AspectLine : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectLine {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_AspectLine {
@@ -2063,7 +2065,7 @@ class Prs2d_Angle : public Prs2d_Dimension {
 };
 %extend Prs2d_Angle {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Angle {
@@ -2091,7 +2093,7 @@ class Prs2d_Repere : public Prs2d_Dimension {
 };
 %extend Prs2d_Repere {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Repere {
@@ -2139,7 +2141,7 @@ class Prs2d_ToleranceFrame : public Graphic2d_Line {
 };
 %extend Prs2d_ToleranceFrame {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_ToleranceFrame {
@@ -2171,7 +2173,7 @@ class Prs2d_Arrow : public Graphic2d_Line {
 };
 %extend Prs2d_Arrow {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Arrow {
@@ -2199,7 +2201,7 @@ class Prs2d_Taper : public Prs2d_Tolerance {
 };
 %extend Prs2d_Taper {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Taper {
@@ -2233,7 +2235,7 @@ class Prs2d_Drawer : public MMgt_TShared {
 };
 %extend Prs2d_Drawer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Drawer {
@@ -2277,7 +2279,7 @@ class Prs2d_AspectFramedText : public Prs2d_AspectRoot {
 };
 %extend Prs2d_AspectFramedText {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_AspectFramedText {
@@ -2305,7 +2307,7 @@ class Prs2d_SurfProfile : public Prs2d_Tolerance {
 };
 %extend Prs2d_SurfProfile {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_SurfProfile {
@@ -2333,7 +2335,7 @@ class Prs2d_SymTotal : public Prs2d_Tolerance {
 };
 %extend Prs2d_SymTotal {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_SymTotal {
@@ -2373,7 +2375,7 @@ class Prs2d_Length : public Prs2d_Dimension {
 };
 %extend Prs2d_Length {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Length {
@@ -2407,7 +2409,7 @@ class Prs2d_SymbolDefinitionError : public Standard_OutOfRange {
 };
 %extend Prs2d_SymbolDefinitionError {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_SymbolDefinitionError {
@@ -2435,7 +2437,7 @@ class Prs2d_Perpendicular : public Prs2d_Tolerance {
 };
 %extend Prs2d_Perpendicular {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Perpendicular {
@@ -2465,7 +2467,7 @@ class Prs2d_Diameter : public Prs2d_Dimension {
 };
 %extend Prs2d_Diameter {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend Prs2d_Diameter {

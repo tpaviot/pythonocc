@@ -81,42 +81,6 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 // Additional headers necessary for compilation.
 
-#include<MDF.hxx>
-#include<MDF_ARDriver.hxx>
-#include<MDF_ARDriverHSequence.hxx>
-#include<MDF_ARDriverSequence.hxx>
-#include<MDF_ARDriverTable.hxx>
-#include<MDF_ASDriver.hxx>
-#include<MDF_ASDriverHSequence.hxx>
-#include<MDF_ASDriverSequence.hxx>
-#include<MDF_ASDriverTable.hxx>
-#include<MDF_DataMapIteratorOfTypeARDriverMap.hxx>
-#include<MDF_DataMapIteratorOfTypeASDriverMap.hxx>
-#include<MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable.hxx>
-#include<MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable.hxx>
-#include<MDF_DataMapNodeOfTypeARDriverMap.hxx>
-#include<MDF_DataMapNodeOfTypeASDriverMap.hxx>
-#include<MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable.hxx>
-#include<MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable.hxx>
-#include<MDF_DriverListOfARDriverTable.hxx>
-#include<MDF_DriverListOfASDriverTable.hxx>
-#include<MDF_ListIteratorOfDriverListOfARDriverTable.hxx>
-#include<MDF_ListIteratorOfDriverListOfASDriverTable.hxx>
-#include<MDF_ListNodeOfDriverListOfARDriverTable.hxx>
-#include<MDF_ListNodeOfDriverListOfASDriverTable.hxx>
-#include<MDF_RRelocationTable.hxx>
-#include<MDF_ReferenceRetrievalDriver.hxx>
-#include<MDF_ReferenceStorageDriver.hxx>
-#include<MDF_SRelocationTable.hxx>
-#include<MDF_SequenceNodeOfARDriverSequence.hxx>
-#include<MDF_SequenceNodeOfASDriverSequence.hxx>
-#include<MDF_TagSourceRetrievalDriver.hxx>
-#include<MDF_TagSourceStorageDriver.hxx>
-#include<MDF_Tool.hxx>
-#include<MDF_TypeARDriverMap.hxx>
-#include<MDF_TypeASDriverMap.hxx>
-#include<MDF_TypeDriverListMapOfARDriverTable.hxx>
-#include<MDF_TypeDriverListMapOfASDriverTable.hxx>
 
 // Needed headers necessary for compilation.
 

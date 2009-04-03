@@ -25,6 +25,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include cpointer.i
 %include carrays.i
 %include exception.i
+%include std_list.i
+%include std_string.i
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -316,7 +318,7 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 };
 %extend V2d_RectangularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V2d_RectangularGrid {
@@ -366,7 +368,7 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 };
 %extend V2d_CircularGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V2d_CircularGrid {
@@ -396,7 +398,7 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 };
 %extend V2d_RectangularGraphicGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V2d_RectangularGraphicGrid {
@@ -426,7 +428,7 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 };
 %extend V2d_CircularGraphicGrid {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V2d_CircularGraphicGrid {
@@ -454,7 +456,7 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 };
 %extend V2d_BackgroundGraphicObject {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V2d_BackgroundGraphicObject {
@@ -598,7 +600,7 @@ class V2d_View : public Viewer_View {
 };
 %extend V2d_View {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V2d_View {
@@ -714,7 +716,7 @@ class V2d_Viewer : public Viewer_Viewer {
 };
 %extend V2d_Viewer {
 	Standard_Integer __hash__() {
-	return $self->HashCode(LONG_MAX);
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
 	}
 };
 %extend V2d_Viewer {
