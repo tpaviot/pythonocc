@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Torus creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define TORUS_ARG_CC   1
 #define TORUS_ARG_VV   2

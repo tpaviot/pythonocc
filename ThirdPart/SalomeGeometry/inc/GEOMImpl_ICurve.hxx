@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Circle creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define CURVE_ARG_EDGE  1
 #define CURVE_ARG_PAR   2

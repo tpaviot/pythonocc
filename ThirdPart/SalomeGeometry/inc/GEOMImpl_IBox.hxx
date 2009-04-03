@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Box creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define BOX_ARG_DX   1
 #define BOX_ARG_DY   2

@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Sphere creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define SPH_ARG_R   1
 #define SPH_ARG_PNT 4

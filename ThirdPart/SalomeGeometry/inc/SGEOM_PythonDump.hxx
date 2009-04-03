@@ -22,9 +22,9 @@
 
 //#include <SALOMEconfig.h>
 
-#include "GEOM_Object.hxx"
-#include "GEOM_Function.hxx"
-#include "GEOM_Parameter.hxx"
+#include "SGEOM_Object.hxx"
+#include "SGEOM_Function.hxx"
+#include "SGEOM_Parameter.hxx"
 
 #include <TCollection_AsciiString.hxx>
 

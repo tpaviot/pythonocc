@@ -20,7 +20,7 @@
 //NOTE: This is an interface to a function for the Chamfer and creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define CHAM_ARG_SH    1
 #define CHAM_ARG_D1    2

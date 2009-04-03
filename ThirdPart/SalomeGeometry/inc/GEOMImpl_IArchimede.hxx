@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Archimede operation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define ARG_WEIGHT   1  
 #define ARG_DENSITY  2

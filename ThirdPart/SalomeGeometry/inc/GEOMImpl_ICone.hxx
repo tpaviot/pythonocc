@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Cone creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define CONE_ARG_R1  1
 #define CONE_ARG_R2  2

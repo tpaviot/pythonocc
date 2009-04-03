@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Translate creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define TRANSLATE_ARG_POINT1   1  
 #define TRANSLATE_ARG_POINT2   2

@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the vector creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define PLN_ARG_SIZE 1
 

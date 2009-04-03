@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the point creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define ARG_X     1
 #define ARG_Y     2

@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Common, Cut and Fuse creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define BOOL_ARG_SHAPE1  1
 #define BOOL_ARG_SHAPE2  2

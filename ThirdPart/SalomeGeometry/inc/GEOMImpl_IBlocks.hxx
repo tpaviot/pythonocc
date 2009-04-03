@@ -21,7 +21,7 @@
 // creation and transformation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #include "TColStd_HSequenceOfTransient.hxx"
 

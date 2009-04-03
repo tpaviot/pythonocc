@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Revolution creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define REVOL_ARG_ANGLE 1
 #define REVOL_ARG_AXIS  2

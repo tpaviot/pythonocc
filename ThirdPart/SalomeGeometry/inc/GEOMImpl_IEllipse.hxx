@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Ellipse creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define ELLIPS_ARG_CC   1
 #define ELLIPS_ARG_VV   2

@@ -124,8 +124,8 @@ class Handle(GEOM_Object) : public Handle(MMgt_TShared) {
 
 #include <Standard_GUID.hxx>
 #include <TDataStd_TreeNode.hxx>
-#include "GEOM_Function.hxx"
-#include "GEOM_Engine.hxx"
+#include "SGEOM_Function.hxx"
+#include "SGEOM_Engine.hxx"
 
 //!Class that represents a geometric entity in the Data Framework
 class GEOM_Object : public MMgt_TShared

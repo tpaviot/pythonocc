@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Offset creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define OFF_ARG_SHAPE 1
 #define OFF_ARG_VALUE 2

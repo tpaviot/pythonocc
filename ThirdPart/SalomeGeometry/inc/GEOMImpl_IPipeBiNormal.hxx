@@ -24,7 +24,7 @@
 #ifndef _GEOMImpl_IPIPEBINORMAL_HXX_
 #define _GEOMImpl_IPIPEBINORMAL_HXX_
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #ifndef _GEOMImpl_IPIPE_HXX_
 #include "GEOMImpl_IPipe.hxx"

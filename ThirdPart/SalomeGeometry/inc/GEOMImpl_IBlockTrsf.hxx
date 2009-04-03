@@ -20,7 +20,7 @@
 //NOTE: This is an interface to a function for the Blocks Multi-Transformations.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define TRSF_ORIGIN  1
 

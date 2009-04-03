@@ -22,9 +22,9 @@
 #define _GEOMImpl_IInsertOperations_HXX_
 
 //#include "Utils_SALOME_Exception.hxx"
-#include "GEOM_IOperations.hxx"
-#include "GEOM_Engine.hxx"
-#include "GEOM_Object.hxx"
+#include "SGEOM_IOperations.hxx"
+#include "SGEOM_Engine.hxx"
+#include "SGEOM_Object.hxx"
 #include <TDocStd_Document.hxx>
 #include <TColStd_HSequenceOfAsciiString.hxx>
 #include <TCollection_HAsciiString.hxx>

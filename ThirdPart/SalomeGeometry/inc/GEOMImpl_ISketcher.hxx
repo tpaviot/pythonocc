@@ -20,7 +20,7 @@
 //NOTE: This is an interface to a function for the Sketcher creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define SKETCH_ARG_CMD 1
 #define SKETCH_ARG_DOUBLE 2

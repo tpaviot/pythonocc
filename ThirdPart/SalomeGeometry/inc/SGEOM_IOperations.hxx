@@ -21,13 +21,13 @@
 #ifndef _GEOM_IOperations_HXX_
 #define _GEOM_IOperations_HXX_
 
-#include "GEOM_Engine.hxx"
+#include "SGEOM_Engine.hxx"
 #include <TDocStd_Document.hxx>
 #include <TCollection_AsciiString.hxx>
 
-#include "GEOM_Object.hxx"
-#include "GEOM_Solver.hxx"
-#include "GEOM_Parameter.hxx"
+#include "SGEOM_Object.hxx"
+#include "SGEOM_Solver.hxx"
+#include "SGEOM_Parameter.hxx"
 
 #define GEOM_OK "PAL_NO_ERROR"
 #define GEOM_KO "PAL_NOT_DONE_ERROR"

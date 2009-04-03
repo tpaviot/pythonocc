@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the vector creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define VEC_ARG_DX   1
 #define VEC_ARG_DY   2

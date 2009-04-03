@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Pipe creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 #include <TColStd_HSequenceOfTransient.hxx>
 
 

@@ -19,7 +19,7 @@
 //
 //NOTE: This is an interface to a function for the ThickSolid and creation.
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define THICKSOLID_ARG_SH   	1
 #define THICKSOLID_ARG_OFFSET	2

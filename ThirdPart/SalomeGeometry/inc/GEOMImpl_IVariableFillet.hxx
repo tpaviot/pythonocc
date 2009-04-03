@@ -19,7 +19,7 @@
 //
 //NOTE: This is an interface to a function for the Variable Fillet and creation.
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 #include <TColStd_HArray1OfInteger.hxx>
 #include <TColStd_HArray1OfReal.hxx>
 

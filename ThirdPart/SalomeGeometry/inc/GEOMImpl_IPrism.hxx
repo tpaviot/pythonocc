@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Prism creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define PRISM_ARG_H     1
 #define PRISM_ARG_VEC   2

@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Cylinder creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define CYL_ARG_R   1
 #define CYL_ARG_H   2

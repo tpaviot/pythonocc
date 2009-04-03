@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Polyline creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define POLY_ARG_LENG 1
 #define POLY_ARG_LAST 1

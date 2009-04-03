@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Rotate operation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define ROTATE_ANGLE    1  
 #define ROTATE_AXIS     2

@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Import Export operation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define EXP_ARG_REF  1
 #define EXP_ARG_FILE 2

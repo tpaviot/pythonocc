@@ -20,7 +20,7 @@
 //NOTE: This is an interface to a function for the Draft creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define DRAFT_ARG_SHAPE     1
 #define DRAFT_ARG_PLANE     2

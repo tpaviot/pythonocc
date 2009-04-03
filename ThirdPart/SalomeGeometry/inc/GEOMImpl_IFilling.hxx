@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Filling operation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define FILL_ARG_MINDEG   1
 #define FILL_ARG_MAXDEG   2

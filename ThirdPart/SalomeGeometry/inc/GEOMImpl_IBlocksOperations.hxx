@@ -21,7 +21,7 @@
 #ifndef _GEOMImpl_IBlocksOperations_HXX_
 #define _GEOMImpl_IBlocksOperations_HXX_
 
-#include "GEOM_IOperations.hxx"
+#include "SGEOM_IOperations.hxx"
 
 #include <TopTools_ListOfShape.hxx>
 #include <TColStd_HSequenceOfTransient.hxx>

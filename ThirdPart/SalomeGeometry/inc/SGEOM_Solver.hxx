@@ -21,9 +21,9 @@
 #ifndef _GEOM_Solver_HXX_
 #define _GEOM_Solver_HXX_
 
-#include "GEOM_Engine.hxx"
-#include "GEOM_Object.hxx"
-#include "GEOM_Function.hxx"
+#include "SGEOM_Engine.hxx"
+#include "SGEOM_Object.hxx"
+#include "SGEOM_Function.hxx"
 
 #include <TDF_LabelSequence.hxx>
 

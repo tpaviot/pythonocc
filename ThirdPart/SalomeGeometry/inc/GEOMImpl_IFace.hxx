@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the face creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define FACE_ARG_PNT1 1
 #define FACE_ARG_PNT2 2

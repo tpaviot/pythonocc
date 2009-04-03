@@ -22,7 +22,7 @@
 #ifndef _GEOMImpl_IPIPE_HXX_
 #define _GEOMImpl_IPIPE_HXX_
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define PIPE_ARG_BASE 1
 #define PIPE_ARG_PATH 2

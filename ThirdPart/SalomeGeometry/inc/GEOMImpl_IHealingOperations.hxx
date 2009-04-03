@@ -21,9 +21,9 @@
 #ifndef _GEOMImpl_IHealingOperations_HXX_
 #define _GEOMImpl_IHealingOperations_HXX_
 
-#include "GEOM_IOperations.hxx"
-#include "GEOM_Engine.hxx"
-#include "GEOM_Object.hxx"
+#include "SGEOM_IOperations.hxx"
+#include "SGEOM_Engine.hxx"
+#include "SGEOM_Object.hxx"
 
 #include <TColStd_HArray1OfExtendedString.hxx>
 #include <TColStd_HArray1OfInteger.hxx>

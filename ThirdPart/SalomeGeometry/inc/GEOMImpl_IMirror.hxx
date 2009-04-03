@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Mirror creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define MIRROR_ARG_ORIGINAL 1
 #define MIRROR_ARG_PLANE    2

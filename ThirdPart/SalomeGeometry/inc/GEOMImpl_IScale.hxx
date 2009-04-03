@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Scale creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define SCALE_ARG_SHAPE   1
 #define SCALE_ARG_VALUE   2

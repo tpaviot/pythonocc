@@ -22,7 +22,7 @@
 #ifndef _GEOMImpl_IMeasureOperations_HXX_
 #define _GEOMImpl_IMeasureOperations_HXX_
 
-#include "GEOM_IOperations.hxx"
+#include "SGEOM_IOperations.hxx"
 
 #include <BRepCheck_Analyzer.hxx>
 #include <TopoDS_Shape.hxx>

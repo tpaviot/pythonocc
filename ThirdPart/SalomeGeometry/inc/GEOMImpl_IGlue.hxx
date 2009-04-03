@@ -20,7 +20,7 @@
 // NOTE: This is an interface to a function for the Glueing of faces
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #include <TColStd_HSequenceOfTransient.hxx>
 

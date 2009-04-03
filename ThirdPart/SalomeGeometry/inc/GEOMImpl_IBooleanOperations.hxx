@@ -21,7 +21,7 @@
 #ifndef _GEOMImpl_IBooleanOperations_HXX_
 #define _GEOMImpl_IBooleanOperations_HXX_
 
-#include "GEOM_IOperations.hxx"
+#include "SGEOM_IOperations.hxx"
 
 #include <list>
 

@@ -21,7 +21,7 @@
 // (Wire, Face, Shell, Solid and Compound) creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #include "TColStd_HSequenceOfTransient.hxx"
 #include "TColStd_HArray1OfInteger.hxx"

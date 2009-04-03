@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Setting In Position.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define POSITION_ARG_SHAPE 1
 #define POSITION_ARG_START_LCS 2

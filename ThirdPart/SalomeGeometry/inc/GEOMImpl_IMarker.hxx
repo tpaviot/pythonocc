@@ -20,7 +20,7 @@
 //NOTE: This is an interface to a function for the local coordinate system creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define CS_ARG_O_X   1
 #define CS_ARG_O_Y   2

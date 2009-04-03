@@ -20,7 +20,7 @@
 //NOTE: This is an intreface to a function for the Spline creation.
 
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define SPL_ARG_LENG 1
 #define SPL_ARG_LAST 1

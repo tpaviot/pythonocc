@@ -23,7 +23,7 @@
 //Date : 5/8/2008
 //for the salome geom win32 port
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define PLT_ARG_LENG 	1
 #define PLT_ARG_INIT_SH	1

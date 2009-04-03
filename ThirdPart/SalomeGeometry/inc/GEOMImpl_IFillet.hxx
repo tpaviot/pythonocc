@@ -19,7 +19,7 @@
 //
 //NOTE: This is an interface to a function for the Fillet and creation.
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 #define FILLET_ARG_SH   1
 #define FILLET_ARG_R    2

@@ -21,7 +21,7 @@
 #ifndef _GEOMImpl_ICurvesOperations_HXX_
 #define _GEOMImpl_ICurvesOperations_HXX_
 
-#include "GEOM_IOperations.hxx"
+#include "SGEOM_IOperations.hxx"
 
 #include <TCollection_AsciiString.hxx>
 

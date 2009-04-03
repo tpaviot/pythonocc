@@ -21,9 +21,9 @@
 #ifndef _GEOM_Engine_HXX_
 #define _GEOM_Engine_HXX_
 
-#include "GEOM_Application.hxx"
-#include "GEOM_Object.hxx"
-#include "GEOM_DataMapOfAsciiStringTransient.hxx"
+#include "SGEOM_Application.hxx"
+#include "SGEOM_Object.hxx"
+#include "SGEOM_DataMapOfAsciiStringTransient.hxx"
 
 #include <Interface_DataMapOfIntegerTransient.hxx> 
 #include <Resource_DataMapOfAsciiStringAsciiString.hxx>

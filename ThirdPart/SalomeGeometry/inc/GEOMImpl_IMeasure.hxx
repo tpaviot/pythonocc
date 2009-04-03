@@ -19,7 +19,7 @@
 //
 // NOTE: This is an interface to a functions for the Measurement
 
-#include "GEOM_Function.hxx"
+#include "SGEOM_Function.hxx"
 
 class GEOMImpl_IMeasure
 {

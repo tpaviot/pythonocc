@@ -35,7 +35,7 @@
 #include "GEOMImpl_IInsertOperations.hxx"
 #include "GEOMImpl_IMeasureOperations.hxx"
 #include "GEOMImpl_IGroupOperations.hxx"
-#include "GEOM_Engine.hxx"
+#include "SGEOM_Engine.hxx"
 
 #ifdef WNT
 //#include <SALOME_WNT.hxx>
