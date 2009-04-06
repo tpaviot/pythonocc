@@ -475,6 +475,10 @@ MODULES = [
             ('APIHeaderSection',['MoniTool','TCollection','Handle_Interface'],[]),
             ('TransferBRep',['MoniTool','TCollection','Handle_Interface','Interface_SequenceOfCheck'],['TransferBRep_ShapeMapper'],\
                 {'TransferBRep':['BRepCheck']}),
+            ('XCAFApp',['CDM','CDF','TDF','TCollection'],[]),
+            ('XCAFDoc',[],[],{'XCAFDoc_DimTolTool':['GetDatum']}),
+            ('XCAFDrivers',['Standard','PCDM','Storage','MDF','TCollection'],[]),
+            #('XCAFSchema',['TCollection'],[]),#Many linkage errors Function SAdd
            ]
 #####################################
 # Visualization part is OS specific #
@@ -495,9 +499,10 @@ if sys.platform=='win32':
              ('NIS',['TCollection','Quantity','Viewer','TColStd','Aspect'],[],{'NIS_InteractiveObject':['SetAttribute'],\
                                              'NIS_Triangulated':['Polygon','tri_line_intersect','seg_line_intersect']}),
              ('Voxel',['Quantity','gp','Graphic3d','Aspect',\
-                      'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics'],[]),
+                      'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics',],[]),
              ('Visual3d',[],[]),
              ('TPrsStd',['Aspect',],[]),
+             ('XCAFPrs',['SelectMgr','TDF','Graphic3d','Aspect','Prs3d','PrsMgr','SelectBasics','Quantity'],[]),
              #('WNT',[],[]), gccxml error
              ])
     MODULES.extend([
