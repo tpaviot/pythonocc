@@ -33,11 +33,11 @@ from OCC.gp import *
 shape = BRepPrimAPI_MakeBox(200, 200, 200).Shape()
 theBox = BRepPrimAPI_MakeBox(200,60,60).Shape()
 theSphere = BRepPrimAPI_MakeSphere(gp_Pnt(100,20,20),80).Shape()
-shape = BRepAlgoAPI_Fuse(theSphere,theBox).Shape()
+shape = theSphere#BRepAlgoAPI_Fuse(theSphere,theBox).Shape()
 #
 # Mesh the shape
 #
-BRepMesh().Mesh(shape,True)
+BRepMesh().Mesh(shape,0.8)
 builder = BRep_Builder()
 Comp = TopoDS_Compound()
 builder.MakeCompound(Comp)
