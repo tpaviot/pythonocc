@@ -89,6 +89,7 @@ PYOCC_HEADER_TEMPLATE = """
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -502,13 +503,16 @@ class ModularBuilder(object):
                 #We have something like:
                 #['std::list<Handle_GEOM_Object,std::allocator<Handle_GEOM_Object>', '>'] 2
                 #
+                print argument_types
                 tmp = argument_types[0]
                 tmp = tmp.split('<')[1]
                 tmp = tmp.split(',')[0]
+                #if tmp=='std::basic_string':
+                #    tmp='std::string'
                 if tmp=='std::basic_string':
-                    tmp='std::string'
+                    tmp='std::basic_string<char>'
                 argument_types[0] = 'std::list'
-                argument_types[1] = tmp                
+                argument_types[1] = tmp               
                 to_write += "%s<%s>"%(argument_types[0],argument_types[1])
             elif argument_types[1]=='*' and len(argument_types)==2:
                 #Case: GEOM_Engine* theEngine
@@ -656,7 +660,17 @@ class ModularBuilder(object):
         self.fp.write('\n%')
         self.fp.write('extend %s {\n'%class_name)
         self.fp.write('\t~%s() {\n\tchar *__env=getenv("PYTHONOCC_VERBOSE");\n\tif (__env){printf("## Call custom destructor for instance of %s\\n");}'%(class_name,class_name))
-        self.fp.write('\n\t}\n};')
+        self.fp.write('\n\t}\n};\n')
+        #
+        # Special method for XCAFApp_Application
+        #
+        if (class_name=='XCAFApp_Application'):
+            self.fp.write('%inline %{\n')
+            self.fp.write('Handle_XCAFApp_Application GetApplication()\n')
+            self.fp.write('{\n')
+            self.fp.write('return XCAFApp_Application::GetApplication();\n')
+            self.fp.write('}\n%}\n')
+
         #
         # On l'ajoute a la liste des classes deja exposees
         #
