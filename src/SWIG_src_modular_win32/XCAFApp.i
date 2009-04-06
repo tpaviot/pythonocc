@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-%module Sketcher
+%module XCAFApp
 
 %include typemaps.i
 %include cmalloc.i
@@ -27,7 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
-%include std_basic_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -106,34 +106,74 @@ Standard_Integer & function transformation
 }
 
 
-%include Sketcher_dependencies.i
+%include XCAFApp_dependencies.i
 
 
-%include Sketcher_headers.i
+%include XCAFApp_headers.i
 
 
 
 
-%nodefaultctor Sketcher_Profile;
-class Sketcher_Profile {
+%nodefaultctor Handle_XCAFApp_Application;
+class Handle_XCAFApp_Application : public Handle_TDocStd_Application {
 	public:
 		%feature("autodoc", "1");
-		Sketcher_Profile();
+		Handle_XCAFApp_Application();
 		%feature("autodoc", "1");
-		Sketcher_Profile(const char *aCmd);
+		Handle_XCAFApp_Application(const Handle_XCAFApp_Application &aHandle);
 		%feature("autodoc", "1");
-		gp_Pnt GetLastPoint();
+		Handle_XCAFApp_Application(const XCAFApp_Application *anItem);
 		%feature("autodoc", "1");
-		gp_Dir GetLastDir();
-		%feature("autodoc", "1");
-		const TopoDS_Shape & GetShape();
-		%feature("autodoc", "1");
-		bool IsDone();
+		Handle_XCAFApp_Application const DownCast(const Handle_Standard_Transient &AnObject);
 
 };
-%extend Sketcher_Profile {
-	~Sketcher_Profile() {
-	char *__env=getenv("PYTHONOCC_VERBOSE");
-	if (__env){printf("## Call custom destructor for instance of Sketcher_Profile\n");}
+%extend Handle_XCAFApp_Application {
+	XCAFApp_Application* GetObject() {
+	return (XCAFApp_Application*)$self->Access();
 	}
 };
+%extend Handle_XCAFApp_Application {
+	~Handle_XCAFApp_Application() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of Handle_XCAFApp_Application\n");}
+	}
+};
+
+
+%nodefaultctor XCAFApp_Application;
+class XCAFApp_Application : public TDocStd_Application {
+	public:
+		%feature("autodoc", "1");
+		virtual		void Formats(TColStd_SequenceOfExtendedString & Formats);
+		%feature("autodoc", "1");
+		virtual		Standard_CString ResourcesName();
+		%feature("autodoc", "1");
+		virtual		void InitDocument(const Handle_TDocStd_Document &aDoc) const;
+		%feature("autodoc", "1");
+		Handle_XCAFApp_Application GetApplication();
+		%feature("autodoc", "1");
+		virtual		const Handle_Standard_Type & DynamicType() const;
+
+};
+%extend XCAFApp_Application {
+	Handle_XCAFApp_Application GetHandle() {
+	return *(Handle_XCAFApp_Application*) &$self;
+	}
+};
+%extend XCAFApp_Application {
+	Standard_Integer __hash__() {
+	return $self->HashCode(__PYTHONOCC_MAXINT__);
+	}
+};
+%extend XCAFApp_Application {
+	~XCAFApp_Application() {
+	char *__env=getenv("PYTHONOCC_VERBOSE");
+	if (__env){printf("## Call custom destructor for instance of XCAFApp_Application\n");}
+	}
+};
+%inline %{
+Handle_XCAFApp_Application GetApplication()
+{
+return XCAFApp_Application::GetApplication();
+}
+%}
