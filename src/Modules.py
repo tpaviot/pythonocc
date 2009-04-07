@@ -526,6 +526,8 @@ else:
                               'Handle_TCollection','Prs3d','PrsMgr','SelectMgr','SelectBasics'],[]),
                     ('Visual3d',['OSD','MFT','Xw'],[]),
                     ('TPrsStd',['OSD','MFT','Xw','Aspect',],[]),
+                    ('XCAFPrs',['Aspect','MFT','TDF','OSD','Graphic3d',\
+                                'SelectBasics','SelectMgr','Xw','Quantity','Prs3d','PrsMgr'],[]),
                     ])
     MODULES.extend([
                     ('Image',[],[]), #bug on Windows
