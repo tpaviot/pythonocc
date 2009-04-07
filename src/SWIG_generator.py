@@ -427,6 +427,8 @@ class ModularBuilder(object):
         # the key can be Coord, Coord_1 or Coord_2
         if self.MemberfunctionDocStrings.has_key(function_name):
             key = function_name
+        else:
+            key = None
         if self._generate_doc and not ('Handle' in class_parent_name) and key!=None:#self.MemberfunctionDocStrings.has_key(function_name):
             docstring = self.MemberfunctionDocStrings.pop(key)#
             to_write += '\t\t%feature("docstring") '
