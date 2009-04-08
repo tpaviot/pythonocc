@@ -62,13 +62,12 @@ def add_menu(*args, **kwargs):
 def add_function_to_menu(*args, **kwargs):
     frame.add_function_to_menu(*args, **kwargs)
 
-def StartDisplay():
+def start_display():
     '''
     call the mainloop
     '''
     global app
     app.MainLoop()
-    
     
 if __name__ == '__main__':
     from OCC.BRepPrimAPI import *

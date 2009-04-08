@@ -70,8 +70,9 @@ from OCC.Prs3d import *
 from OCC.TColgp import * 
 from OCC.GeomFill import *
 
+from OCC.Display.wxSamplesGui import display
 
-import time
+import time, sys
 
 
 #===============================================================================
@@ -196,7 +197,7 @@ def make_face(shape):
 #===============================================================================
 
 
-def point_from_curve( display ):
+def point_from_curve( event=None ):
     '''
     @param display: instance of wxViewer3d
     '''
@@ -236,7 +237,7 @@ def point_from_curve( display ):
         
     print 'completed point_from_curve, moving on...'
 
-def project_point_on_curve(display):
+def project_point_on_curve(event=None):
     '''
     '''
     global myGroup
@@ -274,7 +275,7 @@ def project_point_on_curve(display):
             display.DisplayShape(make_vertex(Q))
     print 'completed project_point_on_curve, moving on...'
 
-def point_from_projections(display):
+def point_from_projections(event=None):
     '''
     '''
     display.EraseAll()
@@ -322,7 +323,7 @@ def point_from_projections(display):
         
     print 'completed point_from_curve, moving on...'
 
-def points_from_intersection(display):
+def points_from_intersection(event=None):
     '''
     
     @param display:
@@ -357,7 +358,7 @@ def points_from_intersection(display):
                 display.DisplayShape( make_vertex(P) )
                 make_text(pstring, P, 6)    
     
-def parabola(display):
+def parabola(event=None):
     '''
     @param display:
     '''
@@ -390,7 +391,7 @@ def parabola(display):
 
 # TODO
 # Didnt find an equivalent of the direction element...
-def axis(display):
+def axis(event=None):
     '''
     @param display:
     '''
@@ -444,7 +445,7 @@ def axis(display):
     #aDirection6.SetText("A2 YDirection")
     #self.interactive_context.Display(aDirection6,1)
     
-def bspline(display):
+def bspline(event=None):
     '''
     @param display:
     '''
@@ -522,7 +523,7 @@ def bspline(display):
         make_vertex(P); make_text(pstring, P, 6)    
 
 
-def curves2d_from_curves(display):
+def curves2d_from_curves(event=None):
     '''
     @param display:
     '''
@@ -543,7 +544,7 @@ def curves2d_from_curves(display):
     #session_curve.SetColorIndex(3)
     #self.myISessionContext.Display(session_curve,1)
 
-def curves2d_from_offset(display):
+def curves2d_from_offset(event=None):
     '''
     @param display:
     '''
@@ -575,7 +576,7 @@ def curves2d_from_offset(display):
     display.DisplayShape( make_edge2d(OC.GetHandle()) )
     display.DisplayShape( make_edge2d(OC2.GetHandle()) )
 
-def circles2d_from_curves(display):
+def circles2d_from_curves(event=None):
     '''
     @param display:
     '''
@@ -642,7 +643,7 @@ def circles2d_from_curves(display):
             make_text("tangentpoint2", pnt4, 6)
             # find the second tangent point                                         
 
-def curves3d_from_points(display):
+def curves3d_from_points(event=None):
     '''
     @param display:
     '''
@@ -711,7 +712,7 @@ def curves3d_from_points(display):
         #    display.interactive_context.Display(aCurve2,1)
 
 
-def surface_from_curves(display):
+def surface_from_curves(event=None):
     '''
     @param display:
     '''
@@ -778,7 +779,7 @@ def surface_from_curves(display):
     #    aCurve1.Attributes().LineAspect().SetColor(Quantity_NOC_GREEN)
     #    display.interactive_context.Display(aCurve2,1)
 
-def pipes(display):
+def pipes(event=None):
     '''
     @param display:
     '''
@@ -834,7 +835,7 @@ def pipes(display):
             print 'failed with mode:', mode
             pass
 
-def bezier_surfaces(display):
+def bezier_surfaces(event=None):
     '''
     @param display:
     '''
@@ -971,7 +972,7 @@ def bezier_surfaces(display):
     #if BB.IsDone():
     #    display.DisplaySurface(BSPLSURF,1,color = Quantity_NOC_HOTPINK)
 
-def surfaces_from_offsets(display):
+def surfaces_from_offsets(event=None):
     display.EraseAll()
     array1 = []
     array1.append(gp_Pnt (-4,5,5 ))                                           
@@ -1004,7 +1005,7 @@ def surfaces_from_offsets(display):
     display.DisplayShape(make_face(GOS1.GetHandle()))
     display.DisplayShape(make_face(GOS2.GetHandle()))
     
-def surfaces_from_revolution(display):
+def surfaces_from_revolution(event=None):
     display.EraseAll()
     array = []
     array.append(gp_Pnt(0,0,1))                                         
@@ -1020,7 +1021,7 @@ def surfaces_from_revolution(display):
     display.DisplayShape(make_edge(aCurve))
     display.DisplayShape(make_face(SOR.GetHandle()))
  
-def distances(display):
+def distances(event=None):
     display.EraseAll()
     array1 = []
     array1.append(gp_Pnt (-5,1,2))
@@ -1116,180 +1117,31 @@ def distances(display):
     make_text("P2", b, 6)
     display.DisplayShape(make_vertex(a))
     display.DisplayShape(make_vertex(b))
-            
+
+def exit(event=None):
+    sys.exit() 
 
 if __name__ == '__main__':
-    import wx
-    from OCC.Display.wxDisplay import wxViewer3d
-
-    class AppFrame(wx.Frame):
-        def __init__(self, parent):
-            wx.Frame.__init__(self, parent, -1, "wxDisplay3d sample", style=wx.DEFAULT_FRAME_STYLE,size = (640,480))
-            self.canva = wxViewer3d(self)
-            print 'self.canva',self.canva
-            
-            menuBar = wx.MenuBar()
-            DemoMenu = wx.Menu()
-            menuBar.Append(DemoMenu, "&Geometry Examples")
-            self.SetMenuBar(menuBar)
-            # point on curve
-            _1 = wx.NewId()
-            DemoMenu.Append(_1, "point on curve")
-            self.Bind(wx.EVT_MENU, self.demo1, id=_1)
-            # project_point_on_curve
-            _2 = wx.NewId()
-            DemoMenu.Append(_2, "project point on curve")
-            self.Bind(wx.EVT_MENU, self.demo2, id=_2)
-            # points_from_projection
-            _3 = wx.NewId()
-            DemoMenu.Append(_3, "points from projection")
-            self.Bind(wx.EVT_MENU, self.demo3, id=_3)
-            # points_from_intersection
-            _4 = wx.NewId()
-            DemoMenu.Append(_4, "points from intersection")
-            self.Bind(wx.EVT_MENU, self.demo4, id=_4)
-            
-            # parabola
-            _5 = wx.NewId()
-            DemoMenu.Append(_5, "parabola")
-            self.Bind(wx.EVT_MENU, self.demo5, id=_5)
-            
-            # axis
-#            _6 = wx.NewId()
-#            DemoMenu.Append(_6, "points from intersection")
-#            self.Bind(wx.EVT_MENU, self.demo6, id=_6)
-            
-            # bspline
-            _7 = wx.NewId()
-            DemoMenu.Append(_7, "bspline")
-            self.Bind(wx.EVT_MENU, self.demo7, id=_7)
-            
-            # curves2d_from_curves
-            _8 = wx.NewId()
-            DemoMenu.Append(_8, "curves2d from curves")
-            self.Bind(wx.EVT_MENU, self.demo8, id=_8)
-            
-            # curves2d_from_offset
-            _9 = wx.NewId()
-            DemoMenu.Append(_9, "curves2d from offset")
-            self.Bind(wx.EVT_MENU, self.demo9, id=_9)
-            
-            # circles2d_from_curves
-            _10 = wx.NewId()
-            DemoMenu.Append(_10, "circles2d from curves")
-            self.Bind(wx.EVT_MENU, self.demo10, id=_10)
-            
-            # curves3d_from_points
-            _11 = wx.NewId()
-            DemoMenu.Append(_11, "curves3d from points")
-            self.Bind(wx.EVT_MENU, self.demo11, id=_11)
-            
-            # surface_from_curves
-            _12 = wx.NewId()
-            DemoMenu.Append(_12, "surface from curves")
-            self.Bind(wx.EVT_MENU, self.demo12, id=_12)
-            
-            # pipes
-            _13 = wx.NewId()
-            DemoMenu.Append(_13, "pipes")
-            self.Bind(wx.EVT_MENU, self.demo13, id=_13)
-            
-            # pipesbezier_surfaces
-            _14 = wx.NewId()
-            DemoMenu.Append(_14, "pipesbezier surfaces")
-            self.Bind(wx.EVT_MENU, self.demo14, id=_14)
-            
-            # surfaces_from_offsets
-            _15 = wx.NewId()
-            DemoMenu.Append(_15, "surfaces from offsets")
-            self.Bind(wx.EVT_MENU, self.demo15, id=_15)
-            
-            # surfaces_from_revolution
-            _16 = wx.NewId()
-            DemoMenu.Append(_16, "surfaces from revolution")
-            self.Bind(wx.EVT_MENU, self.demo16, id=_16)
-            
-        
-        def demo1(self, event=None):
-            point_from_curve(self.canva._display)
-            
-        def demo2(self, event=None):
-            project_point_on_curve(self.canva._display)
-        
-        def demo3(self, event=None):
-            point_from_projections(self.canva._display)
-        
-        def demo4(self, event=None):
-            points_from_intersection(self.canva._display)
-        
-        def demo5(self, event=None):
-            parabola(self.canva._display)
-        
-#        def demo6(self, event=None):
-#            axis(self.canva._display)
-        
-        def demo7(self, event=None):
-            bspline(self.canva._display)
-        
-        def demo8(self, event=None):
-            curves2d_from_curves(self.canva._display)
-        
-        def demo9(self, event=None):
-            curves2d_from_offset(self.canva._display)
-        
-        def demo10(self, event=None):
-            circles2d_from_curves(self.canva._display)
-        
-        def demo11(self, event=None):
-            curves3d_from_points(self.canva._display)
-        
-        def demo12(self, event=None):
-            surface_from_curves(self.canva._display)
-        
-        def demo13(self, event=None):
-            pipes(self.canva._display)
-        
-        def demo14(self, event=None):
-            bezier_surfaces(self.canva._display)
-        
-        def demo15(self, event=None):
-            surfaces_from_offsets(self.canva._display)
-        
-        def demo16(self, event=None):
-            surfaces_from_revolution(self.canva._display)
-        
-        def demo17(self, event=None):
-            distances(self.canva._display)
-        
-            
-#app = wx.PySimpleApp()
-#wx.InitAllImageHandlers()
-#frame = AppFrame(None)
-#frame.Show(True)
-#
-#wx.SafeYield()
-#frame.canva.InitViewer3d()
-##frame.menu()
-#app.SetTopWindow(frame)
-#
-#app.MainLoop()
-
-
-
-app = wx.PySimpleApp()
-wx.InitAllImageHandlers()
-frame = AppFrame(None)
-frame.Show(True)
-
-wx.SafeYield()
-global display
-frame.canva.InitDriver()
-display = frame.canva._display
-
-
-app.SetTopWindow(frame)
-app.MainLoop()
-
-
-
-
+        from OCC.Display.wxSamplesGui import add_function_to_menu, add_menu, start_display
+        add_menu('geometry')
+        for f in [point_from_curve,
+                  project_point_on_curve,
+                  point_from_projections,
+                  points_from_intersection,
+                  parabola,
+                  axis,
+                  bspline,
+                  curves2d_from_curves,
+                  curves2d_from_offset,
+                  circles2d_from_curves,
+                  curves3d_from_points,
+                  surface_from_curves,
+                  pipes,
+                  bezier_surfaces,
+                  surfaces_from_offsets,
+                  surfaces_from_revolution,
+                  distances,
+                  exit
+                  ]:
+            add_function_to_menu('geometry', f)
+        start_display()

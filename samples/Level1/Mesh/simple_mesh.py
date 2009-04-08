@@ -27,46 +27,56 @@ from OCC.TopLoc import *
 from OCC.Poly import *
 from OCC.TColgp import *
 from OCC.gp import *
-#
-# Create the shape
-#
-shape = BRepPrimAPI_MakeBox(200, 200, 200).Shape()
-theBox = BRepPrimAPI_MakeBox(200,60,60).Shape()
-theSphere = BRepPrimAPI_MakeSphere(gp_Pnt(100,20,20),80).Shape()
-shape = theSphere#BRepAlgoAPI_Fuse(theSphere,theBox).Shape()
-#
-# Mesh the shape
-#
-BRepMesh().Mesh(shape,0.8)
-builder = BRep_Builder()
-Comp = TopoDS_Compound()
-builder.MakeCompound(Comp)
+from OCC.Display.wxSamplesGui import display
 
-ex = TopExp_Explorer(shape,TopAbs_FACE)
-while ex.More():
-    F = TopoDS().Face(ex.Current())
-    L = TopLoc_Location()       
-    facing = (BRep_Tool().Triangulation(F,L)).GetObject()
-    tab = facing.Nodes()
-    tri = facing.Triangles()
-    for i in range(1,facing.NbTriangles()+1):
-        trian = tri.Value(i)
-        print trian
-        index1, index2, index3 = trian.Get()
-        for j in range(1,4):
-            if j==1:    
-                M = index1
-                N = index2
-            elif j==2:    
-                N = index3
-            elif j==3:
-                M = index2  
-            ME = BRepBuilderAPI_MakeEdge(tab.Value(M),tab.Value(N))
-            if ME.IsDone():
-                builder.Add(Comp,ME.Edge())
-    ex.Next()
 
-if 'display' in dir():
+def simple_mesh(event=None):    
+    #
+    # Create the shape
+    #
+    shape = BRepPrimAPI_MakeBox(200, 200, 200).Shape()
+    theBox = BRepPrimAPI_MakeBox(200,60,60).Shape()
+    theSphere = BRepPrimAPI_MakeSphere(gp_Pnt(100,20,20),80).Shape()
+    shape = theSphere#BRepAlgoAPI_Fuse(theSphere,theBox).Shape()
+    #
+    # Mesh the shape
+    #
+    BRepMesh().Mesh(shape,0.8)
+    builder = BRep_Builder()
+    Comp = TopoDS_Compound()
+    builder.MakeCompound(Comp)
+    
+    ex = TopExp_Explorer(shape,TopAbs_FACE)
+    while ex.More():
+        F = TopoDS().Face(ex.Current())
+        L = TopLoc_Location()       
+        facing = (BRep_Tool().Triangulation(F,L)).GetObject()
+        tab = facing.Nodes()
+        tri = facing.Triangles()
+        for i in range(1,facing.NbTriangles()+1):
+            trian = tri.Value(i)
+            print trian
+            index1, index2, index3 = trian.Get()
+            for j in range(1,4):
+                if j==1:    
+                    M = index1
+                    N = index2
+                elif j==2:    
+                    N = index3
+                elif j==3:
+                    M = index2  
+                ME = BRepBuilderAPI_MakeEdge(tab.Value(M),tab.Value(N))
+                if ME.IsDone():
+                    builder.Add(Comp,ME.Edge())
+        ex.Next()
     display.EraseAll()
     display.DisplayShape(shape)
     display.DisplayShape(Comp)
+    
+if __name__ == '__main__':
+    from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu, display
+    add_menu('mesh')
+    add_function_to_menu('mesh', simple_mesh)
+    start_display()
+
+
