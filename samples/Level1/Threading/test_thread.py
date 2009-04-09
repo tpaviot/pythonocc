@@ -14,17 +14,18 @@
 ##
 ##You should have received a copy of the GNU General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
+from OCC.BRepPrimAPI import *
 
 import threading
 import Queue
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
-import time
-import random
+import time, random, sys
 
 from OCC.Display.wxSamplesGui import display
 
 def threading_test(event=None):
+    display.EraseAll()
     QUEUE_POINTS = Queue.Queue(1000)
     QUEUE_VERTICES = Queue.Queue(1000)
     
@@ -63,9 +64,24 @@ def threading_test(event=None):
             vertices.append(vertex)
     print vertices, len(vertices)
 
+def threaded_boxes(event=None):
+    display.EraseAll()
+    def CreateBox():
+        time.sleep(random.random()*10)
+        b = BRepPrimAPI_MakeBox(random.random()*50.,random.random()*50.,random.random()*50.).Shape()
+        display.DisplayShape(b)
+    for i in range(500):
+        thread = threading.Thread(None, CreateBox, None,())
+        thread.start()
+
+def exit(event=None):
+    sys.exit()
+
 if __name__ == '__main__':
     from OCC.Display.wxSamplesGui import add_function_to_menu, add_menu, start_display
     add_menu('threading')
     add_function_to_menu('threading', threading_test)
+    add_function_to_menu('threading', threaded_boxes)
+    add_function_to_menu('threading', exit)
     start_display()
     
