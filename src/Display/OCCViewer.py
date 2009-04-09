@@ -253,6 +253,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         #self._objects_displayed.append(shape_to_display)
         self.Context.Display(shape_to_display.GetHandle())
         self.FitAll()
+        return shape_to_display.GetHandle()
 
     def DisplayColoredShape(self,shape,color):
         dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,\
@@ -264,6 +265,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
         self.Context.SetColor(shape_to_display.GetHandle(),dict_color[color],0)
         self.Context.Display(shape_to_display.GetHandle())
         self.FitAll()
+        return shape_to_display.GetHandle()
         
     def DisplayTriedron(self):
         self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
