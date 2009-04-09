@@ -13,8 +13,11 @@ from OCC.BRepFeat import *
 
 from OCC.Utils.Topology import Topo
 from OCC.Display.wxSamplesGui import display
-from math import pi
 from OCC.BRepLib import *
+from OCC.TopTools import *
+
+from math import pi
+from OCC.BRepOffsetAPI import *
 import sys
 
 def extrusion(event=None):
@@ -129,15 +132,36 @@ def brepfeat_prism(event=None):
     display.DisplayShape(prism.Shape())
     display.DisplayColoredShape(wire.Wire(), 'RED')
 
+
+def thick_solid(event=None):
+    S = BRepPrimAPI_MakeBox(150,200,110).Shape()
+    
+    topo = Topo(S)
+    vert = topo.vertices().next()
+    
+    shapes = TopTools_ListOfShape()
+    for f in topo.faces_from_vertex(vert):
+        shapes.Append(f)
+    
+    #    TopTools_ListOfShape aList    
+    #    TopExp_Explorer Ex(S,TopAbs_FACE)    
+    #    Ex.Next()    //in order to recover the front face    
+    #    TopoDS_Shape aFace = Ex.Current()    
+    #    aList.Append(aFace)    
+    
+    _thick_solid = BRepOffsetAPI_MakeThickSolid(S,shapes, 15,0.01)
+    display.EraseAll()
+    display.DisplayShape(_thick_solid.Shape())
+
 def exit(event=None):
 	sys.exit()
-    
     
 if __name__ == '__main__':
     from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
     add_menu('topology local operations')
     add_function_to_menu('topology local operations', brepfeat_prism)
     add_function_to_menu('topology local operations', extrusion)
+    add_function_to_menu('topology local operations', thick_solid)
     add_function_to_menu('topology local operations', exit)
     start_display()
     

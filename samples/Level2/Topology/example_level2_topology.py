@@ -32,33 +32,9 @@
 ##
 ##The fact that you are presently reading this means that you have had
 ##knowledge of the CeCILL license and that you accept its terms.
-
-
-'''
-TODO:
-
-Hide WireExplorer...
-
-BRepTools.Map3DEdges()
-History:
-        20-01-2009:    initial version
-        23-03-2009:    completed and updated for modular pythonOCC build
-'''
-
-#===============================================================================
-# showing you how to implement a fillet vertex routine
-#===============================================================================
-
-
-from OCC.BRepPrimAPI import *
-from OCC.BRepFilletAPI import *
-from OCC.TColgp import *
-from OCC.gp import *
-from OCC.TopExp import *
-from OCC.BRep import *
-
-from OCC.Utils.Topology import Topo
-from examples_gui import display, loop
+
+from OCC.BRepPrimAPI import *from OCC.BRepFilletAPI import *from OCC.TColgp import *from OCC.gp import *from OCC.TopExp import *from OCC.BRep import *from OCC.Utils.Topology import Topo
+from OCC.Display.wxSamplesGui import display
 
 cube = BRepPrimAPI_MakeBox(100,100,100).Shape()
 topo = Topo(cube)
@@ -107,11 +83,7 @@ except ImportError:
     pass 
 
 display.DisplayShape(filleted_vertA)
-loop()
-
-
-from OCC.BRepTools import *
-
+if __name__ == '__main__':    from OCC.Display.wxSamplesGui import display
 
 
 

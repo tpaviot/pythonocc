@@ -25,10 +25,15 @@ from OCC.Geom2d import *
 from OCC.gp import *
 from OCC.BRepBuilderAPI import *
 from OCC.TColgp import *
+from OCC.BRepOffsetAPI import *
+from OCC.GeomAbs import *
+from OCC.BRepPrimAPI import *
+from OCC.Utils.Topology import Topo
+from OCC.BRep import *
+from OCC.Precision import *
 
 from OCC.Display.wxSamplesGui import display
-
-import math
+import math, sys
 
 def edge(event=None):
     # The blud edge
@@ -212,11 +217,121 @@ def face(event=None):
     display.DisplayColoredShape(BrownFace.Face(),'BLUE')
     #display.DisplayShape(RedFace_f)
     
+def evolved_shape(event=None):    
+    P = BRepBuilderAPI_MakePolygon()
+    P.Add(gp_Pnt(0.,0.,0.))
+    P.Add(gp_Pnt(200.,0.,0.))
+    P.Add(gp_Pnt(200.,200.,0.))
+    P.Add(gp_Pnt(0.,200.,0.))
+    P.Add(gp_Pnt(0.,0.,0.))
+    wprof = BRepBuilderAPI_MakePolygon(gp_Pnt(0.,0.,0.),gp_Pnt(-60.,-60.,-200.))
+    S = BRepOffsetAPI_MakeEvolved(P.Wire(),wprof.Wire(),GeomAbs_Arc,True,False,True,0.0001)
+    S.Build()
+    display.EraseAll()
+    display.DisplayShape(S.Shape())
+
+def draft_angle(event=None):
+    S = BRepPrimAPI_MakeBox(200.,300.,150.).Shape()
+    adraft = BRepOffsetAPI_DraftAngle(S)
+    
+    topo = Topo(S)
+    for f in topo.faces():
+        surf = Handle_Geom_Plane().DownCast(BRep_Tool().Surface(f)).GetObject()
+        dirf = surf.Pln().Axis().Direction()
+        print 'direction',dirf.Coord()
+        ddd = gp_Dir(0,0,1)
+        if dirf.IsNormal(ddd, Precision().Angular()):
+            adraft.Add(f, ddd, math.radians(15), gp_Pln(gp_Ax3(gp().XOY())))
+            
+    adraft.Build()
+    display.EraseAll()
+    display.DisplayShape(adraft.Shape())
+
+
+def through_sections(event=None):
+    #ruled 
+    c1 = gp_Circ(gp_Ax2(gp_Pnt(-100.,0.,-100.),gp_Dir(0.,0.,1.)),40.)
+    W1 = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c1).Edge()).Wire()
+    
+    c2 = gp_Circ(gp_Ax2(gp_Pnt(-10.,0.,-0.),gp_Dir(0.,0.,1.)),40.)
+    W2 = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c2).Edge()).Wire()
+    
+    c3 = gp_Circ(gp_Ax2(gp_Pnt(-75.,0.,100.),gp_Dir(0.,0.,1.)),40.)
+    W3 = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c3).Edge()).Wire()
+    
+    c4= gp_Circ(gp_Ax2(gp_Pnt(0.,0.,200.),gp_Dir(0.,0.,1.)),40.)
+    W4 = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c4).Edge()).Wire()
+    
+    generatorA = BRepOffsetAPI_ThruSections(False, True)
+    map(generatorA.AddWire, [W1,W2,W3,W4])
+    generatorA.Build()
+    display.EraseAll()
+    display.DisplayShape(generatorA.Shape())
+
+    #smooth
+    c1b = gp_Circ(gp_Ax2(gp_Pnt(100.,0.,-100.),gp_Dir(0.,0.,1.)),40.) 
+    W1b = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c1b).Edge()).Wire()
+    
+    c2b = gp_Circ(gp_Ax2(gp_Pnt(210.,0.,-0.),gp_Dir(0.,0.,1.)),40.) 
+    W2b = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c2b).Edge()).Wire()
+     
+    c3b = gp_Circ(gp_Ax2(gp_Pnt(275.,0.,100.),gp_Dir(0.,0.,1.)),40.)
+    W3b = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c3b).Edge()).Wire()
+    
+    c4b= gp_Circ(gp_Ax2(gp_Pnt(200.,0.,200.),gp_Dir(0.,0.,1.)),40.)
+    W4b = BRepBuilderAPI_MakeWire(BRepBuilderAPI_MakeEdge(c4b).Edge()).Wire()
+    generatorB = BRepOffsetAPI_ThruSections(True, False)
+    map(generatorB.AddWire, [W1b,W2b,W3b,W4b])
+    generatorB.Build()
+    display.DisplayShape(generatorB.Shape())
+    
+def prism(event=None):
+    def add_shapes(display, shapes):
+        for shp in shapes:
+            display.DisplayShape(shp.Shape())
+            
+    #Prism a vertex > result is an edge   
+    display.EraseAll()
+    V1  = BRepBuilderAPI_MakeVertex(gp_Pnt(200.,200.,0.)) 
+    S1  = BRepPrimAPI_MakePrism(V1.Shape(),gp_Vec(0.,0.,100.)) 
+
+    #Prism an edge > result is a face  
+    E   = BRepBuilderAPI_MakeEdge(gp_Pnt(150.,150,0.), gp_Pnt(50.,50,0.)) 
+    S2  = BRepPrimAPI_MakePrism(E.Shape(),gp_Vec(0.,0.,100.)) 
+
+    #Prism an wire > result is a shell  
+    E1  = BRepBuilderAPI_MakeEdge(gp_Pnt(0.,0.,0.), gp_Pnt(50.,0.,0.)) 
+    E2  = BRepBuilderAPI_MakeEdge(gp_Pnt(50.,0.,0.), gp_Pnt(50.,50.,0.)) 
+    E3  = BRepBuilderAPI_MakeEdge(gp_Pnt(50.,50.,0.), gp_Pnt(0.,0.,0.)) 
+    W   = BRepBuilderAPI_MakeWire(E1.Edge(),E2.Edge(),E3.Edge()) 
+    S3  = BRepPrimAPI_MakePrism(W.Shape(),gp_Vec(0.,0.,100.)) 
+    
+    #Prism a face or a shell > result is a solid  
+    c   = gp_Circ(gp_Ax2(gp_Pnt(200.,200.,0.),gp_Dir(0.,0.,1.)), 80.) 
+    Ec  = BRepBuilderAPI_MakeEdge(c) 
+    Wc  = BRepBuilderAPI_MakeWire(Ec.Edge())
+    F   = BRepBuilderAPI_MakeFace(gp_Pln(gp_Ax3(gp().XOY())),Wc.Wire()) 
+    S4  = BRepPrimAPI_MakePrism(F.Shape(),gp_Vec(0.,0.,100.)) 
+    
+    add_shapes(display, [V1, S1,
+                         E, S2,
+                         E1,E2,E3,W,S3,
+                         Ec, Wc, F, S4 
+                         ]
+               )
+    
+def exit(event=None):
+    sys.exit()
+    
 if __name__ == '__main__':
     from OCC.Display.wxSamplesGui import start_display, add_function_to_menu, add_menu
-    raise NotImplementedError, 'uses too archaic OCC calls... should be redone...'
+#    raise NotImplementedError, 'uses too archaic OCC calls... should be redone...'
     add_menu('topology building')
     add_function_to_menu('topology building', edge)
     add_function_to_menu('topology building', wire)
     add_function_to_menu('topology building', face)
+    add_function_to_menu('topology building', evolved_shape)
+    add_function_to_menu('topology building', draft_angle)
+    add_function_to_menu('topology building', through_sections)
+    add_function_to_menu('topology building', prism)
     start_display()

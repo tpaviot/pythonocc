@@ -214,6 +214,7 @@ def variable_filleting(event=None):
     display.DisplayShape(evolvedBox)    
     display.DisplayShape(LawEvolvedBox)
 
+
 def exit(event=None):
     sys.exit()
 
