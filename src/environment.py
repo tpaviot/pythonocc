@@ -27,7 +27,7 @@ from distutils import sysconfig
 #
 # Define pythonOCC version
 #
-VERSION = 'rev218'
+VERSION = 'wo0.2'
 #
 # Wrap SalomeGEOM?
 #
