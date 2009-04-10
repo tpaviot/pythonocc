@@ -117,7 +117,7 @@ if GENERATE_SWIG:#a small things to do before building
 # Create 'OCC' folder if it does not exist
 #
 if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
-        os.mkdir(os.path.join(os.getcwd(),'OCC')
+        os.mkdir(os.path.join(os.getcwd(),'OCC'))
                                
 #
 # Package Name
