@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public Handle_TColl
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPCAFControl_ActorWrite;
 class Handle_STEPCAFControl_ActorWrite : public Handle_STEPControl_ActorWrite {
@@ -188,6 +191,7 @@ class Handle_STEPCAFControl_ActorWrite : public Handle_STEPControl_ActorWrite {
 	}
 };
 
+
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile;
 class Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_STEPCAFControl_StackItemOfDictionaryOfExternFile : public Handle_MM
 	}
 };
 
+
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public Handle_TCollection_MapNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPCAFControl_ExternFile;
 class Handle_STEPCAFControl_ExternFile : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_STEPCAFControl_ExternFile : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_STEPCAFControl_DictionaryOfExternFile;
 class Handle_STEPCAFControl_DictionaryOfExternFile : public Handle_MMgt_TShared {
 	public:
@@ -312,6 +320,7 @@ class Handle_STEPCAFControl_DictionaryOfExternFile : public Handle_MMgt_TShared 
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DictionaryOfExternFile\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public Handle_TCollection_MapNode {
@@ -338,6 +347,7 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public Handl
 	}
 };
 
+
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public Handle_TCollection_MapNode {
 	public:
@@ -362,6 +372,7 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public Handle
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPCAFControl_Controller;
 class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
@@ -388,6 +399,7 @@ class Handle_STEPCAFControl_Controller : public Handle_STEPControl_Controller {
 	}
 };
 
+
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public Handle_TCollection_MapNode {
 	public:
@@ -412,6 +424,7 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPCAFControl_DataMapNodeOfDataMapOfLabelShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel;
 class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCollection_MapNode {
@@ -438,6 +451,7 @@ class Handle_STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCo
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile;
 class STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile : public TCollection_BasicMapIterator {
 	public:
@@ -459,6 +473,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile : public TCollect
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfLabelExternFile\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeTransient;
 class STEPCAFControl_DataMapOfShapeTransient : public TCollection_BasicMap {
@@ -493,6 +508,7 @@ class STEPCAFControl_DataMapOfShapeTransient : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfShapeTransient\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_ExternFile;
 class STEPCAFControl_ExternFile : public MMgt_TShared {
@@ -544,6 +560,7 @@ class STEPCAFControl_ExternFile : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapOfShapePD;
 class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 	public:
@@ -577,6 +594,7 @@ class STEPCAFControl_DataMapOfShapePD : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfShapePD\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeSDR;
 class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
@@ -612,6 +630,7 @@ class STEPCAFControl_DataMapOfShapeSDR : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR;
 class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode {
 	public:
@@ -642,6 +661,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeSDR : public TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape;
 class STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape : public TCollection_BasicMapIterator {
 	public:
@@ -663,6 +683,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape : public TCollection_B
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfLabelShape\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_ActorWrite;
 class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
@@ -698,6 +719,7 @@ class STEPCAFControl_ActorWrite : public STEPControl_ActorWrite {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel;
 class STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {
 	public:
@@ -728,6 +750,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_Controller;
 class STEPCAFControl_Controller : public STEPControl_Controller {
 	public:
@@ -755,6 +778,7 @@ class STEPCAFControl_Controller : public STEPControl_Controller {
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_Controller\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapOfShapeLabel;
 class STEPCAFControl_DataMapOfShapeLabel : public TCollection_BasicMap {
@@ -790,6 +814,7 @@ class STEPCAFControl_DataMapOfShapeLabel : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_StackItemOfDictionaryOfExternFile;
 class STEPCAFControl_StackItemOfDictionaryOfExternFile : public MMgt_TShared {
 	public:
@@ -824,6 +849,7 @@ class STEPCAFControl_StackItemOfDictionaryOfExternFile : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile;
 class STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public TCollection_MapNode {
 	public:
@@ -853,6 +879,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfLabelExternFile\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapePD;
 class STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public TCollection_MapNode {
@@ -884,6 +911,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapePD : public TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient;
 class STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode {
 	public:
@@ -913,6 +941,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient : public TCollection_M
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfShapeTransient\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapOfPDExternFile;
 class STEPCAFControl_DataMapOfPDExternFile : public TCollection_BasicMap {
@@ -948,6 +977,7 @@ class STEPCAFControl_DataMapOfPDExternFile : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile;
 class STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile : public TCollection_BasicMapIterator {
 	public:
@@ -969,6 +999,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfSDRExternFile\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapOfSDRExternFile;
 class STEPCAFControl_DataMapOfSDRExternFile : public TCollection_BasicMap {
@@ -1004,6 +1035,7 @@ class STEPCAFControl_DataMapOfSDRExternFile : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapOfLabelExternFile;
 class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 	public:
@@ -1038,6 +1070,7 @@ class STEPCAFControl_DataMapOfLabelExternFile : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel;
 class STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_BasicMapIterator {
 	public:
@@ -1059,6 +1092,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_B
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapeLabel\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile;
 class STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public TCollection_MapNode {
@@ -1089,6 +1123,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile : public TCollection_Ma
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfSDRExternFile\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapOfLabelShape;
 class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
@@ -1123,6 +1158,7 @@ class STEPCAFControl_DataMapOfLabelShape : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapOfLabelShape\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DictionaryOfExternFile;
 class STEPCAFControl_DictionaryOfExternFile : public MMgt_TShared {
@@ -1184,6 +1220,7 @@ class STEPCAFControl_DictionaryOfExternFile : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_IteratorOfDictionaryOfExternFile;
 class STEPCAFControl_IteratorOfDictionaryOfExternFile {
 	public:
@@ -1211,6 +1248,7 @@ class STEPCAFControl_IteratorOfDictionaryOfExternFile {
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_IteratorOfDictionaryOfExternFile\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_Reader;
 class STEPCAFControl_Reader {
@@ -1280,6 +1318,7 @@ class STEPCAFControl_Reader {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient;
 class STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_BasicMapIterator {
 	public:
@@ -1301,6 +1340,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient : public TCollecti
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfShapeTransient\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfLabelShape;
 class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNode {
@@ -1332,6 +1372,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfLabelShape : public TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile;
 class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_MapNode {
 	public:
@@ -1361,6 +1402,7 @@ class STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile : public TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapNodeOfDataMapOfPDExternFile\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_Writer;
 class STEPCAFControl_Writer {
@@ -1428,6 +1470,7 @@ class STEPCAFControl_Writer {
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapePD;
 class STEPCAFControl_DataMapIteratorOfDataMapOfShapePD : public TCollection_BasicMapIterator {
 	public:
@@ -1450,6 +1493,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfShapePD : public TCollection_Basi
 	}
 };
 
+
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile;
 class STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile : public TCollection_BasicMapIterator {
 	public:
@@ -1471,6 +1515,7 @@ class STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile : public TCollection
 	if (__env){printf("## Call custom destructor for instance of STEPCAFControl_DataMapIteratorOfDataMapOfPDExternFile\n");}
 	}
 };
+
 
 %nodefaultctor STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR;
 class STEPCAFControl_DataMapIteratorOfDataMapOfShapeSDR : public TCollection_BasicMapIterator {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -194,6 +195,7 @@ class Handle_PlotMgt_PlotterParameter : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_PlotMgt_PlotterDefinitionError;
 class Handle_PlotMgt_PlotterDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -218,6 +220,7 @@ class Handle_PlotMgt_PlotterDefinitionError : public Handle_Standard_OutOfRange 
 	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter;
 class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TCollection_SeqNode {
@@ -244,6 +247,7 @@ class Handle_PlotMgt_SequenceNodeOfListOfPlotterParameter : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_PlotMgt_HListOfMFTFonts;
 class Handle_PlotMgt_HListOfMFTFonts : public Handle_MMgt_TShared {
 	public:
@@ -268,6 +272,7 @@ class Handle_PlotMgt_HListOfMFTFonts : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_HListOfMFTFonts\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PlotMgt_HListOfPlotterParameter;
 class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
@@ -294,6 +299,7 @@ class Handle_PlotMgt_HListOfPlotterParameter : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_PlotMgt_Plotter;
 class Handle_PlotMgt_Plotter : public Handle_MMgt_TShared {
 	public:
@@ -318,6 +324,7 @@ class Handle_PlotMgt_Plotter : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_Plotter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PlotMgt_TextManager;
 class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
@@ -344,6 +351,7 @@ class Handle_PlotMgt_TextManager : public Handle_MFT_TextManager {
 	}
 };
 
+
 %nodefaultctor Handle_PlotMgt_PlotterAccessError;
 class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 	public:
@@ -368,6 +376,7 @@ class Handle_PlotMgt_PlotterAccessError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_PlotterAccessError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PlotMgt_HListOfMFTSizes;
 class Handle_PlotMgt_HListOfMFTSizes : public Handle_MMgt_TShared {
@@ -394,6 +403,7 @@ class Handle_PlotMgt_HListOfMFTSizes : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_PlotMgt_PlotterDriver;
 class Handle_PlotMgt_PlotterDriver : public Handle_Aspect_Driver {
 	public:
@@ -419,6 +429,7 @@ class Handle_PlotMgt_PlotterDriver : public Handle_Aspect_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_PlotMgt_ImageDriver;
 class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
 	public:
@@ -443,6 +454,7 @@ class Handle_PlotMgt_ImageDriver : public Handle_PlotMgt_PlotterDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_PlotMgt_ImageDriver\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt_PlotterDefinitionError;
 class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
@@ -477,6 +489,7 @@ class PlotMgt_PlotterDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt_TextManager;
 class PlotMgt_TextManager : public MFT_TextManager {
@@ -523,6 +536,7 @@ class PlotMgt_TextManager : public MFT_TextManager {
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_TextManager\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt_PlotterDriver;
 class PlotMgt_PlotterDriver : public Aspect_Driver {
@@ -644,6 +658,7 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 	}
 };
 
+
 %nodefaultctor PlotMgt_SequenceNodeOfListOfPlotterParameter;
 class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode {
 	public:
@@ -671,6 +686,7 @@ class PlotMgt_SequenceNodeOfListOfPlotterParameter : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_SequenceNodeOfListOfPlotterParameter\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt_ListOfPlotterParameter;
 class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
@@ -725,6 +741,7 @@ class PlotMgt_ListOfPlotterParameter : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfPlotterParameter\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt_HListOfPlotterParameter;
 class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
@@ -796,6 +813,7 @@ class PlotMgt_HListOfPlotterParameter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor PlotMgt_ListOfMFTFonts;
 class PlotMgt_ListOfMFTFonts {
 	public:
@@ -835,6 +853,7 @@ class PlotMgt_ListOfMFTFonts {
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_ListOfMFTFonts\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt_Plotter;
 class PlotMgt_Plotter : public MMgt_TShared {
@@ -1188,6 +1207,7 @@ class PlotMgt_Plotter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor PlotMgt_HListOfMFTSizes;
 class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
 	public:
@@ -1234,6 +1254,7 @@ class PlotMgt_HListOfMFTSizes : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor PlotMgt_ImageDriver;
 class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 	public:
@@ -1265,6 +1286,7 @@ class PlotMgt_ImageDriver : public PlotMgt_PlotterDriver {
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_ImageDriver\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt;
 class PlotMgt {
@@ -1308,6 +1330,7 @@ class PlotMgt {
 	}
 };
 
+
 %nodefaultctor PlotMgt_PlotterAccessError;
 class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
 	public:
@@ -1341,6 +1364,7 @@ class PlotMgt_PlotterAccessError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_PlotterAccessError\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt_PlotterParameter;
 class PlotMgt_PlotterParameter : public MMgt_TShared {
@@ -1406,6 +1430,7 @@ class PlotMgt_PlotterParameter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor PlotMgt_HListOfMFTFonts;
 class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 	public:
@@ -1451,6 +1476,7 @@ class PlotMgt_HListOfMFTFonts : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of PlotMgt_HListOfMFTFonts\n");}
 	}
 };
+
 
 %nodefaultctor PlotMgt_ListOfMFTSizes;
 class PlotMgt_ListOfMFTSizes {

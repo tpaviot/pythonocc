@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlMDF_ADriver : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDF_TagSourceDriver;
 class Handle_XmlMDF_TagSourceDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_XmlMDF_TagSourceDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDF_TagSourceDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDF_DataMapNodeOfMapOfDriver;
 class Handle_XmlMDF_DataMapNodeOfMapOfDriver : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_XmlMDF_DataMapNodeOfMapOfDriver : public Handle_TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDF_ReferenceDriver;
 class Handle_XmlMDF_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_XmlMDF_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDF_ReferenceDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDF_ADriverTable;
 class Handle_XmlMDF_ADriverTable : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_XmlMDF_ADriverTable : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDF_DataMapNodeOfTypeADriverMap;
 class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapNode {
 	public:
@@ -263,6 +269,7 @@ class Handle_XmlMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 	}
 };
 
+
 %nodefaultctor XmlMDF;
 class XmlMDF {
 	public:
@@ -282,6 +289,7 @@ class XmlMDF {
 	if (__env){printf("## Call custom destructor for instance of XmlMDF\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDF_DataMapNodeOfTypeADriverMap;
 class XmlMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
@@ -312,6 +320,7 @@ class XmlMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of XmlMDF_DataMapNodeOfTypeADriverMap\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDF_ADriver;
 class XmlMDF_ADriver : public MMgt_TShared {
@@ -351,6 +360,7 @@ class XmlMDF_ADriver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor XmlMDF_ReferenceDriver;
 class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 	public:
@@ -378,6 +388,7 @@ class XmlMDF_ReferenceDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDF_ReferenceDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDF_DataMapNodeOfMapOfDriver;
 class XmlMDF_DataMapNodeOfMapOfDriver : public TCollection_MapNode {
@@ -408,6 +419,7 @@ class XmlMDF_DataMapNodeOfMapOfDriver : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of XmlMDF_DataMapNodeOfMapOfDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDF_TypeADriverMap;
 class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
@@ -443,6 +455,7 @@ class XmlMDF_TypeADriverMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor XmlMDF_DataMapIteratorOfTypeADriverMap;
 class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
 	public:
@@ -464,6 +477,7 @@ class XmlMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 	if (__env){printf("## Call custom destructor for instance of XmlMDF_DataMapIteratorOfTypeADriverMap\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDF_TagSourceDriver;
 class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
@@ -497,6 +511,7 @@ class XmlMDF_TagSourceDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDF_DataMapIteratorOfMapOfDriver;
 class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator {
 	public:
@@ -518,6 +533,7 @@ class XmlMDF_DataMapIteratorOfMapOfDriver : public TCollection_BasicMapIterator 
 	if (__env){printf("## Call custom destructor for instance of XmlMDF_DataMapIteratorOfMapOfDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDF_ADriverTable;
 class XmlMDF_ADriverTable : public MMgt_TShared {
@@ -550,6 +566,7 @@ class XmlMDF_ADriverTable : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of XmlMDF_ADriverTable\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDF_MapOfDriver;
 class XmlMDF_MapOfDriver : public TCollection_BasicMap {

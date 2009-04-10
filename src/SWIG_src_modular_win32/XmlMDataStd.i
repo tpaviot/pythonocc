@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlMDataStd_PointDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_IntPackedMapDriver;
 class Handle_XmlMDataStd_IntPackedMapDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_XmlMDataStd_IntPackedMapDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_IntPackedMapDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_PlacementDriver;
 class Handle_XmlMDataStd_PlacementDriver : public Handle_XmlMDF_ADriver {
@@ -188,6 +191,7 @@ class Handle_XmlMDataStd_PlacementDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_PlaneDriver;
 class Handle_XmlMDataStd_PlaneDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_XmlMDataStd_PlaneDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_PlaneDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_RealListDriver;
 class Handle_XmlMDataStd_RealListDriver : public Handle_XmlMDF_ADriver {
@@ -238,6 +243,7 @@ class Handle_XmlMDataStd_RealListDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_AsciiStringDriver;
 class Handle_XmlMDataStd_AsciiStringDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -262,6 +268,7 @@ class Handle_XmlMDataStd_AsciiStringDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_AsciiStringDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_ConstraintDriver;
 class Handle_XmlMDataStd_ConstraintDriver : public Handle_XmlMDF_ADriver {
@@ -288,6 +295,7 @@ class Handle_XmlMDataStd_ConstraintDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_AxisDriver;
 class Handle_XmlMDataStd_AxisDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -312,6 +320,7 @@ class Handle_XmlMDataStd_AxisDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_AxisDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_CommentDriver;
 class Handle_XmlMDataStd_CommentDriver : public Handle_XmlMDF_ADriver {
@@ -338,6 +347,7 @@ class Handle_XmlMDataStd_CommentDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_ReferenceArrayDriver;
 class Handle_XmlMDataStd_ReferenceArrayDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -362,6 +372,7 @@ class Handle_XmlMDataStd_ReferenceArrayDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ReferenceArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_TreeNodeDriver;
 class Handle_XmlMDataStd_TreeNodeDriver : public Handle_XmlMDF_ADriver {
@@ -388,6 +399,7 @@ class Handle_XmlMDataStd_TreeNodeDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_GeometryDriver;
 class Handle_XmlMDataStd_GeometryDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -412,6 +424,7 @@ class Handle_XmlMDataStd_GeometryDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_GeometryDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_ExtStringListDriver;
 class Handle_XmlMDataStd_ExtStringListDriver : public Handle_XmlMDF_ADriver {
@@ -438,6 +451,7 @@ class Handle_XmlMDataStd_ExtStringListDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_ByteArrayDriver;
 class Handle_XmlMDataStd_ByteArrayDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -462,6 +476,7 @@ class Handle_XmlMDataStd_ByteArrayDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ByteArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_ExtStringArrayDriver;
 class Handle_XmlMDataStd_ExtStringArrayDriver : public Handle_XmlMDF_ADriver {
@@ -488,6 +503,7 @@ class Handle_XmlMDataStd_ExtStringArrayDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_PatternStdDriver;
 class Handle_XmlMDataStd_PatternStdDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -512,6 +528,7 @@ class Handle_XmlMDataStd_PatternStdDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_PatternStdDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_RealDriver;
 class Handle_XmlMDataStd_RealDriver : public Handle_XmlMDF_ADriver {
@@ -538,6 +555,7 @@ class Handle_XmlMDataStd_RealDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_DirectoryDriver;
 class Handle_XmlMDataStd_DirectoryDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -562,6 +580,7 @@ class Handle_XmlMDataStd_DirectoryDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_DirectoryDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_IntegerArrayDriver;
 class Handle_XmlMDataStd_IntegerArrayDriver : public Handle_XmlMDF_ADriver {
@@ -588,6 +607,7 @@ class Handle_XmlMDataStd_IntegerArrayDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_BooleanListDriver;
 class Handle_XmlMDataStd_BooleanListDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -612,6 +632,7 @@ class Handle_XmlMDataStd_BooleanListDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_BooleanListDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_UAttributeDriver;
 class Handle_XmlMDataStd_UAttributeDriver : public Handle_XmlMDF_ADriver {
@@ -638,6 +659,7 @@ class Handle_XmlMDataStd_UAttributeDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_IntegerDriver;
 class Handle_XmlMDataStd_IntegerDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -662,6 +684,7 @@ class Handle_XmlMDataStd_IntegerDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_IntegerDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_TickDriver;
 class Handle_XmlMDataStd_TickDriver : public Handle_XmlMDF_ADriver {
@@ -688,6 +711,7 @@ class Handle_XmlMDataStd_TickDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_IntegerListDriver;
 class Handle_XmlMDataStd_IntegerListDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -712,6 +736,7 @@ class Handle_XmlMDataStd_IntegerListDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_IntegerListDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_NoteBookDriver;
 class Handle_XmlMDataStd_NoteBookDriver : public Handle_XmlMDF_ADriver {
@@ -738,6 +763,7 @@ class Handle_XmlMDataStd_NoteBookDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_ReferenceListDriver;
 class Handle_XmlMDataStd_ReferenceListDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -762,6 +788,7 @@ class Handle_XmlMDataStd_ReferenceListDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ReferenceListDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_NamedDataDriver;
 class Handle_XmlMDataStd_NamedDataDriver : public Handle_XmlMDF_ADriver {
@@ -788,6 +815,7 @@ class Handle_XmlMDataStd_NamedDataDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_BooleanArrayDriver;
 class Handle_XmlMDataStd_BooleanArrayDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -812,6 +840,7 @@ class Handle_XmlMDataStd_BooleanArrayDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_BooleanArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_ExpressionDriver;
 class Handle_XmlMDataStd_ExpressionDriver : public Handle_XmlMDF_ADriver {
@@ -838,6 +867,7 @@ class Handle_XmlMDataStd_ExpressionDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_ShapeDriver;
 class Handle_XmlMDataStd_ShapeDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -862,6 +892,7 @@ class Handle_XmlMDataStd_ShapeDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_ShapeDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_RelationDriver;
 class Handle_XmlMDataStd_RelationDriver : public Handle_XmlMDF_ADriver {
@@ -888,6 +919,7 @@ class Handle_XmlMDataStd_RelationDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_NameDriver;
 class Handle_XmlMDataStd_NameDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -912,6 +944,7 @@ class Handle_XmlMDataStd_NameDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_NameDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMDataStd_VariableDriver;
 class Handle_XmlMDataStd_VariableDriver : public Handle_XmlMDF_ADriver {
@@ -938,6 +971,7 @@ class Handle_XmlMDataStd_VariableDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMDataStd_RealArrayDriver;
 class Handle_XmlMDataStd_RealArrayDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -962,6 +996,7 @@ class Handle_XmlMDataStd_RealArrayDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMDataStd_RealArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_DirectoryDriver;
 class XmlMDataStd_DirectoryDriver : public XmlMDF_ADriver {
@@ -995,6 +1030,7 @@ class XmlMDataStd_DirectoryDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_IntegerListDriver;
 class XmlMDataStd_IntegerListDriver : public XmlMDF_ADriver {
 	public:
@@ -1026,6 +1062,7 @@ class XmlMDataStd_IntegerListDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_IntegerListDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_ExpressionDriver;
 class XmlMDataStd_ExpressionDriver : public XmlMDF_ADriver {
@@ -1059,6 +1096,7 @@ class XmlMDataStd_ExpressionDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_BooleanListDriver;
 class XmlMDataStd_BooleanListDriver : public XmlMDF_ADriver {
 	public:
@@ -1090,6 +1128,7 @@ class XmlMDataStd_BooleanListDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_BooleanListDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_VariableDriver;
 class XmlMDataStd_VariableDriver : public XmlMDF_ADriver {
@@ -1123,6 +1162,7 @@ class XmlMDataStd_VariableDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_NamedDataDriver;
 class XmlMDataStd_NamedDataDriver : public XmlMDF_ADriver {
 	public:
@@ -1154,6 +1194,7 @@ class XmlMDataStd_NamedDataDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_NamedDataDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_IntegerDriver;
 class XmlMDataStd_IntegerDriver : public XmlMDF_ADriver {
@@ -1187,6 +1228,7 @@ class XmlMDataStd_IntegerDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_ConstraintDriver;
 class XmlMDataStd_ConstraintDriver : public XmlMDF_ADriver {
 	public:
@@ -1218,6 +1260,7 @@ class XmlMDataStd_ConstraintDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_ConstraintDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_RealArrayDriver;
 class XmlMDataStd_RealArrayDriver : public XmlMDF_ADriver {
@@ -1251,6 +1294,7 @@ class XmlMDataStd_RealArrayDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_PatternStdDriver;
 class XmlMDataStd_PatternStdDriver : public XmlMDF_ADriver {
 	public:
@@ -1282,6 +1326,7 @@ class XmlMDataStd_PatternStdDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_PatternStdDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_ExtStringListDriver;
 class XmlMDataStd_ExtStringListDriver : public XmlMDF_ADriver {
@@ -1315,6 +1360,7 @@ class XmlMDataStd_ExtStringListDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_RelationDriver;
 class XmlMDataStd_RelationDriver : public XmlMDF_ADriver {
 	public:
@@ -1346,6 +1392,7 @@ class XmlMDataStd_RelationDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_RelationDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_PlacementDriver;
 class XmlMDataStd_PlacementDriver : public XmlMDF_ADriver {
@@ -1379,6 +1426,7 @@ class XmlMDataStd_PlacementDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_IntegerArrayDriver;
 class XmlMDataStd_IntegerArrayDriver : public XmlMDF_ADriver {
 	public:
@@ -1410,6 +1458,7 @@ class XmlMDataStd_IntegerArrayDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_IntegerArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_PointDriver;
 class XmlMDataStd_PointDriver : public XmlMDF_ADriver {
@@ -1443,6 +1492,7 @@ class XmlMDataStd_PointDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_TickDriver;
 class XmlMDataStd_TickDriver : public XmlMDF_ADriver {
 	public:
@@ -1474,6 +1524,7 @@ class XmlMDataStd_TickDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_TickDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_ShapeDriver;
 class XmlMDataStd_ShapeDriver : public XmlMDF_ADriver {
@@ -1507,6 +1558,7 @@ class XmlMDataStd_ShapeDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_PlaneDriver;
 class XmlMDataStd_PlaneDriver : public XmlMDF_ADriver {
 	public:
@@ -1538,6 +1590,7 @@ class XmlMDataStd_PlaneDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_PlaneDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_RealListDriver;
 class XmlMDataStd_RealListDriver : public XmlMDF_ADriver {
@@ -1571,6 +1624,7 @@ class XmlMDataStd_RealListDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_AsciiStringDriver;
 class XmlMDataStd_AsciiStringDriver : public XmlMDF_ADriver {
 	public:
@@ -1602,6 +1656,7 @@ class XmlMDataStd_AsciiStringDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_AsciiStringDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_GeometryDriver;
 class XmlMDataStd_GeometryDriver : public XmlMDF_ADriver {
@@ -1635,6 +1690,7 @@ class XmlMDataStd_GeometryDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_UAttributeDriver;
 class XmlMDataStd_UAttributeDriver : public XmlMDF_ADriver {
 	public:
@@ -1667,6 +1723,7 @@ class XmlMDataStd_UAttributeDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd;
 class XmlMDataStd {
 	public:
@@ -1686,6 +1743,7 @@ class XmlMDataStd {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_ReferenceListDriver;
 class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
@@ -1719,6 +1777,7 @@ class XmlMDataStd_ReferenceListDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_ReferenceArrayDriver;
 class XmlMDataStd_ReferenceArrayDriver : public XmlMDF_ADriver {
 	public:
@@ -1750,6 +1809,7 @@ class XmlMDataStd_ReferenceArrayDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_ReferenceArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_RealDriver;
 class XmlMDataStd_RealDriver : public XmlMDF_ADriver {
@@ -1783,6 +1843,7 @@ class XmlMDataStd_RealDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_BooleanArrayDriver;
 class XmlMDataStd_BooleanArrayDriver : public XmlMDF_ADriver {
 	public:
@@ -1814,6 +1875,7 @@ class XmlMDataStd_BooleanArrayDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_BooleanArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_ByteArrayDriver;
 class XmlMDataStd_ByteArrayDriver : public XmlMDF_ADriver {
@@ -1847,6 +1909,7 @@ class XmlMDataStd_ByteArrayDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_IntPackedMapDriver;
 class XmlMDataStd_IntPackedMapDriver : public XmlMDF_ADriver {
 	public:
@@ -1878,6 +1941,7 @@ class XmlMDataStd_IntPackedMapDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_IntPackedMapDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_ExtStringArrayDriver;
 class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
@@ -1911,6 +1975,7 @@ class XmlMDataStd_ExtStringArrayDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_NameDriver;
 class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 	public:
@@ -1942,6 +2007,7 @@ class XmlMDataStd_NameDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_NameDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_NoteBookDriver;
 class XmlMDataStd_NoteBookDriver : public XmlMDF_ADriver {
@@ -1975,6 +2041,7 @@ class XmlMDataStd_NoteBookDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_CommentDriver;
 class XmlMDataStd_CommentDriver : public XmlMDF_ADriver {
 	public:
@@ -2007,6 +2074,7 @@ class XmlMDataStd_CommentDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDataStd_TreeNodeDriver;
 class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
 	public:
@@ -2038,6 +2106,7 @@ class XmlMDataStd_TreeNodeDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDataStd_TreeNodeDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDataStd_AxisDriver;
 class XmlMDataStd_AxisDriver : public XmlMDF_ADriver {

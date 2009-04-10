@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -161,6 +162,7 @@ class BRepFilletAPI_LocalOperation : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepFilletAPI_MakeChamfer;
 class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 	public:
@@ -208,6 +210,7 @@ class BRepFilletAPI_MakeChamfer : public BRepFilletAPI_LocalOperation {
 	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeChamfer\n");}
 	}
 };
+
 
 %nodefaultctor BRepFilletAPI_MakeFillet2d;
 class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
@@ -270,6 +273,7 @@ class BRepFilletAPI_MakeFillet2d : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepFilletAPI_MakeFillet2d\n");}
 	}
 };
+
 
 %nodefaultctor BRepFilletAPI_MakeFillet;
 class BRepFilletAPI_MakeFillet : public BRepFilletAPI_LocalOperation {

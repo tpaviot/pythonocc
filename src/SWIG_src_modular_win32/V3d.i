@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -257,6 +258,7 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_Plane;
 class Handle_V3d_Plane : public Handle_MMgt_TShared {
 	public:
@@ -281,6 +283,7 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Plane\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_View;
 class Handle_V3d_View : public Handle_Viewer_View {
@@ -307,6 +310,7 @@ class Handle_V3d_View : public Handle_Viewer_View {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_PerspectiveView;
 class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 	public:
@@ -331,6 +335,7 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PerspectiveView\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_Light;
 class Handle_V3d_Light : public Handle_MMgt_TShared {
@@ -357,6 +362,7 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_AmbientLight;
 class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 	public:
@@ -381,6 +387,7 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_AmbientLight\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_Camera;
 class Handle_V3d_Camera : public Handle_MMgt_TShared {
@@ -407,6 +414,7 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_LayerMgr;
 class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 	public:
@@ -431,6 +439,7 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_LayerMgr\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_CircularGrid;
 class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
@@ -457,6 +466,7 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_ColorScale;
 class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 	public:
@@ -481,6 +491,7 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_ColorScale\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_OrthographicView;
 class Handle_V3d_OrthographicView : public Handle_V3d_View {
@@ -507,6 +518,7 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_PositionLight;
 class Handle_V3d_PositionLight : public Handle_V3d_Light {
 	public:
@@ -531,6 +543,7 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionLight\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_SpotLight;
 class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
@@ -557,6 +570,7 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_Viewer;
 class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 	public:
@@ -581,6 +595,7 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Viewer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_DirectionalLight;
 class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
@@ -607,6 +622,7 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_RectangularGrid;
 class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	public:
@@ -632,6 +648,7 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_PositionalLight;
 class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 	public:
@@ -656,6 +673,7 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionalLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d_Camera;
 class V3d_Camera : public MMgt_TShared {
@@ -725,6 +743,7 @@ class V3d_Camera : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor V3d_Light;
 class V3d_Light : public MMgt_TShared {
 	public:
@@ -766,6 +785,7 @@ class V3d_Light : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of V3d_Light\n");}
 	}
 };
+
 
 %nodefaultctor V3d_PositionLight;
 class V3d_PositionLight : public V3d_Light {
@@ -817,6 +837,7 @@ class V3d_PositionLight : public V3d_Light {
 	}
 };
 
+
 %nodefaultctor V3d_AmbientLight;
 class V3d_AmbientLight : public V3d_Light {
 	public:
@@ -842,6 +863,7 @@ class V3d_AmbientLight : public V3d_Light {
 	if (__env){printf("## Call custom destructor for instance of V3d_AmbientLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d_RectangularGrid;
 class V3d_RectangularGrid : public Aspect_RectangularGrid {
@@ -880,6 +902,7 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 	if (__env){printf("## Call custom destructor for instance of V3d_RectangularGrid\n");}
 	}
 };
+
 
 %nodefaultctor V3d_SpotLight;
 class V3d_SpotLight : public V3d_PositionLight {
@@ -933,6 +956,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 	}
 };
 
+
 %nodefaultctor V3d_ListOfTransient;
 class V3d_ListOfTransient : public TColStd_ListOfTransient {
 	public:
@@ -950,6 +974,7 @@ class V3d_ListOfTransient : public TColStd_ListOfTransient {
 	if (__env){printf("## Call custom destructor for instance of V3d_ListOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor V3d;
 class V3d {
@@ -978,6 +1003,7 @@ class V3d {
 	if (__env){printf("## Call custom destructor for instance of V3d\n");}
 	}
 };
+
 
 %nodefaultctor V3d_Viewer;
 class V3d_Viewer : public Viewer_Viewer {
@@ -1187,6 +1213,7 @@ class V3d_Viewer : public Viewer_Viewer {
 	}
 };
 
+
 %nodefaultctor V3d_CircularGrid;
 class V3d_CircularGrid : public Aspect_CircularGrid {
 	public:
@@ -1224,6 +1251,7 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 	if (__env){printf("## Call custom destructor for instance of V3d_CircularGrid\n");}
 	}
 };
+
 
 %nodefaultctor V3d_View;
 class V3d_View : public Viewer_View {
@@ -1619,6 +1647,7 @@ class V3d_View : public Viewer_View {
 	}
 };
 
+
 %nodefaultctor V3d_OrthographicView;
 class V3d_OrthographicView : public V3d_View {
 	public:
@@ -1648,6 +1677,7 @@ class V3d_OrthographicView : public V3d_View {
 	if (__env){printf("## Call custom destructor for instance of V3d_OrthographicView\n");}
 	}
 };
+
 
 %nodefaultctor V3d_UnMapped;
 class V3d_UnMapped : public Standard_DomainError {
@@ -1682,6 +1712,7 @@ class V3d_UnMapped : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of V3d_UnMapped\n");}
 	}
 };
+
 
 %nodefaultctor V3d_Plane;
 class V3d_Plane : public MMgt_TShared {
@@ -1718,6 +1749,7 @@ class V3d_Plane : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of V3d_Plane\n");}
 	}
 };
+
 
 %nodefaultctor V3d_PositionalLight;
 class V3d_PositionalLight : public V3d_PositionLight {
@@ -1756,6 +1788,7 @@ class V3d_PositionalLight : public V3d_PositionLight {
 	if (__env){printf("## Call custom destructor for instance of V3d_PositionalLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d_ColorScale;
 class V3d_ColorScale : public Aspect_ColorScale {
@@ -1801,6 +1834,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 	}
 };
 
+
 %nodefaultctor V3d_PerspectiveView;
 class V3d_PerspectiveView : public V3d_View {
 	public:
@@ -1838,6 +1872,7 @@ class V3d_PerspectiveView : public V3d_View {
 	if (__env){printf("## Call custom destructor for instance of V3d_PerspectiveView\n");}
 	}
 };
+
 
 %nodefaultctor V3d_LayerMgr;
 class V3d_LayerMgr : public MMgt_TShared {
@@ -1880,6 +1915,7 @@ class V3d_LayerMgr : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of V3d_LayerMgr\n");}
 	}
 };
+
 
 %nodefaultctor V3d_DirectionalLight;
 class V3d_DirectionalLight : public V3d_PositionLight {

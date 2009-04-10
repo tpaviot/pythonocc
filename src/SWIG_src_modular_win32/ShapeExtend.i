@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -166,6 +167,7 @@ class Handle_ShapeExtend_BasicMsgRegistrator : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
 class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TCollection_MapNode {
 	public:
@@ -190,6 +192,7 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeExtend_MsgRegistrator;
 class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegistrator {
@@ -216,6 +219,7 @@ class Handle_ShapeExtend_MsgRegistrator : public Handle_ShapeExtend_BasicMsgRegi
 	}
 };
 
+
 %nodefaultctor Handle_ShapeExtend_ComplexCurve;
 class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 	public:
@@ -240,6 +244,7 @@ class Handle_ShapeExtend_ComplexCurve : public Handle_Geom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_ComplexCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeExtend_CompositeSurface;
 class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
@@ -266,6 +271,7 @@ class Handle_ShapeExtend_CompositeSurface : public Handle_Geom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
 class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handle_TCollection_MapNode {
 	public:
@@ -291,6 +297,7 @@ class Handle_ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public Handl
 	}
 };
 
+
 %nodefaultctor Handle_ShapeExtend_WireData;
 class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 	public:
@@ -315,6 +322,7 @@ class Handle_ShapeExtend_WireData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeExtend_WireData\n");}
 	}
 };
+
 
 %nodefaultctor ShapeExtend_ComplexCurve;
 class ShapeExtend_ComplexCurve : public Geom_Curve {
@@ -377,6 +385,7 @@ class ShapeExtend_ComplexCurve : public Geom_Curve {
 	if (__env){printf("## Call custom destructor for instance of ShapeExtend_ComplexCurve\n");}
 	}
 };
+
 
 %nodefaultctor ShapeExtend_WireData;
 class ShapeExtend_WireData : public MMgt_TShared {
@@ -460,6 +469,7 @@ class ShapeExtend_WireData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeExtend;
 class ShapeExtend {
 	public:
@@ -479,6 +489,7 @@ class ShapeExtend {
 	if (__env){printf("## Call custom destructor for instance of ShapeExtend\n");}
 	}
 };
+
 
 %nodefaultctor ShapeExtend_DataMapOfShapeListOfMsg;
 class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
@@ -514,6 +525,7 @@ class ShapeExtend_DataMapOfShapeListOfMsg : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor ShapeExtend_BasicMsgRegistrator;
 class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 	public:
@@ -545,6 +557,7 @@ class ShapeExtend_BasicMsgRegistrator : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of ShapeExtend_BasicMsgRegistrator\n");}
 	}
 };
+
 
 %nodefaultctor ShapeExtend_CompositeSurface;
 class ShapeExtend_CompositeSurface : public Geom_Surface {
@@ -676,6 +689,7 @@ class ShapeExtend_CompositeSurface : public Geom_Surface {
 	}
 };
 
+
 %nodefaultctor ShapeExtend_MsgRegistrator;
 class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 	public:
@@ -710,6 +724,7 @@ class ShapeExtend_MsgRegistrator : public ShapeExtend_BasicMsgRegistrator {
 	}
 };
 
+
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg;
 class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_MapNode {
 	public:
@@ -740,6 +755,7 @@ class ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg : public TCollection_
 	}
 };
 
+
 %nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg;
 class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollection_BasicMapIterator {
 	public:
@@ -762,6 +778,7 @@ class ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg : public TCollect
 	}
 };
 
+
 %nodefaultctor ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg;
 class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_BasicMapIterator {
 	public:
@@ -783,6 +800,7 @@ class ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg\n");}
 	}
 };
+
 
 %nodefaultctor ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg;
 class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapNode {
@@ -814,6 +832,7 @@ class ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg : public TCollection_MapN
 	}
 };
 
+
 %nodefaultctor ShapeExtend_Explorer;
 class ShapeExtend_Explorer {
 	public:
@@ -841,6 +860,7 @@ class ShapeExtend_Explorer {
 	if (__env){printf("## Call custom destructor for instance of ShapeExtend_Explorer\n");}
 	}
 };
+
 
 %nodefaultctor ShapeExtend_DataMapOfTransientListOfMsg;
 class ShapeExtend_DataMapOfTransientListOfMsg : public TCollection_BasicMap {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlMXCAFDoc_LocationDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMXCAFDoc_GraphNodeDriver;
 class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_XmlMXCAFDoc_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_GraphNodeDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMXCAFDoc_VolumeDriver;
 class Handle_XmlMXCAFDoc_VolumeDriver : public Handle_XmlMDF_ADriver {
@@ -188,6 +191,7 @@ class Handle_XmlMXCAFDoc_VolumeDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMXCAFDoc_DocumentToolDriver;
 class Handle_XmlMXCAFDoc_DocumentToolDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_XmlMXCAFDoc_DocumentToolDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_DocumentToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMXCAFDoc_ColorDriver;
 class Handle_XmlMXCAFDoc_ColorDriver : public Handle_XmlMDF_ADriver {
@@ -238,6 +243,7 @@ class Handle_XmlMXCAFDoc_ColorDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMXCAFDoc_LayerToolDriver;
 class Handle_XmlMXCAFDoc_LayerToolDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -262,6 +268,7 @@ class Handle_XmlMXCAFDoc_LayerToolDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_LayerToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMXCAFDoc_AreaDriver;
 class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
@@ -288,6 +295,7 @@ class Handle_XmlMXCAFDoc_AreaDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMXCAFDoc_CentroidDriver;
 class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -312,6 +320,7 @@ class Handle_XmlMXCAFDoc_CentroidDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_CentroidDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlMXCAFDoc_ColorToolDriver;
 class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
@@ -338,6 +347,7 @@ class Handle_XmlMXCAFDoc_ColorToolDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMXCAFDoc_ShapeToolDriver;
 class Handle_XmlMXCAFDoc_ShapeToolDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -362,6 +372,7 @@ class Handle_XmlMXCAFDoc_ShapeToolDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMXCAFDoc_ShapeToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMXCAFDoc_DocumentToolDriver;
 class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
@@ -394,6 +405,7 @@ class XmlMXCAFDoc_DocumentToolDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_DocumentToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMXCAFDoc_LocationDriver;
 class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
@@ -431,6 +443,7 @@ class XmlMXCAFDoc_LocationDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMXCAFDoc_ColorDriver;
 class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 	public:
@@ -462,6 +475,7 @@ class XmlMXCAFDoc_ColorDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ColorDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMXCAFDoc_GraphNodeDriver;
 class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
@@ -495,6 +509,7 @@ class XmlMXCAFDoc_GraphNodeDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMXCAFDoc;
 class XmlMXCAFDoc {
 	public:
@@ -510,6 +525,7 @@ class XmlMXCAFDoc {
 	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc\n");}
 	}
 };
+
 
 %nodefaultctor XmlMXCAFDoc_VolumeDriver;
 class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
@@ -543,6 +559,7 @@ class XmlMXCAFDoc_VolumeDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMXCAFDoc_ColorToolDriver;
 class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
 	public:
@@ -574,6 +591,7 @@ class XmlMXCAFDoc_ColorToolDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_ColorToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMXCAFDoc_LayerToolDriver;
 class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
@@ -607,6 +625,7 @@ class XmlMXCAFDoc_LayerToolDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMXCAFDoc_ShapeToolDriver;
 class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 	public:
@@ -639,6 +658,7 @@ class XmlMXCAFDoc_ShapeToolDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMXCAFDoc_AreaDriver;
 class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
 	public:
@@ -670,6 +690,7 @@ class XmlMXCAFDoc_AreaDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMXCAFDoc_AreaDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMXCAFDoc_CentroidDriver;
 class XmlMXCAFDoc_CentroidDriver : public XmlMDF_ADriver {

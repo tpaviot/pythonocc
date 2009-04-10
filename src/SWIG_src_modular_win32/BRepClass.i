@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -137,6 +138,7 @@ class BRepClass_Edge {
 	}
 };
 
+
 %nodefaultctor BRepClass_Intersector;
 class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 	public:
@@ -154,6 +156,7 @@ class BRepClass_Intersector : public Geom2dInt_IntConicCurveOfGInter {
 	if (__env){printf("## Call custom destructor for instance of BRepClass_Intersector\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass_FClass2dOfFClassifier;
 class BRepClass_FClass2dOfFClassifier {
@@ -182,6 +185,7 @@ class BRepClass_FClass2dOfFClassifier {
 	if (__env){printf("## Call custom destructor for instance of BRepClass_FClass2dOfFClassifier\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass_FClassifier;
 class BRepClass_FClassifier {
@@ -213,6 +217,7 @@ class BRepClass_FClassifier {
 	}
 };
 
+
 %nodefaultctor BRepClass_FaceClassifier;
 class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 	public:
@@ -228,6 +233,7 @@ class BRepClass_FaceClassifier : public BRepClass_FClassifier {
 	if (__env){printf("## Call custom destructor for instance of BRepClass_FaceClassifier\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass_FaceExplorer;
 class BRepClass_FaceExplorer {
@@ -266,6 +272,7 @@ class BRepClass_FaceExplorer {
 	if (__env){printf("## Call custom destructor for instance of BRepClass_FaceExplorer\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass_FacePassiveClassifier;
 class BRepClass_FacePassiveClassifier {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -146,6 +147,7 @@ class Handle_GccEnt_BadQualifier : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor GccEnt;
 class GccEnt {
 	public:
@@ -173,6 +175,7 @@ class GccEnt {
 	if (__env){printf("## Call custom destructor for instance of GccEnt\n");}
 	}
 };
+
 
 %nodefaultctor GccEnt_QualifiedLin;
 class GccEnt_QualifiedLin {
@@ -205,6 +208,7 @@ class GccEnt_QualifiedLin {
 	if (__env){printf("## Call custom destructor for instance of GccEnt_QualifiedLin\n");}
 	}
 };
+
 
 %nodefaultctor GccEnt_Array1OfPosition;
 class GccEnt_Array1OfPosition {
@@ -246,6 +250,7 @@ class GccEnt_Array1OfPosition {
 	}
 };
 
+
 %nodefaultctor GccEnt_BadQualifier;
 class GccEnt_BadQualifier : public Standard_DomainError {
 	public:
@@ -279,6 +284,7 @@ class GccEnt_BadQualifier : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of GccEnt_BadQualifier\n");}
 	}
 };
+
 
 %nodefaultctor GccEnt_QualifiedCirc;
 class GccEnt_QualifiedCirc {

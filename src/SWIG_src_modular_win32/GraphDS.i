@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -150,6 +151,7 @@ class Handle_GraphDS_DataMapNodeOfEntityRoleMap : public Handle_TCollection_MapN
 	}
 };
 
+
 %nodefaultctor GraphDS_EntityRoleMap;
 class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 	public:
@@ -184,6 +186,7 @@ class GraphDS_EntityRoleMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor GraphDS_DataMapNodeOfEntityRoleMap;
 class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 	public:
@@ -213,6 +216,7 @@ class GraphDS_DataMapNodeOfEntityRoleMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of GraphDS_DataMapNodeOfEntityRoleMap\n");}
 	}
 };
+
 
 %nodefaultctor GraphDS_DataMapIteratorOfEntityRoleMap;
 class GraphDS_DataMapIteratorOfEntityRoleMap : public TCollection_BasicMapIterator {

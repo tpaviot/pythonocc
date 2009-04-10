@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -147,6 +148,7 @@ class Handle_BiTgte_HCurveOnEdge : public Handle_Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor Handle_BiTgte_HCurveOnVertex;
 class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 	public:
@@ -172,6 +174,7 @@ class Handle_BiTgte_HCurveOnVertex : public Handle_Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox;
 class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_MapNode {
 	public:
@@ -196,6 +199,7 @@ class Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox : public Handle_TCollection_M
 	if (__env){printf("## Call custom destructor for instance of Handle_BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
 	}
 };
+
 
 %nodefaultctor BiTgte_CurveOnVertex;
 class BiTgte_CurveOnVertex : public Adaptor3d_Curve {
@@ -271,6 +275,7 @@ class BiTgte_CurveOnVertex : public Adaptor3d_Curve {
 	}
 };
 
+
 %nodefaultctor BiTgte_HCurveOnEdge;
 class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 	public:
@@ -307,6 +312,7 @@ class BiTgte_HCurveOnEdge : public Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor BiTgte_DataMapNodeOfDataMapOfShapeBox;
 class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 	public:
@@ -336,6 +342,7 @@ class BiTgte_DataMapNodeOfDataMapOfShapeBox : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapNodeOfDataMapOfShapeBox\n");}
 	}
 };
+
 
 %nodefaultctor BiTgte_HCurveOnVertex;
 class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
@@ -372,6 +379,7 @@ class BiTgte_HCurveOnVertex : public Adaptor3d_HCurve {
 	if (__env){printf("## Call custom destructor for instance of BiTgte_HCurveOnVertex\n");}
 	}
 };
+
 
 %nodefaultctor BiTgte_Blend;
 class BiTgte_Blend {
@@ -441,6 +449,7 @@ class BiTgte_Blend {
 	}
 };
 
+
 %nodefaultctor BiTgte_DataMapIteratorOfDataMapOfShapeBox;
 class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIterator {
 	public:
@@ -462,6 +471,7 @@ class BiTgte_DataMapIteratorOfDataMapOfShapeBox : public TCollection_BasicMapIte
 	if (__env){printf("## Call custom destructor for instance of BiTgte_DataMapIteratorOfDataMapOfShapeBox\n");}
 	}
 };
+
 
 %nodefaultctor BiTgte_CurveOnEdge;
 class BiTgte_CurveOnEdge : public Adaptor3d_Curve {
@@ -536,6 +546,7 @@ class BiTgte_CurveOnEdge : public Adaptor3d_Curve {
 	if (__env){printf("## Call custom destructor for instance of BiTgte_CurveOnEdge\n");}
 	}
 };
+
 
 %nodefaultctor BiTgte_DataMapOfShapeBox;
 class BiTgte_DataMapOfShapeBox : public TCollection_BasicMap {

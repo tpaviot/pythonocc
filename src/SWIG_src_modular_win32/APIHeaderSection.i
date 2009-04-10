@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_APIHeaderSection_EditHeader : public Handle_IFSelect_Editor {
 	}
 };
 
+
 %nodefaultctor APIHeaderSection_EditHeader;
 class APIHeaderSection_EditHeader : public IFSelect_Editor {
 	public:
@@ -173,6 +175,7 @@ class APIHeaderSection_EditHeader : public IFSelect_Editor {
 	if (__env){printf("## Call custom destructor for instance of APIHeaderSection_EditHeader\n");}
 	}
 };
+
 
 %nodefaultctor APIHeaderSection_MakeHeader;
 class APIHeaderSection_MakeHeader {

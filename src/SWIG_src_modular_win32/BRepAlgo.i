@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -143,6 +144,7 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_BRepAlgo_AsDes;
 class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 	public:
@@ -167,6 +169,7 @@ class Handle_BRepAlgo_AsDes : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepAlgo_AsDes\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
 class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_TCollection_SeqNode {
@@ -193,6 +196,7 @@ class Handle_BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
 class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TCollection_MapNode {
 	public:
@@ -217,6 +221,7 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeInterference\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepAlgo_EdgeConnector;
 class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
@@ -243,6 +248,7 @@ class Handle_BRepAlgo_EdgeConnector : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger;
 class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -268,6 +274,7 @@ class Handle_BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 	}
 };
 
+
 %nodefaultctor BRepAlgo_Tool;
 class BRepAlgo_Tool {
 	public:
@@ -283,6 +290,7 @@ class BRepAlgo_Tool {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Tool\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger;
 class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_MapNode {
@@ -313,6 +321,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapNodeOfDataMapOfShapeListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_Loop;
 class BRepAlgo_Loop {
@@ -351,6 +360,7 @@ class BRepAlgo_Loop {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Loop\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_DSAccess;
 class BRepAlgo_DSAccess {
@@ -414,6 +424,7 @@ class BRepAlgo_DSAccess {
 	}
 };
 
+
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference;
 class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_BasicMapIterator {
 	public:
@@ -435,6 +446,7 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapIteratorOfDataMapOfShapeInterference\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeInterference;
 class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapNode {
@@ -466,6 +478,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeInterference : public TCollection_MapN
 	}
 };
 
+
 %nodefaultctor BRepAlgo_BooleanOperation;
 class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 	public:
@@ -494,6 +507,7 @@ class BRepAlgo_BooleanOperation : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepAlgo_Fuse;
 class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
 	public:
@@ -507,6 +521,7 @@ class BRepAlgo_Fuse : public BRepAlgo_BooleanOperation {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Fuse\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_DataMapOfShapeBoolean;
 class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
@@ -541,6 +556,7 @@ class BRepAlgo_DataMapOfShapeBoolean : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapOfShapeBoolean\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_NormalProjection;
 class BRepAlgo_NormalProjection {
@@ -587,6 +603,7 @@ class BRepAlgo_NormalProjection {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_NormalProjection\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_AsDes;
 class BRepAlgo_AsDes : public MMgt_TShared {
@@ -636,6 +653,7 @@ class BRepAlgo_AsDes : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepAlgo_EdgeConnector;
 class BRepAlgo_EdgeConnector : public MMgt_TShared {
 	public:
@@ -680,6 +698,7 @@ class BRepAlgo_EdgeConnector : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean;
 class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 	public:
@@ -709,6 +728,7 @@ class BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapNodeOfDataMapOfShapeBoolean\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_TopOpe;
 class BRepAlgo_TopOpe {
@@ -753,6 +773,7 @@ class BRepAlgo_TopOpe {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_TopOpe\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_Image;
 class BRepAlgo_Image {
@@ -800,6 +821,7 @@ class BRepAlgo_Image {
 	}
 };
 
+
 %nodefaultctor BRepAlgo_FaceRestrictor;
 class BRepAlgo_FaceRestrictor {
 	public:
@@ -829,6 +851,7 @@ class BRepAlgo_FaceRestrictor {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_FaceRestrictor\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_BooleanOperations;
 class BRepAlgo_BooleanOperations {
@@ -877,6 +900,7 @@ class BRepAlgo_BooleanOperations {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_BooleanOperations\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_Section;
 class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
@@ -928,6 +952,7 @@ class BRepAlgo_Section : public BRepAlgo_BooleanOperation {
 	}
 };
 
+
 %nodefaultctor BRepAlgo_Common;
 class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
 	public:
@@ -941,6 +966,7 @@ class BRepAlgo_Common : public BRepAlgo_BooleanOperation {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Common\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_DataMapOfShapeInterference;
 class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
@@ -975,6 +1001,7 @@ class BRepAlgo_DataMapOfShapeInterference : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapOfShapeInterference\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_SequenceOfSequenceOfInteger;
 class BRepAlgo_SequenceOfSequenceOfInteger : public TCollection_BaseSequence {
@@ -1030,6 +1057,7 @@ class BRepAlgo_SequenceOfSequenceOfInteger : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BRepAlgo_DataMapOfShapeListOfInteger;
 class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 	public:
@@ -1064,6 +1092,7 @@ class BRepAlgo_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepAlgo;
 class BRepAlgo {
 	public:
@@ -1086,6 +1115,7 @@ class BRepAlgo {
 	}
 };
 
+
 %nodefaultctor BRepAlgo_Cut;
 class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 	public:
@@ -1099,6 +1129,7 @@ class BRepAlgo_Cut : public BRepAlgo_BooleanOperation {
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_Cut\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean;
 class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_BasicMapIterator {
@@ -1122,6 +1153,7 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeBoolean : public TCollection_Basic
 	}
 };
 
+
 %nodefaultctor BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger;
 class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -1143,6 +1175,7 @@ class BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 	if (__env){printf("## Call custom destructor for instance of BRepAlgo_DataMapIteratorOfDataMapOfShapeListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger;
 class BRepAlgo_SequenceNodeOfSequenceOfSequenceOfInteger : public TCollection_SeqNode {

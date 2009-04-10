@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -258,6 +259,7 @@ class Handle_OSD_Exception : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_STACK_OVERFLOW;
 class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 	public:
@@ -282,6 +284,7 @@ class Handle_OSD_Exception_STACK_OVERFLOW : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_STACK_OVERFLOW\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_Signal;
 class Handle_OSD_Signal : public Handle_Standard_Failure {
@@ -308,6 +311,7 @@ class Handle_OSD_Signal : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_SIGILL;
 class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 	public:
@@ -332,6 +336,7 @@ class Handle_OSD_SIGILL : public Handle_OSD_Signal {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGILL\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_SIGHUP;
 class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
@@ -358,6 +363,7 @@ class Handle_OSD_SIGHUP : public Handle_OSD_Signal {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_ILLEGAL_INSTRUCTION;
 class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 	public:
@@ -382,6 +388,7 @@ class Handle_OSD_Exception_ILLEGAL_INSTRUCTION : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ILLEGAL_INSTRUCTION\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_OSDError;
 class Handle_OSD_OSDError : public Handle_Standard_Failure {
@@ -408,6 +415,7 @@ class Handle_OSD_OSDError : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_CTRL_BREAK;
 class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 	public:
@@ -432,6 +440,7 @@ class Handle_OSD_Exception_CTRL_BREAK : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_CTRL_BREAK\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_SIGINT;
 class Handle_OSD_SIGINT : public Handle_OSD_Signal {
@@ -458,6 +467,7 @@ class Handle_OSD_SIGINT : public Handle_OSD_Signal {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_PRIV_INSTRUCTION;
 class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 	public:
@@ -482,6 +492,7 @@ class Handle_OSD_Exception_PRIV_INSTRUCTION : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_PRIV_INSTRUCTION\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_SIGKILL;
 class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
@@ -508,6 +519,7 @@ class Handle_OSD_SIGKILL : public Handle_OSD_Signal {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_ACCESS_VIOLATION;
 class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 	public:
@@ -532,6 +544,7 @@ class Handle_OSD_Exception_ACCESS_VIOLATION : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ACCESS_VIOLATION\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_SIGQUIT;
 class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
@@ -558,6 +571,7 @@ class Handle_OSD_SIGQUIT : public Handle_OSD_Signal {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_INVALID_DISPOSITION;
 class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 	public:
@@ -582,6 +596,7 @@ class Handle_OSD_Exception_INVALID_DISPOSITION : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INVALID_DISPOSITION\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_Exception_INT_DIVIDE_BY_ZERO;
 class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
@@ -608,6 +623,7 @@ class Handle_OSD_Exception_INT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_INT_OVERFLOW;
 class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
 	public:
@@ -632,6 +648,7 @@ class Handle_OSD_Exception_INT_OVERFLOW : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_INT_OVERFLOW\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_Exception_FLT_STACK_CHECK;
 class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
@@ -658,6 +675,7 @@ class Handle_OSD_Exception_FLT_STACK_CHECK : public Handle_OSD_Exception {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_STATUS_NO_MEMORY;
 class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 	public:
@@ -682,6 +700,7 @@ class Handle_OSD_Exception_STATUS_NO_MEMORY : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_STATUS_NO_MEMORY\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_Exception_FLT_INVALID_OPERATION;
 class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
@@ -708,6 +727,7 @@ class Handle_OSD_Exception_FLT_INVALID_OPERATION : public Handle_OSD_Exception {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION;
 class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exception {
 	public:
@@ -732,6 +752,7 @@ class Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION : public Handle_OSD_Exceptio
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_NONCONTINUABLE_EXCEPTION\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_Exception_FLT_OVERFLOW;
 class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
@@ -758,6 +779,7 @@ class Handle_OSD_Exception_FLT_OVERFLOW : public Handle_OSD_Exception {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
 class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 	public:
@@ -782,6 +804,7 @@ class Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_SIGBUS;
 class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
@@ -808,6 +831,7 @@ class Handle_OSD_SIGBUS : public Handle_OSD_Signal {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_FLT_INEXACT_RESULT;
 class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 	public:
@@ -832,6 +856,7 @@ class Handle_OSD_Exception_FLT_INEXACT_RESULT : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_FLT_INEXACT_RESULT\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_Exception_FLT_DENORMAL_OPERAND;
 class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
@@ -858,6 +883,7 @@ class Handle_OSD_Exception_FLT_DENORMAL_OPERAND : public Handle_OSD_Exception {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_SIGSEGV;
 class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 	public:
@@ -882,6 +908,7 @@ class Handle_OSD_SIGSEGV : public Handle_OSD_Signal {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGSEGV\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO;
 class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
@@ -908,6 +935,7 @@ class Handle_OSD_Exception_FLT_DIVIDE_BY_ZERO : public Handle_OSD_Exception {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_SIGSYS;
 class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 	public:
@@ -932,6 +960,7 @@ class Handle_OSD_SIGSYS : public Handle_OSD_Signal {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_SIGSYS\n");}
 	}
 };
+
 
 %nodefaultctor Handle_OSD_Exception_FLT_UNDERFLOW;
 class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
@@ -958,6 +987,7 @@ class Handle_OSD_Exception_FLT_UNDERFLOW : public Handle_OSD_Exception {
 	}
 };
 
+
 %nodefaultctor Handle_OSD_Exception_IN_PAGE_ERROR;
 class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 	public:
@@ -982,6 +1012,7 @@ class Handle_OSD_Exception_IN_PAGE_ERROR : public Handle_OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of Handle_OSD_Exception_IN_PAGE_ERROR\n");}
 	}
 };
+
 
 %nodefaultctor OSD_FileIterator;
 class OSD_FileIterator {
@@ -1017,6 +1048,7 @@ class OSD_FileIterator {
 	}
 };
 
+
 %nodefaultctor OSD_DirectoryIterator;
 class OSD_DirectoryIterator {
 	public:
@@ -1050,6 +1082,7 @@ class OSD_DirectoryIterator {
 	if (__env){printf("## Call custom destructor for instance of OSD_DirectoryIterator\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception;
 class OSD_Exception : public Standard_Failure {
@@ -1085,6 +1118,7 @@ class OSD_Exception : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor OSD_Exception_CTRL_BREAK;
 class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 	public:
@@ -1113,6 +1147,7 @@ class OSD_Exception_CTRL_BREAK : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_Real2String;
 class OSD_Real2String {
 	public:
@@ -1130,6 +1165,7 @@ class OSD_Real2String {
 	if (__env){printf("## Call custom destructor for instance of OSD_Real2String\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_INVALID_DISPOSITION;
 class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
@@ -1165,6 +1201,7 @@ class OSD_Exception_INVALID_DISPOSITION : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_Signal;
 class OSD_Signal : public Standard_Failure {
 	public:
@@ -1199,6 +1236,7 @@ class OSD_Signal : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor OSD_SIGKILL;
 class OSD_SIGKILL : public OSD_Signal {
 	public:
@@ -1226,6 +1264,7 @@ class OSD_SIGKILL : public OSD_Signal {
 	if (__env){printf("## Call custom destructor for instance of OSD_SIGKILL\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Host;
 class OSD_Host {
@@ -1263,6 +1302,7 @@ class OSD_Host {
 	}
 };
 
+
 %nodefaultctor OSD_Exception_FLT_INEXACT_RESULT;
 class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 	public:
@@ -1296,6 +1336,7 @@ class OSD_Exception_FLT_INEXACT_RESULT : public OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_INEXACT_RESULT\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_INT_DIVIDE_BY_ZERO;
 class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
@@ -1331,6 +1372,7 @@ class OSD_Exception_INT_DIVIDE_BY_ZERO : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_Exception_FLT_STACK_CHECK;
 class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 	public:
@@ -1365,6 +1407,7 @@ class OSD_Exception_FLT_STACK_CHECK : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_Printer;
 class OSD_Printer {
 	public:
@@ -1390,6 +1433,7 @@ class OSD_Printer {
 	if (__env){printf("## Call custom destructor for instance of OSD_Printer\n");}
 	}
 };
+
 
 %nodefaultctor OSD_EnvironmentIterator;
 class OSD_EnvironmentIterator {
@@ -1420,6 +1464,7 @@ class OSD_EnvironmentIterator {
 	if (__env){printf("## Call custom destructor for instance of OSD_EnvironmentIterator\n");}
 	}
 };
+
 
 %nodefaultctor OSD_SIGSYS;
 class OSD_SIGSYS : public OSD_Signal {
@@ -1455,6 +1500,7 @@ class OSD_SIGSYS : public OSD_Signal {
 	}
 };
 
+
 %nodefaultctor OSD_Exception_FLT_UNDERFLOW;
 class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 	public:
@@ -1488,6 +1534,7 @@ class OSD_Exception_FLT_UNDERFLOW : public OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_UNDERFLOW\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_IN_PAGE_ERROR;
 class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
@@ -1523,6 +1570,7 @@ class OSD_Exception_IN_PAGE_ERROR : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_OSDError;
 class OSD_OSDError : public Standard_Failure {
 	public:
@@ -1556,6 +1604,7 @@ class OSD_OSDError : public Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of OSD_OSDError\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Disk;
 class OSD_Disk {
@@ -1599,6 +1648,7 @@ class OSD_Disk {
 	}
 };
 
+
 %nodefaultctor OSD_Error;
 class OSD_Error {
 	public:
@@ -1622,6 +1672,7 @@ class OSD_Error {
 	if (__env){printf("## Call custom destructor for instance of OSD_Error\n");}
 	}
 };
+
 
 %nodefaultctor OSD_SharedMemory;
 class OSD_SharedMemory {
@@ -1654,6 +1705,7 @@ class OSD_SharedMemory {
 	if (__env){printf("## Call custom destructor for instance of OSD_SharedMemory\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_ARRAY_BOUNDS_EXCEEDED;
 class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
@@ -1688,6 +1740,7 @@ class OSD_Exception_ARRAY_BOUNDS_EXCEEDED : public OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ARRAY_BOUNDS_EXCEEDED\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Thread;
 class OSD_Thread {
@@ -1725,6 +1778,7 @@ class OSD_Thread {
 	}
 };
 
+
 %nodefaultctor OSD_SIGQUIT;
 class OSD_SIGQUIT : public OSD_Signal {
 	public:
@@ -1759,6 +1813,7 @@ class OSD_SIGQUIT : public OSD_Signal {
 	}
 };
 
+
 %nodefaultctor OSD_SIGBUS;
 class OSD_SIGBUS : public OSD_Signal {
 	public:
@@ -1792,6 +1847,7 @@ class OSD_SIGBUS : public OSD_Signal {
 	if (__env){printf("## Call custom destructor for instance of OSD_SIGBUS\n");}
 	}
 };
+
 
 %nodefaultctor OSD_FileNode;
 class OSD_FileNode {
@@ -1836,6 +1892,7 @@ class OSD_FileNode {
 	if (__env){printf("## Call custom destructor for instance of OSD_FileNode\n");}
 	}
 };
+
 
 %nodefaultctor OSD_File;
 class OSD_File : public OSD_FileNode {
@@ -1903,6 +1960,7 @@ class OSD_File : public OSD_FileNode {
 	}
 };
 
+
 %nodefaultctor OSD_SIGSEGV;
 class OSD_SIGSEGV : public OSD_Signal {
 	public:
@@ -1936,6 +1994,7 @@ class OSD_SIGSEGV : public OSD_Signal {
 	if (__env){printf("## Call custom destructor for instance of OSD_SIGSEGV\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_PRIV_INSTRUCTION;
 class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
@@ -1971,6 +2030,7 @@ class OSD_Exception_PRIV_INSTRUCTION : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_Directory;
 class OSD_Directory : public OSD_FileNode {
 	public:
@@ -1990,6 +2050,7 @@ class OSD_Directory : public OSD_FileNode {
 	if (__env){printf("## Call custom destructor for instance of OSD_Directory\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Environment;
 class OSD_Environment {
@@ -2029,6 +2090,7 @@ class OSD_Environment {
 	}
 };
 
+
 %nodefaultctor OSD_Exception_ACCESS_VIOLATION;
 class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 	public:
@@ -2062,6 +2124,7 @@ class OSD_Exception_ACCESS_VIOLATION : public OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ACCESS_VIOLATION\n");}
 	}
 };
+
 
 %nodefaultctor OSD;
 class OSD {
@@ -2101,6 +2164,7 @@ class OSD {
 	}
 };
 
+
 %nodefaultctor OSD_Exception_ILLEGAL_INSTRUCTION;
 class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 	public:
@@ -2134,6 +2198,7 @@ class OSD_Exception_ILLEGAL_INSTRUCTION : public OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_ILLEGAL_INSTRUCTION\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_FLT_INVALID_OPERATION;
 class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
@@ -2169,6 +2234,7 @@ class OSD_Exception_FLT_INVALID_OPERATION : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_SIGINT;
 class OSD_SIGINT : public OSD_Signal {
 	public:
@@ -2202,6 +2268,7 @@ class OSD_SIGINT : public OSD_Signal {
 	if (__env){printf("## Call custom destructor for instance of OSD_SIGINT\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_STACK_OVERFLOW;
 class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
@@ -2237,6 +2304,7 @@ class OSD_Exception_STACK_OVERFLOW : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_Chronometer;
 class OSD_Chronometer {
 	public:
@@ -2266,6 +2334,7 @@ class OSD_Chronometer {
 	if (__env){printf("## Call custom destructor for instance of OSD_Chronometer\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_INT_OVERFLOW;
 class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
@@ -2300,6 +2369,7 @@ class OSD_Exception_INT_OVERFLOW : public OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_INT_OVERFLOW\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Path;
 class OSD_Path {
@@ -2375,6 +2445,7 @@ class OSD_Path {
 	}
 };
 
+
 %nodefaultctor OSD_SIGHUP;
 class OSD_SIGHUP : public OSD_Signal {
 	public:
@@ -2409,6 +2480,7 @@ class OSD_SIGHUP : public OSD_Signal {
 	}
 };
 
+
 %nodefaultctor OSD_Timer;
 class OSD_Timer : public OSD_Chronometer {
 	public:
@@ -2436,6 +2508,7 @@ class OSD_Timer : public OSD_Chronometer {
 	if (__env){printf("## Call custom destructor for instance of OSD_Timer\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_STATUS_NO_MEMORY;
 class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
@@ -2470,6 +2543,7 @@ class OSD_Exception_STATUS_NO_MEMORY : public OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_STATUS_NO_MEMORY\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Protection;
 class OSD_Protection {
@@ -2511,6 +2585,7 @@ class OSD_Protection {
 	}
 };
 
+
 %nodefaultctor OSD_SIGILL;
 class OSD_SIGILL : public OSD_Signal {
 	public:
@@ -2545,6 +2620,7 @@ class OSD_SIGILL : public OSD_Signal {
 	}
 };
 
+
 %nodefaultctor OSD_SharedLibrary;
 class OSD_SharedLibrary {
 	public:
@@ -2572,6 +2648,7 @@ class OSD_SharedLibrary {
 	if (__env){printf("## Call custom destructor for instance of OSD_SharedLibrary\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_FLT_DENORMAL_OPERAND;
 class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
@@ -2607,6 +2684,7 @@ class OSD_Exception_FLT_DENORMAL_OPERAND : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_Exception_FLT_OVERFLOW;
 class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 	public:
@@ -2641,6 +2719,7 @@ class OSD_Exception_FLT_OVERFLOW : public OSD_Exception {
 	}
 };
 
+
 %nodefaultctor OSD_Exception_FLT_DIVIDE_BY_ZERO;
 class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 	public:
@@ -2674,6 +2753,7 @@ class OSD_Exception_FLT_DIVIDE_BY_ZERO : public OSD_Exception {
 	if (__env){printf("## Call custom destructor for instance of OSD_Exception_FLT_DIVIDE_BY_ZERO\n");}
 	}
 };
+
 
 %nodefaultctor OSD_Exception_NONCONTINUABLE_EXCEPTION;
 class OSD_Exception_NONCONTINUABLE_EXCEPTION : public OSD_Exception {

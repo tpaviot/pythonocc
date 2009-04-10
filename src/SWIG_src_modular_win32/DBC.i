@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_DBC_VArrayNodeOfVArrayOfInteger : public Handle_PStandard_ArrayNode
 	}
 };
 
+
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfExtCharacter;
 class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_ArrayNode {
 	public:
@@ -163,6 +165,7 @@ class Handle_DBC_VArrayNodeOfVArrayOfExtCharacter : public Handle_PStandard_Arra
 	if (__env){printf("## Call custom destructor for instance of Handle_DBC_VArrayNodeOfVArrayOfExtCharacter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfCharacter;
 class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNode {
@@ -189,6 +192,7 @@ class Handle_DBC_VArrayNodeOfVArrayOfCharacter : public Handle_PStandard_ArrayNo
 	}
 };
 
+
 %nodefaultctor Handle_DBC_VArrayNodeOfVArrayOfReal;
 class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 	public:
@@ -214,6 +218,7 @@ class Handle_DBC_VArrayNodeOfVArrayOfReal : public Handle_PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfCharacter;
 class DBC_VArrayTNodeOfVArrayOfCharacter {
 	public:
@@ -233,6 +238,7 @@ class DBC_VArrayTNodeOfVArrayOfCharacter {
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfCharacter\n");}
 	}
 };
+
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfExtCharacter;
 class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
@@ -272,6 +278,7 @@ class DBC_VArrayNodeOfVArrayOfExtCharacter : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfInteger;
 class DBC_VArrayTNodeOfVArrayOfInteger {
 	public:
@@ -291,6 +298,7 @@ class DBC_VArrayTNodeOfVArrayOfInteger {
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor DBC_BaseArray;
 class DBC_BaseArray {
@@ -330,6 +338,7 @@ class DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfExtCharacter;
 class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 	public:
@@ -349,6 +358,7 @@ class DBC_VArrayTNodeOfVArrayOfExtCharacter {
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfExtCharacter\n");}
 	}
 };
+
 
 %nodefaultctor DBC_VArrayOfReal;
 class DBC_VArrayOfReal : public DBC_BaseArray {
@@ -380,6 +390,7 @@ class DBC_VArrayOfReal : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor DBC_VArrayOfCharacter;
 class DBC_VArrayOfCharacter : public DBC_BaseArray {
 	public:
@@ -409,6 +420,7 @@ class DBC_VArrayOfCharacter : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfCharacter\n");}
 	}
 };
+
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfCharacter;
 class DBC_VArrayNodeOfVArrayOfCharacter : public PStandard_ArrayNode {
@@ -448,6 +460,7 @@ class DBC_VArrayNodeOfVArrayOfCharacter : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor DBC_VArrayOfInteger;
 class DBC_VArrayOfInteger : public DBC_BaseArray {
 	public:
@@ -477,6 +490,7 @@ class DBC_VArrayOfInteger : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfReal;
 class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
@@ -516,6 +530,7 @@ class DBC_VArrayNodeOfVArrayOfReal : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor DBC_VArrayTNodeOfVArrayOfReal;
 class DBC_VArrayTNodeOfVArrayOfReal {
 	public:
@@ -535,6 +550,7 @@ class DBC_VArrayTNodeOfVArrayOfReal {
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayTNodeOfVArrayOfReal\n");}
 	}
 };
+
 
 %nodefaultctor DBC_VArrayOfExtCharacter;
 class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
@@ -565,6 +581,7 @@ class DBC_VArrayOfExtCharacter : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of DBC_VArrayOfExtCharacter\n");}
 	}
 };
+
 
 %nodefaultctor DBC_VArrayNodeOfVArrayOfInteger;
 class DBC_VArrayNodeOfVArrayOfInteger : public PStandard_ArrayNode {

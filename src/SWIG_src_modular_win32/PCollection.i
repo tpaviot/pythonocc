@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -148,6 +149,7 @@ class Handle_PCollection_HAsciiString : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PCollection_HExtendedString;
 class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 	public:
@@ -172,6 +174,7 @@ class Handle_PCollection_HExtendedString : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_HExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PCollection_IsNotRoot;
 class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
@@ -198,6 +201,7 @@ class Handle_PCollection_IsNotRoot : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_PCollection_IsContained;
 class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 	public:
@@ -223,6 +227,7 @@ class Handle_PCollection_IsContained : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_PCollection_IsNullTree;
 class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 	public:
@@ -247,6 +252,7 @@ class Handle_PCollection_IsNullTree : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_PCollection_IsNullTree\n");}
 	}
 };
+
 
 %nodefaultctor PCollection_IsNullTree;
 class PCollection_IsNullTree : public Standard_Failure {
@@ -282,6 +288,7 @@ class PCollection_IsNullTree : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor PCollection_PrivCompareOfInteger;
 class PCollection_PrivCompareOfInteger {
 	public:
@@ -301,6 +308,7 @@ class PCollection_PrivCompareOfInteger {
 	if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor PCollection_IsNotRoot;
 class PCollection_IsNotRoot : public Standard_Failure {
@@ -336,6 +344,7 @@ class PCollection_IsNotRoot : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor PCollection_IsContained;
 class PCollection_IsContained : public Standard_Failure {
 	public:
@@ -369,6 +378,7 @@ class PCollection_IsContained : public Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of PCollection_IsContained\n");}
 	}
 };
+
 
 %nodefaultctor PCollection_HExtendedString;
 class PCollection_HExtendedString : public Standard_Persistent {
@@ -477,6 +487,7 @@ class PCollection_HExtendedString : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PCollection_HExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor PCollection_HAsciiString;
 class PCollection_HAsciiString : public Standard_Persistent {
@@ -606,6 +617,7 @@ class PCollection_HAsciiString : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PCollection_CompareOfInteger;
 class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 	public:
@@ -623,6 +635,7 @@ class PCollection_CompareOfInteger : public PCollection_PrivCompareOfInteger {
 	if (__env){printf("## Call custom destructor for instance of PCollection_CompareOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor PCollection_PrivCompareOfReal;
 class PCollection_PrivCompareOfReal {
@@ -643,6 +656,7 @@ class PCollection_PrivCompareOfReal {
 	if (__env){printf("## Call custom destructor for instance of PCollection_PrivCompareOfReal\n");}
 	}
 };
+
 
 %nodefaultctor PCollection_CompareOfReal;
 class PCollection_CompareOfReal : public PCollection_PrivCompareOfReal {

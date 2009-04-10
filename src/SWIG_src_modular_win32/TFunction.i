@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -146,6 +147,7 @@ class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_DriverTable;
 class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 	public:
@@ -170,6 +172,7 @@ class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DriverTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TFunction_Scope;
 class Handle_TFunction_Scope : public Handle_TDF_Attribute {
@@ -196,6 +199,7 @@ class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
 class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TCollection_MapNode {
 	public:
@@ -220,6 +224,7 @@ class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TFunction_Function;
 class Handle_TFunction_Function : public Handle_TDF_Attribute {
@@ -246,6 +251,7 @@ class Handle_TFunction_Function : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
 class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TCollection_MapNode {
 	public:
@@ -270,6 +276,7 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TFunction_HArray1OfDataMapOfGUIDDriver;
 class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared {
@@ -296,6 +303,7 @@ class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver;
 class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollection_MapNode {
 	public:
@@ -321,6 +329,7 @@ class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_Driver;
 class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 	public:
@@ -345,6 +354,7 @@ class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_Driver\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_HArray1OfDataMapOfGUIDDriver;
 class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
@@ -392,6 +402,7 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
 class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapNode {
 	public:
@@ -421,6 +432,7 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_DoubleMapOfIntegerLabel;
 class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
@@ -457,6 +469,7 @@ class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapOfIntegerLabel\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_Scope;
 class TFunction_Scope : public TDF_Attribute {
@@ -524,6 +537,7 @@ class TFunction_Scope : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TFunction_DataMapOfGUIDDriver;
 class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 	public:
@@ -557,6 +571,7 @@ class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_IFunction;
 class TFunction_IFunction {
@@ -606,6 +621,7 @@ class TFunction_IFunction {
 	}
 };
 
+
 %nodefaultctor TFunction_Array1OfDataMapOfGUIDDriver;
 class TFunction_Array1OfDataMapOfGUIDDriver {
 	public:
@@ -645,6 +661,7 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 	if (__env){printf("## Call custom destructor for instance of TFunction_Array1OfDataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_Function;
 class TFunction_Function : public TDF_Attribute {
@@ -700,6 +717,7 @@ class TFunction_Function : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TFunction_Iterator;
 class TFunction_Iterator {
 	public:
@@ -736,6 +754,7 @@ class TFunction_Iterator {
 	}
 };
 
+
 %nodefaultctor TFunction_DataMapOfLabelListOfLabel;
 class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 	public:
@@ -770,6 +789,7 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TFunction_DataMapIteratorOfDataMapOfGUIDDriver;
 class TFunction_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMapIterator {
 	public:
@@ -791,6 +811,7 @@ class TFunction_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicM
 	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_DriverTable;
 class TFunction_DriverTable : public MMgt_TShared {
@@ -832,6 +853,7 @@ class TFunction_DriverTable : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
 class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_BasicMapIterator {
 	public:
@@ -853,6 +875,7 @@ class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfGUIDDriver;
 class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
@@ -883,6 +906,7 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
 class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapNode {
@@ -915,6 +939,7 @@ class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_GraphNode;
 class TFunction_GraphNode : public TDF_Attribute {
@@ -986,6 +1011,7 @@ class TFunction_GraphNode : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TFunction_Driver;
 class TFunction_Driver : public MMgt_TShared {
 	public:
@@ -1024,6 +1050,7 @@ class TFunction_Driver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel;
 class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_BasicMapIterator {
 	public:
@@ -1045,6 +1072,7 @@ class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_Logbook;
 class TFunction_Logbook {

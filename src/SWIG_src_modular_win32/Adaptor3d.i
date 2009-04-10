@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -141,6 +142,7 @@ class Handle_Adaptor3d_HCurve : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Adaptor3d_HIsoCurve;
 class Handle_Adaptor3d_HIsoCurve : public Handle_Adaptor3d_HCurve {
 	public:
@@ -165,6 +167,7 @@ class Handle_Adaptor3d_HIsoCurve : public Handle_Adaptor3d_HCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HIsoCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Adaptor3d_HSurface;
 class Handle_Adaptor3d_HSurface : public Handle_MMgt_TShared {
@@ -191,6 +194,7 @@ class Handle_Adaptor3d_HSurface : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Adaptor3d_HSurfaceOfRevolution;
 class Handle_Adaptor3d_HSurfaceOfRevolution : public Handle_Adaptor3d_HSurface {
 	public:
@@ -215,6 +219,7 @@ class Handle_Adaptor3d_HSurfaceOfRevolution : public Handle_Adaptor3d_HSurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HSurfaceOfRevolution\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Adaptor3d_HOffsetCurve;
 class Handle_Adaptor3d_HOffsetCurve : public Handle_Adaptor2d_HCurve2d {
@@ -241,6 +246,7 @@ class Handle_Adaptor3d_HOffsetCurve : public Handle_Adaptor2d_HCurve2d {
 	}
 };
 
+
 %nodefaultctor Handle_Adaptor3d_TopolTool;
 class Handle_Adaptor3d_TopolTool : public Handle_MMgt_TShared {
 	public:
@@ -265,6 +271,7 @@ class Handle_Adaptor3d_TopolTool : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_TopolTool\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Adaptor3d_HVertex;
 class Handle_Adaptor3d_HVertex : public Handle_MMgt_TShared {
@@ -291,6 +298,7 @@ class Handle_Adaptor3d_HVertex : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Adaptor3d_HCurveOnSurface;
 class Handle_Adaptor3d_HCurveOnSurface : public Handle_Adaptor3d_HCurve {
 	public:
@@ -316,6 +324,7 @@ class Handle_Adaptor3d_HCurveOnSurface : public Handle_Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor Handle_Adaptor3d_HSurfaceOfLinearExtrusion;
 class Handle_Adaptor3d_HSurfaceOfLinearExtrusion : public Handle_Adaptor3d_HSurface {
 	public:
@@ -340,6 +349,7 @@ class Handle_Adaptor3d_HSurfaceOfLinearExtrusion : public Handle_Adaptor3d_HSurf
 	if (__env){printf("## Call custom destructor for instance of Handle_Adaptor3d_HSurfaceOfLinearExtrusion\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_HSurface;
 class Adaptor3d_HSurface : public MMgt_TShared {
@@ -461,6 +471,7 @@ class Adaptor3d_HSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Adaptor3d_HSurfaceOfLinearExtrusion;
 class Adaptor3d_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 	public:
@@ -490,6 +501,7 @@ class Adaptor3d_HSurfaceOfLinearExtrusion : public Adaptor3d_HSurface {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HSurfaceOfLinearExtrusion\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_TopolTool;
 class Adaptor3d_TopolTool : public MMgt_TShared {
@@ -583,6 +595,7 @@ class Adaptor3d_TopolTool : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Adaptor3d_HCurve;
 class Adaptor3d_HCurve : public MMgt_TShared {
 	public:
@@ -667,6 +680,7 @@ class Adaptor3d_HCurve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Adaptor3d_HIsoCurve;
 class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 	public:
@@ -697,6 +711,7 @@ class Adaptor3d_HIsoCurve : public Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor Adaptor3d_InterFunc;
 class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 	public:
@@ -716,6 +731,7 @@ class Adaptor3d_InterFunc : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_InterFunc\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_Surface;
 class Adaptor3d_Surface {
@@ -827,6 +843,7 @@ class Adaptor3d_Surface {
 	}
 };
 
+
 %nodefaultctor Adaptor3d_SurfaceOfRevolution;
 class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
 	public:
@@ -850,6 +867,7 @@ class Adaptor3d_SurfaceOfRevolution : public Adaptor3d_Surface {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_SurfaceOfRevolution\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_HVertex;
 class Adaptor3d_HVertex : public MMgt_TShared {
@@ -888,6 +906,7 @@ class Adaptor3d_HVertex : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HVertex\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_Curve;
 class Adaptor3d_Curve {
@@ -961,6 +980,7 @@ class Adaptor3d_Curve {
 	}
 };
 
+
 %nodefaultctor Adaptor3d_CurveOnSurface;
 class Adaptor3d_CurveOnSurface : public Adaptor3d_Curve {
 	public:
@@ -990,6 +1010,7 @@ class Adaptor3d_CurveOnSurface : public Adaptor3d_Curve {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_CurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_HOffsetCurve;
 class Adaptor3d_HOffsetCurve : public Adaptor2d_HCurve2d {
@@ -1024,6 +1045,7 @@ class Adaptor3d_HOffsetCurve : public Adaptor2d_HCurve2d {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HOffsetCurve\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_SurfaceOfLinearExtrusion;
 class Adaptor3d_SurfaceOfLinearExtrusion : public Adaptor3d_Surface {
@@ -1137,6 +1159,7 @@ class Adaptor3d_SurfaceOfLinearExtrusion : public Adaptor3d_Surface {
 	}
 };
 
+
 %nodefaultctor Adaptor3d_HCurveOnSurface;
 class Adaptor3d_HCurveOnSurface : public Adaptor3d_HCurve {
 	public:
@@ -1172,6 +1195,7 @@ class Adaptor3d_HCurveOnSurface : public Adaptor3d_HCurve {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_HCurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_OffsetCurve;
 class Adaptor3d_OffsetCurve : public Adaptor2d_Curve2d {
@@ -1258,6 +1282,7 @@ class Adaptor3d_OffsetCurve : public Adaptor2d_Curve2d {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_OffsetCurve\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_IsoCurve;
 class Adaptor3d_IsoCurve : public Adaptor3d_Curve {
@@ -1346,6 +1371,7 @@ class Adaptor3d_IsoCurve : public Adaptor3d_Curve {
 	if (__env){printf("## Call custom destructor for instance of Adaptor3d_IsoCurve\n");}
 	}
 };
+
 
 %nodefaultctor Adaptor3d_HSurfaceOfRevolution;
 class Adaptor3d_HSurfaceOfRevolution : public Adaptor3d_HSurface {

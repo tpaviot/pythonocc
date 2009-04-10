@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -145,6 +146,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo;
 class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollection_MapNode {
 	public:
@@ -169,6 +171,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Draft_Modification;
 class Handle_Draft_Modification : public Handle_BRepTools_Modification {
@@ -195,6 +198,7 @@ class Handle_Draft_Modification : public Handle_BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
 class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TCollection_MapNode {
 	public:
@@ -219,6 +223,7 @@ class Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_Draft_DataMapNodeOfDataMapOfVertexVertexInfo\n");}
 	}
 };
+
 
 %nodefaultctor Draft_FaceInfo;
 class Draft_FaceInfo {
@@ -255,6 +260,7 @@ class Draft_FaceInfo {
 	if (__env){printf("## Call custom destructor for instance of Draft_FaceInfo\n");}
 	}
 };
+
 
 %nodefaultctor Draft_EdgeInfo;
 class Draft_EdgeInfo {
@@ -306,6 +312,7 @@ class Draft_EdgeInfo {
 	}
 };
 
+
 %nodefaultctor Draft_DataMapOfEdgeEdgeInfo;
 class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 	public:
@@ -340,6 +347,7 @@ class Draft_DataMapOfEdgeEdgeInfo : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfFaceFaceInfo;
 class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMapIterator {
 	public:
@@ -361,6 +369,7 @@ class Draft_DataMapIteratorOfDataMapOfFaceFaceInfo : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfFaceFaceInfo\n");}
 	}
 };
+
 
 %nodefaultctor Draft_Modification;
 class Draft_Modification : public BRepTools_Modification {
@@ -420,6 +429,7 @@ class Draft_Modification : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor Draft_DataMapNodeOfDataMapOfVertexVertexInfo;
 class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode {
 	public:
@@ -450,6 +460,7 @@ class Draft_DataMapNodeOfDataMapOfVertexVertexInfo : public TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfVertexVertexInfo;
 class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_BasicMapIterator {
 	public:
@@ -472,6 +483,7 @@ class Draft_DataMapIteratorOfDataMapOfVertexVertexInfo : public TCollection_Basi
 	}
 };
 
+
 %nodefaultctor Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo;
 class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMapIterator {
 	public:
@@ -493,6 +505,7 @@ class Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of Draft_DataMapIteratorOfDataMapOfEdgeEdgeInfo\n");}
 	}
 };
+
 
 %nodefaultctor Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo;
 class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
@@ -523,6 +536,7 @@ class Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfEdgeEdgeInfo\n");}
 	}
 };
+
 
 %nodefaultctor Draft_VertexInfo;
 class Draft_VertexInfo {
@@ -555,6 +569,7 @@ class Draft_VertexInfo {
 	if (__env){printf("## Call custom destructor for instance of Draft_VertexInfo\n");}
 	}
 };
+
 
 %nodefaultctor Draft_DataMapOfFaceFaceInfo;
 class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
@@ -590,6 +605,7 @@ class Draft_DataMapOfFaceFaceInfo : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor Draft_DataMapNodeOfDataMapOfFaceFaceInfo;
 class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 	public:
@@ -619,6 +635,7 @@ class Draft_DataMapNodeOfDataMapOfFaceFaceInfo : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Draft_DataMapNodeOfDataMapOfFaceFaceInfo\n");}
 	}
 };
+
 
 %nodefaultctor Draft_DataMapOfVertexVertexInfo;
 class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
@@ -653,6 +670,7 @@ class Draft_DataMapOfVertexVertexInfo : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Draft_DataMapOfVertexVertexInfo\n");}
 	}
 };
+
 
 %nodefaultctor Draft;
 class Draft {

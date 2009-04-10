@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -162,6 +163,7 @@ class Handle_ChFiDS_SecHArray1 : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfStripe;
 class Handle_ChFiDS_ListNodeOfListOfStripe : public Handle_TCollection_MapNode {
 	public:
@@ -186,6 +188,7 @@ class Handle_ChFiDS_ListNodeOfListOfStripe : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ListNodeOfListOfStripe\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ChFiDS_Stripe;
 class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
@@ -212,6 +215,7 @@ class Handle_ChFiDS_Stripe : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ChFiDS_ListNodeOfListOfHElSpine;
 class Handle_ChFiDS_ListNodeOfListOfHElSpine : public Handle_TCollection_MapNode {
 	public:
@@ -236,6 +240,7 @@ class Handle_ChFiDS_ListNodeOfListOfHElSpine : public Handle_TCollection_MapNode
 	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ListNodeOfListOfHElSpine\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ChFiDS_Spine;
 class Handle_ChFiDS_Spine : public Handle_MMgt_TShared {
@@ -262,6 +267,7 @@ class Handle_ChFiDS_Spine : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ChFiDS_ChamfSpine;
 class Handle_ChFiDS_ChamfSpine : public Handle_ChFiDS_Spine {
 	public:
@@ -286,6 +292,7 @@ class Handle_ChFiDS_ChamfSpine : public Handle_ChFiDS_Spine {
 	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ChamfSpine\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
 class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public Handle_TCollection_MapNode {
@@ -312,6 +319,7 @@ class Handle_ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : pub
 	}
 };
 
+
 %nodefaultctor Handle_ChFiDS_HData;
 class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
 	public:
@@ -336,6 +344,7 @@ class Handle_ChFiDS_HData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_HData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSpine;
 class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_SeqNode {
@@ -362,6 +371,7 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSpine : public Handle_TCollection_Se
 	}
 };
 
+
 %nodefaultctor Handle_ChFiDS_SurfData;
 class Handle_ChFiDS_SurfData : public Handle_MMgt_TShared {
 	public:
@@ -386,6 +396,7 @@ class Handle_ChFiDS_SurfData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_SurfData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData;
 class Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData : public Handle_TCollection_SeqNode {
@@ -412,6 +423,7 @@ class Handle_ChFiDS_SequenceNodeOfSequenceOfSurfData : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_ChFiDS_ListNodeOfRegularities;
 class Handle_ChFiDS_ListNodeOfRegularities : public Handle_TCollection_MapNode {
 	public:
@@ -436,6 +448,7 @@ class Handle_ChFiDS_ListNodeOfRegularities : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_ListNodeOfRegularities\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ChFiDS_FilSpine;
 class Handle_ChFiDS_FilSpine : public Handle_ChFiDS_Spine {
@@ -462,6 +475,7 @@ class Handle_ChFiDS_FilSpine : public Handle_ChFiDS_Spine {
 	}
 };
 
+
 %nodefaultctor Handle_ChFiDS_HElSpine;
 class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
 	public:
@@ -486,6 +500,7 @@ class Handle_ChFiDS_HElSpine : public Handle_Adaptor3d_HCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_ChFiDS_HElSpine\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_StripeArray1;
 class ChFiDS_StripeArray1 {
@@ -526,6 +541,7 @@ class ChFiDS_StripeArray1 {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_StripeArray1\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_Spine;
 class ChFiDS_Spine : public MMgt_TShared {
@@ -675,6 +691,7 @@ class ChFiDS_Spine : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ChFiDS_SecArray1;
 class ChFiDS_SecArray1 {
 	public:
@@ -714,6 +731,7 @@ class ChFiDS_SecArray1 {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_SecArray1\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_FaceInterference;
 class ChFiDS_FaceInterference {
@@ -758,6 +776,7 @@ class ChFiDS_FaceInterference {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_FaceInterference\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_ListOfStripe;
 class ChFiDS_ListOfStripe {
@@ -809,6 +828,7 @@ class ChFiDS_ListOfStripe {
 	}
 };
 
+
 %nodefaultctor ChFiDS_ListIteratorOfListOfHElSpine;
 class ChFiDS_ListIteratorOfListOfHElSpine {
 	public:
@@ -832,6 +852,7 @@ class ChFiDS_ListIteratorOfListOfHElSpine {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListIteratorOfListOfHElSpine\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_ListNodeOfListOfStripe;
 class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
@@ -861,6 +882,7 @@ class ChFiDS_ListNodeOfListOfStripe : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor ChFiDS_Map;
 class ChFiDS_Map {
 	public:
@@ -886,6 +908,7 @@ class ChFiDS_Map {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_Map\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_ListNodeOfRegularities;
 class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
@@ -914,6 +937,7 @@ class ChFiDS_ListNodeOfRegularities : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListNodeOfRegularities\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_CommonPoint;
 class ChFiDS_CommonPoint {
@@ -964,6 +988,7 @@ class ChFiDS_CommonPoint {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_CommonPoint\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_FilSpine;
 class ChFiDS_FilSpine : public ChFiDS_Spine {
@@ -1027,6 +1052,7 @@ class ChFiDS_FilSpine : public ChFiDS_Spine {
 	}
 };
 
+
 %nodefaultctor ChFiDS_SequenceOfSpine;
 class ChFiDS_SequenceOfSpine : public TCollection_BaseSequence {
 	public:
@@ -1081,6 +1107,7 @@ class ChFiDS_SequenceOfSpine : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor ChFiDS_ChamfSpine;
 class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 	public:
@@ -1122,6 +1149,7 @@ class ChFiDS_ChamfSpine : public ChFiDS_Spine {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_ChamfSpine\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_SurfData;
 class ChFiDS_SurfData : public MMgt_TShared {
@@ -1253,6 +1281,7 @@ class ChFiDS_SurfData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ChFiDS_StripeMap;
 class ChFiDS_StripeMap {
 	public:
@@ -1282,6 +1311,7 @@ class ChFiDS_StripeMap {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_StripeMap\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_HData;
 class ChFiDS_HData : public MMgt_TShared {
@@ -1353,6 +1383,7 @@ class ChFiDS_HData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ChFiDS_SequenceNodeOfSequenceOfSurfData;
 class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 	public:
@@ -1381,6 +1412,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSurfData : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor ChFiDS_CircSection;
 class ChFiDS_CircSection {
 	public:
@@ -1402,6 +1434,7 @@ class ChFiDS_CircSection {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_CircSection\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_ListIteratorOfListOfStripe;
 class ChFiDS_ListIteratorOfListOfStripe {
@@ -1426,6 +1459,7 @@ class ChFiDS_ListIteratorOfListOfStripe {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListIteratorOfListOfStripe\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_SequenceOfSurfData;
 class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
@@ -1481,6 +1515,7 @@ class ChFiDS_SequenceOfSurfData : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor ChFiDS_SequenceNodeOfSequenceOfSpine;
 class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 	public:
@@ -1508,6 +1543,7 @@ class ChFiDS_SequenceNodeOfSequenceOfSpine : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_SequenceNodeOfSequenceOfSpine\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_HElSpine;
 class ChFiDS_HElSpine : public Adaptor3d_HCurve {
@@ -1544,6 +1580,7 @@ class ChFiDS_HElSpine : public Adaptor3d_HCurve {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_HElSpine\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_ElSpine;
 class ChFiDS_ElSpine : public Adaptor3d_Curve {
@@ -1629,6 +1666,7 @@ class ChFiDS_ElSpine : public Adaptor3d_Curve {
 	}
 };
 
+
 %nodefaultctor ChFiDS_ListOfHElSpine;
 class ChFiDS_ListOfHElSpine {
 	public:
@@ -1679,6 +1717,7 @@ class ChFiDS_ListOfHElSpine {
 	}
 };
 
+
 %nodefaultctor ChFiDS_Regul;
 class ChFiDS_Regul {
 	public:
@@ -1708,6 +1747,7 @@ class ChFiDS_Regul {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_Regul\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe;
 class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCollection_MapNode {
@@ -1742,6 +1782,7 @@ class ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe : public TCo
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_IndexedDataMapNodeOfIndexedDataMapOfVertexListOfStripe\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_Stripe;
 class ChFiDS_Stripe : public MMgt_TShared {
@@ -1871,6 +1912,7 @@ class ChFiDS_Stripe : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ChFiDS_ListIteratorOfRegularities;
 class ChFiDS_ListIteratorOfRegularities {
 	public:
@@ -1894,6 +1936,7 @@ class ChFiDS_ListIteratorOfRegularities {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListIteratorOfRegularities\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_ListNodeOfListOfHElSpine;
 class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
@@ -1922,6 +1965,7 @@ class ChFiDS_ListNodeOfListOfHElSpine : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_ListNodeOfListOfHElSpine\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_IndexedDataMapOfVertexListOfStripe;
 class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
@@ -1966,6 +2010,7 @@ class ChFiDS_IndexedDataMapOfVertexListOfStripe : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_IndexedDataMapOfVertexListOfStripe\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_Regularities;
 class ChFiDS_Regularities {
@@ -2016,6 +2061,7 @@ class ChFiDS_Regularities {
 	if (__env){printf("## Call custom destructor for instance of ChFiDS_Regularities\n");}
 	}
 };
+
 
 %nodefaultctor ChFiDS_SecHArray1;
 class ChFiDS_SecHArray1 : public MMgt_TShared {

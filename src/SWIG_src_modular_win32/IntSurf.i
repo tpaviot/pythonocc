@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -151,6 +152,7 @@ class Handle_IntSurf_LineOn2S : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IntSurf_ListNodeOfListOfPntOn2S;
 class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode {
 	public:
@@ -175,6 +177,7 @@ class Handle_IntSurf_ListNodeOfListOfPntOn2S : public Handle_TCollection_MapNode
 	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_ListNodeOfListOfPntOn2S\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfCouple;
 class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_SeqNode {
@@ -201,6 +204,7 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfCouple : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint;
 class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollection_SeqNode {
 	public:
@@ -225,6 +229,7 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint : public Handle_TCollecti
 	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfPathPoint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S;
 class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection_SeqNode {
@@ -251,6 +256,7 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfPntOn2S : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
 class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TCollection_SeqNode {
 	public:
@@ -275,6 +281,7 @@ class Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public Handle_TColl
 	if (__env){printf("## Call custom destructor for instance of Handle_IntSurf_SequenceNodeOfSequenceOfInteriorPoint\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_ListNodeOfListOfPntOn2S;
 class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
@@ -304,6 +311,7 @@ class IntSurf_ListNodeOfListOfPntOn2S : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor IntSurf;
 class IntSurf {
 	public:
@@ -319,6 +327,7 @@ class IntSurf {
 	if (__env){printf("## Call custom destructor for instance of IntSurf\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_Transition;
 class IntSurf_Transition {
@@ -352,6 +361,7 @@ class IntSurf_Transition {
 	}
 };
 
+
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfPntOn2S;
 class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 	public:
@@ -379,6 +389,7 @@ class IntSurf_SequenceNodeOfSequenceOfPntOn2S : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfPntOn2S\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_Quadric;
 class IntSurf_Quadric {
@@ -438,6 +449,7 @@ class IntSurf_Quadric {
 	}
 };
 
+
 %nodefaultctor IntSurf_ListOfPntOn2S;
 class IntSurf_ListOfPntOn2S {
 	public:
@@ -488,6 +500,7 @@ class IntSurf_ListOfPntOn2S {
 	}
 };
 
+
 %nodefaultctor IntSurf_PntOn2S;
 class IntSurf_PntOn2S {
 	public:
@@ -519,6 +532,7 @@ class IntSurf_PntOn2S {
 	if (__env){printf("## Call custom destructor for instance of IntSurf_PntOn2S\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_SequenceOfPathPoint;
 class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
@@ -574,6 +588,7 @@ class IntSurf_SequenceOfPathPoint : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntSurf_PathPoint;
 class IntSurf_PathPoint {
 	public:
@@ -616,6 +631,7 @@ class IntSurf_PathPoint {
 	}
 };
 
+
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfCouple;
 class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
 	public:
@@ -644,6 +660,7 @@ class IntSurf_SequenceNodeOfSequenceOfCouple : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor IntSurf_Couple;
 class IntSurf_Couple {
 	public:
@@ -663,6 +680,7 @@ class IntSurf_Couple {
 	if (__env){printf("## Call custom destructor for instance of IntSurf_Couple\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_PathPointTool;
 class IntSurf_PathPointTool {
@@ -694,6 +712,7 @@ class IntSurf_PathPointTool {
 	}
 };
 
+
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfPathPoint;
 class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 	public:
@@ -721,6 +740,7 @@ class IntSurf_SequenceNodeOfSequenceOfPathPoint : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfPathPoint\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_InteriorPoint;
 class IntSurf_InteriorPoint {
@@ -752,6 +772,7 @@ class IntSurf_InteriorPoint {
 	}
 };
 
+
 %nodefaultctor IntSurf_SequenceNodeOfSequenceOfInteriorPoint;
 class IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public TCollection_SeqNode {
 	public:
@@ -779,6 +800,7 @@ class IntSurf_SequenceNodeOfSequenceOfInteriorPoint : public TCollection_SeqNode
 	if (__env){printf("## Call custom destructor for instance of IntSurf_SequenceNodeOfSequenceOfInteriorPoint\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_SequenceOfCouple;
 class IntSurf_SequenceOfCouple : public TCollection_BaseSequence {
@@ -834,6 +856,7 @@ class IntSurf_SequenceOfCouple : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntSurf_SequenceOfPntOn2S;
 class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 	public:
@@ -888,6 +911,7 @@ class IntSurf_SequenceOfPntOn2S : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntSurf_LineOn2S;
 class IntSurf_LineOn2S : public MMgt_TShared {
 	public:
@@ -934,6 +958,7 @@ class IntSurf_LineOn2S : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IntSurf_InteriorPointTool;
 class IntSurf_InteriorPointTool {
 	public:
@@ -955,6 +980,7 @@ class IntSurf_InteriorPointTool {
 	if (__env){printf("## Call custom destructor for instance of IntSurf_InteriorPointTool\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_ListIteratorOfListOfPntOn2S;
 class IntSurf_ListIteratorOfListOfPntOn2S {
@@ -980,6 +1006,7 @@ class IntSurf_ListIteratorOfListOfPntOn2S {
 	}
 };
 
+
 %nodefaultctor IntSurf_QuadricTool;
 class IntSurf_QuadricTool {
 	public:
@@ -1001,6 +1028,7 @@ class IntSurf_QuadricTool {
 	if (__env){printf("## Call custom destructor for instance of IntSurf_QuadricTool\n");}
 	}
 };
+
 
 %nodefaultctor IntSurf_SequenceOfInteriorPoint;
 class IntSurf_SequenceOfInteriorPoint : public TCollection_BaseSequence {

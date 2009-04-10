@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -147,6 +148,7 @@ class Handle_TopOpeBRepTool_HBoxTool : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public Handle_TCollection_MapNode {
 	public:
@@ -171,6 +173,7 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity :
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public Handle_TCollection_MapNode {
@@ -197,6 +200,7 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : p
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF;
 class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public Handle_TCollection_MapNode {
 	public:
@@ -221,6 +225,7 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal;
 class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
@@ -247,6 +252,7 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public Handle_TCol
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF;
 class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public Handle_TCollection_MapNode {
 	public:
@@ -271,6 +277,7 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public Han
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface;
 class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public Handle_TCollection_MapNode {
@@ -297,6 +304,7 @@ class Handle_TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public Handle_TCol
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepTool_ListNodeOfListOfC2DF;
 class Handle_TopOpeBRepTool_ListNodeOfListOfC2DF : public Handle_TCollection_MapNode {
 	public:
@@ -321,6 +329,7 @@ class Handle_TopOpeBRepTool_ListNodeOfListOfC2DF : public Handle_TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_ListNodeOfListOfC2DF\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Handle_TCollection_MapNode {
@@ -347,6 +356,7 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier 
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public Handle_TCollection_MapNode {
 	public:
@@ -372,6 +382,7 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : pub
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
 class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public Handle_TCollection_MapNode {
 	public:
@@ -396,6 +407,7 @@ class Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : publi
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfShapeBox2d;
 class TopOpeBRepTool_IndexedDataMapOfShapeBox2d : public TCollection_BasicMap {
@@ -441,6 +453,7 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox2d : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfShapeBox;
 class TopOpeBRepTool_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 	public:
@@ -485,6 +498,7 @@ class TopOpeBRepTool_IndexedDataMapOfShapeBox : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d;
 class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public TCollection_MapNode {
 	public:
@@ -518,6 +532,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d : public TCo
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox2d\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
 class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollection_MapNode {
@@ -553,6 +568,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public T
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF;
 class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF : public TCollection_BasicMapIterator {
 	public:
@@ -574,6 +590,7 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF : public TCollect
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeListOfC2DF\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_BoxSort;
 class TopOpeBRepTool_BoxSort {
@@ -619,6 +636,7 @@ class TopOpeBRepTool_BoxSort {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_ListNodeOfListOfC2DF;
 class TopOpeBRepTool_ListNodeOfListOfC2DF : public TCollection_MapNode {
 	public:
@@ -647,6 +665,7 @@ class TopOpeBRepTool_ListNodeOfListOfC2DF : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_face;
 class TopOpeBRepTool_face {
 	public:
@@ -672,6 +691,7 @@ class TopOpeBRepTool_face {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_face\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_ShapeClassifier;
 class TopOpeBRepTool_ShapeClassifier {
@@ -721,6 +741,7 @@ class TopOpeBRepTool_ShapeClassifier {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity;
 class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public TCollection_MapNode {
 	public:
@@ -754,6 +775,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity : public
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeconnexity\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_GeomTool;
 class TopOpeBRepTool_GeomTool {
@@ -801,6 +823,7 @@ class TopOpeBRepTool_GeomTool {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_REGUS;
 class TopOpeBRepTool_REGUS {
 	public:
@@ -842,6 +865,7 @@ class TopOpeBRepTool_REGUS {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_REGUS\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_REGUW;
 class TopOpeBRepTool_REGUW {
@@ -897,6 +921,7 @@ class TopOpeBRepTool_REGUW {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_SolidClassifier;
 class TopOpeBRepTool_SolidClassifier {
 	public:
@@ -924,6 +949,7 @@ class TopOpeBRepTool_SolidClassifier {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_SolidClassifier\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_ShapeExplorer;
 class TopOpeBRepTool_ShapeExplorer {
@@ -954,6 +980,7 @@ class TopOpeBRepTool_ShapeExplorer {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_ShapeExplorer\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfShapeAddress;
 class TopOpeBRepTool_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
@@ -999,6 +1026,7 @@ class TopOpeBRepTool_IndexedDataMapOfShapeAddress : public TCollection_BasicMap 
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal;
 class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
@@ -1020,6 +1048,7 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal : public TCollection_Ba
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeReal\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal;
 class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
@@ -1051,6 +1080,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNod
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface;
 class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface : public TCollection_BasicMapIterator {
 	public:
@@ -1072,6 +1102,7 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface : public TCollection_Ba
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfShapeface\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_CORRISO;
 class TopOpeBRepTool_CORRISO {
@@ -1133,6 +1164,7 @@ class TopOpeBRepTool_CORRISO {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface;
 class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public TCollection_MapNode {
 	public:
@@ -1162,6 +1194,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface : public TCollection_MapNod
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfShapeface\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_DataMapOfShapeReal;
 class TopOpeBRepTool_DataMapOfShapeReal : public TCollection_BasicMap {
@@ -1197,6 +1230,7 @@ class TopOpeBRepTool_DataMapOfShapeReal : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF;
 class TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF : public TCollection_BasicMapIterator {
 	public:
@@ -1218,6 +1252,7 @@ class TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF : public TColle
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapIteratorOfDataMapOfOrientedShapeC2DF\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_CLASSI;
 class TopOpeBRepTool_CLASSI {
@@ -1248,6 +1283,7 @@ class TopOpeBRepTool_CLASSI {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_CLASSI\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_HBoxTool;
 class TopOpeBRepTool_HBoxTool : public MMgt_TShared {
@@ -1303,6 +1339,7 @@ class TopOpeBRepTool_HBoxTool : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_DataMapOfShapeface;
 class TopOpeBRepTool_DataMapOfShapeface : public TCollection_BasicMap {
 	public:
@@ -1336,6 +1373,7 @@ class TopOpeBRepTool_DataMapOfShapeface : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapOfShapeface\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_DataMapOfShapeListOfC2DF;
 class TopOpeBRepTool_DataMapOfShapeListOfC2DF : public TCollection_BasicMap {
@@ -1371,6 +1409,7 @@ class TopOpeBRepTool_DataMapOfShapeListOfC2DF : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_C2DF;
 class TopOpeBRepTool_C2DF {
 	public:
@@ -1398,6 +1437,7 @@ class TopOpeBRepTool_C2DF {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_C2DF\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_CurveTool;
 class TopOpeBRepTool_CurveTool {
@@ -1432,6 +1472,7 @@ class TopOpeBRepTool_CurveTool {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_CurveTool\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_TOOL;
 class TopOpeBRepTool_TOOL {
@@ -1555,6 +1596,7 @@ class TopOpeBRepTool_TOOL {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_ShapeTool;
 class TopOpeBRepTool_ShapeTool {
 	public:
@@ -1613,6 +1655,7 @@ class TopOpeBRepTool_ShapeTool {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_AncestorsTool;
 class TopOpeBRepTool_AncestorsTool {
 	public:
@@ -1628,6 +1671,7 @@ class TopOpeBRepTool_AncestorsTool {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_AncestorsTool\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfSolidClassifier;
 class TopOpeBRepTool_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
@@ -1673,6 +1717,7 @@ class TopOpeBRepTool_IndexedDataMapOfSolidClassifier : public TCollection_BasicM
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_makeTransition;
 class TopOpeBRepTool_makeTransition {
 	public:
@@ -1706,6 +1751,7 @@ class TopOpeBRepTool_makeTransition {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_makeTransition\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_ListOfC2DF;
 class TopOpeBRepTool_ListOfC2DF {
@@ -1757,6 +1803,7 @@ class TopOpeBRepTool_ListOfC2DF {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_PurgeInternalEdges;
 class TopOpeBRepTool_PurgeInternalEdges {
 	public:
@@ -1780,6 +1827,7 @@ class TopOpeBRepTool_PurgeInternalEdges {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_PurgeInternalEdges\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox;
 class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TCollection_MapNode {
@@ -1815,6 +1863,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfShapeBox : public TColl
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_ListIteratorOfListOfC2DF;
 class TopOpeBRepTool_ListIteratorOfListOfC2DF {
 	public:
@@ -1838,6 +1887,7 @@ class TopOpeBRepTool_ListIteratorOfListOfC2DF {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_ListIteratorOfListOfC2DF\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_FuseEdges;
 class TopOpeBRepTool_FuseEdges {
@@ -1866,6 +1916,7 @@ class TopOpeBRepTool_FuseEdges {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_FuseEdges\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_IndexedDataMapOfShapeconnexity;
 class TopOpeBRepTool_IndexedDataMapOfShapeconnexity : public TCollection_BasicMap {
@@ -1911,6 +1962,7 @@ class TopOpeBRepTool_IndexedDataMapOfShapeconnexity : public TCollection_BasicMa
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_connexity;
 class TopOpeBRepTool_connexity {
 	public:
@@ -1951,6 +2003,7 @@ class TopOpeBRepTool_connexity {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
 class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollection_MapNode {
 	public:
@@ -1985,6 +2038,7 @@ class TopOpeBRepTool_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : publi
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF;
 class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public TCollection_MapNode {
 	public:
@@ -2014,6 +2068,7 @@ class TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool_DataMapNodeOfDataMapOfShapeListOfC2DF\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_DataMapOfOrientedShapeC2DF;
 class TopOpeBRepTool_DataMapOfOrientedShapeC2DF : public TCollection_BasicMap {
@@ -2049,6 +2104,7 @@ class TopOpeBRepTool_DataMapOfOrientedShapeC2DF : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepTool;
 class TopOpeBRepTool {
 	public:
@@ -2080,6 +2136,7 @@ class TopOpeBRepTool {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepTool\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF;
 class TopOpeBRepTool_DataMapNodeOfDataMapOfOrientedShapeC2DF : public TCollection_MapNode {

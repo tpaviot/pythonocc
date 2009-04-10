@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 	}
 };
 
+
 %nodefaultctor Handle_V2d_RectangularGraphicGrid;
 class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	public:
@@ -168,6 +170,7 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Handle_V2d_RectangularGraphicGrid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V2d_RectangularGrid;
 class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
@@ -194,6 +197,7 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	}
 };
 
+
 %nodefaultctor Handle_V2d_CircularGraphicGrid;
 class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 	public:
@@ -218,6 +222,7 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGraphicGrid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V2d_CircularGrid;
 class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
@@ -244,6 +249,7 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 	}
 };
 
+
 %nodefaultctor Handle_V2d_View;
 class Handle_V2d_View : public Handle_Viewer_View {
 	public:
@@ -269,6 +275,7 @@ class Handle_V2d_View : public Handle_Viewer_View {
 	}
 };
 
+
 %nodefaultctor Handle_V2d_Viewer;
 class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 	public:
@@ -293,6 +300,7 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 	if (__env){printf("## Call custom destructor for instance of Handle_V2d_Viewer\n");}
 	}
 };
+
 
 %nodefaultctor V2d_RectangularGrid;
 class V2d_RectangularGrid : public Aspect_RectangularGrid {
@@ -328,6 +336,7 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 	}
 };
 
+
 %nodefaultctor V2d;
 class V2d {
 	public:
@@ -343,6 +352,7 @@ class V2d {
 	if (__env){printf("## Call custom destructor for instance of V2d\n");}
 	}
 };
+
 
 %nodefaultctor V2d_CircularGrid;
 class V2d_CircularGrid : public Aspect_CircularGrid {
@@ -378,6 +388,7 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 	}
 };
 
+
 %nodefaultctor V2d_RectangularGraphicGrid;
 class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 	public:
@@ -407,6 +418,7 @@ class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGraphicGrid\n");}
 	}
 };
+
 
 %nodefaultctor V2d_CircularGraphicGrid;
 class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
@@ -438,6 +450,7 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor V2d_BackgroundGraphicObject;
 class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 	public:
@@ -465,6 +478,7 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 	if (__env){printf("## Call custom destructor for instance of V2d_BackgroundGraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor V2d_View;
 class V2d_View : public Viewer_View {
@@ -610,6 +624,7 @@ class V2d_View : public Viewer_View {
 	}
 };
 
+
 %nodefaultctor V2d_DefaultMap;
 class V2d_DefaultMap {
 	public:
@@ -633,6 +648,7 @@ class V2d_DefaultMap {
 	if (__env){printf("## Call custom destructor for instance of V2d_DefaultMap\n");}
 	}
 };
+
 
 %nodefaultctor V2d_Viewer;
 class V2d_Viewer : public Viewer_Viewer {

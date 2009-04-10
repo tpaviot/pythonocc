@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BRepTopAdaptor_TopolTool : public Handle_Adaptor3d_TopolTool {
 	}
 };
 
+
 %nodefaultctor Handle_BRepTopAdaptor_HVertex;
 class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 	public:
@@ -162,6 +164,7 @@ class Handle_BRepTopAdaptor_HVertex : public Handle_Adaptor3d_HVertex {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_HVertex\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool;
 class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
 class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public Handle_TCollection_S
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
 	}
 };
+
 
 %nodefaultctor BRepTopAdaptor_MapOfShapeTool;
 class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
@@ -246,6 +251,7 @@ class BRepTopAdaptor_MapOfShapeTool : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_MapOfShapeTool\n");}
 	}
 };
+
 
 %nodefaultctor BRepTopAdaptor_HVertex;
 class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
@@ -287,6 +293,7 @@ class BRepTopAdaptor_HVertex : public Adaptor3d_HVertex {
 	}
 };
 
+
 %nodefaultctor BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool;
 class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicMapIterator {
 	public:
@@ -308,6 +315,7 @@ class BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool : public TCollection_BasicM
 	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_DataMapIteratorOfMapOfShapeTool\n");}
 	}
 };
+
 
 %nodefaultctor BRepTopAdaptor_FClass2d;
 class BRepTopAdaptor_FClass2d {
@@ -332,6 +340,7 @@ class BRepTopAdaptor_FClass2d {
 	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_FClass2d\n");}
 	}
 };
+
 
 %nodefaultctor BRepTopAdaptor_TopolTool;
 class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
@@ -415,6 +424,7 @@ class BRepTopAdaptor_TopolTool : public Adaptor3d_TopolTool {
 	}
 };
 
+
 %nodefaultctor BRepTopAdaptor_SeqOfPtr;
 class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 	public:
@@ -469,6 +479,7 @@ class BRepTopAdaptor_SeqOfPtr : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BRepTopAdaptor_Tool;
 class BRepTopAdaptor_Tool {
 	public:
@@ -499,6 +510,7 @@ class BRepTopAdaptor_Tool {
 	}
 };
 
+
 %nodefaultctor BRepTopAdaptor_SequenceNodeOfSeqOfPtr;
 class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
 	public:
@@ -526,6 +538,7 @@ class BRepTopAdaptor_SequenceNodeOfSeqOfPtr : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of BRepTopAdaptor_SequenceNodeOfSeqOfPtr\n");}
 	}
 };
+
 
 %nodefaultctor BRepTopAdaptor_DataMapNodeOfMapOfShapeTool;
 class BRepTopAdaptor_DataMapNodeOfMapOfShapeTool : public TCollection_MapNode {

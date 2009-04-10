@@ -139,6 +139,7 @@ class Handle_XCAFDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Documen
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDrivers_DocumentStorageDriver;
 class Handle_XCAFDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentStorageDriver {
 	public:
@@ -163,6 +164,7 @@ class Handle_XCAFDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentS
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDrivers_DocumentRetrievalDriver;
 class XCAFDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriver {
@@ -192,6 +194,7 @@ class XCAFDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriv
 	}
 };
 
+
 %nodefaultctor XCAFDrivers_DocumentStorageDriver;
 class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 	public:
@@ -219,6 +222,7 @@ class XCAFDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 	if (__env){printf("## Call custom destructor for instance of XCAFDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDrivers;
 class XCAFDrivers {

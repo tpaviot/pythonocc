@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -227,6 +228,7 @@ class BRepPrim_OneAxis {
 	}
 };
 
+
 %nodefaultctor BRepPrim_Revolution;
 class BRepPrim_Revolution : public BRepPrim_OneAxis {
 	public:
@@ -240,6 +242,7 @@ class BRepPrim_Revolution : public BRepPrim_OneAxis {
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Revolution\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrim_Sphere;
 class BRepPrim_Sphere : public BRepPrim_Revolution {
@@ -258,6 +261,7 @@ class BRepPrim_Sphere : public BRepPrim_Revolution {
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Sphere\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrim_FaceBuilder;
 class BRepPrim_FaceBuilder {
@@ -286,6 +290,7 @@ class BRepPrim_FaceBuilder {
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_FaceBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrim_GWedge;
 class BRepPrim_GWedge {
@@ -357,6 +362,7 @@ class BRepPrim_GWedge {
 	}
 };
 
+
 %nodefaultctor BRepPrim_Wedge;
 class BRepPrim_Wedge : public BRepPrim_GWedge {
 	public:
@@ -374,6 +380,7 @@ class BRepPrim_Wedge : public BRepPrim_GWedge {
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Wedge\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrim_Builder;
 class BRepPrim_Builder {
@@ -435,6 +442,7 @@ class BRepPrim_Builder {
 	}
 };
 
+
 %nodefaultctor BRepPrim_Cone;
 class BRepPrim_Cone : public BRepPrim_Revolution {
 	public:
@@ -463,6 +471,7 @@ class BRepPrim_Cone : public BRepPrim_Revolution {
 	}
 };
 
+
 %nodefaultctor BRepPrim_Cylinder;
 class BRepPrim_Cylinder : public BRepPrim_Revolution {
 	public:
@@ -488,6 +497,7 @@ class BRepPrim_Cylinder : public BRepPrim_Revolution {
 	if (__env){printf("## Call custom destructor for instance of BRepPrim_Cylinder\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrim_Torus;
 class BRepPrim_Torus : public BRepPrim_Revolution {

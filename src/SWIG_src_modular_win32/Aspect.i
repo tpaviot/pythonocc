@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -466,6 +467,7 @@ class Handle_Aspect_ColorScale : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_Grid;
 class Handle_Aspect_Grid : public Handle_MMgt_TShared {
 	public:
@@ -490,6 +492,7 @@ class Handle_Aspect_Grid : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_Grid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_RectangularGrid;
 class Handle_Aspect_RectangularGrid : public Handle_Aspect_Grid {
@@ -516,6 +519,7 @@ class Handle_Aspect_RectangularGrid : public Handle_Aspect_Grid {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_WindowError;
 class Handle_Aspect_WindowError : public Handle_Standard_OutOfRange {
 	public:
@@ -540,6 +544,7 @@ class Handle_Aspect_WindowError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public Handle_TCollection_SeqNode {
@@ -566,6 +571,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_WindowDefinitionError;
 class Handle_Aspect_WindowDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -590,6 +596,7 @@ class Handle_Aspect_WindowDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_MarkerStyleDefinitionError;
 class Handle_Aspect_MarkerStyleDefinitionError : public Handle_Standard_OutOfRange {
@@ -616,6 +623,7 @@ class Handle_Aspect_MarkerStyleDefinitionError : public Handle_Standard_OutOfRan
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_AspectMarkerDefinitionError;
 class Handle_Aspect_AspectMarkerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -640,6 +648,7 @@ class Handle_Aspect_AspectMarkerDefinitionError : public Handle_Standard_OutOfRa
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectMarkerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_WidthMap;
 class Handle_Aspect_WidthMap : public Handle_MMgt_TShared {
@@ -666,6 +675,7 @@ class Handle_Aspect_WidthMap : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_PixMap;
 class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
 	public:
@@ -690,6 +700,7 @@ class Handle_Aspect_PixMap : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_GraphicDeviceDefinitionError;
 class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfRange {
@@ -716,6 +727,7 @@ class Handle_Aspect_GraphicDeviceDefinitionError : public Handle_Standard_OutOfR
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_MarkMap;
 class Handle_Aspect_MarkMap : public Handle_MMgt_TShared {
 	public:
@@ -740,6 +752,7 @@ class Handle_Aspect_MarkMap : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_MarkMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_WidthMapDefinitionError;
 class Handle_Aspect_WidthMapDefinitionError : public Handle_Standard_OutOfRange {
@@ -766,6 +779,7 @@ class Handle_Aspect_WidthMapDefinitionError : public Handle_Standard_OutOfRange 
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_AspectLineDefinitionError;
 class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -790,6 +804,7 @@ class Handle_Aspect_AspectLineDefinitionError : public Handle_Standard_OutOfRang
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectLineDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public Handle_TCollection_SeqNode {
@@ -816,6 +831,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_PixmapError;
 class Handle_Aspect_PixmapError : public Handle_Standard_OutOfRange {
 	public:
@@ -840,6 +856,7 @@ class Handle_Aspect_PixmapError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixmapError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_Driver;
 class Handle_Aspect_Driver : public Handle_MMgt_TShared {
@@ -866,6 +883,7 @@ class Handle_Aspect_Driver : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_ColorMapDefinitionError;
 class Handle_Aspect_ColorMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -890,6 +908,7 @@ class Handle_Aspect_ColorMapDefinitionError : public Handle_Standard_OutOfRange 
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_ColorMapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_TypeMap;
 class Handle_Aspect_TypeMap : public Handle_MMgt_TShared {
@@ -916,6 +935,7 @@ class Handle_Aspect_TypeMap : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_AspectFillArea;
 class Handle_Aspect_AspectFillArea : public Handle_MMgt_TShared {
 	public:
@@ -940,6 +960,7 @@ class Handle_Aspect_AspectFillArea : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_AspectFillArea\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_IdentDefinitionError;
 class Handle_Aspect_IdentDefinitionError : public Handle_Standard_OutOfRange {
@@ -966,6 +987,7 @@ class Handle_Aspect_IdentDefinitionError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public Handle_TCollection_SeqNode {
 	public:
@@ -990,6 +1012,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_ColorMap;
 class Handle_Aspect_ColorMap : public Handle_MMgt_TShared {
@@ -1016,6 +1039,7 @@ class Handle_Aspect_ColorMap : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_FontStyleDefinitionError;
 class Handle_Aspect_FontStyleDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1040,6 +1064,7 @@ class Handle_Aspect_FontStyleDefinitionError : public Handle_Standard_OutOfRange
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontStyleDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_AspectMarker;
 class Handle_Aspect_AspectMarker : public Handle_MMgt_TShared {
@@ -1066,6 +1091,7 @@ class Handle_Aspect_AspectMarker : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_LineStyleDefinitionError;
 class Handle_Aspect_LineStyleDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1090,6 +1116,7 @@ class Handle_Aspect_LineStyleDefinitionError : public Handle_Standard_OutOfRange
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_LineStyleDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_GenericColorMap;
 class Handle_Aspect_GenericColorMap : public Handle_Aspect_ColorMap {
@@ -1116,6 +1143,7 @@ class Handle_Aspect_GenericColorMap : public Handle_Aspect_ColorMap {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_PixmapDefinitionError;
 class Handle_Aspect_PixmapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1140,6 +1168,7 @@ class Handle_Aspect_PixmapDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_PixmapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry : public Handle_TCollection_SeqNode {
@@ -1166,6 +1195,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfFontMapEntry : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_TypeMapDefinitionError;
 class Handle_Aspect_TypeMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1190,6 +1220,7 @@ class Handle_Aspect_TypeMapDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_TypeMapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_ColorRampColorMap;
 class Handle_Aspect_ColorRampColorMap : public Handle_Aspect_ColorMap {
@@ -1216,6 +1247,7 @@ class Handle_Aspect_ColorRampColorMap : public Handle_Aspect_ColorMap {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_Window;
 class Handle_Aspect_Window : public Handle_MMgt_TShared {
 	public:
@@ -1240,6 +1272,7 @@ class Handle_Aspect_Window : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_Window\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_BadAccess;
 class Handle_Aspect_BadAccess : public Handle_Standard_DomainError {
@@ -1266,6 +1299,7 @@ class Handle_Aspect_BadAccess : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_FontMap;
 class Handle_Aspect_FontMap : public Handle_MMgt_TShared {
 	public:
@@ -1290,6 +1324,7 @@ class Handle_Aspect_FontMap : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_LineWidthDefinitionError;
 class Handle_Aspect_LineWidthDefinitionError : public Handle_Standard_OutOfRange {
@@ -1316,6 +1351,7 @@ class Handle_Aspect_LineWidthDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_FontMapDefinitionError;
 class Handle_Aspect_FontMapDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1340,6 +1376,7 @@ class Handle_Aspect_FontMapDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_FontMapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_AspectLine;
 class Handle_Aspect_AspectLine : public Handle_MMgt_TShared {
@@ -1366,6 +1403,7 @@ class Handle_Aspect_AspectLine : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_DriverError;
 class Handle_Aspect_DriverError : public Handle_Standard_OutOfRange {
 	public:
@@ -1390,6 +1428,7 @@ class Handle_Aspect_DriverError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_DriverError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_ColorCubeColorMap;
 class Handle_Aspect_ColorCubeColorMap : public Handle_Aspect_ColorMap {
@@ -1416,6 +1455,7 @@ class Handle_Aspect_ColorCubeColorMap : public Handle_Aspect_ColorMap {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_WindowDriver;
 class Handle_Aspect_WindowDriver : public Handle_Aspect_Driver {
 	public:
@@ -1440,6 +1480,7 @@ class Handle_Aspect_WindowDriver : public Handle_Aspect_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_WindowDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_MarkMapDefinitionError;
 class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
@@ -1466,6 +1507,7 @@ class Handle_Aspect_MarkMapDefinitionError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_GraphicDriver;
 class Handle_Aspect_GraphicDriver : public Handle_MMgt_TShared {
 	public:
@@ -1490,6 +1532,7 @@ class Handle_Aspect_GraphicDriver : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfColor;
 class Handle_Aspect_SequenceNodeOfSequenceOfColor : public Handle_TCollection_SeqNode {
@@ -1516,6 +1559,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColor : public Handle_TCollection_Se
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_GraphicDevice;
 class Handle_Aspect_GraphicDevice : public Handle_MMgt_TShared {
 	public:
@@ -1540,6 +1584,7 @@ class Handle_Aspect_GraphicDevice : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_GraphicDevice\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_CircularGrid;
 class Handle_Aspect_CircularGrid : public Handle_Aspect_Grid {
@@ -1566,6 +1611,7 @@ class Handle_Aspect_CircularGrid : public Handle_Aspect_Grid {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_UndefinedMap;
 class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
 	public:
@@ -1590,6 +1636,7 @@ class Handle_Aspect_UndefinedMap : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_UndefinedMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_AspectFillAreaDefinitionError;
 class Handle_Aspect_AspectFillAreaDefinitionError : public Handle_Standard_OutOfRange {
@@ -1616,6 +1663,7 @@ class Handle_Aspect_AspectFillAreaDefinitionError : public Handle_Standard_OutOf
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_DriverDefinitionError;
 class Handle_Aspect_DriverDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1640,6 +1688,7 @@ class Handle_Aspect_DriverDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_DriverDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Aspect_PolyStyleDefinitionError;
 class Handle_Aspect_PolyStyleDefinitionError : public Handle_Standard_OutOfRange {
@@ -1666,6 +1715,7 @@ class Handle_Aspect_PolyStyleDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_EdgeDefinitionError;
 class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1691,6 +1741,7 @@ class Handle_Aspect_EdgeDefinitionError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry;
 class Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry : public Handle_TCollection_SeqNode {
 	public:
@@ -1715,6 +1766,7 @@ class Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfFontMapEntry;
 class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
@@ -1743,6 +1795,7 @@ class Aspect_SequenceNodeOfSequenceOfFontMapEntry : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfFontMapEntry\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_MarkMapDefinitionError;
 class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
@@ -1777,6 +1830,7 @@ class Aspect_MarkMapDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_MarkMapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_TypeMap;
 class Aspect_TypeMap : public MMgt_TShared {
@@ -1816,6 +1870,7 @@ class Aspect_TypeMap : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_GraphicCallbackStruct;
 class Aspect_GraphicCallbackStruct {
 	public:
@@ -1829,6 +1884,7 @@ class Aspect_GraphicCallbackStruct {
 	if (__env){printf("## Call custom destructor for instance of Aspect_GraphicCallbackStruct\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_AspectFillAreaDefinitionError;
 class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
@@ -1864,6 +1920,7 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect_Pixel;
 class Aspect_Pixel {
 	public:
@@ -1877,6 +1934,7 @@ class Aspect_Pixel {
 	if (__env){printf("## Call custom destructor for instance of Aspect_Pixel\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_ColorPixel;
 class Aspect_ColorPixel : public Aspect_Pixel {
@@ -1914,6 +1972,7 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 	if (__env){printf("## Call custom destructor for instance of Aspect_ColorPixel\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_Grid;
 class Aspect_Grid : public MMgt_TShared {
@@ -1981,6 +2040,7 @@ class Aspect_Grid : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_CircularGrid;
 class Aspect_CircularGrid : public Aspect_Grid {
 	public:
@@ -2014,6 +2074,7 @@ class Aspect_CircularGrid : public Aspect_Grid {
 	if (__env){printf("## Call custom destructor for instance of Aspect_CircularGrid\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_ColorMapDefinitionError;
 class Aspect_ColorMapDefinitionError : public Standard_OutOfRange {
@@ -2049,6 +2110,7 @@ class Aspect_ColorMapDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect_PixMap;
 class Aspect_PixMap : public MMgt_TShared {
 	public:
@@ -2083,6 +2145,7 @@ class Aspect_PixMap : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_AspectMarker;
 class Aspect_AspectMarker : public MMgt_TShared {
 	public:
@@ -2114,6 +2177,7 @@ class Aspect_AspectMarker : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Aspect_AspectMarker\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_ColorMap;
 class Aspect_ColorMap : public MMgt_TShared {
@@ -2159,6 +2223,7 @@ class Aspect_ColorMap : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_ColorCubeColorMap;
 class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 	public:
@@ -2184,6 +2249,7 @@ class Aspect_ColorCubeColorMap : public Aspect_ColorMap {
 	if (__env){printf("## Call custom destructor for instance of Aspect_ColorCubeColorMap\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_IndexPixel;
 class Aspect_IndexPixel : public Aspect_Pixel {
@@ -2226,6 +2292,7 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 	}
 };
 
+
 %nodefaultctor Aspect_RGBPixel;
 class Aspect_RGBPixel {
 	public:
@@ -2239,6 +2306,7 @@ class Aspect_RGBPixel {
 	if (__env){printf("## Call custom destructor for instance of Aspect_RGBPixel\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_SequenceOfMarkMapEntry;
 class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
@@ -2294,6 +2362,7 @@ class Aspect_SequenceOfMarkMapEntry : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Aspect_Array1OfEdge;
 class Aspect_Array1OfEdge {
 	public:
@@ -2334,6 +2403,7 @@ class Aspect_Array1OfEdge {
 	}
 };
 
+
 %nodefaultctor Aspect_PixmapError;
 class Aspect_PixmapError : public Standard_OutOfRange {
 	public:
@@ -2367,6 +2437,7 @@ class Aspect_PixmapError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_PixmapError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_SequenceOfTypeMapEntry;
 class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
@@ -2422,6 +2493,7 @@ class Aspect_SequenceOfTypeMapEntry : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Aspect_PixmapDefinitionError;
 class Aspect_PixmapDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2455,6 +2527,7 @@ class Aspect_PixmapDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_PixmapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_Driver;
 class Aspect_Driver : public MMgt_TShared {
@@ -2574,6 +2647,7 @@ class Aspect_Driver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_ColorRampColorMap;
 class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 	public:
@@ -2613,6 +2687,7 @@ class Aspect_ColorRampColorMap : public Aspect_ColorMap {
 	if (__env){printf("## Call custom destructor for instance of Aspect_ColorRampColorMap\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_GenericColorMap;
 class Aspect_GenericColorMap : public Aspect_ColorMap {
@@ -2654,6 +2729,7 @@ class Aspect_GenericColorMap : public Aspect_ColorMap {
 	}
 };
 
+
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfMarkMapEntry;
 class Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public TCollection_SeqNode {
 	public:
@@ -2681,6 +2757,7 @@ class Aspect_SequenceNodeOfSequenceOfMarkMapEntry : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfMarkMapEntry\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_MarkMap;
 class Aspect_MarkMap : public MMgt_TShared {
@@ -2720,6 +2797,7 @@ class Aspect_MarkMap : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_DriverDefinitionError;
 class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2753,6 +2831,7 @@ class Aspect_DriverDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_DriverDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_FontMapEntry;
 class Aspect_FontMapEntry {
@@ -2790,6 +2869,7 @@ class Aspect_FontMapEntry {
 	}
 };
 
+
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfTypeMapEntry;
 class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 	public:
@@ -2817,6 +2897,7 @@ class Aspect_SequenceNodeOfSequenceOfTypeMapEntry : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfTypeMapEntry\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_SequenceOfColor;
 class Aspect_SequenceOfColor : public TCollection_BaseSequence {
@@ -2872,6 +2953,7 @@ class Aspect_SequenceOfColor : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Aspect_WidthMap;
 class Aspect_WidthMap : public MMgt_TShared {
 	public:
@@ -2912,6 +2994,7 @@ class Aspect_WidthMap : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_UndefinedMap;
 class Aspect_UndefinedMap : public Standard_OutOfRange {
 	public:
@@ -2945,6 +3028,7 @@ class Aspect_UndefinedMap : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_UndefinedMap\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_EdgeDefinitionError;
 class Aspect_EdgeDefinitionError : public Standard_OutOfRange {
@@ -2980,6 +3064,7 @@ class Aspect_EdgeDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect_LineWidthDefinitionError;
 class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3013,6 +3098,7 @@ class Aspect_LineWidthDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_LineWidthDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_AspectFillArea;
 class Aspect_AspectFillArea : public MMgt_TShared {
@@ -3058,6 +3144,7 @@ class Aspect_AspectFillArea : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_FontStyleDefinitionError;
 class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3091,6 +3178,7 @@ class Aspect_FontStyleDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_FontStyleDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_FontStyle;
 class Aspect_FontStyle {
@@ -3182,6 +3270,7 @@ class Aspect_FontStyle {
 	}
 };
 
+
 %nodefaultctor Aspect_MarkMapEntry;
 class Aspect_MarkMapEntry {
 	public:
@@ -3218,6 +3307,7 @@ class Aspect_MarkMapEntry {
 	}
 };
 
+
 %nodefaultctor Aspect_TypeMapDefinitionError;
 class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3251,6 +3341,7 @@ class Aspect_TypeMapDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_TypeMapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_Window;
 class Aspect_Window : public MMgt_TShared {
@@ -3352,6 +3443,7 @@ class Aspect_Window : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_GenId;
 class Aspect_GenId {
 	public:
@@ -3379,6 +3471,7 @@ class Aspect_GenId {
 	if (__env){printf("## Call custom destructor for instance of Aspect_GenId\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_PolyStyleDefinitionError;
 class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
@@ -3414,6 +3507,7 @@ class Aspect_PolyStyleDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect;
 class Aspect {
 	public:
@@ -3433,6 +3527,7 @@ class Aspect {
 	if (__env){printf("## Call custom destructor for instance of Aspect\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_MarkerStyleDefinitionError;
 class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
@@ -3468,6 +3563,7 @@ class Aspect_MarkerStyleDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect_GraphicDeviceDefinitionError;
 class Aspect_GraphicDeviceDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3502,6 +3598,7 @@ class Aspect_GraphicDeviceDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect_DriverError;
 class Aspect_DriverError : public Standard_OutOfRange {
 	public:
@@ -3535,6 +3632,7 @@ class Aspect_DriverError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_DriverError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_RectangularGrid;
 class Aspect_RectangularGrid : public Aspect_Grid {
@@ -3581,6 +3679,7 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 	if (__env){printf("## Call custom destructor for instance of Aspect_RectangularGrid\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_WindowDriver;
 class Aspect_WindowDriver : public Aspect_Driver {
@@ -3668,6 +3767,7 @@ class Aspect_WindowDriver : public Aspect_Driver {
 	}
 };
 
+
 %nodefaultctor Aspect_AspectMarkerDefinitionError;
 class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3702,6 +3802,7 @@ class Aspect_AspectMarkerDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfColorMapEntry;
 class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode {
 	public:
@@ -3729,6 +3830,7 @@ class Aspect_SequenceNodeOfSequenceOfColorMapEntry : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of Aspect_SequenceNodeOfSequenceOfColorMapEntry\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_ColorMapEntry;
 class Aspect_ColorMapEntry {
@@ -3784,6 +3886,7 @@ class Aspect_ColorMapEntry {
 	}
 };
 
+
 %nodefaultctor Aspect_AspectLine;
 class Aspect_AspectLine : public MMgt_TShared {
 	public:
@@ -3815,6 +3918,7 @@ class Aspect_AspectLine : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Aspect_AspectLine\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_BadAccess;
 class Aspect_BadAccess : public Standard_DomainError {
@@ -3850,6 +3954,7 @@ class Aspect_BadAccess : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Aspect_AspectLineDefinitionError;
 class Aspect_AspectLineDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3883,6 +3988,7 @@ class Aspect_AspectLineDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_AspectLineDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_SequenceOfColorMapEntry;
 class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
@@ -3938,6 +4044,7 @@ class Aspect_SequenceOfColorMapEntry : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Aspect_FontMap;
 class Aspect_FontMap : public MMgt_TShared {
 	public:
@@ -3976,6 +4083,7 @@ class Aspect_FontMap : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_LineStyle;
 class Aspect_LineStyle {
 	public:
@@ -4013,6 +4121,7 @@ class Aspect_LineStyle {
 	if (__env){printf("## Call custom destructor for instance of Aspect_LineStyle\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_MarkerStyle;
 class Aspect_MarkerStyle {
@@ -4056,6 +4165,7 @@ class Aspect_MarkerStyle {
 	}
 };
 
+
 %nodefaultctor Aspect_LineStyleDefinitionError;
 class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 	public:
@@ -4089,6 +4199,7 @@ class Aspect_LineStyleDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_LineStyleDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_IdentDefinitionError;
 class Aspect_IdentDefinitionError : public Standard_OutOfRange {
@@ -4124,6 +4235,7 @@ class Aspect_IdentDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect_Background;
 class Aspect_Background {
 	public:
@@ -4143,6 +4255,7 @@ class Aspect_Background {
 	if (__env){printf("## Call custom destructor for instance of Aspect_Background\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_WidthMapEntry;
 class Aspect_WidthMapEntry {
@@ -4188,6 +4301,7 @@ class Aspect_WidthMapEntry {
 	}
 };
 
+
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfWidthMapEntry;
 class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode {
 	public:
@@ -4216,6 +4330,7 @@ class Aspect_SequenceNodeOfSequenceOfWidthMapEntry : public TCollection_SeqNode 
 	}
 };
 
+
 %nodefaultctor Aspect_Edge;
 class Aspect_Edge {
 	public:
@@ -4241,6 +4356,7 @@ class Aspect_Edge {
 	if (__env){printf("## Call custom destructor for instance of Aspect_Edge\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_WindowDefinitionError;
 class Aspect_WindowDefinitionError : public Standard_OutOfRange {
@@ -4275,6 +4391,7 @@ class Aspect_WindowDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_WindowDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_TypeMapEntry;
 class Aspect_TypeMapEntry {
@@ -4311,6 +4428,7 @@ class Aspect_TypeMapEntry {
 	if (__env){printf("## Call custom destructor for instance of Aspect_TypeMapEntry\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_SequenceOfFontMapEntry;
 class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
@@ -4366,6 +4484,7 @@ class Aspect_SequenceOfFontMapEntry : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Aspect_SequenceOfWidthMapEntry;
 class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 	public:
@@ -4420,6 +4539,7 @@ class Aspect_SequenceOfWidthMapEntry : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Aspect_GraphicDriver;
 class Aspect_GraphicDriver : public MMgt_TShared {
 	public:
@@ -4443,6 +4563,7 @@ class Aspect_GraphicDriver : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Aspect_GraphicDriver\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_WidthMapDefinitionError;
 class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
@@ -4477,6 +4598,7 @@ class Aspect_WidthMapDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_WidthMapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_ColorScale;
 class Aspect_ColorScale : public MMgt_TShared {
@@ -4608,6 +4730,7 @@ class Aspect_ColorScale : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Aspect_GraphicDevice;
 class Aspect_GraphicDevice : public MMgt_TShared {
 	public:
@@ -4633,6 +4756,7 @@ class Aspect_GraphicDevice : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Aspect_GraphicDevice\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_WindowError;
 class Aspect_WindowError : public Standard_OutOfRange {
@@ -4668,6 +4792,7 @@ class Aspect_WindowError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Aspect_FontMapDefinitionError;
 class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 	public:
@@ -4701,6 +4826,7 @@ class Aspect_FontMapDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Aspect_FontMapDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Aspect_SequenceNodeOfSequenceOfColor;
 class Aspect_SequenceNodeOfSequenceOfColor : public TCollection_SeqNode {

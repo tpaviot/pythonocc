@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TColStd_HSetOfInteger : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HSequenceOfInteger;
 class Handle_TColStd_HSequenceOfInteger : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_TColStd_HSequenceOfInteger : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSequenceOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HArray2OfBoolean;
 class Handle_TColStd_HArray2OfBoolean : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_TColStd_HArray2OfBoolean : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString;
 class Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfHExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient;
 class Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public Handle_TCollection_MapNode {
@@ -238,6 +243,7 @@ class Handle_TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : pu
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HArray2OfReal;
 class Handle_TColStd_HArray2OfReal : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_TColStd_HArray2OfReal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray2OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HArray1OfBoolean;
 class Handle_TColStd_HArray1OfBoolean : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_TColStd_HArray1OfBoolean : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString;
 class Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString : public Handle_TCollection_SeqNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfHAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfTransient;
 class Handle_TColStd_SequenceNodeOfSequenceOfTransient : public Handle_TCollection_SeqNode {
@@ -338,6 +347,7 @@ class Handle_TColStd_SequenceNodeOfSequenceOfTransient : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HArray1OfInteger;
 class Handle_TColStd_HArray1OfInteger : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_TColStd_HArray1OfInteger : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfInteger;
 class Handle_TColStd_ListNodeOfSetListOfSetOfInteger : public Handle_TCollection_MapNode {
@@ -388,6 +399,7 @@ class Handle_TColStd_ListNodeOfSetListOfSetOfInteger : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfAsciiString;
 class Handle_TColStd_SequenceNodeOfSequenceOfAsciiString : public Handle_TCollection_SeqNode {
 	public:
@@ -412,6 +424,7 @@ class Handle_TColStd_SequenceNodeOfSequenceOfAsciiString : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal;
 class Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal : public Handle_TCollection_MapNode {
@@ -438,6 +451,7 @@ class Handle_TColStd_DataMapNodeOfDataMapOfIntegerReal : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HSequenceOfReal;
 class Handle_TColStd_HSequenceOfReal : public Handle_MMgt_TShared {
 	public:
@@ -462,6 +476,7 @@ class Handle_TColStd_HSequenceOfReal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSequenceOfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal;
 class Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal : public Handle_TCollection_MapNode {
@@ -488,6 +503,7 @@ class Handle_TColStd_IndexedMapNodeOfIndexedMapOfReal : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HArray1OfAsciiString;
 class Handle_TColStd_HArray1OfAsciiString : public Handle_MMgt_TShared {
 	public:
@@ -512,6 +528,7 @@ class Handle_TColStd_HArray1OfAsciiString : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HSequenceOfTransient;
 class Handle_TColStd_HSequenceOfTransient : public Handle_MMgt_TShared {
@@ -538,6 +555,7 @@ class Handle_TColStd_HSequenceOfTransient : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger;
 class Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -562,6 +580,7 @@ class Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HSetOfReal;
 class Handle_TColStd_HSetOfReal : public Handle_MMgt_TShared {
@@ -588,6 +607,7 @@ class Handle_TColStd_HSetOfReal : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HArray1OfCharacter;
 class Handle_TColStd_HArray1OfCharacter : public Handle_MMgt_TShared {
 	public:
@@ -612,6 +632,7 @@ class Handle_TColStd_HArray1OfCharacter : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfCharacter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_StackNodeOfStackOfReal;
 class Handle_TColStd_StackNodeOfStackOfReal : public Handle_TCollection_MapNode {
@@ -638,6 +659,7 @@ class Handle_TColStd_StackNodeOfStackOfReal : public Handle_TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HSequenceOfHAsciiString;
 class Handle_TColStd_HSequenceOfHAsciiString : public Handle_MMgt_TShared {
 	public:
@@ -662,6 +684,7 @@ class Handle_TColStd_HSequenceOfHAsciiString : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSequenceOfHAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfInteger;
 class Handle_TColStd_SequenceNodeOfSequenceOfInteger : public Handle_TCollection_SeqNode {
@@ -688,6 +711,7 @@ class Handle_TColStd_SequenceNodeOfSequenceOfInteger : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HSequenceOfExtendedString;
 class Handle_TColStd_HSequenceOfExtendedString : public Handle_MMgt_TShared {
 	public:
@@ -712,6 +736,7 @@ class Handle_TColStd_HSequenceOfExtendedString : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HSequenceOfExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_QueueNodeOfQueueOfInteger;
 class Handle_TColStd_QueueNodeOfQueueOfInteger : public Handle_TCollection_MapNode {
@@ -738,6 +763,7 @@ class Handle_TColStd_QueueNodeOfQueueOfInteger : public Handle_TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfReal;
 class Handle_TColStd_ListNodeOfSetListOfSetOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -762,6 +788,7 @@ class Handle_TColStd_ListNodeOfSetListOfSetOfReal : public Handle_TCollection_Ma
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_ListNodeOfSetListOfSetOfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_ListNodeOfListOfTransient;
 class Handle_TColStd_ListNodeOfListOfTransient : public Handle_TCollection_MapNode {
@@ -788,6 +815,7 @@ class Handle_TColStd_ListNodeOfListOfTransient : public Handle_TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_ListNodeOfListOfReal;
 class Handle_TColStd_ListNodeOfListOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -812,6 +840,7 @@ class Handle_TColStd_ListNodeOfListOfReal : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_ListNodeOfListOfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HSequenceOfAsciiString;
 class Handle_TColStd_HSequenceOfAsciiString : public Handle_MMgt_TShared {
@@ -838,6 +867,7 @@ class Handle_TColStd_HSequenceOfAsciiString : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_ListNodeOfSetListOfSetOfTransient;
 class Handle_TColStd_ListNodeOfSetListOfSetOfTransient : public Handle_TCollection_MapNode {
 	public:
@@ -862,6 +892,7 @@ class Handle_TColStd_ListNodeOfSetListOfSetOfTransient : public Handle_TCollecti
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_ListNodeOfSetListOfSetOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HArray1OfExtendedString;
 class Handle_TColStd_HArray1OfExtendedString : public Handle_MMgt_TShared {
@@ -888,6 +919,7 @@ class Handle_TColStd_HArray1OfExtendedString : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger;
 class Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger : public Handle_TCollection_MapNode {
 	public:
@@ -912,6 +944,7 @@ class Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_DataMapNodeOfDataMapOfIntegerInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_StackNodeOfStackOfTransient;
 class Handle_TColStd_StackNodeOfStackOfTransient : public Handle_TCollection_MapNode {
@@ -938,6 +971,7 @@ class Handle_TColStd_StackNodeOfStackOfTransient : public Handle_TCollection_Map
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HArray1OfReal;
 class Handle_TColStd_HArray1OfReal : public Handle_MMgt_TShared {
 	public:
@@ -962,6 +996,7 @@ class Handle_TColStd_HArray1OfReal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HArray1OfListOfInteger;
 class Handle_TColStd_HArray1OfListOfInteger : public Handle_MMgt_TShared {
@@ -988,6 +1023,7 @@ class Handle_TColStd_HArray1OfListOfInteger : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HPackedMapOfInteger;
 class Handle_TColStd_HPackedMapOfInteger : public Handle_MMgt_TShared {
 	public:
@@ -1012,6 +1048,7 @@ class Handle_TColStd_HPackedMapOfInteger : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HPackedMapOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_StdMapNodeOfMapOfInteger;
 class Handle_TColStd_StdMapNodeOfMapOfInteger : public Handle_TCollection_MapNode {
@@ -1038,6 +1075,7 @@ class Handle_TColStd_StdMapNodeOfMapOfInteger : public Handle_TCollection_MapNod
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient;
 class Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient : public Handle_TCollection_MapNode {
 	public:
@@ -1062,6 +1100,7 @@ class Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient : public Handle_TColl
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_IndexedMapNodeOfIndexedMapOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_ListNodeOfListOfInteger;
 class Handle_TColStd_ListNodeOfListOfInteger : public Handle_TCollection_MapNode {
@@ -1088,6 +1127,7 @@ class Handle_TColStd_ListNodeOfListOfInteger : public Handle_TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfExtendedString;
 class Handle_TColStd_SequenceNodeOfSequenceOfExtendedString : public Handle_TCollection_SeqNode {
 	public:
@@ -1112,6 +1152,7 @@ class Handle_TColStd_SequenceNodeOfSequenceOfExtendedString : public Handle_TCol
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_SequenceNodeOfSequenceOfExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HArray2OfInteger;
 class Handle_TColStd_HArray2OfInteger : public Handle_MMgt_TShared {
@@ -1138,6 +1179,7 @@ class Handle_TColStd_HArray2OfInteger : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_QueueNodeOfQueueOfTransient;
 class Handle_TColStd_QueueNodeOfQueueOfTransient : public Handle_TCollection_MapNode {
 	public:
@@ -1162,6 +1204,7 @@ class Handle_TColStd_QueueNodeOfQueueOfTransient : public Handle_TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_QueueNodeOfQueueOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_StackNodeOfStackOfInteger;
 class Handle_TColStd_StackNodeOfStackOfInteger : public Handle_TCollection_MapNode {
@@ -1188,6 +1231,7 @@ class Handle_TColStd_StackNodeOfStackOfInteger : public Handle_TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_QueueNodeOfQueueOfReal;
 class Handle_TColStd_QueueNodeOfQueueOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -1212,6 +1256,7 @@ class Handle_TColStd_QueueNodeOfQueueOfReal : public Handle_TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_QueueNodeOfQueueOfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HSequenceOfHExtendedString;
 class Handle_TColStd_HSequenceOfHExtendedString : public Handle_MMgt_TShared {
@@ -1238,6 +1283,7 @@ class Handle_TColStd_HSequenceOfHExtendedString : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HArray2OfTransient;
 class Handle_TColStd_HArray2OfTransient : public Handle_MMgt_TShared {
 	public:
@@ -1262,6 +1308,7 @@ class Handle_TColStd_HArray2OfTransient : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray2OfTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_SequenceNodeOfSequenceOfReal;
 class Handle_TColStd_SequenceNodeOfSequenceOfReal : public Handle_TCollection_SeqNode {
@@ -1288,6 +1335,7 @@ class Handle_TColStd_SequenceNodeOfSequenceOfReal : public Handle_TCollection_Se
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_StdMapNodeOfMapOfTransient;
 class Handle_TColStd_StdMapNodeOfMapOfTransient : public Handle_TCollection_MapNode {
 	public:
@@ -1312,6 +1360,7 @@ class Handle_TColStd_StdMapNodeOfMapOfTransient : public Handle_TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StdMapNodeOfMapOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_HArray2OfCharacter;
 class Handle_TColStd_HArray2OfCharacter : public Handle_MMgt_TShared {
@@ -1338,6 +1387,7 @@ class Handle_TColStd_HArray2OfCharacter : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_StdMapNodeOfMapOfReal;
 class Handle_TColStd_StdMapNodeOfMapOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -1362,6 +1412,7 @@ class Handle_TColStd_StdMapNodeOfMapOfReal : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_StdMapNodeOfMapOfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger;
 class Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger : public Handle_TCollection_MapNode {
@@ -1388,6 +1439,7 @@ class Handle_TColStd_IndexedMapNodeOfIndexedMapOfInteger : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HSetOfTransient;
 class Handle_TColStd_HSetOfTransient : public Handle_MMgt_TShared {
 	public:
@@ -1413,6 +1465,7 @@ class Handle_TColStd_HSetOfTransient : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColStd_HArray1OfTransient;
 class Handle_TColStd_HArray1OfTransient : public Handle_MMgt_TShared {
 	public:
@@ -1437,6 +1490,7 @@ class Handle_TColStd_HArray1OfTransient : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColStd_HArray1OfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_StdMapNodeOfMapOfInteger;
 class TColStd_StdMapNodeOfMapOfInteger : public TCollection_MapNode {
@@ -1466,6 +1520,7 @@ class TColStd_StdMapNodeOfMapOfInteger : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TColStd_StackIteratorOfStackOfInteger;
 class TColStd_StackIteratorOfStackOfInteger {
 	public:
@@ -1489,6 +1544,7 @@ class TColStd_StackIteratorOfStackOfInteger {
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackIteratorOfStackOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceOfHAsciiString;
 class TColStd_SequenceOfHAsciiString : public TCollection_BaseSequence {
@@ -1544,6 +1600,7 @@ class TColStd_SequenceOfHAsciiString : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColStd_SequenceOfTransient;
 class TColStd_SequenceOfTransient : public TCollection_BaseSequence {
 	public:
@@ -1598,6 +1655,7 @@ class TColStd_SequenceOfTransient : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient;
 class TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public TCollection_MapNode {
 	public:
@@ -1632,6 +1690,7 @@ class TColStd_IndexedDataMapNodeOfIndexedDataMapOfTransientTransient : public TC
 	}
 };
 
+
 %nodefaultctor TColStd_HPackedMapOfInteger;
 class TColStd_HPackedMapOfInteger : public MMgt_TShared {
 	public:
@@ -1664,6 +1723,7 @@ class TColStd_HPackedMapOfInteger : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_StackNodeOfStackOfTransient;
 class TColStd_StackNodeOfStackOfTransient : public TCollection_MapNode {
 	public:
@@ -1692,6 +1752,7 @@ class TColStd_StackNodeOfStackOfTransient : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TColStd_StackNodeOfStackOfReal;
 class TColStd_StackNodeOfStackOfReal : public TCollection_MapNode {
 	public:
@@ -1719,6 +1780,7 @@ class TColStd_StackNodeOfStackOfReal : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackNodeOfStackOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_DataMapOfIntegerReal;
 class TColStd_DataMapOfIntegerReal : public TCollection_BasicMap {
@@ -1754,6 +1816,7 @@ class TColStd_DataMapOfIntegerReal : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TColStd_MapRealHasher;
 class TColStd_MapRealHasher {
 	public:
@@ -1771,6 +1834,7 @@ class TColStd_MapRealHasher {
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapRealHasher\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array2OfInteger;
 class TColStd_Array2OfInteger {
@@ -1816,6 +1880,7 @@ class TColStd_Array2OfInteger {
 	}
 };
 
+
 %nodefaultctor TColStd_SetIteratorOfSetOfInteger;
 class TColStd_SetIteratorOfSetOfInteger {
 	public:
@@ -1839,6 +1904,7 @@ class TColStd_SetIteratorOfSetOfInteger {
 	if (__env){printf("## Call custom destructor for instance of TColStd_SetIteratorOfSetOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_StackOfTransient;
 class TColStd_StackOfTransient {
@@ -1870,6 +1936,7 @@ class TColStd_StackOfTransient {
 	}
 };
 
+
 %nodefaultctor TColStd_ListIteratorOfSetListOfSetOfReal;
 class TColStd_ListIteratorOfSetListOfSetOfReal {
 	public:
@@ -1893,6 +1960,7 @@ class TColStd_ListIteratorOfSetListOfSetOfReal {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfSetListOfSetOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray2OfReal;
 class TColStd_HArray2OfReal : public MMgt_TShared {
@@ -1945,6 +2013,7 @@ class TColStd_HArray2OfReal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColStd_HArray2OfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSetOfReal;
 class TColStd_HSetOfReal : public MMgt_TShared {
@@ -2000,6 +2069,7 @@ class TColStd_HSetOfReal : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_DataMapNodeOfDataMapOfIntegerReal;
 class TColStd_DataMapNodeOfDataMapOfIntegerReal : public TCollection_MapNode {
 	public:
@@ -2030,6 +2100,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerReal : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TColStd_StdMapNodeOfMapOfReal;
 class TColStd_StdMapNodeOfMapOfReal : public TCollection_MapNode {
 	public:
@@ -2057,6 +2128,7 @@ class TColStd_StdMapNodeOfMapOfReal : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_StdMapNodeOfMapOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSequenceOfInteger;
 class TColStd_HSequenceOfInteger : public MMgt_TShared {
@@ -2128,6 +2200,7 @@ class TColStd_HSequenceOfInteger : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_ListNodeOfSetListOfSetOfInteger;
 class TColStd_ListNodeOfSetListOfSetOfInteger : public TCollection_MapNode {
 	public:
@@ -2155,6 +2228,7 @@ class TColStd_ListNodeOfSetListOfSetOfInteger : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfSetListOfSetOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SetListOfSetOfTransient;
 class TColStd_SetListOfSetOfTransient {
@@ -2206,6 +2280,7 @@ class TColStd_SetListOfSetOfTransient {
 	}
 };
 
+
 %nodefaultctor TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger;
 class TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -2227,6 +2302,7 @@ class TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapIteratorOfDataMapOfIntegerListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray1OfAsciiString;
 class TColStd_HArray1OfAsciiString : public MMgt_TShared {
@@ -2274,6 +2350,7 @@ class TColStd_HArray1OfAsciiString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_MapOfReal;
 class TColStd_MapOfReal : public TCollection_BasicMap {
 	public:
@@ -2299,6 +2376,7 @@ class TColStd_MapOfReal : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceOfReal;
 class TColStd_SequenceOfReal : public TCollection_BaseSequence {
@@ -2354,6 +2432,7 @@ class TColStd_SequenceOfReal : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColStd_ListNodeOfSetListOfSetOfReal;
 class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
 	public:
@@ -2381,6 +2460,7 @@ class TColStd_ListNodeOfSetListOfSetOfReal : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfSetListOfSetOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSequenceOfAsciiString;
 class TColStd_HSequenceOfAsciiString : public MMgt_TShared {
@@ -2452,6 +2532,7 @@ class TColStd_HSequenceOfAsciiString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_Array1OfBoolean;
 class TColStd_Array1OfBoolean {
 	public:
@@ -2491,6 +2572,7 @@ class TColStd_Array1OfBoolean {
 	if (__env){printf("## Call custom destructor for instance of TColStd_Array1OfBoolean\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray1OfBoolean;
 class TColStd_HArray1OfBoolean : public MMgt_TShared {
@@ -2538,6 +2620,7 @@ class TColStd_HArray1OfBoolean : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfHExtendedString;
 class TColStd_SequenceNodeOfSequenceOfHExtendedString : public TCollection_SeqNode {
 	public:
@@ -2565,6 +2648,7 @@ class TColStd_SequenceNodeOfSequenceOfHExtendedString : public TCollection_SeqNo
 	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfHExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray1OfListOfInteger;
 class TColStd_HArray1OfListOfInteger : public MMgt_TShared {
@@ -2611,6 +2695,7 @@ class TColStd_HArray1OfListOfInteger : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColStd_HArray1OfListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceOfInteger;
 class TColStd_SequenceOfInteger : public TCollection_BaseSequence {
@@ -2666,6 +2751,7 @@ class TColStd_SequenceOfInteger : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColStd_SetIteratorOfSetOfTransient;
 class TColStd_SetIteratorOfSetOfTransient {
 	public:
@@ -2690,6 +2776,7 @@ class TColStd_SetIteratorOfSetOfTransient {
 	}
 };
 
+
 %nodefaultctor TColStd_SetIteratorOfSetOfReal;
 class TColStd_SetIteratorOfSetOfReal {
 	public:
@@ -2713,6 +2800,7 @@ class TColStd_SetIteratorOfSetOfReal {
 	if (__env){printf("## Call custom destructor for instance of TColStd_SetIteratorOfSetOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array1OfInteger;
 class TColStd_Array1OfInteger {
@@ -2753,6 +2841,7 @@ class TColStd_Array1OfInteger {
 	if (__env){printf("## Call custom destructor for instance of TColStd_Array1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSequenceOfReal;
 class TColStd_HSequenceOfReal : public MMgt_TShared {
@@ -2824,6 +2913,7 @@ class TColStd_HSequenceOfReal : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_IndexedMapNodeOfIndexedMapOfInteger;
 class TColStd_IndexedMapNodeOfIndexedMapOfInteger : public TCollection_MapNode {
 	public:
@@ -2856,6 +2946,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfInteger : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TColStd_DataMapNodeOfDataMapOfIntegerInteger;
 class TColStd_DataMapNodeOfDataMapOfIntegerInteger : public TCollection_MapNode {
 	public:
@@ -2885,6 +2976,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerInteger : public TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapNodeOfDataMapOfIntegerInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array1OfTransient;
 class TColStd_Array1OfTransient {
@@ -2926,6 +3018,7 @@ class TColStd_Array1OfTransient {
 	}
 };
 
+
 %nodefaultctor TColStd_IndexedMapOfReal;
 class TColStd_IndexedMapOfReal : public TCollection_BasicMap {
 	public:
@@ -2960,6 +3053,7 @@ class TColStd_IndexedMapOfReal : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TColStd_ListIteratorOfSetListOfSetOfTransient;
 class TColStd_ListIteratorOfSetListOfSetOfTransient {
 	public:
@@ -2983,6 +3077,7 @@ class TColStd_ListIteratorOfSetListOfSetOfTransient {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfSetListOfSetOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray2OfBoolean;
 class TColStd_HArray2OfBoolean : public MMgt_TShared {
@@ -3036,6 +3131,7 @@ class TColStd_HArray2OfBoolean : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_ListOfReal;
 class TColStd_ListOfReal {
 	public:
@@ -3086,6 +3182,7 @@ class TColStd_ListOfReal {
 	}
 };
 
+
 %nodefaultctor TColStd_StdMapNodeOfMapOfTransient;
 class TColStd_StdMapNodeOfMapOfTransient : public TCollection_MapNode {
 	public:
@@ -3113,6 +3210,7 @@ class TColStd_StdMapNodeOfMapOfTransient : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_StdMapNodeOfMapOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceOfAsciiString;
 class TColStd_SequenceOfAsciiString : public TCollection_BaseSequence {
@@ -3168,6 +3266,7 @@ class TColStd_SequenceOfAsciiString : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColStd_IndexedMapNodeOfIndexedMapOfReal;
 class TColStd_IndexedMapNodeOfIndexedMapOfReal : public TCollection_MapNode {
 	public:
@@ -3200,6 +3299,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfReal : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TColStd_QueueOfInteger;
 class TColStd_QueueOfInteger {
 	public:
@@ -3230,6 +3330,7 @@ class TColStd_QueueOfInteger {
 	}
 };
 
+
 %nodefaultctor TColStd_ListNodeOfListOfReal;
 class TColStd_ListNodeOfListOfReal : public TCollection_MapNode {
 	public:
@@ -3257,6 +3358,7 @@ class TColStd_ListNodeOfListOfReal : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfListOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SetOfTransient;
 class TColStd_SetOfTransient {
@@ -3293,6 +3395,7 @@ class TColStd_SetOfTransient {
 	if (__env){printf("## Call custom destructor for instance of TColStd_SetOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array1OfReal;
 class TColStd_Array1OfReal {
@@ -3333,6 +3436,7 @@ class TColStd_Array1OfReal {
 	if (__env){printf("## Call custom destructor for instance of TColStd_Array1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_IndexedDataMapOfTransientTransient;
 class TColStd_IndexedDataMapOfTransientTransient : public TCollection_BasicMap {
@@ -3377,6 +3481,7 @@ class TColStd_IndexedDataMapOfTransientTransient : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TColStd_IndexedDataMapOfTransientTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSequenceOfTransient;
 class TColStd_HSequenceOfTransient : public MMgt_TShared {
@@ -3448,6 +3553,7 @@ class TColStd_HSequenceOfTransient : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_SetOfReal;
 class TColStd_SetOfReal {
 	public:
@@ -3483,6 +3589,7 @@ class TColStd_SetOfReal {
 	if (__env){printf("## Call custom destructor for instance of TColStd_SetOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_PackedMapOfInteger;
 class TColStd_PackedMapOfInteger : public TCollection_BasicMap {
@@ -3546,6 +3653,7 @@ class TColStd_PackedMapOfInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TColStd_HArray1OfExtendedString;
 class TColStd_HArray1OfExtendedString : public MMgt_TShared {
 	public:
@@ -3592,6 +3700,7 @@ class TColStd_HArray1OfExtendedString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_IndexedMapNodeOfIndexedMapOfTransient;
 class TColStd_IndexedMapNodeOfIndexedMapOfTransient : public TCollection_MapNode {
 	public:
@@ -3623,6 +3732,7 @@ class TColStd_IndexedMapNodeOfIndexedMapOfTransient : public TCollection_MapNode
 	if (__env){printf("## Call custom destructor for instance of TColStd_IndexedMapNodeOfIndexedMapOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array1OfListOfInteger;
 class TColStd_Array1OfListOfInteger {
@@ -3664,6 +3774,7 @@ class TColStd_Array1OfListOfInteger {
 	}
 };
 
+
 %nodefaultctor TColStd_MapIteratorOfMapOfReal;
 class TColStd_MapIteratorOfMapOfReal : public TCollection_BasicMapIterator {
 	public:
@@ -3683,6 +3794,7 @@ class TColStd_MapIteratorOfMapOfReal : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfMapOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array2OfCharacter;
 class TColStd_Array2OfCharacter {
@@ -3728,6 +3840,7 @@ class TColStd_Array2OfCharacter {
 	}
 };
 
+
 %nodefaultctor TColStd_ListIteratorOfListOfTransient;
 class TColStd_ListIteratorOfListOfTransient {
 	public:
@@ -3752,6 +3865,7 @@ class TColStd_ListIteratorOfListOfTransient {
 	}
 };
 
+
 %nodefaultctor TColStd_MapTransientHasher;
 class TColStd_MapTransientHasher {
 	public:
@@ -3769,6 +3883,7 @@ class TColStd_MapTransientHasher {
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapTransientHasher\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray1OfCharacter;
 class TColStd_HArray1OfCharacter : public MMgt_TShared {
@@ -3816,6 +3931,7 @@ class TColStd_HArray1OfCharacter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_MapOfInteger;
 class TColStd_MapOfInteger : public TCollection_BasicMap {
 	public:
@@ -3841,6 +3957,7 @@ class TColStd_MapOfInteger : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceOfExtendedString;
 class TColStd_SequenceOfExtendedString : public TCollection_BaseSequence {
@@ -3896,6 +4013,7 @@ class TColStd_SequenceOfExtendedString : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColStd_QueueNodeOfQueueOfReal;
 class TColStd_QueueNodeOfQueueOfReal : public TCollection_MapNode {
 	public:
@@ -3923,6 +4041,7 @@ class TColStd_QueueNodeOfQueueOfReal : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_QueueNodeOfQueueOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray1OfInteger;
 class TColStd_HArray1OfInteger : public MMgt_TShared {
@@ -3969,6 +4088,7 @@ class TColStd_HArray1OfInteger : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColStd_HArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSequenceOfHExtendedString;
 class TColStd_HSequenceOfHExtendedString : public MMgt_TShared {
@@ -4040,6 +4160,7 @@ class TColStd_HSequenceOfHExtendedString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_Array2OfBoolean;
 class TColStd_Array2OfBoolean {
 	public:
@@ -4084,6 +4205,7 @@ class TColStd_Array2OfBoolean {
 	}
 };
 
+
 %nodefaultctor TColStd_MapOfTransient;
 class TColStd_MapOfTransient : public TCollection_BasicMap {
 	public:
@@ -4109,6 +4231,7 @@ class TColStd_MapOfTransient : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_IndexedMapOfTransient;
 class TColStd_IndexedMapOfTransient : public TCollection_BasicMap {
@@ -4143,6 +4266,7 @@ class TColStd_IndexedMapOfTransient : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TColStd_IndexedMapOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array1OfCharacter;
 class TColStd_Array1OfCharacter {
@@ -4184,6 +4308,7 @@ class TColStd_Array1OfCharacter {
 	}
 };
 
+
 %nodefaultctor TColStd_QueueNodeOfQueueOfInteger;
 class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
 	public:
@@ -4212,6 +4337,7 @@ class TColStd_QueueNodeOfQueueOfInteger : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TColStd_ListIteratorOfSetListOfSetOfInteger;
 class TColStd_ListIteratorOfSetListOfSetOfInteger {
 	public:
@@ -4235,6 +4361,7 @@ class TColStd_ListIteratorOfSetListOfSetOfInteger {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfSetListOfSetOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SetListOfSetOfReal;
 class TColStd_SetListOfSetOfReal {
@@ -4286,6 +4413,7 @@ class TColStd_SetListOfSetOfReal {
 	}
 };
 
+
 %nodefaultctor TColStd_SetListOfSetOfInteger;
 class TColStd_SetListOfSetOfInteger {
 	public:
@@ -4336,6 +4464,7 @@ class TColStd_SetListOfSetOfInteger {
 	}
 };
 
+
 %nodefaultctor TColStd_HArray1OfReal;
 class TColStd_HArray1OfReal : public MMgt_TShared {
 	public:
@@ -4382,6 +4511,7 @@ class TColStd_HArray1OfReal : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_ListNodeOfListOfInteger;
 class TColStd_ListNodeOfListOfInteger : public TCollection_MapNode {
 	public:
@@ -4409,6 +4539,7 @@ class TColStd_ListNodeOfListOfInteger : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_ListNodeOfSetListOfSetOfTransient;
 class TColStd_ListNodeOfSetListOfSetOfTransient : public TCollection_MapNode {
@@ -4438,6 +4569,7 @@ class TColStd_ListNodeOfSetListOfSetOfTransient : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TColStd_StackIteratorOfStackOfTransient;
 class TColStd_StackIteratorOfStackOfTransient {
 	public:
@@ -4461,6 +4593,7 @@ class TColStd_StackIteratorOfStackOfTransient {
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackIteratorOfStackOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSequenceOfHAsciiString;
 class TColStd_HSequenceOfHAsciiString : public MMgt_TShared {
@@ -4532,6 +4665,7 @@ class TColStd_HSequenceOfHAsciiString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_IndexedMapOfInteger;
 class TColStd_IndexedMapOfInteger : public TCollection_BasicMap {
 	public:
@@ -4566,6 +4700,7 @@ class TColStd_IndexedMapOfInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TColStd_ListIteratorOfListOfReal;
 class TColStd_ListIteratorOfListOfReal {
 	public:
@@ -4589,6 +4724,7 @@ class TColStd_ListIteratorOfListOfReal {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfListOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfAsciiString;
 class TColStd_SequenceNodeOfSequenceOfAsciiString : public TCollection_SeqNode {
@@ -4618,6 +4754,7 @@ class TColStd_SequenceNodeOfSequenceOfAsciiString : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor TColStd_ListIteratorOfListOfInteger;
 class TColStd_ListIteratorOfListOfInteger {
 	public:
@@ -4641,6 +4778,7 @@ class TColStd_ListIteratorOfListOfInteger {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListIteratorOfListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array2OfTransient;
 class TColStd_Array2OfTransient {
@@ -4686,6 +4824,7 @@ class TColStd_Array2OfTransient {
 	}
 };
 
+
 %nodefaultctor TColStd_QueueNodeOfQueueOfTransient;
 class TColStd_QueueNodeOfQueueOfTransient : public TCollection_MapNode {
 	public:
@@ -4713,6 +4852,7 @@ class TColStd_QueueNodeOfQueueOfTransient : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_QueueNodeOfQueueOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray1OfTransient;
 class TColStd_HArray1OfTransient : public MMgt_TShared {
@@ -4760,6 +4900,7 @@ class TColStd_HArray1OfTransient : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_StackNodeOfStackOfInteger;
 class TColStd_StackNodeOfStackOfInteger : public TCollection_MapNode {
 	public:
@@ -4787,6 +4928,7 @@ class TColStd_StackNodeOfStackOfInteger : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackNodeOfStackOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfExtendedString;
 class TColStd_SequenceNodeOfSequenceOfExtendedString : public TCollection_SeqNode {
@@ -4816,6 +4958,7 @@ class TColStd_SequenceNodeOfSequenceOfExtendedString : public TCollection_SeqNod
 	}
 };
 
+
 %nodefaultctor TColStd_DataMapIteratorOfDataMapOfIntegerReal;
 class TColStd_DataMapIteratorOfDataMapOfIntegerReal : public TCollection_BasicMapIterator {
 	public:
@@ -4837,6 +4980,7 @@ class TColStd_DataMapIteratorOfDataMapOfIntegerReal : public TCollection_BasicMa
 	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapIteratorOfDataMapOfIntegerReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfTransient;
 class TColStd_SequenceNodeOfSequenceOfTransient : public TCollection_SeqNode {
@@ -4865,6 +5009,7 @@ class TColStd_SequenceNodeOfSequenceOfTransient : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_ListOfTransient;
 class TColStd_ListOfTransient {
@@ -4916,6 +5061,7 @@ class TColStd_ListOfTransient {
 	}
 };
 
+
 %nodefaultctor TColStd_MapIteratorOfMapOfInteger;
 class TColStd_MapIteratorOfMapOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -4935,6 +5081,7 @@ class TColStd_MapIteratorOfMapOfInteger : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfMapOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceOfHExtendedString;
 class TColStd_SequenceOfHExtendedString : public TCollection_BaseSequence {
@@ -4990,6 +5137,7 @@ class TColStd_SequenceOfHExtendedString : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColStd_DataMapOfIntegerListOfInteger;
 class TColStd_DataMapOfIntegerListOfInteger : public TCollection_BasicMap {
 	public:
@@ -5023,6 +5171,7 @@ class TColStd_DataMapOfIntegerListOfInteger : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapOfIntegerListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SetOfInteger;
 class TColStd_SetOfInteger {
@@ -5060,6 +5209,7 @@ class TColStd_SetOfInteger {
 	}
 };
 
+
 %nodefaultctor TColStd_StackOfInteger;
 class TColStd_StackOfInteger {
 	public:
@@ -5089,6 +5239,7 @@ class TColStd_StackOfInteger {
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_StackOfReal;
 class TColStd_StackOfReal {
@@ -5120,6 +5271,7 @@ class TColStd_StackOfReal {
 	}
 };
 
+
 %nodefaultctor TColStd_StackIteratorOfStackOfReal;
 class TColStd_StackIteratorOfStackOfReal {
 	public:
@@ -5143,6 +5295,7 @@ class TColStd_StackIteratorOfStackOfReal {
 	if (__env){printf("## Call custom destructor for instance of TColStd_StackIteratorOfStackOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSequenceOfExtendedString;
 class TColStd_HSequenceOfExtendedString : public MMgt_TShared {
@@ -5214,6 +5367,7 @@ class TColStd_HSequenceOfExtendedString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_HArray2OfCharacter;
 class TColStd_HArray2OfCharacter : public MMgt_TShared {
 	public:
@@ -5266,6 +5420,7 @@ class TColStd_HArray2OfCharacter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_Array1OfAsciiString;
 class TColStd_Array1OfAsciiString {
 	public:
@@ -5306,6 +5461,7 @@ class TColStd_Array1OfAsciiString {
 	}
 };
 
+
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfReal;
 class TColStd_SequenceNodeOfSequenceOfReal : public TCollection_SeqNode {
 	public:
@@ -5333,6 +5489,7 @@ class TColStd_SequenceNodeOfSequenceOfReal : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_SequenceNodeOfSequenceOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array1OfExtendedString;
 class TColStd_Array1OfExtendedString {
@@ -5374,6 +5531,7 @@ class TColStd_Array1OfExtendedString {
 	}
 };
 
+
 %nodefaultctor TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger;
 class TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public TCollection_MapNode {
 	public:
@@ -5403,6 +5561,7 @@ class TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger : public TCollection_Ma
 	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapNodeOfDataMapOfIntegerListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_DataMapOfIntegerInteger;
 class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
@@ -5438,6 +5597,7 @@ class TColStd_DataMapOfIntegerInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfInteger;
 class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
 	public:
@@ -5466,6 +5626,7 @@ class TColStd_SequenceNodeOfSequenceOfInteger : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor TColStd_DataMapIteratorOfDataMapOfIntegerInteger;
 class TColStd_DataMapIteratorOfDataMapOfIntegerInteger : public TCollection_BasicMapIterator {
 	public:
@@ -5487,6 +5648,7 @@ class TColStd_DataMapIteratorOfDataMapOfIntegerInteger : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of TColStd_DataMapIteratorOfDataMapOfIntegerInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_SequenceNodeOfSequenceOfHAsciiString;
 class TColStd_SequenceNodeOfSequenceOfHAsciiString : public TCollection_SeqNode {
@@ -5516,6 +5678,7 @@ class TColStd_SequenceNodeOfSequenceOfHAsciiString : public TCollection_SeqNode 
 	}
 };
 
+
 %nodefaultctor TColStd_ListNodeOfListOfTransient;
 class TColStd_ListNodeOfListOfTransient : public TCollection_MapNode {
 	public:
@@ -5543,6 +5706,7 @@ class TColStd_ListNodeOfListOfTransient : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListNodeOfListOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_Array2OfReal;
 class TColStd_Array2OfReal {
@@ -5588,6 +5752,7 @@ class TColStd_Array2OfReal {
 	}
 };
 
+
 %nodefaultctor TColStd_MapIntegerHasher;
 class TColStd_MapIntegerHasher {
 	public:
@@ -5605,6 +5770,7 @@ class TColStd_MapIntegerHasher {
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapIntegerHasher\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_QueueOfReal;
 class TColStd_QueueOfReal {
@@ -5635,6 +5801,7 @@ class TColStd_QueueOfReal {
 	if (__env){printf("## Call custom destructor for instance of TColStd_QueueOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray2OfInteger;
 class TColStd_HArray2OfInteger : public MMgt_TShared {
@@ -5688,6 +5855,7 @@ class TColStd_HArray2OfInteger : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_QueueOfTransient;
 class TColStd_QueueOfTransient {
 	public:
@@ -5718,6 +5886,7 @@ class TColStd_QueueOfTransient {
 	}
 };
 
+
 %nodefaultctor TColStd_MapIteratorOfMapOfTransient;
 class TColStd_MapIteratorOfMapOfTransient : public TCollection_BasicMapIterator {
 	public:
@@ -5737,6 +5906,7 @@ class TColStd_MapIteratorOfMapOfTransient : public TCollection_BasicMapIterator 
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfMapOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HSetOfInteger;
 class TColStd_HSetOfInteger : public MMgt_TShared {
@@ -5792,6 +5962,7 @@ class TColStd_HSetOfInteger : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_HSetOfTransient;
 class TColStd_HSetOfTransient : public MMgt_TShared {
 	public:
@@ -5846,6 +6017,7 @@ class TColStd_HSetOfTransient : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColStd_MapIteratorOfPackedMapOfInteger;
 class TColStd_MapIteratorOfPackedMapOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -5865,6 +6037,7 @@ class TColStd_MapIteratorOfPackedMapOfInteger : public TCollection_BasicMapItera
 	if (__env){printf("## Call custom destructor for instance of TColStd_MapIteratorOfPackedMapOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_ListOfInteger;
 class TColStd_ListOfInteger {
@@ -5915,6 +6088,7 @@ class TColStd_ListOfInteger {
 	if (__env){printf("## Call custom destructor for instance of TColStd_ListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TColStd_HArray2OfTransient;
 class TColStd_HArray2OfTransient : public MMgt_TShared {

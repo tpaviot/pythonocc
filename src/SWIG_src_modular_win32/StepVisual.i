@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -166,6 +167,7 @@ class Handle_StepVisual_PresentationRepresentation : public Handle_StepRepr_Repr
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation;
 class Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation : public Handle_StepVisual_PresentationRepresentation {
 	public:
@@ -190,6 +192,7 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation : pu
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_MechanicalDesignGeometricPresentationRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_CompositeText;
 class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresentationItem {
@@ -216,6 +219,7 @@ class Handle_StepVisual_CompositeText : public Handle_StepGeom_GeometricRepresen
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_Invisibility;
 class Handle_StepVisual_Invisibility : public Handle_MMgt_TShared {
 	public:
@@ -240,6 +244,7 @@ class Handle_StepVisual_Invisibility : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_Invisibility\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_CameraModel;
 class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresentationItem {
@@ -266,6 +271,7 @@ class Handle_StepVisual_CameraModel : public Handle_StepGeom_GeometricRepresenta
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_SurfaceStyleSegmentationCurve;
 class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShared {
 	public:
@@ -290,6 +296,7 @@ class Handle_StepVisual_SurfaceStyleSegmentationCurve : public Handle_MMgt_TShar
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleSegmentationCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_Colour;
 class Handle_StepVisual_Colour : public Handle_MMgt_TShared {
@@ -316,6 +323,7 @@ class Handle_StepVisual_Colour : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PreDefinedColour;
 class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
 	public:
@@ -340,6 +348,7 @@ class Handle_StepVisual_PreDefinedColour : public Handle_StepVisual_Colour {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PreDefinedColour\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_CameraUsage;
 class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
@@ -366,6 +375,7 @@ class Handle_StepVisual_CameraUsage : public Handle_StepRepr_RepresentationMap {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_AnnotationText;
 class Handle_StepVisual_AnnotationText : public Handle_StepRepr_MappedItem {
 	public:
@@ -390,6 +400,7 @@ class Handle_StepVisual_AnnotationText : public Handle_StepRepr_MappedItem {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_AnnotationText\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_ContextDependentInvisibility;
 class Handle_StepVisual_ContextDependentInvisibility : public Handle_StepVisual_Invisibility {
@@ -416,6 +427,7 @@ class Handle_StepVisual_ContextDependentInvisibility : public Handle_StepVisual_
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_ExternallyDefinedCurveFont;
 class Handle_StepVisual_ExternallyDefinedCurveFont : public Handle_StepBasic_ExternallyDefinedItem {
 	public:
@@ -440,6 +452,7 @@ class Handle_StepVisual_ExternallyDefinedCurveFont : public Handle_StepBasic_Ext
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ExternallyDefinedCurveFont\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_MarkerMember;
 class Handle_StepVisual_MarkerMember : public Handle_StepData_SelectInt {
@@ -466,6 +479,7 @@ class Handle_StepVisual_MarkerMember : public Handle_StepData_SelectInt {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PresentationView;
 class Handle_StepVisual_PresentationView : public Handle_StepVisual_PresentationRepresentation {
 	public:
@@ -490,6 +504,7 @@ class Handle_StepVisual_PresentationView : public Handle_StepVisual_Presentation
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationView\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_StyledItem;
 class Handle_StepVisual_StyledItem : public Handle_StepRepr_RepresentationItem {
@@ -516,6 +531,7 @@ class Handle_StepVisual_StyledItem : public Handle_StepRepr_RepresentationItem {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_OverRidingStyledItem;
 class Handle_StepVisual_OverRidingStyledItem : public Handle_StepVisual_StyledItem {
 	public:
@@ -540,6 +556,7 @@ class Handle_StepVisual_OverRidingStyledItem : public Handle_StepVisual_StyledIt
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_OverRidingStyledItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_ContextDependentOverRidingStyledItem;
 class Handle_StepVisual_ContextDependentOverRidingStyledItem : public Handle_StepVisual_OverRidingStyledItem {
@@ -566,6 +583,7 @@ class Handle_StepVisual_ContextDependentOverRidingStyledItem : public Handle_Ste
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PresentationSize;
 class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
 	public:
@@ -590,6 +608,7 @@ class Handle_StepVisual_PresentationSize : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationSize\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_DraughtingPreDefinedColour;
 class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_PreDefinedColour {
@@ -616,6 +635,7 @@ class Handle_StepVisual_DraughtingPreDefinedColour : public Handle_StepVisual_Pr
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_HArray1OfTextOrCharacter;
 class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
 	public:
@@ -640,6 +660,7 @@ class Handle_StepVisual_HArray1OfTextOrCharacter : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfTextOrCharacter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_CameraModelD2;
 class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
@@ -666,6 +687,7 @@ class Handle_StepVisual_CameraModelD2 : public Handle_StepVisual_CameraModel {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_CameraModelD3;
 class Handle_StepVisual_CameraModelD3 : public Handle_StepVisual_CameraModel {
 	public:
@@ -690,6 +712,7 @@ class Handle_StepVisual_CameraModelD3 : public Handle_StepVisual_CameraModel {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraModelD3\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_CameraImage;
 class Handle_StepVisual_CameraImage : public Handle_StepRepr_MappedItem {
@@ -716,6 +739,7 @@ class Handle_StepVisual_CameraImage : public Handle_StepRepr_MappedItem {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_SurfaceStyleParameterLine;
 class Handle_StepVisual_SurfaceStyleParameterLine : public Handle_MMgt_TShared {
 	public:
@@ -740,6 +764,7 @@ class Handle_StepVisual_SurfaceStyleParameterLine : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleParameterLine\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_AnnotationOccurrence;
 class Handle_StepVisual_AnnotationOccurrence : public Handle_StepVisual_StyledItem {
@@ -766,6 +791,7 @@ class Handle_StepVisual_AnnotationOccurrence : public Handle_StepVisual_StyledIt
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_CameraImage2dWithScale;
 class Handle_StepVisual_CameraImage2dWithScale : public Handle_StepVisual_CameraImage {
 	public:
@@ -790,6 +816,7 @@ class Handle_StepVisual_CameraImage2dWithScale : public Handle_StepVisual_Camera
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraImage2dWithScale\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleAssignment;
 class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMgt_TShared {
@@ -816,6 +843,7 @@ class Handle_StepVisual_HArray1OfPresentationStyleAssignment : public Handle_MMg
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PresentationLayerAssignment;
 class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared {
 	public:
@@ -840,6 +868,7 @@ class Handle_StepVisual_PresentationLayerAssignment : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationLayerAssignment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_PresentationArea;
 class Handle_StepVisual_PresentationArea : public Handle_StepVisual_PresentationRepresentation {
@@ -866,6 +895,7 @@ class Handle_StepVisual_PresentationArea : public Handle_StepVisual_Presentation
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_MechanicalDesignGeometricPresentationArea;
 class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handle_StepVisual_PresentationArea {
 	public:
@@ -890,6 +920,7 @@ class Handle_StepVisual_MechanicalDesignGeometricPresentationArea : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_MechanicalDesignGeometricPresentationArea\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_PresentationStyleAssignment;
 class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared {
@@ -916,6 +947,7 @@ class Handle_StepVisual_PresentationStyleAssignment : public Handle_MMgt_TShared
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PresentationStyleByContext;
 class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_PresentationStyleAssignment {
 	public:
@@ -940,6 +972,7 @@ class Handle_StepVisual_PresentationStyleByContext : public Handle_StepVisual_Pr
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationStyleByContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_ViewVolume;
 class Handle_StepVisual_ViewVolume : public Handle_MMgt_TShared {
@@ -966,6 +999,7 @@ class Handle_StepVisual_ViewVolume : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_TextStyle;
 class Handle_StepVisual_TextStyle : public Handle_MMgt_TShared {
 	public:
@@ -990,6 +1024,7 @@ class Handle_StepVisual_TextStyle : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_TextStyle\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_TextStyleWithBoxCharacteristics;
 class Handle_StepVisual_TextStyleWithBoxCharacteristics : public Handle_StepVisual_TextStyle {
@@ -1016,6 +1051,7 @@ class Handle_StepVisual_TextStyleWithBoxCharacteristics : public Handle_StepVisu
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_SurfaceSideStyle;
 class Handle_StepVisual_SurfaceSideStyle : public Handle_MMgt_TShared {
 	public:
@@ -1040,6 +1076,7 @@ class Handle_StepVisual_SurfaceSideStyle : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceSideStyle\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_PointStyle;
 class Handle_StepVisual_PointStyle : public Handle_MMgt_TShared {
@@ -1066,6 +1103,7 @@ class Handle_StepVisual_PointStyle : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_HArray1OfDirectionCountSelect;
 class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShared {
 	public:
@@ -1090,6 +1128,7 @@ class Handle_StepVisual_HArray1OfDirectionCountSelect : public Handle_MMgt_TShar
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfDirectionCountSelect\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_FillAreaStyle;
 class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
@@ -1116,6 +1155,7 @@ class Handle_StepVisual_FillAreaStyle : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_ColourSpecification;
 class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
 	public:
@@ -1140,6 +1180,7 @@ class Handle_StepVisual_ColourSpecification : public Handle_StepVisual_Colour {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ColourSpecification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_ColourRgb;
 class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification {
@@ -1166,6 +1207,7 @@ class Handle_StepVisual_ColourRgb : public Handle_StepVisual_ColourSpecification
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PresentationSet;
 class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
 	public:
@@ -1190,6 +1232,7 @@ class Handle_StepVisual_PresentationSet : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationSet\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_CurveStyle;
 class Handle_StepVisual_CurveStyle : public Handle_MMgt_TShared {
@@ -1216,6 +1259,7 @@ class Handle_StepVisual_CurveStyle : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_ExternallyDefinedTextFont;
 class Handle_StepVisual_ExternallyDefinedTextFont : public Handle_StepBasic_ExternallyDefinedItem {
 	public:
@@ -1240,6 +1284,7 @@ class Handle_StepVisual_ExternallyDefinedTextFont : public Handle_StepBasic_Exte
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_ExternallyDefinedTextFont\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_TemplateInstance;
 class Handle_StepVisual_TemplateInstance : public Handle_StepRepr_MappedItem {
@@ -1266,6 +1311,7 @@ class Handle_StepVisual_TemplateInstance : public Handle_StepRepr_MappedItem {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_HArray1OfFillStyleSelect;
 class Handle_StepVisual_HArray1OfFillStyleSelect : public Handle_MMgt_TShared {
 	public:
@@ -1290,6 +1336,7 @@ class Handle_StepVisual_HArray1OfFillStyleSelect : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfFillStyleSelect\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_FillAreaStyleColour;
 class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
@@ -1316,6 +1363,7 @@ class Handle_StepVisual_FillAreaStyleColour : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_HArray1OfSurfaceStyleElementSelect;
 class Handle_StepVisual_HArray1OfSurfaceStyleElementSelect : public Handle_MMgt_TShared {
 	public:
@@ -1340,6 +1388,7 @@ class Handle_StepVisual_HArray1OfSurfaceStyleElementSelect : public Handle_MMgt_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfSurfaceStyleElementSelect\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleFillArea;
 class Handle_StepVisual_SurfaceStyleFillArea : public Handle_MMgt_TShared {
@@ -1366,6 +1415,7 @@ class Handle_StepVisual_SurfaceStyleFillArea : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PresentedItem;
 class Handle_StepVisual_PresentedItem : public Handle_MMgt_TShared {
 	public:
@@ -1390,6 +1440,7 @@ class Handle_StepVisual_PresentedItem : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentedItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_Template;
 class Handle_StepVisual_Template : public Handle_StepRepr_Representation {
@@ -1416,6 +1467,7 @@ class Handle_StepVisual_Template : public Handle_StepRepr_Representation {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_AreaInSet;
 class Handle_StepVisual_AreaInSet : public Handle_MMgt_TShared {
 	public:
@@ -1440,6 +1492,7 @@ class Handle_StepVisual_AreaInSet : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_AreaInSet\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_TextStyleForDefinedFont;
 class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
@@ -1466,6 +1519,7 @@ class Handle_StepVisual_TextStyleForDefinedFont : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PreDefinedItem;
 class Handle_StepVisual_PreDefinedItem : public Handle_MMgt_TShared {
 	public:
@@ -1490,6 +1544,7 @@ class Handle_StepVisual_PreDefinedItem : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PreDefinedItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_PreDefinedCurveFont;
 class Handle_StepVisual_PreDefinedCurveFont : public Handle_StepVisual_PreDefinedItem {
@@ -1516,6 +1571,7 @@ class Handle_StepVisual_PreDefinedCurveFont : public Handle_StepVisual_PreDefine
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_HArray1OfBoxCharacteristicSelect;
 class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TShared {
 	public:
@@ -1540,6 +1596,7 @@ class Handle_StepVisual_HArray1OfBoxCharacteristicSelect : public Handle_MMgt_TS
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfBoxCharacteristicSelect\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_PreDefinedTextFont;
 class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefinedItem {
@@ -1566,6 +1623,7 @@ class Handle_StepVisual_PreDefinedTextFont : public Handle_StepVisual_PreDefined
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_CurveStyleFontPattern;
 class Handle_StepVisual_CurveStyleFontPattern : public Handle_MMgt_TShared {
 	public:
@@ -1590,6 +1648,7 @@ class Handle_StepVisual_CurveStyleFontPattern : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CurveStyleFontPattern\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_SurfaceStyleUsage;
 class Handle_StepVisual_SurfaceStyleUsage : public Handle_MMgt_TShared {
@@ -1616,6 +1675,7 @@ class Handle_StepVisual_SurfaceStyleUsage : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PlanarExtent;
 class Handle_StepVisual_PlanarExtent : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -1640,6 +1700,7 @@ class Handle_StepVisual_PlanarExtent : public Handle_StepGeom_GeometricRepresent
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PlanarExtent\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_PlanarBox;
 class Handle_StepVisual_PlanarBox : public Handle_StepVisual_PlanarExtent {
@@ -1666,6 +1727,7 @@ class Handle_StepVisual_PlanarBox : public Handle_StepVisual_PlanarExtent {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_DraughtingAnnotationOccurrence;
 class Handle_StepVisual_DraughtingAnnotationOccurrence : public Handle_StepVisual_AnnotationOccurrence {
 	public:
@@ -1690,6 +1752,7 @@ class Handle_StepVisual_DraughtingAnnotationOccurrence : public Handle_StepVisua
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_DraughtingAnnotationOccurrence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_HArray1OfCurveStyleFontPattern;
 class Handle_StepVisual_HArray1OfCurveStyleFontPattern : public Handle_MMgt_TShared {
@@ -1716,6 +1779,7 @@ class Handle_StepVisual_HArray1OfCurveStyleFontPattern : public Handle_MMgt_TSha
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_HArray1OfPresentationStyleSelect;
 class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TShared {
 	public:
@@ -1740,6 +1804,7 @@ class Handle_StepVisual_HArray1OfPresentationStyleSelect : public Handle_MMgt_TS
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_HArray1OfPresentationStyleSelect\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_AnnotationTextOccurrence;
 class Handle_StepVisual_AnnotationTextOccurrence : public Handle_StepVisual_AnnotationOccurrence {
@@ -1766,6 +1831,7 @@ class Handle_StepVisual_AnnotationTextOccurrence : public Handle_StepVisual_Anno
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_DraughtingPreDefinedCurveFont;
 class Handle_StepVisual_DraughtingPreDefinedCurveFont : public Handle_StepVisual_PreDefinedCurveFont {
 	public:
@@ -1790,6 +1856,7 @@ class Handle_StepVisual_DraughtingPreDefinedCurveFont : public Handle_StepVisual
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_DraughtingPreDefinedCurveFont\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_TextLiteral;
 class Handle_StepVisual_TextLiteral : public Handle_StepGeom_GeometricRepresentationItem {
@@ -1816,6 +1883,7 @@ class Handle_StepVisual_TextLiteral : public Handle_StepGeom_GeometricRepresenta
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_CompositeTextWithExtent;
 class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_CompositeText {
 	public:
@@ -1840,6 +1908,7 @@ class Handle_StepVisual_CompositeTextWithExtent : public Handle_StepVisual_Compo
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CompositeTextWithExtent\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_DraughtingModel;
 class Handle_StepVisual_DraughtingModel : public Handle_StepRepr_Representation {
@@ -1866,6 +1935,7 @@ class Handle_StepVisual_DraughtingModel : public Handle_StepRepr_Representation 
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_SurfaceStyleBoundary;
 class Handle_StepVisual_SurfaceStyleBoundary : public Handle_MMgt_TShared {
 	public:
@@ -1890,6 +1960,7 @@ class Handle_StepVisual_SurfaceStyleBoundary : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleBoundary\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_HArray1OfLayeredItem;
 class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
@@ -1916,6 +1987,7 @@ class Handle_StepVisual_HArray1OfLayeredItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PresentationLayerUsage;
 class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 	public:
@@ -1940,6 +2012,7 @@ class Handle_StepVisual_PresentationLayerUsage : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentationLayerUsage\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_HArray1OfStyleContextSelect;
 class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared {
@@ -1966,6 +2039,7 @@ class Handle_StepVisual_HArray1OfStyleContextSelect : public Handle_MMgt_TShared
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_PresentedItemRepresentation;
 class Handle_StepVisual_PresentedItemRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -1990,6 +2064,7 @@ class Handle_StepVisual_PresentedItemRepresentation : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_PresentedItemRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_HArray1OfInvisibleItem;
 class Handle_StepVisual_HArray1OfInvisibleItem : public Handle_MMgt_TShared {
@@ -2016,6 +2091,7 @@ class Handle_StepVisual_HArray1OfInvisibleItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_SurfaceStyleSilhouette;
 class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 	public:
@@ -2040,6 +2116,7 @@ class Handle_StepVisual_SurfaceStyleSilhouette : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleSilhouette\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_BackgroundColour;
 class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
@@ -2066,6 +2143,7 @@ class Handle_StepVisual_BackgroundColour : public Handle_StepVisual_Colour {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_CameraImage3dWithScale;
 class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_CameraImage {
 	public:
@@ -2090,6 +2168,7 @@ class Handle_StepVisual_CameraImage3dWithScale : public Handle_StepVisual_Camera
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_CameraImage3dWithScale\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepVisual_CurveStyleFont;
 class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
@@ -2116,6 +2195,7 @@ class Handle_StepVisual_CurveStyleFont : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepVisual_SurfaceStyleControlGrid;
 class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
 	public:
@@ -2140,6 +2220,7 @@ class Handle_StepVisual_SurfaceStyleControlGrid : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepVisual_SurfaceStyleControlGrid\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_CurveStyleFontPattern;
 class StepVisual_CurveStyleFontPattern : public MMgt_TShared {
@@ -2177,6 +2258,7 @@ class StepVisual_CurveStyleFontPattern : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_Invisibility;
 class StepVisual_Invisibility : public MMgt_TShared {
 	public:
@@ -2213,6 +2295,7 @@ class StepVisual_Invisibility : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_ContextDependentInvisibility;
 class StepVisual_ContextDependentInvisibility : public StepVisual_Invisibility {
 	public:
@@ -2243,6 +2326,7 @@ class StepVisual_ContextDependentInvisibility : public StepVisual_Invisibility {
 	}
 };
 
+
 %nodefaultctor StepVisual_SurfaceStyleElementSelect;
 class StepVisual_SurfaceStyleElementSelect : public StepData_SelectType {
 	public:
@@ -2264,6 +2348,7 @@ class StepVisual_SurfaceStyleElementSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleElementSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_CameraUsage;
 class StepVisual_CameraUsage : public StepRepr_RepresentationMap {
@@ -2290,6 +2375,7 @@ class StepVisual_CameraUsage : public StepRepr_RepresentationMap {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraUsage\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfDirectionCountSelect;
 class StepVisual_HArray1OfDirectionCountSelect : public MMgt_TShared {
@@ -2337,6 +2423,7 @@ class StepVisual_HArray1OfDirectionCountSelect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_Array1OfCurveStyleFontPattern;
 class StepVisual_Array1OfCurveStyleFontPattern {
 	public:
@@ -2377,6 +2464,7 @@ class StepVisual_Array1OfCurveStyleFontPattern {
 	}
 };
 
+
 %nodefaultctor StepVisual_Array1OfStyleContextSelect;
 class StepVisual_Array1OfStyleContextSelect {
 	public:
@@ -2416,6 +2504,7 @@ class StepVisual_Array1OfStyleContextSelect {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfStyleContextSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfCurveStyleFontPattern;
 class StepVisual_HArray1OfCurveStyleFontPattern : public MMgt_TShared {
@@ -2463,6 +2552,7 @@ class StepVisual_HArray1OfCurveStyleFontPattern : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentedItemRepresentation;
 class StepVisual_PresentedItemRepresentation : public MMgt_TShared {
 	public:
@@ -2499,6 +2589,7 @@ class StepVisual_PresentedItemRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationRepresentationSelect;
 class StepVisual_PresentationRepresentationSelect : public StepData_SelectType {
 	public:
@@ -2518,6 +2609,7 @@ class StepVisual_PresentationRepresentationSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationRepresentationSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfStyleContextSelect;
 class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
@@ -2565,6 +2657,7 @@ class StepVisual_HArray1OfStyleContextSelect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_BoxCharacteristicSelect;
 class StepVisual_BoxCharacteristicSelect {
 	public:
@@ -2586,6 +2679,7 @@ class StepVisual_BoxCharacteristicSelect {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_BoxCharacteristicSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfPresentationStyleSelect;
 class StepVisual_HArray1OfPresentationStyleSelect : public MMgt_TShared {
@@ -2633,6 +2727,7 @@ class StepVisual_HArray1OfPresentationStyleSelect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationStyleAssignment;
 class StepVisual_PresentationStyleAssignment : public MMgt_TShared {
 	public:
@@ -2669,6 +2764,7 @@ class StepVisual_PresentationStyleAssignment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationStyleByContext;
 class StepVisual_PresentationStyleByContext : public StepVisual_PresentationStyleAssignment {
 	public:
@@ -2698,6 +2794,7 @@ class StepVisual_PresentationStyleByContext : public StepVisual_PresentationStyl
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationStyleByContext\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_CurveStyle;
 class StepVisual_CurveStyle : public MMgt_TShared {
@@ -2743,6 +2840,7 @@ class StepVisual_CurveStyle : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_SurfaceStyleSilhouette;
 class StepVisual_SurfaceStyleSilhouette : public MMgt_TShared {
 	public:
@@ -2775,6 +2873,7 @@ class StepVisual_SurfaceStyleSilhouette : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_Colour;
 class StepVisual_Colour : public MMgt_TShared {
 	public:
@@ -2800,6 +2899,7 @@ class StepVisual_Colour : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_Colour\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_BackgroundColour;
 class StepVisual_BackgroundColour : public StepVisual_Colour {
@@ -2830,6 +2930,7 @@ class StepVisual_BackgroundColour : public StepVisual_Colour {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_BackgroundColour\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_PreDefinedItem;
 class StepVisual_PreDefinedItem : public MMgt_TShared {
@@ -2863,6 +2964,7 @@ class StepVisual_PreDefinedItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_PreDefinedCurveFont;
 class StepVisual_PreDefinedCurveFont : public StepVisual_PreDefinedItem {
 	public:
@@ -2887,6 +2989,7 @@ class StepVisual_PreDefinedCurveFont : public StepVisual_PreDefinedItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_DraughtingPreDefinedCurveFont;
 class StepVisual_DraughtingPreDefinedCurveFont : public StepVisual_PreDefinedCurveFont {
 	public:
@@ -2910,6 +3013,7 @@ class StepVisual_DraughtingPreDefinedCurveFont : public StepVisual_PreDefinedCur
 	if (__env){printf("## Call custom destructor for instance of StepVisual_DraughtingPreDefinedCurveFont\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_ViewVolume;
 class StepVisual_ViewVolume : public MMgt_TShared {
@@ -2975,6 +3079,7 @@ class StepVisual_ViewVolume : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_PreDefinedColour;
 class StepVisual_PreDefinedColour : public StepVisual_Colour {
 	public:
@@ -3004,6 +3109,7 @@ class StepVisual_PreDefinedColour : public StepVisual_Colour {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PreDefinedColour\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_StyledItem;
 class StepVisual_StyledItem : public StepRepr_RepresentationItem {
@@ -3047,6 +3153,7 @@ class StepVisual_StyledItem : public StepRepr_RepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_PlanarExtent;
 class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -3085,6 +3192,7 @@ class StepVisual_PlanarExtent : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_PlanarBox;
 class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 	public:
@@ -3114,6 +3222,7 @@ class StepVisual_PlanarBox : public StepVisual_PlanarExtent {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PlanarBox\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_OverRidingStyledItem;
 class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
@@ -3149,6 +3258,7 @@ class StepVisual_OverRidingStyledItem : public StepVisual_StyledItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_ContextDependentOverRidingStyledItem;
 class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRidingStyledItem {
 	public:
@@ -3183,6 +3293,7 @@ class StepVisual_ContextDependentOverRidingStyledItem : public StepVisual_OverRi
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationRepresentation;
 class StepVisual_PresentationRepresentation : public StepRepr_Representation {
 	public:
@@ -3209,6 +3320,7 @@ class StepVisual_PresentationRepresentation : public StepRepr_Representation {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationArea;
 class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation {
 	public:
@@ -3232,6 +3344,7 @@ class StepVisual_PresentationArea : public StepVisual_PresentationRepresentation
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationArea\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_MechanicalDesignGeometricPresentationArea;
 class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_PresentationArea {
@@ -3257,6 +3370,7 @@ class StepVisual_MechanicalDesignGeometricPresentationArea : public StepVisual_P
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationSizeAssignmentSelect;
 class StepVisual_PresentationSizeAssignmentSelect : public StepData_SelectType {
 	public:
@@ -3278,6 +3392,7 @@ class StepVisual_PresentationSizeAssignmentSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationSizeAssignmentSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_PointStyle;
 class StepVisual_PointStyle : public MMgt_TShared {
@@ -3323,6 +3438,7 @@ class StepVisual_PointStyle : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_MarkerMember;
 class StepVisual_MarkerMember : public StepData_SelectInt {
 	public:
@@ -3363,6 +3479,7 @@ class StepVisual_MarkerMember : public StepData_SelectInt {
 	}
 };
 
+
 %nodefaultctor StepVisual_TextStyle;
 class StepVisual_TextStyle : public MMgt_TShared {
 	public:
@@ -3399,6 +3516,7 @@ class StepVisual_TextStyle : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_TextStyleWithBoxCharacteristics;
 class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
 	public:
@@ -3433,6 +3551,7 @@ class StepVisual_TextStyleWithBoxCharacteristics : public StepVisual_TextStyle {
 	}
 };
 
+
 %nodefaultctor StepVisual_MarkerSelect;
 class StepVisual_MarkerSelect : public StepData_SelectType {
 	public:
@@ -3454,6 +3573,7 @@ class StepVisual_MarkerSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_MarkerSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_SurfaceStyleParameterLine;
 class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
@@ -3495,6 +3615,7 @@ class StepVisual_SurfaceStyleParameterLine : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_CameraImage;
 class StepVisual_CameraImage : public StepRepr_MappedItem {
 	public:
@@ -3521,6 +3642,7 @@ class StepVisual_CameraImage : public StepRepr_MappedItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_CameraImage3dWithScale;
 class StepVisual_CameraImage3dWithScale : public StepVisual_CameraImage {
 	public:
@@ -3544,6 +3666,7 @@ class StepVisual_CameraImage3dWithScale : public StepVisual_CameraImage {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraImage3dWithScale\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_CompositeText;
 class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
@@ -3583,6 +3706,7 @@ class StepVisual_CompositeText : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationStyleSelect;
 class StepVisual_PresentationStyleSelect : public StepData_SelectType {
 	public:
@@ -3604,6 +3728,7 @@ class StepVisual_PresentationStyleSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationStyleSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_ExternallyDefinedCurveFont;
 class StepVisual_ExternallyDefinedCurveFont : public StepBasic_ExternallyDefinedItem {
@@ -3630,6 +3755,7 @@ class StepVisual_ExternallyDefinedCurveFont : public StepBasic_ExternallyDefined
 	if (__env){printf("## Call custom destructor for instance of StepVisual_ExternallyDefinedCurveFont\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfLayeredItem;
 class StepVisual_HArray1OfLayeredItem : public MMgt_TShared {
@@ -3677,6 +3803,7 @@ class StepVisual_HArray1OfLayeredItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_ColourSpecification;
 class StepVisual_ColourSpecification : public StepVisual_Colour {
 	public:
@@ -3708,6 +3835,7 @@ class StepVisual_ColourSpecification : public StepVisual_Colour {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_ColourSpecification\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_ColourRgb;
 class StepVisual_ColourRgb : public StepVisual_ColourSpecification {
@@ -3746,6 +3874,7 @@ class StepVisual_ColourRgb : public StepVisual_ColourSpecification {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_ColourRgb\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_Array1OfTextOrCharacter;
 class StepVisual_Array1OfTextOrCharacter {
@@ -3786,6 +3915,7 @@ class StepVisual_Array1OfTextOrCharacter {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfTextOrCharacter\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_PresentationLayerAssignment;
 class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
@@ -3831,6 +3961,7 @@ class StepVisual_PresentationLayerAssignment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_FillAreaStyleColour;
 class StepVisual_FillAreaStyleColour : public MMgt_TShared {
 	public:
@@ -3867,6 +3998,7 @@ class StepVisual_FillAreaStyleColour : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_InvisibleItem;
 class StepVisual_InvisibleItem : public StepData_SelectType {
 	public:
@@ -3888,6 +4020,7 @@ class StepVisual_InvisibleItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_InvisibleItem\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_PresentationView;
 class StepVisual_PresentationView : public StepVisual_PresentationRepresentation {
@@ -3914,6 +4047,7 @@ class StepVisual_PresentationView : public StepVisual_PresentationRepresentation
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationView\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_PresentationLayerUsage;
 class StepVisual_PresentationLayerUsage : public MMgt_TShared {
@@ -3950,6 +4084,7 @@ class StepVisual_PresentationLayerUsage : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationLayerUsage\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_TextLiteral;
 class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
@@ -4001,6 +4136,7 @@ class StepVisual_TextLiteral : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationSize;
 class StepVisual_PresentationSize : public MMgt_TShared {
 	public:
@@ -4036,6 +4172,7 @@ class StepVisual_PresentationSize : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentationSize\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_Array1OfFillStyleSelect;
 class StepVisual_Array1OfFillStyleSelect {
@@ -4077,6 +4214,7 @@ class StepVisual_Array1OfFillStyleSelect {
 	}
 };
 
+
 %nodefaultctor StepVisual_TextStyleForDefinedFont;
 class StepVisual_TextStyleForDefinedFont : public MMgt_TShared {
 	public:
@@ -4109,6 +4247,7 @@ class StepVisual_TextStyleForDefinedFont : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_CameraModel;
 class StepVisual_CameraModel : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -4134,6 +4273,7 @@ class StepVisual_CameraModel : public StepGeom_GeometricRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraModel\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_CameraModelD2;
 class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
@@ -4170,6 +4310,7 @@ class StepVisual_CameraModelD2 : public StepVisual_CameraModel {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraModelD2\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_CurveStyleFont;
 class StepVisual_CurveStyleFont : public MMgt_TShared {
@@ -4211,6 +4352,7 @@ class StepVisual_CurveStyleFont : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_SurfaceStyleFillArea;
 class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
 	public:
@@ -4243,6 +4385,7 @@ class StepVisual_SurfaceStyleFillArea : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentationSet;
 class StepVisual_PresentationSet : public MMgt_TShared {
 	public:
@@ -4269,6 +4412,7 @@ class StepVisual_PresentationSet : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_ExternallyDefinedTextFont;
 class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedItem {
 	public:
@@ -4294,6 +4438,7 @@ class StepVisual_ExternallyDefinedTextFont : public StepBasic_ExternallyDefinedI
 	if (__env){printf("## Call custom destructor for instance of StepVisual_ExternallyDefinedTextFont\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_SurfaceSideStyle;
 class StepVisual_SurfaceSideStyle : public MMgt_TShared {
@@ -4335,6 +4480,7 @@ class StepVisual_SurfaceSideStyle : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_SurfaceStyleUsage;
 class StepVisual_SurfaceStyleUsage : public MMgt_TShared {
 	public:
@@ -4371,6 +4517,7 @@ class StepVisual_SurfaceStyleUsage : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_AnnotationText;
 class StepVisual_AnnotationText : public StepRepr_MappedItem {
 	public:
@@ -4396,6 +4543,7 @@ class StepVisual_AnnotationText : public StepRepr_MappedItem {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationText\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfSurfaceStyleElementSelect;
 class StepVisual_HArray1OfSurfaceStyleElementSelect : public MMgt_TShared {
@@ -4443,6 +4591,7 @@ class StepVisual_HArray1OfSurfaceStyleElementSelect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_Array1OfBoxCharacteristicSelect;
 class StepVisual_Array1OfBoxCharacteristicSelect {
 	public:
@@ -4483,6 +4632,7 @@ class StepVisual_Array1OfBoxCharacteristicSelect {
 	}
 };
 
+
 %nodefaultctor StepVisual_StyleContextSelect;
 class StepVisual_StyleContextSelect : public StepData_SelectType {
 	public:
@@ -4504,6 +4654,7 @@ class StepVisual_StyleContextSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_StyleContextSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_AreaInSet;
 class StepVisual_AreaInSet : public MMgt_TShared {
@@ -4541,6 +4692,7 @@ class StepVisual_AreaInSet : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_CameraImage2dWithScale;
 class StepVisual_CameraImage2dWithScale : public StepVisual_CameraImage {
 	public:
@@ -4567,6 +4719,7 @@ class StepVisual_CameraImage2dWithScale : public StepVisual_CameraImage {
 	}
 };
 
+
 %nodefaultctor StepVisual_CurveStyleFontSelect;
 class StepVisual_CurveStyleFontSelect : public StepData_SelectType {
 	public:
@@ -4588,6 +4741,7 @@ class StepVisual_CurveStyleFontSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_CurveStyleFontSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_Template;
 class StepVisual_Template : public StepRepr_Representation {
@@ -4614,6 +4768,7 @@ class StepVisual_Template : public StepRepr_Representation {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_Template\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_Array1OfPresentationStyleAssignment;
 class StepVisual_Array1OfPresentationStyleAssignment {
@@ -4655,6 +4810,7 @@ class StepVisual_Array1OfPresentationStyleAssignment {
 	}
 };
 
+
 %nodefaultctor StepVisual_LayeredItem;
 class StepVisual_LayeredItem : public StepData_SelectType {
 	public:
@@ -4674,6 +4830,7 @@ class StepVisual_LayeredItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_LayeredItem\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_FillAreaStyle;
 class StepVisual_FillAreaStyle : public MMgt_TShared {
@@ -4715,6 +4872,7 @@ class StepVisual_FillAreaStyle : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_AnnotationOccurrence;
 class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
 	public:
@@ -4740,6 +4898,7 @@ class StepVisual_AnnotationOccurrence : public StepVisual_StyledItem {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_AnnotationOccurrence\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_CompositeTextWithExtent;
 class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
@@ -4775,6 +4934,7 @@ class StepVisual_CompositeTextWithExtent : public StepVisual_CompositeText {
 	}
 };
 
+
 %nodefaultctor StepVisual_SurfaceStyleBoundary;
 class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 	public:
@@ -4806,6 +4966,7 @@ class StepVisual_SurfaceStyleBoundary : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleBoundary\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_Array1OfLayeredItem;
 class StepVisual_Array1OfLayeredItem {
@@ -4847,6 +5008,7 @@ class StepVisual_Array1OfLayeredItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_MechanicalDesignGeometricPresentationRepresentation;
 class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public StepVisual_PresentationRepresentation {
 	public:
@@ -4872,6 +5034,7 @@ class StepVisual_MechanicalDesignGeometricPresentationRepresentation : public St
 	if (__env){printf("## Call custom destructor for instance of StepVisual_MechanicalDesignGeometricPresentationRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_DraughtingPreDefinedColour;
 class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour {
@@ -4899,6 +5062,7 @@ class StepVisual_DraughtingPreDefinedColour : public StepVisual_PreDefinedColour
 	}
 };
 
+
 %nodefaultctor StepVisual_DirectionCountSelect;
 class StepVisual_DirectionCountSelect {
 	public:
@@ -4925,6 +5089,7 @@ class StepVisual_DirectionCountSelect {
 	}
 };
 
+
 %nodefaultctor StepVisual_TemplateInstance;
 class StepVisual_TemplateInstance : public StepRepr_MappedItem {
 	public:
@@ -4950,6 +5115,7 @@ class StepVisual_TemplateInstance : public StepRepr_MappedItem {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_TemplateInstance\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfTextOrCharacter;
 class StepVisual_HArray1OfTextOrCharacter : public MMgt_TShared {
@@ -4997,6 +5163,7 @@ class StepVisual_HArray1OfTextOrCharacter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_SurfaceStyleSegmentationCurve;
 class StepVisual_SurfaceStyleSegmentationCurve : public MMgt_TShared {
 	public:
@@ -5029,6 +5196,7 @@ class StepVisual_SurfaceStyleSegmentationCurve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_FontSelect;
 class StepVisual_FontSelect : public StepData_SelectType {
 	public:
@@ -5048,6 +5216,7 @@ class StepVisual_FontSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_FontSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_Array1OfPresentationStyleSelect;
 class StepVisual_Array1OfPresentationStyleSelect {
@@ -5088,6 +5257,7 @@ class StepVisual_Array1OfPresentationStyleSelect {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_Array1OfPresentationStyleSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfInvisibleItem;
 class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
@@ -5135,6 +5305,7 @@ class StepVisual_HArray1OfInvisibleItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_PresentedItem;
 class StepVisual_PresentedItem : public MMgt_TShared {
 	public:
@@ -5160,6 +5331,7 @@ class StepVisual_PresentedItem : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PresentedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_Array1OfDirectionCountSelect;
 class StepVisual_Array1OfDirectionCountSelect {
@@ -5201,6 +5373,7 @@ class StepVisual_Array1OfDirectionCountSelect {
 	}
 };
 
+
 %nodefaultctor StepVisual_Array1OfInvisibleItem;
 class StepVisual_Array1OfInvisibleItem {
 	public:
@@ -5241,6 +5414,7 @@ class StepVisual_Array1OfInvisibleItem {
 	}
 };
 
+
 %nodefaultctor StepVisual_AnnotationTextOccurrence;
 class StepVisual_AnnotationTextOccurrence : public StepVisual_AnnotationOccurrence {
 	public:
@@ -5267,6 +5441,7 @@ class StepVisual_AnnotationTextOccurrence : public StepVisual_AnnotationOccurren
 	}
 };
 
+
 %nodefaultctor StepVisual_PreDefinedTextFont;
 class StepVisual_PreDefinedTextFont : public StepVisual_PreDefinedItem {
 	public:
@@ -5292,6 +5467,7 @@ class StepVisual_PreDefinedTextFont : public StepVisual_PreDefinedItem {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_PreDefinedTextFont\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_CameraModelD3;
 class StepVisual_CameraModelD3 : public StepVisual_CameraModel {
@@ -5330,6 +5506,7 @@ class StepVisual_CameraModelD3 : public StepVisual_CameraModel {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_CameraModelD3\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_Array1OfSurfaceStyleElementSelect;
 class StepVisual_Array1OfSurfaceStyleElementSelect {
@@ -5371,6 +5548,7 @@ class StepVisual_Array1OfSurfaceStyleElementSelect {
 	}
 };
 
+
 %nodefaultctor StepVisual_SurfaceStyleControlGrid;
 class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
 	public:
@@ -5402,6 +5580,7 @@ class StepVisual_SurfaceStyleControlGrid : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_SurfaceStyleControlGrid\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfFillStyleSelect;
 class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
@@ -5449,6 +5628,7 @@ class StepVisual_HArray1OfFillStyleSelect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_HArray1OfPresentationStyleAssignment;
 class StepVisual_HArray1OfPresentationStyleAssignment : public MMgt_TShared {
 	public:
@@ -5495,6 +5675,7 @@ class StepVisual_HArray1OfPresentationStyleAssignment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepVisual_FillStyleSelect;
 class StepVisual_FillStyleSelect : public StepData_SelectType {
 	public:
@@ -5512,6 +5693,7 @@ class StepVisual_FillStyleSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_FillStyleSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_DraughtingModel;
 class StepVisual_DraughtingModel : public StepRepr_Representation {
@@ -5539,6 +5721,7 @@ class StepVisual_DraughtingModel : public StepRepr_Representation {
 	}
 };
 
+
 %nodefaultctor StepVisual_AreaOrView;
 class StepVisual_AreaOrView : public StepData_SelectType {
 	public:
@@ -5558,6 +5741,7 @@ class StepVisual_AreaOrView : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_AreaOrView\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_DraughtingAnnotationOccurrence;
 class StepVisual_DraughtingAnnotationOccurrence : public StepVisual_AnnotationOccurrence {
@@ -5585,6 +5769,7 @@ class StepVisual_DraughtingAnnotationOccurrence : public StepVisual_AnnotationOc
 	}
 };
 
+
 %nodefaultctor StepVisual_InvisibilityContext;
 class StepVisual_InvisibilityContext : public StepData_SelectType {
 	public:
@@ -5604,6 +5789,7 @@ class StepVisual_InvisibilityContext : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_InvisibilityContext\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_TextOrCharacter;
 class StepVisual_TextOrCharacter : public StepData_SelectType {
@@ -5626,6 +5812,7 @@ class StepVisual_TextOrCharacter : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepVisual_TextOrCharacter\n");}
 	}
 };
+
 
 %nodefaultctor StepVisual_HArray1OfBoxCharacteristicSelect;
 class StepVisual_HArray1OfBoxCharacteristicSelect : public MMgt_TShared {

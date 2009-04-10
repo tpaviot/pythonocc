@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -149,6 +150,7 @@ class Handle_STEPControl_ActorRead : public Handle_Transfer_ActorOfTransientProc
 	}
 };
 
+
 %nodefaultctor Handle_STEPControl_ActorWrite;
 class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProcess {
 	public:
@@ -173,6 +175,7 @@ class Handle_STEPControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPControl_ActorWrite\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPControl_Controller;
 class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
@@ -199,6 +202,7 @@ class Handle_STEPControl_Controller : public Handle_XSControl_Controller {
 	}
 };
 
+
 %nodefaultctor STEPControl_Reader;
 class STEPControl_Reader : public XSControl_Reader {
 	public:
@@ -220,6 +224,7 @@ class STEPControl_Reader : public XSControl_Reader {
 	if (__env){printf("## Call custom destructor for instance of STEPControl_Reader\n");}
 	}
 };
+
 
 %nodefaultctor STEPControl_ActorRead;
 class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
@@ -260,6 +265,7 @@ class STEPControl_ActorRead : public Transfer_ActorOfTransientProcess {
 	if (__env){printf("## Call custom destructor for instance of STEPControl_ActorRead\n");}
 	}
 };
+
 
 %nodefaultctor STEPControl_ActorWrite;
 class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
@@ -309,6 +315,7 @@ class STEPControl_ActorWrite : public Transfer_ActorOfFinderProcess {
 	}
 };
 
+
 %nodefaultctor STEPControl_Controller;
 class STEPControl_Controller : public XSControl_Controller {
 	public:
@@ -344,6 +351,7 @@ class STEPControl_Controller : public XSControl_Controller {
 	if (__env){printf("## Call custom destructor for instance of STEPControl_Controller\n");}
 	}
 };
+
 
 %nodefaultctor STEPControl_Writer;
 class STEPControl_Writer {

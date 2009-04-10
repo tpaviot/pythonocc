@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_GraphTools_SC : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GraphTools_ListNodeOfListOfSequenceOfInteger;
 class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -163,6 +165,7 @@ class Handle_GraphTools_ListNodeOfListOfSequenceOfInteger : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_GraphTools_ListNodeOfSCList;
 class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 	public:
@@ -187,6 +190,7 @@ class Handle_GraphTools_ListNodeOfSCList : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_GraphTools_ListNodeOfSCList\n");}
 	}
 };
+
 
 %nodefaultctor GraphTools_ListOfSequenceOfInteger;
 class GraphTools_ListOfSequenceOfInteger {
@@ -238,6 +242,7 @@ class GraphTools_ListOfSequenceOfInteger {
 	}
 };
 
+
 %nodefaultctor GraphTools_RGNode;
 class GraphTools_RGNode {
 	public:
@@ -267,6 +272,7 @@ class GraphTools_RGNode {
 	if (__env){printf("## Call custom destructor for instance of GraphTools_RGNode\n");}
 	}
 };
+
 
 %nodefaultctor GraphTools_SCList;
 class GraphTools_SCList {
@@ -318,6 +324,7 @@ class GraphTools_SCList {
 	}
 };
 
+
 %nodefaultctor GraphTools_ListIteratorOfListOfSequenceOfInteger;
 class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 	public:
@@ -341,6 +348,7 @@ class GraphTools_ListIteratorOfListOfSequenceOfInteger {
 	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfListOfSequenceOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor GraphTools_TSNode;
 class GraphTools_TSNode {
@@ -370,6 +378,7 @@ class GraphTools_TSNode {
 	}
 };
 
+
 %nodefaultctor GraphTools_ListNodeOfSCList;
 class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 	public:
@@ -398,6 +407,7 @@ class GraphTools_ListNodeOfSCList : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor GraphTools_ListIteratorOfSCList;
 class GraphTools_ListIteratorOfSCList {
 	public:
@@ -421,6 +431,7 @@ class GraphTools_ListIteratorOfSCList {
 	if (__env){printf("## Call custom destructor for instance of GraphTools_ListIteratorOfSCList\n");}
 	}
 };
+
 
 %nodefaultctor GraphTools_SC;
 class GraphTools_SC : public MMgt_TShared {
@@ -463,6 +474,7 @@ class GraphTools_SC : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of GraphTools_SC\n");}
 	}
 };
+
 
 %nodefaultctor GraphTools_ListNodeOfListOfSequenceOfInteger;
 class GraphTools_ListNodeOfListOfSequenceOfInteger : public TCollection_MapNode {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -163,6 +164,7 @@ class CSLib {
 	}
 };
 
+
 %nodefaultctor CSLib_Class2d;
 class CSLib_Class2d {
 	public:
@@ -188,6 +190,7 @@ class CSLib_Class2d {
 	if (__env){printf("## Call custom destructor for instance of CSLib_Class2d\n");}
 	}
 };
+
 
 %nodefaultctor CSLib_NormalPolyDef;
 class CSLib_NormalPolyDef : public math_FunctionWithDerivative {

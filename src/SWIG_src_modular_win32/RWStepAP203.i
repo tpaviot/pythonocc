@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepAP203_RWChangeRequest {
 	}
 };
 
+
 %nodefaultctor RWStepAP203_RWCcDesignSecurityClassification;
 class RWStepAP203_RWCcDesignSecurityClassification {
 	public:
@@ -152,6 +154,7 @@ class RWStepAP203_RWCcDesignSecurityClassification {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSecurityClassification\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP203_RWStartRequest;
 class RWStepAP203_RWStartRequest {
@@ -173,6 +176,7 @@ class RWStepAP203_RWStartRequest {
 	}
 };
 
+
 %nodefaultctor RWStepAP203_RWStartWork;
 class RWStepAP203_RWStartWork {
 	public:
@@ -192,6 +196,7 @@ class RWStepAP203_RWStartWork {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWStartWork\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP203_RWCcDesignDateAndTimeAssignment;
 class RWStepAP203_RWCcDesignDateAndTimeAssignment {
@@ -213,6 +218,7 @@ class RWStepAP203_RWCcDesignDateAndTimeAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP203_RWChange;
 class RWStepAP203_RWChange {
 	public:
@@ -232,6 +238,7 @@ class RWStepAP203_RWChange {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWChange\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP203_RWCcDesignCertification;
 class RWStepAP203_RWCcDesignCertification {
@@ -253,6 +260,7 @@ class RWStepAP203_RWCcDesignCertification {
 	}
 };
 
+
 %nodefaultctor RWStepAP203_RWCcDesignPersonAndOrganizationAssignment;
 class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 	public:
@@ -272,6 +280,7 @@ class RWStepAP203_RWCcDesignPersonAndOrganizationAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignPersonAndOrganizationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP203_RWCcDesignApproval;
 class RWStepAP203_RWCcDesignApproval {
@@ -293,6 +302,7 @@ class RWStepAP203_RWCcDesignApproval {
 	}
 };
 
+
 %nodefaultctor RWStepAP203_RWCcDesignSpecificationReference;
 class RWStepAP203_RWCcDesignSpecificationReference {
 	public:
@@ -312,6 +322,7 @@ class RWStepAP203_RWCcDesignSpecificationReference {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP203_RWCcDesignSpecificationReference\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP203_RWCcDesignContract;
 class RWStepAP203_RWCcDesignContract {

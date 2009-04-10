@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PShort_HArray2OfShortReal : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PShort_HSequenceOfShortReal;
 class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PShort_HSequenceOfShortReal : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PShort_HSequenceOfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PShort_SeqNodeOfHSequenceOfShortReal;
 class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged {
@@ -188,6 +191,7 @@ class Handle_PShort_SeqNodeOfHSequenceOfShortReal : public Handle_PMMgt_PManaged
 	}
 };
 
+
 %nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
 class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStandard_ArrayNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public Handle_PStand
 	if (__env){printf("## Call custom destructor for instance of Handle_PShort_VArrayNodeOfFieldOfHArray2OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
 class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStandard_ArrayNode {
@@ -238,6 +243,7 @@ class Handle_PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public Handle_PStand
 	}
 };
 
+
 %nodefaultctor Handle_PShort_HArray1OfShortReal;
 class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 	public:
@@ -263,6 +269,7 @@ class Handle_PShort_HArray1OfShortReal : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PShort_VArrayTNodeOfFieldOfHArray2OfShortReal;
 class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
 	public:
@@ -282,6 +289,7 @@ class PShort_VArrayTNodeOfFieldOfHArray2OfShortReal {
 	if (__env){printf("## Call custom destructor for instance of PShort_VArrayTNodeOfFieldOfHArray2OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor PShort_FieldOfHArray1OfShortReal;
 class PShort_FieldOfHArray1OfShortReal : public DBC_BaseArray {
@@ -312,6 +320,7 @@ class PShort_FieldOfHArray1OfShortReal : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PShort_FieldOfHArray1OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor PShort_VArrayNodeOfFieldOfHArray1OfShortReal;
 class PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public PStandard_ArrayNode {
@@ -350,6 +359,7 @@ class PShort_VArrayNodeOfFieldOfHArray1OfShortReal : public PStandard_ArrayNode 
 	if (__env){printf("## Call custom destructor for instance of PShort_VArrayNodeOfFieldOfHArray1OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor PShort_HSequenceOfShortReal;
 class PShort_HSequenceOfShortReal : public Standard_Persistent {
@@ -445,6 +455,7 @@ class PShort_HSequenceOfShortReal : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PShort_FieldOfHArray2OfShortReal;
 class PShort_FieldOfHArray2OfShortReal : public DBC_BaseArray {
 	public:
@@ -474,6 +485,7 @@ class PShort_FieldOfHArray2OfShortReal : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PShort_FieldOfHArray2OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor PShort_VArrayNodeOfFieldOfHArray2OfShortReal;
 class PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public PStandard_ArrayNode {
@@ -513,6 +525,7 @@ class PShort_VArrayNodeOfFieldOfHArray2OfShortReal : public PStandard_ArrayNode 
 	}
 };
 
+
 %nodefaultctor PShort_SeqExplorerOfHSequenceOfShortReal;
 class PShort_SeqExplorerOfHSequenceOfShortReal {
 	public:
@@ -534,6 +547,7 @@ class PShort_SeqExplorerOfHSequenceOfShortReal {
 	if (__env){printf("## Call custom destructor for instance of PShort_SeqExplorerOfHSequenceOfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor PShort_HArray2OfShortReal;
 class PShort_HArray2OfShortReal : public Standard_Persistent {
@@ -605,6 +619,7 @@ class PShort_HArray2OfShortReal : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PShort_VArrayTNodeOfFieldOfHArray1OfShortReal;
 class PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
 	public:
@@ -624,6 +639,7 @@ class PShort_VArrayTNodeOfFieldOfHArray1OfShortReal {
 	if (__env){printf("## Call custom destructor for instance of PShort_VArrayTNodeOfFieldOfHArray1OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor PShort_SeqNodeOfHSequenceOfShortReal;
 class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
@@ -682,6 +698,7 @@ class PShort_SeqNodeOfHSequenceOfShortReal : public PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of PShort_SeqNodeOfHSequenceOfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor PShort_HArray1OfShortReal;
 class PShort_HArray1OfShortReal : public Standard_Persistent {

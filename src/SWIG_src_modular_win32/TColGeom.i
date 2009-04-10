@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface;
 class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public Handle_TCollection_SeqNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColGeom_HArray1OfBoundedSurface;
 class Handle_TColGeom_HArray1OfBoundedSurface : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_TColGeom_HArray1OfBoundedSurface : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_HArray2OfBoundedSurface;
 class Handle_TColGeom_HArray2OfBoundedSurface : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_TColGeom_HArray2OfBoundedSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColGeom_HArray1OfCurve;
 class Handle_TColGeom_HArray1OfCurve : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_TColGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfSurface;
 class Handle_TColGeom_SequenceNodeOfSequenceOfSurface : public Handle_TCollection_SeqNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfSurface : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_SequenceNodeOfSequenceOfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColGeom_HArray1OfBoundedCurve;
 class Handle_TColGeom_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_TColGeom_HArray1OfBoundedCurve : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_HArray2OfBSplineSurface;
 class Handle_TColGeom_HArray2OfBSplineSurface : public Handle_MMgt_TShared {
 	public:
@@ -312,6 +320,7 @@ class Handle_TColGeom_HArray2OfBSplineSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray2OfBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
 class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TCollection_SeqNode {
@@ -338,6 +347,7 @@ class Handle_TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_HSequenceOfCurve;
 class Handle_TColGeom_HSequenceOfCurve : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_TColGeom_HSequenceOfCurve : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColGeom_HArray2OfBezierSurface;
 class Handle_TColGeom_HArray2OfBezierSurface : public Handle_MMgt_TShared {
@@ -388,6 +399,7 @@ class Handle_TColGeom_HArray2OfBezierSurface : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_HArray1OfSurface;
 class Handle_TColGeom_HArray1OfSurface : public Handle_MMgt_TShared {
 	public:
@@ -412,6 +424,7 @@ class Handle_TColGeom_HArray1OfSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HArray1OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColGeom_HArray1OfBezierCurve;
 class Handle_TColGeom_HArray1OfBezierCurve : public Handle_MMgt_TShared {
@@ -438,6 +451,7 @@ class Handle_TColGeom_HArray1OfBezierCurve : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_HSequenceOfBoundedSurface;
 class Handle_TColGeom_HSequenceOfBoundedSurface : public Handle_MMgt_TShared {
 	public:
@@ -462,6 +476,7 @@ class Handle_TColGeom_HSequenceOfBoundedSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColGeom_HArray1OfBSplineCurve;
 class Handle_TColGeom_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
@@ -488,6 +503,7 @@ class Handle_TColGeom_HArray1OfBSplineCurve : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_HSequenceOfSurface;
 class Handle_TColGeom_HSequenceOfSurface : public Handle_MMgt_TShared {
 	public:
@@ -512,6 +528,7 @@ class Handle_TColGeom_HSequenceOfSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColGeom_HArray2OfSurface;
 class Handle_TColGeom_HArray2OfSurface : public Handle_MMgt_TShared {
@@ -538,6 +555,7 @@ class Handle_TColGeom_HArray2OfSurface : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColGeom_HSequenceOfBoundedCurve;
 class Handle_TColGeom_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	public:
@@ -562,6 +580,7 @@ class Handle_TColGeom_HSequenceOfBoundedCurve : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColGeom_HSequenceOfBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HArray1OfSurface;
 class TColGeom_HArray1OfSurface : public MMgt_TShared {
@@ -608,6 +627,7 @@ class TColGeom_HArray1OfSurface : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HSequenceOfCurve;
 class TColGeom_HSequenceOfCurve : public MMgt_TShared {
@@ -679,6 +699,7 @@ class TColGeom_HSequenceOfCurve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColGeom_Array1OfBoundedCurve;
 class TColGeom_Array1OfBoundedCurve {
 	public:
@@ -719,6 +740,7 @@ class TColGeom_Array1OfBoundedCurve {
 	}
 };
 
+
 %nodefaultctor TColGeom_Array1OfCurve;
 class TColGeom_Array1OfCurve {
 	public:
@@ -758,6 +780,7 @@ class TColGeom_Array1OfCurve {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HSequenceOfSurface;
 class TColGeom_HSequenceOfSurface : public MMgt_TShared {
@@ -829,6 +852,7 @@ class TColGeom_HSequenceOfSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColGeom_HArray1OfCurve;
 class TColGeom_HArray1OfCurve : public MMgt_TShared {
 	public:
@@ -874,6 +898,7 @@ class TColGeom_HArray1OfCurve : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HArray2OfBoundedSurface;
 class TColGeom_HArray2OfBoundedSurface : public MMgt_TShared {
@@ -927,6 +952,7 @@ class TColGeom_HArray2OfBoundedSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfBoundedSurface;
 class TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public TCollection_SeqNode {
 	public:
@@ -955,6 +981,7 @@ class TColGeom_SequenceNodeOfSequenceOfBoundedSurface : public TCollection_SeqNo
 	}
 };
 
+
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfCurve;
 class TColGeom_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 	public:
@@ -982,6 +1009,7 @@ class TColGeom_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_Array2OfSurface;
 class TColGeom_Array2OfSurface {
@@ -1027,6 +1055,7 @@ class TColGeom_Array2OfSurface {
 	}
 };
 
+
 %nodefaultctor TColGeom_Array2OfBezierSurface;
 class TColGeom_Array2OfBezierSurface {
 	public:
@@ -1070,6 +1099,7 @@ class TColGeom_Array2OfBezierSurface {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfBezierSurface\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HSequenceOfBoundedCurve;
 class TColGeom_HSequenceOfBoundedCurve : public MMgt_TShared {
@@ -1141,6 +1171,7 @@ class TColGeom_HSequenceOfBoundedCurve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColGeom_SequenceOfBoundedSurface;
 class TColGeom_SequenceOfBoundedSurface : public TCollection_BaseSequence {
 	public:
@@ -1195,6 +1226,7 @@ class TColGeom_SequenceOfBoundedSurface : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColGeom_Array1OfSurface;
 class TColGeom_Array1OfSurface {
 	public:
@@ -1234,6 +1266,7 @@ class TColGeom_Array1OfSurface {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HArray2OfBezierSurface;
 class TColGeom_HArray2OfBezierSurface : public MMgt_TShared {
@@ -1287,6 +1320,7 @@ class TColGeom_HArray2OfBezierSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColGeom_HArray1OfBoundedSurface;
 class TColGeom_HArray1OfBoundedSurface : public MMgt_TShared {
 	public:
@@ -1332,6 +1366,7 @@ class TColGeom_HArray1OfBoundedSurface : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HArray2OfSurface;
 class TColGeom_HArray2OfSurface : public MMgt_TShared {
@@ -1384,6 +1419,7 @@ class TColGeom_HArray2OfSurface : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray2OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_SequenceOfBoundedCurve;
 class TColGeom_SequenceOfBoundedCurve : public TCollection_BaseSequence {
@@ -1439,6 +1475,7 @@ class TColGeom_SequenceOfBoundedCurve : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfBoundedCurve;
 class TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNode {
 	public:
@@ -1466,6 +1503,7 @@ class TColGeom_SequenceNodeOfSequenceOfBoundedCurve : public TCollection_SeqNode
 	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HSequenceOfBoundedSurface;
 class TColGeom_HSequenceOfBoundedSurface : public MMgt_TShared {
@@ -1537,6 +1575,7 @@ class TColGeom_HSequenceOfBoundedSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColGeom_Array1OfBoundedSurface;
 class TColGeom_Array1OfBoundedSurface {
 	public:
@@ -1576,6 +1615,7 @@ class TColGeom_Array1OfBoundedSurface {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HArray1OfBSplineCurve;
 class TColGeom_HArray1OfBSplineCurve : public MMgt_TShared {
@@ -1622,6 +1662,7 @@ class TColGeom_HArray1OfBSplineCurve : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_SequenceOfSurface;
 class TColGeom_SequenceOfSurface : public TCollection_BaseSequence {
@@ -1677,6 +1718,7 @@ class TColGeom_SequenceOfSurface : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColGeom_HArray2OfBSplineSurface;
 class TColGeom_HArray2OfBSplineSurface : public MMgt_TShared {
 	public:
@@ -1729,6 +1771,7 @@ class TColGeom_HArray2OfBSplineSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColGeom_Array2OfBoundedSurface;
 class TColGeom_Array2OfBoundedSurface {
 	public:
@@ -1773,6 +1816,7 @@ class TColGeom_Array2OfBoundedSurface {
 	}
 };
 
+
 %nodefaultctor TColGeom_Array1OfBSplineCurve;
 class TColGeom_Array1OfBSplineCurve {
 	public:
@@ -1813,6 +1857,7 @@ class TColGeom_Array1OfBSplineCurve {
 	}
 };
 
+
 %nodefaultctor TColGeom_Array1OfBezierCurve;
 class TColGeom_Array1OfBezierCurve {
 	public:
@@ -1852,6 +1897,7 @@ class TColGeom_Array1OfBezierCurve {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array1OfBezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_Array2OfBSplineSurface;
 class TColGeom_Array2OfBSplineSurface {
@@ -1896,6 +1942,7 @@ class TColGeom_Array2OfBSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_Array2OfBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HArray1OfBezierCurve;
 class TColGeom_HArray1OfBezierCurve : public MMgt_TShared {
@@ -1942,6 +1989,7 @@ class TColGeom_HArray1OfBezierCurve : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_HArray1OfBezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_SequenceOfCurve;
 class TColGeom_SequenceOfCurve : public TCollection_BaseSequence {
@@ -1997,6 +2045,7 @@ class TColGeom_SequenceOfCurve : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColGeom_SequenceNodeOfSequenceOfSurface;
 class TColGeom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	public:
@@ -2024,6 +2073,7 @@ class TColGeom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColGeom_SequenceNodeOfSequenceOfSurface\n");}
 	}
 };
+
 
 %nodefaultctor TColGeom_HArray1OfBoundedCurve;
 class TColGeom_HArray1OfBoundedCurve : public MMgt_TShared {

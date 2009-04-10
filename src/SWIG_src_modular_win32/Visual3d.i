@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -187,6 +188,7 @@ class Handle_Visual3d_SequenceNodeOfSequenceOfPickPath : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_PickError;
 class Handle_Visual3d_PickError : public Handle_Standard_OutOfRange {
 	public:
@@ -211,6 +213,7 @@ class Handle_Visual3d_PickError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_PickError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane;
 class Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane : public Handle_TCollection_MapNode {
@@ -237,6 +240,7 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfClipPlane : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_ZClippingDefinitionError;
 class Handle_Visual3d_ZClippingDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -261,6 +265,7 @@ class Handle_Visual3d_ZClippingDefinitionError : public Handle_Standard_OutOfRan
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ZClippingDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_TransformError;
 class Handle_Visual3d_TransformError : public Handle_Standard_OutOfRange {
@@ -287,6 +292,7 @@ class Handle_Visual3d_TransformError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_LightDefinitionError;
 class Handle_Visual3d_LightDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -311,6 +317,7 @@ class Handle_Visual3d_LightDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_LightDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_TransientManager;
 class Handle_Visual3d_TransientManager : public Handle_MMgt_TShared {
@@ -337,6 +344,7 @@ class Handle_Visual3d_TransientManager : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_View;
 class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
 	public:
@@ -361,6 +369,7 @@ class Handle_Visual3d_View : public Handle_Graphic3d_DataStructureManager {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_View\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_ViewManager;
 class Handle_Visual3d_ViewManager : public Handle_Graphic3d_StructureManager {
@@ -387,6 +396,7 @@ class Handle_Visual3d_ViewManager : public Handle_Graphic3d_StructureManager {
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_LayerDefinitionError;
 class Handle_Visual3d_LayerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -411,6 +421,7 @@ class Handle_Visual3d_LayerDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_LayerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_HSetOfClipPlane;
 class Handle_Visual3d_HSetOfClipPlane : public Handle_MMgt_TShared {
@@ -437,6 +448,7 @@ class Handle_Visual3d_HSetOfClipPlane : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_ListNodeOfSetListOfSetOfLight;
 class Handle_Visual3d_ListNodeOfSetListOfSetOfLight : public Handle_TCollection_MapNode {
 	public:
@@ -461,6 +473,7 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfLight : public Handle_TCollection_
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ListNodeOfSetListOfSetOfLight\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_Light;
 class Handle_Visual3d_Light : public Handle_MMgt_TShared {
@@ -487,6 +500,7 @@ class Handle_Visual3d_Light : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_Layer;
 class Handle_Visual3d_Layer : public Handle_MMgt_TShared {
 	public:
@@ -511,6 +525,7 @@ class Handle_Visual3d_Layer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_Layer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_ClipDefinitionError;
 class Handle_Visual3d_ClipDefinitionError : public Handle_Standard_OutOfRange {
@@ -537,6 +552,7 @@ class Handle_Visual3d_ClipDefinitionError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_HSetOfLight;
 class Handle_Visual3d_HSetOfLight : public Handle_MMgt_TShared {
 	public:
@@ -561,6 +577,7 @@ class Handle_Visual3d_HSetOfLight : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_HSetOfLight\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_DepthCueingDefinitionError;
 class Handle_Visual3d_DepthCueingDefinitionError : public Handle_Standard_OutOfRange {
@@ -587,6 +604,7 @@ class Handle_Visual3d_DepthCueingDefinitionError : public Handle_Standard_OutOfR
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_ClipPlane;
 class Handle_Visual3d_ClipPlane : public Handle_MMgt_TShared {
 	public:
@@ -611,6 +629,7 @@ class Handle_Visual3d_ClipPlane : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ClipPlane\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_ListNodeOfSetListOfSetOfView;
 class Handle_Visual3d_ListNodeOfSetListOfSetOfView : public Handle_TCollection_MapNode {
@@ -637,6 +656,7 @@ class Handle_Visual3d_ListNodeOfSetListOfSetOfView : public Handle_TCollection_M
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_ViewManagerDefinitionError;
 class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -661,6 +681,7 @@ class Handle_Visual3d_ViewManagerDefinitionError : public Handle_Standard_OutOfR
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ViewManagerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_HSetOfView;
 class Handle_Visual3d_HSetOfView : public Handle_MMgt_TShared {
@@ -687,6 +708,7 @@ class Handle_Visual3d_HSetOfView : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_ViewMappingDefinitionError;
 class Handle_Visual3d_ViewMappingDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -711,6 +733,7 @@ class Handle_Visual3d_ViewMappingDefinitionError : public Handle_Standard_OutOfR
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ViewMappingDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_TransientDefinitionError;
 class Handle_Visual3d_TransientDefinitionError : public Handle_Standard_OutOfRange {
@@ -737,6 +760,7 @@ class Handle_Visual3d_TransientDefinitionError : public Handle_Standard_OutOfRan
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_HSequenceOfPickPath;
 class Handle_Visual3d_HSequenceOfPickPath : public Handle_MMgt_TShared {
 	public:
@@ -761,6 +785,7 @@ class Handle_Visual3d_HSequenceOfPickPath : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_HSequenceOfPickPath\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_ViewOrientationDefinitionError;
 class Handle_Visual3d_ViewOrientationDefinitionError : public Handle_Standard_OutOfRange {
@@ -787,6 +812,7 @@ class Handle_Visual3d_ViewOrientationDefinitionError : public Handle_Standard_Ou
 	}
 };
 
+
 %nodefaultctor Handle_Visual3d_ViewDefinitionError;
 class Handle_Visual3d_ViewDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -811,6 +837,7 @@ class Handle_Visual3d_ViewDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Visual3d_ViewDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Visual3d_ContextPickDefinitionError;
 class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfRange {
@@ -837,6 +864,7 @@ class Handle_Visual3d_ContextPickDefinitionError : public Handle_Standard_OutOfR
 	}
 };
 
+
 %nodefaultctor Visual3d_SetIteratorOfSetOfLight;
 class Visual3d_SetIteratorOfSetOfLight {
 	public:
@@ -860,6 +888,7 @@ class Visual3d_SetIteratorOfSetOfLight {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_SetIteratorOfSetOfLight\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ContextPick;
 class Visual3d_ContextPick {
@@ -888,6 +917,7 @@ class Visual3d_ContextPick {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ContextPick\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_SetListOfSetOfView;
 class Visual3d_SetListOfSetOfView {
@@ -939,6 +969,7 @@ class Visual3d_SetListOfSetOfView {
 	}
 };
 
+
 %nodefaultctor Visual3d_TransformError;
 class Visual3d_TransformError : public Standard_OutOfRange {
 	public:
@@ -973,6 +1004,7 @@ class Visual3d_TransformError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Visual3d_PickPath;
 class Visual3d_PickPath {
 	public:
@@ -1000,6 +1032,7 @@ class Visual3d_PickPath {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_PickPath\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_LayerDefinitionError;
 class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
@@ -1035,6 +1068,7 @@ class Visual3d_LayerDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Visual3d_DepthCueingDefinitionError;
 class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 	public:
@@ -1068,6 +1102,7 @@ class Visual3d_DepthCueingDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_DepthCueingDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ViewMapping;
 class Visual3d_ViewMapping {
@@ -1113,6 +1148,7 @@ class Visual3d_ViewMapping {
 	}
 };
 
+
 %nodefaultctor Visual3d_TransientDefinitionError;
 class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 	public:
@@ -1146,6 +1182,7 @@ class Visual3d_TransientDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_TransientDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ContextView;
 class Visual3d_ContextView {
@@ -1241,6 +1278,7 @@ class Visual3d_ContextView {
 	}
 };
 
+
 %nodefaultctor Visual3d_ListNodeOfSetListOfSetOfClipPlane;
 class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
 	public:
@@ -1269,6 +1307,7 @@ class Visual3d_ListNodeOfSetListOfSetOfClipPlane : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfLight;
 class Visual3d_ListIteratorOfSetListOfSetOfLight {
 	public:
@@ -1292,6 +1331,7 @@ class Visual3d_ListIteratorOfSetListOfSetOfLight {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfLight\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ListNodeOfSetListOfSetOfLight;
 class Visual3d_ListNodeOfSetListOfSetOfLight : public TCollection_MapNode {
@@ -1320,6 +1360,7 @@ class Visual3d_ListNodeOfSetListOfSetOfLight : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfLight\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ViewOrientationDefinitionError;
 class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
@@ -1355,6 +1396,7 @@ class Visual3d_ViewOrientationDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Visual3d_ViewManagerDefinitionError;
 class Visual3d_ViewManagerDefinitionError : public Standard_OutOfRange {
 	public:
@@ -1388,6 +1430,7 @@ class Visual3d_ViewManagerDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewManagerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_SetListOfSetOfLight;
 class Visual3d_SetListOfSetOfLight {
@@ -1439,6 +1482,7 @@ class Visual3d_SetListOfSetOfLight {
 	}
 };
 
+
 %nodefaultctor Visual3d_ListNodeOfSetListOfSetOfView;
 class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
 	public:
@@ -1466,6 +1510,7 @@ class Visual3d_ListNodeOfSetListOfSetOfView : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ListNodeOfSetListOfSetOfView\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_SetListOfSetOfClipPlane;
 class Visual3d_SetListOfSetOfClipPlane {
@@ -1516,6 +1561,7 @@ class Visual3d_SetListOfSetOfClipPlane {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_SetListOfSetOfClipPlane\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_HSetOfView;
 class Visual3d_HSetOfView : public MMgt_TShared {
@@ -1571,6 +1617,7 @@ class Visual3d_HSetOfView : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Visual3d_SetIteratorOfSetOfClipPlane;
 class Visual3d_SetIteratorOfSetOfClipPlane {
 	public:
@@ -1594,6 +1641,7 @@ class Visual3d_SetIteratorOfSetOfClipPlane {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_SetIteratorOfSetOfClipPlane\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ViewManager;
 class Visual3d_ViewManager : public Graphic3d_StructureManager {
@@ -1693,6 +1741,7 @@ class Visual3d_ViewManager : public Graphic3d_StructureManager {
 	}
 };
 
+
 %nodefaultctor Visual3d_SequenceNodeOfSequenceOfPickPath;
 class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
 	public:
@@ -1720,6 +1769,7 @@ class Visual3d_SequenceNodeOfSequenceOfPickPath : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_SequenceNodeOfSequenceOfPickPath\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ClipPlane;
 class Visual3d_ClipPlane : public MMgt_TShared {
@@ -1753,6 +1803,7 @@ class Visual3d_ClipPlane : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Visual3d_PickDescriptor;
 class Visual3d_PickDescriptor {
 	public:
@@ -1780,6 +1831,7 @@ class Visual3d_PickDescriptor {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_PickDescriptor\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ClipDefinitionError;
 class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
@@ -1815,6 +1867,7 @@ class Visual3d_ClipDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Visual3d_LightDefinitionError;
 class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 	public:
@@ -1848,6 +1901,7 @@ class Visual3d_LightDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_LightDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_SetOfView;
 class Visual3d_SetOfView {
@@ -1884,6 +1938,7 @@ class Visual3d_SetOfView {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_SetOfView\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_Layer;
 class Visual3d_Layer : public MMgt_TShared {
@@ -1951,6 +2006,7 @@ class Visual3d_Layer : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Visual3d_ZClippingDefinitionError;
 class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
 	public:
@@ -1984,6 +2040,7 @@ class Visual3d_ZClippingDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ZClippingDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_Light;
 class Visual3d_Light : public MMgt_TShared {
@@ -2049,6 +2106,7 @@ class Visual3d_Light : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfView;
 class Visual3d_ListIteratorOfSetListOfSetOfView {
 	public:
@@ -2073,6 +2131,7 @@ class Visual3d_ListIteratorOfSetListOfSetOfView {
 	}
 };
 
+
 %nodefaultctor Visual3d_ListIteratorOfSetListOfSetOfClipPlane;
 class Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
 	public:
@@ -2096,6 +2155,7 @@ class Visual3d_ListIteratorOfSetListOfSetOfClipPlane {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ListIteratorOfSetListOfSetOfClipPlane\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_HSetOfLight;
 class Visual3d_HSetOfLight : public MMgt_TShared {
@@ -2151,6 +2211,7 @@ class Visual3d_HSetOfLight : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Visual3d_HSetOfClipPlane;
 class Visual3d_HSetOfClipPlane : public MMgt_TShared {
 	public:
@@ -2205,6 +2266,7 @@ class Visual3d_HSetOfClipPlane : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Visual3d_SetOfLight;
 class Visual3d_SetOfLight {
 	public:
@@ -2241,6 +2303,7 @@ class Visual3d_SetOfLight {
 	}
 };
 
+
 %nodefaultctor Visual3d_SetIteratorOfSetOfView;
 class Visual3d_SetIteratorOfSetOfView {
 	public:
@@ -2264,6 +2327,7 @@ class Visual3d_SetIteratorOfSetOfView {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_SetIteratorOfSetOfView\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_View;
 class Visual3d_View : public Graphic3d_DataStructureManager {
@@ -2451,6 +2515,7 @@ class Visual3d_View : public Graphic3d_DataStructureManager {
 	}
 };
 
+
 %nodefaultctor Visual3d_ViewDefinitionError;
 class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2484,6 +2549,7 @@ class Visual3d_ViewDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_TransientManager;
 class Visual3d_TransientManager : public MMgt_TShared {
@@ -2559,6 +2625,7 @@ class Visual3d_TransientManager : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Visual3d_PickError;
 class Visual3d_PickError : public Standard_OutOfRange {
 	public:
@@ -2592,6 +2659,7 @@ class Visual3d_PickError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_PickError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_SequenceOfPickPath;
 class Visual3d_SequenceOfPickPath : public TCollection_BaseSequence {
@@ -2647,6 +2715,7 @@ class Visual3d_SequenceOfPickPath : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Visual3d_ViewMappingDefinitionError;
 class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2680,6 +2749,7 @@ class Visual3d_ViewMappingDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ViewMappingDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_SetOfClipPlane;
 class Visual3d_SetOfClipPlane {
@@ -2717,6 +2787,7 @@ class Visual3d_SetOfClipPlane {
 	}
 };
 
+
 %nodefaultctor Visual3d_ContextPickDefinitionError;
 class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2750,6 +2821,7 @@ class Visual3d_ContextPickDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_ContextPickDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_HSequenceOfPickPath;
 class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
@@ -2820,6 +2892,7 @@ class Visual3d_HSequenceOfPickPath : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Visual3d_HSequenceOfPickPath\n");}
 	}
 };
+
 
 %nodefaultctor Visual3d_ViewOrientation;
 class Visual3d_ViewOrientation {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -165,6 +166,7 @@ class Handle_StdSelect_SensitiveText2d : public Handle_Select2D_SensitiveEntity 
 	}
 };
 
+
 %nodefaultctor Handle_StdSelect_TextProjector2d;
 class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 	public:
@@ -189,6 +191,7 @@ class Handle_StdSelect_TextProjector2d : public Handle_Select2D_Projector {
 	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_TextProjector2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StdSelect_EdgeFilter;
 class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
@@ -215,6 +218,7 @@ class Handle_StdSelect_EdgeFilter : public Handle_SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor Handle_StdSelect_BRepOwner;
 class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 	public:
@@ -239,6 +243,7 @@ class Handle_StdSelect_BRepOwner : public Handle_SelectMgr_EntityOwner {
 	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_BRepOwner\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
 class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TCollection_MapNode {
@@ -265,6 +270,7 @@ class Handle_StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Han
 	}
 };
 
+
 %nodefaultctor Handle_StdSelect_Shape;
 class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
 	public:
@@ -289,6 +295,7 @@ class Handle_StdSelect_Shape : public Handle_PrsMgr_PresentableObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_Shape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StdSelect_FaceFilter;
 class Handle_StdSelect_FaceFilter : public Handle_SelectMgr_Filter {
@@ -315,6 +322,7 @@ class Handle_StdSelect_FaceFilter : public Handle_SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor Handle_StdSelect_ViewerSelector2d;
 class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector {
 	public:
@@ -339,6 +347,7 @@ class Handle_StdSelect_ViewerSelector2d : public Handle_SelectMgr_ViewerSelector
 	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_ViewerSelector2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StdSelect_ViewerSelector3d;
 class Handle_StdSelect_ViewerSelector3d : public Handle_SelectMgr_ViewerSelector {
@@ -365,6 +374,7 @@ class Handle_StdSelect_ViewerSelector3d : public Handle_SelectMgr_ViewerSelector
 	}
 };
 
+
 %nodefaultctor Handle_StdSelect_ShapeTypeFilter;
 class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -390,6 +400,7 @@ class Handle_StdSelect_ShapeTypeFilter : public Handle_SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor Handle_StdSelect_Prs;
 class Handle_StdSelect_Prs : public Handle_Prs3d_Presentation {
 	public:
@@ -414,6 +425,7 @@ class Handle_StdSelect_Prs : public Handle_Prs3d_Presentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_StdSelect_Prs\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_IndexedDataMapOfOwnerPrs;
 class StdSelect_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
@@ -459,6 +471,7 @@ class StdSelect_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor StdSelect_ShapeTypeFilter;
 class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 	public:
@@ -491,6 +504,7 @@ class StdSelect_ShapeTypeFilter : public SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor StdSelect;
 class StdSelect {
 	public:
@@ -508,6 +522,7 @@ class StdSelect {
 	if (__env){printf("## Call custom destructor for instance of StdSelect\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_BRepSelectionTool;
 class StdSelect_BRepSelectionTool {
@@ -532,6 +547,7 @@ class StdSelect_BRepSelectionTool {
 	if (__env){printf("## Call custom destructor for instance of StdSelect_BRepSelectionTool\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_FaceFilter;
 class StdSelect_FaceFilter : public SelectMgr_Filter {
@@ -567,6 +583,7 @@ class StdSelect_FaceFilter : public SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
 class StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapNode {
 	public:
@@ -600,6 +617,7 @@ class StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of StdSelect_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_SensitiveText2d;
 class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
@@ -639,6 +657,7 @@ class StdSelect_SensitiveText2d : public Select2D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor StdSelect_Shape;
 class StdSelect_Shape : public PrsMgr_PresentableObject {
 	public:
@@ -669,6 +688,7 @@ class StdSelect_Shape : public PrsMgr_PresentableObject {
 	}
 };
 
+
 %nodefaultctor StdSelect_Prs;
 class StdSelect_Prs : public Prs3d_Presentation {
 	public:
@@ -696,6 +716,7 @@ class StdSelect_Prs : public Prs3d_Presentation {
 	if (__env){printf("## Call custom destructor for instance of StdSelect_Prs\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_TextProjector2d;
 class StdSelect_TextProjector2d : public Select2D_Projector {
@@ -730,6 +751,7 @@ class StdSelect_TextProjector2d : public Select2D_Projector {
 	if (__env){printf("## Call custom destructor for instance of StdSelect_TextProjector2d\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_ViewerSelector2d;
 class StdSelect_ViewerSelector2d : public SelectMgr_ViewerSelector {
@@ -774,6 +796,7 @@ class StdSelect_ViewerSelector2d : public SelectMgr_ViewerSelector {
 	if (__env){printf("## Call custom destructor for instance of StdSelect_ViewerSelector2d\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_ViewerSelector3d;
 class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
@@ -832,6 +855,7 @@ class StdSelect_ViewerSelector3d : public SelectMgr_ViewerSelector {
 	if (__env){printf("## Call custom destructor for instance of StdSelect_ViewerSelector3d\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_BRepOwner;
 class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
@@ -893,6 +917,7 @@ class StdSelect_BRepOwner : public SelectMgr_EntityOwner {
 	}
 };
 
+
 %nodefaultctor StdSelect_BRepHilighter;
 class StdSelect_BRepHilighter {
 	public:
@@ -924,6 +949,7 @@ class StdSelect_BRepHilighter {
 	if (__env){printf("## Call custom destructor for instance of StdSelect_BRepHilighter\n");}
 	}
 };
+
 
 %nodefaultctor StdSelect_EdgeFilter;
 class StdSelect_EdgeFilter : public SelectMgr_Filter {

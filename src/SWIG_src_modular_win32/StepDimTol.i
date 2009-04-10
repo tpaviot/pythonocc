@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_StepDimTol_DatumTarget : public Handle_StepRepr_ShapeAspect {
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_PlacedDatumTargetFeature;
 class Handle_StepDimTol_PlacedDatumTargetFeature : public Handle_StepDimTol_DatumTarget {
 	public:
@@ -168,6 +170,7 @@ class Handle_StepDimTol_PlacedDatumTargetFeature : public Handle_StepDimTol_Datu
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PlacedDatumTargetFeature\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_HArray1OfDatumReference;
 class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
@@ -194,6 +197,7 @@ class Handle_StepDimTol_HArray1OfDatumReference : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_GeometricTolerance;
 class Handle_StepDimTol_GeometricTolerance : public Handle_MMgt_TShared {
 	public:
@@ -218,6 +222,7 @@ class Handle_StepDimTol_GeometricTolerance : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_GeometricTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_GeometricToleranceWithDatumReference;
 class Handle_StepDimTol_GeometricToleranceWithDatumReference : public Handle_StepDimTol_GeometricTolerance {
@@ -244,6 +249,7 @@ class Handle_StepDimTol_GeometricToleranceWithDatumReference : public Handle_Ste
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_CoaxialityTolerance;
 class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -268,6 +274,7 @@ class Handle_StepDimTol_CoaxialityTolerance : public Handle_StepDimTol_Geometric
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CoaxialityTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_Datum;
 class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
@@ -294,6 +301,7 @@ class Handle_StepDimTol_Datum : public Handle_StepRepr_ShapeAspect {
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_LineProfileTolerance;
 class Handle_StepDimTol_LineProfileTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
@@ -318,6 +326,7 @@ class Handle_StepDimTol_LineProfileTolerance : public Handle_StepDimTol_Geometri
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_LineProfileTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_AngularityTolerance;
 class Handle_StepDimTol_AngularityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
@@ -344,6 +353,7 @@ class Handle_StepDimTol_AngularityTolerance : public Handle_StepDimTol_Geometric
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_CircularRunoutTolerance;
 class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -368,6 +378,7 @@ class Handle_StepDimTol_CircularRunoutTolerance : public Handle_StepDimTol_Geome
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_CircularRunoutTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_TotalRunoutTolerance;
 class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
@@ -394,6 +405,7 @@ class Handle_StepDimTol_TotalRunoutTolerance : public Handle_StepDimTol_Geometri
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_PositionTolerance;
 class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
@@ -418,6 +430,7 @@ class Handle_StepDimTol_PositionTolerance : public Handle_StepDimTol_GeometricTo
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PositionTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_GeometricToleranceRelationship;
 class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TShared {
@@ -444,6 +457,7 @@ class Handle_StepDimTol_GeometricToleranceRelationship : public Handle_MMgt_TSha
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_ConcentricityTolerance;
 class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -468,6 +482,7 @@ class Handle_StepDimTol_ConcentricityTolerance : public Handle_StepDimTol_Geomet
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_ConcentricityTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_ParallelismTolerance;
 class Handle_StepDimTol_ParallelismTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
@@ -494,6 +509,7 @@ class Handle_StepDimTol_ParallelismTolerance : public Handle_StepDimTol_Geometri
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_PerpendicularityTolerance;
 class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -518,6 +534,7 @@ class Handle_StepDimTol_PerpendicularityTolerance : public Handle_StepDimTol_Geo
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_PerpendicularityTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_StraightnessTolerance;
 class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_GeometricTolerance {
@@ -544,6 +561,7 @@ class Handle_StepDimTol_StraightnessTolerance : public Handle_StepDimTol_Geometr
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_FlatnessTolerance;
 class Handle_StepDimTol_FlatnessTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
@@ -568,6 +586,7 @@ class Handle_StepDimTol_FlatnessTolerance : public Handle_StepDimTol_GeometricTo
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_FlatnessTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_DatumReference;
 class Handle_StepDimTol_DatumReference : public Handle_MMgt_TShared {
@@ -594,6 +613,7 @@ class Handle_StepDimTol_DatumReference : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_DatumFeature;
 class Handle_StepDimTol_DatumFeature : public Handle_StepRepr_ShapeAspect {
 	public:
@@ -618,6 +638,7 @@ class Handle_StepDimTol_DatumFeature : public Handle_StepRepr_ShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_DatumFeature\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_CylindricityTolerance;
 class Handle_StepDimTol_CylindricityTolerance : public Handle_StepDimTol_GeometricTolerance {
@@ -644,6 +665,7 @@ class Handle_StepDimTol_CylindricityTolerance : public Handle_StepDimTol_Geometr
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_SymmetryTolerance;
 class Handle_StepDimTol_SymmetryTolerance : public Handle_StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -668,6 +690,7 @@ class Handle_StepDimTol_SymmetryTolerance : public Handle_StepDimTol_GeometricTo
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_SymmetryTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_SurfaceProfileTolerance;
 class Handle_StepDimTol_SurfaceProfileTolerance : public Handle_StepDimTol_GeometricTolerance {
@@ -694,6 +717,7 @@ class Handle_StepDimTol_SurfaceProfileTolerance : public Handle_StepDimTol_Geome
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_ModifiedGeometricTolerance;
 class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
@@ -718,6 +742,7 @@ class Handle_StepDimTol_ModifiedGeometricTolerance : public Handle_StepDimTol_Ge
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_ModifiedGeometricTolerance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepDimTol_CommonDatum;
 class Handle_StepDimTol_CommonDatum : public Handle_StepRepr_CompositeShapeAspect {
@@ -744,6 +769,7 @@ class Handle_StepDimTol_CommonDatum : public Handle_StepRepr_CompositeShapeAspec
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_RoundnessTolerance;
 class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricTolerance {
 	public:
@@ -769,6 +795,7 @@ class Handle_StepDimTol_RoundnessTolerance : public Handle_StepDimTol_GeometricT
 	}
 };
 
+
 %nodefaultctor Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
 class Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public Handle_StepDimTol_GeometricTolerance {
 	public:
@@ -793,6 +820,7 @@ class Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public H
 	if (__env){printf("## Call custom destructor for instance of Handle_StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_GeometricTolerance;
 class StepDimTol_GeometricTolerance : public MMgt_TShared {
@@ -838,6 +866,7 @@ class StepDimTol_GeometricTolerance : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepDimTol_StraightnessTolerance;
 class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 	public:
@@ -861,6 +890,7 @@ class StepDimTol_StraightnessTolerance : public StepDimTol_GeometricTolerance {
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_StraightnessTolerance\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_LineProfileTolerance;
 class StepDimTol_LineProfileTolerance : public StepDimTol_GeometricTolerance {
@@ -888,6 +918,7 @@ class StepDimTol_LineProfileTolerance : public StepDimTol_GeometricTolerance {
 	}
 };
 
+
 %nodefaultctor StepDimTol_SurfaceProfileTolerance;
 class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance {
 	public:
@@ -913,6 +944,7 @@ class StepDimTol_SurfaceProfileTolerance : public StepDimTol_GeometricTolerance 
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_SurfaceProfileTolerance\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_CylindricityTolerance;
 class StepDimTol_CylindricityTolerance : public StepDimTol_GeometricTolerance {
@@ -940,6 +972,7 @@ class StepDimTol_CylindricityTolerance : public StepDimTol_GeometricTolerance {
 	}
 };
 
+
 %nodefaultctor StepDimTol_RoundnessTolerance;
 class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 	public:
@@ -965,6 +998,7 @@ class StepDimTol_RoundnessTolerance : public StepDimTol_GeometricTolerance {
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_RoundnessTolerance\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_Array1OfDatumReference;
 class StepDimTol_Array1OfDatumReference {
@@ -1006,6 +1040,7 @@ class StepDimTol_Array1OfDatumReference {
 	}
 };
 
+
 %nodefaultctor StepDimTol_DatumTarget;
 class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 	public:
@@ -1037,6 +1072,7 @@ class StepDimTol_DatumTarget : public StepRepr_ShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_DatumTarget\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_GeometricToleranceWithDatumReference;
 class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_GeometricTolerance {
@@ -1070,6 +1106,7 @@ class StepDimTol_GeometricToleranceWithDatumReference : public StepDimTol_Geomet
 	}
 };
 
+
 %nodefaultctor StepDimTol_AngularityTolerance;
 class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -1093,6 +1130,7 @@ class StepDimTol_AngularityTolerance : public StepDimTol_GeometricToleranceWithD
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_AngularityTolerance\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_ConcentricityTolerance;
 class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
@@ -1120,6 +1158,7 @@ class StepDimTol_ConcentricityTolerance : public StepDimTol_GeometricToleranceWi
 	}
 };
 
+
 %nodefaultctor StepDimTol_PlacedDatumTargetFeature;
 class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
 	public:
@@ -1145,6 +1184,7 @@ class StepDimTol_PlacedDatumTargetFeature : public StepDimTol_DatumTarget {
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_PlacedDatumTargetFeature\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_TotalRunoutTolerance;
 class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
@@ -1172,6 +1212,7 @@ class StepDimTol_TotalRunoutTolerance : public StepDimTol_GeometricToleranceWith
 	}
 };
 
+
 %nodefaultctor StepDimTol_ParallelismTolerance;
 class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -1198,6 +1239,7 @@ class StepDimTol_ParallelismTolerance : public StepDimTol_GeometricToleranceWith
 	}
 };
 
+
 %nodefaultctor StepDimTol_PerpendicularityTolerance;
 class StepDimTol_PerpendicularityTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -1223,6 +1265,7 @@ class StepDimTol_PerpendicularityTolerance : public StepDimTol_GeometricToleranc
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_PerpendicularityTolerance\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
 class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimTol_GeometricTolerance {
@@ -1264,6 +1307,7 @@ class StepDimTol_GeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol : public StepDimT
 	}
 };
 
+
 %nodefaultctor StepDimTol_CommonDatum;
 class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
 	public:
@@ -1295,6 +1339,7 @@ class StepDimTol_CommonDatum : public StepRepr_CompositeShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_CommonDatum\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_ModifiedGeometricTolerance;
 class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricTolerance {
@@ -1328,6 +1373,7 @@ class StepDimTol_ModifiedGeometricTolerance : public StepDimTol_GeometricToleran
 	}
 };
 
+
 %nodefaultctor StepDimTol_CircularRunoutTolerance;
 class StepDimTol_CircularRunoutTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -1353,6 +1399,7 @@ class StepDimTol_CircularRunoutTolerance : public StepDimTol_GeometricToleranceW
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_CircularRunoutTolerance\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_CoaxialityTolerance;
 class StepDimTol_CoaxialityTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
@@ -1380,6 +1427,7 @@ class StepDimTol_CoaxialityTolerance : public StepDimTol_GeometricToleranceWithD
 	}
 };
 
+
 %nodefaultctor StepDimTol_FlatnessTolerance;
 class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
 	public:
@@ -1406,6 +1454,7 @@ class StepDimTol_FlatnessTolerance : public StepDimTol_GeometricTolerance {
 	}
 };
 
+
 %nodefaultctor StepDimTol_ShapeToleranceSelect;
 class StepDimTol_ShapeToleranceSelect : public StepData_SelectType {
 	public:
@@ -1425,6 +1474,7 @@ class StepDimTol_ShapeToleranceSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_ShapeToleranceSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_DatumFeature;
 class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
@@ -1452,6 +1502,7 @@ class StepDimTol_DatumFeature : public StepRepr_ShapeAspect {
 	}
 };
 
+
 %nodefaultctor StepDimTol_SymmetryTolerance;
 class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDatumReference {
 	public:
@@ -1477,6 +1528,7 @@ class StepDimTol_SymmetryTolerance : public StepDimTol_GeometricToleranceWithDat
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_SymmetryTolerance\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_DatumReference;
 class StepDimTol_DatumReference : public MMgt_TShared {
@@ -1514,6 +1566,7 @@ class StepDimTol_DatumReference : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepDimTol_Datum;
 class StepDimTol_Datum : public StepRepr_ShapeAspect {
 	public:
@@ -1546,6 +1599,7 @@ class StepDimTol_Datum : public StepRepr_ShapeAspect {
 	}
 };
 
+
 %nodefaultctor StepDimTol_PositionTolerance;
 class StepDimTol_PositionTolerance : public StepDimTol_GeometricTolerance {
 	public:
@@ -1571,6 +1625,7 @@ class StepDimTol_PositionTolerance : public StepDimTol_GeometricTolerance {
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_PositionTolerance\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_GeometricToleranceRelationship;
 class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
@@ -1615,6 +1670,7 @@ class StepDimTol_GeometricToleranceRelationship : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepDimTol_GeometricToleranceRelationship\n");}
 	}
 };
+
 
 %nodefaultctor StepDimTol_HArray1OfDatumReference;
 class StepDimTol_HArray1OfDatumReference : public MMgt_TShared {

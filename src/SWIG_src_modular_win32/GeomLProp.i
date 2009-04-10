@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -173,6 +174,7 @@ class GeomLProp_SLProps {
 	}
 };
 
+
 %nodefaultctor GeomLProp_CLProps;
 class GeomLProp_CLProps {
 	public:
@@ -213,6 +215,7 @@ class GeomLProp_CLProps {
 	}
 };
 
+
 %nodefaultctor GeomLProp;
 class GeomLProp {
 	public:
@@ -230,6 +233,7 @@ class GeomLProp {
 	if (__env){printf("## Call custom destructor for instance of GeomLProp\n");}
 	}
 };
+
 
 %nodefaultctor GeomLProp_SurfaceTool;
 class GeomLProp_SurfaceTool {
@@ -256,6 +260,7 @@ class GeomLProp_SurfaceTool {
 	if (__env){printf("## Call custom destructor for instance of GeomLProp_SurfaceTool\n");}
 	}
 };
+
 
 %nodefaultctor GeomLProp_CurveTool;
 class GeomLProp_CurveTool {

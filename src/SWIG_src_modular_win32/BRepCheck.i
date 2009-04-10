@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -175,6 +176,7 @@ class Handle_BRepCheck_Result : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BRepCheck_Shell;
 class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 	public:
@@ -199,6 +201,7 @@ class Handle_BRepCheck_Shell : public Handle_BRepCheck_Result {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Shell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult;
 class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollection_MapNode {
@@ -225,6 +228,7 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeResult : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
 class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_TCollection_MapNode {
 	public:
@@ -249,6 +253,7 @@ class Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepCheck_Wire;
 class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
@@ -275,6 +280,7 @@ class Handle_BRepCheck_Wire : public Handle_BRepCheck_Result {
 	}
 };
 
+
 %nodefaultctor Handle_BRepCheck_ListNodeOfListOfStatus;
 class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNode {
 	public:
@@ -299,6 +305,7 @@ class Handle_BRepCheck_ListNodeOfListOfStatus : public Handle_TCollection_MapNod
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_ListNodeOfListOfStatus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepCheck_Edge;
 class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
@@ -325,6 +332,7 @@ class Handle_BRepCheck_Edge : public Handle_BRepCheck_Result {
 	}
 };
 
+
 %nodefaultctor Handle_BRepCheck_Vertex;
 class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 	public:
@@ -350,6 +358,7 @@ class Handle_BRepCheck_Vertex : public Handle_BRepCheck_Result {
 	}
 };
 
+
 %nodefaultctor Handle_BRepCheck_Face;
 class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 	public:
@@ -374,6 +383,7 @@ class Handle_BRepCheck_Face : public Handle_BRepCheck_Result {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepCheck_Face\n");}
 	}
 };
+
 
 %nodefaultctor BRepCheck_ListNodeOfListOfStatus;
 class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
@@ -402,6 +412,7 @@ class BRepCheck_ListNodeOfListOfStatus : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_ListNodeOfListOfStatus\n");}
 	}
 };
+
 
 %nodefaultctor BRepCheck_DataMapOfShapeListOfStatus;
 class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
@@ -436,6 +447,7 @@ class BRepCheck_DataMapOfShapeListOfStatus : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeListOfStatus\n");}
 	}
 };
+
 
 %nodefaultctor BRepCheck_Result;
 class BRepCheck_Result : public MMgt_TShared {
@@ -489,6 +501,7 @@ class BRepCheck_Result : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepCheck_Shell;
 class BRepCheck_Shell : public BRepCheck_Result {
 	public:
@@ -523,6 +536,7 @@ class BRepCheck_Shell : public BRepCheck_Result {
 	}
 };
 
+
 %nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeResult;
 class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_BasicMapIterator {
 	public:
@@ -544,6 +558,7 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeResult : public TCollection_Basic
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeResult\n");}
 	}
 };
+
 
 %nodefaultctor BRepCheck_Face;
 class BRepCheck_Face : public BRepCheck_Result {
@@ -591,6 +606,7 @@ class BRepCheck_Face : public BRepCheck_Result {
 	}
 };
 
+
 %nodefaultctor BRepCheck_DataMapNodeOfDataMapOfShapeResult;
 class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 	public:
@@ -621,6 +637,7 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeResult : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BRepCheck;
 class BRepCheck {
 	public:
@@ -640,6 +657,7 @@ class BRepCheck {
 	if (__env){printf("## Call custom destructor for instance of BRepCheck\n");}
 	}
 };
+
 
 %nodefaultctor BRepCheck_Wire;
 class BRepCheck_Wire : public BRepCheck_Result {
@@ -685,6 +703,7 @@ class BRepCheck_Wire : public BRepCheck_Result {
 	}
 };
 
+
 %nodefaultctor BRepCheck_Vertex;
 class BRepCheck_Vertex : public BRepCheck_Result {
 	public:
@@ -719,6 +738,7 @@ class BRepCheck_Vertex : public BRepCheck_Result {
 	}
 };
 
+
 %nodefaultctor BRepCheck_DataMapOfShapeResult;
 class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 	public:
@@ -752,6 +772,7 @@ class BRepCheck_DataMapOfShapeResult : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapOfShapeResult\n");}
 	}
 };
+
 
 %nodefaultctor BRepCheck_Edge;
 class BRepCheck_Edge : public BRepCheck_Result {
@@ -791,6 +812,7 @@ class BRepCheck_Edge : public BRepCheck_Result {
 	}
 };
 
+
 %nodefaultctor BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus;
 class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_MapNode {
 	public:
@@ -821,6 +843,7 @@ class BRepCheck_DataMapNodeOfDataMapOfShapeListOfStatus : public TCollection_Map
 	}
 };
 
+
 %nodefaultctor BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus;
 class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection_BasicMapIterator {
 	public:
@@ -842,6 +865,7 @@ class BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus : public TCollection
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_DataMapIteratorOfDataMapOfShapeListOfStatus\n");}
 	}
 };
+
 
 %nodefaultctor BRepCheck_ListOfStatus;
 class BRepCheck_ListOfStatus {
@@ -893,6 +917,7 @@ class BRepCheck_ListOfStatus {
 	}
 };
 
+
 %nodefaultctor BRepCheck_ListIteratorOfListOfStatus;
 class BRepCheck_ListIteratorOfListOfStatus {
 	public:
@@ -916,6 +941,7 @@ class BRepCheck_ListIteratorOfListOfStatus {
 	if (__env){printf("## Call custom destructor for instance of BRepCheck_ListIteratorOfListOfStatus\n");}
 	}
 };
+
 
 %nodefaultctor BRepCheck_Analyzer;
 class BRepCheck_Analyzer {

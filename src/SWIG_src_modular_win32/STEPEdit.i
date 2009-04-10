@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_STEPEdit_EditSDR : public Handle_IFSelect_Editor {
 	}
 };
 
+
 %nodefaultctor Handle_STEPEdit_EditContext;
 class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 	public:
@@ -162,6 +164,7 @@ class Handle_STEPEdit_EditContext : public Handle_IFSelect_Editor {
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPEdit_EditContext\n");}
 	}
 };
+
 
 %nodefaultctor STEPEdit;
 class STEPEdit {
@@ -188,6 +191,7 @@ class STEPEdit {
 	if (__env){printf("## Call custom destructor for instance of STEPEdit\n");}
 	}
 };
+
 
 %nodefaultctor STEPEdit_EditContext;
 class STEPEdit_EditContext : public IFSelect_Editor {
@@ -224,6 +228,7 @@ class STEPEdit_EditContext : public IFSelect_Editor {
 	if (__env){printf("## Call custom destructor for instance of STEPEdit_EditContext\n");}
 	}
 };
+
 
 %nodefaultctor STEPEdit_EditSDR;
 class STEPEdit_EditSDR : public IFSelect_Editor {

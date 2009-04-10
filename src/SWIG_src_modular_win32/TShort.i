@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TShort_HSequenceOfShortReal : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TShort_HArray1OfShortReal;
 class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_TShort_HArray1OfShortReal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TShort_HArray1OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TShort_SequenceNodeOfSequenceOfShortReal;
 class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollection_SeqNode {
@@ -188,6 +191,7 @@ class Handle_TShort_SequenceNodeOfSequenceOfShortReal : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_TShort_HArray2OfShortReal;
 class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_TShort_HArray2OfShortReal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TShort_HArray2OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor TShort_HArray1OfShortReal;
 class TShort_HArray1OfShortReal : public MMgt_TShared {
@@ -258,6 +263,7 @@ class TShort_HArray1OfShortReal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TShort_HArray1OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor TShort_SequenceOfShortReal;
 class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
@@ -313,6 +319,7 @@ class TShort_SequenceOfShortReal : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TShort_Array1OfShortReal;
 class TShort_Array1OfShortReal {
 	public:
@@ -353,6 +360,7 @@ class TShort_Array1OfShortReal {
 	}
 };
 
+
 %nodefaultctor TShort_SequenceNodeOfSequenceOfShortReal;
 class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 	public:
@@ -380,6 +388,7 @@ class TShort_SequenceNodeOfSequenceOfShortReal : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TShort_SequenceNodeOfSequenceOfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor TShort_HArray2OfShortReal;
 class TShort_HArray2OfShortReal : public MMgt_TShared {
@@ -432,6 +441,7 @@ class TShort_HArray2OfShortReal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TShort_HArray2OfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor TShort_HSequenceOfShortReal;
 class TShort_HSequenceOfShortReal : public MMgt_TShared {
@@ -502,6 +512,7 @@ class TShort_HSequenceOfShortReal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TShort_HSequenceOfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor TShort_Array2OfShortReal;
 class TShort_Array2OfShortReal {

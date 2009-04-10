@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Units_NoSuchType : public Handle_Standard_NoSuchObject {
 	}
 };
 
+
 %nodefaultctor Handle_Units_QuantitiesSequence;
 class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_Units_QuantitiesSequence : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_QuantitiesSequence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_SequenceNodeOfTksSequence;
 class Handle_Units_SequenceNodeOfTksSequence : public Handle_TCollection_SeqNode {
@@ -188,6 +191,7 @@ class Handle_Units_SequenceNodeOfTksSequence : public Handle_TCollection_SeqNode
 	}
 };
 
+
 %nodefaultctor Handle_Units_StringsSequence;
 class Handle_Units_StringsSequence : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_Units_StringsSequence : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_StringsSequence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_Lexicon;
 class Handle_Units_Lexicon : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_Units_Lexicon : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Units_UnitsLexicon;
 class Handle_Units_UnitsLexicon : public Handle_Units_Lexicon {
 	public:
@@ -262,6 +268,7 @@ class Handle_Units_UnitsLexicon : public Handle_Units_Lexicon {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_UnitsLexicon\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_UnitsDictionary;
 class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_Units_UnitsDictionary : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Units_Unit;
 class Handle_Units_Unit : public Handle_MMgt_TShared {
 	public:
@@ -312,6 +320,7 @@ class Handle_Units_Unit : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_Unit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_UnitsSystem;
 class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_Units_UnitsSystem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Units_Token;
 class Handle_Units_Token : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_Units_Token : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_Token\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_ShiftedToken;
 class Handle_Units_ShiftedToken : public Handle_Units_Token {
@@ -388,6 +399,7 @@ class Handle_Units_ShiftedToken : public Handle_Units_Token {
 	}
 };
 
+
 %nodefaultctor Handle_Units_SequenceNodeOfQtsSequence;
 class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode {
 	public:
@@ -412,6 +424,7 @@ class Handle_Units_SequenceNodeOfQtsSequence : public Handle_TCollection_SeqNode
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_SequenceNodeOfQtsSequence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_SequenceNodeOfUtsSequence;
 class Handle_Units_SequenceNodeOfUtsSequence : public Handle_TCollection_SeqNode {
@@ -438,6 +451,7 @@ class Handle_Units_SequenceNodeOfUtsSequence : public Handle_TCollection_SeqNode
 	}
 };
 
+
 %nodefaultctor Handle_Units_TokensSequence;
 class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
 	public:
@@ -462,6 +476,7 @@ class Handle_Units_TokensSequence : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_TokensSequence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_UnitsSequence;
 class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
@@ -488,6 +503,7 @@ class Handle_Units_UnitsSequence : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Units_NoSuchUnit;
 class Handle_Units_NoSuchUnit : public Handle_Standard_NoSuchObject {
 	public:
@@ -512,6 +528,7 @@ class Handle_Units_NoSuchUnit : public Handle_Standard_NoSuchObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_NoSuchUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_ShiftedUnit;
 class Handle_Units_ShiftedUnit : public Handle_Units_Unit {
@@ -538,6 +555,7 @@ class Handle_Units_ShiftedUnit : public Handle_Units_Unit {
 	}
 };
 
+
 %nodefaultctor Handle_Units_Dimensions;
 class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 	public:
@@ -562,6 +580,7 @@ class Handle_Units_Dimensions : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_Dimensions\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Units_SequenceNodeOfStrgSequence;
 class Handle_Units_SequenceNodeOfStrgSequence : public Handle_TCollection_SeqNode {
@@ -588,6 +607,7 @@ class Handle_Units_SequenceNodeOfStrgSequence : public Handle_TCollection_SeqNod
 	}
 };
 
+
 %nodefaultctor Handle_Units_Quantity;
 class Handle_Units_Quantity : public Handle_MMgt_TShared {
 	public:
@@ -612,6 +632,7 @@ class Handle_Units_Quantity : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Units_Quantity\n");}
 	}
 };
+
 
 %nodefaultctor Units_NoSuchType;
 class Units_NoSuchType : public Standard_NoSuchObject {
@@ -647,6 +668,7 @@ class Units_NoSuchType : public Standard_NoSuchObject {
 	}
 };
 
+
 %nodefaultctor Units_SequenceNodeOfTksSequence;
 class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
 	public:
@@ -674,6 +696,7 @@ class Units_SequenceNodeOfTksSequence : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfTksSequence\n");}
 	}
 };
+
 
 %nodefaultctor Units_StrgSequence;
 class Units_StrgSequence : public TCollection_BaseSequence {
@@ -729,6 +752,7 @@ class Units_StrgSequence : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Units_Sentence;
 class Units_Sentence {
 	public:
@@ -755,6 +779,7 @@ class Units_Sentence {
 	}
 };
 
+
 %nodefaultctor Units_MathSentence;
 class Units_MathSentence : public Units_Sentence {
 	public:
@@ -768,6 +793,7 @@ class Units_MathSentence : public Units_Sentence {
 	if (__env){printf("## Call custom destructor for instance of Units_MathSentence\n");}
 	}
 };
+
 
 %nodefaultctor Units_TksSequence;
 class Units_TksSequence : public TCollection_BaseSequence {
@@ -823,6 +849,7 @@ class Units_TksSequence : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Units_Unit;
 class Units_Unit : public MMgt_TShared {
 	public:
@@ -873,6 +900,7 @@ class Units_Unit : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Units_ShiftedUnit;
 class Units_ShiftedUnit : public Units_Unit {
 	public:
@@ -910,6 +938,7 @@ class Units_ShiftedUnit : public Units_Unit {
 	if (__env){printf("## Call custom destructor for instance of Units_ShiftedUnit\n");}
 	}
 };
+
 
 %nodefaultctor Units_UnitsSequence;
 class Units_UnitsSequence : public MMgt_TShared {
@@ -981,6 +1010,7 @@ class Units_UnitsSequence : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Units_Measurement;
 class Units_Measurement {
 	public:
@@ -1038,6 +1068,7 @@ class Units_Measurement {
 	if (__env){printf("## Call custom destructor for instance of Units_Measurement\n");}
 	}
 };
+
 
 %nodefaultctor Units_Token;
 class Units_Token : public MMgt_TShared {
@@ -1135,6 +1166,7 @@ class Units_Token : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Units_ShiftedToken;
 class Units_ShiftedToken : public Units_Token {
 	public:
@@ -1160,6 +1192,7 @@ class Units_ShiftedToken : public Units_Token {
 	if (__env){printf("## Call custom destructor for instance of Units_ShiftedToken\n");}
 	}
 };
+
 
 %nodefaultctor Units_UnitsDictionary;
 class Units_UnitsDictionary : public MMgt_TShared {
@@ -1198,6 +1231,7 @@ class Units_UnitsDictionary : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Units_UnitsDictionary\n");}
 	}
 };
+
 
 %nodefaultctor Units_QuantitiesSequence;
 class Units_QuantitiesSequence : public MMgt_TShared {
@@ -1269,6 +1303,7 @@ class Units_QuantitiesSequence : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Units_NoSuchUnit;
 class Units_NoSuchUnit : public Standard_NoSuchObject {
 	public:
@@ -1302,6 +1337,7 @@ class Units_NoSuchUnit : public Standard_NoSuchObject {
 	if (__env){printf("## Call custom destructor for instance of Units_NoSuchUnit\n");}
 	}
 };
+
 
 %nodefaultctor Units_Lexicon;
 class Units_Lexicon : public MMgt_TShared {
@@ -1340,6 +1376,7 @@ class Units_Lexicon : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Units_Lexicon\n");}
 	}
 };
+
 
 %nodefaultctor Units_UnitsSystem;
 class Units_UnitsSystem : public MMgt_TShared {
@@ -1393,6 +1430,7 @@ class Units_UnitsSystem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Units_UnitsLexicon;
 class Units_UnitsLexicon : public Units_Lexicon {
 	public:
@@ -1426,6 +1464,7 @@ class Units_UnitsLexicon : public Units_Lexicon {
 	if (__env){printf("## Call custom destructor for instance of Units_UnitsLexicon\n");}
 	}
 };
+
 
 %nodefaultctor Units_StringsSequence;
 class Units_StringsSequence : public MMgt_TShared {
@@ -1497,6 +1536,7 @@ class Units_StringsSequence : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Units_UtsSequence;
 class Units_UtsSequence : public TCollection_BaseSequence {
 	public:
@@ -1551,6 +1591,7 @@ class Units_UtsSequence : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Units_Explorer;
 class Units_Explorer {
 	public:
@@ -1595,6 +1636,7 @@ class Units_Explorer {
 	}
 };
 
+
 %nodefaultctor Units;
 class Units {
 	public:
@@ -1636,6 +1678,7 @@ class Units {
 	if (__env){printf("## Call custom destructor for instance of Units\n");}
 	}
 };
+
 
 %nodefaultctor Units_TokensSequence;
 class Units_TokensSequence : public MMgt_TShared {
@@ -1707,6 +1750,7 @@ class Units_TokensSequence : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Units_UnitSentence;
 class Units_UnitSentence : public Units_Sentence {
 	public:
@@ -1726,6 +1770,7 @@ class Units_UnitSentence : public Units_Sentence {
 	if (__env){printf("## Call custom destructor for instance of Units_UnitSentence\n");}
 	}
 };
+
 
 %nodefaultctor Units_QtsSequence;
 class Units_QtsSequence : public TCollection_BaseSequence {
@@ -1781,6 +1826,7 @@ class Units_QtsSequence : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Units_SequenceNodeOfUtsSequence;
 class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
 	public:
@@ -1809,6 +1855,7 @@ class Units_SequenceNodeOfUtsSequence : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Units_SequenceNodeOfStrgSequence;
 class Units_SequenceNodeOfStrgSequence : public TCollection_SeqNode {
 	public:
@@ -1836,6 +1883,7 @@ class Units_SequenceNodeOfStrgSequence : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Units_SequenceNodeOfStrgSequence\n");}
 	}
 };
+
 
 %nodefaultctor Units_SequenceNodeOfQtsSequence;
 class Units_SequenceNodeOfQtsSequence : public TCollection_SeqNode {

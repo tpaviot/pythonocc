@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -129,6 +130,7 @@ class SortTools_QuickSortOfReal {
 	}
 };
 
+
 %nodefaultctor SortTools_HeapSortOfInteger;
 class SortTools_HeapSortOfInteger {
 	public:
@@ -144,6 +146,7 @@ class SortTools_HeapSortOfInteger {
 	if (__env){printf("## Call custom destructor for instance of SortTools_HeapSortOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor SortTools_StraightInsertionSortOfInteger;
 class SortTools_StraightInsertionSortOfInteger {
@@ -161,6 +164,7 @@ class SortTools_StraightInsertionSortOfInteger {
 	}
 };
 
+
 %nodefaultctor SortTools_HeapSortOfReal;
 class SortTools_HeapSortOfReal {
 	public:
@@ -176,6 +180,7 @@ class SortTools_HeapSortOfReal {
 	if (__env){printf("## Call custom destructor for instance of SortTools_HeapSortOfReal\n");}
 	}
 };
+
 
 %nodefaultctor SortTools_StraightInsertionSortOfReal;
 class SortTools_StraightInsertionSortOfReal {
@@ -193,6 +198,7 @@ class SortTools_StraightInsertionSortOfReal {
 	}
 };
 
+
 %nodefaultctor SortTools_QuickSortOfInteger;
 class SortTools_QuickSortOfInteger {
 	public:
@@ -209,6 +215,7 @@ class SortTools_QuickSortOfInteger {
 	}
 };
 
+
 %nodefaultctor SortTools_ShellSortOfReal;
 class SortTools_ShellSortOfReal {
 	public:
@@ -224,6 +231,7 @@ class SortTools_ShellSortOfReal {
 	if (__env){printf("## Call custom destructor for instance of SortTools_ShellSortOfReal\n");}
 	}
 };
+
 
 %nodefaultctor SortTools_ShellSortOfInteger;
 class SortTools_ShellSortOfInteger {

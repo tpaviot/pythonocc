@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Poly_CoherentTriangulation : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_Poly_PolygonOnTriangulation;
 class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_Poly_PolygonOnTriangulation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Poly_PolygonOnTriangulation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Poly_Polygon3D;
 class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_Poly_Polygon3D : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Poly_Polygon2D;
 class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_Poly_Polygon2D : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Poly_Polygon2D\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Poly_HArray1OfTriangle;
 class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_Poly_HArray1OfTriangle : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Poly_Triangulation;
 class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_Poly_Triangulation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Poly_Triangulation\n");}
 	}
 };
+
 
 %nodefaultctor Poly_Connect;
 class Poly_Connect {
@@ -292,6 +299,7 @@ class Poly_Connect {
 	if (__env){printf("## Call custom destructor for instance of Poly_Connect\n");}
 	}
 };
+
 
 %nodefaultctor Poly_PolygonOnTriangulation;
 class Poly_PolygonOnTriangulation : public MMgt_TShared {
@@ -333,6 +341,7 @@ class Poly_PolygonOnTriangulation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Poly_Array1OfTriangle;
 class Poly_Array1OfTriangle {
 	public:
@@ -372,6 +381,7 @@ class Poly_Array1OfTriangle {
 	if (__env){printf("## Call custom destructor for instance of Poly_Array1OfTriangle\n");}
 	}
 };
+
 
 %nodefaultctor Poly_Triangulation;
 class Poly_Triangulation : public MMgt_TShared {
@@ -435,6 +445,7 @@ class Poly_Triangulation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Poly_CoherentNode;
 class Poly_CoherentNode : public gp_XYZ {
 	public:
@@ -477,6 +488,7 @@ class Poly_CoherentNode : public gp_XYZ {
 	}
 };
 
+
 %nodefaultctor Poly_CoherentTriangle;
 class Poly_CoherentTriangle {
 	public:
@@ -515,6 +527,7 @@ class Poly_CoherentTriangle {
 	}
 };
 
+
 %nodefaultctor Poly_Triangle;
 class Poly_Triangle {
 	public:
@@ -544,6 +557,7 @@ class Poly_Triangle {
 	if (__env){printf("## Call custom destructor for instance of Poly_Triangle\n");}
 	}
 };
+
 
 %nodefaultctor Poly_HArray1OfTriangle;
 class Poly_HArray1OfTriangle : public MMgt_TShared {
@@ -591,6 +605,7 @@ class Poly_HArray1OfTriangle : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Poly;
 class Poly {
 	public:
@@ -625,6 +640,7 @@ class Poly {
 	}
 };
 
+
 %nodefaultctor Poly_CoherentLink;
 class Poly_CoherentLink {
 	public:
@@ -654,6 +670,7 @@ class Poly_CoherentLink {
 	if (__env){printf("## Call custom destructor for instance of Poly_CoherentLink\n");}
 	}
 };
+
 
 %nodefaultctor Poly_Polygon2D;
 class Poly_Polygon2D : public MMgt_TShared {
@@ -688,6 +705,7 @@ class Poly_Polygon2D : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Poly_Polygon2D\n");}
 	}
 };
+
 
 %nodefaultctor Poly_Polygon3D;
 class Poly_Polygon3D : public MMgt_TShared {

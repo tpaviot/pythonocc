@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -137,6 +138,7 @@ class GeomLib_LogSample : public math_FunctionSample {
 	}
 };
 
+
 %nodefaultctor GeomLib_DenominatorMultiplier;
 class GeomLib_DenominatorMultiplier {
 	public:
@@ -152,6 +154,7 @@ class GeomLib_DenominatorMultiplier {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_DenominatorMultiplier\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_Tool;
 class GeomLib_Tool {
@@ -172,6 +175,7 @@ class GeomLib_Tool {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_Tool\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_Array1OfMat;
 class GeomLib_Array1OfMat {
@@ -213,6 +217,7 @@ class GeomLib_Array1OfMat {
 	}
 };
 
+
 %nodefaultctor GeomLib_PolyFunc;
 class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 	public:
@@ -233,6 +238,7 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 	}
 };
 
+
 %nodefaultctor GeomLib_Interpolate;
 class GeomLib_Interpolate {
 	public:
@@ -252,6 +258,7 @@ class GeomLib_Interpolate {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_Interpolate\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_MakeCurvefromApprox;
 class GeomLib_MakeCurvefromApprox {
@@ -285,6 +292,7 @@ class GeomLib_MakeCurvefromApprox {
 	}
 };
 
+
 %nodefaultctor GeomLib_IsPlanarSurface;
 class GeomLib_IsPlanarSurface {
 	public:
@@ -302,6 +310,7 @@ class GeomLib_IsPlanarSurface {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_IsPlanarSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_Check2dBSplineCurve;
 class GeomLib_Check2dBSplineCurve {
@@ -324,6 +333,7 @@ class GeomLib_Check2dBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_Check2dBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib;
 class GeomLib {
@@ -370,6 +380,7 @@ class GeomLib {
 	if (__env){printf("## Call custom destructor for instance of GeomLib\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_CheckBSplineCurve;
 class GeomLib_CheckBSplineCurve {

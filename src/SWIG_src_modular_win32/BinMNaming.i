@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinMNaming_NamedShapeDriver;
 class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -163,6 +165,7 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMNaming;
 class BinMNaming {
 	public:
@@ -178,6 +181,7 @@ class BinMNaming {
 	if (__env){printf("## Call custom destructor for instance of BinMNaming\n");}
 	}
 };
+
 
 %nodefaultctor BinMNaming_NamingDriver;
 class BinMNaming_NamingDriver : public BinMDF_ADriver {
@@ -210,6 +214,7 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamingDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMNaming_NamedShapeDriver;
 class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {

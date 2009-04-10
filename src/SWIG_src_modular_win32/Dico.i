@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Dico_DictionaryOfTransient : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfTransient;
 class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_Dico_StackItemOfDictionaryOfTransient : public Handle_MMgt_TShared 
 	if (__env){printf("## Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dico_DictionaryOfInteger;
 class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_Dico_DictionaryOfInteger : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dico_StackItemOfDictionaryOfInteger;
 class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_Dico_StackItemOfDictionaryOfInteger : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dico_StackItemOfDictionaryOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Dico_DictionaryOfInteger;
 class Dico_DictionaryOfInteger : public MMgt_TShared {
@@ -273,6 +278,7 @@ class Dico_DictionaryOfInteger : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dico_IteratorOfDictionaryOfTransient;
 class Dico_IteratorOfDictionaryOfTransient {
 	public:
@@ -300,6 +306,7 @@ class Dico_IteratorOfDictionaryOfTransient {
 	if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor Dico_StackItemOfDictionaryOfInteger;
 class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
@@ -335,6 +342,7 @@ class Dico_StackItemOfDictionaryOfInteger : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dico_StackItemOfDictionaryOfTransient;
 class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 	public:
@@ -369,6 +377,7 @@ class Dico_StackItemOfDictionaryOfTransient : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dico_IteratorOfDictionaryOfInteger;
 class Dico_IteratorOfDictionaryOfInteger {
 	public:
@@ -396,6 +405,7 @@ class Dico_IteratorOfDictionaryOfInteger {
 	if (__env){printf("## Call custom destructor for instance of Dico_IteratorOfDictionaryOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Dico_DictionaryOfTransient;
 class Dico_DictionaryOfTransient : public MMgt_TShared {

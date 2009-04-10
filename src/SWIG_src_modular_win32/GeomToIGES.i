@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -137,6 +138,7 @@ class GeomToIGES_GeomEntity {
 	}
 };
 
+
 %nodefaultctor GeomToIGES_GeomCurve;
 class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
 	public:
@@ -176,6 +178,7 @@ class GeomToIGES_GeomCurve : public GeomToIGES_GeomEntity {
 	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomCurve\n");}
 	}
 };
+
 
 %nodefaultctor GeomToIGES_GeomSurface;
 class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
@@ -243,6 +246,7 @@ class GeomToIGES_GeomSurface : public GeomToIGES_GeomEntity {
 	}
 };
 
+
 %nodefaultctor GeomToIGES_GeomPoint;
 class GeomToIGES_GeomPoint : public GeomToIGES_GeomEntity {
 	public:
@@ -262,6 +266,7 @@ class GeomToIGES_GeomPoint : public GeomToIGES_GeomEntity {
 	if (__env){printf("## Call custom destructor for instance of GeomToIGES_GeomPoint\n");}
 	}
 };
+
 
 %nodefaultctor GeomToIGES_GeomVector;
 class GeomToIGES_GeomVector : public GeomToIGES_GeomEntity {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Geom2dAdaptor_GHCurve : public Handle_Adaptor2d_HCurve2d {
 	}
 };
 
+
 %nodefaultctor Handle_Geom2dAdaptor_HCurve;
 class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 	public:
@@ -163,6 +165,7 @@ class Handle_Geom2dAdaptor_HCurve : public Handle_Geom2dAdaptor_GHCurve {
 	}
 };
 
+
 %nodefaultctor Geom2dAdaptor;
 class Geom2dAdaptor {
 	public:
@@ -178,6 +181,7 @@ class Geom2dAdaptor {
 	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dAdaptor_GHCurve;
 class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
@@ -213,6 +217,7 @@ class Geom2dAdaptor_GHCurve : public Adaptor2d_HCurve2d {
 	}
 };
 
+
 %nodefaultctor Geom2dAdaptor_HCurve;
 class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 	public:
@@ -242,6 +247,7 @@ class Geom2dAdaptor_HCurve : public Geom2dAdaptor_GHCurve {
 	if (__env){printf("## Call custom destructor for instance of Geom2dAdaptor_HCurve\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dAdaptor_Curve;
 class Geom2dAdaptor_Curve : public Adaptor2d_Curve2d {

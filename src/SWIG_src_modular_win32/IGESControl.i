@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESControl_AlgoContainer : public Handle_IGESToBRep_AlgoContainer 
 	}
 };
 
+
 %nodefaultctor Handle_IGESControl_ActorWrite;
 class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProcess {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESControl_ActorWrite : public Handle_Transfer_ActorOfFinderProces
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_ActorWrite\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESControl_Controller;
 class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
@@ -188,6 +191,7 @@ class Handle_IGESControl_Controller : public Handle_XSControl_Controller {
 	}
 };
 
+
 %nodefaultctor Handle_IGESControl_IGESBoundary;
 class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESControl_IGESBoundary : public Handle_IGESToBRep_IGESBoundary {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESControl_IGESBoundary\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESControl_ToolContainer;
 class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer {
@@ -238,6 +243,7 @@ class Handle_IGESControl_ToolContainer : public Handle_IGESToBRep_ToolContainer 
 	}
 };
 
+
 %nodefaultctor IGESControl_Reader;
 class IGESControl_Reader : public XSControl_Reader {
 	public:
@@ -263,6 +269,7 @@ class IGESControl_Reader : public XSControl_Reader {
 	if (__env){printf("## Call custom destructor for instance of IGESControl_Reader\n");}
 	}
 };
+
 
 %nodefaultctor IGESControl_ToolContainer;
 class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
@@ -291,6 +298,7 @@ class IGESControl_ToolContainer : public IGESToBRep_ToolContainer {
 	if (__env){printf("## Call custom destructor for instance of IGESControl_ToolContainer\n");}
 	}
 };
+
 
 %nodefaultctor IGESControl_Controller;
 class IGESControl_Controller : public XSControl_Controller {
@@ -328,6 +336,7 @@ class IGESControl_Controller : public XSControl_Controller {
 	}
 };
 
+
 %nodefaultctor IGESControl_AlgoContainer;
 class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 	public:
@@ -353,6 +362,7 @@ class IGESControl_AlgoContainer : public IGESToBRep_AlgoContainer {
 	if (__env){printf("## Call custom destructor for instance of IGESControl_AlgoContainer\n");}
 	}
 };
+
 
 %nodefaultctor IGESControl_IGESBoundary;
 class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
@@ -383,6 +393,7 @@ class IGESControl_IGESBoundary : public IGESToBRep_IGESBoundary {
 	if (__env){printf("## Call custom destructor for instance of IGESControl_IGESBoundary\n");}
 	}
 };
+
 
 %nodefaultctor IGESControl_Writer;
 class IGESControl_Writer {
@@ -421,6 +432,7 @@ class IGESControl_Writer {
 	if (__env){printf("## Call custom destructor for instance of IGESControl_Writer\n");}
 	}
 };
+
 
 %nodefaultctor IGESControl_ActorWrite;
 class IGESControl_ActorWrite : public Transfer_ActorOfFinderProcess {

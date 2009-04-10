@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -152,6 +153,7 @@ class Handle_MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public Handle_TC
 	}
 };
 
+
 %nodefaultctor MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger;
 class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -173,6 +175,7 @@ class MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapIteratorOfDataMapOfIntegerMapOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger;
 class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapNode {
@@ -203,6 +206,7 @@ class MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of MeshDS_DataMapNodeOfDataMapOfIntegerMapOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor MeshDS_DataMapOfIntegerMapOfInteger;
 class MeshDS_DataMapOfIntegerMapOfInteger : public TCollection_BasicMap {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -140,6 +141,7 @@ class Handle_TDF_DoubleMapNodeOfGUIDProgIDMap : public Handle_TCollection_MapNod
 	}
 };
 
+
 %nodefaultctor Handle_TDF_AttributeDelta;
 class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 	public:
@@ -164,6 +166,7 @@ class Handle_TDF_AttributeDelta : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_AttributeDelta\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DeltaOnForget;
 class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
@@ -190,6 +193,7 @@ class Handle_TDF_DeltaOnForget : public Handle_TDF_AttributeDelta {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_StdMapNodeOfLabelMap;
 class Handle_TDF_StdMapNodeOfLabelMap : public Handle_TCollection_MapNode {
 	public:
@@ -214,6 +218,7 @@ class Handle_TDF_StdMapNodeOfLabelMap : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_StdMapNodeOfLabelMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DeltaOnRemoval;
 class Handle_TDF_DeltaOnRemoval : public Handle_TDF_AttributeDelta {
@@ -240,6 +245,7 @@ class Handle_TDF_DeltaOnRemoval : public Handle_TDF_AttributeDelta {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_ListNodeOfAttributeDeltaList;
 class Handle_TDF_ListNodeOfAttributeDeltaList : public Handle_TCollection_MapNode {
 	public:
@@ -264,6 +270,7 @@ class Handle_TDF_ListNodeOfAttributeDeltaList : public Handle_TCollection_MapNod
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfAttributeDeltaList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_ListNodeOfIDList;
 class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
@@ -290,6 +297,7 @@ class Handle_TDF_ListNodeOfIDList : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_Attribute;
 class Handle_TDF_Attribute : public Handle_MMgt_TShared {
 	public:
@@ -314,6 +322,7 @@ class Handle_TDF_Attribute : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_Attribute\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelIntegerMap;
 class Handle_TDF_DataMapNodeOfLabelIntegerMap : public Handle_TCollection_MapNode {
@@ -340,6 +349,7 @@ class Handle_TDF_DataMapNodeOfLabelIntegerMap : public Handle_TCollection_MapNod
 	}
 };
 
+
 %nodefaultctor Handle_TDF_RelocationTable;
 class Handle_TDF_RelocationTable : public Handle_MMgt_TShared {
 	public:
@@ -364,6 +374,7 @@ class Handle_TDF_RelocationTable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_RelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_Reference;
 class Handle_TDF_Reference : public Handle_TDF_Attribute {
@@ -390,6 +401,7 @@ class Handle_TDF_Reference : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_SequenceNodeOfAttributeSequence;
 class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_SeqNode {
 	public:
@@ -414,6 +426,7 @@ class Handle_TDF_SequenceNodeOfAttributeSequence : public Handle_TCollection_Seq
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_SequenceNodeOfAttributeSequence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_Data;
 class Handle_TDF_Data : public Handle_MMgt_TShared {
@@ -440,6 +453,7 @@ class Handle_TDF_Data : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_DoubleMapNodeOfLabelDoubleMap;
 class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNode {
 	public:
@@ -464,6 +478,7 @@ class Handle_TDF_DoubleMapNodeOfLabelDoubleMap : public Handle_TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DoubleMapNodeOfLabelDoubleMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_IndexedMapNodeOfAttributeIndexedMap;
 class Handle_TDF_IndexedMapNodeOfAttributeIndexedMap : public Handle_TCollection_MapNode {
@@ -490,6 +505,7 @@ class Handle_TDF_IndexedMapNodeOfAttributeIndexedMap : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_TDF_HAttributeArray1;
 class Handle_TDF_HAttributeArray1 : public Handle_MMgt_TShared {
 	public:
@@ -514,6 +530,7 @@ class Handle_TDF_HAttributeArray1 : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_HAttributeArray1\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelLabelMap;
 class Handle_TDF_DataMapNodeOfLabelLabelMap : public Handle_TCollection_MapNode {
@@ -540,6 +557,7 @@ class Handle_TDF_DataMapNodeOfLabelLabelMap : public Handle_TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Handle_TDF_TagSource;
 class Handle_TDF_TagSource : public Handle_TDF_Attribute {
 	public:
@@ -564,6 +582,7 @@ class Handle_TDF_TagSource : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_TagSource\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_ListNodeOfDeltaList;
 class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
@@ -590,6 +609,7 @@ class Handle_TDF_ListNodeOfDeltaList : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_ListNodeOfAttributeList;
 class Handle_TDF_ListNodeOfAttributeList : public Handle_TCollection_MapNode {
 	public:
@@ -614,6 +634,7 @@ class Handle_TDF_ListNodeOfAttributeList : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfAttributeList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DoubleMapNodeOfAttributeDoubleMap;
 class Handle_TDF_DoubleMapNodeOfAttributeDoubleMap : public Handle_TCollection_MapNode {
@@ -640,6 +661,7 @@ class Handle_TDF_DoubleMapNodeOfAttributeDoubleMap : public Handle_TCollection_M
 	}
 };
 
+
 %nodefaultctor Handle_TDF_StdMapNodeOfAttributeMap;
 class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
 	public:
@@ -664,6 +686,7 @@ class Handle_TDF_StdMapNodeOfAttributeMap : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_StdMapNodeOfAttributeMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DeltaOnAddition;
 class Handle_TDF_DeltaOnAddition : public Handle_TDF_AttributeDelta {
@@ -690,6 +713,7 @@ class Handle_TDF_DeltaOnAddition : public Handle_TDF_AttributeDelta {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_ListNodeOfLabelList;
 class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
 	public:
@@ -714,6 +738,7 @@ class Handle_TDF_ListNodeOfLabelList : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_ListNodeOfLabelList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DataSet;
 class Handle_TDF_DataSet : public Handle_MMgt_TShared {
@@ -740,6 +765,7 @@ class Handle_TDF_DataSet : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_DeltaOnModification;
 class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 	public:
@@ -764,6 +790,7 @@ class Handle_TDF_DeltaOnModification : public Handle_TDF_AttributeDelta {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DeltaOnModification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DataMapNodeOfLabelDataMap;
 class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
@@ -790,6 +817,7 @@ class Handle_TDF_DataMapNodeOfLabelDataMap : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_DefaultDeltaOnModification;
 class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModification {
 	public:
@@ -814,6 +842,7 @@ class Handle_TDF_DefaultDeltaOnModification : public Handle_TDF_DeltaOnModificat
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DefaultDeltaOnModification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DefaultDeltaOnRemoval;
 class Handle_TDF_DefaultDeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
@@ -840,6 +869,7 @@ class Handle_TDF_DefaultDeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_DataMapNodeOfAttributeDataMap;
 class Handle_TDF_DataMapNodeOfAttributeDataMap : public Handle_TCollection_MapNode {
 	public:
@@ -864,6 +894,7 @@ class Handle_TDF_DataMapNodeOfAttributeDataMap : public Handle_TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_DataMapNodeOfAttributeDataMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_DeltaOnResume;
 class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
@@ -890,6 +921,7 @@ class Handle_TDF_DeltaOnResume : public Handle_TDF_AttributeDelta {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_StdMapNodeOfIDMap;
 class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
 	public:
@@ -914,6 +946,7 @@ class Handle_TDF_StdMapNodeOfIDMap : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_StdMapNodeOfIDMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDF_IndexedMapNodeOfLabelIndexedMap;
 class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_MapNode {
@@ -940,6 +973,7 @@ class Handle_TDF_IndexedMapNodeOfLabelIndexedMap : public Handle_TCollection_Map
 	}
 };
 
+
 %nodefaultctor Handle_TDF_Delta;
 class Handle_TDF_Delta : public Handle_MMgt_TShared {
 	public:
@@ -965,6 +999,7 @@ class Handle_TDF_Delta : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDF_SequenceNodeOfLabelSequence;
 class Handle_TDF_SequenceNodeOfLabelSequence : public Handle_TCollection_SeqNode {
 	public:
@@ -989,6 +1024,7 @@ class Handle_TDF_SequenceNodeOfLabelSequence : public Handle_TCollection_SeqNode
 	if (__env){printf("## Call custom destructor for instance of Handle_TDF_SequenceNodeOfLabelSequence\n");}
 	}
 };
+
 
 %nodefaultctor TDF_AttributeDoubleMap;
 class TDF_AttributeDoubleMap : public TCollection_BasicMap {
@@ -1026,6 +1062,7 @@ class TDF_AttributeDoubleMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDF_DataMapIteratorOfLabelDataMap;
 class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 	public:
@@ -1047,6 +1084,7 @@ class TDF_DataMapIteratorOfLabelDataMap : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TDF_DataMapIteratorOfLabelDataMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_ComparisonTool;
 class TDF_ComparisonTool {
@@ -1072,6 +1110,7 @@ class TDF_ComparisonTool {
 	}
 };
 
+
 %nodefaultctor TDF_ListIteratorOfIDList;
 class TDF_ListIteratorOfIDList {
 	public:
@@ -1096,6 +1135,7 @@ class TDF_ListIteratorOfIDList {
 	}
 };
 
+
 %nodefaultctor TDF_ClosureTool;
 class TDF_ClosureTool {
 	public:
@@ -1115,6 +1155,7 @@ class TDF_ClosureTool {
 	if (__env){printf("## Call custom destructor for instance of TDF_ClosureTool\n");}
 	}
 };
+
 
 %nodefaultctor TDF_Attribute;
 class TDF_Attribute : public MMgt_TShared {
@@ -1212,6 +1253,7 @@ class TDF_Attribute : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDF_LabelMapHasher;
 class TDF_LabelMapHasher {
 	public:
@@ -1229,6 +1271,7 @@ class TDF_LabelMapHasher {
 	if (__env){printf("## Call custom destructor for instance of TDF_LabelMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor TDF_ListNodeOfDeltaList;
 class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
@@ -1257,6 +1300,7 @@ class TDF_ListNodeOfDeltaList : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfDeltaList\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DoubleMapNodeOfGUIDProgIDMap;
 class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
@@ -1289,6 +1333,7 @@ class TDF_DoubleMapNodeOfGUIDProgIDMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapNodeOfGUIDProgIDMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_LabelDataMap;
 class TDF_LabelDataMap : public TCollection_BasicMap {
@@ -1324,6 +1369,7 @@ class TDF_LabelDataMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDF_AttributeDelta;
 class TDF_AttributeDelta : public MMgt_TShared {
 	public:
@@ -1358,6 +1404,7 @@ class TDF_AttributeDelta : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDF_DeltaOnRemoval;
 class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 	public:
@@ -1379,6 +1426,7 @@ class TDF_DeltaOnRemoval : public TDF_AttributeDelta {
 	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnRemoval\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DefaultDeltaOnRemoval;
 class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
@@ -1403,6 +1451,7 @@ class TDF_DefaultDeltaOnRemoval : public TDF_DeltaOnRemoval {
 	if (__env){printf("## Call custom destructor for instance of TDF_DefaultDeltaOnRemoval\n");}
 	}
 };
+
 
 %nodefaultctor TDF_AttributeList;
 class TDF_AttributeList {
@@ -1454,6 +1503,7 @@ class TDF_AttributeList {
 	}
 };
 
+
 %nodefaultctor TDF_SequenceNodeOfLabelSequence;
 class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 	public:
@@ -1482,6 +1532,7 @@ class TDF_SequenceNodeOfLabelSequence : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor TDF_ListIteratorOfDeltaList;
 class TDF_ListIteratorOfDeltaList {
 	public:
@@ -1505,6 +1556,7 @@ class TDF_ListIteratorOfDeltaList {
 	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfDeltaList\n");}
 	}
 };
+
 
 %nodefaultctor TDF_ListNodeOfAttributeDeltaList;
 class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
@@ -1534,6 +1586,7 @@ class TDF_ListNodeOfAttributeDeltaList : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_DataMapIteratorOfAttributeDataMap;
 class TDF_DataMapIteratorOfAttributeDataMap : public TCollection_BasicMapIterator {
 	public:
@@ -1555,6 +1608,7 @@ class TDF_DataMapIteratorOfAttributeDataMap : public TCollection_BasicMapIterato
 	if (__env){printf("## Call custom destructor for instance of TDF_DataMapIteratorOfAttributeDataMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_LabelDoubleMap;
 class TDF_LabelDoubleMap : public TCollection_BasicMap {
@@ -1592,6 +1646,7 @@ class TDF_LabelDoubleMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDF_DataMapNodeOfLabelDataMap;
 class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
 	public:
@@ -1621,6 +1676,7 @@ class TDF_DataMapNodeOfLabelDataMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDF_DataMapNodeOfLabelDataMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DataMapNodeOfLabelIntegerMap;
 class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
@@ -1652,6 +1708,7 @@ class TDF_DataMapNodeOfLabelIntegerMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_ListIteratorOfAttributeDeltaList;
 class TDF_ListIteratorOfAttributeDeltaList {
 	public:
@@ -1676,6 +1733,7 @@ class TDF_ListIteratorOfAttributeDeltaList {
 	}
 };
 
+
 %nodefaultctor TDF_DoubleMapIteratorOfAttributeDoubleMap;
 class TDF_DoubleMapIteratorOfAttributeDoubleMap : public TCollection_BasicMapIterator {
 	public:
@@ -1697,6 +1755,7 @@ class TDF_DoubleMapIteratorOfAttributeDoubleMap : public TCollection_BasicMapIte
 	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapIteratorOfAttributeDoubleMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_ListNodeOfLabelList;
 class TDF_ListNodeOfLabelList : public TCollection_MapNode {
@@ -1726,6 +1785,7 @@ class TDF_ListNodeOfLabelList : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_SequenceNodeOfAttributeSequence;
 class TDF_SequenceNodeOfAttributeSequence : public TCollection_SeqNode {
 	public:
@@ -1754,6 +1814,7 @@ class TDF_SequenceNodeOfAttributeSequence : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor TDF_ChildIterator;
 class TDF_ChildIterator {
 	public:
@@ -1779,6 +1840,7 @@ class TDF_ChildIterator {
 	if (__env){printf("## Call custom destructor for instance of TDF_ChildIterator\n");}
 	}
 };
+
 
 %nodefaultctor TDF_TagSource;
 class TDF_TagSource : public TDF_Attribute {
@@ -1828,6 +1890,7 @@ class TDF_TagSource : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDF_DeltaOnForget;
 class TDF_DeltaOnForget : public TDF_AttributeDelta {
 	public:
@@ -1856,6 +1919,7 @@ class TDF_DeltaOnForget : public TDF_AttributeDelta {
 	}
 };
 
+
 %nodefaultctor TDF_DoubleMapIteratorOfLabelDoubleMap;
 class TDF_DoubleMapIteratorOfLabelDoubleMap : public TCollection_BasicMapIterator {
 	public:
@@ -1877,6 +1941,7 @@ class TDF_DoubleMapIteratorOfLabelDoubleMap : public TCollection_BasicMapIterato
 	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapIteratorOfLabelDoubleMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_AttributeDeltaList;
 class TDF_AttributeDeltaList {
@@ -1928,6 +1993,7 @@ class TDF_AttributeDeltaList {
 	}
 };
 
+
 %nodefaultctor TDF_StdMapNodeOfAttributeMap;
 class TDF_StdMapNodeOfAttributeMap : public TCollection_MapNode {
 	public:
@@ -1955,6 +2021,7 @@ class TDF_StdMapNodeOfAttributeMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDF_StdMapNodeOfAttributeMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DeltaOnResume;
 class TDF_DeltaOnResume : public TDF_AttributeDelta {
@@ -1984,6 +2051,7 @@ class TDF_DeltaOnResume : public TDF_AttributeDelta {
 	}
 };
 
+
 %nodefaultctor TDF_StdMapNodeOfIDMap;
 class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 	public:
@@ -2012,6 +2080,7 @@ class TDF_StdMapNodeOfIDMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_ChildIDIterator;
 class TDF_ChildIDIterator {
 	public:
@@ -2037,6 +2106,7 @@ class TDF_ChildIDIterator {
 	if (__env){printf("## Call custom destructor for instance of TDF_ChildIDIterator\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DeltaOnModification;
 class TDF_DeltaOnModification : public TDF_AttributeDelta {
@@ -2064,6 +2134,7 @@ class TDF_DeltaOnModification : public TDF_AttributeDelta {
 	}
 };
 
+
 %nodefaultctor TDF_ListIteratorOfLabelList;
 class TDF_ListIteratorOfLabelList {
 	public:
@@ -2087,6 +2158,7 @@ class TDF_ListIteratorOfLabelList {
 	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfLabelList\n");}
 	}
 };
+
 
 %nodefaultctor TDF_RelocationTable;
 class TDF_RelocationTable : public MMgt_TShared {
@@ -2148,6 +2220,7 @@ class TDF_RelocationTable : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDF_DoubleMapIteratorOfGUIDProgIDMap;
 class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator {
 	public:
@@ -2169,6 +2242,7 @@ class TDF_DoubleMapIteratorOfGUIDProgIDMap : public TCollection_BasicMapIterator
 	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapIteratorOfGUIDProgIDMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_LabelLabelMap;
 class TDF_LabelLabelMap : public TCollection_BasicMap {
@@ -2204,6 +2278,7 @@ class TDF_LabelLabelMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDF_LabelMap;
 class TDF_LabelMap : public TCollection_BasicMap {
 	public:
@@ -2229,6 +2304,7 @@ class TDF_LabelMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDF_LabelMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_Transaction;
 class TDF_Transaction {
@@ -2262,6 +2338,7 @@ class TDF_Transaction {
 	}
 };
 
+
 %nodefaultctor TDF_ListNodeOfIDList;
 class TDF_ListNodeOfIDList : public TCollection_MapNode {
 	public:
@@ -2289,6 +2366,7 @@ class TDF_ListNodeOfIDList : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDF_ListNodeOfIDList\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DataMapNodeOfAttributeDataMap;
 class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
@@ -2320,6 +2398,7 @@ class TDF_DataMapNodeOfAttributeDataMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_DataMapNodeOfLabelLabelMap;
 class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
 	public:
@@ -2350,6 +2429,7 @@ class TDF_DataMapNodeOfLabelLabelMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_DataMapIteratorOfLabelLabelMap;
 class TDF_DataMapIteratorOfLabelLabelMap : public TCollection_BasicMapIterator {
 	public:
@@ -2371,6 +2451,7 @@ class TDF_DataMapIteratorOfLabelLabelMap : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TDF_DataMapIteratorOfLabelLabelMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_IDList;
 class TDF_IDList {
@@ -2422,6 +2503,7 @@ class TDF_IDList {
 	}
 };
 
+
 %nodefaultctor TDF_AttributeDataMap;
 class TDF_AttributeDataMap : public TCollection_BasicMap {
 	public:
@@ -2455,6 +2537,7 @@ class TDF_AttributeDataMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDF_AttributeDataMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DeltaList;
 class TDF_DeltaList {
@@ -2506,6 +2589,7 @@ class TDF_DeltaList {
 	}
 };
 
+
 %nodefaultctor TDF_Reference;
 class TDF_Reference : public TDF_Attribute {
 	public:
@@ -2551,6 +2635,7 @@ class TDF_Reference : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDF_Reference\n");}
 	}
 };
+
 
 %nodefaultctor TDF_LabelSequence;
 class TDF_LabelSequence : public TCollection_BaseSequence {
@@ -2606,6 +2691,7 @@ class TDF_LabelSequence : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TDF_DoubleMapNodeOfAttributeDoubleMap;
 class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 	public:
@@ -2637,6 +2723,7 @@ class TDF_DoubleMapNodeOfAttributeDoubleMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDF_DoubleMapNodeOfAttributeDoubleMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_LabelList;
 class TDF_LabelList {
@@ -2688,6 +2775,7 @@ class TDF_LabelList {
 	}
 };
 
+
 %nodefaultctor TDF_IDFilter;
 class TDF_IDFilter {
 	public:
@@ -2727,6 +2815,7 @@ class TDF_IDFilter {
 	if (__env){printf("## Call custom destructor for instance of TDF_IDFilter\n");}
 	}
 };
+
 
 %nodefaultctor TDF_AttributeSequence;
 class TDF_AttributeSequence : public TCollection_BaseSequence {
@@ -2782,6 +2871,7 @@ class TDF_AttributeSequence : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TDF_ListNodeOfAttributeList;
 class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 	public:
@@ -2810,6 +2900,7 @@ class TDF_ListNodeOfAttributeList : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_CopyTool;
 class TDF_CopyTool {
 	public:
@@ -2829,6 +2920,7 @@ class TDF_CopyTool {
 	if (__env){printf("## Call custom destructor for instance of TDF_CopyTool\n");}
 	}
 };
+
 
 %nodefaultctor TDF_Data;
 class TDF_Data : public MMgt_TShared {
@@ -2878,6 +2970,7 @@ class TDF_Data : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDF_IndexedMapNodeOfAttributeIndexedMap;
 class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 	public:
@@ -2909,6 +3002,7 @@ class TDF_IndexedMapNodeOfAttributeIndexedMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDF_IndexedMapNodeOfAttributeIndexedMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DataSet;
 class TDF_DataSet : public MMgt_TShared {
@@ -2957,6 +3051,7 @@ class TDF_DataSet : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TDF_DataSet\n");}
 	}
 };
+
 
 %nodefaultctor TDF_Label;
 class TDF_Label {
@@ -3046,6 +3141,7 @@ class TDF_Label {
 	}
 };
 
+
 %nodefaultctor TDF_IDMap;
 class TDF_IDMap : public TCollection_BasicMap {
 	public:
@@ -3071,6 +3167,7 @@ class TDF_IDMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDF_IDMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_CopyLabel;
 class TDF_CopyLabel {
@@ -3101,6 +3198,7 @@ class TDF_CopyLabel {
 	if (__env){printf("## Call custom destructor for instance of TDF_CopyLabel\n");}
 	}
 };
+
 
 %nodefaultctor TDF_AttributeIndexedMap;
 class TDF_AttributeIndexedMap : public TCollection_BasicMap {
@@ -3136,6 +3234,7 @@ class TDF_AttributeIndexedMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDF;
 class TDF {
 	public:
@@ -3159,6 +3258,7 @@ class TDF {
 	if (__env){printf("## Call custom destructor for instance of TDF\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DeltaOnAddition;
 class TDF_DeltaOnAddition : public TDF_AttributeDelta {
@@ -3187,6 +3287,7 @@ class TDF_DeltaOnAddition : public TDF_AttributeDelta {
 	if (__env){printf("## Call custom destructor for instance of TDF_DeltaOnAddition\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DoubleMapNodeOfLabelDoubleMap;
 class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
@@ -3220,6 +3321,7 @@ class TDF_DoubleMapNodeOfLabelDoubleMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_AttributeIterator;
 class TDF_AttributeIterator {
 	public:
@@ -3246,6 +3348,7 @@ class TDF_AttributeIterator {
 	}
 };
 
+
 %nodefaultctor TDF_MapIteratorOfAttributeMap;
 class TDF_MapIteratorOfAttributeMap : public TCollection_BasicMapIterator {
 	public:
@@ -3265,6 +3368,7 @@ class TDF_MapIteratorOfAttributeMap : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TDF_MapIteratorOfAttributeMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_AttributeMap;
 class TDF_AttributeMap : public TCollection_BasicMap {
@@ -3291,6 +3395,7 @@ class TDF_AttributeMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDF_AttributeMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_HAttributeArray1;
 class TDF_HAttributeArray1 : public MMgt_TShared {
@@ -3338,6 +3443,7 @@ class TDF_HAttributeArray1 : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDF_MapIteratorOfLabelMap;
 class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 	public:
@@ -3357,6 +3463,7 @@ class TDF_MapIteratorOfLabelMap : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TDF_MapIteratorOfLabelMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_StdMapNodeOfLabelMap;
 class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
@@ -3386,6 +3493,7 @@ class TDF_StdMapNodeOfLabelMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDF_MapIteratorOfIDMap;
 class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 	public:
@@ -3405,6 +3513,7 @@ class TDF_MapIteratorOfIDMap : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TDF_MapIteratorOfIDMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_DefaultDeltaOnModification;
 class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
@@ -3433,6 +3542,7 @@ class TDF_DefaultDeltaOnModification : public TDF_DeltaOnModification {
 	if (__env){printf("## Call custom destructor for instance of TDF_DefaultDeltaOnModification\n");}
 	}
 };
+
 
 %nodefaultctor TDF_LabelIndexedMap;
 class TDF_LabelIndexedMap : public TCollection_BasicMap {
@@ -3467,6 +3577,7 @@ class TDF_LabelIndexedMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDF_LabelIndexedMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_Delta;
 class TDF_Delta : public MMgt_TShared {
@@ -3512,6 +3623,7 @@ class TDF_Delta : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDF_IndexedMapNodeOfLabelIndexedMap;
 class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 	public:
@@ -3543,6 +3655,7 @@ class TDF_IndexedMapNodeOfLabelIndexedMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDF_IndexedMapNodeOfLabelIndexedMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_Tool;
 class TDF_Tool {
@@ -3602,6 +3715,7 @@ class TDF_Tool {
 	}
 };
 
+
 %nodefaultctor TDF_DataMapIteratorOfLabelIntegerMap;
 class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator {
 	public:
@@ -3623,6 +3737,7 @@ class TDF_DataMapIteratorOfLabelIntegerMap : public TCollection_BasicMapIterator
 	if (__env){printf("## Call custom destructor for instance of TDF_DataMapIteratorOfLabelIntegerMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_GUIDProgIDMap;
 class TDF_GUIDProgIDMap : public TCollection_BasicMap {
@@ -3660,6 +3775,7 @@ class TDF_GUIDProgIDMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDF_ClosureMode;
 class TDF_ClosureMode {
 	public:
@@ -3681,6 +3797,7 @@ class TDF_ClosureMode {
 	if (__env){printf("## Call custom destructor for instance of TDF_ClosureMode\n");}
 	}
 };
+
 
 %nodefaultctor TDF_ListIteratorOfAttributeList;
 class TDF_ListIteratorOfAttributeList {
@@ -3705,6 +3822,7 @@ class TDF_ListIteratorOfAttributeList {
 	if (__env){printf("## Call custom destructor for instance of TDF_ListIteratorOfAttributeList\n");}
 	}
 };
+
 
 %nodefaultctor TDF_LabelIntegerMap;
 class TDF_LabelIntegerMap : public TCollection_BasicMap {
@@ -3739,6 +3857,7 @@ class TDF_LabelIntegerMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDF_LabelIntegerMap\n");}
 	}
 };
+
 
 %nodefaultctor TDF_AttributeArray1;
 class TDF_AttributeArray1 {

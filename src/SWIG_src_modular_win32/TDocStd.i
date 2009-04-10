@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_TDocStd_ApplicationDelta : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDocStd_XLinkRoot;
 class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 	public:
@@ -163,6 +165,7 @@ class Handle_TDocStd_XLinkRoot : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_XLinkRoot\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDocStd_Owner;
 class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
@@ -189,6 +192,7 @@ class Handle_TDocStd_Owner : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
 class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TCollection_SeqNode {
 	public:
@@ -213,6 +217,7 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDocStd_Document;
 class Handle_TDocStd_Document : public Handle_CDM_Document {
@@ -239,6 +244,7 @@ class Handle_TDocStd_Document : public Handle_CDM_Document {
 	}
 };
 
+
 %nodefaultctor Handle_TDocStd_MultiTransactionManager;
 class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 	public:
@@ -263,6 +269,7 @@ class Handle_TDocStd_MultiTransactionManager : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_MultiTransactionManager\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDocStd_SequenceNodeOfSequenceOfDocument;
 class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_SeqNode {
@@ -289,6 +296,7 @@ class Handle_TDocStd_SequenceNodeOfSequenceOfDocument : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_TDocStd_Modified;
 class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 	public:
@@ -313,6 +321,7 @@ class Handle_TDocStd_Modified : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Modified\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDocStd_XLink;
 class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
@@ -339,6 +348,7 @@ class Handle_TDocStd_XLink : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDocStd_CompoundDelta;
 class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 	public:
@@ -363,6 +373,7 @@ class Handle_TDocStd_CompoundDelta : public Handle_TDF_Delta {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_CompoundDelta\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap;
 class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_MapNode {
@@ -389,6 +400,7 @@ class Handle_TDocStd_DataMapNodeOfLabelIDMapDataMap : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_TDocStd_Application;
 class Handle_TDocStd_Application : public Handle_CDF_Application {
 	public:
@@ -413,6 +425,7 @@ class Handle_TDocStd_Application : public Handle_CDF_Application {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDocStd_Application\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfApplicationDelta;
 class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqNode {
@@ -441,6 +454,7 @@ class TDocStd_SequenceNodeOfSequenceOfApplicationDelta : public TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfApplicationDelta\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_Owner;
 class TDocStd_Owner : public TDF_Attribute {
@@ -488,6 +502,7 @@ class TDocStd_Owner : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDocStd_PathParser;
 class TDocStd_PathParser {
 	public:
@@ -514,6 +529,7 @@ class TDocStd_PathParser {
 	}
 };
 
+
 %nodefaultctor TDocStd_CompoundDelta;
 class TDocStd_CompoundDelta : public TDF_Delta {
 	public:
@@ -539,6 +555,7 @@ class TDocStd_CompoundDelta : public TDF_Delta {
 	if (__env){printf("## Call custom destructor for instance of TDocStd_CompoundDelta\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_DataMapNodeOfLabelIDMapDataMap;
 class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
@@ -569,6 +586,7 @@ class TDocStd_DataMapNodeOfLabelIDMapDataMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDocStd_DataMapNodeOfLabelIDMapDataMap\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_XLinkRoot;
 class TDocStd_XLinkRoot : public TDF_Attribute {
@@ -614,6 +632,7 @@ class TDocStd_XLinkRoot : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDocStd_DataMapIteratorOfLabelIDMapDataMap;
 class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIterator {
 	public:
@@ -635,6 +654,7 @@ class TDocStd_DataMapIteratorOfLabelIDMapDataMap : public TCollection_BasicMapIt
 	if (__env){printf("## Call custom destructor for instance of TDocStd_DataMapIteratorOfLabelIDMapDataMap\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_XLinkTool;
 class TDocStd_XLinkTool {
@@ -661,6 +681,7 @@ class TDocStd_XLinkTool {
 	if (__env){printf("## Call custom destructor for instance of TDocStd_XLinkTool\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_Document;
 class TDocStd_Document : public CDM_Document {
@@ -774,6 +795,7 @@ class TDocStd_Document : public CDM_Document {
 	}
 };
 
+
 %nodefaultctor TDocStd_SequenceOfApplicationDelta;
 class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 	public:
@@ -828,6 +850,7 @@ class TDocStd_SequenceOfApplicationDelta : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TDocStd_LabelIDMapDataMap;
 class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 	public:
@@ -862,6 +885,7 @@ class TDocStd_LabelIDMapDataMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDocStd_XLinkIterator;
 class TDocStd_XLinkIterator {
 	public:
@@ -886,6 +910,7 @@ class TDocStd_XLinkIterator {
 	}
 };
 
+
 %nodefaultctor TDocStd;
 class TDocStd {
 	public:
@@ -901,6 +926,7 @@ class TDocStd {
 	if (__env){printf("## Call custom destructor for instance of TDocStd\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_SequenceNodeOfSequenceOfDocument;
 class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
@@ -929,6 +955,7 @@ class TDocStd_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceNodeOfSequenceOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_Modified;
 class TDocStd_Modified : public TDF_Attribute {
@@ -989,6 +1016,7 @@ class TDocStd_Modified : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDocStd_Modified\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_XLink;
 class TDocStd_XLink : public TDF_Attribute {
@@ -1051,6 +1079,7 @@ class TDocStd_XLink : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDocStd_XLink\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_MultiTransactionManager;
 class TDocStd_MultiTransactionManager : public MMgt_TShared {
@@ -1122,6 +1151,7 @@ class TDocStd_MultiTransactionManager : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDocStd_Application;
 class TDocStd_Application : public CDF_Application {
 	public:
@@ -1176,6 +1206,7 @@ class TDocStd_Application : public CDF_Application {
 	}
 };
 
+
 %nodefaultctor TDocStd_ApplicationDelta;
 class TDocStd_ApplicationDelta : public MMgt_TShared {
 	public:
@@ -1209,6 +1240,7 @@ class TDocStd_ApplicationDelta : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TDocStd_ApplicationDelta\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_SequenceOfDocument;
 class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
@@ -1263,6 +1295,7 @@ class TDocStd_SequenceOfDocument : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of TDocStd_SequenceOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor TDocStd_Context;
 class TDocStd_Context {

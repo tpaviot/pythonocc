@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -159,6 +160,7 @@ class Handle_Transfer_HSequenceOfFinder : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfBinder;
 class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection_SeqNode {
 	public:
@@ -183,6 +185,7 @@ class Handle_Transfer_SequenceNodeOfSequenceOfBinder : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfBinder\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_Binder;
 class Handle_Transfer_Binder : public Handle_MMgt_TShared {
@@ -209,6 +212,7 @@ class Handle_Transfer_Binder : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_VoidBinder;
 class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
 	public:
@@ -233,6 +237,7 @@ class Handle_Transfer_VoidBinder : public Handle_Transfer_Binder {
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_VoidBinder\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_Finder;
 class Handle_Transfer_Finder : public Handle_MMgt_TShared {
@@ -259,6 +264,7 @@ class Handle_Transfer_Finder : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_ResultFromTransient;
 class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 	public:
@@ -283,6 +289,7 @@ class Handle_Transfer_ResultFromTransient : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ResultFromTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_ProcessForFinder;
 class Handle_Transfer_ProcessForFinder : public Handle_MMgt_TShared {
@@ -309,6 +316,7 @@ class Handle_Transfer_ProcessForFinder : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder;
 class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public Handle_TCollection_MapNode {
 	public:
@@ -333,6 +341,7 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_ActorOfProcessForFinder;
 class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
@@ -359,6 +368,7 @@ class Handle_Transfer_ActorOfProcessForFinder : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_TransientMapper;
 class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 	public:
@@ -383,6 +393,7 @@ class Handle_Transfer_TransientMapper : public Handle_Transfer_Finder {
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransientMapper\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
 class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public Handle_TCollection_MapNode {
@@ -409,6 +420,7 @@ class Handle_Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : pub
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_SimpleBinderOfTransient;
 class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 	public:
@@ -433,6 +445,7 @@ class Handle_Transfer_SimpleBinderOfTransient : public Handle_Transfer_Binder {
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SimpleBinderOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_TransferFailure;
 class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
@@ -459,6 +472,7 @@ class Handle_Transfer_TransferFailure : public Handle_Interface_InterfaceError {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_ProcessForTransient;
 class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
 	public:
@@ -483,6 +497,7 @@ class Handle_Transfer_ProcessForTransient : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ProcessForTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_TransientProcess;
 class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransient {
@@ -509,6 +524,7 @@ class Handle_Transfer_TransientProcess : public Handle_Transfer_ProcessForTransi
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_SequenceNodeOfSequenceOfFinder;
 class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection_SeqNode {
 	public:
@@ -533,6 +549,7 @@ class Handle_Transfer_SequenceNodeOfSequenceOfFinder : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_SequenceNodeOfSequenceOfFinder\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_ActorOfProcessForTransient;
 class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
@@ -559,6 +576,7 @@ class Handle_Transfer_ActorOfProcessForTransient : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_ActorOfTransientProcess;
 class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfProcessForTransient {
 	public:
@@ -583,6 +601,7 @@ class Handle_Transfer_ActorOfTransientProcess : public Handle_Transfer_ActorOfPr
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorOfTransientProcess\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_BinderOfTransientInteger;
 class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBinderOfTransient {
@@ -609,6 +628,7 @@ class Handle_Transfer_BinderOfTransientInteger : public Handle_Transfer_SimpleBi
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient;
 class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_TCollection_MapNode {
 	public:
@@ -633,6 +653,7 @@ class Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_DataMapNodeOfDataMapOfTransientTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_ActorOfFinderProcess;
 class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProcessForFinder {
@@ -659,6 +680,7 @@ class Handle_Transfer_ActorOfFinderProcess : public Handle_Transfer_ActorOfProce
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_ActorDispatch;
 class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientProcess {
 	public:
@@ -683,6 +705,7 @@ class Handle_Transfer_ActorDispatch : public Handle_Transfer_ActorOfTransientPro
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_ActorDispatch\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_DispatchControl;
 class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
@@ -709,6 +732,7 @@ class Handle_Transfer_DispatchControl : public Handle_Interface_CopyControl {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_FinderProcess;
 class Handle_Transfer_FinderProcess : public Handle_Transfer_ProcessForFinder {
 	public:
@@ -733,6 +757,7 @@ class Handle_Transfer_FinderProcess : public Handle_Transfer_ProcessForFinder {
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_FinderProcess\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_HSequenceOfBinder;
 class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
@@ -759,6 +784,7 @@ class Handle_Transfer_HSequenceOfBinder : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_MultipleBinder;
 class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 	public:
@@ -783,6 +809,7 @@ class Handle_Transfer_MultipleBinder : public Handle_Transfer_Binder {
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_MultipleBinder\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_ResultFromModel;
 class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
@@ -809,6 +836,7 @@ class Handle_Transfer_ResultFromModel : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_MapContainer;
 class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 	public:
@@ -833,6 +861,7 @@ class Handle_Transfer_MapContainer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_MapContainer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Transfer_TransientListBinder;
 class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
@@ -859,6 +888,7 @@ class Handle_Transfer_TransientListBinder : public Handle_Transfer_Binder {
 	}
 };
 
+
 %nodefaultctor Handle_Transfer_TransferDeadLoop;
 class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure {
 	public:
@@ -883,6 +913,7 @@ class Handle_Transfer_TransferDeadLoop : public Handle_Transfer_TransferFailure 
 	if (__env){printf("## Call custom destructor for instance of Handle_Transfer_TransferDeadLoop\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_TransferMapOfProcessForTransient;
 class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
@@ -928,6 +959,7 @@ class Transfer_TransferMapOfProcessForTransient : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor Transfer_TransferInput;
 class Transfer_TransferInput {
 	public:
@@ -951,6 +983,7 @@ class Transfer_TransferInput {
 	if (__env){printf("## Call custom destructor for instance of Transfer_TransferInput\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_DispatchControl;
 class Transfer_DispatchControl : public Interface_CopyControl {
@@ -987,6 +1020,7 @@ class Transfer_DispatchControl : public Interface_CopyControl {
 	if (__env){printf("## Call custom destructor for instance of Transfer_DispatchControl\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_ResultFromTransient;
 class Transfer_ResultFromTransient : public MMgt_TShared {
@@ -1046,6 +1080,7 @@ class Transfer_ResultFromTransient : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_DataMapOfTransientTransient;
 class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
 	public:
@@ -1079,6 +1114,7 @@ class Transfer_DataMapOfTransientTransient : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapOfTransientTransient\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_SequenceOfFinder;
 class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
@@ -1134,6 +1170,7 @@ class Transfer_SequenceOfFinder : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Transfer_TransferDispatch;
 class Transfer_TransferDispatch : public Interface_CopyTool {
 	public:
@@ -1155,6 +1192,7 @@ class Transfer_TransferDispatch : public Interface_CopyTool {
 	if (__env){printf("## Call custom destructor for instance of Transfer_TransferDispatch\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_TransferIterator;
 class Transfer_TransferIterator {
@@ -1207,6 +1245,7 @@ class Transfer_TransferIterator {
 	if (__env){printf("## Call custom destructor for instance of Transfer_TransferIterator\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_Finder;
 class Transfer_Finder : public MMgt_TShared {
@@ -1272,6 +1311,7 @@ class Transfer_Finder : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_TransientMapper;
 class Transfer_TransientMapper : public Transfer_Finder {
 	public:
@@ -1297,6 +1337,7 @@ class Transfer_TransientMapper : public Transfer_Finder {
 	if (__env){printf("## Call custom destructor for instance of Transfer_TransientMapper\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_ActorOfProcessForFinder;
 class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
@@ -1339,6 +1380,7 @@ class Transfer_ActorOfProcessForFinder : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfProcessForFinder\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_HSequenceOfFinder;
 class Transfer_HSequenceOfFinder : public MMgt_TShared {
@@ -1409,6 +1451,7 @@ class Transfer_HSequenceOfFinder : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Transfer_HSequenceOfFinder\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_ProcessForFinder;
 class Transfer_ProcessForFinder : public MMgt_TShared {
@@ -1564,6 +1607,7 @@ class Transfer_ProcessForFinder : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_FinderProcess;
 class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 	public:
@@ -1598,6 +1642,7 @@ class Transfer_FinderProcess : public Transfer_ProcessForFinder {
 	}
 };
 
+
 %nodefaultctor Transfer_FindHasher;
 class Transfer_FindHasher {
 	public:
@@ -1615,6 +1660,7 @@ class Transfer_FindHasher {
 	if (__env){printf("## Call custom destructor for instance of Transfer_FindHasher\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_ActorOfProcessForTransient;
 class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
@@ -1658,6 +1704,7 @@ class Transfer_ActorOfProcessForTransient : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_ActorOfTransientProcess;
 class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransient {
 	public:
@@ -1685,6 +1732,7 @@ class Transfer_ActorOfTransientProcess : public Transfer_ActorOfProcessForTransi
 	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfTransientProcess\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_ActorDispatch;
 class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
@@ -1717,6 +1765,7 @@ class Transfer_ActorDispatch : public Transfer_ActorOfTransientProcess {
 	if (__env){printf("## Call custom destructor for instance of Transfer_ActorDispatch\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_TransferFailure;
 class Transfer_TransferFailure : public Interface_InterfaceError {
@@ -1752,6 +1801,7 @@ class Transfer_TransferFailure : public Interface_InterfaceError {
 	}
 };
 
+
 %nodefaultctor Transfer_TransferDeadLoop;
 class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 	public:
@@ -1779,6 +1829,7 @@ class Transfer_TransferDeadLoop : public Transfer_TransferFailure {
 	if (__env){printf("## Call custom destructor for instance of Transfer_TransferDeadLoop\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_ProcessForTransient;
 class Transfer_ProcessForTransient : public MMgt_TShared {
@@ -1934,6 +1985,7 @@ class Transfer_ProcessForTransient : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_Binder;
 class Transfer_Binder : public MMgt_TShared {
 	public:
@@ -1988,6 +2040,7 @@ class Transfer_Binder : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_VoidBinder;
 class Transfer_VoidBinder : public Transfer_Binder {
 	public:
@@ -2011,6 +2064,7 @@ class Transfer_VoidBinder : public Transfer_Binder {
 	if (__env){printf("## Call custom destructor for instance of Transfer_VoidBinder\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder;
 class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TCollection_MapNode {
@@ -2045,6 +2099,7 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder : public TColle
 	if (__env){printf("## Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForFinder\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_ResultFromModel;
 class Transfer_ResultFromModel : public MMgt_TShared {
@@ -2110,6 +2165,7 @@ class Transfer_ResultFromModel : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_DataMapNodeOfDataMapOfTransientTransient;
 class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode {
 	public:
@@ -2140,6 +2196,7 @@ class Transfer_DataMapNodeOfDataMapOfTransientTransient : public TCollection_Map
 	}
 };
 
+
 %nodefaultctor Transfer_IteratorOfProcessForFinder;
 class Transfer_IteratorOfProcessForFinder : public Transfer_TransferIterator {
 	public:
@@ -2163,6 +2220,7 @@ class Transfer_IteratorOfProcessForFinder : public Transfer_TransferIterator {
 	if (__env){printf("## Call custom destructor for instance of Transfer_IteratorOfProcessForFinder\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_SimpleBinderOfTransient;
 class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
@@ -2200,6 +2258,7 @@ class Transfer_SimpleBinderOfTransient : public Transfer_Binder {
 	}
 };
 
+
 %nodefaultctor Transfer_ActorOfFinderProcess;
 class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
 	public:
@@ -2233,6 +2292,7 @@ class Transfer_ActorOfFinderProcess : public Transfer_ActorOfProcessForFinder {
 	if (__env){printf("## Call custom destructor for instance of Transfer_ActorOfFinderProcess\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_SequenceOfBinder;
 class Transfer_SequenceOfBinder : public TCollection_BaseSequence {
@@ -2288,6 +2348,7 @@ class Transfer_SequenceOfBinder : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Transfer_MultipleBinder;
 class Transfer_MultipleBinder : public Transfer_Binder {
 	public:
@@ -2330,6 +2391,7 @@ class Transfer_MultipleBinder : public Transfer_Binder {
 	}
 };
 
+
 %nodefaultctor Transfer_SequenceNodeOfSequenceOfFinder;
 class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
 	public:
@@ -2357,6 +2419,7 @@ class Transfer_SequenceNodeOfSequenceOfFinder : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Transfer_SequenceNodeOfSequenceOfFinder\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_TransferOutput;
 class Transfer_TransferOutput {
@@ -2389,6 +2452,7 @@ class Transfer_TransferOutput {
 	if (__env){printf("## Call custom destructor for instance of Transfer_TransferOutput\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_TransientListBinder;
 class Transfer_TransientListBinder : public Transfer_Binder {
@@ -2434,6 +2498,7 @@ class Transfer_TransientListBinder : public Transfer_Binder {
 	}
 };
 
+
 %nodefaultctor Transfer_BinderOfTransientInteger;
 class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransient {
 	public:
@@ -2463,6 +2528,7 @@ class Transfer_BinderOfTransientInteger : public Transfer_SimpleBinderOfTransien
 	if (__env){printf("## Call custom destructor for instance of Transfer_BinderOfTransientInteger\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_HSequenceOfBinder;
 class Transfer_HSequenceOfBinder : public MMgt_TShared {
@@ -2534,6 +2600,7 @@ class Transfer_HSequenceOfBinder : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_DataInfo;
 class Transfer_DataInfo {
 	public:
@@ -2551,6 +2618,7 @@ class Transfer_DataInfo {
 	if (__env){printf("## Call custom destructor for instance of Transfer_DataInfo\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient;
 class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCollection_MapNode {
@@ -2585,6 +2653,7 @@ class Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient : public TCo
 	if (__env){printf("## Call custom destructor for instance of Transfer_IndexedDataMapNodeOfTransferMapOfProcessForTransient\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_TransferMapOfProcessForFinder;
 class Transfer_TransferMapOfProcessForFinder : public TCollection_BasicMap {
@@ -2630,6 +2699,7 @@ class Transfer_TransferMapOfProcessForFinder : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor Transfer_DataMapIteratorOfDataMapOfTransientTransient;
 class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_BasicMapIterator {
 	public:
@@ -2651,6 +2721,7 @@ class Transfer_DataMapIteratorOfDataMapOfTransientTransient : public TCollection
 	if (__env){printf("## Call custom destructor for instance of Transfer_DataMapIteratorOfDataMapOfTransientTransient\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_TransientProcess;
 class Transfer_TransientProcess : public Transfer_ProcessForTransient {
@@ -2710,6 +2781,7 @@ class Transfer_TransientProcess : public Transfer_ProcessForTransient {
 	}
 };
 
+
 %nodefaultctor Transfer_MapContainer;
 class Transfer_MapContainer : public MMgt_TShared {
 	public:
@@ -2740,6 +2812,7 @@ class Transfer_MapContainer : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Transfer_IteratorOfProcessForTransient;
 class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator {
 	public:
@@ -2763,6 +2836,7 @@ class Transfer_IteratorOfProcessForTransient : public Transfer_TransferIterator 
 	if (__env){printf("## Call custom destructor for instance of Transfer_IteratorOfProcessForTransient\n");}
 	}
 };
+
 
 %nodefaultctor Transfer_SequenceNodeOfSequenceOfBinder;
 class Transfer_SequenceNodeOfSequenceOfBinder : public TCollection_SeqNode {

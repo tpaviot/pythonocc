@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -201,6 +202,7 @@ class Handle_StepElement_SurfaceElementPurposeMember : public Handle_StepData_Se
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_ElementDescriptor;
 class Handle_StepElement_ElementDescriptor : public Handle_MMgt_TShared {
 	public:
@@ -225,6 +227,7 @@ class Handle_StepElement_ElementDescriptor : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_ElementDescriptor\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_Surface3dElementDescriptor;
 class Handle_StepElement_Surface3dElementDescriptor : public Handle_StepElement_ElementDescriptor {
@@ -251,6 +254,7 @@ class Handle_StepElement_Surface3dElementDescriptor : public Handle_StepElement_
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_SurfaceSection;
 class Handle_StepElement_SurfaceSection : public Handle_MMgt_TShared {
 	public:
@@ -275,6 +279,7 @@ class Handle_StepElement_SurfaceSection : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceSection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember;
 class Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : public Handle_MMgt_TShared {
@@ -301,6 +306,7 @@ class Handle_StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : publi
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_CurveElementSectionDefinition;
 class Handle_StepElement_CurveElementSectionDefinition : public Handle_MMgt_TShared {
 	public:
@@ -325,6 +331,7 @@ class Handle_StepElement_CurveElementSectionDefinition : public Handle_MMgt_TSha
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementSectionDefinition\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial;
 class Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial : public Handle_TCollection_SeqNode {
@@ -351,6 +358,7 @@ class Handle_StepElement_SequenceNodeOfSequenceOfElementMaterial : public Handle
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
 class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public Handle_TCollection_SeqNode {
 	public:
@@ -375,6 +383,7 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : pub
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember;
 class Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public Handle_MMgt_TShared {
@@ -401,6 +410,7 @@ class Handle_StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public 
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_CurveElementSectionDerivedDefinitions;
 class Handle_StepElement_CurveElementSectionDerivedDefinitions : public Handle_StepElement_CurveElementSectionDefinition {
 	public:
@@ -425,6 +435,7 @@ class Handle_StepElement_CurveElementSectionDerivedDefinitions : public Handle_S
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementSectionDerivedDefinitions\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurpose;
 class Handle_StepElement_HArray2OfSurfaceElementPurpose : public Handle_MMgt_TShared {
@@ -451,6 +462,7 @@ class Handle_StepElement_HArray2OfSurfaceElementPurpose : public Handle_MMgt_TSh
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_HSequenceOfElementMaterial;
 class Handle_StepElement_HSequenceOfElementMaterial : public Handle_MMgt_TShared {
 	public:
@@ -475,6 +487,7 @@ class Handle_StepElement_HSequenceOfElementMaterial : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HSequenceOfElementMaterial\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HArray2OfSurfaceElementPurposeMember;
 class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MMgt_TShared {
@@ -501,6 +514,7 @@ class Handle_StepElement_HArray2OfSurfaceElementPurposeMember : public Handle_MM
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue;
 class Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue : public Handle_MMgt_TShared {
 	public:
@@ -525,6 +539,7 @@ class Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue : public Handle_MMgt
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfMeasureOrUnspecifiedValue\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_CurveElementFreedomMember;
 class Handle_StepElement_CurveElementFreedomMember : public Handle_StepData_SelectNamed {
@@ -551,6 +566,7 @@ class Handle_StepElement_CurveElementFreedomMember : public Handle_StepData_Sele
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_CurveElementEndReleasePacket;
 class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShared {
 	public:
@@ -575,6 +591,7 @@ class Handle_StepElement_CurveElementEndReleasePacket : public Handle_MMgt_TShar
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_CurveElementEndReleasePacket\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember;
 class Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public Handle_TCollection_SeqNode {
@@ -601,6 +618,7 @@ class Handle_StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : p
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_SurfaceElementProperty;
 class Handle_StepElement_SurfaceElementProperty : public Handle_MMgt_TShared {
 	public:
@@ -625,6 +643,7 @@ class Handle_StepElement_SurfaceElementProperty : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceElementProperty\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HArray2OfCurveElementPurposeMember;
 class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt_TShared {
@@ -651,6 +670,7 @@ class Handle_StepElement_HArray2OfCurveElementPurposeMember : public Handle_MMgt
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_SurfaceSectionField;
 class Handle_StepElement_SurfaceSectionField : public Handle_MMgt_TShared {
 	public:
@@ -675,6 +695,7 @@ class Handle_StepElement_SurfaceSectionField : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceSectionField\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HSequenceOfCurveElementPurposeMember;
 class Handle_StepElement_HSequenceOfCurveElementPurposeMember : public Handle_MMgt_TShared {
@@ -701,6 +722,7 @@ class Handle_StepElement_HSequenceOfCurveElementPurposeMember : public Handle_MM
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_HArray1OfCurveElementEndReleasePacket;
 class Handle_StepElement_HArray1OfCurveElementEndReleasePacket : public Handle_MMgt_TShared {
 	public:
@@ -725,6 +747,7 @@ class Handle_StepElement_HArray1OfCurveElementEndReleasePacket : public Handle_M
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfCurveElementEndReleasePacket\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_Curve3dElementDescriptor;
 class Handle_StepElement_Curve3dElementDescriptor : public Handle_StepElement_ElementDescriptor {
@@ -751,6 +774,7 @@ class Handle_StepElement_Curve3dElementDescriptor : public Handle_StepElement_El
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_VolumeElementPurposeMember;
 class Handle_StepElement_VolumeElementPurposeMember : public Handle_StepData_SelectNamed {
 	public:
@@ -775,6 +799,7 @@ class Handle_StepElement_VolumeElementPurposeMember : public Handle_StepData_Sel
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_VolumeElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_MeasureOrUnspecifiedValueMember;
 class Handle_StepElement_MeasureOrUnspecifiedValueMember : public Handle_StepData_SelectNamed {
@@ -801,6 +826,7 @@ class Handle_StepElement_MeasureOrUnspecifiedValueMember : public Handle_StepDat
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_HSequenceOfCurveElementSectionDefinition;
 class Handle_StepElement_HSequenceOfCurveElementSectionDefinition : public Handle_MMgt_TShared {
 	public:
@@ -825,6 +851,7 @@ class Handle_StepElement_HSequenceOfCurveElementSectionDefinition : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HSequenceOfCurveElementSectionDefinition\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HSequenceOfSurfaceElementPurposeMember;
 class Handle_StepElement_HSequenceOfSurfaceElementPurposeMember : public Handle_MMgt_TShared {
@@ -851,6 +878,7 @@ class Handle_StepElement_HSequenceOfSurfaceElementPurposeMember : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_HArray1OfSurfaceSection;
 class Handle_StepElement_HArray1OfSurfaceSection : public Handle_MMgt_TShared {
 	public:
@@ -875,6 +903,7 @@ class Handle_StepElement_HArray1OfSurfaceSection : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfSurfaceSection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_CurveElementPurposeMember;
 class Handle_StepElement_CurveElementPurposeMember : public Handle_StepData_SelectNamed {
@@ -901,6 +930,7 @@ class Handle_StepElement_CurveElementPurposeMember : public Handle_StepData_Sele
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_ElementAspectMember;
 class Handle_StepElement_ElementAspectMember : public Handle_StepData_SelectNamed {
 	public:
@@ -925,6 +955,7 @@ class Handle_StepElement_ElementAspectMember : public Handle_StepData_SelectName
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_ElementAspectMember\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_Volume3dElementDescriptor;
 class Handle_StepElement_Volume3dElementDescriptor : public Handle_StepElement_ElementDescriptor {
@@ -951,6 +982,7 @@ class Handle_StepElement_Volume3dElementDescriptor : public Handle_StepElement_E
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_SurfaceSectionFieldVarying;
 class Handle_StepElement_SurfaceSectionFieldVarying : public Handle_StepElement_SurfaceSectionField {
 	public:
@@ -975,6 +1007,7 @@ class Handle_StepElement_SurfaceSectionFieldVarying : public Handle_StepElement_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_SurfaceSectionFieldVarying\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HArray1OfCurveElementSectionDefinition;
 class Handle_StepElement_HArray1OfCurveElementSectionDefinition : public Handle_MMgt_TShared {
@@ -1001,6 +1034,7 @@ class Handle_StepElement_HArray1OfCurveElementSectionDefinition : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_UniformSurfaceSection;
 class Handle_StepElement_UniformSurfaceSection : public Handle_StepElement_SurfaceSection {
 	public:
@@ -1025,6 +1059,7 @@ class Handle_StepElement_UniformSurfaceSection : public Handle_StepElement_Surfa
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_UniformSurfaceSection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
 class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public Handle_TCollection_SeqNode {
@@ -1051,6 +1086,7 @@ class Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition :
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_AnalysisItemWithinRepresentation;
 class Handle_StepElement_AnalysisItemWithinRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -1075,6 +1111,7 @@ class Handle_StepElement_AnalysisItemWithinRepresentation : public Handle_MMgt_T
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_AnalysisItemWithinRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_HArray1OfVolumeElementPurposeMember;
 class Handle_StepElement_HArray1OfVolumeElementPurposeMember : public Handle_MMgt_TShared {
@@ -1101,6 +1138,7 @@ class Handle_StepElement_HArray1OfVolumeElementPurposeMember : public Handle_MMg
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_ElementMaterial;
 class Handle_StepElement_ElementMaterial : public Handle_MMgt_TShared {
 	public:
@@ -1125,6 +1163,7 @@ class Handle_StepElement_ElementMaterial : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_ElementMaterial\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepElement_SurfaceSectionFieldConstant;
 class Handle_StepElement_SurfaceSectionFieldConstant : public Handle_StepElement_SurfaceSectionField {
@@ -1151,6 +1190,7 @@ class Handle_StepElement_SurfaceSectionFieldConstant : public Handle_StepElement
 	}
 };
 
+
 %nodefaultctor Handle_StepElement_HArray1OfVolumeElementPurpose;
 class Handle_StepElement_HArray1OfVolumeElementPurpose : public Handle_MMgt_TShared {
 	public:
@@ -1175,6 +1215,7 @@ class Handle_StepElement_HArray1OfVolumeElementPurpose : public Handle_MMgt_TSha
 	if (__env){printf("## Call custom destructor for instance of Handle_StepElement_HArray1OfVolumeElementPurpose\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember;
 class StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : public MMgt_TShared {
@@ -1221,6 +1262,7 @@ class StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember : public MMgt_
 	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfHSequenceOfSurfaceElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_SequenceOfSurfaceElementPurposeMember;
 class StepElement_SequenceOfSurfaceElementPurposeMember : public TCollection_BaseSequence {
@@ -1276,6 +1318,7 @@ class StepElement_SequenceOfSurfaceElementPurposeMember : public TCollection_Bas
 	}
 };
 
+
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfElementMaterial;
 class StepElement_SequenceNodeOfSequenceOfElementMaterial : public TCollection_SeqNode {
 	public:
@@ -1304,6 +1347,7 @@ class StepElement_SequenceNodeOfSequenceOfElementMaterial : public TCollection_S
 	}
 };
 
+
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember;
 class StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public TCollection_SeqNode {
 	public:
@@ -1331,6 +1375,7 @@ class StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember : public T
 	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfSurfaceElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_SequenceOfCurveElementPurposeMember;
 class StepElement_SequenceOfCurveElementPurposeMember : public TCollection_BaseSequence {
@@ -1386,6 +1431,7 @@ class StepElement_SequenceOfCurveElementPurposeMember : public TCollection_BaseS
 	}
 };
 
+
 %nodefaultctor StepElement_SurfaceSection;
 class StepElement_SurfaceSection : public MMgt_TShared {
 	public:
@@ -1426,6 +1472,7 @@ class StepElement_SurfaceSection : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_UniformSurfaceSection;
 class StepElement_UniformSurfaceSection : public StepElement_SurfaceSection {
 	public:
@@ -1463,6 +1510,7 @@ class StepElement_UniformSurfaceSection : public StepElement_SurfaceSection {
 	if (__env){printf("## Call custom destructor for instance of StepElement_UniformSurfaceSection\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HArray1OfVolumeElementPurposeMember;
 class StepElement_HArray1OfVolumeElementPurposeMember : public MMgt_TShared {
@@ -1509,6 +1557,7 @@ class StepElement_HArray1OfVolumeElementPurposeMember : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfVolumeElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_ElementAspect;
 class StepElement_ElementAspect : public StepData_SelectType {
@@ -1570,6 +1619,7 @@ class StepElement_ElementAspect : public StepData_SelectType {
 	}
 };
 
+
 %nodefaultctor StepElement_Array2OfSurfaceElementPurposeMember;
 class StepElement_Array2OfSurfaceElementPurposeMember {
 	public:
@@ -1614,6 +1664,7 @@ class StepElement_Array2OfSurfaceElementPurposeMember {
 	}
 };
 
+
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember;
 class StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public TCollection_SeqNode {
 	public:
@@ -1641,6 +1692,7 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember : public TCo
 	if (__env){printf("## Call custom destructor for instance of StepElement_SequenceNodeOfSequenceOfCurveElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_ElementDescriptor;
 class StepElement_ElementDescriptor : public MMgt_TShared {
@@ -1678,6 +1730,7 @@ class StepElement_ElementDescriptor : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_Surface3dElementDescriptor;
 class StepElement_Surface3dElementDescriptor : public StepElement_ElementDescriptor {
 	public:
@@ -1711,6 +1764,7 @@ class StepElement_Surface3dElementDescriptor : public StepElement_ElementDescrip
 	if (__env){printf("## Call custom destructor for instance of StepElement_Surface3dElementDescriptor\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_ElementMaterial;
 class StepElement_ElementMaterial : public MMgt_TShared {
@@ -1752,6 +1806,7 @@ class StepElement_ElementMaterial : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_SurfaceElementProperty;
 class StepElement_SurfaceElementProperty : public MMgt_TShared {
 	public:
@@ -1791,6 +1846,7 @@ class StepElement_SurfaceElementProperty : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceElementProperty\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_Array1OfHSequenceOfCurveElementPurposeMember;
 class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
@@ -1832,6 +1888,7 @@ class StepElement_Array1OfHSequenceOfCurveElementPurposeMember {
 	}
 };
 
+
 %nodefaultctor StepElement_Volume3dElementDescriptor;
 class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescriptor {
 	public:
@@ -1868,6 +1925,7 @@ class StepElement_Volume3dElementDescriptor : public StepElement_ElementDescript
 	}
 };
 
+
 %nodefaultctor StepElement_ElementAspectMember;
 class StepElement_ElementAspectMember : public StepData_SelectNamed {
 	public:
@@ -1901,6 +1959,7 @@ class StepElement_ElementAspectMember : public StepData_SelectNamed {
 	if (__env){printf("## Call custom destructor for instance of StepElement_ElementAspectMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HSequenceOfCurveElementPurposeMember;
 class StepElement_HSequenceOfCurveElementPurposeMember : public MMgt_TShared {
@@ -1972,6 +2031,7 @@ class StepElement_HSequenceOfCurveElementPurposeMember : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_HArray1OfVolumeElementPurpose;
 class StepElement_HArray1OfVolumeElementPurpose : public MMgt_TShared {
 	public:
@@ -2017,6 +2077,7 @@ class StepElement_HArray1OfVolumeElementPurpose : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepElement_HArray1OfVolumeElementPurpose\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HArray1OfCurveElementEndReleasePacket;
 class StepElement_HArray1OfCurveElementEndReleasePacket : public MMgt_TShared {
@@ -2064,6 +2125,7 @@ class StepElement_HArray1OfCurveElementEndReleasePacket : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_HArray1OfSurfaceSection;
 class StepElement_HArray1OfSurfaceSection : public MMgt_TShared {
 	public:
@@ -2110,6 +2172,7 @@ class StepElement_HArray1OfSurfaceSection : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_MeasureOrUnspecifiedValue;
 class StepElement_MeasureOrUnspecifiedValue : public StepData_SelectType {
 	public:
@@ -2137,6 +2200,7 @@ class StepElement_MeasureOrUnspecifiedValue : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepElement_MeasureOrUnspecifiedValue\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_CurveElementPurposeMember;
 class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
@@ -2172,6 +2236,7 @@ class StepElement_CurveElementPurposeMember : public StepData_SelectNamed {
 	}
 };
 
+
 %nodefaultctor StepElement_CurveElementFreedom;
 class StepElement_CurveElementFreedom : public StepData_SelectType {
 	public:
@@ -2199,6 +2264,7 @@ class StepElement_CurveElementFreedom : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementFreedom\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HSequenceOfCurveElementSectionDefinition;
 class StepElement_HSequenceOfCurveElementSectionDefinition : public MMgt_TShared {
@@ -2270,6 +2336,7 @@ class StepElement_HSequenceOfCurveElementSectionDefinition : public MMgt_TShared
 	}
 };
 
+
 %nodefaultctor StepElement_MeasureOrUnspecifiedValueMember;
 class StepElement_MeasureOrUnspecifiedValueMember : public StepData_SelectNamed {
 	public:
@@ -2303,6 +2370,7 @@ class StepElement_MeasureOrUnspecifiedValueMember : public StepData_SelectNamed 
 	if (__env){printf("## Call custom destructor for instance of StepElement_MeasureOrUnspecifiedValueMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_CurveElementSectionDefinition;
 class StepElement_CurveElementSectionDefinition : public MMgt_TShared {
@@ -2339,6 +2407,7 @@ class StepElement_CurveElementSectionDefinition : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementSectionDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HSequenceOfSurfaceElementPurposeMember;
 class StepElement_HSequenceOfSurfaceElementPurposeMember : public MMgt_TShared {
@@ -2410,6 +2479,7 @@ class StepElement_HSequenceOfSurfaceElementPurposeMember : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_HSequenceOfElementMaterial;
 class StepElement_HSequenceOfElementMaterial : public MMgt_TShared {
 	public:
@@ -2480,6 +2550,7 @@ class StepElement_HSequenceOfElementMaterial : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_SurfaceSectionField;
 class StepElement_SurfaceSectionField : public MMgt_TShared {
 	public:
@@ -2505,6 +2576,7 @@ class StepElement_SurfaceSectionField : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceSectionField\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_AnalysisItemWithinRepresentation;
 class StepElement_AnalysisItemWithinRepresentation : public MMgt_TShared {
@@ -2550,6 +2622,7 @@ class StepElement_AnalysisItemWithinRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_Curve3dElementDescriptor;
 class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescriptor {
 	public:
@@ -2581,6 +2654,7 @@ class StepElement_Curve3dElementDescriptor : public StepElement_ElementDescripto
 	if (__env){printf("## Call custom destructor for instance of StepElement_Curve3dElementDescriptor\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_Array1OfSurfaceSection;
 class StepElement_Array1OfSurfaceSection {
@@ -2622,6 +2696,7 @@ class StepElement_Array1OfSurfaceSection {
 	}
 };
 
+
 %nodefaultctor StepElement_SurfaceElementPurpose;
 class StepElement_SurfaceElementPurpose : public StepData_SelectType {
 	public:
@@ -2649,6 +2724,7 @@ class StepElement_SurfaceElementPurpose : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceElementPurpose\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_Array1OfVolumeElementPurpose;
 class StepElement_Array1OfVolumeElementPurpose {
@@ -2690,6 +2766,7 @@ class StepElement_Array1OfVolumeElementPurpose {
 	}
 };
 
+
 %nodefaultctor StepElement_VolumeElementPurposeMember;
 class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
 	public:
@@ -2724,6 +2801,7 @@ class StepElement_VolumeElementPurposeMember : public StepData_SelectNamed {
 	}
 };
 
+
 %nodefaultctor StepElement_CurveElementPurpose;
 class StepElement_CurveElementPurpose : public StepData_SelectType {
 	public:
@@ -2751,6 +2829,7 @@ class StepElement_CurveElementPurpose : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementPurpose\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_SurfaceElementPurposeMember;
 class StepElement_SurfaceElementPurposeMember : public StepData_SelectNamed {
@@ -2785,6 +2864,7 @@ class StepElement_SurfaceElementPurposeMember : public StepData_SelectNamed {
 	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_Array1OfMeasureOrUnspecifiedValue;
 class StepElement_Array1OfMeasureOrUnspecifiedValue {
@@ -2825,6 +2905,7 @@ class StepElement_Array1OfMeasureOrUnspecifiedValue {
 	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfMeasureOrUnspecifiedValue\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_CurveElementSectionDerivedDefinitions;
 class StepElement_CurveElementSectionDerivedDefinitions : public StepElement_CurveElementSectionDefinition {
@@ -2894,6 +2975,7 @@ class StepElement_CurveElementSectionDerivedDefinitions : public StepElement_Cur
 	}
 };
 
+
 %nodefaultctor StepElement_Array1OfCurveElementSectionDefinition;
 class StepElement_Array1OfCurveElementSectionDefinition {
 	public:
@@ -2934,6 +3016,7 @@ class StepElement_Array1OfCurveElementSectionDefinition {
 	}
 };
 
+
 %nodefaultctor StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember;
 class StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
 	public:
@@ -2973,6 +3056,7 @@ class StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember {
 	if (__env){printf("## Call custom destructor for instance of StepElement_Array1OfHSequenceOfSurfaceElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HArray2OfSurfaceElementPurposeMember;
 class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
@@ -3025,6 +3109,7 @@ class StepElement_HArray2OfSurfaceElementPurposeMember : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepElement_HArray2OfSurfaceElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_SequenceOfCurveElementSectionDefinition;
 class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_BaseSequence {
@@ -3080,6 +3165,7 @@ class StepElement_SequenceOfCurveElementSectionDefinition : public TCollection_B
 	}
 };
 
+
 %nodefaultctor StepElement_HArray1OfHSequenceOfCurveElementPurposeMember;
 class StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public MMgt_TShared {
 	public:
@@ -3126,6 +3212,7 @@ class StepElement_HArray1OfHSequenceOfCurveElementPurposeMember : public MMgt_TS
 	}
 };
 
+
 %nodefaultctor StepElement_Array2OfCurveElementPurposeMember;
 class StepElement_Array2OfCurveElementPurposeMember {
 	public:
@@ -3169,6 +3256,7 @@ class StepElement_Array2OfCurveElementPurposeMember {
 	if (__env){printf("## Call custom destructor for instance of StepElement_Array2OfCurveElementPurposeMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_SequenceOfElementMaterial;
 class StepElement_SequenceOfElementMaterial : public TCollection_BaseSequence {
@@ -3224,6 +3312,7 @@ class StepElement_SequenceOfElementMaterial : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor StepElement_Array2OfSurfaceElementPurpose;
 class StepElement_Array2OfSurfaceElementPurpose {
 	public:
@@ -3268,6 +3357,7 @@ class StepElement_Array2OfSurfaceElementPurpose {
 	}
 };
 
+
 %nodefaultctor StepElement_Array1OfVolumeElementPurposeMember;
 class StepElement_Array1OfVolumeElementPurposeMember {
 	public:
@@ -3308,6 +3398,7 @@ class StepElement_Array1OfVolumeElementPurposeMember {
 	}
 };
 
+
 %nodefaultctor StepElement_CurveElementFreedomMember;
 class StepElement_CurveElementFreedomMember : public StepData_SelectNamed {
 	public:
@@ -3341,6 +3432,7 @@ class StepElement_CurveElementFreedomMember : public StepData_SelectNamed {
 	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementFreedomMember\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HArray2OfSurfaceElementPurpose;
 class StepElement_HArray2OfSurfaceElementPurpose : public MMgt_TShared {
@@ -3394,6 +3486,7 @@ class StepElement_HArray2OfSurfaceElementPurpose : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_SurfaceSectionFieldVarying;
 class StepElement_SurfaceSectionFieldVarying : public StepElement_SurfaceSectionField {
 	public:
@@ -3429,6 +3522,7 @@ class StepElement_SurfaceSectionFieldVarying : public StepElement_SurfaceSection
 	if (__env){printf("## Call custom destructor for instance of StepElement_SurfaceSectionFieldVarying\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HArray2OfCurveElementPurposeMember;
 class StepElement_HArray2OfCurveElementPurposeMember : public MMgt_TShared {
@@ -3482,6 +3576,7 @@ class StepElement_HArray2OfCurveElementPurposeMember : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_SurfaceSectionFieldConstant;
 class StepElement_SurfaceSectionFieldConstant : public StepElement_SurfaceSectionField {
 	public:
@@ -3514,6 +3609,7 @@ class StepElement_SurfaceSectionFieldConstant : public StepElement_SurfaceSectio
 	}
 };
 
+
 %nodefaultctor StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
 class StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public TCollection_SeqNode {
 	public:
@@ -3542,6 +3638,7 @@ class StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition : public
 	}
 };
 
+
 %nodefaultctor StepElement_VolumeElementPurpose;
 class StepElement_VolumeElementPurpose : public StepData_SelectType {
 	public:
@@ -3569,6 +3666,7 @@ class StepElement_VolumeElementPurpose : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepElement_VolumeElementPurpose\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HArray1OfCurveElementSectionDefinition;
 class StepElement_HArray1OfCurveElementSectionDefinition : public MMgt_TShared {
@@ -3616,6 +3714,7 @@ class StepElement_HArray1OfCurveElementSectionDefinition : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepElement_Array1OfCurveElementEndReleasePacket;
 class StepElement_Array1OfCurveElementEndReleasePacket {
 	public:
@@ -3656,6 +3755,7 @@ class StepElement_Array1OfCurveElementEndReleasePacket {
 	}
 };
 
+
 %nodefaultctor StepElement_CurveElementEndReleasePacket;
 class StepElement_CurveElementEndReleasePacket : public MMgt_TShared {
 	public:
@@ -3691,6 +3791,7 @@ class StepElement_CurveElementEndReleasePacket : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepElement_CurveElementEndReleasePacket\n");}
 	}
 };
+
 
 %nodefaultctor StepElement_HArray1OfMeasureOrUnspecifiedValue;
 class StepElement_HArray1OfMeasureOrUnspecifiedValue : public MMgt_TShared {

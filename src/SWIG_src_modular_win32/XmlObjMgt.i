@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -142,6 +143,7 @@ class Handle_XmlObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor XmlObjMgt_DataMapIteratorOfRRelocationTable;
 class XmlObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapIterator {
 	public:
@@ -163,6 +165,7 @@ class XmlObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_DataMapIteratorOfRRelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor XmlObjMgt;
 class XmlObjMgt {
@@ -202,6 +205,7 @@ class XmlObjMgt {
 	}
 };
 
+
 %nodefaultctor XmlObjMgt_DataMapNodeOfRRelocationTable;
 class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	public:
@@ -232,6 +236,7 @@ class XmlObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor XmlObjMgt_GP;
 class XmlObjMgt_GP {
 	public:
@@ -257,6 +262,7 @@ class XmlObjMgt_GP {
 	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_GP\n");}
 	}
 };
+
 
 %nodefaultctor XmlObjMgt_Persistent;
 class XmlObjMgt_Persistent {
@@ -285,6 +291,7 @@ class XmlObjMgt_Persistent {
 	if (__env){printf("## Call custom destructor for instance of XmlObjMgt_Persistent\n");}
 	}
 };
+
 
 %nodefaultctor XmlObjMgt_RRelocationTable;
 class XmlObjMgt_RRelocationTable : public TCollection_BasicMap {

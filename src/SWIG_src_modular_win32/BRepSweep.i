@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : p
 	}
 };
 
+
 %nodefaultctor BRepSweep_NumLinearRegularSweep;
 class BRepSweep_NumLinearRegularSweep {
 	public:
@@ -202,6 +204,7 @@ class BRepSweep_NumLinearRegularSweep {
 	}
 };
 
+
 %nodefaultctor BRepSweep_Trsf;
 class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 	public:
@@ -220,6 +223,7 @@ class BRepSweep_Trsf : public BRepSweep_NumLinearRegularSweep {
 	}
 };
 
+
 %nodefaultctor BRepSweep_Translation;
 class BRepSweep_Translation : public BRepSweep_Trsf {
 	public:
@@ -235,6 +239,7 @@ class BRepSweep_Translation : public BRepSweep_Trsf {
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Translation\n");}
 	}
 };
+
 
 %nodefaultctor BRepSweep_Iterator;
 class BRepSweep_Iterator {
@@ -259,6 +264,7 @@ class BRepSweep_Iterator {
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Iterator\n");}
 	}
 };
+
 
 %nodefaultctor BRepSweep_SequenceOfShapesOfNumLinearRegularSweep;
 class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_BaseSequence {
@@ -314,6 +320,7 @@ class BRepSweep_SequenceOfShapesOfNumLinearRegularSweep : public TCollection_Bas
 	}
 };
 
+
 %nodefaultctor BRepSweep_Array2OfShapesOfNumLinearRegularSweep;
 class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 	public:
@@ -358,6 +365,7 @@ class BRepSweep_Array2OfShapesOfNumLinearRegularSweep {
 	}
 };
 
+
 %nodefaultctor BRepSweep_Revol;
 class BRepSweep_Revol {
 	public:
@@ -390,6 +398,7 @@ class BRepSweep_Revol {
 	}
 };
 
+
 %nodefaultctor BRepSweep_Builder;
 class BRepSweep_Builder {
 	public:
@@ -420,6 +429,7 @@ class BRepSweep_Builder {
 	}
 };
 
+
 %nodefaultctor BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep;
 class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public TCollection_SeqNode {
 	public:
@@ -447,6 +457,7 @@ class BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep : public T
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep\n");}
 	}
 };
+
 
 %nodefaultctor BRepSweep_Rotation;
 class BRepSweep_Rotation : public BRepSweep_Trsf {
@@ -500,6 +511,7 @@ class BRepSweep_Rotation : public BRepSweep_Trsf {
 	}
 };
 
+
 %nodefaultctor BRepSweep_Tool;
 class BRepSweep_Tool {
 	public:
@@ -525,6 +537,7 @@ class BRepSweep_Tool {
 	if (__env){printf("## Call custom destructor for instance of BRepSweep_Tool\n");}
 	}
 };
+
 
 %nodefaultctor BRepSweep_Prism;
 class BRepSweep_Prism {

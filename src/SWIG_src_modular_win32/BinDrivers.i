@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -143,6 +144,7 @@ class Handle_BinDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_Docu
 	}
 };
 
+
 %nodefaultctor Handle_BinDrivers_DocumentStorageDriver;
 class Handle_BinDrivers_DocumentStorageDriver : public Handle_BinLDrivers_DocumentStorageDriver {
 	public:
@@ -167,6 +169,7 @@ class Handle_BinDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Docume
 	if (__env){printf("## Call custom destructor for instance of Handle_BinDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinDrivers_DocumentStorageDriver;
 class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDriver {
@@ -196,6 +199,7 @@ class BinDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDrive
 	}
 };
 
+
 %nodefaultctor BinDrivers;
 class BinDrivers {
 	public:
@@ -215,6 +219,7 @@ class BinDrivers {
 	if (__env){printf("## Call custom destructor for instance of BinDrivers\n");}
 	}
 };
+
 
 %nodefaultctor BinDrivers_DocumentRetrievalDriver;
 class BinDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalDriver {

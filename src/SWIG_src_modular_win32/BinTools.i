@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -141,6 +142,7 @@ class BinTools_LocationSet {
 	}
 };
 
+
 %nodefaultctor BinTools;
 class BinTools {
 	public:
@@ -170,6 +172,7 @@ class BinTools {
 	if (__env){printf("## Call custom destructor for instance of BinTools\n");}
 	}
 };
+
 
 %nodefaultctor BinTools_ShapeSet;
 class BinTools_ShapeSet {
@@ -237,6 +240,7 @@ class BinTools_ShapeSet {
 	}
 };
 
+
 %nodefaultctor BinTools_Curve2dSet;
 class BinTools_Curve2dSet {
 	public:
@@ -267,6 +271,7 @@ class BinTools_Curve2dSet {
 	}
 };
 
+
 %nodefaultctor BinTools_SurfaceSet;
 class BinTools_SurfaceSet {
 	public:
@@ -296,6 +301,7 @@ class BinTools_SurfaceSet {
 	if (__env){printf("## Call custom destructor for instance of BinTools_SurfaceSet\n");}
 	}
 };
+
 
 %nodefaultctor BinTools_CurveSet;
 class BinTools_CurveSet {

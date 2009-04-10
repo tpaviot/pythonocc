@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -172,6 +173,7 @@ class BRepLib_Command {
 	}
 };
 
+
 %nodefaultctor BRepLib_MakeShape;
 class BRepLib_MakeShape : public BRepLib_Command {
 	public:
@@ -200,6 +202,7 @@ class BRepLib_MakeShape : public BRepLib_Command {
 	}
 };
 
+
 %nodefaultctor BRepLib_MakeVertex;
 class BRepLib_MakeVertex : public BRepLib_MakeShape {
 	public:
@@ -215,6 +218,7 @@ class BRepLib_MakeVertex : public BRepLib_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeVertex\n");}
 	}
 };
+
 
 %nodefaultctor BRepLib_MakeEdge;
 class BRepLib_MakeEdge : public BRepLib_MakeShape {
@@ -330,6 +334,7 @@ class BRepLib_MakeEdge : public BRepLib_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepLib_MakeEdge2d;
 class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
 	public:
@@ -418,6 +423,7 @@ class BRepLib_MakeEdge2d : public BRepLib_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepLib_MakeShell;
 class BRepLib_MakeShell : public BRepLib_MakeShape {
 	public:
@@ -441,6 +447,7 @@ class BRepLib_MakeShell : public BRepLib_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeShell\n");}
 	}
 };
+
 
 %nodefaultctor BRepLib;
 class BRepLib {
@@ -494,6 +501,7 @@ class BRepLib {
 	}
 };
 
+
 %nodefaultctor BRepLib_FuseEdges;
 class BRepLib_FuseEdges {
 	public:
@@ -523,6 +531,7 @@ class BRepLib_FuseEdges {
 	if (__env){printf("## Call custom destructor for instance of BRepLib_FuseEdges\n");}
 	}
 };
+
 
 %nodefaultctor BRepLib_MakePolygon;
 class BRepLib_MakePolygon : public BRepLib_MakeShape {
@@ -565,6 +574,7 @@ class BRepLib_MakePolygon : public BRepLib_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakePolygon\n");}
 	}
 };
+
 
 %nodefaultctor BRepLib_MakeFace;
 class BRepLib_MakeFace : public BRepLib_MakeShape {
@@ -634,6 +644,7 @@ class BRepLib_MakeFace : public BRepLib_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepLib_MakeSolid;
 class BRepLib_MakeSolid : public BRepLib_MakeShape {
 	public:
@@ -665,6 +676,7 @@ class BRepLib_MakeSolid : public BRepLib_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeSolid\n");}
 	}
 };
+
 
 %nodefaultctor BRepLib_MakeWire;
 class BRepLib_MakeWire : public BRepLib_MakeShape {
@@ -705,6 +717,7 @@ class BRepLib_MakeWire : public BRepLib_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepLib_MakeWire\n");}
 	}
 };
+
 
 %nodefaultctor BRepLib_FindSurface;
 class BRepLib_FindSurface {

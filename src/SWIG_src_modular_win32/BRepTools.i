@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BRepTools_Modification : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BRepTools_GTrsfModification;
 class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification {
 	public:
@@ -162,6 +164,7 @@ class Handle_BRepTools_GTrsfModification : public Handle_BRepTools_Modification 
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_GTrsfModification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepTools_TrsfModification;
 class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
@@ -188,6 +191,7 @@ class Handle_BRepTools_TrsfModification : public Handle_BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor Handle_BRepTools_ReShape;
 class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_BRepTools_ReShape : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_ReShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepTools_NurbsConvertModification;
 class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modification {
@@ -238,6 +243,7 @@ class Handle_BRepTools_NurbsConvertModification : public Handle_BRepTools_Modifi
 	}
 };
 
+
 %nodefaultctor Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d;
 class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection_MapNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepTools_DataMapNodeOfMapOfVertexPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor BRepTools_ShapeSet;
 class BRepTools_ShapeSet : public TopTools_ShapeSet {
@@ -317,6 +324,7 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 	}
 };
 
+
 %nodefaultctor BRepTools_Quilt;
 class BRepTools_Quilt {
 	public:
@@ -342,6 +350,7 @@ class BRepTools_Quilt {
 	if (__env){printf("## Call custom destructor for instance of BRepTools_Quilt\n");}
 	}
 };
+
 
 %nodefaultctor BRepTools_Modification;
 class BRepTools_Modification : public MMgt_TShared {
@@ -379,6 +388,7 @@ class BRepTools_Modification : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepTools_MapOfVertexPnt2d;
 class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 	public:
@@ -412,6 +422,7 @@ class BRepTools_MapOfVertexPnt2d : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BRepTools_MapOfVertexPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor BRepTools;
 class BRepTools {
@@ -485,6 +496,7 @@ class BRepTools {
 	}
 };
 
+
 %nodefaultctor BRepTools_GTrsfModification;
 class BRepTools_GTrsfModification : public BRepTools_Modification {
 	public:
@@ -525,6 +537,7 @@ class BRepTools_GTrsfModification : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor BRepTools_Modifier;
 class BRepTools_Modifier {
 	public:
@@ -550,6 +563,7 @@ class BRepTools_Modifier {
 	if (__env){printf("## Call custom destructor for instance of BRepTools_Modifier\n");}
 	}
 };
+
 
 %nodefaultctor BRepTools_TrsfModification;
 class BRepTools_TrsfModification : public BRepTools_Modification {
@@ -591,6 +605,7 @@ class BRepTools_TrsfModification : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor BRepTools_WireExplorer;
 class BRepTools_WireExplorer {
 	public:
@@ -624,6 +639,7 @@ class BRepTools_WireExplorer {
 	if (__env){printf("## Call custom destructor for instance of BRepTools_WireExplorer\n");}
 	}
 };
+
 
 %nodefaultctor BRepTools_ReShape;
 class BRepTools_ReShape : public MMgt_TShared {
@@ -671,6 +687,7 @@ class BRepTools_ReShape : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepTools_NurbsConvertModification;
 class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 	public:
@@ -709,6 +726,7 @@ class BRepTools_NurbsConvertModification : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor BRepTools_DataMapIteratorOfMapOfVertexPnt2d;
 class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapIterator {
 	public:
@@ -730,6 +748,7 @@ class BRepTools_DataMapIteratorOfMapOfVertexPnt2d : public TCollection_BasicMapI
 	if (__env){printf("## Call custom destructor for instance of BRepTools_DataMapIteratorOfMapOfVertexPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor BRepTools_Substitution;
 class BRepTools_Substitution {
@@ -754,6 +773,7 @@ class BRepTools_Substitution {
 	if (__env){printf("## Call custom destructor for instance of BRepTools_Substitution\n");}
 	}
 };
+
 
 %nodefaultctor BRepTools_DataMapNodeOfMapOfVertexPnt2d;
 class BRepTools_DataMapNodeOfMapOfVertexPnt2d : public TCollection_MapNode {

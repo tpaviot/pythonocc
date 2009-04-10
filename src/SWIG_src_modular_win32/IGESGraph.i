@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESGraph_LineFontDefPattern : public Handle_IGESData_LineFontEntit
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_Pick;
 class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESGraph_Pick : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Pick\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_HArray1OfTextDisplayTemplate;
 class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_IGESGraph_HArray1OfTextDisplayTemplate : public Handle_MMgt_TShared
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_Color;
 class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESGraph_Color : public Handle_IGESData_ColorEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_Color\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_TextDisplayTemplate;
 class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
@@ -238,6 +243,7 @@ class Handle_IGESGraph_TextDisplayTemplate : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_NominalSize;
 class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 	public:
@@ -262,6 +268,7 @@ class Handle_IGESGraph_NominalSize : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_NominalSize\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_DrawingSize;
 class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
@@ -288,6 +295,7 @@ class Handle_IGESGraph_DrawingSize : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_DrawingUnits;
 class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 	public:
@@ -312,6 +320,7 @@ class Handle_IGESGraph_DrawingUnits : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DrawingUnits\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_IntercharacterSpacing;
 class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity {
@@ -338,6 +347,7 @@ class Handle_IGESGraph_IntercharacterSpacing : public Handle_IGESData_IGESEntity
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_GeneralModule;
 class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
@@ -362,6 +372,7 @@ class Handle_IGESGraph_GeneralModule : public Handle_IGESData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_GeneralModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_HArray1OfColor;
 class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
@@ -388,6 +399,7 @@ class Handle_IGESGraph_HArray1OfColor : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_DefinitionLevel;
 class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity {
 	public:
@@ -412,6 +424,7 @@ class Handle_IGESGraph_DefinitionLevel : public Handle_IGESData_LevelListEntity 
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_DefinitionLevel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_HArray1OfTextFontDef;
 class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
@@ -438,6 +451,7 @@ class Handle_IGESGraph_HArray1OfTextFontDef : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_SpecificModule;
 class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
@@ -462,6 +476,7 @@ class Handle_IGESGraph_SpecificModule : public Handle_IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_UniformRectGrid;
 class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
@@ -488,6 +503,7 @@ class Handle_IGESGraph_UniformRectGrid : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_HighLight;
 class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 	public:
@@ -512,6 +528,7 @@ class Handle_IGESGraph_HighLight : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_HighLight\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_LineFontDefTemplate;
 class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEntity {
@@ -538,6 +555,7 @@ class Handle_IGESGraph_LineFontDefTemplate : public Handle_IGESData_LineFontEnti
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_ReadWriteModule;
 class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
@@ -562,6 +580,7 @@ class Handle_IGESGraph_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGraph_Protocol;
 class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
@@ -588,6 +607,7 @@ class Handle_IGESGraph_Protocol : public Handle_IGESData_Protocol {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_TextFontDef;
 class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 	public:
@@ -613,6 +633,7 @@ class Handle_IGESGraph_TextFontDef : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGraph_LineFontPredefined;
 class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 	public:
@@ -637,6 +658,7 @@ class Handle_IGESGraph_LineFontPredefined : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGraph_LineFontPredefined\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_HighLight;
 class IGESGraph_HighLight : public IGESData_IGESEntity {
@@ -672,6 +694,7 @@ class IGESGraph_HighLight : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_Pick;
 class IGESGraph_Pick : public IGESData_IGESEntity {
 	public:
@@ -706,6 +729,7 @@ class IGESGraph_Pick : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolDrawingUnits;
 class IGESGraph_ToolDrawingUnits {
 	public:
@@ -735,6 +759,7 @@ class IGESGraph_ToolDrawingUnits {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingUnits\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_DrawingUnits;
 class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
@@ -771,6 +796,7 @@ class IGESGraph_DrawingUnits : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_DrawingUnits\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_Array1OfTextFontDef;
 class IGESGraph_Array1OfTextFontDef {
@@ -811,6 +837,7 @@ class IGESGraph_Array1OfTextFontDef {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_Array1OfTextFontDef\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_UniformRectGrid;
 class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
@@ -856,6 +883,7 @@ class IGESGraph_UniformRectGrid : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolUniformRectGrid;
 class IGESGraph_ToolUniformRectGrid {
 	public:
@@ -885,6 +913,7 @@ class IGESGraph_ToolUniformRectGrid {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolUniformRectGrid\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_ToolIntercharacterSpacing;
 class IGESGraph_ToolIntercharacterSpacing {
@@ -916,6 +945,7 @@ class IGESGraph_ToolIntercharacterSpacing {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolNominalSize;
 class IGESGraph_ToolNominalSize {
 	public:
@@ -945,6 +975,7 @@ class IGESGraph_ToolNominalSize {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolNominalSize\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_HArray1OfTextDisplayTemplate;
 class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
@@ -992,6 +1023,7 @@ class IGESGraph_HArray1OfTextDisplayTemplate : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolDrawingSize;
 class IGESGraph_ToolDrawingSize {
 	public:
@@ -1021,6 +1053,7 @@ class IGESGraph_ToolDrawingSize {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDrawingSize\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_IntercharacterSpacing;
 class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
@@ -1054,6 +1087,7 @@ class IGESGraph_IntercharacterSpacing : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolTextFontDef;
 class IGESGraph_ToolTextFontDef {
 	public:
@@ -1081,6 +1115,7 @@ class IGESGraph_ToolTextFontDef {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolTextFontDef\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_LineFontDefTemplate;
 class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
@@ -1118,6 +1153,7 @@ class IGESGraph_LineFontDefTemplate : public IGESData_LineFontEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph;
 class IGESGraph {
 	public:
@@ -1135,6 +1171,7 @@ class IGESGraph {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_ToolPick;
 class IGESGraph_ToolPick {
@@ -1166,6 +1203,7 @@ class IGESGraph_ToolPick {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolColor;
 class IGESGraph_ToolColor {
 	public:
@@ -1193,6 +1231,7 @@ class IGESGraph_ToolColor {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolColor\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_GeneralModule;
 class IGESGraph_GeneralModule : public IGESData_GeneralModule {
@@ -1232,6 +1271,7 @@ class IGESGraph_GeneralModule : public IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolLineFontDefTemplate;
 class IGESGraph_ToolLineFontDefTemplate {
 	public:
@@ -1259,6 +1299,7 @@ class IGESGraph_ToolLineFontDefTemplate {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontDefTemplate\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_Color;
 class IGESGraph_Color : public IGESData_ColorEntity {
@@ -1298,6 +1339,7 @@ class IGESGraph_Color : public IGESData_ColorEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolDefinitionLevel;
 class IGESGraph_ToolDefinitionLevel {
 	public:
@@ -1325,6 +1367,7 @@ class IGESGraph_ToolDefinitionLevel {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolDefinitionLevel\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_TextDisplayTemplate;
 class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
@@ -1380,6 +1423,7 @@ class IGESGraph_TextDisplayTemplate : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_SpecificModule;
 class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 	public:
@@ -1409,6 +1453,7 @@ class IGESGraph_SpecificModule : public IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_Array1OfTextDisplayTemplate;
 class IGESGraph_Array1OfTextDisplayTemplate {
@@ -1450,6 +1495,7 @@ class IGESGraph_Array1OfTextDisplayTemplate {
 	}
 };
 
+
 %nodefaultctor IGESGraph_DefinitionLevel;
 class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 	public:
@@ -1484,6 +1530,7 @@ class IGESGraph_DefinitionLevel : public IGESData_LevelListEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ReadWriteModule;
 class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 	public:
@@ -1516,6 +1563,7 @@ class IGESGraph_ReadWriteModule : public IGESData_ReadWriteModule {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolTextDisplayTemplate;
 class IGESGraph_ToolTextDisplayTemplate {
 	public:
@@ -1543,6 +1591,7 @@ class IGESGraph_ToolTextDisplayTemplate {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolTextDisplayTemplate\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_NominalSize;
 class IGESGraph_NominalSize : public IGESData_IGESEntity {
@@ -1582,6 +1631,7 @@ class IGESGraph_NominalSize : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolLineFontDefPattern;
 class IGESGraph_ToolLineFontDefPattern {
 	public:
@@ -1609,6 +1659,7 @@ class IGESGraph_ToolLineFontDefPattern {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontDefPattern\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_DrawingSize;
 class IGESGraph_DrawingSize : public IGESData_IGESEntity {
@@ -1643,6 +1694,7 @@ class IGESGraph_DrawingSize : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_DrawingSize\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_TextFontDef;
 class IGESGraph_TextFontDef : public IGESData_IGESEntity {
@@ -1696,6 +1748,7 @@ class IGESGraph_TextFontDef : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_LineFontPredefined;
 class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 	public:
@@ -1728,6 +1781,7 @@ class IGESGraph_LineFontPredefined : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolHighLight;
 class IGESGraph_ToolHighLight {
 	public:
@@ -1758,6 +1812,7 @@ class IGESGraph_ToolHighLight {
 	}
 };
 
+
 %nodefaultctor IGESGraph_ToolLineFontPredefined;
 class IGESGraph_ToolLineFontPredefined {
 	public:
@@ -1787,6 +1842,7 @@ class IGESGraph_ToolLineFontPredefined {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_ToolLineFontPredefined\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_Array1OfColor;
 class IGESGraph_Array1OfColor {
@@ -1828,6 +1884,7 @@ class IGESGraph_Array1OfColor {
 	}
 };
 
+
 %nodefaultctor IGESGraph_LineFontDefPattern;
 class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 	public:
@@ -1863,6 +1920,7 @@ class IGESGraph_LineFontDefPattern : public IGESData_LineFontEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_LineFontDefPattern\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_HArray1OfColor;
 class IGESGraph_HArray1OfColor : public MMgt_TShared {
@@ -1909,6 +1967,7 @@ class IGESGraph_HArray1OfColor : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESGraph_HArray1OfColor\n");}
 	}
 };
+
 
 %nodefaultctor IGESGraph_HArray1OfTextFontDef;
 class IGESGraph_HArray1OfTextFontDef : public MMgt_TShared {

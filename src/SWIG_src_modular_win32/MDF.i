@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_MDF_ARDriverHSequence : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MDF_ARDriverTable;
 class Handle_MDF_ARDriverTable : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_MDF_ARDriverTable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ARDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_ListNodeOfDriverListOfARDriverTable;
 class Handle_MDF_ListNodeOfDriverListOfARDriverTable : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_MDF_ListNodeOfDriverListOfARDriverTable : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
 class Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_ASDriver;
 class Handle_MDF_ASDriver : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_MDF_ASDriver : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MDF_ReferenceStorageDriver;
 class Handle_MDF_ReferenceStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -262,6 +268,7 @@ class Handle_MDF_ReferenceStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ReferenceStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_ARDriver;
 class Handle_MDF_ARDriver : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_MDF_ARDriver : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MDF_ReferenceRetrievalDriver;
 class Handle_MDF_ReferenceRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -312,6 +320,7 @@ class Handle_MDF_ReferenceRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ReferenceRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_TagSourceRetrievalDriver;
 class Handle_MDF_TagSourceRetrievalDriver : public Handle_MDF_ARDriver {
@@ -338,6 +347,7 @@ class Handle_MDF_TagSourceRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDF_ASDriverTable;
 class Handle_MDF_ASDriverTable : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_MDF_ASDriverTable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ASDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_RRelocationTable;
 class Handle_MDF_RRelocationTable : public Handle_MMgt_TShared {
@@ -388,6 +399,7 @@ class Handle_MDF_RRelocationTable : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MDF_ListNodeOfDriverListOfASDriverTable;
 class Handle_MDF_ListNodeOfDriverListOfASDriverTable : public Handle_TCollection_MapNode {
 	public:
@@ -412,6 +424,7 @@ class Handle_MDF_ListNodeOfDriverListOfASDriverTable : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_ListNodeOfDriverListOfASDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_ASDriverHSequence;
 class Handle_MDF_ASDriverHSequence : public Handle_MMgt_TShared {
@@ -438,6 +451,7 @@ class Handle_MDF_ASDriverHSequence : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeASDriverMap;
 class Handle_MDF_DataMapNodeOfTypeASDriverMap : public Handle_TCollection_MapNode {
 	public:
@@ -462,6 +476,7 @@ class Handle_MDF_DataMapNodeOfTypeASDriverMap : public Handle_TCollection_MapNod
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeASDriverMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeARDriverMap;
 class Handle_MDF_DataMapNodeOfTypeARDriverMap : public Handle_TCollection_MapNode {
@@ -488,6 +503,7 @@ class Handle_MDF_DataMapNodeOfTypeARDriverMap : public Handle_TCollection_MapNod
 	}
 };
 
+
 %nodefaultctor Handle_MDF_SRelocationTable;
 class Handle_MDF_SRelocationTable : public Handle_MMgt_TShared {
 	public:
@@ -512,6 +528,7 @@ class Handle_MDF_SRelocationTable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_SRelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_SequenceNodeOfARDriverSequence;
 class Handle_MDF_SequenceNodeOfARDriverSequence : public Handle_TCollection_SeqNode {
@@ -538,6 +555,7 @@ class Handle_MDF_SequenceNodeOfARDriverSequence : public Handle_TCollection_SeqN
 	}
 };
 
+
 %nodefaultctor Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable;
 class Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public Handle_TCollection_MapNode {
 	public:
@@ -562,6 +580,7 @@ class Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDF_TagSourceStorageDriver;
 class Handle_MDF_TagSourceStorageDriver : public Handle_MDF_ASDriver {
@@ -588,6 +607,7 @@ class Handle_MDF_TagSourceStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDF_SequenceNodeOfASDriverSequence;
 class Handle_MDF_SequenceNodeOfASDriverSequence : public Handle_TCollection_SeqNode {
 	public:
@@ -612,6 +632,7 @@ class Handle_MDF_SequenceNodeOfASDriverSequence : public Handle_TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Handle_MDF_SequenceNodeOfASDriverSequence\n");}
 	}
 };
+
 
 %nodefaultctor MDF_DataMapNodeOfTypeARDriverMap;
 class MDF_DataMapNodeOfTypeARDriverMap : public TCollection_MapNode {
@@ -643,6 +664,7 @@ class MDF_DataMapNodeOfTypeARDriverMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable;
 class MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable : public TCollection_BasicMapIterator {
 	public:
@@ -664,6 +686,7 @@ class MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable : public TCollection
 	if (__env){printf("## Call custom destructor for instance of MDF_DataMapIteratorOfTypeDriverListMapOfASDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ASDriver;
 class MDF_ASDriver : public MMgt_TShared {
@@ -699,6 +722,7 @@ class MDF_ASDriver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MDF_TagSourceStorageDriver;
 class MDF_TagSourceStorageDriver : public MDF_ASDriver {
 	public:
@@ -724,6 +748,7 @@ class MDF_TagSourceStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDF_TagSourceStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ListNodeOfDriverListOfARDriverTable;
 class MDF_ListNodeOfDriverListOfARDriverTable : public TCollection_MapNode {
@@ -752,6 +777,7 @@ class MDF_ListNodeOfDriverListOfARDriverTable : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MDF_ListNodeOfDriverListOfARDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_DriverListOfARDriverTable;
 class MDF_DriverListOfARDriverTable {
@@ -803,6 +829,7 @@ class MDF_DriverListOfARDriverTable {
 	}
 };
 
+
 %nodefaultctor MDF;
 class MDF {
 	public:
@@ -825,6 +852,7 @@ class MDF {
 	}
 };
 
+
 %nodefaultctor MDF_DataMapIteratorOfTypeARDriverMap;
 class MDF_DataMapIteratorOfTypeARDriverMap : public TCollection_BasicMapIterator {
 	public:
@@ -846,6 +874,7 @@ class MDF_DataMapIteratorOfTypeARDriverMap : public TCollection_BasicMapIterator
 	if (__env){printf("## Call custom destructor for instance of MDF_DataMapIteratorOfTypeARDriverMap\n");}
 	}
 };
+
 
 %nodefaultctor MDF_DataMapNodeOfTypeASDriverMap;
 class MDF_DataMapNodeOfTypeASDriverMap : public TCollection_MapNode {
@@ -876,6 +905,7 @@ class MDF_DataMapNodeOfTypeASDriverMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MDF_DataMapNodeOfTypeASDriverMap\n");}
 	}
 };
+
 
 %nodefaultctor MDF_TypeARDriverMap;
 class MDF_TypeARDriverMap : public TCollection_BasicMap {
@@ -911,6 +941,7 @@ class MDF_TypeARDriverMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MDF_ARDriver;
 class MDF_ARDriver : public MMgt_TShared {
 	public:
@@ -945,6 +976,7 @@ class MDF_ARDriver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MDF_TagSourceRetrievalDriver;
 class MDF_TagSourceRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -970,6 +1002,7 @@ class MDF_TagSourceRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDF_TagSourceRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ASDriverTable;
 class MDF_ASDriverTable : public MMgt_TShared {
@@ -1005,6 +1038,7 @@ class MDF_ASDriverTable : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MDF_ListIteratorOfDriverListOfASDriverTable;
 class MDF_ListIteratorOfDriverListOfASDriverTable {
 	public:
@@ -1028,6 +1062,7 @@ class MDF_ListIteratorOfDriverListOfASDriverTable {
 	if (__env){printf("## Call custom destructor for instance of MDF_ListIteratorOfDriverListOfASDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ARDriverTable;
 class MDF_ARDriverTable : public MMgt_TShared {
@@ -1063,6 +1098,7 @@ class MDF_ARDriverTable : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable;
 class MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public TCollection_MapNode {
 	public:
@@ -1092,6 +1128,7 @@ class MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable : public TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of MDF_DataMapNodeOfTypeDriverListMapOfARDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_DriverListOfASDriverTable;
 class MDF_DriverListOfASDriverTable {
@@ -1143,6 +1180,7 @@ class MDF_DriverListOfASDriverTable {
 	}
 };
 
+
 %nodefaultctor MDF_ListNodeOfDriverListOfASDriverTable;
 class MDF_ListNodeOfDriverListOfASDriverTable : public TCollection_MapNode {
 	public:
@@ -1170,6 +1208,7 @@ class MDF_ListNodeOfDriverListOfASDriverTable : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MDF_ListNodeOfDriverListOfASDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ReferenceStorageDriver;
 class MDF_ReferenceStorageDriver : public MDF_ASDriver {
@@ -1205,6 +1244,7 @@ class MDF_ReferenceStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable;
 class MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable : public TCollection_BasicMapIterator {
 	public:
@@ -1226,6 +1266,7 @@ class MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable : public TCollection
 	if (__env){printf("## Call custom destructor for instance of MDF_DataMapIteratorOfTypeDriverListMapOfARDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_SRelocationTable;
 class MDF_SRelocationTable : public MMgt_TShared {
@@ -1269,6 +1310,7 @@ class MDF_SRelocationTable : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MDF_TypeDriverListMapOfARDriverTable;
 class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 	public:
@@ -1303,6 +1345,7 @@ class MDF_TypeDriverListMapOfARDriverTable : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MDF_ListIteratorOfDriverListOfARDriverTable;
 class MDF_ListIteratorOfDriverListOfARDriverTable {
 	public:
@@ -1326,6 +1369,7 @@ class MDF_ListIteratorOfDriverListOfARDriverTable {
 	if (__env){printf("## Call custom destructor for instance of MDF_ListIteratorOfDriverListOfARDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_SequenceNodeOfARDriverSequence;
 class MDF_SequenceNodeOfARDriverSequence : public TCollection_SeqNode {
@@ -1354,6 +1398,7 @@ class MDF_SequenceNodeOfARDriverSequence : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of MDF_SequenceNodeOfARDriverSequence\n");}
 	}
 };
+
 
 %nodefaultctor MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable;
 class MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public TCollection_MapNode {
@@ -1384,6 +1429,7 @@ class MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable : public TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of MDF_DataMapNodeOfTypeDriverListMapOfASDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ASDriverHSequence;
 class MDF_ASDriverHSequence : public MMgt_TShared {
@@ -1455,6 +1501,7 @@ class MDF_ASDriverHSequence : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MDF_Tool;
 class MDF_Tool {
 	public:
@@ -1480,6 +1527,7 @@ class MDF_Tool {
 	if (__env){printf("## Call custom destructor for instance of MDF_Tool\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ReferenceRetrievalDriver;
 class MDF_ReferenceRetrievalDriver : public MDF_ARDriver {
@@ -1515,6 +1563,7 @@ class MDF_ReferenceRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDF_TypeDriverListMapOfASDriverTable;
 class MDF_TypeDriverListMapOfASDriverTable : public TCollection_BasicMap {
 	public:
@@ -1548,6 +1597,7 @@ class MDF_TypeDriverListMapOfASDriverTable : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of MDF_TypeDriverListMapOfASDriverTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ASDriverSequence;
 class MDF_ASDriverSequence : public TCollection_BaseSequence {
@@ -1603,6 +1653,7 @@ class MDF_ASDriverSequence : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MDF_SequenceNodeOfASDriverSequence;
 class MDF_SequenceNodeOfASDriverSequence : public TCollection_SeqNode {
 	public:
@@ -1630,6 +1681,7 @@ class MDF_SequenceNodeOfASDriverSequence : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of MDF_SequenceNodeOfASDriverSequence\n");}
 	}
 };
+
 
 %nodefaultctor MDF_TypeASDriverMap;
 class MDF_TypeASDriverMap : public TCollection_BasicMap {
@@ -1664,6 +1716,7 @@ class MDF_TypeASDriverMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of MDF_TypeASDriverMap\n");}
 	}
 };
+
 
 %nodefaultctor MDF_RRelocationTable;
 class MDF_RRelocationTable : public MMgt_TShared {
@@ -1706,6 +1759,7 @@ class MDF_RRelocationTable : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of MDF_RRelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ARDriverSequence;
 class MDF_ARDriverSequence : public TCollection_BaseSequence {
@@ -1760,6 +1814,7 @@ class MDF_ARDriverSequence : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of MDF_ARDriverSequence\n");}
 	}
 };
+
 
 %nodefaultctor MDF_ARDriverHSequence;
 class MDF_ARDriverHSequence : public MMgt_TShared {
@@ -1830,6 +1885,7 @@ class MDF_ARDriverHSequence : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of MDF_ARDriverHSequence\n");}
 	}
 };
+
 
 %nodefaultctor MDF_DataMapIteratorOfTypeASDriverMap;
 class MDF_DataMapIteratorOfTypeASDriverMap : public TCollection_BasicMapIterator {

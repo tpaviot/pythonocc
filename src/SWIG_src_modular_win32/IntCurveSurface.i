@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfSeg : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt;
 class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
 	public:
@@ -168,6 +170,7 @@ class Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_IntCurveSurface_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_ThePolyhedronToolOfHInter;
 class IntCurveSurface_ThePolyhedronToolOfHInter {
@@ -203,6 +206,7 @@ class IntCurveSurface_ThePolyhedronToolOfHInter {
 	}
 };
 
+
 %nodefaultctor IntCurveSurface_Intersection;
 class IntCurveSurface_Intersection {
 	public:
@@ -226,6 +230,7 @@ class IntCurveSurface_Intersection {
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_Intersection\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_SequenceOfPnt;
 class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
@@ -281,6 +286,7 @@ class IntCurveSurface_SequenceOfPnt : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntCurveSurface_IntersectionPoint;
 class IntCurveSurface_IntersectionPoint {
 	public:
@@ -313,6 +319,7 @@ class IntCurveSurface_IntersectionPoint {
 	}
 };
 
+
 %nodefaultctor IntCurveSurface_HInter;
 class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 	public:
@@ -336,6 +343,7 @@ class IntCurveSurface_HInter : public IntCurveSurface_Intersection {
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_HInter\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_TheHCurveTool;
 class IntCurveSurface_TheHCurveTool {
@@ -401,6 +409,7 @@ class IntCurveSurface_TheHCurveTool {
 	}
 };
 
+
 %nodefaultctor IntCurveSurface_TheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvExactHInter {
 	public:
@@ -424,6 +433,7 @@ class IntCurveSurface_TheQuadCurvExactHInter {
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheQuadCurvExactHInter\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_TheHSurfaceTool;
 class IntCurveSurface_TheHSurfaceTool {
@@ -521,6 +531,7 @@ class IntCurveSurface_TheHSurfaceTool {
 	}
 };
 
+
 %nodefaultctor IntCurveSurface_TheExactHInter;
 class IntCurveSurface_TheExactHInter {
 	public:
@@ -551,6 +562,7 @@ class IntCurveSurface_TheExactHInter {
 	}
 };
 
+
 %nodefaultctor IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter;
 class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_FunctionWithDerivative {
 	public:
@@ -570,6 +582,7 @@ class IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter : public math_Func
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheQuadCurvFuncOfTheQuadCurvExactHInter\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_ThePolygonToolOfHInter;
 class IntCurveSurface_ThePolygonToolOfHInter {
@@ -598,6 +611,7 @@ class IntCurveSurface_ThePolygonToolOfHInter {
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_ThePolygonToolOfHInter\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_IntersectionSegment;
 class IntCurveSurface_IntersectionSegment {
@@ -628,6 +642,7 @@ class IntCurveSurface_IntersectionSegment {
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_IntersectionSegment\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_ThePolygonOfHInter;
 class IntCurveSurface_ThePolygonOfHInter {
@@ -671,6 +686,7 @@ class IntCurveSurface_ThePolygonOfHInter {
 	}
 };
 
+
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfSeg;
 class IntCurveSurface_SequenceNodeOfSequenceOfSeg : public TCollection_SeqNode {
 	public:
@@ -698,6 +714,7 @@ class IntCurveSurface_SequenceNodeOfSequenceOfSeg : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_SequenceNodeOfSequenceOfSeg\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_SequenceOfSeg;
 class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
@@ -753,6 +770,7 @@ class IntCurveSurface_SequenceOfSeg : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntCurveSurface_TheCSFunctionOfHInter;
 class IntCurveSurface_TheCSFunctionOfHInter : public math_FunctionSetWithDerivatives {
 	public:
@@ -784,6 +802,7 @@ class IntCurveSurface_TheCSFunctionOfHInter : public math_FunctionSetWithDerivat
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheCSFunctionOfHInter\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_TheInterferenceOfHInter;
 class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
@@ -826,6 +845,7 @@ class IntCurveSurface_TheInterferenceOfHInter : public Intf_Interference {
 	if (__env){printf("## Call custom destructor for instance of IntCurveSurface_TheInterferenceOfHInter\n");}
 	}
 };
+
 
 %nodefaultctor IntCurveSurface_SequenceNodeOfSequenceOfPnt;
 class IntCurveSurface_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {

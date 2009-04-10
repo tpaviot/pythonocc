@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -145,6 +146,7 @@ class Handle_Intf_SequenceNodeOfSeqOfTangentZone : public Handle_TCollection_Seq
 	}
 };
 
+
 %nodefaultctor Handle_Intf_SequenceNodeOfSeqOfSectionLine;
 class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_SeqNode {
 	public:
@@ -170,6 +172,7 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionLine : public Handle_TCollection_Seq
 	}
 };
 
+
 %nodefaultctor Handle_Intf_SequenceNodeOfSeqOfSectionPoint;
 class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_SeqNode {
 	public:
@@ -194,6 +197,7 @@ class Handle_Intf_SequenceNodeOfSeqOfSectionPoint : public Handle_TCollection_Se
 	if (__env){printf("## Call custom destructor for instance of Handle_Intf_SequenceNodeOfSeqOfSectionPoint\n");}
 	}
 };
+
 
 %nodefaultctor Intf_SequenceNodeOfSeqOfSectionPoint;
 class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
@@ -223,6 +227,7 @@ class Intf_SequenceNodeOfSeqOfSectionPoint : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Intf_SequenceNodeOfSeqOfSectionLine;
 class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 	public:
@@ -250,6 +255,7 @@ class Intf_SequenceNodeOfSeqOfSectionLine : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfSectionLine\n");}
 	}
 };
+
 
 %nodefaultctor Intf_SectionPoint;
 class Intf_SectionPoint {
@@ -298,6 +304,7 @@ class Intf_SectionPoint {
 	if (__env){printf("## Call custom destructor for instance of Intf_SectionPoint\n");}
 	}
 };
+
 
 %nodefaultctor Intf_SeqOfTangentZone;
 class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
@@ -353,6 +360,7 @@ class Intf_SeqOfTangentZone : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Intf_SeqOfSectionLine;
 class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 	public:
@@ -407,6 +415,7 @@ class Intf_SeqOfSectionLine : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Intf_Interference;
 class Intf_Interference {
 	public:
@@ -441,6 +450,7 @@ class Intf_Interference {
 	}
 };
 
+
 %nodefaultctor Intf_SequenceNodeOfSeqOfTangentZone;
 class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
 	public:
@@ -468,6 +478,7 @@ class Intf_SequenceNodeOfSeqOfTangentZone : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Intf_SequenceNodeOfSeqOfTangentZone\n");}
 	}
 };
+
 
 %nodefaultctor Intf_SeqOfSectionPoint;
 class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
@@ -523,6 +534,7 @@ class Intf_SeqOfSectionPoint : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Intf_Array1OfLin;
 class Intf_Array1OfLin {
 	public:
@@ -562,6 +574,7 @@ class Intf_Array1OfLin {
 	if (__env){printf("## Call custom destructor for instance of Intf_Array1OfLin\n");}
 	}
 };
+
 
 %nodefaultctor Intf_TangentZone;
 class Intf_TangentZone {
@@ -615,6 +628,7 @@ class Intf_TangentZone {
 	}
 };
 
+
 %nodefaultctor Intf_SectionLine;
 class Intf_SectionLine {
 	public:
@@ -659,6 +673,7 @@ class Intf_SectionLine {
 	}
 };
 
+
 %nodefaultctor Intf_Tool;
 class Intf_Tool {
 	public:
@@ -690,6 +705,7 @@ class Intf_Tool {
 	if (__env){printf("## Call custom destructor for instance of Intf_Tool\n");}
 	}
 };
+
 
 %nodefaultctor Intf;
 class Intf {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_StlMesh_MeshDomain : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StlMesh_MeshTriangle;
 class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_StlMesh_MeshTriangle : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_MeshTriangle\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StlMesh_Mesh;
 class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_StlMesh_Mesh : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMesh;
 class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMesh : public Handle_TCollection_Se
 	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMesh\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain;
 class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollection_SeqNode {
@@ -238,6 +243,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshDomain : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle;
 class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TCollection_SeqNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");}
 	}
 };
+
 
 %nodefaultctor StlMesh_MeshDomain;
 class StlMesh_MeshDomain : public MMgt_TShared {
@@ -306,6 +313,7 @@ class StlMesh_MeshDomain : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshDomain\n");}
 	}
 };
+
 
 %nodefaultctor StlMesh_Mesh;
 class StlMesh_Mesh : public MMgt_TShared {
@@ -365,6 +373,7 @@ class StlMesh_Mesh : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StlMesh_SequenceOfMeshDomain;
 class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 	public:
@@ -419,6 +428,7 @@ class StlMesh_SequenceOfMeshDomain : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor StlMesh_MeshExplorer;
 class StlMesh_MeshExplorer {
 	public:
@@ -444,6 +454,7 @@ class StlMesh_MeshExplorer {
 	if (__env){printf("## Call custom destructor for instance of StlMesh_MeshExplorer\n");}
 	}
 };
+
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshTriangle;
 class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode {
@@ -472,6 +483,7 @@ class StlMesh_SequenceNodeOfSequenceOfMeshTriangle : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshTriangle\n");}
 	}
 };
+
 
 %nodefaultctor StlMesh_MeshTriangle;
 class StlMesh_MeshTriangle : public MMgt_TShared {
@@ -509,6 +521,7 @@ class StlMesh_MeshTriangle : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMeshDomain;
 class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 	public:
@@ -536,6 +549,7 @@ class StlMesh_SequenceNodeOfSequenceOfMeshDomain : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceNodeOfSequenceOfMeshDomain\n");}
 	}
 };
+
 
 %nodefaultctor StlMesh_SequenceNodeOfSequenceOfMesh;
 class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
@@ -565,6 +579,7 @@ class StlMesh_SequenceNodeOfSequenceOfMesh : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor StlMesh;
 class StlMesh {
 	public:
@@ -580,6 +595,7 @@ class StlMesh {
 	if (__env){printf("## Call custom destructor for instance of StlMesh\n");}
 	}
 };
+
 
 %nodefaultctor StlMesh_SequenceOfMeshTriangle;
 class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
@@ -634,6 +650,7 @@ class StlMesh_SequenceOfMeshTriangle : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of StlMesh_SequenceOfMeshTriangle\n");}
 	}
 };
+
 
 %nodefaultctor StlMesh_SequenceOfMesh;
 class StlMesh_SequenceOfMesh : public TCollection_BaseSequence {

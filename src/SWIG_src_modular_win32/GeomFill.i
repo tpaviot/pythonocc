@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -168,6 +169,7 @@ class Handle_GeomFill_TrihedronLaw : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_TrihedronWithGuide;
 class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
 	public:
@@ -192,6 +194,7 @@ class Handle_GeomFill_TrihedronWithGuide : public Handle_GeomFill_TrihedronLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TrihedronWithGuide\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_GuideTrihedronAC;
 class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGuide {
@@ -218,6 +221,7 @@ class Handle_GeomFill_GuideTrihedronAC : public Handle_GeomFill_TrihedronWithGui
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_CircularBlendFunc;
 class Handle_GeomFill_CircularBlendFunc : public Handle_Approx_SweepFunction {
 	public:
@@ -242,6 +246,7 @@ class Handle_GeomFill_CircularBlendFunc : public Handle_Approx_SweepFunction {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CircularBlendFunc\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_HArray1OfLocationLaw;
 class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
@@ -268,6 +273,7 @@ class Handle_GeomFill_HArray1OfLocationLaw : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_GuideTrihedronPlan;
 class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithGuide {
 	public:
@@ -292,6 +298,7 @@ class Handle_GeomFill_GuideTrihedronPlan : public Handle_GeomFill_TrihedronWithG
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_GuideTrihedronPlan\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_LocationLaw;
 class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
@@ -318,6 +325,7 @@ class Handle_GeomFill_LocationLaw : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_CurveAndTrihedron;
 class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
 	public:
@@ -342,6 +350,7 @@ class Handle_GeomFill_CurveAndTrihedron : public Handle_GeomFill_LocationLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_CurveAndTrihedron\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_LocationDraft;
 class Handle_GeomFill_LocationDraft : public Handle_GeomFill_LocationLaw {
@@ -368,6 +377,7 @@ class Handle_GeomFill_LocationDraft : public Handle_GeomFill_LocationLaw {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_Boundary;
 class Handle_GeomFill_Boundary : public Handle_MMgt_TShared {
 	public:
@@ -392,6 +402,7 @@ class Handle_GeomFill_Boundary : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Boundary\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_BoundWithSurf;
 class Handle_GeomFill_BoundWithSurf : public Handle_GeomFill_Boundary {
@@ -418,6 +429,7 @@ class Handle_GeomFill_BoundWithSurf : public Handle_GeomFill_Boundary {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_Line;
 class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 	public:
@@ -442,6 +454,7 @@ class Handle_GeomFill_Line : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Line\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfCurve;
 class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
@@ -468,6 +481,7 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_TgtField;
 class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
 	public:
@@ -492,6 +506,7 @@ class Handle_GeomFill_TgtField : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_TgtField\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_Frenet;
 class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
@@ -518,6 +533,7 @@ class Handle_GeomFill_Frenet : public Handle_GeomFill_TrihedronLaw {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_Darboux;
 class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 	public:
@@ -542,6 +558,7 @@ class Handle_GeomFill_Darboux : public Handle_GeomFill_TrihedronLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Darboux\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_ConstantBiNormal;
 class Handle_GeomFill_ConstantBiNormal : public Handle_GeomFill_TrihedronLaw {
@@ -568,6 +585,7 @@ class Handle_GeomFill_ConstantBiNormal : public Handle_GeomFill_TrihedronLaw {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_DegeneratedBound;
 class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 	public:
@@ -592,6 +610,7 @@ class Handle_GeomFill_DegeneratedBound : public Handle_GeomFill_Boundary {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_DegeneratedBound\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_CorrectedFrenet;
 class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
@@ -618,6 +637,7 @@ class Handle_GeomFill_CorrectedFrenet : public Handle_GeomFill_TrihedronLaw {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_SimpleBound;
 class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 	public:
@@ -642,6 +662,7 @@ class Handle_GeomFill_SimpleBound : public Handle_GeomFill_Boundary {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SimpleBound\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_TgtOnCoons;
 class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
@@ -668,6 +689,7 @@ class Handle_GeomFill_TgtOnCoons : public Handle_GeomFill_TgtField {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_HArray1OfSectionLaw;
 class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
 	public:
@@ -692,6 +714,7 @@ class Handle_GeomFill_HArray1OfSectionLaw : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_HArray1OfSectionLaw\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_SectionLaw;
 class Handle_GeomFill_SectionLaw : public Handle_MMgt_TShared {
@@ -718,6 +741,7 @@ class Handle_GeomFill_SectionLaw : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_NSections;
 class Handle_GeomFill_NSections : public Handle_GeomFill_SectionLaw {
 	public:
@@ -742,6 +766,7 @@ class Handle_GeomFill_NSections : public Handle_GeomFill_SectionLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_NSections\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_UniformSection;
 class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
@@ -768,6 +793,7 @@ class Handle_GeomFill_UniformSection : public Handle_GeomFill_SectionLaw {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_SequenceNodeOfSequenceOfTrsf;
 class Handle_GeomFill_SequenceNodeOfSequenceOfTrsf : public Handle_TCollection_SeqNode {
 	public:
@@ -792,6 +818,7 @@ class Handle_GeomFill_SequenceNodeOfSequenceOfTrsf : public Handle_TCollection_S
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_SequenceNodeOfSequenceOfTrsf\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_CoonsAlgPatch;
 class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
@@ -818,6 +845,7 @@ class Handle_GeomFill_CoonsAlgPatch : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_EvolvedSection;
 class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 	public:
@@ -842,6 +870,7 @@ class Handle_GeomFill_EvolvedSection : public Handle_GeomFill_SectionLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_EvolvedSection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_DraftTrihedron;
 class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
@@ -868,6 +897,7 @@ class Handle_GeomFill_DraftTrihedron : public Handle_GeomFill_TrihedronLaw {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_Fixed;
 class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 	public:
@@ -892,6 +922,7 @@ class Handle_GeomFill_Fixed : public Handle_GeomFill_TrihedronLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_Fixed\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomFill_SweepFunction;
 class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
@@ -918,6 +949,7 @@ class Handle_GeomFill_SweepFunction : public Handle_Approx_SweepFunction {
 	}
 };
 
+
 %nodefaultctor Handle_GeomFill_LocationGuide;
 class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
 	public:
@@ -942,6 +974,7 @@ class Handle_GeomFill_LocationGuide : public Handle_GeomFill_LocationLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomFill_LocationGuide\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_TgtField;
 class GeomFill_TgtField : public MMgt_TShared {
@@ -977,6 +1010,7 @@ class GeomFill_TgtField : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomFill_TgtOnCoons;
 class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 	public:
@@ -1008,6 +1042,7 @@ class GeomFill_TgtOnCoons : public GeomFill_TgtField {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_TgtOnCoons\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_TrihedronLaw;
 class GeomFill_TrihedronLaw : public MMgt_TShared {
@@ -1059,6 +1094,7 @@ class GeomFill_TrihedronLaw : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomFill_Frenet;
 class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 	public:
@@ -1084,6 +1120,7 @@ class GeomFill_Frenet : public GeomFill_TrihedronLaw {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Frenet\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_Profiler;
 class GeomFill_Profiler {
@@ -1121,6 +1158,7 @@ class GeomFill_Profiler {
 	}
 };
 
+
 %nodefaultctor GeomFill_Generator;
 class GeomFill_Generator : public GeomFill_Profiler {
 	public:
@@ -1136,6 +1174,7 @@ class GeomFill_Generator : public GeomFill_Profiler {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Generator\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_SectionPlacement;
 class GeomFill_SectionPlacement {
@@ -1174,6 +1213,7 @@ class GeomFill_SectionPlacement {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionPlacement\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_Boundary;
 class GeomFill_Boundary : public MMgt_TShared {
@@ -1225,6 +1265,7 @@ class GeomFill_Boundary : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomFill_DegeneratedBound;
 class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 	public:
@@ -1248,6 +1289,7 @@ class GeomFill_DegeneratedBound : public GeomFill_Boundary {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_DegeneratedBound\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_Darboux;
 class GeomFill_Darboux : public GeomFill_TrihedronLaw {
@@ -1293,6 +1335,7 @@ class GeomFill_Darboux : public GeomFill_TrihedronLaw {
 	}
 };
 
+
 %nodefaultctor GeomFill_Array1OfSectionLaw;
 class GeomFill_Array1OfSectionLaw {
 	public:
@@ -1332,6 +1375,7 @@ class GeomFill_Array1OfSectionLaw {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfSectionLaw\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_SequenceOfCurve;
 class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
@@ -1387,6 +1431,7 @@ class GeomFill_SequenceOfCurve : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor GeomFill_CoonsAlgPatch;
 class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 	public:
@@ -1431,6 +1476,7 @@ class GeomFill_CoonsAlgPatch : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomFill_FunctionDraft;
 class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 	public:
@@ -1462,6 +1508,7 @@ class GeomFill_FunctionDraft : public math_FunctionSetWithDerivatives {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_FunctionDraft\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_LocationLaw;
 class GeomFill_LocationLaw : public MMgt_TShared {
@@ -1537,6 +1584,7 @@ class GeomFill_LocationLaw : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomFill_LocationDraft;
 class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 	public:
@@ -1569,6 +1617,7 @@ class GeomFill_LocationDraft : public GeomFill_LocationLaw {
 	}
 };
 
+
 %nodefaultctor GeomFill_Filling;
 class GeomFill_Filling {
 	public:
@@ -1592,6 +1641,7 @@ class GeomFill_Filling {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Filling\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_TrihedronWithGuide;
 class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
@@ -1620,6 +1670,7 @@ class GeomFill_TrihedronWithGuide : public GeomFill_TrihedronLaw {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_TrihedronWithGuide\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_GuideTrihedronAC;
 class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
@@ -1669,6 +1720,7 @@ class GeomFill_GuideTrihedronAC : public GeomFill_TrihedronWithGuide {
 	}
 };
 
+
 %nodefaultctor GeomFill_SnglrFunc;
 class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 	public:
@@ -1709,6 +1761,7 @@ class GeomFill_SnglrFunc : public Adaptor3d_Curve {
 	}
 };
 
+
 %nodefaultctor GeomFill_PolynomialConvertor;
 class GeomFill_PolynomialConvertor {
 	public:
@@ -1732,6 +1785,7 @@ class GeomFill_PolynomialConvertor {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_PolynomialConvertor\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_CircularBlendFunc;
 class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
@@ -1790,6 +1844,7 @@ class GeomFill_CircularBlendFunc : public Approx_SweepFunction {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_CircularBlendFunc\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_SectionLaw;
 class GeomFill_SectionLaw : public MMgt_TShared {
@@ -1863,6 +1918,7 @@ class GeomFill_SectionLaw : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomFill_HArray1OfLocationLaw;
 class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 	public:
@@ -1909,6 +1965,7 @@ class GeomFill_HArray1OfLocationLaw : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomFill;
 class GeomFill {
 	public:
@@ -1940,6 +1997,7 @@ class GeomFill {
 	if (__env){printf("## Call custom destructor for instance of GeomFill\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_CurveAndTrihedron;
 class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
@@ -2003,6 +2061,7 @@ class GeomFill_CurveAndTrihedron : public GeomFill_LocationLaw {
 	}
 };
 
+
 %nodefaultctor GeomFill_SequenceNodeOfSequenceOfTrsf;
 class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 	public:
@@ -2030,6 +2089,7 @@ class GeomFill_SequenceNodeOfSequenceOfTrsf : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfTrsf\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_SweepFunction;
 class GeomFill_SweepFunction : public Approx_SweepFunction {
@@ -2091,6 +2151,7 @@ class GeomFill_SweepFunction : public Approx_SweepFunction {
 	}
 };
 
+
 %nodefaultctor GeomFill_BoundWithSurf;
 class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 	public:
@@ -2133,6 +2194,7 @@ class GeomFill_BoundWithSurf : public GeomFill_Boundary {
 	}
 };
 
+
 %nodefaultctor GeomFill_LocFunction;
 class GeomFill_LocFunction {
 	public:
@@ -2154,6 +2216,7 @@ class GeomFill_LocFunction {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_LocFunction\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_SequenceOfTrsf;
 class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
@@ -2209,6 +2272,7 @@ class GeomFill_SequenceOfTrsf : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor GeomFill_SectionGenerator;
 class GeomFill_SectionGenerator : public GeomFill_Profiler {
 	public:
@@ -2236,6 +2300,7 @@ class GeomFill_SectionGenerator : public GeomFill_Profiler {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_SectionGenerator\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_GuideTrihedronPlan;
 class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
@@ -2290,6 +2355,7 @@ class GeomFill_GuideTrihedronPlan : public GeomFill_TrihedronWithGuide {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_GuideTrihedronPlan\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_AppSurf;
 class GeomFill_AppSurf : public AppBlend_Approx {
@@ -2353,6 +2419,7 @@ class GeomFill_AppSurf : public AppBlend_Approx {
 	}
 };
 
+
 %nodefaultctor GeomFill_Tensor;
 class GeomFill_Tensor {
 	public:
@@ -2378,6 +2445,7 @@ class GeomFill_Tensor {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Tensor\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_SequenceNodeOfSequenceOfCurve;
 class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
@@ -2406,6 +2474,7 @@ class GeomFill_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_ConstrainedFilling;
 class GeomFill_ConstrainedFilling {
@@ -2442,6 +2511,7 @@ class GeomFill_ConstrainedFilling {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_ConstrainedFilling\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_UniformSection;
 class GeomFill_UniformSection : public GeomFill_SectionLaw {
@@ -2511,6 +2581,7 @@ class GeomFill_UniformSection : public GeomFill_SectionLaw {
 	}
 };
 
+
 %nodefaultctor GeomFill_Stretch;
 class GeomFill_Stretch : public GeomFill_Filling {
 	public:
@@ -2532,6 +2603,7 @@ class GeomFill_Stretch : public GeomFill_Filling {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Stretch\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_PlanFunc;
 class GeomFill_PlanFunc : public math_FunctionWithDerivative {
@@ -2558,6 +2630,7 @@ class GeomFill_PlanFunc : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_PlanFunc\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_SimpleBound;
 class GeomFill_SimpleBound : public GeomFill_Boundary {
@@ -2595,6 +2668,7 @@ class GeomFill_SimpleBound : public GeomFill_Boundary {
 	}
 };
 
+
 %nodefaultctor GeomFill_BSplineCurves;
 class GeomFill_BSplineCurves {
 	public:
@@ -2622,6 +2696,7 @@ class GeomFill_BSplineCurves {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_BSplineCurves\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_CornerState;
 class GeomFill_CornerState {
@@ -2657,6 +2732,7 @@ class GeomFill_CornerState {
 	}
 };
 
+
 %nodefaultctor GeomFill_QuasiAngularConvertor;
 class GeomFill_QuasiAngularConvertor {
 	public:
@@ -2680,6 +2756,7 @@ class GeomFill_QuasiAngularConvertor {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_QuasiAngularConvertor\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_Sweep;
 class GeomFill_Sweep {
@@ -2722,6 +2799,7 @@ class GeomFill_Sweep {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Sweep\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_ConstantBiNormal;
 class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
@@ -2769,6 +2847,7 @@ class GeomFill_ConstantBiNormal : public GeomFill_TrihedronLaw {
 	}
 };
 
+
 %nodefaultctor GeomFill_HArray1OfSectionLaw;
 class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 	public:
@@ -2814,6 +2893,7 @@ class GeomFill_HArray1OfSectionLaw : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_HArray1OfSectionLaw\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_AppSweep;
 class GeomFill_AppSweep : public AppBlend_Approx {
@@ -2876,6 +2956,7 @@ class GeomFill_AppSweep : public AppBlend_Approx {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_AppSweep\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_EvolvedSection;
 class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
@@ -2945,6 +3026,7 @@ class GeomFill_EvolvedSection : public GeomFill_SectionLaw {
 	}
 };
 
+
 %nodefaultctor GeomFill_DraftTrihedron;
 class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 	public:
@@ -2991,6 +3073,7 @@ class GeomFill_DraftTrihedron : public GeomFill_TrihedronLaw {
 	}
 };
 
+
 %nodefaultctor GeomFill_Coons;
 class GeomFill_Coons : public GeomFill_Filling {
 	public:
@@ -3012,6 +3095,7 @@ class GeomFill_Coons : public GeomFill_Filling {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Coons\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_BezierCurves;
 class GeomFill_BezierCurves {
@@ -3040,6 +3124,7 @@ class GeomFill_BezierCurves {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_BezierCurves\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_Line;
 class GeomFill_Line : public MMgt_TShared {
@@ -3072,6 +3157,7 @@ class GeomFill_Line : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Line\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_Fixed;
 class GeomFill_Fixed : public GeomFill_TrihedronLaw {
@@ -3114,6 +3200,7 @@ class GeomFill_Fixed : public GeomFill_TrihedronLaw {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Fixed\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_Pipe;
 class GeomFill_Pipe {
@@ -3177,6 +3264,7 @@ class GeomFill_Pipe {
 	}
 };
 
+
 %nodefaultctor GeomFill_CorrectedFrenet;
 class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 	public:
@@ -3225,6 +3313,7 @@ class GeomFill_CorrectedFrenet : public GeomFill_TrihedronLaw {
 	}
 };
 
+
 %nodefaultctor GeomFill_Curved;
 class GeomFill_Curved : public GeomFill_Filling {
 	public:
@@ -3262,6 +3351,7 @@ class GeomFill_Curved : public GeomFill_Filling {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Curved\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_Array1OfLocationLaw;
 class GeomFill_Array1OfLocationLaw {
@@ -3302,6 +3392,7 @@ class GeomFill_Array1OfLocationLaw {
 	if (__env){printf("## Call custom destructor for instance of GeomFill_Array1OfLocationLaw\n");}
 	}
 };
+
 
 %nodefaultctor GeomFill_LocationGuide;
 class GeomFill_LocationGuide : public GeomFill_LocationLaw {

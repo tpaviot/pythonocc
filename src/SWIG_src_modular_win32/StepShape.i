@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -150,6 +151,7 @@ class Handle_StepShape_DimensionalLocation : public Handle_StepRepr_ShapeAspectR
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_DimensionalLocationWithPath;
 class Handle_StepShape_DimensionalLocationWithPath : public Handle_StepShape_DimensionalLocation {
 	public:
@@ -174,6 +176,7 @@ class Handle_StepShape_DimensionalLocationWithPath : public Handle_StepShape_Dim
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_DimensionalLocationWithPath\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_HArray1OfConnectedEdgeSet;
 class Handle_StepShape_HArray1OfConnectedEdgeSet : public Handle_MMgt_TShared {
@@ -200,6 +203,7 @@ class Handle_StepShape_HArray1OfConnectedEdgeSet : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_TypeQualifier;
 class Handle_StepShape_TypeQualifier : public Handle_MMgt_TShared {
 	public:
@@ -224,6 +228,7 @@ class Handle_StepShape_TypeQualifier : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_TypeQualifier\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_RightCircularCone;
 class Handle_StepShape_RightCircularCone : public Handle_StepGeom_GeometricRepresentationItem {
@@ -250,6 +255,7 @@ class Handle_StepShape_RightCircularCone : public Handle_StepGeom_GeometricRepre
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_TopologicalRepresentationItem;
 class Handle_StepShape_TopologicalRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -274,6 +280,7 @@ class Handle_StepShape_TopologicalRepresentationItem : public Handle_StepRepr_Re
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_TopologicalRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_Edge;
 class Handle_StepShape_Edge : public Handle_StepShape_TopologicalRepresentationItem {
@@ -300,6 +307,7 @@ class Handle_StepShape_Edge : public Handle_StepShape_TopologicalRepresentationI
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_OrientedEdge;
 class Handle_StepShape_OrientedEdge : public Handle_StepShape_Edge {
 	public:
@@ -324,6 +332,7 @@ class Handle_StepShape_OrientedEdge : public Handle_StepShape_Edge {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_OrientedEdge\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_SeamEdge;
 class Handle_StepShape_SeamEdge : public Handle_StepShape_OrientedEdge {
@@ -350,6 +359,7 @@ class Handle_StepShape_SeamEdge : public Handle_StepShape_OrientedEdge {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_SolidModel;
 class Handle_StepShape_SolidModel : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -374,6 +384,7 @@ class Handle_StepShape_SolidModel : public Handle_StepGeom_GeometricRepresentati
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_SolidModel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_SweptAreaSolid;
 class Handle_StepShape_SweptAreaSolid : public Handle_StepShape_SolidModel {
@@ -400,6 +411,7 @@ class Handle_StepShape_SweptAreaSolid : public Handle_StepShape_SolidModel {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_RevolvedAreaSolid;
 class Handle_StepShape_RevolvedAreaSolid : public Handle_StepShape_SweptAreaSolid {
 	public:
@@ -424,6 +436,7 @@ class Handle_StepShape_RevolvedAreaSolid : public Handle_StepShape_SweptAreaSoli
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_RevolvedAreaSolid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ShapeRepresentation;
 class Handle_StepShape_ShapeRepresentation : public Handle_StepRepr_Representation {
@@ -450,6 +463,7 @@ class Handle_StepShape_ShapeRepresentation : public Handle_StepRepr_Representati
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_ManifoldSurfaceShapeRepresentation;
 class Handle_StepShape_ManifoldSurfaceShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
 	public:
@@ -474,6 +488,7 @@ class Handle_StepShape_ManifoldSurfaceShapeRepresentation : public Handle_StepSh
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_ManifoldSurfaceShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_HArray1OfFaceBound;
 class Handle_StepShape_HArray1OfFaceBound : public Handle_MMgt_TShared {
@@ -500,6 +515,7 @@ class Handle_StepShape_HArray1OfFaceBound : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_SweptFaceSolid;
 class Handle_StepShape_SweptFaceSolid : public Handle_StepShape_SolidModel {
 	public:
@@ -524,6 +540,7 @@ class Handle_StepShape_SweptFaceSolid : public Handle_StepShape_SolidModel {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_SweptFaceSolid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ExtrudedFaceSolid;
 class Handle_StepShape_ExtrudedFaceSolid : public Handle_StepShape_SweptFaceSolid {
@@ -550,6 +567,7 @@ class Handle_StepShape_ExtrudedFaceSolid : public Handle_StepShape_SweptFaceSoli
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_HArray1OfValueQualifier;
 class Handle_StepShape_HArray1OfValueQualifier : public Handle_MMgt_TShared {
 	public:
@@ -574,6 +592,7 @@ class Handle_StepShape_HArray1OfValueQualifier : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_HArray1OfValueQualifier\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_GeometricSet;
 class Handle_StepShape_GeometricSet : public Handle_StepGeom_GeometricRepresentationItem {
@@ -600,6 +619,7 @@ class Handle_StepShape_GeometricSet : public Handle_StepGeom_GeometricRepresenta
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_GeometricCurveSet;
 class Handle_StepShape_GeometricCurveSet : public Handle_StepShape_GeometricSet {
 	public:
@@ -624,6 +644,7 @@ class Handle_StepShape_GeometricCurveSet : public Handle_StepShape_GeometricSet 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_GeometricCurveSet\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_MeasureQualification;
 class Handle_StepShape_MeasureQualification : public Handle_MMgt_TShared {
@@ -650,6 +671,7 @@ class Handle_StepShape_MeasureQualification : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_Sphere;
 class Handle_StepShape_Sphere : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -674,6 +696,7 @@ class Handle_StepShape_Sphere : public Handle_StepGeom_GeometricRepresentationIt
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_Sphere\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_Loop;
 class Handle_StepShape_Loop : public Handle_StepShape_TopologicalRepresentationItem {
@@ -700,6 +723,7 @@ class Handle_StepShape_Loop : public Handle_StepShape_TopologicalRepresentationI
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_PointRepresentation;
 class Handle_StepShape_PointRepresentation : public Handle_StepShape_ShapeRepresentation {
 	public:
@@ -724,6 +748,7 @@ class Handle_StepShape_PointRepresentation : public Handle_StepShape_ShapeRepres
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_PointRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_HArray1OfGeometricSetSelect;
 class Handle_StepShape_HArray1OfGeometricSetSelect : public Handle_MMgt_TShared {
@@ -750,6 +775,7 @@ class Handle_StepShape_HArray1OfGeometricSetSelect : public Handle_MMgt_TShared 
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_SolidReplica;
 class Handle_StepShape_SolidReplica : public Handle_StepShape_SolidModel {
 	public:
@@ -774,6 +800,7 @@ class Handle_StepShape_SolidReplica : public Handle_StepShape_SolidModel {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_SolidReplica\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_Face;
 class Handle_StepShape_Face : public Handle_StepShape_TopologicalRepresentationItem {
@@ -800,6 +827,7 @@ class Handle_StepShape_Face : public Handle_StepShape_TopologicalRepresentationI
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_Subface;
 class Handle_StepShape_Subface : public Handle_StepShape_Face {
 	public:
@@ -824,6 +852,7 @@ class Handle_StepShape_Subface : public Handle_StepShape_Face {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_Subface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_BooleanResult;
 class Handle_StepShape_BooleanResult : public Handle_StepGeom_GeometricRepresentationItem {
@@ -850,6 +879,7 @@ class Handle_StepShape_BooleanResult : public Handle_StepGeom_GeometricRepresent
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_PolyLoop;
 class Handle_StepShape_PolyLoop : public Handle_StepShape_Loop {
 	public:
@@ -874,6 +904,7 @@ class Handle_StepShape_PolyLoop : public Handle_StepShape_Loop {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_PolyLoop\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_HalfSpaceSolid;
 class Handle_StepShape_HalfSpaceSolid : public Handle_StepGeom_GeometricRepresentationItem {
@@ -900,6 +931,7 @@ class Handle_StepShape_HalfSpaceSolid : public Handle_StepGeom_GeometricRepresen
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_BoxedHalfSpace;
 class Handle_StepShape_BoxedHalfSpace : public Handle_StepShape_HalfSpaceSolid {
 	public:
@@ -924,6 +956,7 @@ class Handle_StepShape_BoxedHalfSpace : public Handle_StepShape_HalfSpaceSolid {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_BoxedHalfSpace\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_Path;
 class Handle_StepShape_Path : public Handle_StepShape_TopologicalRepresentationItem {
@@ -950,6 +983,7 @@ class Handle_StepShape_Path : public Handle_StepShape_TopologicalRepresentationI
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_OrientedPath;
 class Handle_StepShape_OrientedPath : public Handle_StepShape_Path {
 	public:
@@ -974,6 +1008,7 @@ class Handle_StepShape_OrientedPath : public Handle_StepShape_Path {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_OrientedPath\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_FaceBound;
 class Handle_StepShape_FaceBound : public Handle_StepShape_TopologicalRepresentationItem {
@@ -1000,6 +1035,7 @@ class Handle_StepShape_FaceBound : public Handle_StepShape_TopologicalRepresenta
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_FaceOuterBound;
 class Handle_StepShape_FaceOuterBound : public Handle_StepShape_FaceBound {
 	public:
@@ -1024,6 +1060,7 @@ class Handle_StepShape_FaceOuterBound : public Handle_StepShape_FaceBound {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_FaceOuterBound\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ConnectedFaceSet;
 class Handle_StepShape_ConnectedFaceSet : public Handle_StepShape_TopologicalRepresentationItem {
@@ -1050,6 +1087,7 @@ class Handle_StepShape_ConnectedFaceSet : public Handle_StepShape_TopologicalRep
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_OpenShell;
 class Handle_StepShape_OpenShell : public Handle_StepShape_ConnectedFaceSet {
 	public:
@@ -1074,6 +1112,7 @@ class Handle_StepShape_OpenShell : public Handle_StepShape_ConnectedFaceSet {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_OpenShell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_EdgeBasedWireframeShapeRepresentation;
 class Handle_StepShape_EdgeBasedWireframeShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
@@ -1100,6 +1139,7 @@ class Handle_StepShape_EdgeBasedWireframeShapeRepresentation : public Handle_Ste
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_ShapeRepresentationWithParameters;
 class Handle_StepShape_ShapeRepresentationWithParameters : public Handle_StepShape_ShapeRepresentation {
 	public:
@@ -1124,6 +1164,7 @@ class Handle_StepShape_ShapeRepresentationWithParameters : public Handle_StepSha
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_ShapeRepresentationWithParameters\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ClosedShell;
 class Handle_StepShape_ClosedShell : public Handle_StepShape_ConnectedFaceSet {
@@ -1150,6 +1191,7 @@ class Handle_StepShape_ClosedShell : public Handle_StepShape_ConnectedFaceSet {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_DimensionalCharacteristicRepresentation;
 class Handle_StepShape_DimensionalCharacteristicRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -1174,6 +1216,7 @@ class Handle_StepShape_DimensionalCharacteristicRepresentation : public Handle_M
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_DimensionalCharacteristicRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_FaceSurface;
 class Handle_StepShape_FaceSurface : public Handle_StepShape_Face {
@@ -1200,6 +1243,7 @@ class Handle_StepShape_FaceSurface : public Handle_StepShape_Face {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_LimitsAndFits;
 class Handle_StepShape_LimitsAndFits : public Handle_MMgt_TShared {
 	public:
@@ -1224,6 +1268,7 @@ class Handle_StepShape_LimitsAndFits : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_LimitsAndFits\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_FaceBasedSurfaceModel;
 class Handle_StepShape_FaceBasedSurfaceModel : public Handle_StepGeom_GeometricRepresentationItem {
@@ -1250,6 +1295,7 @@ class Handle_StepShape_FaceBasedSurfaceModel : public Handle_StepGeom_GeometricR
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_ConnectedFaceSubSet;
 class Handle_StepShape_ConnectedFaceSubSet : public Handle_StepShape_ConnectedFaceSet {
 	public:
@@ -1274,6 +1320,7 @@ class Handle_StepShape_ConnectedFaceSubSet : public Handle_StepShape_ConnectedFa
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_ConnectedFaceSubSet\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_RevolvedFaceSolid;
 class Handle_StepShape_RevolvedFaceSolid : public Handle_StepShape_SweptFaceSolid {
@@ -1300,6 +1347,7 @@ class Handle_StepShape_RevolvedFaceSolid : public Handle_StepShape_SweptFaceSoli
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_Block;
 class Handle_StepShape_Block : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -1324,6 +1372,7 @@ class Handle_StepShape_Block : public Handle_StepGeom_GeometricRepresentationIte
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_Block\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_DimensionalSize;
 class Handle_StepShape_DimensionalSize : public Handle_MMgt_TShared {
@@ -1350,6 +1399,7 @@ class Handle_StepShape_DimensionalSize : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_DimensionalSizeWithPath;
 class Handle_StepShape_DimensionalSizeWithPath : public Handle_StepShape_DimensionalSize {
 	public:
@@ -1374,6 +1424,7 @@ class Handle_StepShape_DimensionalSizeWithPath : public Handle_StepShape_Dimensi
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_DimensionalSizeWithPath\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_LoopAndPath;
 class Handle_StepShape_LoopAndPath : public Handle_StepShape_TopologicalRepresentationItem {
@@ -1400,6 +1451,7 @@ class Handle_StepShape_LoopAndPath : public Handle_StepShape_TopologicalRepresen
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_AdvancedFace;
 class Handle_StepShape_AdvancedFace : public Handle_StepShape_FaceSurface {
 	public:
@@ -1424,6 +1476,7 @@ class Handle_StepShape_AdvancedFace : public Handle_StepShape_FaceSurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_AdvancedFace\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation;
 class Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation : public Handle_StepRepr_DefinitionalRepresentation {
@@ -1450,6 +1503,7 @@ class Handle_StepShape_DefinitionalRepresentationAndShapeRepresentation : public
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_HArray1OfConnectedFaceSet;
 class Handle_StepShape_HArray1OfConnectedFaceSet : public Handle_MMgt_TShared {
 	public:
@@ -1474,6 +1528,7 @@ class Handle_StepShape_HArray1OfConnectedFaceSet : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_HArray1OfConnectedFaceSet\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ManifoldSolidBrep;
 class Handle_StepShape_ManifoldSolidBrep : public Handle_StepShape_SolidModel {
@@ -1500,6 +1555,7 @@ class Handle_StepShape_ManifoldSolidBrep : public Handle_StepShape_SolidModel {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_ExtrudedAreaSolid;
 class Handle_StepShape_ExtrudedAreaSolid : public Handle_StepShape_SweptAreaSolid {
 	public:
@@ -1524,6 +1580,7 @@ class Handle_StepShape_ExtrudedAreaSolid : public Handle_StepShape_SweptAreaSoli
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_ExtrudedAreaSolid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ConnectedEdgeSet;
 class Handle_StepShape_ConnectedEdgeSet : public Handle_StepShape_TopologicalRepresentationItem {
@@ -1550,6 +1607,7 @@ class Handle_StepShape_ConnectedEdgeSet : public Handle_StepShape_TopologicalRep
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_PrecisionQualifier;
 class Handle_StepShape_PrecisionQualifier : public Handle_MMgt_TShared {
 	public:
@@ -1574,6 +1632,7 @@ class Handle_StepShape_PrecisionQualifier : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_PrecisionQualifier\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ToleranceValue;
 class Handle_StepShape_ToleranceValue : public Handle_MMgt_TShared {
@@ -1600,6 +1659,7 @@ class Handle_StepShape_ToleranceValue : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_EdgeBasedWireframeModel;
 class Handle_StepShape_EdgeBasedWireframeModel : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -1624,6 +1684,7 @@ class Handle_StepShape_EdgeBasedWireframeModel : public Handle_StepGeom_Geometri
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_EdgeBasedWireframeModel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_HArray1OfFace;
 class Handle_StepShape_HArray1OfFace : public Handle_MMgt_TShared {
@@ -1650,6 +1711,7 @@ class Handle_StepShape_HArray1OfFace : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_EdgeCurve;
 class Handle_StepShape_EdgeCurve : public Handle_StepShape_Edge {
 	public:
@@ -1674,6 +1736,7 @@ class Handle_StepShape_EdgeCurve : public Handle_StepShape_Edge {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_EdgeCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation;
 class Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
@@ -1700,6 +1763,7 @@ class Handle_StepShape_GeometricallyBoundedWireframeShapeRepresentation : public
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_CsgSolid;
 class Handle_StepShape_CsgSolid : public Handle_StepShape_SolidModel {
 	public:
@@ -1724,6 +1788,7 @@ class Handle_StepShape_CsgSolid : public Handle_StepShape_SolidModel {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_CsgSolid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_RightCircularCylinder;
 class Handle_StepShape_RightCircularCylinder : public Handle_StepGeom_GeometricRepresentationItem {
@@ -1750,6 +1815,7 @@ class Handle_StepShape_RightCircularCylinder : public Handle_StepGeom_GeometricR
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_OrientedClosedShell;
 class Handle_StepShape_OrientedClosedShell : public Handle_StepShape_ClosedShell {
 	public:
@@ -1774,6 +1840,7 @@ class Handle_StepShape_OrientedClosedShell : public Handle_StepShape_ClosedShell
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_OrientedClosedShell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_AdvancedBrepShapeRepresentation;
 class Handle_StepShape_AdvancedBrepShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
@@ -1800,6 +1867,7 @@ class Handle_StepShape_AdvancedBrepShapeRepresentation : public Handle_StepShape
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_BoxDomain;
 class Handle_StepShape_BoxDomain : public Handle_MMgt_TShared {
 	public:
@@ -1824,6 +1892,7 @@ class Handle_StepShape_BoxDomain : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_BoxDomain\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_NonManifoldSurfaceShapeRepresentation;
 class Handle_StepShape_NonManifoldSurfaceShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
@@ -1850,6 +1919,7 @@ class Handle_StepShape_NonManifoldSurfaceShapeRepresentation : public Handle_Ste
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_ShapeDefinitionRepresentation;
 class Handle_StepShape_ShapeDefinitionRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
 	public:
@@ -1874,6 +1944,7 @@ class Handle_StepShape_ShapeDefinitionRepresentation : public Handle_StepRepr_Pr
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_ShapeDefinitionRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_PlusMinusTolerance;
 class Handle_StepShape_PlusMinusTolerance : public Handle_MMgt_TShared {
@@ -1900,6 +1971,7 @@ class Handle_StepShape_PlusMinusTolerance : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_Torus;
 class Handle_StepShape_Torus : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -1924,6 +1996,7 @@ class Handle_StepShape_Torus : public Handle_StepGeom_GeometricRepresentationIte
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_Torus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_OrientedFace;
 class Handle_StepShape_OrientedFace : public Handle_StepShape_Face {
@@ -1950,6 +2023,7 @@ class Handle_StepShape_OrientedFace : public Handle_StepShape_Face {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_ConnectedFaceShapeRepresentation;
 class Handle_StepShape_ConnectedFaceShapeRepresentation : public Handle_StepRepr_Representation {
 	public:
@@ -1974,6 +2048,7 @@ class Handle_StepShape_ConnectedFaceShapeRepresentation : public Handle_StepRepr
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_ConnectedFaceShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ShellBasedSurfaceModel;
 class Handle_StepShape_ShellBasedSurfaceModel : public Handle_StepGeom_GeometricRepresentationItem {
@@ -2000,6 +2075,7 @@ class Handle_StepShape_ShellBasedSurfaceModel : public Handle_StepGeom_Geometric
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_CsgShapeRepresentation;
 class Handle_StepShape_CsgShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
 	public:
@@ -2024,6 +2100,7 @@ class Handle_StepShape_CsgShapeRepresentation : public Handle_StepShape_ShapeRep
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_CsgShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_CompoundShapeRepresentation;
 class Handle_StepShape_CompoundShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
@@ -2050,6 +2127,7 @@ class Handle_StepShape_CompoundShapeRepresentation : public Handle_StepShape_Sha
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_Subedge;
 class Handle_StepShape_Subedge : public Handle_StepShape_Edge {
 	public:
@@ -2074,6 +2152,7 @@ class Handle_StepShape_Subedge : public Handle_StepShape_Edge {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_Subedge\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_FacetedBrepShapeRepresentation;
 class Handle_StepShape_FacetedBrepShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
@@ -2100,6 +2179,7 @@ class Handle_StepShape_FacetedBrepShapeRepresentation : public Handle_StepShape_
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_Vertex;
 class Handle_StepShape_Vertex : public Handle_StepShape_TopologicalRepresentationItem {
 	public:
@@ -2124,6 +2204,7 @@ class Handle_StepShape_Vertex : public Handle_StepShape_TopologicalRepresentatio
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_Vertex\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation;
 class Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
@@ -2150,6 +2231,7 @@ class Handle_StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public H
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_TransitionalShapeRepresentation;
 class Handle_StepShape_TransitionalShapeRepresentation : public Handle_StepShape_ShapeRepresentation {
 	public:
@@ -2174,6 +2256,7 @@ class Handle_StepShape_TransitionalShapeRepresentation : public Handle_StepShape
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_TransitionalShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_HArray1OfShell;
 class Handle_StepShape_HArray1OfShell : public Handle_MMgt_TShared {
@@ -2200,6 +2283,7 @@ class Handle_StepShape_HArray1OfShell : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_DirectedDimensionalLocation;
 class Handle_StepShape_DirectedDimensionalLocation : public Handle_StepShape_DimensionalLocation {
 	public:
@@ -2224,6 +2308,7 @@ class Handle_StepShape_DirectedDimensionalLocation : public Handle_StepShape_Dim
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_DirectedDimensionalLocation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_FacetedBrep;
 class Handle_StepShape_FacetedBrep : public Handle_StepShape_ManifoldSolidBrep {
@@ -2250,6 +2335,7 @@ class Handle_StepShape_FacetedBrep : public Handle_StepShape_ManifoldSolidBrep {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_AngularSize;
 class Handle_StepShape_AngularSize : public Handle_StepShape_DimensionalSize {
 	public:
@@ -2274,6 +2360,7 @@ class Handle_StepShape_AngularSize : public Handle_StepShape_DimensionalSize {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_AngularSize\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_VertexPoint;
 class Handle_StepShape_VertexPoint : public Handle_StepShape_Vertex {
@@ -2300,6 +2387,7 @@ class Handle_StepShape_VertexPoint : public Handle_StepShape_Vertex {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
 class Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -2324,6 +2412,7 @@ class Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem :
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_EdgeLoop;
 class Handle_StepShape_EdgeLoop : public Handle_StepShape_Loop {
@@ -2350,6 +2439,7 @@ class Handle_StepShape_EdgeLoop : public Handle_StepShape_Loop {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_BrepWithVoids;
 class Handle_StepShape_BrepWithVoids : public Handle_StepShape_ManifoldSolidBrep {
 	public:
@@ -2374,6 +2464,7 @@ class Handle_StepShape_BrepWithVoids : public Handle_StepShape_ManifoldSolidBrep
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_BrepWithVoids\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_AngularLocation;
 class Handle_StepShape_AngularLocation : public Handle_StepShape_DimensionalLocation {
@@ -2400,6 +2491,7 @@ class Handle_StepShape_AngularLocation : public Handle_StepShape_DimensionalLoca
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_FacetedBrepAndBrepWithVoids;
 class Handle_StepShape_FacetedBrepAndBrepWithVoids : public Handle_StepShape_ManifoldSolidBrep {
 	public:
@@ -2424,6 +2516,7 @@ class Handle_StepShape_FacetedBrepAndBrepWithVoids : public Handle_StepShape_Man
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_FacetedBrepAndBrepWithVoids\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_VertexLoop;
 class Handle_StepShape_VertexLoop : public Handle_StepShape_Loop {
@@ -2450,6 +2543,7 @@ class Handle_StepShape_VertexLoop : public Handle_StepShape_Loop {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_OrientedOpenShell;
 class Handle_StepShape_OrientedOpenShell : public Handle_StepShape_OpenShell {
 	public:
@@ -2474,6 +2568,7 @@ class Handle_StepShape_OrientedOpenShell : public Handle_StepShape_OpenShell {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_OrientedOpenShell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_HArray1OfEdge;
 class Handle_StepShape_HArray1OfEdge : public Handle_MMgt_TShared {
@@ -2500,6 +2595,7 @@ class Handle_StepShape_HArray1OfEdge : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_RightAngularWedge;
 class Handle_StepShape_RightAngularWedge : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -2524,6 +2620,7 @@ class Handle_StepShape_RightAngularWedge : public Handle_StepGeom_GeometricRepre
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_RightAngularWedge\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_HArray1OfOrientedClosedShell;
 class Handle_StepShape_HArray1OfOrientedClosedShell : public Handle_MMgt_TShared {
@@ -2550,6 +2647,7 @@ class Handle_StepShape_HArray1OfOrientedClosedShell : public Handle_MMgt_TShared
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_HArray1OfOrientedEdge;
 class Handle_StepShape_HArray1OfOrientedEdge : public Handle_MMgt_TShared {
 	public:
@@ -2574,6 +2672,7 @@ class Handle_StepShape_HArray1OfOrientedEdge : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_HArray1OfOrientedEdge\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepShape_ShapeDimensionRepresentation;
 class Handle_StepShape_ShapeDimensionRepresentation : public Handle_StepShape_ShapeRepresentation {
@@ -2600,6 +2699,7 @@ class Handle_StepShape_ShapeDimensionRepresentation : public Handle_StepShape_Sh
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_QualifiedRepresentationItem;
 class Handle_StepShape_QualifiedRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -2625,6 +2725,7 @@ class Handle_StepShape_QualifiedRepresentationItem : public Handle_StepRepr_Repr
 	}
 };
 
+
 %nodefaultctor Handle_StepShape_ContextDependentShapeRepresentation;
 class Handle_StepShape_ContextDependentShapeRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -2649,6 +2750,7 @@ class Handle_StepShape_ContextDependentShapeRepresentation : public Handle_MMgt_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepShape_ContextDependentShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_BooleanOperand;
 class StepShape_BooleanOperand {
@@ -2684,6 +2786,7 @@ class StepShape_BooleanOperand {
 	}
 };
 
+
 %nodefaultctor StepShape_SolidModel;
 class StepShape_SolidModel : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -2709,6 +2812,7 @@ class StepShape_SolidModel : public StepGeom_GeometricRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepShape_SolidModel\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_SweptFaceSolid;
 class StepShape_SweptFaceSolid : public StepShape_SolidModel {
@@ -2741,6 +2845,7 @@ class StepShape_SweptFaceSolid : public StepShape_SolidModel {
 	if (__env){printf("## Call custom destructor for instance of StepShape_SweptFaceSolid\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_RevolvedFaceSolid;
 class StepShape_RevolvedFaceSolid : public StepShape_SweptFaceSolid {
@@ -2775,6 +2880,7 @@ class StepShape_RevolvedFaceSolid : public StepShape_SweptFaceSolid {
 	if (__env){printf("## Call custom destructor for instance of StepShape_RevolvedFaceSolid\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_HArray1OfFaceBound;
 class StepShape_HArray1OfFaceBound : public MMgt_TShared {
@@ -2822,6 +2928,7 @@ class StepShape_HArray1OfFaceBound : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_HArray1OfEdge;
 class StepShape_HArray1OfEdge : public MMgt_TShared {
 	public:
@@ -2868,6 +2975,7 @@ class StepShape_HArray1OfEdge : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_TopologicalRepresentationItem;
 class StepShape_TopologicalRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -2894,6 +3002,7 @@ class StepShape_TopologicalRepresentationItem : public StepRepr_RepresentationIt
 	}
 };
 
+
 %nodefaultctor StepShape_Loop;
 class StepShape_Loop : public StepShape_TopologicalRepresentationItem {
 	public:
@@ -2917,6 +3026,7 @@ class StepShape_Loop : public StepShape_TopologicalRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepShape_Loop\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_PolyLoop;
 class StepShape_PolyLoop : public StepShape_Loop {
@@ -2954,6 +3064,7 @@ class StepShape_PolyLoop : public StepShape_Loop {
 	}
 };
 
+
 %nodefaultctor StepShape_ShapeRepresentation;
 class StepShape_ShapeRepresentation : public StepRepr_Representation {
 	public:
@@ -2980,6 +3091,7 @@ class StepShape_ShapeRepresentation : public StepRepr_Representation {
 	}
 };
 
+
 %nodefaultctor StepShape_GeometricallyBoundedWireframeShapeRepresentation;
 class StepShape_GeometricallyBoundedWireframeShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -3003,6 +3115,7 @@ class StepShape_GeometricallyBoundedWireframeShapeRepresentation : public StepSh
 	if (__env){printf("## Call custom destructor for instance of StepShape_GeometricallyBoundedWireframeShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_GeometricallyBoundedSurfaceShapeRepresentation;
 class StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public StepShape_ShapeRepresentation {
@@ -3029,6 +3142,7 @@ class StepShape_GeometricallyBoundedSurfaceShapeRepresentation : public StepShap
 	if (__env){printf("## Call custom destructor for instance of StepShape_GeometricallyBoundedSurfaceShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_FaceBound;
 class StepShape_FaceBound : public StepShape_TopologicalRepresentationItem {
@@ -3068,6 +3182,7 @@ class StepShape_FaceBound : public StepShape_TopologicalRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_TransitionalShapeRepresentation;
 class StepShape_TransitionalShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -3093,6 +3208,7 @@ class StepShape_TransitionalShapeRepresentation : public StepShape_ShapeRepresen
 	if (__env){printf("## Call custom destructor for instance of StepShape_TransitionalShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_SolidReplica;
 class StepShape_SolidReplica : public StepShape_SolidModel {
@@ -3132,6 +3248,7 @@ class StepShape_SolidReplica : public StepShape_SolidModel {
 	}
 };
 
+
 %nodefaultctor StepShape_ExtrudedFaceSolid;
 class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 	public:
@@ -3169,6 +3286,7 @@ class StepShape_ExtrudedFaceSolid : public StepShape_SweptFaceSolid {
 	if (__env){printf("## Call custom destructor for instance of StepShape_ExtrudedFaceSolid\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_BooleanResult;
 class StepShape_BooleanResult : public StepGeom_GeometricRepresentationItem {
@@ -3212,6 +3330,7 @@ class StepShape_BooleanResult : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_Path;
 class StepShape_Path : public StepShape_TopologicalRepresentationItem {
 	public:
@@ -3249,6 +3368,7 @@ class StepShape_Path : public StepShape_TopologicalRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepShape_Path\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_BoxDomain;
 class StepShape_BoxDomain : public MMgt_TShared {
@@ -3294,6 +3414,7 @@ class StepShape_BoxDomain : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_ShapeDimensionRepresentation;
 class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -3319,6 +3440,7 @@ class StepShape_ShapeDimensionRepresentation : public StepShape_ShapeRepresentat
 	if (__env){printf("## Call custom destructor for instance of StepShape_ShapeDimensionRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_ManifoldSolidBrep;
 class StepShape_ManifoldSolidBrep : public StepShape_SolidModel {
@@ -3353,6 +3475,7 @@ class StepShape_ManifoldSolidBrep : public StepShape_SolidModel {
 	if (__env){printf("## Call custom destructor for instance of StepShape_ManifoldSolidBrep\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Block;
 class StepShape_Block : public StepGeom_GeometricRepresentationItem {
@@ -3400,6 +3523,7 @@ class StepShape_Block : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_NonManifoldSurfaceShapeRepresentation;
 class StepShape_NonManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -3425,6 +3549,7 @@ class StepShape_NonManifoldSurfaceShapeRepresentation : public StepShape_ShapeRe
 	if (__env){printf("## Call custom destructor for instance of StepShape_NonManifoldSurfaceShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_HalfSpaceSolid;
 class StepShape_HalfSpaceSolid : public StepGeom_GeometricRepresentationItem {
@@ -3464,6 +3589,7 @@ class StepShape_HalfSpaceSolid : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_Edge;
 class StepShape_Edge : public StepShape_TopologicalRepresentationItem {
 	public:
@@ -3502,6 +3628,7 @@ class StepShape_Edge : public StepShape_TopologicalRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_EdgeCurve;
 class StepShape_EdgeCurve : public StepShape_Edge {
 	public:
@@ -3536,6 +3663,7 @@ class StepShape_EdgeCurve : public StepShape_Edge {
 	}
 };
 
+
 %nodefaultctor StepShape_EdgeBasedWireframeModel;
 class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -3568,6 +3696,7 @@ class StepShape_EdgeBasedWireframeModel : public StepGeom_GeometricRepresentatio
 	}
 };
 
+
 %nodefaultctor StepShape_FaceOuterBound;
 class StepShape_FaceOuterBound : public StepShape_FaceBound {
 	public:
@@ -3593,6 +3722,7 @@ class StepShape_FaceOuterBound : public StepShape_FaceBound {
 	if (__env){printf("## Call custom destructor for instance of StepShape_FaceOuterBound\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_RightAngularWedge;
 class StepShape_RightAngularWedge : public StepGeom_GeometricRepresentationItem {
@@ -3644,6 +3774,7 @@ class StepShape_RightAngularWedge : public StepGeom_GeometricRepresentationItem 
 	}
 };
 
+
 %nodefaultctor StepShape_ShapeRepresentationWithParameters;
 class StepShape_ShapeRepresentationWithParameters : public StepShape_ShapeRepresentation {
 	public:
@@ -3669,6 +3800,7 @@ class StepShape_ShapeRepresentationWithParameters : public StepShape_ShapeRepres
 	if (__env){printf("## Call custom destructor for instance of StepShape_ShapeRepresentationWithParameters\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_CsgShapeRepresentation;
 class StepShape_CsgShapeRepresentation : public StepShape_ShapeRepresentation {
@@ -3696,6 +3828,7 @@ class StepShape_CsgShapeRepresentation : public StepShape_ShapeRepresentation {
 	}
 };
 
+
 %nodefaultctor StepShape_DimensionalCharacteristic;
 class StepShape_DimensionalCharacteristic : public StepData_SelectType {
 	public:
@@ -3715,6 +3848,7 @@ class StepShape_DimensionalCharacteristic : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepShape_DimensionalCharacteristic\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_ConnectedFaceSet;
 class StepShape_ConnectedFaceSet : public StepShape_TopologicalRepresentationItem {
@@ -3754,6 +3888,7 @@ class StepShape_ConnectedFaceSet : public StepShape_TopologicalRepresentationIte
 	}
 };
 
+
 %nodefaultctor StepShape_ClosedShell;
 class StepShape_ClosedShell : public StepShape_ConnectedFaceSet {
 	public:
@@ -3777,6 +3912,7 @@ class StepShape_ClosedShell : public StepShape_ConnectedFaceSet {
 	if (__env){printf("## Call custom destructor for instance of StepShape_ClosedShell\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_PlusMinusTolerance;
 class StepShape_PlusMinusTolerance : public MMgt_TShared {
@@ -3814,6 +3950,7 @@ class StepShape_PlusMinusTolerance : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_DimensionalCharacteristicRepresentation;
 class StepShape_DimensionalCharacteristicRepresentation : public MMgt_TShared {
 	public:
@@ -3849,6 +3986,7 @@ class StepShape_DimensionalCharacteristicRepresentation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepShape_DimensionalCharacteristicRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Array1OfValueQualifier;
 class StepShape_Array1OfValueQualifier {
@@ -3890,6 +4028,7 @@ class StepShape_Array1OfValueQualifier {
 	}
 };
 
+
 %nodefaultctor StepShape_Face;
 class StepShape_Face : public StepShape_TopologicalRepresentationItem {
 	public:
@@ -3928,6 +4067,7 @@ class StepShape_Face : public StepShape_TopologicalRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_FaceSurface;
 class StepShape_FaceSurface : public StepShape_Face {
 	public:
@@ -3961,6 +4101,7 @@ class StepShape_FaceSurface : public StepShape_Face {
 	if (__env){printf("## Call custom destructor for instance of StepShape_FaceSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Array1OfConnectedEdgeSet;
 class StepShape_Array1OfConnectedEdgeSet {
@@ -4002,6 +4143,7 @@ class StepShape_Array1OfConnectedEdgeSet {
 	}
 };
 
+
 %nodefaultctor StepShape_CsgSolid;
 class StepShape_CsgSolid : public StepShape_SolidModel {
 	public:
@@ -4036,6 +4178,7 @@ class StepShape_CsgSolid : public StepShape_SolidModel {
 	}
 };
 
+
 %nodefaultctor StepShape_CompoundShapeRepresentation;
 class StepShape_CompoundShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -4061,6 +4204,7 @@ class StepShape_CompoundShapeRepresentation : public StepShape_ShapeRepresentati
 	if (__env){printf("## Call custom destructor for instance of StepShape_CompoundShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_OrientedFace;
 class StepShape_OrientedFace : public StepShape_Face {
@@ -4108,6 +4252,7 @@ class StepShape_OrientedFace : public StepShape_Face {
 	}
 };
 
+
 %nodefaultctor StepShape_HArray1OfConnectedEdgeSet;
 class StepShape_HArray1OfConnectedEdgeSet : public MMgt_TShared {
 	public:
@@ -4153,6 +4298,7 @@ class StepShape_HArray1OfConnectedEdgeSet : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepShape_HArray1OfConnectedEdgeSet\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_LoopAndPath;
 class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
@@ -4202,6 +4348,7 @@ class StepShape_LoopAndPath : public StepShape_TopologicalRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_ConnectedEdgeSet;
 class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationItem {
 	public:
@@ -4233,6 +4380,7 @@ class StepShape_ConnectedEdgeSet : public StepShape_TopologicalRepresentationIte
 	if (__env){printf("## Call custom destructor for instance of StepShape_ConnectedEdgeSet\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_SweptAreaSolid;
 class StepShape_SweptAreaSolid : public StepShape_SolidModel {
@@ -4268,6 +4416,7 @@ class StepShape_SweptAreaSolid : public StepShape_SolidModel {
 	}
 };
 
+
 %nodefaultctor StepShape_RevolvedAreaSolid;
 class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 	public:
@@ -4302,6 +4451,7 @@ class StepShape_RevolvedAreaSolid : public StepShape_SweptAreaSolid {
 	}
 };
 
+
 %nodefaultctor StepShape_ShapeDefinitionRepresentation;
 class StepShape_ShapeDefinitionRepresentation : public StepRepr_PropertyDefinitionRepresentation {
 	public:
@@ -4327,6 +4477,7 @@ class StepShape_ShapeDefinitionRepresentation : public StepRepr_PropertyDefiniti
 	if (__env){printf("## Call custom destructor for instance of StepShape_ShapeDefinitionRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_AdvancedFace;
 class StepShape_AdvancedFace : public StepShape_FaceSurface {
@@ -4354,6 +4505,7 @@ class StepShape_AdvancedFace : public StepShape_FaceSurface {
 	}
 };
 
+
 %nodefaultctor StepShape_DimensionalLocation;
 class StepShape_DimensionalLocation : public StepRepr_ShapeAspectRelationship {
 	public:
@@ -4380,6 +4532,7 @@ class StepShape_DimensionalLocation : public StepRepr_ShapeAspectRelationship {
 	}
 };
 
+
 %nodefaultctor StepShape_DirectedDimensionalLocation;
 class StepShape_DirectedDimensionalLocation : public StepShape_DimensionalLocation {
 	public:
@@ -4403,6 +4556,7 @@ class StepShape_DirectedDimensionalLocation : public StepShape_DimensionalLocati
 	if (__env){printf("## Call custom destructor for instance of StepShape_DirectedDimensionalLocation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Vertex;
 class StepShape_Vertex : public StepShape_TopologicalRepresentationItem {
@@ -4430,6 +4584,7 @@ class StepShape_Vertex : public StepShape_TopologicalRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_PointRepresentation;
 class StepShape_PointRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -4455,6 +4610,7 @@ class StepShape_PointRepresentation : public StepShape_ShapeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of StepShape_PointRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_PrecisionQualifier;
 class StepShape_PrecisionQualifier : public MMgt_TShared {
@@ -4487,6 +4643,7 @@ class StepShape_PrecisionQualifier : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepShape_PrecisionQualifier\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Array1OfOrientedEdge;
 class StepShape_Array1OfOrientedEdge {
@@ -4528,6 +4685,7 @@ class StepShape_Array1OfOrientedEdge {
 	}
 };
 
+
 %nodefaultctor StepShape_Array1OfFace;
 class StepShape_Array1OfFace {
 	public:
@@ -4568,6 +4726,7 @@ class StepShape_Array1OfFace {
 	}
 };
 
+
 %nodefaultctor StepShape_OpenShell;
 class StepShape_OpenShell : public StepShape_ConnectedFaceSet {
 	public:
@@ -4593,6 +4752,7 @@ class StepShape_OpenShell : public StepShape_ConnectedFaceSet {
 	if (__env){printf("## Call custom destructor for instance of StepShape_OpenShell\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_OrientedOpenShell;
 class StepShape_OrientedOpenShell : public StepShape_OpenShell {
@@ -4638,6 +4798,7 @@ class StepShape_OrientedOpenShell : public StepShape_OpenShell {
 	}
 };
 
+
 %nodefaultctor StepShape_FacetedBrepShapeRepresentation;
 class StepShape_FacetedBrepShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -4663,6 +4824,7 @@ class StepShape_FacetedBrepShapeRepresentation : public StepShape_ShapeRepresent
 	if (__env){printf("## Call custom destructor for instance of StepShape_FacetedBrepShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_ContextDependentShapeRepresentation;
 class StepShape_ContextDependentShapeRepresentation : public MMgt_TShared {
@@ -4699,6 +4861,7 @@ class StepShape_ContextDependentShapeRepresentation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepShape_ContextDependentShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_HArray1OfOrientedClosedShell;
 class StepShape_HArray1OfOrientedClosedShell : public MMgt_TShared {
@@ -4746,6 +4909,7 @@ class StepShape_HArray1OfOrientedClosedShell : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_OrientedClosedShell;
 class StepShape_OrientedClosedShell : public StepShape_ClosedShell {
 	public:
@@ -4792,6 +4956,7 @@ class StepShape_OrientedClosedShell : public StepShape_ClosedShell {
 	}
 };
 
+
 %nodefaultctor StepShape_Array1OfShell;
 class StepShape_Array1OfShell {
 	public:
@@ -4832,6 +4997,7 @@ class StepShape_Array1OfShell {
 	}
 };
 
+
 %nodefaultctor StepShape_ConnectedFaceSubSet;
 class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 	public:
@@ -4864,6 +5030,7 @@ class StepShape_ConnectedFaceSubSet : public StepShape_ConnectedFaceSet {
 	}
 };
 
+
 %nodefaultctor StepShape_ValueQualifier;
 class StepShape_ValueQualifier : public StepData_SelectType {
 	public:
@@ -4884,6 +5051,7 @@ class StepShape_ValueQualifier : public StepData_SelectType {
 	}
 };
 
+
 %nodefaultctor StepShape_SurfaceModel;
 class StepShape_SurfaceModel : public StepData_SelectType {
 	public:
@@ -4901,6 +5069,7 @@ class StepShape_SurfaceModel : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepShape_SurfaceModel\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_FacetedBrepAndBrepWithVoids;
 class StepShape_FacetedBrepAndBrepWithVoids : public StepShape_ManifoldSolidBrep {
@@ -4950,6 +5119,7 @@ class StepShape_FacetedBrepAndBrepWithVoids : public StepShape_ManifoldSolidBrep
 	}
 };
 
+
 %nodefaultctor StepShape_RightCircularCylinder;
 class StepShape_RightCircularCylinder : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -4992,6 +5162,7 @@ class StepShape_RightCircularCylinder : public StepGeom_GeometricRepresentationI
 	}
 };
 
+
 %nodefaultctor StepShape_DimensionalSize;
 class StepShape_DimensionalSize : public MMgt_TShared {
 	public:
@@ -5027,6 +5198,7 @@ class StepShape_DimensionalSize : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepShape_DimensionalSize\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_GeometricSet;
 class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
@@ -5065,6 +5237,7 @@ class StepShape_GeometricSet : public StepGeom_GeometricRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepShape_GeometricSet\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_HArray1OfFace;
 class StepShape_HArray1OfFace : public MMgt_TShared {
@@ -5112,6 +5285,7 @@ class StepShape_HArray1OfFace : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_AdvancedBrepShapeRepresentation;
 class StepShape_AdvancedBrepShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -5137,6 +5311,7 @@ class StepShape_AdvancedBrepShapeRepresentation : public StepShape_ShapeRepresen
 	if (__env){printf("## Call custom destructor for instance of StepShape_AdvancedBrepShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Subedge;
 class StepShape_Subedge : public StepShape_Edge {
@@ -5169,6 +5344,7 @@ class StepShape_Subedge : public StepShape_Edge {
 	if (__env){printf("## Call custom destructor for instance of StepShape_Subedge\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Array1OfOrientedClosedShell;
 class StepShape_Array1OfOrientedClosedShell {
@@ -5209,6 +5385,7 @@ class StepShape_Array1OfOrientedClosedShell {
 	if (__env){printf("## Call custom destructor for instance of StepShape_Array1OfOrientedClosedShell\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_HArray1OfValueQualifier;
 class StepShape_HArray1OfValueQualifier : public MMgt_TShared {
@@ -5256,6 +5433,7 @@ class StepShape_HArray1OfValueQualifier : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_FaceBasedSurfaceModel;
 class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -5287,6 +5465,7 @@ class StepShape_FaceBasedSurfaceModel : public StepGeom_GeometricRepresentationI
 	if (__env){printf("## Call custom destructor for instance of StepShape_FaceBasedSurfaceModel\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_BoxedHalfSpace;
 class StepShape_BoxedHalfSpace : public StepShape_HalfSpaceSolid {
@@ -5322,6 +5501,7 @@ class StepShape_BoxedHalfSpace : public StepShape_HalfSpaceSolid {
 	}
 };
 
+
 %nodefaultctor StepShape_ReversibleTopologyItem;
 class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 	public:
@@ -5349,6 +5529,7 @@ class StepShape_ReversibleTopologyItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepShape_ReversibleTopologyItem\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_QualifiedRepresentationItem;
 class StepShape_QualifiedRepresentationItem : public StepRepr_RepresentationItem {
@@ -5387,6 +5568,7 @@ class StepShape_QualifiedRepresentationItem : public StepRepr_RepresentationItem
 	if (__env){printf("## Call custom destructor for instance of StepShape_QualifiedRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_RightCircularCone;
 class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem {
@@ -5434,6 +5616,7 @@ class StepShape_RightCircularCone : public StepGeom_GeometricRepresentationItem 
 	}
 };
 
+
 %nodefaultctor StepShape_EdgeLoop;
 class StepShape_EdgeLoop : public StepShape_Loop {
 	public:
@@ -5472,6 +5655,7 @@ class StepShape_EdgeLoop : public StepShape_Loop {
 	}
 };
 
+
 %nodefaultctor StepShape_Subface;
 class StepShape_Subface : public StepShape_Face {
 	public:
@@ -5503,6 +5687,7 @@ class StepShape_Subface : public StepShape_Face {
 	if (__env){printf("## Call custom destructor for instance of StepShape_Subface\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_HArray1OfOrientedEdge;
 class StepShape_HArray1OfOrientedEdge : public MMgt_TShared {
@@ -5550,6 +5735,7 @@ class StepShape_HArray1OfOrientedEdge : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_ConnectedFaceShapeRepresentation;
 class StepShape_ConnectedFaceShapeRepresentation : public StepRepr_Representation {
 	public:
@@ -5575,6 +5761,7 @@ class StepShape_ConnectedFaceShapeRepresentation : public StepRepr_Representatio
 	if (__env){printf("## Call custom destructor for instance of StepShape_ConnectedFaceShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_CsgSelect;
 class StepShape_CsgSelect {
@@ -5602,6 +5789,7 @@ class StepShape_CsgSelect {
 	}
 };
 
+
 %nodefaultctor StepShape_GeometricCurveSet;
 class StepShape_GeometricCurveSet : public StepShape_GeometricSet {
 	public:
@@ -5627,6 +5815,7 @@ class StepShape_GeometricCurveSet : public StepShape_GeometricSet {
 	if (__env){printf("## Call custom destructor for instance of StepShape_GeometricCurveSet\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_AngularSize;
 class StepShape_AngularSize : public StepShape_DimensionalSize {
@@ -5659,6 +5848,7 @@ class StepShape_AngularSize : public StepShape_DimensionalSize {
 	if (__env){printf("## Call custom destructor for instance of StepShape_AngularSize\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Array1OfGeometricSetSelect;
 class StepShape_Array1OfGeometricSetSelect {
@@ -5700,6 +5890,7 @@ class StepShape_Array1OfGeometricSetSelect {
 	}
 };
 
+
 %nodefaultctor StepShape_Array1OfFaceBound;
 class StepShape_Array1OfFaceBound {
 	public:
@@ -5739,6 +5930,7 @@ class StepShape_Array1OfFaceBound {
 	if (__env){printf("## Call custom destructor for instance of StepShape_Array1OfFaceBound\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Array1OfConnectedFaceSet;
 class StepShape_Array1OfConnectedFaceSet {
@@ -5780,6 +5972,7 @@ class StepShape_Array1OfConnectedFaceSet {
 	}
 };
 
+
 %nodefaultctor StepShape_VertexPoint;
 class StepShape_VertexPoint : public StepShape_Vertex {
 	public:
@@ -5813,6 +6006,7 @@ class StepShape_VertexPoint : public StepShape_Vertex {
 	if (__env){printf("## Call custom destructor for instance of StepShape_VertexPoint\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_HArray1OfGeometricSetSelect;
 class StepShape_HArray1OfGeometricSetSelect : public MMgt_TShared {
@@ -5860,6 +6054,7 @@ class StepShape_HArray1OfGeometricSetSelect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_HArray1OfShell;
 class StepShape_HArray1OfShell : public MMgt_TShared {
 	public:
@@ -5906,6 +6101,7 @@ class StepShape_HArray1OfShell : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_EdgeBasedWireframeShapeRepresentation;
 class StepShape_EdgeBasedWireframeShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -5931,6 +6127,7 @@ class StepShape_EdgeBasedWireframeShapeRepresentation : public StepShape_ShapeRe
 	if (__env){printf("## Call custom destructor for instance of StepShape_EdgeBasedWireframeShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_FacetedBrep;
 class StepShape_FacetedBrep : public StepShape_ManifoldSolidBrep {
@@ -5958,6 +6155,7 @@ class StepShape_FacetedBrep : public StepShape_ManifoldSolidBrep {
 	}
 };
 
+
 %nodefaultctor StepShape_Shell;
 class StepShape_Shell : public StepData_SelectType {
 	public:
@@ -5977,6 +6175,7 @@ class StepShape_Shell : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepShape_Shell\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_MeasureQualification;
 class StepShape_MeasureQualification : public MMgt_TShared {
@@ -6028,6 +6227,7 @@ class StepShape_MeasureQualification : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_CsgPrimitive;
 class StepShape_CsgPrimitive : public StepData_SelectType {
 	public:
@@ -6056,6 +6256,7 @@ class StepShape_CsgPrimitive : public StepData_SelectType {
 	}
 };
 
+
 %nodefaultctor StepShape_ManifoldSurfaceShapeRepresentation;
 class StepShape_ManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepresentation {
 	public:
@@ -6081,6 +6282,7 @@ class StepShape_ManifoldSurfaceShapeRepresentation : public StepShape_ShapeRepre
 	if (__env){printf("## Call custom destructor for instance of StepShape_ManifoldSurfaceShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_OrientedEdge;
 class StepShape_OrientedEdge : public StepShape_Edge {
@@ -6126,6 +6328,7 @@ class StepShape_OrientedEdge : public StepShape_Edge {
 	}
 };
 
+
 %nodefaultctor StepShape_ToleranceMethodDefinition;
 class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
 	public:
@@ -6145,6 +6348,7 @@ class StepShape_ToleranceMethodDefinition : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepShape_ToleranceMethodDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Torus;
 class StepShape_Torus : public StepGeom_GeometricRepresentationItem {
@@ -6188,6 +6392,7 @@ class StepShape_Torus : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_DimensionalSizeWithPath;
 class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
 	public:
@@ -6219,6 +6424,7 @@ class StepShape_DimensionalSizeWithPath : public StepShape_DimensionalSize {
 	if (__env){printf("## Call custom destructor for instance of StepShape_DimensionalSizeWithPath\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_HArray1OfConnectedFaceSet;
 class StepShape_HArray1OfConnectedFaceSet : public MMgt_TShared {
@@ -6266,6 +6472,7 @@ class StepShape_HArray1OfConnectedFaceSet : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem;
 class StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -6308,6 +6515,7 @@ class StepShape_MeasureRepresentationItemAndQualifiedRepresentationItem : public
 	}
 };
 
+
 %nodefaultctor StepShape_DefinitionalRepresentationAndShapeRepresentation;
 class StepShape_DefinitionalRepresentationAndShapeRepresentation : public StepRepr_DefinitionalRepresentation {
 	public:
@@ -6333,6 +6541,7 @@ class StepShape_DefinitionalRepresentationAndShapeRepresentation : public StepRe
 	if (__env){printf("## Call custom destructor for instance of StepShape_DefinitionalRepresentationAndShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_ExtrudedAreaSolid;
 class StepShape_ExtrudedAreaSolid : public StepShape_SweptAreaSolid {
@@ -6371,6 +6580,7 @@ class StepShape_ExtrudedAreaSolid : public StepShape_SweptAreaSolid {
 	if (__env){printf("## Call custom destructor for instance of StepShape_ExtrudedAreaSolid\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Array1OfEdge;
 class StepShape_Array1OfEdge {
@@ -6412,6 +6622,7 @@ class StepShape_Array1OfEdge {
 	}
 };
 
+
 %nodefaultctor StepShape_BrepWithVoids;
 class StepShape_BrepWithVoids : public StepShape_ManifoldSolidBrep {
 	public:
@@ -6450,6 +6661,7 @@ class StepShape_BrepWithVoids : public StepShape_ManifoldSolidBrep {
 	}
 };
 
+
 %nodefaultctor StepShape_GeometricSetSelect;
 class StepShape_GeometricSetSelect : public StepData_SelectType {
 	public:
@@ -6471,6 +6683,7 @@ class StepShape_GeometricSetSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepShape_GeometricSetSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_SeamEdge;
 class StepShape_SeamEdge : public StepShape_OrientedEdge {
@@ -6503,6 +6716,7 @@ class StepShape_SeamEdge : public StepShape_OrientedEdge {
 	if (__env){printf("## Call custom destructor for instance of StepShape_SeamEdge\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_ToleranceValue;
 class StepShape_ToleranceValue : public MMgt_TShared {
@@ -6539,6 +6753,7 @@ class StepShape_ToleranceValue : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepShape_ToleranceValue\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_Sphere;
 class StepShape_Sphere : public StepGeom_GeometricRepresentationItem {
@@ -6578,6 +6793,7 @@ class StepShape_Sphere : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepShape_TypeQualifier;
 class StepShape_TypeQualifier : public MMgt_TShared {
 	public:
@@ -6610,6 +6826,7 @@ class StepShape_TypeQualifier : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_DimensionalLocationWithPath;
 class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocation {
 	public:
@@ -6641,6 +6858,7 @@ class StepShape_DimensionalLocationWithPath : public StepShape_DimensionalLocati
 	if (__env){printf("## Call custom destructor for instance of StepShape_DimensionalLocationWithPath\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_LimitsAndFits;
 class StepShape_LimitsAndFits : public MMgt_TShared {
@@ -6686,6 +6904,7 @@ class StepShape_LimitsAndFits : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepShape_VertexLoop;
 class StepShape_VertexLoop : public StepShape_Loop {
 	public:
@@ -6720,6 +6939,7 @@ class StepShape_VertexLoop : public StepShape_Loop {
 	}
 };
 
+
 %nodefaultctor StepShape_AngularLocation;
 class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 	public:
@@ -6751,6 +6971,7 @@ class StepShape_AngularLocation : public StepShape_DimensionalLocation {
 	if (__env){printf("## Call custom destructor for instance of StepShape_AngularLocation\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_OrientedPath;
 class StepShape_OrientedPath : public StepShape_Path {
@@ -6797,6 +7018,7 @@ class StepShape_OrientedPath : public StepShape_Path {
 	if (__env){printf("## Call custom destructor for instance of StepShape_OrientedPath\n");}
 	}
 };
+
 
 %nodefaultctor StepShape_ShellBasedSurfaceModel;
 class StepShape_ShellBasedSurfaceModel : public StepGeom_GeometricRepresentationItem {

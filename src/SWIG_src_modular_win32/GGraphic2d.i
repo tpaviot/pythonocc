@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_GGraphic2d_Curve : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve;
 class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollection_SeqNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GGraphic2d_CurveDefinitionError;
 class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange {
@@ -188,6 +191,7 @@ class Handle_GGraphic2d_CurveDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_GGraphic2d_SetOfCurves;
 class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	public:
@@ -212,6 +216,7 @@ class Handle_GGraphic2d_SetOfCurves : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_GGraphic2d_SetOfCurves\n");}
 	}
 };
+
 
 %nodefaultctor GGraphic2d_SequenceNodeOfSequenceOfCurve;
 class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
@@ -240,6 +245,7 @@ class GGraphic2d_SequenceNodeOfSequenceOfCurve : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of GGraphic2d_SequenceNodeOfSequenceOfCurve\n");}
 	}
 };
+
 
 %nodefaultctor GGraphic2d_SetOfCurves;
 class GGraphic2d_SetOfCurves : public Graphic2d_Line {
@@ -272,6 +278,7 @@ class GGraphic2d_SetOfCurves : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of GGraphic2d_SetOfCurves\n");}
 	}
 };
+
 
 %nodefaultctor GGraphic2d_SequenceOfCurve;
 class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
@@ -327,6 +334,7 @@ class GGraphic2d_SequenceOfCurve : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor GGraphic2d_Curve;
 class GGraphic2d_Curve : public Graphic2d_Line {
 	public:
@@ -356,6 +364,7 @@ class GGraphic2d_Curve : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of GGraphic2d_Curve\n");}
 	}
 };
+
 
 %nodefaultctor GGraphic2d_CurveDefinitionError;
 class GGraphic2d_CurveDefinitionError : public Standard_OutOfRange {

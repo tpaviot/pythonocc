@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_TopExp_StackNodeOfStackOfIterator : public Handle_TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor TopExp_StackNodeOfStackOfIterator;
 class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 	public:
@@ -167,6 +169,7 @@ class TopExp_StackNodeOfStackOfIterator : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TopExp_StackIteratorOfStackOfIterator;
 class TopExp_StackIteratorOfStackOfIterator {
 	public:
@@ -190,6 +193,7 @@ class TopExp_StackIteratorOfStackOfIterator {
 	if (__env){printf("## Call custom destructor for instance of TopExp_StackIteratorOfStackOfIterator\n");}
 	}
 };
+
 
 %nodefaultctor TopExp_StackOfIterator;
 class TopExp_StackOfIterator {
@@ -220,6 +224,7 @@ class TopExp_StackOfIterator {
 	if (__env){printf("## Call custom destructor for instance of TopExp_StackOfIterator\n");}
 	}
 };
+
 
 %nodefaultctor TopExp_Explorer;
 class TopExp_Explorer {
@@ -252,6 +257,7 @@ class TopExp_Explorer {
 	if (__env){printf("## Call custom destructor for instance of TopExp_Explorer\n");}
 	}
 };
+
 
 %nodefaultctor TopExp;
 class TopExp {

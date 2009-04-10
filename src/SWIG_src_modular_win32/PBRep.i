@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PBRep_TFace1 : public Handle_PTopoDS_TFace1 {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_PointRepresentation;
 class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PBRep_PointRepresentation : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_TVertex1;
 class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
@@ -188,6 +191,7 @@ class Handle_PBRep_TVertex1 : public Handle_PTopoDS_TVertex1 {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_CurveRepresentation;
 class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 	public:
@@ -212,6 +216,7 @@ class Handle_PBRep_CurveRepresentation : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_GCurve;
 class Handle_PBRep_GCurve : public Handle_PBRep_CurveRepresentation {
@@ -238,6 +243,7 @@ class Handle_PBRep_GCurve : public Handle_PBRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_CurveOnSurface;
 class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 	public:
@@ -262,6 +268,7 @@ class Handle_PBRep_CurveOnSurface : public Handle_PBRep_GCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_TFace;
 class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
@@ -288,6 +295,7 @@ class Handle_PBRep_TFace : public Handle_PTopoDS_TFace {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_PolygonOnTriangulation;
 class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentation {
 	public:
@@ -312,6 +320,7 @@ class Handle_PBRep_PolygonOnTriangulation : public Handle_PBRep_CurveRepresentat
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnTriangulation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_PointsOnSurface;
 class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
@@ -338,6 +347,7 @@ class Handle_PBRep_PointsOnSurface : public Handle_PBRep_PointRepresentation {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_CurveOn2Surfaces;
 class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
 	public:
@@ -362,6 +372,7 @@ class Handle_PBRep_CurveOn2Surfaces : public Handle_PBRep_CurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOn2Surfaces\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_TEdge1;
 class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
@@ -388,6 +399,7 @@ class Handle_PBRep_TEdge1 : public Handle_PTopoDS_TEdge1 {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_PolygonOnSurface;
 class Handle_PBRep_PolygonOnSurface : public Handle_PBRep_CurveRepresentation {
 	public:
@@ -412,6 +424,7 @@ class Handle_PBRep_PolygonOnSurface : public Handle_PBRep_CurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PolygonOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_PolygonOnClosedSurface;
 class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface {
@@ -438,6 +451,7 @@ class Handle_PBRep_PolygonOnClosedSurface : public Handle_PBRep_PolygonOnSurface
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_Polygon3D;
 class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 	public:
@@ -462,6 +476,7 @@ class Handle_PBRep_Polygon3D : public Handle_PBRep_CurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_Polygon3D\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_Curve3D;
 class Handle_PBRep_Curve3D : public Handle_PBRep_GCurve {
@@ -488,6 +503,7 @@ class Handle_PBRep_Curve3D : public Handle_PBRep_GCurve {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_PointOnSurface;
 class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 	public:
@@ -512,6 +528,7 @@ class Handle_PBRep_PointOnSurface : public Handle_PBRep_PointsOnSurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_TEdge;
 class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
@@ -538,6 +555,7 @@ class Handle_PBRep_TEdge : public Handle_PTopoDS_TEdge {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_CurveOnClosedSurface;
 class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 	public:
@@ -562,6 +580,7 @@ class Handle_PBRep_CurveOnClosedSurface : public Handle_PBRep_CurveOnSurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_CurveOnClosedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_PolygonOnClosedTriangulation;
 class Handle_PBRep_PolygonOnClosedTriangulation : public Handle_PBRep_PolygonOnTriangulation {
@@ -588,6 +607,7 @@ class Handle_PBRep_PolygonOnClosedTriangulation : public Handle_PBRep_PolygonOnT
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_TVertex;
 class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 	public:
@@ -612,6 +632,7 @@ class Handle_PBRep_TVertex : public Handle_PTopoDS_TVertex {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_TVertex\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PBRep_PointOnCurve;
 class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
@@ -638,6 +659,7 @@ class Handle_PBRep_PointOnCurve : public Handle_PBRep_PointRepresentation {
 	}
 };
 
+
 %nodefaultctor Handle_PBRep_PointOnCurveOnSurface;
 class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
 	public:
@@ -662,6 +684,7 @@ class Handle_PBRep_PointOnCurveOnSurface : public Handle_PBRep_PointsOnSurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_PBRep_PointOnCurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_CurveRepresentation;
 class PBRep_CurveRepresentation : public Standard_Persistent {
@@ -723,6 +746,7 @@ class PBRep_CurveRepresentation : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PBRep_PolygonOnTriangulation;
 class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 	public:
@@ -763,6 +787,7 @@ class PBRep_PolygonOnTriangulation : public PBRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor PBRep_PolygonOnClosedTriangulation;
 class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 	public:
@@ -796,6 +821,7 @@ class PBRep_PolygonOnClosedTriangulation : public PBRep_PolygonOnTriangulation {
 	if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnClosedTriangulation\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_TVertex1;
 class PBRep_TVertex1 : public PTopoDS_TVertex1 {
@@ -846,6 +872,7 @@ class PBRep_TVertex1 : public PTopoDS_TVertex1 {
 	if (__env){printf("## Call custom destructor for instance of PBRep_TVertex1\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_TEdge1;
 class PBRep_TEdge1 : public PTopoDS_TEdge1 {
@@ -907,6 +934,7 @@ class PBRep_TEdge1 : public PTopoDS_TEdge1 {
 	}
 };
 
+
 %nodefaultctor PBRep_GCurve;
 class PBRep_GCurve : public PBRep_CurveRepresentation {
 	public:
@@ -952,6 +980,7 @@ class PBRep_GCurve : public PBRep_CurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of PBRep_GCurve\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_CurveOnSurface;
 class PBRep_CurveOnSurface : public PBRep_GCurve {
@@ -1004,6 +1033,7 @@ class PBRep_CurveOnSurface : public PBRep_GCurve {
 	if (__env){printf("## Call custom destructor for instance of PBRep_CurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_TEdge;
 class PBRep_TEdge : public PTopoDS_TEdge {
@@ -1065,6 +1095,7 @@ class PBRep_TEdge : public PTopoDS_TEdge {
 	}
 };
 
+
 %nodefaultctor PBRep_PointRepresentation;
 class PBRep_PointRepresentation : public Standard_Persistent {
 	public:
@@ -1119,6 +1150,7 @@ class PBRep_PointRepresentation : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PBRep_PointsOnSurface;
 class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 	public:
@@ -1150,6 +1182,7 @@ class PBRep_PointsOnSurface : public PBRep_PointRepresentation {
 	if (__env){printf("## Call custom destructor for instance of PBRep_PointsOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_CurveOn2Surfaces;
 class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
@@ -1205,6 +1238,7 @@ class PBRep_CurveOn2Surfaces : public PBRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor PBRep_Curve3D;
 class PBRep_Curve3D : public PBRep_GCurve {
 	public:
@@ -1243,6 +1277,7 @@ class PBRep_Curve3D : public PBRep_GCurve {
 	}
 };
 
+
 %nodefaultctor PBRep_PointOnCurveOnSurface;
 class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 	public:
@@ -1280,6 +1315,7 @@ class PBRep_PointOnCurveOnSurface : public PBRep_PointsOnSurface {
 	if (__env){printf("## Call custom destructor for instance of PBRep_PointOnCurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_TVertex;
 class PBRep_TVertex : public PTopoDS_TVertex {
@@ -1331,6 +1367,7 @@ class PBRep_TVertex : public PTopoDS_TVertex {
 	}
 };
 
+
 %nodefaultctor PBRep_PolygonOnSurface;
 class PBRep_PolygonOnSurface : public PBRep_CurveRepresentation {
 	public:
@@ -1375,6 +1412,7 @@ class PBRep_PolygonOnSurface : public PBRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor PBRep_PolygonOnClosedSurface;
 class PBRep_PolygonOnClosedSurface : public PBRep_PolygonOnSurface {
 	public:
@@ -1410,6 +1448,7 @@ class PBRep_PolygonOnClosedSurface : public PBRep_PolygonOnSurface {
 	if (__env){printf("## Call custom destructor for instance of PBRep_PolygonOnClosedSurface\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_Polygon3D;
 class PBRep_Polygon3D : public PBRep_CurveRepresentation {
@@ -1449,6 +1488,7 @@ class PBRep_Polygon3D : public PBRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor PBRep_PointOnSurface;
 class PBRep_PointOnSurface : public PBRep_PointsOnSurface {
 	public:
@@ -1486,6 +1526,7 @@ class PBRep_PointOnSurface : public PBRep_PointsOnSurface {
 	if (__env){printf("## Call custom destructor for instance of PBRep_PointOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_CurveOnClosedSurface;
 class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
@@ -1542,6 +1583,7 @@ class PBRep_CurveOnClosedSurface : public PBRep_CurveOnSurface {
 	if (__env){printf("## Call custom destructor for instance of PBRep_CurveOnClosedSurface\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_TFace1;
 class PBRep_TFace1 : public PTopoDS_TFace1 {
@@ -1609,6 +1651,7 @@ class PBRep_TFace1 : public PTopoDS_TFace1 {
 	}
 };
 
+
 %nodefaultctor PBRep_TFace;
 class PBRep_TFace : public PTopoDS_TFace {
 	public:
@@ -1674,6 +1717,7 @@ class PBRep_TFace : public PTopoDS_TFace {
 	if (__env){printf("## Call custom destructor for instance of PBRep_TFace\n");}
 	}
 };
+
 
 %nodefaultctor PBRep_PointOnCurve;
 class PBRep_PointOnCurve : public PBRep_PointRepresentation {

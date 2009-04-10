@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_MNaming_NamingRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MNaming_NamedShapeStorageDriver;
 class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_MNaming_NamedShapeStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamedShapeStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MNaming_NamingStorageDriver;
 class Handle_MNaming_NamingStorageDriver : public Handle_MDF_ASDriver {
@@ -188,6 +191,7 @@ class Handle_MNaming_NamingStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MNaming_NamedShapeRetrievalDriver;
 class Handle_MNaming_NamedShapeRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_MNaming_NamedShapeRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MNaming_NamedShapeRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MNaming_NamedShapeStorageDriver;
 class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
@@ -247,6 +252,7 @@ class MNaming_NamedShapeStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MNaming;
 class MNaming {
 	public:
@@ -264,6 +270,7 @@ class MNaming {
 	if (__env){printf("## Call custom destructor for instance of MNaming\n");}
 	}
 };
+
 
 %nodefaultctor MNaming_NamedShapeRetrievalDriver;
 class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
@@ -299,6 +306,7 @@ class MNaming_NamedShapeRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MNaming_NamingStorageDriver;
 class MNaming_NamingStorageDriver : public MDF_ASDriver {
 	public:
@@ -332,6 +340,7 @@ class MNaming_NamingStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MNaming_NamingStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MNaming_NamingRetrievalDriver;
 class MNaming_NamingRetrievalDriver : public MDF_ARDriver {

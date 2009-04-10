@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor MMgt_TShared;
 class MMgt_TShared : public Standard_Transient {
 	public:
@@ -165,6 +167,7 @@ class MMgt_TShared : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of MMgt_TShared\n");}
 	}
 };
+
 
 %nodefaultctor MMgt_StackManager;
 class MMgt_StackManager {

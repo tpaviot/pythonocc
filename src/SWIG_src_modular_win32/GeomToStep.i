@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -129,6 +130,7 @@ class GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeLine;
 class GeomToStep_MakeLine : public GeomToStep_Root {
 	public:
@@ -151,6 +153,7 @@ class GeomToStep_MakeLine : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeSurfaceOfLinearExtrusion;
 class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
 	public:
@@ -166,6 +169,7 @@ class GeomToStep_MakeSurfaceOfLinearExtrusion : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurfaceOfLinearExtrusion\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeAxis1Placement;
 class GeomToStep_MakeAxis1Placement : public GeomToStep_Root {
@@ -189,6 +193,7 @@ class GeomToStep_MakeAxis1Placement : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeElementarySurface;
 class GeomToStep_MakeElementarySurface : public GeomToStep_Root {
 	public:
@@ -204,6 +209,7 @@ class GeomToStep_MakeElementarySurface : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeElementarySurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeCylindricalSurface;
 class GeomToStep_MakeCylindricalSurface : public GeomToStep_Root {
@@ -221,6 +227,7 @@ class GeomToStep_MakeCylindricalSurface : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface;
 class GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface : public GeomToStep_Root {
 	public:
@@ -236,6 +243,7 @@ class GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface : public G
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineSurfaceWithKnotsAndRationalBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeDirection;
 class GeomToStep_MakeDirection : public GeomToStep_Root {
@@ -259,6 +267,7 @@ class GeomToStep_MakeDirection : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeSweptSurface;
 class GeomToStep_MakeSweptSurface : public GeomToStep_Root {
 	public:
@@ -275,6 +284,7 @@ class GeomToStep_MakeSweptSurface : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeSurfaceOfRevolution;
 class GeomToStep_MakeSurfaceOfRevolution : public GeomToStep_Root {
 	public:
@@ -290,6 +300,7 @@ class GeomToStep_MakeSurfaceOfRevolution : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurfaceOfRevolution\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakePlane;
 class GeomToStep_MakePlane : public GeomToStep_Root {
@@ -309,6 +320,7 @@ class GeomToStep_MakePlane : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeConicalSurface;
 class GeomToStep_MakeConicalSurface : public GeomToStep_Root {
 	public:
@@ -324,6 +336,7 @@ class GeomToStep_MakeConicalSurface : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeConicalSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve;
 class GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve : public GeomToStep_Root {
@@ -343,6 +356,7 @@ class GeomToStep_MakeBSplineCurveWithKnotsAndRationalBSplineCurve : public GeomT
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeAxis2Placement2d;
 class GeomToStep_MakeAxis2Placement2d : public GeomToStep_Root {
 	public:
@@ -361,6 +375,7 @@ class GeomToStep_MakeAxis2Placement2d : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeHyperbola;
 class GeomToStep_MakeHyperbola : public GeomToStep_Root {
 	public:
@@ -378,6 +393,7 @@ class GeomToStep_MakeHyperbola : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeHyperbola\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeAxis2Placement3d;
 class GeomToStep_MakeAxis2Placement3d : public GeomToStep_Root {
@@ -403,6 +419,7 @@ class GeomToStep_MakeAxis2Placement3d : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeParabola;
 class GeomToStep_MakeParabola : public GeomToStep_Root {
 	public:
@@ -421,6 +438,7 @@ class GeomToStep_MakeParabola : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeRectangularTrimmedSurface;
 class GeomToStep_MakeRectangularTrimmedSurface : public GeomToStep_Root {
 	public:
@@ -437,6 +455,7 @@ class GeomToStep_MakeRectangularTrimmedSurface : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeBSplineSurfaceWithKnots;
 class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
 	public:
@@ -452,6 +471,7 @@ class GeomToStep_MakeBSplineSurfaceWithKnots : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBSplineSurfaceWithKnots\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeCartesianPoint;
 class GeomToStep_MakeCartesianPoint : public GeomToStep_Root {
@@ -475,6 +495,7 @@ class GeomToStep_MakeCartesianPoint : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeCurve;
 class GeomToStep_MakeCurve : public GeomToStep_Root {
 	public:
@@ -493,6 +514,7 @@ class GeomToStep_MakeCurve : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeToroidalSurface;
 class GeomToStep_MakeToroidalSurface : public GeomToStep_Root {
 	public:
@@ -509,6 +531,7 @@ class GeomToStep_MakeToroidalSurface : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeSphericalSurface;
 class GeomToStep_MakeSphericalSurface : public GeomToStep_Root {
 	public:
@@ -524,6 +547,7 @@ class GeomToStep_MakeSphericalSurface : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSphericalSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeCircle;
 class GeomToStep_MakeCircle : public GeomToStep_Root {
@@ -545,6 +569,7 @@ class GeomToStep_MakeCircle : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeBoundedSurface;
 class GeomToStep_MakeBoundedSurface : public GeomToStep_Root {
 	public:
@@ -560,6 +585,7 @@ class GeomToStep_MakeBoundedSurface : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakePolyline;
 class GeomToStep_MakePolyline : public GeomToStep_Root {
@@ -578,6 +604,7 @@ class GeomToStep_MakePolyline : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakePolyline\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeEllipse;
 class GeomToStep_MakeEllipse : public GeomToStep_Root {
@@ -599,6 +626,7 @@ class GeomToStep_MakeEllipse : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeBoundedCurve;
 class GeomToStep_MakeBoundedCurve : public GeomToStep_Root {
 	public:
@@ -616,6 +644,7 @@ class GeomToStep_MakeBoundedCurve : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeBSplineCurveWithKnots;
 class GeomToStep_MakeBSplineCurveWithKnots : public GeomToStep_Root {
@@ -635,6 +664,7 @@ class GeomToStep_MakeBSplineCurveWithKnots : public GeomToStep_Root {
 	}
 };
 
+
 %nodefaultctor GeomToStep_MakeSurface;
 class GeomToStep_MakeSurface : public GeomToStep_Root {
 	public:
@@ -650,6 +680,7 @@ class GeomToStep_MakeSurface : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeConic;
 class GeomToStep_MakeConic : public GeomToStep_Root {
@@ -668,6 +699,7 @@ class GeomToStep_MakeConic : public GeomToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of GeomToStep_MakeConic\n");}
 	}
 };
+
 
 %nodefaultctor GeomToStep_MakeVector;
 class GeomToStep_MakeVector : public GeomToStep_Root {

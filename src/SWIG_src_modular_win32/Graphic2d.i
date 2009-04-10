@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -197,6 +198,7 @@ class Handle_Graphic2d_Primitive : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Line;
 class Handle_Graphic2d_Line : public Handle_Graphic2d_Primitive {
 	public:
@@ -221,6 +223,7 @@ class Handle_Graphic2d_Line : public Handle_Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Line\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Marker;
 class Handle_Graphic2d_Marker : public Handle_Graphic2d_Line {
@@ -247,6 +250,7 @@ class Handle_Graphic2d_Marker : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SetOfMarkers;
 class Handle_Graphic2d_SetOfMarkers : public Handle_Graphic2d_Line {
 	public:
@@ -271,6 +275,7 @@ class Handle_Graphic2d_SetOfMarkers : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SetOfMarkers\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_EllipsDefinitionError;
 class Handle_Graphic2d_EllipsDefinitionError : public Handle_Standard_OutOfRange {
@@ -297,6 +302,7 @@ class Handle_Graphic2d_EllipsDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Text;
 class Handle_Graphic2d_Text : public Handle_Graphic2d_Primitive {
 	public:
@@ -321,6 +327,7 @@ class Handle_Graphic2d_Text : public Handle_Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Text\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_HidingText;
 class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
@@ -347,6 +354,7 @@ class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Drawer;
 class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 	public:
@@ -371,6 +379,7 @@ class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Drawer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_TransientManager;
 class Handle_Graphic2d_TransientManager : public Handle_Graphic2d_Drawer {
@@ -397,6 +406,7 @@ class Handle_Graphic2d_TransientManager : public Handle_Graphic2d_Drawer {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SetOfSegments;
 class Handle_Graphic2d_SetOfSegments : public Handle_Graphic2d_Line {
 	public:
@@ -421,6 +431,7 @@ class Handle_Graphic2d_SetOfSegments : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SetOfSegments\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_HSequenceOfVertex;
 class Handle_Graphic2d_HSequenceOfVertex : public Handle_MMgt_TShared {
@@ -447,6 +458,7 @@ class Handle_Graphic2d_HSequenceOfVertex : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_ViewMapping;
 class Handle_Graphic2d_ViewMapping : public Handle_MMgt_TShared {
 	public:
@@ -471,6 +483,7 @@ class Handle_Graphic2d_ViewMapping : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_ViewMapping\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_VectorialMarker;
 class Handle_Graphic2d_VectorialMarker : public Handle_Graphic2d_Line {
@@ -497,6 +510,7 @@ class Handle_Graphic2d_VectorialMarker : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_EllipsMarker;
 class Handle_Graphic2d_EllipsMarker : public Handle_Graphic2d_VectorialMarker {
 	public:
@@ -521,6 +535,7 @@ class Handle_Graphic2d_EllipsMarker : public Handle_Graphic2d_VectorialMarker {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_EllipsMarker\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_PolylineDefinitionError;
 class Handle_Graphic2d_PolylineDefinitionError : public Handle_Standard_OutOfRange {
@@ -547,6 +562,7 @@ class Handle_Graphic2d_PolylineDefinitionError : public Handle_Standard_OutOfRan
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Segment;
 class Handle_Graphic2d_Segment : public Handle_Graphic2d_Line {
 	public:
@@ -571,6 +587,7 @@ class Handle_Graphic2d_Segment : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Segment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Circle;
 class Handle_Graphic2d_Circle : public Handle_Graphic2d_Line {
@@ -597,6 +614,7 @@ class Handle_Graphic2d_Circle : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_HArray1OfVertex;
 class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
 	public:
@@ -621,6 +639,7 @@ class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HArray1OfVertex\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Polyline;
 class Handle_Graphic2d_Polyline : public Handle_Graphic2d_Line {
@@ -647,6 +666,7 @@ class Handle_Graphic2d_Polyline : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Paragraph;
 class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 	public:
@@ -671,6 +691,7 @@ class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Paragraph\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_InfiniteLineDefinitionError;
 class Handle_Graphic2d_InfiniteLineDefinitionError : public Handle_Standard_OutOfRange {
@@ -697,6 +718,7 @@ class Handle_Graphic2d_InfiniteLineDefinitionError : public Handle_Standard_OutO
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_PolylineMarker;
 class Handle_Graphic2d_PolylineMarker : public Handle_Graphic2d_VectorialMarker {
 	public:
@@ -721,6 +743,7 @@ class Handle_Graphic2d_PolylineMarker : public Handle_Graphic2d_VectorialMarker 
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_PolylineMarker\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_CircleDefinitionError;
 class Handle_Graphic2d_CircleDefinitionError : public Handle_Standard_OutOfRange {
@@ -747,6 +770,7 @@ class Handle_Graphic2d_CircleDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollection_SeqNode {
 	public:
@@ -771,6 +795,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollect
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_SetOfPolylines;
 class Handle_Graphic2d_SetOfPolylines : public Handle_Graphic2d_Line {
@@ -797,6 +822,7 @@ class Handle_Graphic2d_SetOfPolylines : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_ImageDefinitionError;
 class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -821,6 +847,7 @@ class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange 
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_ImageDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_OverrideColorError;
 class Handle_Graphic2d_OverrideColorError : public Handle_Standard_OutOfRange {
@@ -847,6 +874,7 @@ class Handle_Graphic2d_OverrideColorError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_GraphicObject;
 class Handle_Graphic2d_GraphicObject : public Handle_MMgt_TShared {
 	public:
@@ -871,6 +899,7 @@ class Handle_Graphic2d_GraphicObject : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_GraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_HidingGraphicObject;
 class Handle_Graphic2d_HidingGraphicObject : public Handle_Graphic2d_GraphicObject {
@@ -897,6 +926,7 @@ class Handle_Graphic2d_HidingGraphicObject : public Handle_Graphic2d_GraphicObje
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_DisplayList;
 class Handle_Graphic2d_DisplayList : public Handle_MMgt_TShared {
 	public:
@@ -921,6 +951,7 @@ class Handle_Graphic2d_DisplayList : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_DisplayList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_DetectionColorError;
 class Handle_Graphic2d_DetectionColorError : public Handle_Standard_OutOfRange {
@@ -947,6 +978,7 @@ class Handle_Graphic2d_DetectionColorError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_BufferList;
 class Handle_Graphic2d_BufferList : public Handle_MMgt_TShared {
 	public:
@@ -971,6 +1003,7 @@ class Handle_Graphic2d_BufferList : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_BufferList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_MarkerDefinitionError;
 class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange {
@@ -997,6 +1030,7 @@ class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Ellips;
 class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
 	public:
@@ -1021,6 +1055,7 @@ class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Ellips\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_View;
 class Handle_Graphic2d_View : public Handle_MMgt_TShared {
@@ -1047,6 +1082,7 @@ class Handle_Graphic2d_View : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_TransientDefinitionError;
 class Handle_Graphic2d_TransientDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1071,6 +1107,7 @@ class Handle_Graphic2d_TransientDefinitionError : public Handle_Standard_OutOfRa
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_TransientDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_DrawerDefinitionError;
 class Handle_Graphic2d_DrawerDefinitionError : public Handle_Standard_OutOfRange {
@@ -1097,6 +1134,7 @@ class Handle_Graphic2d_DrawerDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Buffer;
 class Handle_Graphic2d_Buffer : public Handle_MMgt_TShared {
 	public:
@@ -1121,6 +1159,7 @@ class Handle_Graphic2d_Buffer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Buffer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Image;
 class Handle_Graphic2d_Image : public Handle_Graphic2d_Primitive {
@@ -1147,6 +1186,7 @@ class Handle_Graphic2d_Image : public Handle_Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives : public Handle_TCollection_SeqNode {
 	public:
@@ -1171,6 +1211,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfVertex;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfVertex : public Handle_TCollection_SeqNode {
@@ -1197,6 +1238,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfVertex : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer : public Handle_TCollection_SeqNode {
 	public:
@@ -1221,6 +1263,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_SegmentDefinitionError;
 class Handle_Graphic2d_SegmentDefinitionError : public Handle_Standard_OutOfRange {
@@ -1247,6 +1290,7 @@ class Handle_Graphic2d_SegmentDefinitionError : public Handle_Standard_OutOfRang
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_FramedText;
 class Handle_Graphic2d_FramedText : public Handle_Graphic2d_Text {
 	public:
@@ -1271,6 +1315,7 @@ class Handle_Graphic2d_FramedText : public Handle_Graphic2d_Text {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_FramedText\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_InfiniteLine;
 class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
@@ -1297,6 +1342,7 @@ class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_HSequenceOfPrimitives;
 class Handle_Graphic2d_HSequenceOfPrimitives : public Handle_MMgt_TShared {
 	public:
@@ -1321,6 +1367,7 @@ class Handle_Graphic2d_HSequenceOfPrimitives : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HSequenceOfPrimitives\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_CircleMarker;
 class Handle_Graphic2d_CircleMarker : public Handle_Graphic2d_VectorialMarker {
@@ -1347,6 +1394,7 @@ class Handle_Graphic2d_CircleMarker : public Handle_Graphic2d_VectorialMarker {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public Handle_TCollection_SeqNode {
 	public:
@@ -1371,6 +1419,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_ImageFile;
 class Handle_Graphic2d_ImageFile : public Handle_Graphic2d_Primitive {
@@ -1397,6 +1446,7 @@ class Handle_Graphic2d_ImageFile : public Handle_Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_TextDefinitionError;
 class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1421,6 +1471,7 @@ class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_TextDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Primitive;
 class Graphic2d_Primitive : public MMgt_TShared {
@@ -1484,6 +1535,7 @@ class Graphic2d_Primitive : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Image;
 class Graphic2d_Image : public Graphic2d_Primitive {
 	public:
@@ -1529,6 +1581,7 @@ class Graphic2d_Image : public Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Image\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Line;
 class Graphic2d_Line : public Graphic2d_Primitive {
@@ -1580,6 +1633,7 @@ class Graphic2d_Line : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Polyline;
 class Graphic2d_Polyline : public Graphic2d_Line {
 	public:
@@ -1611,6 +1665,7 @@ class Graphic2d_Polyline : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Polyline\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_ViewMapping;
 class Graphic2d_ViewMapping : public MMgt_TShared {
@@ -1656,6 +1711,7 @@ class Graphic2d_ViewMapping : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfGraphicObject;
 class Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public TCollection_SeqNode {
 	public:
@@ -1683,6 +1739,7 @@ class Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public TCollection_SeqNo
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfGraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_VectorialMarker;
 class Graphic2d_VectorialMarker : public Graphic2d_Line {
@@ -1713,6 +1770,7 @@ class Graphic2d_VectorialMarker : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_VectorialMarker\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_PolylineMarker;
 class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
@@ -1748,6 +1806,7 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 	}
 };
 
+
 %nodefaultctor Graphic2d_TextDefinitionError;
 class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 	public:
@@ -1781,6 +1840,7 @@ class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_TextDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_GraphicObject;
 class Graphic2d_GraphicObject : public MMgt_TShared {
@@ -1888,6 +1948,7 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Text;
 class Graphic2d_Text : public Graphic2d_Primitive {
 	public:
@@ -1958,6 +2019,7 @@ class Graphic2d_Text : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Array1OfVertex;
 class Graphic2d_Array1OfVertex {
 	public:
@@ -1998,6 +2060,7 @@ class Graphic2d_Array1OfVertex {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SegmentDefinitionError;
 class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2031,6 +2094,7 @@ class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SegmentDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_ImageFile;
 class Graphic2d_ImageFile : public Graphic2d_Primitive {
@@ -2090,6 +2154,7 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Graphic2d_HidingGraphicObject;
 class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 	public:
@@ -2146,6 +2211,7 @@ class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 	}
 };
 
+
 %nodefaultctor Graphic2d_InfiniteLine;
 class Graphic2d_InfiniteLine : public Graphic2d_Line {
 	public:
@@ -2180,6 +2246,7 @@ class Graphic2d_InfiniteLine : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_CBitFields8;
 class Graphic2d_CBitFields8 {
 	public:
@@ -2193,6 +2260,7 @@ class Graphic2d_CBitFields8 {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_CBitFields8\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SetOfSegments;
 class Graphic2d_SetOfSegments : public Graphic2d_Line {
@@ -2227,6 +2295,7 @@ class Graphic2d_SetOfSegments : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SetOfSegments\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SetOfMarkers;
 class Graphic2d_SetOfMarkers : public Graphic2d_Line {
@@ -2278,6 +2347,7 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_CircleDefinitionError;
 class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2311,6 +2381,7 @@ class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_CircleDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_FramedText;
 class Graphic2d_FramedText : public Graphic2d_Text {
@@ -2355,6 +2426,7 @@ class Graphic2d_FramedText : public Graphic2d_Text {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_FramedText\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_HSequenceOfPrimitives;
 class Graphic2d_HSequenceOfPrimitives : public MMgt_TShared {
@@ -2426,6 +2498,7 @@ class Graphic2d_HSequenceOfPrimitives : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_HSequenceOfVertex;
 class Graphic2d_HSequenceOfVertex : public MMgt_TShared {
 	public:
@@ -2496,6 +2569,7 @@ class Graphic2d_HSequenceOfVertex : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceOfBuffer;
 class Graphic2d_SequenceOfBuffer : public TCollection_BaseSequence {
 	public:
@@ -2550,6 +2624,7 @@ class Graphic2d_SequenceOfBuffer : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Ellips;
 class Graphic2d_Ellips : public Graphic2d_Line {
 	public:
@@ -2588,6 +2663,7 @@ class Graphic2d_Ellips : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_OverrideColorError;
 class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 	public:
@@ -2621,6 +2697,7 @@ class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_OverrideColorError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SetOfPolylines;
 class Graphic2d_SetOfPolylines : public Graphic2d_Line {
@@ -2659,6 +2736,7 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SetOfPolylines\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Buffer;
 class Graphic2d_Buffer : public MMgt_TShared {
@@ -2734,6 +2812,7 @@ class Graphic2d_Buffer : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_DetectionColorError;
 class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 	public:
@@ -2767,6 +2846,7 @@ class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_DetectionColorError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_DisplayList;
 class Graphic2d_DisplayList : public MMgt_TShared {
@@ -2838,6 +2918,7 @@ class Graphic2d_DisplayList : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfPolyline;
 class Graphic2d_SequenceNodeOfSequenceOfPolyline : public TCollection_SeqNode {
 	public:
@@ -2866,6 +2947,7 @@ class Graphic2d_SequenceNodeOfSequenceOfPolyline : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfPrimitives;
 class Graphic2d_SequenceNodeOfSequenceOfPrimitives : public TCollection_SeqNode {
 	public:
@@ -2893,6 +2975,7 @@ class Graphic2d_SequenceNodeOfSequenceOfPrimitives : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfPrimitives\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_BufferList;
 class Graphic2d_BufferList : public MMgt_TShared {
@@ -2964,6 +3047,7 @@ class Graphic2d_BufferList : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfBuffer;
 class Graphic2d_SequenceNodeOfSequenceOfBuffer : public TCollection_SeqNode {
 	public:
@@ -2991,6 +3075,7 @@ class Graphic2d_SequenceNodeOfSequenceOfBuffer : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfBuffer\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_CircleMarker;
 class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
@@ -3031,6 +3116,7 @@ class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_CircleMarker\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_HidingText;
 class Graphic2d_HidingText : public Graphic2d_Text {
@@ -3079,6 +3165,7 @@ class Graphic2d_HidingText : public Graphic2d_Text {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_HidingText\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SequenceOfVertex;
 class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
@@ -3134,6 +3221,7 @@ class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic2d_TransientDefinitionError;
 class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3167,6 +3255,7 @@ class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_TransientDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Marker;
 class Graphic2d_Marker : public Graphic2d_Line {
@@ -3206,6 +3295,7 @@ class Graphic2d_Marker : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Vertex;
 class Graphic2d_Vertex {
 	public:
@@ -3242,6 +3332,7 @@ class Graphic2d_Vertex {
 	}
 };
 
+
 %nodefaultctor Graphic2d_DrawerDefinitionError;
 class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3276,6 +3367,7 @@ class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Segment;
 class Graphic2d_Segment : public Graphic2d_Line {
 	public:
@@ -3309,6 +3401,7 @@ class Graphic2d_Segment : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Segment\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Paragraph;
 class Graphic2d_Paragraph : public Graphic2d_Primitive {
@@ -3400,6 +3493,7 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfVertex;
 class Graphic2d_SequenceNodeOfSequenceOfVertex : public TCollection_SeqNode {
 	public:
@@ -3427,6 +3521,7 @@ class Graphic2d_SequenceNodeOfSequenceOfVertex : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfVertex\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Drawer;
 class Graphic2d_Drawer : public Standard_Transient {
@@ -3586,6 +3681,7 @@ class Graphic2d_Drawer : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Graphic2d_PolylineDefinitionError;
 class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3619,6 +3715,7 @@ class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_PolylineDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_EllipsMarker;
 class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
@@ -3658,6 +3755,7 @@ class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
 	}
 };
 
+
 %nodefaultctor Graphic2d_InfiniteLineDefinitionError;
 class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3691,6 +3789,7 @@ class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_InfiniteLineDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_HArray1OfVertex;
 class Graphic2d_HArray1OfVertex : public MMgt_TShared {
@@ -3738,6 +3837,7 @@ class Graphic2d_HArray1OfVertex : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_ImageDefinitionError;
 class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3772,6 +3872,7 @@ class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_EllipsDefinitionError;
 class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3805,6 +3906,7 @@ class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_EllipsDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SequenceOfPolyline;
 class Graphic2d_SequenceOfPolyline : public TCollection_BaseSequence {
@@ -3860,6 +3962,7 @@ class Graphic2d_SequenceOfPolyline : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceOfPrimitives;
 class Graphic2d_SequenceOfPrimitives : public TCollection_BaseSequence {
 	public:
@@ -3914,6 +4017,7 @@ class Graphic2d_SequenceOfPrimitives : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Circle;
 class Graphic2d_Circle : public Graphic2d_Line {
 	public:
@@ -3959,6 +4063,7 @@ class Graphic2d_Circle : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Circle\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_View;
 class Graphic2d_View : public MMgt_TShared {
@@ -4046,6 +4151,7 @@ class Graphic2d_View : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_TransientManager;
 class Graphic2d_TransientManager : public Graphic2d_Drawer {
 	public:
@@ -4130,6 +4236,7 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceOfGraphicObject;
 class Graphic2d_SequenceOfGraphicObject : public TCollection_BaseSequence {
 	public:
@@ -4183,6 +4290,7 @@ class Graphic2d_SequenceOfGraphicObject : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceOfGraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_MarkerDefinitionError;
 class Graphic2d_MarkerDefinitionError : public Standard_OutOfRange {

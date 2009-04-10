@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_STEPSelections_SelectForTransfer : public Handle_XSControl_SelectFo
 	}
 };
 
+
 %nodefaultctor Handle_STEPSelections_AssemblyLink;
 class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_STEPSelections_AssemblyLink : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_AssemblyLink\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPSelections_SelectGSCurves;
 class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplore {
@@ -188,6 +191,7 @@ class Handle_STEPSelections_SelectGSCurves : public Handle_IFSelect_SelectExplor
 	}
 };
 
+
 %nodefaultctor Handle_STEPSelections_HSequenceOfAssemblyLink;
 class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_STEPSelections_HSequenceOfAssemblyLink : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_HSequenceOfAssemblyLink\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
 class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public Handle_TCollection_SeqNode {
@@ -238,6 +243,7 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public H
 	}
 };
 
+
 %nodefaultctor Handle_STEPSelections_SelectDerived;
 class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 	public:
@@ -262,6 +268,7 @@ class Handle_STEPSelections_SelectDerived : public Handle_StepSelect_StepType {
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectDerived\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPSelections_SelectInstances;
 class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplore {
@@ -288,6 +295,7 @@ class Handle_STEPSelections_SelectInstances : public Handle_IFSelect_SelectExplo
 	}
 };
 
+
 %nodefaultctor Handle_STEPSelections_SelectAssembly;
 class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplore {
 	public:
@@ -312,6 +320,7 @@ class Handle_STEPSelections_SelectAssembly : public Handle_IFSelect_SelectExplor
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SelectAssembly\n");}
 	}
 };
+
 
 %nodefaultctor Handle_STEPSelections_AssemblyComponent;
 class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_STEPSelections_AssemblyComponent : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_STEPSelections_SelectFaces;
 class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 	public:
@@ -363,6 +373,7 @@ class Handle_STEPSelections_SelectFaces : public Handle_IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
 class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle_TCollection_SeqNode {
 	public:
@@ -387,6 +398,7 @@ class Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public Handle
 	if (__env){printf("## Call custom destructor for instance of Handle_STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
 	}
 };
+
 
 %nodefaultctor STEPSelections_AssemblyExplorer;
 class STEPSelections_AssemblyExplorer {
@@ -415,6 +427,7 @@ class STEPSelections_AssemblyExplorer {
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyExplorer\n");}
 	}
 };
+
 
 %nodefaultctor STEPSelections_AssemblyComponent;
 class STEPSelections_AssemblyComponent : public MMgt_TShared {
@@ -451,6 +464,7 @@ class STEPSelections_AssemblyComponent : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyComponent\n");}
 	}
 };
+
 
 %nodefaultctor STEPSelections_HSequenceOfAssemblyLink;
 class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
@@ -522,6 +536,7 @@ class STEPSelections_HSequenceOfAssemblyLink : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor STEPSelections_SelectForTransfer;
 class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 	public:
@@ -552,6 +567,7 @@ class STEPSelections_SelectForTransfer : public XSControl_SelectForTransfer {
 	}
 };
 
+
 %nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent;
 class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollection_SeqNode {
 	public:
@@ -580,6 +596,7 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyComponent : public TCollect
 	}
 };
 
+
 %nodefaultctor STEPSelections_SequenceNodeOfSequenceOfAssemblyLink;
 class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_SeqNode {
 	public:
@@ -607,6 +624,7 @@ class STEPSelections_SequenceNodeOfSequenceOfAssemblyLink : public TCollection_S
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_SequenceNodeOfSequenceOfAssemblyLink\n");}
 	}
 };
+
 
 %nodefaultctor STEPSelections_Counter;
 class STEPSelections_Counter {
@@ -646,6 +664,7 @@ class STEPSelections_Counter {
 	}
 };
 
+
 %nodefaultctor STEPSelections_SelectDerived;
 class STEPSelections_SelectDerived : public StepSelect_StepType {
 	public:
@@ -673,6 +692,7 @@ class STEPSelections_SelectDerived : public StepSelect_StepType {
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectDerived\n");}
 	}
 };
+
 
 %nodefaultctor STEPSelections_SelectGSCurves;
 class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
@@ -703,6 +723,7 @@ class STEPSelections_SelectGSCurves : public IFSelect_SelectExplore {
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectGSCurves\n");}
 	}
 };
+
 
 %nodefaultctor STEPSelections_SequenceOfAssemblyComponent;
 class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequence {
@@ -758,6 +779,7 @@ class STEPSelections_SequenceOfAssemblyComponent : public TCollection_BaseSequen
 	}
 };
 
+
 %nodefaultctor STEPSelections_SequenceOfAssemblyLink;
 class STEPSelections_SequenceOfAssemblyLink : public TCollection_BaseSequence {
 	public:
@@ -812,6 +834,7 @@ class STEPSelections_SequenceOfAssemblyLink : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor STEPSelections_SelectInstances;
 class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 	public:
@@ -844,6 +867,7 @@ class STEPSelections_SelectInstances : public IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor STEPSelections_SelectAssembly;
 class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 	public:
@@ -873,6 +897,7 @@ class STEPSelections_SelectAssembly : public IFSelect_SelectExplore {
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_SelectAssembly\n");}
 	}
 };
+
 
 %nodefaultctor STEPSelections_AssemblyLink;
 class STEPSelections_AssemblyLink : public MMgt_TShared {
@@ -913,6 +938,7 @@ class STEPSelections_AssemblyLink : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of STEPSelections_AssemblyLink\n");}
 	}
 };
+
 
 %nodefaultctor STEPSelections_SelectFaces;
 class STEPSelections_SelectFaces : public IFSelect_SelectExplore {

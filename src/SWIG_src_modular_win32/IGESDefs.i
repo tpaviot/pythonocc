@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESDefs_Protocol : public Handle_IGESData_Protocol {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDefs_GeneralModule;
 class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESDefs_GeneralModule : public Handle_IGESData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_GeneralModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDefs_AttributeTable;
 class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
@@ -188,6 +191,7 @@ class Handle_IGESDefs_AttributeTable : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDefs_GenericData;
 class Handle_IGESDefs_GenericData : public Handle_IGESData_IGESEntity {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESDefs_GenericData : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_GenericData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
 class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public Handle_MMgt
 	}
 };
 
+
 %nodefaultctor Handle_IGESDefs_SpecificModule;
 class Handle_IGESDefs_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
@@ -262,6 +268,7 @@ class Handle_IGESDefs_SpecificModule : public Handle_IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDefs_HArray1OfTabularData;
 class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_IGESDefs_HArray1OfTabularData : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDefs_AssociativityDef;
 class Handle_IGESDefs_AssociativityDef : public Handle_IGESData_IGESEntity {
 	public:
@@ -312,6 +320,7 @@ class Handle_IGESDefs_AssociativityDef : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_AssociativityDef\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDefs_AttributeDef;
 class Handle_IGESDefs_AttributeDef : public Handle_IGESData_IGESEntity {
@@ -338,6 +347,7 @@ class Handle_IGESDefs_AttributeDef : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDefs_UnitsData;
 class Handle_IGESDefs_UnitsData : public Handle_IGESData_IGESEntity {
 	public:
@@ -362,6 +372,7 @@ class Handle_IGESDefs_UnitsData : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_UnitsData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDefs_ReadWriteModule;
 class Handle_IGESDefs_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
@@ -388,6 +399,7 @@ class Handle_IGESDefs_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDefs_MacroDef;
 class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 	public:
@@ -413,6 +425,7 @@ class Handle_IGESDefs_MacroDef : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDefs_TabularData;
 class Handle_IGESDefs_TabularData : public Handle_IGESData_IGESEntity {
 	public:
@@ -437,6 +450,7 @@ class Handle_IGESDefs_TabularData : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDefs_TabularData\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_GeneralModule;
 class IGESDefs_GeneralModule : public IGESData_GeneralModule {
@@ -476,6 +490,7 @@ class IGESDefs_GeneralModule : public IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor IGESDefs_ToolAttributeDef;
 class IGESDefs_ToolAttributeDef {
 	public:
@@ -503,6 +518,7 @@ class IGESDefs_ToolAttributeDef {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeDef\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_SpecificModule;
 class IGESDefs_SpecificModule : public IGESData_SpecificModule {
@@ -532,6 +548,7 @@ class IGESDefs_SpecificModule : public IGESData_SpecificModule {
 	}
 };
 
+
 %nodefaultctor IGESDefs_ToolAssociativityDef;
 class IGESDefs_ToolAssociativityDef {
 	public:
@@ -559,6 +576,7 @@ class IGESDefs_ToolAssociativityDef {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAssociativityDef\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_ReadWriteModule;
 class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
@@ -591,6 +609,7 @@ class IGESDefs_ReadWriteModule : public IGESData_ReadWriteModule {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_AssociativityDef;
 class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
@@ -636,6 +655,7 @@ class IGESDefs_AssociativityDef : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDefs;
 class IGESDefs {
 	public:
@@ -653,6 +673,7 @@ class IGESDefs {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_AttributeTable;
 class IGESDefs_AttributeTable : public IGESData_IGESEntity {
@@ -706,6 +727,7 @@ class IGESDefs_AttributeTable : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDefs_ToolUnitsData;
 class IGESDefs_ToolUnitsData {
 	public:
@@ -733,6 +755,7 @@ class IGESDefs_ToolUnitsData {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolUnitsData\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_ToolGenericData;
 class IGESDefs_ToolGenericData {
@@ -762,6 +785,7 @@ class IGESDefs_ToolGenericData {
 	}
 };
 
+
 %nodefaultctor IGESDefs_ToolMacroDef;
 class IGESDefs_ToolMacroDef {
 	public:
@@ -789,6 +813,7 @@ class IGESDefs_ToolMacroDef {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolMacroDef\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_HArray1OfTabularData;
 class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
@@ -835,6 +860,7 @@ class IGESDefs_HArray1OfTabularData : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_HArray1OfTabularData\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_GenericData;
 class IGESDefs_GenericData : public IGESData_IGESEntity {
@@ -884,6 +910,7 @@ class IGESDefs_GenericData : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDefs_ToolTabularData;
 class IGESDefs_ToolTabularData {
 	public:
@@ -911,6 +938,7 @@ class IGESDefs_ToolTabularData {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolTabularData\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_MacroDef;
 class IGESDefs_MacroDef : public IGESData_IGESEntity {
@@ -950,6 +978,7 @@ class IGESDefs_MacroDef : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDefs_UnitsData;
 class IGESDefs_UnitsData : public IGESData_IGESEntity {
 	public:
@@ -986,6 +1015,7 @@ class IGESDefs_UnitsData : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDefs_ToolAttributeTable;
 class IGESDefs_ToolAttributeTable {
 	public:
@@ -1013,6 +1043,7 @@ class IGESDefs_ToolAttributeTable {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_ToolAttributeTable\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_AttributeDef;
 class IGESDefs_AttributeDef : public IGESData_IGESEntity {
@@ -1074,6 +1105,7 @@ class IGESDefs_AttributeDef : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDefs_HArray1OfHArray1OfTextDisplayTemplate;
 class IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public MMgt_TShared {
 	public:
@@ -1109,6 +1141,7 @@ class IGESDefs_HArray1OfHArray1OfTextDisplayTemplate : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_HArray1OfHArray1OfTextDisplayTemplate\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_TabularData;
 class IGESDefs_TabularData : public IGESData_IGESEntity {
@@ -1159,6 +1192,7 @@ class IGESDefs_TabularData : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESDefs_TabularData\n");}
 	}
 };
+
 
 %nodefaultctor IGESDefs_Array1OfTabularData;
 class IGESDefs_Array1OfTabularData {

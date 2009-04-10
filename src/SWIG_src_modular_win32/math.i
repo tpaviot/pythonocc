@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -146,6 +147,7 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 	}
 };
 
+
 %nodefaultctor Handle_math_SingularMatrix;
 class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 	public:
@@ -171,6 +173,7 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor math_GaussLeastSquare;
 class math_GaussLeastSquare {
 	public:
@@ -190,6 +193,7 @@ class math_GaussLeastSquare {
 	if (__env){printf("## Call custom destructor for instance of math_GaussLeastSquare\n");}
 	}
 };
+
 
 %nodefaultctor math_DoubleTabOfReal;
 class math_DoubleTabOfReal {
@@ -222,6 +226,7 @@ class math_DoubleTabOfReal {
 	if (__env){printf("## Call custom destructor for instance of math_DoubleTabOfReal\n");}
 	}
 };
+
 
 %nodefaultctor math_SingularMatrix;
 class math_SingularMatrix : public Standard_Failure {
@@ -257,6 +262,7 @@ class math_SingularMatrix : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor math_TrigonometricFunctionRoots;
 class math_TrigonometricFunctionRoots {
 	public:
@@ -285,6 +291,7 @@ class math_TrigonometricFunctionRoots {
 	}
 };
 
+
 %nodefaultctor math_BissecNewton;
 class math_BissecNewton {
 	public:
@@ -311,6 +318,7 @@ class math_BissecNewton {
 	}
 };
 
+
 %nodefaultctor math_MultipleVarFunction;
 class math_MultipleVarFunction {
 	public:
@@ -328,6 +336,7 @@ class math_MultipleVarFunction {
 	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunction\n");}
 	}
 };
+
 
 %nodefaultctor math_MultipleVarFunctionWithGradient;
 class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
@@ -347,6 +356,7 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 	}
 };
 
+
 %nodefaultctor math_MultipleVarFunctionWithHessian;
 class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithGradient {
 	public:
@@ -360,6 +370,7 @@ class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithG
 	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithHessian\n");}
 	}
 };
+
 
 %nodefaultctor math_BFGS;
 class math_BFGS {
@@ -399,6 +410,7 @@ class math_BFGS {
 	}
 };
 
+
 %nodefaultctor math_DirectPolynomialRoots;
 class math_DirectPolynomialRoots {
 	public:
@@ -429,6 +441,7 @@ class math_DirectPolynomialRoots {
 	}
 };
 
+
 %nodefaultctor math_IntegerRandom;
 class math_IntegerRandom {
 	public:
@@ -446,6 +459,7 @@ class math_IntegerRandom {
 	if (__env){printf("## Call custom destructor for instance of math_IntegerRandom\n");}
 	}
 };
+
 
 %nodefaultctor math_Jacobi;
 class math_Jacobi {
@@ -473,6 +487,7 @@ class math_Jacobi {
 	}
 };
 
+
 %nodefaultctor math;
 class math {
 	public:
@@ -498,6 +513,7 @@ class math {
 	if (__env){printf("## Call custom destructor for instance of math\n");}
 	}
 };
+
 
 %nodefaultctor math_Powell;
 class math_Powell {
@@ -533,6 +549,7 @@ class math_Powell {
 	}
 };
 
+
 %nodefaultctor math_FunctionRoot;
 class math_FunctionRoot {
 	public:
@@ -560,6 +577,7 @@ class math_FunctionRoot {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionRoot\n");}
 	}
 };
+
 
 %nodefaultctor math_Array1OfValueAndWeight;
 class math_Array1OfValueAndWeight {
@@ -601,6 +619,7 @@ class math_Array1OfValueAndWeight {
 	}
 };
 
+
 %nodefaultctor math_Householder;
 class math_Householder {
 	public:
@@ -626,6 +645,7 @@ class math_Householder {
 	if (__env){printf("## Call custom destructor for instance of math_Householder\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionAllRoots;
 class math_FunctionAllRoots {
@@ -657,6 +677,7 @@ class math_FunctionAllRoots {
 	}
 };
 
+
 %nodefaultctor math_EigenValuesSearcher;
 class math_EigenValuesSearcher {
 	public:
@@ -679,6 +700,7 @@ class math_EigenValuesSearcher {
 	}
 };
 
+
 %nodefaultctor math_QuickSortOfValueAndWeight;
 class math_QuickSortOfValueAndWeight {
 	public:
@@ -694,6 +716,7 @@ class math_QuickSortOfValueAndWeight {
 	if (__env){printf("## Call custom destructor for instance of math_QuickSortOfValueAndWeight\n");}
 	}
 };
+
 
 %nodefaultctor math_ComputeGaussPointsAndWeights;
 class math_ComputeGaussPointsAndWeights {
@@ -714,6 +737,7 @@ class math_ComputeGaussPointsAndWeights {
 	if (__env){printf("## Call custom destructor for instance of math_ComputeGaussPointsAndWeights\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionSet;
 class math_FunctionSet {
@@ -737,6 +761,7 @@ class math_FunctionSet {
 	}
 };
 
+
 %nodefaultctor math_FunctionSetWithDerivatives;
 class math_FunctionSetWithDerivatives : public math_FunctionSet {
 	public:
@@ -752,6 +777,7 @@ class math_FunctionSetWithDerivatives : public math_FunctionSet {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionSetWithDerivatives\n");}
 	}
 };
+
 
 %nodefaultctor math_GaussSingleIntegration;
 class math_GaussSingleIntegration {
@@ -776,6 +802,7 @@ class math_GaussSingleIntegration {
 	if (__env){printf("## Call custom destructor for instance of math_GaussSingleIntegration\n");}
 	}
 };
+
 
 %nodefaultctor math_Matrix;
 class math_Matrix {
@@ -907,6 +934,7 @@ class math_Matrix {
 	}
 };
 
+
 %nodefaultctor math_Gauss;
 class math_Gauss {
 	public:
@@ -933,6 +961,7 @@ class math_Gauss {
 	}
 };
 
+
 %nodefaultctor math_Function;
 class math_Function {
 	public:
@@ -948,6 +977,7 @@ class math_Function {
 	if (__env){printf("## Call custom destructor for instance of math_Function\n");}
 	}
 };
+
 
 %nodefaultctor math_GaussSetIntegration;
 class math_GaussSetIntegration {
@@ -968,6 +998,7 @@ class math_GaussSetIntegration {
 	if (__env){printf("## Call custom destructor for instance of math_GaussSetIntegration\n");}
 	}
 };
+
 
 %nodefaultctor math_Vector;
 class math_Vector {
@@ -1085,6 +1116,7 @@ class math_Vector {
 	}
 };
 
+
 %nodefaultctor math_Crout;
 class math_Crout {
 	public:
@@ -1111,6 +1143,7 @@ class math_Crout {
 	}
 };
 
+
 %nodefaultctor math_SVD;
 class math_SVD {
 	public:
@@ -1132,6 +1165,7 @@ class math_SVD {
 	if (__env){printf("## Call custom destructor for instance of math_SVD\n");}
 	}
 };
+
 
 %nodefaultctor math_BracketedRoot;
 class math_BracketedRoot {
@@ -1157,6 +1191,7 @@ class math_BracketedRoot {
 	}
 };
 
+
 %nodefaultctor math_GaussMultipleIntegration;
 class math_GaussMultipleIntegration {
 	public:
@@ -1176,6 +1211,7 @@ class math_GaussMultipleIntegration {
 	if (__env){printf("## Call custom destructor for instance of math_GaussMultipleIntegration\n");}
 	}
 };
+
 
 %nodefaultctor math_NotSquare;
 class math_NotSquare : public Standard_DimensionError {
@@ -1211,6 +1247,7 @@ class math_NotSquare : public Standard_DimensionError {
 	}
 };
 
+
 %nodefaultctor math_ComputeKronrodPointsAndWeights;
 class math_ComputeKronrodPointsAndWeights {
 	public:
@@ -1230,6 +1267,7 @@ class math_ComputeKronrodPointsAndWeights {
 	if (__env){printf("## Call custom destructor for instance of math_ComputeKronrodPointsAndWeights\n");}
 	}
 };
+
 
 %nodefaultctor math_BrentMinimum;
 class math_BrentMinimum {
@@ -1262,6 +1300,7 @@ class math_BrentMinimum {
 	if (__env){printf("## Call custom destructor for instance of math_BrentMinimum\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionSetRoot;
 class math_FunctionSetRoot {
@@ -1310,6 +1349,7 @@ class math_FunctionSetRoot {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionSetRoot\n");}
 	}
 };
+
 
 %nodefaultctor math_IntegerVector;
 class math_IntegerVector {
@@ -1403,6 +1443,7 @@ class math_IntegerVector {
 	}
 };
 
+
 %nodefaultctor math_BracketMinimum;
 class math_BracketMinimum {
 	public:
@@ -1428,6 +1469,7 @@ class math_BracketMinimum {
 	if (__env){printf("## Call custom destructor for instance of math_BracketMinimum\n");}
 	}
 };
+
 
 %nodefaultctor math_SingleTabOfReal;
 class math_SingleTabOfReal {
@@ -1459,6 +1501,7 @@ class math_SingleTabOfReal {
 	}
 };
 
+
 %nodefaultctor math_ValueAndWeight;
 class math_ValueAndWeight {
 	public:
@@ -1478,6 +1521,7 @@ class math_ValueAndWeight {
 	if (__env){printf("## Call custom destructor for instance of math_ValueAndWeight\n");}
 	}
 };
+
 
 %nodefaultctor math_CompareOfValueAndWeight;
 class math_CompareOfValueAndWeight {
@@ -1499,6 +1543,7 @@ class math_CompareOfValueAndWeight {
 	}
 };
 
+
 %nodefaultctor math_FunctionWithDerivative;
 class math_FunctionWithDerivative : public math_Function {
 	public:
@@ -1518,6 +1563,7 @@ class math_FunctionWithDerivative : public math_Function {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionWithDerivative\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionRoots;
 class math_FunctionRoots {
@@ -1544,6 +1590,7 @@ class math_FunctionRoots {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionRoots\n");}
 	}
 };
+
 
 %nodefaultctor math_KronrodSingleIntegration;
 class math_KronrodSingleIntegration {
@@ -1581,6 +1628,7 @@ class math_KronrodSingleIntegration {
 	}
 };
 
+
 %nodefaultctor math_Uzawa;
 class math_Uzawa {
 	public:
@@ -1612,6 +1660,7 @@ class math_Uzawa {
 	if (__env){printf("## Call custom destructor for instance of math_Uzawa\n");}
 	}
 };
+
 
 %nodefaultctor math_FRPR;
 class math_FRPR {
@@ -1651,6 +1700,7 @@ class math_FRPR {
 	}
 };
 
+
 %nodefaultctor math_FunctionSample;
 class math_FunctionSample {
 	public:
@@ -1670,6 +1720,7 @@ class math_FunctionSample {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionSample\n");}
 	}
 };
+
 
 %nodefaultctor math_NewtonFunctionRoot;
 class math_NewtonFunctionRoot {
@@ -1703,6 +1754,7 @@ class math_NewtonFunctionRoot {
 	}
 };
 
+
 %nodefaultctor math_RealRandom;
 class math_RealRandom {
 	public:
@@ -1720,6 +1772,7 @@ class math_RealRandom {
 	if (__env){printf("## Call custom destructor for instance of math_RealRandom\n");}
 	}
 };
+
 
 %nodefaultctor math_SingleTabOfInteger;
 class math_SingleTabOfInteger {

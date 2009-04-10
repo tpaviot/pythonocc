@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_StdFail_UndefinedValue : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_StdFail_NotDone;
 class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 	public:
@@ -162,6 +164,7 @@ class Handle_StdFail_NotDone : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_NotDone\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StdFail_InfiniteSolutions;
 class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
@@ -188,6 +191,7 @@ class Handle_StdFail_InfiniteSolutions : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_StdFail_Undefined;
 class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 	public:
@@ -213,6 +217,7 @@ class Handle_StdFail_Undefined : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_StdFail_UndefinedDerivative;
 class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 	public:
@@ -237,6 +242,7 @@ class Handle_StdFail_UndefinedDerivative : public Handle_Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Handle_StdFail_UndefinedDerivative\n");}
 	}
 };
+
 
 %nodefaultctor StdFail_Undefined;
 class StdFail_Undefined : public Standard_Failure {
@@ -272,6 +278,7 @@ class StdFail_Undefined : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor StdFail_UndefinedDerivative;
 class StdFail_UndefinedDerivative : public Standard_DomainError {
 	public:
@@ -305,6 +312,7 @@ class StdFail_UndefinedDerivative : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of StdFail_UndefinedDerivative\n");}
 	}
 };
+
 
 %nodefaultctor StdFail_InfiniteSolutions;
 class StdFail_InfiniteSolutions : public Standard_Failure {
@@ -340,6 +348,7 @@ class StdFail_InfiniteSolutions : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor StdFail_NotDone;
 class StdFail_NotDone : public Standard_Failure {
 	public:
@@ -373,6 +382,7 @@ class StdFail_NotDone : public Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of StdFail_NotDone\n");}
 	}
 };
+
 
 %nodefaultctor StdFail_UndefinedValue;
 class StdFail_UndefinedValue : public Standard_DomainError {

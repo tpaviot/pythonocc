@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlMNaming_NamingDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMNaming_NamedShapeDriver;
 class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_XmlMNaming_NamedShapeDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMNaming_NamedShapeDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMNaming_NamedShapeDriver;
 class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
@@ -201,6 +204,7 @@ class XmlMNaming_NamedShapeDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMNaming_Array1OfShape1;
 class XmlMNaming_Array1OfShape1 {
 	public:
@@ -230,6 +234,7 @@ class XmlMNaming_Array1OfShape1 {
 	if (__env){printf("## Call custom destructor for instance of XmlMNaming_Array1OfShape1\n");}
 	}
 };
+
 
 %nodefaultctor XmlMNaming_Shape1;
 class XmlMNaming_Shape1 {
@@ -279,6 +284,7 @@ class XmlMNaming_Shape1 {
 	}
 };
 
+
 %nodefaultctor XmlMNaming_NamingDriver;
 class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 	public:
@@ -310,6 +316,7 @@ class XmlMNaming_NamingDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMNaming_NamingDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMNaming;
 class XmlMNaming {

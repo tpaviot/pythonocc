@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Law_Function : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Law_Linear;
 class Handle_Law_Linear : public Handle_Law_Function {
 	public:
@@ -162,6 +164,7 @@ class Handle_Law_Linear : public Handle_Law_Function {
 	if (__env){printf("## Call custom destructor for instance of Handle_Law_Linear\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Law_Constant;
 class Handle_Law_Constant : public Handle_Law_Function {
@@ -188,6 +191,7 @@ class Handle_Law_Constant : public Handle_Law_Function {
 	}
 };
 
+
 %nodefaultctor Handle_Law_ListNodeOfLaws;
 class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_Law_ListNodeOfLaws : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_Law_ListNodeOfLaws\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Law_BSpFunc;
 class Handle_Law_BSpFunc : public Handle_Law_Function {
@@ -238,6 +243,7 @@ class Handle_Law_BSpFunc : public Handle_Law_Function {
 	}
 };
 
+
 %nodefaultctor Handle_Law_Composite;
 class Handle_Law_Composite : public Handle_Law_Function {
 	public:
@@ -262,6 +268,7 @@ class Handle_Law_Composite : public Handle_Law_Function {
 	if (__env){printf("## Call custom destructor for instance of Handle_Law_Composite\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Law_Interpol;
 class Handle_Law_Interpol : public Handle_Law_BSpFunc {
@@ -288,6 +295,7 @@ class Handle_Law_Interpol : public Handle_Law_BSpFunc {
 	}
 };
 
+
 %nodefaultctor Handle_Law_BSpline;
 class Handle_Law_BSpline : public Handle_MMgt_TShared {
 	public:
@@ -313,6 +321,7 @@ class Handle_Law_BSpline : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Law_S;
 class Handle_Law_S : public Handle_Law_BSpFunc {
 	public:
@@ -337,6 +346,7 @@ class Handle_Law_S : public Handle_Law_BSpFunc {
 	if (__env){printf("## Call custom destructor for instance of Handle_Law_S\n");}
 	}
 };
+
 
 %nodefaultctor Law_Function;
 class Law_Function : public MMgt_TShared {
@@ -378,6 +388,7 @@ class Law_Function : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Law_BSpFunc;
 class Law_BSpFunc : public Law_Function {
 	public:
@@ -408,6 +419,7 @@ class Law_BSpFunc : public Law_Function {
 	}
 };
 
+
 %nodefaultctor Law_ListNodeOfLaws;
 class Law_ListNodeOfLaws : public TCollection_MapNode {
 	public:
@@ -435,6 +447,7 @@ class Law_ListNodeOfLaws : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Law_ListNodeOfLaws\n");}
 	}
 };
+
 
 %nodefaultctor Law_Constant;
 class Law_Constant : public Law_Function {
@@ -480,6 +493,7 @@ class Law_Constant : public Law_Function {
 	}
 };
 
+
 %nodefaultctor Law_Interpol;
 class Law_Interpol : public Law_BSpFunc {
 	public:
@@ -514,6 +528,7 @@ class Law_Interpol : public Law_BSpFunc {
 	}
 };
 
+
 %nodefaultctor Law_ListIteratorOfLaws;
 class Law_ListIteratorOfLaws {
 	public:
@@ -537,6 +552,7 @@ class Law_ListIteratorOfLaws {
 	if (__env){printf("## Call custom destructor for instance of Law_ListIteratorOfLaws\n");}
 	}
 };
+
 
 %nodefaultctor Law_Laws;
 class Law_Laws {
@@ -587,6 +603,7 @@ class Law_Laws {
 	if (__env){printf("## Call custom destructor for instance of Law_Laws\n");}
 	}
 };
+
 
 %nodefaultctor Law_Composite;
 class Law_Composite : public Law_Function {
@@ -640,6 +657,7 @@ class Law_Composite : public Law_Function {
 	}
 };
 
+
 %nodefaultctor Law_BSplineKnotSplitting;
 class Law_BSplineKnotSplitting {
 	public:
@@ -659,6 +677,7 @@ class Law_BSplineKnotSplitting {
 	if (__env){printf("## Call custom destructor for instance of Law_BSplineKnotSplitting\n");}
 	}
 };
+
 
 %nodefaultctor Law_S;
 class Law_S : public Law_BSpFunc {
@@ -690,6 +709,7 @@ class Law_S : public Law_BSpFunc {
 	}
 };
 
+
 %nodefaultctor Law;
 class Law {
 	public:
@@ -715,6 +735,7 @@ class Law {
 	if (__env){printf("## Call custom destructor for instance of Law\n");}
 	}
 };
+
 
 %nodefaultctor Law_Linear;
 class Law_Linear : public Law_Function {
@@ -760,6 +781,7 @@ class Law_Linear : public Law_Function {
 	}
 };
 
+
 %nodefaultctor Law_Interpolate;
 class Law_Interpolate {
 	public:
@@ -785,6 +807,7 @@ class Law_Interpolate {
 	if (__env){printf("## Call custom destructor for instance of Law_Interpolate\n");}
 	}
 };
+
 
 %nodefaultctor Law_BSpline;
 class Law_BSpline : public MMgt_TShared {

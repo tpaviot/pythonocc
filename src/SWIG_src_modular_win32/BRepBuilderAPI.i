@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -192,6 +193,7 @@ class Handle_BRepBuilderAPI_Sewing : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_Command;
 class BRepBuilderAPI_Command {
 	public:
@@ -209,6 +211,7 @@ class BRepBuilderAPI_Command {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Command\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI_MakeShape;
 class BRepBuilderAPI_MakeShape : public BRepBuilderAPI_Command {
@@ -232,6 +235,7 @@ class BRepBuilderAPI_MakeShape : public BRepBuilderAPI_Command {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_MakeVertex;
 class BRepBuilderAPI_MakeVertex : public BRepBuilderAPI_MakeShape {
 	public:
@@ -248,6 +252,7 @@ class BRepBuilderAPI_MakeVertex : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_ModifyShape;
 class BRepBuilderAPI_ModifyShape : public BRepBuilderAPI_MakeShape {
 	public:
@@ -263,6 +268,7 @@ class BRepBuilderAPI_ModifyShape : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_ModifyShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI_Copy;
 class BRepBuilderAPI_Copy : public BRepBuilderAPI_ModifyShape {
@@ -281,6 +287,7 @@ class BRepBuilderAPI_Copy : public BRepBuilderAPI_ModifyShape {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Copy\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI_MakeShell;
 class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
@@ -307,6 +314,7 @@ class BRepBuilderAPI_MakeShell : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeShell\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI_MakeWire;
 class BRepBuilderAPI_MakeWire : public BRepBuilderAPI_MakeShape {
@@ -349,6 +357,7 @@ class BRepBuilderAPI_MakeWire : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_MakeWire\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI_MakeEdge;
 class BRepBuilderAPI_MakeEdge : public BRepBuilderAPI_MakeShape {
@@ -466,6 +475,7 @@ class BRepBuilderAPI_MakeEdge : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_FindPlane;
 class BRepBuilderAPI_FindPlane {
 	public:
@@ -487,6 +497,7 @@ class BRepBuilderAPI_FindPlane {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_FindPlane\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI_Sewing;
 class BRepBuilderAPI_Sewing : public MMgt_TShared {
@@ -596,6 +607,7 @@ class BRepBuilderAPI_Sewing : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_MakeEdge2d;
 class BRepBuilderAPI_MakeEdge2d : public BRepBuilderAPI_MakeShape {
 	public:
@@ -686,6 +698,7 @@ class BRepBuilderAPI_MakeEdge2d : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_Transform;
 class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
 	public:
@@ -708,6 +721,7 @@ class BRepBuilderAPI_Transform : public BRepBuilderAPI_ModifyShape {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_NurbsConvert;
 class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 	public:
@@ -725,6 +739,7 @@ class BRepBuilderAPI_NurbsConvert : public BRepBuilderAPI_ModifyShape {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_NurbsConvert\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI;
 class BRepBuilderAPI {
@@ -748,6 +763,7 @@ class BRepBuilderAPI {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_GTransform;
 class BRepBuilderAPI_GTransform : public BRepBuilderAPI_ModifyShape {
 	public:
@@ -769,6 +785,7 @@ class BRepBuilderAPI_GTransform : public BRepBuilderAPI_ModifyShape {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_GTransform\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI_MakePolygon;
 class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
@@ -814,6 +831,7 @@ class BRepBuilderAPI_MakePolygon : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_MakeSolid;
 class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 	public:
@@ -848,6 +866,7 @@ class BRepBuilderAPI_MakeSolid : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepBuilderAPI_Collect;
 class BRepBuilderAPI_Collect {
 	public:
@@ -873,6 +892,7 @@ class BRepBuilderAPI_Collect {
 	if (__env){printf("## Call custom destructor for instance of BRepBuilderAPI_Collect\n");}
 	}
 };
+
 
 %nodefaultctor BRepBuilderAPI_MakeFace;
 class BRepBuilderAPI_MakeFace : public BRepBuilderAPI_MakeShape {

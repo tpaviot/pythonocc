@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -151,6 +152,7 @@ class GeomAPI_ExtremaSurfaceSurface {
 	}
 };
 
+
 %nodefaultctor GeomAPI_IntCS;
 class GeomAPI_IntCS {
 	public:
@@ -183,6 +185,7 @@ class GeomAPI_IntCS {
 	}
 };
 
+
 %nodefaultctor GeomAPI_Interpolate;
 class GeomAPI_Interpolate {
 	public:
@@ -208,6 +211,7 @@ class GeomAPI_Interpolate {
 	if (__env){printf("## Call custom destructor for instance of GeomAPI_Interpolate\n");}
 	}
 };
+
 
 %nodefaultctor GeomAPI_ExtremaCurveCurve;
 class GeomAPI_ExtremaCurveCurve {
@@ -253,6 +257,7 @@ class GeomAPI_ExtremaCurveCurve {
 	}
 };
 
+
 %nodefaultctor GeomAPI_ExtremaCurveSurface;
 class GeomAPI_ExtremaCurveSurface {
 	public:
@@ -290,6 +295,7 @@ class GeomAPI_ExtremaCurveSurface {
 	if (__env){printf("## Call custom destructor for instance of GeomAPI_ExtremaCurveSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomAPI_ProjectPointOnCurve;
 class GeomAPI_ProjectPointOnCurve {
@@ -335,6 +341,7 @@ class GeomAPI_ProjectPointOnCurve {
 	}
 };
 
+
 %nodefaultctor GeomAPI_PointsToBSpline;
 class GeomAPI_PointsToBSpline {
 	public:
@@ -358,6 +365,7 @@ class GeomAPI_PointsToBSpline {
 	if (__env){printf("## Call custom destructor for instance of GeomAPI_PointsToBSpline\n");}
 	}
 };
+
 
 %nodefaultctor GeomAPI_ProjectPointOnSurf;
 class GeomAPI_ProjectPointOnSurf {
@@ -413,6 +421,7 @@ class GeomAPI_ProjectPointOnSurf {
 	}
 };
 
+
 %nodefaultctor GeomAPI_PointsToBSplineSurface;
 class GeomAPI_PointsToBSplineSurface {
 	public:
@@ -441,6 +450,7 @@ class GeomAPI_PointsToBSplineSurface {
 	}
 };
 
+
 %nodefaultctor GeomAPI;
 class GeomAPI {
 	public:
@@ -458,6 +468,7 @@ class GeomAPI {
 	if (__env){printf("## Call custom destructor for instance of GeomAPI\n");}
 	}
 };
+
 
 %nodefaultctor GeomAPI_IntSS;
 class GeomAPI_IntSS {

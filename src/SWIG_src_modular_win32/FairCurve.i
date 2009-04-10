@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class FairCurve_DistributionOfEnergy : public math_FunctionSet {
 	}
 };
 
+
 %nodefaultctor FairCurve_DistributionOfSagging;
 class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
 	public:
@@ -153,6 +155,7 @@ class FairCurve_DistributionOfSagging : public FairCurve_DistributionOfEnergy {
 	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfSagging\n");}
 	}
 };
+
 
 %nodefaultctor FairCurve_Newton;
 class FairCurve_Newton : public math_NewtonMinimum {
@@ -171,6 +174,7 @@ class FairCurve_Newton : public math_NewtonMinimum {
 	if (__env){printf("## Call custom destructor for instance of FairCurve_Newton\n");}
 	}
 };
+
 
 %nodefaultctor FairCurve_Batten;
 class FairCurve_Batten {
@@ -236,6 +240,7 @@ class FairCurve_Batten {
 	}
 };
 
+
 %nodefaultctor FairCurve_BattenLaw;
 class FairCurve_BattenLaw : public math_Function {
 	public:
@@ -258,6 +263,7 @@ class FairCurve_BattenLaw : public math_Function {
 	}
 };
 
+
 %nodefaultctor FairCurve_DistributionOfJerk;
 class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
 	public:
@@ -273,6 +279,7 @@ class FairCurve_DistributionOfJerk : public FairCurve_DistributionOfEnergy {
 	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfJerk\n");}
 	}
 };
+
 
 %nodefaultctor FairCurve_MinimalVariation;
 class FairCurve_MinimalVariation : public FairCurve_Batten {
@@ -304,6 +311,7 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 	}
 };
 
+
 %nodefaultctor FairCurve_Energy;
 class FairCurve_Energy : public math_MultipleVarFunctionWithHessian {
 	public:
@@ -330,6 +338,7 @@ class FairCurve_Energy : public math_MultipleVarFunctionWithHessian {
 	}
 };
 
+
 %nodefaultctor FairCurve_EnergyOfMVC;
 class FairCurve_EnergyOfMVC : public FairCurve_Energy {
 	public:
@@ -348,6 +357,7 @@ class FairCurve_EnergyOfMVC : public FairCurve_Energy {
 	}
 };
 
+
 %nodefaultctor FairCurve_DistributionOfTension;
 class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
 	public:
@@ -365,6 +375,7 @@ class FairCurve_DistributionOfTension : public FairCurve_DistributionOfEnergy {
 	if (__env){printf("## Call custom destructor for instance of FairCurve_DistributionOfTension\n");}
 	}
 };
+
 
 %nodefaultctor FairCurve_EnergyOfBatten;
 class FairCurve_EnergyOfBatten : public FairCurve_Energy {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepShape_RWFacetedBrep {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWAngularSize;
 class RWStepShape_RWAngularSize {
 	public:
@@ -152,6 +154,7 @@ class RWStepShape_RWAngularSize {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWAngularSize\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWVertexPoint;
 class RWStepShape_RWVertexPoint {
@@ -173,6 +176,7 @@ class RWStepShape_RWVertexPoint {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWPath;
 class RWStepShape_RWPath {
 	public:
@@ -192,6 +196,7 @@ class RWStepShape_RWPath {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWPath\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWDimensionalSizeWithPath;
 class RWStepShape_RWDimensionalSizeWithPath {
@@ -213,6 +218,7 @@ class RWStepShape_RWDimensionalSizeWithPath {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWConnectedFaceSet;
 class RWStepShape_RWConnectedFaceSet {
 	public:
@@ -232,6 +238,7 @@ class RWStepShape_RWConnectedFaceSet {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWConnectedFaceSet\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWTransitionalShapeRepresentation;
 class RWStepShape_RWTransitionalShapeRepresentation {
@@ -253,6 +260,7 @@ class RWStepShape_RWTransitionalShapeRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWBoxedHalfSpace;
 class RWStepShape_RWBoxedHalfSpace {
 	public:
@@ -272,6 +280,7 @@ class RWStepShape_RWBoxedHalfSpace {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWBoxedHalfSpace\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWSolidReplica;
 class RWStepShape_RWSolidReplica {
@@ -293,6 +302,7 @@ class RWStepShape_RWSolidReplica {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWDimensionalCharacteristicRepresentation;
 class RWStepShape_RWDimensionalCharacteristicRepresentation {
 	public:
@@ -312,6 +322,7 @@ class RWStepShape_RWDimensionalCharacteristicRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalCharacteristicRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWPolyLoop;
 class RWStepShape_RWPolyLoop {
@@ -333,6 +344,7 @@ class RWStepShape_RWPolyLoop {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWManifoldSolidBrep;
 class RWStepShape_RWManifoldSolidBrep {
 	public:
@@ -352,6 +364,7 @@ class RWStepShape_RWManifoldSolidBrep {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWManifoldSolidBrep\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWRevolvedFaceSolid;
 class RWStepShape_RWRevolvedFaceSolid {
@@ -373,6 +386,7 @@ class RWStepShape_RWRevolvedFaceSolid {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation;
 class RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
 	public:
@@ -392,6 +406,7 @@ class RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricallyBoundedWireframeShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWEdgeBasedWireframeShapeRepresentation;
 class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
@@ -413,6 +428,7 @@ class RWStepShape_RWEdgeBasedWireframeShapeRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWGeometricSet;
 class RWStepShape_RWGeometricSet {
 	public:
@@ -433,6 +449,7 @@ class RWStepShape_RWGeometricSet {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWLoop;
 class RWStepShape_RWLoop {
 	public:
@@ -450,6 +467,7 @@ class RWStepShape_RWLoop {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWLoop\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWEdgeBasedWireframeModel;
 class RWStepShape_RWEdgeBasedWireframeModel {
@@ -471,6 +489,7 @@ class RWStepShape_RWEdgeBasedWireframeModel {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWGeometricCurveSet;
 class RWStepShape_RWGeometricCurveSet {
 	public:
@@ -490,6 +509,7 @@ class RWStepShape_RWGeometricCurveSet {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricCurveSet\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWExtrudedAreaSolid;
 class RWStepShape_RWExtrudedAreaSolid {
@@ -511,6 +531,7 @@ class RWStepShape_RWExtrudedAreaSolid {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWSweptFaceSolid;
 class RWStepShape_RWSweptFaceSolid {
 	public:
@@ -530,6 +551,7 @@ class RWStepShape_RWSweptFaceSolid {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSweptFaceSolid\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWSubedge;
 class RWStepShape_RWSubedge {
@@ -551,6 +573,7 @@ class RWStepShape_RWSubedge {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWMeasureQualification;
 class RWStepShape_RWMeasureQualification {
 	public:
@@ -570,6 +593,7 @@ class RWStepShape_RWMeasureQualification {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWMeasureQualification\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWBlock;
 class RWStepShape_RWBlock {
@@ -591,6 +615,7 @@ class RWStepShape_RWBlock {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWAdvancedBrepShapeRepresentation;
 class RWStepShape_RWAdvancedBrepShapeRepresentation {
 	public:
@@ -610,6 +635,7 @@ class RWStepShape_RWAdvancedBrepShapeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWAdvancedBrepShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWShellBasedSurfaceModel;
 class RWStepShape_RWShellBasedSurfaceModel {
@@ -631,6 +657,7 @@ class RWStepShape_RWShellBasedSurfaceModel {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWShapeDimensionRepresentation;
 class RWStepShape_RWShapeDimensionRepresentation {
 	public:
@@ -650,6 +677,7 @@ class RWStepShape_RWShapeDimensionRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWShapeDimensionRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWToleranceValue;
 class RWStepShape_RWToleranceValue {
@@ -671,6 +699,7 @@ class RWStepShape_RWToleranceValue {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWPointRepresentation;
 class RWStepShape_RWPointRepresentation {
 	public:
@@ -690,6 +719,7 @@ class RWStepShape_RWPointRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWPointRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWContextDependentShapeRepresentation;
 class RWStepShape_RWContextDependentShapeRepresentation {
@@ -711,6 +741,7 @@ class RWStepShape_RWContextDependentShapeRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWFace;
 class RWStepShape_RWFace {
 	public:
@@ -730,6 +761,7 @@ class RWStepShape_RWFace {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFace\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWOrientedClosedShell;
 class RWStepShape_RWOrientedClosedShell {
@@ -751,6 +783,7 @@ class RWStepShape_RWOrientedClosedShell {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWCsgSolid;
 class RWStepShape_RWCsgSolid {
 	public:
@@ -770,6 +803,7 @@ class RWStepShape_RWCsgSolid {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWCsgSolid\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWConnectedFaceSubSet;
 class RWStepShape_RWConnectedFaceSubSet {
@@ -791,6 +825,7 @@ class RWStepShape_RWConnectedFaceSubSet {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWCompoundShapeRepresentation;
 class RWStepShape_RWCompoundShapeRepresentation {
 	public:
@@ -810,6 +845,7 @@ class RWStepShape_RWCompoundShapeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWCompoundShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWFacetedBrepAndBrepWithVoids;
 class RWStepShape_RWFacetedBrepAndBrepWithVoids {
@@ -831,6 +867,7 @@ class RWStepShape_RWFacetedBrepAndBrepWithVoids {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWOrientedEdge;
 class RWStepShape_RWOrientedEdge {
 	public:
@@ -850,6 +887,7 @@ class RWStepShape_RWOrientedEdge {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWOrientedEdge\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWSweptAreaSolid;
 class RWStepShape_RWSweptAreaSolid {
@@ -871,6 +909,7 @@ class RWStepShape_RWSweptAreaSolid {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem;
 class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
 	public:
@@ -890,6 +929,7 @@ class RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWMeasureRepresentationItemAndQualifiedRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWPlusMinusTolerance;
 class RWStepShape_RWPlusMinusTolerance {
@@ -911,6 +951,7 @@ class RWStepShape_RWPlusMinusTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWClosedShell;
 class RWStepShape_RWClosedShell {
 	public:
@@ -930,6 +971,7 @@ class RWStepShape_RWClosedShell {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWClosedShell\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWConnectedEdgeSet;
 class RWStepShape_RWConnectedEdgeSet {
@@ -951,6 +993,7 @@ class RWStepShape_RWConnectedEdgeSet {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWNonManifoldSurfaceShapeRepresentation;
 class RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
 	public:
@@ -970,6 +1013,7 @@ class RWStepShape_RWNonManifoldSurfaceShapeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWNonManifoldSurfaceShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWFaceBasedSurfaceModel;
 class RWStepShape_RWFaceBasedSurfaceModel {
@@ -991,6 +1035,7 @@ class RWStepShape_RWFaceBasedSurfaceModel {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWQualifiedRepresentationItem;
 class RWStepShape_RWQualifiedRepresentationItem {
 	public:
@@ -1010,6 +1055,7 @@ class RWStepShape_RWQualifiedRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWQualifiedRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWOpenShell;
 class RWStepShape_RWOpenShell {
@@ -1031,6 +1077,7 @@ class RWStepShape_RWOpenShell {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWVertexLoop;
 class RWStepShape_RWVertexLoop {
 	public:
@@ -1050,6 +1097,7 @@ class RWStepShape_RWVertexLoop {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWVertexLoop\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWFaceSurface;
 class RWStepShape_RWFaceSurface {
@@ -1071,6 +1119,7 @@ class RWStepShape_RWFaceSurface {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWConnectedFaceShapeRepresentation;
 class RWStepShape_RWConnectedFaceShapeRepresentation {
 	public:
@@ -1091,6 +1140,7 @@ class RWStepShape_RWConnectedFaceShapeRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWVertex;
 class RWStepShape_RWVertex {
 	public:
@@ -1108,6 +1158,7 @@ class RWStepShape_RWVertex {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWVertex\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWSphere;
 class RWStepShape_RWSphere {
@@ -1129,6 +1180,7 @@ class RWStepShape_RWSphere {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWExtrudedFaceSolid;
 class RWStepShape_RWExtrudedFaceSolid {
 	public:
@@ -1148,6 +1200,7 @@ class RWStepShape_RWExtrudedFaceSolid {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWExtrudedFaceSolid\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWCsgShapeRepresentation;
 class RWStepShape_RWCsgShapeRepresentation {
@@ -1169,6 +1222,7 @@ class RWStepShape_RWCsgShapeRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWAngularLocation;
 class RWStepShape_RWAngularLocation {
 	public:
@@ -1188,6 +1242,7 @@ class RWStepShape_RWAngularLocation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWAngularLocation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWOrientedPath;
 class RWStepShape_RWOrientedPath {
@@ -1209,6 +1264,7 @@ class RWStepShape_RWOrientedPath {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWLoopAndPath;
 class RWStepShape_RWLoopAndPath {
 	public:
@@ -1228,6 +1284,7 @@ class RWStepShape_RWLoopAndPath {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWLoopAndPath\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWShapeDefinitionRepresentation;
 class RWStepShape_RWShapeDefinitionRepresentation {
@@ -1249,6 +1306,7 @@ class RWStepShape_RWShapeDefinitionRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWDimensionalLocation;
 class RWStepShape_RWDimensionalLocation {
 	public:
@@ -1268,6 +1326,7 @@ class RWStepShape_RWDimensionalLocation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalLocation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWHalfSpaceSolid;
 class RWStepShape_RWHalfSpaceSolid {
@@ -1289,6 +1348,7 @@ class RWStepShape_RWHalfSpaceSolid {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWTopologicalRepresentationItem;
 class RWStepShape_RWTopologicalRepresentationItem {
 	public:
@@ -1306,6 +1366,7 @@ class RWStepShape_RWTopologicalRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWTopologicalRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWFaceOuterBound;
 class RWStepShape_RWFaceOuterBound {
@@ -1327,6 +1388,7 @@ class RWStepShape_RWFaceOuterBound {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWRightAngularWedge;
 class RWStepShape_RWRightAngularWedge {
 	public:
@@ -1347,6 +1409,7 @@ class RWStepShape_RWRightAngularWedge {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWSolidModel;
 class RWStepShape_RWSolidModel {
 	public:
@@ -1364,6 +1427,7 @@ class RWStepShape_RWSolidModel {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSolidModel\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation;
 class RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
@@ -1384,6 +1448,7 @@ class RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWGeometricallyBoundedSurfaceShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWEdgeLoop;
 class RWStepShape_RWEdgeLoop {
@@ -1407,6 +1472,7 @@ class RWStepShape_RWEdgeLoop {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWTypeQualifier;
 class RWStepShape_RWTypeQualifier {
 	public:
@@ -1424,6 +1490,7 @@ class RWStepShape_RWTypeQualifier {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWTypeQualifier\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWShapeRepresentation;
 class RWStepShape_RWShapeRepresentation {
@@ -1445,6 +1512,7 @@ class RWStepShape_RWShapeRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWFacetedBrepShapeRepresentation;
 class RWStepShape_RWFacetedBrepShapeRepresentation {
 	public:
@@ -1464,6 +1532,7 @@ class RWStepShape_RWFacetedBrepShapeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWFacetedBrepShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWSubface;
 class RWStepShape_RWSubface {
@@ -1485,6 +1554,7 @@ class RWStepShape_RWSubface {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWLimitsAndFits;
 class RWStepShape_RWLimitsAndFits {
 	public:
@@ -1502,6 +1572,7 @@ class RWStepShape_RWLimitsAndFits {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWLimitsAndFits\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWDimensionalLocationWithPath;
 class RWStepShape_RWDimensionalLocationWithPath {
@@ -1522,6 +1593,7 @@ class RWStepShape_RWDimensionalLocationWithPath {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalLocationWithPath\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWEdgeCurve;
 class RWStepShape_RWEdgeCurve {
@@ -1545,6 +1617,7 @@ class RWStepShape_RWEdgeCurve {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWSeamEdge;
 class RWStepShape_RWSeamEdge {
 	public:
@@ -1564,6 +1637,7 @@ class RWStepShape_RWSeamEdge {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWSeamEdge\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWEdge;
 class RWStepShape_RWEdge {
@@ -1585,6 +1659,7 @@ class RWStepShape_RWEdge {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWBoxDomain;
 class RWStepShape_RWBoxDomain {
 	public:
@@ -1604,6 +1679,7 @@ class RWStepShape_RWBoxDomain {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWBoxDomain\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWRightCircularCone;
 class RWStepShape_RWRightCircularCone {
@@ -1625,6 +1701,7 @@ class RWStepShape_RWRightCircularCone {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWBooleanResult;
 class RWStepShape_RWBooleanResult {
 	public:
@@ -1644,6 +1721,7 @@ class RWStepShape_RWBooleanResult {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWBooleanResult\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWRevolvedAreaSolid;
 class RWStepShape_RWRevolvedAreaSolid {
@@ -1665,6 +1743,7 @@ class RWStepShape_RWRevolvedAreaSolid {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWDimensionalSize;
 class RWStepShape_RWDimensionalSize {
 	public:
@@ -1684,6 +1763,7 @@ class RWStepShape_RWDimensionalSize {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDimensionalSize\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWFaceBound;
 class RWStepShape_RWFaceBound {
@@ -1707,6 +1787,7 @@ class RWStepShape_RWFaceBound {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation;
 class RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
 	public:
@@ -1726,6 +1807,7 @@ class RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWDefinitionalRepresentationAndShapeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWManifoldSurfaceShapeRepresentation;
 class RWStepShape_RWManifoldSurfaceShapeRepresentation {
@@ -1747,6 +1829,7 @@ class RWStepShape_RWManifoldSurfaceShapeRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWAdvancedFace;
 class RWStepShape_RWAdvancedFace {
 	public:
@@ -1766,6 +1849,7 @@ class RWStepShape_RWAdvancedFace {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWAdvancedFace\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWTorus;
 class RWStepShape_RWTorus {
@@ -1787,6 +1871,7 @@ class RWStepShape_RWTorus {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWPrecisionQualifier;
 class RWStepShape_RWPrecisionQualifier {
 	public:
@@ -1804,6 +1889,7 @@ class RWStepShape_RWPrecisionQualifier {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWPrecisionQualifier\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWOrientedFace;
 class RWStepShape_RWOrientedFace {
@@ -1824,6 +1910,7 @@ class RWStepShape_RWOrientedFace {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWOrientedFace\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWBrepWithVoids;
 class RWStepShape_RWBrepWithVoids {
@@ -1847,6 +1934,7 @@ class RWStepShape_RWBrepWithVoids {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWOrientedOpenShell;
 class RWStepShape_RWOrientedOpenShell {
 	public:
@@ -1867,6 +1955,7 @@ class RWStepShape_RWOrientedOpenShell {
 	}
 };
 
+
 %nodefaultctor RWStepShape_RWShapeRepresentationWithParameters;
 class RWStepShape_RWShapeRepresentationWithParameters {
 	public:
@@ -1886,6 +1975,7 @@ class RWStepShape_RWShapeRepresentationWithParameters {
 	if (__env){printf("## Call custom destructor for instance of RWStepShape_RWShapeRepresentationWithParameters\n");}
 	}
 };
+
 
 %nodefaultctor RWStepShape_RWRightCircularCylinder;
 class RWStepShape_RWRightCircularCylinder {

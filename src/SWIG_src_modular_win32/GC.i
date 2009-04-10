@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -131,6 +132,7 @@ class GC_Root {
 	}
 };
 
+
 %nodefaultctor GC_MakeEllipse;
 class GC_MakeEllipse : public GC_Root {
 	public:
@@ -152,6 +154,7 @@ class GC_MakeEllipse : public GC_Root {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeEllipse\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeConicalSurface;
 class GC_MakeConicalSurface : public GC_Root {
@@ -185,6 +188,7 @@ class GC_MakeConicalSurface : public GC_Root {
 	}
 };
 
+
 %nodefaultctor GC_MakeArcOfCircle;
 class GC_MakeArcOfCircle : public GC_Root {
 	public:
@@ -210,6 +214,7 @@ class GC_MakeArcOfCircle : public GC_Root {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfCircle\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeLine;
 class GC_MakeLine : public GC_Root {
@@ -237,6 +242,7 @@ class GC_MakeLine : public GC_Root {
 	}
 };
 
+
 %nodefaultctor GC_MakeTrimmedCone;
 class GC_MakeTrimmedCone : public GC_Root {
 	public:
@@ -257,6 +263,7 @@ class GC_MakeTrimmedCone : public GC_Root {
 	}
 };
 
+
 %nodefaultctor GC_MakeScale;
 class GC_MakeScale {
 	public:
@@ -274,6 +281,7 @@ class GC_MakeScale {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeScale\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeCircle;
 class GC_MakeCircle : public GC_Root {
@@ -307,6 +315,7 @@ class GC_MakeCircle : public GC_Root {
 	}
 };
 
+
 %nodefaultctor GC_MakeArcOfHyperbola;
 class GC_MakeArcOfHyperbola : public GC_Root {
 	public:
@@ -328,6 +337,7 @@ class GC_MakeArcOfHyperbola : public GC_Root {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfHyperbola\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeMirror;
 class GC_MakeMirror {
@@ -357,6 +367,7 @@ class GC_MakeMirror {
 	}
 };
 
+
 %nodefaultctor GC_MakeTranslation;
 class GC_MakeTranslation {
 	public:
@@ -376,6 +387,7 @@ class GC_MakeTranslation {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeTranslation\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeRotation;
 class GC_MakeRotation {
@@ -398,6 +410,7 @@ class GC_MakeRotation {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeRotation\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeTrimmedCylinder;
 class GC_MakeTrimmedCylinder : public GC_Root {
@@ -424,6 +437,7 @@ class GC_MakeTrimmedCylinder : public GC_Root {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeTrimmedCylinder\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeCylindricalSurface;
 class GC_MakeCylindricalSurface : public GC_Root {
@@ -455,6 +469,7 @@ class GC_MakeCylindricalSurface : public GC_Root {
 	}
 };
 
+
 %nodefaultctor GC_MakeArcOfParabola;
 class GC_MakeArcOfParabola : public GC_Root {
 	public:
@@ -476,6 +491,7 @@ class GC_MakeArcOfParabola : public GC_Root {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeArcOfParabola\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeArcOfEllipse;
 class GC_MakeArcOfEllipse : public GC_Root {
@@ -499,6 +515,7 @@ class GC_MakeArcOfEllipse : public GC_Root {
 	}
 };
 
+
 %nodefaultctor GC_MakeHyperbola;
 class GC_MakeHyperbola : public GC_Root {
 	public:
@@ -520,6 +537,7 @@ class GC_MakeHyperbola : public GC_Root {
 	if (__env){printf("## Call custom destructor for instance of GC_MakeHyperbola\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakePlane;
 class GC_MakePlane : public GC_Root {
@@ -552,6 +570,7 @@ class GC_MakePlane : public GC_Root {
 	if (__env){printf("## Call custom destructor for instance of GC_MakePlane\n");}
 	}
 };
+
 
 %nodefaultctor GC_MakeSegment;
 class GC_MakeSegment : public GC_Root {

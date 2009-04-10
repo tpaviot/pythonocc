@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepFEA_RWFeaParametricPoint {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWCurve3dElementRepresentation;
 class RWStepFEA_RWCurve3dElementRepresentation {
 	public:
@@ -152,6 +154,7 @@ class RWStepFEA_RWCurve3dElementRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurve3dElementRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWCurve3dElementProperty;
 class RWStepFEA_RWCurve3dElementProperty {
@@ -173,6 +176,7 @@ class RWStepFEA_RWCurve3dElementProperty {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaAreaDensity;
 class RWStepFEA_RWFeaAreaDensity {
 	public:
@@ -192,6 +196,7 @@ class RWStepFEA_RWFeaAreaDensity {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaAreaDensity\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWCurveElementInterval;
 class RWStepFEA_RWCurveElementInterval {
@@ -213,6 +218,7 @@ class RWStepFEA_RWCurveElementInterval {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWNodeRepresentation;
 class RWStepFEA_RWNodeRepresentation {
 	public:
@@ -232,6 +238,7 @@ class RWStepFEA_RWNodeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem;
 class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
@@ -253,6 +260,7 @@ class RWStepFEA_RWArbitraryVolume3dElementCoordinateSystem {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWElementRepresentation;
 class RWStepFEA_RWElementRepresentation {
 	public:
@@ -272,6 +280,7 @@ class RWStepFEA_RWElementRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWElementRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaMoistureAbsorption;
 class RWStepFEA_RWFeaMoistureAbsorption {
@@ -293,6 +302,7 @@ class RWStepFEA_RWFeaMoistureAbsorption {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWCurveElementIntervalConstant;
 class RWStepFEA_RWCurveElementIntervalConstant {
 	public:
@@ -312,6 +322,7 @@ class RWStepFEA_RWCurveElementIntervalConstant {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementIntervalConstant\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWNode;
 class RWStepFEA_RWNode {
@@ -333,6 +344,7 @@ class RWStepFEA_RWNode {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaMassDensity;
 class RWStepFEA_RWFeaMassDensity {
 	public:
@@ -352,6 +364,7 @@ class RWStepFEA_RWFeaMassDensity {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaMassDensity\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaMaterialPropertyRepresentation;
 class RWStepFEA_RWFeaMaterialPropertyRepresentation {
@@ -373,6 +386,7 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateSystem;
 class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 	public:
@@ -392,6 +406,7 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateSystem {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWParametricCurve3dElementCoordinateSystem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaShellBendingStiffness;
 class RWStepFEA_RWFeaShellBendingStiffness {
@@ -413,6 +428,7 @@ class RWStepFEA_RWFeaShellBendingStiffness {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWNodeGroup;
 class RWStepFEA_RWNodeGroup {
 	public:
@@ -432,6 +448,7 @@ class RWStepFEA_RWNodeGroup {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeGroup\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWParametricSurface3dElementCoordinateSystem;
 class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
@@ -453,6 +470,7 @@ class RWStepFEA_RWParametricSurface3dElementCoordinateSystem {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWAlignedCurve3dElementCoordinateSystem;
 class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 	public:
@@ -472,6 +490,7 @@ class RWStepFEA_RWAlignedCurve3dElementCoordinateSystem {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWAlignedCurve3dElementCoordinateSystem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaSurfaceSectionGeometricRelationship;
 class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
@@ -493,6 +512,7 @@ class RWStepFEA_RWFeaSurfaceSectionGeometricRelationship {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWDummyNode;
 class RWStepFEA_RWDummyNode {
 	public:
@@ -512,6 +532,7 @@ class RWStepFEA_RWDummyNode {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWDummyNode\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWAlignedSurface3dElementCoordinateSystem;
 class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
@@ -533,6 +554,7 @@ class RWStepFEA_RWAlignedSurface3dElementCoordinateSystem {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion;
 class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 	public:
@@ -552,6 +574,7 @@ class RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaSecantCoefficientOfLinearThermalExpansion\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaAxis2Placement3d;
 class RWStepFEA_RWFeaAxis2Placement3d {
@@ -573,6 +596,7 @@ class RWStepFEA_RWFeaAxis2Placement3d {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion;
 class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 	public:
@@ -592,6 +616,7 @@ class RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaTangentialCoefficientOfLinearThermalExpansion\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWGeometricNode;
 class RWStepFEA_RWGeometricNode {
@@ -613,6 +638,7 @@ class RWStepFEA_RWGeometricNode {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaShellMembraneStiffness;
 class RWStepFEA_RWFeaShellMembraneStiffness {
 	public:
@@ -632,6 +658,7 @@ class RWStepFEA_RWFeaShellMembraneStiffness {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaShellMembraneStiffness\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFreedomsList;
 class RWStepFEA_RWFreedomsList {
@@ -653,6 +680,7 @@ class RWStepFEA_RWFreedomsList {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaModelDefinition;
 class RWStepFEA_RWFeaModelDefinition {
 	public:
@@ -672,6 +700,7 @@ class RWStepFEA_RWFeaModelDefinition {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModelDefinition\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaShellShearStiffness;
 class RWStepFEA_RWFeaShellShearStiffness {
@@ -693,6 +722,7 @@ class RWStepFEA_RWFeaShellShearStiffness {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWNodeSet;
 class RWStepFEA_RWNodeSet {
 	public:
@@ -712,6 +742,7 @@ class RWStepFEA_RWNodeSet {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeSet\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFreedomAndCoefficient;
 class RWStepFEA_RWFreedomAndCoefficient {
@@ -733,6 +764,7 @@ class RWStepFEA_RWFreedomAndCoefficient {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness;
 class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 	public:
@@ -752,6 +784,7 @@ class RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaShellMembraneBendingCouplingStiffness\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWSurface3dElementRepresentation;
 class RWStepFEA_RWSurface3dElementRepresentation {
@@ -773,6 +806,7 @@ class RWStepFEA_RWSurface3dElementRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWElementGroup;
 class RWStepFEA_RWElementGroup {
 	public:
@@ -792,6 +826,7 @@ class RWStepFEA_RWElementGroup {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWElementGroup\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWCurveElementEndOffset;
 class RWStepFEA_RWCurveElementEndOffset {
@@ -813,6 +848,7 @@ class RWStepFEA_RWCurveElementEndOffset {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWVolume3dElementRepresentation;
 class RWStepFEA_RWVolume3dElementRepresentation {
 	public:
@@ -832,6 +868,7 @@ class RWStepFEA_RWVolume3dElementRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWVolume3dElementRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaRepresentationItem;
 class RWStepFEA_RWFeaRepresentationItem {
@@ -853,6 +890,7 @@ class RWStepFEA_RWFeaRepresentationItem {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaModel;
 class RWStepFEA_RWFeaModel {
 	public:
@@ -872,6 +910,7 @@ class RWStepFEA_RWFeaModel {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWNodeDefinition;
 class RWStepFEA_RWNodeDefinition {
@@ -893,6 +932,7 @@ class RWStepFEA_RWNodeDefinition {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWParametricCurve3dElementCoordinateDirection;
 class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 	public:
@@ -912,6 +952,7 @@ class RWStepFEA_RWParametricCurve3dElementCoordinateDirection {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWParametricCurve3dElementCoordinateDirection\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaLinearElasticity;
 class RWStepFEA_RWFeaLinearElasticity {
@@ -933,6 +974,7 @@ class RWStepFEA_RWFeaLinearElasticity {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWCurveElementLocation;
 class RWStepFEA_RWCurveElementLocation {
 	public:
@@ -952,6 +994,7 @@ class RWStepFEA_RWCurveElementLocation {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementLocation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWElementGeometricRelationship;
 class RWStepFEA_RWElementGeometricRelationship {
@@ -973,6 +1016,7 @@ class RWStepFEA_RWElementGeometricRelationship {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaMaterialPropertyRepresentationItem;
 class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 	public:
@@ -992,6 +1036,7 @@ class RWStepFEA_RWFeaMaterialPropertyRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaMaterialPropertyRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWCurveElementEndRelease;
 class RWStepFEA_RWCurveElementEndRelease {
@@ -1013,6 +1058,7 @@ class RWStepFEA_RWCurveElementEndRelease {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWCurveElementIntervalLinearlyVarying;
 class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 	public:
@@ -1032,6 +1078,7 @@ class RWStepFEA_RWCurveElementIntervalLinearlyVarying {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWCurveElementIntervalLinearlyVarying\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWNodeWithSolutionCoordinateSystem;
 class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
@@ -1053,6 +1100,7 @@ class RWStepFEA_RWNodeWithSolutionCoordinateSystem {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWNodeWithVector;
 class RWStepFEA_RWNodeWithVector {
 	public:
@@ -1072,6 +1120,7 @@ class RWStepFEA_RWNodeWithVector {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWNodeWithVector\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWFeaCurveSectionGeometricRelationship;
 class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
@@ -1093,6 +1142,7 @@ class RWStepFEA_RWFeaCurveSectionGeometricRelationship {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaGroup;
 class RWStepFEA_RWFeaGroup {
 	public:
@@ -1113,6 +1163,7 @@ class RWStepFEA_RWFeaGroup {
 	}
 };
 
+
 %nodefaultctor RWStepFEA_RWFeaModel3d;
 class RWStepFEA_RWFeaModel3d {
 	public:
@@ -1132,6 +1183,7 @@ class RWStepFEA_RWFeaModel3d {
 	if (__env){printf("## Call custom destructor for instance of RWStepFEA_RWFeaModel3d\n");}
 	}
 };
+
 
 %nodefaultctor RWStepFEA_RWConstantSurface3dElementCoordinateSystem;
 class RWStepFEA_RWConstantSurface3dElementCoordinateSystem {

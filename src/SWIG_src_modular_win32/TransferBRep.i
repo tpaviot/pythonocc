@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TransferBRep_BinderOfShape : public Handle_Transfer_Binder {
 	}
 };
 
+
 %nodefaultctor Handle_TransferBRep_ShapeBinder;
 class Handle_TransferBRep_ShapeBinder : public Handle_TransferBRep_BinderOfShape {
 	public:
@@ -162,6 +164,7 @@ class Handle_TransferBRep_ShapeBinder : public Handle_TransferBRep_BinderOfShape
 	if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_ShapeBinder\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TransferBRep_HSequenceOfTransferResultInfo;
 class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_TransferBRep_HSequenceOfTransferResultInfo : public Handle_MMgt_TSh
 	}
 };
 
+
 %nodefaultctor Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo;
 class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public Ha
 	if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TransferBRep_ShapeListBinder;
 class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
@@ -238,6 +243,7 @@ class Handle_TransferBRep_ShapeListBinder : public Handle_Transfer_Binder {
 	}
 };
 
+
 %nodefaultctor Handle_TransferBRep_ShapeMapper;
 class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 	public:
@@ -262,6 +268,7 @@ class Handle_TransferBRep_ShapeMapper : public Handle_Transfer_Finder {
 	if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_ShapeMapper\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TransferBRep_TransferResultInfo;
 class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_TransferBRep_TransferResultInfo : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TransferBRep_OrientedShapeMapper;
 class Handle_TransferBRep_OrientedShapeMapper : public Handle_Transfer_Finder {
 	public:
@@ -312,6 +320,7 @@ class Handle_TransferBRep_OrientedShapeMapper : public Handle_Transfer_Finder {
 	if (__env){printf("## Call custom destructor for instance of Handle_TransferBRep_OrientedShapeMapper\n");}
 	}
 };
+
 
 %nodefaultctor TransferBRep_Reader;
 class TransferBRep_Reader {
@@ -393,6 +402,7 @@ class TransferBRep_Reader {
 	}
 };
 
+
 %nodefaultctor TransferBRep_TransferResultInfo;
 class TransferBRep_TransferResultInfo : public MMgt_TShared {
 	public:
@@ -437,6 +447,7 @@ class TransferBRep_TransferResultInfo : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TransferBRep_OrientedShapeMapper;
 class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 	public:
@@ -470,6 +481,7 @@ class TransferBRep_OrientedShapeMapper : public Transfer_Finder {
 	if (__env){printf("## Call custom destructor for instance of TransferBRep_OrientedShapeMapper\n");}
 	}
 };
+
 
 %nodefaultctor TransferBRep_BinderOfShape;
 class TransferBRep_BinderOfShape : public Transfer_Binder {
@@ -508,6 +520,7 @@ class TransferBRep_BinderOfShape : public Transfer_Binder {
 	if (__env){printf("## Call custom destructor for instance of TransferBRep_BinderOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TransferBRep_ShapeBinder;
 class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
@@ -554,6 +567,7 @@ class TransferBRep_ShapeBinder : public TransferBRep_BinderOfShape {
 	if (__env){printf("## Call custom destructor for instance of TransferBRep_ShapeBinder\n");}
 	}
 };
+
 
 %nodefaultctor TransferBRep_HSequenceOfTransferResultInfo;
 class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
@@ -625,6 +639,7 @@ class TransferBRep_HSequenceOfTransferResultInfo : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TransferBRep_ShapeInfo;
 class TransferBRep_ShapeInfo {
 	public:
@@ -642,6 +657,7 @@ class TransferBRep_ShapeInfo {
 	if (__env){printf("## Call custom destructor for instance of TransferBRep_ShapeInfo\n");}
 	}
 };
+
 
 %nodefaultctor TransferBRep_SequenceOfTransferResultInfo;
 class TransferBRep_SequenceOfTransferResultInfo : public TCollection_BaseSequence {
@@ -697,6 +713,7 @@ class TransferBRep_SequenceOfTransferResultInfo : public TCollection_BaseSequenc
 	}
 };
 
+
 %nodefaultctor TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo;
 class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollection_SeqNode {
 	public:
@@ -724,6 +741,7 @@ class TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo : public TCollecti
 	if (__env){printf("## Call custom destructor for instance of TransferBRep_SequenceNodeOfSequenceOfTransferResultInfo\n");}
 	}
 };
+
 
 %nodefaultctor TransferBRep_ShapeListBinder;
 class TransferBRep_ShapeListBinder : public Transfer_Binder {
@@ -786,6 +804,7 @@ class TransferBRep_ShapeListBinder : public Transfer_Binder {
 	if (__env){printf("## Call custom destructor for instance of TransferBRep_ShapeListBinder\n");}
 	}
 };
+
 
 %nodefaultctor TransferBRep;
 class TransferBRep {

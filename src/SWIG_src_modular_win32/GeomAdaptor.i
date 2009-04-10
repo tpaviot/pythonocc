@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_GeomAdaptor_GHCurve : public Handle_Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor Handle_GeomAdaptor_HCurve;
 class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 	public:
@@ -162,6 +164,7 @@ class Handle_GeomAdaptor_HCurve : public Handle_GeomAdaptor_GHCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomAdaptor_HCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomAdaptor_GHSurface;
 class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
@@ -188,6 +191,7 @@ class Handle_GeomAdaptor_GHSurface : public Handle_Adaptor3d_HSurface {
 	}
 };
 
+
 %nodefaultctor Handle_GeomAdaptor_HSurface;
 class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 	public:
@@ -212,6 +216,7 @@ class Handle_GeomAdaptor_HSurface : public Handle_GeomAdaptor_GHSurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomAdaptor_HSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomAdaptor_GHCurve;
 class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
@@ -249,6 +254,7 @@ class GeomAdaptor_GHCurve : public Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor GeomAdaptor_HCurve;
 class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 	public:
@@ -278,6 +284,7 @@ class GeomAdaptor_HCurve : public GeomAdaptor_GHCurve {
 	if (__env){printf("## Call custom destructor for instance of GeomAdaptor_HCurve\n");}
 	}
 };
+
 
 %nodefaultctor GeomAdaptor_GHSurface;
 class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
@@ -313,6 +320,7 @@ class GeomAdaptor_GHSurface : public Adaptor3d_HSurface {
 	}
 };
 
+
 %nodefaultctor GeomAdaptor_HSurface;
 class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 	public:
@@ -343,6 +351,7 @@ class GeomAdaptor_HSurface : public GeomAdaptor_GHSurface {
 	}
 };
 
+
 %nodefaultctor GeomAdaptor;
 class GeomAdaptor {
 	public:
@@ -360,6 +369,7 @@ class GeomAdaptor {
 	if (__env){printf("## Call custom destructor for instance of GeomAdaptor\n");}
 	}
 };
+
 
 %nodefaultctor GeomAdaptor_Surface;
 class GeomAdaptor_Surface : public Adaptor3d_Surface {
@@ -478,6 +488,7 @@ class GeomAdaptor_Surface : public Adaptor3d_Surface {
 	if (__env){printf("## Call custom destructor for instance of GeomAdaptor_Surface\n");}
 	}
 };
+
 
 %nodefaultctor GeomAdaptor_Curve;
 class GeomAdaptor_Curve : public Adaptor3d_Curve {

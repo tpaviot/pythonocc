@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor DNaming;
 class DNaming {
 	public:
@@ -170,6 +172,7 @@ class DNaming {
 	}
 };
 
+
 %nodefaultctor DNaming_DataMapIteratorOfDataMapOfShapeOfName;
 class DNaming_DataMapIteratorOfDataMapOfShapeOfName : public TCollection_BasicMapIterator {
 	public:
@@ -191,6 +194,7 @@ class DNaming_DataMapIteratorOfDataMapOfShapeOfName : public TCollection_BasicMa
 	if (__env){printf("## Call custom destructor for instance of DNaming_DataMapIteratorOfDataMapOfShapeOfName\n");}
 	}
 };
+
 
 %nodefaultctor DNaming_DataMapNodeOfDataMapOfShapeOfName;
 class DNaming_DataMapNodeOfDataMapOfShapeOfName : public TCollection_MapNode {
@@ -221,6 +225,7 @@ class DNaming_DataMapNodeOfDataMapOfShapeOfName : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of DNaming_DataMapNodeOfDataMapOfShapeOfName\n");}
 	}
 };
+
 
 %nodefaultctor DNaming_DataMapOfShapeOfName;
 class DNaming_DataMapOfShapeOfName : public TCollection_BasicMap {

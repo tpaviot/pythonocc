@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -168,6 +169,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_BRepOffset_ListNodeOfListOfInterval;
 class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_MapNode {
 	public:
@@ -192,6 +194,7 @@ class Handle_BRepOffset_ListNodeOfListOfInterval : public Handle_TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_ListNodeOfListOfInterval\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TCollection_MapNode {
@@ -218,6 +221,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TCollection_MapNode {
 	public:
@@ -243,6 +247,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
 class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handle_TCollection_MapNode {
 	public:
@@ -267,6 +272,7 @@ class Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_DataMapOfShapeMapOfShape;
 class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
@@ -301,6 +307,7 @@ class BRepOffset_DataMapOfShapeMapOfShape : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapOfShapeMapOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_Analyse;
 class BRepOffset_Analyse {
@@ -344,6 +351,7 @@ class BRepOffset_Analyse {
 	}
 };
 
+
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeReal;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
@@ -365,6 +373,7 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicM
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeReal\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_ListIteratorOfListOfInterval;
 class BRepOffset_ListIteratorOfListOfInterval {
@@ -390,6 +399,7 @@ class BRepOffset_ListIteratorOfListOfInterval {
 	}
 };
 
+
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeOffset;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_BasicMapIterator {
 	public:
@@ -411,6 +421,7 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeOffset : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeOffset\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_MakeOffset;
 class BRepOffset_MakeOffset {
@@ -453,6 +464,7 @@ class BRepOffset_MakeOffset {
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_MakeOffset\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_ListOfInterval;
 class BRepOffset_ListOfInterval {
@@ -504,6 +516,7 @@ class BRepOffset_ListOfInterval {
 	}
 };
 
+
 %nodefaultctor BRepOffset_DataMapOfShapeReal;
 class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
 	public:
@@ -538,6 +551,7 @@ class BRepOffset_DataMapOfShapeReal : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepOffset;
 class BRepOffset {
 	public:
@@ -553,6 +567,7 @@ class BRepOffset {
 	if (__env){printf("## Call custom destructor for instance of BRepOffset\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_DataMapOfShapeListOfInterval;
 class BRepOffset_DataMapOfShapeListOfInterval : public TCollection_BasicMap {
@@ -588,6 +603,7 @@ class BRepOffset_DataMapOfShapeListOfInterval : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval;
 class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_MapNode {
 	public:
@@ -617,6 +633,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeListOfInterval\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeReal;
 class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
@@ -648,6 +665,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollection_BasicMapIterator {
 	public:
@@ -669,6 +687,7 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval : public TCollect
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeListOfInterval\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_Interval;
 class BRepOffset_Interval {
@@ -698,6 +717,7 @@ class BRepOffset_Interval {
 	}
 };
 
+
 %nodefaultctor BRepOffset_ListNodeOfListOfInterval;
 class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 	public:
@@ -725,6 +745,7 @@ class BRepOffset_ListNodeOfListOfInterval : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_ListNodeOfListOfInterval\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_DataMapOfShapeOffset;
 class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
@@ -760,6 +781,7 @@ class BRepOffset_DataMapOfShapeOffset : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepOffset_MakeLoops;
 class BRepOffset_MakeLoops {
 	public:
@@ -779,6 +801,7 @@ class BRepOffset_MakeLoops {
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_MakeLoops\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape;
 class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_BasicMapIterator {
@@ -801,6 +824,7 @@ class BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapIteratorOfDataMapOfShapeMapOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeOffset;
 class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode {
@@ -831,6 +855,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeOffset : public TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_DataMapNodeOfDataMapOfShapeOffset\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_Tool;
 class BRepOffset_Tool {
@@ -880,6 +905,7 @@ class BRepOffset_Tool {
 	}
 };
 
+
 %nodefaultctor BRepOffset_Offset;
 class BRepOffset_Offset {
 	public:
@@ -924,6 +950,7 @@ class BRepOffset_Offset {
 	}
 };
 
+
 %nodefaultctor BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape;
 class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapNode {
 	public:
@@ -954,6 +981,7 @@ class BRepOffset_DataMapNodeOfDataMapOfShapeMapOfShape : public TCollection_MapN
 	}
 };
 
+
 %nodefaultctor BRepOffset_Inter2d;
 class BRepOffset_Inter2d {
 	public:
@@ -971,6 +999,7 @@ class BRepOffset_Inter2d {
 	if (__env){printf("## Call custom destructor for instance of BRepOffset_Inter2d\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffset_Inter3d;
 class BRepOffset_Inter3d {

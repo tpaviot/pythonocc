@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -153,6 +154,7 @@ class Geom2dGcc_Circ2d2TanOn {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_MyL2dTanObl;
 class Geom2dGcc_MyL2dTanObl {
 	public:
@@ -179,6 +181,7 @@ class Geom2dGcc_MyL2dTanObl {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_FuncTOblOfMyL2dTanObl;
 class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 	public:
@@ -198,6 +201,7 @@ class Geom2dGcc_FuncTOblOfMyL2dTanObl : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTOblOfMyL2dTanObl\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn;
 class Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn : public math_FunctionSetWithDerivatives {
@@ -247,6 +251,7 @@ class Geom2dGcc_FuncTCuCuOnCuOfMyC2d2TanOn : public math_FunctionSetWithDerivati
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_QualifiedCurve;
 class Geom2dGcc_QualifiedCurve {
 	public:
@@ -273,6 +278,7 @@ class Geom2dGcc_QualifiedCurve {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_MyCirc2dTanCen;
 class Geom2dGcc_MyCirc2dTanCen {
 	public:
@@ -297,6 +303,7 @@ class Geom2dGcc_MyCirc2dTanCen {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_FuncTCirCuOfMyL2d2Tan;
 class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
 	public:
@@ -316,6 +323,7 @@ class Geom2dGcc_FuncTCirCuOfMyL2d2Tan : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCirCuOfMyL2d2Tan\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_MyQCurve;
 class Geom2dGcc_MyQCurve {
@@ -342,6 +350,7 @@ class Geom2dGcc_MyQCurve {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyQCurve\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_Circ2d3Tan;
 class Geom2dGcc_Circ2d3Tan {
@@ -385,6 +394,7 @@ class Geom2dGcc_Circ2d3Tan {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_FuncTCuPtOfMyL2d2Tan;
 class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 	public:
@@ -404,6 +414,7 @@ class Geom2dGcc_FuncTCuPtOfMyL2d2Tan : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuPtOfMyL2d2Tan\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_MyCurveTool;
 class Geom2dGcc_MyCurveTool {
@@ -453,6 +464,7 @@ class Geom2dGcc_MyCurveTool {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_Lin2d2Tan;
 class Geom2dGcc_Lin2d2Tan {
 	public:
@@ -484,6 +496,7 @@ class Geom2dGcc_Lin2d2Tan {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2d2Tan\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_MyCirc2d2TanRad;
 class Geom2dGcc_MyCirc2d2TanRad {
@@ -520,6 +533,7 @@ class Geom2dGcc_MyCirc2d2TanRad {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyCirc2d2TanRad\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_MyCirc2d2TanOn;
 class Geom2dGcc_MyCirc2d2TanOn {
@@ -563,6 +577,7 @@ class Geom2dGcc_MyCirc2d2TanOn {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_Circ2dTanCen;
 class Geom2dGcc_Circ2dTanCen {
 	public:
@@ -588,6 +603,7 @@ class Geom2dGcc_Circ2dTanCen {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanCen\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_FuncTCuCuOfMyL2d2Tan;
 class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
@@ -616,6 +632,7 @@ class Geom2dGcc_FuncTCuCuOfMyL2d2Tan : public math_FunctionSetWithDerivatives {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_FuncTCuCuOfMyL2d2Tan\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_MyC2d3Tan;
 class Geom2dGcc_MyC2d3Tan {
@@ -666,6 +683,7 @@ class Geom2dGcc_MyC2d3Tan {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyC2d3Tan\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_MyC2d2TanOn;
 class Geom2dGcc_MyC2d2TanOn {
@@ -719,6 +737,7 @@ class Geom2dGcc_MyC2d2TanOn {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_MyL2d2Tan;
 class Geom2dGcc_MyL2d2Tan {
 	public:
@@ -746,6 +765,7 @@ class Geom2dGcc_MyL2d2Tan {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_MyL2d2Tan\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_MyCirc2dTanOnRad;
 class Geom2dGcc_MyCirc2dTanOnRad {
@@ -785,6 +805,7 @@ class Geom2dGcc_MyCirc2dTanOnRad {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_Circ2d2TanRad;
 class Geom2dGcc_Circ2d2TanRad {
 	public:
@@ -823,6 +844,7 @@ class Geom2dGcc_Circ2d2TanRad {
 	}
 };
 
+
 %nodefaultctor Geom2dGcc_Lin2dTanObl;
 class Geom2dGcc_Lin2dTanObl {
 	public:
@@ -850,6 +872,7 @@ class Geom2dGcc_Lin2dTanObl {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Lin2dTanObl\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_CurveTool;
 class Geom2dGcc_CurveTool {
@@ -880,6 +903,7 @@ class Geom2dGcc_CurveTool {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_CurveTool\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc_Circ2dTanOnRad;
 class Geom2dGcc_Circ2dTanOnRad {
@@ -914,6 +938,7 @@ class Geom2dGcc_Circ2dTanOnRad {
 	if (__env){printf("## Call custom destructor for instance of Geom2dGcc_Circ2dTanOnRad\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dGcc;
 class Geom2dGcc {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ShapeFix_EdgeProjAux : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeFix_Root;
 class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_ShapeFix_Root : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Root\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeFix_Face;
 class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
@@ -188,6 +191,7 @@ class Handle_ShapeFix_Face : public Handle_ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeFix_ComposeShell;
 class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 	public:
@@ -212,6 +216,7 @@ class Handle_ShapeFix_ComposeShell : public Handle_ShapeFix_Root {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_ComposeShell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeFix_SplitCommonVertex;
 class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
@@ -238,6 +243,7 @@ class Handle_ShapeFix_SplitCommonVertex : public Handle_ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeFix_Edge;
 class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_ShapeFix_Edge : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Edge\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeFix_Solid;
 class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
@@ -288,6 +295,7 @@ class Handle_ShapeFix_Solid : public Handle_ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
 class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollection_MapNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public Handle_TCollecti
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_DataMapNodeOfDataMapOfShapeBox2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeFix_Wire;
 class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
@@ -338,6 +347,7 @@ class Handle_ShapeFix_Wire : public Handle_ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment;
 class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TCollection_SeqNode {
 	public:
@@ -362,6 +372,7 @@ class Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_SequenceNodeOfSequenceOfWireSegment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeFix_Wireframe;
 class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
@@ -388,6 +399,7 @@ class Handle_ShapeFix_Wireframe : public Handle_ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeFix_Shape;
 class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 	public:
@@ -412,6 +424,7 @@ class Handle_ShapeFix_Shape : public Handle_ShapeFix_Root {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Shape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeFix_FixSmallFace;
 class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
@@ -438,6 +451,7 @@ class Handle_ShapeFix_FixSmallFace : public Handle_ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeFix_Shell;
 class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 	public:
@@ -462,6 +476,7 @@ class Handle_ShapeFix_Shell : public Handle_ShapeFix_Root {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeFix_Shell\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_Root;
 class ShapeFix_Root : public MMgt_TShared {
@@ -525,6 +540,7 @@ class ShapeFix_Root : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeFix_ComposeShell;
 class ShapeFix_ComposeShell : public ShapeFix_Root {
 	public:
@@ -569,6 +585,7 @@ class ShapeFix_ComposeShell : public ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor ShapeFix_EdgeProjAux;
 class ShapeFix_EdgeProjAux : public MMgt_TShared {
 	public:
@@ -611,6 +628,7 @@ class ShapeFix_EdgeProjAux : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d;
 class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMapIterator {
 	public:
@@ -632,6 +650,7 @@ class ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d : public TCollection_BasicMa
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_FreeBounds;
 class ShapeFix_FreeBounds {
@@ -656,6 +675,7 @@ class ShapeFix_FreeBounds {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_FreeBounds\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_Face;
 class ShapeFix_Face : public ShapeFix_Root {
@@ -746,6 +766,7 @@ class ShapeFix_Face : public ShapeFix_Root {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_Face\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_Wire;
 class ShapeFix_Wire : public ShapeFix_Root {
@@ -937,6 +958,7 @@ class ShapeFix_Wire : public ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor ShapeFix_Solid;
 class ShapeFix_Solid : public ShapeFix_Root {
 	public:
@@ -991,6 +1013,7 @@ class ShapeFix_Solid : public ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor ShapeFix_SequenceNodeOfSequenceOfWireSegment;
 class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode {
 	public:
@@ -1018,6 +1041,7 @@ class ShapeFix_SequenceNodeOfSequenceOfWireSegment : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_SequenceNodeOfSequenceOfWireSegment\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_SequenceOfWireSegment;
 class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
@@ -1072,6 +1096,7 @@ class ShapeFix_SequenceOfWireSegment : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_SequenceOfWireSegment\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_Edge;
 class ShapeFix_Edge : public MMgt_TShared {
@@ -1129,6 +1154,7 @@ class ShapeFix_Edge : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeFix_DataMapOfShapeBox2d;
 class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 	public:
@@ -1163,6 +1189,7 @@ class ShapeFix_DataMapOfShapeBox2d : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor ShapeFix_DataMapNodeOfDataMapOfShapeBox2d;
 class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 	public:
@@ -1192,6 +1219,7 @@ class ShapeFix_DataMapNodeOfDataMapOfShapeBox2d : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_DataMapNodeOfDataMapOfShapeBox2d\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_Wireframe;
 class ShapeFix_Wireframe : public ShapeFix_Root {
@@ -1245,6 +1273,7 @@ class ShapeFix_Wireframe : public ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor ShapeFix;
 class ShapeFix {
 	public:
@@ -1266,6 +1295,7 @@ class ShapeFix {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_IntersectionTool;
 class ShapeFix_IntersectionTool {
@@ -1291,6 +1321,7 @@ class ShapeFix_IntersectionTool {
 	}
 };
 
+
 %nodefaultctor ShapeFix_EdgeConnect;
 class ShapeFix_EdgeConnect {
 	public:
@@ -1312,6 +1343,7 @@ class ShapeFix_EdgeConnect {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_EdgeConnect\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_FixSmallFace;
 class ShapeFix_FixSmallFace : public ShapeFix_Root {
@@ -1373,6 +1405,7 @@ class ShapeFix_FixSmallFace : public ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor ShapeFix_ShapeTolerance;
 class ShapeFix_ShapeTolerance {
 	public:
@@ -1390,6 +1423,7 @@ class ShapeFix_ShapeTolerance {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_ShapeTolerance\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_SplitTool;
 class ShapeFix_SplitTool {
@@ -1412,6 +1446,7 @@ class ShapeFix_SplitTool {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_SplitTool\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_WireVertex;
 class ShapeFix_WireVertex {
@@ -1442,6 +1477,7 @@ class ShapeFix_WireVertex {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_WireVertex\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_Shell;
 class ShapeFix_Shell : public ShapeFix_Root {
@@ -1500,6 +1536,7 @@ class ShapeFix_Shell : public ShapeFix_Root {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_Shell\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_Shape;
 class ShapeFix_Shape : public ShapeFix_Root {
@@ -1567,6 +1604,7 @@ class ShapeFix_Shape : public ShapeFix_Root {
 	}
 };
 
+
 %nodefaultctor ShapeFix_FaceConnect;
 class ShapeFix_FaceConnect {
 	public:
@@ -1586,6 +1624,7 @@ class ShapeFix_FaceConnect {
 	if (__env){printf("## Call custom destructor for instance of ShapeFix_FaceConnect\n");}
 	}
 };
+
 
 %nodefaultctor ShapeFix_SplitCommonVertex;
 class ShapeFix_SplitCommonVertex : public ShapeFix_Root {

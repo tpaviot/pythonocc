@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_NLPlate_HGPPConstraint : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_NLPlate_HPG0Constraint;
 class Handle_NLPlate_HPG0Constraint : public Handle_NLPlate_HGPPConstraint {
 	public:
@@ -162,6 +164,7 @@ class Handle_NLPlate_HPG0Constraint : public Handle_NLPlate_HGPPConstraint {
 	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG0Constraint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_NLPlate_HPG0G1Constraint;
 class Handle_NLPlate_HPG0G1Constraint : public Handle_NLPlate_HPG0Constraint {
@@ -188,6 +191,7 @@ class Handle_NLPlate_HPG0G1Constraint : public Handle_NLPlate_HPG0Constraint {
 	}
 };
 
+
 %nodefaultctor Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
 class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public Handle_TCol
 	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_NLPlate_HPG1Constraint;
 class Handle_NLPlate_HPG1Constraint : public Handle_NLPlate_HGPPConstraint {
@@ -238,6 +243,7 @@ class Handle_NLPlate_HPG1Constraint : public Handle_NLPlate_HGPPConstraint {
 	}
 };
 
+
 %nodefaultctor Handle_NLPlate_HPG2Constraint;
 class Handle_NLPlate_HPG2Constraint : public Handle_NLPlate_HPG1Constraint {
 	public:
@@ -262,6 +268,7 @@ class Handle_NLPlate_HPG2Constraint : public Handle_NLPlate_HPG1Constraint {
 	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_HPG2Constraint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_NLPlate_HPG3Constraint;
 class Handle_NLPlate_HPG3Constraint : public Handle_NLPlate_HPG2Constraint {
@@ -288,6 +295,7 @@ class Handle_NLPlate_HPG3Constraint : public Handle_NLPlate_HPG2Constraint {
 	}
 };
 
+
 %nodefaultctor Handle_NLPlate_StackNodeOfStackOfPlate;
 class Handle_NLPlate_StackNodeOfStackOfPlate : public Handle_TCollection_MapNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_NLPlate_StackNodeOfStackOfPlate : public Handle_TCollection_MapNode
 	if (__env){printf("## Call custom destructor for instance of Handle_NLPlate_StackNodeOfStackOfPlate\n");}
 	}
 };
+
 
 %nodefaultctor Handle_NLPlate_HPG0G2Constraint;
 class Handle_NLPlate_HPG0G2Constraint : public Handle_NLPlate_HPG0G1Constraint {
@@ -338,6 +347,7 @@ class Handle_NLPlate_HPG0G2Constraint : public Handle_NLPlate_HPG0G1Constraint {
 	}
 };
 
+
 %nodefaultctor Handle_NLPlate_HPG0G3Constraint;
 class Handle_NLPlate_HPG0G3Constraint : public Handle_NLPlate_HPG0G2Constraint {
 	public:
@@ -363,6 +373,7 @@ class Handle_NLPlate_HPG0G3Constraint : public Handle_NLPlate_HPG0G2Constraint {
 	}
 };
 
+
 %nodefaultctor NLPlate_StackIteratorOfStackOfPlate;
 class NLPlate_StackIteratorOfStackOfPlate {
 	public:
@@ -386,6 +397,7 @@ class NLPlate_StackIteratorOfStackOfPlate {
 	if (__env){printf("## Call custom destructor for instance of NLPlate_StackIteratorOfStackOfPlate\n");}
 	}
 };
+
 
 %nodefaultctor NLPlate_SequenceOfHGPPConstraint;
 class NLPlate_SequenceOfHGPPConstraint : public TCollection_BaseSequence {
@@ -440,6 +452,7 @@ class NLPlate_SequenceOfHGPPConstraint : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceOfHGPPConstraint\n");}
 	}
 };
+
 
 %nodefaultctor NLPlate_HGPPConstraint;
 class NLPlate_HGPPConstraint : public MMgt_TShared {
@@ -511,6 +524,7 @@ class NLPlate_HGPPConstraint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor NLPlate_HPG0Constraint;
 class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 	public:
@@ -534,6 +548,7 @@ class NLPlate_HPG0Constraint : public NLPlate_HGPPConstraint {
 	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0Constraint\n");}
 	}
 };
+
 
 %nodefaultctor NLPlate_HPG0G1Constraint;
 class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
@@ -559,6 +574,7 @@ class NLPlate_HPG0G1Constraint : public NLPlate_HPG0Constraint {
 	}
 };
 
+
 %nodefaultctor NLPlate_HPG0G2Constraint;
 class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	public:
@@ -582,6 +598,7 @@ class NLPlate_HPG0G2Constraint : public NLPlate_HPG0G1Constraint {
 	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G2Constraint\n");}
 	}
 };
+
 
 %nodefaultctor NLPlate_HPG1Constraint;
 class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
@@ -623,6 +640,7 @@ class NLPlate_HPG1Constraint : public NLPlate_HGPPConstraint {
 	}
 };
 
+
 %nodefaultctor NLPlate_HPG2Constraint;
 class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 	public:
@@ -648,6 +666,7 @@ class NLPlate_HPG2Constraint : public NLPlate_HPG1Constraint {
 	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG2Constraint\n");}
 	}
 };
+
 
 %nodefaultctor NLPlate_HPG3Constraint;
 class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
@@ -679,6 +698,7 @@ class NLPlate_HPG3Constraint : public NLPlate_HPG2Constraint {
 	}
 };
 
+
 %nodefaultctor NLPlate_StackNodeOfStackOfPlate;
 class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
 	public:
@@ -707,6 +727,7 @@ class NLPlate_StackNodeOfStackOfPlate : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor NLPlate_SequenceNodeOfSequenceOfHGPPConstraint;
 class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNode {
 	public:
@@ -734,6 +755,7 @@ class NLPlate_SequenceNodeOfSequenceOfHGPPConstraint : public TCollection_SeqNod
 	if (__env){printf("## Call custom destructor for instance of NLPlate_SequenceNodeOfSequenceOfHGPPConstraint\n");}
 	}
 };
+
 
 %nodefaultctor NLPlate_NLPlate;
 class NLPlate_NLPlate {
@@ -773,6 +795,7 @@ class NLPlate_NLPlate {
 	}
 };
 
+
 %nodefaultctor NLPlate_HPG0G3Constraint;
 class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 	public:
@@ -802,6 +825,7 @@ class NLPlate_HPG0G3Constraint : public NLPlate_HPG0G2Constraint {
 	if (__env){printf("## Call custom destructor for instance of NLPlate_HPG0G3Constraint\n");}
 	}
 };
+
 
 %nodefaultctor NLPlate_StackOfPlate;
 class NLPlate_StackOfPlate {

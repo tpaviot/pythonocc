@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESBasic_Group : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_ReadWriteModule;
 class Handle_IGESBasic_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESBasic_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_SingleParent;
 class Handle_IGESBasic_SingleParent : public Handle_IGESData_SingleParentEntity {
@@ -188,6 +191,7 @@ class Handle_IGESBasic_SingleParent : public Handle_IGESData_SingleParentEntity 
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_ExternalRefLibName;
 class Handle_IGESBasic_ExternalRefLibName : public Handle_IGESData_IGESEntity {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESBasic_ExternalRefLibName : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefLibName\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_Name;
 class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
@@ -238,6 +243,7 @@ class Handle_IGESBasic_Name : public Handle_IGESData_NameEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfIGESEntity;
 class Handle_IGESBasic_HArray1OfHArray1OfIGESEntity : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_IGESBasic_HArray1OfHArray1OfIGESEntity : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfIGESEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfXY;
 class Handle_IGESBasic_HArray1OfHArray1OfXY : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_IGESBasic_HArray1OfHArray1OfXY : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_Protocol;
 class Handle_IGESBasic_Protocol : public Handle_IGESData_Protocol {
 	public:
@@ -312,6 +320,7 @@ class Handle_IGESBasic_Protocol : public Handle_IGESData_Protocol {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_Protocol\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_Hierarchy;
 class Handle_IGESBasic_Hierarchy : public Handle_IGESData_IGESEntity {
@@ -338,6 +347,7 @@ class Handle_IGESBasic_Hierarchy : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfInteger;
 class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_IGESBasic_HArray1OfHArray1OfInteger : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_SingularSubfigure;
 class Handle_IGESBasic_SingularSubfigure : public Handle_IGESData_IGESEntity {
@@ -388,6 +399,7 @@ class Handle_IGESBasic_SingularSubfigure : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_HArray1OfLineFontEntity;
 class Handle_IGESBasic_HArray1OfLineFontEntity : public Handle_MMgt_TShared {
 	public:
@@ -412,6 +424,7 @@ class Handle_IGESBasic_HArray1OfLineFontEntity : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfLineFontEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_ExternalRefFileName;
 class Handle_IGESBasic_ExternalRefFileName : public Handle_IGESData_IGESEntity {
@@ -438,6 +451,7 @@ class Handle_IGESBasic_ExternalRefFileName : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_HArray2OfHArray1OfReal;
 class Handle_IGESBasic_HArray2OfHArray1OfReal : public Handle_MMgt_TShared {
 	public:
@@ -462,6 +476,7 @@ class Handle_IGESBasic_HArray2OfHArray1OfReal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray2OfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_GeneralModule;
 class Handle_IGESBasic_GeneralModule : public Handle_IGESData_GeneralModule {
@@ -488,6 +503,7 @@ class Handle_IGESBasic_GeneralModule : public Handle_IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_GroupWithoutBackP;
 class Handle_IGESBasic_GroupWithoutBackP : public Handle_IGESBasic_Group {
 	public:
@@ -512,6 +528,7 @@ class Handle_IGESBasic_GroupWithoutBackP : public Handle_IGESBasic_Group {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_GroupWithoutBackP\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_AssocGroupType;
 class Handle_IGESBasic_AssocGroupType : public Handle_IGESData_IGESEntity {
@@ -538,6 +555,7 @@ class Handle_IGESBasic_AssocGroupType : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfXYZ;
 class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
 	public:
@@ -562,6 +580,7 @@ class Handle_IGESBasic_HArray1OfHArray1OfXYZ : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_OrderedGroup;
 class Handle_IGESBasic_OrderedGroup : public Handle_IGESBasic_Group {
@@ -588,6 +607,7 @@ class Handle_IGESBasic_OrderedGroup : public Handle_IGESBasic_Group {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_ExternalRefName;
 class Handle_IGESBasic_ExternalRefName : public Handle_IGESData_IGESEntity {
 	public:
@@ -612,6 +632,7 @@ class Handle_IGESBasic_ExternalRefName : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefName\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_OrderedGroupWithoutBackP;
 class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group {
@@ -638,6 +659,7 @@ class Handle_IGESBasic_OrderedGroupWithoutBackP : public Handle_IGESBasic_Group 
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_SubfigureDef;
 class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
 	public:
@@ -662,6 +684,7 @@ class Handle_IGESBasic_SubfigureDef : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_SubfigureDef\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_ExternalReferenceFile;
 class Handle_IGESBasic_ExternalReferenceFile : public Handle_IGESData_IGESEntity {
@@ -688,6 +711,7 @@ class Handle_IGESBasic_ExternalReferenceFile : public Handle_IGESData_IGESEntity
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_HArray1OfHArray1OfReal;
 class Handle_IGESBasic_HArray1OfHArray1OfReal : public Handle_MMgt_TShared {
 	public:
@@ -712,6 +736,7 @@ class Handle_IGESBasic_HArray1OfHArray1OfReal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_HArray1OfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESBasic_SpecificModule;
 class Handle_IGESBasic_SpecificModule : public Handle_IGESData_SpecificModule {
@@ -738,6 +763,7 @@ class Handle_IGESBasic_SpecificModule : public Handle_IGESData_SpecificModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_ExternalRefFileIndex;
 class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity {
 	public:
@@ -763,6 +789,7 @@ class Handle_IGESBasic_ExternalRefFileIndex : public Handle_IGESData_IGESEntity 
 	}
 };
 
+
 %nodefaultctor Handle_IGESBasic_ExternalRefFile;
 class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 	public:
@@ -787,6 +814,7 @@ class Handle_IGESBasic_ExternalRefFile : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESBasic_ExternalRefFile\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ToolAssocGroupType;
 class IGESBasic_ToolAssocGroupType {
@@ -818,6 +846,7 @@ class IGESBasic_ToolAssocGroupType {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ExternalRefName;
 class IGESBasic_ExternalRefName : public IGESData_IGESEntity {
 	public:
@@ -847,6 +876,7 @@ class IGESBasic_ExternalRefName : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefName\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_Array2OfHArray1OfReal;
 class IGESBasic_Array2OfHArray1OfReal {
@@ -892,6 +922,7 @@ class IGESBasic_Array2OfHArray1OfReal {
 	}
 };
 
+
 %nodefaultctor IGESBasic_HArray1OfHArray1OfReal;
 class IGESBasic_HArray1OfHArray1OfReal : public MMgt_TShared {
 	public:
@@ -927,6 +958,7 @@ class IGESBasic_HArray1OfHArray1OfReal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_Group;
 class IGESBasic_Group : public IGESData_IGESEntity {
@@ -978,6 +1010,7 @@ class IGESBasic_Group : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic_GroupWithoutBackP;
 class IGESBasic_GroupWithoutBackP : public IGESBasic_Group {
 	public:
@@ -1001,6 +1034,7 @@ class IGESBasic_GroupWithoutBackP : public IGESBasic_Group {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_GroupWithoutBackP\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_SpecificModule;
 class IGESBasic_SpecificModule : public IGESData_SpecificModule {
@@ -1032,6 +1066,7 @@ class IGESBasic_SpecificModule : public IGESData_SpecificModule {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolSingularSubfigure;
 class IGESBasic_ToolSingularSubfigure {
 	public:
@@ -1059,6 +1094,7 @@ class IGESBasic_ToolSingularSubfigure {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSingularSubfigure\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_HArray1OfHArray1OfXYZ;
 class IGESBasic_HArray1OfHArray1OfXYZ : public MMgt_TShared {
@@ -1096,6 +1132,7 @@ class IGESBasic_HArray1OfHArray1OfXYZ : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESBasic_HArray1OfHArray1OfIGESEntity;
 class IGESBasic_HArray1OfHArray1OfIGESEntity : public MMgt_TShared {
 	public:
@@ -1131,6 +1168,7 @@ class IGESBasic_HArray1OfHArray1OfIGESEntity : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_HArray1OfHArray1OfIGESEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_GeneralModule;
 class IGESBasic_GeneralModule : public IGESData_GeneralModule {
@@ -1170,6 +1208,7 @@ class IGESBasic_GeneralModule : public IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor IGESBasic_OrderedGroup;
 class IGESBasic_OrderedGroup : public IGESBasic_Group {
 	public:
@@ -1195,6 +1234,7 @@ class IGESBasic_OrderedGroup : public IGESBasic_Group {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_OrderedGroup\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_AssocGroupType;
 class IGESBasic_AssocGroupType : public IGESData_IGESEntity {
@@ -1230,6 +1270,7 @@ class IGESBasic_AssocGroupType : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic_Name;
 class IGESBasic_Name : public IGESData_NameEntity {
 	public:
@@ -1261,6 +1302,7 @@ class IGESBasic_Name : public IGESData_NameEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_Name\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_SubfigureDef;
 class IGESBasic_SubfigureDef : public IGESData_IGESEntity {
@@ -1300,6 +1342,7 @@ class IGESBasic_SubfigureDef : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolExternalRefName;
 class IGESBasic_ToolExternalRefName {
 	public:
@@ -1327,6 +1370,7 @@ class IGESBasic_ToolExternalRefName {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefName\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ToolGroupWithoutBackP;
 class IGESBasic_ToolGroupWithoutBackP {
@@ -1358,6 +1402,7 @@ class IGESBasic_ToolGroupWithoutBackP {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolSubfigureDef;
 class IGESBasic_ToolSubfigureDef {
 	public:
@@ -1385,6 +1430,7 @@ class IGESBasic_ToolSubfigureDef {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSubfigureDef\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ToolOrderedGroup;
 class IGESBasic_ToolOrderedGroup {
@@ -1415,6 +1461,7 @@ class IGESBasic_ToolOrderedGroup {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolOrderedGroup\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_HArray1OfHArray1OfInteger;
 class IGESBasic_HArray1OfHArray1OfInteger : public MMgt_TShared {
@@ -1452,6 +1499,7 @@ class IGESBasic_HArray1OfHArray1OfInteger : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolOrderedGroupWithoutBackP;
 class IGESBasic_ToolOrderedGroupWithoutBackP {
 	public:
@@ -1481,6 +1529,7 @@ class IGESBasic_ToolOrderedGroupWithoutBackP {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolOrderedGroupWithoutBackP\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ToolGroup;
 class IGESBasic_ToolGroup {
@@ -1512,6 +1561,7 @@ class IGESBasic_ToolGroup {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolHierarchy;
 class IGESBasic_ToolHierarchy {
 	public:
@@ -1541,6 +1591,7 @@ class IGESBasic_ToolHierarchy {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolHierarchy\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_SingularSubfigure;
 class IGESBasic_SingularSubfigure : public IGESData_IGESEntity {
@@ -1579,6 +1630,7 @@ class IGESBasic_SingularSubfigure : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_SingularSubfigure\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_Array1OfLineFontEntity;
 class IGESBasic_Array1OfLineFontEntity {
@@ -1620,6 +1672,7 @@ class IGESBasic_Array1OfLineFontEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolExternalRefLibName;
 class IGESBasic_ToolExternalRefLibName {
 	public:
@@ -1647,6 +1700,7 @@ class IGESBasic_ToolExternalRefLibName {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefLibName\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_HArray1OfLineFontEntity;
 class IGESBasic_HArray1OfLineFontEntity : public MMgt_TShared {
@@ -1694,6 +1748,7 @@ class IGESBasic_HArray1OfLineFontEntity : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ReadWriteModule;
 class IGESBasic_ReadWriteModule : public IGESData_ReadWriteModule {
 	public:
@@ -1725,6 +1780,7 @@ class IGESBasic_ReadWriteModule : public IGESData_ReadWriteModule {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ExternalRefFileName;
 class IGESBasic_ExternalRefFileName : public IGESData_IGESEntity {
@@ -1760,6 +1816,7 @@ class IGESBasic_ExternalRefFileName : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ExternalRefFile;
 class IGESBasic_ExternalRefFile : public IGESData_IGESEntity {
 	public:
@@ -1789,6 +1846,7 @@ class IGESBasic_ExternalRefFile : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFile\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_Hierarchy;
 class IGESBasic_Hierarchy : public IGESData_IGESEntity {
@@ -1832,6 +1890,7 @@ class IGESBasic_Hierarchy : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolExternalRefFileIndex;
 class IGESBasic_ToolExternalRefFileIndex {
 	public:
@@ -1859,6 +1918,7 @@ class IGESBasic_ToolExternalRefFileIndex {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFileIndex\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ExternalReferenceFile;
 class IGESBasic_ExternalReferenceFile : public IGESData_IGESEntity {
@@ -1892,6 +1952,7 @@ class IGESBasic_ExternalReferenceFile : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic;
 class IGESBasic {
 	public:
@@ -1909,6 +1970,7 @@ class IGESBasic {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ExternalRefFileIndex;
 class IGESBasic_ExternalRefFileIndex : public IGESData_IGESEntity {
@@ -1943,6 +2005,7 @@ class IGESBasic_ExternalRefFileIndex : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ExternalRefFileIndex\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_SingleParent;
 class IGESBasic_SingleParent : public IGESData_SingleParentEntity {
@@ -1980,6 +2043,7 @@ class IGESBasic_SingleParent : public IGESData_SingleParentEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolExternalRefFile;
 class IGESBasic_ToolExternalRefFile {
 	public:
@@ -2008,6 +2072,7 @@ class IGESBasic_ToolExternalRefFile {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolExternalRefFileName;
 class IGESBasic_ToolExternalRefFileName {
 	public:
@@ -2035,6 +2100,7 @@ class IGESBasic_ToolExternalRefFileName {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalRefFileName\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_HArray2OfHArray1OfReal;
 class IGESBasic_HArray2OfHArray1OfReal : public MMgt_TShared {
@@ -2088,6 +2154,7 @@ class IGESBasic_HArray2OfHArray1OfReal : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESBasic_OrderedGroupWithoutBackP;
 class IGESBasic_OrderedGroupWithoutBackP : public IGESBasic_Group {
 	public:
@@ -2113,6 +2180,7 @@ class IGESBasic_OrderedGroupWithoutBackP : public IGESBasic_Group {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_OrderedGroupWithoutBackP\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_HArray1OfHArray1OfXY;
 class IGESBasic_HArray1OfHArray1OfXY : public MMgt_TShared {
@@ -2150,6 +2218,7 @@ class IGESBasic_HArray1OfHArray1OfXY : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolSingleParent;
 class IGESBasic_ToolSingleParent {
 	public:
@@ -2179,6 +2248,7 @@ class IGESBasic_ToolSingleParent {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolSingleParent\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ExternalRefLibName;
 class IGESBasic_ExternalRefLibName : public IGESData_IGESEntity {
@@ -2212,6 +2282,7 @@ class IGESBasic_ExternalRefLibName : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESBasic_ToolExternalReferenceFile;
 class IGESBasic_ToolExternalReferenceFile {
 	public:
@@ -2239,6 +2310,7 @@ class IGESBasic_ToolExternalReferenceFile {
 	if (__env){printf("## Call custom destructor for instance of IGESBasic_ToolExternalReferenceFile\n");}
 	}
 };
+
 
 %nodefaultctor IGESBasic_ToolName;
 class IGESBasic_ToolName {

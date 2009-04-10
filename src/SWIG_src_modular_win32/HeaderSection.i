@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_HeaderSection_HeaderRecognizer : public Handle_StepData_FileRecogni
 	}
 };
 
+
 %nodefaultctor Handle_HeaderSection_FileName;
 class Handle_HeaderSection_FileName : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_HeaderSection_FileName : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HeaderSection_FileName\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HeaderSection_Protocol;
 class Handle_HeaderSection_Protocol : public Handle_StepData_Protocol {
@@ -188,6 +191,7 @@ class Handle_HeaderSection_Protocol : public Handle_StepData_Protocol {
 	}
 };
 
+
 %nodefaultctor Handle_HeaderSection_FileDescription;
 class Handle_HeaderSection_FileDescription : public Handle_MMgt_TShared {
 	public:
@@ -213,6 +217,7 @@ class Handle_HeaderSection_FileDescription : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HeaderSection_FileSchema;
 class Handle_HeaderSection_FileSchema : public Handle_MMgt_TShared {
 	public:
@@ -237,6 +242,7 @@ class Handle_HeaderSection_FileSchema : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HeaderSection_FileSchema\n");}
 	}
 };
+
 
 %nodefaultctor HeaderSection_FileDescription;
 class HeaderSection_FileDescription : public MMgt_TShared {
@@ -278,6 +284,7 @@ class HeaderSection_FileDescription : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HeaderSection_FileSchema;
 class HeaderSection_FileSchema : public MMgt_TShared {
 	public:
@@ -313,6 +320,7 @@ class HeaderSection_FileSchema : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of HeaderSection_FileSchema\n");}
 	}
 };
+
 
 %nodefaultctor HeaderSection_FileName;
 class HeaderSection_FileName : public MMgt_TShared {
@@ -378,6 +386,7 @@ class HeaderSection_FileName : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HeaderSection;
 class HeaderSection {
 	public:
@@ -393,6 +402,7 @@ class HeaderSection {
 	if (__env){printf("## Call custom destructor for instance of HeaderSection\n");}
 	}
 };
+
 
 %nodefaultctor HeaderSection_HeaderRecognizer;
 class HeaderSection_HeaderRecognizer : public StepData_FileRecognizer {

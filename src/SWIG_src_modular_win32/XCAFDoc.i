@@ -145,6 +145,7 @@ class Handle_XCAFDoc_Location : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_Volume;
 class Handle_XCAFDoc_Volume : public Handle_TDF_Attribute {
 	public:
@@ -169,6 +170,7 @@ class Handle_XCAFDoc_Volume : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Volume\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFDoc_Centroid;
 class Handle_XCAFDoc_Centroid : public Handle_TDF_Attribute {
@@ -195,6 +197,7 @@ class Handle_XCAFDoc_Centroid : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence;
 class Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence : public Handle_TCollection_SeqNode {
 	public:
@@ -219,6 +222,7 @@ class Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_SequenceNodeOfGraphNodeSequence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFDoc_Color;
 class Handle_XCAFDoc_Color : public Handle_TDF_Attribute {
@@ -245,6 +249,7 @@ class Handle_XCAFDoc_Color : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_Material;
 class Handle_XCAFDoc_Material : public Handle_TDF_Attribute {
 	public:
@@ -269,6 +274,7 @@ class Handle_XCAFDoc_Material : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Material\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFDoc_MaterialTool;
 class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
@@ -295,6 +301,7 @@ class Handle_XCAFDoc_MaterialTool : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_ColorTool;
 class Handle_XCAFDoc_ColorTool : public Handle_TDF_Attribute {
 	public:
@@ -319,6 +326,7 @@ class Handle_XCAFDoc_ColorTool : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_ColorTool\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFDoc_DimTolTool;
 class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
@@ -345,6 +353,7 @@ class Handle_XCAFDoc_DimTolTool : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel;
 class Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCollection_MapNode {
 	public:
@@ -369,6 +378,7 @@ class Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_DataMapNodeOfDataMapOfShapeLabel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFDoc_LayerTool;
 class Handle_XCAFDoc_LayerTool : public Handle_TDF_Attribute {
@@ -395,6 +405,7 @@ class Handle_XCAFDoc_LayerTool : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_ShapeTool;
 class Handle_XCAFDoc_ShapeTool : public Handle_TDF_Attribute {
 	public:
@@ -419,6 +430,7 @@ class Handle_XCAFDoc_ShapeTool : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_ShapeTool\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFDoc_DocumentTool;
 class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
@@ -445,6 +457,7 @@ class Handle_XCAFDoc_DocumentTool : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_ShapeMapTool;
 class Handle_XCAFDoc_ShapeMapTool : public Handle_TDF_Attribute {
 	public:
@@ -469,6 +482,7 @@ class Handle_XCAFDoc_ShapeMapTool : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_ShapeMapTool\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFDoc_DimTol;
 class Handle_XCAFDoc_DimTol : public Handle_TDF_Attribute {
@@ -495,6 +509,7 @@ class Handle_XCAFDoc_DimTol : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_GraphNode;
 class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
 	public:
@@ -519,6 +534,7 @@ class Handle_XCAFDoc_GraphNode : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_GraphNode\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFDoc_Area;
 class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
@@ -545,6 +561,7 @@ class Handle_XCAFDoc_Area : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFDoc_Datum;
 class Handle_XCAFDoc_Datum : public Handle_TDF_Attribute {
 	public:
@@ -569,6 +586,7 @@ class Handle_XCAFDoc_Datum : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFDoc_Datum\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_Centroid;
 class XCAFDoc_Centroid : public TDF_Attribute {
@@ -616,6 +634,7 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_ShapeMapTool;
 class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 	public:
@@ -659,6 +678,7 @@ class XCAFDoc_ShapeMapTool : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_ShapeMapTool\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_Material;
 class XCAFDoc_Material : public TDF_Attribute {
@@ -710,6 +730,7 @@ class XCAFDoc_Material : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_DataMapOfShapeLabel;
 class XCAFDoc_DataMapOfShapeLabel : public TCollection_BasicMap {
 	public:
@@ -743,6 +764,7 @@ class XCAFDoc_DataMapOfShapeLabel : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DataMapOfShapeLabel\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_DimTol;
 class XCAFDoc_DimTol : public TDF_Attribute {
@@ -791,6 +813,7 @@ class XCAFDoc_DimTol : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DimTol\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_GraphNode;
 class XCAFDoc_GraphNode : public TDF_Attribute {
@@ -869,6 +892,7 @@ class XCAFDoc_GraphNode : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_GraphNode\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_ColorTool;
 class XCAFDoc_ColorTool : public TDF_Attribute {
@@ -962,6 +986,7 @@ class XCAFDoc_ColorTool : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc;
 class XCAFDoc {
 	public:
@@ -998,6 +1023,7 @@ class XCAFDoc {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_SequenceNodeOfGraphNodeSequence;
 class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
 	public:
@@ -1025,6 +1051,7 @@ class XCAFDoc_SequenceNodeOfGraphNodeSequence : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_SequenceNodeOfGraphNodeSequence\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_Volume;
 class XCAFDoc_Volume : public TDF_Attribute {
@@ -1071,6 +1098,7 @@ class XCAFDoc_Volume : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Volume\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_LayerTool;
 class XCAFDoc_LayerTool : public TDF_Attribute {
@@ -1162,6 +1190,7 @@ class XCAFDoc_LayerTool : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel;
 class XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_BasicMapIterator {
 	public:
@@ -1183,6 +1212,7 @@ class XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_DataMapIteratorOfDataMapOfShapeLabel\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_GraphNodeSequence;
 class XCAFDoc_GraphNodeSequence : public TCollection_BaseSequence {
@@ -1237,6 +1267,7 @@ class XCAFDoc_GraphNodeSequence : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_GraphNodeSequence\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_ShapeTool;
 class XCAFDoc_ShapeTool : public TDF_Attribute {
@@ -1390,6 +1421,7 @@ class XCAFDoc_ShapeTool : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_DimTolTool;
 class XCAFDoc_DimTolTool : public TDF_Attribute {
 	public:
@@ -1466,6 +1498,7 @@ class XCAFDoc_DimTolTool : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_MaterialTool;
 class XCAFDoc_MaterialTool : public TDF_Attribute {
 	public:
@@ -1521,6 +1554,7 @@ class XCAFDoc_MaterialTool : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_MaterialTool\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_DocumentTool;
 class XCAFDoc_DocumentTool : public TDF_Attribute {
@@ -1586,6 +1620,7 @@ class XCAFDoc_DocumentTool : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_Color;
 class XCAFDoc_Color : public TDF_Attribute {
 	public:
@@ -1640,6 +1675,7 @@ class XCAFDoc_Color : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_Datum;
 class XCAFDoc_Datum : public TDF_Attribute {
 	public:
@@ -1685,6 +1721,7 @@ class XCAFDoc_Datum : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Datum\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_Area;
 class XCAFDoc_Area : public TDF_Attribute {
@@ -1732,6 +1769,7 @@ class XCAFDoc_Area : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor XCAFDoc_Location;
 class XCAFDoc_Location : public TDF_Attribute {
 	public:
@@ -1773,6 +1811,7 @@ class XCAFDoc_Location : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of XCAFDoc_Location\n");}
 	}
 };
+
 
 %nodefaultctor XCAFDoc_DataMapNodeOfDataMapOfShapeLabel;
 class XCAFDoc_DataMapNodeOfDataMapOfShapeLabel : public TCollection_MapNode {

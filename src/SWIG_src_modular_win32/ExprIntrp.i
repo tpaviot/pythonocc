@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralRelation : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_ExprIntrp_Generator;
 class Handle_ExprIntrp_Generator : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_ExprIntrp_Generator : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_Generator\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ExprIntrp_GenExp;
 class Handle_ExprIntrp_GenExp : public Handle_ExprIntrp_Generator {
@@ -188,6 +191,7 @@ class Handle_ExprIntrp_GenExp : public Handle_ExprIntrp_Generator {
 	}
 };
 
+
 %nodefaultctor Handle_ExprIntrp_SyntaxError;
 class Handle_ExprIntrp_SyntaxError : public Handle_Standard_Failure {
 	public:
@@ -212,6 +216,7 @@ class Handle_ExprIntrp_SyntaxError : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SyntaxError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction;
 class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollection_MapNode {
@@ -238,6 +243,7 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralFunction : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_ExprIntrp_GenFct;
 class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
 	public:
@@ -262,6 +268,7 @@ class Handle_ExprIntrp_GenFct : public Handle_ExprIntrp_Generator {
 	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_GenFct\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression;
 class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TCollection_MapNode {
@@ -288,6 +295,7 @@ class Handle_ExprIntrp_StackNodeOfStackOfGeneralExpression : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
 class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCollection_SeqNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedFunction\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ExprIntrp_StackNodeOfStackOfNames;
 class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNode {
@@ -338,6 +347,7 @@ class Handle_ExprIntrp_StackNodeOfStackOfNames : public Handle_TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor Handle_ExprIntrp_GenRel;
 class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 	public:
@@ -363,6 +373,7 @@ class Handle_ExprIntrp_GenRel : public Handle_ExprIntrp_Generator {
 	}
 };
 
+
 %nodefaultctor Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
 class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_TCollection_SeqNode {
 	public:
@@ -387,6 +398,7 @@ class Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_ExprIntrp_SequenceNodeOfSequenceOfNamedExpression\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_Generator;
 class ExprIntrp_Generator : public MMgt_TShared {
@@ -424,6 +436,7 @@ class ExprIntrp_Generator : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_GenFct;
 class ExprIntrp_GenFct : public ExprIntrp_Generator {
 	public:
@@ -452,6 +465,7 @@ class ExprIntrp_GenFct : public ExprIntrp_Generator {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackNodeOfStackOfNames;
 class ExprIntrp_StackNodeOfStackOfNames : public TCollection_MapNode {
 	public:
@@ -479,6 +493,7 @@ class ExprIntrp_StackNodeOfStackOfNames : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfNames\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_SequenceOfNamedFunction;
 class ExprIntrp_SequenceOfNamedFunction : public TCollection_BaseSequence {
@@ -534,6 +549,7 @@ class ExprIntrp_SequenceOfNamedFunction : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackOfNames;
 class ExprIntrp_StackOfNames {
 	public:
@@ -563,6 +579,7 @@ class ExprIntrp_StackOfNames {
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackOfNames\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_SyntaxError;
 class ExprIntrp_SyntaxError : public Standard_Failure {
@@ -598,6 +615,7 @@ class ExprIntrp_SyntaxError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedExpression;
 class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_SeqNode {
 	public:
@@ -626,6 +644,7 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedExpression : public TCollection_Seq
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfNames;
 class ExprIntrp_StackIteratorOfStackOfNames {
 	public:
@@ -650,6 +669,7 @@ class ExprIntrp_StackIteratorOfStackOfNames {
 	}
 };
 
+
 %nodefaultctor ExprIntrp;
 class ExprIntrp {
 	public:
@@ -663,6 +683,7 @@ class ExprIntrp {
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_GenRel;
 class ExprIntrp_GenRel : public ExprIntrp_Generator {
@@ -696,6 +717,7 @@ class ExprIntrp_GenRel : public ExprIntrp_Generator {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralRelation;
 class ExprIntrp_StackIteratorOfStackOfGeneralRelation {
 	public:
@@ -720,6 +742,7 @@ class ExprIntrp_StackIteratorOfStackOfGeneralRelation {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralFunction;
 class ExprIntrp_StackIteratorOfStackOfGeneralFunction {
 	public:
@@ -743,6 +766,7 @@ class ExprIntrp_StackIteratorOfStackOfGeneralFunction {
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralFunction\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralRelation;
 class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
@@ -771,6 +795,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralRelation : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralRelation\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_StackOfGeneralRelation;
 class ExprIntrp_StackOfGeneralRelation {
@@ -802,6 +827,7 @@ class ExprIntrp_StackOfGeneralRelation {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralExpression;
 class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode {
 	public:
@@ -829,6 +855,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralExpression : public TCollection_MapNode
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralExpression\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_SequenceOfNamedExpression;
 class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
@@ -884,6 +911,7 @@ class ExprIntrp_SequenceOfNamedExpression : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackNodeOfStackOfGeneralFunction;
 class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 	public:
@@ -911,6 +939,7 @@ class ExprIntrp_StackNodeOfStackOfGeneralFunction : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackNodeOfStackOfGeneralFunction\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_StackOfGeneralFunction;
 class ExprIntrp_StackOfGeneralFunction {
@@ -942,6 +971,7 @@ class ExprIntrp_StackOfGeneralFunction {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackOfGeneralExpression;
 class ExprIntrp_StackOfGeneralExpression {
 	public:
@@ -972,6 +1002,7 @@ class ExprIntrp_StackOfGeneralExpression {
 	}
 };
 
+
 %nodefaultctor ExprIntrp_SequenceNodeOfSequenceOfNamedFunction;
 class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNode {
 	public:
@@ -1000,6 +1031,7 @@ class ExprIntrp_SequenceNodeOfSequenceOfNamedFunction : public TCollection_SeqNo
 	}
 };
 
+
 %nodefaultctor ExprIntrp_StackIteratorOfStackOfGeneralExpression;
 class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 	public:
@@ -1023,6 +1055,7 @@ class ExprIntrp_StackIteratorOfStackOfGeneralExpression {
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_StackIteratorOfStackOfGeneralExpression\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_GenExp;
 class ExprIntrp_GenExp : public ExprIntrp_Generator {
@@ -1055,6 +1088,7 @@ class ExprIntrp_GenExp : public ExprIntrp_Generator {
 	if (__env){printf("## Call custom destructor for instance of ExprIntrp_GenExp\n");}
 	}
 };
+
 
 %nodefaultctor ExprIntrp_Analysis;
 class ExprIntrp_Analysis {

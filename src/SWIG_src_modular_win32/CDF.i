@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -195,6 +196,7 @@ class Handle_CDF_MetaDataDriver : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_CDF_MetaDataDriverError;
 class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 	public:
@@ -219,6 +221,7 @@ class Handle_CDF_MetaDataDriverError : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_CDF_MetaDataDriverError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_CDF_StoreList;
 class Handle_CDF_StoreList : public Handle_Standard_Transient {
@@ -245,6 +248,7 @@ class Handle_CDF_StoreList : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_CDF_Directory;
 class Handle_CDF_Directory : public Handle_Standard_Transient {
 	public:
@@ -269,6 +273,7 @@ class Handle_CDF_Directory : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_CDF_Directory\n");}
 	}
 };
+
 
 %nodefaultctor Handle_CDF_Application;
 class Handle_CDF_Application : public Handle_CDM_Application {
@@ -295,6 +300,7 @@ class Handle_CDF_Application : public Handle_CDM_Application {
 	}
 };
 
+
 %nodefaultctor Handle_CDF_MetaDataDriverFactory;
 class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 	public:
@@ -320,6 +326,7 @@ class Handle_CDF_MetaDataDriverFactory : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_CDF_Session;
 class Handle_CDF_Session : public Handle_Standard_Transient {
 	public:
@@ -344,6 +351,7 @@ class Handle_CDF_Session : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_CDF_Session\n");}
 	}
 };
+
 
 %nodefaultctor CDF_MetaDataDriverError;
 class CDF_MetaDataDriverError : public Standard_Failure {
@@ -379,6 +387,7 @@ class CDF_MetaDataDriverError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor CDF;
 class CDF {
 	public:
@@ -396,6 +405,7 @@ class CDF {
 	if (__env){printf("## Call custom destructor for instance of CDF\n");}
 	}
 };
+
 
 %nodefaultctor CDF_Application;
 class CDF_Application : public CDM_Application {
@@ -457,6 +467,7 @@ class CDF_Application : public CDM_Application {
 	}
 };
 
+
 %nodefaultctor CDF_Timer;
 class CDF_Timer {
 	public:
@@ -476,6 +487,7 @@ class CDF_Timer {
 	if (__env){printf("## Call custom destructor for instance of CDF_Timer\n");}
 	}
 };
+
 
 %nodefaultctor CDF_StoreList;
 class CDF_StoreList : public Standard_Transient {
@@ -514,6 +526,7 @@ class CDF_StoreList : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of CDF_StoreList\n");}
 	}
 };
+
 
 %nodefaultctor CDF_MetaDataDriver;
 class CDF_MetaDataDriver : public Standard_Transient {
@@ -571,6 +584,7 @@ class CDF_MetaDataDriver : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor CDF_MetaDataDriverFactory;
 class CDF_MetaDataDriverFactory : public Standard_Transient {
 	public:
@@ -596,6 +610,7 @@ class CDF_MetaDataDriverFactory : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of CDF_MetaDataDriverFactory\n");}
 	}
 };
+
 
 %nodefaultctor CDF_Directory;
 class CDF_Directory : public Standard_Transient {
@@ -634,6 +649,7 @@ class CDF_Directory : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of CDF_Directory\n");}
 	}
 };
+
 
 %nodefaultctor CDF_Session;
 class CDF_Session : public Standard_Transient {
@@ -679,6 +695,7 @@ class CDF_Session : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor CDF_DirectoryIterator;
 class CDF_DirectoryIterator {
 	public:
@@ -700,6 +717,7 @@ class CDF_DirectoryIterator {
 	if (__env){printf("## Call custom destructor for instance of CDF_DirectoryIterator\n");}
 	}
 };
+
 
 %nodefaultctor CDF_Store;
 class CDF_Store {

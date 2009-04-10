@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -176,6 +177,7 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 	}
 };
 
+
 %nodefaultctor Handle_MFT_TextManager;
 class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 	public:
@@ -200,6 +202,7 @@ class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MFT_TextManager\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MFT_FontManager;
 class Handle_MFT_FontManager : public Handle_MMgt_TShared {
@@ -226,6 +229,7 @@ class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MFT_FontManagerError;
 class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 	public:
@@ -250,6 +254,7 @@ class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 	if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManagerError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontHandle;
 class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqNode {
@@ -276,6 +281,7 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 	}
 };
 
+
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontReference;
 class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_SeqNode {
 	public:
@@ -301,6 +307,7 @@ class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_S
 	}
 };
 
+
 %nodefaultctor Handle_MFT_FontManagerDefinitionError;
 class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObject {
 	public:
@@ -325,6 +332,7 @@ class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObjec
 	if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManagerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontReference;
 class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
@@ -353,6 +361,7 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontReference\n");}
 	}
 };
+
 
 %nodefaultctor MFT_ListOfFontHandle;
 class MFT_ListOfFontHandle : public TCollection_BaseSequence {
@@ -408,6 +417,7 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MFT_ListOfFontName;
 class MFT_ListOfFontName : public TCollection_BaseSequence {
 	public:
@@ -461,6 +471,7 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of MFT_ListOfFontName\n");}
 	}
 };
+
 
 %nodefaultctor MFT_ListOfFontReference;
 class MFT_ListOfFontReference : public TCollection_BaseSequence {
@@ -516,6 +527,7 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MFT_SequenceNodeOfListOfFontName;
 class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 	public:
@@ -544,6 +556,7 @@ class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor MFT_SequenceNodeOfListOfFontHandle;
 class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 	public:
@@ -571,6 +584,7 @@ class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontHandle\n");}
 	}
 };
+
 
 %nodefaultctor MFT_TextManager;
 class MFT_TextManager : public MMgt_TShared {
@@ -618,6 +632,7 @@ class MFT_TextManager : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MFT_FontManagerDefinitionError;
 class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 	public:
@@ -652,6 +667,7 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 	}
 };
 
+
 %nodefaultctor MFT_FontManagerError;
 class MFT_FontManagerError : public Standard_TypeMismatch {
 	public:
@@ -685,6 +701,7 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 	if (__env){printf("## Call custom destructor for instance of MFT_FontManagerError\n");}
 	}
 };
+
 
 %nodefaultctor MFT_FontManager;
 class MFT_FontManager : public MMgt_TShared {
@@ -805,6 +822,7 @@ class MFT_FontManager : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of MFT_FontManager\n");}
 	}
 };
+
 
 %nodefaultctor MFT;
 class MFT {

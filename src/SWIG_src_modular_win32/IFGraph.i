@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -147,6 +148,7 @@ class IFGraph_Compare : public Interface_GraphContent {
 	}
 };
 
+
 %nodefaultctor IFGraph_SubPartsIterator;
 class IFGraph_SubPartsIterator {
 	public:
@@ -209,6 +211,7 @@ class IFGraph_SubPartsIterator {
 	}
 };
 
+
 %nodefaultctor IFGraph_StrongComponants;
 class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 	public:
@@ -224,6 +227,7 @@ class IFGraph_StrongComponants : public IFGraph_SubPartsIterator {
 	if (__env){printf("## Call custom destructor for instance of IFGraph_StrongComponants\n");}
 	}
 };
+
 
 %nodefaultctor IFGraph_SCRoots;
 class IFGraph_SCRoots : public IFGraph_StrongComponants {
@@ -242,6 +246,7 @@ class IFGraph_SCRoots : public IFGraph_StrongComponants {
 	if (__env){printf("## Call custom destructor for instance of IFGraph_SCRoots\n");}
 	}
 };
+
 
 %nodefaultctor IFGraph_AllConnected;
 class IFGraph_AllConnected : public Interface_GraphContent {
@@ -265,6 +270,7 @@ class IFGraph_AllConnected : public Interface_GraphContent {
 	}
 };
 
+
 %nodefaultctor IFGraph_ConnectedComponants;
 class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 	public:
@@ -282,6 +288,7 @@ class IFGraph_ConnectedComponants : public IFGraph_SubPartsIterator {
 	if (__env){printf("## Call custom destructor for instance of IFGraph_ConnectedComponants\n");}
 	}
 };
+
 
 %nodefaultctor IFGraph_AllShared;
 class IFGraph_AllShared : public Interface_GraphContent {
@@ -307,6 +314,7 @@ class IFGraph_AllShared : public Interface_GraphContent {
 	}
 };
 
+
 %nodefaultctor IFGraph_Articulations;
 class IFGraph_Articulations : public Interface_GraphContent {
 	public:
@@ -328,6 +336,7 @@ class IFGraph_Articulations : public Interface_GraphContent {
 	if (__env){printf("## Call custom destructor for instance of IFGraph_Articulations\n");}
 	}
 };
+
 
 %nodefaultctor IFGraph_ExternalSources;
 class IFGraph_ExternalSources : public Interface_GraphContent {
@@ -352,6 +361,7 @@ class IFGraph_ExternalSources : public Interface_GraphContent {
 	if (__env){printf("## Call custom destructor for instance of IFGraph_ExternalSources\n");}
 	}
 };
+
 
 %nodefaultctor IFGraph_Cumulate;
 class IFGraph_Cumulate : public Interface_GraphContent {
@@ -384,6 +394,7 @@ class IFGraph_Cumulate : public Interface_GraphContent {
 	if (__env){printf("## Call custom destructor for instance of IFGraph_Cumulate\n");}
 	}
 };
+
 
 %nodefaultctor IFGraph_Cycles;
 class IFGraph_Cycles : public IFGraph_SubPartsIterator {

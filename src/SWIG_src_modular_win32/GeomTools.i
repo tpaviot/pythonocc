@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomTools_CurveSet;
 class GeomTools_CurveSet {
 	public:
@@ -173,6 +175,7 @@ class GeomTools_CurveSet {
 	if (__env){printf("## Call custom destructor for instance of GeomTools_CurveSet\n");}
 	}
 };
+
 
 %nodefaultctor GeomTools_SurfaceSet;
 class GeomTools_SurfaceSet {
@@ -210,6 +213,7 @@ class GeomTools_SurfaceSet {
 	}
 };
 
+
 %nodefaultctor GeomTools_Curve2dSet;
 class GeomTools_Curve2dSet {
 	public:
@@ -245,6 +249,7 @@ class GeomTools_Curve2dSet {
 	if (__env){printf("## Call custom destructor for instance of GeomTools_Curve2dSet\n");}
 	}
 };
+
 
 %nodefaultctor GeomTools_UndefinedTypeHandler;
 class GeomTools_UndefinedTypeHandler : public MMgt_TShared {
@@ -283,6 +288,7 @@ class GeomTools_UndefinedTypeHandler : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of GeomTools_UndefinedTypeHandler\n");}
 	}
 };
+
 
 %nodefaultctor GeomTools;
 class GeomTools {

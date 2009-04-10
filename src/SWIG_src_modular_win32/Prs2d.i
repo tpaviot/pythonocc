@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -225,6 +226,7 @@ class Handle_Prs2d_Tolerance : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Flatness;
 class Handle_Prs2d_Flatness : public Handle_Prs2d_Tolerance {
 	public:
@@ -249,6 +251,7 @@ class Handle_Prs2d_Flatness : public Handle_Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Flatness\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_SurfProfile;
 class Handle_Prs2d_SurfProfile : public Handle_Prs2d_Tolerance {
@@ -275,6 +278,7 @@ class Handle_Prs2d_SurfProfile : public Handle_Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Dimension;
 class Handle_Prs2d_Dimension : public Handle_Graphic2d_Line {
 	public:
@@ -299,6 +303,7 @@ class Handle_Prs2d_Dimension : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Dimension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Repere;
 class Handle_Prs2d_Repere : public Handle_Prs2d_Dimension {
@@ -325,6 +330,7 @@ class Handle_Prs2d_Repere : public Handle_Prs2d_Dimension {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Axis;
 class Handle_Prs2d_Axis : public Handle_Graphic2d_Line {
 	public:
@@ -349,6 +355,7 @@ class Handle_Prs2d_Axis : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Axis\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Radius;
 class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
@@ -375,6 +382,7 @@ class Handle_Prs2d_Radius : public Handle_Prs2d_Dimension {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_AspectRoot;
 class Handle_Prs2d_AspectRoot : public Handle_MMgt_TShared {
 	public:
@@ -399,6 +407,7 @@ class Handle_Prs2d_AspectRoot : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectRoot\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_AspectFramedText;
 class Handle_Prs2d_AspectFramedText : public Handle_Prs2d_AspectRoot {
@@ -425,6 +434,7 @@ class Handle_Prs2d_AspectFramedText : public Handle_Prs2d_AspectRoot {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_DrawSymbol;
 class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
 	public:
@@ -449,6 +459,7 @@ class Handle_Prs2d_DrawSymbol : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_DrawSymbol\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Cylindric;
 class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
@@ -475,6 +486,7 @@ class Handle_Prs2d_Cylindric : public Handle_Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot;
 class Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot : public Handle_TCollection_MapNode {
 	public:
@@ -499,6 +511,7 @@ class Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot : public Handle_TCollection_
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Diameter;
 class Handle_Prs2d_Diameter : public Handle_Prs2d_Dimension {
@@ -525,6 +538,7 @@ class Handle_Prs2d_Diameter : public Handle_Prs2d_Dimension {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Drawer;
 class Handle_Prs2d_Drawer : public Handle_MMgt_TShared {
 	public:
@@ -549,6 +563,7 @@ class Handle_Prs2d_Drawer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Drawer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Length;
 class Handle_Prs2d_Length : public Handle_Prs2d_Dimension {
@@ -575,6 +590,7 @@ class Handle_Prs2d_Length : public Handle_Prs2d_Dimension {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Taper;
 class Handle_Prs2d_Taper : public Handle_Prs2d_Tolerance {
 	public:
@@ -599,6 +615,7 @@ class Handle_Prs2d_Taper : public Handle_Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Taper\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Arrow;
 class Handle_Prs2d_Arrow : public Handle_Graphic2d_Line {
@@ -625,6 +642,7 @@ class Handle_Prs2d_Arrow : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_ToleranceFrame;
 class Handle_Prs2d_ToleranceFrame : public Handle_Graphic2d_Line {
 	public:
@@ -649,6 +667,7 @@ class Handle_Prs2d_ToleranceFrame : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_ToleranceFrame\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_SymCircular;
 class Handle_Prs2d_SymCircular : public Handle_Prs2d_Tolerance {
@@ -675,6 +694,7 @@ class Handle_Prs2d_SymCircular : public Handle_Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Position;
 class Handle_Prs2d_Position : public Handle_Prs2d_Tolerance {
 	public:
@@ -699,6 +719,7 @@ class Handle_Prs2d_Position : public Handle_Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Position\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Concentric;
 class Handle_Prs2d_Concentric : public Handle_Prs2d_Tolerance {
@@ -725,6 +746,7 @@ class Handle_Prs2d_Concentric : public Handle_Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Perpendicular;
 class Handle_Prs2d_Perpendicular : public Handle_Prs2d_Tolerance {
 	public:
@@ -749,6 +771,7 @@ class Handle_Prs2d_Perpendicular : public Handle_Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Perpendicular\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_LineProfile;
 class Handle_Prs2d_LineProfile : public Handle_Prs2d_Tolerance {
@@ -775,6 +798,7 @@ class Handle_Prs2d_LineProfile : public Handle_Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_AspectHidingText;
 class Handle_Prs2d_AspectHidingText : public Handle_Prs2d_AspectRoot {
 	public:
@@ -799,6 +823,7 @@ class Handle_Prs2d_AspectHidingText : public Handle_Prs2d_AspectRoot {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectHidingText\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_RadiusIndep;
 class Handle_Prs2d_RadiusIndep : public Handle_Graphic2d_Line {
@@ -825,6 +850,7 @@ class Handle_Prs2d_RadiusIndep : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Angularity;
 class Handle_Prs2d_Angularity : public Handle_Prs2d_Tolerance {
 	public:
@@ -849,6 +875,7 @@ class Handle_Prs2d_Angularity : public Handle_Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Angularity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Symmetry;
 class Handle_Prs2d_Symmetry : public Handle_Prs2d_Tolerance {
@@ -875,6 +902,7 @@ class Handle_Prs2d_Symmetry : public Handle_Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Circularity;
 class Handle_Prs2d_Circularity : public Handle_Prs2d_Tolerance {
 	public:
@@ -899,6 +927,7 @@ class Handle_Prs2d_Circularity : public Handle_Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Circularity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_Straightness;
 class Handle_Prs2d_Straightness : public Handle_Prs2d_Tolerance {
@@ -925,6 +954,7 @@ class Handle_Prs2d_Straightness : public Handle_Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_SymbolDefinitionError;
 class Handle_Prs2d_SymbolDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -949,6 +979,7 @@ class Handle_Prs2d_SymbolDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_SymbolDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_AspectHidingPoly;
 class Handle_Prs2d_AspectHidingPoly : public Handle_Prs2d_AspectRoot {
@@ -975,6 +1006,7 @@ class Handle_Prs2d_AspectHidingPoly : public Handle_Prs2d_AspectRoot {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Point;
 class Handle_Prs2d_Point : public Handle_Graphic2d_Line {
 	public:
@@ -999,6 +1031,7 @@ class Handle_Prs2d_Point : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Point\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_AspectText;
 class Handle_Prs2d_AspectText : public Handle_Prs2d_AspectRoot {
@@ -1025,6 +1058,7 @@ class Handle_Prs2d_AspectText : public Handle_Prs2d_AspectRoot {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Parallelism;
 class Handle_Prs2d_Parallelism : public Handle_Prs2d_Tolerance {
 	public:
@@ -1049,6 +1083,7 @@ class Handle_Prs2d_Parallelism : public Handle_Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_Parallelism\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Prs2d_SymTotal;
 class Handle_Prs2d_SymTotal : public Handle_Prs2d_Tolerance {
@@ -1075,6 +1110,7 @@ class Handle_Prs2d_SymTotal : public Handle_Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_Angle;
 class Handle_Prs2d_Angle : public Handle_Prs2d_Dimension {
 	public:
@@ -1100,6 +1136,7 @@ class Handle_Prs2d_Angle : public Handle_Prs2d_Dimension {
 	}
 };
 
+
 %nodefaultctor Handle_Prs2d_AspectLine;
 class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
 	public:
@@ -1124,6 +1161,7 @@ class Handle_Prs2d_AspectLine : public Handle_Prs2d_AspectRoot {
 	if (__env){printf("## Call custom destructor for instance of Handle_Prs2d_AspectLine\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Tolerance;
 class Prs2d_Tolerance : public Graphic2d_Line {
@@ -1153,6 +1191,7 @@ class Prs2d_Tolerance : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Prs2d_LineProfile;
 class Prs2d_LineProfile : public Prs2d_Tolerance {
 	public:
@@ -1179,6 +1218,7 @@ class Prs2d_LineProfile : public Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Prs2d_AspectRoot;
 class Prs2d_AspectRoot : public MMgt_TShared {
 	public:
@@ -1204,6 +1244,7 @@ class Prs2d_AspectRoot : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_AspectRoot\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_AspectHidingText;
 class Prs2d_AspectHidingText : public Prs2d_AspectRoot {
@@ -1249,6 +1290,7 @@ class Prs2d_AspectHidingText : public Prs2d_AspectRoot {
 	}
 };
 
+
 %nodefaultctor Prs2d_DataMapOfAspectRoot;
 class Prs2d_DataMapOfAspectRoot : public TCollection_BasicMap {
 	public:
@@ -1283,6 +1325,7 @@ class Prs2d_DataMapOfAspectRoot : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor Prs2d_DataMapIteratorOfDataMapOfAspectRoot;
 class Prs2d_DataMapIteratorOfDataMapOfAspectRoot : public TCollection_BasicMapIterator {
 	public:
@@ -1304,6 +1347,7 @@ class Prs2d_DataMapIteratorOfDataMapOfAspectRoot : public TCollection_BasicMapIt
 	if (__env){printf("## Call custom destructor for instance of Prs2d_DataMapIteratorOfDataMapOfAspectRoot\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Dimension;
 class Prs2d_Dimension : public Graphic2d_Line {
@@ -1391,6 +1435,7 @@ class Prs2d_Dimension : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Prs2d_Radius;
 class Prs2d_Radius : public Prs2d_Dimension {
 	public:
@@ -1418,6 +1463,7 @@ class Prs2d_Radius : public Prs2d_Dimension {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Radius\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Concentric;
 class Prs2d_Concentric : public Prs2d_Tolerance {
@@ -1447,6 +1493,7 @@ class Prs2d_Concentric : public Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Prs2d_SymCircular;
 class Prs2d_SymCircular : public Prs2d_Tolerance {
 	public:
@@ -1475,6 +1522,7 @@ class Prs2d_SymCircular : public Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Prs2d_Angularity;
 class Prs2d_Angularity : public Prs2d_Tolerance {
 	public:
@@ -1502,6 +1550,7 @@ class Prs2d_Angularity : public Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Angularity\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Axis;
 class Prs2d_Axis : public Graphic2d_Line {
@@ -1545,6 +1594,7 @@ class Prs2d_Axis : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Prs2d_Point;
 class Prs2d_Point : public Graphic2d_Line {
 	public:
@@ -1583,6 +1633,7 @@ class Prs2d_Point : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Prs2d_AspectHidingPoly;
 class Prs2d_AspectHidingPoly : public Prs2d_AspectRoot {
 	public:
@@ -1619,6 +1670,7 @@ class Prs2d_AspectHidingPoly : public Prs2d_AspectRoot {
 	}
 };
 
+
 %nodefaultctor Prs2d_Cylindric;
 class Prs2d_Cylindric : public Prs2d_Tolerance {
 	public:
@@ -1646,6 +1698,7 @@ class Prs2d_Cylindric : public Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Cylindric\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Straightness;
 class Prs2d_Straightness : public Prs2d_Tolerance {
@@ -1675,6 +1728,7 @@ class Prs2d_Straightness : public Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Prs2d_Position;
 class Prs2d_Position : public Prs2d_Tolerance {
 	public:
@@ -1702,6 +1756,7 @@ class Prs2d_Position : public Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Position\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_DataMapNodeOfDataMapOfAspectRoot;
 class Prs2d_DataMapNodeOfDataMapOfAspectRoot : public TCollection_MapNode {
@@ -1732,6 +1787,7 @@ class Prs2d_DataMapNodeOfDataMapOfAspectRoot : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_DataMapNodeOfDataMapOfAspectRoot\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_RadiusIndep;
 class Prs2d_RadiusIndep : public Graphic2d_Line {
@@ -1783,6 +1839,7 @@ class Prs2d_RadiusIndep : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Prs2d_Flatness;
 class Prs2d_Flatness : public Prs2d_Tolerance {
 	public:
@@ -1810,6 +1867,7 @@ class Prs2d_Flatness : public Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Flatness\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Circularity;
 class Prs2d_Circularity : public Prs2d_Tolerance {
@@ -1839,6 +1897,7 @@ class Prs2d_Circularity : public Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Prs2d_Parallelism;
 class Prs2d_Parallelism : public Prs2d_Tolerance {
 	public:
@@ -1867,6 +1926,7 @@ class Prs2d_Parallelism : public Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Prs2d_DrawSymbol;
 class Prs2d_DrawSymbol : public Graphic2d_Line {
 	public:
@@ -1894,6 +1954,7 @@ class Prs2d_DrawSymbol : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_DrawSymbol\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_AspectText;
 class Prs2d_AspectText : public Prs2d_AspectRoot {
@@ -1949,6 +2010,7 @@ class Prs2d_AspectText : public Prs2d_AspectRoot {
 	}
 };
 
+
 %nodefaultctor Prs2d_Symmetry;
 class Prs2d_Symmetry : public Prs2d_Tolerance {
 	public:
@@ -1976,6 +2038,7 @@ class Prs2d_Symmetry : public Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Symmetry\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_AspectLine;
 class Prs2d_AspectLine : public Prs2d_AspectRoot {
@@ -2045,6 +2108,7 @@ class Prs2d_AspectLine : public Prs2d_AspectRoot {
 	}
 };
 
+
 %nodefaultctor Prs2d_Angle;
 class Prs2d_Angle : public Prs2d_Dimension {
 	public:
@@ -2075,6 +2139,7 @@ class Prs2d_Angle : public Prs2d_Dimension {
 	}
 };
 
+
 %nodefaultctor Prs2d_Repere;
 class Prs2d_Repere : public Prs2d_Dimension {
 	public:
@@ -2102,6 +2167,7 @@ class Prs2d_Repere : public Prs2d_Dimension {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Repere\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_ToleranceFrame;
 class Prs2d_ToleranceFrame : public Graphic2d_Line {
@@ -2151,6 +2217,7 @@ class Prs2d_ToleranceFrame : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Prs2d_Arrow;
 class Prs2d_Arrow : public Graphic2d_Line {
 	public:
@@ -2183,6 +2250,7 @@ class Prs2d_Arrow : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Prs2d_Taper;
 class Prs2d_Taper : public Prs2d_Tolerance {
 	public:
@@ -2210,6 +2278,7 @@ class Prs2d_Taper : public Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Taper\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Drawer;
 class Prs2d_Drawer : public MMgt_TShared {
@@ -2244,6 +2313,7 @@ class Prs2d_Drawer : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Drawer\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_AspectFramedText;
 class Prs2d_AspectFramedText : public Prs2d_AspectRoot {
@@ -2289,6 +2359,7 @@ class Prs2d_AspectFramedText : public Prs2d_AspectRoot {
 	}
 };
 
+
 %nodefaultctor Prs2d_SurfProfile;
 class Prs2d_SurfProfile : public Prs2d_Tolerance {
 	public:
@@ -2317,6 +2388,7 @@ class Prs2d_SurfProfile : public Prs2d_Tolerance {
 	}
 };
 
+
 %nodefaultctor Prs2d_SymTotal;
 class Prs2d_SymTotal : public Prs2d_Tolerance {
 	public:
@@ -2344,6 +2416,7 @@ class Prs2d_SymTotal : public Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_SymTotal\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Length;
 class Prs2d_Length : public Prs2d_Dimension {
@@ -2385,6 +2458,7 @@ class Prs2d_Length : public Prs2d_Dimension {
 	}
 };
 
+
 %nodefaultctor Prs2d_SymbolDefinitionError;
 class Prs2d_SymbolDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2419,6 +2493,7 @@ class Prs2d_SymbolDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Prs2d_Perpendicular;
 class Prs2d_Perpendicular : public Prs2d_Tolerance {
 	public:
@@ -2446,6 +2521,7 @@ class Prs2d_Perpendicular : public Prs2d_Tolerance {
 	if (__env){printf("## Call custom destructor for instance of Prs2d_Perpendicular\n");}
 	}
 };
+
 
 %nodefaultctor Prs2d_Diameter;
 class Prs2d_Diameter : public Prs2d_Dimension {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESSolid_ManifoldSolid : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_SpecificModule;
 class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESSolid_SpecificModule : public Handle_IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_EdgeList;
 class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
@@ -188,6 +191,7 @@ class Handle_IGESSolid_EdgeList : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_ConeFrustum;
 class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESSolid_ConeFrustum : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ConeFrustum\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_HArray1OfFace;
 class Handle_IGESSolid_HArray1OfFace : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_IGESSolid_HArray1OfFace : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_RightAngularWedge;
 class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 	public:
@@ -262,6 +268,7 @@ class Handle_IGESSolid_RightAngularWedge : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_RightAngularWedge\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_CylindricalSurface;
 class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
@@ -288,6 +295,7 @@ class Handle_IGESSolid_CylindricalSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_BooleanTree;
 class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 	public:
@@ -312,6 +320,7 @@ class Handle_IGESSolid_BooleanTree : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_BooleanTree\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_Shell;
 class Handle_IGESSolid_Shell : public Handle_IGESData_IGESEntity {
@@ -338,6 +347,7 @@ class Handle_IGESSolid_Shell : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_SolidInstance;
 class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 	public:
@@ -362,6 +372,7 @@ class Handle_IGESSolid_SolidInstance : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidInstance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_SolidOfRevolution;
 class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
@@ -388,6 +399,7 @@ class Handle_IGESSolid_SolidOfRevolution : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_ConicalSurface;
 class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -412,6 +424,7 @@ class Handle_IGESSolid_ConicalSurface : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_ConicalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_Protocol;
 class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
@@ -438,6 +451,7 @@ class Handle_IGESSolid_Protocol : public Handle_IGESData_Protocol {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_VertexList;
 class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 	public:
@@ -462,6 +476,7 @@ class Handle_IGESSolid_VertexList : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_VertexList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_GeneralModule;
 class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
@@ -488,6 +503,7 @@ class Handle_IGESSolid_GeneralModule : public Handle_IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_HArray1OfLoop;
 class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 	public:
@@ -512,6 +528,7 @@ class Handle_IGESSolid_HArray1OfLoop : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfLoop\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_HArray1OfVertexList;
 class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
@@ -538,6 +555,7 @@ class Handle_IGESSolid_HArray1OfVertexList : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_SphericalSurface;
 class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -562,6 +580,7 @@ class Handle_IGESSolid_SphericalSurface : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SphericalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_Cylinder;
 class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
@@ -588,6 +607,7 @@ class Handle_IGESSolid_Cylinder : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_SolidAssembly;
 class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 	public:
@@ -612,6 +632,7 @@ class Handle_IGESSolid_SolidAssembly : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidAssembly\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_Block;
 class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
@@ -638,6 +659,7 @@ class Handle_IGESSolid_Block : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_Loop;
 class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 	public:
@@ -662,6 +684,7 @@ class Handle_IGESSolid_Loop : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Loop\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_Sphere;
 class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
@@ -688,6 +711,7 @@ class Handle_IGESSolid_Sphere : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_HArray1OfShell;
 class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 	public:
@@ -712,6 +736,7 @@ class Handle_IGESSolid_HArray1OfShell : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_HArray1OfShell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_ToroidalSurface;
 class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
@@ -738,6 +763,7 @@ class Handle_IGESSolid_ToroidalSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_Torus;
 class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 	public:
@@ -762,6 +788,7 @@ class Handle_IGESSolid_Torus : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Torus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_ReadWriteModule;
 class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
@@ -788,6 +815,7 @@ class Handle_IGESSolid_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_Face;
 class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 	public:
@@ -812,6 +840,7 @@ class Handle_IGESSolid_Face : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Face\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_PlaneSurface;
 class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
@@ -838,6 +867,7 @@ class Handle_IGESSolid_PlaneSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_Ellipsoid;
 class Handle_IGESSolid_Ellipsoid : public Handle_IGESData_IGESEntity {
 	public:
@@ -862,6 +892,7 @@ class Handle_IGESSolid_Ellipsoid : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_Ellipsoid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSolid_SelectedComponent;
 class Handle_IGESSolid_SelectedComponent : public Handle_IGESData_IGESEntity {
@@ -888,6 +919,7 @@ class Handle_IGESSolid_SelectedComponent : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSolid_SolidOfLinearExtrusion;
 class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntity {
 	public:
@@ -912,6 +944,7 @@ class Handle_IGESSolid_SolidOfLinearExtrusion : public Handle_IGESData_IGESEntit
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSolid_SolidOfLinearExtrusion\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_SphericalSurface;
 class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
@@ -952,6 +985,7 @@ class IGESSolid_SphericalSurface : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_SphericalSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_SolidOfRevolution;
 class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
@@ -996,6 +1030,7 @@ class IGESSolid_SolidOfRevolution : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidOfRevolution\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_HArray1OfShell;
 class IGESSolid_HArray1OfShell : public MMgt_TShared {
@@ -1043,6 +1078,7 @@ class IGESSolid_HArray1OfShell : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolToroidalSurface;
 class IGESSolid_ToolToroidalSurface {
 	public:
@@ -1070,6 +1106,7 @@ class IGESSolid_ToolToroidalSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolToroidalSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ConeFrustum;
 class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
@@ -1113,6 +1150,7 @@ class IGESSolid_ConeFrustum : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolSolidOfRevolution;
 class IGESSolid_ToolSolidOfRevolution {
 	public:
@@ -1140,6 +1178,7 @@ class IGESSolid_ToolSolidOfRevolution {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidOfRevolution\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_Array1OfShell;
 class IGESSolid_Array1OfShell {
@@ -1181,6 +1220,7 @@ class IGESSolid_Array1OfShell {
 	}
 };
 
+
 %nodefaultctor IGESSolid_SolidAssembly;
 class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 	public:
@@ -1218,6 +1258,7 @@ class IGESSolid_SolidAssembly : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidAssembly\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_CylindricalSurface;
 class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
@@ -1257,6 +1298,7 @@ class IGESSolid_CylindricalSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_SelectedComponent;
 class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 	public:
@@ -1290,6 +1332,7 @@ class IGESSolid_SelectedComponent : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_SelectedComponent\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_BooleanTree;
 class IGESSolid_BooleanTree : public IGESData_IGESEntity {
@@ -1327,6 +1370,7 @@ class IGESSolid_BooleanTree : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolTorus;
 class IGESSolid_ToolTorus {
 	public:
@@ -1355,6 +1399,7 @@ class IGESSolid_ToolTorus {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolConeFrustum;
 class IGESSolid_ToolConeFrustum {
 	public:
@@ -1382,6 +1427,7 @@ class IGESSolid_ToolConeFrustum {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolConeFrustum\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_HArray1OfLoop;
 class IGESSolid_HArray1OfLoop : public MMgt_TShared {
@@ -1429,6 +1475,7 @@ class IGESSolid_HArray1OfLoop : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESSolid_Array1OfLoop;
 class IGESSolid_Array1OfLoop {
 	public:
@@ -1469,6 +1516,7 @@ class IGESSolid_Array1OfLoop {
 	}
 };
 
+
 %nodefaultctor IGESSolid_SolidOfLinearExtrusion;
 class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 	public:
@@ -1504,6 +1552,7 @@ class IGESSolid_SolidOfLinearExtrusion : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_SolidOfLinearExtrusion\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_Shell;
 class IGESSolid_Shell : public IGESData_IGESEntity {
@@ -1543,6 +1592,7 @@ class IGESSolid_Shell : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_SolidInstance;
 class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 	public:
@@ -1577,6 +1627,7 @@ class IGESSolid_SolidInstance : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolSelectedComponent;
 class IGESSolid_ToolSelectedComponent {
 	public:
@@ -1604,6 +1655,7 @@ class IGESSolid_ToolSelectedComponent {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSelectedComponent\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ToolFace;
 class IGESSolid_ToolFace {
@@ -1633,6 +1685,7 @@ class IGESSolid_ToolFace {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolLoop;
 class IGESSolid_ToolLoop {
 	public:
@@ -1660,6 +1713,7 @@ class IGESSolid_ToolLoop {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolLoop\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ToolEllipsoid;
 class IGESSolid_ToolEllipsoid {
@@ -1689,6 +1743,7 @@ class IGESSolid_ToolEllipsoid {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolEdgeList;
 class IGESSolid_ToolEdgeList {
 	public:
@@ -1716,6 +1771,7 @@ class IGESSolid_ToolEdgeList {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolEdgeList\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_Sphere;
 class IGESSolid_Sphere : public IGESData_IGESEntity {
@@ -1751,6 +1807,7 @@ class IGESSolid_Sphere : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolBlock;
 class IGESSolid_ToolBlock {
 	public:
@@ -1778,6 +1835,7 @@ class IGESSolid_ToolBlock {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolBlock\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_Cylinder;
 class IGESSolid_Cylinder : public IGESData_IGESEntity {
@@ -1819,6 +1877,7 @@ class IGESSolid_Cylinder : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolSphericalSurface;
 class IGESSolid_ToolSphericalSurface {
 	public:
@@ -1846,6 +1905,7 @@ class IGESSolid_ToolSphericalSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphericalSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ToolBooleanTree;
 class IGESSolid_ToolBooleanTree {
@@ -1875,6 +1935,7 @@ class IGESSolid_ToolBooleanTree {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolVertexList;
 class IGESSolid_ToolVertexList {
 	public:
@@ -1902,6 +1963,7 @@ class IGESSolid_ToolVertexList {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolVertexList\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_RightAngularWedge;
 class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
@@ -1957,6 +2019,7 @@ class IGESSolid_RightAngularWedge : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolManifoldSolid;
 class IGESSolid_ToolManifoldSolid {
 	public:
@@ -1984,6 +2047,7 @@ class IGESSolid_ToolManifoldSolid {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolManifoldSolid\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ReadWriteModule;
 class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
@@ -2017,6 +2081,7 @@ class IGESSolid_ReadWriteModule : public IGESData_ReadWriteModule {
 	}
 };
 
+
 %nodefaultctor IGESSolid_VertexList;
 class IGESSolid_VertexList : public IGESData_IGESEntity {
 	public:
@@ -2049,6 +2114,7 @@ class IGESSolid_VertexList : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolConicalSurface;
 class IGESSolid_ToolConicalSurface {
 	public:
@@ -2076,6 +2142,7 @@ class IGESSolid_ToolConicalSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolConicalSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ToroidalSurface;
 class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
@@ -2119,6 +2186,7 @@ class IGESSolid_ToroidalSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_Array1OfFace;
 class IGESSolid_Array1OfFace {
 	public:
@@ -2158,6 +2226,7 @@ class IGESSolid_Array1OfFace {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfFace\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_HArray1OfFace;
 class IGESSolid_HArray1OfFace : public MMgt_TShared {
@@ -2205,6 +2274,7 @@ class IGESSolid_HArray1OfFace : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESSolid;
 class IGESSolid {
 	public:
@@ -2222,6 +2292,7 @@ class IGESSolid {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ToolSphere;
 class IGESSolid_ToolSphere {
@@ -2250,6 +2321,7 @@ class IGESSolid_ToolSphere {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSphere\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_PlaneSurface;
 class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
@@ -2286,6 +2358,7 @@ class IGESSolid_PlaneSurface : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_PlaneSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_Array1OfVertexList;
 class IGESSolid_Array1OfVertexList {
@@ -2326,6 +2399,7 @@ class IGESSolid_Array1OfVertexList {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_Array1OfVertexList\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_Ellipsoid;
 class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
@@ -2379,6 +2453,7 @@ class IGESSolid_Ellipsoid : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_Torus;
 class IGESSolid_Torus : public IGESData_IGESEntity {
 	public:
@@ -2419,6 +2494,7 @@ class IGESSolid_Torus : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_Face;
 class IGESSolid_Face : public IGESData_IGESEntity {
 	public:
@@ -2455,6 +2531,7 @@ class IGESSolid_Face : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolRightAngularWedge;
 class IGESSolid_ToolRightAngularWedge {
 	public:
@@ -2482,6 +2559,7 @@ class IGESSolid_ToolRightAngularWedge {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolRightAngularWedge\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_HArray1OfVertexList;
 class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
@@ -2528,6 +2606,7 @@ class IGESSolid_HArray1OfVertexList : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_HArray1OfVertexList\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_Loop;
 class IGESSolid_Loop : public IGESData_IGESEntity {
@@ -2577,6 +2656,7 @@ class IGESSolid_Loop : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolCylindricalSurface;
 class IGESSolid_ToolCylindricalSurface {
 	public:
@@ -2604,6 +2684,7 @@ class IGESSolid_ToolCylindricalSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolCylindricalSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ConicalSurface;
 class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
@@ -2645,6 +2726,7 @@ class IGESSolid_ConicalSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolSolidInstance;
 class IGESSolid_ToolSolidInstance {
 	public:
@@ -2672,6 +2754,7 @@ class IGESSolid_ToolSolidInstance {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidInstance\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ManifoldSolid;
 class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
@@ -2711,6 +2794,7 @@ class IGESSolid_ManifoldSolid : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_SpecificModule;
 class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 	public:
@@ -2738,6 +2822,7 @@ class IGESSolid_SpecificModule : public IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ToolPlaneSurface;
 class IGESSolid_ToolPlaneSurface {
@@ -2767,6 +2852,7 @@ class IGESSolid_ToolPlaneSurface {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolSolidAssembly;
 class IGESSolid_ToolSolidAssembly {
 	public:
@@ -2794,6 +2880,7 @@ class IGESSolid_ToolSolidAssembly {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolSolidAssembly\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_EdgeList;
 class IGESSolid_EdgeList : public IGESData_IGESEntity {
@@ -2835,6 +2922,7 @@ class IGESSolid_EdgeList : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolSolidOfLinearExtrusion;
 class IGESSolid_ToolSolidOfLinearExtrusion {
 	public:
@@ -2863,6 +2951,7 @@ class IGESSolid_ToolSolidOfLinearExtrusion {
 	}
 };
 
+
 %nodefaultctor IGESSolid_ToolCylinder;
 class IGESSolid_ToolCylinder {
 	public:
@@ -2890,6 +2979,7 @@ class IGESSolid_ToolCylinder {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_ToolCylinder\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_GeneralModule;
 class IGESSolid_GeneralModule : public IGESData_GeneralModule {
@@ -2928,6 +3018,7 @@ class IGESSolid_GeneralModule : public IGESData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_GeneralModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_Block;
 class IGESSolid_Block : public IGESData_IGESEntity {
@@ -2980,6 +3071,7 @@ class IGESSolid_Block : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_Block\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_TopoBuilder;
 class IGESSolid_TopoBuilder {
@@ -3042,6 +3134,7 @@ class IGESSolid_TopoBuilder {
 	if (__env){printf("## Call custom destructor for instance of IGESSolid_TopoBuilder\n");}
 	}
 };
+
 
 %nodefaultctor IGESSolid_ToolShell;
 class IGESSolid_ToolShell {

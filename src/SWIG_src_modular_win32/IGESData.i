@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -170,6 +171,7 @@ class Handle_IGESData_IGESEntity : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_FileRecognizer;
 class Handle_IGESData_FileRecognizer : public Handle_Standard_Transient {
 	public:
@@ -194,6 +196,7 @@ class Handle_IGESData_FileRecognizer : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_FileRecognizer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_GeneralModule;
 class Handle_IGESData_GeneralModule : public Handle_Interface_GeneralModule {
@@ -220,6 +223,7 @@ class Handle_IGESData_GeneralModule : public Handle_Interface_GeneralModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_ToolLocation;
 class Handle_IGESData_ToolLocation : public Handle_MMgt_TShared {
 	public:
@@ -244,6 +248,7 @@ class Handle_IGESData_ToolLocation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_ToolLocation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_ColorEntity;
 class Handle_IGESData_ColorEntity : public Handle_IGESData_IGESEntity {
@@ -270,6 +275,7 @@ class Handle_IGESData_ColorEntity : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_UndefinedEntity;
 class Handle_IGESData_UndefinedEntity : public Handle_IGESData_IGESEntity {
 	public:
@@ -294,6 +300,7 @@ class Handle_IGESData_UndefinedEntity : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_UndefinedEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_FreeFormatEntity;
 class Handle_IGESData_FreeFormatEntity : public Handle_IGESData_UndefinedEntity {
@@ -320,6 +327,7 @@ class Handle_IGESData_FreeFormatEntity : public Handle_IGESData_UndefinedEntity 
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_NameEntity;
 class Handle_IGESData_NameEntity : public Handle_IGESData_IGESEntity {
 	public:
@@ -344,6 +352,7 @@ class Handle_IGESData_NameEntity : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_NameEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_SpecificModule;
 class Handle_IGESData_SpecificModule : public Handle_Standard_Transient {
@@ -370,6 +379,7 @@ class Handle_IGESData_SpecificModule : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_DefaultSpecific;
 class Handle_IGESData_DefaultSpecific : public Handle_IGESData_SpecificModule {
 	public:
@@ -394,6 +404,7 @@ class Handle_IGESData_DefaultSpecific : public Handle_IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_DefaultSpecific\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_GlobalNodeOfSpecificLib;
 class Handle_IGESData_GlobalNodeOfSpecificLib : public Handle_Standard_Transient {
@@ -420,6 +431,7 @@ class Handle_IGESData_GlobalNodeOfSpecificLib : public Handle_Standard_Transient
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_LevelListEntity;
 class Handle_IGESData_LevelListEntity : public Handle_IGESData_IGESEntity {
 	public:
@@ -444,6 +456,7 @@ class Handle_IGESData_LevelListEntity : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_LevelListEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_LineFontEntity;
 class Handle_IGESData_LineFontEntity : public Handle_IGESData_IGESEntity {
@@ -470,6 +483,7 @@ class Handle_IGESData_LineFontEntity : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_TransfEntity;
 class Handle_IGESData_TransfEntity : public Handle_IGESData_IGESEntity {
 	public:
@@ -494,6 +508,7 @@ class Handle_IGESData_TransfEntity : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_TransfEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_SingleParentEntity;
 class Handle_IGESData_SingleParentEntity : public Handle_IGESData_IGESEntity {
@@ -520,6 +535,7 @@ class Handle_IGESData_SingleParentEntity : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_NodeOfSpecificLib;
 class Handle_IGESData_NodeOfSpecificLib : public Handle_MMgt_TShared {
 	public:
@@ -544,6 +560,7 @@ class Handle_IGESData_NodeOfSpecificLib : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_NodeOfSpecificLib\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_Protocol;
 class Handle_IGESData_Protocol : public Handle_Interface_Protocol {
@@ -570,6 +587,7 @@ class Handle_IGESData_Protocol : public Handle_Interface_Protocol {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_FileProtocol;
 class Handle_IGESData_FileProtocol : public Handle_IGESData_Protocol {
 	public:
@@ -594,6 +612,7 @@ class Handle_IGESData_FileProtocol : public Handle_IGESData_Protocol {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_FileProtocol\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_GlobalNodeOfWriterLib;
 class Handle_IGESData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
@@ -620,6 +639,7 @@ class Handle_IGESData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_HArray1OfIGESEntity;
 class Handle_IGESData_HArray1OfIGESEntity : public Handle_MMgt_TShared {
 	public:
@@ -644,6 +664,7 @@ class Handle_IGESData_HArray1OfIGESEntity : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_HArray1OfIGESEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_ViewKindEntity;
 class Handle_IGESData_ViewKindEntity : public Handle_IGESData_IGESEntity {
@@ -670,6 +691,7 @@ class Handle_IGESData_ViewKindEntity : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_IGESReaderData;
 class Handle_IGESData_IGESReaderData : public Handle_Interface_FileReaderData {
 	public:
@@ -694,6 +716,7 @@ class Handle_IGESData_IGESReaderData : public Handle_Interface_FileReaderData {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_IGESReaderData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_LabelDisplayEntity;
 class Handle_IGESData_LabelDisplayEntity : public Handle_IGESData_IGESEntity {
@@ -720,6 +743,7 @@ class Handle_IGESData_LabelDisplayEntity : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_DefaultGeneral;
 class Handle_IGESData_DefaultGeneral : public Handle_IGESData_GeneralModule {
 	public:
@@ -744,6 +768,7 @@ class Handle_IGESData_DefaultGeneral : public Handle_IGESData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_DefaultGeneral\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESData_ReadWriteModule;
 class Handle_IGESData_ReadWriteModule : public Handle_Interface_ReaderModule {
@@ -770,6 +795,7 @@ class Handle_IGESData_ReadWriteModule : public Handle_Interface_ReaderModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_NodeOfWriterLib;
 class Handle_IGESData_NodeOfWriterLib : public Handle_MMgt_TShared {
 	public:
@@ -795,6 +821,7 @@ class Handle_IGESData_NodeOfWriterLib : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESData_IGESModel;
 class Handle_IGESData_IGESModel : public Handle_Interface_InterfaceModel {
 	public:
@@ -819,6 +846,7 @@ class Handle_IGESData_IGESModel : public Handle_Interface_InterfaceModel {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESData_IGESModel\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_SpecificModule;
 class IGESData_SpecificModule : public Standard_Transient {
@@ -847,6 +875,7 @@ class IGESData_SpecificModule : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of IGESData_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_ReadWriteModule;
 class IGESData_ReadWriteModule : public Interface_ReaderModule {
@@ -881,6 +910,7 @@ class IGESData_ReadWriteModule : public Interface_ReaderModule {
 	if (__env){printf("## Call custom destructor for instance of IGESData_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_ToolLocation;
 class IGESData_ToolLocation : public MMgt_TShared {
@@ -943,6 +973,7 @@ class IGESData_ToolLocation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESData_ToolLocation\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_IGESEntity;
 class IGESData_IGESEntity : public MMgt_TShared {
@@ -1098,6 +1129,7 @@ class IGESData_IGESEntity : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESData_ColorEntity;
 class IGESData_ColorEntity : public IGESData_IGESEntity {
 	public:
@@ -1122,6 +1154,7 @@ class IGESData_ColorEntity : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESData_IGESDumper;
 class IGESData_IGESDumper {
 	public:
@@ -1143,6 +1176,7 @@ class IGESData_IGESDumper {
 	if (__env){printf("## Call custom destructor for instance of IGESData_IGESDumper\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_NodeOfWriterLib;
 class IGESData_NodeOfWriterLib : public MMgt_TShared {
@@ -1178,6 +1212,7 @@ class IGESData_NodeOfWriterLib : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESData;
 class IGESData {
 	public:
@@ -1195,6 +1230,7 @@ class IGESData {
 	if (__env){printf("## Call custom destructor for instance of IGESData\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_IGESType;
 class IGESData_IGESType {
@@ -1222,6 +1258,7 @@ class IGESData_IGESType {
 	}
 };
 
+
 %nodefaultctor IGESData_TransfEntity;
 class IGESData_TransfEntity : public IGESData_IGESEntity {
 	public:
@@ -1247,6 +1284,7 @@ class IGESData_TransfEntity : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESData_TransfEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_DirPart;
 class IGESData_DirPart {
@@ -1277,6 +1315,7 @@ class IGESData_DirPart {
 	if (__env){printf("## Call custom destructor for instance of IGESData_DirPart\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_Array1OfIGESEntity;
 class IGESData_Array1OfIGESEntity {
@@ -1317,6 +1356,7 @@ class IGESData_Array1OfIGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESData_Array1OfIGESEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_UndefinedEntity;
 class IGESData_UndefinedEntity : public IGESData_IGESEntity {
@@ -1372,6 +1412,7 @@ class IGESData_UndefinedEntity : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESData_IGESReaderTool;
 class IGESData_IGESReaderTool : public Interface_FileReaderTool {
 	public:
@@ -1403,6 +1444,7 @@ class IGESData_IGESReaderTool : public Interface_FileReaderTool {
 	if (__env){printf("## Call custom destructor for instance of IGESData_IGESReaderTool\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_Array1OfDirPart;
 class IGESData_Array1OfDirPart {
@@ -1443,6 +1485,7 @@ class IGESData_Array1OfDirPart {
 	if (__env){printf("## Call custom destructor for instance of IGESData_Array1OfDirPart\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_HArray1OfIGESEntity;
 class IGESData_HArray1OfIGESEntity : public MMgt_TShared {
@@ -1490,6 +1533,7 @@ class IGESData_HArray1OfIGESEntity : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESData_FileProtocol;
 class IGESData_FileProtocol : public IGESData_Protocol {
 	public:
@@ -1522,6 +1566,7 @@ class IGESData_FileProtocol : public IGESData_Protocol {
 	}
 };
 
+
 %nodefaultctor IGESData_DefaultSpecific;
 class IGESData_DefaultSpecific : public IGESData_SpecificModule {
 	public:
@@ -1549,6 +1594,7 @@ class IGESData_DefaultSpecific : public IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of IGESData_DefaultSpecific\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_NodeOfSpecificLib;
 class IGESData_NodeOfSpecificLib : public MMgt_TShared {
@@ -1584,6 +1630,7 @@ class IGESData_NodeOfSpecificLib : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESData_GlobalNodeOfSpecificLib;
 class IGESData_GlobalNodeOfSpecificLib : public Standard_Transient {
 	public:
@@ -1618,6 +1665,7 @@ class IGESData_GlobalNodeOfSpecificLib : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor IGESData_NameEntity;
 class IGESData_NameEntity : public IGESData_IGESEntity {
 	public:
@@ -1643,6 +1691,7 @@ class IGESData_NameEntity : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESData_NameEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_WriterLib;
 class IGESData_WriterLib {
@@ -1680,6 +1729,7 @@ class IGESData_WriterLib {
 	}
 };
 
+
 %nodefaultctor IGESData_SpecificLib;
 class IGESData_SpecificLib {
 	public:
@@ -1715,6 +1765,7 @@ class IGESData_SpecificLib {
 	if (__env){printf("## Call custom destructor for instance of IGESData_SpecificLib\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_FreeFormatEntity;
 class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
@@ -1776,6 +1827,7 @@ class IGESData_FreeFormatEntity : public IGESData_UndefinedEntity {
 	}
 };
 
+
 %nodefaultctor IGESData_GeneralModule;
 class IGESData_GeneralModule : public Interface_GeneralModule {
 	public:
@@ -1831,6 +1883,7 @@ class IGESData_GeneralModule : public Interface_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of IGESData_GeneralModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_IGESModel;
 class IGESData_IGESModel : public Interface_InterfaceModel {
@@ -1902,6 +1955,7 @@ class IGESData_IGESModel : public Interface_InterfaceModel {
 	}
 };
 
+
 %nodefaultctor IGESData_FileRecognizer;
 class IGESData_FileRecognizer : public Standard_Transient {
 	public:
@@ -1931,6 +1985,7 @@ class IGESData_FileRecognizer : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of IGESData_FileRecognizer\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_ParamReader;
 class IGESData_ParamReader {
@@ -2062,6 +2117,7 @@ class IGESData_ParamReader {
 	}
 };
 
+
 %nodefaultctor IGESData_LevelListEntity;
 class IGESData_LevelListEntity : public IGESData_IGESEntity {
 	public:
@@ -2091,6 +2147,7 @@ class IGESData_LevelListEntity : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESData_LevelListEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_ParamCursor;
 class IGESData_ParamCursor {
@@ -2132,6 +2189,7 @@ class IGESData_ParamCursor {
 	}
 };
 
+
 %nodefaultctor IGESData_ViewKindEntity;
 class IGESData_ViewKindEntity : public IGESData_IGESEntity {
 	public:
@@ -2161,6 +2219,7 @@ class IGESData_ViewKindEntity : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESData_ViewKindEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_IGESWriter;
 class IGESData_IGESWriter {
@@ -2228,6 +2287,7 @@ class IGESData_IGESWriter {
 	}
 };
 
+
 %nodefaultctor IGESData_DefaultGeneral;
 class IGESData_DefaultGeneral : public IGESData_GeneralModule {
 	public:
@@ -2263,6 +2323,7 @@ class IGESData_DefaultGeneral : public IGESData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of IGESData_DefaultGeneral\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_DirChecker;
 class IGESData_DirChecker {
@@ -2320,6 +2381,7 @@ class IGESData_DirChecker {
 	}
 };
 
+
 %nodefaultctor IGESData_DefSwitch;
 class IGESData_DefSwitch {
 	public:
@@ -2348,6 +2410,7 @@ class IGESData_DefSwitch {
 	}
 };
 
+
 %nodefaultctor IGESData_LineFontEntity;
 class IGESData_LineFontEntity : public IGESData_IGESEntity {
 	public:
@@ -2373,6 +2436,7 @@ class IGESData_LineFontEntity : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESData_LineFontEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_GlobalSection;
 class IGESData_GlobalSection {
@@ -2518,6 +2582,7 @@ class IGESData_GlobalSection {
 	}
 };
 
+
 %nodefaultctor IGESData_IGESReaderData;
 class IGESData_IGESReaderData : public Interface_FileReaderData {
 	public:
@@ -2572,6 +2637,7 @@ class IGESData_IGESReaderData : public Interface_FileReaderData {
 	}
 };
 
+
 %nodefaultctor IGESData_GlobalNodeOfWriterLib;
 class IGESData_GlobalNodeOfWriterLib : public Standard_Transient {
 	public:
@@ -2605,6 +2671,7 @@ class IGESData_GlobalNodeOfWriterLib : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of IGESData_GlobalNodeOfWriterLib\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_BasicEditor;
 class IGESData_BasicEditor {
@@ -2652,6 +2719,7 @@ class IGESData_BasicEditor {
 	}
 };
 
+
 %nodefaultctor IGESData_SingleParentEntity;
 class IGESData_SingleParentEntity : public IGESData_IGESEntity {
 	public:
@@ -2681,6 +2749,7 @@ class IGESData_SingleParentEntity : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESData_SingleParentEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESData_LabelDisplayEntity;
 class IGESData_LabelDisplayEntity : public IGESData_IGESEntity {

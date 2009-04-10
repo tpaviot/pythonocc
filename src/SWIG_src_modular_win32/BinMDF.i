@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BinMDF_ADriver : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BinMDF_TagSourceDriver;
 class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_BinMDF_TagSourceDriver : public Handle_BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_TagSourceDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinMDF_DataMapNodeOfTypeADriverMap;
 class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_BinMDF_DataMapNodeOfTypeADriverMap : public Handle_TCollection_MapN
 	}
 };
 
+
 %nodefaultctor Handle_BinMDF_ReferenceDriver;
 class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_BinMDF_ReferenceDriver : public Handle_BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ReferenceDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinMDF_DoubleMapNodeOfTypeIdMap;
 class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode {
@@ -238,6 +243,7 @@ class Handle_BinMDF_DoubleMapNodeOfTypeIdMap : public Handle_TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor Handle_BinMDF_DataMapNodeOfStringIdMap;
 class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode {
 	public:
@@ -263,6 +269,7 @@ class Handle_BinMDF_DataMapNodeOfStringIdMap : public Handle_TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor Handle_BinMDF_ADriverTable;
 class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 	public:
@@ -287,6 +294,7 @@ class Handle_BinMDF_ADriverTable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMDF_ADriverTable\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF_ADriverTable;
 class BinMDF_ADriverTable : public MMgt_TShared {
@@ -324,6 +332,7 @@ class BinMDF_ADriverTable : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BinMDF_ADriver;
 class BinMDF_ADriver : public MMgt_TShared {
 	public:
@@ -360,6 +369,7 @@ class BinMDF_ADriver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BinMDF_DataMapIteratorOfStringIdMap;
 class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator {
 	public:
@@ -381,6 +391,7 @@ class BinMDF_DataMapIteratorOfStringIdMap : public TCollection_BasicMapIterator 
 	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfStringIdMap\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF_DataMapNodeOfTypeADriverMap;
 class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
@@ -411,6 +422,7 @@ class BinMDF_DataMapNodeOfTypeADriverMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfTypeADriverMap\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF_DoubleMapNodeOfTypeIdMap;
 class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
@@ -444,6 +456,7 @@ class BinMDF_DoubleMapNodeOfTypeIdMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BinMDF_DataMapNodeOfStringIdMap;
 class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
 	public:
@@ -473,6 +486,7 @@ class BinMDF_DataMapNodeOfStringIdMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapNodeOfStringIdMap\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF_TagSourceDriver;
 class BinMDF_TagSourceDriver : public BinMDF_ADriver {
@@ -505,6 +519,7 @@ class BinMDF_TagSourceDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMDF_TagSourceDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF_StringIdMap;
 class BinMDF_StringIdMap : public TCollection_BasicMap {
@@ -540,6 +555,7 @@ class BinMDF_StringIdMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BinMDF_DoubleMapIteratorOfTypeIdMap;
 class BinMDF_DoubleMapIteratorOfTypeIdMap : public TCollection_BasicMapIterator {
 	public:
@@ -561,6 +577,7 @@ class BinMDF_DoubleMapIteratorOfTypeIdMap : public TCollection_BasicMapIterator 
 	if (__env){printf("## Call custom destructor for instance of BinMDF_DoubleMapIteratorOfTypeIdMap\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF_ReferenceDriver;
 class BinMDF_ReferenceDriver : public BinMDF_ADriver {
@@ -593,6 +610,7 @@ class BinMDF_ReferenceDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMDF_ReferenceDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF_TypeADriverMap;
 class BinMDF_TypeADriverMap : public TCollection_BasicMap {
@@ -628,6 +646,7 @@ class BinMDF_TypeADriverMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BinMDF_DataMapIteratorOfTypeADriverMap;
 class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterator {
 	public:
@@ -649,6 +668,7 @@ class BinMDF_DataMapIteratorOfTypeADriverMap : public TCollection_BasicMapIterat
 	if (__env){printf("## Call custom destructor for instance of BinMDF_DataMapIteratorOfTypeADriverMap\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF_TypeIdMap;
 class BinMDF_TypeIdMap : public TCollection_BasicMap {
@@ -685,6 +705,7 @@ class BinMDF_TypeIdMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BinMDF_TypeIdMap\n");}
 	}
 };
+
 
 %nodefaultctor BinMDF;
 class BinMDF {

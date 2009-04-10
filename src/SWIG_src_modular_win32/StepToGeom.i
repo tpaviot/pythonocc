@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -129,6 +130,7 @@ class StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeEllipse2d;
 class StepToGeom_MakeEllipse2d : public StepToGeom_Root {
 	public:
@@ -144,6 +146,7 @@ class StepToGeom_MakeEllipse2d : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeEllipse2d\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeTrimmedCurve2d;
 class StepToGeom_MakeTrimmedCurve2d : public StepToGeom_Root {
@@ -161,6 +164,7 @@ class StepToGeom_MakeTrimmedCurve2d : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeDirection;
 class StepToGeom_MakeDirection : public StepToGeom_Root {
 	public:
@@ -176,6 +180,7 @@ class StepToGeom_MakeDirection : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeDirection\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeAxis1Placement;
 class StepToGeom_MakeAxis1Placement : public StepToGeom_Root {
@@ -193,6 +198,7 @@ class StepToGeom_MakeAxis1Placement : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakePolyline;
 class StepToGeom_MakePolyline : public StepToGeom_Root {
 	public:
@@ -208,6 +214,7 @@ class StepToGeom_MakePolyline : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakePolyline\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakePolyline2d;
 class StepToGeom_MakePolyline2d : public StepToGeom_Root {
@@ -225,6 +232,7 @@ class StepToGeom_MakePolyline2d : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeConic;
 class StepToGeom_MakeConic : public StepToGeom_Root {
 	public:
@@ -240,6 +248,7 @@ class StepToGeom_MakeConic : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConic\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeEllipse;
 class StepToGeom_MakeEllipse : public StepToGeom_Root {
@@ -257,6 +266,7 @@ class StepToGeom_MakeEllipse : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeToroidalSurface;
 class StepToGeom_MakeToroidalSurface : public StepToGeom_Root {
 	public:
@@ -272,6 +282,7 @@ class StepToGeom_MakeToroidalSurface : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeToroidalSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeBoundedCurve;
 class StepToGeom_MakeBoundedCurve : public StepToGeom_Root {
@@ -289,6 +300,7 @@ class StepToGeom_MakeBoundedCurve : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeBoundedCurve2d;
 class StepToGeom_MakeBoundedCurve2d : public StepToGeom_Root {
 	public:
@@ -304,6 +316,7 @@ class StepToGeom_MakeBoundedCurve2d : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBoundedCurve2d\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeSurface;
 class StepToGeom_MakeSurface : public StepToGeom_Root {
@@ -321,6 +334,7 @@ class StepToGeom_MakeSurface : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeElementarySurface;
 class StepToGeom_MakeElementarySurface : public StepToGeom_Root {
 	public:
@@ -336,6 +350,7 @@ class StepToGeom_MakeElementarySurface : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeElementarySurface\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeHyperbola;
 class StepToGeom_MakeHyperbola : public StepToGeom_Root {
@@ -353,6 +368,7 @@ class StepToGeom_MakeHyperbola : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeConicalSurface;
 class StepToGeom_MakeConicalSurface : public StepToGeom_Root {
 	public:
@@ -368,6 +384,7 @@ class StepToGeom_MakeConicalSurface : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeConicalSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeBoundedSurface;
 class StepToGeom_MakeBoundedSurface : public StepToGeom_Root {
@@ -385,6 +402,7 @@ class StepToGeom_MakeBoundedSurface : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeVectorWithMagnitude2d;
 class StepToGeom_MakeVectorWithMagnitude2d : public StepToGeom_Root {
 	public:
@@ -400,6 +418,7 @@ class StepToGeom_MakeVectorWithMagnitude2d : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude2d\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeConic2d;
 class StepToGeom_MakeConic2d : public StepToGeom_Root {
@@ -417,6 +436,7 @@ class StepToGeom_MakeConic2d : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeBSplineSurface;
 class StepToGeom_MakeBSplineSurface : public StepToGeom_Root {
 	public:
@@ -432,6 +452,7 @@ class StepToGeom_MakeBSplineSurface : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeSweptSurface;
 class StepToGeom_MakeSweptSurface : public StepToGeom_Root {
@@ -449,6 +470,7 @@ class StepToGeom_MakeSweptSurface : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeCartesianPoint2d;
 class StepToGeom_MakeCartesianPoint2d : public StepToGeom_Root {
 	public:
@@ -464,6 +486,7 @@ class StepToGeom_MakeCartesianPoint2d : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCartesianPoint2d\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakePlane;
 class StepToGeom_MakePlane : public StepToGeom_Root {
@@ -481,6 +504,7 @@ class StepToGeom_MakePlane : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeCircle2d;
 class StepToGeom_MakeCircle2d : public StepToGeom_Root {
 	public:
@@ -496,6 +520,7 @@ class StepToGeom_MakeCircle2d : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCircle2d\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeLine;
 class StepToGeom_MakeLine : public StepToGeom_Root {
@@ -513,6 +538,7 @@ class StepToGeom_MakeLine : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeLine2d;
 class StepToGeom_MakeLine2d : public StepToGeom_Root {
 	public:
@@ -528,6 +554,7 @@ class StepToGeom_MakeLine2d : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeLine2d\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeParabola2d;
 class StepToGeom_MakeParabola2d : public StepToGeom_Root {
@@ -545,6 +572,7 @@ class StepToGeom_MakeParabola2d : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeAxisPlacement;
 class StepToGeom_MakeAxisPlacement : public StepToGeom_Root {
 	public:
@@ -560,6 +588,7 @@ class StepToGeom_MakeAxisPlacement : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeAxisPlacement\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeParabola;
 class StepToGeom_MakeParabola : public StepToGeom_Root {
@@ -577,6 +606,7 @@ class StepToGeom_MakeParabola : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeTrimmedCurve;
 class StepToGeom_MakeTrimmedCurve : public StepToGeom_Root {
 	public:
@@ -592,6 +622,7 @@ class StepToGeom_MakeTrimmedCurve : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTrimmedCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeSurfaceOfRevolution;
 class StepToGeom_MakeSurfaceOfRevolution : public StepToGeom_Root {
@@ -609,6 +640,7 @@ class StepToGeom_MakeSurfaceOfRevolution : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeCartesianPoint;
 class StepToGeom_MakeCartesianPoint : public StepToGeom_Root {
 	public:
@@ -624,6 +656,7 @@ class StepToGeom_MakeCartesianPoint : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCartesianPoint\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeHyperbola2d;
 class StepToGeom_MakeHyperbola2d : public StepToGeom_Root {
@@ -641,6 +674,7 @@ class StepToGeom_MakeHyperbola2d : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeVectorWithMagnitude;
 class StepToGeom_MakeVectorWithMagnitude : public StepToGeom_Root {
 	public:
@@ -656,6 +690,7 @@ class StepToGeom_MakeVectorWithMagnitude : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeVectorWithMagnitude\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeBSplineCurve2d;
 class StepToGeom_MakeBSplineCurve2d : public StepToGeom_Root {
@@ -673,6 +708,7 @@ class StepToGeom_MakeBSplineCurve2d : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeSphericalSurface;
 class StepToGeom_MakeSphericalSurface : public StepToGeom_Root {
 	public:
@@ -688,6 +724,7 @@ class StepToGeom_MakeSphericalSurface : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSphericalSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeCurve;
 class StepToGeom_MakeCurve : public StepToGeom_Root {
@@ -705,6 +742,7 @@ class StepToGeom_MakeCurve : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeTransformation2d;
 class StepToGeom_MakeTransformation2d : public StepToGeom_Root {
 	public:
@@ -720,6 +758,7 @@ class StepToGeom_MakeTransformation2d : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeTransformation2d\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeTransformation3d;
 class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
@@ -737,6 +776,7 @@ class StepToGeom_MakeTransformation3d : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeBSplineCurve;
 class StepToGeom_MakeBSplineCurve : public StepToGeom_Root {
 	public:
@@ -752,6 +792,7 @@ class StepToGeom_MakeBSplineCurve : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeRectangularTrimmedSurface;
 class StepToGeom_MakeRectangularTrimmedSurface : public StepToGeom_Root {
@@ -769,6 +810,7 @@ class StepToGeom_MakeRectangularTrimmedSurface : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeCircle;
 class StepToGeom_MakeCircle : public StepToGeom_Root {
 	public:
@@ -784,6 +826,7 @@ class StepToGeom_MakeCircle : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCircle\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeAxis2Placement;
 class StepToGeom_MakeAxis2Placement : public StepToGeom_Root {
@@ -801,6 +844,7 @@ class StepToGeom_MakeAxis2Placement : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeCurve2d;
 class StepToGeom_MakeCurve2d : public StepToGeom_Root {
 	public:
@@ -816,6 +860,7 @@ class StepToGeom_MakeCurve2d : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeCurve2d\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeCylindricalSurface;
 class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
@@ -833,6 +878,7 @@ class StepToGeom_MakeCylindricalSurface : public StepToGeom_Root {
 	}
 };
 
+
 %nodefaultctor StepToGeom_MakeSurfaceOfLinearExtrusion;
 class StepToGeom_MakeSurfaceOfLinearExtrusion : public StepToGeom_Root {
 	public:
@@ -848,6 +894,7 @@ class StepToGeom_MakeSurfaceOfLinearExtrusion : public StepToGeom_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToGeom_MakeSurfaceOfLinearExtrusion\n");}
 	}
 };
+
 
 %nodefaultctor StepToGeom_MakeDirection2d;
 class StepToGeom_MakeDirection2d : public StepToGeom_Root {

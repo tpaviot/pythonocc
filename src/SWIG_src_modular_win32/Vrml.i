@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -220,6 +221,7 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_LOD;
 class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	public:
@@ -244,6 +246,7 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_LOD\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Vrml_Coordinate3;
 class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
@@ -270,6 +273,7 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_SFImage;
 class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 	public:
@@ -294,6 +298,7 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_SFImage\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Vrml_Normal;
 class Handle_Vrml_Normal : public Handle_MMgt_TShared {
@@ -320,6 +325,7 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_Material;
 class Handle_Vrml_Material : public Handle_MMgt_TShared {
 	public:
@@ -344,6 +350,7 @@ class Handle_Vrml_Material : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Material\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Vrml_IndexedLineSet;
 class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
@@ -370,6 +377,7 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_IndexedFaceSet;
 class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 	public:
@@ -395,6 +403,7 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_TextureCoordinate2;
 class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 	public:
@@ -419,6 +428,7 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_TextureCoordinate2\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_WWWInline;
 class Vrml_WWWInline {
@@ -450,6 +460,7 @@ class Vrml_WWWInline {
 	}
 };
 
+
 %nodefaultctor Vrml_Switch;
 class Vrml_Switch {
 	public:
@@ -469,6 +480,7 @@ class Vrml_Switch {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Switch\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_MaterialBinding;
 class Vrml_MaterialBinding {
@@ -492,6 +504,7 @@ class Vrml_MaterialBinding {
 	}
 };
 
+
 %nodefaultctor Vrml_TransformSeparator;
 class Vrml_TransformSeparator {
 	public:
@@ -507,6 +520,7 @@ class Vrml_TransformSeparator {
 	if (__env){printf("## Call custom destructor for instance of Vrml_TransformSeparator\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_FontStyle;
 class Vrml_FontStyle {
@@ -535,6 +549,7 @@ class Vrml_FontStyle {
 	if (__env){printf("## Call custom destructor for instance of Vrml_FontStyle\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_PointLight;
 class Vrml_PointLight {
@@ -570,6 +585,7 @@ class Vrml_PointLight {
 	}
 };
 
+
 %nodefaultctor Vrml_Instancing;
 class Vrml_Instancing {
 	public:
@@ -587,6 +603,7 @@ class Vrml_Instancing {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Instancing\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Sphere;
 class Vrml_Sphere {
@@ -607,6 +624,7 @@ class Vrml_Sphere {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Sphere\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_SpotLight;
 class Vrml_SpotLight {
@@ -654,6 +672,7 @@ class Vrml_SpotLight {
 	}
 };
 
+
 %nodefaultctor Vrml_AsciiText;
 class Vrml_AsciiText : public MMgt_TShared {
 	public:
@@ -699,6 +718,7 @@ class Vrml_AsciiText : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Vrml_AsciiText\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_IndexedLineSet;
 class Vrml_IndexedLineSet : public MMgt_TShared {
@@ -746,6 +766,7 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_Texture2;
 class Vrml_Texture2 {
 	public:
@@ -779,6 +800,7 @@ class Vrml_Texture2 {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Texture2\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_SFImage;
 class Vrml_SFImage : public MMgt_TShared {
@@ -826,6 +848,7 @@ class Vrml_SFImage : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_PerspectiveCamera;
 class Vrml_PerspectiveCamera {
 	public:
@@ -860,6 +883,7 @@ class Vrml_PerspectiveCamera {
 	}
 };
 
+
 %nodefaultctor Vrml_Rotation;
 class Vrml_Rotation {
 	public:
@@ -882,6 +906,7 @@ class Vrml_Rotation {
 	}
 };
 
+
 %nodefaultctor Vrml_NormalBinding;
 class Vrml_NormalBinding {
 	public:
@@ -903,6 +928,7 @@ class Vrml_NormalBinding {
 	if (__env){printf("## Call custom destructor for instance of Vrml_NormalBinding\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Normal;
 class Vrml_Normal : public MMgt_TShared {
@@ -938,6 +964,7 @@ class Vrml_Normal : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_Texture2Transform;
 class Vrml_Texture2Transform {
 	public:
@@ -971,6 +998,7 @@ class Vrml_Texture2Transform {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Texture2Transform\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Transform;
 class Vrml_Transform {
@@ -1010,6 +1038,7 @@ class Vrml_Transform {
 	}
 };
 
+
 %nodefaultctor Vrml_Coordinate3;
 class Vrml_Coordinate3 : public MMgt_TShared {
 	public:
@@ -1044,6 +1073,7 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_Cylinder;
 class Vrml_Cylinder {
 	public:
@@ -1071,6 +1101,7 @@ class Vrml_Cylinder {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Cylinder\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_OrthographicCamera;
 class Vrml_OrthographicCamera {
@@ -1105,6 +1136,7 @@ class Vrml_OrthographicCamera {
 	if (__env){printf("## Call custom destructor for instance of Vrml_OrthographicCamera\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_LOD;
 class Vrml_LOD : public MMgt_TShared {
@@ -1144,6 +1176,7 @@ class Vrml_LOD : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_Cone;
 class Vrml_Cone {
 	public:
@@ -1172,6 +1205,7 @@ class Vrml_Cone {
 	}
 };
 
+
 %nodefaultctor Vrml;
 class Vrml {
 	public:
@@ -1189,6 +1223,7 @@ class Vrml {
 	if (__env){printf("## Call custom destructor for instance of Vrml\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Info;
 class Vrml_Info {
@@ -1209,6 +1244,7 @@ class Vrml_Info {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Info\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Cube;
 class Vrml_Cube {
@@ -1238,6 +1274,7 @@ class Vrml_Cube {
 	}
 };
 
+
 %nodefaultctor Vrml_MatrixTransform;
 class Vrml_MatrixTransform {
 	public:
@@ -1259,6 +1296,7 @@ class Vrml_MatrixTransform {
 	if (__env){printf("## Call custom destructor for instance of Vrml_MatrixTransform\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_DirectionalLight;
 class Vrml_DirectionalLight {
@@ -1294,6 +1332,7 @@ class Vrml_DirectionalLight {
 	}
 };
 
+
 %nodefaultctor Vrml_WWWAnchor;
 class Vrml_WWWAnchor {
 	public:
@@ -1321,6 +1360,7 @@ class Vrml_WWWAnchor {
 	if (__env){printf("## Call custom destructor for instance of Vrml_WWWAnchor\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Material;
 class Vrml_Material : public MMgt_TShared {
@@ -1376,6 +1416,7 @@ class Vrml_Material : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_ShapeHints;
 class Vrml_ShapeHints {
 	public:
@@ -1408,6 +1449,7 @@ class Vrml_ShapeHints {
 	}
 };
 
+
 %nodefaultctor Vrml_Scale;
 class Vrml_Scale {
 	public:
@@ -1429,6 +1471,7 @@ class Vrml_Scale {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Scale\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_PointSet;
 class Vrml_PointSet {
@@ -1454,6 +1497,7 @@ class Vrml_PointSet {
 	}
 };
 
+
 %nodefaultctor Vrml_Separator;
 class Vrml_Separator {
 	public:
@@ -1476,6 +1520,7 @@ class Vrml_Separator {
 	}
 };
 
+
 %nodefaultctor Vrml_Translation;
 class Vrml_Translation {
 	public:
@@ -1497,6 +1542,7 @@ class Vrml_Translation {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Translation\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_SFRotation;
 class Vrml_SFRotation {
@@ -1530,6 +1576,7 @@ class Vrml_SFRotation {
 	}
 };
 
+
 %nodefaultctor Vrml_Group;
 class Vrml_Group {
 	public:
@@ -1545,6 +1592,7 @@ class Vrml_Group {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Group\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_TextureCoordinate2;
 class Vrml_TextureCoordinate2 : public MMgt_TShared {
@@ -1579,6 +1627,7 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Vrml_TextureCoordinate2\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_IndexedFaceSet;
 class Vrml_IndexedFaceSet : public MMgt_TShared {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_ShapeAnalysis_FreeBoundData;
 class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 	public:
@@ -163,6 +165,7 @@ class Handle_ShapeAnalysis_FreeBoundData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_FreeBoundData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeAnalysis_Wire;
 class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
@@ -189,6 +192,7 @@ class Handle_ShapeAnalysis_Wire : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeAnalysis_TransferParameters;
 class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 	public:
@@ -213,6 +217,7 @@ class Handle_ShapeAnalysis_TransferParameters : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_TransferParameters\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeAnalysis_TransferParametersProj;
 class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_TransferParameters {
@@ -239,6 +244,7 @@ class Handle_ShapeAnalysis_TransferParametersProj : public Handle_ShapeAnalysis_
 	}
 };
 
+
 %nodefaultctor Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal;
 class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -263,6 +269,7 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public Handle
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeAnalysis_HSequenceOfFreeBounds;
 class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
@@ -289,6 +296,7 @@ class Handle_ShapeAnalysis_HSequenceOfFreeBounds : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal;
 class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
@@ -314,6 +322,7 @@ class Handle_ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_ShapeAnalysis_Surface;
 class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 	public:
@@ -338,6 +347,7 @@ class Handle_ShapeAnalysis_Surface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAnalysis_Surface\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal;
 class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
@@ -369,6 +379,7 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_ShapeTolerance;
 class ShapeAnalysis_ShapeTolerance {
 	public:
@@ -394,6 +405,7 @@ class ShapeAnalysis_ShapeTolerance {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_ShapeTolerance\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_FreeBounds;
 class ShapeAnalysis_FreeBounds {
@@ -427,6 +439,7 @@ class ShapeAnalysis_FreeBounds {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis;
 class ShapeAnalysis {
 	public:
@@ -456,6 +469,7 @@ class ShapeAnalysis {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_TransferParameters;
 class ShapeAnalysis_TransferParameters : public MMgt_TShared {
@@ -496,6 +510,7 @@ class ShapeAnalysis_TransferParameters : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_TransferParameters\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_ShapeContents;
 class ShapeAnalysis_ShapeContents {
@@ -607,6 +622,7 @@ class ShapeAnalysis_ShapeContents {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_Curve;
 class ShapeAnalysis_Curve {
 	public:
@@ -652,6 +668,7 @@ class ShapeAnalysis_Curve {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Curve\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_Edge;
 class ShapeAnalysis_Edge {
@@ -717,6 +734,7 @@ class ShapeAnalysis_Edge {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_DataMapOfShapeReal;
 class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 	public:
@@ -751,6 +769,7 @@ class ShapeAnalysis_DataMapOfShapeReal : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal;
 class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_MapNode {
 	public:
@@ -781,6 +800,7 @@ class ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal : public TCollection_M
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal;
 class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
@@ -802,6 +822,7 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal : public TCollection_Bas
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_DataMapIteratorOfDataMapOfShapeReal\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_FreeBoundData;
 class ShapeAnalysis_FreeBoundData : public MMgt_TShared {
@@ -864,6 +885,7 @@ class ShapeAnalysis_FreeBoundData : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_FreeBoundData\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_HSequenceOfFreeBounds;
 class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
@@ -935,6 +957,7 @@ class ShapeAnalysis_HSequenceOfFreeBounds : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_DataMapOfShapeListOfReal;
 class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 	public:
@@ -968,6 +991,7 @@ class ShapeAnalysis_DataMapOfShapeListOfReal : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_DataMapOfShapeListOfReal\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_CheckSmallFace;
 class ShapeAnalysis_CheckSmallFace {
@@ -1027,6 +1051,7 @@ class ShapeAnalysis_CheckSmallFace {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds;
 class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqNode {
 	public:
@@ -1054,6 +1079,7 @@ class ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds : public TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_SequenceOfFreeBounds;
 class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
@@ -1108,6 +1134,7 @@ class ShapeAnalysis_SequenceOfFreeBounds : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_SequenceOfFreeBounds\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_WireOrder;
 class ShapeAnalysis_WireOrder {
@@ -1165,6 +1192,7 @@ class ShapeAnalysis_WireOrder {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_TransferParametersProj;
 class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParameters {
 	public:
@@ -1208,6 +1236,7 @@ class ShapeAnalysis_TransferParametersProj : public ShapeAnalysis_TransferParame
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_TransferParametersProj\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_Wire;
 class ShapeAnalysis_Wire : public MMgt_TShared {
@@ -1377,6 +1406,7 @@ class ShapeAnalysis_Wire : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_WireVertex;
 class ShapeAnalysis_WireVertex {
 	public:
@@ -1439,6 +1469,7 @@ class ShapeAnalysis_WireVertex {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal;
 class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollection_BasicMapIterator {
 	public:
@@ -1461,6 +1492,7 @@ class ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal : public TCollecti
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_Geom;
 class ShapeAnalysis_Geom {
 	public:
@@ -1478,6 +1510,7 @@ class ShapeAnalysis_Geom {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Geom\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_Surface;
 class ShapeAnalysis_Surface : public MMgt_TShared {
@@ -1569,6 +1602,7 @@ class ShapeAnalysis_Surface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeAnalysis_Shell;
 class ShapeAnalysis_Shell {
 	public:
@@ -1604,6 +1638,7 @@ class ShapeAnalysis_Shell {
 	if (__env){printf("## Call custom destructor for instance of ShapeAnalysis_Shell\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAnalysis_FreeBoundsProperties;
 class ShapeAnalysis_FreeBoundsProperties {

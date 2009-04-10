@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PColStd_HSingleListOfReal : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_HArray1OfExtendedString;
 class Handle_PColStd_HArray1OfExtendedString : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PColStd_HArray1OfExtendedString : public Handle_Standard_Persistent
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HDoubleListOfInteger;
 class Handle_PColStd_HDoubleListOfInteger : public Handle_PMMgt_PManaged {
@@ -188,6 +191,7 @@ class Handle_PColStd_HDoubleListOfInteger : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent;
 class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public Handle_PStandard_ArrayNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public Handle_PSta
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HArray2OfPersistent;
 class Handle_PColStd_HArray2OfPersistent : public Handle_Standard_Persistent {
@@ -238,6 +243,7 @@ class Handle_PColStd_HArray2OfPersistent : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal;
 class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal : public Handle_PStandard_ArrayNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal : public Handle_PStandard_
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HDoubleListOfReal;
 class Handle_PColStd_HDoubleListOfReal : public Handle_PMMgt_PManaged {
@@ -288,6 +295,7 @@ class Handle_PColStd_HDoubleListOfReal : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfInteger;
 class Handle_PColStd_SeqNodeOfHSequenceOfInteger : public Handle_PMMgt_PManaged {
 	public:
@@ -312,6 +320,7 @@ class Handle_PColStd_SeqNodeOfHSequenceOfInteger : public Handle_PMMgt_PManaged 
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HSequenceOfReal;
 class Handle_PColStd_HSequenceOfReal : public Handle_Standard_Persistent {
@@ -338,6 +347,7 @@ class Handle_PColStd_HSequenceOfReal : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_HSequenceOfHAsciiString;
 class Handle_PColStd_HSequenceOfHAsciiString : public Handle_Standard_Persistent {
 	public:
@@ -362,6 +372,7 @@ class Handle_PColStd_HSequenceOfHAsciiString : public Handle_Standard_Persistent
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfHAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HSequenceOfHExtendedString;
 class Handle_PColStd_HSequenceOfHExtendedString : public Handle_Standard_Persistent {
@@ -388,6 +399,7 @@ class Handle_PColStd_HSequenceOfHExtendedString : public Handle_Standard_Persist
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_HSequenceOfInteger;
 class Handle_PColStd_HSequenceOfInteger : public Handle_Standard_Persistent {
 	public:
@@ -412,6 +424,7 @@ class Handle_PColStd_HSequenceOfInteger : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
 class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public Handle_PStandard_ArrayNode {
@@ -438,6 +451,7 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public Handle_PSta
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString;
 class Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString : public Handle_PMMgt_PManaged {
 	public:
@@ -462,6 +476,7 @@ class Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString : public Handle_PMMgt_P
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfHExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HArray1OfPersistent;
 class Handle_PColStd_HArray1OfPersistent : public Handle_Standard_Persistent {
@@ -488,6 +503,7 @@ class Handle_PColStd_HArray1OfPersistent : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_HSequenceOfPersistent;
 class Handle_PColStd_HSequenceOfPersistent : public Handle_Standard_Persistent {
 	public:
@@ -512,6 +528,7 @@ class Handle_PColStd_HSequenceOfPersistent : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HSequenceOfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HSingleListOfPersistent;
 class Handle_PColStd_HSingleListOfPersistent : public Handle_PMMgt_PManaged {
@@ -538,6 +555,7 @@ class Handle_PColStd_HSingleListOfPersistent : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
 class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public Handle_PStandard_ArrayNode {
 	public:
@@ -562,6 +580,7 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public Handle_PStanda
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString;
 class Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString : public Handle_PMMgt_PManaged {
@@ -588,6 +607,7 @@ class Handle_PColStd_SeqNodeOfHSequenceOfHAsciiString : public Handle_PMMgt_PMan
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_HArray1OfReal;
 class Handle_PColStd_HArray1OfReal : public Handle_Standard_Persistent {
 	public:
@@ -612,6 +632,7 @@ class Handle_PColStd_HArray1OfReal : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HDoubleListOfPersistent;
 class Handle_PColStd_HDoubleListOfPersistent : public Handle_PMMgt_PManaged {
@@ -638,6 +659,7 @@ class Handle_PColStd_HDoubleListOfPersistent : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal;
 class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal : public Handle_PStandard_ArrayNode {
 	public:
@@ -662,6 +684,7 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal : public Handle_PStandard_
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray2OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HArray2OfInteger;
 class Handle_PColStd_HArray2OfInteger : public Handle_Standard_Persistent {
@@ -688,6 +711,7 @@ class Handle_PColStd_HArray2OfInteger : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
 class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public Handle_PStandard_ArrayNode {
 	public:
@@ -712,6 +736,7 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HArray1OfInteger;
 class Handle_PColStd_HArray1OfInteger : public Handle_Standard_Persistent {
@@ -738,6 +763,7 @@ class Handle_PColStd_HArray1OfInteger : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
 class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public Handle_PStandard_ArrayNode {
 	public:
@@ -762,6 +788,7 @@ class Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public Handle_PStanda
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_VArrayNodeOfFieldOfHArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfPersistent;
 class Handle_PColStd_SeqNodeOfHSequenceOfPersistent : public Handle_PMMgt_PManaged {
@@ -788,6 +815,7 @@ class Handle_PColStd_SeqNodeOfHSequenceOfPersistent : public Handle_PMMgt_PManag
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_HArray2OfReal;
 class Handle_PColStd_HArray2OfReal : public Handle_Standard_Persistent {
 	public:
@@ -812,6 +840,7 @@ class Handle_PColStd_HArray2OfReal : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_HArray2OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColStd_HSingleListOfInteger;
 class Handle_PColStd_HSingleListOfInteger : public Handle_PMMgt_PManaged {
@@ -838,6 +867,7 @@ class Handle_PColStd_HSingleListOfInteger : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_PColStd_SeqNodeOfHSequenceOfReal;
 class Handle_PColStd_SeqNodeOfHSequenceOfReal : public Handle_PMMgt_PManaged {
 	public:
@@ -862,6 +892,7 @@ class Handle_PColStd_SeqNodeOfHSequenceOfReal : public Handle_PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColStd_SeqNodeOfHSequenceOfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString;
 class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_ArrayNode {
@@ -901,6 +932,7 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfExtendedString : public PStandard_Arra
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfReal;
 class PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
 	public:
@@ -920,6 +952,7 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfReal {
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HDoubleListOfInteger;
 class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
@@ -985,6 +1018,7 @@ class PColStd_HDoubleListOfInteger : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfInteger;
 class PColStd_SeqExplorerOfHSequenceOfInteger {
 	public:
@@ -1007,6 +1041,7 @@ class PColStd_SeqExplorerOfHSequenceOfInteger {
 	}
 };
 
+
 %nodefaultctor PColStd_HOfExtendedString;
 class PColStd_HOfExtendedString {
 	public:
@@ -1024,6 +1059,7 @@ class PColStd_HOfExtendedString {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HOfExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_FieldOfHArray2OfInteger;
 class PColStd_FieldOfHArray2OfInteger : public DBC_BaseArray {
@@ -1055,6 +1091,7 @@ class PColStd_FieldOfHArray2OfInteger : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColStd_FieldOfHArray1OfExtendedString;
 class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 	public:
@@ -1085,6 +1122,7 @@ class PColStd_FieldOfHArray1OfExtendedString : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColStd_HOfReal;
 class PColStd_HOfReal {
 	public:
@@ -1102,6 +1140,7 @@ class PColStd_HOfReal {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HOfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfInteger;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
@@ -1123,6 +1162,7 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfInteger {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 	public:
@@ -1142,6 +1182,7 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent {
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_FieldOfHArray2OfReal;
 class PColStd_FieldOfHArray2OfReal : public DBC_BaseArray {
@@ -1172,6 +1213,7 @@ class PColStd_FieldOfHArray2OfReal : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray2OfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HSequenceOfHAsciiString;
 class PColStd_HSequenceOfHAsciiString : public Standard_Persistent {
@@ -1267,6 +1309,7 @@ class PColStd_HSequenceOfHAsciiString : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_HSequenceOfReal;
 class PColStd_HSequenceOfReal : public Standard_Persistent {
 	public:
@@ -1361,6 +1404,7 @@ class PColStd_HSequenceOfReal : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfReal;
 class PColStd_SeqNodeOfHSequenceOfReal : public PMMgt_PManaged {
 	public:
@@ -1419,6 +1463,7 @@ class PColStd_SeqNodeOfHSequenceOfReal : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfInteger;
 class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 	public:
@@ -1438,6 +1483,7 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfInteger {
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfInteger;
 class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
@@ -1476,6 +1522,7 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfInteger : public PStandard_ArrayNode {
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray2OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HSingleListOfPersistent;
 class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
@@ -1531,6 +1578,7 @@ class PColStd_HSingleListOfPersistent : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfPersistent;
 class PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public PStandard_ArrayNode {
 	public:
@@ -1568,6 +1616,7 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfPersistent : public PStandard_ArrayNod
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HSequenceOfHExtendedString;
 class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
@@ -1663,6 +1712,7 @@ class PColStd_HSequenceOfHExtendedString : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent;
 class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
 	public:
@@ -1682,6 +1732,7 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent {
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HArray1OfReal;
 class PColStd_HArray1OfReal : public Standard_Persistent {
@@ -1738,6 +1789,7 @@ class PColStd_HArray1OfReal : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HArray2OfPersistent;
 class PColStd_HArray2OfPersistent : public Standard_Persistent {
@@ -1809,6 +1861,7 @@ class PColStd_HArray2OfPersistent : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfPersistent;
 class PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public PStandard_ArrayNode {
 	public:
@@ -1847,6 +1900,7 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfPersistent : public PStandard_ArrayNod
 	}
 };
 
+
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfReal;
 class PColStd_SeqExplorerOfHSequenceOfReal {
 	public:
@@ -1869,6 +1923,7 @@ class PColStd_SeqExplorerOfHSequenceOfReal {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray2OfReal;
 class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 	public:
@@ -1888,6 +1943,7 @@ class PColStd_VArrayTNodeOfFieldOfHArray2OfReal {
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray2OfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfHExtendedString;
 class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
@@ -1910,6 +1966,7 @@ class PColStd_SeqExplorerOfHSequenceOfHExtendedString {
 	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_FieldOfHArray2OfPersistent;
 class PColStd_FieldOfHArray2OfPersistent : public DBC_BaseArray {
@@ -1940,6 +1997,7 @@ class PColStd_FieldOfHArray2OfPersistent : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray2OfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfInteger;
 class PColStd_SeqNodeOfHSequenceOfInteger : public PMMgt_PManaged {
@@ -1999,6 +2057,7 @@ class PColStd_SeqNodeOfHSequenceOfInteger : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColStd_HOfInteger;
 class PColStd_HOfInteger {
 	public:
@@ -2016,6 +2075,7 @@ class PColStd_HOfInteger {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfHAsciiString;
 class PColStd_SeqNodeOfHSequenceOfHAsciiString : public PMMgt_PManaged {
@@ -2074,6 +2134,7 @@ class PColStd_SeqNodeOfHSequenceOfHAsciiString : public PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfHAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HDoubleListOfPersistent;
 class PColStd_HDoubleListOfPersistent : public PMMgt_PManaged {
@@ -2139,6 +2200,7 @@ class PColStd_HDoubleListOfPersistent : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray2OfReal;
 class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
 	public:
@@ -2177,6 +2239,7 @@ class PColStd_VArrayNodeOfFieldOfHArray2OfReal : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfReal;
 class PColStd_VArrayNodeOfFieldOfHArray1OfReal : public PStandard_ArrayNode {
 	public:
@@ -2214,6 +2277,7 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfReal : public PStandard_ArrayNode {
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayNodeOfFieldOfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HSingleListOfReal;
 class PColStd_HSingleListOfReal : public PMMgt_PManaged {
@@ -2269,6 +2333,7 @@ class PColStd_HSingleListOfReal : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfHAsciiString;
 class PColStd_SeqExplorerOfHSequenceOfHAsciiString {
 	public:
@@ -2290,6 +2355,7 @@ class PColStd_SeqExplorerOfHSequenceOfHAsciiString {
 	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfHAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HDoubleListOfReal;
 class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
@@ -2354,6 +2420,7 @@ class PColStd_HDoubleListOfReal : public PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HDoubleListOfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HSequenceOfInteger;
 class PColStd_HSequenceOfInteger : public Standard_Persistent {
@@ -2449,6 +2516,7 @@ class PColStd_HSequenceOfInteger : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_FieldOfHArray1OfInteger;
 class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
 	public:
@@ -2479,6 +2547,7 @@ class PColStd_FieldOfHArray1OfInteger : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColStd_SeqExplorerOfHSequenceOfPersistent;
 class PColStd_SeqExplorerOfHSequenceOfPersistent {
 	public:
@@ -2500,6 +2569,7 @@ class PColStd_SeqExplorerOfHSequenceOfPersistent {
 	if (__env){printf("## Call custom destructor for instance of PColStd_SeqExplorerOfHSequenceOfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_FieldOfHArray1OfReal;
 class PColStd_FieldOfHArray1OfReal : public DBC_BaseArray {
@@ -2530,6 +2600,7 @@ class PColStd_FieldOfHArray1OfReal : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HArray1OfInteger;
 class PColStd_HArray1OfInteger : public Standard_Persistent {
@@ -2586,6 +2657,7 @@ class PColStd_HArray1OfInteger : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HSequenceOfPersistent;
 class PColStd_HSequenceOfPersistent : public Standard_Persistent {
@@ -2681,6 +2753,7 @@ class PColStd_HSequenceOfPersistent : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString;
 class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 	public:
@@ -2700,6 +2773,7 @@ class PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString {
 	if (__env){printf("## Call custom destructor for instance of PColStd_VArrayTNodeOfFieldOfHArray1OfExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HArray1OfPersistent;
 class PColStd_HArray1OfPersistent : public Standard_Persistent {
@@ -2757,6 +2831,7 @@ class PColStd_HArray1OfPersistent : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_HOfAsciiString;
 class PColStd_HOfAsciiString {
 	public:
@@ -2775,6 +2850,7 @@ class PColStd_HOfAsciiString {
 	}
 };
 
+
 %nodefaultctor PColStd_HashAsciiString;
 class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
 	public:
@@ -2788,6 +2864,7 @@ class PColStd_HashAsciiString : public PColStd_HOfAsciiString {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HashAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_VArrayNodeOfFieldOfHArray1OfInteger;
 class PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public PStandard_ArrayNode {
@@ -2827,6 +2904,7 @@ class PColStd_VArrayNodeOfFieldOfHArray1OfInteger : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColStd_FieldOfHArray1OfPersistent;
 class PColStd_FieldOfHArray1OfPersistent : public DBC_BaseArray {
 	public:
@@ -2856,6 +2934,7 @@ class PColStd_FieldOfHArray1OfPersistent : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColStd_FieldOfHArray1OfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HSingleListOfInteger;
 class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
@@ -2910,6 +2989,7 @@ class PColStd_HSingleListOfInteger : public PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HSingleListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfHExtendedString;
 class PColStd_SeqNodeOfHSequenceOfHExtendedString : public PMMgt_PManaged {
@@ -2968,6 +3048,7 @@ class PColStd_SeqNodeOfHSequenceOfHExtendedString : public PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfHExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HArray2OfInteger;
 class PColStd_HArray2OfInteger : public Standard_Persistent {
@@ -3039,6 +3120,7 @@ class PColStd_HArray2OfInteger : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_HArray2OfReal;
 class PColStd_HArray2OfReal : public Standard_Persistent {
 	public:
@@ -3109,6 +3191,7 @@ class PColStd_HArray2OfReal : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColStd_HashExtendedString;
 class PColStd_HashExtendedString : public PColStd_HOfExtendedString {
 	public:
@@ -3126,6 +3209,7 @@ class PColStd_HashExtendedString : public PColStd_HOfExtendedString {
 	if (__env){printf("## Call custom destructor for instance of PColStd_HashExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_SeqNodeOfHSequenceOfPersistent;
 class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
@@ -3184,6 +3268,7 @@ class PColStd_SeqNodeOfHSequenceOfPersistent : public PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of PColStd_SeqNodeOfHSequenceOfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor PColStd_HArray1OfExtendedString;
 class PColStd_HArray1OfExtendedString : public Standard_Persistent {

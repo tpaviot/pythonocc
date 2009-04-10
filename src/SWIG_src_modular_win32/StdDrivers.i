@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_StdDrivers_DocumentStorageDriver : public Handle_MDocStd_DocumentSt
 	}
 };
 
+
 %nodefaultctor Handle_StdDrivers_DocumentRetrievalDriver;
 class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_DocumentRetrievalDriver {
 	public:
@@ -163,6 +165,7 @@ class Handle_StdDrivers_DocumentRetrievalDriver : public Handle_MDocStd_Document
 	}
 };
 
+
 %nodefaultctor StdDrivers;
 class StdDrivers {
 	public:
@@ -178,6 +181,7 @@ class StdDrivers {
 	if (__env){printf("## Call custom destructor for instance of StdDrivers\n");}
 	}
 };
+
 
 %nodefaultctor StdDrivers_DocumentStorageDriver;
 class StdDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
@@ -208,6 +212,7 @@ class StdDrivers_DocumentStorageDriver : public MDocStd_DocumentStorageDriver {
 	if (__env){printf("## Call custom destructor for instance of StdDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor StdDrivers_DocumentRetrievalDriver;
 class StdDrivers_DocumentRetrievalDriver : public MDocStd_DocumentRetrievalDriver {

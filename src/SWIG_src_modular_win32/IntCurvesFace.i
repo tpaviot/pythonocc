@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -156,6 +157,7 @@ class IntCurvesFace_Intersector {
 	if (__env){printf("## Call custom destructor for instance of IntCurvesFace_Intersector\n");}
 	}
 };
+
 
 %nodefaultctor IntCurvesFace_ShapeIntersector;
 class IntCurvesFace_ShapeIntersector {

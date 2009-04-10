@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PColPGeom2d_HArray1OfCurve : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom2d_HArray1OfBSplineCurve;
 class Handle_PColPGeom2d_HArray1OfBSplineCurve : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PColPGeom2d_HArray1OfBSplineCurve : public Handle_Standard_Persiste
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom2d_HArray1OfBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve;
 class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle_PStandard_ArrayNode {
@@ -188,6 +191,7 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
 class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handle_PStandard_ArrayNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom2d_HArray1OfBezierCurve;
 class Handle_PColPGeom2d_HArray1OfBezierCurve : public Handle_Standard_Persistent {
@@ -238,6 +243,7 @@ class Handle_PColPGeom2d_HArray1OfBezierCurve : public Handle_Standard_Persisten
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve;
 class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStandard_ArrayNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStan
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
 class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handle_PStandard_ArrayNode {
@@ -288,6 +295,7 @@ class Handle_PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handl
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom2d_HArray1OfBoundedCurve;
 class Handle_PColPGeom2d_HArray1OfBoundedCurve : public Handle_Standard_Persistent {
 	public:
@@ -313,6 +321,7 @@ class Handle_PColPGeom2d_HArray1OfBoundedCurve : public Handle_Standard_Persiste
 	}
 };
 
+
 %nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve;
 class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
 	public:
@@ -332,6 +341,7 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_HArray1OfBoundedCurve;
 class PColPGeom2d_HArray1OfBoundedCurve : public Standard_Persistent {
@@ -389,6 +399,7 @@ class PColPGeom2d_HArray1OfBoundedCurve : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve;
 class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 	public:
@@ -408,6 +419,7 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfCurve;
 class PColPGeom2d_FieldOfHArray1OfCurve : public DBC_BaseArray {
@@ -439,6 +451,7 @@ class PColPGeom2d_FieldOfHArray1OfCurve : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve;
 class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	public:
@@ -458,6 +471,7 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
 class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_ArrayNode {
@@ -497,6 +511,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Ar
 	}
 };
 
+
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfBezierCurve;
 class PColPGeom2d_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 	public:
@@ -526,6 +541,7 @@ class PColPGeom2d_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_FieldOfHArray1OfBezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve;
 class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_ArrayNode {
@@ -565,6 +581,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Arr
 	}
 };
 
+
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfBSplineCurve;
 class PColPGeom2d_FieldOfHArray1OfBSplineCurve : public DBC_BaseArray {
 	public:
@@ -594,6 +611,7 @@ class PColPGeom2d_FieldOfHArray1OfBSplineCurve : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_FieldOfHArray1OfBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_HArray1OfCurve;
 class PColPGeom2d_HArray1OfCurve : public Standard_Persistent {
@@ -651,6 +669,7 @@ class PColPGeom2d_HArray1OfCurve : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve;
 class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 	public:
@@ -670,6 +689,7 @@ class PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_VArrayTNodeOfFieldOfHArray1OfBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
 class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_ArrayNode {
@@ -708,6 +728,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Ar
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_VArrayNodeOfFieldOfHArray1OfBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_HArray1OfBSplineCurve;
 class PColPGeom2d_HArray1OfBSplineCurve : public Standard_Persistent {
@@ -765,6 +786,7 @@ class PColPGeom2d_HArray1OfBSplineCurve : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom2d_FieldOfHArray1OfBoundedCurve;
 class PColPGeom2d_FieldOfHArray1OfBoundedCurve : public DBC_BaseArray {
 	public:
@@ -794,6 +816,7 @@ class PColPGeom2d_FieldOfHArray1OfBoundedCurve : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_FieldOfHArray1OfBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve;
 class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode {
@@ -832,6 +855,7 @@ class PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode
 	if (__env){printf("## Call custom destructor for instance of PColPGeom2d_VArrayNodeOfFieldOfHArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom2d_HArray1OfBezierCurve;
 class PColPGeom2d_HArray1OfBezierCurve : public Standard_Persistent {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TCollection_SeqNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_HArray1OfPOnSurf;
 class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_Extrema_HArray1OfPOnSurf : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : pu
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public Handle_TCollection_SeqNode {
@@ -238,6 +243,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCollection_SeqNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public Handle_TCol
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public Handle_TCollection_SeqNode {
@@ -288,6 +295,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public Handle_TCollection_SeqNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public H
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_HArray2OfPOnCurv;
 class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_Extrema_HArray2OfPOnCurv : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_HArray2OfPOnSurf;
 class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_Extrema_HArray2OfPOnSurf : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray2OfPOnSurf\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv;
 class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection_SeqNode {
@@ -388,6 +399,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_HArray1OfPOnCurv2d;
 class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 	public:
@@ -412,6 +424,7 @@ class Handle_Extrema_HArray1OfPOnCurv2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_HArray1OfPOnCurv2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public Handle_TCollection_SeqNode {
@@ -438,6 +451,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public 
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public Handle_TCollection_SeqNode {
 	public:
@@ -462,6 +476,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public H
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_HArray1OfPOnCurv;
 class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
@@ -488,6 +503,7 @@ class Handle_Extrema_HArray1OfPOnCurv : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
 class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollection_SeqNode {
 	public:
@@ -512,6 +528,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public Handle_TCollecti
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfBoolean;
 class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_SeqNode {
@@ -538,6 +555,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
 class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -562,6 +580,7 @@ class Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public Handle_TCol
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Handle_TCollection_SeqNode {
@@ -588,6 +607,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public Hand
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
 class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_TCollection_SeqNode {
 	public:
@@ -612,6 +632,7 @@ class Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Extrema_HArray2OfPOnCurv2d;
 class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
@@ -638,6 +659,7 @@ class Handle_Extrema_HArray2OfPOnCurv2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf;
 class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection_SeqNode {
 	public:
@@ -662,6 +684,7 @@ class Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_POnCurv2d;
 class Extrema_POnCurv2d {
@@ -690,6 +713,7 @@ class Extrema_POnCurv2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_POnCurv2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SequenceOfBoolean;
 class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
@@ -745,6 +769,7 @@ class Extrema_SequenceOfBoolean : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfBoolean;
 class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 	public:
@@ -773,6 +798,7 @@ class Extrema_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Extrema_LocECC2dOfLocateExtCC2d;
 class Extrema_LocECC2dOfLocateExtCC2d {
 	public:
@@ -792,6 +818,7 @@ class Extrema_LocECC2dOfLocateExtCC2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_LocECC2dOfLocateExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC;
 class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence {
@@ -847,6 +874,7 @@ class Extrema_SeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_BaseSequence 
 	}
 };
 
+
 %nodefaultctor Extrema_ExtPC;
 class Extrema_ExtPC {
 	public:
@@ -881,6 +909,7 @@ class Extrema_ExtPC {
 	}
 };
 
+
 %nodefaultctor Extrema_ExtPS;
 class Extrema_ExtPS {
 	public:
@@ -912,6 +941,7 @@ class Extrema_ExtPS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
 class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequence {
@@ -967,6 +997,7 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_BaseSequ
 	}
 };
 
+
 %nodefaultctor Extrema_ExtSS;
 class Extrema_ExtSS {
 	public:
@@ -998,6 +1029,7 @@ class Extrema_ExtSS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ExtSS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_CCFOfELCCOfLocateExtCC;
 class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
@@ -1031,6 +1063,7 @@ class Extrema_CCFOfELCCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 	}
 };
 
+
 %nodefaultctor Extrema_ECC2dOfExtCC2d;
 class Extrema_ECC2dOfExtCC2d {
 	public:
@@ -1056,6 +1089,7 @@ class Extrema_ECC2dOfExtCC2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ECC2dOfExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_ExtCC2d;
 class Extrema_ExtCC2d {
@@ -1090,6 +1124,7 @@ class Extrema_ExtCC2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_CurveTool;
 class Extrema_CurveTool {
@@ -1151,6 +1186,7 @@ class Extrema_CurveTool {
 	}
 };
 
+
 %nodefaultctor Extrema_Array1OfPOnSurf;
 class Extrema_Array1OfPOnSurf {
 	public:
@@ -1190,6 +1226,7 @@ class Extrema_Array1OfPOnSurf {
 	if (__env){printf("## Call custom destructor for instance of Extrema_Array1OfPOnSurf\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
 class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequence {
@@ -1244,6 +1281,7 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_BaseSequ
 	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_ExtElCS;
 class Extrema_ExtElCS {
@@ -1313,6 +1351,7 @@ class Extrema_ExtElCS {
 	}
 };
 
+
 %nodefaultctor Extrema_EPCOfELPCOfLocateExtPC;
 class Extrema_EPCOfELPCOfLocateExtPC {
 	public:
@@ -1351,6 +1390,7 @@ class Extrema_EPCOfELPCOfLocateExtPC {
 	}
 };
 
+
 %nodefaultctor Extrema_GenLocateExtSS;
 class Extrema_GenLocateExtSS {
 	public:
@@ -1376,6 +1416,7 @@ class Extrema_GenLocateExtSS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtSS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_PCFOfEPCOfELPCOfLocateExtPC;
 class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
@@ -1412,6 +1453,7 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_HArray2OfPOnCurv2d;
 class Extrema_HArray2OfPOnCurv2d : public MMgt_TShared {
@@ -1465,6 +1507,7 @@ class Extrema_HArray2OfPOnCurv2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Extrema_HArray1OfPOnSurf;
 class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 	public:
@@ -1511,6 +1554,7 @@ class Extrema_HArray1OfPOnSurf : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Extrema_LocateExtCC;
 class Extrema_LocateExtCC {
 	public:
@@ -1530,6 +1574,7 @@ class Extrema_LocateExtCC {
 	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_ExtElSS;
 class Extrema_ExtElSS {
@@ -1578,6 +1623,7 @@ class Extrema_ExtElSS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ExtElSS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_ExtElC2d;
 class Extrema_ExtElC2d {
@@ -1633,6 +1679,7 @@ class Extrema_ExtElC2d {
 	}
 };
 
+
 %nodefaultctor Extrema_HArray1OfPOnCurv;
 class Extrema_HArray1OfPOnCurv : public MMgt_TShared {
 	public:
@@ -1679,6 +1726,7 @@ class Extrema_HArray1OfPOnCurv : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC;
 class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public TCollection_SeqNode {
 	public:
@@ -1707,6 +1755,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECCOfExtCC : public TCollection_SeqNod
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d;
 class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TCollection_SeqNode {
 	public:
@@ -1734,6 +1783,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d : public TColle
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_PCFOfEPCOfExtPC2d;
 class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
@@ -1771,6 +1821,7 @@ class Extrema_PCFOfEPCOfExtPC2d : public math_FunctionWithDerivative {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv;
 class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
 	public:
@@ -1798,6 +1849,7 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_Array2OfPOnCurv;
 class Extrema_Array2OfPOnCurv {
@@ -1843,6 +1895,7 @@ class Extrema_Array2OfPOnCurv {
 	}
 };
 
+
 %nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC;
 class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 	public:
@@ -1878,6 +1931,7 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
 class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSequence {
@@ -1933,6 +1987,7 @@ class Extrema_SeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_BaseSeque
 	}
 };
 
+
 %nodefaultctor Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
 class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequence {
 	public:
@@ -1987,6 +2042,7 @@ class Extrema_SeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_BaseSequ
 	}
 };
 
+
 %nodefaultctor Extrema_PCLocFOfLocEPCOfLocateExtPC2d;
 class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative {
 	public:
@@ -2022,6 +2078,7 @@ class Extrema_PCLocFOfLocEPCOfLocateExtPC2d : public math_FunctionWithDerivative
 	if (__env){printf("## Call custom destructor for instance of Extrema_PCLocFOfLocEPCOfLocateExtPC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_FuncExtSS;
 class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
@@ -2060,6 +2117,7 @@ class Extrema_FuncExtSS : public math_FunctionSetWithDerivatives {
 	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtSS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_HArray2OfPOnSurf;
 class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
@@ -2113,6 +2171,7 @@ class Extrema_HArray2OfPOnSurf : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Extrema_ELCC2dOfLocateExtCC2d;
 class Extrema_ELCC2dOfLocateExtCC2d {
 	public:
@@ -2138,6 +2197,7 @@ class Extrema_ELCC2dOfLocateExtCC2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ELCC2dOfLocateExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_Array1OfPOnCurv;
 class Extrema_Array1OfPOnCurv {
@@ -2179,6 +2239,7 @@ class Extrema_Array1OfPOnCurv {
 	}
 };
 
+
 %nodefaultctor Extrema_PCFOfEPCOfELPCOfLocateExtPC2d;
 class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative {
 	public:
@@ -2214,6 +2275,7 @@ class Extrema_PCFOfEPCOfELPCOfLocateExtPC2d : public math_FunctionWithDerivative
 	if (__env){printf("## Call custom destructor for instance of Extrema_PCFOfEPCOfELPCOfLocateExtPC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SequenceOfPOnSurf;
 class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
@@ -2269,6 +2331,7 @@ class Extrema_SequenceOfPOnSurf : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Extrema_LocateExtPC2d;
 class Extrema_LocateExtPC2d {
 	public:
@@ -2299,6 +2362,7 @@ class Extrema_LocateExtPC2d {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC;
 class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TCollection_SeqNode {
 	public:
@@ -2326,6 +2390,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC : public TColle
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_LocateExtPC;
 class Extrema_LocateExtPC {
@@ -2357,6 +2422,7 @@ class Extrema_LocateExtPC {
 	}
 };
 
+
 %nodefaultctor Extrema_GenLocateExtCS;
 class Extrema_GenLocateExtCS {
 	public:
@@ -2382,6 +2448,7 @@ class Extrema_GenLocateExtCS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtCS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d;
 class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
@@ -2437,6 +2504,7 @@ class Extrema_SeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Extrema_ExtCC;
 class Extrema_ExtCC {
 	public:
@@ -2471,6 +2539,7 @@ class Extrema_ExtCC {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d;
 class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_SeqNode {
 	public:
@@ -2498,6 +2567,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d : public TCollection_Se
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfECC2dOfExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_LocEPCOfLocateExtPC2d;
 class Extrema_LocEPCOfLocateExtPC2d {
@@ -2528,6 +2598,7 @@ class Extrema_LocEPCOfLocateExtPC2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_ExtPElC;
 class Extrema_ExtPElC {
@@ -2573,6 +2644,7 @@ class Extrema_ExtPElC {
 	}
 };
 
+
 %nodefaultctor Extrema_ExtPElS;
 class Extrema_ExtPElS {
 	public:
@@ -2615,6 +2687,7 @@ class Extrema_ExtPElS {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d;
 class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollection_SeqNode {
 	public:
@@ -2642,6 +2715,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d : public TCollec
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCC2dOfLocateExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_ExtElC;
 class Extrema_ExtElC {
@@ -2697,6 +2771,7 @@ class Extrema_ExtElC {
 	}
 };
 
+
 %nodefaultctor Extrema_SeqPOnCOfCCFOfECCOfExtCC;
 class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 	public:
@@ -2751,6 +2826,7 @@ class Extrema_SeqPOnCOfCCFOfECCOfExtCC : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Extrema_CCFOfECC2dOfExtCC2d;
 class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 	public:
@@ -2782,6 +2858,7 @@ class Extrema_CCFOfECC2dOfExtCC2d : public math_FunctionSetWithDerivatives {
 	if (__env){printf("## Call custom destructor for instance of Extrema_CCFOfECC2dOfExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SequenceOfPOnCurv2d;
 class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
@@ -2837,6 +2914,7 @@ class Extrema_SequenceOfPOnCurv2d : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Extrema_HArray2OfPOnCurv;
 class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
 	public:
@@ -2889,6 +2967,7 @@ class Extrema_HArray2OfPOnCurv : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Extrema_PCFOfEPCOfExtPC;
 class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 	public:
@@ -2925,6 +3004,7 @@ class Extrema_PCFOfEPCOfExtPC : public math_FunctionWithDerivative {
 	}
 };
 
+
 %nodefaultctor Extrema_POnSurf;
 class Extrema_POnSurf {
 	public:
@@ -2955,6 +3035,7 @@ class Extrema_POnSurf {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d;
 class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TCollection_SeqNode {
 	public:
@@ -2983,6 +3064,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC2d : public TColle
 	}
 };
 
+
 %nodefaultctor Extrema_GenLocateExtPS;
 class Extrema_GenLocateExtPS {
 	public:
@@ -3004,6 +3086,7 @@ class Extrema_GenLocateExtPS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_GenLocateExtPS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_CCFOfELCC2dOfLocateExtCC2d;
 class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
@@ -3037,6 +3120,7 @@ class Extrema_CCFOfELCC2dOfLocateExtCC2d : public math_FunctionSetWithDerivative
 	}
 };
 
+
 %nodefaultctor Extrema_CCLocFOfLocECCOfLocateExtCC;
 class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivatives {
 	public:
@@ -3068,6 +3152,7 @@ class Extrema_CCLocFOfLocECCOfLocateExtCC : public math_FunctionSetWithDerivativ
 	if (__env){printf("## Call custom destructor for instance of Extrema_CCLocFOfLocECCOfLocateExtCC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_Array1OfPOnCurv2d;
 class Extrema_Array1OfPOnCurv2d {
@@ -3109,6 +3194,7 @@ class Extrema_Array1OfPOnCurv2d {
 	}
 };
 
+
 %nodefaultctor Extrema_EPCOfExtPC;
 class Extrema_EPCOfExtPC {
 	public:
@@ -3147,6 +3233,7 @@ class Extrema_EPCOfExtPC {
 	}
 };
 
+
 %nodefaultctor Extrema_GenExtCS;
 class Extrema_GenExtCS {
 	public:
@@ -3183,6 +3270,7 @@ class Extrema_GenExtCS {
 	}
 };
 
+
 %nodefaultctor Extrema_LocEPCOfLocateExtPC;
 class Extrema_LocEPCOfLocateExtPC {
 	public:
@@ -3212,6 +3300,7 @@ class Extrema_LocEPCOfLocateExtPC {
 	if (__env){printf("## Call custom destructor for instance of Extrema_LocEPCOfLocateExtPC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_Array2OfPOnSurf;
 class Extrema_Array2OfPOnSurf {
@@ -3257,6 +3346,7 @@ class Extrema_Array2OfPOnSurf {
 	}
 };
 
+
 %nodefaultctor Extrema_ExtPC2d;
 class Extrema_ExtPC2d {
 	public:
@@ -3291,6 +3381,7 @@ class Extrema_ExtPC2d {
 	}
 };
 
+
 %nodefaultctor Extrema_ExtPExtS;
 class Extrema_ExtPExtS {
 	public:
@@ -3321,6 +3412,7 @@ class Extrema_ExtPExtS {
 	}
 };
 
+
 %nodefaultctor Extrema_ExtPRevS;
 class Extrema_ExtPRevS {
 	public:
@@ -3350,6 +3442,7 @@ class Extrema_ExtPRevS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ExtPRevS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_GenExtPS;
 class Extrema_GenExtPS {
@@ -3383,6 +3476,7 @@ class Extrema_GenExtPS {
 	}
 };
 
+
 %nodefaultctor Extrema_CCLocFOfLocECC2dOfLocateExtCC2d;
 class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDerivatives {
 	public:
@@ -3415,6 +3509,7 @@ class Extrema_CCLocFOfLocECC2dOfLocateExtCC2d : public math_FunctionSetWithDeriv
 	}
 };
 
+
 %nodefaultctor Extrema_LocateExtCC2d;
 class Extrema_LocateExtCC2d {
 	public:
@@ -3434,6 +3529,7 @@ class Extrema_LocateExtCC2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_LocateExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_GenExtSS;
 class Extrema_GenExtSS {
@@ -3470,6 +3566,7 @@ class Extrema_GenExtSS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_GenExtSS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_Curve2dTool;
 class Extrema_Curve2dTool {
@@ -3539,6 +3636,7 @@ class Extrema_Curve2dTool {
 	}
 };
 
+
 %nodefaultctor Extrema_ECCOfExtCC;
 class Extrema_ECCOfExtCC {
 	public:
@@ -3564,6 +3662,7 @@ class Extrema_ECCOfExtCC {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ECCOfExtCC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_EPCOfExtPC2d;
 class Extrema_EPCOfExtPC2d {
@@ -3602,6 +3701,7 @@ class Extrema_EPCOfExtPC2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_EPCOfExtPC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_HArray1OfPOnCurv2d;
 class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
@@ -3649,6 +3749,7 @@ class Extrema_HArray1OfPOnCurv2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Extrema_LocECCOfLocateExtCC;
 class Extrema_LocECCOfLocateExtCC {
 	public:
@@ -3668,6 +3769,7 @@ class Extrema_LocECCOfLocateExtCC {
 	if (__env){printf("## Call custom destructor for instance of Extrema_LocECCOfLocateExtCC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
 class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_SeqNode {
@@ -3696,6 +3798,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TC
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC;
 class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_BaseSequence {
@@ -3751,6 +3854,7 @@ class Extrema_SeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_BaseSequen
 	}
 };
 
+
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
 class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequence {
 	public:
@@ -3804,6 +3908,7 @@ class Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_BaseSequen
 	if (__env){printf("## Call custom destructor for instance of Extrema_SeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfExtPC;
 class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
@@ -3859,6 +3964,7 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Extrema_ELPCOfLocateExtPC;
 class Extrema_ELPCOfLocateExtPC {
 	public:
@@ -3893,6 +3999,7 @@ class Extrema_ELPCOfLocateExtPC {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC;
 class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection_SeqNode {
 	public:
@@ -3921,6 +4028,7 @@ class Extrema_SequenceNodeOfSeqPOnCOfCCFOfELCCOfLocateExtCC : public TCollection
 	}
 };
 
+
 %nodefaultctor Extrema_ELCCOfLocateExtCC;
 class Extrema_ELCCOfLocateExtCC {
 	public:
@@ -3946,6 +4054,7 @@ class Extrema_ELCCOfLocateExtCC {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ELCCOfLocateExtCC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SequenceOfPOnCurv;
 class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
@@ -4001,6 +4110,7 @@ class Extrema_SequenceOfPOnCurv : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Extrema_ELPCOfLocateExtPC2d;
 class Extrema_ELPCOfLocateExtPC2d {
 	public:
@@ -4035,6 +4145,7 @@ class Extrema_ELPCOfLocateExtPC2d {
 	}
 };
 
+
 %nodefaultctor Extrema_POnCurv;
 class Extrema_POnCurv {
 	public:
@@ -4062,6 +4173,7 @@ class Extrema_POnCurv {
 	if (__env){printf("## Call custom destructor for instance of Extrema_POnCurv\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC;
 class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode {
@@ -4091,6 +4203,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC : public TCollection_SeqNode 
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC;
 class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollection_SeqNode {
 	public:
@@ -4119,6 +4232,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCLocFOfLocEPCOfLocateExtPC : public TCollect
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC;
 class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollection_SeqNode {
 	public:
@@ -4146,6 +4260,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC : public TCollect
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfELPCOfLocateExtPC\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_ExtCS;
 class Extrema_ExtCS {
@@ -4178,6 +4293,7 @@ class Extrema_ExtCS {
 	if (__env){printf("## Call custom destructor for instance of Extrema_ExtCS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_ExtPElC2d;
 class Extrema_ExtPElC2d {
@@ -4223,6 +4339,7 @@ class Extrema_ExtPElC2d {
 	}
 };
 
+
 %nodefaultctor Extrema_EPCOfELPCOfLocateExtPC2d;
 class Extrema_EPCOfELPCOfLocateExtPC2d {
 	public:
@@ -4261,6 +4378,7 @@ class Extrema_EPCOfELPCOfLocateExtPC2d {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnSurf;
 class Extrema_SequenceNodeOfSequenceOfPOnSurf : public TCollection_SeqNode {
 	public:
@@ -4288,6 +4406,7 @@ class Extrema_SequenceNodeOfSequenceOfPOnSurf : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnSurf\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_FuncExtPS;
 class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
@@ -4329,6 +4448,7 @@ class Extrema_FuncExtPS : public math_FunctionSetWithDerivatives {
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSequenceOfPOnCurv2d;
 class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
 	public:
@@ -4356,6 +4476,7 @@ class Extrema_SequenceNodeOfSequenceOfPOnCurv2d : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSequenceOfPOnCurv2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d;
 class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_BaseSequence {
@@ -4411,6 +4532,7 @@ class Extrema_SeqPOnCOfCCLocFOfLocECC2dOfLocateExtCC2d : public TCollection_Base
 	}
 };
 
+
 %nodefaultctor Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d;
 class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNode {
 	public:
@@ -4438,6 +4560,7 @@ class Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d : public TCollection_SeqNod
 	if (__env){printf("## Call custom destructor for instance of Extrema_SequenceNodeOfSeqPCOfPCFOfEPCOfExtPC2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_SeqPCOfPCFOfEPCOfExtPC2d;
 class Extrema_SeqPCOfPCFOfEPCOfExtPC2d : public TCollection_BaseSequence {
@@ -4493,6 +4616,7 @@ class Extrema_SeqPCOfPCFOfEPCOfExtPC2d : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Extrema_FuncExtCS;
 class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 	public:
@@ -4530,6 +4654,7 @@ class Extrema_FuncExtCS : public math_FunctionSetWithDerivatives {
 	if (__env){printf("## Call custom destructor for instance of Extrema_FuncExtCS\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_Array2OfPOnCurv2d;
 class Extrema_Array2OfPOnCurv2d {
@@ -4574,6 +4699,7 @@ class Extrema_Array2OfPOnCurv2d {
 	if (__env){printf("## Call custom destructor for instance of Extrema_Array2OfPOnCurv2d\n");}
 	}
 };
+
 
 %nodefaultctor Extrema_CCFOfECCOfExtCC;
 class Extrema_CCFOfECCOfExtCC : public math_FunctionSetWithDerivatives {

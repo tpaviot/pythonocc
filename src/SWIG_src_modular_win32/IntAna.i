@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -151,6 +152,7 @@ class Handle_IntAna_ListNodeOfListOfCurve : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor IntAna_Quadric;
 class IntAna_Quadric {
 	public:
@@ -184,6 +186,7 @@ class IntAna_Quadric {
 	if (__env){printf("## Call custom destructor for instance of IntAna_Quadric\n");}
 	}
 };
+
 
 %nodefaultctor IntAna_QuadQuadGeo;
 class IntAna_QuadQuadGeo {
@@ -261,6 +264,7 @@ class IntAna_QuadQuadGeo {
 	}
 };
 
+
 %nodefaultctor IntAna_ListNodeOfListOfCurve;
 class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 	public:
@@ -288,6 +292,7 @@ class IntAna_ListNodeOfListOfCurve : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of IntAna_ListNodeOfListOfCurve\n");}
 	}
 };
+
 
 %nodefaultctor IntAna_IntQuadQuad;
 class IntAna_IntQuadQuad {
@@ -332,6 +337,7 @@ class IntAna_IntQuadQuad {
 	if (__env){printf("## Call custom destructor for instance of IntAna_IntQuadQuad\n");}
 	}
 };
+
 
 %nodefaultctor IntAna_IntConicQuad;
 class IntAna_IntConicQuad {
@@ -399,6 +405,7 @@ class IntAna_IntConicQuad {
 	}
 };
 
+
 %nodefaultctor IntAna_ListOfCurve;
 class IntAna_ListOfCurve {
 	public:
@@ -449,6 +456,7 @@ class IntAna_ListOfCurve {
 	}
 };
 
+
 %nodefaultctor IntAna_ListIteratorOfListOfCurve;
 class IntAna_ListIteratorOfListOfCurve {
 	public:
@@ -473,6 +481,7 @@ class IntAna_ListIteratorOfListOfCurve {
 	}
 };
 
+
 %nodefaultctor IntAna_Int3Pln;
 class IntAna_Int3Pln {
 	public:
@@ -496,6 +505,7 @@ class IntAna_Int3Pln {
 	if (__env){printf("## Call custom destructor for instance of IntAna_Int3Pln\n");}
 	}
 };
+
 
 %nodefaultctor IntAna_Curve;
 class IntAna_Curve {
@@ -538,6 +548,7 @@ class IntAna_Curve {
 	if (__env){printf("## Call custom destructor for instance of IntAna_Curve\n");}
 	}
 };
+
 
 %nodefaultctor IntAna_IntLinTorus;
 class IntAna_IntLinTorus {

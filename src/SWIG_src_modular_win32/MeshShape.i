@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public Handl
 	}
 };
 
+
 %nodefaultctor Handle_MeshShape_ListNodeOfPolygon;
 class Handle_MeshShape_ListNodeOfPolygon : public Handle_TCollection_MapNode {
 	public:
@@ -168,6 +170,7 @@ class Handle_MeshShape_ListNodeOfPolygon : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_ListNodeOfPolygon\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MeshShape_ListNodeOfListOfSurfacePoint;
 class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_MapNode {
@@ -194,6 +197,7 @@ class Handle_MeshShape_ListNodeOfListOfSurfacePoint : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_MeshShape_StdMapNodeOfMapOfCouple;
 class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNode {
 	public:
@@ -218,6 +222,7 @@ class Handle_MeshShape_StdMapNodeOfMapOfCouple : public Handle_TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_StdMapNodeOfMapOfCouple\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY;
 class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY : public Handle_TCollection_MapNode {
@@ -244,6 +249,7 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerXY : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt;
 class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public Handle_TCollection_MapNode {
 	public:
@@ -268,6 +274,7 @@ class Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public Handle_TCollect
 	if (__env){printf("## Call custom destructor for instance of Handle_MeshShape_DataMapNodeOfDataMapOfIntegerPnt\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfIntegerPnt;
 class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
@@ -299,6 +306,7 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerPnt : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor MeshShape_ListIteratorOfPolygon;
 class MeshShape_ListIteratorOfPolygon {
 	public:
@@ -322,6 +330,7 @@ class MeshShape_ListIteratorOfPolygon {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_ListIteratorOfPolygon\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient;
 class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_MapNode {
@@ -353,6 +362,7 @@ class MeshShape_DataMapNodeOfDataMapOfShapeListOfTransient : public TCollection_
 	}
 };
 
+
 %nodefaultctor MeshShape_Couple;
 class MeshShape_Couple {
 	public:
@@ -379,6 +389,7 @@ class MeshShape_Couple {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_Couple\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_DataMapOfIntegerPnt;
 class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
@@ -414,6 +425,7 @@ class MeshShape_DataMapOfIntegerPnt : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MeshShape;
 class MeshShape {
 	public:
@@ -431,6 +443,7 @@ class MeshShape {
 	if (__env){printf("## Call custom destructor for instance of MeshShape\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_PolygonPoint;
 class MeshShape_PolygonPoint {
@@ -451,6 +464,7 @@ class MeshShape_PolygonPoint {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_PolygonPoint\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient;
 class MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient : public TCollection_BasicMapIterator {
@@ -474,6 +488,7 @@ class MeshShape_DataMapIteratorOfDataMapOfShapeListOfTransient : public TCollect
 	}
 };
 
+
 %nodefaultctor MeshShape_CoupleHasher;
 class MeshShape_CoupleHasher {
 	public:
@@ -491,6 +506,7 @@ class MeshShape_CoupleHasher {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_CoupleHasher\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_ListOfSurfacePoint;
 class MeshShape_ListOfSurfacePoint {
@@ -542,6 +558,7 @@ class MeshShape_ListOfSurfacePoint {
 	}
 };
 
+
 %nodefaultctor MeshShape_ListNodeOfPolygon;
 class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
 	public:
@@ -570,6 +587,7 @@ class MeshShape_ListNodeOfPolygon : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfIntegerPnt;
 class MeshShape_DataMapIteratorOfDataMapOfIntegerPnt : public TCollection_BasicMapIterator {
 	public:
@@ -592,6 +610,7 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerPnt : public TCollection_BasicM
 	}
 };
 
+
 %nodefaultctor MeshShape_MapIteratorOfMapOfCouple;
 class MeshShape_MapIteratorOfMapOfCouple : public TCollection_BasicMapIterator {
 	public:
@@ -611,6 +630,7 @@ class MeshShape_MapIteratorOfMapOfCouple : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_MapIteratorOfMapOfCouple\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_StdMapNodeOfMapOfCouple;
 class MeshShape_StdMapNodeOfMapOfCouple : public TCollection_MapNode {
@@ -639,6 +659,7 @@ class MeshShape_StdMapNodeOfMapOfCouple : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_StdMapNodeOfMapOfCouple\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_Polygon;
 class MeshShape_Polygon {
@@ -690,6 +711,7 @@ class MeshShape_Polygon {
 	}
 };
 
+
 %nodefaultctor MeshShape_DataMapIteratorOfDataMapOfIntegerXY;
 class MeshShape_DataMapIteratorOfDataMapOfIntegerXY : public TCollection_BasicMapIterator {
 	public:
@@ -711,6 +733,7 @@ class MeshShape_DataMapIteratorOfDataMapOfIntegerXY : public TCollection_BasicMa
 	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapIteratorOfDataMapOfIntegerXY\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_DataMapOfIntegerXY;
 class MeshShape_DataMapOfIntegerXY : public TCollection_BasicMap {
@@ -746,6 +769,7 @@ class MeshShape_DataMapOfIntegerXY : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MeshShape_ListIteratorOfListOfSurfacePoint;
 class MeshShape_ListIteratorOfListOfSurfacePoint {
 	public:
@@ -770,6 +794,7 @@ class MeshShape_ListIteratorOfListOfSurfacePoint {
 	}
 };
 
+
 %nodefaultctor MeshShape_SurfacePoint;
 class MeshShape_SurfacePoint {
 	public:
@@ -793,6 +818,7 @@ class MeshShape_SurfacePoint {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_SurfacePoint\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_MapOfCouple;
 class MeshShape_MapOfCouple : public TCollection_BasicMap {
@@ -819,6 +845,7 @@ class MeshShape_MapOfCouple : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_MapOfCouple\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_DataMapNodeOfDataMapOfIntegerXY;
 class MeshShape_DataMapNodeOfDataMapOfIntegerXY : public TCollection_MapNode {
@@ -849,6 +876,7 @@ class MeshShape_DataMapNodeOfDataMapOfIntegerXY : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapNodeOfDataMapOfIntegerXY\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_DataMapOfShapeListOfTransient;
 class MeshShape_DataMapOfShapeListOfTransient : public TCollection_BasicMap {
@@ -883,6 +911,7 @@ class MeshShape_DataMapOfShapeListOfTransient : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of MeshShape_DataMapOfShapeListOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor MeshShape_ListNodeOfListOfSurfacePoint;
 class MeshShape_ListNodeOfListOfSurfacePoint : public TCollection_MapNode {

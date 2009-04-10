@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -185,6 +186,7 @@ class Handle_TDataStd_ReferenceArray : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_TreeNode;
 class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 	public:
@@ -209,6 +211,7 @@ class Handle_TDataStd_TreeNode : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_TreeNode\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfRealArray;
 class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOnModification {
@@ -235,6 +238,7 @@ class Handle_TDataStd_DeltaOnModificationOfRealArray : public Handle_TDF_DeltaOn
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Pattern;
 class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 	public:
@@ -259,6 +263,7 @@ class Handle_TDataStd_Pattern : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Pattern\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Handle_TCollection_MapNode {
@@ -285,6 +290,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public Hand
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Placement;
 class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 	public:
@@ -309,6 +315,7 @@ class Handle_TDataStd_Placement : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Placement\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Constraint;
 class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
@@ -335,6 +342,7 @@ class Handle_TDataStd_Constraint : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_IntegerList;
 class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 	public:
@@ -359,6 +367,7 @@ class Handle_TDataStd_IntegerList : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntegerList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntPackedMap;
 class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_DeltaOnModification {
@@ -385,6 +394,7 @@ class Handle_TDataStd_DeltaOnModificationOfIntPackedMap : public Handle_TDF_Delt
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Shape;
 class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 	public:
@@ -409,6 +419,7 @@ class Handle_TDataStd_Shape : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Shape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_RealArray;
 class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
@@ -435,6 +446,7 @@ class Handle_TDataStd_RealArray : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_NoteBook;
 class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 	public:
@@ -459,6 +471,7 @@ class Handle_TDataStd_NoteBook : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_NoteBook\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Variable;
 class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
@@ -485,6 +498,7 @@ class Handle_TDataStd_Variable : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Relation;
 class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 	public:
@@ -509,6 +523,7 @@ class Handle_TDataStd_Relation : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Relation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Geometry;
 class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
@@ -535,6 +550,7 @@ class Handle_TDataStd_Geometry : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_AsciiString;
 class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 	public:
@@ -559,6 +575,7 @@ class Handle_TDataStd_AsciiString : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_AsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_IntegerArray;
 class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
@@ -585,6 +602,7 @@ class Handle_TDataStd_IntegerArray : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfByteArray;
 class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOnModification {
 	public:
@@ -609,6 +627,7 @@ class Handle_TDataStd_DeltaOnModificationOfByteArray : public Handle_TDF_DeltaOn
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfByteArray\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_ExtStringArray;
 class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
@@ -635,6 +654,7 @@ class Handle_TDataStd_ExtStringArray : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Plane;
 class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 	public:
@@ -659,6 +679,7 @@ class Handle_TDataStd_Plane : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Plane\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_ReferenceList;
 class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
@@ -685,6 +706,7 @@ class Handle_TDataStd_ReferenceList : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringString;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollection_MapNode {
 	public:
@@ -709,6 +731,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringString : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringHArray1OfInteger;
 class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TShared {
@@ -735,6 +758,7 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfInteger : public Handle_MMgt_TSha
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_BooleanArray;
 class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 	public:
@@ -759,6 +783,7 @@ class Handle_TDataStd_BooleanArray : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_BooleanArray\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_PatternStd;
 class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
@@ -785,6 +810,7 @@ class Handle_TDataStd_PatternStd : public Handle_TDataStd_Pattern {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfExtStringArray;
 class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_DeltaOnModification {
 	public:
@@ -809,6 +835,7 @@ class Handle_TDataStd_DeltaOnModificationOfExtStringArray : public Handle_TDF_De
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DeltaOnModificationOfExtStringArray\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Expression;
 class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
@@ -835,6 +862,7 @@ class Handle_TDataStd_Expression : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Integer;
 class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 	public:
@@ -859,6 +887,7 @@ class Handle_TDataStd_Integer : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Integer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_ByteArray;
 class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
@@ -885,6 +914,7 @@ class Handle_TDataStd_ByteArray : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Real;
 class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 	public:
@@ -909,6 +939,7 @@ class Handle_TDataStd_Real : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Real\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringByte;
 class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
@@ -935,6 +966,7 @@ class Handle_TDataStd_HDataMapOfStringByte : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringByte;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollection_MapNode {
 	public:
@@ -959,6 +991,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringByte : public Handle_TCollecti
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringByte\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_BooleanList;
 class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
@@ -985,6 +1018,7 @@ class Handle_TDataStd_BooleanList : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_UAttribute;
 class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 	public:
@@ -1009,6 +1043,7 @@ class Handle_TDataStd_UAttribute : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_UAttribute\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringReal;
 class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
@@ -1035,6 +1070,7 @@ class Handle_TDataStd_HDataMapOfStringReal : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringReal;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollection_MapNode {
 	public:
@@ -1059,6 +1095,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringReal : public Handle_TCollecti
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_ListNodeOfListOfExtendedString;
 class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection_MapNode {
@@ -1085,6 +1122,7 @@ class Handle_TDataStd_ListNodeOfListOfExtendedString : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_HDataMapOfStringString;
 class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 	public:
@@ -1109,6 +1147,7 @@ class Handle_TDataStd_HDataMapOfStringString : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Point;
 class Handle_TDataStd_Point : public Handle_TDF_Attribute {
@@ -1135,6 +1174,7 @@ class Handle_TDataStd_Point : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_HLabelArray1;
 class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 	public:
@@ -1159,6 +1199,7 @@ class Handle_TDataStd_HLabelArray1 : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HLabelArray1\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Position;
 class Handle_TDataStd_Position : public Handle_TDF_Attribute {
@@ -1185,6 +1226,7 @@ class Handle_TDataStd_Position : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_HDataMapOfStringHArray1OfReal;
 class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared {
 	public:
@@ -1209,6 +1251,7 @@ class Handle_TDataStd_HDataMapOfStringHArray1OfReal : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_HDataMapOfStringHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Directory;
 class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
@@ -1235,6 +1278,7 @@ class Handle_TDataStd_Directory : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Comment;
 class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 	public:
@@ -1259,6 +1303,7 @@ class Handle_TDataStd_Comment : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Comment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Current;
 class Handle_TDataStd_Current : public Handle_TDF_Attribute {
@@ -1285,6 +1330,7 @@ class Handle_TDataStd_Current : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Axis;
 class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 	public:
@@ -1309,6 +1355,7 @@ class Handle_TDataStd_Axis : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Axis\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_HArray1OfByte;
 class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
@@ -1335,6 +1382,7 @@ class Handle_TDataStd_HArray1OfByte : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_NamedData;
 class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 	public:
@@ -1359,6 +1407,7 @@ class Handle_TDataStd_NamedData : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_NamedData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_DeltaOnModificationOfIntArray;
 class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnModification {
@@ -1385,6 +1434,7 @@ class Handle_TDataStd_DeltaOnModificationOfIntArray : public Handle_TDF_DeltaOnM
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_IntPackedMap;
 class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 	public:
@@ -1409,6 +1459,7 @@ class Handle_TDataStd_IntPackedMap : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_IntPackedMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_HDataMapOfStringInteger;
 class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
@@ -1435,6 +1486,7 @@ class Handle_TDataStd_HDataMapOfStringInteger : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TCollection_MapNode {
 	public:
@@ -1459,6 +1511,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_Name;
 class Handle_TDataStd_Name : public Handle_TDF_Attribute {
@@ -1485,6 +1538,7 @@ class Handle_TDataStd_Name : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_ExtStringList;
 class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 	public:
@@ -1509,6 +1563,7 @@ class Handle_TDataStd_ExtStringList : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_ExtStringList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_ListNodeOfListOfByte;
 class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
@@ -1535,6 +1590,7 @@ class Handle_TDataStd_ListNodeOfListOfByte : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_Tick;
 class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 	public:
@@ -1559,6 +1615,7 @@ class Handle_TDataStd_Tick : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_Tick\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TDataStd_HArray1OfTrsf;
 class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
@@ -1585,6 +1642,7 @@ class Handle_TDataStd_HArray1OfTrsf : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_RealList;
 class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 	public:
@@ -1610,6 +1668,7 @@ class Handle_TDataStd_RealList : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal;
 class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_TCollection_MapNode {
 	public:
@@ -1634,6 +1693,7 @@ class Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_ReferenceList;
 class TDataStd_ReferenceList : public TDF_Attribute {
@@ -1699,6 +1759,7 @@ class TDataStd_ReferenceList : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger;
 class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection_MapNode {
 	public:
@@ -1728,6 +1789,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger : public TCollection
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_ListOfExtendedString;
 class TDataStd_ListOfExtendedString {
@@ -1778,6 +1840,7 @@ class TDataStd_ListOfExtendedString {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_ListOfExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_BooleanList;
 class TDataStd_BooleanList : public TDF_Attribute {
@@ -1835,6 +1898,7 @@ class TDataStd_BooleanList : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_ListNodeOfListOfExtendedString;
 class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 	public:
@@ -1862,6 +1926,7 @@ class TDataStd_ListNodeOfListOfExtendedString : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_ListNodeOfListOfExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_HDataMapOfStringByte;
 class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
@@ -1894,6 +1959,7 @@ class TDataStd_HDataMapOfStringByte : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringByte\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Position;
 class TDataStd_Position : public TDF_Attribute {
@@ -1941,6 +2007,7 @@ class TDataStd_Position : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_Array1OfTrsf;
 class TDataStd_Array1OfTrsf {
 	public:
@@ -1980,6 +2047,7 @@ class TDataStd_Array1OfTrsf {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Array1OfTrsf\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_ExtStringArray;
 class TDataStd_ExtStringArray : public TDF_Attribute {
@@ -2045,6 +2113,7 @@ class TDataStd_ExtStringArray : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_LabelArray1;
 class TDataStd_LabelArray1 {
 	public:
@@ -2084,6 +2153,7 @@ class TDataStd_LabelArray1 {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_LabelArray1\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_NoteBook;
 class TDataStd_NoteBook : public TDF_Attribute {
@@ -2131,6 +2201,7 @@ class TDataStd_NoteBook : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_HDataMapOfStringReal;
 class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 	public:
@@ -2163,6 +2234,7 @@ class TDataStd_HDataMapOfStringReal : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDataStd_DeltaOnModificationOfIntArray;
 class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 	public:
@@ -2190,6 +2262,7 @@ class TDataStd_DeltaOnModificationOfIntArray : public TDF_DeltaOnModification {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntArray\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Pattern;
 class TDataStd_Pattern : public TDF_Attribute {
@@ -2224,6 +2297,7 @@ class TDataStd_Pattern : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Pattern\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_HLabelArray1;
 class TDataStd_HLabelArray1 : public MMgt_TShared {
@@ -2271,6 +2345,7 @@ class TDataStd_HLabelArray1 : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDataStd;
 class TDataStd {
 	public:
@@ -2292,6 +2367,7 @@ class TDataStd {
 	if (__env){printf("## Call custom destructor for instance of TDataStd\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Directory;
 class TDataStd_Directory : public TDF_Attribute {
@@ -2341,6 +2417,7 @@ class TDataStd_Directory : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DeltaOnModificationOfRealArray;
 class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 	public:
@@ -2368,6 +2445,7 @@ class TDataStd_DeltaOnModificationOfRealArray : public TDF_DeltaOnModification {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfRealArray\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_RealList;
 class TDataStd_RealList : public TDF_Attribute {
@@ -2431,6 +2509,7 @@ class TDataStd_RealList : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapOfStringReal;
 class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 	public:
@@ -2464,6 +2543,7 @@ class TDataStd_DataMapOfStringReal : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringReal\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_TreeNode;
 class TDataStd_TreeNode : public TDF_Attribute {
@@ -2577,6 +2657,7 @@ class TDataStd_TreeNode : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_HDataMapOfStringHArray1OfInteger;
 class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
 	public:
@@ -2608,6 +2689,7 @@ class TDataStd_HDataMapOfStringHArray1OfInteger : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_NamedData;
 class TDataStd_NamedData : public TDF_Attribute {
@@ -2721,6 +2803,7 @@ class TDataStd_NamedData : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_PatternStd;
 class TDataStd_PatternStd : public TDataStd_Pattern {
 	public:
@@ -2807,6 +2890,7 @@ class TDataStd_PatternStd : public TDataStd_Pattern {
 	}
 };
 
+
 %nodefaultctor TDataStd_Expression;
 class TDataStd_Expression : public TDF_Attribute {
 	public:
@@ -2855,6 +2939,7 @@ class TDataStd_Expression : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DeltaOnModificationOfExtStringArray;
 class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModification {
 	public:
@@ -2882,6 +2967,7 @@ class TDataStd_DeltaOnModificationOfExtStringArray : public TDF_DeltaOnModificat
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfExtStringArray\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_IntPackedMap;
 class TDataStd_IntPackedMap : public TDF_Attribute {
@@ -2947,6 +3033,7 @@ class TDataStd_IntPackedMap : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal;
 class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal : public TCollection_BasicMapIterator {
 	public:
@@ -2968,6 +3055,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_DataMapOfStringHArray1OfInteger;
 class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
@@ -3003,6 +3091,7 @@ class TDataStd_DataMapOfStringHArray1OfInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringByte;
 class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 	public:
@@ -3033,6 +3122,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringByte : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal;
 class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_MapNode {
 	public:
@@ -3062,6 +3152,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal : public TCollection_Ma
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_DataMapOfStringString;
 class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
@@ -3096,6 +3187,7 @@ class TDataStd_DataMapOfStringString : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringString\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Integer;
 class TDataStd_Integer : public TDF_Attribute {
@@ -3143,6 +3235,7 @@ class TDataStd_Integer : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DeltaOnModificationOfIntPackedMap;
 class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModification {
 	public:
@@ -3170,6 +3263,7 @@ class TDataStd_DeltaOnModificationOfIntPackedMap : public TDF_DeltaOnModificatio
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfIntPackedMap\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringReal;
 class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
@@ -3200,6 +3294,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringReal : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringReal\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_UAttribute;
 class TDataStd_UAttribute : public TDF_Attribute {
@@ -3242,6 +3337,7 @@ class TDataStd_UAttribute : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_UAttribute\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_ReferenceArray;
 class TDataStd_ReferenceArray : public TDF_Attribute {
@@ -3303,6 +3399,7 @@ class TDataStd_ReferenceArray : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_Point;
 class TDataStd_Point : public TDF_Attribute {
 	public:
@@ -3344,6 +3441,7 @@ class TDataStd_Point : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Point\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Real;
 class TDataStd_Real : public TDF_Attribute {
@@ -3395,6 +3493,7 @@ class TDataStd_Real : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_ChildNodeIterator;
 class TDataStd_ChildNodeIterator {
 	public:
@@ -3420,6 +3519,7 @@ class TDataStd_ChildNodeIterator {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_ChildNodeIterator\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Relation;
 class TDataStd_Relation : public TDF_Attribute {
@@ -3469,6 +3569,7 @@ class TDataStd_Relation : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_HArray1OfByte;
 class TDataStd_HArray1OfByte : public MMgt_TShared {
 	public:
@@ -3514,6 +3615,7 @@ class TDataStd_HArray1OfByte : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_HArray1OfByte\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Geometry;
 class TDataStd_Geometry : public TDF_Attribute {
@@ -3591,6 +3693,7 @@ class TDataStd_Geometry : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_ListNodeOfListOfByte;
 class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 	public:
@@ -3618,6 +3721,7 @@ class TDataStd_ListNodeOfListOfByte : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_ListNodeOfListOfByte\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Placement;
 class TDataStd_Placement : public TDF_Attribute {
@@ -3659,6 +3763,7 @@ class TDataStd_Placement : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringInteger;
 class TDataStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode {
 	public:
@@ -3689,6 +3794,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringInteger : public TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapNodeOfDataMapOfStringString;
 class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 	public:
@@ -3718,6 +3824,7 @@ class TDataStd_DataMapNodeOfDataMapOfStringString : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapNodeOfDataMapOfStringString\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_DataMapOfStringByte;
 class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
@@ -3752,6 +3859,7 @@ class TDataStd_DataMapOfStringByte : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringByte\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_ExtStringList;
 class TDataStd_ExtStringList : public TDF_Attribute {
@@ -3815,6 +3923,7 @@ class TDataStd_ExtStringList : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapOfStringInteger;
 class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 	public:
@@ -3848,6 +3957,7 @@ class TDataStd_DataMapOfStringInteger : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapOfStringInteger\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_HArray1OfTrsf;
 class TDataStd_HArray1OfTrsf : public MMgt_TShared {
@@ -3894,6 +4004,7 @@ class TDataStd_HArray1OfTrsf : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_HArray1OfTrsf\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Variable;
 class TDataStd_Variable : public TDF_Attribute {
@@ -3967,6 +4078,7 @@ class TDataStd_Variable : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_Comment;
 class TDataStd_Comment : public TDF_Attribute {
 	public:
@@ -4014,6 +4126,7 @@ class TDataStd_Comment : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Comment\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Current;
 class TDataStd_Current : public TDF_Attribute {
@@ -4063,6 +4176,7 @@ class TDataStd_Current : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_Shape;
 class TDataStd_Shape : public TDF_Attribute {
 	public:
@@ -4110,6 +4224,7 @@ class TDataStd_Shape : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Shape\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_RealArray;
 class TDataStd_RealArray : public TDF_Attribute {
@@ -4175,6 +4290,7 @@ class TDataStd_RealArray : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_Axis;
 class TDataStd_Axis : public TDF_Attribute {
 	public:
@@ -4217,6 +4333,7 @@ class TDataStd_Axis : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringByte;
 class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMapIterator {
 	public:
@@ -4238,6 +4355,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringByte : public TCollection_BasicMa
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringByte\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_DataMapOfStringHArray1OfReal;
 class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
@@ -4273,6 +4391,7 @@ class TDataStd_DataMapOfStringHArray1OfReal : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TDataStd_ListIteratorOfListOfExtendedString;
 class TDataStd_ListIteratorOfListOfExtendedString {
 	public:
@@ -4297,6 +4416,7 @@ class TDataStd_ListIteratorOfListOfExtendedString {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringReal;
 class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMapIterator {
 	public:
@@ -4318,6 +4438,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringReal : public TCollection_BasicMa
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringReal\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_AsciiString;
 class TDataStd_AsciiString : public TDF_Attribute {
@@ -4364,6 +4485,7 @@ class TDataStd_AsciiString : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_AsciiString\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_IntegerArray;
 class TDataStd_IntegerArray : public TDF_Attribute {
@@ -4429,6 +4551,7 @@ class TDataStd_IntegerArray : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringString;
 class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_BasicMapIterator {
 	public:
@@ -4450,6 +4573,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringString : public TCollection_Basic
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringString\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_ListOfByte;
 class TDataStd_ListOfByte {
@@ -4501,6 +4625,7 @@ class TDataStd_ListOfByte {
 	}
 };
 
+
 %nodefaultctor TDataStd_Name;
 class TDataStd_Name : public TDF_Attribute {
 	public:
@@ -4545,6 +4670,7 @@ class TDataStd_Name : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DeltaOnModificationOfByteArray;
 class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 	public:
@@ -4572,6 +4698,7 @@ class TDataStd_DeltaOnModificationOfByteArray : public TDF_DeltaOnModification {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DeltaOnModificationOfByteArray\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_HDataMapOfStringString;
 class TDataStd_HDataMapOfStringString : public MMgt_TShared {
@@ -4605,6 +4732,7 @@ class TDataStd_HDataMapOfStringString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringInteger;
 class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_BasicMapIterator {
 	public:
@@ -4626,6 +4754,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringInteger : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringInteger\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Tick;
 class TDataStd_Tick : public TDF_Attribute {
@@ -4666,6 +4795,7 @@ class TDataStd_Tick : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_Tick\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_BooleanArray;
 class TDataStd_BooleanArray : public TDF_Attribute {
@@ -4725,6 +4855,7 @@ class TDataStd_BooleanArray : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_HDataMapOfStringInteger;
 class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
 	public:
@@ -4756,6 +4887,7 @@ class TDataStd_HDataMapOfStringInteger : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringInteger\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_ByteArray;
 class TDataStd_ByteArray : public TDF_Attribute {
@@ -4820,6 +4952,7 @@ class TDataStd_ByteArray : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_ByteArray\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Constraint;
 class TDataStd_Constraint : public TDF_Attribute {
@@ -4909,6 +5042,7 @@ class TDataStd_Constraint : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger;
 class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -4930,6 +5064,7 @@ class TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger : public TCollec
 	if (__env){printf("## Call custom destructor for instance of TDataStd_DataMapIteratorOfDataMapOfStringHArray1OfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_Plane;
 class TDataStd_Plane : public TDF_Attribute {
@@ -4973,6 +5108,7 @@ class TDataStd_Plane : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TDataStd_Array1OfByte;
 class TDataStd_Array1OfByte {
 	public:
@@ -5013,6 +5149,7 @@ class TDataStd_Array1OfByte {
 	}
 };
 
+
 %nodefaultctor TDataStd_ListIteratorOfListOfByte;
 class TDataStd_ListIteratorOfListOfByte {
 	public:
@@ -5036,6 +5173,7 @@ class TDataStd_ListIteratorOfListOfByte {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_ListIteratorOfListOfByte\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_HDataMapOfStringHArray1OfReal;
 class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
@@ -5068,6 +5206,7 @@ class TDataStd_HDataMapOfStringHArray1OfReal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TDataStd_HDataMapOfStringHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor TDataStd_IntegerList;
 class TDataStd_IntegerList : public TDF_Attribute {

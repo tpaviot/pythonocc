@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ShapeCustom_BSplineRestriction : public Handle_BRepTools_Modificati
 	}
 };
 
+
 %nodefaultctor Handle_ShapeCustom_TrsfModification;
 class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModification {
 	public:
@@ -162,6 +164,7 @@ class Handle_ShapeCustom_TrsfModification : public Handle_BRepTools_TrsfModifica
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_TrsfModification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeCustom_SweptToElementary;
 class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modification {
@@ -188,6 +191,7 @@ class Handle_ShapeCustom_SweptToElementary : public Handle_BRepTools_Modificatio
 	}
 };
 
+
 %nodefaultctor Handle_ShapeCustom_ConvertToBSpline;
 class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification {
 	public:
@@ -212,6 +216,7 @@ class Handle_ShapeCustom_ConvertToBSpline : public Handle_BRepTools_Modification
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_ConvertToBSpline\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeCustom_ConvertToRevolution;
 class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modification {
@@ -238,6 +243,7 @@ class Handle_ShapeCustom_ConvertToRevolution : public Handle_BRepTools_Modificat
 	}
 };
 
+
 %nodefaultctor Handle_ShapeCustom_RestrictionParameters;
 class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 	public:
@@ -263,6 +269,7 @@ class Handle_ShapeCustom_RestrictionParameters : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeCustom_DirectModification;
 class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modification {
 	public:
@@ -287,6 +294,7 @@ class Handle_ShapeCustom_DirectModification : public Handle_BRepTools_Modificati
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeCustom_DirectModification\n");}
 	}
 };
+
 
 %nodefaultctor ShapeCustom_BSplineRestriction;
 class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
@@ -372,6 +380,7 @@ class ShapeCustom_BSplineRestriction : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor ShapeCustom_TrsfModification;
 class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 	public:
@@ -407,6 +416,7 @@ class ShapeCustom_TrsfModification : public BRepTools_TrsfModification {
 	if (__env){printf("## Call custom destructor for instance of ShapeCustom_TrsfModification\n");}
 	}
 };
+
 
 %nodefaultctor ShapeCustom_RestrictionParameters;
 class ShapeCustom_RestrictionParameters : public MMgt_TShared {
@@ -458,6 +468,7 @@ class ShapeCustom_RestrictionParameters : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeCustom_SweptToElementary;
 class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 	public:
@@ -496,6 +507,7 @@ class ShapeCustom_SweptToElementary : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor ShapeCustom_Curve2d;
 class ShapeCustom_Curve2d {
 	public:
@@ -516,6 +528,7 @@ class ShapeCustom_Curve2d {
 	}
 };
 
+
 %nodefaultctor ShapeCustom_Curve;
 class ShapeCustom_Curve {
 	public:
@@ -535,6 +548,7 @@ class ShapeCustom_Curve {
 	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Curve\n");}
 	}
 };
+
 
 %nodefaultctor ShapeCustom_Surface;
 class ShapeCustom_Surface {
@@ -559,6 +573,7 @@ class ShapeCustom_Surface {
 	if (__env){printf("## Call custom destructor for instance of ShapeCustom_Surface\n");}
 	}
 };
+
 
 %nodefaultctor ShapeCustom_ConvertToRevolution;
 class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
@@ -598,6 +613,7 @@ class ShapeCustom_ConvertToRevolution : public BRepTools_Modification {
 	}
 };
 
+
 %nodefaultctor ShapeCustom;
 class ShapeCustom {
 	public:
@@ -617,6 +633,7 @@ class ShapeCustom {
 	if (__env){printf("## Call custom destructor for instance of ShapeCustom\n");}
 	}
 };
+
 
 %nodefaultctor ShapeCustom_DirectModification;
 class ShapeCustom_DirectModification : public BRepTools_Modification {
@@ -655,6 +672,7 @@ class ShapeCustom_DirectModification : public BRepTools_Modification {
 	if (__env){printf("## Call custom destructor for instance of ShapeCustom_DirectModification\n");}
 	}
 };
+
 
 %nodefaultctor ShapeCustom_ConvertToBSpline;
 class ShapeCustom_ConvertToBSpline : public BRepTools_Modification {

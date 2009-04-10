@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_Hatch_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqN
 	}
 };
 
+
 %nodefaultctor Handle_Hatch_SequenceNodeOfSequenceOfParameter;
 class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection_SeqNode {
 	public:
@@ -168,6 +170,7 @@ class Handle_Hatch_SequenceNodeOfSequenceOfParameter : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_Hatch_SequenceNodeOfSequenceOfParameter\n");}
 	}
 };
+
 
 %nodefaultctor Hatch_SequenceOfParameter;
 class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
@@ -223,6 +226,7 @@ class Hatch_SequenceOfParameter : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfLine;
 class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	public:
@@ -250,6 +254,7 @@ class Hatch_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Hatch_SequenceNodeOfSequenceOfLine\n");}
 	}
 };
+
 
 %nodefaultctor Hatch_Hatcher;
 class Hatch_Hatcher {
@@ -307,6 +312,7 @@ class Hatch_Hatcher {
 	}
 };
 
+
 %nodefaultctor Hatch_Line;
 class Hatch_Line {
 	public:
@@ -324,6 +330,7 @@ class Hatch_Line {
 	if (__env){printf("## Call custom destructor for instance of Hatch_Line\n");}
 	}
 };
+
 
 %nodefaultctor Hatch_SequenceOfLine;
 class Hatch_SequenceOfLine : public TCollection_BaseSequence {
@@ -379,6 +386,7 @@ class Hatch_SequenceOfLine : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Hatch_Parameter;
 class Hatch_Parameter {
 	public:
@@ -394,6 +402,7 @@ class Hatch_Parameter {
 	if (__env){printf("## Call custom destructor for instance of Hatch_Parameter\n");}
 	}
 };
+
 
 %nodefaultctor Hatch_SequenceNodeOfSequenceOfParameter;
 class Hatch_SequenceNodeOfSequenceOfParameter : public TCollection_SeqNode {

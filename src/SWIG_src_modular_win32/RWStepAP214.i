@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_RWStepAP214_ReadWriteModule : public Handle_StepData_ReadWriteModul
 	}
 };
 
+
 %nodefaultctor Handle_RWStepAP214_GeneralModule;
 class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 	public:
@@ -163,6 +165,7 @@ class Handle_RWStepAP214_GeneralModule : public Handle_StepData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment;
 class RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
 	public:
@@ -182,6 +185,7 @@ class RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignPersonAndOrganizationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAppliedDateAssignment;
 class RWStepAP214_RWAppliedDateAssignment {
@@ -203,6 +207,7 @@ class RWStepAP214_RWAppliedDateAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAutoDesignDateAndPersonAssignment;
 class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 	public:
@@ -222,6 +227,7 @@ class RWStepAP214_RWAutoDesignDateAndPersonAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignDateAndPersonAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAppliedExternalIdentificationAssignment;
 class RWStepAP214_RWAppliedExternalIdentificationAssignment {
@@ -243,6 +249,7 @@ class RWStepAP214_RWAppliedExternalIdentificationAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAppliedPersonAndOrganizationAssignment;
 class RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
 	public:
@@ -262,6 +269,7 @@ class RWStepAP214_RWAppliedPersonAndOrganizationAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedPersonAndOrganizationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAutoDesignOrganizationAssignment;
 class RWStepAP214_RWAutoDesignOrganizationAssignment {
@@ -283,6 +291,7 @@ class RWStepAP214_RWAutoDesignOrganizationAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAppliedDateAndTimeAssignment;
 class RWStepAP214_RWAppliedDateAndTimeAssignment {
 	public:
@@ -302,6 +311,7 @@ class RWStepAP214_RWAppliedDateAndTimeAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedDateAndTimeAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAppliedGroupAssignment;
 class RWStepAP214_RWAppliedGroupAssignment {
@@ -323,6 +333,7 @@ class RWStepAP214_RWAppliedGroupAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAppliedSecurityClassificationAssignment;
 class RWStepAP214_RWAppliedSecurityClassificationAssignment {
 	public:
@@ -342,6 +353,7 @@ class RWStepAP214_RWAppliedSecurityClassificationAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedSecurityClassificationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWClass;
 class RWStepAP214_RWClass {
@@ -363,6 +375,7 @@ class RWStepAP214_RWClass {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAutoDesignApprovalAssignment;
 class RWStepAP214_RWAutoDesignApprovalAssignment {
 	public:
@@ -382,6 +395,7 @@ class RWStepAP214_RWAutoDesignApprovalAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignApprovalAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_GeneralModule;
 class RWStepAP214_GeneralModule : public StepData_GeneralModule {
@@ -421,6 +435,7 @@ class RWStepAP214_GeneralModule : public StepData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment;
 class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 	public:
@@ -440,6 +455,7 @@ class RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignNominalDateAndTimeAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAutoDesignNominalDateAssignment;
 class RWStepAP214_RWAutoDesignNominalDateAssignment {
@@ -461,6 +477,7 @@ class RWStepAP214_RWAutoDesignNominalDateAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAppliedPresentedItem;
 class RWStepAP214_RWAppliedPresentedItem {
 	public:
@@ -480,6 +497,7 @@ class RWStepAP214_RWAppliedPresentedItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedPresentedItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAutoDesignGroupAssignment;
 class RWStepAP214_RWAutoDesignGroupAssignment {
@@ -501,6 +519,7 @@ class RWStepAP214_RWAutoDesignGroupAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAppliedApprovalAssignment;
 class RWStepAP214_RWAppliedApprovalAssignment {
 	public:
@@ -520,6 +539,7 @@ class RWStepAP214_RWAppliedApprovalAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedApprovalAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAutoDesignPresentedItem;
 class RWStepAP214_RWAutoDesignPresentedItem {
@@ -541,6 +561,7 @@ class RWStepAP214_RWAutoDesignPresentedItem {
 	}
 };
 
+
 %nodefaultctor RWStepAP214;
 class RWStepAP214 {
 	public:
@@ -556,6 +577,7 @@ class RWStepAP214 {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWRepItemGroup;
 class RWStepAP214_RWRepItemGroup {
@@ -577,6 +599,7 @@ class RWStepAP214_RWRepItemGroup {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAutoDesignActualDateAssignment;
 class RWStepAP214_RWAutoDesignActualDateAssignment {
 	public:
@@ -596,6 +619,7 @@ class RWStepAP214_RWAutoDesignActualDateAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAutoDesignActualDateAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAutoDesignActualDateAndTimeAssignment;
 class RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
@@ -617,6 +641,7 @@ class RWStepAP214_RWAutoDesignActualDateAndTimeAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAppliedDocumentReference;
 class RWStepAP214_RWAppliedDocumentReference {
 	public:
@@ -636,6 +661,7 @@ class RWStepAP214_RWAppliedDocumentReference {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWAppliedDocumentReference\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAutoDesignDocumentReference;
 class RWStepAP214_RWAutoDesignDocumentReference {
@@ -657,6 +683,7 @@ class RWStepAP214_RWAutoDesignDocumentReference {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWExternallyDefinedGeneralProperty;
 class RWStepAP214_RWExternallyDefinedGeneralProperty {
 	public:
@@ -676,6 +703,7 @@ class RWStepAP214_RWExternallyDefinedGeneralProperty {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWExternallyDefinedGeneralProperty\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_RWAutoDesignSecurityClassificationAssignment;
 class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
@@ -697,6 +725,7 @@ class RWStepAP214_RWAutoDesignSecurityClassificationAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWAppliedOrganizationAssignment;
 class RWStepAP214_RWAppliedOrganizationAssignment {
 	public:
@@ -717,6 +746,7 @@ class RWStepAP214_RWAppliedOrganizationAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepAP214_RWExternallyDefinedClass;
 class RWStepAP214_RWExternallyDefinedClass {
 	public:
@@ -736,6 +766,7 @@ class RWStepAP214_RWExternallyDefinedClass {
 	if (__env){printf("## Call custom destructor for instance of RWStepAP214_RWExternallyDefinedClass\n");}
 	}
 };
+
 
 %nodefaultctor RWStepAP214_ReadWriteModule;
 class RWStepAP214_ReadWriteModule : public StepData_ReadWriteModule {

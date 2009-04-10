@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -145,6 +146,7 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress;
 class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
 	public:
@@ -169,6 +171,7 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 	if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_Persistent;
 class BinObjMgt_Persistent {
@@ -284,6 +287,7 @@ class BinObjMgt_Persistent {
 	}
 };
 
+
 %nodefaultctor BinObjMgt_DataMapNodeOfRRelocationTable;
 class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	public:
@@ -313,6 +317,7 @@ class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapNodeOfRRelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_SequenceOfAddress;
 class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
@@ -368,6 +373,7 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BinObjMgt_SequenceNodeOfSequenceOfAddress;
 class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 	public:
@@ -395,6 +401,7 @@ class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_RRelocationTable;
 class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
@@ -429,6 +436,7 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BinObjMgt_RRelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_DataMapIteratorOfRRelocationTable;
 class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapIterator {

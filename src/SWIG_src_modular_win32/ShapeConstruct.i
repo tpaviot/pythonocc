@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ShapeConstruct_ProjectCurveOnSurface : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeConstruct;
 class ShapeConstruct {
 	public:
@@ -163,6 +165,7 @@ class ShapeConstruct {
 	if (__env){printf("## Call custom destructor for instance of ShapeConstruct\n");}
 	}
 };
+
 
 %nodefaultctor ShapeConstruct_ProjectCurveOnSurface;
 class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
@@ -212,6 +215,7 @@ class ShapeConstruct_ProjectCurveOnSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeConstruct_CompBezierCurvesToBSplineCurve;
 class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	public:
@@ -239,6 +243,7 @@ class ShapeConstruct_CompBezierCurvesToBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_CompBezierCurvesToBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor ShapeConstruct_Curve;
 class ShapeConstruct_Curve {
@@ -268,6 +273,7 @@ class ShapeConstruct_Curve {
 	}
 };
 
+
 %nodefaultctor ShapeConstruct_MakeTriangulation;
 class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 	public:
@@ -287,6 +293,7 @@ class ShapeConstruct_MakeTriangulation : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of ShapeConstruct_MakeTriangulation\n");}
 	}
 };
+
 
 %nodefaultctor ShapeConstruct_CompBezierCurves2dToBSplineCurve2d;
 class ShapeConstruct_CompBezierCurves2dToBSplineCurve2d {

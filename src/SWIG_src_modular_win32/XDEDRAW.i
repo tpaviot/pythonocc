@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -129,6 +130,7 @@ class XDEDRAW_Common {
 	}
 };
 
+
 %nodefaultctor XDEDRAW_Layers;
 class XDEDRAW_Layers {
 	public:
@@ -144,6 +146,7 @@ class XDEDRAW_Layers {
 	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Layers\n");}
 	}
 };
+
 
 %nodefaultctor XDEDRAW;
 class XDEDRAW {
@@ -163,6 +166,7 @@ class XDEDRAW {
 	}
 };
 
+
 %nodefaultctor XDEDRAW_Colors;
 class XDEDRAW_Colors {
 	public:
@@ -179,6 +183,7 @@ class XDEDRAW_Colors {
 	}
 };
 
+
 %nodefaultctor XDEDRAW_Shapes;
 class XDEDRAW_Shapes {
 	public:
@@ -194,6 +199,7 @@ class XDEDRAW_Shapes {
 	if (__env){printf("## Call custom destructor for instance of XDEDRAW_Shapes\n");}
 	}
 };
+
 
 %nodefaultctor XDEDRAW_Props;
 class XDEDRAW_Props {

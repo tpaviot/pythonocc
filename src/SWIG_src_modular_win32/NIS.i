@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_NIS_InteractiveObject : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_NIS_Triangulated;
 class Handle_NIS_Triangulated : public Handle_NIS_InteractiveObject {
 	public:
@@ -162,6 +164,7 @@ class Handle_NIS_Triangulated : public Handle_NIS_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_NIS_Triangulated\n");}
 	}
 };
+
 
 %nodefaultctor Handle_NIS_SelectFilter;
 class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
@@ -188,6 +191,7 @@ class Handle_NIS_SelectFilter : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_NIS_Drawer;
 class Handle_NIS_Drawer : public Handle_Standard_Transient {
 	public:
@@ -212,6 +216,7 @@ class Handle_NIS_Drawer : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_NIS_Drawer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_NIS_TriangulatedDrawer;
 class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
@@ -238,6 +243,7 @@ class Handle_NIS_TriangulatedDrawer : public Handle_NIS_Drawer {
 	}
 };
 
+
 %nodefaultctor Handle_NIS_InteractiveContext;
 class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 	public:
@@ -262,6 +268,7 @@ class Handle_NIS_InteractiveContext : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_NIS_InteractiveContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_NIS_Surface;
 class Handle_NIS_Surface : public Handle_NIS_InteractiveObject {
@@ -288,6 +295,7 @@ class Handle_NIS_Surface : public Handle_NIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor Handle_NIS_SurfaceDrawer;
 class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
 	public:
@@ -313,6 +321,7 @@ class Handle_NIS_SurfaceDrawer : public Handle_NIS_Drawer {
 	}
 };
 
+
 %nodefaultctor Handle_NIS_View;
 class Handle_NIS_View : public Handle_V3d_OrthographicView {
 	public:
@@ -337,6 +346,7 @@ class Handle_NIS_View : public Handle_V3d_OrthographicView {
 	if (__env){printf("## Call custom destructor for instance of Handle_NIS_View\n");}
 	}
 };
+
 
 %nodefaultctor NIS_InteractiveObject;
 class NIS_InteractiveObject : public Standard_Transient {
@@ -397,6 +407,7 @@ class NIS_InteractiveObject : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of NIS_InteractiveObject\n");}
 	}
 };
+
 
 %nodefaultctor NIS_Triangulated;
 class NIS_Triangulated : public NIS_InteractiveObject {
@@ -482,6 +493,7 @@ class NIS_Triangulated : public NIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor NIS_DrawList;
 class NIS_DrawList {
 	public:
@@ -515,6 +527,7 @@ class NIS_DrawList {
 	if (__env){printf("## Call custom destructor for instance of NIS_DrawList\n");}
 	}
 };
+
 
 %nodefaultctor NIS_Drawer;
 class NIS_Drawer : public Standard_Transient {
@@ -560,6 +573,7 @@ class NIS_Drawer : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor NIS_SurfaceDrawer;
 class NIS_SurfaceDrawer : public NIS_Drawer {
 	public:
@@ -601,6 +615,7 @@ class NIS_SurfaceDrawer : public NIS_Drawer {
 	if (__env){printf("## Call custom destructor for instance of NIS_SurfaceDrawer\n");}
 	}
 };
+
 
 %nodefaultctor NIS_InteractiveContext;
 class NIS_InteractiveContext : public Standard_Transient {
@@ -682,6 +697,7 @@ class NIS_InteractiveContext : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor NIS_Surface;
 class NIS_Surface : public NIS_InteractiveObject {
 	public:
@@ -734,6 +750,7 @@ class NIS_Surface : public NIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor NIS_ObjectsIterator;
 class NIS_ObjectsIterator {
 	public:
@@ -757,6 +774,7 @@ class NIS_ObjectsIterator {
 	if (__env){printf("## Call custom destructor for instance of NIS_ObjectsIterator\n");}
 	}
 };
+
 
 %nodefaultctor NIS_SelectFilter;
 class NIS_SelectFilter : public Standard_Transient {
@@ -785,6 +803,7 @@ class NIS_SelectFilter : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of NIS_SelectFilter\n");}
 	}
 };
+
 
 %nodefaultctor NIS_View;
 class NIS_View : public V3d_OrthographicView {
@@ -825,6 +844,7 @@ class NIS_View : public V3d_OrthographicView {
 	if (__env){printf("## Call custom destructor for instance of NIS_View\n");}
 	}
 };
+
 
 %nodefaultctor NIS_TriangulatedDrawer;
 class NIS_TriangulatedDrawer : public NIS_Drawer {

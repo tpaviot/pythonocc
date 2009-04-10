@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -145,6 +146,7 @@ class Handle_Voxel_Prs : public Handle_AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor Voxel_DS;
 class Voxel_DS {
 	public:
@@ -191,6 +193,7 @@ class Voxel_DS {
 	}
 };
 
+
 %nodefaultctor Voxel_BoolDS;
 class Voxel_BoolDS : public Voxel_DS {
 	public:
@@ -214,6 +217,7 @@ class Voxel_BoolDS : public Voxel_DS {
 	if (__env){printf("## Call custom destructor for instance of Voxel_BoolDS\n");}
 	}
 };
+
 
 %nodefaultctor Voxel_FloatDS;
 class Voxel_FloatDS : public Voxel_DS {
@@ -241,6 +245,7 @@ class Voxel_FloatDS : public Voxel_DS {
 	}
 };
 
+
 %nodefaultctor Voxel_Selector;
 class Voxel_Selector {
 	public:
@@ -264,6 +269,7 @@ class Voxel_Selector {
 	if (__env){printf("## Call custom destructor for instance of Voxel_Selector\n");}
 	}
 };
+
 
 %nodefaultctor Voxel_Prs;
 class Voxel_Prs : public AIS_InteractiveObject {
@@ -323,6 +329,7 @@ class Voxel_Prs : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor Voxel_BooleanOperation;
 class Voxel_BooleanOperation {
 	public:
@@ -349,6 +356,7 @@ class Voxel_BooleanOperation {
 	}
 };
 
+
 %nodefaultctor Voxel_FastConverter;
 class Voxel_FastConverter {
 	public:
@@ -370,6 +378,7 @@ class Voxel_FastConverter {
 	if (__env){printf("## Call custom destructor for instance of Voxel_FastConverter\n");}
 	}
 };
+
 
 %nodefaultctor Voxel_ColorDS;
 class Voxel_ColorDS : public Voxel_DS {
@@ -396,6 +405,7 @@ class Voxel_ColorDS : public Voxel_DS {
 	if (__env){printf("## Call custom destructor for instance of Voxel_ColorDS\n");}
 	}
 };
+
 
 %nodefaultctor Voxel_CollisionDetection;
 class Voxel_CollisionDetection {

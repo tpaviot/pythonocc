@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_StepAP203_Change : public Handle_StepBasic_ActionAssignment {
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_HArray1OfWorkItem;
 class Handle_StepAP203_HArray1OfWorkItem : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_StepAP203_HArray1OfWorkItem : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfWorkItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_CcDesignPersonAndOrganizationAssignment;
 class Handle_StepAP203_CcDesignPersonAndOrganizationAssignment : public Handle_StepBasic_PersonAndOrganizationAssignment {
@@ -188,6 +191,7 @@ class Handle_StepAP203_CcDesignPersonAndOrganizationAssignment : public Handle_S
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_StartRequest;
 class Handle_StepAP203_StartRequest : public Handle_StepBasic_ActionRequestAssignment {
 	public:
@@ -212,6 +216,7 @@ class Handle_StepAP203_StartRequest : public Handle_StepBasic_ActionRequestAssig
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_StartRequest\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_CcDesignSpecificationReference;
 class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_DocumentReference {
@@ -238,6 +243,7 @@ class Handle_StepAP203_CcDesignSpecificationReference : public Handle_StepBasic_
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_HArray1OfPersonOrganizationItem;
 class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_StepAP203_HArray1OfPersonOrganizationItem : public Handle_MMgt_TSha
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfPersonOrganizationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_ChangeRequest;
 class Handle_StepAP203_ChangeRequest : public Handle_StepBasic_ActionRequestAssignment {
@@ -288,6 +295,7 @@ class Handle_StepAP203_ChangeRequest : public Handle_StepBasic_ActionRequestAssi
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_CcDesignDateAndTimeAssignment;
 class Handle_StepAP203_CcDesignDateAndTimeAssignment : public Handle_StepBasic_DateAndTimeAssignment {
 	public:
@@ -312,6 +320,7 @@ class Handle_StepAP203_CcDesignDateAndTimeAssignment : public Handle_StepBasic_D
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignDateAndTimeAssignment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_CcDesignApproval;
 class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssignment {
@@ -338,6 +347,7 @@ class Handle_StepAP203_CcDesignApproval : public Handle_StepBasic_ApprovalAssign
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_HArray1OfChangeRequestItem;
 class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_StepAP203_HArray1OfChangeRequestItem : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfChangeRequestItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_StartWork;
 class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
@@ -388,6 +399,7 @@ class Handle_StepAP203_StartWork : public Handle_StepBasic_ActionAssignment {
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_HArray1OfStartRequestItem;
 class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 	public:
@@ -412,6 +424,7 @@ class Handle_StepAP203_HArray1OfStartRequestItem : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfStartRequestItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_CcDesignSecurityClassification;
 class Handle_StepAP203_CcDesignSecurityClassification : public Handle_StepBasic_SecurityClassificationAssignment {
@@ -438,6 +451,7 @@ class Handle_StepAP203_CcDesignSecurityClassification : public Handle_StepBasic_
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_HArray1OfApprovedItem;
 class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
 	public:
@@ -462,6 +476,7 @@ class Handle_StepAP203_HArray1OfApprovedItem : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfApprovedItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_HArray1OfSpecifiedItem;
 class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
@@ -488,6 +503,7 @@ class Handle_StepAP203_HArray1OfSpecifiedItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_CcDesignContract;
 class Handle_StepAP203_CcDesignContract : public Handle_StepBasic_ContractAssignment {
 	public:
@@ -512,6 +528,7 @@ class Handle_StepAP203_CcDesignContract : public Handle_StepBasic_ContractAssign
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignContract\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_HArray1OfDateTimeItem;
 class Handle_StepAP203_HArray1OfDateTimeItem : public Handle_MMgt_TShared {
@@ -538,6 +555,7 @@ class Handle_StepAP203_HArray1OfDateTimeItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_CcDesignCertification;
 class Handle_StepAP203_CcDesignCertification : public Handle_StepBasic_CertificationAssignment {
 	public:
@@ -562,6 +580,7 @@ class Handle_StepAP203_CcDesignCertification : public Handle_StepBasic_Certifica
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_CcDesignCertification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepAP203_HArray1OfContractedItem;
 class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
@@ -588,6 +607,7 @@ class Handle_StepAP203_HArray1OfContractedItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_HArray1OfClassifiedItem;
 class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
 	public:
@@ -613,6 +633,7 @@ class Handle_StepAP203_HArray1OfClassifiedItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepAP203_HArray1OfCertifiedItem;
 class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
 	public:
@@ -637,6 +658,7 @@ class Handle_StepAP203_HArray1OfCertifiedItem : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepAP203_HArray1OfCertifiedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_HArray1OfSpecifiedItem;
 class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
@@ -684,6 +706,7 @@ class StepAP203_HArray1OfSpecifiedItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_Array1OfClassifiedItem;
 class StepAP203_Array1OfClassifiedItem {
 	public:
@@ -723,6 +746,7 @@ class StepAP203_Array1OfClassifiedItem {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfClassifiedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_HArray1OfChangeRequestItem;
 class StepAP203_HArray1OfChangeRequestItem : public MMgt_TShared {
@@ -770,6 +794,7 @@ class StepAP203_HArray1OfChangeRequestItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_ChangeRequest;
 class StepAP203_ChangeRequest : public StepBasic_ActionRequestAssignment {
 	public:
@@ -801,6 +826,7 @@ class StepAP203_ChangeRequest : public StepBasic_ActionRequestAssignment {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_ChangeRequest\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_CcDesignSecurityClassification;
 class StepAP203_CcDesignSecurityClassification : public StepBasic_SecurityClassificationAssignment {
@@ -834,6 +860,7 @@ class StepAP203_CcDesignSecurityClassification : public StepBasic_SecurityClassi
 	}
 };
 
+
 %nodefaultctor StepAP203_CcDesignDateAndTimeAssignment;
 class StepAP203_CcDesignDateAndTimeAssignment : public StepBasic_DateAndTimeAssignment {
 	public:
@@ -865,6 +892,7 @@ class StepAP203_CcDesignDateAndTimeAssignment : public StepBasic_DateAndTimeAssi
 	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignDateAndTimeAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_Array1OfWorkItem;
 class StepAP203_Array1OfWorkItem {
@@ -906,6 +934,7 @@ class StepAP203_Array1OfWorkItem {
 	}
 };
 
+
 %nodefaultctor StepAP203_CcDesignContract;
 class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
 	public:
@@ -937,6 +966,7 @@ class StepAP203_CcDesignContract : public StepBasic_ContractAssignment {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignContract\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_HArray1OfCertifiedItem;
 class StepAP203_HArray1OfCertifiedItem : public MMgt_TShared {
@@ -984,6 +1014,7 @@ class StepAP203_HArray1OfCertifiedItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_SpecifiedItem;
 class StepAP203_SpecifiedItem : public StepData_SelectType {
 	public:
@@ -1003,6 +1034,7 @@ class StepAP203_SpecifiedItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_SpecifiedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_Array1OfContractedItem;
 class StepAP203_Array1OfContractedItem {
@@ -1044,6 +1076,7 @@ class StepAP203_Array1OfContractedItem {
 	}
 };
 
+
 %nodefaultctor StepAP203_Array1OfPersonOrganizationItem;
 class StepAP203_Array1OfPersonOrganizationItem {
 	public:
@@ -1083,6 +1116,7 @@ class StepAP203_Array1OfPersonOrganizationItem {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfPersonOrganizationItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_HArray1OfClassifiedItem;
 class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
@@ -1130,6 +1164,7 @@ class StepAP203_HArray1OfClassifiedItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_Array1OfChangeRequestItem;
 class StepAP203_Array1OfChangeRequestItem {
 	public:
@@ -1169,6 +1204,7 @@ class StepAP203_Array1OfChangeRequestItem {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfChangeRequestItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_HArray1OfWorkItem;
 class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
@@ -1216,6 +1252,7 @@ class StepAP203_HArray1OfWorkItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_StartRequestItem;
 class StepAP203_StartRequestItem : public StepData_SelectType {
 	public:
@@ -1233,6 +1270,7 @@ class StepAP203_StartRequestItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_StartRequestItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_PersonOrganizationItem;
 class StepAP203_PersonOrganizationItem : public StepData_SelectType {
@@ -1270,6 +1308,7 @@ class StepAP203_PersonOrganizationItem : public StepData_SelectType {
 	}
 };
 
+
 %nodefaultctor StepAP203_WorkItem;
 class StepAP203_WorkItem : public StepData_SelectType {
 	public:
@@ -1288,6 +1327,7 @@ class StepAP203_WorkItem : public StepData_SelectType {
 	}
 };
 
+
 %nodefaultctor StepAP203_CertifiedItem;
 class StepAP203_CertifiedItem : public StepData_SelectType {
 	public:
@@ -1305,6 +1345,7 @@ class StepAP203_CertifiedItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_CertifiedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_HArray1OfContractedItem;
 class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
@@ -1352,6 +1393,7 @@ class StepAP203_HArray1OfContractedItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_HArray1OfApprovedItem;
 class StepAP203_HArray1OfApprovedItem : public MMgt_TShared {
 	public:
@@ -1398,6 +1440,7 @@ class StepAP203_HArray1OfApprovedItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_StartWork;
 class StepAP203_StartWork : public StepBasic_ActionAssignment {
 	public:
@@ -1429,6 +1472,7 @@ class StepAP203_StartWork : public StepBasic_ActionAssignment {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_StartWork\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_HArray1OfPersonOrganizationItem;
 class StepAP203_HArray1OfPersonOrganizationItem : public MMgt_TShared {
@@ -1476,6 +1520,7 @@ class StepAP203_HArray1OfPersonOrganizationItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_CcDesignPersonAndOrganizationAssignment;
 class StepAP203_CcDesignPersonAndOrganizationAssignment : public StepBasic_PersonAndOrganizationAssignment {
 	public:
@@ -1508,6 +1553,7 @@ class StepAP203_CcDesignPersonAndOrganizationAssignment : public StepBasic_Perso
 	}
 };
 
+
 %nodefaultctor StepAP203_ChangeRequestItem;
 class StepAP203_ChangeRequestItem : public StepData_SelectType {
 	public:
@@ -1525,6 +1571,7 @@ class StepAP203_ChangeRequestItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_ChangeRequestItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_DateTimeItem;
 class StepAP203_DateTimeItem : public StepData_SelectType {
@@ -1559,6 +1606,7 @@ class StepAP203_DateTimeItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_DateTimeItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_Array1OfStartRequestItem;
 class StepAP203_Array1OfStartRequestItem {
@@ -1599,6 +1647,7 @@ class StepAP203_Array1OfStartRequestItem {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfStartRequestItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_HArray1OfDateTimeItem;
 class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
@@ -1646,6 +1695,7 @@ class StepAP203_HArray1OfDateTimeItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_HArray1OfStartRequestItem;
 class StepAP203_HArray1OfStartRequestItem : public MMgt_TShared {
 	public:
@@ -1692,6 +1742,7 @@ class StepAP203_HArray1OfStartRequestItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepAP203_StartRequest;
 class StepAP203_StartRequest : public StepBasic_ActionRequestAssignment {
 	public:
@@ -1724,6 +1775,7 @@ class StepAP203_StartRequest : public StepBasic_ActionRequestAssignment {
 	}
 };
 
+
 %nodefaultctor StepAP203_Change;
 class StepAP203_Change : public StepBasic_ActionAssignment {
 	public:
@@ -1755,6 +1807,7 @@ class StepAP203_Change : public StepBasic_ActionAssignment {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_Change\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_Array1OfApprovedItem;
 class StepAP203_Array1OfApprovedItem {
@@ -1796,6 +1849,7 @@ class StepAP203_Array1OfApprovedItem {
 	}
 };
 
+
 %nodefaultctor StepAP203_ApprovedItem;
 class StepAP203_ApprovedItem : public StepData_SelectType {
 	public:
@@ -1834,6 +1888,7 @@ class StepAP203_ApprovedItem : public StepData_SelectType {
 	}
 };
 
+
 %nodefaultctor StepAP203_CcDesignCertification;
 class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment {
 	public:
@@ -1865,6 +1920,7 @@ class StepAP203_CcDesignCertification : public StepBasic_CertificationAssignment
 	if (__env){printf("## Call custom destructor for instance of StepAP203_CcDesignCertification\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_CcDesignApproval;
 class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
@@ -1898,6 +1954,7 @@ class StepAP203_CcDesignApproval : public StepBasic_ApprovalAssignment {
 	}
 };
 
+
 %nodefaultctor StepAP203_ContractedItem;
 class StepAP203_ContractedItem : public StepData_SelectType {
 	public:
@@ -1915,6 +1972,7 @@ class StepAP203_ContractedItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_ContractedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_CcDesignSpecificationReference;
 class StepAP203_CcDesignSpecificationReference : public StepBasic_DocumentReference {
@@ -1948,6 +2006,7 @@ class StepAP203_CcDesignSpecificationReference : public StepBasic_DocumentRefere
 	}
 };
 
+
 %nodefaultctor StepAP203_ClassifiedItem;
 class StepAP203_ClassifiedItem : public StepData_SelectType {
 	public:
@@ -1967,6 +2026,7 @@ class StepAP203_ClassifiedItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_ClassifiedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_Array1OfDateTimeItem;
 class StepAP203_Array1OfDateTimeItem {
@@ -2008,6 +2068,7 @@ class StepAP203_Array1OfDateTimeItem {
 	}
 };
 
+
 %nodefaultctor StepAP203_Array1OfCertifiedItem;
 class StepAP203_Array1OfCertifiedItem {
 	public:
@@ -2047,6 +2108,7 @@ class StepAP203_Array1OfCertifiedItem {
 	if (__env){printf("## Call custom destructor for instance of StepAP203_Array1OfCertifiedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepAP203_Array1OfSpecifiedItem;
 class StepAP203_Array1OfSpecifiedItem {

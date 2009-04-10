@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -143,6 +144,7 @@ class Handle_Select2D_Projector : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Select2D_SensitiveEntity;
 class Handle_Select2D_SensitiveEntity : public Handle_SelectBasics_SensitiveEntity {
 	public:
@@ -167,6 +169,7 @@ class Handle_Select2D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select2D_SensitivePoint;
 class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
@@ -193,6 +196,7 @@ class Handle_Select2D_SensitivePoint : public Handle_Select2D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Handle_Select2D_SensitiveArc;
 class Handle_Select2D_SensitiveArc : public Handle_Select2D_SensitiveEntity {
 	public:
@@ -217,6 +221,7 @@ class Handle_Select2D_SensitiveArc : public Handle_Select2D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveArc\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select2D_SensitiveSegment;
 class Handle_Select2D_SensitiveSegment : public Handle_Select2D_SensitiveEntity {
@@ -243,6 +248,7 @@ class Handle_Select2D_SensitiveSegment : public Handle_Select2D_SensitiveEntity 
 	}
 };
 
+
 %nodefaultctor Handle_Select2D_SensitiveCircle;
 class Handle_Select2D_SensitiveCircle : public Handle_Select2D_SensitiveEntity {
 	public:
@@ -268,6 +274,7 @@ class Handle_Select2D_SensitiveCircle : public Handle_Select2D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Handle_Select2D_SensitiveBox;
 class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
 	public:
@@ -292,6 +299,7 @@ class Handle_Select2D_SensitiveBox : public Handle_Select2D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_Select2D_SensitiveBox\n");}
 	}
 };
+
 
 %nodefaultctor Select2D_SensitiveEntity;
 class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
@@ -335,6 +343,7 @@ class Select2D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Select2D_SensitiveCircle;
 class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 	public:
@@ -370,6 +379,7 @@ class Select2D_SensitiveCircle : public Select2D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveCircle\n");}
 	}
 };
+
 
 %nodefaultctor Select2D_SensitiveSegment;
 class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
@@ -415,6 +425,7 @@ class Select2D_SensitiveSegment : public Select2D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Select2D_SensitivePoint;
 class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 	public:
@@ -451,6 +462,7 @@ class Select2D_SensitivePoint : public Select2D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Select2D_SensitiveArc;
 class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 	public:
@@ -482,6 +494,7 @@ class Select2D_SensitiveArc : public Select2D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveArc\n");}
 	}
 };
+
 
 %nodefaultctor Select2D_SensitiveBox;
 class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
@@ -516,6 +529,7 @@ class Select2D_SensitiveBox : public Select2D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Select2D_SensitiveBox\n");}
 	}
 };
+
 
 %nodefaultctor Select2D_Projector;
 class Select2D_Projector : public MMgt_TShared {

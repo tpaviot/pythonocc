@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -154,6 +155,7 @@ class Handle_Intrv_SequenceNodeOfSequenceOfInterval : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Intrv_Intervals;
 class Intrv_Intervals {
 	public:
@@ -191,6 +193,7 @@ class Intrv_Intervals {
 	if (__env){printf("## Call custom destructor for instance of Intrv_Intervals\n");}
 	}
 };
+
 
 %nodefaultctor Intrv_Interval;
 class Intrv_Interval {
@@ -262,6 +265,7 @@ class Intrv_Interval {
 	}
 };
 
+
 %nodefaultctor Intrv_SequenceOfInterval;
 class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 	public:
@@ -315,6 +319,7 @@ class Intrv_SequenceOfInterval : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Intrv_SequenceOfInterval\n");}
 	}
 };
+
 
 %nodefaultctor Intrv_SequenceNodeOfSequenceOfInterval;
 class Intrv_SequenceNodeOfSequenceOfInterval : public TCollection_SeqNode {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlTObjDrivers_XYZDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlTObjDrivers_DocumentRetrievalDriver;
 class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_DocumentRetrievalDriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_XmlTObjDrivers_DocumentRetrievalDriver : public Handle_XmlLDrivers_
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlTObjDrivers_ModelDriver;
 class Handle_XmlTObjDrivers_ModelDriver : public Handle_XmlMDF_ADriver {
@@ -188,6 +191,7 @@ class Handle_XmlTObjDrivers_ModelDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlTObjDrivers_DocumentStorageDriver;
 class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_DocumentStorageDriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_XmlTObjDrivers_DocumentStorageDriver : public Handle_XmlLDrivers_Do
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XmlTObjDrivers_IntSparseArrayDriver;
 class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver {
@@ -238,6 +243,7 @@ class Handle_XmlTObjDrivers_IntSparseArrayDriver : public Handle_XmlMDF_ADriver 
 	}
 };
 
+
 %nodefaultctor Handle_XmlTObjDrivers_ObjectDriver;
 class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -263,6 +269,7 @@ class Handle_XmlTObjDrivers_ObjectDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlTObjDrivers_ReferenceDriver;
 class Handle_XmlTObjDrivers_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -287,6 +294,7 @@ class Handle_XmlTObjDrivers_ReferenceDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlTObjDrivers_ReferenceDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlTObjDrivers_ReferenceDriver;
 class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
@@ -320,6 +328,7 @@ class XmlTObjDrivers_ReferenceDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlTObjDrivers_DocumentRetrievalDriver;
 class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrievalDriver {
 	public:
@@ -348,6 +357,7 @@ class XmlTObjDrivers_DocumentRetrievalDriver : public XmlLDrivers_DocumentRetrie
 	}
 };
 
+
 %nodefaultctor XmlTObjDrivers;
 class XmlTObjDrivers {
 	public:
@@ -365,6 +375,7 @@ class XmlTObjDrivers {
 	if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers\n");}
 	}
 };
+
 
 %nodefaultctor XmlTObjDrivers_ModelDriver;
 class XmlTObjDrivers_ModelDriver : public XmlMDF_ADriver {
@@ -398,6 +409,7 @@ class XmlTObjDrivers_ModelDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlTObjDrivers_IntSparseArrayDriver;
 class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 	public:
@@ -430,6 +442,7 @@ class XmlTObjDrivers_IntSparseArrayDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlTObjDrivers_DocumentStorageDriver;
 class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageDriver {
 	public:
@@ -457,6 +470,7 @@ class XmlTObjDrivers_DocumentStorageDriver : public XmlLDrivers_DocumentStorageD
 	if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlTObjDrivers_ObjectDriver;
 class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
@@ -489,6 +503,7 @@ class XmlTObjDrivers_ObjectDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlTObjDrivers_ObjectDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlTObjDrivers_XYZDriver;
 class XmlTObjDrivers_XYZDriver : public XmlMDF_ADriver {

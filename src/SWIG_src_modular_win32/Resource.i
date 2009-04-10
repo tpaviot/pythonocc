@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -145,6 +146,7 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public H
 	}
 };
 
+
 %nodefaultctor Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
 class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Handle_TCollection_MapNode {
 	public:
@@ -169,6 +171,7 @@ class Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public Hand
 	if (__env){printf("## Call custom destructor for instance of Handle_Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Resource_Manager;
 class Handle_Resource_Manager : public Handle_MMgt_TShared {
@@ -195,6 +198,7 @@ class Handle_Resource_Manager : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Resource_NoSuchResource;
 class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 	public:
@@ -219,6 +223,7 @@ class Handle_Resource_NoSuchResource : public Handle_Standard_NoSuchObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_Resource_NoSuchResource\n");}
 	}
 };
+
 
 %nodefaultctor Resource_Array1OfAsciiString;
 class Resource_Array1OfAsciiString {
@@ -260,6 +265,7 @@ class Resource_Array1OfAsciiString {
 	}
 };
 
+
 %nodefaultctor Resource_DataMapOfAsciiStringAsciiString;
 class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 	public:
@@ -294,6 +300,7 @@ class Resource_DataMapOfAsciiStringAsciiString : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCollection_BasicMapIterator {
 	public:
@@ -315,6 +322,7 @@ class Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString : public TCol
 	if (__env){printf("## Call custom destructor for instance of Resource_DataMapIteratorOfDataMapOfAsciiStringExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString;
 class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection_MapNode {
@@ -345,6 +353,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString : public TCollection
 	if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Resource_Manager;
 class Resource_Manager : public MMgt_TShared {
@@ -394,6 +403,7 @@ class Resource_Manager : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Resource_QuickSortOfArray1;
 class Resource_QuickSortOfArray1 {
 	public:
@@ -410,6 +420,7 @@ class Resource_QuickSortOfArray1 {
 	}
 };
 
+
 %nodefaultctor Resource_LexicalCompare;
 class Resource_LexicalCompare {
 	public:
@@ -425,6 +436,7 @@ class Resource_LexicalCompare {
 	if (__env){printf("## Call custom destructor for instance of Resource_LexicalCompare\n");}
 	}
 };
+
 
 %nodefaultctor Resource_NoSuchResource;
 class Resource_NoSuchResource : public Standard_NoSuchObject {
@@ -460,6 +472,7 @@ class Resource_NoSuchResource : public Standard_NoSuchObject {
 	}
 };
 
+
 %nodefaultctor Resource_DataMapOfAsciiStringExtendedString;
 class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap {
 	public:
@@ -493,6 +506,7 @@ class Resource_DataMapOfAsciiStringExtendedString : public TCollection_BasicMap 
 	if (__env){printf("## Call custom destructor for instance of Resource_DataMapOfAsciiStringExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Resource_Unicode;
 class Resource_Unicode {
@@ -534,6 +548,7 @@ class Resource_Unicode {
 	}
 };
 
+
 %nodefaultctor Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString;
 class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollection_MapNode {
 	public:
@@ -563,6 +578,7 @@ class Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString : public TCollect
 	if (__env){printf("## Call custom destructor for instance of Resource_DataMapNodeOfDataMapOfAsciiStringExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString;
 class Resource_DataMapIteratorOfDataMapOfAsciiStringAsciiString : public TCollection_BasicMapIterator {

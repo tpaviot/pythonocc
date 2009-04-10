@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -160,6 +161,7 @@ class Handle_GProp_UndefinedAxis : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor GProp_GProps;
 class GProp_GProps {
 	public:
@@ -191,6 +193,7 @@ class GProp_GProps {
 	if (__env){printf("## Call custom destructor for instance of GProp_GProps\n");}
 	}
 };
+
 
 %nodefaultctor GProp_PGProps;
 class GProp_PGProps : public GProp_GProps {
@@ -226,6 +229,7 @@ class GProp_PGProps : public GProp_GProps {
 	}
 };
 
+
 %nodefaultctor GProp_PrincipalProps;
 class GProp_PrincipalProps {
 	public:
@@ -257,6 +261,7 @@ class GProp_PrincipalProps {
 	if (__env){printf("## Call custom destructor for instance of GProp_PrincipalProps\n");}
 	}
 };
+
 
 %nodefaultctor GProp_UndefinedAxis;
 class GProp_UndefinedAxis : public Standard_DomainError {
@@ -292,6 +297,7 @@ class GProp_UndefinedAxis : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor GProp_SelGProps;
 class GProp_SelGProps : public GProp_GProps {
 	public:
@@ -324,6 +330,7 @@ class GProp_SelGProps : public GProp_GProps {
 	}
 };
 
+
 %nodefaultctor GProp_CelGProps;
 class GProp_CelGProps : public GProp_GProps {
 	public:
@@ -349,6 +356,7 @@ class GProp_CelGProps : public GProp_GProps {
 	if (__env){printf("## Call custom destructor for instance of GProp_CelGProps\n");}
 	}
 };
+
 
 %nodefaultctor GProp_VelGProps;
 class GProp_VelGProps : public GProp_GProps {
@@ -382,6 +390,7 @@ class GProp_VelGProps : public GProp_GProps {
 	}
 };
 
+
 %nodefaultctor GProp;
 class GProp {
 	public:
@@ -397,6 +406,7 @@ class GProp {
 	if (__env){printf("## Call custom destructor for instance of GProp\n");}
 	}
 };
+
 
 %nodefaultctor GProp_PEquation;
 class GProp_PEquation {

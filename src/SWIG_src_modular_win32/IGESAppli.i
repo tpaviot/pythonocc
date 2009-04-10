@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESAppli_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_NodalConstraint;
 class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESAppli_NodalConstraint : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_FiniteElement;
 class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
@@ -188,6 +191,7 @@ class Handle_IGESAppli_FiniteElement : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_HArray1OfNode;
 class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESAppli_HArray1OfNode : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_HArray1OfNode\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_PinNumber;
 class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
@@ -238,6 +243,7 @@ class Handle_IGESAppli_PinNumber : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_PWBArtworkStackup;
 class Handle_IGESAppli_PWBArtworkStackup : public Handle_IGESData_IGESEntity {
 	public:
@@ -262,6 +268,7 @@ class Handle_IGESAppli_PWBArtworkStackup : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_PWBArtworkStackup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_LevelToPWBLayerMap;
 class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
@@ -288,6 +295,7 @@ class Handle_IGESAppli_LevelToPWBLayerMap : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_ReferenceDesignator;
 class Handle_IGESAppli_ReferenceDesignator : public Handle_IGESData_IGESEntity {
 	public:
@@ -312,6 +320,7 @@ class Handle_IGESAppli_ReferenceDesignator : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_ReferenceDesignator\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_ElementResults;
 class Handle_IGESAppli_ElementResults : public Handle_IGESData_IGESEntity {
@@ -338,6 +347,7 @@ class Handle_IGESAppli_ElementResults : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_NodalDisplAndRot;
 class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
 	public:
@@ -362,6 +372,7 @@ class Handle_IGESAppli_NodalDisplAndRot : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalDisplAndRot\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_PWBDrilledHole;
 class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
@@ -388,6 +399,7 @@ class Handle_IGESAppli_PWBDrilledHole : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_DrilledHole;
 class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
 	public:
@@ -412,6 +424,7 @@ class Handle_IGESAppli_DrilledHole : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_DrilledHole\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_SpecificModule;
 class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
@@ -438,6 +451,7 @@ class Handle_IGESAppli_SpecificModule : public Handle_IGESData_SpecificModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_FlowLineSpec;
 class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 	public:
@@ -462,6 +476,7 @@ class Handle_IGESAppli_FlowLineSpec : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_FlowLineSpec\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_RegionRestriction;
 class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
@@ -488,6 +503,7 @@ class Handle_IGESAppli_RegionRestriction : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_HArray1OfFlow;
 class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 	public:
@@ -512,6 +528,7 @@ class Handle_IGESAppli_HArray1OfFlow : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_HArray1OfFlow\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_HArray1OfFiniteElement;
 class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
@@ -538,6 +555,7 @@ class Handle_IGESAppli_HArray1OfFiniteElement : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_Node;
 class Handle_IGESAppli_Node : public Handle_IGESData_IGESEntity {
 	public:
@@ -562,6 +580,7 @@ class Handle_IGESAppli_Node : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_Node\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_Flow;
 class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
@@ -588,6 +607,7 @@ class Handle_IGESAppli_Flow : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_LineWidening;
 class Handle_IGESAppli_LineWidening : public Handle_IGESData_IGESEntity {
 	public:
@@ -612,6 +632,7 @@ class Handle_IGESAppli_LineWidening : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_LineWidening\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_PipingFlow;
 class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
@@ -638,6 +659,7 @@ class Handle_IGESAppli_PipingFlow : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_Protocol;
 class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 	public:
@@ -662,6 +684,7 @@ class Handle_IGESAppli_Protocol : public Handle_IGESData_Protocol {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_Protocol\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_GeneralModule;
 class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
@@ -688,6 +711,7 @@ class Handle_IGESAppli_GeneralModule : public Handle_IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_NodalResults;
 class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 	public:
@@ -712,6 +736,7 @@ class Handle_IGESAppli_NodalResults : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_NodalResults\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESAppli_PartNumber;
 class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
@@ -738,6 +763,7 @@ class Handle_IGESAppli_PartNumber : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESAppli_LevelFunction;
 class Handle_IGESAppli_LevelFunction : public Handle_IGESData_IGESEntity {
 	public:
@@ -762,6 +788,7 @@ class Handle_IGESAppli_LevelFunction : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESAppli_LevelFunction\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_HArray1OfFiniteElement;
 class IGESAppli_HArray1OfFiniteElement : public MMgt_TShared {
@@ -809,6 +836,7 @@ class IGESAppli_HArray1OfFiniteElement : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESAppli_FiniteElement;
 class IGESAppli_FiniteElement : public IGESData_IGESEntity {
 	public:
@@ -844,6 +872,7 @@ class IGESAppli_FiniteElement : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_FiniteElement\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_Flow;
 class IGESAppli_Flow : public IGESData_IGESEntity {
@@ -905,6 +934,7 @@ class IGESAppli_Flow : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_NodalResults;
 class IGESAppli_NodalResults : public IGESData_IGESEntity {
 	public:
@@ -951,6 +981,7 @@ class IGESAppli_NodalResults : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_FlowLineSpec;
 class IGESAppli_FlowLineSpec : public IGESData_IGESEntity {
 	public:
@@ -985,6 +1016,7 @@ class IGESAppli_FlowLineSpec : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolNodalConstraint;
 class IGESAppli_ToolNodalConstraint {
 	public:
@@ -1012,6 +1044,7 @@ class IGESAppli_ToolNodalConstraint {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolNodalConstraint\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_LevelToPWBLayerMap;
 class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
@@ -1053,6 +1086,7 @@ class IGESAppli_LevelToPWBLayerMap : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_Array1OfNode;
 class IGESAppli_Array1OfNode {
 	public:
@@ -1093,6 +1127,7 @@ class IGESAppli_Array1OfNode {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolLevelToPWBLayerMap;
 class IGESAppli_ToolLevelToPWBLayerMap {
 	public:
@@ -1120,6 +1155,7 @@ class IGESAppli_ToolLevelToPWBLayerMap {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolLevelToPWBLayerMap\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_HArray1OfNode;
 class IGESAppli_HArray1OfNode : public MMgt_TShared {
@@ -1167,6 +1203,7 @@ class IGESAppli_HArray1OfNode : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESAppli;
 class IGESAppli {
 	public:
@@ -1184,6 +1221,7 @@ class IGESAppli {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_ToolFiniteElement;
 class IGESAppli_ToolFiniteElement {
@@ -1213,6 +1251,7 @@ class IGESAppli_ToolFiniteElement {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolNodalDisplAndRot;
 class IGESAppli_ToolNodalDisplAndRot {
 	public:
@@ -1240,6 +1279,7 @@ class IGESAppli_ToolNodalDisplAndRot {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolNodalDisplAndRot\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_ToolReferenceDesignator;
 class IGESAppli_ToolReferenceDesignator {
@@ -1270,6 +1310,7 @@ class IGESAppli_ToolReferenceDesignator {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolReferenceDesignator\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_ElementResults;
 class IGESAppli_ElementResults : public IGESData_IGESEntity {
@@ -1337,6 +1378,7 @@ class IGESAppli_ElementResults : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_SpecificModule;
 class IGESAppli_SpecificModule : public IGESData_SpecificModule {
 	public:
@@ -1366,6 +1408,7 @@ class IGESAppli_SpecificModule : public IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_ReferenceDesignator;
 class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
@@ -1399,6 +1442,7 @@ class IGESAppli_ReferenceDesignator : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolRegionRestriction;
 class IGESAppli_ToolRegionRestriction {
 	public:
@@ -1428,6 +1472,7 @@ class IGESAppli_ToolRegionRestriction {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolRegionRestriction\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_DrilledHole;
 class IGESAppli_DrilledHole : public IGESData_IGESEntity {
@@ -1469,6 +1514,7 @@ class IGESAppli_DrilledHole : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolNode;
 class IGESAppli_ToolNode {
 	public:
@@ -1496,6 +1542,7 @@ class IGESAppli_ToolNode {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolNode\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_LevelFunction;
 class IGESAppli_LevelFunction : public IGESData_IGESEntity {
@@ -1530,6 +1577,7 @@ class IGESAppli_LevelFunction : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_LevelFunction\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_RegionRestriction;
 class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
@@ -1566,6 +1614,7 @@ class IGESAppli_RegionRestriction : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_RegionRestriction\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_PipingFlow;
 class IGESAppli_PipingFlow : public IGESData_IGESEntity {
@@ -1625,6 +1674,7 @@ class IGESAppli_PipingFlow : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_Array1OfFiniteElement;
 class IGESAppli_Array1OfFiniteElement {
 	public:
@@ -1665,6 +1715,7 @@ class IGESAppli_Array1OfFiniteElement {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolNodalResults;
 class IGESAppli_ToolNodalResults {
 	public:
@@ -1693,6 +1744,7 @@ class IGESAppli_ToolNodalResults {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolFlowLineSpec;
 class IGESAppli_ToolFlowLineSpec {
 	public:
@@ -1720,6 +1772,7 @@ class IGESAppli_ToolFlowLineSpec {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolFlowLineSpec\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_ReadWriteModule;
 class IGESAppli_ReadWriteModule : public IGESData_ReadWriteModule {
@@ -1753,6 +1806,7 @@ class IGESAppli_ReadWriteModule : public IGESData_ReadWriteModule {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolDrilledHole;
 class IGESAppli_ToolDrilledHole {
 	public:
@@ -1782,6 +1836,7 @@ class IGESAppli_ToolDrilledHole {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolDrilledHole\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_NodalConstraint;
 class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
@@ -1819,6 +1874,7 @@ class IGESAppli_NodalConstraint : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_PWBArtworkStackup;
 class IGESAppli_PWBArtworkStackup : public IGESData_IGESEntity {
 	public:
@@ -1854,6 +1910,7 @@ class IGESAppli_PWBArtworkStackup : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_PWBArtworkStackup\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_NodalDisplAndRot;
 class IGESAppli_NodalDisplAndRot : public IGESData_IGESEntity {
@@ -1897,6 +1954,7 @@ class IGESAppli_NodalDisplAndRot : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolPWBArtworkStackup;
 class IGESAppli_ToolPWBArtworkStackup {
 	public:
@@ -1924,6 +1982,7 @@ class IGESAppli_ToolPWBArtworkStackup {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPWBArtworkStackup\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_PinNumber;
 class IGESAppli_PinNumber : public IGESData_IGESEntity {
@@ -1957,6 +2016,7 @@ class IGESAppli_PinNumber : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolElementResults;
 class IGESAppli_ToolElementResults {
 	public:
@@ -1984,6 +2044,7 @@ class IGESAppli_ToolElementResults {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolElementResults\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_Array1OfFlow;
 class IGESAppli_Array1OfFlow {
@@ -2024,6 +2085,7 @@ class IGESAppli_Array1OfFlow {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_Array1OfFlow\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_HArray1OfFlow;
 class IGESAppli_HArray1OfFlow : public MMgt_TShared {
@@ -2071,6 +2133,7 @@ class IGESAppli_HArray1OfFlow : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESAppli_LineWidening;
 class IGESAppli_LineWidening : public IGESData_IGESEntity {
 	public:
@@ -2111,6 +2174,7 @@ class IGESAppli_LineWidening : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolLevelFunction;
 class IGESAppli_ToolLevelFunction {
 	public:
@@ -2141,6 +2205,7 @@ class IGESAppli_ToolLevelFunction {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolPinNumber;
 class IGESAppli_ToolPinNumber {
 	public:
@@ -2170,6 +2235,7 @@ class IGESAppli_ToolPinNumber {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPinNumber\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_PWBDrilledHole;
 class IGESAppli_PWBDrilledHole : public IGESData_IGESEntity {
@@ -2206,6 +2272,7 @@ class IGESAppli_PWBDrilledHole : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_PWBDrilledHole\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_GeneralModule;
 class IGESAppli_GeneralModule : public IGESData_GeneralModule {
@@ -2245,6 +2312,7 @@ class IGESAppli_GeneralModule : public IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolPWBDrilledHole;
 class IGESAppli_ToolPWBDrilledHole {
 	public:
@@ -2274,6 +2342,7 @@ class IGESAppli_ToolPWBDrilledHole {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPWBDrilledHole\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_ToolLineWidening;
 class IGESAppli_ToolLineWidening {
@@ -2305,6 +2374,7 @@ class IGESAppli_ToolLineWidening {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolPipingFlow;
 class IGESAppli_ToolPipingFlow {
 	public:
@@ -2334,6 +2404,7 @@ class IGESAppli_ToolPipingFlow {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolPipingFlow\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_Node;
 class IGESAppli_Node : public IGESData_IGESEntity {
@@ -2370,6 +2441,7 @@ class IGESAppli_Node : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_Node\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_PartNumber;
 class IGESAppli_PartNumber : public IGESData_IGESEntity {
@@ -2409,6 +2481,7 @@ class IGESAppli_PartNumber : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESAppli_ToolFlow;
 class IGESAppli_ToolFlow {
 	public:
@@ -2438,6 +2511,7 @@ class IGESAppli_ToolFlow {
 	if (__env){printf("## Call custom destructor for instance of IGESAppli_ToolFlow\n");}
 	}
 };
+
 
 %nodefaultctor IGESAppli_ToolPartNumber;
 class IGESAppli_ToolPartNumber {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -146,6 +147,7 @@ class Handle_TCollection_SeqNode : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TCollection_HExtendedString;
 class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 	public:
@@ -170,6 +172,7 @@ class Handle_TCollection_HExtendedString : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_HExtendedString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TCollection_AVLBaseNode;
 class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
@@ -196,6 +199,7 @@ class Handle_TCollection_AVLBaseNode : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TCollection_HAsciiString;
 class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 	public:
@@ -221,6 +225,7 @@ class Handle_TCollection_HAsciiString : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TCollection_MapNode;
 class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 	public:
@@ -245,6 +250,7 @@ class Handle_TCollection_MapNode : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TCollection_MapNode\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_AsciiString;
 class TCollection_AsciiString {
@@ -462,6 +468,7 @@ class TCollection_AsciiString {
 	}
 };
 
+
 %nodefaultctor TCollection;
 class TCollection {
 	public:
@@ -477,6 +484,7 @@ class TCollection {
 	if (__env){printf("## Call custom destructor for instance of TCollection\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_MapNode;
 class TCollection_MapNode : public MMgt_TShared {
@@ -506,6 +514,7 @@ class TCollection_MapNode : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TCollection_PrivCompareOfInteger;
 class TCollection_PrivCompareOfInteger {
 	public:
@@ -525,6 +534,7 @@ class TCollection_PrivCompareOfInteger {
 	if (__env){printf("## Call custom destructor for instance of TCollection_PrivCompareOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_AVLBaseNode;
 class TCollection_AVLBaseNode : public MMgt_TShared {
@@ -566,6 +576,7 @@ class TCollection_AVLBaseNode : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TCollection_BasicMapIterator;
 class TCollection_BasicMapIterator {
 	public:
@@ -583,6 +594,7 @@ class TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TCollection_BasicMapIterator\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_PrivCompareOfReal;
 class TCollection_PrivCompareOfReal {
@@ -604,6 +616,7 @@ class TCollection_PrivCompareOfReal {
 	}
 };
 
+
 %nodefaultctor TCollection_CompareOfReal;
 class TCollection_CompareOfReal : public TCollection_PrivCompareOfReal {
 	public:
@@ -617,6 +630,7 @@ class TCollection_CompareOfReal : public TCollection_PrivCompareOfReal {
 	if (__env){printf("## Call custom destructor for instance of TCollection_CompareOfReal\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_ExtendedString;
 class TCollection_ExtendedString {
@@ -738,6 +752,7 @@ class TCollection_ExtendedString {
 	}
 };
 
+
 %nodefaultctor TCollection_Array2Descriptor;
 class TCollection_Array2Descriptor {
 	public:
@@ -759,6 +774,7 @@ class TCollection_Array2Descriptor {
 	if (__env){printf("## Call custom destructor for instance of TCollection_Array2Descriptor\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_HExtendedString;
 class TCollection_HExtendedString : public MMgt_TShared {
@@ -854,6 +870,7 @@ class TCollection_HExtendedString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TCollection_BaseSequence;
 class TCollection_BaseSequence {
 	public:
@@ -873,6 +890,7 @@ class TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of TCollection_BaseSequence\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_SeqNode;
 class TCollection_SeqNode : public MMgt_TShared {
@@ -904,6 +922,7 @@ class TCollection_SeqNode : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TCollection_CompareOfInteger;
 class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 	public:
@@ -922,6 +941,7 @@ class TCollection_CompareOfInteger : public TCollection_PrivCompareOfInteger {
 	}
 };
 
+
 %nodefaultctor TCollection_Array1Descriptor;
 class TCollection_Array1Descriptor {
 	public:
@@ -939,6 +959,7 @@ class TCollection_Array1Descriptor {
 	if (__env){printf("## Call custom destructor for instance of TCollection_Array1Descriptor\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_BasicMap;
 class TCollection_BasicMap {
@@ -959,6 +980,7 @@ class TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TCollection_BasicMap\n");}
 	}
 };
+
 
 %nodefaultctor TCollection_HAsciiString;
 class TCollection_HAsciiString : public MMgt_TShared {

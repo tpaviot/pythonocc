@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BinMXCAFDoc_LayerToolDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinMXCAFDoc_VolumeDriver;
 class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_BinMXCAFDoc_VolumeDriver : public Handle_BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_VolumeDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinMXCAFDoc_ShapeToolDriver;
 class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
@@ -188,6 +191,7 @@ class Handle_BinMXCAFDoc_ShapeToolDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinMXCAFDoc_CentroidDriver;
 class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_BinMXCAFDoc_CentroidDriver : public Handle_BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_CentroidDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinMXCAFDoc_ColorDriver;
 class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
@@ -238,6 +243,7 @@ class Handle_BinMXCAFDoc_ColorDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinMXCAFDoc_LocationDriver;
 class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -262,6 +268,7 @@ class Handle_BinMXCAFDoc_LocationDriver : public Handle_BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_LocationDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinMXCAFDoc_AreaDriver;
 class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
@@ -288,6 +295,7 @@ class Handle_BinMXCAFDoc_AreaDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinMXCAFDoc_ColorToolDriver;
 class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -312,6 +320,7 @@ class Handle_BinMXCAFDoc_ColorToolDriver : public Handle_BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_ColorToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinMXCAFDoc_GraphNodeDriver;
 class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
@@ -338,6 +347,7 @@ class Handle_BinMXCAFDoc_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinMXCAFDoc_DocumentToolDriver;
 class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -362,6 +372,7 @@ class Handle_BinMXCAFDoc_DocumentToolDriver : public Handle_BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMXCAFDoc_DocumentToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMXCAFDoc_VolumeDriver;
 class BinMXCAFDoc_VolumeDriver : public BinMDF_ADriver {
@@ -395,6 +406,7 @@ class BinMXCAFDoc_VolumeDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMXCAFDoc_GraphNodeDriver;
 class BinMXCAFDoc_GraphNodeDriver : public BinMDF_ADriver {
 	public:
@@ -426,6 +438,7 @@ class BinMXCAFDoc_GraphNodeDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMXCAFDoc_GraphNodeDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMXCAFDoc_ColorToolDriver;
 class BinMXCAFDoc_ColorToolDriver : public BinMDF_ADriver {
@@ -459,6 +472,7 @@ class BinMXCAFDoc_ColorToolDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMXCAFDoc_ShapeToolDriver;
 class BinMXCAFDoc_ShapeToolDriver : public BinMDF_ADriver {
 	public:
@@ -491,6 +505,7 @@ class BinMXCAFDoc_ShapeToolDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMXCAFDoc_LayerToolDriver;
 class BinMXCAFDoc_LayerToolDriver : public BinMDF_ADriver {
 	public:
@@ -522,6 +537,7 @@ class BinMXCAFDoc_LayerToolDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMXCAFDoc_LayerToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMXCAFDoc_LocationDriver;
 class BinMXCAFDoc_LocationDriver : public BinMDF_ADriver {
@@ -559,6 +575,7 @@ class BinMXCAFDoc_LocationDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMXCAFDoc_CentroidDriver;
 class BinMXCAFDoc_CentroidDriver : public BinMDF_ADriver {
 	public:
@@ -590,6 +607,7 @@ class BinMXCAFDoc_CentroidDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMXCAFDoc_CentroidDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMXCAFDoc_ColorDriver;
 class BinMXCAFDoc_ColorDriver : public BinMDF_ADriver {
@@ -623,6 +641,7 @@ class BinMXCAFDoc_ColorDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMXCAFDoc;
 class BinMXCAFDoc {
 	public:
@@ -638,6 +657,7 @@ class BinMXCAFDoc {
 	if (__env){printf("## Call custom destructor for instance of BinMXCAFDoc\n");}
 	}
 };
+
 
 %nodefaultctor BinMXCAFDoc_DocumentToolDriver;
 class BinMXCAFDoc_DocumentToolDriver : public BinMDF_ADriver {
@@ -670,6 +690,7 @@ class BinMXCAFDoc_DocumentToolDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMXCAFDoc_DocumentToolDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMXCAFDoc_AreaDriver;
 class BinMXCAFDoc_AreaDriver : public BinMDF_ADriver {

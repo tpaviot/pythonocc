@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Bisector_Curve : public Handle_Geom2d_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_Bisector_BisecAna;
 class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 	public:
@@ -162,6 +164,7 @@ class Handle_Bisector_BisecAna : public Handle_Bisector_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_Bisector_BisecAna\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Bisector_BisecCC;
 class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
@@ -188,6 +191,7 @@ class Handle_Bisector_BisecCC : public Handle_Bisector_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_Bisector_BisecPC;
 class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 	public:
@@ -213,6 +217,7 @@ class Handle_Bisector_BisecPC : public Handle_Bisector_Curve {
 	}
 };
 
+
 %nodefaultctor Bisector_Inter;
 class Bisector_Inter : public IntRes2d_Intersection {
 	public:
@@ -230,6 +235,7 @@ class Bisector_Inter : public IntRes2d_Intersection {
 	if (__env){printf("## Call custom destructor for instance of Bisector_Inter\n");}
 	}
 };
+
 
 %nodefaultctor Bisector_FunctionInter;
 class Bisector_FunctionInter : public math_FunctionWithDerivative {
@@ -254,6 +260,7 @@ class Bisector_FunctionInter : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of Bisector_FunctionInter\n");}
 	}
 };
+
 
 %nodefaultctor Bisector_Curve;
 class Bisector_Curve : public Geom2d_Curve {
@@ -290,6 +297,7 @@ class Bisector_Curve : public Geom2d_Curve {
 	if (__env){printf("## Call custom destructor for instance of Bisector_Curve\n");}
 	}
 };
+
 
 %nodefaultctor Bisector_BisecCC;
 class Bisector_BisecCC : public Bisector_Curve {
@@ -368,6 +376,7 @@ class Bisector_BisecCC : public Bisector_Curve {
 	if (__env){printf("## Call custom destructor for instance of Bisector_BisecCC\n");}
 	}
 };
+
 
 %nodefaultctor Bisector_BisecPC;
 class Bisector_BisecPC : public Bisector_Curve {
@@ -454,6 +463,7 @@ class Bisector_BisecPC : public Bisector_Curve {
 	if (__env){printf("## Call custom destructor for instance of Bisector_BisecPC\n");}
 	}
 };
+
 
 %nodefaultctor Bisector_BisecAna;
 class Bisector_BisecAna : public Bisector_Curve {
@@ -545,6 +555,7 @@ class Bisector_BisecAna : public Bisector_Curve {
 	}
 };
 
+
 %nodefaultctor Bisector_PolyBis;
 class Bisector_PolyBis {
 	public:
@@ -574,6 +585,7 @@ class Bisector_PolyBis {
 	if (__env){printf("## Call custom destructor for instance of Bisector_PolyBis\n");}
 	}
 };
+
 
 %nodefaultctor Bisector_PointOnBis;
 class Bisector_PointOnBis {
@@ -617,6 +629,7 @@ class Bisector_PointOnBis {
 	}
 };
 
+
 %nodefaultctor Bisector_Bisec;
 class Bisector_Bisec {
 	public:
@@ -643,6 +656,7 @@ class Bisector_Bisec {
 	}
 };
 
+
 %nodefaultctor Bisector;
 class Bisector {
 	public:
@@ -658,6 +672,7 @@ class Bisector {
 	if (__env){printf("## Call custom destructor for instance of Bisector\n");}
 	}
 };
+
 
 %nodefaultctor Bisector_FunctionH;
 class Bisector_FunctionH : public math_FunctionWithDerivative {

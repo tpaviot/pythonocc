@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfI
 	}
 };
 
+
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : pub
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
 class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public 
 	}
 };
 
+
 %nodefaultctor Handle_BOPTColStd_ListNodeOfListOfListOfShape;
 class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_BOPTColStd_ListNodeOfListOfListOfShape : public Handle_TCollection_
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTColStd_ListNodeOfListOfListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerInteger;
 class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
@@ -257,6 +262,7 @@ class BOPTColStd_IndexedDataMapOfIntegerInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTColStd_CArray1OfShape;
 class BOPTColStd_CArray1OfShape {
 	public:
@@ -296,6 +302,7 @@ class BOPTColStd_CArray1OfShape {
 	if (__env){printf("## Call custom destructor for instance of BOPTColStd_CArray1OfShape\n");}
 	}
 };
+
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger;
 class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection_BasicMap {
@@ -341,6 +348,7 @@ class BOPTColStd_IndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection
 	}
 };
 
+
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger;
 class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCollection_MapNode {
 	public:
@@ -375,6 +383,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerInteger : public TCo
 	}
 };
 
+
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger;
 class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollection_MapNode {
 	public:
@@ -408,6 +417,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger : public TCollec
 	if (__env){printf("## Call custom destructor for instance of BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfSWRInteger\n");}
 	}
 };
+
 
 %nodefaultctor BOPTColStd_CArray1OfPnt2d;
 class BOPTColStd_CArray1OfPnt2d {
@@ -448,6 +458,7 @@ class BOPTColStd_CArray1OfPnt2d {
 	if (__env){printf("## Call custom destructor for instance of BOPTColStd_CArray1OfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor BOPTColStd_IndexedDataMapOfSWRInteger;
 class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
@@ -493,6 +504,7 @@ class BOPTColStd_IndexedDataMapOfSWRInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTColStd_ListIteratorOfListOfListOfShape;
 class BOPTColStd_ListIteratorOfListOfListOfShape {
 	public:
@@ -516,6 +528,7 @@ class BOPTColStd_ListIteratorOfListOfListOfShape {
 	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ListIteratorOfListOfListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BOPTColStd_ListOfListOfShape;
 class BOPTColStd_ListOfListOfShape {
@@ -567,6 +580,7 @@ class BOPTColStd_ListOfListOfShape {
 	}
 };
 
+
 %nodefaultctor BOPTColStd_CArray1OfInteger;
 class BOPTColStd_CArray1OfInteger {
 	public:
@@ -607,6 +621,7 @@ class BOPTColStd_CArray1OfInteger {
 	}
 };
 
+
 %nodefaultctor BOPTColStd_ListNodeOfListOfListOfShape;
 class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 	public:
@@ -635,6 +650,7 @@ class BOPTColStd_ListNodeOfListOfListOfShape : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BOPTColStd_Failure;
 class BOPTColStd_Failure {
 	public:
@@ -650,6 +666,7 @@ class BOPTColStd_Failure {
 	if (__env){printf("## Call custom destructor for instance of BOPTColStd_Failure\n");}
 	}
 };
+
 
 %nodefaultctor BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger;
 class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger : public TCollection_MapNode {
@@ -685,6 +702,7 @@ class BOPTColStd_IndexedDataMapNodeOfIndexedDataMapOfIntegerIndexedMapOfInteger 
 	}
 };
 
+
 %nodefaultctor BOPTColStd_ShapeWithRank;
 class BOPTColStd_ShapeWithRank {
 	public:
@@ -716,6 +734,7 @@ class BOPTColStd_ShapeWithRank {
 	}
 };
 
+
 %nodefaultctor BOPTColStd_ShapeWithRankHasher;
 class BOPTColStd_ShapeWithRankHasher {
 	public:
@@ -733,6 +752,7 @@ class BOPTColStd_ShapeWithRankHasher {
 	if (__env){printf("## Call custom destructor for instance of BOPTColStd_ShapeWithRankHasher\n");}
 	}
 };
+
 
 %nodefaultctor BOPTColStd_Dump;
 class BOPTColStd_Dump {

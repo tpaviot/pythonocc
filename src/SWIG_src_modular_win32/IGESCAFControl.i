@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -131,6 +132,7 @@ class IGESCAFControl {
 	}
 };
 
+
 %nodefaultctor IGESCAFControl_Writer;
 class IGESCAFControl_Writer : public IGESControl_Writer {
 	public:
@@ -164,6 +166,7 @@ class IGESCAFControl_Writer : public IGESControl_Writer {
 	if (__env){printf("## Call custom destructor for instance of IGESCAFControl_Writer\n");}
 	}
 };
+
 
 %nodefaultctor IGESCAFControl_Reader;
 class IGESCAFControl_Reader : public IGESControl_Reader {

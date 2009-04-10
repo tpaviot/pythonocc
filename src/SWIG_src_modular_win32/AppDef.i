@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_AppDef_MyCriterionOfTheVariational : public Handle_AppParCurves_Smo
 	}
 };
 
+
 %nodefaultctor Handle_AppDef_HArray1OfMultiPointConstraint;
 class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_AppDef_HArray1OfMultiPointConstraint : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AppDef_HArray1OfMultiPointConstraint\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_MyLineTool;
 class AppDef_MyLineTool {
@@ -207,6 +210,7 @@ class AppDef_MyLineTool {
 	}
 };
 
+
 %nodefaultctor AppDef_ParFunctionOfTheGradient;
 class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradient {
 	public:
@@ -242,6 +246,7 @@ class AppDef_ParFunctionOfTheGradient : public math_MultipleVarFunctionWithGradi
 	if (__env){printf("## Call custom destructor for instance of AppDef_ParFunctionOfTheGradient\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_MultiPointConstraint;
 class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
@@ -299,6 +304,7 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 	}
 };
 
+
 %nodefaultctor AppDef_MultiLine;
 class AppDef_MultiLine {
 	public:
@@ -331,6 +337,7 @@ class AppDef_MultiLine {
 	}
 };
 
+
 %nodefaultctor AppDef_MyBSplGradientOfBSplineCompute;
 class AppDef_MyBSplGradientOfBSplineCompute {
 	public:
@@ -358,6 +365,7 @@ class AppDef_MyBSplGradientOfBSplineCompute {
 	if (__env){printf("## Call custom destructor for instance of AppDef_MyBSplGradientOfBSplineCompute\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_HArray1OfMultiPointConstraint;
 class AppDef_HArray1OfMultiPointConstraint : public MMgt_TShared {
@@ -405,6 +413,7 @@ class AppDef_HArray1OfMultiPointConstraint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute;
 class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_MultipleVarFunctionWithGradient {
 	public:
@@ -451,6 +460,7 @@ class AppDef_BSpParFunctionOfMyBSplGradientOfBSplineCompute : public math_Multip
 	}
 };
 
+
 %nodefaultctor AppDef_Gradient_BFGSOfMyGradientOfCompute;
 class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 	public:
@@ -466,6 +476,7 @@ class AppDef_Gradient_BFGSOfMyGradientOfCompute : public math_BFGS {
 	if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientOfCompute\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_TheLeastSquares;
 class AppDef_TheLeastSquares {
@@ -521,6 +532,7 @@ class AppDef_TheLeastSquares {
 	}
 };
 
+
 %nodefaultctor AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute;
 class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS {
 	public:
@@ -537,6 +549,7 @@ class AppDef_BSpGradient_BFGSOfMyBSplGradientOfBSplineCompute : public math_BFGS
 	}
 };
 
+
 %nodefaultctor AppDef_Gradient_BFGSOfTheGradient;
 class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
 	public:
@@ -552,6 +565,7 @@ class AppDef_Gradient_BFGSOfTheGradient : public math_BFGS {
 	if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfTheGradient\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_TheVariational;
 class AppDef_TheVariational {
@@ -635,6 +649,7 @@ class AppDef_TheVariational {
 	}
 };
 
+
 %nodefaultctor AppDef_Compute;
 class AppDef_Compute {
 	public:
@@ -683,6 +698,7 @@ class AppDef_Compute {
 	}
 };
 
+
 %nodefaultctor AppDef_ParFunctionOfMyGradientbisOfBSplineCompute;
 class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVarFunctionWithGradient {
 	public:
@@ -719,6 +735,7 @@ class AppDef_ParFunctionOfMyGradientbisOfBSplineCompute : public math_MultipleVa
 	}
 };
 
+
 %nodefaultctor AppDef_TheGradient;
 class AppDef_TheGradient {
 	public:
@@ -744,6 +761,7 @@ class AppDef_TheGradient {
 	if (__env){printf("## Call custom destructor for instance of AppDef_TheGradient\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_ParLeastSquareOfTheGradient;
 class AppDef_ParLeastSquareOfTheGradient {
@@ -798,6 +816,7 @@ class AppDef_ParLeastSquareOfTheGradient {
 	if (__env){printf("## Call custom destructor for instance of AppDef_ParLeastSquareOfTheGradient\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_MyCriterionOfTheVariational;
 class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
@@ -857,6 +876,7 @@ class AppDef_MyCriterionOfTheVariational : public AppParCurves_SmoothCriterion {
 	}
 };
 
+
 %nodefaultctor AppDef_ParLeastSquareOfMyGradientOfCompute;
 class AppDef_ParLeastSquareOfMyGradientOfCompute {
 	public:
@@ -911,6 +931,7 @@ class AppDef_ParLeastSquareOfMyGradientOfCompute {
 	}
 };
 
+
 %nodefaultctor AppDef_ResConstraintOfTheGradient;
 class AppDef_ResConstraintOfTheGradient {
 	public:
@@ -934,6 +955,7 @@ class AppDef_ResConstraintOfTheGradient {
 	if (__env){printf("## Call custom destructor for instance of AppDef_ResConstraintOfTheGradient\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_TheFunction;
 class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
@@ -971,6 +993,7 @@ class AppDef_TheFunction : public math_MultipleVarFunctionWithGradient {
 	}
 };
 
+
 %nodefaultctor AppDef_MyGradientOfCompute;
 class AppDef_MyGradientOfCompute {
 	public:
@@ -996,6 +1019,7 @@ class AppDef_MyGradientOfCompute {
 	if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientOfCompute\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute;
 class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
@@ -1051,6 +1075,7 @@ class AppDef_BSpParLeastSquareOfMyBSplGradientOfBSplineCompute {
 	}
 };
 
+
 %nodefaultctor AppDef_MyGradientbisOfBSplineCompute;
 class AppDef_MyGradientbisOfBSplineCompute {
 	public:
@@ -1076,6 +1101,7 @@ class AppDef_MyGradientbisOfBSplineCompute {
 	if (__env){printf("## Call custom destructor for instance of AppDef_MyGradientbisOfBSplineCompute\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_BSplineCompute;
 class AppDef_BSplineCompute {
@@ -1128,6 +1154,7 @@ class AppDef_BSplineCompute {
 	if (__env){printf("## Call custom destructor for instance of AppDef_BSplineCompute\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute;
 class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
@@ -1183,6 +1210,7 @@ class AppDef_ParLeastSquareOfMyGradientbisOfBSplineCompute {
 	}
 };
 
+
 %nodefaultctor AppDef_ResConstraintOfMyGradientOfCompute;
 class AppDef_ResConstraintOfMyGradientOfCompute {
 	public:
@@ -1207,6 +1235,7 @@ class AppDef_ResConstraintOfMyGradientOfCompute {
 	}
 };
 
+
 %nodefaultctor AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute;
 class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
 	public:
@@ -1222,6 +1251,7 @@ class AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute : public math_BFGS {
 	if (__env){printf("## Call custom destructor for instance of AppDef_Gradient_BFGSOfMyGradientbisOfBSplineCompute\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_Array1OfMultiPointConstraint;
 class AppDef_Array1OfMultiPointConstraint {
@@ -1263,6 +1293,7 @@ class AppDef_Array1OfMultiPointConstraint {
 	}
 };
 
+
 %nodefaultctor AppDef_TheResol;
 class AppDef_TheResol {
 	public:
@@ -1287,6 +1318,7 @@ class AppDef_TheResol {
 	}
 };
 
+
 %nodefaultctor AppDef_ResConstraintOfMyGradientbisOfBSplineCompute;
 class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 	public:
@@ -1310,6 +1342,7 @@ class AppDef_ResConstraintOfMyGradientbisOfBSplineCompute {
 	if (__env){printf("## Call custom destructor for instance of AppDef_ResConstraintOfMyGradientbisOfBSplineCompute\n");}
 	}
 };
+
 
 %nodefaultctor AppDef_ParFunctionOfMyGradientOfCompute;
 class AppDef_ParFunctionOfMyGradientOfCompute : public math_MultipleVarFunctionWithGradient {

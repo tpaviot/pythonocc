@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -150,6 +151,7 @@ class Handle_Approx_CurvlinFunc : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Approx_HArray1OfAdHSurface;
 class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 	public:
@@ -174,6 +176,7 @@ class Handle_Approx_HArray1OfAdHSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Approx_HArray1OfAdHSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Approx_SweepFunction;
 class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
@@ -200,6 +203,7 @@ class Handle_Approx_SweepFunction : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Approx_HArray1OfGTrsf2d;
 class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 	public:
@@ -224,6 +228,7 @@ class Handle_Approx_HArray1OfGTrsf2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Approx_HArray1OfGTrsf2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d;
 class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TCollection_SeqNode {
@@ -250,6 +255,7 @@ class Handle_Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal;
 class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TCollection_SeqNode {
 	public:
@@ -274,6 +280,7 @@ class Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Approx_CurvilinearParameter;
 class Approx_CurvilinearParameter {
@@ -311,6 +318,7 @@ class Approx_CurvilinearParameter {
 	}
 };
 
+
 %nodefaultctor Approx_MyLeastSquareOfFitAndDivide;
 class Approx_MyLeastSquareOfFitAndDivide {
 	public:
@@ -330,6 +338,7 @@ class Approx_MyLeastSquareOfFitAndDivide {
 	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide\n");}
 	}
 };
+
 
 %nodefaultctor Approx_SequenceOfHArray1OfReal;
 class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
@@ -385,6 +394,7 @@ class Approx_SequenceOfHArray1OfReal : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Approx_Curve2d;
 class Approx_Curve2d {
 	public:
@@ -409,6 +419,7 @@ class Approx_Curve2d {
 	}
 };
 
+
 %nodefaultctor Approx_Curve3d;
 class Approx_Curve3d {
 	public:
@@ -432,6 +443,7 @@ class Approx_Curve3d {
 	if (__env){printf("## Call custom destructor for instance of Approx_Curve3d\n");}
 	}
 };
+
 
 %nodefaultctor Approx_SequenceNodeOfSequenceOfArray1OfPnt2d;
 class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode {
@@ -461,6 +473,7 @@ class Approx_SequenceNodeOfSequenceOfArray1OfPnt2d : public TCollection_SeqNode 
 	}
 };
 
+
 %nodefaultctor Approx_MCurvesToBSpCurve;
 class Approx_MCurvesToBSpCurve {
 	public:
@@ -486,6 +499,7 @@ class Approx_MCurvesToBSpCurve {
 	if (__env){printf("## Call custom destructor for instance of Approx_MCurvesToBSpCurve\n");}
 	}
 };
+
 
 %nodefaultctor Approx_Array1OfGTrsf2d;
 class Approx_Array1OfGTrsf2d {
@@ -526,6 +540,7 @@ class Approx_Array1OfGTrsf2d {
 	if (__env){printf("## Call custom destructor for instance of Approx_Array1OfGTrsf2d\n");}
 	}
 };
+
 
 %nodefaultctor Approx_HArray1OfAdHSurface;
 class Approx_HArray1OfAdHSurface : public MMgt_TShared {
@@ -572,6 +587,7 @@ class Approx_HArray1OfAdHSurface : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Approx_HArray1OfAdHSurface\n");}
 	}
 };
+
 
 %nodefaultctor Approx_SweepFunction;
 class Approx_SweepFunction : public MMgt_TShared {
@@ -631,6 +647,7 @@ class Approx_SweepFunction : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Approx_FitAndDivide;
 class Approx_FitAndDivide {
 	public:
@@ -666,6 +683,7 @@ class Approx_FitAndDivide {
 	if (__env){printf("## Call custom destructor for instance of Approx_FitAndDivide\n");}
 	}
 };
+
 
 %nodefaultctor Approx_HArray1OfGTrsf2d;
 class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
@@ -713,6 +731,7 @@ class Approx_HArray1OfGTrsf2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Approx_SameParameter;
 class Approx_SameParameter {
 	public:
@@ -738,6 +757,7 @@ class Approx_SameParameter {
 	if (__env){printf("## Call custom destructor for instance of Approx_SameParameter\n");}
 	}
 };
+
 
 %nodefaultctor Approx_SequenceNodeOfSequenceOfHArray1OfReal;
 class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode {
@@ -766,6 +786,7 @@ class Approx_SequenceNodeOfSequenceOfHArray1OfReal : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of Approx_SequenceNodeOfSequenceOfHArray1OfReal\n");}
 	}
 };
+
 
 %nodefaultctor Approx_FitAndDivide2d;
 class Approx_FitAndDivide2d {
@@ -803,6 +824,7 @@ class Approx_FitAndDivide2d {
 	}
 };
 
+
 %nodefaultctor Approx_CurveOnSurface;
 class Approx_CurveOnSurface {
 	public:
@@ -830,6 +852,7 @@ class Approx_CurveOnSurface {
 	if (__env){printf("## Call custom destructor for instance of Approx_CurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Approx_CurvlinFunc;
 class Approx_CurvlinFunc : public MMgt_TShared {
@@ -889,6 +912,7 @@ class Approx_CurvlinFunc : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Approx_Array1OfAdHSurface;
 class Approx_Array1OfAdHSurface {
 	public:
@@ -929,6 +953,7 @@ class Approx_Array1OfAdHSurface {
 	}
 };
 
+
 %nodefaultctor Approx_MyLeastSquareOfFitAndDivide2d;
 class Approx_MyLeastSquareOfFitAndDivide2d {
 	public:
@@ -948,6 +973,7 @@ class Approx_MyLeastSquareOfFitAndDivide2d {
 	if (__env){printf("## Call custom destructor for instance of Approx_MyLeastSquareOfFitAndDivide2d\n");}
 	}
 };
+
 
 %nodefaultctor Approx_SequenceOfArray1OfPnt2d;
 class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
@@ -1002,6 +1028,7 @@ class Approx_SequenceOfArray1OfPnt2d : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Approx_SequenceOfArray1OfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor Approx_SweepApproximation;
 class Approx_SweepApproximation {

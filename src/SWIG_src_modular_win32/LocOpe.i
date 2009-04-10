@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_LocOpe_ProjectedWires : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt;
 class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_MapNode {
 	public:
@@ -168,6 +170,7 @@ class Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt : public Handle_TCollection_M
 	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_DataMapNodeOfDataMapOfShapePnt\n");}
 	}
 };
+
 
 %nodefaultctor Handle_LocOpe_HBuilder;
 class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
@@ -194,6 +197,7 @@ class Handle_LocOpe_HBuilder : public Handle_TopOpeBRepBuild_HBuilder {
 	}
 };
 
+
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfPntFace;
 class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_SeqNode {
 	public:
@@ -218,6 +222,7 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfPntFace : public Handle_TCollection_
 	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfPntFace\n");}
 	}
 };
+
 
 %nodefaultctor Handle_LocOpe_GeneratedShape;
 class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
@@ -244,6 +249,7 @@ class Handle_LocOpe_GeneratedShape : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_LocOpe_GluedShape;
 class Handle_LocOpe_GluedShape : public Handle_LocOpe_GeneratedShape {
 	public:
@@ -268,6 +274,7 @@ class Handle_LocOpe_GluedShape : public Handle_LocOpe_GeneratedShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_GluedShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfLin;
 class Handle_LocOpe_SequenceNodeOfSequenceOfLin : public Handle_TCollection_SeqNode {
@@ -294,6 +301,7 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfLin : public Handle_TCollection_SeqN
 	}
 };
 
+
 %nodefaultctor Handle_LocOpe_WiresOnShape;
 class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
 	public:
@@ -319,6 +327,7 @@ class Handle_LocOpe_WiresOnShape : public Handle_LocOpe_ProjectedWires {
 	}
 };
 
+
 %nodefaultctor Handle_LocOpe_SequenceNodeOfSequenceOfCirc;
 class Handle_LocOpe_SequenceNodeOfSequenceOfCirc : public Handle_TCollection_SeqNode {
 	public:
@@ -343,6 +352,7 @@ class Handle_LocOpe_SequenceNodeOfSequenceOfCirc : public Handle_TCollection_Seq
 	if (__env){printf("## Call custom destructor for instance of Handle_LocOpe_SequenceNodeOfSequenceOfCirc\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_SequenceOfCirc;
 class LocOpe_SequenceOfCirc : public TCollection_BaseSequence {
@@ -398,6 +408,7 @@ class LocOpe_SequenceOfCirc : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor LocOpe_Pipe;
 class LocOpe_Pipe {
 	public:
@@ -427,6 +438,7 @@ class LocOpe_Pipe {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_Pipe\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_DataMapOfShapePnt;
 class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
@@ -461,6 +473,7 @@ class LocOpe_DataMapOfShapePnt : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapOfShapePnt\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_Gluer;
 class LocOpe_Gluer {
@@ -502,6 +515,7 @@ class LocOpe_Gluer {
 	}
 };
 
+
 %nodefaultctor LocOpe_BuildWires;
 class LocOpe_BuildWires {
 	public:
@@ -523,6 +537,7 @@ class LocOpe_BuildWires {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_BuildWires\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_GeneratedShape;
 class LocOpe_GeneratedShape : public MMgt_TShared {
@@ -555,6 +570,7 @@ class LocOpe_GeneratedShape : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_GeneratedShape\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_ProjectedWires;
 class LocOpe_ProjectedWires : public MMgt_TShared {
@@ -596,6 +612,7 @@ class LocOpe_ProjectedWires : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor LocOpe_WiresOnShape;
 class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 	public:
@@ -632,6 +649,7 @@ class LocOpe_WiresOnShape : public LocOpe_ProjectedWires {
 	}
 };
 
+
 %nodefaultctor LocOpe_DPrism;
 class LocOpe_DPrism {
 	public:
@@ -666,6 +684,7 @@ class LocOpe_DPrism {
 	}
 };
 
+
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfCirc;
 class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 	public:
@@ -694,6 +713,7 @@ class LocOpe_SequenceNodeOfSequenceOfCirc : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor LocOpe;
 class LocOpe {
 	public:
@@ -715,6 +735,7 @@ class LocOpe {
 	if (__env){printf("## Call custom destructor for instance of LocOpe\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_GluedShape;
 class LocOpe_GluedShape : public LocOpe_GeneratedShape {
@@ -756,6 +777,7 @@ class LocOpe_GluedShape : public LocOpe_GeneratedShape {
 	}
 };
 
+
 %nodefaultctor LocOpe_DataMapNodeOfDataMapOfShapePnt;
 class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 	public:
@@ -785,6 +807,7 @@ class LocOpe_DataMapNodeOfDataMapOfShapePnt : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapNodeOfDataMapOfShapePnt\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_Prism;
 class LocOpe_Prism {
@@ -820,6 +843,7 @@ class LocOpe_Prism {
 	}
 };
 
+
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfLin;
 class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 	public:
@@ -847,6 +871,7 @@ class LocOpe_SequenceNodeOfSequenceOfLin : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_SequenceNodeOfSequenceOfLin\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_HBuilder;
 class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
@@ -878,6 +903,7 @@ class LocOpe_HBuilder : public TopOpeBRepBuild_HBuilder {
 	}
 };
 
+
 %nodefaultctor LocOpe_DataMapIteratorOfDataMapOfShapePnt;
 class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIterator {
 	public:
@@ -899,6 +925,7 @@ class LocOpe_DataMapIteratorOfDataMapOfShapePnt : public TCollection_BasicMapIte
 	if (__env){printf("## Call custom destructor for instance of LocOpe_DataMapIteratorOfDataMapOfShapePnt\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_Generator;
 class LocOpe_Generator {
@@ -927,6 +954,7 @@ class LocOpe_Generator {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_Generator\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_CSIntersector;
 class LocOpe_CSIntersector {
@@ -968,6 +996,7 @@ class LocOpe_CSIntersector {
 	}
 };
 
+
 %nodefaultctor LocOpe_CurveShapeIntersector;
 class LocOpe_CurveShapeIntersector {
 	public:
@@ -1004,6 +1033,7 @@ class LocOpe_CurveShapeIntersector {
 	}
 };
 
+
 %nodefaultctor LocOpe_Spliter;
 class LocOpe_Spliter {
 	public:
@@ -1036,6 +1066,7 @@ class LocOpe_Spliter {
 	}
 };
 
+
 %nodefaultctor LocOpe_PntFace;
 class LocOpe_PntFace {
 	public:
@@ -1065,6 +1096,7 @@ class LocOpe_PntFace {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_PntFace\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_SequenceOfLin;
 class LocOpe_SequenceOfLin : public TCollection_BaseSequence {
@@ -1120,6 +1152,7 @@ class LocOpe_SequenceOfLin : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor LocOpe_Builder;
 class LocOpe_Builder {
 	public:
@@ -1173,6 +1206,7 @@ class LocOpe_Builder {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_Builder\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_SequenceOfPntFace;
 class LocOpe_SequenceOfPntFace : public TCollection_BaseSequence {
@@ -1228,6 +1262,7 @@ class LocOpe_SequenceOfPntFace : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor LocOpe_FindEdges;
 class LocOpe_FindEdges {
 	public:
@@ -1256,6 +1291,7 @@ class LocOpe_FindEdges {
 	}
 };
 
+
 %nodefaultctor LocOpe_BuildShape;
 class LocOpe_BuildShape {
 	public:
@@ -1275,6 +1311,7 @@ class LocOpe_BuildShape {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_BuildShape\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_SplitShape;
 class LocOpe_SplitShape {
@@ -1306,6 +1343,7 @@ class LocOpe_SplitShape {
 	}
 };
 
+
 %nodefaultctor LocOpe_FindEdgesInFace;
 class LocOpe_FindEdgesInFace {
 	public:
@@ -1331,6 +1369,7 @@ class LocOpe_FindEdgesInFace {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_FindEdgesInFace\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_SplitDrafts;
 class LocOpe_SplitDrafts {
@@ -1362,6 +1401,7 @@ class LocOpe_SplitDrafts {
 	}
 };
 
+
 %nodefaultctor LocOpe_LinearForm;
 class LocOpe_LinearForm {
 	public:
@@ -1391,6 +1431,7 @@ class LocOpe_LinearForm {
 	if (__env){printf("## Call custom destructor for instance of LocOpe_LinearForm\n");}
 	}
 };
+
 
 %nodefaultctor LocOpe_SequenceNodeOfSequenceOfPntFace;
 class LocOpe_SequenceNodeOfSequenceOfPntFace : public TCollection_SeqNode {

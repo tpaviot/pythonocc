@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BinTObjDrivers_ModelDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinTObjDrivers_DocumentRetrievalDriver;
 class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_DocumentRetrievalDriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_BinTObjDrivers_DocumentRetrievalDriver : public Handle_BinLDrivers_
 	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_DocumentRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinTObjDrivers_ObjectDriver;
 class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
@@ -188,6 +191,7 @@ class Handle_BinTObjDrivers_ObjectDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinTObjDrivers_IntSparseArrayDriver;
 class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_BinTObjDrivers_IntSparseArrayDriver : public Handle_BinMDF_ADriver 
 	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_IntSparseArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinTObjDrivers_ReferenceDriver;
 class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
@@ -238,6 +243,7 @@ class Handle_BinTObjDrivers_ReferenceDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinTObjDrivers_XYZDriver;
 class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -263,6 +269,7 @@ class Handle_BinTObjDrivers_XYZDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinTObjDrivers_DocumentStorageDriver;
 class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_DocumentStorageDriver {
 	public:
@@ -287,6 +294,7 @@ class Handle_BinTObjDrivers_DocumentStorageDriver : public Handle_BinLDrivers_Do
 	if (__env){printf("## Call custom destructor for instance of Handle_BinTObjDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinTObjDrivers_ObjectDriver;
 class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
@@ -320,6 +328,7 @@ class BinTObjDrivers_ObjectDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinTObjDrivers_ReferenceDriver;
 class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 	public:
@@ -352,6 +361,7 @@ class BinTObjDrivers_ReferenceDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinTObjDrivers_DocumentRetrievalDriver;
 class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrievalDriver {
 	public:
@@ -380,6 +390,7 @@ class BinTObjDrivers_DocumentRetrievalDriver : public BinLDrivers_DocumentRetrie
 	}
 };
 
+
 %nodefaultctor BinTObjDrivers;
 class BinTObjDrivers {
 	public:
@@ -397,6 +408,7 @@ class BinTObjDrivers {
 	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers\n");}
 	}
 };
+
 
 %nodefaultctor BinTObjDrivers_DocumentStorageDriver;
 class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageDriver {
@@ -425,6 +437,7 @@ class BinTObjDrivers_DocumentStorageDriver : public BinLDrivers_DocumentStorageD
 	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinTObjDrivers_XYZDriver;
 class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
@@ -458,6 +471,7 @@ class BinTObjDrivers_XYZDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinTObjDrivers_IntSparseArrayDriver;
 class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
 	public:
@@ -489,6 +503,7 @@ class BinTObjDrivers_IntSparseArrayDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinTObjDrivers_IntSparseArrayDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinTObjDrivers_ModelDriver;
 class BinTObjDrivers_ModelDriver : public BinMDF_ADriver {

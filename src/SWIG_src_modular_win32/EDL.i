@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -158,6 +159,7 @@ class Handle_EDL_Interpretor : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_EDL_SequenceNodeOfSequenceOfVariable;
 class Handle_EDL_SequenceNodeOfSequenceOfVariable : public Handle_TCollection_SeqNode {
 	public:
@@ -182,6 +184,7 @@ class Handle_EDL_SequenceNodeOfSequenceOfVariable : public Handle_TCollection_Se
 	if (__env){printf("## Call custom destructor for instance of Handle_EDL_SequenceNodeOfSequenceOfVariable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_EDL_DataMapNodeOfMapOfVariable;
 class Handle_EDL_DataMapNodeOfMapOfVariable : public Handle_TCollection_MapNode {
@@ -208,6 +211,7 @@ class Handle_EDL_DataMapNodeOfMapOfVariable : public Handle_TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Handle_EDL_DataMapNodeOfMapOfTemplate;
 class Handle_EDL_DataMapNodeOfMapOfTemplate : public Handle_TCollection_MapNode {
 	public:
@@ -232,6 +236,7 @@ class Handle_EDL_DataMapNodeOfMapOfTemplate : public Handle_TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfTemplate\n");}
 	}
 };
+
 
 %nodefaultctor Handle_EDL_StackNodeOfStackOfBoolean;
 class Handle_EDL_StackNodeOfStackOfBoolean : public Handle_TCollection_MapNode {
@@ -258,6 +263,7 @@ class Handle_EDL_StackNodeOfStackOfBoolean : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_EDL_API;
 class Handle_EDL_API : public Handle_MMgt_TShared {
 	public:
@@ -282,6 +288,7 @@ class Handle_EDL_API : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_EDL_API\n");}
 	}
 };
+
 
 %nodefaultctor Handle_EDL_HSequenceOfVariable;
 class Handle_EDL_HSequenceOfVariable : public Handle_MMgt_TShared {
@@ -308,6 +315,7 @@ class Handle_EDL_HSequenceOfVariable : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_EDL_DataMapNodeOfMapOfFile;
 class Handle_EDL_DataMapNodeOfMapOfFile : public Handle_TCollection_MapNode {
 	public:
@@ -333,6 +341,7 @@ class Handle_EDL_DataMapNodeOfMapOfFile : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_EDL_DataMapNodeOfMapOfLibrary;
 class Handle_EDL_DataMapNodeOfMapOfLibrary : public Handle_TCollection_MapNode {
 	public:
@@ -357,6 +366,7 @@ class Handle_EDL_DataMapNodeOfMapOfLibrary : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_EDL_DataMapNodeOfMapOfLibrary\n");}
 	}
 };
+
 
 %nodefaultctor EDL_API;
 class EDL_API : public MMgt_TShared {
@@ -446,6 +456,7 @@ class EDL_API : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor EDL_DataMapNodeOfMapOfFile;
 class EDL_DataMapNodeOfMapOfFile : public TCollection_MapNode {
 	public:
@@ -476,6 +487,7 @@ class EDL_DataMapNodeOfMapOfFile : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor EDL_DataMapNodeOfMapOfLibrary;
 class EDL_DataMapNodeOfMapOfLibrary : public TCollection_MapNode {
 	public:
@@ -505,6 +517,7 @@ class EDL_DataMapNodeOfMapOfLibrary : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of EDL_DataMapNodeOfMapOfLibrary\n");}
 	}
 };
+
 
 %nodefaultctor EDL_Interpretor;
 class EDL_Interpretor : public MMgt_TShared {
@@ -620,6 +633,7 @@ class EDL_Interpretor : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor EDL_SequenceNodeOfSequenceOfVariable;
 class EDL_SequenceNodeOfSequenceOfVariable : public TCollection_SeqNode {
 	public:
@@ -647,6 +661,7 @@ class EDL_SequenceNodeOfSequenceOfVariable : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of EDL_SequenceNodeOfSequenceOfVariable\n");}
 	}
 };
+
 
 %nodefaultctor EDL_StackOfBoolean;
 class EDL_StackOfBoolean {
@@ -678,6 +693,7 @@ class EDL_StackOfBoolean {
 	}
 };
 
+
 %nodefaultctor EDL_DataMapNodeOfMapOfTemplate;
 class EDL_DataMapNodeOfMapOfTemplate : public TCollection_MapNode {
 	public:
@@ -707,6 +723,7 @@ class EDL_DataMapNodeOfMapOfTemplate : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of EDL_DataMapNodeOfMapOfTemplate\n");}
 	}
 };
+
 
 %nodefaultctor EDL_Library;
 class EDL_Library {
@@ -738,6 +755,7 @@ class EDL_Library {
 	}
 };
 
+
 %nodefaultctor EDL_DataMapIteratorOfMapOfLibrary;
 class EDL_DataMapIteratorOfMapOfLibrary : public TCollection_BasicMapIterator {
 	public:
@@ -759,6 +777,7 @@ class EDL_DataMapIteratorOfMapOfLibrary : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of EDL_DataMapIteratorOfMapOfLibrary\n");}
 	}
 };
+
 
 %nodefaultctor EDL_Template;
 class EDL_Template {
@@ -806,6 +825,7 @@ class EDL_Template {
 	}
 };
 
+
 %nodefaultctor EDL_StackNodeOfStackOfBoolean;
 class EDL_StackNodeOfStackOfBoolean : public TCollection_MapNode {
 	public:
@@ -834,6 +854,7 @@ class EDL_StackNodeOfStackOfBoolean : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor EDL_DataMapIteratorOfMapOfVariable;
 class EDL_DataMapIteratorOfMapOfVariable : public TCollection_BasicMapIterator {
 	public:
@@ -855,6 +876,7 @@ class EDL_DataMapIteratorOfMapOfVariable : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of EDL_DataMapIteratorOfMapOfVariable\n");}
 	}
 };
+
 
 %nodefaultctor EDL_DataMapIteratorOfMapOfTemplate;
 class EDL_DataMapIteratorOfMapOfTemplate : public TCollection_BasicMapIterator {
@@ -878,6 +900,7 @@ class EDL_DataMapIteratorOfMapOfTemplate : public TCollection_BasicMapIterator {
 	}
 };
 
+
 %nodefaultctor EDL;
 class EDL {
 	public:
@@ -893,6 +916,7 @@ class EDL {
 	if (__env){printf("## Call custom destructor for instance of EDL\n");}
 	}
 };
+
 
 %nodefaultctor EDL_HSequenceOfVariable;
 class EDL_HSequenceOfVariable : public MMgt_TShared {
@@ -964,6 +988,7 @@ class EDL_HSequenceOfVariable : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor EDL_SequenceOfVariable;
 class EDL_SequenceOfVariable : public TCollection_BaseSequence {
 	public:
@@ -1018,6 +1043,7 @@ class EDL_SequenceOfVariable : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor EDL_StackIteratorOfStackOfBoolean;
 class EDL_StackIteratorOfStackOfBoolean {
 	public:
@@ -1041,6 +1067,7 @@ class EDL_StackIteratorOfStackOfBoolean {
 	if (__env){printf("## Call custom destructor for instance of EDL_StackIteratorOfStackOfBoolean\n");}
 	}
 };
+
 
 %nodefaultctor EDL_MapOfVariable;
 class EDL_MapOfVariable : public TCollection_BasicMap {
@@ -1076,6 +1103,7 @@ class EDL_MapOfVariable : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor EDL_MapOfTemplate;
 class EDL_MapOfTemplate : public TCollection_BasicMap {
 	public:
@@ -1110,6 +1138,7 @@ class EDL_MapOfTemplate : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor EDL_DataMapIteratorOfMapOfFile;
 class EDL_DataMapIteratorOfMapOfFile : public TCollection_BasicMapIterator {
 	public:
@@ -1131,6 +1160,7 @@ class EDL_DataMapIteratorOfMapOfFile : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of EDL_DataMapIteratorOfMapOfFile\n");}
 	}
 };
+
 
 %nodefaultctor EDL_MapOfFile;
 class EDL_MapOfFile : public TCollection_BasicMap {
@@ -1166,6 +1196,7 @@ class EDL_MapOfFile : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor EDL_File;
 class EDL_File {
 	public:
@@ -1197,6 +1228,7 @@ class EDL_File {
 	if (__env){printf("## Call custom destructor for instance of EDL_File\n");}
 	}
 };
+
 
 %nodefaultctor EDL_Variable;
 class EDL_Variable {
@@ -1230,6 +1262,7 @@ class EDL_Variable {
 	}
 };
 
+
 %nodefaultctor EDL_DataMapNodeOfMapOfVariable;
 class EDL_DataMapNodeOfMapOfVariable : public TCollection_MapNode {
 	public:
@@ -1259,6 +1292,7 @@ class EDL_DataMapNodeOfMapOfVariable : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of EDL_DataMapNodeOfMapOfVariable\n");}
 	}
 };
+
 
 %nodefaultctor EDL_MapOfLibrary;
 class EDL_MapOfLibrary : public TCollection_BasicMap {

@@ -139,6 +139,7 @@ class Handle_XCAFPrs_AISObject : public Handle_AIS_Shape {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle;
 class Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public Handle_TCollection_MapNode {
 	public:
@@ -163,6 +164,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFPrs_DataMapNodeOfDataMapOfShapeStyle\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient;
 class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public Handle_TCollection_MapNode {
@@ -189,6 +191,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_XCAFPrs_Driver;
 class Handle_XCAFPrs_Driver : public Handle_TPrsStd_Driver {
 	public:
@@ -214,6 +217,7 @@ class Handle_XCAFPrs_Driver : public Handle_TPrsStd_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape;
 class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public Handle_TCollection_MapNode {
 	public:
@@ -238,6 +242,7 @@ class Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_XCAFPrs_DataMapNodeOfDataMapOfStyleShape\n");}
 	}
 };
+
 
 %nodefaultctor XCAFPrs_DataMapOfStyleShape;
 class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
@@ -273,6 +278,7 @@ class XCAFPrs_DataMapOfStyleShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor XCAFPrs_AISObject;
 class XCAFPrs_AISObject : public AIS_Shape {
 	public:
@@ -299,6 +305,7 @@ class XCAFPrs_AISObject : public AIS_Shape {
 	}
 };
 
+
 %nodefaultctor XCAFPrs;
 class XCAFPrs {
 	public:
@@ -320,6 +327,7 @@ class XCAFPrs {
 	if (__env){printf("## Call custom destructor for instance of XCAFPrs\n");}
 	}
 };
+
 
 %nodefaultctor XCAFPrs_DataMapOfShapeStyle;
 class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
@@ -355,6 +363,7 @@ class XCAFPrs_DataMapOfShapeStyle : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient;
 class XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient : public TCollection_BasicMapIterator {
 	public:
@@ -376,6 +385,7 @@ class XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfStyleTransient\n");}
 	}
 };
+
 
 %nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfStyleTransient;
 class XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public TCollection_MapNode {
@@ -406,6 +416,7 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleTransient : public TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapNodeOfDataMapOfStyleTransient\n");}
 	}
 };
+
 
 %nodefaultctor XCAFPrs_DataMapOfStyleTransient;
 class XCAFPrs_DataMapOfStyleTransient : public TCollection_BasicMap {
@@ -441,6 +452,7 @@ class XCAFPrs_DataMapOfStyleTransient : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfStyleShape;
 class XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public TCollection_MapNode {
 	public:
@@ -471,6 +483,7 @@ class XCAFPrs_DataMapNodeOfDataMapOfStyleShape : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor XCAFPrs_Driver;
 class XCAFPrs_Driver : public TPrsStd_Driver {
 	public:
@@ -500,6 +513,7 @@ class XCAFPrs_Driver : public TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of XCAFPrs_Driver\n");}
 	}
 };
+
 
 %nodefaultctor XCAFPrs_Style;
 class XCAFPrs_Style {
@@ -543,6 +557,7 @@ class XCAFPrs_Style {
 	}
 };
 
+
 %nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle;
 class XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle : public TCollection_BasicMapIterator {
 	public:
@@ -565,6 +580,7 @@ class XCAFPrs_DataMapIteratorOfDataMapOfShapeStyle : public TCollection_BasicMap
 	}
 };
 
+
 %nodefaultctor XCAFPrs_DataMapIteratorOfDataMapOfStyleShape;
 class XCAFPrs_DataMapIteratorOfDataMapOfStyleShape : public TCollection_BasicMapIterator {
 	public:
@@ -586,6 +602,7 @@ class XCAFPrs_DataMapIteratorOfDataMapOfStyleShape : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of XCAFPrs_DataMapIteratorOfDataMapOfStyleShape\n");}
 	}
 };
+
 
 %nodefaultctor XCAFPrs_DataMapNodeOfDataMapOfShapeStyle;
 class XCAFPrs_DataMapNodeOfDataMapOfShapeStyle : public TCollection_MapNode {

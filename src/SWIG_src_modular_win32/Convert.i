@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -149,6 +150,7 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d;
 class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCollection_SeqNode {
 	public:
@@ -173,6 +175,7 @@ class Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_Convert_SequenceNodeOfSequenceOfArray1OfPoles2d\n");}
 	}
 };
+
 
 %nodefaultctor Convert_CompPolynomialToPoles;
 class Convert_CompPolynomialToPoles {
@@ -206,6 +209,7 @@ class Convert_CompPolynomialToPoles {
 	}
 };
 
+
 %nodefaultctor Convert_ConicToBSplineCurve;
 class Convert_ConicToBSplineCurve {
 	public:
@@ -237,6 +241,7 @@ class Convert_ConicToBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of Convert_ConicToBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Convert_ElementarySurfaceToBSplineSurface;
 class Convert_ElementarySurfaceToBSplineSurface {
@@ -278,6 +283,7 @@ class Convert_ElementarySurfaceToBSplineSurface {
 	}
 };
 
+
 %nodefaultctor Convert_ConeToBSplineSurface;
 class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
@@ -294,6 +300,7 @@ class Convert_ConeToBSplineSurface : public Convert_ElementarySurfaceToBSplineSu
 	}
 };
 
+
 %nodefaultctor Convert_ParabolaToBSplineCurve;
 class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
@@ -307,6 +314,7 @@ class Convert_ParabolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of Convert_ParabolaToBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Convert_TorusToBSplineSurface;
 class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
@@ -326,6 +334,7 @@ class Convert_TorusToBSplineSurface : public Convert_ElementarySurfaceToBSplineS
 	}
 };
 
+
 %nodefaultctor Convert_CircleToBSplineCurve;
 class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
@@ -342,6 +351,7 @@ class Convert_CircleToBSplineCurve : public Convert_ConicToBSplineCurve {
 	}
 };
 
+
 %nodefaultctor Convert_HyperbolaToBSplineCurve;
 class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
@@ -355,6 +365,7 @@ class Convert_HyperbolaToBSplineCurve : public Convert_ConicToBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of Convert_HyperbolaToBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Convert_GridPolynomialToPoles;
 class Convert_GridPolynomialToPoles {
@@ -397,6 +408,7 @@ class Convert_GridPolynomialToPoles {
 	if (__env){printf("## Call custom destructor for instance of Convert_GridPolynomialToPoles\n");}
 	}
 };
+
 
 %nodefaultctor Convert_SequenceOfArray1OfPoles2d;
 class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
@@ -452,6 +464,7 @@ class Convert_SequenceOfArray1OfPoles2d : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Convert_SphereToBSplineSurface;
 class Convert_SphereToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
@@ -469,6 +482,7 @@ class Convert_SphereToBSplineSurface : public Convert_ElementarySurfaceToBSpline
 	if (__env){printf("## Call custom destructor for instance of Convert_SphereToBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Convert_CompBezierCurvesToBSplineCurve;
 class Convert_CompBezierCurvesToBSplineCurve {
@@ -497,6 +511,7 @@ class Convert_CompBezierCurvesToBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurvesToBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Convert_SequenceOfArray1OfPoles;
 class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
@@ -552,6 +567,7 @@ class Convert_SequenceOfArray1OfPoles : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Convert_CylinderToBSplineSurface;
 class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSplineSurface {
 	public:
@@ -567,6 +583,7 @@ class Convert_CylinderToBSplineSurface : public Convert_ElementarySurfaceToBSpli
 	if (__env){printf("## Call custom destructor for instance of Convert_CylinderToBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Convert_SequenceNodeOfSequenceOfArray1OfPoles;
 class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode {
@@ -596,6 +613,7 @@ class Convert_SequenceNodeOfSequenceOfArray1OfPoles : public TCollection_SeqNode
 	}
 };
 
+
 %nodefaultctor Convert_EllipseToBSplineCurve;
 class Convert_EllipseToBSplineCurve : public Convert_ConicToBSplineCurve {
 	public:
@@ -611,6 +629,7 @@ class Convert_EllipseToBSplineCurve : public Convert_ConicToBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of Convert_EllipseToBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Convert_CompBezierCurves2dToBSplineCurve2d;
 class Convert_CompBezierCurves2dToBSplineCurve2d {
@@ -639,6 +658,7 @@ class Convert_CompBezierCurves2dToBSplineCurve2d {
 	if (__env){printf("## Call custom destructor for instance of Convert_CompBezierCurves2dToBSplineCurve2d\n");}
 	}
 };
+
 
 %nodefaultctor Convert_SequenceNodeOfSequenceOfArray1OfPoles2d;
 class Convert_SequenceNodeOfSequenceOfArray1OfPoles2d : public TCollection_SeqNode {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BinMFunction_ScopeDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinMFunction_GraphNodeDriver;
 class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_BinMFunction_GraphNodeDriver : public Handle_BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_BinMFunction_GraphNodeDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BinMFunction_FunctionDriver;
 class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
@@ -188,6 +191,7 @@ class Handle_BinMFunction_FunctionDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMFunction;
 class BinMFunction {
 	public:
@@ -203,6 +207,7 @@ class BinMFunction {
 	if (__env){printf("## Call custom destructor for instance of BinMFunction\n");}
 	}
 };
+
 
 %nodefaultctor BinMFunction_FunctionDriver;
 class BinMFunction_FunctionDriver : public BinMDF_ADriver {
@@ -236,6 +241,7 @@ class BinMFunction_FunctionDriver : public BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMFunction_ScopeDriver;
 class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 	public:
@@ -267,6 +273,7 @@ class BinMFunction_ScopeDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMFunction_ScopeDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMFunction_GraphNodeDriver;
 class BinMFunction_GraphNodeDriver : public BinMDF_ADriver {

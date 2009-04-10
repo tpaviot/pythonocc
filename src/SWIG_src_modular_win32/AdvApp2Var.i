@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -148,6 +149,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfPatch : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip;
 class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollection_SeqNode {
 	public:
@@ -172,6 +174,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfSequenceOfStrip\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode;
 class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection_SeqNode {
@@ -198,6 +201,7 @@ class Handle_AdvApp2Var_SequenceNodeOfSequenceOfNode : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_AdvApp2Var_SequenceNodeOfStrip;
 class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode {
 	public:
@@ -222,6 +226,7 @@ class Handle_AdvApp2Var_SequenceNodeOfStrip : public Handle_TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_AdvApp2Var_SequenceNodeOfStrip\n");}
 	}
 };
+
 
 %nodefaultctor AdvApp2Var_SequenceOfNode;
 class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
@@ -277,6 +282,7 @@ class AdvApp2Var_SequenceOfNode : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor AdvApp2Var_Network;
 class AdvApp2Var_Network {
 	public:
@@ -319,6 +325,7 @@ class AdvApp2Var_Network {
 	}
 };
 
+
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfNode;
 class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 	public:
@@ -346,6 +353,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfNode : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfNode\n");}
 	}
 };
+
 
 %nodefaultctor AdvApp2Var_Framework;
 class AdvApp2Var_Framework {
@@ -388,6 +396,7 @@ class AdvApp2Var_Framework {
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Framework\n");}
 	}
 };
+
 
 %nodefaultctor AdvApp2Var_Patch;
 class AdvApp2Var_Patch {
@@ -459,6 +468,7 @@ class AdvApp2Var_Patch {
 	}
 };
 
+
 %nodefaultctor AdvApp2Var_Data;
 class AdvApp2Var_Data {
 	public:
@@ -494,6 +504,7 @@ class AdvApp2Var_Data {
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Data\n");}
 	}
 };
+
 
 %nodefaultctor AdvApp2Var_Strip;
 class AdvApp2Var_Strip : public TCollection_BaseSequence {
@@ -549,6 +560,7 @@ class AdvApp2Var_Strip : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor AdvApp2Var_Context;
 class AdvApp2Var_Context {
 	public:
@@ -601,6 +613,7 @@ class AdvApp2Var_Context {
 	}
 };
 
+
 %nodefaultctor AdvApp2Var_SequenceNodeOfStrip;
 class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
 	public:
@@ -628,6 +641,7 @@ class AdvApp2Var_SequenceNodeOfStrip : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfStrip\n");}
 	}
 };
+
 
 %nodefaultctor AdvApp2Var_SequenceOfPatch;
 class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
@@ -683,6 +697,7 @@ class AdvApp2Var_SequenceOfPatch : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfPatch;
 class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
 	public:
@@ -710,6 +725,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfPatch : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfPatch\n");}
 	}
 };
+
 
 %nodefaultctor AdvApp2Var_ApproxAFunc2Var;
 class AdvApp2Var_ApproxAFunc2Var {
@@ -759,6 +775,7 @@ class AdvApp2Var_ApproxAFunc2Var {
 	}
 };
 
+
 %nodefaultctor AdvApp2Var_SequenceNodeOfSequenceOfStrip;
 class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 	public:
@@ -786,6 +803,7 @@ class AdvApp2Var_SequenceNodeOfSequenceOfStrip : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_SequenceNodeOfSequenceOfStrip\n");}
 	}
 };
+
 
 %nodefaultctor AdvApp2Var_Node;
 class AdvApp2Var_Node {
@@ -821,6 +839,7 @@ class AdvApp2Var_Node {
 	}
 };
 
+
 %nodefaultctor AdvApp2Var_Criterion;
 class AdvApp2Var_Criterion {
 	public:
@@ -844,6 +863,7 @@ class AdvApp2Var_Criterion {
 	if (__env){printf("## Call custom destructor for instance of AdvApp2Var_Criterion\n");}
 	}
 };
+
 
 %nodefaultctor AdvApp2Var_SequenceOfStrip;
 class AdvApp2Var_SequenceOfStrip : public TCollection_BaseSequence {

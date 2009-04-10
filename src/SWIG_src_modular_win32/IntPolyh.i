@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_IntPolyh_SequenceNodeOfSeqOfStartPoints : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor IntPolyh_StartPoint;
 class IntPolyh_StartPoint {
 	public:
@@ -215,6 +217,7 @@ class IntPolyh_StartPoint {
 	}
 };
 
+
 %nodefaultctor IntPolyh_Edge;
 class IntPolyh_Edge {
 	public:
@@ -253,6 +256,7 @@ class IntPolyh_Edge {
 	}
 };
 
+
 %nodefaultctor IntPolyh_ArrayOfCouples;
 class IntPolyh_ArrayOfCouples {
 	public:
@@ -289,6 +293,7 @@ class IntPolyh_ArrayOfCouples {
 	}
 };
 
+
 %nodefaultctor IntPolyh_SequenceNodeOfSeqOfStartPoints;
 class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 	public:
@@ -316,6 +321,7 @@ class IntPolyh_SequenceNodeOfSeqOfStartPoints : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_SequenceNodeOfSeqOfStartPoints\n");}
 	}
 };
+
 
 %nodefaultctor IntPolyh_ArrayOfSectionLines;
 class IntPolyh_ArrayOfSectionLines {
@@ -354,6 +360,7 @@ class IntPolyh_ArrayOfSectionLines {
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfSectionLines\n");}
 	}
 };
+
 
 %nodefaultctor IntPolyh_SectionLine;
 class IntPolyh_SectionLine {
@@ -395,6 +402,7 @@ class IntPolyh_SectionLine {
 	}
 };
 
+
 %nodefaultctor IntPolyh_Couple;
 class IntPolyh_Couple {
 	public:
@@ -426,6 +434,7 @@ class IntPolyh_Couple {
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_Couple\n");}
 	}
 };
+
 
 %nodefaultctor IntPolyh_ArrayOfEdges;
 class IntPolyh_ArrayOfEdges {
@@ -467,6 +476,7 @@ class IntPolyh_ArrayOfEdges {
 	}
 };
 
+
 %nodefaultctor IntPolyh_ArrayOfTangentZones;
 class IntPolyh_ArrayOfTangentZones {
 	public:
@@ -504,6 +514,7 @@ class IntPolyh_ArrayOfTangentZones {
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfTangentZones\n");}
 	}
 };
+
 
 %nodefaultctor IntPolyh_Point;
 class IntPolyh_Point {
@@ -579,6 +590,7 @@ class IntPolyh_Point {
 	}
 };
 
+
 %nodefaultctor IntPolyh_ArrayOfStartPoints;
 class IntPolyh_ArrayOfStartPoints {
 	public:
@@ -612,6 +624,7 @@ class IntPolyh_ArrayOfStartPoints {
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfStartPoints\n");}
 	}
 };
+
 
 %nodefaultctor IntPolyh_Intersection;
 class IntPolyh_Intersection {
@@ -648,6 +661,7 @@ class IntPolyh_Intersection {
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_Intersection\n");}
 	}
 };
+
 
 %nodefaultctor IntPolyh_SeqOfStartPoints;
 class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
@@ -703,6 +717,7 @@ class IntPolyh_SeqOfStartPoints : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntPolyh_ArrayOfPoints;
 class IntPolyh_ArrayOfPoints {
 	public:
@@ -742,6 +757,7 @@ class IntPolyh_ArrayOfPoints {
 	if (__env){printf("## Call custom destructor for instance of IntPolyh_ArrayOfPoints\n");}
 	}
 };
+
 
 %nodefaultctor IntPolyh_ArrayOfTriangles;
 class IntPolyh_ArrayOfTriangles {

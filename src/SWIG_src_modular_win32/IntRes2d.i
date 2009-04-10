@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -157,6 +158,7 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public Handl
 	}
 };
 
+
 %nodefaultctor Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
 class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_TCollection_SeqNode {
 	public:
@@ -181,6 +183,7 @@ class Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint\n");}
 	}
 };
+
 
 %nodefaultctor IntRes2d_Transition;
 class IntRes2d_Transition {
@@ -240,6 +243,7 @@ class IntRes2d_Transition {
 	}
 };
 
+
 %nodefaultctor IntRes2d_SequenceOfIntersectionPoint;
 class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 	public:
@@ -293,6 +297,7 @@ class IntRes2d_SequenceOfIntersectionPoint : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of IntRes2d_SequenceOfIntersectionPoint\n");}
 	}
 };
+
 
 %nodefaultctor IntRes2d_SequenceOfIntersectionSegment;
 class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
@@ -348,6 +353,7 @@ class IntRes2d_SequenceOfIntersectionSegment : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntRes2d_IntersectionSegment;
 class IntRes2d_IntersectionSegment {
 	public:
@@ -394,6 +400,7 @@ class IntRes2d_IntersectionSegment {
 	}
 };
 
+
 %nodefaultctor IntRes2d_IntersectionPoint;
 class IntRes2d_IntersectionPoint {
 	public:
@@ -436,6 +443,7 @@ class IntRes2d_IntersectionPoint {
 	}
 };
 
+
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment;
 class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_SeqNode {
 	public:
@@ -464,6 +472,7 @@ class IntRes2d_SequenceNodeOfSequenceOfIntersectionSegment : public TCollection_
 	}
 };
 
+
 %nodefaultctor IntRes2d_Intersection;
 class IntRes2d_Intersection {
 	public:
@@ -489,6 +498,7 @@ class IntRes2d_Intersection {
 	if (__env){printf("## Call custom destructor for instance of IntRes2d_Intersection\n");}
 	}
 };
+
 
 %nodefaultctor IntRes2d_Domain;
 class IntRes2d_Domain {
@@ -535,6 +545,7 @@ class IntRes2d_Domain {
 	if (__env){printf("## Call custom destructor for instance of IntRes2d_Domain\n");}
 	}
 };
+
 
 %nodefaultctor IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint;
 class IntRes2d_SequenceNodeOfSequenceOfIntersectionPoint : public TCollection_SeqNode {

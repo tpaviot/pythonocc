@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ShapeUpgrade_Tool : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_FixSmallCurves;
 class Handle_ShapeUpgrade_FixSmallCurves : public Handle_ShapeUpgrade_Tool {
 	public:
@@ -162,6 +164,7 @@ class Handle_ShapeUpgrade_FixSmallCurves : public Handle_ShapeUpgrade_Tool {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FixSmallCurves\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_FixSmallBezierCurves;
 class Handle_ShapeUpgrade_FixSmallBezierCurves : public Handle_ShapeUpgrade_FixSmallCurves {
@@ -188,6 +191,7 @@ class Handle_ShapeUpgrade_FixSmallBezierCurves : public Handle_ShapeUpgrade_FixS
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_SplitSurface;
 class Handle_ShapeUpgrade_SplitSurface : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_ShapeUpgrade_SplitSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_SplitSurfaceAngle;
 class Handle_ShapeUpgrade_SplitSurfaceAngle : public Handle_ShapeUpgrade_SplitSurface {
@@ -238,6 +243,7 @@ class Handle_ShapeUpgrade_SplitSurfaceAngle : public Handle_ShapeUpgrade_SplitSu
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_EdgeDivide;
 class Handle_ShapeUpgrade_EdgeDivide : public Handle_ShapeUpgrade_Tool {
 	public:
@@ -262,6 +268,7 @@ class Handle_ShapeUpgrade_EdgeDivide : public Handle_ShapeUpgrade_Tool {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_EdgeDivide\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_ClosedEdgeDivide;
 class Handle_ShapeUpgrade_ClosedEdgeDivide : public Handle_ShapeUpgrade_EdgeDivide {
@@ -288,6 +295,7 @@ class Handle_ShapeUpgrade_ClosedEdgeDivide : public Handle_ShapeUpgrade_EdgeDivi
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis;
 class Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis : public Handle_ShapeUpgrade_SplitSurface {
 	public:
@@ -312,6 +320,7 @@ class Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis : public Handle_ShapeUpgra
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertSurfaceToBezierBasis\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_RemoveLocations;
 class Handle_ShapeUpgrade_RemoveLocations : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_ShapeUpgrade_RemoveLocations : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve;
 class Handle_ShapeUpgrade_SplitCurve : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_ShapeUpgrade_SplitCurve : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_RemoveInternalWires;
 class Handle_ShapeUpgrade_RemoveInternalWires : public Handle_ShapeUpgrade_Tool {
@@ -388,6 +399,7 @@ class Handle_ShapeUpgrade_RemoveInternalWires : public Handle_ShapeUpgrade_Tool 
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_SplitSurfaceArea;
 class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSurface {
 	public:
@@ -412,6 +424,7 @@ class Handle_ShapeUpgrade_SplitSurfaceArea : public Handle_ShapeUpgrade_SplitSur
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitSurfaceArea\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_SplitSurfaceContinuity;
 class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_SplitSurface {
@@ -438,6 +451,7 @@ class Handle_ShapeUpgrade_SplitSurfaceContinuity : public Handle_ShapeUpgrade_Sp
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve2d;
 class Handle_ShapeUpgrade_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve {
 	public:
@@ -462,6 +476,7 @@ class Handle_ShapeUpgrade_SplitCurve2d : public Handle_ShapeUpgrade_SplitCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_ConvertCurve2dToBezier;
 class Handle_ShapeUpgrade_ConvertCurve2dToBezier : public Handle_ShapeUpgrade_SplitCurve2d {
@@ -488,6 +503,7 @@ class Handle_ShapeUpgrade_ConvertCurve2dToBezier : public Handle_ShapeUpgrade_Sp
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve2dContinuity;
 class Handle_ShapeUpgrade_SplitCurve2dContinuity : public Handle_ShapeUpgrade_SplitCurve2d {
 	public:
@@ -512,6 +528,7 @@ class Handle_ShapeUpgrade_SplitCurve2dContinuity : public Handle_ShapeUpgrade_Sp
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_SplitCurve2dContinuity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_FaceDivide;
 class Handle_ShapeUpgrade_FaceDivide : public Handle_ShapeUpgrade_Tool {
@@ -538,6 +555,7 @@ class Handle_ShapeUpgrade_FaceDivide : public Handle_ShapeUpgrade_Tool {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_FaceDivideArea;
 class Handle_ShapeUpgrade_FaceDivideArea : public Handle_ShapeUpgrade_FaceDivide {
 	public:
@@ -562,6 +580,7 @@ class Handle_ShapeUpgrade_FaceDivideArea : public Handle_ShapeUpgrade_FaceDivide
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_FaceDivideArea\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve3d;
 class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
@@ -588,6 +607,7 @@ class Handle_ShapeUpgrade_SplitCurve3d : public Handle_ShapeUpgrade_SplitCurve {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_ConvertCurve3dToBezier;
 class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_SplitCurve3d {
 	public:
@@ -612,6 +632,7 @@ class Handle_ShapeUpgrade_ConvertCurve3dToBezier : public Handle_ShapeUpgrade_Sp
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_ConvertCurve3dToBezier\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeUpgrade_ClosedFaceDivide;
 class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivide {
@@ -638,6 +659,7 @@ class Handle_ShapeUpgrade_ClosedFaceDivide : public Handle_ShapeUpgrade_FaceDivi
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_SplitCurve3dContinuity;
 class Handle_ShapeUpgrade_SplitCurve3dContinuity : public Handle_ShapeUpgrade_SplitCurve3d {
 	public:
@@ -663,6 +685,7 @@ class Handle_ShapeUpgrade_SplitCurve3dContinuity : public Handle_ShapeUpgrade_Sp
 	}
 };
 
+
 %nodefaultctor Handle_ShapeUpgrade_WireDivide;
 class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
 	public:
@@ -687,6 +710,7 @@ class Handle_ShapeUpgrade_WireDivide : public Handle_ShapeUpgrade_Tool {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeUpgrade_WireDivide\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_SplitCurve;
 class ShapeUpgrade_SplitCurve : public MMgt_TShared {
@@ -728,6 +752,7 @@ class ShapeUpgrade_SplitCurve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_SplitCurve3d;
 class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 	public:
@@ -757,6 +782,7 @@ class ShapeUpgrade_SplitCurve3d : public ShapeUpgrade_SplitCurve {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve3d\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_ConvertCurve3dToBezier;
 class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
@@ -795,6 +821,7 @@ class ShapeUpgrade_ConvertCurve3dToBezier : public ShapeUpgrade_SplitCurve3d {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertCurve3dToBezier\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_Tool;
 class ShapeUpgrade_Tool : public MMgt_TShared {
@@ -842,6 +869,7 @@ class ShapeUpgrade_Tool : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_RemoveInternalWires;
 class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 	public:
@@ -886,6 +914,7 @@ class ShapeUpgrade_RemoveInternalWires : public ShapeUpgrade_Tool {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_SplitCurve3dContinuity;
 class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 	public:
@@ -919,6 +948,7 @@ class ShapeUpgrade_SplitCurve3dContinuity : public ShapeUpgrade_SplitCurve3d {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve3dContinuity\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_SplitSurface;
 class ShapeUpgrade_SplitSurface : public MMgt_TShared {
@@ -968,6 +998,7 @@ class ShapeUpgrade_SplitSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_SplitSurfaceAngle;
 class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 	public:
@@ -997,6 +1028,7 @@ class ShapeUpgrade_SplitSurfaceAngle : public ShapeUpgrade_SplitSurface {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceAngle\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_ShapeDivide;
 class ShapeUpgrade_ShapeDivide {
@@ -1040,6 +1072,7 @@ class ShapeUpgrade_ShapeDivide {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_ShapeDivideContinuity;
 class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 	public:
@@ -1065,6 +1098,7 @@ class ShapeUpgrade_ShapeDivideContinuity : public ShapeUpgrade_ShapeDivide {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideContinuity\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_FixSmallCurves;
 class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
@@ -1101,6 +1135,7 @@ class ShapeUpgrade_FixSmallCurves : public ShapeUpgrade_Tool {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FixSmallCurves\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_EdgeDivide;
 class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
@@ -1150,6 +1185,7 @@ class ShapeUpgrade_EdgeDivide : public ShapeUpgrade_Tool {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_ClosedEdgeDivide;
 class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 	public:
@@ -1176,6 +1212,7 @@ class ShapeUpgrade_ClosedEdgeDivide : public ShapeUpgrade_EdgeDivide {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade;
 class ShapeUpgrade {
 	public:
@@ -1194,6 +1231,7 @@ class ShapeUpgrade {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_ShellSewing;
 class ShapeUpgrade_ShellSewing {
 	public:
@@ -1209,6 +1247,7 @@ class ShapeUpgrade_ShellSewing {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShellSewing\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_FaceDivide;
 class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
@@ -1258,6 +1297,7 @@ class ShapeUpgrade_FaceDivide : public ShapeUpgrade_Tool {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_FaceDivideArea;
 class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 	public:
@@ -1285,6 +1325,7 @@ class ShapeUpgrade_FaceDivideArea : public ShapeUpgrade_FaceDivide {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_FaceDivideArea\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_FixSmallBezierCurves;
 class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
@@ -1314,6 +1355,7 @@ class ShapeUpgrade_FixSmallBezierCurves : public ShapeUpgrade_FixSmallCurves {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_ShapeDivideClosedEdges;
 class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 	public:
@@ -1329,6 +1371,7 @@ class ShapeUpgrade_ShapeDivideClosedEdges : public ShapeUpgrade_ShapeDivide {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosedEdges\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_SplitSurfaceArea;
 class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
@@ -1359,6 +1402,7 @@ class ShapeUpgrade_SplitSurfaceArea : public ShapeUpgrade_SplitSurface {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceArea\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_SplitCurve2d;
 class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
@@ -1394,6 +1438,7 @@ class ShapeUpgrade_SplitCurve2d : public ShapeUpgrade_SplitCurve {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_ConvertCurve2dToBezier;
 class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 	public:
@@ -1421,6 +1466,7 @@ class ShapeUpgrade_ConvertCurve2dToBezier : public ShapeUpgrade_SplitCurve2d {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ConvertCurve2dToBezier\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_ClosedFaceDivide;
 class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
@@ -1455,6 +1501,7 @@ class ShapeUpgrade_ClosedFaceDivide : public ShapeUpgrade_FaceDivide {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ClosedFaceDivide\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_ShapeConvertToBezier;
 class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
@@ -1514,6 +1561,7 @@ class ShapeUpgrade_ShapeConvertToBezier : public ShapeUpgrade_ShapeDivide {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_SplitSurfaceContinuity;
 class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
 	public:
@@ -1545,6 +1593,7 @@ class ShapeUpgrade_SplitSurfaceContinuity : public ShapeUpgrade_SplitSurface {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitSurfaceContinuity\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_WireDivide;
 class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
@@ -1610,6 +1659,7 @@ class ShapeUpgrade_WireDivide : public ShapeUpgrade_Tool {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_ShapeDivideAngle;
 class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 	public:
@@ -1631,6 +1681,7 @@ class ShapeUpgrade_ShapeDivideAngle : public ShapeUpgrade_ShapeDivide {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideAngle\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_SplitCurve2dContinuity;
 class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
@@ -1663,6 +1714,7 @@ class ShapeUpgrade_SplitCurve2dContinuity : public ShapeUpgrade_SplitCurve2d {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_SplitCurve2dContinuity\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_ConvertSurfaceToBezierBasis;
 class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurface {
@@ -1712,6 +1764,7 @@ class ShapeUpgrade_ConvertSurfaceToBezierBasis : public ShapeUpgrade_SplitSurfac
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_ShapeDivideArea;
 class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 	public:
@@ -1730,6 +1783,7 @@ class ShapeUpgrade_ShapeDivideArea : public ShapeUpgrade_ShapeDivide {
 	}
 };
 
+
 %nodefaultctor ShapeUpgrade_ShapeDivideClosed;
 class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 	public:
@@ -1745,6 +1799,7 @@ class ShapeUpgrade_ShapeDivideClosed : public ShapeUpgrade_ShapeDivide {
 	if (__env){printf("## Call custom destructor for instance of ShapeUpgrade_ShapeDivideClosed\n");}
 	}
 };
+
 
 %nodefaultctor ShapeUpgrade_RemoveLocations;
 class ShapeUpgrade_RemoveLocations : public MMgt_TShared {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlMDocStd_XLinkDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMDocStd_XLinkDriver;
 class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 	public:
@@ -169,6 +171,7 @@ class XmlMDocStd_XLinkDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMDocStd_XLinkDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMDocStd;
 class XmlMDocStd {

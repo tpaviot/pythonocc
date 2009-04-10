@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PXCAFDoc_SeqNodeOfGraphNodeSequence : public Handle_PMMgt_PManaged 
 	}
 };
 
+
 %nodefaultctor Handle_PXCAFDoc_LayerTool;
 class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 	public:
@@ -162,6 +164,7 @@ class Handle_PXCAFDoc_LayerTool : public Handle_PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_LayerTool\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PXCAFDoc_ShapeTool;
 class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
@@ -188,6 +191,7 @@ class Handle_PXCAFDoc_ShapeTool : public Handle_PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_PXCAFDoc_Area;
 class Handle_PXCAFDoc_Area : public Handle_PDF_Attribute {
 	public:
@@ -212,6 +216,7 @@ class Handle_PXCAFDoc_Area : public Handle_PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Area\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PXCAFDoc_Color;
 class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
@@ -238,6 +243,7 @@ class Handle_PXCAFDoc_Color : public Handle_PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_PXCAFDoc_Location;
 class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 	public:
@@ -262,6 +268,7 @@ class Handle_PXCAFDoc_Location : public Handle_PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Location\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PXCAFDoc_GraphNode;
 class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
@@ -288,6 +295,7 @@ class Handle_PXCAFDoc_GraphNode : public Handle_PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_PXCAFDoc_Centroid;
 class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 	public:
@@ -312,6 +320,7 @@ class Handle_PXCAFDoc_Centroid : public Handle_PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Centroid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PXCAFDoc_GraphNodeSequence;
 class Handle_PXCAFDoc_GraphNodeSequence : public Handle_Standard_Persistent {
@@ -338,6 +347,7 @@ class Handle_PXCAFDoc_GraphNodeSequence : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PXCAFDoc_Volume;
 class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 	public:
@@ -362,6 +372,7 @@ class Handle_PXCAFDoc_Volume : public Handle_PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_Volume\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PXCAFDoc_DocumentTool;
 class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
@@ -388,6 +399,7 @@ class Handle_PXCAFDoc_DocumentTool : public Handle_PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_PXCAFDoc_ColorTool;
 class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 	public:
@@ -412,6 +424,7 @@ class Handle_PXCAFDoc_ColorTool : public Handle_PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_PXCAFDoc_ColorTool\n");}
 	}
 };
+
 
 %nodefaultctor PXCAFDoc_Volume;
 class PXCAFDoc_Volume : public PDF_Attribute {
@@ -450,6 +463,7 @@ class PXCAFDoc_Volume : public PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_Volume\n");}
 	}
 };
+
 
 %nodefaultctor PXCAFDoc_SeqNodeOfGraphNodeSequence;
 class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
@@ -509,6 +523,7 @@ class PXCAFDoc_SeqNodeOfGraphNodeSequence : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PXCAFDoc_Area;
 class PXCAFDoc_Area : public PDF_Attribute {
 	public:
@@ -547,6 +562,7 @@ class PXCAFDoc_Area : public PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor PXCAFDoc_DocumentTool;
 class PXCAFDoc_DocumentTool : public PDF_Attribute {
 	public:
@@ -575,6 +591,7 @@ class PXCAFDoc_DocumentTool : public PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor PXCAFDoc_SeqExplorerOfGraphNodeSequence;
 class PXCAFDoc_SeqExplorerOfGraphNodeSequence {
 	public:
@@ -596,6 +613,7 @@ class PXCAFDoc_SeqExplorerOfGraphNodeSequence {
 	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_SeqExplorerOfGraphNodeSequence\n");}
 	}
 };
+
 
 %nodefaultctor PXCAFDoc_ColorTool;
 class PXCAFDoc_ColorTool : public PDF_Attribute {
@@ -624,6 +642,7 @@ class PXCAFDoc_ColorTool : public PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_ColorTool\n");}
 	}
 };
+
 
 %nodefaultctor PXCAFDoc_Location;
 class PXCAFDoc_Location : public PDF_Attribute {
@@ -661,6 +680,7 @@ class PXCAFDoc_Location : public PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor PXCAFDoc_LayerTool;
 class PXCAFDoc_LayerTool : public PDF_Attribute {
 	public:
@@ -689,6 +709,7 @@ class PXCAFDoc_LayerTool : public PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor PXCAFDoc_ShapeTool;
 class PXCAFDoc_ShapeTool : public PDF_Attribute {
 	public:
@@ -716,6 +737,7 @@ class PXCAFDoc_ShapeTool : public PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_ShapeTool\n");}
 	}
 };
+
 
 %nodefaultctor PXCAFDoc_Centroid;
 class PXCAFDoc_Centroid : public PDF_Attribute {
@@ -752,6 +774,7 @@ class PXCAFDoc_Centroid : public PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_Centroid\n");}
 	}
 };
+
 
 %nodefaultctor PXCAFDoc_GraphNodeSequence;
 class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
@@ -847,6 +870,7 @@ class PXCAFDoc_GraphNodeSequence : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PXCAFDoc_GraphNode;
 class PXCAFDoc_GraphNode : public PDF_Attribute {
 	public:
@@ -904,6 +928,7 @@ class PXCAFDoc_GraphNode : public PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of PXCAFDoc_GraphNode\n");}
 	}
 };
+
 
 %nodefaultctor PXCAFDoc_Color;
 class PXCAFDoc_Color : public PDF_Attribute {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -137,6 +138,7 @@ class TopTrans_CurveTransition {
 	}
 };
 
+
 %nodefaultctor TopTrans_Array2OfOrientation;
 class TopTrans_Array2OfOrientation {
 	public:
@@ -180,6 +182,7 @@ class TopTrans_Array2OfOrientation {
 	if (__env){printf("## Call custom destructor for instance of TopTrans_Array2OfOrientation\n");}
 	}
 };
+
 
 %nodefaultctor TopTrans_SurfaceTransition;
 class TopTrans_SurfaceTransition {
