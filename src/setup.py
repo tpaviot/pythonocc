@@ -106,24 +106,19 @@ if GENERATE_SWIG:#a small things to do before building
     #
     files_to_remove = glob.glob(os.path.join(os.getcwd(),'OCC','*'))
     for file_to_remove in files_to_remove:
-        os.remove(file_to_remove)
-                                
+        os.remove(file_to_remove) 
     #
     # Create paths
     #
     if not os.path.isdir(SWIG_FILES_PATH_MODULAR):
         os.mkdir(SWIG_FILES_PATH_MODULAR)
-##
-## OCC header file TopOpeBRepDS_tools.hxx maybe missing, causing a gccxml error.
-##
-#if not os.path.isfile(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx')):
-#    try:
-#        f = open(os.path.join(OCC_INC,'TopOpeBRepDS_tools.hxx'),'w')
-#        f.close()
-#        print "TopOpeBRepDS_tools.hxx created in %s"%OCC_INC
-#    except:
-#        print "You don't have write acces to %s directory. Please use 'sudo python setup.py build'."%OCC_INC
-#        sys.exit(0)
+
+#
+# Create 'OCC' folder if it does not exist
+#
+if not (os.path.isdir(os.path.join(os.getcwd(),'OCC'))):
+        os.mkdir(os.path.join(os.getcwd(),'OCC')
+                               
 #
 # Package Name
 #
