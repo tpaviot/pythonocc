@@ -23,6 +23,7 @@
 import sys
 import os, os.path
 import shutil
+import platform
 from distutils import sysconfig
 #
 # Define pythonOCC version
@@ -80,7 +81,7 @@ elif sys.platform=='linux2':
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
-    ECA = ['-O0']
+    ECA = ['-O0','-march=%s'%platform.machine()]
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
 elif sys.platform=='darwin':
@@ -102,7 +103,7 @@ elif sys.platform=='darwin':
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
-    ECA = ['-O0']
+    ECA = ['-O0','-march=%s'%platform.machine()]
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
 else:
