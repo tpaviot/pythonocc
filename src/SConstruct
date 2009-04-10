@@ -129,7 +129,7 @@ if sys.platform=='win32':
     PYGCCXML_DEFINES = ['WNT','__SWIG_GENERATION__','CSFDB','WIN32','_WINDOWS']
     DEFINE_MACROS = ['WNT','WIN32','_WINDOWS','CSFDB','NDEBUG']
     ECA = ['/Ox','/MD','/W3','/GX','/link']
-    SWIG_OPTS = ['-O','-python','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir',BUILD_DIR]
+    SWIG_OPTS = ['-O','-w302,314,509,512','-python','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir',BUILD_DIR]
     ELA = []
     EXTRA_LIBS = []    
 elif sys.platform=='linux2':
@@ -141,7 +141,7 @@ elif sys.platform=='linux2':
     GCC_XML_PATH = '/usr/bin' # Ubuntu 8.04 Hardy installation path for gccxml
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL','_GNU_SOURCE=1']
     DEFINE_MACROS = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS','LIN','LININTEL',('_GNU_SOURCE','1')]
-    SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+    SWIG_OPTS = ['-python','-w302,314,509,512','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-DOCC_CONVERT_SIGNALS','-DLIN','-DLININTEL','-D_GNU_SOURCE=1'],#'-outdir',BUILD_DIR]
     ECA = ['-O0','-march=%s'%architecture]
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
@@ -156,7 +156,7 @@ elif sys.platform=='darwin':
     GCC_XML_PATH = '/usr/bin' 
     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),('CSFDB',None),('OCC_CONVERT_SIGNALS',None)]
-    SWIG_OPTS = ['-python','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+    SWIG_OPTS = ['-python','-w302,314,509,512','-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-DOCC_CONVERT_SIGNALS'],#'-outdir',BUILD_DIR]
     ECA = ['-O0','-march=%s'%architecture]
     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
@@ -316,12 +316,12 @@ def Create__init__():
     #MMGT_OPT=1 //use the optimised memory manager
     #MMGT_CLEAR=1 //this is important , at least in my case.Many problems could rise if i did not set this variable.Sets all bits of new allocated memory to NULL.
     #MMGT_REENTRANT=0 //My application is not multi threaded , so i do not need this.
-    init_fp.write('import os\n')
-    init_fp.write('#\n#Define OpenCascade behaviour settings\n#\n')
-    init_fp.write("os.environ['MMGT_CLEAR']='1'\n")
-    init_fp.write("os.environ['MMGT_OPT']='1'\n")
-    init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
-    init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
+    #init_fp.write('import os\n')
+    #init_fp.write('#\n#Define OpenCascade behaviour settings\n#\n')
+    #init_fp.write("os.environ['MMGT_CLEAR']='1'\n")
+    #init_fp.write("os.environ['MMGT_OPT']='1'\n")
+    #init_fp.write("os.environ['MMGT_REENTRANT']='0'\n")
+    #init_fp.write("os.environ['CSF_EXCEPTION_PROMPT']='1'\n")
     # Display stuff
     #init_fp.write("os.environ['DISPLAY']=':0.0'\n")
     #init_fp.write("os.environ['CSF_GraphicShr']='/usr/local/lib/libTKOpenGL.so'\n")
@@ -348,9 +348,9 @@ if BUILD:
 	for module in MODULES:
 		module_name = module[0]
 		SWIG_source_file = os.path.join(os.getcwd(),SWIG_FILES_PATH_MODULAR,"%s.i"%module_name)
-		if not (os.path.isfile(SWIG_source_file)): #if no .i file, generate_it		
-			import SWIG_generator
-			builder = SWIG_generator.ModularBuilder(module, False)
+	#	if not (os.path.isfile(SWIG_source_file)): #if no .i file, generate_it		
+	#		import SWIG_generator
+	#		builder = SWIG_generator.ModularBuilder(module, False)
 	#
 	# Check configuration
 	#
