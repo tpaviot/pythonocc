@@ -1,3 +1,7 @@
+2009/5/10:
+	- code clean up
+	- new wxSampleGui.py sample framework
+	- bugfix: in setup.py, ig OCC folder is not dir
 2009/4/06:
 	- Added CAF*
 	- Added CAF sample
