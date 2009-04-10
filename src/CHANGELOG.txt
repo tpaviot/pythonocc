@@ -1,3 +1,6 @@
+2009/4/06:
+	- Added CAF*
+	- Added CAF sample
 2009/4/02:
 	- Beginning of SalomeGEOM integration
 	- Bugfix: Quantity_Parameter & byref parameter fix
