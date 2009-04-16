@@ -89,10 +89,30 @@ elif sys.platform=='darwin':
     #
     # Fill in this part with your own settings
     #
+#     os.environ['CC'] = 'g++'
+#     os.environ['CPP'] = 'g++'
+# #    OCC_INC = '/usr/local/inc'
+# #    OCC_LIB = '/usr/local/lib'
+#     OCC_LIB = '/usr/local/lib/OCC'
+#     OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
+#     SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc')
+#     SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
+#     GCC_XML_PATH = '/usr/bin' 
+#     PYGCCXML_DEFINES = ['HAVE_CONFIG_H','HAVE_LIMITS_H','CSFDB','OCC_CONVERT_SIGNALS']
+#     DEFINE_MACROS = [('HAVE_CONFIG_H',None),('HAVE_LIMITS_H',None),\
+#                      ('CSFDB',None),('OCC_CONVERT_SIGNALS',None),\
+#                      ('__PYTHONOCC_MAXINT__',sys.maxint)]
+#     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
+#                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
+#                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+#     ECA = ['-O0','-march=%s'%platform.machine()]
+#     lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')
+#     ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
+
     os.environ['CC'] = 'g++'
     os.environ['CPP'] = 'g++'
-    OCC_INC = '/usr/local/inc'
-    OCC_LIB = '/usr/local/lib'
+    OCC_LIB = '/usr/local/lib/OCC'
+    OCC_INC = '/Volumes/DATA/Src/OCC/OpenCASCADE6.3.0/ros/mac/inc'
     SALOME_GEOM_INC = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','inc')
     SALOME_GEOM_LIB = os.path.join(os.getcwd(),'..','ThirdPart','SalomeGeometry','win32','lib')
     GCC_XML_PATH = '/usr/bin' 
@@ -103,8 +123,10 @@ elif sys.platform=='darwin':
     SWIG_OPTS = ['-modern','-fcompact','-c++','-DHAVE_LIMITS_H','-DHAVE_CONFIG_H','-DCSFDB',\
                  '-w302,314,509,512','-DOCC_CONVERT_SIGNALS',\
                  '-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
-    ECA = ['-O0','-march=%s'%platform.machine()]
-    lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
-    ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
+    ECA = ['-O0']
+    #lib_python = sysconfig.get_config_var('BLDLIBRARY').split(' ')[1]
+    #ELA = ['-Wl,--no-undefined','-lm','-lstdc++',lib_python]
+    ELA = ['-Wl', '--no-undefined','-lm','-lstdc++',]
+
 else:
     raise "Unsupported platform"

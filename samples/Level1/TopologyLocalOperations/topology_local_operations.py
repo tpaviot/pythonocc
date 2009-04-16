@@ -1,4 +1,3 @@
-
 from OCC.gp import *
 from OCC.BRepPrimAPI import *
 from OCC.TopExp import *
@@ -26,7 +25,7 @@ from OCC.LocOpe import *
 from OCC.TColgp import *
 
 from OCC.Display.wxSamplesGui import display
-import sys
+import sys, time
 
 def extrusion(event=None):
     #
@@ -357,6 +356,103 @@ def brep_feat_local_revolution(event=None):
     display.EraseAll()
     display.DisplayShape(MKrev.Shape())
 
+def brep_feat_extrusion_protrusion(event=None):
+    #Extrusion 
+    S = BRepPrimAPI_MakeBox(400.,250.,300.).Shape()
+    faces = Topo(S).faces()
+    F = faces.next()
+    surf1 = BRep_Tool().Surface(F)
+    
+    Pl1 = Handle_Geom_Plane().DownCast(surf1).GetObject()
+    
+    D1 = Pl1.Pln().Axis().Direction().Reversed()
+    MW = BRepBuilderAPI_MakeWire()
+    p1,p2 = gp_Pnt2d(200.,-100.), gp_Pnt2d(100.,-100.) 
+    aline = GCE2d_MakeLine(p1,p2).Value()
+    MW.Add(BRepBuilderAPI_MakeEdge(aline,surf1,0.,p1.Distance(p2)).Edge())
+    
+    p1,p2 = gp_Pnt2d(100.,-100.), gp_Pnt2d(100.,-200.)
+    aline = GCE2d_MakeLine(p1,p2).Value()
+    MW.Add(BRepBuilderAPI_MakeEdge(aline,surf1,0.,p1.Distance(p2)).Edge())
+    
+    p1,p2 = gp_Pnt2d(100.,-200.), gp_Pnt2d(200.,-200.)
+    aline = GCE2d_MakeLine(p1,p2).Value()
+    MW.Add(BRepBuilderAPI_MakeEdge(aline,surf1,0.,p1.Distance(p2)).Edge())
+    
+    p1,p2 = gp_Pnt2d(200.,-200.), gp_Pnt2d(200.,-100.)
+    aline = GCE2d_MakeLine(p1,p2).Value()
+    MW.Add(BRepBuilderAPI_MakeEdge(aline,surf1,0.,p1.Distance(p2)).Edge())
+    
+    MKF = BRepBuilderAPI_MakeFace() 
+    MKF.Init(surf1,False)
+    MKF.Add(MW.Wire())
+    FP = MKF.Face()
+    BRepLib().BuildCurves3d(FP)
+#    MKP = BRepFeat_MakePrism(S,FP,F,D1,0,True)
+#    MKP.Perform(-200)
+#    print 'depth 200'
+#    res1 = MKP.Shape()
+#    display.DisplayShape(res1)
+#    time.sleep(1)
+    
+    display.EraseAll()
+    MKP = BRepFeat_MakePrism(S,FP,F,D1,0,True)
+    MKP.PerformThruAll()
+    print 'depth thru all'
+    res1 = MKP.Shape()
+#    display.DisplayShape(res1)
+    
+    # Protrusion
+    faces.next()  
+    F2 = faces.next()
+    surf2 = BRep_Tool().Surface(F2)
+    Pl2 = Handle_Geom_Plane().DownCast(surf2).GetObject()
+    D2 = Pl2.Pln().Axis().Direction().Reversed()
+    MW2 = BRepBuilderAPI_MakeWire() 
+    p1, p2 = gp_Pnt2d(100.,100.), gp_Pnt2d(200.,100.)
+#    p1, p2 = gp_Pnt2d(100.,100.), gp_Pnt2d(150.,100.)
+    aline = GCE2d_MakeLine(p1,p2).Value()
+    MW2.Add(BRepBuilderAPI_MakeEdge(aline,surf2,0.,p1.Distance(p2)).Edge())
+
+    p1, p2 = gp_Pnt2d(200.,100.), gp_Pnt2d(150.,200.)
+    aline = GCE2d_MakeLine(p1,p2).Value()
+    MW2.Add(BRepBuilderAPI_MakeEdge(aline,surf2,0.,p1.Distance(p2)).Edge())
+
+    p1, p2 = gp_Pnt2d(150.,200.), gp_Pnt2d(100.,100.)
+    aline = GCE2d_MakeLine(p1,p2).Value()
+    MW2.Add(BRepBuilderAPI_MakeEdge(aline,surf2,0.,p1.Distance(p2)).Edge())
+
+    MKF2 = BRepBuilderAPI_MakeFace()
+    MKF2.Init(surf2,False)
+    MKF2.Add(MW2.Wire())
+    MKF2.Build()
+    
+#    display.DisplayShape(MW2.Wire())
+    
+    FP = MKF2.Face()
+    BRepLib().BuildCurves3d(FP)
+    MKP2 = BRepFeat_MakePrism(res1,FP,F2,D2,0,True)
+    MKP2.PerformThruAll()
+    display.EraseAll()
+#    display.DisplayShape(MKP2.Shape())
+    
+    trf = gp_Trsf()
+    trf.SetTranslation(gp_Vec(0,0,300))
+    gtrf = gp_GTrsf()
+    gtrf.SetTrsf(trf)
+    tr = BRepBuilderAPI_GTransform(MKP2.Shape(), gtrf, True)
+    
+    
+    from OCC.BRepAlgoAPI import BRepAlgoAPI_Fuse
+    fused = BRepAlgoAPI_Fuse(tr.Shape(), MKP2.Shape())
+    fused.RefineEdges()
+    fused.Build()
+    print 'boolean operation error status:', fused.ErrorStatus()
+    display.DisplayShape(fused.Shape())
+    
+#    tr.Perform()
+#    import ipdb; ipdb.set_trace()
+
 
 def exit(event=None):
 	sys.exit()
@@ -373,7 +469,8 @@ if __name__ == '__main__':
     add_function_to_menu('topology local operations', brep_feat_rib)
     add_function_to_menu('topology local operations', brep_feat_local_pipe)
     add_function_to_menu('topology local operations', brep_feat_local_revolution)
-    add_function_to_menu('topology local operations', brep_feat_draft_angle)
+#    add_function_to_menu('topology local operations', brep_feat_draft_angle)
+    add_function_to_menu('topology local operations', brep_feat_extrusion_protrusion)
     add_function_to_menu('topology local operations', exit)
     start_display()
     
