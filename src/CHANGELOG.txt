@@ -1,3 +1,5 @@
+== pythonOCC-wo0.2 released ==
+
 2009/5/10:
 	- code clean up
 	- new wxSampleGui.py sample framework
