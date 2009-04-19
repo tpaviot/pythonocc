@@ -17,9 +17,10 @@ from OCC.Display.wxSamplesGui import display, start_display
 
 
 from occ_utils import file_to_shape
-box = file_to_shape('')
+box = file_to_shape('/Volumes/DATA/Jelle_prive/Jelle_dev/workspace/SVN/phd_code/chair_II/open_cube/open_voxel_chair_1.iges')
 
-display.DisplayShape(box)
+box_ais = display.DisplayShape(box)
+#display.Context.SetTransparency(box_ais, 0.8)
 
 # make the PostScript plotter 
 
@@ -59,20 +60,23 @@ hlr.Update()
 hlr_to_shp = HLRBRep_PolyHLRToShape()
 hlr_to_shp.Update(hlr.GetHandle())
 
-display.EraseAll()
-display.DisplayShape(hlr_to_shp.VCompound())
-display.DisplayShape(hlr_to_shp.HCompound())
 
-
-display.DisplayShape(hlr_to_shp.Rg1LineHCompound())
-display.DisplayShape(hlr_to_shp.Rg1LineVCompound())
-
-display.DisplayShape(hlr_to_shp.RgNLineHCompound())
-display.DisplayShape(hlr_to_shp.RgNLineVCompound())
-
-
-display.DisplayShape(hlr_to_shp.OutLineVCompound())
-display.DisplayShape(hlr_to_shp.OutLineHCompound())
+for i in [
+    hlr_to_shp.VCompound(),
+#    hlr_to_shp.HCompound(),
+#    hlr_to_shp.Rg1LineHCompound(),
+#    hlr_to_shp.Rg1LineVCompound(),
+#    hlr_to_shp.RgNLineHCompound(),
+#    hlr_to_shp.RgNLineVCompound(),
+#    hlr_to_shp.OutLineVCompound(),
+#    hlr_to_shp.OutLineHCompound(),
+    ]:
+    
+#    display.EraseAll()
+    display.DisplayShape(i)
+#    import ipdb; ipdb.set_trace()
+    
+    
 
 
 #_pres_proj = Prs3d_Projector()
