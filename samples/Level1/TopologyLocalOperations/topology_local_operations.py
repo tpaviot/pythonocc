@@ -118,7 +118,6 @@ def brepfeat_prism(event=None):
     mkf.Init(srf, False)
     mkf.Add(wire.Wire())
     mkf.Build()
-    #import ipdb; ipdb.set_trace()
     
     # bit obscure why this is nessecary...
     # segfaults without...
@@ -183,7 +182,6 @@ def offset_cube(event=None):
     dim.SetValue(30)
     display.Context.Display(dim.GetHandle())
     
-    import ipdb; ipdb.set_trace()
     display.FitAll()
 
 def split_shape(event=None):
@@ -221,30 +219,36 @@ def glue_solids(event=None):
     display.EraseAll()
     display.DisplayShape(glue1.Shape())
     
-#    # With common edges 
-#    S3 = BRepPrimAPI_MakeBox(500.,400.,300.).Shape()
-#    facesC = Topo(S3).faces()
-#    F3 = [facesC.next() for i in range(5)][-1]
-#    
-#    S4 = BRepPrimAPI_MakeBox(gp_Pnt(0.,0.,300.),gp_Pnt(200.,200.,500.)).Shape()
-#    facesD = Topo(S4).faces()
-#    F4 = [facesD.next() for i in range(4)][-1]
-#    
-#    glue2 = BRepFeat_Gluer(S4,S3)
-#    glue2.Bind(F4,F3)
-#
-#    common_edges = LocOpe_FindEdges(F4,F3)
-#    common_edges.InitIterator()
-#    import ipdb; ipdb.set_trace()
-#    print 'loop common edges'
-#    while common_edges.More():
-#        print 'common edges',common_edges.EdgeFrom(),common_edges.EdgeTo()
-#        glue2.Bind(common_edges.EdgeFrom(),common_edges.EdgeTo())
-#        common_edges.Next()
-##    for ( common_edges.More() common_edges.Next())
-##    display.EraseAll()
-#    glue2.Build()
-#    display.DisplayShape(glue2.Shape())
+
+def glue_solids_edges(event=None):
+    # With common edges 
+    S3 = BRepPrimAPI_MakeBox(500.,400.,300.).Shape()
+    S4 = BRepPrimAPI_MakeBox(gp_Pnt(0.,0.,300.),gp_Pnt(200.,200.,500.)).Shape()
+
+    ex3, ex4 = TopExp_Explorer(S3, TopAbs_FACE), TopExp_Explorer(S4, TopAbs_FACE)
+
+    for a in range(5):
+         ex3.Next()
+    for b in range(4):
+         ex4.Next()
+
+    F3, F4 = TopoDS.TopoDS().Face(ex3.Current()), TopoDS.TopoDS().Face(ex4.Current())
+
+    glue2 = BRepFeat_Gluer(S4,S3)
+    glue2.Bind(F4,F3)
+
+    common_edges = LocOpe_FindEdges(F4,F3)
+    common_edges.InitIterator()
+    print 'loop common edges', common_edges.More()
+    while common_edges.More():
+        print 'common edges',common_edges.EdgeFrom(),common_edges.EdgeTo()
+        glue2.Bind(common_edges.EdgeFrom(),common_edges.EdgeTo())
+        common_edges.Next()
+ 
+    display.EraseAll()
+    glue2.Build()
+    display.DisplayShape(glue2.Shape())
+
 
 def brep_feat_rib(event=None):
     mkw = BRepBuilderAPI_MakeWire()
@@ -451,7 +455,6 @@ def brep_feat_extrusion_protrusion(event=None):
     display.DisplayShape(fused.Shape())
     
 #    tr.Perform()
-#    import ipdb; ipdb.set_trace()
 
 
 def exit(event=None):
@@ -466,6 +469,7 @@ if __name__ == '__main__':
     add_function_to_menu('topology local operations', offset_cube)
     add_function_to_menu('topology local operations', split_shape)
     add_function_to_menu('topology local operations', glue_solids)
+    add_function_to_menu('topology local operations', glue_solids_edges)
     add_function_to_menu('topology local operations', brep_feat_rib)
     add_function_to_menu('topology local operations', brep_feat_local_pipe)
     add_function_to_menu('topology local operations', brep_feat_local_revolution)
