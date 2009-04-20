@@ -528,7 +528,10 @@ class ModularBuilder(object):
             elif len(argument_types)==4:
                 to_write += "%s %s%s"%(argument_types[0],argument_types[1],argument_name)
             else:
-                if ('Standard_Real &' in argument_type) or ('Quantity_Parameter &' in argument_type): # byref Standard_Float parameter
+                if ('Standard_Real &' in argument_type) or\
+                 ('Quantity_Parameter &' in argument_type) or\
+                 ('Quantity_Length &' in argument_type) or\
+                 ('V3d_Coordinate &' in argument_type): # byref Standard_Float parameter
                     to_write += "Standard_Real &OutValue"
                 elif 'Standard_Integer &' in argument_type:# byref Standard_Integer parameter
                     to_write += "Standard_Integer &OutValue"
