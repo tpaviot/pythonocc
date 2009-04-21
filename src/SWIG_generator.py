@@ -677,6 +677,18 @@ class ModularBuilder(object):
             self.fp.write('{\n')
             self.fp.write('return XCAFApp_Application::GetApplication();\n')
             self.fp.write('}\n%}\n')
+        #
+        # Method ToString for Standard_GUID
+        #
+        if (class_name=='Standard_GUID'):
+            self.fp.write('%extend Standard_GUID {\n')
+            self.fp.write('\tStandard_PCharacter ToString() {\n')
+            self.fp.write('\tStandard_PCharacter tmpstr=NULL;\n')
+            self.fp.write('\ttmpstr = new char[37];\n')
+            self.fp.write('\tstrcpy(tmpstr,"00000000-0000-0000-0000-000000000000");\n')
+            self.fp.write('\t$self->ToCString(tmpstr);\n')
+            self.fp.write('\treturn tmpstr;\n\t}\n};\n')
+    
 
         #
         # On l'ajoute a la liste des classes deja exposees
