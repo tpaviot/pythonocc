@@ -157,28 +157,36 @@ class wxViewer3d(wxBaseViewer):
         self._display.SetModeShaded()
         self._inited = True
 
-    def OnKeyDown(self,evt):
-        key_code = evt.GetKeyCode()
-        print key_code
-        if key_code==87:#"W"
-            self._display.SetModeWireFrame()
-        elif key_code==83:#"S"
+        # dict mapping keys to functions
+        self._SetupKeyMap()
+
+    def _SetupKeyMap(self):
+        
+        def set_shade_mode():
             self._display.DisableAntiAliasing()
             self._display.SetModeShaded()
-        elif key_code==65:#"A"
-            self._display.EnableAntiAliasing()
-        elif key_code==66:#"B"
-            self._display.DisableAntiAliasing()
-        elif key_code==81:#"Q"
-            self._display.SetModeQuickHLR()
-        elif key_code==69:#"E"
-            self._display.SetModeExactHLR()
-        elif key_code == 70:#"F"
-            self._display.ExportToImage("essai.BMP")
-        elif key_code == 71:#"G"
-            self._display.SetBackgroundImage("carrelage1.gif")
-        elif key_code == 72:#"G"
-            self._display.SetSelectionModeVertex()
+        
+        
+        self._key_map = {
+        ord('W'): self._display.SetModeWireFrame,
+        ord('S'): set_shade_mode,
+        ord('A'): self._display.EnableAntiAliasing,
+        ord('B'): self._display.DisableAntiAliasing,
+        ord('Q'): self._display.SetModeQuickHLR,
+        ord('E'): self._display.SetModeExactHLR,
+        ord('F'): self._display.FitAll,
+        #ord('F'): self._display.ExportToImage("essai.BMP"),
+        #ord('F'): self._display.SetBackgroundImage("carrelage1.gif"),
+        ord('G'): self._display.SetSelectionModeVertex
+        }                 
+        
+    def OnKeyDown(self,evt):
+        code = evt.GetKeyCode()
+        try:
+            print 'key', chr(code), 'in keymap'
+            self._key_map[code]()
+        except:
+            print 'unrecognized key', evt.GetKeyCode()
             
     def OnMaximize(self, event):
         if self._inited:
