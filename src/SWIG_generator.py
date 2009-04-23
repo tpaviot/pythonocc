@@ -513,8 +513,8 @@ class ModularBuilder(object):
                 tmp = tmp.split(',')[0]
                 #if tmp=='std::basic_string':
                 #    tmp='std::string'
-                if tmp=='std::basic_string':
-                    tmp='std::basic_string<char>'
+                #if tmp=='std::basic_string':
+                #    tmp='std::basic_string<char>'
                 argument_types[0] = 'std::list'
                 argument_types[1] = tmp               
                 to_write += "%s<%s>"%(argument_types[0],argument_types[1])
@@ -562,6 +562,22 @@ class ModularBuilder(object):
         # dont't write constructors for abstract classes
         if parent_is_abstract and ("%s();"%class_parent_name in to_write):
             return False
+        #
+        # Finally, process Standard_OStream and Standard_ISteam selated methods
+        #
+        if len(arguments)==1: #Methods with only one Standard_Ostream/Standard_IStream & parameter
+            if 'Standard_OStream &' in '%s'%arguments[0].type:#argument_type:
+                to_write ='\t\t%feature("autodoc", "1");\n'
+                to_write+='\t\t%extend{\n\t\t\tstd::string '
+                to_write+='%sToString() {\n\t\t\tstd::stringstream s;\n'%function_name
+                to_write+='\t\t\tself->%s(s);\n'%function_name
+                to_write+='\t\t\treturn s.str();}\n\t\t};\n'
+            if 'std::istream &' in '%s'%arguments[0].type:#argument_type:
+                to_write = '\t\t%feature("autodoc", "1");\n'
+                to_write+='\t\t%extend{\n\t\t\tvoid '
+                to_write+='%sFromString(std::string src) {\n\t\t\tstd::stringstream s(src);\n'%function_name
+                to_write+='\t\t\tself->%s(s);}\n'%function_name
+                to_write+='\t\t};\n'
         self.fp.write(to_write)
         self._CURRENT_CLASS_EXPOSED_METHODS.append(to_write)     
             
