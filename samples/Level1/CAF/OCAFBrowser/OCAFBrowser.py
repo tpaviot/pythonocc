@@ -26,6 +26,11 @@
 from enthought.traits.ui.api import View, Item, TreeEditor, TreeNode,\
         ListEditor, VGroup
 
+from enthought.traits.api import (HasTraits, Property, Bool, 
+                        on_trait_change, cached_property, Instance, File,
+                        Float as _Float, List, Str, Enum, Int
+                                  )
+
 from OCC import XCAFApp, TDocStd, TCollection,\
         XCAFDoc, BRepPrimAPI, Quantity, TopLoc, gp,\
         TPrsStd, XCAFPrs, STEPCAFControl, TDF, TDataStd,\
@@ -280,7 +285,7 @@ if __name__=="__main__":
         
     
     app = App()
-    fname = "path to a step file"
+    fname = "../test.stp"
     app.LoadSTEPFile(fname)
     
     doc = app.MakeNewDoc()
