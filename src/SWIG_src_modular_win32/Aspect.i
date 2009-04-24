@@ -1925,7 +1925,12 @@ class Aspect_AspectFillAreaDefinitionError : public Standard_OutOfRange {
 class Aspect_Pixel {
 	public:
 		%feature("autodoc", "1");
-		virtual		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Aspect_Pixel {
@@ -1947,6 +1952,13 @@ class Aspect_ColorPixel : public Aspect_Pixel {
 		const Quantity_Color & Value() const;
 		%feature("autodoc", "1");
 		void SetValue(const Quantity_Color &aColor);
+		%feature("autodoc", "1");
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
@@ -1990,9 +2002,9 @@ class Aspect_Grid : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void SetColors(const Quantity_Color &aColor, const Quantity_Color &aTenthColor);
 		%feature("autodoc", "1");
-		void Hit(const Quantity_Length X, const Quantity_Length Y, Quantity_Length & gridX, Quantity_Length & gridY) const;
+		void Hit(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Quantity_Length & gridX, Quantity_Length & gridY) const;
+		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Activate();
 		%feature("autodoc", "1");
@@ -2265,7 +2277,12 @@ class Aspect_IndexPixel : public Aspect_Pixel {
 		%feature("autodoc", "1");
 		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
-		virtual		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean IsEqual(const Aspect_IndexPixel &Other) const;
 		%feature("autodoc", "1");
@@ -2615,13 +2632,13 @@ class Aspect_Driver : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Aspect_MarkMap MarkMap() const;
 		%feature("autodoc", "1");
-		virtual		void WorkSpace(Quantity_Length & Width, Quantity_Length & Heigth) const;
+		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Quantity_Length & DX, Quantity_Length & DY) const;
+		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
@@ -3514,7 +3531,7 @@ class Aspect {
 		%feature("autodoc", "1");
 		Aspect();
 		%feature("autodoc", "1");
-		char * ValuesOfFOSP(const Aspect_FormatOfSheetPaper aFOSP, Quantity_Length & aWidth, Quantity_Length & aHeight);
+		char * ValuesOfFOSP(const Aspect_FormatOfSheetPaper aFOSP, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		char * ToCString(const TCollection_ExtendedString &aString);
 		%feature("autodoc", "1");
@@ -3648,7 +3665,7 @@ class Aspect_RectangularGrid : public Aspect_Grid {
 		%feature("autodoc", "1");
 		void SetGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");
-		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Quantity_Length & gridX, Quantity_Length & gridY) const;
+		virtual		void Compute(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length XStep() const;
 		%feature("autodoc", "1");

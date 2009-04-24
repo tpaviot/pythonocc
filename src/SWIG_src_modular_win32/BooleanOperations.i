@@ -209,7 +209,12 @@ class BooleanOperations_Explorer {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Current();
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & S) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend BooleanOperations_Explorer {
@@ -320,7 +325,12 @@ class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Current();
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & S) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend BooleanOperations_OnceExplorer {
@@ -390,9 +400,19 @@ class BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		void FindSubshapes(const TopoDS_Shape &Sha, Standard_Integer &OutValue, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & S) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void LightDump(Standard_OStream & S) const;
+		%extend{
+			std::string LightDumpToString() {
+			std::stringstream s;
+			self->LightDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		const TopoDS_Shape & GetShape(const Standard_Integer index) const;
 		%feature("autodoc", "1");

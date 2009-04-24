@@ -689,7 +689,12 @@ class MoniTool_Timer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real Amend() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & ostr);
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Handle_MoniTool_Timer Timer(const char * name);
 		%feature("autodoc", "1");
@@ -701,7 +706,12 @@ class MoniTool_Timer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ClearTimers();
 		%feature("autodoc", "1");
-		void DumpTimers(Standard_OStream & ostr);
+		%extend{
+			std::string DumpTimersToString() {
+			std::stringstream s;
+			self->DumpTimers(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void ComputeAmendments();
 		%feature("autodoc", "1");

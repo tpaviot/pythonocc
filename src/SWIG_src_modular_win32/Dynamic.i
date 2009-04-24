@@ -1022,7 +1022,12 @@ class Dynamic_Method : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Value(const char * aname, Handle_Dynamic_Variable & avariable) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1050,6 +1055,13 @@ class Dynamic_MethodDefinition : public Dynamic_Method {
 	public:
 		%feature("autodoc", "1");
 		void AddVariable(const Handle_Dynamic_Parameter &aparameter, const Dynamic_ModeEnum amode, const Standard_Boolean agroup=0);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Dynamic_MethodDefinition {
@@ -1204,7 +1216,12 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, Handle_Standard_Transient & avalue) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1243,7 +1260,12 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Dynamic_DynamicInstance Instance() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1320,7 +1342,12 @@ class Dynamic_Parameter : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TCollection_AsciiString Name() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1354,6 +1381,13 @@ class Dynamic_StringParameter : public Dynamic_Parameter {
 		TCollection_AsciiString Value() const;
 		%feature("autodoc", "1");
 		void Value(const char * avalue);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Dynamic_StringParameter {
@@ -1415,7 +1449,12 @@ class Dynamic_InstanceParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Handle_Dynamic_DynamicInstance &avalue);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1668,7 +1707,12 @@ class Dynamic_RealParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Standard_Real avalue);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1776,7 +1820,12 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Standard_Boolean avalue);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1815,7 +1864,12 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyClass Definition(const Standard_Integer anindex) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2023,7 +2077,12 @@ class Dynamic_Variable : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dynamic_ModeEnum Mode() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2083,7 +2142,12 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method Method(const Standard_Integer anindex) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2182,7 +2246,12 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Handle_Standard_Transient &anobject);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2271,7 +2340,12 @@ class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 		%feature("autodoc", "1");
 		virtual		TCollection_AsciiString Type() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2337,7 +2411,12 @@ class Dynamic_IntegerParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Standard_Integer avalue);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2411,7 +2490,12 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method Definition(const Standard_Integer anindex) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -811,7 +811,12 @@ class Prs3d_LineAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectLine3d Aspect() const;
 		%feature("autodoc", "1");
-		virtual		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Prs3d_LineAspect {
@@ -877,7 +882,12 @@ class Prs3d_DatumAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Quantity_Length ThirdAxisLength() const;
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -918,7 +928,12 @@ class Prs3d_AngleAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		void SetArrowAspect(const Handle_Prs3d_ArrowAspect &anAspect);
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -947,7 +962,7 @@ class Prs3d {
 		%feature("autodoc", "1");
 		Prs3d();
 		%feature("autodoc", "1");
-		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Quantity_Length & dist);
+		Standard_Boolean MatchSegment(const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Z, const Quantity_Length aDistance, const gp_Pnt &p1, const gp_Pnt &p2, Standard_Real &OutValue);
 
 };
 %extend Prs3d {
@@ -1025,7 +1040,12 @@ class Prs3d_PointAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectMarker3d Aspect() const;
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void GetTextureSize(Standard_Integer &OutValue, Standard_Integer &OutValue);
 		%feature("autodoc", "1");
@@ -1074,7 +1094,12 @@ class Prs3d_ArrowAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectLine3d Aspect() const;
 		%feature("autodoc", "1");
-		virtual		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1272,7 +1297,12 @@ class Prs3d_Drawer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void SetSectionAspect(const Handle_Prs3d_LineAspect &anAspect);
 		%feature("autodoc", "1");
-		virtual		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1392,7 +1422,12 @@ class Prs3d_TextAspect : public Prs3d_BasicAspect {
 		%feature("autodoc", "1");
 		Handle_Graphic3d_AspectText3d Aspect() const;
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1427,7 +1462,12 @@ class Prs3d_IsoAspect : public Prs3d_LineAspect {
 		%feature("autodoc", "1");
 		Standard_Integer Number() const;
 		%feature("autodoc", "1");
-		virtual		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1501,9 +1541,9 @@ class Prs3d_PlaneSet : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Quantity_Length Offset() const;
 		%feature("autodoc", "1");
-		void Location(Quantity_Length & X, Quantity_Length & Y, Quantity_Length & Z) const;
+		void Location(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Direction(Quantity_Length & X, Quantity_Length & Y, Quantity_Length & Z) const;
+		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1646,7 +1686,12 @@ class Prs3d_LengthAspect : public Prs3d_CompositeAspect {
 		%feature("autodoc", "1");
 		Standard_Boolean DrawSecondArrow() const;
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

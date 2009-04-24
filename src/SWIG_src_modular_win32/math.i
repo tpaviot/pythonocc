@@ -184,7 +184,12 @@ class math_GaussLeastSquare {
 		%feature("autodoc", "1");
 		void Solve(const math_Vector &B, math_Vector & X) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_GaussLeastSquare {
@@ -281,7 +286,12 @@ class math_TrigonometricFunctionRoots {
 		%feature("autodoc", "1");
 		Standard_Integer NbSolutions() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_TrigonometricFunctionRoots {
@@ -308,7 +318,12 @@ class math_BissecNewton {
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BissecNewton {
@@ -400,7 +415,12 @@ class math_BFGS {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BFGS {
@@ -431,7 +451,12 @@ class math_DirectPolynomialRoots {
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer Nieme) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_DirectPolynomialRoots {
@@ -477,7 +502,12 @@ class math_Jacobi {
 		%feature("autodoc", "1");
 		void Vector(const Standard_Integer Num, math_Vector & V) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Jacobi {
@@ -539,7 +569,12 @@ class math_Powell {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Powell {
@@ -568,7 +603,12 @@ class math_FunctionRoot {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FunctionRoot {
@@ -636,7 +676,12 @@ class math_Householder {
 		%feature("autodoc", "1");
 		const math_Matrix & AllValues() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Householder {
@@ -667,7 +712,12 @@ class math_FunctionAllRoots {
 		%feature("autodoc", "1");
 		Standard_Integer GetPointState(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FunctionAllRoots {
@@ -793,7 +843,12 @@ class math_GaussSingleIntegration {
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_GaussSingleIntegration {
@@ -924,7 +979,12 @@ class math_Matrix {
 		%feature("autodoc", "1");
 		math_Matrix operator-();
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Matrix {
@@ -951,7 +1011,12 @@ class math_Gauss {
 		%feature("autodoc", "1");
 		void Invert(math_Matrix & Inv) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Gauss {
@@ -989,7 +1054,12 @@ class math_GaussSetIntegration {
 		%feature("autodoc", "1");
 		const math_Vector & Value() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_GaussSetIntegration {
@@ -1106,7 +1176,12 @@ class math_Vector {
 		%feature("autodoc", "1");
 		void Multiply(const Standard_Real Left, const math_Vector &Right);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Vector {
@@ -1133,7 +1208,12 @@ class math_Crout {
 		%feature("autodoc", "1");
 		Standard_Real Determinant() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Crout {
@@ -1156,7 +1236,12 @@ class math_SVD {
 		%feature("autodoc", "1");
 		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_SVD {
@@ -1181,7 +1266,12 @@ class math_BracketedRoot {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BracketedRoot {
@@ -1202,7 +1292,12 @@ class math_GaussMultipleIntegration {
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_GaussMultipleIntegration {
@@ -1291,7 +1386,12 @@ class math_BrentMinimum {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BrentMinimum {
@@ -1340,7 +1440,12 @@ class math_FunctionSetRoot {
 		%feature("autodoc", "1");
 		void FunctionSetErrors(math_Vector & Err) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FunctionSetRoot {
@@ -1433,7 +1538,12 @@ class math_IntegerVector {
 		%feature("autodoc", "1");
 		void Multiply(const Standard_Integer Left, const math_IntegerVector &Right);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_IntegerVector {
@@ -1460,7 +1570,12 @@ class math_BracketMinimum {
 		%feature("autodoc", "1");
 		void FunctionValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BracketMinimum {
@@ -1581,7 +1696,12 @@ class math_FunctionRoots {
 		%feature("autodoc", "1");
 		Standard_Integer StateNumber(const Standard_Integer Nieme) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FunctionRoots {
@@ -1651,7 +1771,12 @@ class math_Uzawa {
 		%feature("autodoc", "1");
 		const math_Matrix & InverseCont() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Uzawa {
@@ -1690,7 +1815,12 @@ class math_FRPR {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FRPR {
@@ -1744,7 +1874,12 @@ class math_NewtonFunctionRoot {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_NewtonFunctionRoot {

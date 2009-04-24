@@ -200,7 +200,12 @@ class Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient const DownCast(const Handle_Standard_Transient &AnObject);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & out) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Handle_Standard_Transient {
@@ -720,7 +725,12 @@ class Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent(const Standard_Persistent *anItem);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & out) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		int operator==(const Handle_Standard_Persistent &right) const;
 		%feature("autodoc", "1");
@@ -1014,7 +1024,12 @@ class Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & arg0) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -1061,7 +1076,12 @@ class Standard_Failure : public Standard_Transient {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_CString GetMessageString() const;
 		%feature("autodoc", "1");
@@ -1525,7 +1545,12 @@ class Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & arg0) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 
 };
 %extend Standard_Persistent {
@@ -1795,7 +1820,12 @@ class Standard_Storable {
 		%feature("autodoc", "1");
 		Standard_Boolean IsSimilar(const Standard_Storable &Other) const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 
 };
 %extend Standard_Storable {
@@ -1880,7 +1910,12 @@ class Standard_GUID {
 		%feature("autodoc", "1");
 		void Assign(const Standard_UUID &uid);
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & aStream) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean CheckGUIDFormat(const char * aGuid);
 		%feature("autodoc", "1");
@@ -1935,6 +1970,15 @@ class Standard_GUID {
 	~Standard_GUID() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of Standard_GUID\n");}
+	}
+};
+%extend Standard_GUID {
+	Standard_PCharacter ToString() {
+	Standard_PCharacter tmpstr=NULL;
+	tmpstr = new char[37];
+	strcpy(tmpstr,"00000000-0000-0000-0000-000000000000");
+	$self->ToCString(tmpstr);
+	return tmpstr;
 	}
 };
 
@@ -2126,9 +2170,19 @@ class Standard_Type : public Standard_Transient {
 		%feature("autodoc", "1");
 		void ShallowDump() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

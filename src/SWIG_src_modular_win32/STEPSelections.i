@@ -408,7 +408,12 @@ class STEPSelections_AssemblyExplorer {
 		%feature("autodoc", "1");
 		void Init(const Interface_Graph &G);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & os) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Handle_StepShape_ShapeDefinitionRepresentation FindSDRWithProduct(const Handle_StepBasic_ProductDefinition &product) const;
 		%feature("autodoc", "1");

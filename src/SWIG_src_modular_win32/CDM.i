@@ -1308,7 +1308,12 @@ class CDM_MetaData : public Standard_Transient {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString FileName() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		TCollection_ExtendedString Path() const;
 		%feature("autodoc", "1");

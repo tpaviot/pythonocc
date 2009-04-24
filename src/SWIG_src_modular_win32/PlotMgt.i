@@ -624,13 +624,13 @@ class PlotMgt_PlotterDriver : public Aspect_Driver {
 		%feature("autodoc", "1");
 		TCollection_AsciiString SpoolDirectory() const;
 		%feature("autodoc", "1");
-		virtual		void WorkSpace(Quantity_Length & Width, Quantity_Length & Height) const;
+		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		Quantity_Length Convert(const Standard_Integer PV) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Quantity_Length & DX, Quantity_Length & DY) const;
+		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");

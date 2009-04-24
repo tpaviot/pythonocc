@@ -507,7 +507,12 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		const TFunction_DoubleMapOfIntegerLabel & GetFunctions() const;
 		%feature("autodoc", "1");
@@ -695,7 +700,12 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -744,7 +754,12 @@ class TFunction_Iterator {
 		%feature("autodoc", "1");
 		void SetStatus(const TDF_Label &func, const TFunction_ExecutionStatus status) const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TFunction_Iterator {
@@ -827,7 +842,12 @@ class TFunction_DriverTable : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean FindDriver(const Standard_GUID &guid, Handle_TFunction_Driver & driver, const Standard_Integer thread=0) const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean RemoveDriver(const Standard_GUID &guid, const Standard_Integer thread=0);
 		%feature("autodoc", "1");
@@ -989,7 +1009,12 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1104,7 +1129,12 @@ class TFunction_Logbook {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & stream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TFunction_Logbook {

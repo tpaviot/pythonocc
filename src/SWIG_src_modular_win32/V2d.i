@@ -514,7 +514,7 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Quantity_Length Convert(const Standard_Integer V) const;
 		%feature("autodoc", "1");
-		void Convert(const Standard_Integer X, const Standard_Integer Y, Quantity_Length & ViewX, Quantity_Length & ViewY) const;
+		void Convert(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Convert(const Quantity_Length ViewX, const Quantity_Length ViewY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
@@ -564,7 +564,7 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void ScreenPostScriptOutput(const char * aFile, const Quantity_Length aWidth, const Quantity_Length aHeight, const Aspect_TypeOfColorSpace aTypeOfColorSpace) const;
 		%feature("autodoc", "1");
-		void Hit(const Standard_Integer X, const Standard_Integer Y, Quantity_Length & gx, Quantity_Length & gy) const;
+		void Hit(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void ShowHit(const Standard_Integer X, const Standard_Integer Y);
 		%feature("autodoc", "1");
@@ -584,7 +584,7 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Quantity_Factor Zoom() const;
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & aX, Quantity_Length & aY) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Size() const;
 		%feature("autodoc", "1");
@@ -704,7 +704,7 @@ class V2d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		Aspect_GridType GridType() const;
 		%feature("autodoc", "1");
-		void Hit(const Quantity_Length X, const Quantity_Length Y, Quantity_Length & gx, Quantity_Length & gy) const;
+		void Hit(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void ActivateGrid(const Aspect_GridType aGridType, const Aspect_GridDrawMode aGridDrawMode);
 		%feature("autodoc", "1");
@@ -712,11 +712,11 @@ class V2d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		Standard_Boolean IsActive() const;
 		%feature("autodoc", "1");
-		void RectangularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & XStep, Quantity_Length & YStep, Quantity_PlaneAngle & RotationAngle) const;
+		void RectangularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetRectangularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");
-		void CircularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & RadiusStep, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
+		void CircularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetCircularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length RadiusStep, const Standard_Integer DivisionNumber, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");

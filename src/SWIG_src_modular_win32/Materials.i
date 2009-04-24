@@ -312,7 +312,12 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 		%feature("autodoc", "1");
 		Standard_Boolean UpToDate() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -427,7 +432,12 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, Handle_Standard_Transient & avalue) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -487,7 +497,12 @@ class Materials_Material : public Materials_FuzzyInstance {
 		%feature("autodoc", "1");
 		TCollection_AsciiString Name() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

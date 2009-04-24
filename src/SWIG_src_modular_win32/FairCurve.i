@@ -230,7 +230,12 @@ class FairCurve_Batten {
 		%feature("autodoc", "1");
 		Handle_Geom2d_BSplineCurve Curve() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend FairCurve_Batten {
@@ -301,7 +306,12 @@ class FairCurve_MinimalVariation : public FairCurve_Batten {
 		%feature("autodoc", "1");
 		Standard_Real GetPhysicalRatio() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend FairCurve_MinimalVariation {

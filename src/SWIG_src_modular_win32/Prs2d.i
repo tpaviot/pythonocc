@@ -2115,7 +2115,7 @@ class Prs2d_Angle : public Prs2d_Dimension {
 		%feature("autodoc", "1");
 		Prs2d_Angle(const Handle_Graphic2d_GraphicObject &aGraphicObject, const gp_Pnt2d &anAttachPnt1, const gp_Pnt2d &anAttachPnt2, const gp_Pnt2d &anAttachPnt3, const Quantity_Length aRadius, const TCollection_ExtendedString &aText, const Standard_Real aTxtScale=3.0e+0, const Standard_Real anArrAngle=1.5e+1, const Standard_Real anArrLength=1.0e+1, const Prs2d_TypeOfArrow anArrType=Prs2d_TOA_OPENED, const Prs2d_ArrowSide anArrow=Prs2d_AS_BOTHAR, const Standard_Boolean IsReverseArrow=0);
 		%feature("autodoc", "1");
-		void Values(gp_Pnt2d & aPnt1, gp_Pnt2d & aPnt2, gp_Pnt2d & aPnt3, Quantity_Length & aRad) const;
+		void Values(gp_Pnt2d & aPnt1, gp_Pnt2d & aPnt2, gp_Pnt2d & aPnt3, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");

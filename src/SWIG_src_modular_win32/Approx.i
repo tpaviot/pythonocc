@@ -308,7 +308,12 @@ class Approx_CurvilinearParameter {
 		%feature("autodoc", "1");
 		Standard_Real MaxError2d2() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Approx_CurvilinearParameter {
@@ -434,7 +439,12 @@ class Approx_Curve3d {
 		%feature("autodoc", "1");
 		Standard_Real MaxError() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Approx_Curve3d {
@@ -1086,7 +1096,12 @@ class Approx_SweepApproximation {
 		%feature("autodoc", "1");
 		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Approx_SweepApproximation {

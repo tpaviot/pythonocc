@@ -436,7 +436,12 @@ class PCollection_HExtendedString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Prepend(const Handle_PCollection_HExtendedString &S);
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & S) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Remove(const Standard_Integer Index);
 		%feature("autodoc", "1");
@@ -460,7 +465,12 @@ class PCollection_HExtendedString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_ExtCharacter Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PCollection_HExtendedString();
 		%feature("autodoc", "1");
@@ -559,7 +569,12 @@ class PCollection_HAsciiString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		void Prepend(const Handle_PCollection_HAsciiString &S);
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & S) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Real RealValue() const;
 		%feature("autodoc", "1");
@@ -589,7 +604,12 @@ class PCollection_HAsciiString : public Standard_Persistent {
 		%feature("autodoc", "1");
 		Standard_Character Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PCollection_HAsciiString();
 		%feature("autodoc", "1");

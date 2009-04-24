@@ -979,7 +979,12 @@ class TopOpeBRepBuild_GTool {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTopo GComDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS);
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRepBuild_GTool {
@@ -1818,7 +1823,12 @@ class TopOpeBRepBuild_GTopo {
 		%feature("autodoc", "1");
 		void DumpVal(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2) const;
 		%feature("autodoc", "1");
-		void DumpType(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpTypeToString() {
+			std::stringstream s;
+			self->DumpType(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void DumpSSB(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2, const Standard_Boolean b);
 		%feature("autodoc", "1");
@@ -2318,7 +2328,12 @@ class TopOpeBRepBuild_GIter {
 		%feature("autodoc", "1");
 		void Current(TopAbs_State & s1, TopAbs_State & s2) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRepBuild_GIter {

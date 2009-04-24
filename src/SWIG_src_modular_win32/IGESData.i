@@ -2277,7 +2277,12 @@ class IGESData_IGESWriter {
 		%feature("autodoc", "1");
 		Handle_TColStd_HSequenceOfHAsciiString SectionStrings(const Standard_Integer numsec) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Print(Standard_OStream & S) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend IGESData_IGESWriter {

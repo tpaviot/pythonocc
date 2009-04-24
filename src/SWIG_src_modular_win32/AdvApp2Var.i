@@ -765,7 +765,12 @@ class AdvApp2Var_ApproxAFunc2Var {
 		%feature("autodoc", "1");
 		Standard_Real CritError(const Standard_Integer Dimension, const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AdvApp2Var_ApproxAFunc2Var {

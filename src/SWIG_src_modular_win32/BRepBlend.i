@@ -982,7 +982,12 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend BRepBlend_AppSurface {

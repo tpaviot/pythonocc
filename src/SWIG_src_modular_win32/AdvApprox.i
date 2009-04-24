@@ -190,7 +190,12 @@ class AdvApprox_ApproxAFunction {
 		%feature("autodoc", "1");
 		Standard_Real AverageError(const Standard_Integer Dimension, const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AdvApprox_ApproxAFunction {
@@ -261,7 +266,12 @@ class AdvApprox_SimpleApprox {
 		%feature("autodoc", "1");
 		Standard_Real AverageError(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AdvApprox_SimpleApprox {

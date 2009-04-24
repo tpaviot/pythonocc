@@ -226,7 +226,12 @@ class Geom2dConvert_ApproxCurve {
 		%feature("autodoc", "1");
 		Standard_Real MaxError() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Geom2dConvert_ApproxCurve {

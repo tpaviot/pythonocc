@@ -3136,7 +3136,11 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		Standard_CString Value() const;
 		%feature("autodoc", "1");
-		Standard_Integer Read(std::istream & S);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer Read(const char * file);
 		%feature("autodoc", "1");
@@ -3152,7 +3156,12 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		void SetMode(const Standard_Boolean running, const Standard_Boolean raising);
 		%feature("autodoc", "1");
-		void PrintTrace(Standard_OStream & S);
+		%extend{
+			std::string PrintTraceToString() {
+			std::stringstream s;
+			self->PrintTrace(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Real Intervalled(const Standard_Real val, const Standard_Integer order=3, const Standard_Boolean upper=0);
 		%feature("autodoc", "1");

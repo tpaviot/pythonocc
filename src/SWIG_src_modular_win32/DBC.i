@@ -320,7 +320,12 @@ class DBC_BaseArray {
 		%feature("autodoc", "1");
 		void Unlock() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer _CSFDB_GetDBC_BaseArraymySize() const;
 		%feature("autodoc", "1");

@@ -404,9 +404,18 @@ class TCollection_AsciiString {
 		%feature("autodoc", "1");
 		void Prepend(const TCollection_AsciiString &other);
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & astream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & astream);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		Standard_Real RealValue() const;
 		%feature("autodoc", "1");
@@ -712,7 +721,12 @@ class TCollection_ExtendedString {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & astream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void RemoveAll(const Standard_ExtCharacter what);
 		%feature("autodoc", "1");
@@ -842,11 +856,21 @@ class TCollection_HExtendedString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString String() const;
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & astream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Handle_TCollection_HExtendedString ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean IsSameState(const Handle_TCollection_HExtendedString &other) const;
 		%feature("autodoc", "1");
@@ -971,7 +995,12 @@ class TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Boolean IsEmpty() const;
 		%feature("autodoc", "1");
-		void Statistics(Standard_OStream & S) const;
+		%extend{
+			std::string StatisticsToString() {
+			std::stringstream s;
+			self->Statistics(s);
+			return s.str();}
+		};
 
 };
 %extend TCollection_BasicMap {
@@ -1068,7 +1097,12 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Prepend(const Handle_TCollection_HAsciiString &other);
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & astream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Real RealValue() const;
 		%feature("autodoc", "1");
@@ -1116,7 +1150,12 @@ class TCollection_HAsciiString : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean IsSameState(const Handle_TCollection_HAsciiString &other) const;
 		%feature("autodoc", "1");

@@ -139,6 +139,7 @@ class Handle_GEOMImpl_ConeDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_CircleDriver;
 class Handle_GEOMImpl_CircleDriver : public Handle_TFunction_Driver {
 	public:
@@ -163,6 +164,7 @@ class Handle_GEOMImpl_CircleDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_CircleDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_MeasureDriver;
 class Handle_GEOMImpl_MeasureDriver : public Handle_TFunction_Driver {
@@ -189,6 +191,7 @@ class Handle_GEOMImpl_MeasureDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_FillingDriver;
 class Handle_GEOMImpl_FillingDriver : public Handle_TFunction_Driver {
 	public:
@@ -213,6 +216,7 @@ class Handle_GEOMImpl_FillingDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_FillingDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_PositionDriver;
 class Handle_GEOMImpl_PositionDriver : public Handle_TFunction_Driver {
@@ -239,6 +243,7 @@ class Handle_GEOMImpl_PositionDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_PlaneDriver;
 class Handle_GEOMImpl_PlaneDriver : public Handle_TFunction_Driver {
 	public:
@@ -263,6 +268,7 @@ class Handle_GEOMImpl_PlaneDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PlaneDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_ThickSolidDriver;
 class Handle_GEOMImpl_ThickSolidDriver : public Handle_TFunction_Driver {
@@ -289,6 +295,7 @@ class Handle_GEOMImpl_ThickSolidDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_ThruSectionsDriver;
 class Handle_GEOMImpl_ThruSectionsDriver : public Handle_TFunction_Driver {
 	public:
@@ -313,6 +320,7 @@ class Handle_GEOMImpl_ThruSectionsDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ThruSectionsDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_DraftDriver;
 class Handle_GEOMImpl_DraftDriver : public Handle_TFunction_Driver {
@@ -339,6 +347,7 @@ class Handle_GEOMImpl_DraftDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_VariableFilletDriver;
 class Handle_GEOMImpl_VariableFilletDriver : public Handle_TFunction_Driver {
 	public:
@@ -363,6 +372,7 @@ class Handle_GEOMImpl_VariableFilletDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_VariableFilletDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_ImportDriver;
 class Handle_GEOMImpl_ImportDriver : public Handle_TFunction_Driver {
@@ -389,6 +399,7 @@ class Handle_GEOMImpl_ImportDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_SphereDriver;
 class Handle_GEOMImpl_SphereDriver : public Handle_TFunction_Driver {
 	public:
@@ -413,6 +424,7 @@ class Handle_GEOMImpl_SphereDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_SphereDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_MirrorDriver;
 class Handle_GEOMImpl_MirrorDriver : public Handle_TFunction_Driver {
@@ -439,6 +451,7 @@ class Handle_GEOMImpl_MirrorDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_EllipseDriver;
 class Handle_GEOMImpl_EllipseDriver : public Handle_TFunction_Driver {
 	public:
@@ -463,6 +476,7 @@ class Handle_GEOMImpl_EllipseDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_EllipseDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_PointDriver;
 class Handle_GEOMImpl_PointDriver : public Handle_TFunction_Driver {
@@ -489,6 +503,7 @@ class Handle_GEOMImpl_PointDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_BoxDriver;
 class Handle_GEOMImpl_BoxDriver : public Handle_TFunction_Driver {
 	public:
@@ -513,6 +528,7 @@ class Handle_GEOMImpl_BoxDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_BoxDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_ChamferDriver;
 class Handle_GEOMImpl_ChamferDriver : public Handle_TFunction_Driver {
@@ -539,6 +555,7 @@ class Handle_GEOMImpl_ChamferDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_CopyDriver;
 class Handle_GEOMImpl_CopyDriver : public Handle_TFunction_Driver {
 	public:
@@ -563,6 +580,7 @@ class Handle_GEOMImpl_CopyDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_CopyDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_ArcDriver;
 class Handle_GEOMImpl_ArcDriver : public Handle_TFunction_Driver {
@@ -589,6 +607,7 @@ class Handle_GEOMImpl_ArcDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_MarkerDriver;
 class Handle_GEOMImpl_MarkerDriver : public Handle_TFunction_Driver {
 	public:
@@ -613,6 +632,7 @@ class Handle_GEOMImpl_MarkerDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_MarkerDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_FilletDriver;
 class Handle_GEOMImpl_FilletDriver : public Handle_TFunction_Driver {
@@ -639,6 +659,7 @@ class Handle_GEOMImpl_FilletDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_VectorDriver;
 class Handle_GEOMImpl_VectorDriver : public Handle_TFunction_Driver {
 	public:
@@ -663,6 +684,7 @@ class Handle_GEOMImpl_VectorDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_VectorDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_OffsetDriver;
 class Handle_GEOMImpl_OffsetDriver : public Handle_TFunction_Driver {
@@ -689,6 +711,7 @@ class Handle_GEOMImpl_OffsetDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_ScaleDriver;
 class Handle_GEOMImpl_ScaleDriver : public Handle_TFunction_Driver {
 	public:
@@ -713,6 +736,7 @@ class Handle_GEOMImpl_ScaleDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ScaleDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_FaceDriver;
 class Handle_GEOMImpl_FaceDriver : public Handle_TFunction_Driver {
@@ -739,6 +763,7 @@ class Handle_GEOMImpl_FaceDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_BooleanDriver;
 class Handle_GEOMImpl_BooleanDriver : public Handle_TFunction_Driver {
 	public:
@@ -763,6 +788,7 @@ class Handle_GEOMImpl_BooleanDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_BooleanDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_PartitionDriver;
 class Handle_GEOMImpl_PartitionDriver : public Handle_TFunction_Driver {
@@ -789,6 +815,7 @@ class Handle_GEOMImpl_PartitionDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_CylinderDriver;
 class Handle_GEOMImpl_CylinderDriver : public Handle_TFunction_Driver {
 	public:
@@ -813,6 +840,7 @@ class Handle_GEOMImpl_CylinderDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_CylinderDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_PipeDriver;
 class Handle_GEOMImpl_PipeDriver : public Handle_TFunction_Driver {
@@ -839,6 +867,7 @@ class Handle_GEOMImpl_PipeDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_PolylineDriver;
 class Handle_GEOMImpl_PolylineDriver : public Handle_TFunction_Driver {
 	public:
@@ -863,6 +892,7 @@ class Handle_GEOMImpl_PolylineDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PolylineDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_PrismDriver;
 class Handle_GEOMImpl_PrismDriver : public Handle_TFunction_Driver {
@@ -889,6 +919,7 @@ class Handle_GEOMImpl_PrismDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_GlueDriver;
 class Handle_GEOMImpl_GlueDriver : public Handle_TFunction_Driver {
 	public:
@@ -913,6 +944,7 @@ class Handle_GEOMImpl_GlueDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_GlueDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_ExportDriver;
 class Handle_GEOMImpl_ExportDriver : public Handle_TFunction_Driver {
@@ -939,6 +971,7 @@ class Handle_GEOMImpl_ExportDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_RotateDriver;
 class Handle_GEOMImpl_RotateDriver : public Handle_TFunction_Driver {
 	public:
@@ -963,6 +996,7 @@ class Handle_GEOMImpl_RotateDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_RotateDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_TorusDriver;
 class Handle_GEOMImpl_TorusDriver : public Handle_TFunction_Driver {
@@ -989,6 +1023,7 @@ class Handle_GEOMImpl_TorusDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_RevolutionDriver;
 class Handle_GEOMImpl_RevolutionDriver : public Handle_TFunction_Driver {
 	public:
@@ -1013,6 +1048,7 @@ class Handle_GEOMImpl_RevolutionDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_RevolutionDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_BlockDriver;
 class Handle_GEOMImpl_BlockDriver : public Handle_TFunction_Driver {
@@ -1039,6 +1075,7 @@ class Handle_GEOMImpl_BlockDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_PlateDriver;
 class Handle_GEOMImpl_PlateDriver : public Handle_TFunction_Driver {
 	public:
@@ -1063,6 +1100,7 @@ class Handle_GEOMImpl_PlateDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_PlateDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_ArchimedeDriver;
 class Handle_GEOMImpl_ArchimedeDriver : public Handle_TFunction_Driver {
@@ -1089,6 +1127,7 @@ class Handle_GEOMImpl_ArchimedeDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_LineDriver;
 class Handle_GEOMImpl_LineDriver : public Handle_TFunction_Driver {
 	public:
@@ -1113,6 +1152,7 @@ class Handle_GEOMImpl_LineDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_LineDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_SplineDriver;
 class Handle_GEOMImpl_SplineDriver : public Handle_TFunction_Driver {
@@ -1139,6 +1179,7 @@ class Handle_GEOMImpl_SplineDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_ShapeDriver;
 class Handle_GEOMImpl_ShapeDriver : public Handle_TFunction_Driver {
 	public:
@@ -1163,6 +1204,7 @@ class Handle_GEOMImpl_ShapeDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_ShapeDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_HealingDriver;
 class Handle_GEOMImpl_HealingDriver : public Handle_TFunction_Driver {
@@ -1189,6 +1231,7 @@ class Handle_GEOMImpl_HealingDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_TranslateDriver;
 class Handle_GEOMImpl_TranslateDriver : public Handle_TFunction_Driver {
 	public:
@@ -1213,6 +1256,7 @@ class Handle_GEOMImpl_TranslateDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_TranslateDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GEOMImpl_SketcherDriver;
 class Handle_GEOMImpl_SketcherDriver : public Handle_TFunction_Driver {
@@ -1239,6 +1283,7 @@ class Handle_GEOMImpl_SketcherDriver : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_Template;
 class Handle_GEOMImpl_Template : public Handle_TFunction_Driver {
 	public:
@@ -1264,6 +1309,7 @@ class Handle_GEOMImpl_Template : public Handle_TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_GEOMImpl_CurveDriver;
 class Handle_GEOMImpl_CurveDriver : public Handle_TFunction_Driver {
 	public:
@@ -1288,6 +1334,7 @@ class Handle_GEOMImpl_CurveDriver : public Handle_TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_GEOMImpl_CurveDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IShapes;
 class GEOMImpl_IShapes {
@@ -1322,6 +1369,7 @@ class GEOMImpl_IShapes {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IShapes\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_MarkerDriver;
 class GEOMImpl_MarkerDriver : public TFunction_Driver {
@@ -1359,6 +1407,7 @@ class GEOMImpl_MarkerDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IVariableFillet;
 class GEOMImpl_IVariableFillet {
 	public:
@@ -1393,6 +1442,7 @@ class GEOMImpl_IVariableFillet {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IMirror;
 class GEOMImpl_IMirror {
 	public:
@@ -1422,6 +1472,7 @@ class GEOMImpl_IMirror {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IMirror\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IScale;
 class GEOMImpl_IScale {
@@ -1473,6 +1524,7 @@ class GEOMImpl_IScale {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ICurve;
 class GEOMImpl_ICurve {
 	public:
@@ -1500,6 +1552,7 @@ class GEOMImpl_ICurve {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ICurve\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ScaleDriver;
 class GEOMImpl_ScaleDriver : public TFunction_Driver {
@@ -1536,6 +1589,7 @@ class GEOMImpl_ScaleDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ScaleDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IShapesOperations;
 class GEOMImpl_IShapesOperations : public GEOM_IOperations {
@@ -1637,6 +1691,7 @@ class GEOMImpl_IShapesOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IGlue;
 class GEOMImpl_IGlue {
 	public:
@@ -1666,6 +1721,7 @@ class GEOMImpl_IGlue {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IGlue\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IPartition;
 class GEOMImpl_IPartition {
@@ -1717,6 +1773,7 @@ class GEOMImpl_IPartition {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_RevolutionDriver;
 class GEOMImpl_RevolutionDriver : public TFunction_Driver {
 	public:
@@ -1753,6 +1810,7 @@ class GEOMImpl_RevolutionDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IPipe;
 class GEOMImpl_IPipe {
 	public:
@@ -1774,6 +1832,7 @@ class GEOMImpl_IPipe {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPipe\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IPipeDiffSect;
 class GEOMImpl_IPipeDiffSect : public GEOMImpl_IPipe {
@@ -1805,6 +1864,7 @@ class GEOMImpl_IPipeDiffSect : public GEOMImpl_IPipe {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IPipeShellSect;
 class GEOMImpl_IPipeShellSect : public GEOMImpl_IPipeDiffSect {
 	public:
@@ -1823,6 +1883,7 @@ class GEOMImpl_IPipeShellSect : public GEOMImpl_IPipeDiffSect {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IHealingOperations;
 class GEOMImpl_IHealingOperations : public GEOM_IOperations {
 	public:
@@ -1831,11 +1892,11 @@ class GEOMImpl_IHealingOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object ShapeProcess(Handle_GEOM_Object , const Handle_TColStd_HArray1OfExtendedString &theOperations, const Handle_TColStd_HArray1OfExtendedString &theParams, const Handle_TColStd_HArray1OfExtendedString &theValues);
 		%feature("autodoc", "1");
-		void GetShapeProcessParameters(std::list<std::basic_string<char>>, std::list<std::basic_string<char>>, std::list<std::basic_string<char>>);
+		void GetShapeProcessParameters(std::list<std::basic_string>, std::list<std::basic_string>, std::list<std::basic_string>);
 		%feature("autodoc", "1");
-		bool GetOperatorParameters(const std::string theOperation, std::list<std::basic_string<char>>, std::list<std::basic_string<char>>);
+		bool GetOperatorParameters(const std::string theOperation, std::list<std::basic_string>, std::list<std::basic_string>);
 		%feature("autodoc", "1");
-		bool GetParameters(const std::string theOperation, std::list<std::basic_string<char>>);
+		bool GetParameters(const std::string theOperation, std::list<std::basic_string>);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object SuppressFaces(Handle_GEOM_Object , const Handle_TColStd_HArray1OfInteger &theFaces);
 		%feature("autodoc", "1");
@@ -1863,6 +1924,7 @@ class GEOMImpl_IHealingOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IPolyline;
 class GEOMImpl_IPolyline {
 	public:
@@ -1884,6 +1946,7 @@ class GEOMImpl_IPolyline {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPolyline\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_MirrorDriver;
 class GEOMImpl_MirrorDriver : public TFunction_Driver {
@@ -1921,6 +1984,7 @@ class GEOMImpl_MirrorDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_VectorDriver;
 class GEOMImpl_VectorDriver : public TFunction_Driver {
 	public:
@@ -1956,6 +2020,7 @@ class GEOMImpl_VectorDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_VectorDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_PrismDriver;
 class GEOMImpl_PrismDriver : public TFunction_Driver {
@@ -1993,6 +2058,7 @@ class GEOMImpl_PrismDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IPipeBiNormal;
 class GEOMImpl_IPipeBiNormal : public GEOMImpl_IPipe {
 	public:
@@ -2010,6 +2076,7 @@ class GEOMImpl_IPipeBiNormal : public GEOMImpl_IPipe {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPipeBiNormal\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IVector;
 class GEOMImpl_IVector {
@@ -2058,6 +2125,7 @@ class GEOMImpl_IVector {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IVector\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IMeasureOperations;
 class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
@@ -2113,6 +2181,7 @@ class GEOMImpl_IMeasureOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IFilling;
 class GEOMImpl_IFilling {
 	public:
@@ -2155,6 +2224,7 @@ class GEOMImpl_IFilling {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IArc;
 class GEOMImpl_IArc {
 	public:
@@ -2184,6 +2254,7 @@ class GEOMImpl_IArc {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IArc\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_PlaneDriver;
 class GEOMImpl_PlaneDriver : public TFunction_Driver {
@@ -2221,6 +2292,7 @@ class GEOMImpl_PlaneDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ThickSolidDriver;
 class GEOMImpl_ThickSolidDriver : public TFunction_Driver {
 	public:
@@ -2256,6 +2328,7 @@ class GEOMImpl_ThickSolidDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ThickSolidDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ITransformOperations;
 class GEOMImpl_ITransformOperations : public GEOM_IOperations {
@@ -2329,6 +2402,7 @@ class GEOMImpl_ITransformOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_TranslateDriver;
 class GEOMImpl_TranslateDriver : public TFunction_Driver {
 	public:
@@ -2364,6 +2438,7 @@ class GEOMImpl_TranslateDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_TranslateDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_CopyDriver;
 class GEOMImpl_CopyDriver : public TFunction_Driver {
@@ -2401,6 +2476,7 @@ class GEOMImpl_CopyDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ExportDriver;
 class GEOMImpl_ExportDriver : public TFunction_Driver {
 	public:
@@ -2437,6 +2513,7 @@ class GEOMImpl_ExportDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_BooleanDriver;
 class GEOMImpl_BooleanDriver : public TFunction_Driver {
 	public:
@@ -2472,6 +2549,7 @@ class GEOMImpl_BooleanDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_BooleanDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IHealing;
 class GEOMImpl_IHealing {
@@ -2531,6 +2609,7 @@ class GEOMImpl_IHealing {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IFillet;
 class GEOMImpl_IFillet {
 	public:
@@ -2585,6 +2664,7 @@ class GEOMImpl_IFillet {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_CurveDriver;
 class GEOMImpl_CurveDriver : public TFunction_Driver {
 	public:
@@ -2621,6 +2701,7 @@ class GEOMImpl_CurveDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ISketcher;
 class GEOMImpl_ISketcher {
 	public:
@@ -2648,6 +2729,7 @@ class GEOMImpl_ISketcher {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ISketcher\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_TorusDriver;
 class GEOMImpl_TorusDriver : public TFunction_Driver {
@@ -2685,6 +2767,7 @@ class GEOMImpl_TorusDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_FaceDriver;
 class GEOMImpl_FaceDriver : public TFunction_Driver {
 	public:
@@ -2720,6 +2803,7 @@ class GEOMImpl_FaceDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_FaceDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_RotateDriver;
 class GEOMImpl_RotateDriver : public TFunction_Driver {
@@ -2757,6 +2841,7 @@ class GEOMImpl_RotateDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_MeasureDriver;
 class GEOMImpl_MeasureDriver : public TFunction_Driver {
 	public:
@@ -2793,6 +2878,7 @@ class GEOMImpl_MeasureDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ChamferDriver;
 class GEOMImpl_ChamferDriver : public TFunction_Driver {
 	public:
@@ -2828,6 +2914,7 @@ class GEOMImpl_ChamferDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ChamferDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IBlockTrsf;
 class GEOMImpl_IBlockTrsf {
@@ -2875,6 +2962,7 @@ class GEOMImpl_IBlockTrsf {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_DraftDriver;
 class GEOMImpl_DraftDriver : public TFunction_Driver {
 	public:
@@ -2910,6 +2998,7 @@ class GEOMImpl_DraftDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_DraftDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ICircle;
 class GEOMImpl_ICircle {
@@ -2951,6 +3040,7 @@ class GEOMImpl_ICircle {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IGroupOperations;
 class GEOMImpl_IGroupOperations : public GEOM_IOperations {
 	public:
@@ -2985,6 +3075,7 @@ class GEOMImpl_IGroupOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IImportExport;
 class GEOMImpl_IImportExport {
 	public:
@@ -3014,6 +3105,7 @@ class GEOMImpl_IImportExport {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IImportExport\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ICylinder;
 class GEOMImpl_ICylinder {
@@ -3055,6 +3147,7 @@ class GEOMImpl_ICylinder {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_OffsetDriver;
 class GEOMImpl_OffsetDriver : public TFunction_Driver {
 	public:
@@ -3090,6 +3183,7 @@ class GEOMImpl_OffsetDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_OffsetDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ArchimedeDriver;
 class GEOMImpl_ArchimedeDriver : public TFunction_Driver {
@@ -3127,6 +3221,7 @@ class GEOMImpl_ArchimedeDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ShapeDriver;
 class GEOMImpl_ShapeDriver : public TFunction_Driver {
 	public:
@@ -3162,6 +3257,7 @@ class GEOMImpl_ShapeDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ShapeDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_PolylineDriver;
 class GEOMImpl_PolylineDriver : public TFunction_Driver {
@@ -3199,6 +3295,7 @@ class GEOMImpl_PolylineDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IMeasure;
 class GEOMImpl_IMeasure {
 	public:
@@ -3220,6 +3317,7 @@ class GEOMImpl_IMeasure {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IMeasure\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IEllipse;
 class GEOMImpl_IEllipse {
@@ -3263,6 +3361,7 @@ class GEOMImpl_IEllipse {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_PipeDriver;
 class GEOMImpl_PipeDriver : public TFunction_Driver {
 	public:
@@ -3299,6 +3398,7 @@ class GEOMImpl_PipeDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ThruSectionsDriver;
 class GEOMImpl_ThruSectionsDriver : public TFunction_Driver {
 	public:
@@ -3334,6 +3434,7 @@ class GEOMImpl_ThruSectionsDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ThruSectionsDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IBox;
 class GEOMImpl_IBox {
@@ -3375,6 +3476,7 @@ class GEOMImpl_IBox {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_HealingDriver;
 class GEOMImpl_HealingDriver : public TFunction_Driver {
 	public:
@@ -3410,6 +3512,7 @@ class GEOMImpl_HealingDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_HealingDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IBasicOperations;
 class GEOMImpl_IBasicOperations : public GEOM_IOperations {
@@ -3463,6 +3566,7 @@ class GEOMImpl_IBasicOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_PartitionDriver;
 class GEOMImpl_PartitionDriver : public TFunction_Driver {
 	public:
@@ -3498,6 +3602,7 @@ class GEOMImpl_PartitionDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PartitionDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ICurvesOperations;
 class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
@@ -3541,6 +3646,7 @@ class GEOMImpl_ICurvesOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ISphere;
 class GEOMImpl_ISphere {
 	public:
@@ -3583,6 +3689,7 @@ class GEOMImpl_ISphere {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_FilletDriver;
 class GEOMImpl_FilletDriver : public TFunction_Driver {
 	public:
@@ -3618,6 +3725,7 @@ class GEOMImpl_FilletDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_FilletDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IPoint;
 class GEOMImpl_IPoint {
@@ -3682,6 +3790,7 @@ class GEOMImpl_IPoint {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IPoint\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ITranslate;
 class GEOMImpl_ITranslate {
@@ -3765,6 +3874,7 @@ class GEOMImpl_ITranslate {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IFace;
 class GEOMImpl_IFace {
 	public:
@@ -3794,6 +3904,7 @@ class GEOMImpl_IFace {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IFace\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IRotate;
 class GEOMImpl_IRotate {
@@ -3853,6 +3964,7 @@ class GEOMImpl_IRotate {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IThruSections;
 class GEOMImpl_IThruSections {
 	public:
@@ -3878,6 +3990,7 @@ class GEOMImpl_IThruSections {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IThruSections\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IThickSolid;
 class GEOMImpl_IThickSolid {
@@ -3913,6 +4026,7 @@ class GEOMImpl_IThickSolid {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ISpline;
 class GEOMImpl_ISpline {
 	public:
@@ -3934,6 +4048,7 @@ class GEOMImpl_ISpline {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ISpline\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_GlueDriver;
 class GEOMImpl_GlueDriver : public TFunction_Driver {
@@ -3977,6 +4092,7 @@ class GEOMImpl_GlueDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IBoolean;
 class GEOMImpl_IBoolean {
 	public:
@@ -3999,6 +4115,7 @@ class GEOMImpl_IBoolean {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ICopy;
 class GEOMImpl_ICopy {
 	public:
@@ -4016,6 +4133,7 @@ class GEOMImpl_ICopy {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ICopy\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IRevolution;
 class GEOMImpl_IRevolution {
@@ -4057,6 +4175,7 @@ class GEOMImpl_IRevolution {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IDraft;
 class GEOMImpl_IDraft {
 	public:
@@ -4097,6 +4216,7 @@ class GEOMImpl_IDraft {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IOffset;
 class GEOMImpl_IOffset {
 	public:
@@ -4126,6 +4246,7 @@ class GEOMImpl_IOffset {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IOffset\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_SplineDriver;
 class GEOMImpl_SplineDriver : public TFunction_Driver {
@@ -4162,6 +4283,7 @@ class GEOMImpl_SplineDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_SplineDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_Gen;
 class GEOMImpl_Gen : public GEOM_Engine {
@@ -4201,6 +4323,7 @@ class GEOMImpl_Gen : public GEOM_Engine {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_LineDriver;
 class GEOMImpl_LineDriver : public TFunction_Driver {
 	public:
@@ -4236,6 +4359,7 @@ class GEOMImpl_LineDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_LineDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_FillingDriver;
 class GEOMImpl_FillingDriver : public TFunction_Driver {
@@ -4273,6 +4397,7 @@ class GEOMImpl_FillingDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_SphereDriver;
 class GEOMImpl_SphereDriver : public TFunction_Driver {
 	public:
@@ -4309,6 +4434,7 @@ class GEOMImpl_SphereDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_VariableFilletDriver;
 class GEOMImpl_VariableFilletDriver : public TFunction_Driver {
 	public:
@@ -4344,6 +4470,7 @@ class GEOMImpl_VariableFilletDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_VariableFilletDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IBlocksOperations;
 class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
@@ -4415,6 +4542,7 @@ class GEOMImpl_IBlocksOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IMarker;
 class GEOMImpl_IMarker {
 	public:
@@ -4483,6 +4611,7 @@ class GEOMImpl_IMarker {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ILine;
 class GEOMImpl_ILine {
 	public:
@@ -4512,6 +4641,7 @@ class GEOMImpl_ILine {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ILine\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_BoxDriver;
 class GEOMImpl_BoxDriver : public TFunction_Driver {
@@ -4548,6 +4678,7 @@ class GEOMImpl_BoxDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_BoxDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ITorus;
 class GEOMImpl_ITorus {
@@ -4601,6 +4732,7 @@ class GEOMImpl_ITorus {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_Template;
 class GEOMImpl_Template : public TFunction_Driver {
 	public:
@@ -4636,6 +4768,7 @@ class GEOMImpl_Template : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_Template\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_PositionDriver;
 class GEOMImpl_PositionDriver : public TFunction_Driver {
@@ -4673,6 +4806,7 @@ class GEOMImpl_PositionDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_BlockDriver;
 class GEOMImpl_BlockDriver : public TFunction_Driver {
 	public:
@@ -4708,6 +4842,7 @@ class GEOMImpl_BlockDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_BlockDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_PointDriver;
 class GEOMImpl_PointDriver : public TFunction_Driver {
@@ -4745,6 +4880,7 @@ class GEOMImpl_PointDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IPosition;
 class GEOMImpl_IPosition {
 	public:
@@ -4771,6 +4907,7 @@ class GEOMImpl_IPosition {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IInsertOperations;
 class GEOMImpl_IInsertOperations : public GEOM_IOperations {
 	public:
@@ -4796,6 +4933,7 @@ class GEOMImpl_IInsertOperations : public GEOM_IOperations {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IInsertOperations\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_SketcherDriver;
 class GEOMImpl_SketcherDriver : public TFunction_Driver {
@@ -4833,6 +4971,7 @@ class GEOMImpl_SketcherDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ConeDriver;
 class GEOMImpl_ConeDriver : public TFunction_Driver {
 	public:
@@ -4868,6 +5007,7 @@ class GEOMImpl_ConeDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ConeDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_I3DPrimOperations;
 class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
@@ -4939,6 +5079,7 @@ class GEOMImpl_I3DPrimOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_CylinderDriver;
 class GEOMImpl_CylinderDriver : public TFunction_Driver {
 	public:
@@ -4975,6 +5116,7 @@ class GEOMImpl_CylinderDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IBooleanOperations;
 class GEOMImpl_IBooleanOperations : public GEOM_IOperations {
 	public:
@@ -4994,6 +5136,7 @@ class GEOMImpl_IBooleanOperations : public GEOM_IOperations {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBooleanOperations\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IArchimede;
 class GEOMImpl_IArchimede {
@@ -5031,6 +5174,7 @@ class GEOMImpl_IArchimede {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ArcDriver;
 class GEOMImpl_ArcDriver : public TFunction_Driver {
 	public:
@@ -5066,6 +5210,7 @@ class GEOMImpl_ArcDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ArcDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IPlane;
 class GEOMImpl_IPlane {
@@ -5123,6 +5268,7 @@ class GEOMImpl_IPlane {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ICone;
 class GEOMImpl_ICone {
 	public:
@@ -5169,6 +5315,7 @@ class GEOMImpl_ICone {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IPlate;
 class GEOMImpl_IPlate {
 	public:
@@ -5195,6 +5342,7 @@ class GEOMImpl_IPlate {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_IBlocks;
 class GEOMImpl_IBlocks {
 	public:
@@ -5212,6 +5360,7 @@ class GEOMImpl_IBlocks {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_IBlocks\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_ILocalOperations;
 class GEOMImpl_ILocalOperations : public GEOM_IOperations {
@@ -5269,6 +5418,7 @@ class GEOMImpl_ILocalOperations : public GEOM_IOperations {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_CircleDriver;
 class GEOMImpl_CircleDriver : public TFunction_Driver {
 	public:
@@ -5304,6 +5454,7 @@ class GEOMImpl_CircleDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_CircleDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_EllipseDriver;
 class GEOMImpl_EllipseDriver : public TFunction_Driver {
@@ -5341,6 +5492,7 @@ class GEOMImpl_EllipseDriver : public TFunction_Driver {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_PlateDriver;
 class GEOMImpl_PlateDriver : public TFunction_Driver {
 	public:
@@ -5376,6 +5528,7 @@ class GEOMImpl_PlateDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_PlateDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IChamfer;
 class GEOMImpl_IChamfer {
@@ -5447,6 +5600,7 @@ class GEOMImpl_IChamfer {
 	}
 };
 
+
 %nodefaultctor GEOMImpl_ImportDriver;
 class GEOMImpl_ImportDriver : public TFunction_Driver {
 	public:
@@ -5482,6 +5636,7 @@ class GEOMImpl_ImportDriver : public TFunction_Driver {
 	if (__env){printf("## Call custom destructor for instance of GEOMImpl_ImportDriver\n");}
 	}
 };
+
 
 %nodefaultctor GEOMImpl_IPrism;
 class GEOMImpl_IPrism {

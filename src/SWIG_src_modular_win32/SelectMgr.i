@@ -1404,7 +1404,12 @@ class SelectMgr_ViewerSelector : public MMgt_TShared {
 		%feature("autodoc", "1");
 		SelectMgr_StateOfSelection Status(const Handle_SelectMgr_Selection &aSelection) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & S) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		TCollection_AsciiString Status(const Handle_SelectMgr_SelectableObject &aSelectableObject) const;
 		%feature("autodoc", "1");

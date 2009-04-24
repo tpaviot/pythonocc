@@ -228,9 +228,18 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
-		void ReadShapeSection(std::istream & theIS);
+		%extend{
+			void ReadShapeSectionFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadShapeSection(s);}
+		};
 		%feature("autodoc", "1");
-		void WriteShapeSection(Standard_OStream & theOS);
+		%extend{
+			std::string WriteShapeSectionToString() {
+			std::stringstream s;
+			self->WriteShapeSection(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");

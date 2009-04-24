@@ -2321,7 +2321,12 @@ class OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Show();
 		%feature("autodoc", "1");
-		virtual		void Show(Standard_OStream & os);
+		%extend{
+			std::string ShowToString() {
+			std::stringstream s;
+			self->Show(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Show(Standard_Real &OutValue);
 		%feature("autodoc", "1");
@@ -2493,7 +2498,12 @@ class OSD_Timer : public OSD_Chronometer {
 		%feature("autodoc", "1");
 		virtual		void Show();
 		%feature("autodoc", "1");
-		virtual		void Show(Standard_OStream & os);
+		%extend{
+			std::string ShowToString() {
+			std::stringstream s;
+			self->Show(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Show(Standard_Real &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");

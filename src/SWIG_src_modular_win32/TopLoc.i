@@ -400,7 +400,12 @@ class TopLoc_Location {
 		%feature("autodoc", "1");
 		Standard_Boolean operator!=(const TopLoc_Location &Other) const;
 		%feature("autodoc", "1");
-		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 
 };
 %extend TopLoc_Location {
@@ -525,7 +530,12 @@ class TopLoc_Datum3D : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const gp_Trsf & Transformation() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

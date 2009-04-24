@@ -744,7 +744,12 @@ class BRepMesh_DataStructureOfDelaun : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ClearDeleted();
 		%feature("autodoc", "1");
-		void Statistics(Standard_OStream & flot) const;
+		%extend{
+			std::string StatisticsToString() {
+			std::stringstream s;
+			self->Statistics(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		const MeshDS_BaseAllocator & Allocator() const;
 		%feature("autodoc", "1");

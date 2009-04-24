@@ -2068,7 +2068,12 @@ class StepData_HeaderTool {
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Ignored(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & S) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend StepData_HeaderTool {
@@ -2345,7 +2350,12 @@ class StepData_StepWriter {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Line(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Print(Standard_OStream & S);
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend StepData_StepWriter {

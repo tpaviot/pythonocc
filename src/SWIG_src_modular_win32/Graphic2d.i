@@ -1556,9 +1556,9 @@ class Graphic2d_Image : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Integer SmallSize();
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Offset(Quantity_Length & aX, Quantity_Length & aY) const;
+		void Offset(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_CardinalPoints Placement() const;
 		%feature("autodoc", "1");
@@ -1644,7 +1644,7 @@ class Graphic2d_Polyline : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Quantity_Length & X, Quantity_Length & Y) const;
+		void Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 
@@ -1683,11 +1683,11 @@ class Graphic2d_ViewMapping : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ViewMappingReset();
 		%feature("autodoc", "1");
-		void ViewMapping(Quantity_Length & XCenter, Quantity_Length & YCenter, Quantity_Length & Size) const;
+		void ViewMapping(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & XCenter, Quantity_Length & YCenter) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void ViewMappingDefault(Quantity_Length & XCenter, Quantity_Length & YCenter, Quantity_Length & Size) const;
+		void ViewMappingDefault(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Factor Zoom() const;
 		%feature("autodoc", "1");
@@ -1782,7 +1782,7 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Quantity_Length & X, Quantity_Length & Y) const;
+		void Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -1920,9 +1920,9 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Primitive Primitive(const Standard_Integer aRank) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean MinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		virtual		Standard_Boolean MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean MarkerMinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		virtual		Standard_Boolean MarkerMinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer PickedIndex() const;
 		%feature("autodoc", "1");
@@ -1975,11 +1975,11 @@ class Graphic2d_Text : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Boolean IsUnderlined() const;
 		%feature("autodoc", "1");
-		Standard_Boolean TextSize(Quantity_Length & aWidth, Quantity_Length & aHeight) const;
+		Standard_Boolean TextSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean TextSize(Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & anXoffset, Quantity_Length & anYoffset) const;
+		virtual		Standard_Boolean TextSize(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Offset(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
@@ -2120,9 +2120,9 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Boolean IsZoomable() const;
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Offset(Quantity_Length & aX, Quantity_Length & aY) const;
+		void Offset(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_CardinalPoints Placement() const;
 		%feature("autodoc", "1");
@@ -2177,9 +2177,9 @@ class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer MaxPriority() const;
 		%feature("autodoc", "1");
-		Standard_Boolean FrameMinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		Standard_Boolean FrameMinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean MinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		virtual		Standard_Boolean MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Graphic2d_TypeOfFrame Frame(Graphic2d_Array1OfVertex & aFrame) const;
 		%feature("autodoc", "1");
@@ -2218,9 +2218,9 @@ class Graphic2d_InfiniteLine : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Graphic2d_InfiniteLine(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length DX, const Quantity_Length DY);
 		%feature("autodoc", "1");
-		void Reference(Quantity_Length & X, Quantity_Length & Y) const;
+		void Reference(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Slope(Quantity_Length & dX, Quantity_Length & dY) const;
+		void Slope(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -2272,7 +2272,7 @@ class Graphic2d_SetOfSegments : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Quantity_Length & X1, Quantity_Length & Y1, Quantity_Length & X2, Quantity_Length & Y2) const;
+		void Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -2309,7 +2309,7 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Standard_Integer &OutValue, Quantity_Length & X, Quantity_Length & Y, Quantity_Length & aW, Quantity_Length & aH, Quantity_PlaneAngle & anAngle) const;
+		void Values(const Standard_Integer aRank, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & anAngle) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean SetElementsSelected();
 		%feature("autodoc", "1");
@@ -2397,7 +2397,7 @@ class Graphic2d_FramedText : public Graphic2d_Text {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Trunc(const Quantity_Length aWidth);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean TextSize(Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & anXoffset, Quantity_Length & anYoffset) const;
+		virtual		Standard_Boolean TextSize(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Ratio Margin() const;
 		%feature("autodoc", "1");
@@ -2631,7 +2631,7 @@ class Graphic2d_Ellips : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Graphic2d_Ellips(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length MajorRadius, const Quantity_Length MinorRadius, const Quantity_PlaneAngle anAngle);
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & X, Quantity_Length & Y) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length MajorRadius() const;
 		%feature("autodoc", "1");
@@ -2713,7 +2713,7 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length(const Standard_Integer aPrank) const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aPrank, const Standard_Integer aVrank, Quantity_Length & X, Quantity_Length & Y) const;
+		void Values(const Standard_Integer aPrank, const Standard_Integer aVrank, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -3085,7 +3085,7 @@ class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 		%feature("autodoc", "1");
 		Graphic2d_CircleMarker(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length aXPosition, const Quantity_Length aYPosition, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Radius, const Quantity_PlaneAngle Alpha, const Quantity_PlaneAngle Beta);
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & X, Quantity_Length & Y) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Radius() const;
 		%feature("autodoc", "1");
@@ -3134,7 +3134,7 @@ class Graphic2d_HidingText : public Graphic2d_Text {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Trunc(const Quantity_Length aWidth);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean TextSize(Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & anXoffset, Quantity_Length & anYoffset) const;
+		virtual		Standard_Boolean TextSize(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Ratio Margin() const;
 		%feature("autodoc", "1");
@@ -3265,9 +3265,9 @@ class Graphic2d_Marker : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Graphic2d_Marker(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Standard_Integer anIndex, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length aWidth, const Quantity_Length anHeight, const Quantity_PlaneAngle anAngle=0.0);
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Size(Quantity_Length & aW, Quantity_Length & aH) const;
+		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 		%feature("autodoc", "1");
@@ -3312,7 +3312,7 @@ class Graphic2d_Vertex {
 		%feature("autodoc", "1");
 		void SetYCoord(const Quantity_Length Ynew);
 		%feature("autodoc", "1");
-		void Coord(Quantity_Length & AX, Quantity_Length & AY) const;
+		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length X() const;
 		%feature("autodoc", "1");
@@ -3374,9 +3374,9 @@ class Graphic2d_Segment : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Graphic2d_Segment(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2);
 		%feature("autodoc", "1");
-		void FirstPoint(Quantity_Length & X, Quantity_Length & Y) const;
+		void FirstPoint(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void SecondPoint(Quantity_Length & X, Quantity_Length & Y) const;
+		void SecondPoint(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -3439,11 +3439,11 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Boolean IsZoomable() const;
 		%feature("autodoc", "1");
-		void Size(Quantity_Length & aWidth, Quantity_Length & aHeight) const;
+		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Aspect_CardinalPoints Offset(Quantity_Length & Dx, Quantity_Length & Dy) const;
+		Aspect_CardinalPoints Offset(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle Angle() const;
 		%feature("autodoc", "1");
@@ -3461,7 +3461,7 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString Text(const Standard_Integer aRank, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Graphic2d_TypeOfAlignment & anAlignment) const;
 		%feature("autodoc", "1");
-		Standard_Boolean TextSize(const Standard_Integer aRank, Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & anXoffset, Quantity_Length & anYoffset) const;
+		Standard_Boolean TextSize(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3723,7 +3723,7 @@ class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
 		%feature("autodoc", "1");
 		Graphic2d_EllipsMarker(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length aXPosition, const Quantity_Length aYPosition, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length MajorRadius, const Quantity_Length MinorRadius, const Quantity_PlaneAngle anAngle);
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & X, Quantity_Length & Y) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length MajorRadius() const;
 		%feature("autodoc", "1");
@@ -4026,7 +4026,7 @@ class Graphic2d_Circle : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Graphic2d_Circle(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Radius, const Quantity_PlaneAngle Alpha, const Quantity_PlaneAngle Beta);
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & X, Quantity_Length & Y) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Radius() const;
 		%feature("autodoc", "1");
@@ -4089,13 +4089,13 @@ class Graphic2d_View : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsIn(const Handle_Graphic2d_GraphicObject &aGraphicObject) const;
 		%feature("autodoc", "1");
-		void MinMax(const Handle_Graphic2d_DisplayList &aList, Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		void MinMax(const Handle_Graphic2d_DisplayList &aList, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void MinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		void MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void MarkerMinMax(const Handle_Graphic2d_DisplayList &aList, Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		void MarkerMinMax(const Handle_Graphic2d_DisplayList &aList, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void MarkerMinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		void MarkerMinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Graphic2d_DisplayList Pick(const Handle_Graphic2d_ViewMapping &aViewMapping, const Standard_Real X, const Standard_Real Y, const Standard_Real aPrecision, const Standard_Real aXPosition, const Standard_Real aYPosition, const Standard_Real aScale);
 		%feature("autodoc", "1");
@@ -4214,7 +4214,7 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 		%feature("autodoc", "1");
 		void SetMapping(const Standard_Boolean aStatus=1);
 		%feature("autodoc", "1");
-		Standard_Boolean MinMax(Quantity_Length & XMin, Quantity_Length & YMin, Quantity_Length & XMax, Quantity_Length & YMax) const;
+		Standard_Boolean MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

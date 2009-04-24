@@ -1228,11 +1228,26 @@ class TopOpeBRepDS_Transition {
 		%feature("autodoc", "1");
 		Standard_Boolean IsUnknown() const;
 		%feature("autodoc", "1");
-		Standard_OStream & DumpA(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpAToString() {
+			std::stringstream s;
+			self->DumpA(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		Standard_OStream & DumpB(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpBToString() {
+			std::stringstream s;
+			self->DumpB(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRepDS_Transition {
@@ -1459,11 +1474,26 @@ class TopOpeBRepDS_Interference : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean HasSameGeometry(const Handle_TopOpeBRepDS_Interference &Other) const;
 		%feature("autodoc", "1");
-		Standard_OStream & DumpG(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpGToString() {
+			std::stringstream s;
+			self->DumpG(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		Standard_OStream & DumpS(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpSToString() {
+			std::stringstream s;
+			self->DumpS(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_OStream & Dump(Standard_OStream & OS, const TCollection_AsciiString &s1, const TCollection_AsciiString &s2) const;
 		%feature("autodoc", "1");
@@ -1497,6 +1527,13 @@ class TopOpeBRepDS_CurvePointInterference : public TopOpeBRepDS_Interference {
 		Standard_Real Parameter() const;
 		%feature("autodoc", "1");
 		void Parameter(const Standard_Real P);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRepDS_CurvePointInterference {
@@ -1618,7 +1655,12 @@ class TopOpeBRepDS_SolidSurfaceInterference : public TopOpeBRepDS_Interference {
 		%feature("autodoc", "1");
 		TopOpeBRepDS_SolidSurfaceInterference(const TopOpeBRepDS_Transition &Transition, const TopOpeBRepDS_Kind SupportType, const Standard_Integer Support, const TopOpeBRepDS_Kind GeometryType, const Standard_Integer Geometry);
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1990,7 +2032,12 @@ class TopOpeBRepDS_ShapeShapeInterference : public TopOpeBRepDS_Interference {
 		%feature("autodoc", "1");
 		void SetGBound(const Standard_Boolean b);
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2024,6 +2071,13 @@ class TopOpeBRepDS_EdgeVertexInterference : public TopOpeBRepDS_ShapeShapeInterf
 		Standard_Real Parameter() const;
 		%feature("autodoc", "1");
 		void Parameter(const Standard_Real P);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRepDS_EdgeVertexInterference {
@@ -2068,7 +2122,12 @@ class TopOpeBRepDS_Check : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TopOpeBRepDS_HDataStructure & ChangeHDS();
 		%feature("autodoc", "1");
-		Standard_OStream & PrintIntg(Standard_OStream & S);
+		%extend{
+			std::string PrintIntgToString() {
+			std::stringstream s;
+			self->PrintIntg(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_OStream & Print(const TopOpeBRepDS_CheckStatus stat, Standard_OStream & S);
 		%feature("autodoc", "1");
@@ -2871,7 +2930,12 @@ class TopOpeBRepDS_SurfaceCurveInterference : public TopOpeBRepDS_Interference {
 		%feature("autodoc", "1");
 		Standard_OStream & DumpPCurve(Standard_OStream & OS, const Standard_Boolean compact=1) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -4018,7 +4082,12 @@ class TopOpeBRepDS_FaceEdgeInterference : public TopOpeBRepDS_ShapeShapeInterfer
 		%feature("autodoc", "1");
 		TopOpeBRepDS_FaceEdgeInterference(const TopOpeBRepDS_Transition &T, const Standard_Integer S, const Standard_Integer G, const Standard_Boolean GIsBound, const TopOpeBRepDS_Config C);
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

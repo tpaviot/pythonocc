@@ -478,7 +478,12 @@ class Poly_CoherentNode : public gp_XYZ {
 		%feature("autodoc", "1");
 		Poly_CoherentTriPtr::Iterator TriangleIterator() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & theStream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Poly_CoherentNode {
@@ -624,11 +629,23 @@ class Poly {
 		%feature("autodoc", "1");
 		void Dump(const Handle_Poly_Polygon2D &P, Standard_OStream & OS);
 		%feature("autodoc", "1");
-		Handle_Poly_Triangulation ReadTriangulation(std::istream & IS);
+		%extend{
+			void ReadTriangulationFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadTriangulation(s);}
+		};
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon3D ReadPolygon3D(std::istream & IS);
+		%extend{
+			void ReadPolygon3DFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadPolygon3D(s);}
+		};
 		%feature("autodoc", "1");
-		Handle_Poly_Polygon2D ReadPolygon2D(std::istream & IS);
+		%extend{
+			void ReadPolygon2DFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadPolygon2D(s);}
+		};
 		%feature("autodoc", "1");
 		void ComputeNormals(const Handle_Poly_Triangulation &Tri);
 

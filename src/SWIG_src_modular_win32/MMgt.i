@@ -181,7 +181,12 @@ class MMgt_StackManager {
 		%feature("autodoc", "1");
 		MMgt_StackManager ShallowCopy() const;
 		%feature("autodoc", "1");
-		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Destructor();
 

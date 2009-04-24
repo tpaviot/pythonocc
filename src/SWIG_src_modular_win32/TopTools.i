@@ -673,11 +673,25 @@ class TopTools_LocationSet {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const TopLoc_Location &L) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void SetProgress(const Handle_Message_ProgressIndicator &PR);
 		%feature("autodoc", "1");
@@ -1266,15 +1280,34 @@ class TopTools_ShapeSet {
 		%feature("autodoc", "1");
 		TopTools_LocationSet & ChangeLocations();
 		%feature("autodoc", "1");
-		Standard_OStream & DumpExtent(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpExtentToString() {
+			std::stringstream s;
+			self->DumpExtent(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void DumpExtent(TCollection_AsciiString & S) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void Write(Standard_OStream & OS);
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void Dump(const TopoDS_Shape &S, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
@@ -1284,11 +1317,25 @@ class TopTools_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		void AddGeometry(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		virtual		void DumpGeometry(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpGeometryToString() {
+			std::stringstream s;
+			self->DumpGeometry(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void WriteGeometry(Standard_OStream & OS);
+		%extend{
+			std::string WriteGeometryToString() {
+			std::stringstream s;
+			self->WriteGeometry(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void ReadGeometry(std::istream & IS);
+		%extend{
+			void ReadGeometryFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadGeometry(s);}
+		};
 		%feature("autodoc", "1");
 		virtual		void DumpGeometry(const TopoDS_Shape &S, Standard_OStream & OS) const;
 		%feature("autodoc", "1");

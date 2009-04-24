@@ -294,7 +294,12 @@ class AppDef_MultiPointConstraint : public AppParCurves_MultiPoint {
 		%feature("autodoc", "1");
 		Standard_Boolean IsCurvaturePoint() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AppDef_MultiPointConstraint {
@@ -327,7 +332,12 @@ class AppDef_MultiLine {
 		%feature("autodoc", "1");
 		AppDef_MultiPointConstraint Value(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AppDef_MultiLine {
@@ -615,7 +625,12 @@ class AppDef_TheVariational {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean SetConstraints(const Handle_AppParCurves_HArray1OfConstraintCouple &aConstrainst);
 		%feature("autodoc", "1");

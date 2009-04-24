@@ -1227,7 +1227,12 @@ class TDF_Attribute : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		void ExtendedDump(Standard_OStream & anOS, const TDF_IDFilter &aFilter, TDF_AttributeIndexedMap & aMap) const;
 		%feature("autodoc", "1");
@@ -1382,7 +1387,12 @@ class TDF_AttributeDelta : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_GUID ID() const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2612,7 +2622,12 @@ class TDF_Reference : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &DS) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		TDF_Reference();
 		%feature("autodoc", "1");
@@ -2806,7 +2821,12 @@ class TDF_IDFilter {
 		%feature("autodoc", "1");
 		void Copy(const TDF_IDFilter &fromFilter);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TDF_IDFilter {
@@ -2942,7 +2962,12 @@ class TDF_Data : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean NotUndoMode() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void AllowModification(const Standard_Boolean theAllowModification);
 		%feature("autodoc", "1");
@@ -3030,7 +3055,12 @@ class TDF_DataSet : public MMgt_TShared {
 		%feature("autodoc", "1");
 		TDF_LabelList & Roots();
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3127,11 +3157,21 @@ class TDF_Label {
 		%feature("autodoc", "1");
 		Standard_Boolean HasGreaterNode(const TDF_Label &otherLabel) const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void ExtendedDump(Standard_OStream & anOS, const TDF_IDFilter &aFilter, TDF_AttributeIndexedMap & aMap) const;
 		%feature("autodoc", "1");
-		void EntryDump(Standard_OStream & anOS) const;
+		%extend{
+			std::string EntryDumpToString() {
+			std::stringstream s;
+			self->EntryDump(s);
+			return s.str();}
+		};
 
 };
 %extend TDF_Label {
@@ -3601,7 +3641,12 @@ class TDF_Delta : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void SetName(const TCollection_ExtendedString &theName);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

@@ -3613,7 +3613,12 @@ class TColStd_PackedMapOfInteger : public TCollection_BasicMap {
 		%feature("autodoc", "1");
 		Standard_Integer IsEmpty() const;
 		%feature("autodoc", "1");
-		void Statistics(Standard_OStream & outStream) const;
+		%extend{
+			std::string StatisticsToString() {
+			std::stringstream s;
+			self->Statistics(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer GetMinimalMapped() const;
 		%feature("autodoc", "1");

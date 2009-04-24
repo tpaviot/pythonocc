@@ -558,7 +558,12 @@ class BRepExtrema_DistShapeShape {
 		%feature("autodoc", "1");
 		void ParOnFaceS2(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend BRepExtrema_DistShapeShape {

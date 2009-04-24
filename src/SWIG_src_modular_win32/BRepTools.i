@@ -282,11 +282,25 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		void AddGeometry(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		virtual		void DumpGeometry(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpGeometryToString() {
+			std::stringstream s;
+			self->DumpGeometry(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void WriteGeometry(Standard_OStream & OS);
+		%extend{
+			std::string WriteGeometryToString() {
+			std::stringstream s;
+			self->WriteGeometry(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void ReadGeometry(std::istream & IS);
+		%extend{
+			void ReadGeometryFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadGeometry(s);}
+		};
 		%feature("autodoc", "1");
 		virtual		void DumpGeometry(const TopoDS_Shape &S, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
@@ -298,23 +312,50 @@ class BRepTools_ShapeSet : public TopTools_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		void Check(const TopAbs_ShapeEnum T, TopoDS_Shape & S);
 		%feature("autodoc", "1");
-		void ReadPolygon3D(std::istream & IS);
+		%extend{
+			void ReadPolygon3DFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadPolygon3D(s);}
+		};
 		%feature("autodoc", "1");
 		void WritePolygon3D(Standard_OStream & OS, const Standard_Boolean Compact=1) const;
 		%feature("autodoc", "1");
-		void DumpPolygon3D(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpPolygon3DToString() {
+			std::stringstream s;
+			self->DumpPolygon3D(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void ReadTriangulation(std::istream & IS);
+		%extend{
+			void ReadTriangulationFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadTriangulation(s);}
+		};
 		%feature("autodoc", "1");
 		void WriteTriangulation(Standard_OStream & OS, const Standard_Boolean Compact=1) const;
 		%feature("autodoc", "1");
-		void DumpTriangulation(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpTriangulationToString() {
+			std::stringstream s;
+			self->DumpTriangulation(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void ReadPolygonOnTriangulation(std::istream & IS);
+		%extend{
+			void ReadPolygonOnTriangulationFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadPolygonOnTriangulation(s);}
+		};
 		%feature("autodoc", "1");
 		void WritePolygonOnTriangulation(Standard_OStream & OS, const Standard_Boolean Compact=1) const;
 		%feature("autodoc", "1");
-		void DumpPolygonOnTriangulation(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpPolygonOnTriangulationToString() {
+			std::stringstream s;
+			self->DumpPolygonOnTriangulation(s);
+			return s.str();}
+		};
 
 };
 %extend BRepTools_ShapeSet {

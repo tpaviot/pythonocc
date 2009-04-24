@@ -556,7 +556,12 @@ class VrmlConverter_Projector : public MMgt_TShared {
 		%feature("autodoc", "1");
 		VrmlConverter_TypeOfLight Light() const;
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream) const;
+		%extend{
+			std::string AddToString() {
+			std::stringstream s;
+			self->Add(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		HLRAlgo_Projector Projector() const;
 		%feature("autodoc", "1");

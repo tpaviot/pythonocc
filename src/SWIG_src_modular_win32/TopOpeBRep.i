@@ -594,7 +594,12 @@ class TopOpeBRep_ShapeScanner {
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 		%feature("autodoc", "1");
-		Standard_OStream & DumpCurrent(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpCurrentToString() {
+			std::stringstream s;
+			self->DumpCurrent(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRep_ShapeScanner {

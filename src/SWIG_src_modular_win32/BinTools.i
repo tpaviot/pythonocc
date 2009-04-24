@@ -130,9 +130,18 @@ class BinTools_LocationSet {
 		%feature("autodoc", "1");
 		Standard_Integer NbLocations() const;
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 
 };
 %extend BinTools_LocationSet {
@@ -200,15 +209,33 @@ class BinTools_ShapeSet {
 		%feature("autodoc", "1");
 		Standard_Integer NbShapes() const;
 		%feature("autodoc", "1");
-		virtual		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		virtual		void Write(const TopoDS_Shape &S, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
-		virtual		void WriteGeometry(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteGeometryToString() {
+			std::stringstream s;
+			self->WriteGeometry(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void ReadGeometry(std::istream & IS);
+		%extend{
+			void ReadGeometryFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadGeometry(s);}
+		};
 		%feature("autodoc", "1");
 		virtual		void Read(TopoDS_Shape & S, std::istream & IS, const Standard_Integer NbShapes) const;
 		%feature("autodoc", "1");
@@ -220,17 +247,44 @@ class BinTools_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		void AddShapes(TopoDS_Shape & S1, const TopoDS_Shape &S2);
 		%feature("autodoc", "1");
-		void ReadPolygon3D(std::istream & IS);
+		%extend{
+			void ReadPolygon3DFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadPolygon3D(s);}
+		};
 		%feature("autodoc", "1");
-		void WritePolygon3D(Standard_OStream & OS) const;
+		%extend{
+			std::string WritePolygon3DToString() {
+			std::stringstream s;
+			self->WritePolygon3D(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void ReadTriangulation(std::istream & IS);
+		%extend{
+			void ReadTriangulationFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadTriangulation(s);}
+		};
 		%feature("autodoc", "1");
-		void WriteTriangulation(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteTriangulationToString() {
+			std::stringstream s;
+			self->WriteTriangulation(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void ReadPolygonOnTriangulation(std::istream & IS);
+		%extend{
+			void ReadPolygonOnTriangulationFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadPolygonOnTriangulation(s);}
+		};
 		%feature("autodoc", "1");
-		void WritePolygonOnTriangulation(Standard_OStream & OS) const;
+		%extend{
+			std::string WritePolygonOnTriangulationToString() {
+			std::stringstream s;
+			self->WritePolygonOnTriangulation(s);
+			return s.str();}
+		};
 
 };
 %extend BinTools_ShapeSet {
@@ -255,9 +309,18 @@ class BinTools_Curve2dSet {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Handle_Geom2d_Curve &C) const;
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void WriteCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS);
 		%feature("autodoc", "1");
@@ -286,9 +349,18 @@ class BinTools_SurfaceSet {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Handle_Geom_Surface &S) const;
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void WriteSurface(const Handle_Geom_Surface &S, Standard_OStream & OS);
 		%feature("autodoc", "1");
@@ -317,9 +389,18 @@ class BinTools_CurveSet {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Handle_Geom_Curve &C) const;
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void WriteCurve(const Handle_Geom_Curve &C, Standard_OStream & OS);
 		%feature("autodoc", "1");

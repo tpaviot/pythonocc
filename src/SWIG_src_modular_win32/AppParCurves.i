@@ -353,7 +353,12 @@ class AppParCurves_MultiCurve {
 		%feature("autodoc", "1");
 		virtual		void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1, gp_Vec2d & V2) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AppParCurves_MultiCurve {
@@ -383,6 +388,13 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		const TColStd_Array1OfReal & Knots() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfInteger & Multiplicities() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AppParCurves_MultiBSpCurve {
@@ -667,7 +679,12 @@ class AppParCurves_MultiPoint {
 		%feature("autodoc", "1");
 		void Transform2d(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AppParCurves_MultiPoint {

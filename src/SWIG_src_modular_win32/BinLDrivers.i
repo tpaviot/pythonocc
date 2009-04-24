@@ -229,7 +229,12 @@ class BinLDrivers_DocumentSection {
 		%feature("autodoc", "1");
 		void SetLength(const Standard_Size theLength);
 		%feature("autodoc", "1");
-		void WriteTOC(Standard_OStream & theOS);
+		%extend{
+			std::string WriteTOCToString() {
+			std::stringstream s;
+			self->WriteTOC(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Write(Standard_OStream & theOS, const Standard_Size theOffset);
 		%feature("autodoc", "1");

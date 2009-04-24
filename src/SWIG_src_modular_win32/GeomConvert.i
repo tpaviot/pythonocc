@@ -128,7 +128,12 @@ class GeomConvert_ApproxCurve {
 		%feature("autodoc", "1");
 		Standard_Real MaxError() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend GeomConvert_ApproxCurve {
@@ -153,7 +158,12 @@ class GeomConvert_ApproxSurface {
 		%feature("autodoc", "1");
 		Standard_Real MaxError() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend GeomConvert_ApproxSurface {
