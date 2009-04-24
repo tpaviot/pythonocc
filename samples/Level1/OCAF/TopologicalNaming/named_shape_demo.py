@@ -25,26 +25,12 @@
 
 from OCC import BRepPrimAPI, BRepFilletAPI, TNaming,\
     TDocStd, AppStd, TCollection, TDF, BRepAlgoAPI, gp, TopTools,\
-    TopoDS
+    TopoDS, Quantity, Graphic3d, AIS
 
 from OCC.Utils.Topology import Topo
 
-import itertools
-import os
-
 from OCC.Display.wxSamplesGui import display, start_display
 
-def print_children(label):
-    tool = TDF.TDF_Tool()
-    itr = TDF.TDF_ChildIterator(label, True)
-    while itr.More():
-        val = itr.Value()
-        output = TCollection.TCollection_AsciiString()
-        tool.Entry(val, output)
-        entry = output.ToCString()
-        print "entry", entry
-        itr.Next()
-    print "end iteration"
 
 app = AppStd.AppStd_Application()
 
@@ -92,6 +78,10 @@ print "selected", ret
 
 box2 = BRepPrimAPI.BRepPrimAPI_MakeBox(5.0,10.0,15.0).Shape()
 
+#
+#Update the naming with the new box shape
+#
+
 ns_builder = TNaming.TNaming_Builder(box_label)
 ns_builder.Generated(box2)
 
@@ -102,7 +92,10 @@ for i, edge in enumerate(Topo(box2).edges()):
     ns_builder = TNaming.TNaming_Builder(sub_label)
     ns_builder.Generated(edge)
 
-
+#
+#Need to build a map covering all the OCAF nodes which might
+#contain relevent shapes
+#
 aMap = TDF.TDF_LabelMap()
 aMap.Add(box_label)
 itr = TDF.TDF_ChildIterator(box_label, True)
@@ -110,80 +103,28 @@ while itr.More():
     sub_label = itr.Value()
     aMap.Add(sub_label)
     itr.Next()
-    
+
+#
+#Solve for the selected edge
+#   
 ok = selector.Solve(aMap)
 print "solve OK", ok
 
+
+#
+#Extract the selected edge
+#
 nt = TNaming.TNaming_Tool()
 shape = nt.CurrentShape(selector.NamedShape())
 
-#edge = TopoDS.TopoDS().Edge(shape)
-
-#face = Topo(box2).faces_from_edge(edge).next()
-
-#chamf = BRepFilletAPI.BRepFilletAPI_MakeChamfer(box2)
-#chamf.Add(3,3,edge,face)
-
+#display them together
 display.DisplayShape(shape)
-display.DisplayShape(box2)
+
+#Make the box transparent, so it's easier to see the selected edge
+ctx = display.Context
+ais_shape = AIS.AIS_Shape(box2).GetHandle()
+ctx.SetTransparency(ais_shape, 0.8, True)
+ctx.Display(ais_shape)
+
 start_display()
 
-
-import sys
-sys.exit(0)
-
-cut_tool = BRepPrimAPI.BRepPrimAPI_MakeBox(gp.gp_Pnt(6,6,6),
-                                           5.,5.,5.).Shape()
-                                           
-#tool_label = ts.NewChild(root)
-#ns_builder = TNaming.TNaming_Builder(tool_label)
-#ns_builder.Generated(cut_tool)
-#
-#topo = Topo(cut_tool)
-#for edge in topo.edges():
-#    sub_label = ts.NewChild(tool_label)
-#    ns_builder = TNaming.TNaming_Builder(sub_label)
-#    ns_builder.Generated(edge)
-
-
-                                           
-bop = BRepAlgoAPI.BRepAlgoAPI_Cut(box, cut_tool)
-cut_shape = bop.Shape()
-
-cut_label = ts.NewChild(root)
-ns_builder = TNaming.TNaming_Builder(cut_label)
-ns_builder.Modify(box, cut_shape)
-
-#if bop.HasModified():
-#    mod_label = ts.NewChild(cut_label)
-#    ns_builder = TNaming.TNaming_Builder(mod_label)
-#    for edge in Topo(cut_shape).edges():
-#        modified = bop.Modified(edge)
-#        itr = TopTools.TopTools_ListIteratorOfListOfShape(modified)
-#        while itr.More():
-#            this = itr.Value()
-#            ns_builder.Modify(edge, modified)
-#            print "modify", edge, modified
-#            itr.Next()
-#            
-#if bop.HasGenerated():
-#    mod_label = ts.NewChild(cut_label)
-#    ns_builder = TNaming.TNaming_Builder(mod_label)
-#    for edge in Topo(cut_shape).edges():
-#        modified = bop.Generated(edge)
-#        itr = TopTools.TopTools_ListIteratorOfListOfShape(modified)
-#        while itr.More():
-#            this = itr.Value()
-#            ns_builder.Modify(edge, modified)
-#            print "generated", edge, modified
-#            itr.Next()
-
-
-#
-#Chamfer selected edge
-#
-
-
-
-#display.DisplayShape(bop)
-#start_display()
