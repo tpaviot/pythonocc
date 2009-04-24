@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -164,6 +165,7 @@ class Handle_BOPTools_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public Handle_TCollection_MapNode {
 	public:
@@ -188,6 +190,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public 
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock;
 class Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public Handle_TCollection_MapNode {
@@ -214,6 +217,7 @@ class Handle_BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger;
 class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -238,6 +242,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfCommonBlock;
 class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_MapNode {
@@ -264,6 +269,7 @@ class Handle_BOPTools_ListNodeOfListOfCommonBlock : public Handle_TCollection_Ma
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public Handle_TCollection_MapNode {
 	public:
@@ -288,6 +294,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfCheckResults;
 class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_MapNode {
@@ -314,6 +321,7 @@ class Handle_BOPTools_ListNodeOfListOfCheckResults : public Handle_TCollection_M
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public Handle_TCollection_MapNode {
 	public:
@@ -338,6 +346,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : publi
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfInterference;
 class Handle_BOPTools_ListNodeOfListOfInterference : public Handle_TCollection_MapNode {
@@ -364,6 +373,7 @@ class Handle_BOPTools_ListNodeOfListOfInterference : public Handle_TCollection_M
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfShapeEnum;
 class Handle_BOPTools_ListNodeOfListOfShapeEnum : public Handle_TCollection_MapNode {
 	public:
@@ -388,6 +398,7 @@ class Handle_BOPTools_ListNodeOfListOfShapeEnum : public Handle_TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfShapeEnum\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTools_HArray2OfIntersectionStatus;
 class Handle_BOPTools_HArray2OfIntersectionStatus : public Handle_MMgt_TShared {
@@ -414,6 +425,7 @@ class Handle_BOPTools_HArray2OfIntersectionStatus : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfPaveBlock;
 class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapNode {
 	public:
@@ -438,6 +450,7 @@ class Handle_BOPTools_ListNodeOfListOfPaveBlock : public Handle_TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_ListNodeOfListOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTools_ListNodeOfListOfCoupleOfInteger;
 class Handle_BOPTools_ListNodeOfListOfCoupleOfInteger : public Handle_TCollection_MapNode {
@@ -464,6 +477,7 @@ class Handle_BOPTools_ListNodeOfListOfCoupleOfInteger : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock;
 class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollection_SeqNode {
 	public:
@@ -488,6 +502,7 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock : public Handle_TCollect
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTools_SequenceNodeOfSequenceOfCurves;
 class Handle_BOPTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection_SeqNode {
@@ -514,6 +529,7 @@ class Handle_BOPTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger;
 class Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -538,6 +554,7 @@ class Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState;
 class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public Handle_TCollection_MapNode {
@@ -564,6 +581,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : publi
 	}
 };
 
+
 %nodefaultctor Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock;
 class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public Handle_TCollection_MapNode {
 	public:
@@ -588,6 +606,7 @@ class Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : publ
 	if (__env){printf("## Call custom destructor for instance of Handle_BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_Interference;
 class BOPTools_Interference {
@@ -617,6 +636,7 @@ class BOPTools_Interference {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListNodeOfListOfShapeEnum;
 class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
 	public:
@@ -644,6 +664,7 @@ class BOPTools_ListNodeOfListOfShapeEnum : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfShapeEnum\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_CommonBlock;
 class BOPTools_CommonBlock {
@@ -678,6 +699,7 @@ class BOPTools_CommonBlock {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CommonBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_Tools;
 class BOPTools_Tools {
@@ -725,6 +747,7 @@ class BOPTools_Tools {
 	}
 };
 
+
 %nodefaultctor BOPTools_PointBetween;
 class BOPTools_PointBetween {
 	public:
@@ -751,6 +774,7 @@ class BOPTools_PointBetween {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListIteratorOfListOfCommonBlock;
 class BOPTools_ListIteratorOfListOfCommonBlock {
 	public:
@@ -775,6 +799,7 @@ class BOPTools_ListIteratorOfListOfCommonBlock {
 	}
 };
 
+
 %nodefaultctor BOPTools_PCurveMaker;
 class BOPTools_PCurveMaker {
 	public:
@@ -792,6 +817,7 @@ class BOPTools_PCurveMaker {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_PCurveMaker\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_SSIntersectionAttribute;
 class BOPTools_SSIntersectionAttribute {
@@ -818,6 +844,7 @@ class BOPTools_SSIntersectionAttribute {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_SSIntersectionAttribute\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IndexedDataMapOfShapeWithState;
 class BOPTools_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
@@ -863,6 +890,7 @@ class BOPTools_IndexedDataMapOfShapeWithState : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTools_DEProcessor;
 class BOPTools_DEProcessor {
 	public:
@@ -880,6 +908,7 @@ class BOPTools_DEProcessor {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_DEProcessor\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_ShapeShapeInterference;
 class BOPTools_ShapeShapeInterference {
@@ -913,6 +942,7 @@ class BOPTools_ShapeShapeInterference {
 	}
 };
 
+
 %nodefaultctor BOPTools_VVInterference;
 class BOPTools_VVInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -928,6 +958,7 @@ class BOPTools_VVInterference : public BOPTools_ShapeShapeInterference {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_VVInterference\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_Array1OfPave;
 class BOPTools_Array1OfPave {
@@ -969,6 +1000,7 @@ class BOPTools_Array1OfPave {
 	}
 };
 
+
 %nodefaultctor BOPTools_RoughShapeIntersector;
 class BOPTools_RoughShapeIntersector {
 	public:
@@ -988,6 +1020,7 @@ class BOPTools_RoughShapeIntersector {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_RoughShapeIntersector\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet;
 class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public TCollection_MapNode {
@@ -1022,6 +1055,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet : public TColl
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerPaveSet\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_ListOfCommonBlock;
 class BOPTools_ListOfCommonBlock {
@@ -1073,6 +1107,7 @@ class BOPTools_ListOfCommonBlock {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListOfCoupleOfInteger;
 class BOPTools_ListOfCoupleOfInteger {
 	public:
@@ -1123,6 +1158,7 @@ class BOPTools_ListOfCoupleOfInteger {
 	}
 };
 
+
 %nodefaultctor BOPTools_PavePool;
 class BOPTools_PavePool {
 	public:
@@ -1163,6 +1199,7 @@ class BOPTools_PavePool {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListIteratorOfListOfShapeEnum;
 class BOPTools_ListIteratorOfListOfShapeEnum {
 	public:
@@ -1186,6 +1223,7 @@ class BOPTools_ListIteratorOfListOfShapeEnum {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfShapeEnum\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_Curve;
 class BOPTools_Curve {
@@ -1215,6 +1253,7 @@ class BOPTools_Curve {
 	}
 };
 
+
 %nodefaultctor BOPTools_QuickSortPave;
 class BOPTools_QuickSortPave {
 	public:
@@ -1230,6 +1269,7 @@ class BOPTools_QuickSortPave {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_QuickSortPave\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_DEInfo;
 class BOPTools_DEInfo {
@@ -1254,6 +1294,7 @@ class BOPTools_DEInfo {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_DEInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger;
 class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_MapNode {
@@ -1286,6 +1327,7 @@ class BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapNodeOfIndexedMapOfCoupleOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IteratorOfCoupleOfShape;
 class BOPTools_IteratorOfCoupleOfShape {
@@ -1322,6 +1364,7 @@ class BOPTools_IteratorOfCoupleOfShape {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IteratorOfCoupleOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IndexedDataMapOfIntegerState;
 class BOPTools_IndexedDataMapOfIntegerState : public TCollection_BasicMap {
@@ -1367,6 +1410,7 @@ class BOPTools_IndexedDataMapOfIntegerState : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger;
 class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public TCollection_MapNode {
 	public:
@@ -1401,6 +1445,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfInteger : public TColle
 	}
 };
 
+
 %nodefaultctor BOPTools_ListNodeOfListOfCommonBlock;
 class BOPTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 	public:
@@ -1428,6 +1473,7 @@ class BOPTools_ListNodeOfListOfCommonBlock : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfCommonBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_CommonBlockPool;
 class BOPTools_CommonBlockPool {
@@ -1469,6 +1515,7 @@ class BOPTools_CommonBlockPool {
 	}
 };
 
+
 %nodefaultctor BOPTools_CoupleOfIntegerMapHasher;
 class BOPTools_CoupleOfIntegerMapHasher {
 	public:
@@ -1486,6 +1533,7 @@ class BOPTools_CoupleOfIntegerMapHasher {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CoupleOfIntegerMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_PaveFiller;
 class BOPTools_PaveFiller {
@@ -1567,6 +1615,7 @@ class BOPTools_PaveFiller {
 	}
 };
 
+
 %nodefaultctor BOPTools_Checker;
 class BOPTools_Checker : public BOPTools_PaveFiller {
 	public:
@@ -1594,6 +1643,7 @@ class BOPTools_Checker : public BOPTools_PaveFiller {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_Checker\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState;
 class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollection_MapNode {
@@ -1629,6 +1679,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerState : public TCollec
 	}
 };
 
+
 %nodefaultctor BOPTools_VSInterference;
 class BOPTools_VSInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -1649,6 +1700,7 @@ class BOPTools_VSInterference : public BOPTools_ShapeShapeInterference {
 	}
 };
 
+
 %nodefaultctor BOPTools_EEInterference;
 class BOPTools_EEInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -1666,6 +1718,7 @@ class BOPTools_EEInterference : public BOPTools_ShapeShapeInterference {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_EEInterference\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_StateFiller;
 class BOPTools_StateFiller {
@@ -1695,6 +1748,7 @@ class BOPTools_StateFiller {
 	}
 };
 
+
 %nodefaultctor BOPTools_WireStateFiller;
 class BOPTools_WireStateFiller : public BOPTools_StateFiller {
 	public:
@@ -1708,6 +1762,7 @@ class BOPTools_WireStateFiller : public BOPTools_StateFiller {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_WireStateFiller\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_ListNodeOfListOfCheckResults;
 class BOPTools_ListNodeOfListOfCheckResults : public TCollection_MapNode {
@@ -1737,6 +1792,7 @@ class BOPTools_ListNodeOfListOfCheckResults : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BOPTools_PaveBlockIterator;
 class BOPTools_PaveBlockIterator {
 	public:
@@ -1761,6 +1817,7 @@ class BOPTools_PaveBlockIterator {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListIteratorOfListOfCoupleOfInteger;
 class BOPTools_ListIteratorOfListOfCoupleOfInteger {
 	public:
@@ -1784,6 +1841,7 @@ class BOPTools_ListIteratorOfListOfCoupleOfInteger {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfCoupleOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IDMapOfPaveBlockIMapOfPaveBlock;
 class BOPTools_IDMapOfPaveBlockIMapOfPaveBlock : public TCollection_BasicMap {
@@ -1829,6 +1887,7 @@ class BOPTools_IDMapOfPaveBlockIMapOfPaveBlock : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState;
 class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TCollection_MapNode {
 	public:
@@ -1862,6 +1921,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState : public TColl
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfShapeWithState\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IndexedDataMapOfIntegerPaveSet;
 class BOPTools_IndexedDataMapOfIntegerPaveSet : public TCollection_BasicMap {
@@ -1907,6 +1967,7 @@ class BOPTools_IndexedDataMapOfIntegerPaveSet : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListIteratorOfListOfInterference;
 class BOPTools_ListIteratorOfListOfInterference {
 	public:
@@ -1930,6 +1991,7 @@ class BOPTools_ListIteratorOfListOfInterference {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfInterference\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_ListOfShapeEnum;
 class BOPTools_ListOfShapeEnum {
@@ -1981,6 +2043,7 @@ class BOPTools_ListOfShapeEnum {
 	}
 };
 
+
 %nodefaultctor BOPTools_SolidStateFiller;
 class BOPTools_SolidStateFiller : public BOPTools_StateFiller {
 	public:
@@ -1996,6 +2059,7 @@ class BOPTools_SolidStateFiller : public BOPTools_StateFiller {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_SolidStateFiller\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_SequenceOfPaveBlock;
 class BOPTools_SequenceOfPaveBlock : public TCollection_BaseSequence {
@@ -2051,6 +2115,7 @@ class BOPTools_SequenceOfPaveBlock : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BOPTools_VEInterference;
 class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -2071,6 +2136,7 @@ class BOPTools_VEInterference : public BOPTools_ShapeShapeInterference {
 	}
 };
 
+
 %nodefaultctor BOPTools_ESInterference;
 class BOPTools_ESInterference : public BOPTools_ShapeShapeInterference {
 	public:
@@ -2088,6 +2154,7 @@ class BOPTools_ESInterference : public BOPTools_ShapeShapeInterference {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ESInterference\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_CArray1OfEEInterference;
 class BOPTools_CArray1OfEEInterference {
@@ -2129,6 +2196,7 @@ class BOPTools_CArray1OfEEInterference {
 	}
 };
 
+
 %nodefaultctor BOPTools_IndexedMapNodeOfIMapOfPaveBlock;
 class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
 	public:
@@ -2160,6 +2228,7 @@ class BOPTools_IndexedMapNodeOfIMapOfPaveBlock : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedMapNodeOfIMapOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_SplitShapesPool;
 class BOPTools_SplitShapesPool {
@@ -2201,6 +2270,7 @@ class BOPTools_SplitShapesPool {
 	}
 };
 
+
 %nodefaultctor BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo;
 class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TCollection_MapNode {
 	public:
@@ -2234,6 +2304,7 @@ class BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo : public TColle
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIndexedDataMapOfIntegerDEInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_HArray2OfIntersectionStatus;
 class BOPTools_HArray2OfIntersectionStatus : public MMgt_TShared {
@@ -2287,6 +2358,7 @@ class BOPTools_HArray2OfIntersectionStatus : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BOPTools_SequenceNodeOfSequenceOfPaveBlock;
 class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 	public:
@@ -2314,6 +2386,7 @@ class BOPTools_SequenceNodeOfSequenceOfPaveBlock : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_SequenceNodeOfSequenceOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_CArray1OfESInterference;
 class BOPTools_CArray1OfESInterference {
@@ -2355,6 +2428,7 @@ class BOPTools_CArray1OfESInterference {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListIteratorOfListOfPave;
 class BOPTools_ListIteratorOfListOfPave {
 	public:
@@ -2378,6 +2452,7 @@ class BOPTools_ListIteratorOfListOfPave {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfPave\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock;
 class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public TCollection_MapNode {
@@ -2412,6 +2487,7 @@ class BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock : public TCol
 	if (__env){printf("## Call custom destructor for instance of BOPTools_IndexedDataMapNodeOfIDMapOfPaveBlockIMapOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_PaveBlock;
 class BOPTools_PaveBlock {
@@ -2475,6 +2551,7 @@ class BOPTools_PaveBlock {
 	}
 };
 
+
 %nodefaultctor BOPTools_CArray1OfVEInterference;
 class BOPTools_CArray1OfVEInterference {
 	public:
@@ -2515,6 +2592,7 @@ class BOPTools_CArray1OfVEInterference {
 	}
 };
 
+
 %nodefaultctor BOPTools_CommonBlockAPI;
 class BOPTools_CommonBlockAPI {
 	public:
@@ -2534,6 +2612,7 @@ class BOPTools_CommonBlockAPI {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CommonBlockAPI\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_InterferencePool;
 class BOPTools_InterferencePool {
@@ -2593,6 +2672,7 @@ class BOPTools_InterferencePool {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListOfPaveBlock;
 class BOPTools_ListOfPaveBlock {
 	public:
@@ -2642,6 +2722,7 @@ class BOPTools_ListOfPaveBlock {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_DSFiller;
 class BOPTools_DSFiller {
@@ -2699,6 +2780,7 @@ class BOPTools_DSFiller {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListOfPave;
 class BOPTools_ListOfPave {
 	public:
@@ -2749,6 +2831,7 @@ class BOPTools_ListOfPave {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListNodeOfListOfPaveBlock;
 class BOPTools_ListNodeOfListOfPaveBlock : public TCollection_MapNode {
 	public:
@@ -2776,6 +2859,7 @@ class BOPTools_ListNodeOfListOfPaveBlock : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_ListOfInterference;
 class BOPTools_ListOfInterference {
@@ -2826,6 +2910,7 @@ class BOPTools_ListOfInterference {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListOfInterference\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_SequenceOfCurves;
 class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
@@ -2881,6 +2966,7 @@ class BOPTools_SequenceOfCurves : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BOPTools_ComparePave;
 class BOPTools_ComparePave {
 	public:
@@ -2902,6 +2988,7 @@ class BOPTools_ComparePave {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ComparePave\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_CArray1OfInterferenceLine;
 class BOPTools_CArray1OfInterferenceLine {
@@ -2943,6 +3030,7 @@ class BOPTools_CArray1OfInterferenceLine {
 	}
 };
 
+
 %nodefaultctor BOPTools_CoupleOfInteger;
 class BOPTools_CoupleOfInteger {
 	public:
@@ -2979,6 +3067,7 @@ class BOPTools_CoupleOfInteger {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CoupleOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_Array2OfIntersectionStatus;
 class BOPTools_Array2OfIntersectionStatus {
@@ -3023,6 +3112,7 @@ class BOPTools_Array2OfIntersectionStatus {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_Array2OfIntersectionStatus\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_Tools2D;
 class BOPTools_Tools2D {
@@ -3081,6 +3171,7 @@ class BOPTools_Tools2D {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_Tools2D\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_Tools3D;
 class BOPTools_Tools3D {
@@ -3184,6 +3275,7 @@ class BOPTools_Tools3D {
 	}
 };
 
+
 %nodefaultctor BOPTools_IMapOfPaveBlock;
 class BOPTools_IMapOfPaveBlock : public TCollection_BasicMap {
 	public:
@@ -3218,6 +3310,7 @@ class BOPTools_IMapOfPaveBlock : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListNodeOfListOfInterference;
 class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
 	public:
@@ -3245,6 +3338,7 @@ class BOPTools_ListNodeOfListOfInterference : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfInterference\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_CArray1OfPave;
 class BOPTools_CArray1OfPave {
@@ -3286,6 +3380,7 @@ class BOPTools_CArray1OfPave {
 	}
 };
 
+
 %nodefaultctor BOPTools_CheckResult;
 class BOPTools_CheckResult {
 	public:
@@ -3311,6 +3406,7 @@ class BOPTools_CheckResult {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CheckResult\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IDMapOfPaveBlockIMapOfInteger;
 class BOPTools_IDMapOfPaveBlockIMapOfInteger : public TCollection_BasicMap {
@@ -3356,6 +3452,7 @@ class BOPTools_IDMapOfPaveBlockIMapOfInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTools_IndexedMapOfCoupleOfInteger;
 class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
 	public:
@@ -3390,6 +3487,7 @@ class BOPTools_IndexedMapOfCoupleOfInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListNodeOfListOfCoupleOfInteger;
 class BOPTools_ListNodeOfListOfCoupleOfInteger : public TCollection_MapNode {
 	public:
@@ -3417,6 +3515,7 @@ class BOPTools_ListNodeOfListOfCoupleOfInteger : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListNodeOfListOfCoupleOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_ListNodeOfListOfPave;
 class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
@@ -3446,6 +3545,7 @@ class BOPTools_ListNodeOfListOfPave : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListIteratorOfListOfCheckResults;
 class BOPTools_ListIteratorOfListOfCheckResults {
 	public:
@@ -3469,6 +3569,7 @@ class BOPTools_ListIteratorOfListOfCheckResults {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfCheckResults\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_CArray1OfVSInterference;
 class BOPTools_CArray1OfVSInterference {
@@ -3509,6 +3610,7 @@ class BOPTools_CArray1OfVSInterference {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfVSInterference\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_SSInterference;
 class BOPTools_SSInterference : public BOPTools_ShapeShapeInterference {
@@ -3560,6 +3662,7 @@ class BOPTools_SSInterference : public BOPTools_ShapeShapeInterference {
 	}
 };
 
+
 %nodefaultctor BOPTools_PaveSet;
 class BOPTools_PaveSet {
 	public:
@@ -3582,6 +3685,7 @@ class BOPTools_PaveSet {
 	}
 };
 
+
 %nodefaultctor BOPTools_PaveBlockMapHasher;
 class BOPTools_PaveBlockMapHasher {
 	public:
@@ -3599,6 +3703,7 @@ class BOPTools_PaveBlockMapHasher {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_PaveBlockMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_ListOfCheckResults;
 class BOPTools_ListOfCheckResults {
@@ -3650,6 +3755,7 @@ class BOPTools_ListOfCheckResults {
 	}
 };
 
+
 %nodefaultctor BOPTools_CArray1OfSSInterference;
 class BOPTools_CArray1OfSSInterference {
 	public:
@@ -3690,6 +3796,7 @@ class BOPTools_CArray1OfSSInterference {
 	}
 };
 
+
 %nodefaultctor BOPTools_InterferenceLine;
 class BOPTools_InterferenceLine {
 	public:
@@ -3717,6 +3824,7 @@ class BOPTools_InterferenceLine {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_InterferenceLine\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_IndexedDataMapOfIntegerDEInfo;
 class BOPTools_IndexedDataMapOfIntegerDEInfo : public TCollection_BasicMap {
@@ -3762,6 +3870,7 @@ class BOPTools_IndexedDataMapOfIntegerDEInfo : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOPTools_SequenceNodeOfSequenceOfCurves;
 class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 	public:
@@ -3790,6 +3899,7 @@ class BOPTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor BOPTools_ListIteratorOfListOfPaveBlock;
 class BOPTools_ListIteratorOfListOfPaveBlock {
 	public:
@@ -3813,6 +3923,7 @@ class BOPTools_ListIteratorOfListOfPaveBlock {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_ListIteratorOfListOfPaveBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_CArray1OfVVInterference;
 class BOPTools_CArray1OfVVInterference {
@@ -3853,6 +3964,7 @@ class BOPTools_CArray1OfVVInterference {
 	if (__env){printf("## Call custom destructor for instance of BOPTools_CArray1OfVVInterference\n");}
 	}
 };
+
 
 %nodefaultctor BOPTools_Pave;
 class BOPTools_Pave {

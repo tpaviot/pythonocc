@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -145,6 +146,7 @@ class Handle_BinObjMgt_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor Handle_BinObjMgt_DataMapNodeOfRRelocationTable;
 class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection_MapNode {
 	public:
@@ -169,6 +171,7 @@ class Handle_BinObjMgt_DataMapNodeOfRRelocationTable : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_BinObjMgt_DataMapNodeOfRRelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_SequenceOfAddress;
 class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
@@ -223,6 +226,7 @@ class BinObjMgt_SequenceOfAddress : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of BinObjMgt_SequenceOfAddress\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_Persistent;
 class BinObjMgt_Persistent {
@@ -324,9 +328,18 @@ class BinObjMgt_Persistent {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Write(Standard_OStream & theOS);
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		std::istream & Read(std::istream & theIS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void Destroy();
 
@@ -337,6 +350,7 @@ class BinObjMgt_Persistent {
 	if (__env){printf("## Call custom destructor for instance of BinObjMgt_Persistent\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_DataMapNodeOfRRelocationTable;
 class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
@@ -368,6 +382,7 @@ class BinObjMgt_DataMapNodeOfRRelocationTable : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BinObjMgt_DataMapIteratorOfRRelocationTable;
 class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapIterator {
 	public:
@@ -389,6 +404,7 @@ class BinObjMgt_DataMapIteratorOfRRelocationTable : public TCollection_BasicMapI
 	if (__env){printf("## Call custom destructor for instance of BinObjMgt_DataMapIteratorOfRRelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_RRelocationTable;
 class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
@@ -423,6 +439,7 @@ class BinObjMgt_RRelocationTable : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BinObjMgt_RRelocationTable\n");}
 	}
 };
+
 
 %nodefaultctor BinObjMgt_SequenceNodeOfSequenceOfAddress;
 class BinObjMgt_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {

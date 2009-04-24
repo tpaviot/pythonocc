@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -187,6 +188,7 @@ class Handle_StepToTopoDS_DataMapNodeOfDataMapOfTRI : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointVertexMap;
 class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollection_MapNode {
 	public:
@@ -211,6 +213,7 @@ class Handle_StepToTopoDS_DataMapNodeOfPointVertexMap : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_StepToTopoDS_DataMapNodeOfPointVertexMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap;
 class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_MapNode {
@@ -237,6 +240,7 @@ class Handle_StepToTopoDS_DataMapNodeOfPointEdgeMap : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_PointPair;
 class StepToTopoDS_PointPair {
 	public:
@@ -250,6 +254,7 @@ class StepToTopoDS_PointPair {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointPair\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_Root;
 class StepToTopoDS_Root {
@@ -273,6 +278,7 @@ class StepToTopoDS_Root {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_TranslateShell;
 class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
 	public:
@@ -294,6 +300,7 @@ class StepToTopoDS_TranslateShell : public StepToTopoDS_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateShell\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_MakeTransformed;
 class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
@@ -318,6 +325,7 @@ class StepToTopoDS_MakeTransformed : public StepToTopoDS_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_MakeTransformed\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_Tool;
 class StepToTopoDS_Tool {
@@ -389,6 +397,7 @@ class StepToTopoDS_Tool {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_TranslateEdge;
 class StepToTopoDS_TranslateEdge : public StepToTopoDS_Root {
 	public:
@@ -415,6 +424,7 @@ class StepToTopoDS_TranslateEdge : public StepToTopoDS_Root {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointVertexMap;
 class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMapIterator {
 	public:
@@ -437,6 +447,7 @@ class StepToTopoDS_DataMapIteratorOfPointVertexMap : public TCollection_BasicMap
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_CartesianPointHasher;
 class StepToTopoDS_CartesianPointHasher {
 	public:
@@ -454,6 +465,7 @@ class StepToTopoDS_CartesianPointHasher {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_CartesianPointHasher\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfPointEdgeMap;
 class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
@@ -485,6 +497,7 @@ class StepToTopoDS_DataMapNodeOfPointEdgeMap : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_DataMapNodeOfDataMapOfTRI;
 class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
 	public:
@@ -515,6 +528,7 @@ class StepToTopoDS_DataMapNodeOfDataMapOfTRI : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_DataMapIteratorOfDataMapOfTRI;
 class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIterator {
 	public:
@@ -537,6 +551,7 @@ class StepToTopoDS_DataMapIteratorOfDataMapOfTRI : public TCollection_BasicMapIt
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_PointPairHasher;
 class StepToTopoDS_PointPairHasher {
 	public:
@@ -554,6 +569,7 @@ class StepToTopoDS_PointPairHasher {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_PointPairHasher\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_DataMapNodeOfPointVertexMap;
 class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
@@ -584,6 +600,7 @@ class StepToTopoDS_DataMapNodeOfPointVertexMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_DataMapNodeOfPointVertexMap\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_DataMapOfTRI;
 class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
@@ -619,6 +636,7 @@ class StepToTopoDS_DataMapOfTRI : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_TranslateFace;
 class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
 	public:
@@ -641,6 +659,7 @@ class StepToTopoDS_TranslateFace : public StepToTopoDS_Root {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_TranslatePolyLoop;
 class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
 	public:
@@ -662,6 +681,7 @@ class StepToTopoDS_TranslatePolyLoop : public StepToTopoDS_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslatePolyLoop\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_TranslateCompositeCurve;
 class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
@@ -686,6 +706,7 @@ class StepToTopoDS_TranslateCompositeCurve : public StepToTopoDS_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateCompositeCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_PointVertexMap;
 class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
@@ -721,6 +742,7 @@ class StepToTopoDS_PointVertexMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_TranslateEdgeLoop;
 class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
 	public:
@@ -742,6 +764,7 @@ class StepToTopoDS_TranslateEdgeLoop : public StepToTopoDS_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateEdgeLoop\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_DataMapIteratorOfPointEdgeMap;
 class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIterator {
@@ -765,6 +788,7 @@ class StepToTopoDS_DataMapIteratorOfPointEdgeMap : public TCollection_BasicMapIt
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_GeometricTool;
 class StepToTopoDS_GeometricTool {
 	public:
@@ -786,6 +810,7 @@ class StepToTopoDS_GeometricTool {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_GeometricTool\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_PointEdgeMap;
 class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
@@ -821,6 +846,7 @@ class StepToTopoDS_PointEdgeMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_TranslateVertex;
 class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
 	public:
@@ -843,6 +869,7 @@ class StepToTopoDS_TranslateVertex : public StepToTopoDS_Root {
 	}
 };
 
+
 %nodefaultctor StepToTopoDS_TranslateCurveBoundedSurface;
 class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 	public:
@@ -862,6 +889,7 @@ class StepToTopoDS_TranslateCurveBoundedSurface : public StepToTopoDS_Root {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS_TranslateCurveBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS;
 class StepToTopoDS {
@@ -892,6 +920,7 @@ class StepToTopoDS {
 	if (__env){printf("## Call custom destructor for instance of StepToTopoDS\n");}
 	}
 };
+
 
 %nodefaultctor StepToTopoDS_TranslateVertexLoop;
 class StepToTopoDS_TranslateVertexLoop : public StepToTopoDS_Root {

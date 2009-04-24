@@ -749,7 +749,12 @@ class XCAFDoc_Volume : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -845,7 +850,12 @@ class XCAFDoc_Area : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1265,7 +1275,12 @@ class XCAFDoc_GraphNode : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		void BeforeForget();
 		%feature("autodoc", "1");
@@ -1314,7 +1329,12 @@ class XCAFDoc_Centroid : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Into, const Handle_TDF_RelocationTable &RT) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 

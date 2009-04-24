@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -197,6 +198,7 @@ class Handle_Graphic2d_Primitive : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Text;
 class Handle_Graphic2d_Text : public Handle_Graphic2d_Primitive {
 	public:
@@ -221,6 +223,7 @@ class Handle_Graphic2d_Text : public Handle_Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Text\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_HidingText;
 class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
@@ -247,6 +250,7 @@ class Handle_Graphic2d_HidingText : public Handle_Graphic2d_Text {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_MarkerDefinitionError;
 class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -271,6 +275,7 @@ class Handle_Graphic2d_MarkerDefinitionError : public Handle_Standard_OutOfRange
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_MarkerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Line;
 class Handle_Graphic2d_Line : public Handle_Graphic2d_Primitive {
@@ -297,6 +302,7 @@ class Handle_Graphic2d_Line : public Handle_Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_VectorialMarker;
 class Handle_Graphic2d_VectorialMarker : public Handle_Graphic2d_Line {
 	public:
@@ -321,6 +327,7 @@ class Handle_Graphic2d_VectorialMarker : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_VectorialMarker\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_EllipsMarker;
 class Handle_Graphic2d_EllipsMarker : public Handle_Graphic2d_VectorialMarker {
@@ -347,6 +354,7 @@ class Handle_Graphic2d_EllipsMarker : public Handle_Graphic2d_VectorialMarker {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Segment;
 class Handle_Graphic2d_Segment : public Handle_Graphic2d_Line {
 	public:
@@ -371,6 +379,7 @@ class Handle_Graphic2d_Segment : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Segment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_SetOfMarkers;
 class Handle_Graphic2d_SetOfMarkers : public Handle_Graphic2d_Line {
@@ -397,6 +406,7 @@ class Handle_Graphic2d_SetOfMarkers : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Drawer;
 class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 	public:
@@ -421,6 +431,7 @@ class Handle_Graphic2d_Drawer : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Drawer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_TransientManager;
 class Handle_Graphic2d_TransientManager : public Handle_Graphic2d_Drawer {
@@ -447,6 +458,7 @@ class Handle_Graphic2d_TransientManager : public Handle_Graphic2d_Drawer {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_OverrideColorError;
 class Handle_Graphic2d_OverrideColorError : public Handle_Standard_OutOfRange {
 	public:
@@ -471,6 +483,7 @@ class Handle_Graphic2d_OverrideColorError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_OverrideColorError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_CircleDefinitionError;
 class Handle_Graphic2d_CircleDefinitionError : public Handle_Standard_OutOfRange {
@@ -497,6 +510,7 @@ class Handle_Graphic2d_CircleDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SetOfSegments;
 class Handle_Graphic2d_SetOfSegments : public Handle_Graphic2d_Line {
 	public:
@@ -521,6 +535,7 @@ class Handle_Graphic2d_SetOfSegments : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SetOfSegments\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_BufferList;
 class Handle_Graphic2d_BufferList : public Handle_MMgt_TShared {
@@ -547,6 +562,7 @@ class Handle_Graphic2d_BufferList : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SetOfPolylines;
 class Handle_Graphic2d_SetOfPolylines : public Handle_Graphic2d_Line {
 	public:
@@ -571,6 +587,7 @@ class Handle_Graphic2d_SetOfPolylines : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SetOfPolylines\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_ImageDefinitionError;
 class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange {
@@ -597,6 +614,7 @@ class Handle_Graphic2d_ImageDefinitionError : public Handle_Standard_OutOfRange 
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_DetectionColorError;
 class Handle_Graphic2d_DetectionColorError : public Handle_Standard_OutOfRange {
 	public:
@@ -621,6 +639,7 @@ class Handle_Graphic2d_DetectionColorError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_DetectionColorError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Ellips;
 class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
@@ -647,6 +666,7 @@ class Handle_Graphic2d_Ellips : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_DrawerDefinitionError;
 class Handle_Graphic2d_DrawerDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -671,6 +691,7 @@ class Handle_Graphic2d_DrawerDefinitionError : public Handle_Standard_OutOfRange
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_DrawerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_ViewMapping;
 class Handle_Graphic2d_ViewMapping : public Handle_MMgt_TShared {
@@ -697,6 +718,7 @@ class Handle_Graphic2d_ViewMapping : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer : public Handle_TCollection_SeqNode {
 	public:
@@ -721,6 +743,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfBuffer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_HSequenceOfPrimitives;
 class Handle_Graphic2d_HSequenceOfPrimitives : public Handle_MMgt_TShared {
@@ -747,6 +770,7 @@ class Handle_Graphic2d_HSequenceOfPrimitives : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_CircleMarker;
 class Handle_Graphic2d_CircleMarker : public Handle_Graphic2d_VectorialMarker {
 	public:
@@ -771,6 +795,7 @@ class Handle_Graphic2d_CircleMarker : public Handle_Graphic2d_VectorialMarker {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_CircleMarker\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_ImageFile;
 class Handle_Graphic2d_ImageFile : public Handle_Graphic2d_Primitive {
@@ -797,6 +822,7 @@ class Handle_Graphic2d_ImageFile : public Handle_Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_TextDefinitionError;
 class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -821,6 +847,7 @@ class Handle_Graphic2d_TextDefinitionError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_TextDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_View;
 class Handle_Graphic2d_View : public Handle_MMgt_TShared {
@@ -847,6 +874,7 @@ class Handle_Graphic2d_View : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Marker;
 class Handle_Graphic2d_Marker : public Handle_Graphic2d_Line {
 	public:
@@ -871,6 +899,7 @@ class Handle_Graphic2d_Marker : public Handle_Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Marker\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_EllipsDefinitionError;
 class Handle_Graphic2d_EllipsDefinitionError : public Handle_Standard_OutOfRange {
@@ -897,6 +926,7 @@ class Handle_Graphic2d_EllipsDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_InfiniteLineDefinitionError;
 class Handle_Graphic2d_InfiniteLineDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -921,6 +951,7 @@ class Handle_Graphic2d_InfiniteLineDefinitionError : public Handle_Standard_OutO
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_InfiniteLineDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_PolylineMarker;
 class Handle_Graphic2d_PolylineMarker : public Handle_Graphic2d_VectorialMarker {
@@ -947,6 +978,7 @@ class Handle_Graphic2d_PolylineMarker : public Handle_Graphic2d_VectorialMarker 
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_GraphicObject;
 class Handle_Graphic2d_GraphicObject : public Handle_MMgt_TShared {
 	public:
@@ -971,6 +1003,7 @@ class Handle_Graphic2d_GraphicObject : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_GraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Circle;
 class Handle_Graphic2d_Circle : public Handle_Graphic2d_Line {
@@ -997,6 +1030,7 @@ class Handle_Graphic2d_Circle : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_HArray1OfVertex;
 class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
 	public:
@@ -1021,6 +1055,7 @@ class Handle_Graphic2d_HArray1OfVertex : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HArray1OfVertex\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Polyline;
 class Handle_Graphic2d_Polyline : public Handle_Graphic2d_Line {
@@ -1047,6 +1082,7 @@ class Handle_Graphic2d_Polyline : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Paragraph;
 class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 	public:
@@ -1071,6 +1107,7 @@ class Handle_Graphic2d_Paragraph : public Handle_Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Paragraph\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_PolylineDefinitionError;
 class Handle_Graphic2d_PolylineDefinitionError : public Handle_Standard_OutOfRange {
@@ -1097,6 +1134,7 @@ class Handle_Graphic2d_PolylineDefinitionError : public Handle_Standard_OutOfRan
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfVertex;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfVertex : public Handle_TCollection_SeqNode {
 	public:
@@ -1121,6 +1159,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfVertex : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfVertex\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollection_SeqNode {
@@ -1147,6 +1186,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPolyline : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_HidingGraphicObject;
 class Handle_Graphic2d_HidingGraphicObject : public Handle_Graphic2d_GraphicObject {
 	public:
@@ -1171,6 +1211,7 @@ class Handle_Graphic2d_HidingGraphicObject : public Handle_Graphic2d_GraphicObje
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_HidingGraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_InfiniteLine;
 class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
@@ -1197,6 +1238,7 @@ class Handle_Graphic2d_InfiniteLine : public Handle_Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_DisplayList;
 class Handle_Graphic2d_DisplayList : public Handle_MMgt_TShared {
 	public:
@@ -1221,6 +1263,7 @@ class Handle_Graphic2d_DisplayList : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_DisplayList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_HSequenceOfVertex;
 class Handle_Graphic2d_HSequenceOfVertex : public Handle_MMgt_TShared {
@@ -1247,6 +1290,7 @@ class Handle_Graphic2d_HSequenceOfVertex : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_FramedText;
 class Handle_Graphic2d_FramedText : public Handle_Graphic2d_Text {
 	public:
@@ -1271,6 +1315,7 @@ class Handle_Graphic2d_FramedText : public Handle_Graphic2d_Text {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_FramedText\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_TransientDefinitionError;
 class Handle_Graphic2d_TransientDefinitionError : public Handle_Standard_OutOfRange {
@@ -1297,6 +1342,7 @@ class Handle_Graphic2d_TransientDefinitionError : public Handle_Standard_OutOfRa
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_Buffer;
 class Handle_Graphic2d_Buffer : public Handle_MMgt_TShared {
 	public:
@@ -1321,6 +1367,7 @@ class Handle_Graphic2d_Buffer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_Buffer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_Image;
 class Handle_Graphic2d_Image : public Handle_Graphic2d_Primitive {
@@ -1347,6 +1394,7 @@ class Handle_Graphic2d_Image : public Handle_Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives : public Handle_TCollection_SeqNode {
 	public:
@@ -1371,6 +1419,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfPrimitives\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic2d_SegmentDefinitionError;
 class Handle_Graphic2d_SegmentDefinitionError : public Handle_Standard_OutOfRange {
@@ -1397,6 +1446,7 @@ class Handle_Graphic2d_SegmentDefinitionError : public Handle_Standard_OutOfRang
 	}
 };
 
+
 %nodefaultctor Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject;
 class Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public Handle_TCollection_SeqNode {
 	public:
@@ -1421,6 +1471,7 @@ class Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic2d_SequenceNodeOfSequenceOfGraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Primitive;
 class Graphic2d_Primitive : public MMgt_TShared {
@@ -1484,6 +1535,7 @@ class Graphic2d_Primitive : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Image;
 class Graphic2d_Image : public Graphic2d_Primitive {
 	public:
@@ -1504,9 +1556,9 @@ class Graphic2d_Image : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Integer SmallSize();
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Offset(Quantity_Length & aX, Quantity_Length & aY) const;
+		void Offset(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_CardinalPoints Placement() const;
 		%feature("autodoc", "1");
@@ -1529,6 +1581,7 @@ class Graphic2d_Image : public Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Image\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_InfiniteLineDefinitionError;
 class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
@@ -1564,6 +1617,7 @@ class Graphic2d_InfiniteLineDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Text;
 class Graphic2d_Text : public Graphic2d_Primitive {
 	public:
@@ -1590,11 +1644,11 @@ class Graphic2d_Text : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Boolean IsUnderlined() const;
 		%feature("autodoc", "1");
-		Standard_Boolean TextSize(Quantity_Length & aWidth, Quantity_Length & aHeight) const;
+		Standard_Boolean TextSize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean TextSize(Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & anXoffset, Quantity_Length & anYoffset) const;
+		virtual		Standard_Boolean TextSize(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Offset(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
@@ -1634,6 +1688,7 @@ class Graphic2d_Text : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Graphic2d_HidingText;
 class Graphic2d_HidingText : public Graphic2d_Text {
 	public:
@@ -1672,6 +1727,7 @@ class Graphic2d_HidingText : public Graphic2d_Text {
 	}
 };
 
+
 %nodefaultctor Graphic2d_ViewMapping;
 class Graphic2d_ViewMapping : public MMgt_TShared {
 	public:
@@ -1688,11 +1744,11 @@ class Graphic2d_ViewMapping : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ViewMappingReset();
 		%feature("autodoc", "1");
-		void ViewMapping(Quantity_Length & XCenter, Quantity_Length & YCenter, Quantity_Length & Size) const;
+		void ViewMapping(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & XCenter, Quantity_Length & YCenter) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void ViewMappingDefault(Quantity_Length & XCenter, Quantity_Length & YCenter, Quantity_Length & Size) const;
+		void ViewMappingDefault(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Factor Zoom() const;
 		%feature("autodoc", "1");
@@ -1715,6 +1771,7 @@ class Graphic2d_ViewMapping : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_ViewMapping\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfGraphicObject;
 class Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public TCollection_SeqNode {
@@ -1743,6 +1800,7 @@ class Graphic2d_SequenceNodeOfSequenceOfGraphicObject : public TCollection_SeqNo
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfGraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_GraphicObject;
 class Graphic2d_GraphicObject : public MMgt_TShared {
@@ -1822,9 +1880,9 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Graphic2d_Primitive Primitive(const Standard_Integer aRank) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean MinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		virtual		Standard_Boolean MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean MarkerMinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		virtual		Standard_Boolean MarkerMinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer PickedIndex() const;
 		%feature("autodoc", "1");
@@ -1849,6 +1907,7 @@ class Graphic2d_GraphicObject : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_GraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SegmentDefinitionError;
 class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
@@ -1883,6 +1942,7 @@ class Graphic2d_SegmentDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SegmentDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Array1OfVertex;
 class Graphic2d_Array1OfVertex {
@@ -1924,6 +1984,7 @@ class Graphic2d_Array1OfVertex {
 	}
 };
 
+
 %nodefaultctor Graphic2d_ImageFile;
 class Graphic2d_ImageFile : public Graphic2d_Primitive {
 	public:
@@ -1948,9 +2009,9 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Boolean IsZoomable() const;
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Offset(Quantity_Length & aX, Quantity_Length & aY) const;
+		void Offset(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Aspect_CardinalPoints Placement() const;
 		%feature("autodoc", "1");
@@ -1981,6 +2042,7 @@ class Graphic2d_ImageFile : public Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_ImageFile\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Line;
 class Graphic2d_Line : public Graphic2d_Primitive {
@@ -2032,15 +2094,16 @@ class Graphic2d_Line : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Graphic2d_InfiniteLine;
 class Graphic2d_InfiniteLine : public Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
 		Graphic2d_InfiniteLine(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length DX, const Quantity_Length DY);
 		%feature("autodoc", "1");
-		void Reference(Quantity_Length & X, Quantity_Length & Y) const;
+		void Reference(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Slope(Quantity_Length & dX, Quantity_Length & dY) const;
+		void Slope(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Retrieve(Aspect_IFStream & anIFStream, const Handle_Graphic2d_GraphicObject &aGraphicObject);
 
@@ -2061,6 +2124,7 @@ class Graphic2d_InfiniteLine : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_InfiniteLine\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_HSequenceOfPrimitives;
 class Graphic2d_HSequenceOfPrimitives : public MMgt_TShared {
@@ -2132,6 +2196,7 @@ class Graphic2d_HSequenceOfPrimitives : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_VectorialMarker;
 class Graphic2d_VectorialMarker : public Graphic2d_Line {
 	public:
@@ -2161,6 +2226,7 @@ class Graphic2d_VectorialMarker : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_VectorialMarker\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_HSequenceOfVertex;
 class Graphic2d_HSequenceOfVertex : public MMgt_TShared {
@@ -2232,13 +2298,14 @@ class Graphic2d_HSequenceOfVertex : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Ellips;
 class Graphic2d_Ellips : public Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
 		Graphic2d_Ellips(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length MajorRadius, const Quantity_Length MinorRadius, const Quantity_PlaneAngle anAngle);
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & X, Quantity_Length & Y) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length MajorRadius() const;
 		%feature("autodoc", "1");
@@ -2270,6 +2337,7 @@ class Graphic2d_Ellips : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_PolylineMarker;
 class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 	public:
@@ -2280,7 +2348,7 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Quantity_Length & X, Quantity_Length & Y) const;
+		void Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -2305,6 +2373,7 @@ class Graphic2d_PolylineMarker : public Graphic2d_VectorialMarker {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_PolylineMarker\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SequenceOfPrimitives;
 class Graphic2d_SequenceOfPrimitives : public TCollection_BaseSequence {
@@ -2360,6 +2429,7 @@ class Graphic2d_SequenceOfPrimitives : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfPolyline;
 class Graphic2d_SequenceNodeOfSequenceOfPolyline : public TCollection_SeqNode {
 	public:
@@ -2388,6 +2458,7 @@ class Graphic2d_SequenceNodeOfSequenceOfPolyline : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfPrimitives;
 class Graphic2d_SequenceNodeOfSequenceOfPrimitives : public TCollection_SeqNode {
 	public:
@@ -2415,6 +2486,7 @@ class Graphic2d_SequenceNodeOfSequenceOfPrimitives : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SequenceNodeOfSequenceOfPrimitives\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_BufferList;
 class Graphic2d_BufferList : public MMgt_TShared {
@@ -2486,6 +2558,7 @@ class Graphic2d_BufferList : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceOfVertex;
 class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
 	public:
@@ -2540,6 +2613,7 @@ class Graphic2d_SequenceOfVertex : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Marker;
 class Graphic2d_Marker : public Graphic2d_Line {
 	public:
@@ -2548,9 +2622,9 @@ class Graphic2d_Marker : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Graphic2d_Marker(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Standard_Integer anIndex, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length aWidth, const Quantity_Length anHeight, const Quantity_PlaneAngle anAngle=0.0);
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Size(Quantity_Length & aW, Quantity_Length & aH) const;
+		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 		%feature("autodoc", "1");
@@ -2578,6 +2652,7 @@ class Graphic2d_Marker : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SetOfMarkers;
 class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 	public:
@@ -2590,7 +2665,7 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Standard_Integer &OutValue, Quantity_Length & X, Quantity_Length & Y, Quantity_Length & aW, Quantity_Length & aH, Quantity_PlaneAngle & anAngle) const;
+		void Values(const Standard_Integer aRank, Standard_Integer &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & anAngle) const;
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean SetElementsSelected();
 		%feature("autodoc", "1");
@@ -2628,6 +2703,7 @@ class Graphic2d_SetOfMarkers : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Vertex;
 class Graphic2d_Vertex {
 	public:
@@ -2644,7 +2720,7 @@ class Graphic2d_Vertex {
 		%feature("autodoc", "1");
 		void SetYCoord(const Quantity_Length Ynew);
 		%feature("autodoc", "1");
-		void Coord(Quantity_Length & AX, Quantity_Length & AY) const;
+		void Coord(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length X() const;
 		%feature("autodoc", "1");
@@ -2663,6 +2739,7 @@ class Graphic2d_Vertex {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Vertex\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_HidingGraphicObject;
 class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
@@ -2686,9 +2763,9 @@ class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer MaxPriority() const;
 		%feature("autodoc", "1");
-		Standard_Boolean FrameMinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		Standard_Boolean FrameMinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean MinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		virtual		Standard_Boolean MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Graphic2d_TypeOfFrame Frame(Graphic2d_Array1OfVertex & aFrame) const;
 		%feature("autodoc", "1");
@@ -2719,6 +2796,7 @@ class Graphic2d_HidingGraphicObject : public Graphic2d_GraphicObject {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_HidingGraphicObject\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Drawer;
 class Graphic2d_Drawer : public Standard_Transient {
@@ -2878,6 +2956,7 @@ class Graphic2d_Drawer : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Graphic2d_DetectionColorError;
 class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 	public:
@@ -2911,6 +2990,7 @@ class Graphic2d_DetectionColorError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_DetectionColorError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Paragraph;
 class Graphic2d_Paragraph : public Graphic2d_Primitive {
@@ -2948,11 +3028,11 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		Standard_Boolean IsZoomable() const;
 		%feature("autodoc", "1");
-		void Size(Quantity_Length & aWidth, Quantity_Length & aHeight) const;
+		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Position(Quantity_Length & X, Quantity_Length & Y) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		Aspect_CardinalPoints Offset(Quantity_Length & Dx, Quantity_Length & Dy) const;
+		Aspect_CardinalPoints Offset(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle Angle() const;
 		%feature("autodoc", "1");
@@ -2970,7 +3050,7 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString Text(const Standard_Integer aRank, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Standard_Integer &OutValue, Graphic2d_TypeOfAlignment & anAlignment) const;
 		%feature("autodoc", "1");
-		Standard_Boolean TextSize(const Standard_Integer aRank, Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & anXoffset, Quantity_Length & anYoffset) const;
+		Standard_Boolean TextSize(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
@@ -3002,6 +3082,7 @@ class Graphic2d_Paragraph : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfVertex;
 class Graphic2d_SequenceNodeOfSequenceOfVertex : public TCollection_SeqNode {
 	public:
@@ -3030,13 +3111,14 @@ class Graphic2d_SequenceNodeOfSequenceOfVertex : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Graphic2d_EllipsMarker;
 class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
 	public:
 		%feature("autodoc", "1");
 		Graphic2d_EllipsMarker(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length aXPosition, const Quantity_Length aYPosition, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length MajorRadius, const Quantity_Length MinorRadius, const Quantity_PlaneAngle anAngle);
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & X, Quantity_Length & Y) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length MajorRadius() const;
 		%feature("autodoc", "1");
@@ -3067,6 +3149,7 @@ class Graphic2d_EllipsMarker : public Graphic2d_VectorialMarker {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_EllipsMarker\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_HArray1OfVertex;
 class Graphic2d_HArray1OfVertex : public MMgt_TShared {
@@ -3114,6 +3197,7 @@ class Graphic2d_HArray1OfVertex : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_CBitFields8;
 class Graphic2d_CBitFields8 {
 	public:
@@ -3127,6 +3211,7 @@ class Graphic2d_CBitFields8 {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_CBitFields8\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_FramedText;
 class Graphic2d_FramedText : public Graphic2d_Text {
@@ -3142,7 +3227,7 @@ class Graphic2d_FramedText : public Graphic2d_Text {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Trunc(const Quantity_Length aWidth);
 		%feature("autodoc", "1");
-		virtual		Standard_Boolean TextSize(Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & anXoffset, Quantity_Length & anYoffset) const;
+		virtual		Standard_Boolean TextSize(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Ratio Margin() const;
 		%feature("autodoc", "1");
@@ -3172,6 +3257,7 @@ class Graphic2d_FramedText : public Graphic2d_Text {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Circle;
 class Graphic2d_Circle : public Graphic2d_Line {
 	public:
@@ -3180,7 +3266,7 @@ class Graphic2d_Circle : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Graphic2d_Circle(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Radius, const Quantity_PlaneAngle Alpha, const Quantity_PlaneAngle Beta);
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & X, Quantity_Length & Y) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Radius() const;
 		%feature("autodoc", "1");
@@ -3218,6 +3304,7 @@ class Graphic2d_Circle : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_MarkerDefinitionError;
 class Graphic2d_MarkerDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3251,6 +3338,7 @@ class Graphic2d_MarkerDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_MarkerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_PolylineDefinitionError;
 class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
@@ -3286,6 +3374,7 @@ class Graphic2d_PolylineDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Polyline;
 class Graphic2d_Polyline : public Graphic2d_Line {
 	public:
@@ -3296,7 +3385,7 @@ class Graphic2d_Polyline : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Quantity_Length & X, Quantity_Length & Y) const;
+		void Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -3321,6 +3410,7 @@ class Graphic2d_Polyline : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Polyline\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_TextDefinitionError;
 class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
@@ -3356,6 +3446,7 @@ class Graphic2d_TextDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_ImageDefinitionError;
 class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3389,6 +3480,7 @@ class Graphic2d_ImageDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_ImageDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_CircleDefinitionError;
 class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
@@ -3424,15 +3516,16 @@ class Graphic2d_CircleDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_Segment;
 class Graphic2d_Segment : public Graphic2d_Line {
 	public:
 		%feature("autodoc", "1");
 		Graphic2d_Segment(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length X1, const Quantity_Length Y1, const Quantity_Length X2, const Quantity_Length Y2);
 		%feature("autodoc", "1");
-		void FirstPoint(Quantity_Length & X, Quantity_Length & Y) const;
+		void FirstPoint(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void SecondPoint(Quantity_Length & X, Quantity_Length & Y) const;
+		void SecondPoint(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -3457,6 +3550,7 @@ class Graphic2d_Segment : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_Segment\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SequenceOfBuffer;
 class Graphic2d_SequenceOfBuffer : public TCollection_BaseSequence {
@@ -3512,6 +3606,7 @@ class Graphic2d_SequenceOfBuffer : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic2d_OverrideColorError;
 class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 	public:
@@ -3546,6 +3641,7 @@ class Graphic2d_OverrideColorError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SetOfPolylines;
 class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 	public:
@@ -3560,7 +3656,7 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length(const Standard_Integer aPrank) const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aPrank, const Standard_Integer aVrank, Quantity_Length & X, Quantity_Length & Y) const;
+		void Values(const Standard_Integer aPrank, const Standard_Integer aVrank, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -3584,6 +3680,7 @@ class Graphic2d_SetOfPolylines : public Graphic2d_Line {
 	}
 };
 
+
 %nodefaultctor Graphic2d_SetOfSegments;
 class Graphic2d_SetOfSegments : public Graphic2d_Line {
 	public:
@@ -3594,7 +3691,7 @@ class Graphic2d_SetOfSegments : public Graphic2d_Line {
 		%feature("autodoc", "1");
 		Standard_Integer Length() const;
 		%feature("autodoc", "1");
-		void Values(const Standard_Integer aRank, Quantity_Length & X1, Quantity_Length & Y1, Quantity_Length & X2, Quantity_Length & Y2) const;
+		void Values(const Standard_Integer aRank, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Save(Aspect_FStream & aFStream) const;
 		%feature("autodoc", "1");
@@ -3617,6 +3714,7 @@ class Graphic2d_SetOfSegments : public Graphic2d_Line {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_SetOfSegments\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_Buffer;
 class Graphic2d_Buffer : public MMgt_TShared {
@@ -3692,6 +3790,7 @@ class Graphic2d_Buffer : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_DisplayList;
 class Graphic2d_DisplayList : public MMgt_TShared {
 	public:
@@ -3762,6 +3861,7 @@ class Graphic2d_DisplayList : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic2d_TransientManager;
 class Graphic2d_TransientManager : public Graphic2d_Drawer {
 	public:
@@ -3824,7 +3924,7 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 		%feature("autodoc", "1");
 		void SetMapping(const Standard_Boolean aStatus=1);
 		%feature("autodoc", "1");
-		Standard_Boolean MinMax(Quantity_Length & XMin, Quantity_Length & YMin, Quantity_Length & XMax, Quantity_Length & YMax) const;
+		Standard_Boolean MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -3845,6 +3945,7 @@ class Graphic2d_TransientManager : public Graphic2d_Drawer {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_TransientManager\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SequenceNodeOfSequenceOfBuffer;
 class Graphic2d_SequenceNodeOfSequenceOfBuffer : public TCollection_SeqNode {
@@ -3874,6 +3975,7 @@ class Graphic2d_SequenceNodeOfSequenceOfBuffer : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Graphic2d_CircleMarker;
 class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 	public:
@@ -3882,7 +3984,7 @@ class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 		%feature("autodoc", "1");
 		Graphic2d_CircleMarker(const Handle_Graphic2d_GraphicObject &aGraphicObject, const Quantity_Length aXPosition, const Quantity_Length aYPosition, const Quantity_Length X, const Quantity_Length Y, const Quantity_Length Radius, const Quantity_PlaneAngle Alpha, const Quantity_PlaneAngle Beta);
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & X, Quantity_Length & Y) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Radius() const;
 		%feature("autodoc", "1");
@@ -3913,6 +4015,7 @@ class Graphic2d_CircleMarker : public Graphic2d_VectorialMarker {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_CircleMarker\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_TransientDefinitionError;
 class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
@@ -3948,6 +4051,7 @@ class Graphic2d_TransientDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_DrawerDefinitionError;
 class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3981,6 +4085,7 @@ class Graphic2d_DrawerDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_DrawerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SequenceOfPolyline;
 class Graphic2d_SequenceOfPolyline : public TCollection_BaseSequence {
@@ -4036,6 +4141,7 @@ class Graphic2d_SequenceOfPolyline : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic2d_EllipsDefinitionError;
 class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 	public:
@@ -4070,6 +4176,7 @@ class Graphic2d_EllipsDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic2d_View;
 class Graphic2d_View : public MMgt_TShared {
 	public:
@@ -4094,13 +4201,13 @@ class Graphic2d_View : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean IsIn(const Handle_Graphic2d_GraphicObject &aGraphicObject) const;
 		%feature("autodoc", "1");
-		void MinMax(const Handle_Graphic2d_DisplayList &aList, Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		void MinMax(const Handle_Graphic2d_DisplayList &aList, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void MinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		void MinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void MarkerMinMax(const Handle_Graphic2d_DisplayList &aList, Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		void MarkerMinMax(const Handle_Graphic2d_DisplayList &aList, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void MarkerMinMax(Quantity_Length & Minx, Quantity_Length & Maxx, Quantity_Length & Miny, Quantity_Length & Maxy) const;
+		void MarkerMinMax(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Handle_Graphic2d_DisplayList Pick(const Handle_Graphic2d_ViewMapping &aViewMapping, const Standard_Real X, const Standard_Real Y, const Standard_Real aPrecision, const Standard_Real aXPosition, const Standard_Real aYPosition, const Standard_Real aScale);
 		%feature("autodoc", "1");
@@ -4155,6 +4262,7 @@ class Graphic2d_View : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Graphic2d_View\n");}
 	}
 };
+
 
 %nodefaultctor Graphic2d_SequenceOfGraphicObject;
 class Graphic2d_SequenceOfGraphicObject : public TCollection_BaseSequence {

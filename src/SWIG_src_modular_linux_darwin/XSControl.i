@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XSControl_TransferWriter : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_XSControl_SignTransferStatus;
 class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 	public:
@@ -162,6 +164,7 @@ class Handle_XSControl_SignTransferStatus : public Handle_IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_SignTransferStatus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XSControl_Controller;
 class Handle_XSControl_Controller : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_XSControl_Controller : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_XSControl_TransferReader;
 class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_XSControl_TransferReader : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_TransferReader\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XSControl_SelectForTransfer;
 class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract {
@@ -238,6 +243,7 @@ class Handle_XSControl_SelectForTransfer : public Handle_IFSelect_SelectExtract 
 	}
 };
 
+
 %nodefaultctor Handle_XSControl_Vars;
 class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_XSControl_Vars : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_XSControl_Vars\n");}
 	}
 };
+
 
 %nodefaultctor Handle_XSControl_WorkSession;
 class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
@@ -288,6 +295,7 @@ class Handle_XSControl_WorkSession : public Handle_IFSelect_WorkSession {
 	}
 };
 
+
 %nodefaultctor Handle_XSControl_ConnectedShapes;
 class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 	public:
@@ -313,6 +321,7 @@ class Handle_XSControl_ConnectedShapes : public Handle_IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor XSControl;
 class XSControl {
 	public:
@@ -330,6 +339,7 @@ class XSControl {
 	if (__env){printf("## Call custom destructor for instance of XSControl\n");}
 	}
 };
+
 
 %nodefaultctor XSControl_SignTransferStatus;
 class XSControl_SignTransferStatus : public IFSelect_Signature {
@@ -369,6 +379,7 @@ class XSControl_SignTransferStatus : public IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor XSControl_ConnectedShapes;
 class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 	public:
@@ -404,6 +415,7 @@ class XSControl_ConnectedShapes : public IFSelect_SelectExplore {
 	if (__env){printf("## Call custom destructor for instance of XSControl_ConnectedShapes\n");}
 	}
 };
+
 
 %nodefaultctor XSControl_Utils;
 class XSControl_Utils {
@@ -503,6 +515,7 @@ class XSControl_Utils {
 	}
 };
 
+
 %nodefaultctor XSControl_FuncShape;
 class XSControl_FuncShape {
 	public:
@@ -522,6 +535,7 @@ class XSControl_FuncShape {
 	if (__env){printf("## Call custom destructor for instance of XSControl_FuncShape\n");}
 	}
 };
+
 
 %nodefaultctor XSControl_Controller;
 class XSControl_Controller : public MMgt_TShared {
@@ -625,6 +639,7 @@ class XSControl_Controller : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor XSControl_Reader;
 class XSControl_Reader {
 	public:
@@ -687,6 +702,7 @@ class XSControl_Reader {
 	}
 };
 
+
 %nodefaultctor XSControl_TransferWriter;
 class XSControl_TransferWriter : public MMgt_TShared {
 	public:
@@ -743,6 +759,7 @@ class XSControl_TransferWriter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor XSControl_Writer;
 class XSControl_Writer {
 	public:
@@ -774,6 +791,7 @@ class XSControl_Writer {
 	if (__env){printf("## Call custom destructor for instance of XSControl_Writer\n");}
 	}
 };
+
 
 %nodefaultctor XSControl_WorkSession;
 class XSControl_WorkSession : public IFSelect_WorkSession {
@@ -859,6 +877,7 @@ class XSControl_WorkSession : public IFSelect_WorkSession {
 	}
 };
 
+
 %nodefaultctor XSControl_Functions;
 class XSControl_Functions {
 	public:
@@ -874,6 +893,7 @@ class XSControl_Functions {
 	if (__env){printf("## Call custom destructor for instance of XSControl_Functions\n");}
 	}
 };
+
 
 %nodefaultctor XSControl_TransferReader;
 class XSControl_TransferReader : public MMgt_TShared {
@@ -992,6 +1012,7 @@ class XSControl_TransferReader : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of XSControl_TransferReader\n");}
 	}
 };
+
 
 %nodefaultctor XSControl_SelectForTransfer;
 class XSControl_SelectForTransfer : public IFSelect_SelectExtract {

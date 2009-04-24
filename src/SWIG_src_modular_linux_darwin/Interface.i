@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -172,6 +173,7 @@ class Handle_Interface_EntityCluster : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_ReportEntity;
 class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
 	public:
@@ -196,6 +198,7 @@ class Handle_Interface_ReportEntity : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ReportEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_GlobalNodeOfReaderLib;
 class Handle_Interface_GlobalNodeOfReaderLib : public Handle_Standard_Transient {
@@ -222,6 +225,7 @@ class Handle_Interface_GlobalNodeOfReaderLib : public Handle_Standard_Transient 
 	}
 };
 
+
 %nodefaultctor Handle_Interface_ParamSet;
 class Handle_Interface_ParamSet : public Handle_MMgt_TShared {
 	public:
@@ -246,6 +250,7 @@ class Handle_Interface_ParamSet : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_ParamSet\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_ParamList;
 class Handle_Interface_ParamList : public Handle_MMgt_TShared {
@@ -272,6 +277,7 @@ class Handle_Interface_ParamList : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient;
 class Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient : public Handle_TCollection_MapNode {
 	public:
@@ -296,6 +302,7 @@ class Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_InterfaceError;
 class Handle_Interface_InterfaceError : public Handle_Standard_Failure {
@@ -322,6 +329,7 @@ class Handle_Interface_InterfaceError : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_CheckFailure;
 class Handle_Interface_CheckFailure : public Handle_Interface_InterfaceError {
 	public:
@@ -346,6 +354,7 @@ class Handle_Interface_CheckFailure : public Handle_Interface_InterfaceError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CheckFailure\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_Check;
 class Handle_Interface_Check : public Handle_MMgt_TShared {
@@ -372,6 +381,7 @@ class Handle_Interface_Check : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_SignType;
 class Handle_Interface_SignType : public Handle_MoniTool_SignText {
 	public:
@@ -396,6 +406,7 @@ class Handle_Interface_SignType : public Handle_MoniTool_SignText {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_SignType\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_CopyControl;
 class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
@@ -422,6 +433,7 @@ class Handle_Interface_CopyControl : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_GeneralModule;
 class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
 	public:
@@ -446,6 +458,7 @@ class Handle_Interface_GeneralModule : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GeneralModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
 class Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public Handle_TCollection_MapNode {
@@ -472,6 +485,7 @@ class Handle_Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public Handle_T
 	}
 };
 
+
 %nodefaultctor Handle_Interface_NodeOfReaderLib;
 class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
 	public:
@@ -496,6 +510,7 @@ class Handle_Interface_NodeOfReaderLib : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_NodeOfReaderLib\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_TypedValue;
 class Handle_Interface_TypedValue : public Handle_MoniTool_TypedValue {
@@ -522,6 +537,7 @@ class Handle_Interface_TypedValue : public Handle_MoniTool_TypedValue {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_CopyMap;
 class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
 	public:
@@ -546,6 +562,7 @@ class Handle_Interface_CopyMap : public Handle_Interface_CopyControl {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_CopyMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_ReaderModule;
 class Handle_Interface_ReaderModule : public Handle_MMgt_TShared {
@@ -572,6 +589,7 @@ class Handle_Interface_ReaderModule : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_GTool;
 class Handle_Interface_GTool : public Handle_MMgt_TShared {
 	public:
@@ -596,6 +614,7 @@ class Handle_Interface_GTool : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GTool\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_InterfaceMismatch;
 class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceError {
@@ -622,6 +641,7 @@ class Handle_Interface_InterfaceMismatch : public Handle_Interface_InterfaceErro
 	}
 };
 
+
 %nodefaultctor Handle_Interface_InterfaceModel;
 class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
 	public:
@@ -646,6 +666,7 @@ class Handle_Interface_InterfaceModel : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_InterfaceModel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_SequenceNodeOfSequenceOfCheck;
 class Handle_Interface_SequenceNodeOfSequenceOfCheck : public Handle_TCollection_SeqNode {
@@ -672,6 +693,7 @@ class Handle_Interface_SequenceNodeOfSequenceOfCheck : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_Interface_HSequenceOfCheck;
 class Handle_Interface_HSequenceOfCheck : public Handle_MMgt_TShared {
 	public:
@@ -696,6 +718,7 @@ class Handle_Interface_HSequenceOfCheck : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HSequenceOfCheck\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_NodeOfGeneralLib;
 class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
@@ -722,6 +745,7 @@ class Handle_Interface_NodeOfGeneralLib : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_FileReaderData;
 class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
 	public:
@@ -746,6 +770,7 @@ class Handle_Interface_FileReaderData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_FileReaderData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_IntVal;
 class Handle_Interface_IntVal : public Handle_MMgt_TShared {
@@ -772,6 +797,7 @@ class Handle_Interface_IntVal : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_HArray1OfHAsciiString;
 class Handle_Interface_HArray1OfHAsciiString : public Handle_MMgt_TShared {
 	public:
@@ -796,6 +822,7 @@ class Handle_Interface_HArray1OfHAsciiString : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_HArray1OfHAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_Static;
 class Handle_Interface_Static : public Handle_Interface_TypedValue {
@@ -822,6 +849,7 @@ class Handle_Interface_Static : public Handle_Interface_TypedValue {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_GlobalNodeOfGeneralLib;
 class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient {
 	public:
@@ -846,6 +874,7 @@ class Handle_Interface_GlobalNodeOfGeneralLib : public Handle_Standard_Transient
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_GlobalNodeOfGeneralLib\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_SignLabel;
 class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
@@ -872,6 +901,7 @@ class Handle_Interface_SignLabel : public Handle_MoniTool_SignText {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_UndefinedContent;
 class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
 	public:
@@ -896,6 +926,7 @@ class Handle_Interface_UndefinedContent : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_UndefinedContent\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Interface_HGraph;
 class Handle_Interface_HGraph : public Handle_MMgt_TShared {
@@ -922,6 +953,7 @@ class Handle_Interface_HGraph : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_Protocol;
 class Handle_Interface_Protocol : public Handle_MMgt_TShared {
 	public:
@@ -947,6 +979,7 @@ class Handle_Interface_Protocol : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Interface_DataMapNodeOfDataMapOfTransientInteger;
 class Handle_Interface_DataMapNodeOfDataMapOfTransientInteger : public Handle_TCollection_MapNode {
 	public:
@@ -971,6 +1004,7 @@ class Handle_Interface_DataMapNodeOfDataMapOfTransientInteger : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
 	}
 };
+
 
 %nodefaultctor Interface_IndexedMapOfAsciiString;
 class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
@@ -1006,6 +1040,7 @@ class Interface_IndexedMapOfAsciiString : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor Interface_GlobalNodeOfReaderLib;
 class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 	public:
@@ -1039,6 +1074,7 @@ class Interface_GlobalNodeOfReaderLib : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Interface_GlobalNodeOfReaderLib\n");}
 	}
 };
+
 
 %nodefaultctor Interface_ReaderLib;
 class Interface_ReaderLib {
@@ -1076,6 +1112,7 @@ class Interface_ReaderLib {
 	}
 };
 
+
 %nodefaultctor Interface_DataMapOfIntegerTransient;
 class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 	public:
@@ -1109,6 +1146,7 @@ class Interface_DataMapOfIntegerTransient : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfIntegerTransient\n");}
 	}
 };
+
 
 %nodefaultctor Interface_GeneralModule;
 class Interface_GeneralModule : public MMgt_TShared {
@@ -1164,6 +1202,7 @@ class Interface_GeneralModule : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_CopyControl;
 class Interface_CopyControl : public MMgt_TShared {
 	public:
@@ -1193,6 +1232,7 @@ class Interface_CopyControl : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Interface_CopyControl\n");}
 	}
 };
+
 
 %nodefaultctor Interface_FileReaderData;
 class Interface_FileReaderData : public MMgt_TShared {
@@ -1268,6 +1308,7 @@ class Interface_FileReaderData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_DataMapIteratorOfDataMapOfIntegerTransient;
 class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_BasicMapIterator {
 	public:
@@ -1289,6 +1330,7 @@ class Interface_DataMapIteratorOfDataMapOfIntegerTransient : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfIntegerTransient\n");}
 	}
 };
+
 
 %nodefaultctor Interface_GlobalNodeOfGeneralLib;
 class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
@@ -1324,6 +1366,7 @@ class Interface_GlobalNodeOfGeneralLib : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Interface_ShareFlags;
 class Interface_ShareFlags {
 	public:
@@ -1356,6 +1399,7 @@ class Interface_ShareFlags {
 	}
 };
 
+
 %nodefaultctor Interface_ReaderModule;
 class Interface_ReaderModule : public MMgt_TShared {
 	public:
@@ -1386,6 +1430,7 @@ class Interface_ReaderModule : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_DataMapNodeOfDataMapOfTransientInteger;
 class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapNode {
 	public:
@@ -1415,6 +1460,7 @@ class Interface_DataMapNodeOfDataMapOfTransientInteger : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfTransientInteger\n");}
 	}
 };
+
 
 %nodefaultctor Interface_IndexedMapNodeOfIndexedMapOfAsciiString;
 class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_MapNode {
@@ -1448,6 +1494,7 @@ class Interface_IndexedMapNodeOfIndexedMapOfAsciiString : public TCollection_Map
 	}
 };
 
+
 %nodefaultctor Interface_DataMapNodeOfDataMapOfIntegerTransient;
 class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapNode {
 	public:
@@ -1477,6 +1524,7 @@ class Interface_DataMapNodeOfDataMapOfIntegerTransient : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Interface_DataMapNodeOfDataMapOfIntegerTransient\n");}
 	}
 };
+
 
 %nodefaultctor Interface_CopyMap;
 class Interface_CopyMap : public Interface_CopyControl {
@@ -1512,6 +1560,7 @@ class Interface_CopyMap : public Interface_CopyControl {
 	}
 };
 
+
 %nodefaultctor Interface_MapAsciiStringHasher;
 class Interface_MapAsciiStringHasher {
 	public:
@@ -1529,6 +1578,7 @@ class Interface_MapAsciiStringHasher {
 	if (__env){printf("## Call custom destructor for instance of Interface_MapAsciiStringHasher\n");}
 	}
 };
+
 
 %nodefaultctor Interface_CopyTool;
 class Interface_CopyTool {
@@ -1580,6 +1630,7 @@ class Interface_CopyTool {
 	}
 };
 
+
 %nodefaultctor Interface_Array1OfFileParameter;
 class Interface_Array1OfFileParameter {
 	public:
@@ -1620,6 +1671,7 @@ class Interface_Array1OfFileParameter {
 	}
 };
 
+
 %nodefaultctor Interface_GeneralLib;
 class Interface_GeneralLib {
 	public:
@@ -1655,6 +1707,7 @@ class Interface_GeneralLib {
 	if (__env){printf("## Call custom destructor for instance of Interface_GeneralLib\n");}
 	}
 };
+
 
 %nodefaultctor Interface_ParamList;
 class Interface_ParamList : public MMgt_TShared {
@@ -1700,6 +1753,7 @@ class Interface_ParamList : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_EntityList;
 class Interface_EntityList {
 	public:
@@ -1737,6 +1791,7 @@ class Interface_EntityList {
 	if (__env){printf("## Call custom destructor for instance of Interface_EntityList\n");}
 	}
 };
+
 
 %nodefaultctor Interface_ShareTool;
 class Interface_ShareTool {
@@ -1783,6 +1838,7 @@ class Interface_ShareTool {
 	if (__env){printf("## Call custom destructor for instance of Interface_ShareTool\n");}
 	}
 };
+
 
 %nodefaultctor Interface_HSequenceOfCheck;
 class Interface_HSequenceOfCheck : public MMgt_TShared {
@@ -1854,6 +1910,7 @@ class Interface_HSequenceOfCheck : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_TypedValue;
 class Interface_TypedValue : public MoniTool_TypedValue {
 	public:
@@ -1885,6 +1942,7 @@ class Interface_TypedValue : public MoniTool_TypedValue {
 	if (__env){printf("## Call custom destructor for instance of Interface_TypedValue\n");}
 	}
 };
+
 
 %nodefaultctor Interface_Static;
 class Interface_Static : public Interface_TypedValue {
@@ -1960,6 +2018,7 @@ class Interface_Static : public Interface_TypedValue {
 	}
 };
 
+
 %nodefaultctor Interface_FloatWriter;
 class Interface_FloatWriter {
 	public:
@@ -1992,6 +2051,7 @@ class Interface_FloatWriter {
 	}
 };
 
+
 %nodefaultctor Interface_IntVal;
 class Interface_IntVal : public MMgt_TShared {
 	public:
@@ -2021,6 +2081,7 @@ class Interface_IntVal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Interface_IntVal\n");}
 	}
 };
+
 
 %nodefaultctor Interface_NodeOfGeneralLib;
 class Interface_NodeOfGeneralLib : public MMgt_TShared {
@@ -2056,6 +2117,7 @@ class Interface_NodeOfGeneralLib : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_InterfaceError;
 class Interface_InterfaceError : public Standard_Failure {
 	public:
@@ -2090,6 +2152,7 @@ class Interface_InterfaceError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Interface_DataMapIteratorOfDataMapOfTransientInteger;
 class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_BasicMapIterator {
 	public:
@@ -2111,6 +2174,7 @@ class Interface_DataMapIteratorOfDataMapOfTransientInteger : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of Interface_DataMapIteratorOfDataMapOfTransientInteger\n");}
 	}
 };
+
 
 %nodefaultctor Interface_UndefinedContent;
 class Interface_UndefinedContent : public MMgt_TShared {
@@ -2170,6 +2234,7 @@ class Interface_UndefinedContent : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_IntList;
 class Interface_IntList {
 	public:
@@ -2220,6 +2285,7 @@ class Interface_IntList {
 	}
 };
 
+
 %nodefaultctor Interface_SequenceNodeOfSequenceOfCheck;
 class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 	public:
@@ -2247,6 +2313,7 @@ class Interface_SequenceNodeOfSequenceOfCheck : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Interface_SequenceNodeOfSequenceOfCheck\n");}
 	}
 };
+
 
 %nodefaultctor Interface_BitMap;
 class Interface_BitMap {
@@ -2299,6 +2366,7 @@ class Interface_BitMap {
 	if (__env){printf("## Call custom destructor for instance of Interface_BitMap\n");}
 	}
 };
+
 
 %nodefaultctor Interface_FileReaderTool;
 class Interface_FileReaderTool {
@@ -2356,6 +2424,7 @@ class Interface_FileReaderTool {
 	}
 };
 
+
 %nodefaultctor Interface_HArray1OfHAsciiString;
 class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 	public:
@@ -2402,6 +2471,7 @@ class Interface_HArray1OfHAsciiString : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_CheckTool;
 class Interface_CheckTool {
 	public:
@@ -2443,6 +2513,7 @@ class Interface_CheckTool {
 	if (__env){printf("## Call custom destructor for instance of Interface_CheckTool\n");}
 	}
 };
+
 
 %nodefaultctor Interface_Graph;
 class Interface_Graph {
@@ -2548,6 +2619,7 @@ class Interface_Graph {
 	}
 };
 
+
 %nodefaultctor Interface_SignType;
 class Interface_SignType : public MoniTool_SignText {
 	public:
@@ -2578,6 +2650,7 @@ class Interface_SignType : public MoniTool_SignText {
 	}
 };
 
+
 %nodefaultctor Interface_MSG;
 class Interface_MSG {
 	public:
@@ -2598,7 +2671,11 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		Standard_CString Value() const;
 		%feature("autodoc", "1");
-		Standard_Integer Read(std::istream & S);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		Standard_Integer Read(const char * file);
 		%feature("autodoc", "1");
@@ -2614,7 +2691,12 @@ class Interface_MSG {
 		%feature("autodoc", "1");
 		void SetMode(const Standard_Boolean running, const Standard_Boolean raising);
 		%feature("autodoc", "1");
-		void PrintTrace(Standard_OStream & S);
+		%extend{
+			std::string PrintTraceToString() {
+			std::stringstream s;
+			self->PrintTrace(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Real Intervalled(const Standard_Real val, const Standard_Integer order=3, const Standard_Boolean upper=0);
 		%feature("autodoc", "1");
@@ -2639,6 +2721,7 @@ class Interface_MSG {
 	if (__env){printf("## Call custom destructor for instance of Interface_MSG\n");}
 	}
 };
+
 
 %nodefaultctor Interface_ReportEntity;
 class Interface_ReportEntity : public MMgt_TShared {
@@ -2686,6 +2769,7 @@ class Interface_ReportEntity : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_SignLabel;
 class Interface_SignLabel : public MoniTool_SignText {
 	public:
@@ -2715,6 +2799,7 @@ class Interface_SignLabel : public MoniTool_SignText {
 	if (__env){printf("## Call custom destructor for instance of Interface_SignLabel\n");}
 	}
 };
+
 
 %nodefaultctor Interface_HGraph;
 class Interface_HGraph : public MMgt_TShared {
@@ -2753,6 +2838,7 @@ class Interface_HGraph : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Interface_HGraph\n");}
 	}
 };
+
 
 %nodefaultctor Interface_CheckIterator;
 class Interface_CheckIterator {
@@ -2820,6 +2906,7 @@ class Interface_CheckIterator {
 	}
 };
 
+
 %nodefaultctor Interface_Protocol;
 class Interface_Protocol : public MMgt_TShared {
 	public:
@@ -2874,6 +2961,7 @@ class Interface_Protocol : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_SequenceOfCheck;
 class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 	public:
@@ -2927,6 +3015,7 @@ class Interface_SequenceOfCheck : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Interface_SequenceOfCheck\n");}
 	}
 };
+
 
 %nodefaultctor Interface_Check;
 class Interface_Check : public MMgt_TShared {
@@ -3038,6 +3127,7 @@ class Interface_Check : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_GTool;
 class Interface_GTool : public MMgt_TShared {
 	public:
@@ -3086,6 +3176,7 @@ class Interface_GTool : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_Category;
 class Interface_Category {
 	public:
@@ -3123,6 +3214,7 @@ class Interface_Category {
 	if (__env){printf("## Call custom destructor for instance of Interface_Category\n");}
 	}
 };
+
 
 %nodefaultctor Interface_EntityIterator;
 class Interface_EntityIterator {
@@ -3166,6 +3258,7 @@ class Interface_EntityIterator {
 	}
 };
 
+
 %nodefaultctor Interface_GraphContent;
 class Interface_GraphContent : public Interface_EntityIterator {
 	public:
@@ -3195,6 +3288,7 @@ class Interface_GraphContent : public Interface_EntityIterator {
 	if (__env){printf("## Call custom destructor for instance of Interface_GraphContent\n");}
 	}
 };
+
 
 %nodefaultctor Interface_DataMapOfTransientInteger;
 class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
@@ -3229,6 +3323,7 @@ class Interface_DataMapOfTransientInteger : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Interface_DataMapOfTransientInteger\n");}
 	}
 };
+
 
 %nodefaultctor Interface_InterfaceModel;
 class Interface_InterfaceModel : public MMgt_TShared {
@@ -3374,6 +3469,7 @@ class Interface_InterfaceModel : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_CheckFailure;
 class Interface_CheckFailure : public Interface_InterfaceError {
 	public:
@@ -3407,6 +3503,7 @@ class Interface_CheckFailure : public Interface_InterfaceError {
 	if (__env){printf("## Call custom destructor for instance of Interface_CheckFailure\n");}
 	}
 };
+
 
 %nodefaultctor Interface_Array1OfHAsciiString;
 class Interface_Array1OfHAsciiString {
@@ -3448,6 +3545,7 @@ class Interface_Array1OfHAsciiString {
 	}
 };
 
+
 %nodefaultctor Interface_NodeOfReaderLib;
 class Interface_NodeOfReaderLib : public MMgt_TShared {
 	public:
@@ -3482,6 +3580,7 @@ class Interface_NodeOfReaderLib : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Interface_InterfaceMismatch;
 class Interface_InterfaceMismatch : public Interface_InterfaceError {
 	public:
@@ -3515,6 +3614,7 @@ class Interface_InterfaceMismatch : public Interface_InterfaceError {
 	if (__env){printf("## Call custom destructor for instance of Interface_InterfaceMismatch\n");}
 	}
 };
+
 
 %nodefaultctor Interface_LineBuffer;
 class Interface_LineBuffer {
@@ -3560,6 +3660,7 @@ class Interface_LineBuffer {
 	}
 };
 
+
 %nodefaultctor Interface_ParamSet;
 class Interface_ParamSet : public MMgt_TShared {
 	public:
@@ -3601,6 +3702,7 @@ class Interface_ParamSet : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Interface_ParamSet\n");}
 	}
 };
+
 
 %nodefaultctor Interface_EntityCluster;
 class Interface_EntityCluster : public MMgt_TShared {
@@ -3647,6 +3749,7 @@ class Interface_EntityCluster : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Interface_EntityCluster\n");}
 	}
 };
+
 
 %nodefaultctor Interface_FileParameter;
 class Interface_FileParameter {

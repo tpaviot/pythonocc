@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -147,6 +148,7 @@ class Handle_GccInt_Bisec : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GccInt_BLine;
 class Handle_GccInt_BLine : public Handle_GccInt_Bisec {
 	public:
@@ -171,6 +173,7 @@ class Handle_GccInt_BLine : public Handle_GccInt_Bisec {
 	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BLine\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GccInt_BParab;
 class Handle_GccInt_BParab : public Handle_GccInt_Bisec {
@@ -197,6 +200,7 @@ class Handle_GccInt_BParab : public Handle_GccInt_Bisec {
 	}
 };
 
+
 %nodefaultctor Handle_GccInt_BElips;
 class Handle_GccInt_BElips : public Handle_GccInt_Bisec {
 	public:
@@ -221,6 +225,7 @@ class Handle_GccInt_BElips : public Handle_GccInt_Bisec {
 	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BElips\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GccInt_BPoint;
 class Handle_GccInt_BPoint : public Handle_GccInt_Bisec {
@@ -247,6 +252,7 @@ class Handle_GccInt_BPoint : public Handle_GccInt_Bisec {
 	}
 };
 
+
 %nodefaultctor Handle_GccInt_BCirc;
 class Handle_GccInt_BCirc : public Handle_GccInt_Bisec {
 	public:
@@ -272,6 +278,7 @@ class Handle_GccInt_BCirc : public Handle_GccInt_Bisec {
 	}
 };
 
+
 %nodefaultctor Handle_GccInt_BHyper;
 class Handle_GccInt_BHyper : public Handle_GccInt_Bisec {
 	public:
@@ -296,6 +303,7 @@ class Handle_GccInt_BHyper : public Handle_GccInt_Bisec {
 	if (__env){printf("## Call custom destructor for instance of Handle_GccInt_BHyper\n");}
 	}
 };
+
 
 %nodefaultctor GccInt_Bisec;
 class GccInt_Bisec : public MMgt_TShared {
@@ -335,6 +343,7 @@ class GccInt_Bisec : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GccInt_BParab;
 class GccInt_BParab : public GccInt_Bisec {
 	public:
@@ -358,6 +367,7 @@ class GccInt_BParab : public GccInt_Bisec {
 	if (__env){printf("## Call custom destructor for instance of GccInt_BParab\n");}
 	}
 };
+
 
 %nodefaultctor GccInt_BCirc;
 class GccInt_BCirc : public GccInt_Bisec {
@@ -389,6 +399,7 @@ class GccInt_BCirc : public GccInt_Bisec {
 	}
 };
 
+
 %nodefaultctor GccInt_BElips;
 class GccInt_BElips : public GccInt_Bisec {
 	public:
@@ -418,6 +429,7 @@ class GccInt_BElips : public GccInt_Bisec {
 	if (__env){printf("## Call custom destructor for instance of GccInt_BElips\n");}
 	}
 };
+
 
 %nodefaultctor GccInt_BPoint;
 class GccInt_BPoint : public GccInt_Bisec {
@@ -449,6 +461,7 @@ class GccInt_BPoint : public GccInt_Bisec {
 	}
 };
 
+
 %nodefaultctor GccInt_BHyper;
 class GccInt_BHyper : public GccInt_Bisec {
 	public:
@@ -478,6 +491,7 @@ class GccInt_BHyper : public GccInt_Bisec {
 	if (__env){printf("## Call custom destructor for instance of GccInt_BHyper\n");}
 	}
 };
+
 
 %nodefaultctor GccInt_BLine;
 class GccInt_BLine : public GccInt_Bisec {

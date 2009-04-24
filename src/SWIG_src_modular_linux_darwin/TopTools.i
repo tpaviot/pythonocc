@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public Handle_T
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape;
 class Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfIntegerShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape;
 class Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public Handle_T
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_HSequenceOfShape;
 class Handle_TopTools_HSequenceOfShape : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_TopTools_HSequenceOfShape : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_HSequenceOfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape;
 class Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape : public Handle_TCollection_MapNode {
@@ -238,6 +243,7 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfShape : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_HArray1OfListOfShape;
 class Handle_TopTools_HArray1OfListOfShape : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_TopTools_HArray1OfListOfShape : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_HArray1OfListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeShape;
 class Handle_TopTools_DataMapNodeOfDataMapOfShapeShape : public Handle_TCollection_MapNode {
@@ -288,6 +295,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeShape : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape;
 class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : pub
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape;
 class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public Handle_TCollection_MapNode {
@@ -338,6 +347,7 @@ class Handle_TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public Ha
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_HArray1OfShape;
 class Handle_TopTools_HArray1OfShape : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_TopTools_HArray1OfShape : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_HArray1OfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopTools_ListNodeOfListOfShape;
 class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
@@ -388,6 +399,7 @@ class Handle_TopTools_ListNodeOfListOfShape : public Handle_TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger;
 class Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollection_MapNode {
 	public:
@@ -412,6 +424,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopTools_HArray2OfShape;
 class Handle_TopTools_HArray2OfShape : public Handle_MMgt_TShared {
@@ -438,6 +451,7 @@ class Handle_TopTools_HArray2OfShape : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger;
 class Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public Handle_TCollection_MapNode {
 	public:
@@ -462,6 +476,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public Handle
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopTools_StdMapNodeOfMapOfShape;
 class Handle_TopTools_StdMapNodeOfMapOfShape : public Handle_TCollection_MapNode {
@@ -488,6 +503,7 @@ class Handle_TopTools_StdMapNodeOfMapOfShape : public Handle_TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape;
 class Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public Handle_TCollection_MapNode {
 	public:
@@ -512,6 +528,7 @@ class Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopTools_StdMapNodeOfMapOfOrientedShape;
 class Handle_TopTools_StdMapNodeOfMapOfOrientedShape : public Handle_TCollection_MapNode {
@@ -538,6 +555,7 @@ class Handle_TopTools_StdMapNodeOfMapOfOrientedShape : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_SequenceNodeOfSequenceOfShape;
 class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_SeqNode {
 	public:
@@ -563,6 +581,7 @@ class Handle_TopTools_SequenceNodeOfSequenceOfShape : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape;
 class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -587,6 +606,7 @@ class Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_TopTools_DataMapNodeOfDataMapOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_ListOfShape;
 class TopTools_ListOfShape {
@@ -638,6 +658,7 @@ class TopTools_ListOfShape {
 	}
 };
 
+
 %nodefaultctor TopTools_LocationSet;
 class TopTools_LocationSet {
 	public:
@@ -652,11 +673,25 @@ class TopTools_LocationSet {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const TopLoc_Location &L) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void SetProgress(const Handle_Message_ProgressIndicator &PR);
 		%feature("autodoc", "1");
@@ -669,6 +704,7 @@ class TopTools_LocationSet {
 	if (__env){printf("## Call custom destructor for instance of TopTools_LocationSet\n");}
 	}
 };
+
 
 %nodefaultctor TopTools;
 class TopTools {
@@ -687,6 +723,7 @@ class TopTools {
 	if (__env){printf("## Call custom destructor for instance of TopTools\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfIntegerListOfShape;
 class TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public TCollection_MapNode {
@@ -717,6 +754,7 @@ class TopTools_DataMapNodeOfDataMapOfIntegerListOfShape : public TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfIntegerListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_IndexedDataMapOfShapeShape;
 class TopTools_IndexedDataMapOfShapeShape : public TCollection_BasicMap {
@@ -762,6 +800,7 @@ class TopTools_IndexedDataMapOfShapeShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfShape;
 class TopTools_DataMapIteratorOfDataMapOfShapeListOfShape : public TCollection_BasicMapIterator {
 	public:
@@ -783,6 +822,7 @@ class TopTools_DataMapIteratorOfDataMapOfShapeListOfShape : public TCollection_B
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_Array1OfListOfShape;
 class TopTools_Array1OfListOfShape {
@@ -824,6 +864,7 @@ class TopTools_Array1OfListOfShape {
 	}
 };
 
+
 %nodefaultctor TopTools_MapOfOrientedShape;
 class TopTools_MapOfOrientedShape : public TCollection_BasicMap {
 	public:
@@ -849,6 +890,7 @@ class TopTools_MapOfOrientedShape : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TopTools_MapOfOrientedShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape;
 class TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public TCollection_MapNode {
@@ -882,6 +924,7 @@ class TopTools_IndexedMapNodeOfIndexedMapOfOrientedShape : public TCollection_Ma
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeShape;
 class TopTools_DataMapIteratorOfDataMapOfShapeShape : public TCollection_BasicMapIterator {
 	public:
@@ -903,6 +946,7 @@ class TopTools_DataMapIteratorOfDataMapOfShapeShape : public TCollection_BasicMa
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_DataMapOfShapeListOfInteger;
 class TopTools_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
@@ -937,6 +981,7 @@ class TopTools_DataMapOfShapeListOfInteger : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapOfShapeListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_Array2OfShape;
 class TopTools_Array2OfShape {
@@ -982,6 +1027,7 @@ class TopTools_Array2OfShape {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeInteger;
 class TopTools_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 	public:
@@ -1012,6 +1058,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeListOfInteger;
 class TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_MapNode {
 	public:
@@ -1041,6 +1088,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfInteger : public TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_HArray2OfShape;
 class TopTools_HArray2OfShape : public MMgt_TShared {
@@ -1094,6 +1142,7 @@ class TopTools_HArray2OfShape : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopTools_ShapeMapHasher;
 class TopTools_ShapeMapHasher {
 	public:
@@ -1111,6 +1160,7 @@ class TopTools_ShapeMapHasher {
 	if (__env){printf("## Call custom destructor for instance of TopTools_ShapeMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_DataMapOfShapeShape;
 class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
@@ -1146,6 +1196,7 @@ class TopTools_DataMapOfShapeShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_ListIteratorOfListOfShape;
 class TopTools_ListIteratorOfListOfShape {
 	public:
@@ -1169,6 +1220,7 @@ class TopTools_ListIteratorOfListOfShape {
 	if (__env){printf("## Call custom destructor for instance of TopTools_ListIteratorOfListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_IndexedMapOfShape;
 class TopTools_IndexedMapOfShape : public TCollection_BasicMap {
@@ -1204,6 +1256,7 @@ class TopTools_IndexedMapOfShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapOfShapeListOfShape;
 class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
 	public:
@@ -1238,6 +1291,7 @@ class TopTools_DataMapOfShapeListOfShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_ShapeSet;
 class TopTools_ShapeSet {
 	public:
@@ -1262,15 +1316,34 @@ class TopTools_ShapeSet {
 		%feature("autodoc", "1");
 		TopTools_LocationSet & ChangeLocations();
 		%feature("autodoc", "1");
-		Standard_OStream & DumpExtent(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpExtentToString() {
+			std::stringstream s;
+			self->DumpExtent(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void DumpExtent(TCollection_AsciiString & S) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void Write(Standard_OStream & OS);
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void Dump(const TopoDS_Shape &S, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
@@ -1280,11 +1353,25 @@ class TopTools_ShapeSet {
 		%feature("autodoc", "1");
 		virtual		void AddGeometry(const TopoDS_Shape &S);
 		%feature("autodoc", "1");
-		virtual		void DumpGeometry(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpGeometryToString() {
+			std::stringstream s;
+			self->DumpGeometry(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void WriteGeometry(Standard_OStream & OS);
+		%extend{
+			std::string WriteGeometryToString() {
+			std::stringstream s;
+			self->WriteGeometry(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		virtual		void ReadGeometry(std::istream & IS);
+		%extend{
+			void ReadGeometryFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadGeometry(s);}
+		};
 		%feature("autodoc", "1");
 		virtual		void DumpGeometry(const TopoDS_Shape &S, Standard_OStream & OS) const;
 		%feature("autodoc", "1");
@@ -1309,6 +1396,7 @@ class TopTools_ShapeSet {
 	if (__env){printf("## Call custom destructor for instance of TopTools_ShapeSet\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_IndexedMapNodeOfIndexedMapOfShape;
 class TopTools_IndexedMapNodeOfIndexedMapOfShape : public TCollection_MapNode {
@@ -1341,6 +1429,7 @@ class TopTools_IndexedMapNodeOfIndexedMapOfShape : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedMapNodeOfIndexedMapOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape;
 class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public TCollection_MapNode {
@@ -1375,6 +1464,7 @@ class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape : public TCollecti
 	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_Array1OfShape;
 class TopTools_Array1OfShape {
@@ -1415,6 +1505,7 @@ class TopTools_Array1OfShape {
 	if (__env){printf("## Call custom destructor for instance of TopTools_Array1OfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_HArray1OfListOfShape;
 class TopTools_HArray1OfListOfShape : public MMgt_TShared {
@@ -1462,6 +1553,7 @@ class TopTools_HArray1OfListOfShape : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeShape;
 class TopTools_DataMapNodeOfDataMapOfShapeShape : public TCollection_MapNode {
 	public:
@@ -1491,6 +1583,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeShape : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfShapeShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_IndexedDataMapOfShapeListOfShape;
 class TopTools_IndexedDataMapOfShapeListOfShape : public TCollection_BasicMap {
@@ -1536,6 +1629,7 @@ class TopTools_IndexedDataMapOfShapeListOfShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfShapeListOfShape;
 class TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public TCollection_MapNode {
 	public:
@@ -1566,6 +1660,7 @@ class TopTools_DataMapNodeOfDataMapOfShapeListOfShape : public TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor TopTools_MapIteratorOfMapOfOrientedShape;
 class TopTools_MapIteratorOfMapOfOrientedShape : public TCollection_BasicMapIterator {
 	public:
@@ -1585,6 +1680,7 @@ class TopTools_MapIteratorOfMapOfOrientedShape : public TCollection_BasicMapIter
 	if (__env){printf("## Call custom destructor for instance of TopTools_MapIteratorOfMapOfOrientedShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfIntegerShape;
 class TopTools_DataMapNodeOfDataMapOfIntegerShape : public TCollection_MapNode {
@@ -1616,6 +1712,7 @@ class TopTools_DataMapNodeOfDataMapOfIntegerShape : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TopTools_OrientedShapeMapHasher;
 class TopTools_OrientedShapeMapHasher {
 	public:
@@ -1633,6 +1730,7 @@ class TopTools_OrientedShapeMapHasher {
 	if (__env){printf("## Call custom destructor for instance of TopTools_OrientedShapeMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfIntegerShape;
 class TopTools_DataMapIteratorOfDataMapOfIntegerShape : public TCollection_BasicMapIterator {
@@ -1656,6 +1754,7 @@ class TopTools_DataMapIteratorOfDataMapOfIntegerShape : public TCollection_Basic
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger;
 class TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -1677,6 +1776,7 @@ class TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger : public TCollection
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeListOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_DataMapOfShapeInteger;
 class TopTools_DataMapOfShapeInteger : public TCollection_BasicMap {
@@ -1712,6 +1812,7 @@ class TopTools_DataMapOfShapeInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapOfIntegerListOfShape;
 class TopTools_DataMapOfIntegerListOfShape : public TCollection_BasicMap {
 	public:
@@ -1746,6 +1847,7 @@ class TopTools_DataMapOfIntegerListOfShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfShapeInteger;
 class TopTools_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
 	public:
@@ -1767,6 +1869,7 @@ class TopTools_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Basic
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_HSequenceOfShape;
 class TopTools_HSequenceOfShape : public MMgt_TShared {
@@ -1838,6 +1941,7 @@ class TopTools_HSequenceOfShape : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape;
 class TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape : public TCollection_BasicMapIterator {
 	public:
@@ -1859,6 +1963,7 @@ class TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape : public TCollection
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfIntegerListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_StdMapNodeOfMapOfOrientedShape;
 class TopTools_StdMapNodeOfMapOfOrientedShape : public TCollection_MapNode {
@@ -1888,6 +1993,7 @@ class TopTools_StdMapNodeOfMapOfOrientedShape : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TopTools_ListNodeOfListOfShape;
 class TopTools_ListNodeOfListOfShape : public TCollection_MapNode {
 	public:
@@ -1915,6 +2021,7 @@ class TopTools_ListNodeOfListOfShape : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopTools_ListNodeOfListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_DataMapOfOrientedShapeInteger;
 class TopTools_DataMapOfOrientedShapeInteger : public TCollection_BasicMap {
@@ -1950,6 +2057,7 @@ class TopTools_DataMapOfOrientedShapeInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger;
 class TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger : public TCollection_BasicMapIterator {
 	public:
@@ -1971,6 +2079,7 @@ class TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger : public TCollecti
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapIteratorOfDataMapOfOrientedShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_HArray1OfShape;
 class TopTools_HArray1OfShape : public MMgt_TShared {
@@ -2018,6 +2127,7 @@ class TopTools_HArray1OfShape : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger;
 class TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public TCollection_MapNode {
 	public:
@@ -2047,6 +2157,7 @@ class TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger : public TCollection_M
 	if (__env){printf("## Call custom destructor for instance of TopTools_DataMapNodeOfDataMapOfOrientedShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape;
 class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public TCollection_MapNode {
@@ -2082,6 +2193,7 @@ class TopTools_IndexedDataMapNodeOfIndexedDataMapOfShapeListOfShape : public TCo
 	}
 };
 
+
 %nodefaultctor TopTools_IndexedMapOfOrientedShape;
 class TopTools_IndexedMapOfOrientedShape : public TCollection_BasicMap {
 	public:
@@ -2115,6 +2227,7 @@ class TopTools_IndexedMapOfOrientedShape : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TopTools_IndexedMapOfOrientedShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_DataMapOfIntegerShape;
 class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
@@ -2150,6 +2263,7 @@ class TopTools_DataMapOfIntegerShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopTools_MapIteratorOfMapOfShape;
 class TopTools_MapIteratorOfMapOfShape : public TCollection_BasicMapIterator {
 	public:
@@ -2169,6 +2283,7 @@ class TopTools_MapIteratorOfMapOfShape : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of TopTools_MapIteratorOfMapOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_SequenceNodeOfSequenceOfShape;
 class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
@@ -2197,6 +2312,7 @@ class TopTools_SequenceNodeOfSequenceOfShape : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TopTools_SequenceNodeOfSequenceOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_SequenceOfShape;
 class TopTools_SequenceOfShape : public TCollection_BaseSequence {
@@ -2252,6 +2368,7 @@ class TopTools_SequenceOfShape : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TopTools_MapOfShape;
 class TopTools_MapOfShape : public TCollection_BasicMap {
 	public:
@@ -2277,6 +2394,7 @@ class TopTools_MapOfShape : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TopTools_MapOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopTools_StdMapNodeOfMapOfShape;
 class TopTools_StdMapNodeOfMapOfShape : public TCollection_MapNode {

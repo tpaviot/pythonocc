@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Expr_GeneralExpression : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_UnaryExpression;
 class Handle_Expr_UnaryExpression : public Handle_Expr_GeneralExpression {
 	public:
@@ -162,6 +164,7 @@ class Handle_Expr_UnaryExpression : public Handle_Expr_GeneralExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_UnaryExpression\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_SquareRoot;
 class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
@@ -188,6 +191,7 @@ class Handle_Expr_SquareRoot : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Tangent;
 class Handle_Expr_Tangent : public Handle_Expr_UnaryExpression {
 	public:
@@ -212,6 +216,7 @@ class Handle_Expr_Tangent : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Tangent\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_LogOfe;
 class Handle_Expr_LogOfe : public Handle_Expr_UnaryExpression {
@@ -238,6 +243,7 @@ class Handle_Expr_LogOfe : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Exponential;
 class Handle_Expr_Exponential : public Handle_Expr_UnaryExpression {
 	public:
@@ -262,6 +268,7 @@ class Handle_Expr_Exponential : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Exponential\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_BinaryExpression;
 class Handle_Expr_BinaryExpression : public Handle_Expr_GeneralExpression {
@@ -288,6 +295,7 @@ class Handle_Expr_BinaryExpression : public Handle_Expr_GeneralExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_UnaryMinus;
 class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
 	public:
@@ -312,6 +320,7 @@ class Handle_Expr_UnaryMinus : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_UnaryMinus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_Sign;
 class Handle_Expr_Sign : public Handle_Expr_UnaryExpression {
@@ -338,6 +347,7 @@ class Handle_Expr_Sign : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_ExprFailure;
 class Handle_Expr_ExprFailure : public Handle_Standard_Failure {
 	public:
@@ -362,6 +372,7 @@ class Handle_Expr_ExprFailure : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ExprFailure\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_InvalidAssignment;
 class Handle_Expr_InvalidAssignment : public Handle_Expr_ExprFailure {
@@ -388,6 +399,7 @@ class Handle_Expr_InvalidAssignment : public Handle_Expr_ExprFailure {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_ArcCosine;
 class Handle_Expr_ArcCosine : public Handle_Expr_UnaryExpression {
 	public:
@@ -412,6 +424,7 @@ class Handle_Expr_ArcCosine : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArcCosine\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown;
 class Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown : public Handle_TCollection_MapNode {
@@ -438,6 +451,7 @@ class Handle_Expr_IndexedMapNodeOfMapOfNamedUnknown : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_Expr_InvalidOperand;
 class Handle_Expr_InvalidOperand : public Handle_Expr_ExprFailure {
 	public:
@@ -462,6 +476,7 @@ class Handle_Expr_InvalidOperand : public Handle_Expr_ExprFailure {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_InvalidOperand\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_BinaryFunction;
 class Handle_Expr_BinaryFunction : public Handle_Expr_BinaryExpression {
@@ -488,6 +503,7 @@ class Handle_Expr_BinaryFunction : public Handle_Expr_BinaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_GeneralRelation;
 class Handle_Expr_GeneralRelation : public Handle_MMgt_TShared {
 	public:
@@ -512,6 +528,7 @@ class Handle_Expr_GeneralRelation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GeneralRelation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_SingleRelation;
 class Handle_Expr_SingleRelation : public Handle_Expr_GeneralRelation {
@@ -538,6 +555,7 @@ class Handle_Expr_SingleRelation : public Handle_Expr_GeneralRelation {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Different;
 class Handle_Expr_Different : public Handle_Expr_SingleRelation {
 	public:
@@ -562,6 +580,7 @@ class Handle_Expr_Different : public Handle_Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Different\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_NotEvaluable;
 class Handle_Expr_NotEvaluable : public Handle_Expr_ExprFailure {
@@ -588,6 +607,7 @@ class Handle_Expr_NotEvaluable : public Handle_Expr_ExprFailure {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Division;
 class Handle_Expr_Division : public Handle_Expr_BinaryExpression {
 	public:
@@ -612,6 +632,7 @@ class Handle_Expr_Division : public Handle_Expr_BinaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Division\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_ArgSinh;
 class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
@@ -638,6 +659,7 @@ class Handle_Expr_ArgSinh : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_ArcSine;
 class Handle_Expr_ArcSine : public Handle_Expr_UnaryExpression {
 	public:
@@ -662,6 +684,7 @@ class Handle_Expr_ArcSine : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArcSine\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_PolyExpression;
 class Handle_Expr_PolyExpression : public Handle_Expr_GeneralExpression {
@@ -688,6 +711,7 @@ class Handle_Expr_PolyExpression : public Handle_Expr_GeneralExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_LessThan;
 class Handle_Expr_LessThan : public Handle_Expr_SingleRelation {
 	public:
@@ -712,6 +736,7 @@ class Handle_Expr_LessThan : public Handle_Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_LessThan\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_Absolute;
 class Handle_Expr_Absolute : public Handle_Expr_UnaryExpression {
@@ -738,6 +763,7 @@ class Handle_Expr_Absolute : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_NamedExpression;
 class Handle_Expr_NamedExpression : public Handle_Expr_GeneralExpression {
 	public:
@@ -762,6 +788,7 @@ class Handle_Expr_NamedExpression : public Handle_Expr_GeneralExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NamedExpression\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_NamedConstant;
 class Handle_Expr_NamedConstant : public Handle_Expr_NamedExpression {
@@ -788,6 +815,7 @@ class Handle_Expr_NamedConstant : public Handle_Expr_NamedExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_NotAssigned;
 class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
 	public:
@@ -812,6 +840,7 @@ class Handle_Expr_NotAssigned : public Handle_Expr_ExprFailure {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NotAssigned\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_NamedUnknown;
 class Handle_Expr_NamedUnknown : public Handle_Expr_NamedExpression {
@@ -838,6 +867,7 @@ class Handle_Expr_NamedUnknown : public Handle_Expr_NamedExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation;
 class Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation : public Handle_TCollection_SeqNode {
 	public:
@@ -862,6 +892,7 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_SequenceNodeOfSequenceOfGeneralRelation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_Sum;
 class Handle_Expr_Sum : public Handle_Expr_PolyExpression {
@@ -888,6 +919,7 @@ class Handle_Expr_Sum : public Handle_Expr_PolyExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_NumericValue;
 class Handle_Expr_NumericValue : public Handle_Expr_GeneralExpression {
 	public:
@@ -912,6 +944,7 @@ class Handle_Expr_NumericValue : public Handle_Expr_GeneralExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NumericValue\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_InvalidFunction;
 class Handle_Expr_InvalidFunction : public Handle_Expr_ExprFailure {
@@ -938,6 +971,7 @@ class Handle_Expr_InvalidFunction : public Handle_Expr_ExprFailure {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_GreaterThanOrEqual;
 class Handle_Expr_GreaterThanOrEqual : public Handle_Expr_SingleRelation {
 	public:
@@ -962,6 +996,7 @@ class Handle_Expr_GreaterThanOrEqual : public Handle_Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GreaterThanOrEqual\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_Sinh;
 class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
@@ -988,6 +1023,7 @@ class Handle_Expr_Sinh : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Equal;
 class Handle_Expr_Equal : public Handle_Expr_SingleRelation {
 	public:
@@ -1012,6 +1048,7 @@ class Handle_Expr_Equal : public Handle_Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Equal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_Sine;
 class Handle_Expr_Sine : public Handle_Expr_UnaryExpression {
@@ -1038,6 +1075,7 @@ class Handle_Expr_Sine : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_LogOf10;
 class Handle_Expr_LogOf10 : public Handle_Expr_UnaryExpression {
 	public:
@@ -1062,6 +1100,7 @@ class Handle_Expr_LogOf10 : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_LogOf10\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_GreaterThan;
 class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
@@ -1088,6 +1127,7 @@ class Handle_Expr_GreaterThan : public Handle_Expr_SingleRelation {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_LessThanOrEqual;
 class Handle_Expr_LessThanOrEqual : public Handle_Expr_SingleRelation {
 	public:
@@ -1112,6 +1152,7 @@ class Handle_Expr_LessThanOrEqual : public Handle_Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_LessThanOrEqual\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression;
 class Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression : public Handle_TCollection_SeqNode {
@@ -1138,6 +1179,7 @@ class Handle_Expr_SequenceNodeOfSequenceOfGeneralExpression : public Handle_TCol
 	}
 };
 
+
 %nodefaultctor Handle_Expr_ArgCosh;
 class Handle_Expr_ArgCosh : public Handle_Expr_UnaryExpression {
 	public:
@@ -1162,6 +1204,7 @@ class Handle_Expr_ArgCosh : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_ArgCosh\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_PolyFunction;
 class Handle_Expr_PolyFunction : public Handle_Expr_PolyExpression {
@@ -1188,6 +1231,7 @@ class Handle_Expr_PolyFunction : public Handle_Expr_PolyExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Cosh;
 class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
 	public:
@@ -1212,6 +1256,7 @@ class Handle_Expr_Cosh : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Cosh\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_ArcTangent;
 class Handle_Expr_ArcTangent : public Handle_Expr_UnaryExpression {
@@ -1238,6 +1283,7 @@ class Handle_Expr_ArcTangent : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_GeneralFunction;
 class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
 	public:
@@ -1262,6 +1308,7 @@ class Handle_Expr_GeneralFunction : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_GeneralFunction\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_UnaryFunction;
 class Handle_Expr_UnaryFunction : public Handle_Expr_UnaryExpression {
@@ -1288,6 +1335,7 @@ class Handle_Expr_UnaryFunction : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Exponentiate;
 class Handle_Expr_Exponentiate : public Handle_Expr_BinaryExpression {
 	public:
@@ -1312,6 +1360,7 @@ class Handle_Expr_Exponentiate : public Handle_Expr_BinaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Exponentiate\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_Tanh;
 class Handle_Expr_Tanh : public Handle_Expr_UnaryExpression {
@@ -1338,6 +1387,7 @@ class Handle_Expr_Tanh : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_NamedFunction;
 class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
 	public:
@@ -1362,6 +1412,7 @@ class Handle_Expr_NamedFunction : public Handle_Expr_GeneralFunction {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_NamedFunction\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_SystemRelation;
 class Handle_Expr_SystemRelation : public Handle_Expr_GeneralRelation {
@@ -1388,6 +1439,7 @@ class Handle_Expr_SystemRelation : public Handle_Expr_GeneralRelation {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Difference;
 class Handle_Expr_Difference : public Handle_Expr_BinaryExpression {
 	public:
@@ -1412,6 +1464,7 @@ class Handle_Expr_Difference : public Handle_Expr_BinaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Difference\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_ArgTanh;
 class Handle_Expr_ArgTanh : public Handle_Expr_UnaryExpression {
@@ -1438,6 +1491,7 @@ class Handle_Expr_ArgTanh : public Handle_Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Cosine;
 class Handle_Expr_Cosine : public Handle_Expr_UnaryExpression {
 	public:
@@ -1462,6 +1516,7 @@ class Handle_Expr_Cosine : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Cosine\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Expr_FunctionDerivative;
 class Handle_Expr_FunctionDerivative : public Handle_Expr_GeneralFunction {
@@ -1488,6 +1543,7 @@ class Handle_Expr_FunctionDerivative : public Handle_Expr_GeneralFunction {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Product;
 class Handle_Expr_Product : public Handle_Expr_PolyExpression {
 	public:
@@ -1513,6 +1569,7 @@ class Handle_Expr_Product : public Handle_Expr_PolyExpression {
 	}
 };
 
+
 %nodefaultctor Handle_Expr_Square;
 class Handle_Expr_Square : public Handle_Expr_UnaryExpression {
 	public:
@@ -1537,6 +1594,7 @@ class Handle_Expr_Square : public Handle_Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Handle_Expr_Square\n");}
 	}
 };
+
 
 %nodefaultctor Expr_IndexedMapNodeOfMapOfNamedUnknown;
 class Expr_IndexedMapNodeOfMapOfNamedUnknown : public TCollection_MapNode {
@@ -1569,6 +1627,7 @@ class Expr_IndexedMapNodeOfMapOfNamedUnknown : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Expr_IndexedMapNodeOfMapOfNamedUnknown\n");}
 	}
 };
+
 
 %nodefaultctor Expr_GeneralExpression;
 class Expr_GeneralExpression : public MMgt_TShared {
@@ -1626,6 +1685,7 @@ class Expr_GeneralExpression : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Expr_BinaryExpression;
 class Expr_BinaryExpression : public Expr_GeneralExpression {
 	public:
@@ -1656,6 +1716,7 @@ class Expr_BinaryExpression : public Expr_GeneralExpression {
 	}
 };
 
+
 %nodefaultctor Expr_Division;
 class Expr_Division : public Expr_BinaryExpression {
 	public:
@@ -1679,6 +1740,7 @@ class Expr_Division : public Expr_BinaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Division\n");}
 	}
 };
+
 
 %nodefaultctor Expr_UnaryExpression;
 class Expr_UnaryExpression : public Expr_GeneralExpression {
@@ -1720,6 +1782,7 @@ class Expr_UnaryExpression : public Expr_GeneralExpression {
 	}
 };
 
+
 %nodefaultctor Expr_Sinh;
 class Expr_Sinh : public Expr_UnaryExpression {
 	public:
@@ -1757,6 +1820,7 @@ class Expr_Sinh : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Sinh\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Exponential;
 class Expr_Exponential : public Expr_UnaryExpression {
@@ -1797,6 +1861,7 @@ class Expr_Exponential : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Exponential\n");}
 	}
 };
+
 
 %nodefaultctor Expr_PolyExpression;
 class Expr_PolyExpression : public Expr_GeneralExpression {
@@ -1840,6 +1905,7 @@ class Expr_PolyExpression : public Expr_GeneralExpression {
 	}
 };
 
+
 %nodefaultctor Expr_Cosine;
 class Expr_Cosine : public Expr_UnaryExpression {
 	public:
@@ -1879,6 +1945,7 @@ class Expr_Cosine : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Cosine\n");}
 	}
 };
+
 
 %nodefaultctor Expr_ArcCosine;
 class Expr_ArcCosine : public Expr_UnaryExpression {
@@ -1920,6 +1987,7 @@ class Expr_ArcCosine : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_ExprFailure;
 class Expr_ExprFailure : public Standard_Failure {
 	public:
@@ -1954,6 +2022,7 @@ class Expr_ExprFailure : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Expr_InvalidFunction;
 class Expr_InvalidFunction : public Expr_ExprFailure {
 	public:
@@ -1981,6 +2050,7 @@ class Expr_InvalidFunction : public Expr_ExprFailure {
 	if (__env){printf("## Call custom destructor for instance of Expr_InvalidFunction\n");}
 	}
 };
+
 
 %nodefaultctor Expr_GeneralRelation;
 class Expr_GeneralRelation : public MMgt_TShared {
@@ -2028,6 +2098,7 @@ class Expr_GeneralRelation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Expr_SingleRelation;
 class Expr_SingleRelation : public Expr_GeneralRelation {
 	public:
@@ -2058,6 +2129,7 @@ class Expr_SingleRelation : public Expr_GeneralRelation {
 	}
 };
 
+
 %nodefaultctor Expr_LessThan;
 class Expr_LessThan : public Expr_SingleRelation {
 	public:
@@ -2081,6 +2153,7 @@ class Expr_LessThan : public Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Expr_LessThan\n");}
 	}
 };
+
 
 %nodefaultctor Expr_LogOfe;
 class Expr_LogOfe : public Expr_UnaryExpression {
@@ -2121,6 +2194,7 @@ class Expr_LogOfe : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_LogOfe\n");}
 	}
 };
+
 
 %nodefaultctor Expr_BinaryFunction;
 class Expr_BinaryFunction : public Expr_BinaryExpression {
@@ -2164,6 +2238,7 @@ class Expr_BinaryFunction : public Expr_BinaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_RelationIterator;
 class Expr_RelationIterator {
 	public:
@@ -2183,6 +2258,7 @@ class Expr_RelationIterator {
 	if (__env){printf("## Call custom destructor for instance of Expr_RelationIterator\n");}
 	}
 };
+
 
 %nodefaultctor Expr;
 class Expr {
@@ -2205,6 +2281,7 @@ class Expr {
 	if (__env){printf("## Call custom destructor for instance of Expr\n");}
 	}
 };
+
 
 %nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralRelation;
 class Expr_SequenceNodeOfSequenceOfGeneralRelation : public TCollection_SeqNode {
@@ -2233,6 +2310,7 @@ class Expr_SequenceNodeOfSequenceOfGeneralRelation : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of Expr_SequenceNodeOfSequenceOfGeneralRelation\n");}
 	}
 };
+
 
 %nodefaultctor Expr_UnaryMinus;
 class Expr_UnaryMinus : public Expr_UnaryExpression {
@@ -2276,6 +2354,7 @@ class Expr_UnaryMinus : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_ArcSine;
 class Expr_ArcSine : public Expr_UnaryExpression {
 	public:
@@ -2315,6 +2394,7 @@ class Expr_ArcSine : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_ArcSine\n");}
 	}
 };
+
 
 %nodefaultctor Expr_PolyFunction;
 class Expr_PolyFunction : public Expr_PolyExpression {
@@ -2358,6 +2438,7 @@ class Expr_PolyFunction : public Expr_PolyExpression {
 	}
 };
 
+
 %nodefaultctor Expr_SquareRoot;
 class Expr_SquareRoot : public Expr_UnaryExpression {
 	public:
@@ -2397,6 +2478,7 @@ class Expr_SquareRoot : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_SquareRoot\n");}
 	}
 };
+
 
 %nodefaultctor Expr_SequenceOfGeneralRelation;
 class Expr_SequenceOfGeneralRelation : public TCollection_BaseSequence {
@@ -2452,6 +2534,7 @@ class Expr_SequenceOfGeneralRelation : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Expr_NamedExpression;
 class Expr_NamedExpression : public Expr_GeneralExpression {
 	public:
@@ -2485,6 +2568,7 @@ class Expr_NamedExpression : public Expr_GeneralExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_NamedExpression\n");}
 	}
 };
+
 
 %nodefaultctor Expr_NamedUnknown;
 class Expr_NamedUnknown : public Expr_NamedExpression {
@@ -2540,6 +2624,7 @@ class Expr_NamedUnknown : public Expr_NamedExpression {
 	}
 };
 
+
 %nodefaultctor Expr_ArgCosh;
 class Expr_ArgCosh : public Expr_UnaryExpression {
 	public:
@@ -2580,6 +2665,7 @@ class Expr_ArgCosh : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_MapOfNamedUnknown;
 class Expr_MapOfNamedUnknown : public TCollection_BasicMap {
 	public:
@@ -2613,6 +2699,7 @@ class Expr_MapOfNamedUnknown : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Expr_MapOfNamedUnknown\n");}
 	}
 };
+
 
 %nodefaultctor Expr_GreaterThanOrEqual;
 class Expr_GreaterThanOrEqual : public Expr_SingleRelation {
@@ -2649,6 +2736,7 @@ class Expr_GreaterThanOrEqual : public Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Expr_GreaterThanOrEqual\n");}
 	}
 };
+
 
 %nodefaultctor Expr_SystemRelation;
 class Expr_SystemRelation : public Expr_GeneralRelation {
@@ -2702,6 +2790,7 @@ class Expr_SystemRelation : public Expr_GeneralRelation {
 	}
 };
 
+
 %nodefaultctor Expr_Different;
 class Expr_Different : public Expr_SingleRelation {
 	public:
@@ -2737,6 +2826,7 @@ class Expr_Different : public Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Expr_Different\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Array1OfNamedUnknown;
 class Expr_Array1OfNamedUnknown {
@@ -2778,6 +2868,7 @@ class Expr_Array1OfNamedUnknown {
 	}
 };
 
+
 %nodefaultctor Expr_Equal;
 class Expr_Equal : public Expr_SingleRelation {
 	public:
@@ -2814,6 +2905,7 @@ class Expr_Equal : public Expr_SingleRelation {
 	}
 };
 
+
 %nodefaultctor Expr_NotEvaluable;
 class Expr_NotEvaluable : public Expr_ExprFailure {
 	public:
@@ -2848,6 +2940,7 @@ class Expr_NotEvaluable : public Expr_ExprFailure {
 	}
 };
 
+
 %nodefaultctor Expr_SequenceNodeOfSequenceOfGeneralExpression;
 class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNode {
 	public:
@@ -2875,6 +2968,7 @@ class Expr_SequenceNodeOfSequenceOfGeneralExpression : public TCollection_SeqNod
 	if (__env){printf("## Call custom destructor for instance of Expr_SequenceNodeOfSequenceOfGeneralExpression\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Tangent;
 class Expr_Tangent : public Expr_UnaryExpression {
@@ -2916,6 +3010,7 @@ class Expr_Tangent : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_Array1OfGeneralExpression;
 class Expr_Array1OfGeneralExpression {
 	public:
@@ -2956,6 +3051,7 @@ class Expr_Array1OfGeneralExpression {
 	}
 };
 
+
 %nodefaultctor Expr_InvalidOperand;
 class Expr_InvalidOperand : public Expr_ExprFailure {
 	public:
@@ -2989,6 +3085,7 @@ class Expr_InvalidOperand : public Expr_ExprFailure {
 	if (__env){printf("## Call custom destructor for instance of Expr_InvalidOperand\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Tanh;
 class Expr_Tanh : public Expr_UnaryExpression {
@@ -3030,6 +3127,7 @@ class Expr_Tanh : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_UnknownIterator;
 class Expr_UnknownIterator {
 	public:
@@ -3049,6 +3147,7 @@ class Expr_UnknownIterator {
 	if (__env){printf("## Call custom destructor for instance of Expr_UnknownIterator\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Array1OfSingleRelation;
 class Expr_Array1OfSingleRelation {
@@ -3089,6 +3188,7 @@ class Expr_Array1OfSingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Expr_Array1OfSingleRelation\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Sum;
 class Expr_Sum : public Expr_PolyExpression {
@@ -3134,6 +3234,7 @@ class Expr_Sum : public Expr_PolyExpression {
 	}
 };
 
+
 %nodefaultctor Expr_Square;
 class Expr_Square : public Expr_UnaryExpression {
 	public:
@@ -3173,6 +3274,7 @@ class Expr_Square : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Square\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Product;
 class Expr_Product : public Expr_PolyExpression {
@@ -3216,6 +3318,7 @@ class Expr_Product : public Expr_PolyExpression {
 	}
 };
 
+
 %nodefaultctor Expr_ArgSinh;
 class Expr_ArgSinh : public Expr_UnaryExpression {
 	public:
@@ -3256,6 +3359,7 @@ class Expr_ArgSinh : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_GreaterThan;
 class Expr_GreaterThan : public Expr_SingleRelation {
 	public:
@@ -3291,6 +3395,7 @@ class Expr_GreaterThan : public Expr_SingleRelation {
 	if (__env){printf("## Call custom destructor for instance of Expr_GreaterThan\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Exponentiate;
 class Expr_Exponentiate : public Expr_BinaryExpression {
@@ -3331,6 +3436,7 @@ class Expr_Exponentiate : public Expr_BinaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Exponentiate\n");}
 	}
 };
+
 
 %nodefaultctor Expr_SequenceOfGeneralExpression;
 class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
@@ -3386,6 +3492,7 @@ class Expr_SequenceOfGeneralExpression : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Expr_RUIterator;
 class Expr_RUIterator {
 	public:
@@ -3405,6 +3512,7 @@ class Expr_RUIterator {
 	if (__env){printf("## Call custom destructor for instance of Expr_RUIterator\n");}
 	}
 };
+
 
 %nodefaultctor Expr_NotAssigned;
 class Expr_NotAssigned : public Expr_ExprFailure {
@@ -3439,6 +3547,7 @@ class Expr_NotAssigned : public Expr_ExprFailure {
 	if (__env){printf("## Call custom destructor for instance of Expr_NotAssigned\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Absolute;
 class Expr_Absolute : public Expr_UnaryExpression {
@@ -3480,6 +3589,7 @@ class Expr_Absolute : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_InvalidAssignment;
 class Expr_InvalidAssignment : public Expr_ExprFailure {
 	public:
@@ -3513,6 +3623,7 @@ class Expr_InvalidAssignment : public Expr_ExprFailure {
 	if (__env){printf("## Call custom destructor for instance of Expr_InvalidAssignment\n");}
 	}
 };
+
 
 %nodefaultctor Expr_ArgTanh;
 class Expr_ArgTanh : public Expr_UnaryExpression {
@@ -3553,6 +3664,7 @@ class Expr_ArgTanh : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_ArgTanh\n");}
 	}
 };
+
 
 %nodefaultctor Expr_Difference;
 class Expr_Difference : public Expr_BinaryExpression {
@@ -3595,6 +3707,7 @@ class Expr_Difference : public Expr_BinaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Difference\n");}
 	}
 };
+
 
 %nodefaultctor Expr_NamedConstant;
 class Expr_NamedConstant : public Expr_NamedExpression {
@@ -3648,6 +3761,7 @@ class Expr_NamedConstant : public Expr_NamedExpression {
 	}
 };
 
+
 %nodefaultctor Expr_UnaryFunction;
 class Expr_UnaryFunction : public Expr_UnaryExpression {
 	public:
@@ -3690,6 +3804,7 @@ class Expr_UnaryFunction : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_ArcTangent;
 class Expr_ArcTangent : public Expr_UnaryExpression {
 	public:
@@ -3730,6 +3845,7 @@ class Expr_ArcTangent : public Expr_UnaryExpression {
 	}
 };
 
+
 %nodefaultctor Expr_Cosh;
 class Expr_Cosh : public Expr_UnaryExpression {
 	public:
@@ -3769,6 +3885,7 @@ class Expr_Cosh : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Cosh\n");}
 	}
 };
+
 
 %nodefaultctor Expr_GeneralFunction;
 class Expr_GeneralFunction : public MMgt_TShared {
@@ -3812,6 +3929,7 @@ class Expr_GeneralFunction : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Expr_FunctionDerivative;
 class Expr_FunctionDerivative : public Expr_GeneralFunction {
 	public:
@@ -3847,6 +3965,7 @@ class Expr_FunctionDerivative : public Expr_GeneralFunction {
 	if (__env){printf("## Call custom destructor for instance of Expr_FunctionDerivative\n");}
 	}
 };
+
 
 %nodefaultctor Expr_LogOf10;
 class Expr_LogOf10 : public Expr_UnaryExpression {
@@ -3887,6 +4006,7 @@ class Expr_LogOf10 : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_LogOf10\n");}
 	}
 };
+
 
 %nodefaultctor Expr_NumericValue;
 class Expr_NumericValue : public Expr_GeneralExpression {
@@ -3946,6 +4066,7 @@ class Expr_NumericValue : public Expr_GeneralExpression {
 	}
 };
 
+
 %nodefaultctor Expr_NamedFunction;
 class Expr_NamedFunction : public Expr_GeneralFunction {
 	public:
@@ -3998,6 +4119,7 @@ class Expr_NamedFunction : public Expr_GeneralFunction {
 	}
 };
 
+
 %nodefaultctor Expr_Sine;
 class Expr_Sine : public Expr_UnaryExpression {
 	public:
@@ -4037,6 +4159,7 @@ class Expr_Sine : public Expr_UnaryExpression {
 	if (__env){printf("## Call custom destructor for instance of Expr_Sine\n");}
 	}
 };
+
 
 %nodefaultctor Expr_LessThanOrEqual;
 class Expr_LessThanOrEqual : public Expr_SingleRelation {

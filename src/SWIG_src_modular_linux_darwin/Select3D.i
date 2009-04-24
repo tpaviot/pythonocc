@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_Select3D_SensitiveEntity : public Handle_SelectBasics_SensitiveEnti
 	}
 };
 
+
 %nodefaultctor Handle_Select3D_SensitivePoly;
 class Handle_Select3D_SensitivePoly : public Handle_Select3D_SensitiveEntity {
 	public:
@@ -168,6 +170,7 @@ class Handle_Select3D_SensitivePoly : public Handle_Select3D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitivePoly\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select3D_SensitiveCurve;
 class Handle_Select3D_SensitiveCurve : public Handle_Select3D_SensitivePoly {
@@ -194,6 +197,7 @@ class Handle_Select3D_SensitiveCurve : public Handle_Select3D_SensitivePoly {
 	}
 };
 
+
 %nodefaultctor Handle_Select3D_SensitiveCircle;
 class Handle_Select3D_SensitiveCircle : public Handle_Select3D_SensitivePoly {
 	public:
@@ -218,6 +222,7 @@ class Handle_Select3D_SensitiveCircle : public Handle_Select3D_SensitivePoly {
 	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveCircle\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select3D_SensitiveTriangle;
 class Handle_Select3D_SensitiveTriangle : public Handle_Select3D_SensitivePoly {
@@ -244,6 +249,7 @@ class Handle_Select3D_SensitiveTriangle : public Handle_Select3D_SensitivePoly {
 	}
 };
 
+
 %nodefaultctor Handle_Select3D_SensitivePoint;
 class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
 	public:
@@ -268,6 +274,7 @@ class Handle_Select3D_SensitivePoint : public Handle_Select3D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitivePoint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select3D_SequenceNodeOfSensitiveEntitySequence;
 class Handle_Select3D_SequenceNodeOfSensitiveEntitySequence : public Handle_TCollection_SeqNode {
@@ -294,6 +301,7 @@ class Handle_Select3D_SequenceNodeOfSensitiveEntitySequence : public Handle_TCol
 	}
 };
 
+
 %nodefaultctor Handle_Select3D_SensitiveFace;
 class Handle_Select3D_SensitiveFace : public Handle_Select3D_SensitivePoly {
 	public:
@@ -318,6 +326,7 @@ class Handle_Select3D_SensitiveFace : public Handle_Select3D_SensitivePoly {
 	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveFace\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select3D_SensitiveSegment;
 class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity {
@@ -344,6 +353,7 @@ class Handle_Select3D_SensitiveSegment : public Handle_Select3D_SensitiveEntity 
 	}
 };
 
+
 %nodefaultctor Handle_Select3D_ListNodeOfListOfSensitive;
 class Handle_Select3D_ListNodeOfListOfSensitive : public Handle_TCollection_MapNode {
 	public:
@@ -368,6 +378,7 @@ class Handle_Select3D_ListNodeOfListOfSensitive : public Handle_TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_ListNodeOfListOfSensitive\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select3D_SensitiveWire;
 class Handle_Select3D_SensitiveWire : public Handle_Select3D_SensitiveEntity {
@@ -394,6 +405,7 @@ class Handle_Select3D_SensitiveWire : public Handle_Select3D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Handle_Select3D_SensitiveBox;
 class Handle_Select3D_SensitiveBox : public Handle_Select3D_SensitiveEntity {
 	public:
@@ -418,6 +430,7 @@ class Handle_Select3D_SensitiveBox : public Handle_Select3D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveBox\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select3D_SensitiveTriangulation;
 class Handle_Select3D_SensitiveTriangulation : public Handle_Select3D_SensitiveEntity {
@@ -444,6 +457,7 @@ class Handle_Select3D_SensitiveTriangulation : public Handle_Select3D_SensitiveE
 	}
 };
 
+
 %nodefaultctor Handle_Select3D_SensitiveGroup;
 class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
 	public:
@@ -468,6 +482,7 @@ class Handle_Select3D_SensitiveGroup : public Handle_Select3D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_Select3D_SensitiveGroup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Select3D_ListNodeOfListOfSensitiveTriangle;
 class Handle_Select3D_ListNodeOfListOfSensitiveTriangle : public Handle_TCollection_MapNode {
@@ -494,6 +509,7 @@ class Handle_Select3D_ListNodeOfListOfSensitiveTriangle : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Select3D_Pnt;
 class Select3D_Pnt {
 	public:
@@ -507,6 +523,7 @@ class Select3D_Pnt {
 	if (__env){printf("## Call custom destructor for instance of Select3D_Pnt\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_Projector;
 class Select3D_Projector {
@@ -574,6 +591,7 @@ class Select3D_Projector {
 	}
 };
 
+
 %nodefaultctor Select3D_ListIteratorOfListOfSensitive;
 class Select3D_ListIteratorOfListOfSensitive {
 	public:
@@ -598,6 +616,7 @@ class Select3D_ListIteratorOfListOfSensitive {
 	}
 };
 
+
 %nodefaultctor Select3D_Pnt2d;
 class Select3D_Pnt2d {
 	public:
@@ -611,6 +630,7 @@ class Select3D_Pnt2d {
 	if (__env){printf("## Call custom destructor for instance of Select3D_Pnt2d\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_ListIteratorOfListOfSensitiveTriangle;
 class Select3D_ListIteratorOfListOfSensitiveTriangle {
@@ -635,6 +655,7 @@ class Select3D_ListIteratorOfListOfSensitiveTriangle {
 	if (__env){printf("## Call custom destructor for instance of Select3D_ListIteratorOfListOfSensitiveTriangle\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_ListNodeOfListOfSensitive;
 class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
@@ -664,6 +685,7 @@ class Select3D_ListNodeOfListOfSensitive : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Select3D_ListNodeOfListOfSensitiveTriangle;
 class Select3D_ListNodeOfListOfSensitiveTriangle : public TCollection_MapNode {
 	public:
@@ -691,6 +713,7 @@ class Select3D_ListNodeOfListOfSensitiveTriangle : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Select3D_ListNodeOfListOfSensitiveTriangle\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_SensitiveEntity;
 class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
@@ -754,6 +777,7 @@ class Select3D_SensitiveEntity : public SelectBasics_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Select3D_SensitiveSegment;
 class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 	public:
@@ -790,6 +814,7 @@ class Select3D_SensitiveSegment : public Select3D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Select3D_SequenceNodeOfSensitiveEntitySequence;
 class Select3D_SequenceNodeOfSensitiveEntitySequence : public TCollection_SeqNode {
 	public:
@@ -817,6 +842,7 @@ class Select3D_SequenceNodeOfSensitiveEntitySequence : public TCollection_SeqNod
 	if (__env){printf("## Call custom destructor for instance of Select3D_SequenceNodeOfSensitiveEntitySequence\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_SensitiveTriangulation;
 class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
@@ -878,6 +904,7 @@ class Select3D_SensitiveTriangulation : public Select3D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Select3D_SensitivePoly;
 class Select3D_SensitivePoly : public Select3D_SensitiveEntity {
 	public:
@@ -911,6 +938,7 @@ class Select3D_SensitivePoly : public Select3D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Select3D_SensitivePoly\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_ListOfSensitiveTriangle;
 class Select3D_ListOfSensitiveTriangle {
@@ -961,6 +989,7 @@ class Select3D_ListOfSensitiveTriangle {
 	if (__env){printf("## Call custom destructor for instance of Select3D_ListOfSensitiveTriangle\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_SensitiveGroup;
 class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
@@ -1026,6 +1055,7 @@ class Select3D_SensitiveGroup : public Select3D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Select3D_Box2d;
 class Select3D_Box2d {
 	public:
@@ -1047,6 +1077,7 @@ class Select3D_Box2d {
 	if (__env){printf("## Call custom destructor for instance of Select3D_Box2d\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_SensitiveCurve;
 class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
@@ -1087,6 +1118,7 @@ class Select3D_SensitiveCurve : public Select3D_SensitivePoly {
 	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveCurve\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_SensitiveBox;
 class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
@@ -1134,6 +1166,7 @@ class Select3D_SensitiveBox : public Select3D_SensitiveEntity {
 	}
 };
 
+
 %nodefaultctor Select3D_SensitiveFace;
 class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 	public:
@@ -1171,6 +1204,7 @@ class Select3D_SensitiveFace : public Select3D_SensitivePoly {
 	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveFace\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_ListOfSensitive;
 class Select3D_ListOfSensitive {
@@ -1222,6 +1256,7 @@ class Select3D_ListOfSensitive {
 	}
 };
 
+
 %nodefaultctor Select3D_SensitivePoint;
 class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 	public:
@@ -1265,6 +1300,7 @@ class Select3D_SensitivePoint : public Select3D_SensitiveEntity {
 	if (__env){printf("## Call custom destructor for instance of Select3D_SensitivePoint\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_SensitiveTriangle;
 class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
@@ -1312,6 +1348,7 @@ class Select3D_SensitiveTriangle : public Select3D_SensitivePoly {
 	}
 };
 
+
 %nodefaultctor Select3D_SensitiveCircle;
 class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 	public:
@@ -1357,6 +1394,7 @@ class Select3D_SensitiveCircle : public Select3D_SensitivePoly {
 	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveCircle\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_SensitiveEntitySequence;
 class Select3D_SensitiveEntitySequence : public TCollection_BaseSequence {
@@ -1411,6 +1449,7 @@ class Select3D_SensitiveEntitySequence : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Select3D_SensitiveEntitySequence\n");}
 	}
 };
+
 
 %nodefaultctor Select3D_SensitiveWire;
 class Select3D_SensitiveWire : public Select3D_SensitiveEntity {

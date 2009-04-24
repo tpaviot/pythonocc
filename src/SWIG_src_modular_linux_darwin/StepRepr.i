@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_StepRepr_RepresentationContext : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_GlobalUncertaintyAssignedContext;
 class Handle_StepRepr_GlobalUncertaintyAssignedContext : public Handle_StepRepr_RepresentationContext {
 	public:
@@ -162,6 +164,7 @@ class Handle_StepRepr_GlobalUncertaintyAssignedContext : public Handle_StepRepr_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_GlobalUncertaintyAssignedContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_PropertyDefinition;
 class Handle_StepRepr_PropertyDefinition : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_StepRepr_PropertyDefinition : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_ShapeAspect;
 class Handle_StepRepr_ShapeAspect : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_StepRepr_ShapeAspect : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspect\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_CompositeShapeAspect;
 class Handle_StepRepr_CompositeShapeAspect : public Handle_StepRepr_ShapeAspect {
@@ -238,6 +243,7 @@ class Handle_StepRepr_CompositeShapeAspect : public Handle_StepRepr_ShapeAspect 
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_ShapeAspectRelationship;
 class Handle_StepRepr_ShapeAspectRelationship : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_StepRepr_ShapeAspectRelationship : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspectRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ProductDefinitionUsage;
 class Handle_StepRepr_ProductDefinitionUsage : public Handle_StepBasic_ProductDefinitionRelationship {
@@ -288,6 +295,7 @@ class Handle_StepRepr_ProductDefinitionUsage : public Handle_StepBasic_ProductDe
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_MakeFromUsageOption;
 class Handle_StepRepr_MakeFromUsageOption : public Handle_StepRepr_ProductDefinitionUsage {
 	public:
@@ -312,6 +320,7 @@ class Handle_StepRepr_MakeFromUsageOption : public Handle_StepRepr_ProductDefini
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MakeFromUsageOption\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_RepresentationRelationship;
 class Handle_StepRepr_RepresentationRelationship : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_StepRepr_RepresentationRelationship : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_ShapeRepresentationRelationship;
 class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_RepresentationRelationship {
 	public:
@@ -362,6 +372,7 @@ class Handle_StepRepr_ShapeRepresentationRelationship : public Handle_StepRepr_R
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeRepresentationRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ProductConcept;
 class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
@@ -388,6 +399,7 @@ class Handle_StepRepr_ProductConcept : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_PropertyDefinitionRelationship;
 class Handle_StepRepr_PropertyDefinitionRelationship : public Handle_MMgt_TShared {
 	public:
@@ -412,6 +424,7 @@ class Handle_StepRepr_PropertyDefinitionRelationship : public Handle_MMgt_TShare
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_PropertyDefinitionRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_AssemblyComponentUsage;
 class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDefinitionUsage {
@@ -438,6 +451,7 @@ class Handle_StepRepr_AssemblyComponentUsage : public Handle_StepRepr_ProductDef
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_DataEnvironment;
 class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
 	public:
@@ -462,6 +476,7 @@ class Handle_StepRepr_DataEnvironment : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DataEnvironment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation;
 class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
@@ -488,6 +503,7 @@ class Handle_StepRepr_HSequenceOfMaterialPropertyRepresentation : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation;
 class Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public Handle_TCollection_SeqNode {
 	public:
@@ -512,6 +528,7 @@ class Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : p
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ConfigurationItem;
 class Handle_StepRepr_ConfigurationItem : public Handle_MMgt_TShared {
@@ -538,6 +555,7 @@ class Handle_StepRepr_ConfigurationItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_RepresentationItem;
 class Handle_StepRepr_RepresentationItem : public Handle_MMgt_TShared {
 	public:
@@ -562,6 +580,7 @@ class Handle_StepRepr_RepresentationItem : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_RepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_CompoundRepresentationItem;
 class Handle_StepRepr_CompoundRepresentationItem : public Handle_StepRepr_RepresentationItem {
@@ -588,6 +607,7 @@ class Handle_StepRepr_CompoundRepresentationItem : public Handle_StepRepr_Repres
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_HSequenceOfRepresentationItem;
 class Handle_StepRepr_HSequenceOfRepresentationItem : public Handle_MMgt_TShared {
 	public:
@@ -612,6 +632,7 @@ class Handle_StepRepr_HSequenceOfRepresentationItem : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HSequenceOfRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_FunctionallyDefinedTransformation;
 class Handle_StepRepr_FunctionallyDefinedTransformation : public Handle_MMgt_TShared {
@@ -638,6 +659,7 @@ class Handle_StepRepr_FunctionallyDefinedTransformation : public Handle_MMgt_TSh
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_MaterialProperty;
 class Handle_StepRepr_MaterialProperty : public Handle_StepRepr_PropertyDefinition {
 	public:
@@ -662,6 +684,7 @@ class Handle_StepRepr_MaterialProperty : public Handle_StepRepr_PropertyDefiniti
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MaterialProperty\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_RepresentationRelationshipWithTransformation;
 class Handle_StepRepr_RepresentationRelationshipWithTransformation : public Handle_StepRepr_ShapeRepresentationRelationship {
@@ -688,6 +711,7 @@ class Handle_StepRepr_RepresentationRelationshipWithTransformation : public Hand
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation;
 class Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation : public Handle_StepRepr_RepresentationRelationshipWithTransformation {
 	public:
@@ -712,6 +736,7 @@ class Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation : public
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeRepresentationRelationshipWithTransformation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_AssemblyComponentUsageSubstitute;
 class Handle_StepRepr_AssemblyComponentUsageSubstitute : public Handle_MMgt_TShared {
@@ -738,6 +763,7 @@ class Handle_StepRepr_AssemblyComponentUsageSubstitute : public Handle_MMgt_TSha
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation;
 class Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -762,6 +788,7 @@ class Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_HArray1OfPropertyDefinitionRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_MappedItem;
 class Handle_StepRepr_MappedItem : public Handle_StepRepr_RepresentationItem {
@@ -788,6 +815,7 @@ class Handle_StepRepr_MappedItem : public Handle_StepRepr_RepresentationItem {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_ProductDefinitionShape;
 class Handle_StepRepr_ProductDefinitionShape : public Handle_StepRepr_PropertyDefinition {
 	public:
@@ -812,6 +840,7 @@ class Handle_StepRepr_ProductDefinitionShape : public Handle_StepRepr_PropertyDe
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ProductDefinitionShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_RepresentationMap;
 class Handle_StepRepr_RepresentationMap : public Handle_MMgt_TShared {
@@ -838,6 +867,7 @@ class Handle_StepRepr_RepresentationMap : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_MaterialDesignation;
 class Handle_StepRepr_MaterialDesignation : public Handle_MMgt_TShared {
 	public:
@@ -862,6 +892,7 @@ class Handle_StepRepr_MaterialDesignation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MaterialDesignation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ItemDefinedTransformation;
 class Handle_StepRepr_ItemDefinedTransformation : public Handle_MMgt_TShared {
@@ -888,6 +919,7 @@ class Handle_StepRepr_ItemDefinedTransformation : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_NextAssemblyUsageOccurrence;
 class Handle_StepRepr_NextAssemblyUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
 	public:
@@ -912,6 +944,7 @@ class Handle_StepRepr_NextAssemblyUsageOccurrence : public Handle_StepRepr_Assem
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_NextAssemblyUsageOccurrence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_PropertyDefinitionRepresentation;
 class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TShared {
@@ -938,6 +971,7 @@ class Handle_StepRepr_PropertyDefinitionRepresentation : public Handle_MMgt_TSha
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation;
 class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
 	public:
@@ -962,6 +996,7 @@ class Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation : publi
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_DerivedShapeAspect;
 class Handle_StepRepr_DerivedShapeAspect : public Handle_StepRepr_ShapeAspect {
@@ -988,6 +1023,7 @@ class Handle_StepRepr_DerivedShapeAspect : public Handle_StepRepr_ShapeAspect {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_Extension;
 class Handle_StepRepr_Extension : public Handle_StepRepr_DerivedShapeAspect {
 	public:
@@ -1012,6 +1048,7 @@ class Handle_StepRepr_Extension : public Handle_StepRepr_DerivedShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_Extension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ReprItemAndLengthMeasureWithUnit;
 class Handle_StepRepr_ReprItemAndLengthMeasureWithUnit : public Handle_StepRepr_RepresentationItem {
@@ -1038,6 +1075,7 @@ class Handle_StepRepr_ReprItemAndLengthMeasureWithUnit : public Handle_StepRepr_
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_ShapeAspectTransition;
 class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspectRelationship {
 	public:
@@ -1062,6 +1100,7 @@ class Handle_StepRepr_ShapeAspectTransition : public Handle_StepRepr_ShapeAspect
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspectTransition\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_HArray1OfRepresentationItem;
 class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
@@ -1088,6 +1127,7 @@ class Handle_StepRepr_HArray1OfRepresentationItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_DescriptiveRepresentationItem;
 class Handle_StepRepr_DescriptiveRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -1112,6 +1152,7 @@ class Handle_StepRepr_DescriptiveRepresentationItem : public Handle_StepRepr_Rep
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DescriptiveRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_MaterialPropertyRepresentation;
 class Handle_StepRepr_MaterialPropertyRepresentation : public Handle_StepRepr_PropertyDefinitionRepresentation {
@@ -1138,6 +1179,7 @@ class Handle_StepRepr_MaterialPropertyRepresentation : public Handle_StepRepr_Pr
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_StructuralResponseProperty;
 class Handle_StepRepr_StructuralResponseProperty : public Handle_StepRepr_PropertyDefinition {
 	public:
@@ -1162,6 +1204,7 @@ class Handle_StepRepr_StructuralResponseProperty : public Handle_StepRepr_Proper
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_StructuralResponseProperty\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_Representation;
 class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
@@ -1188,6 +1231,7 @@ class Handle_StepRepr_Representation : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_SpecifiedHigherUsageOccurrence;
 class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
 	public:
@@ -1212,6 +1256,7 @@ class Handle_StepRepr_SpecifiedHigherUsageOccurrence : public Handle_StepRepr_As
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_SpecifiedHigherUsageOccurrence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_GlobalUnitAssignedContext;
 class Handle_StepRepr_GlobalUnitAssignedContext : public Handle_StepRepr_RepresentationContext {
@@ -1238,6 +1283,7 @@ class Handle_StepRepr_GlobalUnitAssignedContext : public Handle_StepRepr_Represe
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_DefinitionalRepresentation;
 class Handle_StepRepr_DefinitionalRepresentation : public Handle_StepRepr_Representation {
 	public:
@@ -1262,6 +1308,7 @@ class Handle_StepRepr_DefinitionalRepresentation : public Handle_StepRepr_Repres
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_DefinitionalRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ValueRange;
 class Handle_StepRepr_ValueRange : public Handle_StepRepr_CompoundRepresentationItem {
@@ -1288,6 +1335,7 @@ class Handle_StepRepr_ValueRange : public Handle_StepRepr_CompoundRepresentation
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_ShapeAspectDerivingRelationship;
 class Handle_StepRepr_ShapeAspectDerivingRelationship : public Handle_StepRepr_ShapeAspectRelationship {
 	public:
@@ -1312,6 +1360,7 @@ class Handle_StepRepr_ShapeAspectDerivingRelationship : public Handle_StepRepr_S
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ShapeAspectDerivingRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_HArray1OfMaterialPropertyRepresentation;
 class Handle_StepRepr_HArray1OfMaterialPropertyRepresentation : public Handle_MMgt_TShared {
@@ -1338,6 +1387,7 @@ class Handle_StepRepr_HArray1OfMaterialPropertyRepresentation : public Handle_MM
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem;
 class Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public Handle_TCollection_SeqNode {
 	public:
@@ -1362,6 +1412,7 @@ class Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public Handle
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_SequenceNodeOfSequenceOfRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_PromissoryUsageOccurrence;
 class Handle_StepRepr_PromissoryUsageOccurrence : public Handle_StepRepr_AssemblyComponentUsage {
@@ -1388,6 +1439,7 @@ class Handle_StepRepr_PromissoryUsageOccurrence : public Handle_StepRepr_Assembl
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_SuppliedPartRelationship;
 class Handle_StepRepr_SuppliedPartRelationship : public Handle_StepBasic_ProductDefinitionRelationship {
 	public:
@@ -1412,6 +1464,7 @@ class Handle_StepRepr_SuppliedPartRelationship : public Handle_StepBasic_Product
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_SuppliedPartRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ExternallyDefinedRepresentation;
 class Handle_StepRepr_ExternallyDefinedRepresentation : public Handle_StepRepr_Representation {
@@ -1438,6 +1491,7 @@ class Handle_StepRepr_ExternallyDefinedRepresentation : public Handle_StepRepr_R
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_ParametricRepresentationContext;
 class Handle_StepRepr_ParametricRepresentationContext : public Handle_StepRepr_RepresentationContext {
 	public:
@@ -1462,6 +1516,7 @@ class Handle_StepRepr_ParametricRepresentationContext : public Handle_StepRepr_R
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_ParametricRepresentationContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ConfigurationEffectivity;
 class Handle_StepRepr_ConfigurationEffectivity : public Handle_StepBasic_ProductDefinitionEffectivity {
@@ -1488,6 +1543,7 @@ class Handle_StepRepr_ConfigurationEffectivity : public Handle_StepBasic_Product
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_MeasureRepresentationItem;
 class Handle_StepRepr_MeasureRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -1512,6 +1568,7 @@ class Handle_StepRepr_MeasureRepresentationItem : public Handle_StepRepr_Represe
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_MeasureRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepRepr_ConfigurationDesign;
 class Handle_StepRepr_ConfigurationDesign : public Handle_MMgt_TShared {
@@ -1538,6 +1595,7 @@ class Handle_StepRepr_ConfigurationDesign : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepRepr_QuantifiedAssemblyComponentUsage;
 class Handle_StepRepr_QuantifiedAssemblyComponentUsage : public Handle_StepRepr_AssemblyComponentUsage {
 	public:
@@ -1562,6 +1620,7 @@ class Handle_StepRepr_QuantifiedAssemblyComponentUsage : public Handle_StepRepr_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepRepr_QuantifiedAssemblyComponentUsage\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_Array1OfPropertyDefinitionRepresentation;
 class StepRepr_Array1OfPropertyDefinitionRepresentation {
@@ -1603,6 +1662,7 @@ class StepRepr_Array1OfPropertyDefinitionRepresentation {
 	}
 };
 
+
 %nodefaultctor StepRepr_CharacterizedDefinition;
 class StepRepr_CharacterizedDefinition : public StepData_SelectType {
 	public:
@@ -1632,6 +1692,7 @@ class StepRepr_CharacterizedDefinition : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_CharacterizedDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_ShapeAspectRelationship;
 class StepRepr_ShapeAspectRelationship : public MMgt_TShared {
@@ -1679,6 +1740,7 @@ class StepRepr_ShapeAspectRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_ShapeAspectTransition;
 class StepRepr_ShapeAspectTransition : public StepRepr_ShapeAspectRelationship {
 	public:
@@ -1703,6 +1765,7 @@ class StepRepr_ShapeAspectTransition : public StepRepr_ShapeAspectRelationship {
 	}
 };
 
+
 %nodefaultctor StepRepr_ShapeDefinition;
 class StepRepr_ShapeDefinition : public StepData_SelectType {
 	public:
@@ -1724,6 +1787,7 @@ class StepRepr_ShapeDefinition : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_ConfigurationDesign;
 class StepRepr_ConfigurationDesign : public MMgt_TShared {
@@ -1760,6 +1824,7 @@ class StepRepr_ConfigurationDesign : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationDesign\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_RepresentationRelationship;
 class StepRepr_RepresentationRelationship : public MMgt_TShared {
@@ -1805,6 +1870,7 @@ class StepRepr_RepresentationRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_ShapeRepresentationRelationship;
 class StepRepr_ShapeRepresentationRelationship : public StepRepr_RepresentationRelationship {
 	public:
@@ -1828,6 +1894,7 @@ class StepRepr_ShapeRepresentationRelationship : public StepRepr_RepresentationR
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeRepresentationRelationship\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_RepresentationRelationshipWithTransformation;
 class StepRepr_RepresentationRelationshipWithTransformation : public StepRepr_ShapeRepresentationRelationship {
@@ -1858,6 +1925,7 @@ class StepRepr_RepresentationRelationshipWithTransformation : public StepRepr_Sh
 	if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentationRelationshipWithTransformation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_Representation;
 class StepRepr_Representation : public MMgt_TShared {
@@ -1902,6 +1970,7 @@ class StepRepr_Representation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_Representation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_ProductConcept;
 class StepRepr_ProductConcept : public MMgt_TShared {
@@ -1949,6 +2018,7 @@ class StepRepr_ProductConcept : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_SuppliedPartRelationship;
 class StepRepr_SuppliedPartRelationship : public StepBasic_ProductDefinitionRelationship {
 	public:
@@ -1975,6 +2045,7 @@ class StepRepr_SuppliedPartRelationship : public StepBasic_ProductDefinitionRela
 	}
 };
 
+
 %nodefaultctor StepRepr_ProductDefinitionUsage;
 class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelationship {
 	public:
@@ -2000,6 +2071,7 @@ class StepRepr_ProductDefinitionUsage : public StepBasic_ProductDefinitionRelati
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ProductDefinitionUsage\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_AssemblyComponentUsage;
 class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
@@ -2033,6 +2105,7 @@ class StepRepr_AssemblyComponentUsage : public StepRepr_ProductDefinitionUsage {
 	}
 };
 
+
 %nodefaultctor StepRepr_QuantifiedAssemblyComponentUsage;
 class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyComponentUsage {
 	public:
@@ -2062,6 +2135,7 @@ class StepRepr_QuantifiedAssemblyComponentUsage : public StepRepr_AssemblyCompon
 	if (__env){printf("## Call custom destructor for instance of StepRepr_QuantifiedAssemblyComponentUsage\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_ShapeAspect;
 class StepRepr_ShapeAspect : public MMgt_TShared {
@@ -2107,6 +2181,7 @@ class StepRepr_ShapeAspect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_DerivedShapeAspect;
 class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 	public:
@@ -2131,6 +2206,7 @@ class StepRepr_DerivedShapeAspect : public StepRepr_ShapeAspect {
 	}
 };
 
+
 %nodefaultctor StepRepr_Extension;
 class StepRepr_Extension : public StepRepr_DerivedShapeAspect {
 	public:
@@ -2154,6 +2230,7 @@ class StepRepr_Extension : public StepRepr_DerivedShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_Extension\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_SequenceNodeOfSequenceOfRepresentationItem;
 class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_SeqNode {
@@ -2182,6 +2259,7 @@ class StepRepr_SequenceNodeOfSequenceOfRepresentationItem : public TCollection_S
 	if (__env){printf("## Call custom destructor for instance of StepRepr_SequenceNodeOfSequenceOfRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_RepresentationContext;
 class StepRepr_RepresentationContext : public MMgt_TShared {
@@ -2219,6 +2297,7 @@ class StepRepr_RepresentationContext : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_ParametricRepresentationContext;
 class StepRepr_ParametricRepresentationContext : public StepRepr_RepresentationContext {
 	public:
@@ -2242,6 +2321,7 @@ class StepRepr_ParametricRepresentationContext : public StepRepr_RepresentationC
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ParametricRepresentationContext\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_CompositeShapeAspect;
 class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
@@ -2268,6 +2348,7 @@ class StepRepr_CompositeShapeAspect : public StepRepr_ShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_CompositeShapeAspect\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_HArray1OfRepresentationItem;
 class StepRepr_HArray1OfRepresentationItem : public MMgt_TShared {
@@ -2315,6 +2396,7 @@ class StepRepr_HArray1OfRepresentationItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_MaterialDesignation;
 class StepRepr_MaterialDesignation : public MMgt_TShared {
 	public:
@@ -2350,6 +2432,7 @@ class StepRepr_MaterialDesignation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_MaterialDesignation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_GlobalUncertaintyAssignedContext;
 class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_RepresentationContext {
@@ -2388,6 +2471,7 @@ class StepRepr_GlobalUncertaintyAssignedContext : public StepRepr_Representation
 	if (__env){printf("## Call custom destructor for instance of StepRepr_GlobalUncertaintyAssignedContext\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_HArray1OfMaterialPropertyRepresentation;
 class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
@@ -2434,6 +2518,7 @@ class StepRepr_HArray1OfMaterialPropertyRepresentation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_HArray1OfMaterialPropertyRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_HSequenceOfRepresentationItem;
 class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
@@ -2505,6 +2590,7 @@ class StepRepr_HSequenceOfRepresentationItem : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_PropertyDefinitionRepresentation;
 class StepRepr_PropertyDefinitionRepresentation : public MMgt_TShared {
 	public:
@@ -2541,6 +2627,7 @@ class StepRepr_PropertyDefinitionRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_MaterialPropertyRepresentation;
 class StepRepr_MaterialPropertyRepresentation : public StepRepr_PropertyDefinitionRepresentation {
 	public:
@@ -2570,6 +2657,7 @@ class StepRepr_MaterialPropertyRepresentation : public StepRepr_PropertyDefiniti
 	if (__env){printf("## Call custom destructor for instance of StepRepr_MaterialPropertyRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_RepresentationItem;
 class StepRepr_RepresentationItem : public MMgt_TShared {
@@ -2602,6 +2690,7 @@ class StepRepr_RepresentationItem : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_MappedItem;
 class StepRepr_MappedItem : public StepRepr_RepresentationItem {
@@ -2636,6 +2725,7 @@ class StepRepr_MappedItem : public StepRepr_RepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_MappedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_SequenceOfMaterialPropertyRepresentation;
 class StepRepr_SequenceOfMaterialPropertyRepresentation : public TCollection_BaseSequence {
@@ -2691,6 +2781,7 @@ class StepRepr_SequenceOfMaterialPropertyRepresentation : public TCollection_Bas
 	}
 };
 
+
 %nodefaultctor StepRepr_PropertyDefinitionRelationship;
 class StepRepr_PropertyDefinitionRelationship : public MMgt_TShared {
 	public:
@@ -2735,6 +2826,7 @@ class StepRepr_PropertyDefinitionRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_ShapeAspectDerivingRelationship;
 class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRelationship {
 	public:
@@ -2761,6 +2853,7 @@ class StepRepr_ShapeAspectDerivingRelationship : public StepRepr_ShapeAspectRela
 	}
 };
 
+
 %nodefaultctor StepRepr_Transformation;
 class StepRepr_Transformation : public StepData_SelectType {
 	public:
@@ -2780,6 +2873,7 @@ class StepRepr_Transformation : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_Transformation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_RepresentationMap;
 class StepRepr_RepresentationMap : public MMgt_TShared {
@@ -2817,6 +2911,7 @@ class StepRepr_RepresentationMap : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_RepresentedDefinition;
 class StepRepr_RepresentedDefinition : public StepData_SelectType {
 	public:
@@ -2842,6 +2937,7 @@ class StepRepr_RepresentedDefinition : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_RepresentedDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_Array1OfMaterialPropertyRepresentation;
 class StepRepr_Array1OfMaterialPropertyRepresentation {
@@ -2883,6 +2979,7 @@ class StepRepr_Array1OfMaterialPropertyRepresentation {
 	}
 };
 
+
 %nodefaultctor StepRepr_CompoundRepresentationItem;
 class StepRepr_CompoundRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -2921,6 +3018,7 @@ class StepRepr_CompoundRepresentationItem : public StepRepr_RepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepRepr_ValueRange;
 class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
 	public:
@@ -2944,6 +3042,7 @@ class StepRepr_ValueRange : public StepRepr_CompoundRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ValueRange\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_MakeFromUsageOption;
 class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
@@ -2984,6 +3083,7 @@ class StepRepr_MakeFromUsageOption : public StepRepr_ProductDefinitionUsage {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_MakeFromUsageOption\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_PropertyDefinition;
 class StepRepr_PropertyDefinition : public MMgt_TShared {
@@ -3027,6 +3127,7 @@ class StepRepr_PropertyDefinition : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_ProductDefinitionShape;
 class StepRepr_ProductDefinitionShape : public StepRepr_PropertyDefinition {
 	public:
@@ -3050,6 +3151,7 @@ class StepRepr_ProductDefinitionShape : public StepRepr_PropertyDefinition {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ProductDefinitionShape\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_NextAssemblyUsageOccurrence;
 class StepRepr_NextAssemblyUsageOccurrence : public StepRepr_AssemblyComponentUsage {
@@ -3077,6 +3179,7 @@ class StepRepr_NextAssemblyUsageOccurrence : public StepRepr_AssemblyComponentUs
 	}
 };
 
+
 %nodefaultctor StepRepr_StructuralResponsePropertyDefinitionRepresentation;
 class StepRepr_StructuralResponsePropertyDefinitionRepresentation : public StepRepr_PropertyDefinitionRepresentation {
 	public:
@@ -3102,6 +3205,7 @@ class StepRepr_StructuralResponsePropertyDefinitionRepresentation : public StepR
 	if (__env){printf("## Call custom destructor for instance of StepRepr_StructuralResponsePropertyDefinitionRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_GlobalUnitAssignedContext;
 class StepRepr_GlobalUnitAssignedContext : public StepRepr_RepresentationContext {
@@ -3141,6 +3245,7 @@ class StepRepr_GlobalUnitAssignedContext : public StepRepr_RepresentationContext
 	}
 };
 
+
 %nodefaultctor StepRepr_SpecifiedHigherUsageOccurrence;
 class StepRepr_SpecifiedHigherUsageOccurrence : public StepRepr_AssemblyComponentUsage {
 	public:
@@ -3176,6 +3281,7 @@ class StepRepr_SpecifiedHigherUsageOccurrence : public StepRepr_AssemblyComponen
 	if (__env){printf("## Call custom destructor for instance of StepRepr_SpecifiedHigherUsageOccurrence\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_HArray1OfPropertyDefinitionRepresentation;
 class StepRepr_HArray1OfPropertyDefinitionRepresentation : public MMgt_TShared {
@@ -3223,6 +3329,7 @@ class StepRepr_HArray1OfPropertyDefinitionRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_ExternallyDefinedRepresentation;
 class StepRepr_ExternallyDefinedRepresentation : public StepRepr_Representation {
 	public:
@@ -3248,6 +3355,7 @@ class StepRepr_ExternallyDefinedRepresentation : public StepRepr_Representation 
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ExternallyDefinedRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_DefinitionalRepresentation;
 class StepRepr_DefinitionalRepresentation : public StepRepr_Representation {
@@ -3275,6 +3383,7 @@ class StepRepr_DefinitionalRepresentation : public StepRepr_Representation {
 	}
 };
 
+
 %nodefaultctor StepRepr_ShapeRepresentationRelationshipWithTransformation;
 class StepRepr_ShapeRepresentationRelationshipWithTransformation : public StepRepr_RepresentationRelationshipWithTransformation {
 	public:
@@ -3300,6 +3409,7 @@ class StepRepr_ShapeRepresentationRelationshipWithTransformation : public StepRe
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ShapeRepresentationRelationshipWithTransformation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_ConfigurationEffectivity;
 class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffectivity {
@@ -3332,6 +3442,7 @@ class StepRepr_ConfigurationEffectivity : public StepBasic_ProductDefinitionEffe
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationEffectivity\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_AssemblyComponentUsageSubstitute;
 class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
@@ -3377,6 +3488,7 @@ class StepRepr_AssemblyComponentUsageSubstitute : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_DescriptiveRepresentationItem;
 class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -3411,6 +3523,7 @@ class StepRepr_DescriptiveRepresentationItem : public StepRepr_RepresentationIte
 	}
 };
 
+
 %nodefaultctor StepRepr_PromissoryUsageOccurrence;
 class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsage {
 	public:
@@ -3436,6 +3549,7 @@ class StepRepr_PromissoryUsageOccurrence : public StepRepr_AssemblyComponentUsag
 	if (__env){printf("## Call custom destructor for instance of StepRepr_PromissoryUsageOccurrence\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_FunctionallyDefinedTransformation;
 class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
@@ -3472,6 +3586,7 @@ class StepRepr_FunctionallyDefinedTransformation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_FunctionallyDefinedTransformation\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_Array1OfRepresentationItem;
 class StepRepr_Array1OfRepresentationItem {
@@ -3513,6 +3628,7 @@ class StepRepr_Array1OfRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepRepr_DataEnvironment;
 class StepRepr_DataEnvironment : public MMgt_TShared {
 	public:
@@ -3553,6 +3669,7 @@ class StepRepr_DataEnvironment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_MeasureRepresentationItem;
 class StepRepr_MeasureRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -3585,6 +3702,7 @@ class StepRepr_MeasureRepresentationItem : public StepRepr_RepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepRepr_MaterialProperty;
 class StepRepr_MaterialProperty : public StepRepr_PropertyDefinition {
 	public:
@@ -3610,6 +3728,7 @@ class StepRepr_MaterialProperty : public StepRepr_PropertyDefinition {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_MaterialProperty\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_ReprItemAndLengthMeasureWithUnit;
 class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_RepresentationItem {
@@ -3650,6 +3769,7 @@ class StepRepr_ReprItemAndLengthMeasureWithUnit : public StepRepr_Representation
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ReprItemAndLengthMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_ItemDefinedTransformation;
 class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
@@ -3695,6 +3815,7 @@ class StepRepr_ItemDefinedTransformation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_StructuralResponseProperty;
 class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
 	public:
@@ -3720,6 +3841,7 @@ class StepRepr_StructuralResponseProperty : public StepRepr_PropertyDefinition {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_StructuralResponseProperty\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_HSequenceOfMaterialPropertyRepresentation;
 class StepRepr_HSequenceOfMaterialPropertyRepresentation : public MMgt_TShared {
@@ -3791,6 +3913,7 @@ class StepRepr_HSequenceOfMaterialPropertyRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation;
 class StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public TCollection_SeqNode {
 	public:
@@ -3819,6 +3942,7 @@ class StepRepr_SequenceNodeOfSequenceOfMaterialPropertyRepresentation : public T
 	}
 };
 
+
 %nodefaultctor StepRepr_ConfigurationDesignItem;
 class StepRepr_ConfigurationDesignItem : public StepData_SelectType {
 	public:
@@ -3838,6 +3962,7 @@ class StepRepr_ConfigurationDesignItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationDesignItem\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_ConfigurationItem;
 class StepRepr_ConfigurationItem : public MMgt_TShared {
@@ -3890,6 +4015,7 @@ class StepRepr_ConfigurationItem : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepRepr_ConfigurationItem\n");}
 	}
 };
+
 
 %nodefaultctor StepRepr_SequenceOfRepresentationItem;
 class StepRepr_SequenceOfRepresentationItem : public TCollection_BaseSequence {

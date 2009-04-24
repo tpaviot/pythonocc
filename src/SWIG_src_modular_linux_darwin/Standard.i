@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -199,7 +200,12 @@ class Handle_Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Standard_Transient const DownCast(const Handle_Standard_Transient &AnObject);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & out) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Handle_Standard_Transient {
@@ -213,6 +219,7 @@ class Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Transient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_Failure;
 class Handle_Standard_Failure : public Handle_Standard_Transient {
@@ -239,6 +246,7 @@ class Handle_Standard_Failure : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_DomainError;
 class Handle_Standard_DomainError : public Handle_Standard_Failure {
 	public:
@@ -263,6 +271,7 @@ class Handle_Standard_DomainError : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DomainError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_RangeError;
 class Handle_Standard_RangeError : public Handle_Standard_DomainError {
@@ -289,6 +298,7 @@ class Handle_Standard_RangeError : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_NullValue;
 class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 	public:
@@ -313,6 +323,7 @@ class Handle_Standard_NullValue : public Handle_Standard_RangeError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NullValue\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_TypeMismatch;
 class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
@@ -339,6 +350,7 @@ class Handle_Standard_TypeMismatch : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_Persistent;
 class Handle_Standard_Persistent {
 	public:
@@ -349,7 +361,12 @@ class Handle_Standard_Persistent {
 		%feature("autodoc", "1");
 		Handle_Standard_Persistent(const Standard_Persistent *anItem);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & out) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		int operator==(const Handle_Standard_Persistent &right) const;
 		%feature("autodoc", "1");
@@ -380,6 +397,7 @@ class Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_OutOfRange;
 class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 	public:
@@ -404,6 +422,7 @@ class Handle_Standard_OutOfRange : public Handle_Standard_RangeError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_OutOfRange\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_NumericError;
 class Handle_Standard_NumericError : public Handle_Standard_Failure {
@@ -430,6 +449,7 @@ class Handle_Standard_NumericError : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_DivideByZero;
 class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 	public:
@@ -454,6 +474,7 @@ class Handle_Standard_DivideByZero : public Handle_Standard_NumericError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DivideByZero\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_NoMoreObject;
 class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
@@ -480,6 +501,7 @@ class Handle_Standard_NoMoreObject : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_Overflow;
 class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 	public:
@@ -504,6 +526,7 @@ class Handle_Standard_Overflow : public Handle_Standard_NumericError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Overflow\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_ProgramError;
 class Handle_Standard_ProgramError : public Handle_Standard_Failure {
@@ -530,6 +553,7 @@ class Handle_Standard_ProgramError : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_NotImplemented;
 class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 	public:
@@ -554,6 +578,7 @@ class Handle_Standard_NotImplemented : public Handle_Standard_ProgramError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_NotImplemented\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_NullObject;
 class Handle_Standard_NullObject : public Handle_Standard_DomainError {
@@ -580,6 +605,7 @@ class Handle_Standard_NullObject : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_AbortiveTransaction;
 class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 	public:
@@ -604,6 +630,7 @@ class Handle_Standard_AbortiveTransaction : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_AbortiveTransaction\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_DimensionError;
 class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
@@ -630,6 +657,7 @@ class Handle_Standard_DimensionError : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_LicenseError;
 class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 	public:
@@ -654,6 +682,7 @@ class Handle_Standard_LicenseError : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_LicenseError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_NoSuchObject;
 class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
@@ -680,6 +709,7 @@ class Handle_Standard_NoSuchObject : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_DimensionMismatch;
 class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError {
 	public:
@@ -704,6 +734,7 @@ class Handle_Standard_DimensionMismatch : public Handle_Standard_DimensionError 
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_DimensionMismatch\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_OutOfMemory;
 class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
@@ -730,6 +761,7 @@ class Handle_Standard_OutOfMemory : public Handle_Standard_ProgramError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_Type;
 class Handle_Standard_Type : public Handle_Standard_Transient {
 	public:
@@ -754,6 +786,7 @@ class Handle_Standard_Type : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_Type\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_NegativeValue;
 class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
@@ -780,6 +813,7 @@ class Handle_Standard_NegativeValue : public Handle_Standard_RangeError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_ImmutableObject;
 class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 	public:
@@ -804,6 +838,7 @@ class Handle_Standard_ImmutableObject : public Handle_Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_ImmutableObject\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_Underflow;
 class Handle_Standard_Underflow : public Handle_Standard_NumericError {
@@ -830,6 +865,7 @@ class Handle_Standard_Underflow : public Handle_Standard_NumericError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_ConstructionError;
 class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 	public:
@@ -854,6 +890,7 @@ class Handle_Standard_ConstructionError : public Handle_Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_ConstructionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_LicenseNotFound;
 class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
@@ -880,6 +917,7 @@ class Handle_Standard_LicenseNotFound : public Handle_Standard_LicenseError {
 	}
 };
 
+
 %nodefaultctor Handle_Standard_MultiplyDefined;
 class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 	public:
@@ -904,6 +942,7 @@ class Handle_Standard_MultiplyDefined : public Handle_Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Standard_MultiplyDefined\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Standard_TooManyUsers;
 class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
@@ -930,6 +969,7 @@ class Handle_Standard_TooManyUsers : public Handle_Standard_LicenseError {
 	}
 };
 
+
 %nodefaultctor Standard_Transient;
 class Standard_Transient {
 	public:
@@ -940,7 +980,12 @@ class Standard_Transient {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & arg0) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 		%feature("autodoc", "1");
@@ -974,6 +1019,7 @@ class Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Standard_Failure;
 class Standard_Failure : public Standard_Transient {
 	public:
@@ -986,7 +1032,12 @@ class Standard_Failure : public Standard_Transient {
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_CString GetMessageString() const;
 		%feature("autodoc", "1");
@@ -1024,6 +1075,7 @@ class Standard_Failure : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Standard_LicenseError;
 class Standard_LicenseError : public Standard_Failure {
 	public:
@@ -1051,6 +1103,7 @@ class Standard_LicenseError : public Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Standard_LicenseError\n");}
 	}
 };
+
 
 %nodefaultctor Standard_DomainError;
 class Standard_DomainError : public Standard_Failure {
@@ -1086,6 +1139,7 @@ class Standard_DomainError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Standard_NoSuchObject;
 class Standard_NoSuchObject : public Standard_DomainError {
 	public:
@@ -1113,6 +1167,7 @@ class Standard_NoSuchObject : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Standard_NoSuchObject\n");}
 	}
 };
+
 
 %nodefaultctor Standard_RangeError;
 class Standard_RangeError : public Standard_DomainError {
@@ -1148,6 +1203,7 @@ class Standard_RangeError : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Standard_NullValue;
 class Standard_NullValue : public Standard_RangeError {
 	public:
@@ -1175,6 +1231,7 @@ class Standard_NullValue : public Standard_RangeError {
 	if (__env){printf("## Call custom destructor for instance of Standard_NullValue\n");}
 	}
 };
+
 
 %nodefaultctor Standard_NumericError;
 class Standard_NumericError : public Standard_Failure {
@@ -1210,6 +1267,7 @@ class Standard_NumericError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Standard_MMgrRoot;
 class Standard_MMgrRoot {
 	public:
@@ -1232,6 +1290,7 @@ class Standard_MMgrRoot {
 	}
 };
 
+
 %nodefaultctor Standard_MMgrRaw;
 class Standard_MMgrRaw : public Standard_MMgrRoot {
 	public:
@@ -1251,6 +1310,7 @@ class Standard_MMgrRaw : public Standard_MMgrRoot {
 	if (__env){printf("## Call custom destructor for instance of Standard_MMgrRaw\n");}
 	}
 };
+
 
 %nodefaultctor Standard_NoMoreObject;
 class Standard_NoMoreObject : public Standard_DomainError {
@@ -1286,6 +1346,7 @@ class Standard_NoMoreObject : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Standard_ProgramError;
 class Standard_ProgramError : public Standard_Failure {
 	public:
@@ -1320,6 +1381,7 @@ class Standard_ProgramError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Standard_NotImplemented;
 class Standard_NotImplemented : public Standard_ProgramError {
 	public:
@@ -1347,6 +1409,7 @@ class Standard_NotImplemented : public Standard_ProgramError {
 	if (__env){printf("## Call custom destructor for instance of Standard_NotImplemented\n");}
 	}
 };
+
 
 %nodefaultctor Standard_DimensionError;
 class Standard_DimensionError : public Standard_DomainError {
@@ -1382,6 +1445,7 @@ class Standard_DimensionError : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Standard_ConstructionError;
 class Standard_ConstructionError : public Standard_DomainError {
 	public:
@@ -1416,6 +1480,7 @@ class Standard_ConstructionError : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Standard_MMgrOpt;
 class Standard_MMgrOpt : public Standard_MMgrRoot {
 	public:
@@ -1439,6 +1504,7 @@ class Standard_MMgrOpt : public Standard_MMgrRoot {
 	if (__env){printf("## Call custom destructor for instance of Standard_MMgrOpt\n");}
 	}
 };
+
 
 %nodefaultctor Standard_TypeMismatch;
 class Standard_TypeMismatch : public Standard_DomainError {
@@ -1474,6 +1540,7 @@ class Standard_TypeMismatch : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Standard_Storable;
 class Standard_Storable {
 	public:
@@ -1490,7 +1557,12 @@ class Standard_Storable {
 		%feature("autodoc", "1");
 		Standard_Boolean IsSimilar(const Standard_Storable &Other) const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 
 };
 %extend Standard_Storable {
@@ -1504,6 +1576,7 @@ class Standard_Storable {
 	if (__env){printf("## Call custom destructor for instance of Standard_Storable\n");}
 	}
 };
+
 
 %nodefaultctor Standard_DimensionMismatch;
 class Standard_DimensionMismatch : public Standard_DimensionError {
@@ -1539,6 +1612,7 @@ class Standard_DimensionMismatch : public Standard_DimensionError {
 	}
 };
 
+
 %nodefaultctor Standard_Type;
 class Standard_Type : public Standard_Transient {
 	public:
@@ -1573,9 +1647,19 @@ class Standard_Type : public Standard_Transient {
 		%feature("autodoc", "1");
 		void ShallowDump() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & s) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1597,6 +1681,7 @@ class Standard_Type : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Standard_ErrorHandlerCallback;
 class Standard_ErrorHandlerCallback {
 	public:
@@ -1614,6 +1699,7 @@ class Standard_ErrorHandlerCallback {
 	if (__env){printf("## Call custom destructor for instance of Standard_ErrorHandlerCallback\n");}
 	}
 };
+
 
 %nodefaultctor Standard_NegativeValue;
 class Standard_NegativeValue : public Standard_RangeError {
@@ -1649,6 +1735,7 @@ class Standard_NegativeValue : public Standard_RangeError {
 	}
 };
 
+
 %nodefaultctor Standard_DivideByZero;
 class Standard_DivideByZero : public Standard_NumericError {
 	public:
@@ -1682,6 +1769,7 @@ class Standard_DivideByZero : public Standard_NumericError {
 	if (__env){printf("## Call custom destructor for instance of Standard_DivideByZero\n");}
 	}
 };
+
 
 %nodefaultctor Standard_ImmutableObject;
 class Standard_ImmutableObject : public Standard_DomainError {
@@ -1717,6 +1805,7 @@ class Standard_ImmutableObject : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Standard_AbortiveTransaction;
 class Standard_AbortiveTransaction : public Standard_Failure {
 	public:
@@ -1751,6 +1840,7 @@ class Standard_AbortiveTransaction : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Standard_AncestorIterator;
 class Standard_AncestorIterator {
 	public:
@@ -1776,6 +1866,7 @@ class Standard_AncestorIterator {
 	if (__env){printf("## Call custom destructor for instance of Standard_AncestorIterator\n");}
 	}
 };
+
 
 %nodefaultctor Standard_OutOfMemory;
 class Standard_OutOfMemory : public Standard_ProgramError {
@@ -1811,6 +1902,7 @@ class Standard_OutOfMemory : public Standard_ProgramError {
 	}
 };
 
+
 %nodefaultctor Standard_MultiplyDefined;
 class Standard_MultiplyDefined : public Standard_DomainError {
 	public:
@@ -1844,6 +1936,7 @@ class Standard_MultiplyDefined : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Standard_MultiplyDefined\n");}
 	}
 };
+
 
 %nodefaultctor Standard_TooManyUsers;
 class Standard_TooManyUsers : public Standard_LicenseError {
@@ -1879,6 +1972,7 @@ class Standard_TooManyUsers : public Standard_LicenseError {
 	}
 };
 
+
 %nodefaultctor Standard_LicenseNotFound;
 class Standard_LicenseNotFound : public Standard_LicenseError {
 	public:
@@ -1913,6 +2007,7 @@ class Standard_LicenseNotFound : public Standard_LicenseError {
 	}
 };
 
+
 %nodefaultctor Standard;
 class Standard {
 	public:
@@ -1938,6 +2033,7 @@ class Standard {
 	if (__env){printf("## Call custom destructor for instance of Standard\n");}
 	}
 };
+
 
 %nodefaultctor Standard_Underflow;
 class Standard_Underflow : public Standard_NumericError {
@@ -1973,6 +2069,7 @@ class Standard_Underflow : public Standard_NumericError {
 	}
 };
 
+
 %nodefaultctor Standard_Overflow;
 class Standard_Overflow : public Standard_NumericError {
 	public:
@@ -2006,6 +2103,7 @@ class Standard_Overflow : public Standard_NumericError {
 	if (__env){printf("## Call custom destructor for instance of Standard_Overflow\n");}
 	}
 };
+
 
 %nodefaultctor Standard_NullObject;
 class Standard_NullObject : public Standard_DomainError {
@@ -2041,6 +2139,7 @@ class Standard_NullObject : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Standard_GUID;
 class Standard_GUID {
 	public:
@@ -2075,7 +2174,12 @@ class Standard_GUID {
 		%feature("autodoc", "1");
 		void Assign(const Standard_UUID &uid);
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & aStream) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean CheckGUIDFormat(const char * aGuid);
 		%feature("autodoc", "1");
@@ -2132,6 +2236,16 @@ class Standard_GUID {
 	if (__env){printf("## Call custom destructor for instance of Standard_GUID\n");}
 	}
 };
+%extend Standard_GUID {
+	Standard_PCharacter ToString() {
+	Standard_PCharacter tmpstr=NULL;
+	tmpstr = new char[37];
+	strcpy(tmpstr,"00000000-0000-0000-0000-000000000000");
+	$self->ToCString(tmpstr);
+	return tmpstr;
+	}
+};
+
 
 %nodefaultctor Standard_ErrorHandler;
 class Standard_ErrorHandler {
@@ -2159,6 +2273,7 @@ class Standard_ErrorHandler {
 	}
 };
 
+
 %nodefaultctor Standard_Persistent;
 class Standard_Persistent {
 	public:
@@ -2179,7 +2294,12 @@ class Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer HashCode(const Standard_Integer Upper) const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & arg0) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 
 };
 %extend Standard_Persistent {
@@ -2198,6 +2318,7 @@ class Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Standard_Persistent\n");}
 	}
 };
+
 
 %nodefaultctor Standard_OutOfRange;
 class Standard_OutOfRange : public Standard_RangeError {
@@ -2232,6 +2353,7 @@ class Standard_OutOfRange : public Standard_RangeError {
 	if (__env){printf("## Call custom destructor for instance of Standard_OutOfRange\n");}
 	}
 };
+
 
 %nodefaultctor Standard_Mutex;
 class Standard_Mutex : public Standard_ErrorHandlerCallback {

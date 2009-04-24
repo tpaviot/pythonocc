@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_GccAna_NoSolution : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor GccAna_CircLin2dBisec;
 class GccAna_CircLin2dBisec {
 	public:
@@ -157,6 +159,7 @@ class GccAna_CircLin2dBisec {
 	if (__env){printf("## Call custom destructor for instance of GccAna_CircLin2dBisec\n");}
 	}
 };
+
 
 %nodefaultctor GccAna_Lin2dTanObl;
 class GccAna_Lin2dTanObl {
@@ -186,6 +189,7 @@ class GccAna_Lin2dTanObl {
 	}
 };
 
+
 %nodefaultctor GccAna_Lin2dBisec;
 class GccAna_Lin2dBisec {
 	public:
@@ -210,6 +214,7 @@ class GccAna_Lin2dBisec {
 	}
 };
 
+
 %nodefaultctor GccAna_Pnt2dBisec;
 class GccAna_Pnt2dBisec {
 	public:
@@ -229,6 +234,7 @@ class GccAna_Pnt2dBisec {
 	if (__env){printf("## Call custom destructor for instance of GccAna_Pnt2dBisec\n");}
 	}
 };
+
 
 %nodefaultctor GccAna_Circ2dTanCen;
 class GccAna_Circ2dTanCen {
@@ -259,6 +265,7 @@ class GccAna_Circ2dTanCen {
 	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanCen\n");}
 	}
 };
+
 
 %nodefaultctor GccAna_Lin2dTanPer;
 class GccAna_Lin2dTanPer {
@@ -291,6 +298,7 @@ class GccAna_Lin2dTanPer {
 	if (__env){printf("## Call custom destructor for instance of GccAna_Lin2dTanPer\n");}
 	}
 };
+
 
 %nodefaultctor GccAna_Circ2dTanOnRad;
 class GccAna_Circ2dTanOnRad {
@@ -329,6 +337,7 @@ class GccAna_Circ2dTanOnRad {
 	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2dTanOnRad\n");}
 	}
 };
+
 
 %nodefaultctor GccAna_Circ2d3Tan;
 class GccAna_Circ2d3Tan {
@@ -382,6 +391,7 @@ class GccAna_Circ2d3Tan {
 	}
 };
 
+
 %nodefaultctor GccAna_NoSolution;
 class GccAna_NoSolution : public Standard_Failure {
 	public:
@@ -416,6 +426,7 @@ class GccAna_NoSolution : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor GccAna_LinPnt2dBisec;
 class GccAna_LinPnt2dBisec {
 	public:
@@ -433,6 +444,7 @@ class GccAna_LinPnt2dBisec {
 	if (__env){printf("## Call custom destructor for instance of GccAna_LinPnt2dBisec\n");}
 	}
 };
+
 
 %nodefaultctor GccAna_Circ2d2TanRad;
 class GccAna_Circ2d2TanRad {
@@ -474,6 +486,7 @@ class GccAna_Circ2d2TanRad {
 	}
 };
 
+
 %nodefaultctor GccAna_Lin2d2Tan;
 class GccAna_Lin2d2Tan {
 	public:
@@ -504,6 +517,7 @@ class GccAna_Lin2d2Tan {
 	}
 };
 
+
 %nodefaultctor GccAna_Lin2dTanPar;
 class GccAna_Lin2dTanPar {
 	public:
@@ -530,6 +544,7 @@ class GccAna_Lin2dTanPar {
 	}
 };
 
+
 %nodefaultctor GccAna_CircPnt2dBisec;
 class GccAna_CircPnt2dBisec {
 	public:
@@ -549,6 +564,7 @@ class GccAna_CircPnt2dBisec {
 	if (__env){printf("## Call custom destructor for instance of GccAna_CircPnt2dBisec\n");}
 	}
 };
+
 
 %nodefaultctor GccAna_Circ2d2TanOn;
 class GccAna_Circ2d2TanOn {
@@ -603,6 +619,7 @@ class GccAna_Circ2d2TanOn {
 	if (__env){printf("## Call custom destructor for instance of GccAna_Circ2d2TanOn\n");}
 	}
 };
+
 
 %nodefaultctor GccAna_Circ2dBisec;
 class GccAna_Circ2dBisec {

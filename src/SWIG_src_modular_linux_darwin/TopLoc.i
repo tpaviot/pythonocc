@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_TopLoc_SListNodeOfSListOfItemLocation : public Handle_MMgt_TShared 
 	}
 };
 
+
 %nodefaultctor Handle_TopLoc_StdMapNodeOfMapOfLocation;
 class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNode {
 	public:
@@ -163,6 +165,7 @@ class Handle_TopLoc_StdMapNodeOfMapOfLocation : public Handle_TCollection_MapNod
 	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_StdMapNodeOfMapOfLocation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopLoc_Datum3D;
 class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
@@ -189,6 +192,7 @@ class Handle_TopLoc_Datum3D : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
 class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollection_MapNode {
 	public:
@@ -213,6 +217,7 @@ class Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");}
 	}
 };
+
 
 %nodefaultctor TopLoc_MapOfLocation;
 class TopLoc_MapOfLocation : public TCollection_BasicMap {
@@ -239,6 +244,7 @@ class TopLoc_MapOfLocation : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TopLoc_MapOfLocation\n");}
 	}
 };
+
 
 %nodefaultctor TopLoc_IndexedMapOfLocation;
 class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
@@ -274,6 +280,7 @@ class TopLoc_IndexedMapOfLocation : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopLoc_StdMapNodeOfMapOfLocation;
 class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 	public:
@@ -301,6 +308,7 @@ class TopLoc_StdMapNodeOfMapOfLocation : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopLoc_StdMapNodeOfMapOfLocation\n");}
 	}
 };
+
 
 %nodefaultctor TopLoc_IndexedMapNodeOfIndexedMapOfLocation;
 class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
@@ -333,6 +341,7 @@ class TopLoc_IndexedMapNodeOfIndexedMapOfLocation : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopLoc_IndexedMapNodeOfIndexedMapOfLocation\n");}
 	}
 };
+
 
 %nodefaultctor TopLoc_Location;
 class TopLoc_Location {
@@ -380,7 +389,12 @@ class TopLoc_Location {
 		%feature("autodoc", "1");
 		Standard_Boolean operator!=(const TopLoc_Location &Other) const;
 		%feature("autodoc", "1");
-		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 
 };
 %extend TopLoc_Location {
@@ -394,6 +408,7 @@ class TopLoc_Location {
 	if (__env){printf("## Call custom destructor for instance of TopLoc_Location\n");}
 	}
 };
+
 
 %nodefaultctor TopLoc_MapIteratorOfMapOfLocation;
 class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
@@ -415,6 +430,7 @@ class TopLoc_MapIteratorOfMapOfLocation : public TCollection_BasicMapIterator {
 	}
 };
 
+
 %nodefaultctor TopLoc_MapLocationHasher;
 class TopLoc_MapLocationHasher {
 	public:
@@ -432,6 +448,7 @@ class TopLoc_MapLocationHasher {
 	if (__env){printf("## Call custom destructor for instance of TopLoc_MapLocationHasher\n");}
 	}
 };
+
 
 %nodefaultctor TopLoc_ItemLocation;
 class TopLoc_ItemLocation {
@@ -453,6 +470,7 @@ class TopLoc_ItemLocation {
 	}
 };
 
+
 %nodefaultctor TopLoc_Datum3D;
 class TopLoc_Datum3D : public MMgt_TShared {
 	public:
@@ -463,7 +481,12 @@ class TopLoc_Datum3D : public MMgt_TShared {
 		%feature("autodoc", "1");
 		const gp_Trsf & Transformation() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -484,6 +507,7 @@ class TopLoc_Datum3D : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TopLoc_Datum3D\n");}
 	}
 };
+
 
 %nodefaultctor TopLoc_SListOfItemLocation;
 class TopLoc_SListOfItemLocation {

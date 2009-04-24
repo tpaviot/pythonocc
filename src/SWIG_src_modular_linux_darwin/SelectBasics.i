@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfOwner : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_SelectBasics_SequenceNodeOfSequenceOfAddress;
 class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_SelectBasics_SequenceNodeOfSequenceOfAddress : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfBox2d;
 class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_SelectBasics_ListNodeOfListOfBox2d : public Handle_TCollection_MapN
 	}
 };
 
+
 %nodefaultctor Handle_SelectBasics_ListNodeOfListOfSensitive;
 class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_SelectBasics_ListNodeOfListOfSensitive : public Handle_TCollection_
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_ListNodeOfListOfSensitive\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectBasics_SensitiveEntity;
 class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_SelectBasics_SensitiveEntity : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_SelectBasics_EntityOwner;
 class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_SelectBasics_EntityOwner : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectBasics_EntityOwner\n");}
 	}
 };
+
 
 %nodefaultctor SelectBasics_SortAlgo;
 class SelectBasics_SortAlgo {
@@ -291,6 +298,7 @@ class SelectBasics_SortAlgo {
 	}
 };
 
+
 %nodefaultctor SelectBasics;
 class SelectBasics {
 	public:
@@ -308,6 +316,7 @@ class SelectBasics {
 	if (__env){printf("## Call custom destructor for instance of SelectBasics\n");}
 	}
 };
+
 
 %nodefaultctor SelectBasics_ListNodeOfListOfSensitive;
 class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
@@ -337,6 +346,7 @@ class SelectBasics_ListNodeOfListOfSensitive : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor SelectBasics_ListNodeOfListOfBox2d;
 class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 	public:
@@ -365,6 +375,7 @@ class SelectBasics_ListNodeOfListOfBox2d : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor SelectBasics_SequenceNodeOfSequenceOfAddress;
 class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 	public:
@@ -392,6 +403,7 @@ class SelectBasics_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
+
 
 %nodefaultctor SelectBasics_SensitiveEntity;
 class SelectBasics_SensitiveEntity : public MMgt_TShared {
@@ -440,6 +452,7 @@ class SelectBasics_SensitiveEntity : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of SelectBasics_SensitiveEntity\n");}
 	}
 };
+
 
 %nodefaultctor SelectBasics_ListOfBox2d;
 class SelectBasics_ListOfBox2d {
@@ -491,6 +504,7 @@ class SelectBasics_ListOfBox2d {
 	}
 };
 
+
 %nodefaultctor SelectBasics_BasicTool;
 class SelectBasics_BasicTool {
 	public:
@@ -510,6 +524,7 @@ class SelectBasics_BasicTool {
 	if (__env){printf("## Call custom destructor for instance of SelectBasics_BasicTool\n");}
 	}
 };
+
 
 %nodefaultctor SelectBasics_SequenceNodeOfSequenceOfOwner;
 class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
@@ -539,6 +554,7 @@ class SelectBasics_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor SelectBasics_ListIteratorOfListOfBox2d;
 class SelectBasics_ListIteratorOfListOfBox2d {
 	public:
@@ -563,6 +579,7 @@ class SelectBasics_ListIteratorOfListOfBox2d {
 	}
 };
 
+
 %nodefaultctor SelectBasics_ListIteratorOfListOfSensitive;
 class SelectBasics_ListIteratorOfListOfSensitive {
 	public:
@@ -586,6 +603,7 @@ class SelectBasics_ListIteratorOfListOfSensitive {
 	if (__env){printf("## Call custom destructor for instance of SelectBasics_ListIteratorOfListOfSensitive\n");}
 	}
 };
+
 
 %nodefaultctor SelectBasics_EntityOwner;
 class SelectBasics_EntityOwner : public MMgt_TShared {
@@ -622,6 +640,7 @@ class SelectBasics_EntityOwner : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of SelectBasics_EntityOwner\n");}
 	}
 };
+
 
 %nodefaultctor SelectBasics_SequenceOfOwner;
 class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
@@ -677,6 +696,7 @@ class SelectBasics_SequenceOfOwner : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor SelectBasics_SequenceOfAddress;
 class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 	public:
@@ -730,6 +750,7 @@ class SelectBasics_SequenceOfAddress : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of SelectBasics_SequenceOfAddress\n");}
 	}
 };
+
 
 %nodefaultctor SelectBasics_ListOfSensitive;
 class SelectBasics_ListOfSensitive {

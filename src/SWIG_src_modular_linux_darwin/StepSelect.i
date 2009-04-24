@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_StepSelect_StepType : public Handle_IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor Handle_StepSelect_ModelModifier;
 class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	public:
@@ -162,6 +164,7 @@ class Handle_StepSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_ModelModifier\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepSelect_FileModifier;
 class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
@@ -188,6 +191,7 @@ class Handle_StepSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	}
 };
 
+
 %nodefaultctor Handle_StepSelect_FloatFormat;
 class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 	public:
@@ -212,6 +216,7 @@ class Handle_StepSelect_FloatFormat : public Handle_StepSelect_FileModifier {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_FloatFormat\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepSelect_WorkLibrary;
 class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
@@ -238,6 +243,7 @@ class Handle_StepSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	}
 };
 
+
 %nodefaultctor Handle_StepSelect_Activator;
 class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	public:
@@ -262,6 +268,7 @@ class Handle_StepSelect_Activator : public Handle_IFSelect_Activator {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepSelect_Activator\n");}
 	}
 };
+
 
 %nodefaultctor StepSelect_WorkLibrary;
 class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
@@ -299,6 +306,7 @@ class StepSelect_WorkLibrary : public IFSelect_WorkLibrary {
 	}
 };
 
+
 %nodefaultctor StepSelect_FileModifier;
 class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 	public:
@@ -324,6 +332,7 @@ class StepSelect_FileModifier : public IFSelect_GeneralModifier {
 	if (__env){printf("## Call custom destructor for instance of StepSelect_FileModifier\n");}
 	}
 };
+
 
 %nodefaultctor StepSelect_StepType;
 class StepSelect_StepType : public IFSelect_Signature {
@@ -354,6 +363,7 @@ class StepSelect_StepType : public IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of StepSelect_StepType\n");}
 	}
 };
+
 
 %nodefaultctor StepSelect_FloatFormat;
 class StepSelect_FloatFormat : public StepSelect_FileModifier {
@@ -395,6 +405,7 @@ class StepSelect_FloatFormat : public StepSelect_FileModifier {
 	}
 };
 
+
 %nodefaultctor StepSelect_ModelModifier;
 class StepSelect_ModelModifier : public IFSelect_Modifier {
 	public:
@@ -424,6 +435,7 @@ class StepSelect_ModelModifier : public IFSelect_Modifier {
 	if (__env){printf("## Call custom destructor for instance of StepSelect_ModelModifier\n");}
 	}
 };
+
 
 %nodefaultctor StepSelect_Activator;
 class StepSelect_Activator : public IFSelect_Activator {

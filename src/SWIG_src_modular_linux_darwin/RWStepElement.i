@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepElement_RWAnalysisItemWithinRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepElement_RWSurfaceSectionField;
 class RWStepElement_RWSurfaceSectionField {
 	public:
@@ -152,6 +154,7 @@ class RWStepElement_RWSurfaceSectionField {
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSectionField\n");}
 	}
 };
+
 
 %nodefaultctor RWStepElement_RWCurveElementSectionDefinition;
 class RWStepElement_RWCurveElementSectionDefinition {
@@ -173,6 +176,7 @@ class RWStepElement_RWCurveElementSectionDefinition {
 	}
 };
 
+
 %nodefaultctor RWStepElement_RWSurface3dElementDescriptor;
 class RWStepElement_RWSurface3dElementDescriptor {
 	public:
@@ -192,6 +196,7 @@ class RWStepElement_RWSurface3dElementDescriptor {
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurface3dElementDescriptor\n");}
 	}
 };
+
 
 %nodefaultctor RWStepElement_RWCurveElementSectionDerivedDefinitions;
 class RWStepElement_RWCurveElementSectionDerivedDefinitions {
@@ -213,6 +218,7 @@ class RWStepElement_RWCurveElementSectionDerivedDefinitions {
 	}
 };
 
+
 %nodefaultctor RWStepElement_RWSurfaceSectionFieldVarying;
 class RWStepElement_RWSurfaceSectionFieldVarying {
 	public:
@@ -232,6 +238,7 @@ class RWStepElement_RWSurfaceSectionFieldVarying {
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSectionFieldVarying\n");}
 	}
 };
+
 
 %nodefaultctor RWStepElement_RWElementDescriptor;
 class RWStepElement_RWElementDescriptor {
@@ -253,6 +260,7 @@ class RWStepElement_RWElementDescriptor {
 	}
 };
 
+
 %nodefaultctor RWStepElement_RWElementMaterial;
 class RWStepElement_RWElementMaterial {
 	public:
@@ -272,6 +280,7 @@ class RWStepElement_RWElementMaterial {
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWElementMaterial\n");}
 	}
 };
+
 
 %nodefaultctor RWStepElement_RWVolume3dElementDescriptor;
 class RWStepElement_RWVolume3dElementDescriptor {
@@ -293,6 +302,7 @@ class RWStepElement_RWVolume3dElementDescriptor {
 	}
 };
 
+
 %nodefaultctor RWStepElement_RWSurfaceElementProperty;
 class RWStepElement_RWSurfaceElementProperty {
 	public:
@@ -312,6 +322,7 @@ class RWStepElement_RWSurfaceElementProperty {
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceElementProperty\n");}
 	}
 };
+
 
 %nodefaultctor RWStepElement_RWUniformSurfaceSection;
 class RWStepElement_RWUniformSurfaceSection {
@@ -333,6 +344,7 @@ class RWStepElement_RWUniformSurfaceSection {
 	}
 };
 
+
 %nodefaultctor RWStepElement_RWSurfaceSectionFieldConstant;
 class RWStepElement_RWSurfaceSectionFieldConstant {
 	public:
@@ -352,6 +364,7 @@ class RWStepElement_RWSurfaceSectionFieldConstant {
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWSurfaceSectionFieldConstant\n");}
 	}
 };
+
 
 %nodefaultctor RWStepElement_RWCurve3dElementDescriptor;
 class RWStepElement_RWCurve3dElementDescriptor {
@@ -373,6 +386,7 @@ class RWStepElement_RWCurve3dElementDescriptor {
 	}
 };
 
+
 %nodefaultctor RWStepElement_RWCurveElementEndReleasePacket;
 class RWStepElement_RWCurveElementEndReleasePacket {
 	public:
@@ -392,6 +406,7 @@ class RWStepElement_RWCurveElementEndReleasePacket {
 	if (__env){printf("## Call custom destructor for instance of RWStepElement_RWCurveElementEndReleasePacket\n");}
 	}
 };
+
 
 %nodefaultctor RWStepElement_RWSurfaceSection;
 class RWStepElement_RWSurfaceSection {

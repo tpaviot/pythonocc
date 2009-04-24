@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -257,6 +258,7 @@ class Handle_V3d_UnMapped : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_View;
 class Handle_V3d_View : public Handle_Viewer_View {
 	public:
@@ -281,6 +283,7 @@ class Handle_V3d_View : public Handle_Viewer_View {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_View\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_PerspectiveView;
 class Handle_V3d_PerspectiveView : public Handle_V3d_View {
@@ -307,6 +310,7 @@ class Handle_V3d_PerspectiveView : public Handle_V3d_View {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_OrthographicView;
 class Handle_V3d_OrthographicView : public Handle_V3d_View {
 	public:
@@ -331,6 +335,7 @@ class Handle_V3d_OrthographicView : public Handle_V3d_View {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_OrthographicView\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_Light;
 class Handle_V3d_Light : public Handle_MMgt_TShared {
@@ -357,6 +362,7 @@ class Handle_V3d_Light : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_PositionLight;
 class Handle_V3d_PositionLight : public Handle_V3d_Light {
 	public:
@@ -381,6 +387,7 @@ class Handle_V3d_PositionLight : public Handle_V3d_Light {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_PositionLight\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_SpotLight;
 class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
@@ -407,6 +414,7 @@ class Handle_V3d_SpotLight : public Handle_V3d_PositionLight {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_CircularGrid;
 class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 	public:
@@ -431,6 +439,7 @@ class Handle_V3d_CircularGrid : public Handle_Aspect_CircularGrid {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_CircularGrid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_Plane;
 class Handle_V3d_Plane : public Handle_MMgt_TShared {
@@ -457,6 +466,7 @@ class Handle_V3d_Plane : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_Camera;
 class Handle_V3d_Camera : public Handle_MMgt_TShared {
 	public:
@@ -481,6 +491,7 @@ class Handle_V3d_Camera : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Camera\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_LayerMgr;
 class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
@@ -507,6 +518,7 @@ class Handle_V3d_LayerMgr : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_Viewer;
 class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 	public:
@@ -531,6 +543,7 @@ class Handle_V3d_Viewer : public Handle_Viewer_Viewer {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_Viewer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_ColorScale;
 class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
@@ -557,6 +570,7 @@ class Handle_V3d_ColorScale : public Handle_Aspect_ColorScale {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_DirectionalLight;
 class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 	public:
@@ -581,6 +595,7 @@ class Handle_V3d_DirectionalLight : public Handle_V3d_PositionLight {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_DirectionalLight\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V3d_PositionalLight;
 class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
@@ -607,6 +622,7 @@ class Handle_V3d_PositionalLight : public Handle_V3d_PositionLight {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_RectangularGrid;
 class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	public:
@@ -632,6 +648,7 @@ class Handle_V3d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	}
 };
 
+
 %nodefaultctor Handle_V3d_AmbientLight;
 class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 	public:
@@ -656,6 +673,7 @@ class Handle_V3d_AmbientLight : public Handle_V3d_Light {
 	if (__env){printf("## Call custom destructor for instance of Handle_V3d_AmbientLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d_Light;
 class V3d_Light : public MMgt_TShared {
@@ -699,6 +717,7 @@ class V3d_Light : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor V3d_AmbientLight;
 class V3d_AmbientLight : public V3d_Light {
 	public:
@@ -722,6 +741,7 @@ class V3d_AmbientLight : public V3d_Light {
 	if (__env){printf("## Call custom destructor for instance of V3d_AmbientLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d_Camera;
 class V3d_Camera : public MMgt_TShared {
@@ -757,9 +777,9 @@ class V3d_Camera : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void Erase();
 		%feature("autodoc", "1");
-		void Position(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Target(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle Angle() const;
 		%feature("autodoc", "1");
@@ -791,6 +811,7 @@ class V3d_Camera : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor V3d_PositionLight;
 class V3d_PositionLight : public V3d_Light {
 	public:
@@ -817,9 +838,9 @@ class V3d_PositionLight : public V3d_Light {
 		%feature("autodoc", "1");
 		Standard_Boolean SeeOrHide(const Handle_V3d_View &aView) const;
 		%feature("autodoc", "1");
-		virtual		void Position(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Target(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		void Target(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -840,6 +861,7 @@ class V3d_PositionLight : public V3d_Light {
 	if (__env){printf("## Call custom destructor for instance of V3d_PositionLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d;
 class V3d {
@@ -868,6 +890,7 @@ class V3d {
 	if (__env){printf("## Call custom destructor for instance of V3d\n");}
 	}
 };
+
 
 %nodefaultctor V3d_CircularGrid;
 class V3d_CircularGrid : public Aspect_CircularGrid {
@@ -907,6 +930,7 @@ class V3d_CircularGrid : public Aspect_CircularGrid {
 	}
 };
 
+
 %nodefaultctor V3d_UnMapped;
 class V3d_UnMapped : public Standard_DomainError {
 	public:
@@ -940,6 +964,7 @@ class V3d_UnMapped : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of V3d_UnMapped\n");}
 	}
 };
+
 
 %nodefaultctor V3d_ColorScale;
 class V3d_ColorScale : public Aspect_ColorScale {
@@ -985,6 +1010,7 @@ class V3d_ColorScale : public Aspect_ColorScale {
 	}
 };
 
+
 %nodefaultctor V3d_PositionalLight;
 class V3d_PositionalLight : public V3d_PositionLight {
 	public:
@@ -999,7 +1025,7 @@ class V3d_PositionalLight : public V3d_PositionLight {
 		%feature("autodoc", "1");
 		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
 		%feature("autodoc", "1");
-		virtual		void Position(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
 		%feature("autodoc", "1");
@@ -1022,6 +1048,7 @@ class V3d_PositionalLight : public V3d_PositionLight {
 	if (__env){printf("## Call custom destructor for instance of V3d_PositionalLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d_RectangularGrid;
 class V3d_RectangularGrid : public Aspect_RectangularGrid {
@@ -1061,6 +1088,7 @@ class V3d_RectangularGrid : public Aspect_RectangularGrid {
 	}
 };
 
+
 %nodefaultctor V3d_Plane;
 class V3d_Plane : public MMgt_TShared {
 	public:
@@ -1096,6 +1124,7 @@ class V3d_Plane : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of V3d_Plane\n");}
 	}
 };
+
 
 %nodefaultctor V3d_View;
 class V3d_View : public Viewer_View {
@@ -1291,23 +1320,23 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Quantity_Length Convert(const Standard_Integer Vp) const;
 		%feature("autodoc", "1");
-		void Convert(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & Xv, V3d_Coordinate & Yv) const;
+		void Convert(const Standard_Integer Xp, const Standard_Integer Yp, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer Convert(const Quantity_Length Vv) const;
 		%feature("autodoc", "1");
 		void Convert(const V3d_Coordinate Xv, const V3d_Coordinate Yv, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void Convert(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		void Convert(const Standard_Integer Xp, const Standard_Integer Yp, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void ConvertWithProj(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
+		void ConvertWithProj(const Standard_Integer Xp, const Standard_Integer Yp, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void ConvertToGrid(const Standard_Integer Xp, const Standard_Integer Yp, V3d_Coordinate & Xg, V3d_Coordinate & Yg, V3d_Coordinate & Zg) const;
+		void ConvertToGrid(const Standard_Integer Xp, const Standard_Integer Yp, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void ConvertToGrid(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, V3d_Coordinate & Xg, V3d_Coordinate & Yg, V3d_Coordinate & Zg) const;
+		void ConvertToGrid(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Convert(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void Project(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, V3d_Coordinate & Xp, V3d_Coordinate & Yp) const;
+		void Project(const V3d_Coordinate X, const V3d_Coordinate Y, const V3d_Coordinate Z, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void BackgroundColor(const Quantity_TypeOfColor Type, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
@@ -1317,23 +1346,23 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void AxialScale(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Center(V3d_Coordinate & Xc, V3d_Coordinate & Yc) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Size(Quantity_Length & Width, Quantity_Length & Height) const;
+		void Size(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Real ZSize() const;
 		%feature("autodoc", "1");
-		void Eye(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		void Eye(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void FocalReferencePoint(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		void FocalReferencePoint(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void ProjReferenceAxe(const Standard_Integer Xpix, const Standard_Integer Ypix, V3d_Coordinate & XP, V3d_Coordinate & YP, V3d_Coordinate & ZP, V3d_Coordinate & VX, V3d_Coordinate & VY, V3d_Coordinate & VZ) const;
+		void ProjReferenceAxe(const Standard_Integer Xpix, const Standard_Integer Ypix, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Depth() const;
 		%feature("autodoc", "1");
 		void Proj(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void At(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		void At(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Up(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
@@ -1351,9 +1380,9 @@ class V3d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Standard_Boolean Antialiasing() const;
 		%feature("autodoc", "1");
-		Standard_Boolean ZCueing(Quantity_Length & Depth, Quantity_Length & Width) const;
+		Standard_Boolean ZCueing(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		V3d_TypeOfZclipping ZClipping(Quantity_Length & Depth, Quantity_Length & Width) const;
+		V3d_TypeOfZclipping ZClipping(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Boolean IfMoreLights() const;
 		%feature("autodoc", "1");
@@ -1491,6 +1520,7 @@ class V3d_View : public Viewer_View {
 	}
 };
 
+
 %nodefaultctor V3d_DirectionalLight;
 class V3d_DirectionalLight : public V3d_PositionLight {
 	public:
@@ -1509,9 +1539,9 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 		%feature("autodoc", "1");
 		virtual		void Display(const Handle_V3d_View &aView, const V3d_TypeOfRepresentation Representation);
 		%feature("autodoc", "1");
-		virtual		void Position(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void DisplayPosition(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		void DisplayPosition(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
@@ -1534,6 +1564,7 @@ class V3d_DirectionalLight : public V3d_PositionLight {
 	if (__env){printf("## Call custom destructor for instance of V3d_DirectionalLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d_SpotLight;
 class V3d_SpotLight : public V3d_PositionLight {
@@ -1559,7 +1590,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 		%feature("autodoc", "1");
 		void Direction(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		virtual		void Position(V3d_Coordinate & X, V3d_Coordinate & Y, V3d_Coordinate & Z) const;
+		virtual		void Position(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Attenuation(Quantity_Coefficient & A1, Quantity_Coefficient & A2) const;
 		%feature("autodoc", "1");
@@ -1586,6 +1617,7 @@ class V3d_SpotLight : public V3d_PositionLight {
 	if (__env){printf("## Call custom destructor for instance of V3d_SpotLight\n");}
 	}
 };
+
 
 %nodefaultctor V3d_PerspectiveView;
 class V3d_PerspectiveView : public V3d_View {
@@ -1625,6 +1657,7 @@ class V3d_PerspectiveView : public V3d_View {
 	}
 };
 
+
 %nodefaultctor V3d_OrthographicView;
 class V3d_OrthographicView : public V3d_View {
 	public:
@@ -1657,6 +1690,7 @@ class V3d_OrthographicView : public V3d_View {
 	}
 };
 
+
 %nodefaultctor V3d_ListOfTransient;
 class V3d_ListOfTransient : public TColStd_ListOfTransient {
 	public:
@@ -1674,6 +1708,7 @@ class V3d_ListOfTransient : public TColStd_ListOfTransient {
 	if (__env){printf("## Call custom destructor for instance of V3d_ListOfTransient\n");}
 	}
 };
+
 
 %nodefaultctor V3d_Viewer;
 class V3d_Viewer : public Viewer_Viewer {
@@ -1843,19 +1878,19 @@ class V3d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		Aspect_GridDrawMode GridDrawMode() const;
 		%feature("autodoc", "1");
-		void RectangularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & XStep, Quantity_Length & YStep, Quantity_PlaneAngle & RotationAngle) const;
+		void RectangularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetRectangularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");
-		void CircularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & RadiusStep, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
+		void CircularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetCircularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length RadiusStep, const Standard_Integer DivisionNumber, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");
-		void CircularGridGraphicValues(Quantity_Length & Radius, Quantity_Length & OffSet) const;
+		void CircularGridGraphicValues(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetCircularGridGraphicValues(const Quantity_Length Radius, const Quantity_Length OffSet);
 		%feature("autodoc", "1");
-		void RectangularGridGraphicValues(Quantity_Length & XSize, Quantity_Length & YSize, Quantity_Length & OffSet) const;
+		void RectangularGridGraphicValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void SetRectangularGridGraphicValues(const Quantity_Length XSize, const Quantity_Length YSize, const Quantity_Length OffSet);
 		%feature("autodoc", "1");
@@ -1882,6 +1917,7 @@ class V3d_Viewer : public Viewer_Viewer {
 	if (__env){printf("## Call custom destructor for instance of V3d_Viewer\n");}
 	}
 };
+
 
 %nodefaultctor V3d_LayerMgr;
 class V3d_LayerMgr : public MMgt_TShared {

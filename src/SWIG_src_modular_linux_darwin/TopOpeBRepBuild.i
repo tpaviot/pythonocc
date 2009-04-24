@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -147,6 +148,7 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepBuild_Loop;
 class Handle_TopOpeBRepBuild_Loop : public Handle_MMgt_TShared {
 	public:
@@ -171,6 +173,7 @@ class Handle_TopOpeBRepBuild_Loop : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_Loop\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepBuild_Pave;
 class Handle_TopOpeBRepBuild_Pave : public Handle_TopOpeBRepBuild_Loop {
@@ -197,6 +200,7 @@ class Handle_TopOpeBRepBuild_Pave : public Handle_TopOpeBRepBuild_Loop {
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -221,6 +225,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo;
 class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : public Handle_TCollection_MapNode {
@@ -247,6 +252,7 @@ class Handle_TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
@@ -271,6 +277,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public Handle_TCollect
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_ListNodeOfListOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfPave;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfPave : public Handle_TCollection_MapNode {
@@ -297,6 +304,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfPave : public Handle_TCollection_Ma
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal;
 class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCollection_MapNode {
 	public:
@@ -321,6 +329,7 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepBuild_HBuilder;
 class Handle_TopOpeBRepBuild_HBuilder : public Handle_MMgt_TShared {
@@ -347,6 +356,7 @@ class Handle_TopOpeBRepBuild_HBuilder : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape;
 class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -371,6 +381,7 @@ class Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape :
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRepBuild_ListNodeOfListOfLoop;
 class Handle_TopOpeBRepBuild_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
@@ -397,6 +408,7 @@ class Handle_TopOpeBRepBuild_ListNodeOfListOfLoop : public Handle_TCollection_Ma
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_ShapeListOfShape;
 class TopOpeBRepBuild_ShapeListOfShape {
 	public:
@@ -422,6 +434,7 @@ class TopOpeBRepBuild_ShapeListOfShape {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_AreaBuilder;
 class TopOpeBRepBuild_AreaBuilder {
@@ -462,6 +475,7 @@ class TopOpeBRepBuild_AreaBuilder {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_AreaBuilder\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_Builder;
 class TopOpeBRepBuild_Builder {
@@ -849,6 +863,7 @@ class TopOpeBRepBuild_Builder {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_Builder1;
 class TopOpeBRepBuild_Builder1 : public TopOpeBRepBuild_Builder {
 	public:
@@ -889,6 +904,7 @@ class TopOpeBRepBuild_Builder1 : public TopOpeBRepBuild_Builder {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape;
 class TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
 	public:
@@ -912,6 +928,7 @@ class TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListIteratorOfListOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_CorrectFace2d;
 class TopOpeBRepBuild_CorrectFace2d {
@@ -947,6 +964,7 @@ class TopOpeBRepBuild_CorrectFace2d {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_LoopClassifier;
 class TopOpeBRepBuild_LoopClassifier {
 	public:
@@ -962,6 +980,7 @@ class TopOpeBRepBuild_LoopClassifier {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_LoopClassifier\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_CompositeClassifier;
 class TopOpeBRepBuild_CompositeClassifier : public TopOpeBRepBuild_LoopClassifier {
@@ -987,6 +1006,7 @@ class TopOpeBRepBuild_CompositeClassifier : public TopOpeBRepBuild_LoopClassifie
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_ShellFaceClassifier;
 class TopOpeBRepBuild_ShellFaceClassifier : public TopOpeBRepBuild_CompositeClassifier {
 	public:
@@ -1010,6 +1030,7 @@ class TopOpeBRepBuild_ShellFaceClassifier : public TopOpeBRepBuild_CompositeClas
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ShellFaceClassifier\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_WireEdgeClassifier;
 class TopOpeBRepBuild_WireEdgeClassifier : public TopOpeBRepBuild_CompositeClassifier {
@@ -1040,6 +1061,7 @@ class TopOpeBRepBuild_WireEdgeClassifier : public TopOpeBRepBuild_CompositeClass
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_WireEdgeClassifier\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ListOfLoop;
 class TopOpeBRepBuild_ListOfLoop {
@@ -1091,6 +1113,7 @@ class TopOpeBRepBuild_ListOfLoop {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_Area2dBuilder;
 class TopOpeBRepBuild_Area2dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
@@ -1109,6 +1132,7 @@ class TopOpeBRepBuild_Area2dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_FaceAreaBuilder;
 class TopOpeBRepBuild_FaceAreaBuilder : public TopOpeBRepBuild_Area2dBuilder {
 	public:
@@ -1126,6 +1150,7 @@ class TopOpeBRepBuild_FaceAreaBuilder : public TopOpeBRepBuild_Area2dBuilder {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_FaceAreaBuilder\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_WireToFace;
 class TopOpeBRepBuild_WireToFace {
@@ -1147,6 +1172,7 @@ class TopOpeBRepBuild_WireToFace {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_Area3dBuilder;
 class TopOpeBRepBuild_Area3dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
@@ -1165,6 +1191,7 @@ class TopOpeBRepBuild_Area3dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_SolidAreaBuilder;
 class TopOpeBRepBuild_SolidAreaBuilder : public TopOpeBRepBuild_Area3dBuilder {
 	public:
@@ -1182,6 +1209,7 @@ class TopOpeBRepBuild_SolidAreaBuilder : public TopOpeBRepBuild_Area3dBuilder {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_SolidAreaBuilder\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ListNodeOfListOfListOfLoop;
 class TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
@@ -1211,6 +1239,7 @@ class TopOpeBRepBuild_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_Area1dBuilder;
 class TopOpeBRepBuild_Area1dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	public:
@@ -1236,6 +1265,7 @@ class TopOpeBRepBuild_Area1dBuilder : public TopOpeBRepBuild_AreaBuilder {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_Area1dBuilder\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ListOfListOfLoop;
 class TopOpeBRepBuild_ListOfListOfLoop {
@@ -1287,6 +1317,7 @@ class TopOpeBRepBuild_ListOfListOfLoop {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_LoopSet;
 class TopOpeBRepBuild_LoopSet {
 	public:
@@ -1313,6 +1344,7 @@ class TopOpeBRepBuild_LoopSet {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape;
 class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMapIterator {
 	public:
@@ -1334,6 +1366,7 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape : pu
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeListOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ListNodeOfListOfPave;
 class TopOpeBRepBuild_ListNodeOfListOfPave : public TCollection_MapNode {
@@ -1363,6 +1396,7 @@ class TopOpeBRepBuild_ListNodeOfListOfPave : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfPave;
 class TopOpeBRepBuild_ListIteratorOfListOfPave {
 	public:
@@ -1386,6 +1420,7 @@ class TopOpeBRepBuild_ListIteratorOfListOfPave {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListIteratorOfListOfPave\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_PaveSet;
 class TopOpeBRepBuild_PaveSet : public TopOpeBRepBuild_LoopSet {
@@ -1423,6 +1458,7 @@ class TopOpeBRepBuild_PaveSet : public TopOpeBRepBuild_LoopSet {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger;
 class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
 	public:
@@ -1444,6 +1480,7 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo;
 class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : public TCollection_MapNode {
@@ -1479,6 +1516,7 @@ class TopOpeBRepBuild_IndexedDataMapNodeOfIndexedDataMapOfShapeVertexInfo : publ
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape;
 class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public TCollection_MapNode {
 	public:
@@ -1508,6 +1546,7 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape : public
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeListOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_SolidBuilder;
 class TopOpeBRepBuild_SolidBuilder {
@@ -1551,6 +1590,7 @@ class TopOpeBRepBuild_SolidBuilder {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_GIter;
 class TopOpeBRepBuild_GIter {
 	public:
@@ -1569,7 +1609,12 @@ class TopOpeBRepBuild_GIter {
 		%feature("autodoc", "1");
 		void Current(TopAbs_State & s1, TopAbs_State & s2) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRepBuild_GIter {
@@ -1578,6 +1623,7 @@ class TopOpeBRepBuild_GIter {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_GIter\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ListOfShapeListOfShape;
 class TopOpeBRepBuild_ListOfShapeListOfShape {
@@ -1629,6 +1675,7 @@ class TopOpeBRepBuild_ListOfShapeListOfShape {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal;
 class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal : public TCollection_BasicMapIterator {
 	public:
@@ -1650,6 +1697,7 @@ class TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal : public TCollection_B
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_DataMapIteratorOfDataMapOfShapeReal\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ListNodeOfListOfLoop;
 class TopOpeBRepBuild_ListNodeOfListOfLoop : public TCollection_MapNode {
@@ -1678,6 +1726,7 @@ class TopOpeBRepBuild_ListNodeOfListOfLoop : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListNodeOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_HBuilder;
 class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
@@ -1770,6 +1819,7 @@ class TopOpeBRepBuild_HBuilder : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_HBuilder\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ShapeSet;
 class TopOpeBRepBuild_ShapeSet {
@@ -1869,6 +1919,7 @@ class TopOpeBRepBuild_ShapeSet {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_WireEdgeSet;
 class TopOpeBRepBuild_WireEdgeSet : public TopOpeBRepBuild_ShapeSet {
 	public:
@@ -1890,6 +1941,7 @@ class TopOpeBRepBuild_WireEdgeSet : public TopOpeBRepBuild_ShapeSet {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_WireEdgeSet\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_FuseFace;
 class TopOpeBRepBuild_FuseFace {
@@ -1934,6 +1986,7 @@ class TopOpeBRepBuild_FuseFace {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_FuseFace\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_VertexInfo;
 class TopOpeBRepBuild_VertexInfo {
@@ -1985,6 +2038,7 @@ class TopOpeBRepBuild_VertexInfo {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfLoop;
 class TopOpeBRepBuild_ListIteratorOfListOfLoop {
 	public:
@@ -2008,6 +2062,7 @@ class TopOpeBRepBuild_ListIteratorOfListOfLoop {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListIteratorOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_DataMapOfShapeReal;
 class TopOpeBRepBuild_DataMapOfShapeReal : public TCollection_BasicMap {
@@ -2042,6 +2097,7 @@ class TopOpeBRepBuild_DataMapOfShapeReal : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_DataMapOfShapeReal\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo;
 class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_BasicMap {
@@ -2087,6 +2143,7 @@ class TopOpeBRepBuild_IndexedDataMapOfShapeVertexInfo : public TCollection_Basic
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_BlockIterator;
 class TopOpeBRepBuild_BlockIterator {
 	public:
@@ -2112,6 +2169,7 @@ class TopOpeBRepBuild_BlockIterator {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_BlockIterator\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_Loop;
 class TopOpeBRepBuild_Loop : public MMgt_TShared {
@@ -2148,6 +2206,7 @@ class TopOpeBRepBuild_Loop : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_Loop\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_Pave;
 class TopOpeBRepBuild_Pave : public TopOpeBRepBuild_Loop {
@@ -2191,6 +2250,7 @@ class TopOpeBRepBuild_Pave : public TopOpeBRepBuild_Loop {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_PaveClassifier;
 class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 	public:
@@ -2212,6 +2272,7 @@ class TopOpeBRepBuild_PaveClassifier : public TopOpeBRepBuild_LoopClassifier {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_PaveClassifier\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape;
 class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_BasicMap {
@@ -2247,6 +2308,7 @@ class TopOpeBRepBuild_DataMapOfShapeListOfShapeListOfShape : public TCollection_
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_GTool;
 class TopOpeBRepBuild_GTool {
 	public:
@@ -2271,7 +2333,12 @@ class TopOpeBRepBuild_GTool {
 		%feature("autodoc", "1");
 		TopOpeBRepBuild_GTopo GComDiff(const TopAbs_ShapeEnum s1, const TopAbs_ShapeEnum s2);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS);
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRepBuild_GTool {
@@ -2280,6 +2347,7 @@ class TopOpeBRepBuild_GTool {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_GTool\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_GTopo;
 class TopOpeBRepBuild_GTopo {
@@ -2321,7 +2389,12 @@ class TopOpeBRepBuild_GTopo {
 		%feature("autodoc", "1");
 		void DumpVal(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2) const;
 		%feature("autodoc", "1");
-		void DumpType(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpTypeToString() {
+			std::stringstream s;
+			self->DumpType(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void DumpSSB(Standard_OStream & OS, const TopAbs_State s1, const TopAbs_State s2, const Standard_Boolean b);
 		%feature("autodoc", "1");
@@ -2347,6 +2420,7 @@ class TopOpeBRepBuild_GTopo {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_Tools2d;
 class TopOpeBRepBuild_Tools2d {
 	public:
@@ -2367,6 +2441,7 @@ class TopOpeBRepBuild_Tools2d {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_ShellToSolid;
 class TopOpeBRepBuild_ShellToSolid {
 	public:
@@ -2386,6 +2461,7 @@ class TopOpeBRepBuild_ShellToSolid {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ShellToSolid\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_DataMapOfShapeInteger;
 class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
@@ -2421,6 +2497,7 @@ class TopOpeBRepBuild_DataMapOfShapeInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_EdgeBuilder;
 class TopOpeBRepBuild_EdgeBuilder : public TopOpeBRepBuild_Area1dBuilder {
 	public:
@@ -2455,6 +2532,7 @@ class TopOpeBRepBuild_EdgeBuilder : public TopOpeBRepBuild_Area1dBuilder {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_ListIteratorOfListOfListOfLoop;
 class TopOpeBRepBuild_ListIteratorOfListOfListOfLoop {
 	public:
@@ -2478,6 +2556,7 @@ class TopOpeBRepBuild_ListIteratorOfListOfListOfLoop {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListIteratorOfListOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape;
 class TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public TCollection_MapNode {
@@ -2506,6 +2585,7 @@ class TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_ListNodeOfListOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ShellFaceSet;
 class TopOpeBRepBuild_ShellFaceSet : public TopOpeBRepBuild_ShapeSet {
@@ -2541,6 +2621,7 @@ class TopOpeBRepBuild_ShellFaceSet : public TopOpeBRepBuild_ShapeSet {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal;
 class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNode {
 	public:
@@ -2571,6 +2652,7 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeReal : public TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_BuilderON;
 class TopOpeBRepBuild_BuilderON {
 	public:
@@ -2598,6 +2680,7 @@ class TopOpeBRepBuild_BuilderON {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_BuilderON\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_FaceBuilder;
 class TopOpeBRepBuild_FaceBuilder {
@@ -2655,6 +2738,7 @@ class TopOpeBRepBuild_FaceBuilder {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_BlockBuilder;
 class TopOpeBRepBuild_BlockBuilder {
 	public:
@@ -2698,6 +2782,7 @@ class TopOpeBRepBuild_BlockBuilder {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_BlockBuilder\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_ListOfPave;
 class TopOpeBRepBuild_ListOfPave {
@@ -2749,6 +2834,7 @@ class TopOpeBRepBuild_ListOfPave {
 	}
 };
 
+
 %nodefaultctor TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger;
 class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 	public:
@@ -2778,6 +2864,7 @@ class TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger : public TCollection_Ma
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRepBuild_DataMapNodeOfDataMapOfShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRepBuild_Tools;
 class TopOpeBRepBuild_Tools {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESToBRep_Actor : public Handle_Transfer_ActorOfTransientProcess {
 	}
 };
 
+
 %nodefaultctor Handle_IGESToBRep_AlgoContainer;
 class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESToBRep_AlgoContainer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_AlgoContainer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESToBRep_IGESBoundary;
 class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_IGESToBRep_IGESBoundary : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESToBRep_ToolContainer;
 class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESToBRep_ToolContainer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESToBRep_ToolContainer\n");}
 	}
 };
+
 
 %nodefaultctor IGESToBRep_CurveAndSurface;
 class IGESToBRep_CurveAndSurface {
@@ -313,6 +318,7 @@ class IGESToBRep_CurveAndSurface {
 	}
 };
 
+
 %nodefaultctor IGESToBRep_TopoCurve;
 class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 	public:
@@ -377,6 +383,7 @@ class IGESToBRep_TopoCurve : public IGESToBRep_CurveAndSurface {
 	}
 };
 
+
 %nodefaultctor IGESToBRep_ToolContainer;
 class IGESToBRep_ToolContainer : public MMgt_TShared {
 	public:
@@ -404,6 +411,7 @@ class IGESToBRep_ToolContainer : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESToBRep_ToolContainer\n");}
 	}
 };
+
 
 %nodefaultctor IGESToBRep_Actor;
 class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
@@ -443,6 +451,7 @@ class IGESToBRep_Actor : public Transfer_ActorOfTransientProcess {
 	}
 };
 
+
 %nodefaultctor IGESToBRep;
 class IGESToBRep {
 	public:
@@ -480,6 +489,7 @@ class IGESToBRep {
 	if (__env){printf("## Call custom destructor for instance of IGESToBRep\n");}
 	}
 };
+
 
 %nodefaultctor IGESToBRep_IGESBoundary;
 class IGESToBRep_IGESBoundary : public MMgt_TShared {
@@ -523,6 +533,7 @@ class IGESToBRep_IGESBoundary : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESToBRep_BRepEntity;
 class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 	public:
@@ -554,6 +565,7 @@ class IGESToBRep_BRepEntity : public IGESToBRep_CurveAndSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESToBRep_BRepEntity\n");}
 	}
 };
+
 
 %nodefaultctor IGESToBRep_BasicCurve;
 class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
@@ -603,6 +615,7 @@ class IGESToBRep_BasicCurve : public IGESToBRep_CurveAndSurface {
 	}
 };
 
+
 %nodefaultctor IGESToBRep_TopoSurface;
 class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 	public:
@@ -642,6 +655,7 @@ class IGESToBRep_TopoSurface : public IGESToBRep_CurveAndSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESToBRep_TopoSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESToBRep_Reader;
 class IGESToBRep_Reader {
@@ -686,6 +700,7 @@ class IGESToBRep_Reader {
 	if (__env){printf("## Call custom destructor for instance of IGESToBRep_Reader\n");}
 	}
 };
+
 
 %nodefaultctor IGESToBRep_BasicSurface;
 class IGESToBRep_BasicSurface : public IGESToBRep_CurveAndSurface {

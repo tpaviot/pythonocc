@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -131,6 +132,7 @@ class Geom2dConvert_CompCurveToBSplineCurve {
 	}
 };
 
+
 %nodefaultctor Geom2dConvert;
 class Geom2dConvert {
 	public:
@@ -163,6 +165,7 @@ class Geom2dConvert {
 	}
 };
 
+
 %nodefaultctor Geom2dConvert_BSplineCurveKnotSplitting;
 class Geom2dConvert_BSplineCurveKnotSplitting {
 	public:
@@ -182,6 +185,7 @@ class Geom2dConvert_BSplineCurveKnotSplitting {
 	if (__env){printf("## Call custom destructor for instance of Geom2dConvert_BSplineCurveKnotSplitting\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dConvert_BSplineCurveToBezierCurve;
 class Geom2dConvert_BSplineCurveToBezierCurve {
@@ -207,6 +211,7 @@ class Geom2dConvert_BSplineCurveToBezierCurve {
 	}
 };
 
+
 %nodefaultctor Geom2dConvert_ApproxCurve;
 class Geom2dConvert_ApproxCurve {
 	public:
@@ -221,7 +226,12 @@ class Geom2dConvert_ApproxCurve {
 		%feature("autodoc", "1");
 		Standard_Real MaxError() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Geom2dConvert_ApproxCurve {

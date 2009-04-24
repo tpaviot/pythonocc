@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_HLRAlgo_ListNodeOfInterferenceList : public Handle_TCollection_MapN
 	}
 };
 
+
 %nodefaultctor Handle_HLRAlgo_WiresBlock;
 class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_HLRAlgo_WiresBlock : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_WiresBlock\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfTData;
 class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_HLRAlgo_HArray1OfTData : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HLRAlgo_PolyShellData;
 class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_HLRAlgo_PolyShellData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyShellData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPISeg;
 class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_HLRAlgo_HArray1OfPISeg : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HLRAlgo_PolyData;
 class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_HLRAlgo_PolyData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_PolyData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRAlgo_PolyInternalData;
 class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_HLRAlgo_PolyInternalData : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HLRAlgo_ListNodeOfListOfBPoint;
 class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_HLRAlgo_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_ListNodeOfListOfBPoint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRAlgo_HArray1OfPINod;
 class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_HLRAlgo_HArray1OfPINod : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HLRAlgo_EdgesBlock;
 class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_HLRAlgo_EdgesBlock : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_EdgesBlock\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRAlgo_PolyAlgo;
 class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
@@ -388,6 +399,7 @@ class Handle_HLRAlgo_PolyAlgo : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HLRAlgo_PolyInternalNode;
 class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	public:
@@ -413,6 +425,7 @@ class Handle_HLRAlgo_PolyInternalNode : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HLRAlgo_HArray1OfPHDat;
 class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 	public:
@@ -437,6 +450,7 @@ class Handle_HLRAlgo_HArray1OfPHDat : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRAlgo_HArray1OfPHDat\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_Array1OfPHDat;
 class HLRAlgo_Array1OfPHDat {
@@ -478,6 +492,7 @@ class HLRAlgo_Array1OfPHDat {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_ListIteratorOfInterferenceList;
 class HLRAlgo_ListIteratorOfInterferenceList {
 	public:
@@ -502,6 +517,7 @@ class HLRAlgo_ListIteratorOfInterferenceList {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_PolyHidingData;
 class HLRAlgo_PolyHidingData {
 	public:
@@ -521,6 +537,7 @@ class HLRAlgo_PolyHidingData {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyHidingData\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_HArray1OfPISeg;
 class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
@@ -568,6 +585,7 @@ class HLRAlgo_HArray1OfPISeg : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_PolyInternalNode;
 class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 	public:
@@ -597,6 +615,7 @@ class HLRAlgo_PolyInternalNode : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyInternalNode\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_Array1OfPINod;
 class HLRAlgo_Array1OfPINod {
@@ -637,6 +656,7 @@ class HLRAlgo_Array1OfPINod {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Array1OfPINod\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_Projector;
 class HLRAlgo_Projector {
@@ -688,6 +708,7 @@ class HLRAlgo_Projector {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_EdgeIterator;
 class HLRAlgo_EdgeIterator {
 	public:
@@ -717,6 +738,7 @@ class HLRAlgo_EdgeIterator {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_EdgeIterator\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_BiPoint;
 class HLRAlgo_BiPoint {
@@ -768,6 +790,7 @@ class HLRAlgo_BiPoint {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_PolyInternalSegment;
 class HLRAlgo_PolyInternalSegment {
 	public:
@@ -783,6 +806,7 @@ class HLRAlgo_PolyInternalSegment {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_PolyInternalSegment\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_EdgesBlock;
 class HLRAlgo_EdgesBlock : public MMgt_TShared {
@@ -840,6 +864,7 @@ class HLRAlgo_EdgesBlock : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_ListNodeOfListOfBPoint;
 class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 	public:
@@ -867,6 +892,7 @@ class HLRAlgo_ListNodeOfListOfBPoint : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_ListNodeOfListOfBPoint\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_HArray1OfPHDat;
 class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
@@ -914,6 +940,7 @@ class HLRAlgo_HArray1OfPHDat : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_Array1OfTData;
 class HLRAlgo_Array1OfTData {
 	public:
@@ -954,6 +981,7 @@ class HLRAlgo_Array1OfTData {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_ListNodeOfInterferenceList;
 class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 	public:
@@ -981,6 +1009,7 @@ class HLRAlgo_ListNodeOfInterferenceList : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_ListNodeOfInterferenceList\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_WiresBlock;
 class HLRAlgo_WiresBlock : public MMgt_TShared {
@@ -1017,6 +1046,7 @@ class HLRAlgo_WiresBlock : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_WiresBlock\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_PolyAlgo;
 class HLRAlgo_PolyAlgo : public MMgt_TShared {
@@ -1068,6 +1098,7 @@ class HLRAlgo_PolyAlgo : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_PolyShellData;
 class HLRAlgo_PolyShellData : public MMgt_TShared {
 	public:
@@ -1108,6 +1139,7 @@ class HLRAlgo_PolyShellData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_Array1OfPISeg;
 class HLRAlgo_Array1OfPISeg {
 	public:
@@ -1147,6 +1179,7 @@ class HLRAlgo_Array1OfPISeg {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Array1OfPISeg\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_PolyData;
 class HLRAlgo_PolyData : public MMgt_TShared {
@@ -1198,6 +1231,7 @@ class HLRAlgo_PolyData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_ListIteratorOfListOfBPoint;
 class HLRAlgo_ListIteratorOfListOfBPoint {
 	public:
@@ -1221,6 +1255,7 @@ class HLRAlgo_ListIteratorOfListOfBPoint {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_ListIteratorOfListOfBPoint\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_Interference;
 class HLRAlgo_Interference {
@@ -1261,6 +1296,7 @@ class HLRAlgo_Interference {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Interference\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_ListOfBPoint;
 class HLRAlgo_ListOfBPoint {
@@ -1312,6 +1348,7 @@ class HLRAlgo_ListOfBPoint {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_HArray1OfPINod;
 class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 	public:
@@ -1358,6 +1395,7 @@ class HLRAlgo_HArray1OfPINod : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_Intersection;
 class HLRAlgo_Intersection {
 	public:
@@ -1401,6 +1439,7 @@ class HLRAlgo_Intersection {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Intersection\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_PolyInternalData;
 class HLRAlgo_PolyInternalData : public MMgt_TShared {
@@ -1468,6 +1507,7 @@ class HLRAlgo_PolyInternalData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_TriangleData;
 class HLRAlgo_TriangleData {
 	public:
@@ -1483,6 +1523,7 @@ class HLRAlgo_TriangleData {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_TriangleData\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo;
 class HLRAlgo {
@@ -1513,6 +1554,7 @@ class HLRAlgo {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_HArray1OfTData;
 class HLRAlgo_HArray1OfTData : public MMgt_TShared {
@@ -1560,6 +1602,7 @@ class HLRAlgo_HArray1OfTData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_EdgeStatus;
 class HLRAlgo_EdgeStatus {
 	public:
@@ -1598,6 +1641,7 @@ class HLRAlgo_EdgeStatus {
 	}
 };
 
+
 %nodefaultctor HLRAlgo_Coincidence;
 class HLRAlgo_Coincidence {
 	public:
@@ -1619,6 +1663,7 @@ class HLRAlgo_Coincidence {
 	if (__env){printf("## Call custom destructor for instance of HLRAlgo_Coincidence\n");}
 	}
 };
+
 
 %nodefaultctor HLRAlgo_InterferenceList;
 class HLRAlgo_InterferenceList {

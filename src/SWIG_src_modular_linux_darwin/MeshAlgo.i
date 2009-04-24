@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor MeshAlgo;
 class MeshAlgo {
 	public:
@@ -156,6 +158,7 @@ class MeshAlgo {
 	if (__env){printf("## Call custom destructor for instance of MeshAlgo\n");}
 	}
 };
+
 
 %nodefaultctor MeshAlgo_DataMapOfIntegerCirc;
 class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
@@ -190,6 +193,7 @@ class MeshAlgo_DataMapOfIntegerCirc : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapOfIntegerCirc\n");}
 	}
 };
+
 
 %nodefaultctor MeshAlgo_CircleTool;
 class MeshAlgo_CircleTool {
@@ -227,6 +231,7 @@ class MeshAlgo_CircleTool {
 	}
 };
 
+
 %nodefaultctor MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc;
 class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicMapIterator {
 	public:
@@ -248,6 +253,7 @@ class MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc : public TCollection_BasicM
 	if (__env){printf("## Call custom destructor for instance of MeshAlgo_DataMapIteratorOfDataMapOfIntegerCirc\n");}
 	}
 };
+
 
 %nodefaultctor MeshAlgo_Circ;
 class MeshAlgo_Circ {
@@ -272,6 +278,7 @@ class MeshAlgo_Circ {
 	if (__env){printf("## Call custom destructor for instance of MeshAlgo_Circ\n");}
 	}
 };
+
 
 %nodefaultctor MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc;
 class MeshAlgo_DataMapNodeOfDataMapOfIntegerCirc : public TCollection_MapNode {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public Handle_TCol
 	}
 };
 
+
 %nodefaultctor Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData;
 class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRTopoBRep_OutLiner;
 class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_HLRTopoBRep_OutLiner : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HLRTopoBRep_ListNodeOfListOfVData;
 class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_HLRTopoBRep_ListNodeOfListOfVData : public Handle_TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRTopoBRep_ListNodeOfListOfVData\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData;
 class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNode {
@@ -242,6 +247,7 @@ class HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData : public TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_MapOfShapeListOfVData;
 class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
@@ -276,6 +282,7 @@ class HLRTopoBRep_MapOfShapeListOfVData : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_MapOfShapeListOfVData\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_ListOfVData;
 class HLRTopoBRep_ListOfVData {
@@ -327,6 +334,7 @@ class HLRTopoBRep_ListOfVData {
 	}
 };
 
+
 %nodefaultctor HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData;
 class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_BasicMapIterator {
 	public:
@@ -348,6 +356,7 @@ class HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData : public TCollection_B
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_OutLiner;
 class HLRTopoBRep_OutLiner : public MMgt_TShared {
@@ -390,6 +399,7 @@ class HLRTopoBRep_OutLiner : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_OutLiner\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_Data;
 class HLRTopoBRep_Data {
@@ -475,6 +485,7 @@ class HLRTopoBRep_Data {
 	}
 };
 
+
 %nodefaultctor HLRTopoBRep_FaceData;
 class HLRTopoBRep_FaceData {
 	public:
@@ -500,6 +511,7 @@ class HLRTopoBRep_FaceData {
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceData\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_ListNodeOfListOfVData;
 class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
@@ -529,6 +541,7 @@ class HLRTopoBRep_ListNodeOfListOfVData : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor HLRTopoBRep_VData;
 class HLRTopoBRep_VData {
 	public:
@@ -548,6 +561,7 @@ class HLRTopoBRep_VData {
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_VData\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_ListIteratorOfListOfVData;
 class HLRTopoBRep_ListIteratorOfListOfVData {
@@ -573,6 +587,7 @@ class HLRTopoBRep_ListIteratorOfListOfVData {
 	}
 };
 
+
 %nodefaultctor HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData;
 class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_BasicMapIterator {
 	public:
@@ -594,6 +609,7 @@ class HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData : public TCollection_Ba
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_DataMapOfShapeFaceData;
 class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
@@ -629,6 +645,7 @@ class HLRTopoBRep_DataMapOfShapeFaceData : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor HLRTopoBRep_FaceIsoLiner;
 class HLRTopoBRep_FaceIsoLiner {
 	public:
@@ -648,6 +665,7 @@ class HLRTopoBRep_FaceIsoLiner {
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_FaceIsoLiner\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData;
 class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNode {
@@ -678,6 +696,7 @@ class HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData : public TCollection_MapNod
 	if (__env){printf("## Call custom destructor for instance of HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData\n");}
 	}
 };
+
 
 %nodefaultctor HLRTopoBRep_DSFiller;
 class HLRTopoBRep_DSFiller {

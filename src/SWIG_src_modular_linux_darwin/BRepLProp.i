@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -141,6 +142,7 @@ class BRepLProp_CurveTool {
 	}
 };
 
+
 %nodefaultctor BRepLProp_CLProps;
 class BRepLProp_CLProps {
 	public:
@@ -180,6 +182,7 @@ class BRepLProp_CLProps {
 	if (__env){printf("## Call custom destructor for instance of BRepLProp_CLProps\n");}
 	}
 };
+
 
 %nodefaultctor BRepLProp_SLProps;
 class BRepLProp_SLProps {
@@ -241,6 +244,7 @@ class BRepLProp_SLProps {
 	}
 };
 
+
 %nodefaultctor BRepLProp_SurfaceTool;
 class BRepLProp_SurfaceTool {
 	public:
@@ -266,6 +270,7 @@ class BRepLProp_SurfaceTool {
 	if (__env){printf("## Call custom destructor for instance of BRepLProp_SurfaceTool\n");}
 	}
 };
+
 
 %nodefaultctor BRepLProp;
 class BRepLProp {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlMFunction_GraphNodeDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMFunction_FunctionDriver;
 class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -163,6 +165,7 @@ class Handle_XmlMFunction_FunctionDriver : public Handle_XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_XmlMFunction_ScopeDriver;
 class Handle_XmlMFunction_ScopeDriver : public Handle_XmlMDF_ADriver {
 	public:
@@ -187,6 +190,7 @@ class Handle_XmlMFunction_ScopeDriver : public Handle_XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlMFunction_ScopeDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMFunction_ScopeDriver;
 class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
@@ -220,6 +224,7 @@ class XmlMFunction_ScopeDriver : public XmlMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor XmlMFunction;
 class XmlMFunction {
 	public:
@@ -235,6 +240,7 @@ class XmlMFunction {
 	if (__env){printf("## Call custom destructor for instance of XmlMFunction\n");}
 	}
 };
+
 
 %nodefaultctor XmlMFunction_GraphNodeDriver;
 class XmlMFunction_GraphNodeDriver : public XmlMDF_ADriver {
@@ -267,6 +273,7 @@ class XmlMFunction_GraphNodeDriver : public XmlMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of XmlMFunction_GraphNodeDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlMFunction_FunctionDriver;
 class XmlMFunction_FunctionDriver : public XmlMDF_ADriver {

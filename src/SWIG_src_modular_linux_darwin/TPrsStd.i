@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TPrsStd_Driver : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TPrsStd_ConstraintDriver;
 class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -162,6 +164,7 @@ class Handle_TPrsStd_ConstraintDriver : public Handle_TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_ConstraintDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TPrsStd_PlaneDriver;
 class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
@@ -188,6 +191,7 @@ class Handle_TPrsStd_PlaneDriver : public Handle_TPrsStd_Driver {
 	}
 };
 
+
 %nodefaultctor Handle_TPrsStd_NamedShapeDriver;
 class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -212,6 +216,7 @@ class Handle_TPrsStd_NamedShapeDriver : public Handle_TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_NamedShapeDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
 class Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollection_MapNode {
@@ -238,6 +243,7 @@ class Handle_TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_TPrsStd_AxisDriver;
 class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -262,6 +268,7 @@ class Handle_TPrsStd_AxisDriver : public Handle_TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_AxisDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TPrsStd_DriverTable;
 class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_TPrsStd_DriverTable : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TPrsStd_PointDriver;
 class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -312,6 +320,7 @@ class Handle_TPrsStd_PointDriver : public Handle_TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_PointDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TPrsStd_AISViewer;
 class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
@@ -338,6 +347,7 @@ class Handle_TPrsStd_AISViewer : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TPrsStd_AISPresentation;
 class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 	public:
@@ -363,6 +373,7 @@ class Handle_TPrsStd_AISPresentation : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TPrsStd_GeometryDriver;
 class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	public:
@@ -387,6 +398,7 @@ class Handle_TPrsStd_GeometryDriver : public Handle_TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of Handle_TPrsStd_GeometryDriver\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_ConstraintTools;
 class TPrsStd_ConstraintTools {
@@ -447,6 +459,7 @@ class TPrsStd_ConstraintTools {
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_ConstraintTools\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_AISPresentation;
 class TPrsStd_AISPresentation : public TDF_Attribute {
@@ -568,6 +581,7 @@ class TPrsStd_AISPresentation : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TPrsStd_Driver;
 class TPrsStd_Driver : public MMgt_TShared {
 	public:
@@ -593,6 +607,7 @@ class TPrsStd_Driver : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_Driver\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_NamedShapeDriver;
 class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
@@ -622,6 +637,7 @@ class TPrsStd_NamedShapeDriver : public TPrsStd_Driver {
 	}
 };
 
+
 %nodefaultctor TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver;
 class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMapIterator {
 	public:
@@ -643,6 +659,7 @@ class TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapIteratorOfDataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_PointDriver;
 class TPrsStd_PointDriver : public TPrsStd_Driver {
@@ -672,6 +689,7 @@ class TPrsStd_PointDriver : public TPrsStd_Driver {
 	}
 };
 
+
 %nodefaultctor TPrsStd_GeometryDriver;
 class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 	public:
@@ -699,6 +717,7 @@ class TPrsStd_GeometryDriver : public TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_GeometryDriver\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_AxisDriver;
 class TPrsStd_AxisDriver : public TPrsStd_Driver {
@@ -728,6 +747,7 @@ class TPrsStd_AxisDriver : public TPrsStd_Driver {
 	}
 };
 
+
 %nodefaultctor TPrsStd_PlaneDriver;
 class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 	public:
@@ -755,6 +775,7 @@ class TPrsStd_PlaneDriver : public TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_PlaneDriver\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_AISViewer;
 class TPrsStd_AISViewer : public TDF_Attribute {
@@ -812,6 +833,7 @@ class TPrsStd_AISViewer : public TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor TPrsStd_ConstraintDriver;
 class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 	public:
@@ -839,6 +861,7 @@ class TPrsStd_ConstraintDriver : public TPrsStd_Driver {
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_ConstraintDriver\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_DataMapNodeOfDataMapOfGUIDDriver;
 class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
@@ -869,6 +892,7 @@ class TPrsStd_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapNodeOfDataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_DataMapOfGUIDDriver;
 class TPrsStd_DataMapOfGUIDDriver : public TCollection_BasicMap {
@@ -903,6 +927,7 @@ class TPrsStd_DataMapOfGUIDDriver : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TPrsStd_DataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor TPrsStd_DriverTable;
 class TPrsStd_DriverTable : public MMgt_TShared {

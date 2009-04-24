@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -220,6 +221,7 @@ class Handle_Vrml_AsciiText : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_LOD;
 class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	public:
@@ -244,6 +246,7 @@ class Handle_Vrml_LOD : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_LOD\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Vrml_IndexedFaceSet;
 class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
@@ -270,6 +273,7 @@ class Handle_Vrml_IndexedFaceSet : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_Coordinate3;
 class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	public:
@@ -294,6 +298,7 @@ class Handle_Vrml_Coordinate3 : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Coordinate3\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Vrml_SFImage;
 class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
@@ -320,6 +325,7 @@ class Handle_Vrml_SFImage : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_Normal;
 class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 	public:
@@ -344,6 +350,7 @@ class Handle_Vrml_Normal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_Normal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Vrml_Material;
 class Handle_Vrml_Material : public Handle_MMgt_TShared {
@@ -370,6 +377,7 @@ class Handle_Vrml_Material : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Vrml_IndexedLineSet;
 class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	public:
@@ -394,6 +402,7 @@ class Handle_Vrml_IndexedLineSet : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Vrml_IndexedLineSet\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Vrml_TextureCoordinate2;
 class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
@@ -420,6 +429,7 @@ class Handle_Vrml_TextureCoordinate2 : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_Info;
 class Vrml_Info {
 	public:
@@ -430,7 +440,12 @@ class Vrml_Info {
 		%feature("autodoc", "1");
 		TCollection_AsciiString String() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Info {
@@ -439,6 +454,7 @@ class Vrml_Info {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Info\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Switch;
 class Vrml_Switch {
@@ -450,7 +466,12 @@ class Vrml_Switch {
 		%feature("autodoc", "1");
 		Standard_Integer WhichChild() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Switch {
@@ -460,13 +481,19 @@ class Vrml_Switch {
 	}
 };
 
+
 %nodefaultctor Vrml_TransformSeparator;
 class Vrml_TransformSeparator {
 	public:
 		%feature("autodoc", "1");
 		Vrml_TransformSeparator();
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream);
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_TransformSeparator {
@@ -475,6 +502,7 @@ class Vrml_TransformSeparator {
 	if (__env){printf("## Call custom destructor for instance of Vrml_TransformSeparator\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Cube;
 class Vrml_Cube {
@@ -494,7 +522,12 @@ class Vrml_Cube {
 		%feature("autodoc", "1");
 		Standard_Real Depth() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Cube {
@@ -503,6 +536,7 @@ class Vrml_Cube {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Cube\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Sphere;
 class Vrml_Sphere {
@@ -514,7 +548,12 @@ class Vrml_Sphere {
 		%feature("autodoc", "1");
 		Standard_Real Radius() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Sphere {
@@ -523,6 +562,7 @@ class Vrml_Sphere {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Sphere\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_PointLight;
 class Vrml_PointLight {
@@ -548,7 +588,12 @@ class Vrml_PointLight {
 		%feature("autodoc", "1");
 		gp_Vec Location() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_PointLight {
@@ -557,6 +602,7 @@ class Vrml_PointLight {
 	if (__env){printf("## Call custom destructor for instance of Vrml_PointLight\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_NormalBinding;
 class Vrml_NormalBinding {
@@ -570,7 +616,12 @@ class Vrml_NormalBinding {
 		%feature("autodoc", "1");
 		Vrml_MaterialBindingAndNormalBinding Value() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_NormalBinding {
@@ -579,6 +630,7 @@ class Vrml_NormalBinding {
 	if (__env){printf("## Call custom destructor for instance of Vrml_NormalBinding\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_AsciiText;
 class Vrml_AsciiText : public MMgt_TShared {
@@ -604,7 +656,12 @@ class Vrml_AsciiText : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real Width() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -625,6 +682,7 @@ class Vrml_AsciiText : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Vrml_AsciiText\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_IndexedLineSet;
 class Vrml_IndexedLineSet : public MMgt_TShared {
@@ -650,7 +708,12 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger TextureCoordIndex() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -671,6 +734,7 @@ class Vrml_IndexedLineSet : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Vrml_IndexedLineSet\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_SpotLight;
 class Vrml_SpotLight {
@@ -708,7 +772,12 @@ class Vrml_SpotLight {
 		%feature("autodoc", "1");
 		Standard_Real CutOffAngle() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_SpotLight {
@@ -717,6 +786,7 @@ class Vrml_SpotLight {
 	if (__env){printf("## Call custom destructor for instance of Vrml_SpotLight\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Texture2;
 class Vrml_Texture2 {
@@ -742,7 +812,12 @@ class Vrml_Texture2 {
 		%feature("autodoc", "1");
 		Vrml_Texture2Wrap WrapT() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Texture2 {
@@ -751,6 +826,7 @@ class Vrml_Texture2 {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Texture2\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_SFImage;
 class Vrml_SFImage : public MMgt_TShared {
@@ -798,6 +874,7 @@ class Vrml_SFImage : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_LOD;
 class Vrml_LOD : public MMgt_TShared {
 	public:
@@ -814,7 +891,12 @@ class Vrml_LOD : public MMgt_TShared {
 		%feature("autodoc", "1");
 		gp_Vec Center() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -836,6 +918,7 @@ class Vrml_LOD : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_WWWInline;
 class Vrml_WWWInline {
 	public:
@@ -856,7 +939,12 @@ class Vrml_WWWInline {
 		%feature("autodoc", "1");
 		gp_Vec BboxCenter() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_WWWInline {
@@ -865,6 +953,7 @@ class Vrml_WWWInline {
 	if (__env){printf("## Call custom destructor for instance of Vrml_WWWInline\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Normal;
 class Vrml_Normal : public MMgt_TShared {
@@ -878,7 +967,12 @@ class Vrml_Normal : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfVec Vector() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -900,6 +994,7 @@ class Vrml_Normal : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_Cylinder;
 class Vrml_Cylinder {
 	public:
@@ -918,7 +1013,12 @@ class Vrml_Cylinder {
 		%feature("autodoc", "1");
 		Standard_Real Height() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Cylinder {
@@ -927,6 +1027,7 @@ class Vrml_Cylinder {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Cylinder\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Texture2Transform;
 class Vrml_Texture2Transform {
@@ -952,7 +1053,12 @@ class Vrml_Texture2Transform {
 		%feature("autodoc", "1");
 		gp_Vec2d Center() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Texture2Transform {
@@ -961,6 +1067,7 @@ class Vrml_Texture2Transform {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Texture2Transform\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_SFRotation;
 class Vrml_SFRotation {
@@ -994,6 +1101,7 @@ class Vrml_SFRotation {
 	}
 };
 
+
 %nodefaultctor Vrml_OrthographicCamera;
 class Vrml_OrthographicCamera {
 	public:
@@ -1018,7 +1126,12 @@ class Vrml_OrthographicCamera {
 		%feature("autodoc", "1");
 		Standard_Real Height() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_OrthographicCamera {
@@ -1028,13 +1141,19 @@ class Vrml_OrthographicCamera {
 	}
 };
 
+
 %nodefaultctor Vrml;
 class Vrml {
 	public:
 		%feature("autodoc", "1");
 		Vrml();
 		%feature("autodoc", "1");
-		Standard_OStream & VrmlHeaderWriter(Standard_OStream & anOStream);
+		%extend{
+			std::string VrmlHeaderWriterToString() {
+			std::stringstream s;
+			self->VrmlHeaderWriter(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_OStream & CommentWriter(const char * aComment, Standard_OStream & anOStream);
 
@@ -1045,6 +1164,7 @@ class Vrml {
 	if (__env){printf("## Call custom destructor for instance of Vrml\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Scale;
 class Vrml_Scale {
@@ -1058,7 +1178,12 @@ class Vrml_Scale {
 		%feature("autodoc", "1");
 		gp_Vec ScaleFactor() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Scale {
@@ -1068,15 +1193,26 @@ class Vrml_Scale {
 	}
 };
 
+
 %nodefaultctor Vrml_Instancing;
 class Vrml_Instancing {
 	public:
 		%feature("autodoc", "1");
 		Vrml_Instancing(const TCollection_AsciiString &aString);
 		%feature("autodoc", "1");
-		Standard_OStream & DEF(Standard_OStream & anOStream) const;
+		%extend{
+			std::string DEFToString() {
+			std::stringstream s;
+			self->DEF(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		Standard_OStream & USE(Standard_OStream & anOStream) const;
+		%extend{
+			std::string USEToString() {
+			std::stringstream s;
+			self->USE(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Instancing {
@@ -1085,6 +1221,7 @@ class Vrml_Instancing {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Instancing\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_MaterialBinding;
 class Vrml_MaterialBinding {
@@ -1098,7 +1235,12 @@ class Vrml_MaterialBinding {
 		%feature("autodoc", "1");
 		Vrml_MaterialBindingAndNormalBinding Value() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_MaterialBinding {
@@ -1107,6 +1249,7 @@ class Vrml_MaterialBinding {
 	if (__env){printf("## Call custom destructor for instance of Vrml_MaterialBinding\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_MatrixTransform;
 class Vrml_MatrixTransform {
@@ -1120,7 +1263,12 @@ class Vrml_MatrixTransform {
 		%feature("autodoc", "1");
 		gp_Trsf Matrix() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_MatrixTransform {
@@ -1129,6 +1277,7 @@ class Vrml_MatrixTransform {
 	if (__env){printf("## Call custom destructor for instance of Vrml_MatrixTransform\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_DirectionalLight;
 class Vrml_DirectionalLight {
@@ -1154,7 +1303,12 @@ class Vrml_DirectionalLight {
 		%feature("autodoc", "1");
 		gp_Vec Direction() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_DirectionalLight {
@@ -1163,6 +1317,7 @@ class Vrml_DirectionalLight {
 	if (__env){printf("## Call custom destructor for instance of Vrml_DirectionalLight\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_FontStyle;
 class Vrml_FontStyle {
@@ -1182,7 +1337,12 @@ class Vrml_FontStyle {
 		%feature("autodoc", "1");
 		Vrml_FontStyleStyle Style() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_FontStyle {
@@ -1191,6 +1351,7 @@ class Vrml_FontStyle {
 	if (__env){printf("## Call custom destructor for instance of Vrml_FontStyle\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Transform;
 class Vrml_Transform {
@@ -1220,7 +1381,12 @@ class Vrml_Transform {
 		%feature("autodoc", "1");
 		gp_Vec Center() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Transform {
@@ -1229,6 +1395,7 @@ class Vrml_Transform {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Transform\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_PerspectiveCamera;
 class Vrml_PerspectiveCamera {
@@ -1254,7 +1421,12 @@ class Vrml_PerspectiveCamera {
 		%feature("autodoc", "1");
 		Standard_Real Angle() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_PerspectiveCamera {
@@ -1263,6 +1435,7 @@ class Vrml_PerspectiveCamera {
 	if (__env){printf("## Call custom destructor for instance of Vrml_PerspectiveCamera\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_WWWAnchor;
 class Vrml_WWWAnchor {
@@ -1282,7 +1455,12 @@ class Vrml_WWWAnchor {
 		%feature("autodoc", "1");
 		Vrml_WWWAnchorMap Map() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_WWWAnchor {
@@ -1291,6 +1469,7 @@ class Vrml_WWWAnchor {
 	if (__env){printf("## Call custom destructor for instance of Vrml_WWWAnchor\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_IndexedFaceSet;
 class Vrml_IndexedFaceSet : public MMgt_TShared {
@@ -1316,7 +1495,12 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfInteger TextureCoordIndex() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1337,6 +1521,7 @@ class Vrml_IndexedFaceSet : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Vrml_IndexedFaceSet\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Material;
 class Vrml_Material : public MMgt_TShared {
@@ -1370,7 +1555,12 @@ class Vrml_Material : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColStd_HArray1OfReal Transparency() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1392,6 +1582,7 @@ class Vrml_Material : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_Rotation;
 class Vrml_Rotation {
 	public:
@@ -1404,7 +1595,12 @@ class Vrml_Rotation {
 		%feature("autodoc", "1");
 		Vrml_SFRotation Rotation() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Rotation {
@@ -1413,6 +1609,7 @@ class Vrml_Rotation {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Rotation\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_ShapeHints;
 class Vrml_ShapeHints {
@@ -1436,7 +1633,12 @@ class Vrml_ShapeHints {
 		%feature("autodoc", "1");
 		Standard_Real Angle() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_ShapeHints {
@@ -1445,6 +1647,7 @@ class Vrml_ShapeHints {
 	if (__env){printf("## Call custom destructor for instance of Vrml_ShapeHints\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Separator;
 class Vrml_Separator {
@@ -1458,7 +1661,12 @@ class Vrml_Separator {
 		%feature("autodoc", "1");
 		Vrml_SeparatorRenderCulling RenderCulling() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream);
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Separator {
@@ -1467,6 +1675,7 @@ class Vrml_Separator {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Separator\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Translation;
 class Vrml_Translation {
@@ -1480,7 +1689,12 @@ class Vrml_Translation {
 		%feature("autodoc", "1");
 		gp_Vec Translation() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Translation {
@@ -1490,13 +1704,19 @@ class Vrml_Translation {
 	}
 };
 
+
 %nodefaultctor Vrml_Group;
 class Vrml_Group {
 	public:
 		%feature("autodoc", "1");
 		Vrml_Group();
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream);
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Group {
@@ -1505,6 +1725,7 @@ class Vrml_Group {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Group\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_Coordinate3;
 class Vrml_Coordinate3 : public MMgt_TShared {
@@ -1518,7 +1739,12 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfVec Point() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1540,6 +1766,7 @@ class Vrml_Coordinate3 : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_TextureCoordinate2;
 class Vrml_TextureCoordinate2 : public MMgt_TShared {
 	public:
@@ -1552,7 +1779,12 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_TColgp_HArray1OfVec2d Point() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1574,6 +1806,7 @@ class Vrml_TextureCoordinate2 : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Vrml_Cone;
 class Vrml_Cone {
 	public:
@@ -1592,7 +1825,12 @@ class Vrml_Cone {
 		%feature("autodoc", "1");
 		Standard_Real Height() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_Cone {
@@ -1601,6 +1839,7 @@ class Vrml_Cone {
 	if (__env){printf("## Call custom destructor for instance of Vrml_Cone\n");}
 	}
 };
+
 
 %nodefaultctor Vrml_PointSet;
 class Vrml_PointSet {
@@ -1616,7 +1855,12 @@ class Vrml_PointSet {
 		%feature("autodoc", "1");
 		Standard_Integer NumPoints() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend Vrml_PointSet {

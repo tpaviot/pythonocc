@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -141,6 +142,7 @@ class DsgPrs_SymbPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_FilletRadiusPresentation;
 class DsgPrs_FilletRadiusPresentation {
 	public:
@@ -156,6 +158,7 @@ class DsgPrs_FilletRadiusPresentation {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_FilletRadiusPresentation\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_MidPointPresentation;
 class DsgPrs_MidPointPresentation {
@@ -179,6 +182,7 @@ class DsgPrs_MidPointPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_ShapeDirPresentation;
 class DsgPrs_ShapeDirPresentation {
 	public:
@@ -195,6 +199,7 @@ class DsgPrs_ShapeDirPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_ShadedPlanePresentation;
 class DsgPrs_ShadedPlanePresentation {
 	public:
@@ -210,6 +215,7 @@ class DsgPrs_ShadedPlanePresentation {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_ShadedPlanePresentation\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_LengthPresentation;
 class DsgPrs_LengthPresentation {
@@ -235,6 +241,7 @@ class DsgPrs_LengthPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_RadiusPresentation;
 class DsgPrs_RadiusPresentation {
 	public:
@@ -248,6 +255,7 @@ class DsgPrs_RadiusPresentation {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_RadiusPresentation\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_EqualDistancePresentation;
 class DsgPrs_EqualDistancePresentation {
@@ -269,6 +277,7 @@ class DsgPrs_EqualDistancePresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_XYZPlanePresentation;
 class DsgPrs_XYZPlanePresentation {
 	public:
@@ -284,6 +293,7 @@ class DsgPrs_XYZPlanePresentation {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_XYZPlanePresentation\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_IdenticPresentation;
 class DsgPrs_IdenticPresentation {
@@ -309,6 +319,7 @@ class DsgPrs_IdenticPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_DiameterPresentation;
 class DsgPrs_DiameterPresentation {
 	public:
@@ -327,6 +338,7 @@ class DsgPrs_DiameterPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_FixPresentation;
 class DsgPrs_FixPresentation {
 	public:
@@ -342,6 +354,7 @@ class DsgPrs_FixPresentation {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_FixPresentation\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_EllipseRadiusPresentation;
 class DsgPrs_EllipseRadiusPresentation {
@@ -363,6 +376,7 @@ class DsgPrs_EllipseRadiusPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_DatumPrs;
 class DsgPrs_DatumPrs : public Prs3d_Root {
 	public:
@@ -378,6 +392,7 @@ class DsgPrs_DatumPrs : public Prs3d_Root {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_DatumPrs\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_AnglePresentation;
 class DsgPrs_AnglePresentation {
@@ -407,6 +422,7 @@ class DsgPrs_AnglePresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_TangentPresentation;
 class DsgPrs_TangentPresentation {
 	public:
@@ -423,6 +439,7 @@ class DsgPrs_TangentPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_DatumTool;
 class DsgPrs_DatumTool {
 	public:
@@ -438,6 +455,7 @@ class DsgPrs_DatumTool {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_DatumTool\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_Chamf2dPresentation;
 class DsgPrs_Chamf2dPresentation {
@@ -457,6 +475,7 @@ class DsgPrs_Chamf2dPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_ParalPresentation;
 class DsgPrs_ParalPresentation {
 	public:
@@ -475,6 +494,7 @@ class DsgPrs_ParalPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_EqualRadiusPresentation;
 class DsgPrs_EqualRadiusPresentation {
 	public:
@@ -490,6 +510,7 @@ class DsgPrs_EqualRadiusPresentation {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_EqualRadiusPresentation\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_OffsetPresentation;
 class DsgPrs_OffsetPresentation {
@@ -509,6 +530,7 @@ class DsgPrs_OffsetPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_PerpenPresentation;
 class DsgPrs_PerpenPresentation {
 	public:
@@ -524,6 +546,7 @@ class DsgPrs_PerpenPresentation {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_PerpenPresentation\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs;
 class DsgPrs {
@@ -555,6 +578,7 @@ class DsgPrs {
 	}
 };
 
+
 %nodefaultctor DsgPrs_XYZAxisPresentation;
 class DsgPrs_XYZAxisPresentation {
 	public:
@@ -573,6 +597,7 @@ class DsgPrs_XYZAxisPresentation {
 	}
 };
 
+
 %nodefaultctor DsgPrs_ConcentricPresentation;
 class DsgPrs_ConcentricPresentation {
 	public:
@@ -588,6 +613,7 @@ class DsgPrs_ConcentricPresentation {
 	if (__env){printf("## Call custom destructor for instance of DsgPrs_ConcentricPresentation\n");}
 	}
 };
+
 
 %nodefaultctor DsgPrs_SymmetricPresentation;
 class DsgPrs_SymmetricPresentation {

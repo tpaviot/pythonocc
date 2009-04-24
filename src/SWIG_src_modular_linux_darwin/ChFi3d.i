@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -141,6 +142,7 @@ class ChFi3d {
 	}
 };
 
+
 %nodefaultctor ChFi3d_Builder;
 class ChFi3d_Builder {
 	public:
@@ -217,6 +219,7 @@ class ChFi3d_Builder {
 	}
 };
 
+
 %nodefaultctor ChFi3d_ChBuilder;
 class ChFi3d_ChBuilder : public ChFi3d_Builder {
 	public:
@@ -277,6 +280,7 @@ class ChFi3d_ChBuilder : public ChFi3d_Builder {
 	}
 };
 
+
 %nodefaultctor ChFi3d_SearchSing;
 class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 	public:
@@ -296,6 +300,7 @@ class ChFi3d_SearchSing : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of ChFi3d_SearchSing\n");}
 	}
 };
+
 
 %nodefaultctor ChFi3d_FilBuilder;
 class ChFi3d_FilBuilder : public ChFi3d_Builder {

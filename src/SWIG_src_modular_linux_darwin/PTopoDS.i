@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PTopoDS_TShape : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_TShell;
 class Handle_PTopoDS_TShell : public Handle_PTopoDS_TShape {
 	public:
@@ -162,6 +164,7 @@ class Handle_PTopoDS_TShell : public Handle_PTopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape;
 class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public Handle_PStandard_ArrayNode {
@@ -188,6 +191,7 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public Handle_PStandar
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_HArray1OfHShape;
 class Handle_PTopoDS_HArray1OfHShape : public Handle_Standard_Persistent {
 	public:
@@ -212,6 +216,7 @@ class Handle_PTopoDS_HArray1OfHShape : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_HArray1OfHShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TShape1;
 class Handle_PTopoDS_TShape1 : public Handle_Standard_Persistent {
@@ -238,6 +243,7 @@ class Handle_PTopoDS_TShape1 : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_TShell1;
 class Handle_PTopoDS_TShell1 : public Handle_PTopoDS_TShape1 {
 	public:
@@ -262,6 +268,7 @@ class Handle_PTopoDS_TShell1 : public Handle_PTopoDS_TShape1 {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TShell1\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TEdge1;
 class Handle_PTopoDS_TEdge1 : public Handle_PTopoDS_TShape1 {
@@ -288,6 +295,7 @@ class Handle_PTopoDS_TEdge1 : public Handle_PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1;
 class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public Handle_PStandard_ArrayNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public Handle_PStandar
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_HShape;
 class Handle_PTopoDS_HShape : public Handle_ObjMgt_ExternShareable {
@@ -338,6 +347,7 @@ class Handle_PTopoDS_HShape : public Handle_ObjMgt_ExternShareable {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_Face;
 class Handle_PTopoDS_Face : public Handle_PTopoDS_HShape {
 	public:
@@ -362,6 +372,7 @@ class Handle_PTopoDS_Face : public Handle_PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Face\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TWire1;
 class Handle_PTopoDS_TWire1 : public Handle_PTopoDS_TShape1 {
@@ -388,6 +399,7 @@ class Handle_PTopoDS_TWire1 : public Handle_PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_TWire;
 class Handle_PTopoDS_TWire : public Handle_PTopoDS_TShape {
 	public:
@@ -412,6 +424,7 @@ class Handle_PTopoDS_TWire : public Handle_PTopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TWire\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TSolid1;
 class Handle_PTopoDS_TSolid1 : public Handle_PTopoDS_TShape1 {
@@ -438,6 +451,7 @@ class Handle_PTopoDS_TSolid1 : public Handle_PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_TEdge;
 class Handle_PTopoDS_TEdge : public Handle_PTopoDS_TShape {
 	public:
@@ -462,6 +476,7 @@ class Handle_PTopoDS_TEdge : public Handle_PTopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TEdge\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TCompSolid1;
 class Handle_PTopoDS_TCompSolid1 : public Handle_PTopoDS_TShape1 {
@@ -488,6 +503,7 @@ class Handle_PTopoDS_TCompSolid1 : public Handle_PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_TVertex;
 class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
 	public:
@@ -512,6 +528,7 @@ class Handle_PTopoDS_TVertex : public Handle_PTopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TVertex\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TVertex1;
 class Handle_PTopoDS_TVertex1 : public Handle_PTopoDS_TShape1 {
@@ -538,6 +555,7 @@ class Handle_PTopoDS_TVertex1 : public Handle_PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_TCompound;
 class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
 	public:
@@ -562,6 +580,7 @@ class Handle_PTopoDS_TCompound : public Handle_PTopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompound\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_Vertex;
 class Handle_PTopoDS_Vertex : public Handle_PTopoDS_HShape {
@@ -588,6 +607,7 @@ class Handle_PTopoDS_Vertex : public Handle_PTopoDS_HShape {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_Wire;
 class Handle_PTopoDS_Wire : public Handle_PTopoDS_HShape {
 	public:
@@ -612,6 +632,7 @@ class Handle_PTopoDS_Wire : public Handle_PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Wire\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TSolid;
 class Handle_PTopoDS_TSolid : public Handle_PTopoDS_TShape {
@@ -638,6 +659,7 @@ class Handle_PTopoDS_TSolid : public Handle_PTopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_TCompSolid;
 class Handle_PTopoDS_TCompSolid : public Handle_PTopoDS_TShape {
 	public:
@@ -662,6 +684,7 @@ class Handle_PTopoDS_TCompSolid : public Handle_PTopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TCompSolid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TCompound1;
 class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
@@ -688,6 +711,7 @@ class Handle_PTopoDS_TCompound1 : public Handle_PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_Compound;
 class Handle_PTopoDS_Compound : public Handle_PTopoDS_HShape {
 	public:
@@ -712,6 +736,7 @@ class Handle_PTopoDS_Compound : public Handle_PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Compound\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_Solid;
 class Handle_PTopoDS_Solid : public Handle_PTopoDS_HShape {
@@ -738,6 +763,7 @@ class Handle_PTopoDS_Solid : public Handle_PTopoDS_HShape {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_Edge;
 class Handle_PTopoDS_Edge : public Handle_PTopoDS_HShape {
 	public:
@@ -762,6 +788,7 @@ class Handle_PTopoDS_Edge : public Handle_PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_Edge\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_HArray1OfShape1;
 class Handle_PTopoDS_HArray1OfShape1 : public Handle_Standard_Persistent {
@@ -788,6 +815,7 @@ class Handle_PTopoDS_HArray1OfShape1 : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_CompSolid;
 class Handle_PTopoDS_CompSolid : public Handle_PTopoDS_HShape {
 	public:
@@ -812,6 +840,7 @@ class Handle_PTopoDS_CompSolid : public Handle_PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_CompSolid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTopoDS_TFace1;
 class Handle_PTopoDS_TFace1 : public Handle_PTopoDS_TShape1 {
@@ -838,6 +867,7 @@ class Handle_PTopoDS_TFace1 : public Handle_PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_Shell;
 class Handle_PTopoDS_Shell : public Handle_PTopoDS_HShape {
 	public:
@@ -863,6 +893,7 @@ class Handle_PTopoDS_Shell : public Handle_PTopoDS_HShape {
 	}
 };
 
+
 %nodefaultctor Handle_PTopoDS_TFace;
 class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
 	public:
@@ -887,6 +918,7 @@ class Handle_PTopoDS_TFace : public Handle_PTopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopoDS_TFace\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_TCompound1;
 class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
@@ -917,6 +949,7 @@ class PTopoDS_TCompound1 : public PTopoDS_TShape1 {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompound1\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape;
 class PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public PStandard_ArrayNode {
@@ -956,6 +989,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfHShape : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TShell;
 class PTopoDS_TShell : public PTopoDS_TShape {
 	public:
@@ -986,6 +1020,7 @@ class PTopoDS_TShell : public PTopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TEdge1;
 class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 	public:
@@ -1015,6 +1050,7 @@ class PTopoDS_TEdge1 : public PTopoDS_TShape1 {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_TEdge1\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1;
 class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
@@ -1051,6 +1087,7 @@ class PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1 : public PStandard_ArrayNode {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayNodeOfFieldOfHArray1OfShape1\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_HShape;
 class PTopoDS_HShape : public ObjMgt_ExternShareable {
@@ -1102,6 +1139,7 @@ class PTopoDS_HShape : public ObjMgt_ExternShareable {
 	}
 };
 
+
 %nodefaultctor PTopoDS_Shell;
 class PTopoDS_Shell : public PTopoDS_HShape {
 	public:
@@ -1127,6 +1165,7 @@ class PTopoDS_Shell : public PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_Shell\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_Wire;
 class PTopoDS_Wire : public PTopoDS_HShape {
@@ -1155,6 +1194,7 @@ class PTopoDS_Wire : public PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_Wire\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_TEdge;
 class PTopoDS_TEdge : public PTopoDS_TShape {
@@ -1186,6 +1226,7 @@ class PTopoDS_TEdge : public PTopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_HArray1OfShape1;
 class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 	public:
@@ -1206,7 +1247,12 @@ class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PTopoDS_HArray1OfShape1();
 		%feature("autodoc", "1");
@@ -1242,6 +1288,7 @@ class PTopoDS_HArray1OfShape1 : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TShell1;
 class PTopoDS_TShell1 : public PTopoDS_TShape1 {
 	public:
@@ -1272,6 +1319,7 @@ class PTopoDS_TShell1 : public PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor PTopoDS_Compound;
 class PTopoDS_Compound : public PTopoDS_HShape {
 	public:
@@ -1299,6 +1347,7 @@ class PTopoDS_Compound : public PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_Compound\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_Face;
 class PTopoDS_Face : public PTopoDS_HShape {
@@ -1328,6 +1377,7 @@ class PTopoDS_Face : public PTopoDS_HShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_Edge;
 class PTopoDS_Edge : public PTopoDS_HShape {
 	public:
@@ -1356,6 +1406,7 @@ class PTopoDS_Edge : public PTopoDS_HShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape;
 class PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
 	public:
@@ -1375,6 +1426,7 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfHShape\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_TSolid;
 class PTopoDS_TSolid : public PTopoDS_TShape {
@@ -1406,6 +1458,7 @@ class PTopoDS_TSolid : public PTopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TCompound;
 class PTopoDS_TCompound : public PTopoDS_TShape {
 	public:
@@ -1435,6 +1488,7 @@ class PTopoDS_TCompound : public PTopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompound\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_TSolid1;
 class PTopoDS_TSolid1 : public PTopoDS_TShape1 {
@@ -1466,6 +1520,7 @@ class PTopoDS_TSolid1 : public PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TVertex1;
 class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 	public:
@@ -1496,6 +1551,7 @@ class PTopoDS_TVertex1 : public PTopoDS_TShape1 {
 	}
 };
 
+
 %nodefaultctor PTopoDS_Solid;
 class PTopoDS_Solid : public PTopoDS_HShape {
 	public:
@@ -1523,6 +1579,7 @@ class PTopoDS_Solid : public PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_Solid\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_TWire;
 class PTopoDS_TWire : public PTopoDS_TShape {
@@ -1554,6 +1611,7 @@ class PTopoDS_TWire : public PTopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_FieldOfHArray1OfHShape;
 class PTopoDS_FieldOfHArray1OfHShape : public DBC_BaseArray {
 	public:
@@ -1584,6 +1642,7 @@ class PTopoDS_FieldOfHArray1OfHShape : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PTopoDS_Vertex;
 class PTopoDS_Vertex : public PTopoDS_HShape {
 	public:
@@ -1612,6 +1671,7 @@ class PTopoDS_Vertex : public PTopoDS_HShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1;
 class PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 	public:
@@ -1631,6 +1691,7 @@ class PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1 {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_VArrayTNodeOfFieldOfHArray1OfShape1\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_HArray1OfHShape;
 class PTopoDS_HArray1OfHShape : public Standard_Persistent {
@@ -1652,7 +1713,12 @@ class PTopoDS_HArray1OfHShape : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PTopoDS_HArray1OfHShape();
 		%feature("autodoc", "1");
@@ -1688,6 +1754,7 @@ class PTopoDS_HArray1OfHShape : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TWire1;
 class PTopoDS_TWire1 : public PTopoDS_TShape1 {
 	public:
@@ -1717,6 +1784,7 @@ class PTopoDS_TWire1 : public PTopoDS_TShape1 {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_TWire1\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_FieldOfHArray1OfShape1;
 class PTopoDS_FieldOfHArray1OfShape1 : public DBC_BaseArray {
@@ -1748,6 +1816,7 @@ class PTopoDS_FieldOfHArray1OfShape1 : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PTopoDS_CompSolid;
 class PTopoDS_CompSolid : public PTopoDS_HShape {
 	public:
@@ -1775,6 +1844,7 @@ class PTopoDS_CompSolid : public PTopoDS_HShape {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_CompSolid\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_TVertex;
 class PTopoDS_TVertex : public PTopoDS_TShape {
@@ -1806,6 +1876,7 @@ class PTopoDS_TVertex : public PTopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TFace;
 class PTopoDS_TFace : public PTopoDS_TShape {
 	public:
@@ -1836,6 +1907,7 @@ class PTopoDS_TFace : public PTopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TCompSolid1;
 class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 	public:
@@ -1865,6 +1937,7 @@ class PTopoDS_TCompSolid1 : public PTopoDS_TShape1 {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_TCompSolid1\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_Shape1;
 class PTopoDS_Shape1 {
@@ -1904,6 +1977,7 @@ class PTopoDS_Shape1 {
 	}
 };
 
+
 %nodefaultctor PTopoDS_TFace1;
 class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 	public:
@@ -1933,6 +2007,7 @@ class PTopoDS_TFace1 : public PTopoDS_TShape1 {
 	if (__env){printf("## Call custom destructor for instance of PTopoDS_TFace1\n");}
 	}
 };
+
 
 %nodefaultctor PTopoDS_TCompSolid;
 class PTopoDS_TCompSolid : public PTopoDS_TShape {

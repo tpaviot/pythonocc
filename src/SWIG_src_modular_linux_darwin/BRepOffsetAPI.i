@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public H
 	}
 };
 
+
 %nodefaultctor Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal;
 class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handle_TCollection_SeqNode {
 	public:
@@ -164,6 +166,7 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public Handl
 	}
 };
 
+
 %nodefaultctor Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape;
 class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Handle_TCollection_SeqNode {
 	public:
@@ -188,6 +191,7 @@ class Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public Hand
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape;
 class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_MapNode {
@@ -219,6 +223,7 @@ class BRepOffsetAPI_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollect
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_MakeDraft;
 class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 	public:
@@ -246,6 +251,7 @@ class BRepOffsetAPI_MakeDraft : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeDraft\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_DraftAngle;
 class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
@@ -288,6 +294,7 @@ class BRepOffsetAPI_DraftAngle : public BRepBuilderAPI_ModifyShape {
 	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DraftAngle\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_SequenceOfSequenceOfReal;
 class BRepOffsetAPI_SequenceOfSequenceOfReal : public TCollection_BaseSequence {
@@ -343,6 +350,7 @@ class BRepOffsetAPI_SequenceOfSequenceOfReal : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_MakeFilling;
 class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 	public:
@@ -391,6 +399,7 @@ class BRepOffsetAPI_MakeFilling : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape;
 class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection_SeqNode {
 	public:
@@ -418,6 +427,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape : public TCollection
 	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_MakePipeShell;
 class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
@@ -473,6 +483,7 @@ class BRepOffsetAPI_MakePipeShell : public BRepPrimAPI_MakeSweep {
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_SequenceOfSequenceOfShape;
 class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence {
 	public:
@@ -527,6 +538,7 @@ class BRepOffsetAPI_SequenceOfSequenceOfShape : public TCollection_BaseSequence 
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_MakeOffsetShape;
 class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 	public:
@@ -553,6 +565,7 @@ class BRepOffsetAPI_MakeOffsetShape : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_MakeThickSolid;
 class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 	public:
@@ -570,6 +583,7 @@ class BRepOffsetAPI_MakeThickSolid : public BRepOffsetAPI_MakeOffsetShape {
 	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakeThickSolid\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape;
 class BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCollection_BasicMapIterator {
@@ -592,6 +606,7 @@ class BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCol
 	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_DataMapIteratorOfDataMapOfShapeSequenceOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_MakeEvolved;
 class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
@@ -621,6 +636,7 @@ class BRepOffsetAPI_MakeEvolved : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal;
 class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_SeqNode {
 	public:
@@ -648,6 +664,7 @@ class BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_SequenceNodeOfSequenceOfSequenceOfReal\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_ThruSections;
 class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
@@ -678,6 +695,7 @@ class BRepOffsetAPI_ThruSections : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_ThruSections\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_NormalProjection;
 class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
@@ -721,6 +739,7 @@ class BRepOffsetAPI_NormalProjection : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_MakeOffset;
 class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
 	public:
@@ -751,6 +770,7 @@ class BRepOffsetAPI_MakeOffset : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepOffsetAPI_MakePipe;
 class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 	public:
@@ -774,6 +794,7 @@ class BRepOffsetAPI_MakePipe : public BRepPrimAPI_MakeSweep {
 	if (__env){printf("## Call custom destructor for instance of BRepOffsetAPI_MakePipe\n");}
 	}
 };
+
 
 %nodefaultctor BRepOffsetAPI_DataMapOfShapeSequenceOfShape;
 class BRepOffsetAPI_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TColQuantity_HArray1OfLength : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColQuantity_HArray2OfLength;
 class Handle_TColQuantity_HArray2OfLength : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_TColQuantity_HArray2OfLength : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColQuantity_HArray2OfLength\n");}
 	}
 };
+
 
 %nodefaultctor TColQuantity_Array1OfLength;
 class TColQuantity_Array1OfLength {
@@ -202,6 +205,7 @@ class TColQuantity_Array1OfLength {
 	if (__env){printf("## Call custom destructor for instance of TColQuantity_Array1OfLength\n");}
 	}
 };
+
 
 %nodefaultctor TColQuantity_HArray1OfLength;
 class TColQuantity_HArray1OfLength : public MMgt_TShared {
@@ -249,6 +253,7 @@ class TColQuantity_HArray1OfLength : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColQuantity_Array2OfLength;
 class TColQuantity_Array2OfLength {
 	public:
@@ -292,6 +297,7 @@ class TColQuantity_Array2OfLength {
 	if (__env){printf("## Call custom destructor for instance of TColQuantity_Array2OfLength\n");}
 	}
 };
+
 
 %nodefaultctor TColQuantity_HArray2OfLength;
 class TColQuantity_HArray2OfLength : public MMgt_TShared {

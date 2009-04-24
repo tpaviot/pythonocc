@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BRepAdaptor_HCompCurve : public Handle_Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor Handle_BRepAdaptor_HCurve2d;
 class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 	public:
@@ -162,6 +164,7 @@ class Handle_BRepAdaptor_HCurve2d : public Handle_Adaptor2d_HCurve2d {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HCurve2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepAdaptor_HCurve;
 class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
@@ -188,6 +191,7 @@ class Handle_BRepAdaptor_HCurve : public Handle_Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor Handle_BRepAdaptor_HSurface;
 class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 	public:
@@ -213,6 +217,7 @@ class Handle_BRepAdaptor_HSurface : public Handle_Adaptor3d_HSurface {
 	}
 };
 
+
 %nodefaultctor Handle_BRepAdaptor_HArray1OfCurve;
 class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 	public:
@@ -237,6 +242,7 @@ class Handle_BRepAdaptor_HArray1OfCurve : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepAdaptor_HArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor BRepAdaptor_HCompCurve;
 class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
@@ -274,6 +280,7 @@ class BRepAdaptor_HCompCurve : public Adaptor3d_HCurve {
 	}
 };
 
+
 %nodefaultctor BRepAdaptor_Curve2d;
 class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 	public:
@@ -295,6 +302,7 @@ class BRepAdaptor_Curve2d : public Geom2dAdaptor_Curve {
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve2d\n");}
 	}
 };
+
 
 %nodefaultctor BRepAdaptor_Array1OfCurve;
 class BRepAdaptor_Array1OfCurve {
@@ -336,6 +344,7 @@ class BRepAdaptor_Array1OfCurve {
 	}
 };
 
+
 %nodefaultctor BRepAdaptor_HCurve;
 class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 	public:
@@ -371,6 +380,7 @@ class BRepAdaptor_HCurve : public Adaptor3d_HCurve {
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve\n");}
 	}
 };
+
 
 %nodefaultctor BRepAdaptor_HArray1OfCurve;
 class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
@@ -418,6 +428,7 @@ class BRepAdaptor_HArray1OfCurve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepAdaptor_HCurve2d;
 class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 	public:
@@ -451,6 +462,7 @@ class BRepAdaptor_HCurve2d : public Adaptor2d_HCurve2d {
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_HCurve2d\n");}
 	}
 };
+
 
 %nodefaultctor BRepAdaptor_CompCurve;
 class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
@@ -535,6 +547,7 @@ class BRepAdaptor_CompCurve : public Adaptor3d_Curve {
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_CompCurve\n");}
 	}
 };
+
 
 %nodefaultctor BRepAdaptor_Surface;
 class BRepAdaptor_Surface : public Adaptor3d_Surface {
@@ -658,6 +671,7 @@ class BRepAdaptor_Surface : public Adaptor3d_Surface {
 	}
 };
 
+
 %nodefaultctor BRepAdaptor_Curve;
 class BRepAdaptor_Curve : public Adaptor3d_Curve {
 	public:
@@ -749,6 +763,7 @@ class BRepAdaptor_Curve : public Adaptor3d_Curve {
 	if (__env){printf("## Call custom destructor for instance of BRepAdaptor_Curve\n");}
 	}
 };
+
 
 %nodefaultctor BRepAdaptor_HSurface;
 class BRepAdaptor_HSurface : public Adaptor3d_HSurface {

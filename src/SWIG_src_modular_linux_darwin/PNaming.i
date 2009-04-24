@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PNaming_Name : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PNaming_HArray1OfNamedShape;
 class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PNaming_HArray1OfNamedShape : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_HArray1OfNamedShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PNaming_NamedShape;
 class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
@@ -188,6 +191,7 @@ class Handle_PNaming_NamedShape : public Handle_PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_PNaming_Naming;
 class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 	public:
@@ -213,6 +217,7 @@ class Handle_PNaming_Naming : public Handle_PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
 class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PStandard_ArrayNode {
 	public:
@@ -237,6 +242,7 @@ class Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public Handle_PSta
 	if (__env){printf("## Call custom destructor for instance of Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape\n");}
 	}
 };
+
 
 %nodefaultctor PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
 class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNode {
@@ -276,6 +282,7 @@ class PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape : public PStandard_ArrayNod
 	}
 };
 
+
 %nodefaultctor PNaming_Naming;
 class PNaming_Naming : public PDF_Attribute {
 	public:
@@ -311,6 +318,7 @@ class PNaming_Naming : public PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of PNaming_Naming\n");}
 	}
 };
+
 
 %nodefaultctor PNaming_NamedShape;
 class PNaming_NamedShape : public PDF_Attribute {
@@ -374,6 +382,7 @@ class PNaming_NamedShape : public PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor PNaming_HArray1OfNamedShape;
 class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 	public:
@@ -394,7 +403,12 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PNaming_HArray1OfNamedShape();
 		%feature("autodoc", "1");
@@ -430,6 +444,7 @@ class PNaming_HArray1OfNamedShape : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PNaming_FieldOfHArray1OfNamedShape;
 class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
 	public:
@@ -459,6 +474,7 @@ class PNaming_FieldOfHArray1OfNamedShape : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PNaming_FieldOfHArray1OfNamedShape\n");}
 	}
 };
+
 
 %nodefaultctor PNaming_Name;
 class PNaming_Name : public Standard_Persistent {
@@ -527,6 +543,7 @@ class PNaming_Name : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PNaming_Name\n");}
 	}
 };
+
 
 %nodefaultctor PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape;
 class PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape {

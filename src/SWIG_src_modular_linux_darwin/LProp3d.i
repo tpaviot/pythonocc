@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -141,6 +142,7 @@ class LProp3d_CurveTool {
 	}
 };
 
+
 %nodefaultctor LProp3d_SurfaceTool;
 class LProp3d_SurfaceTool {
 	public:
@@ -166,6 +168,7 @@ class LProp3d_SurfaceTool {
 	if (__env){printf("## Call custom destructor for instance of LProp3d_SurfaceTool\n");}
 	}
 };
+
 
 %nodefaultctor LProp3d_CLProps;
 class LProp3d_CLProps {
@@ -206,6 +209,7 @@ class LProp3d_CLProps {
 	if (__env){printf("## Call custom destructor for instance of LProp3d_CLProps\n");}
 	}
 };
+
 
 %nodefaultctor LProp3d_SLProps;
 class LProp3d_SLProps {

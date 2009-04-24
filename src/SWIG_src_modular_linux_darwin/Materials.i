@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Materials_SequenceNodeOfMtsSequence : public Handle_TCollection_Seq
 	}
 };
 
+
 %nodefaultctor Handle_Materials_FuzzyInstance;
 class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 	public:
@@ -162,6 +164,7 @@ class Handle_Materials_FuzzyInstance : public Handle_Dynamic_FuzzyClass {
 	if (__env){printf("## Call custom destructor for instance of Handle_Materials_FuzzyInstance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Materials_MaterialDefinition;
 class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitionsDictionary {
@@ -188,6 +191,7 @@ class Handle_Materials_MaterialDefinition : public Handle_Dynamic_FuzzyDefinitio
 	}
 };
 
+
 %nodefaultctor Handle_Materials_Color;
 class Handle_Materials_Color : public Handle_Standard_Transient {
 	public:
@@ -212,6 +216,7 @@ class Handle_Materials_Color : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_Materials_Color\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Materials_Material;
 class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
@@ -238,6 +243,7 @@ class Handle_Materials_Material : public Handle_Materials_FuzzyInstance {
 	}
 };
 
+
 %nodefaultctor Handle_Materials_MaterialsDictionary;
 class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 	public:
@@ -262,6 +268,7 @@ class Handle_Materials_MaterialsDictionary : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_Materials_MaterialsDictionary\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Materials_MaterialsSequence;
 class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_Materials_MaterialsSequence : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Materials_MaterialsDictionary;
 class Materials_MaterialsDictionary : public Standard_Transient {
 	public:
@@ -304,7 +312,12 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 		%feature("autodoc", "1");
 		Standard_Boolean UpToDate() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -325,6 +338,7 @@ class Materials_MaterialsDictionary : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Materials_MaterialsDictionary\n");}
 	}
 };
+
 
 %nodefaultctor Materials_FuzzyInstance;
 class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
@@ -358,7 +372,12 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, Handle_Standard_Transient & avalue) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -380,6 +399,7 @@ class Materials_FuzzyInstance : public Dynamic_FuzzyClass {
 	}
 };
 
+
 %nodefaultctor Materials_Material;
 class Materials_Material : public Materials_FuzzyInstance {
 	public:
@@ -387,6 +407,13 @@ class Materials_Material : public Materials_FuzzyInstance {
 		Materials_Material(const char * amaterial);
 		%feature("autodoc", "1");
 		TCollection_AsciiString Name() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Materials_Material {
@@ -405,6 +432,7 @@ class Materials_Material : public Materials_FuzzyInstance {
 	if (__env){printf("## Call custom destructor for instance of Materials_Material\n");}
 	}
 };
+
 
 %nodefaultctor Materials_SequenceNodeOfMtsSequence;
 class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
@@ -434,6 +462,7 @@ class Materials_SequenceNodeOfMtsSequence : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Materials_MaterialDefinition;
 class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 	public:
@@ -461,6 +490,7 @@ class Materials_MaterialDefinition : public Dynamic_FuzzyDefinitionsDictionary {
 	if (__env){printf("## Call custom destructor for instance of Materials_MaterialDefinition\n");}
 	}
 };
+
 
 %nodefaultctor Materials;
 class Materials {
@@ -491,6 +521,7 @@ class Materials {
 	if (__env){printf("## Call custom destructor for instance of Materials\n");}
 	}
 };
+
 
 %nodefaultctor Materials_MtsSequence;
 class Materials_MtsSequence : public TCollection_BaseSequence {
@@ -545,6 +576,7 @@ class Materials_MtsSequence : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Materials_MtsSequence\n");}
 	}
 };
+
 
 %nodefaultctor Materials_MaterialsSequence;
 class Materials_MaterialsSequence : public MMgt_TShared {
@@ -615,6 +647,7 @@ class Materials_MaterialsSequence : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Materials_MaterialsSequence\n");}
 	}
 };
+
 
 %nodefaultctor Materials_Color;
 class Materials_Color : public Standard_Transient {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepVisual_RWPresentationLayerUsage {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWAreaInSet;
 class RWStepVisual_RWAreaInSet {
 	public:
@@ -153,6 +155,7 @@ class RWStepVisual_RWAreaInSet {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWPreDefinedItem;
 class RWStepVisual_RWPreDefinedItem {
 	public:
@@ -170,6 +173,7 @@ class RWStepVisual_RWPreDefinedItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWCompositeTextWithExtent;
 class RWStepVisual_RWCompositeTextWithExtent {
@@ -191,6 +195,7 @@ class RWStepVisual_RWCompositeTextWithExtent {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWCurveStyleFontPattern;
 class RWStepVisual_RWCurveStyleFontPattern {
 	public:
@@ -208,6 +213,7 @@ class RWStepVisual_RWCurveStyleFontPattern {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyleFontPattern\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWBackgroundColour;
 class RWStepVisual_RWBackgroundColour {
@@ -229,6 +235,7 @@ class RWStepVisual_RWBackgroundColour {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWContextDependentInvisibility;
 class RWStepVisual_RWContextDependentInvisibility {
 	public:
@@ -248,6 +255,7 @@ class RWStepVisual_RWContextDependentInvisibility {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWContextDependentInvisibility\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWFillAreaStyle;
 class RWStepVisual_RWFillAreaStyle {
@@ -269,6 +277,7 @@ class RWStepVisual_RWFillAreaStyle {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWCameraModelD2;
 class RWStepVisual_RWCameraModelD2 {
 	public:
@@ -288,6 +297,7 @@ class RWStepVisual_RWCameraModelD2 {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD2\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWTextStyleWithBoxCharacteristics;
 class RWStepVisual_RWTextStyleWithBoxCharacteristics {
@@ -309,6 +319,7 @@ class RWStepVisual_RWTextStyleWithBoxCharacteristics {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWDraughtingModel;
 class RWStepVisual_RWDraughtingModel {
 	public:
@@ -328,6 +339,7 @@ class RWStepVisual_RWDraughtingModel {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingModel\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPresentedItemRepresentation;
 class RWStepVisual_RWPresentedItemRepresentation {
@@ -349,6 +361,7 @@ class RWStepVisual_RWPresentedItemRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWSurfaceStyleUsage;
 class RWStepVisual_RWSurfaceStyleUsage {
 	public:
@@ -369,6 +382,7 @@ class RWStepVisual_RWSurfaceStyleUsage {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWPreDefinedColour;
 class RWStepVisual_RWPreDefinedColour {
 	public:
@@ -386,6 +400,7 @@ class RWStepVisual_RWPreDefinedColour {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedColour\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWColourSpecification;
 class RWStepVisual_RWColourSpecification {
@@ -405,6 +420,7 @@ class RWStepVisual_RWColourSpecification {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWPreDefinedCurveFont;
 class RWStepVisual_RWPreDefinedCurveFont {
 	public:
@@ -422,6 +438,7 @@ class RWStepVisual_RWPreDefinedCurveFont {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPreDefinedCurveFont\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleControlGrid;
 class RWStepVisual_RWSurfaceStyleControlGrid {
@@ -443,6 +460,7 @@ class RWStepVisual_RWSurfaceStyleControlGrid {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWMechanicalDesignGeometricPresentationArea;
 class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 	public:
@@ -462,6 +480,7 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationArea {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWMechanicalDesignGeometricPresentationArea\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPresentationView;
 class RWStepVisual_RWPresentationView {
@@ -483,6 +502,7 @@ class RWStepVisual_RWPresentationView {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWPresentationSize;
 class RWStepVisual_RWPresentationSize {
 	public:
@@ -502,6 +522,7 @@ class RWStepVisual_RWPresentationSize {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationSize\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPresentationStyleByContext;
 class RWStepVisual_RWPresentationStyleByContext {
@@ -523,6 +544,7 @@ class RWStepVisual_RWPresentationStyleByContext {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWSurfaceStyleFillArea;
 class RWStepVisual_RWSurfaceStyleFillArea {
 	public:
@@ -543,6 +565,7 @@ class RWStepVisual_RWSurfaceStyleFillArea {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWPresentationSet;
 class RWStepVisual_RWPresentationSet {
 	public:
@@ -560,6 +583,7 @@ class RWStepVisual_RWPresentationSet {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPresentationSet\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleSegmentationCurve;
 class RWStepVisual_RWSurfaceStyleSegmentationCurve {
@@ -581,6 +605,7 @@ class RWStepVisual_RWSurfaceStyleSegmentationCurve {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWCurveStyle;
 class RWStepVisual_RWCurveStyle {
 	public:
@@ -600,6 +625,7 @@ class RWStepVisual_RWCurveStyle {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyle\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPresentationArea;
 class RWStepVisual_RWPresentationArea {
@@ -621,6 +647,7 @@ class RWStepVisual_RWPresentationArea {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWOverRidingStyledItem;
 class RWStepVisual_RWOverRidingStyledItem {
 	public:
@@ -640,6 +667,7 @@ class RWStepVisual_RWOverRidingStyledItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWOverRidingStyledItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWSurfaceSideStyle;
 class RWStepVisual_RWSurfaceSideStyle {
@@ -661,6 +689,7 @@ class RWStepVisual_RWSurfaceSideStyle {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWCompositeText;
 class RWStepVisual_RWCompositeText {
 	public:
@@ -680,6 +709,7 @@ class RWStepVisual_RWCompositeText {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCompositeText\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWSurfaceStyleParameterLine;
 class RWStepVisual_RWSurfaceStyleParameterLine {
@@ -701,6 +731,7 @@ class RWStepVisual_RWSurfaceStyleParameterLine {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWTextStyle;
 class RWStepVisual_RWTextStyle {
 	public:
@@ -720,6 +751,7 @@ class RWStepVisual_RWTextStyle {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTextStyle\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWCameraUsage;
 class RWStepVisual_RWCameraUsage {
@@ -741,6 +773,7 @@ class RWStepVisual_RWCameraUsage {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWExternallyDefinedCurveFont;
 class RWStepVisual_RWExternallyDefinedCurveFont {
 	public:
@@ -760,6 +793,7 @@ class RWStepVisual_RWExternallyDefinedCurveFont {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWExternallyDefinedCurveFont\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPresentationLayerAssignment;
 class RWStepVisual_RWPresentationLayerAssignment {
@@ -781,6 +815,7 @@ class RWStepVisual_RWPresentationLayerAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWPlanarExtent;
 class RWStepVisual_RWPlanarExtent {
 	public:
@@ -798,6 +833,7 @@ class RWStepVisual_RWPlanarExtent {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWPlanarExtent\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWInvisibility;
 class RWStepVisual_RWInvisibility {
@@ -819,6 +855,7 @@ class RWStepVisual_RWInvisibility {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWStyledItem;
 class RWStepVisual_RWStyledItem {
 	public:
@@ -838,6 +875,7 @@ class RWStepVisual_RWStyledItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWStyledItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPlanarBox;
 class RWStepVisual_RWPlanarBox {
@@ -859,6 +897,7 @@ class RWStepVisual_RWPlanarBox {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWSurfaceStyleBoundary;
 class RWStepVisual_RWSurfaceStyleBoundary {
 	public:
@@ -878,6 +917,7 @@ class RWStepVisual_RWSurfaceStyleBoundary {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleBoundary\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWContextDependentOverRidingStyledItem;
 class RWStepVisual_RWContextDependentOverRidingStyledItem {
@@ -899,6 +939,7 @@ class RWStepVisual_RWContextDependentOverRidingStyledItem {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWCameraImage;
 class RWStepVisual_RWCameraImage {
 	public:
@@ -918,6 +959,7 @@ class RWStepVisual_RWCameraImage {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraImage\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWFillAreaStyleColour;
 class RWStepVisual_RWFillAreaStyleColour {
@@ -939,6 +981,7 @@ class RWStepVisual_RWFillAreaStyleColour {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWTemplateInstance;
 class RWStepVisual_RWTemplateInstance {
 	public:
@@ -958,6 +1001,7 @@ class RWStepVisual_RWTemplateInstance {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTemplateInstance\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWTextLiteral;
 class RWStepVisual_RWTextLiteral {
@@ -979,6 +1023,7 @@ class RWStepVisual_RWTextLiteral {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWTemplate;
 class RWStepVisual_RWTemplate {
 	public:
@@ -998,6 +1043,7 @@ class RWStepVisual_RWTemplate {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWTemplate\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWViewVolume;
 class RWStepVisual_RWViewVolume {
@@ -1019,6 +1065,7 @@ class RWStepVisual_RWViewVolume {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWDraughtingPreDefinedCurveFont;
 class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 	public:
@@ -1036,6 +1083,7 @@ class RWStepVisual_RWDraughtingPreDefinedCurveFont {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWDraughtingPreDefinedCurveFont\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPointStyle;
 class RWStepVisual_RWPointStyle {
@@ -1057,6 +1105,7 @@ class RWStepVisual_RWPointStyle {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWColourRgb;
 class RWStepVisual_RWColourRgb {
 	public:
@@ -1075,6 +1124,7 @@ class RWStepVisual_RWColourRgb {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWCameraModel;
 class RWStepVisual_RWCameraModel {
 	public:
@@ -1092,6 +1142,7 @@ class RWStepVisual_RWCameraModel {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModel\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWTextStyleForDefinedFont;
 class RWStepVisual_RWTextStyleForDefinedFont {
@@ -1113,6 +1164,7 @@ class RWStepVisual_RWTextStyleForDefinedFont {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWColour;
 class RWStepVisual_RWColour {
 	public:
@@ -1130,6 +1182,7 @@ class RWStepVisual_RWColour {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWColour\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPresentationRepresentation;
 class RWStepVisual_RWPresentationRepresentation {
@@ -1151,6 +1204,7 @@ class RWStepVisual_RWPresentationRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWCurveStyleFont;
 class RWStepVisual_RWCurveStyleFont {
 	public:
@@ -1170,6 +1224,7 @@ class RWStepVisual_RWCurveStyleFont {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCurveStyleFont\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation;
 class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
@@ -1191,6 +1246,7 @@ class RWStepVisual_RWMechanicalDesignGeometricPresentationRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWSurfaceStyleSilhouette;
 class RWStepVisual_RWSurfaceStyleSilhouette {
 	public:
@@ -1210,6 +1266,7 @@ class RWStepVisual_RWSurfaceStyleSilhouette {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWSurfaceStyleSilhouette\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWPresentationStyleAssignment;
 class RWStepVisual_RWPresentationStyleAssignment {
@@ -1231,6 +1288,7 @@ class RWStepVisual_RWPresentationStyleAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepVisual_RWCameraModelD3;
 class RWStepVisual_RWCameraModelD3 {
 	public:
@@ -1250,6 +1308,7 @@ class RWStepVisual_RWCameraModelD3 {
 	if (__env){printf("## Call custom destructor for instance of RWStepVisual_RWCameraModelD3\n");}
 	}
 };
+
 
 %nodefaultctor RWStepVisual_RWDraughtingPreDefinedColour;
 class RWStepVisual_RWDraughtingPreDefinedColour {

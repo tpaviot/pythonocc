@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Plugin_DataMapNodeOfMapOfFunctions : public Handle_TCollection_MapN
 	}
 };
 
+
 %nodefaultctor Handle_Plugin_Failure;
 class Handle_Plugin_Failure : public Handle_Standard_Failure {
 	public:
@@ -163,6 +165,7 @@ class Handle_Plugin_Failure : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Plugin_DataMapIteratorOfMapOfFunctions;
 class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterator {
 	public:
@@ -182,6 +185,7 @@ class Plugin_DataMapIteratorOfMapOfFunctions : public TCollection_BasicMapIterat
 	if (__env){printf("## Call custom destructor for instance of Plugin_DataMapIteratorOfMapOfFunctions\n");}
 	}
 };
+
 
 %nodefaultctor Plugin_DataMapNodeOfMapOfFunctions;
 class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
@@ -210,6 +214,7 @@ class Plugin_DataMapNodeOfMapOfFunctions : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Plugin_DataMapNodeOfMapOfFunctions\n");}
 	}
 };
+
 
 %nodefaultctor Plugin_Failure;
 class Plugin_Failure : public Standard_Failure {
@@ -245,6 +250,7 @@ class Plugin_Failure : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Plugin_MapOfFunctions;
 class Plugin_MapOfFunctions : public TCollection_BasicMap {
 	public:
@@ -268,6 +274,7 @@ class Plugin_MapOfFunctions : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Plugin_MapOfFunctions\n");}
 	}
 };
+
 
 %nodefaultctor Plugin;
 class Plugin {

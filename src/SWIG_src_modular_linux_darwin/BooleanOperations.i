@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -165,6 +166,7 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger 
 	}
 };
 
+
 %nodefaultctor Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors;
 class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors : public Handle_TCollection_MapNode {
 	public:
@@ -189,6 +191,7 @@ class Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestor
 	if (__env){printf("## Call custom destructor for instance of Handle_BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors\n");}
 	}
 };
+
 
 %nodefaultctor BooleanOperations_ShapeAndInterferences;
 class BooleanOperations_ShapeAndInterferences {
@@ -230,6 +233,7 @@ class BooleanOperations_ShapeAndInterferences {
 	}
 };
 
+
 %nodefaultctor BooleanOperations_Explorer;
 class BooleanOperations_Explorer {
 	public:
@@ -246,7 +250,12 @@ class BooleanOperations_Explorer {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Current();
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & S) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend BooleanOperations_Explorer {
@@ -255,6 +264,7 @@ class BooleanOperations_Explorer {
 	if (__env){printf("## Call custom destructor for instance of BooleanOperations_Explorer\n");}
 	}
 };
+
 
 %nodefaultctor BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger;
 class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : public TCollection_MapNode {
@@ -290,6 +300,7 @@ class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeInteger : publi
 	}
 };
 
+
 %nodefaultctor BooleanOperations_OnceExplorer;
 class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 	public:
@@ -304,7 +315,12 @@ class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Current();
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & S) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend BooleanOperations_OnceExplorer {
@@ -313,6 +329,7 @@ class BooleanOperations_OnceExplorer : public BooleanOperations_Explorer {
 	if (__env){printf("## Call custom destructor for instance of BooleanOperations_OnceExplorer\n");}
 	}
 };
+
 
 %nodefaultctor BooleanOperations_ShapesDataStructure;
 class BooleanOperations_ShapesDataStructure {
@@ -328,9 +345,19 @@ class BooleanOperations_ShapesDataStructure {
 		%feature("autodoc", "1");
 		void FindSubshapes(const TopoDS_Shape &Sha, Standard_Integer &OutValue, BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors & IndDatMap) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & S) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void LightDump(Standard_OStream & S) const;
+		%extend{
+			std::string LightDumpToString() {
+			std::stringstream s;
+			self->LightDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		const TopoDS_Shape & GetShape(const Standard_Integer index) const;
 		%feature("autodoc", "1");
@@ -400,6 +427,7 @@ class BooleanOperations_ShapesDataStructure {
 	}
 };
 
+
 %nodefaultctor BooleanOperations_AncestorsSeqAndSuccessorsSeq;
 class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
 	public:
@@ -431,6 +459,7 @@ class BooleanOperations_AncestorsSeqAndSuccessorsSeq {
 	if (__env){printf("## Call custom destructor for instance of BooleanOperations_AncestorsSeqAndSuccessorsSeq\n");}
 	}
 };
+
 
 %nodefaultctor BooleanOperations_AncestorsAndSuccessors;
 class BooleanOperations_AncestorsAndSuccessors {
@@ -473,6 +502,7 @@ class BooleanOperations_AncestorsAndSuccessors {
 	if (__env){printf("## Call custom destructor for instance of BooleanOperations_AncestorsAndSuccessors\n");}
 	}
 };
+
 
 %nodefaultctor BooleanOperations_IndexedDataMapOfShapeInteger;
 class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicMap {
@@ -518,6 +548,7 @@ class BooleanOperations_IndexedDataMapOfShapeInteger : public TCollection_BasicM
 	}
 };
 
+
 %nodefaultctor BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors;
 class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TCollection_BasicMap {
 	public:
@@ -561,6 +592,7 @@ class BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors : public TColle
 	if (__env){printf("## Call custom destructor for instance of BooleanOperations_IndexedDataMapOfShapeAncestorsSuccessors\n");}
 	}
 };
+
 
 %nodefaultctor BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors;
 class BooleanOperations_IndexedDataMapNodeOfIndexedDataMapOfShapeAncestorsSuccessors : public TCollection_MapNode {

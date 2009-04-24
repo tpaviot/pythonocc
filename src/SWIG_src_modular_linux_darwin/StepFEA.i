@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -166,6 +167,7 @@ class Handle_StepFEA_NodeRepresentation : public Handle_StepRepr_Representation 
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_DummyNode;
 class Handle_StepFEA_DummyNode : public Handle_StepFEA_NodeRepresentation {
 	public:
@@ -190,6 +192,7 @@ class Handle_StepFEA_DummyNode : public Handle_StepFEA_NodeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_DummyNode\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaGroup;
 class Handle_StepFEA_FeaGroup : public Handle_StepBasic_Group {
@@ -216,6 +219,7 @@ class Handle_StepFEA_FeaGroup : public Handle_StepBasic_Group {
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_NodeGroup;
 class Handle_StepFEA_NodeGroup : public Handle_StepFEA_FeaGroup {
 	public:
@@ -240,6 +244,7 @@ class Handle_StepFEA_NodeGroup : public Handle_StepFEA_FeaGroup {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_NodeGroup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaMaterialPropertyRepresentationItem;
 class Handle_StepFEA_FeaMaterialPropertyRepresentationItem : public Handle_StepRepr_RepresentationItem {
@@ -266,6 +271,7 @@ class Handle_StepFEA_FeaMaterialPropertyRepresentationItem : public Handle_StepR
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness;
 class Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -290,6 +296,7 @@ class Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness : public Handle_St
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellMembraneBendingCouplingStiffness\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaLinearElasticity;
 class Handle_StepFEA_FeaLinearElasticity : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -316,6 +323,7 @@ class Handle_StepFEA_FeaLinearElasticity : public Handle_StepFEA_FeaMaterialProp
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaShellShearStiffness;
 class Handle_StepFEA_FeaShellShearStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -340,6 +348,7 @@ class Handle_StepFEA_FeaShellShearStiffness : public Handle_StepFEA_FeaMaterialP
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaShellShearStiffness\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_HSequenceOfCurve3dElementProperty;
 class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TShared {
@@ -366,6 +375,7 @@ class Handle_StepFEA_HSequenceOfCurve3dElementProperty : public Handle_MMgt_TSha
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaModel;
 class Handle_StepFEA_FeaModel : public Handle_StepRepr_Representation {
 	public:
@@ -390,6 +400,7 @@ class Handle_StepFEA_FeaModel : public Handle_StepRepr_Representation {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaModel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaModel3d;
 class Handle_StepFEA_FeaModel3d : public Handle_StepFEA_FeaModel {
@@ -416,6 +427,7 @@ class Handle_StepFEA_FeaModel3d : public Handle_StepFEA_FeaModel {
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation;
 class Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public Handle_TCollection_SeqNode {
 	public:
@@ -440,6 +452,7 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public Hand
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfElementRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaSurfaceSectionGeometricRelationship;
 class Handle_StepFEA_FeaSurfaceSectionGeometricRelationship : public Handle_MMgt_TShared {
@@ -466,6 +479,7 @@ class Handle_StepFEA_FeaSurfaceSectionGeometricRelationship : public Handle_MMgt
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
 class Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -490,6 +504,7 @@ class Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public H
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_ElementRepresentation;
 class Handle_StepFEA_ElementRepresentation : public Handle_StepRepr_Representation {
@@ -516,6 +531,7 @@ class Handle_StepFEA_ElementRepresentation : public Handle_StepRepr_Representati
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaRepresentationItem;
 class Handle_StepFEA_FeaRepresentationItem : public Handle_StepRepr_RepresentationItem {
 	public:
@@ -540,6 +556,7 @@ class Handle_StepFEA_FeaRepresentationItem : public Handle_StepRepr_Representati
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_AlignedSurface3dElementCoordinateSystem;
 class Handle_StepFEA_AlignedSurface3dElementCoordinateSystem : public Handle_StepFEA_FeaRepresentationItem {
@@ -566,6 +583,7 @@ class Handle_StepFEA_AlignedSurface3dElementCoordinateSystem : public Handle_Ste
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaMoistureAbsorption;
 class Handle_StepFEA_FeaMoistureAbsorption : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -590,6 +608,7 @@ class Handle_StepFEA_FeaMoistureAbsorption : public Handle_StepFEA_FeaMaterialPr
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMoistureAbsorption\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_NodeDefinition;
 class Handle_StepFEA_NodeDefinition : public Handle_StepRepr_ShapeAspect {
@@ -616,6 +635,7 @@ class Handle_StepFEA_NodeDefinition : public Handle_StepRepr_ShapeAspect {
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_Surface3dElementRepresentation;
 class Handle_StepFEA_Surface3dElementRepresentation : public Handle_StepFEA_ElementRepresentation {
 	public:
@@ -640,6 +660,7 @@ class Handle_StepFEA_Surface3dElementRepresentation : public Handle_StepFEA_Elem
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Surface3dElementRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_ParametricCurve3dElementCoordinateSystem;
 class Handle_StepFEA_ParametricCurve3dElementCoordinateSystem : public Handle_StepFEA_FeaRepresentationItem {
@@ -666,6 +687,7 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateSystem : public Handle_St
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_HArray1OfCurveElementEndOffset;
 class Handle_StepFEA_HArray1OfCurveElementEndOffset : public Handle_MMgt_TShared {
 	public:
@@ -690,6 +712,7 @@ class Handle_StepFEA_HArray1OfCurveElementEndOffset : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfCurveElementEndOffset\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_HArray1OfCurveElementInterval;
 class Handle_StepFEA_HArray1OfCurveElementInterval : public Handle_MMgt_TShared {
@@ -716,6 +739,7 @@ class Handle_StepFEA_HArray1OfCurveElementInterval : public Handle_MMgt_TShared 
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship;
 class Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public Handle_TCollection_SeqNode {
 	public:
@@ -740,6 +764,7 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : publ
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaShellMembraneStiffness;
 class Handle_StepFEA_FeaShellMembraneStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -766,6 +791,7 @@ class Handle_StepFEA_FeaShellMembraneStiffness : public Handle_StepFEA_FeaMateri
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaMaterialPropertyRepresentation;
 class Handle_StepFEA_FeaMaterialPropertyRepresentation : public Handle_StepRepr_MaterialPropertyRepresentation {
 	public:
@@ -790,6 +816,7 @@ class Handle_StepFEA_FeaMaterialPropertyRepresentation : public Handle_StepRepr_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMaterialPropertyRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_ConstantSurface3dElementCoordinateSystem;
 class Handle_StepFEA_ConstantSurface3dElementCoordinateSystem : public Handle_StepFEA_FeaRepresentationItem {
@@ -816,6 +843,7 @@ class Handle_StepFEA_ConstantSurface3dElementCoordinateSystem : public Handle_St
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaCurveSectionGeometricRelationship;
 class Handle_StepFEA_FeaCurveSectionGeometricRelationship : public Handle_MMgt_TShared {
 	public:
@@ -840,6 +868,7 @@ class Handle_StepFEA_FeaCurveSectionGeometricRelationship : public Handle_MMgt_T
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaCurveSectionGeometricRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty;
 class Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public Handle_TCollection_SeqNode {
@@ -866,6 +895,7 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public Han
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_Curve3dElementRepresentation;
 class Handle_StepFEA_Curve3dElementRepresentation : public Handle_StepFEA_ElementRepresentation {
 	public:
@@ -890,6 +920,7 @@ class Handle_StepFEA_Curve3dElementRepresentation : public Handle_StepFEA_Elemen
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Curve3dElementRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_GeometricNode;
 class Handle_StepFEA_GeometricNode : public Handle_StepFEA_NodeRepresentation {
@@ -916,6 +947,7 @@ class Handle_StepFEA_GeometricNode : public Handle_StepFEA_NodeRepresentation {
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaAreaDensity;
 class Handle_StepFEA_FeaAreaDensity : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -940,6 +972,7 @@ class Handle_StepFEA_FeaAreaDensity : public Handle_StepFEA_FeaMaterialPropertyR
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaAreaDensity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_HArray1OfElementRepresentation;
 class Handle_StepFEA_HArray1OfElementRepresentation : public Handle_MMgt_TShared {
@@ -966,6 +999,7 @@ class Handle_StepFEA_HArray1OfElementRepresentation : public Handle_MMgt_TShared
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_AlignedCurve3dElementCoordinateSystem;
 class Handle_StepFEA_AlignedCurve3dElementCoordinateSystem : public Handle_StepFEA_FeaRepresentationItem {
 	public:
@@ -990,6 +1024,7 @@ class Handle_StepFEA_AlignedCurve3dElementCoordinateSystem : public Handle_StepF
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_AlignedCurve3dElementCoordinateSystem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_NodeSet;
 class Handle_StepFEA_NodeSet : public Handle_StepGeom_GeometricRepresentationItem {
@@ -1016,6 +1051,7 @@ class Handle_StepFEA_NodeSet : public Handle_StepGeom_GeometricRepresentationIte
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_CurveElementInterval;
 class Handle_StepFEA_CurveElementInterval : public Handle_MMgt_TShared {
 	public:
@@ -1040,6 +1076,7 @@ class Handle_StepFEA_CurveElementInterval : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementInterval\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_CurveElementIntervalLinearlyVarying;
 class Handle_StepFEA_CurveElementIntervalLinearlyVarying : public Handle_StepFEA_CurveElementInterval {
@@ -1066,6 +1103,7 @@ class Handle_StepFEA_CurveElementIntervalLinearlyVarying : public Handle_StepFEA
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_Node;
 class Handle_StepFEA_Node : public Handle_StepFEA_NodeRepresentation {
 	public:
@@ -1090,6 +1128,7 @@ class Handle_StepFEA_Node : public Handle_StepFEA_NodeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Node\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_NodeWithSolutionCoordinateSystem;
 class Handle_StepFEA_NodeWithSolutionCoordinateSystem : public Handle_StepFEA_Node {
@@ -1116,6 +1155,7 @@ class Handle_StepFEA_NodeWithSolutionCoordinateSystem : public Handle_StepFEA_No
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_CurveElementEndRelease;
 class Handle_StepFEA_CurveElementEndRelease : public Handle_MMgt_TShared {
 	public:
@@ -1140,6 +1180,7 @@ class Handle_StepFEA_CurveElementEndRelease : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementEndRelease\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_NodeWithVector;
 class Handle_StepFEA_NodeWithVector : public Handle_StepFEA_Node {
@@ -1166,6 +1207,7 @@ class Handle_StepFEA_NodeWithVector : public Handle_StepFEA_Node {
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FreedomAndCoefficient;
 class Handle_StepFEA_FreedomAndCoefficient : public Handle_MMgt_TShared {
 	public:
@@ -1190,6 +1232,7 @@ class Handle_StepFEA_FreedomAndCoefficient : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FreedomAndCoefficient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
 class Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -1216,6 +1259,7 @@ class Handle_StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public Handl
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_CurveElementIntervalConstant;
 class Handle_StepFEA_CurveElementIntervalConstant : public Handle_StepFEA_CurveElementInterval {
 	public:
@@ -1240,6 +1284,7 @@ class Handle_StepFEA_CurveElementIntervalConstant : public Handle_StepFEA_CurveE
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementIntervalConstant\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem;
 class Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem : public Handle_StepFEA_FeaRepresentationItem {
@@ -1266,6 +1311,7 @@ class Handle_StepFEA_ArbitraryVolume3dElementCoordinateSystem : public Handle_St
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaMassDensity;
 class Handle_StepFEA_FeaMassDensity : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -1290,6 +1336,7 @@ class Handle_StepFEA_FeaMassDensity : public Handle_StepFEA_FeaMaterialPropertyR
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaMassDensity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_SymmetricTensor23dMember;
 class Handle_StepFEA_SymmetricTensor23dMember : public Handle_StepData_SelectArrReal {
@@ -1316,6 +1363,7 @@ class Handle_StepFEA_SymmetricTensor23dMember : public Handle_StepData_SelectArr
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_CurveElementEndOffset;
 class Handle_StepFEA_CurveElementEndOffset : public Handle_MMgt_TShared {
 	public:
@@ -1340,6 +1388,7 @@ class Handle_StepFEA_CurveElementEndOffset : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementEndOffset\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_HSequenceOfElementGeometricRelationship;
 class Handle_StepFEA_HSequenceOfElementGeometricRelationship : public Handle_MMgt_TShared {
@@ -1366,6 +1415,7 @@ class Handle_StepFEA_HSequenceOfElementGeometricRelationship : public Handle_MMg
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_ElementGroup;
 class Handle_StepFEA_ElementGroup : public Handle_StepFEA_FeaGroup {
 	public:
@@ -1390,6 +1440,7 @@ class Handle_StepFEA_ElementGroup : public Handle_StepFEA_FeaGroup {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ElementGroup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_ParametricSurface3dElementCoordinateSystem;
 class Handle_StepFEA_ParametricSurface3dElementCoordinateSystem : public Handle_StepFEA_FeaRepresentationItem {
@@ -1416,6 +1467,7 @@ class Handle_StepFEA_ParametricSurface3dElementCoordinateSystem : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_Curve3dElementProperty;
 class Handle_StepFEA_Curve3dElementProperty : public Handle_MMgt_TShared {
 	public:
@@ -1440,6 +1492,7 @@ class Handle_StepFEA_Curve3dElementProperty : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_Curve3dElementProperty\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_HSequenceOfElementRepresentation;
 class Handle_StepFEA_HSequenceOfElementRepresentation : public Handle_MMgt_TShared {
@@ -1466,6 +1519,7 @@ class Handle_StepFEA_HSequenceOfElementRepresentation : public Handle_MMgt_TShar
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_HSequenceOfNodeRepresentation;
 class Handle_StepFEA_HSequenceOfNodeRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -1490,6 +1544,7 @@ class Handle_StepFEA_HSequenceOfNodeRepresentation : public Handle_MMgt_TShared 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HSequenceOfNodeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaShellBendingStiffness;
 class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -1516,6 +1571,7 @@ class Handle_StepFEA_FeaShellBendingStiffness : public Handle_StepFEA_FeaMateria
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_HArray1OfDegreeOfFreedom;
 class Handle_StepFEA_HArray1OfDegreeOfFreedom : public Handle_MMgt_TShared {
 	public:
@@ -1540,6 +1596,7 @@ class Handle_StepFEA_HArray1OfDegreeOfFreedom : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfDegreeOfFreedom\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaAxis2Placement3d;
 class Handle_StepFEA_FeaAxis2Placement3d : public Handle_StepGeom_Axis2Placement3d {
@@ -1566,6 +1623,7 @@ class Handle_StepFEA_FeaAxis2Placement3d : public Handle_StepGeom_Axis2Placement
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_HArray1OfNodeRepresentation;
 class Handle_StepFEA_HArray1OfNodeRepresentation : public Handle_MMgt_TShared {
 	public:
@@ -1590,6 +1648,7 @@ class Handle_StepFEA_HArray1OfNodeRepresentation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_HArray1OfNodeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FreedomsList;
 class Handle_StepFEA_FreedomsList : public Handle_MMgt_TShared {
@@ -1616,6 +1675,7 @@ class Handle_StepFEA_FreedomsList : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
 class Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public Handle_TCollection_SeqNode {
 	public:
@@ -1640,6 +1700,7 @@ class Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_SequenceNodeOfSequenceOfNodeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_Volume3dElementRepresentation;
 class Handle_StepFEA_Volume3dElementRepresentation : public Handle_StepFEA_ElementRepresentation {
@@ -1666,6 +1727,7 @@ class Handle_StepFEA_Volume3dElementRepresentation : public Handle_StepFEA_Eleme
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_ParametricCurve3dElementCoordinateDirection;
 class Handle_StepFEA_ParametricCurve3dElementCoordinateDirection : public Handle_StepFEA_FeaRepresentationItem {
 	public:
@@ -1690,6 +1752,7 @@ class Handle_StepFEA_ParametricCurve3dElementCoordinateDirection : public Handle
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ParametricCurve3dElementCoordinateDirection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_SymmetricTensor43dMember;
 class Handle_StepFEA_SymmetricTensor43dMember : public Handle_StepData_SelectArrReal {
@@ -1716,6 +1779,7 @@ class Handle_StepFEA_SymmetricTensor43dMember : public Handle_StepData_SelectArr
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_CurveElementLocation;
 class Handle_StepFEA_CurveElementLocation : public Handle_MMgt_TShared {
 	public:
@@ -1740,6 +1804,7 @@ class Handle_StepFEA_CurveElementLocation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_CurveElementLocation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_HArray1OfCurveElementEndRelease;
 class Handle_StepFEA_HArray1OfCurveElementEndRelease : public Handle_MMgt_TShared {
@@ -1766,6 +1831,7 @@ class Handle_StepFEA_HArray1OfCurveElementEndRelease : public Handle_MMgt_TShare
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_ElementGeometricRelationship;
 class Handle_StepFEA_ElementGeometricRelationship : public Handle_MMgt_TShared {
 	public:
@@ -1790,6 +1856,7 @@ class Handle_StepFEA_ElementGeometricRelationship : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_ElementGeometricRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_DegreeOfFreedomMember;
 class Handle_StepFEA_DegreeOfFreedomMember : public Handle_StepData_SelectNamed {
@@ -1816,6 +1883,7 @@ class Handle_StepFEA_DegreeOfFreedomMember : public Handle_StepData_SelectNamed 
 	}
 };
 
+
 %nodefaultctor Handle_StepFEA_FeaModelDefinition;
 class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
 	public:
@@ -1840,6 +1908,7 @@ class Handle_StepFEA_FeaModelDefinition : public Handle_StepRepr_ShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepFEA_FeaModelDefinition\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepFEA_FeaParametricPoint;
 class Handle_StepFEA_FeaParametricPoint : public Handle_StepGeom_Point {
@@ -1866,6 +1935,7 @@ class Handle_StepFEA_FeaParametricPoint : public Handle_StepGeom_Point {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaMaterialPropertyRepresentationItem;
 class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -1891,6 +1961,7 @@ class StepFEA_FeaMaterialPropertyRepresentationItem : public StepRepr_Representa
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMaterialPropertyRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaShellMembraneBendingCouplingStiffness;
 class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -1921,6 +1992,7 @@ class StepFEA_FeaShellMembraneBendingCouplingStiffness : public StepFEA_FeaMater
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellMembraneBendingCouplingStiffness\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaModel;
 class StepFEA_FeaModel : public StepRepr_Representation {
@@ -1966,6 +2038,7 @@ class StepFEA_FeaModel : public StepRepr_Representation {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaMassDensity;
 class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -1998,6 +2071,7 @@ class StepFEA_FeaMassDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 	}
 };
 
+
 %nodefaultctor StepFEA_ElementRepresentation;
 class StepFEA_ElementRepresentation : public StepRepr_Representation {
 	public:
@@ -2029,6 +2103,7 @@ class StepFEA_ElementRepresentation : public StepRepr_Representation {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_ElementRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaSurfaceSectionGeometricRelationship;
 class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
@@ -2066,6 +2141,7 @@ class StepFEA_FeaSurfaceSectionGeometricRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaRepresentationItem;
 class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
 	public:
@@ -2091,6 +2167,7 @@ class StepFEA_FeaRepresentationItem : public StepRepr_RepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_ConstantSurface3dElementCoordinateSystem;
 class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
@@ -2125,6 +2202,7 @@ class StepFEA_ConstantSurface3dElementCoordinateSystem : public StepFEA_FeaRepre
 	if (__env){printf("## Call custom destructor for instance of StepFEA_ConstantSurface3dElementCoordinateSystem\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_HSequenceOfElementRepresentation;
 class StepFEA_HSequenceOfElementRepresentation : public MMgt_TShared {
@@ -2196,6 +2274,7 @@ class StepFEA_HSequenceOfElementRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_Array1OfElementRepresentation;
 class StepFEA_Array1OfElementRepresentation {
 	public:
@@ -2236,6 +2315,7 @@ class StepFEA_Array1OfElementRepresentation {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaMoistureAbsorption;
 class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -2268,6 +2348,7 @@ class StepFEA_FeaMoistureAbsorption : public StepFEA_FeaMaterialPropertyRepresen
 	}
 };
 
+
 %nodefaultctor StepFEA_ParametricCurve3dElementCoordinateDirection;
 class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRepresentationItem {
 	public:
@@ -2299,6 +2380,7 @@ class StepFEA_ParametricCurve3dElementCoordinateDirection : public StepFEA_FeaRe
 	if (__env){printf("## Call custom destructor for instance of StepFEA_ParametricCurve3dElementCoordinateDirection\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaSecantCoefficientOfLinearThermalExpansion;
 class StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -2336,6 +2418,7 @@ class StepFEA_FeaSecantCoefficientOfLinearThermalExpansion : public StepFEA_FeaM
 	}
 };
 
+
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty;
 class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollection_SeqNode {
 	public:
@@ -2363,6 +2446,7 @@ class StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfCurve3dElementProperty\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_ParametricSurface3dElementCoordinateSystem;
 class StepFEA_ParametricSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
@@ -2400,6 +2484,7 @@ class StepFEA_ParametricSurface3dElementCoordinateSystem : public StepFEA_FeaRep
 	}
 };
 
+
 %nodefaultctor StepFEA_CurveElementLocation;
 class StepFEA_CurveElementLocation : public MMgt_TShared {
 	public:
@@ -2431,6 +2516,7 @@ class StepFEA_CurveElementLocation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementLocation\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_HArray1OfDegreeOfFreedom;
 class StepFEA_HArray1OfDegreeOfFreedom : public MMgt_TShared {
@@ -2478,6 +2564,7 @@ class StepFEA_HArray1OfDegreeOfFreedom : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_DegreeOfFreedomMember;
 class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
 	public:
@@ -2512,6 +2599,7 @@ class StepFEA_DegreeOfFreedomMember : public StepData_SelectNamed {
 	}
 };
 
+
 %nodefaultctor StepFEA_NodeRepresentation;
 class StepFEA_NodeRepresentation : public StepRepr_Representation {
 	public:
@@ -2544,6 +2632,7 @@ class StepFEA_NodeRepresentation : public StepRepr_Representation {
 	}
 };
 
+
 %nodefaultctor StepFEA_Node;
 class StepFEA_Node : public StepFEA_NodeRepresentation {
 	public:
@@ -2567,6 +2656,7 @@ class StepFEA_Node : public StepFEA_NodeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_Node\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_SequenceOfNodeRepresentation;
 class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
@@ -2622,6 +2712,7 @@ class StepFEA_SequenceOfNodeRepresentation : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor StepFEA_HArray1OfCurveElementInterval;
 class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
 	public:
@@ -2667,6 +2758,7 @@ class StepFEA_HArray1OfCurveElementInterval : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_HArray1OfCurveElementInterval\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_HArray1OfElementRepresentation;
 class StepFEA_HArray1OfElementRepresentation : public MMgt_TShared {
@@ -2714,6 +2806,7 @@ class StepFEA_HArray1OfElementRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_AlignedSurface3dElementCoordinateSystem;
 class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
@@ -2746,6 +2839,7 @@ class StepFEA_AlignedSurface3dElementCoordinateSystem : public StepFEA_FeaRepres
 	}
 };
 
+
 %nodefaultctor StepFEA_SymmetricTensor23d;
 class StepFEA_SymmetricTensor23d : public StepData_SelectType {
 	public:
@@ -2777,6 +2871,7 @@ class StepFEA_SymmetricTensor23d : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor23d\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_ElementGeometricRelationship;
 class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
@@ -2818,6 +2913,7 @@ class StepFEA_ElementGeometricRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaLinearElasticity;
 class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -2849,6 +2945,7 @@ class StepFEA_FeaLinearElasticity : public StepFEA_FeaMaterialPropertyRepresenta
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaLinearElasticity\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_HArray1OfCurveElementEndRelease;
 class StepFEA_HArray1OfCurveElementEndRelease : public MMgt_TShared {
@@ -2896,6 +2993,7 @@ class StepFEA_HArray1OfCurveElementEndRelease : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_CurveElementInterval;
 class StepFEA_CurveElementInterval : public MMgt_TShared {
 	public:
@@ -2932,6 +3030,7 @@ class StepFEA_CurveElementInterval : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_NodeDefinition;
 class StepFEA_NodeDefinition : public StepRepr_ShapeAspect {
 	public:
@@ -2957,6 +3056,7 @@ class StepFEA_NodeDefinition : public StepRepr_ShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_Curve3dElementRepresentation;
 class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentation {
@@ -3002,6 +3102,7 @@ class StepFEA_Curve3dElementRepresentation : public StepFEA_ElementRepresentatio
 	}
 };
 
+
 %nodefaultctor StepFEA_Array1OfNodeRepresentation;
 class StepFEA_Array1OfNodeRepresentation {
 	public:
@@ -3041,6 +3142,7 @@ class StepFEA_Array1OfNodeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfNodeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_HArray1OfNodeRepresentation;
 class StepFEA_HArray1OfNodeRepresentation : public MMgt_TShared {
@@ -3088,6 +3190,7 @@ class StepFEA_HArray1OfNodeRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_Array1OfCurveElementEndRelease;
 class StepFEA_Array1OfCurveElementEndRelease {
 	public:
@@ -3128,6 +3231,7 @@ class StepFEA_Array1OfCurveElementEndRelease {
 	}
 };
 
+
 %nodefaultctor StepFEA_NodeWithSolutionCoordinateSystem;
 class StepFEA_NodeWithSolutionCoordinateSystem : public StepFEA_Node {
 	public:
@@ -3154,6 +3258,7 @@ class StepFEA_NodeWithSolutionCoordinateSystem : public StepFEA_Node {
 	}
 };
 
+
 %nodefaultctor StepFEA_ElementOrElementGroup;
 class StepFEA_ElementOrElementGroup : public StepData_SelectType {
 	public:
@@ -3173,6 +3278,7 @@ class StepFEA_ElementOrElementGroup : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_ElementOrElementGroup\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_Curve3dElementProperty;
 class StepFEA_Curve3dElementProperty : public MMgt_TShared {
@@ -3222,6 +3328,7 @@ class StepFEA_Curve3dElementProperty : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaShellMembraneStiffness;
 class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -3254,6 +3361,7 @@ class StepFEA_FeaShellMembraneStiffness : public StepFEA_FeaMaterialPropertyRepr
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaModelDefinition;
 class StepFEA_FeaModelDefinition : public StepRepr_ShapeAspect {
 	public:
@@ -3279,6 +3387,7 @@ class StepFEA_FeaModelDefinition : public StepRepr_ShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaModelDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaParametricPoint;
 class StepFEA_FeaParametricPoint : public StepGeom_Point {
@@ -3311,6 +3420,7 @@ class StepFEA_FeaParametricPoint : public StepGeom_Point {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaParametricPoint\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_Array1OfCurveElementInterval;
 class StepFEA_Array1OfCurveElementInterval {
@@ -3352,6 +3462,7 @@ class StepFEA_Array1OfCurveElementInterval {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaGroup;
 class StepFEA_FeaGroup : public StepBasic_Group {
 	public:
@@ -3384,6 +3495,7 @@ class StepFEA_FeaGroup : public StepBasic_Group {
 	}
 };
 
+
 %nodefaultctor StepFEA_CurveElementEndCoordinateSystem;
 class StepFEA_CurveElementEndCoordinateSystem : public StepData_SelectType {
 	public:
@@ -3405,6 +3517,7 @@ class StepFEA_CurveElementEndCoordinateSystem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndCoordinateSystem\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_NodeSet;
 class StepFEA_NodeSet : public StepGeom_GeometricRepresentationItem {
@@ -3438,6 +3551,7 @@ class StepFEA_NodeSet : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaMaterialPropertyRepresentation;
 class StepFEA_FeaMaterialPropertyRepresentation : public StepRepr_MaterialPropertyRepresentation {
 	public:
@@ -3463,6 +3577,7 @@ class StepFEA_FeaMaterialPropertyRepresentation : public StepRepr_MaterialProper
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaMaterialPropertyRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_HArray1OfCurveElementEndOffset;
 class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
@@ -3510,6 +3625,7 @@ class StepFEA_HArray1OfCurveElementEndOffset : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_SymmetricTensor42d;
 class StepFEA_SymmetricTensor42d : public StepData_SelectType {
 	public:
@@ -3527,6 +3643,7 @@ class StepFEA_SymmetricTensor42d : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor42d\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_CurveElementEndRelease;
 class StepFEA_CurveElementEndRelease : public MMgt_TShared {
@@ -3564,6 +3681,7 @@ class StepFEA_CurveElementEndRelease : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_CurveElementIntervalConstant;
 class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval {
 	public:
@@ -3596,6 +3714,7 @@ class StepFEA_CurveElementIntervalConstant : public StepFEA_CurveElementInterval
 	}
 };
 
+
 %nodefaultctor StepFEA_NodeWithVector;
 class StepFEA_NodeWithVector : public StepFEA_Node {
 	public:
@@ -3621,6 +3740,7 @@ class StepFEA_NodeWithVector : public StepFEA_Node {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeWithVector\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_SequenceOfElementGeometricRelationship;
 class StepFEA_SequenceOfElementGeometricRelationship : public TCollection_BaseSequence {
@@ -3676,6 +3796,7 @@ class StepFEA_SequenceOfElementGeometricRelationship : public TCollection_BaseSe
 	}
 };
 
+
 %nodefaultctor StepFEA_CurveElementIntervalLinearlyVarying;
 class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementInterval {
 	public:
@@ -3707,6 +3828,7 @@ class StepFEA_CurveElementIntervalLinearlyVarying : public StepFEA_CurveElementI
 	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementIntervalLinearlyVarying\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_Surface3dElementRepresentation;
 class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentation {
@@ -3752,6 +3874,7 @@ class StepFEA_Surface3dElementRepresentation : public StepFEA_ElementRepresentat
 	}
 };
 
+
 %nodefaultctor StepFEA_ElementGroup;
 class StepFEA_ElementGroup : public StepFEA_FeaGroup {
 	public:
@@ -3783,6 +3906,7 @@ class StepFEA_ElementGroup : public StepFEA_FeaGroup {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_ElementGroup\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_Volume3dElementRepresentation;
 class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentation {
@@ -3824,6 +3948,7 @@ class StepFEA_Volume3dElementRepresentation : public StepFEA_ElementRepresentati
 	}
 };
 
+
 %nodefaultctor StepFEA_FreedomAndCoefficient;
 class StepFEA_FreedomAndCoefficient : public MMgt_TShared {
 	public:
@@ -3859,6 +3984,7 @@ class StepFEA_FreedomAndCoefficient : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FreedomAndCoefficient\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_Array1OfDegreeOfFreedom;
 class StepFEA_Array1OfDegreeOfFreedom {
@@ -3900,6 +4026,7 @@ class StepFEA_Array1OfDegreeOfFreedom {
 	}
 };
 
+
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship;
 class StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public TCollection_SeqNode {
 	public:
@@ -3927,6 +4054,7 @@ class StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship : public TCol
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfElementGeometricRelationship\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_HSequenceOfNodeRepresentation;
 class StepFEA_HSequenceOfNodeRepresentation : public MMgt_TShared {
@@ -3998,6 +4126,7 @@ class StepFEA_HSequenceOfNodeRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_HSequenceOfCurve3dElementProperty;
 class StepFEA_HSequenceOfCurve3dElementProperty : public MMgt_TShared {
 	public:
@@ -4068,6 +4197,7 @@ class StepFEA_HSequenceOfCurve3dElementProperty : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_CurveElementEndOffset;
 class StepFEA_CurveElementEndOffset : public MMgt_TShared {
 	public:
@@ -4103,6 +4233,7 @@ class StepFEA_CurveElementEndOffset : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_CurveElementEndOffset\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaAxis2Placement3d;
 class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
@@ -4140,6 +4271,7 @@ class StepFEA_FeaAxis2Placement3d : public StepGeom_Axis2Placement3d {
 	}
 };
 
+
 %nodefaultctor StepFEA_NodeGroup;
 class StepFEA_NodeGroup : public StepFEA_FeaGroup {
 	public:
@@ -4171,6 +4303,7 @@ class StepFEA_NodeGroup : public StepFEA_FeaGroup {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_NodeGroup\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion;
 class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -4204,6 +4337,7 @@ class StepFEA_FeaTangentialCoefficientOfLinearThermalExpansion : public StepFEA_
 	}
 };
 
+
 %nodefaultctor StepFEA_ParametricCurve3dElementCoordinateSystem;
 class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
 	public:
@@ -4236,6 +4370,7 @@ class StepFEA_ParametricCurve3dElementCoordinateSystem : public StepFEA_FeaRepre
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaShellShearStiffness;
 class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -4267,6 +4402,7 @@ class StepFEA_FeaShellShearStiffness : public StepFEA_FeaMaterialPropertyReprese
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaShellShearStiffness\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_SymmetricTensor23dMember;
 class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
@@ -4301,6 +4437,7 @@ class StepFEA_SymmetricTensor23dMember : public StepData_SelectArrReal {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor23dMember\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_HSequenceOfElementGeometricRelationship;
 class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
@@ -4372,6 +4509,7 @@ class StepFEA_HSequenceOfElementGeometricRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_SymmetricTensor22d;
 class StepFEA_SymmetricTensor22d : public StepData_SelectType {
 	public:
@@ -4389,6 +4527,7 @@ class StepFEA_SymmetricTensor22d : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SymmetricTensor22d\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_DummyNode;
 class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
@@ -4415,6 +4554,7 @@ class StepFEA_DummyNode : public StepFEA_NodeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_DummyNode\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FreedomsList;
 class StepFEA_FreedomsList : public MMgt_TShared {
@@ -4448,6 +4588,7 @@ class StepFEA_FreedomsList : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaAreaDensity;
 class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationItem {
 	public:
@@ -4480,6 +4621,7 @@ class StepFEA_FeaAreaDensity : public StepFEA_FeaMaterialPropertyRepresentationI
 	}
 };
 
+
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfElementRepresentation;
 class StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public TCollection_SeqNode {
 	public:
@@ -4507,6 +4649,7 @@ class StepFEA_SequenceNodeOfSequenceOfElementRepresentation : public TCollection
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfElementRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_SymmetricTensor43dMember;
 class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
@@ -4542,6 +4685,7 @@ class StepFEA_SymmetricTensor43dMember : public StepData_SelectArrReal {
 	}
 };
 
+
 %nodefaultctor StepFEA_SequenceNodeOfSequenceOfNodeRepresentation;
 class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_SeqNode {
 	public:
@@ -4569,6 +4713,7 @@ class StepFEA_SequenceNodeOfSequenceOfNodeRepresentation : public TCollection_Se
 	if (__env){printf("## Call custom destructor for instance of StepFEA_SequenceNodeOfSequenceOfNodeRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaShellBendingStiffness;
 class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepresentationItem {
@@ -4602,6 +4747,7 @@ class StepFEA_FeaShellBendingStiffness : public StepFEA_FeaMaterialPropertyRepre
 	}
 };
 
+
 %nodefaultctor StepFEA_FeaModel3d;
 class StepFEA_FeaModel3d : public StepFEA_FeaModel {
 	public:
@@ -4627,6 +4773,7 @@ class StepFEA_FeaModel3d : public StepFEA_FeaModel {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaModel3d\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_SequenceOfCurve3dElementProperty;
 class StepFEA_SequenceOfCurve3dElementProperty : public TCollection_BaseSequence {
@@ -4682,6 +4829,7 @@ class StepFEA_SequenceOfCurve3dElementProperty : public TCollection_BaseSequence
 	}
 };
 
+
 %nodefaultctor StepFEA_DegreeOfFreedom;
 class StepFEA_DegreeOfFreedom : public StepData_SelectType {
 	public:
@@ -4709,6 +4857,7 @@ class StepFEA_DegreeOfFreedom : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_DegreeOfFreedom\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_FeaCurveSectionGeometricRelationship;
 class StepFEA_FeaCurveSectionGeometricRelationship : public MMgt_TShared {
@@ -4745,6 +4894,7 @@ class StepFEA_FeaCurveSectionGeometricRelationship : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_FeaCurveSectionGeometricRelationship\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_Array1OfCurveElementEndOffset;
 class StepFEA_Array1OfCurveElementEndOffset {
@@ -4785,6 +4935,7 @@ class StepFEA_Array1OfCurveElementEndOffset {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_Array1OfCurveElementEndOffset\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_SequenceOfElementRepresentation;
 class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence {
@@ -4840,6 +4991,7 @@ class StepFEA_SequenceOfElementRepresentation : public TCollection_BaseSequence 
 	}
 };
 
+
 %nodefaultctor StepFEA_GeometricNode;
 class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
 	public:
@@ -4865,6 +5017,7 @@ class StepFEA_GeometricNode : public StepFEA_NodeRepresentation {
 	if (__env){printf("## Call custom destructor for instance of StepFEA_GeometricNode\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_AlignedCurve3dElementCoordinateSystem;
 class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {
@@ -4897,6 +5050,7 @@ class StepFEA_AlignedCurve3dElementCoordinateSystem : public StepFEA_FeaRepresen
 	if (__env){printf("## Call custom destructor for instance of StepFEA_AlignedCurve3dElementCoordinateSystem\n");}
 	}
 };
+
 
 %nodefaultctor StepFEA_ArbitraryVolume3dElementCoordinateSystem;
 class StepFEA_ArbitraryVolume3dElementCoordinateSystem : public StepFEA_FeaRepresentationItem {

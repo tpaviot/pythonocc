@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -153,6 +154,7 @@ class Handle_HatchGen_SequenceNodeOfDomains : public Handle_TCollection_SeqNode 
 	}
 };
 
+
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnElement;
 class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_SeqNode {
 	public:
@@ -178,6 +180,7 @@ class Handle_HatchGen_SequenceNodeOfPointsOnElement : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_HatchGen_SequenceNodeOfPointsOnHatching;
 class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection_SeqNode {
 	public:
@@ -202,6 +205,7 @@ class Handle_HatchGen_SequenceNodeOfPointsOnHatching : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_HatchGen_SequenceNodeOfPointsOnHatching\n");}
 	}
 };
+
 
 %nodefaultctor HatchGen_IntersectionPoint;
 class HatchGen_IntersectionPoint {
@@ -245,6 +249,7 @@ class HatchGen_IntersectionPoint {
 	}
 };
 
+
 %nodefaultctor HatchGen_PointOnElement;
 class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 	public:
@@ -270,6 +275,7 @@ class HatchGen_PointOnElement : public HatchGen_IntersectionPoint {
 	if (__env){printf("## Call custom destructor for instance of HatchGen_PointOnElement\n");}
 	}
 };
+
 
 %nodefaultctor HatchGen_PointsOnHatching;
 class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
@@ -325,6 +331,7 @@ class HatchGen_PointsOnHatching : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor HatchGen_Domain;
 class HatchGen_Domain {
 	public:
@@ -365,6 +372,7 @@ class HatchGen_Domain {
 	}
 };
 
+
 %nodefaultctor HatchGen_PointOnHatching;
 class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 	public:
@@ -402,6 +410,7 @@ class HatchGen_PointOnHatching : public HatchGen_IntersectionPoint {
 	if (__env){printf("## Call custom destructor for instance of HatchGen_PointOnHatching\n");}
 	}
 };
+
 
 %nodefaultctor HatchGen_PointsOnElement;
 class HatchGen_PointsOnElement : public TCollection_BaseSequence {
@@ -457,6 +466,7 @@ class HatchGen_PointsOnElement : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor HatchGen_SequenceNodeOfDomains;
 class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 	public:
@@ -484,6 +494,7 @@ class HatchGen_SequenceNodeOfDomains : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfDomains\n");}
 	}
 };
+
 
 %nodefaultctor HatchGen_SequenceNodeOfPointsOnHatching;
 class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
@@ -513,6 +524,7 @@ class HatchGen_SequenceNodeOfPointsOnHatching : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor HatchGen_SequenceNodeOfPointsOnElement;
 class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
 	public:
@@ -540,6 +552,7 @@ class HatchGen_SequenceNodeOfPointsOnElement : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of HatchGen_SequenceNodeOfPointsOnElement\n");}
 	}
 };
+
 
 %nodefaultctor HatchGen_Domains;
 class HatchGen_Domains : public TCollection_BaseSequence {

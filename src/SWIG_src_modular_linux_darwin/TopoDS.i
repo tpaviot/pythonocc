@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TopoDS_TShape : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TopoDS_TVertex;
 class Handle_TopoDS_TVertex : public Handle_TopoDS_TShape {
 	public:
@@ -162,6 +164,7 @@ class Handle_TopoDS_TVertex : public Handle_TopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TVertex\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopoDS_FrozenShape;
 class Handle_TopoDS_FrozenShape : public Handle_Standard_DomainError {
@@ -188,6 +191,7 @@ class Handle_TopoDS_FrozenShape : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_TopoDS_ListNodeOfListOfShape;
 class Handle_TopoDS_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_TopoDS_ListNodeOfListOfShape : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_ListNodeOfListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopoDS_TFace;
 class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
@@ -238,6 +243,7 @@ class Handle_TopoDS_TFace : public Handle_TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor Handle_TopoDS_TCompound;
 class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 	public:
@@ -262,6 +268,7 @@ class Handle_TopoDS_TCompound : public Handle_TopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TCompound\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopoDS_UnCompatibleShapes;
 class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
@@ -288,6 +295,7 @@ class Handle_TopoDS_UnCompatibleShapes : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_TopoDS_HShape;
 class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 	public:
@@ -312,6 +320,7 @@ class Handle_TopoDS_HShape : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_HShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopoDS_TEdge;
 class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
@@ -338,6 +347,7 @@ class Handle_TopoDS_TEdge : public Handle_TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor Handle_TopoDS_TShell;
 class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 	public:
@@ -362,6 +372,7 @@ class Handle_TopoDS_TShell : public Handle_TopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TShell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopoDS_TCompSolid;
 class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
@@ -388,6 +399,7 @@ class Handle_TopoDS_TCompSolid : public Handle_TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor Handle_TopoDS_TSolid;
 class Handle_TopoDS_TSolid : public Handle_TopoDS_TShape {
 	public:
@@ -413,6 +425,7 @@ class Handle_TopoDS_TSolid : public Handle_TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor Handle_TopoDS_TWire;
 class Handle_TopoDS_TWire : public Handle_TopoDS_TShape {
 	public:
@@ -437,6 +450,7 @@ class Handle_TopoDS_TWire : public Handle_TopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopoDS_TWire\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_Shape;
 class TopoDS_Shape {
@@ -541,6 +555,7 @@ class TopoDS_Shape {
 	}
 };
 
+
 %nodefaultctor TopoDS_Compound;
 class TopoDS_Compound : public TopoDS_Shape {
 	public:
@@ -554,6 +569,7 @@ class TopoDS_Compound : public TopoDS_Shape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Compound\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_HShape;
 class TopoDS_HShape : public MMgt_TShared {
@@ -589,6 +605,7 @@ class TopoDS_HShape : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopoDS_ListNodeOfListOfShape;
 class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 	public:
@@ -616,6 +633,7 @@ class TopoDS_ListNodeOfListOfShape : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_ListNodeOfListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_FrozenShape;
 class TopoDS_FrozenShape : public Standard_DomainError {
@@ -651,6 +669,7 @@ class TopoDS_FrozenShape : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor TopoDS_Vertex;
 class TopoDS_Vertex : public TopoDS_Shape {
 	public:
@@ -664,6 +683,7 @@ class TopoDS_Vertex : public TopoDS_Shape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Vertex\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_Iterator;
 class TopoDS_Iterator {
@@ -688,6 +708,7 @@ class TopoDS_Iterator {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Iterator\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_TShape;
 class TopoDS_TShape : public MMgt_TShared {
@@ -745,6 +766,7 @@ class TopoDS_TShape : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopoDS_Builder;
 class TopoDS_Builder {
 	public:
@@ -765,6 +787,7 @@ class TopoDS_Builder {
 	}
 };
 
+
 %nodefaultctor TopoDS_CompSolid;
 class TopoDS_CompSolid : public TopoDS_Shape {
 	public:
@@ -778,6 +801,7 @@ class TopoDS_CompSolid : public TopoDS_Shape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_CompSolid\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_ListOfShape;
 class TopoDS_ListOfShape {
@@ -829,6 +853,7 @@ class TopoDS_ListOfShape {
 	}
 };
 
+
 %nodefaultctor TopoDS_TWire;
 class TopoDS_TWire : public TopoDS_TShape {
 	public:
@@ -859,6 +884,7 @@ class TopoDS_TWire : public TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor TopoDS_Edge;
 class TopoDS_Edge : public TopoDS_Shape {
 	public:
@@ -873,6 +899,7 @@ class TopoDS_Edge : public TopoDS_Shape {
 	}
 };
 
+
 %nodefaultctor TopoDS_Shell;
 class TopoDS_Shell : public TopoDS_Shape {
 	public:
@@ -886,6 +913,7 @@ class TopoDS_Shell : public TopoDS_Shape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Shell\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_UnCompatibleShapes;
 class TopoDS_UnCompatibleShapes : public Standard_DomainError {
@@ -921,6 +949,7 @@ class TopoDS_UnCompatibleShapes : public Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor TopoDS_ListIteratorOfListOfShape;
 class TopoDS_ListIteratorOfListOfShape {
 	public:
@@ -945,6 +974,7 @@ class TopoDS_ListIteratorOfListOfShape {
 	}
 };
 
+
 %nodefaultctor TopoDS_Solid;
 class TopoDS_Solid : public TopoDS_Shape {
 	public:
@@ -958,6 +988,7 @@ class TopoDS_Solid : public TopoDS_Shape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Solid\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_TCompound;
 class TopoDS_TCompound : public TopoDS_TShape {
@@ -989,6 +1020,7 @@ class TopoDS_TCompound : public TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor TopoDS_TEdge;
 class TopoDS_TEdge : public TopoDS_TShape {
 	public:
@@ -1014,6 +1046,7 @@ class TopoDS_TEdge : public TopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_TEdge\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS;
 class TopoDS {
@@ -1061,6 +1094,7 @@ class TopoDS {
 	}
 };
 
+
 %nodefaultctor TopoDS_TShell;
 class TopoDS_TShell : public TopoDS_TShape {
 	public:
@@ -1090,6 +1124,7 @@ class TopoDS_TShell : public TopoDS_TShape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_TShell\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_TFace;
 class TopoDS_TFace : public TopoDS_TShape {
@@ -1121,6 +1156,7 @@ class TopoDS_TFace : public TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor TopoDS_Builder3D;
 class TopoDS_Builder3D : public TopoDS_Builder {
 	public:
@@ -1138,6 +1174,7 @@ class TopoDS_Builder3D : public TopoDS_Builder {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Builder3D\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_TCompSolid;
 class TopoDS_TCompSolid : public TopoDS_TShape {
@@ -1169,6 +1206,7 @@ class TopoDS_TCompSolid : public TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor TopoDS_Wire;
 class TopoDS_Wire : public TopoDS_Shape {
 	public:
@@ -1182,6 +1220,7 @@ class TopoDS_Wire : public TopoDS_Shape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Wire\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_TVertex;
 class TopoDS_TVertex : public TopoDS_TShape {
@@ -1209,6 +1248,7 @@ class TopoDS_TVertex : public TopoDS_TShape {
 	}
 };
 
+
 %nodefaultctor TopoDS_Face;
 class TopoDS_Face : public TopoDS_Shape {
 	public:
@@ -1222,6 +1262,7 @@ class TopoDS_Face : public TopoDS_Shape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Face\n");}
 	}
 };
+
 
 %nodefaultctor TopoDS_TSolid;
 class TopoDS_TSolid : public TopoDS_TShape {

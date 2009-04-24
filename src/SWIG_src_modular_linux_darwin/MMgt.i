@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_MMgt_TShared : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor MMgt_TShared;
 class MMgt_TShared : public Standard_Transient {
 	public:
@@ -166,6 +168,7 @@ class MMgt_TShared : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor MMgt_StackManager;
 class MMgt_StackManager {
 	public:
@@ -178,7 +181,12 @@ class MMgt_StackManager {
 		%feature("autodoc", "1");
 		MMgt_StackManager ShallowCopy() const;
 		%feature("autodoc", "1");
-		void ShallowDump(Standard_OStream & S) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Destructor();
 

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -168,6 +169,7 @@ class Handle_BOP_SequenceNodeOfSeqOfSeqOfShape : public Handle_TCollection_SeqNo
 	}
 };
 
+
 %nodefaultctor Handle_BOP_ListNodeOfListOfListOfLoop;
 class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
@@ -192,6 +194,7 @@ class Handle_BOP_ListNodeOfListOfListOfLoop : public Handle_TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOP_HistoryCollector;
 class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
@@ -218,6 +221,7 @@ class Handle_BOP_HistoryCollector : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BOP_SolidSolidHistoryCollector;
 class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector {
 	public:
@@ -242,6 +246,7 @@ class Handle_BOP_SolidSolidHistoryCollector : public Handle_BOP_HistoryCollector
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_SolidSolidHistoryCollector\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfFaceInfo;
 class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
@@ -268,6 +273,7 @@ class Handle_BOP_ListNodeOfListOfFaceInfo : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
 class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Handle_TCollection_MapNode {
 	public:
@@ -292,6 +298,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public Ha
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfEdgeInfo;
 class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
@@ -318,6 +325,7 @@ class Handle_BOP_ListNodeOfListOfEdgeInfo : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
 class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public Handle_TCollection_MapNode {
 	public:
@@ -342,6 +350,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public H
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOP_ShellSolidHistoryCollector;
 class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector {
@@ -368,6 +377,7 @@ class Handle_BOP_ShellSolidHistoryCollector : public Handle_BOP_HistoryCollector
 	}
 };
 
+
 %nodefaultctor Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
 class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public Handle_TCollection_MapNode {
 	public:
@@ -392,6 +402,7 @@ class Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOP_ListNodeOfListOfCheckResult;
 class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode {
@@ -418,6 +429,7 @@ class Handle_BOP_ListNodeOfListOfCheckResult : public Handle_TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor Handle_BOP_ListNodeOfListOfLoop;
 class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 	public:
@@ -442,6 +454,7 @@ class Handle_BOP_ListNodeOfListOfLoop : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOP_SectionHistoryCollector;
 class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
@@ -468,6 +481,7 @@ class Handle_BOP_SectionHistoryCollector : public Handle_BOP_HistoryCollector {
 	}
 };
 
+
 %nodefaultctor Handle_BOP_WireSolidHistoryCollector;
 class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector {
 	public:
@@ -492,6 +506,7 @@ class Handle_BOP_WireSolidHistoryCollector : public Handle_BOP_HistoryCollector 
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_WireSolidHistoryCollector\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BOP_Loop;
 class Handle_BOP_Loop : public Handle_MMgt_TShared {
@@ -518,6 +533,7 @@ class Handle_BOP_Loop : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BOP_ListNodeOfListOfConnexityBlock;
 class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapNode {
 	public:
@@ -542,6 +558,7 @@ class Handle_BOP_ListNodeOfListOfConnexityBlock : public Handle_TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Handle_BOP_ListNodeOfListOfConnexityBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOP_HistoryCollector;
 class BOP_HistoryCollector : public MMgt_TShared {
@@ -581,6 +598,7 @@ class BOP_HistoryCollector : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BOP_WireSolidHistoryCollector;
 class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 	public:
@@ -605,6 +623,7 @@ class BOP_WireSolidHistoryCollector : public BOP_HistoryCollector {
 	}
 };
 
+
 %nodefaultctor BOP_ListIteratorOfListOfFaceInfo;
 class BOP_ListIteratorOfListOfFaceInfo {
 	public:
@@ -628,6 +647,7 @@ class BOP_ListIteratorOfListOfFaceInfo {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfFaceInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOP_AreaBuilder;
 class BOP_AreaBuilder {
@@ -668,6 +688,7 @@ class BOP_AreaBuilder {
 	if (__env){printf("## Call custom destructor for instance of BOP_AreaBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListOfLoop;
 class BOP_ListOfLoop {
@@ -719,6 +740,7 @@ class BOP_ListOfLoop {
 	}
 };
 
+
 %nodefaultctor BOP_BlockIterator;
 class BOP_BlockIterator {
 	public:
@@ -745,6 +767,7 @@ class BOP_BlockIterator {
 	}
 };
 
+
 %nodefaultctor BOP_Area2dBuilder;
 class BOP_Area2dBuilder : public BOP_AreaBuilder {
 	public:
@@ -763,6 +786,7 @@ class BOP_Area2dBuilder : public BOP_AreaBuilder {
 	}
 };
 
+
 %nodefaultctor BOP_FaceAreaBuilder;
 class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
 	public:
@@ -780,6 +804,7 @@ class BOP_FaceAreaBuilder : public BOP_Area2dBuilder {
 	if (__env){printf("## Call custom destructor for instance of BOP_FaceAreaBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListNodeOfListOfFaceInfo;
 class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
@@ -808,6 +833,7 @@ class BOP_ListNodeOfListOfFaceInfo : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfFaceInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOP_SolidBuilder;
 class BOP_SolidBuilder {
@@ -850,6 +876,7 @@ class BOP_SolidBuilder {
 	if (__env){printf("## Call custom destructor for instance of BOP_SolidBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BOP_IndexedDataMapOfEdgeListFaceInfo;
 class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
@@ -894,6 +921,7 @@ class BOP_IndexedDataMapOfEdgeListFaceInfo : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfEdgeListFaceInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListOfConnexityBlock;
 class BOP_ListOfConnexityBlock {
@@ -945,6 +973,7 @@ class BOP_ListOfConnexityBlock {
 	}
 };
 
+
 %nodefaultctor BOP_ListNodeOfListOfCheckResult;
 class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 	public:
@@ -973,6 +1002,7 @@ class BOP_ListNodeOfListOfCheckResult : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BOP_LoopClassifier;
 class BOP_LoopClassifier {
 	public:
@@ -988,6 +1018,7 @@ class BOP_LoopClassifier {
 	if (__env){printf("## Call custom destructor for instance of BOP_LoopClassifier\n");}
 	}
 };
+
 
 %nodefaultctor BOP_CompositeClassifier;
 class BOP_CompositeClassifier : public BOP_LoopClassifier {
@@ -1013,6 +1044,7 @@ class BOP_CompositeClassifier : public BOP_LoopClassifier {
 	}
 };
 
+
 %nodefaultctor BOP_WireEdgeClassifier;
 class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 	public:
@@ -1030,6 +1062,7 @@ class BOP_WireEdgeClassifier : public BOP_CompositeClassifier {
 	if (__env){printf("## Call custom destructor for instance of BOP_WireEdgeClassifier\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListOfCheckResult;
 class BOP_ListOfCheckResult {
@@ -1081,6 +1114,7 @@ class BOP_ListOfCheckResult {
 	}
 };
 
+
 %nodefaultctor BOP_ListIteratorOfListOfCheckResult;
 class BOP_ListIteratorOfListOfCheckResult {
 	public:
@@ -1104,6 +1138,7 @@ class BOP_ListIteratorOfListOfCheckResult {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfCheckResult\n");}
 	}
 };
+
 
 %nodefaultctor BOP_SequenceNodeOfSeqOfSeqOfShape;
 class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
@@ -1132,6 +1167,7 @@ class BOP_SequenceNodeOfSeqOfSeqOfShape : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of BOP_SequenceNodeOfSeqOfSeqOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BOP_FaceBuilder;
 class BOP_FaceBuilder {
@@ -1193,6 +1229,7 @@ class BOP_FaceBuilder {
 	}
 };
 
+
 %nodefaultctor BOP_ListNodeOfListOfLoop;
 class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 	public:
@@ -1220,6 +1257,7 @@ class BOP_ListNodeOfListOfLoop : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListOfListOfLoop;
 class BOP_ListOfListOfLoop {
@@ -1270,6 +1308,7 @@ class BOP_ListOfListOfLoop {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor BOP_Builder;
 class BOP_Builder {
@@ -1323,6 +1362,7 @@ class BOP_Builder {
 	}
 };
 
+
 %nodefaultctor BOP_WireShape;
 class BOP_WireShape : public BOP_Builder {
 	public:
@@ -1342,6 +1382,7 @@ class BOP_WireShape : public BOP_Builder {
 	if (__env){printf("## Call custom destructor for instance of BOP_WireShape\n");}
 	}
 };
+
 
 %nodefaultctor BOP_SeqOfSeqOfShape;
 class BOP_SeqOfSeqOfShape : public TCollection_BaseSequence {
@@ -1397,6 +1438,7 @@ class BOP_SeqOfSeqOfShape : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BOP_WireWire;
 class BOP_WireWire : public BOP_WireShape {
 	public:
@@ -1418,6 +1460,7 @@ class BOP_WireWire : public BOP_WireShape {
 	if (__env){printf("## Call custom destructor for instance of BOP_WireWire\n");}
 	}
 };
+
 
 %nodefaultctor BOP_IndexedDataMapOfSolidClassifier;
 class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
@@ -1463,6 +1506,7 @@ class BOP_IndexedDataMapOfSolidClassifier : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BOP_WireSplitter;
 class BOP_WireSplitter {
 	public:
@@ -1491,6 +1535,7 @@ class BOP_WireSplitter {
 	}
 };
 
+
 %nodefaultctor BOP_ListNodeOfListOfConnexityBlock;
 class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 	public:
@@ -1518,6 +1563,7 @@ class BOP_ListNodeOfListOfConnexityBlock : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfConnexityBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ArgumentAnalyzer;
 class BOP_ArgumentAnalyzer {
@@ -1564,6 +1610,7 @@ class BOP_ArgumentAnalyzer {
 	if (__env){printf("## Call custom destructor for instance of BOP_ArgumentAnalyzer\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListOfFaceInfo;
 class BOP_ListOfFaceInfo {
@@ -1615,6 +1662,7 @@ class BOP_ListOfFaceInfo {
 	}
 };
 
+
 %nodefaultctor BOP_EdgeInfo;
 class BOP_EdgeInfo {
 	public:
@@ -1644,6 +1692,7 @@ class BOP_EdgeInfo {
 	if (__env){printf("## Call custom destructor for instance of BOP_EdgeInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo;
 class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TCollection_MapNode {
@@ -1679,6 +1728,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfVertexListEdgeInfo : public TColle
 	}
 };
 
+
 %nodefaultctor BOP_ListNodeOfListOfListOfLoop;
 class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 	public:
@@ -1706,6 +1756,7 @@ class BOP_ListNodeOfListOfListOfLoop : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ShellSplitter;
 class BOP_ShellSplitter {
@@ -1735,6 +1786,7 @@ class BOP_ShellSplitter {
 	}
 };
 
+
 %nodefaultctor BOP_SectionHistoryCollector;
 class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 	public:
@@ -1762,6 +1814,7 @@ class BOP_SectionHistoryCollector : public BOP_HistoryCollector {
 	if (__env){printf("## Call custom destructor for instance of BOP_SectionHistoryCollector\n");}
 	}
 };
+
 
 %nodefaultctor BOP_SolidSolidHistoryCollector;
 class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
@@ -1793,6 +1846,7 @@ class BOP_SolidSolidHistoryCollector : public BOP_HistoryCollector {
 	}
 };
 
+
 %nodefaultctor BOP_ListIteratorOfListOfEdgeInfo;
 class BOP_ListIteratorOfListOfEdgeInfo {
 	public:
@@ -1817,6 +1871,7 @@ class BOP_ListIteratorOfListOfEdgeInfo {
 	}
 };
 
+
 %nodefaultctor BOP_Area3dBuilder;
 class BOP_Area3dBuilder : public BOP_AreaBuilder {
 	public:
@@ -1834,6 +1889,7 @@ class BOP_Area3dBuilder : public BOP_AreaBuilder {
 	if (__env){printf("## Call custom destructor for instance of BOP_Area3dBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BOP_EmptyBuilder;
 class BOP_EmptyBuilder : public BOP_Builder {
@@ -1856,6 +1912,7 @@ class BOP_EmptyBuilder : public BOP_Builder {
 	if (__env){printf("## Call custom destructor for instance of BOP_EmptyBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BOP_Draw;
 class BOP_Draw {
@@ -1880,6 +1937,7 @@ class BOP_Draw {
 	if (__env){printf("## Call custom destructor for instance of BOP_Draw\n");}
 	}
 };
+
 
 %nodefaultctor BOP_WESCorrector;
 class BOP_WESCorrector {
@@ -1906,6 +1964,7 @@ class BOP_WESCorrector {
 	if (__env){printf("## Call custom destructor for instance of BOP_WESCorrector\n");}
 	}
 };
+
 
 %nodefaultctor BOP_Refiner;
 class BOP_Refiner {
@@ -1938,6 +1997,7 @@ class BOP_Refiner {
 	if (__env){printf("## Call custom destructor for instance of BOP_Refiner\n");}
 	}
 };
+
 
 %nodefaultctor BOP_Loop;
 class BOP_Loop : public MMgt_TShared {
@@ -1973,6 +2033,7 @@ class BOP_Loop : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo;
 class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollection_MapNode {
 	public:
@@ -2007,6 +2068,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfEdgeListFaceInfo : public TCollect
 	}
 };
 
+
 %nodefaultctor BOP_ConnexityBlock;
 class BOP_ConnexityBlock {
 	public:
@@ -2030,6 +2092,7 @@ class BOP_ConnexityBlock {
 	if (__env){printf("## Call custom destructor for instance of BOP_ConnexityBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListNodeOfListOfEdgeInfo;
 class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
@@ -2058,6 +2121,7 @@ class BOP_ListNodeOfListOfEdgeInfo : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListNodeOfListOfEdgeInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOP_BuilderTools;
 class BOP_BuilderTools {
@@ -2090,6 +2154,7 @@ class BOP_BuilderTools {
 	if (__env){printf("## Call custom destructor for instance of BOP_BuilderTools\n");}
 	}
 };
+
 
 %nodefaultctor BOP_IndexedDataMapOfVertexListEdgeInfo;
 class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
@@ -2134,6 +2199,7 @@ class BOP_IndexedDataMapOfVertexListEdgeInfo : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapOfVertexListEdgeInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ShapeSet;
 class BOP_ShapeSet {
@@ -2193,6 +2259,7 @@ class BOP_ShapeSet {
 	}
 };
 
+
 %nodefaultctor BOP_ShellFaceSet;
 class BOP_ShellFaceSet : public BOP_ShapeSet {
 	public:
@@ -2210,6 +2277,7 @@ class BOP_ShellFaceSet : public BOP_ShapeSet {
 	if (__env){printf("## Call custom destructor for instance of BOP_ShellFaceSet\n");}
 	}
 };
+
 
 %nodefaultctor BOP_SolidClassifier;
 class BOP_SolidClassifier {
@@ -2239,6 +2307,7 @@ class BOP_SolidClassifier {
 	}
 };
 
+
 %nodefaultctor BOP_WireSolid;
 class BOP_WireSolid : public BOP_WireShape {
 	public:
@@ -2264,6 +2333,7 @@ class BOP_WireSolid : public BOP_WireShape {
 	if (__env){printf("## Call custom destructor for instance of BOP_WireSolid\n");}
 	}
 };
+
 
 %nodefaultctor BOP_CheckResult;
 class BOP_CheckResult {
@@ -2299,6 +2369,7 @@ class BOP_CheckResult {
 	}
 };
 
+
 %nodefaultctor BOP_ShellFaceClassifier;
 class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
 	public:
@@ -2327,6 +2398,7 @@ class BOP_ShellFaceClassifier : public BOP_CompositeClassifier {
 	}
 };
 
+
 %nodefaultctor BOP_ListIteratorOfListOfListOfLoop;
 class BOP_ListIteratorOfListOfListOfLoop {
 	public:
@@ -2351,6 +2423,7 @@ class BOP_ListIteratorOfListOfListOfLoop {
 	}
 };
 
+
 %nodefaultctor BOP_Section;
 class BOP_Section : public BOP_Builder {
 	public:
@@ -2374,6 +2447,7 @@ class BOP_Section : public BOP_Builder {
 	if (__env){printf("## Call custom destructor for instance of BOP_Section\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ShellSolid;
 class BOP_ShellSolid : public BOP_Builder {
@@ -2409,6 +2483,7 @@ class BOP_ShellSolid : public BOP_Builder {
 	}
 };
 
+
 %nodefaultctor BOP_ShellShell;
 class BOP_ShellShell : public BOP_ShellSolid {
 	public:
@@ -2422,6 +2497,7 @@ class BOP_ShellShell : public BOP_ShellSolid {
 	if (__env){printf("## Call custom destructor for instance of BOP_ShellShell\n");}
 	}
 };
+
 
 %nodefaultctor BOP_BlockBuilder;
 class BOP_BlockBuilder {
@@ -2467,6 +2543,7 @@ class BOP_BlockBuilder {
 	}
 };
 
+
 %nodefaultctor BOP_CorrectTolerances;
 class BOP_CorrectTolerances {
 	public:
@@ -2486,6 +2563,7 @@ class BOP_CorrectTolerances {
 	if (__env){printf("## Call custom destructor for instance of BOP_CorrectTolerances\n");}
 	}
 };
+
 
 %nodefaultctor BOP_SolidSolid;
 class BOP_SolidSolid : public BOP_ShellSolid {
@@ -2511,6 +2589,7 @@ class BOP_SolidSolid : public BOP_ShellSolid {
 	}
 };
 
+
 %nodefaultctor BOP_ListIteratorOfListOfConnexityBlock;
 class BOP_ListIteratorOfListOfConnexityBlock {
 	public:
@@ -2534,6 +2613,7 @@ class BOP_ListIteratorOfListOfConnexityBlock {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfConnexityBlock\n");}
 	}
 };
+
 
 %nodefaultctor BOP_SFSCorrector;
 class BOP_SFSCorrector {
@@ -2561,6 +2641,7 @@ class BOP_SFSCorrector {
 	}
 };
 
+
 %nodefaultctor BOP_LoopSet;
 class BOP_LoopSet {
 	public:
@@ -2586,6 +2667,7 @@ class BOP_LoopSet {
 	if (__env){printf("## Call custom destructor for instance of BOP_LoopSet\n");}
 	}
 };
+
 
 %nodefaultctor BOP_WireEdgeSet;
 class BOP_WireEdgeSet : public BOP_ShapeSet {
@@ -2625,6 +2707,7 @@ class BOP_WireEdgeSet : public BOP_ShapeSet {
 	}
 };
 
+
 %nodefaultctor BOP_WireShell;
 class BOP_WireShell : public BOP_WireShape {
 	public:
@@ -2649,6 +2732,7 @@ class BOP_WireShell : public BOP_WireShape {
 	}
 };
 
+
 %nodefaultctor BOP_SolidAreaBuilder;
 class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
 	public:
@@ -2666,6 +2750,7 @@ class BOP_SolidAreaBuilder : public BOP_Area3dBuilder {
 	if (__env){printf("## Call custom destructor for instance of BOP_SolidAreaBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListIteratorOfListOfLoop;
 class BOP_ListIteratorOfListOfLoop {
@@ -2690,6 +2775,7 @@ class BOP_ListIteratorOfListOfLoop {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListIteratorOfListOfLoop\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ShellSolidHistoryCollector;
 class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
@@ -2720,6 +2806,7 @@ class BOP_ShellSolidHistoryCollector : public BOP_HistoryCollector {
 	if (__env){printf("## Call custom destructor for instance of BOP_ShellSolidHistoryCollector\n");}
 	}
 };
+
 
 %nodefaultctor BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier;
 class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollection_MapNode {
@@ -2754,6 +2841,7 @@ class BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier : public TCollecti
 	if (__env){printf("## Call custom destructor for instance of BOP_IndexedDataMapNodeOfIndexedDataMapOfSolidClassifier\n");}
 	}
 };
+
 
 %nodefaultctor BOP_SDFWESFiller;
 class BOP_SDFWESFiller {
@@ -2796,6 +2884,7 @@ class BOP_SDFWESFiller {
 	if (__env){printf("## Call custom destructor for instance of BOP_SDFWESFiller\n");}
 	}
 };
+
 
 %nodefaultctor BOP_ListOfEdgeInfo;
 class BOP_ListOfEdgeInfo {
@@ -2846,6 +2935,7 @@ class BOP_ListOfEdgeInfo {
 	if (__env){printf("## Call custom destructor for instance of BOP_ListOfEdgeInfo\n");}
 	}
 };
+
 
 %nodefaultctor BOP_FaceInfo;
 class BOP_FaceInfo {

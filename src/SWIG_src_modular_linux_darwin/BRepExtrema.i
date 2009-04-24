@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_BRepExtrema_SequenceNodeOfSeqOfSolution : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_BRepExtrema_UnCompatibleShape;
 class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError {
 	public:
@@ -168,6 +170,7 @@ class Handle_BRepExtrema_UnCompatibleShape : public Handle_Standard_DomainError 
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepExtrema_UnCompatibleShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepExtrema_SeqOfSolution;
 class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
@@ -223,6 +226,7 @@ class BRepExtrema_SeqOfSolution : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BRepExtrema_SequenceNodeOfSeqOfSolution;
 class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 	public:
@@ -251,6 +255,7 @@ class BRepExtrema_SequenceNodeOfSeqOfSolution : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor BRepExtrema_Poly;
 class BRepExtrema_Poly {
 	public:
@@ -266,6 +271,7 @@ class BRepExtrema_Poly {
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_Poly\n");}
 	}
 };
+
 
 %nodefaultctor BRepExtrema_ExtPF;
 class BRepExtrema_ExtPF {
@@ -297,6 +303,7 @@ class BRepExtrema_ExtPF {
 	}
 };
 
+
 %nodefaultctor BRepExtrema_DistanceSS;
 class BRepExtrema_DistanceSS {
 	public:
@@ -320,6 +327,7 @@ class BRepExtrema_DistanceSS {
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistanceSS\n");}
 	}
 };
+
 
 %nodefaultctor BRepExtrema_ExtCC;
 class BRepExtrema_ExtCC {
@@ -359,6 +367,7 @@ class BRepExtrema_ExtCC {
 	}
 };
 
+
 %nodefaultctor BRepExtrema_ExtPC;
 class BRepExtrema_ExtPC {
 	public:
@@ -392,6 +401,7 @@ class BRepExtrema_ExtPC {
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtPC\n");}
 	}
 };
+
 
 %nodefaultctor BRepExtrema_ExtCF;
 class BRepExtrema_ExtCF {
@@ -429,6 +439,7 @@ class BRepExtrema_ExtCF {
 	}
 };
 
+
 %nodefaultctor BRepExtrema_ExtFF;
 class BRepExtrema_ExtFF {
 	public:
@@ -464,6 +475,7 @@ class BRepExtrema_ExtFF {
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_ExtFF\n");}
 	}
 };
+
 
 %nodefaultctor BRepExtrema_DistShapeShape;
 class BRepExtrema_DistShapeShape {
@@ -511,7 +523,12 @@ class BRepExtrema_DistShapeShape {
 		%feature("autodoc", "1");
 		void ParOnFaceS2(const Standard_Integer N, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend BRepExtrema_DistShapeShape {
@@ -520,6 +537,7 @@ class BRepExtrema_DistShapeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_DistShapeShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepExtrema_UnCompatibleShape;
 class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
@@ -554,6 +572,7 @@ class BRepExtrema_UnCompatibleShape : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of BRepExtrema_UnCompatibleShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepExtrema_SolutionElem;
 class BRepExtrema_SolutionElem {

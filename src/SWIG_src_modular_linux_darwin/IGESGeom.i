@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESGeom_BoundedSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_SurfaceOfRevolution;
 class Handle_IGESGeom_SurfaceOfRevolution : public Handle_IGESData_IGESEntity {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESGeom_SurfaceOfRevolution : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_SurfaceOfRevolution\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_Boundary;
 class Handle_IGESGeom_Boundary : public Handle_IGESData_IGESEntity {
@@ -188,6 +191,7 @@ class Handle_IGESGeom_Boundary : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_Flash;
 class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESGeom_Flash : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Flash\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_CurveOnSurface;
 class Handle_IGESGeom_CurveOnSurface : public Handle_IGESData_IGESEntity {
@@ -238,6 +243,7 @@ class Handle_IGESGeom_CurveOnSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_SpecificModule;
 class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
@@ -262,6 +268,7 @@ class Handle_IGESGeom_SpecificModule : public Handle_IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_HArray1OfBoundary;
 class Handle_IGESGeom_HArray1OfBoundary : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_IGESGeom_HArray1OfBoundary : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_CompositeCurve;
 class Handle_IGESGeom_CompositeCurve : public Handle_IGESData_IGESEntity {
 	public:
@@ -312,6 +320,7 @@ class Handle_IGESGeom_CompositeCurve : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_CompositeCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_HArray1OfCurveOnSurface;
 class Handle_IGESGeom_HArray1OfCurveOnSurface : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_IGESGeom_HArray1OfCurveOnSurface : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_Line;
 class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 	public:
@@ -362,6 +372,7 @@ class Handle_IGESGeom_Line : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Line\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_TransformationMatrix;
 class Handle_IGESGeom_TransformationMatrix : public Handle_IGESData_TransfEntity {
@@ -388,6 +399,7 @@ class Handle_IGESGeom_TransformationMatrix : public Handle_IGESData_TransfEntity
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_RuledSurface;
 class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -412,6 +424,7 @@ class Handle_IGESGeom_RuledSurface : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_RuledSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_Plane;
 class Handle_IGESGeom_Plane : public Handle_IGESData_IGESEntity {
@@ -438,6 +451,7 @@ class Handle_IGESGeom_Plane : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_BSplineCurve;
 class Handle_IGESGeom_BSplineCurve : public Handle_IGESData_IGESEntity {
 	public:
@@ -462,6 +476,7 @@ class Handle_IGESGeom_BSplineCurve : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_BSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_BSplineSurface;
 class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
@@ -488,6 +503,7 @@ class Handle_IGESGeom_BSplineSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_Protocol;
 class Handle_IGESGeom_Protocol : public Handle_IGESData_Protocol {
 	public:
@@ -512,6 +528,7 @@ class Handle_IGESGeom_Protocol : public Handle_IGESData_Protocol {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Protocol\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_ConicArc;
 class Handle_IGESGeom_ConicArc : public Handle_IGESData_IGESEntity {
@@ -538,6 +555,7 @@ class Handle_IGESGeom_ConicArc : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_OffsetSurface;
 class Handle_IGESGeom_OffsetSurface : public Handle_IGESData_IGESEntity {
 	public:
@@ -562,6 +580,7 @@ class Handle_IGESGeom_OffsetSurface : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_OffsetSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_TrimmedSurface;
 class Handle_IGESGeom_TrimmedSurface : public Handle_IGESData_IGESEntity {
@@ -588,6 +607,7 @@ class Handle_IGESGeom_TrimmedSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_SplineCurve;
 class Handle_IGESGeom_SplineCurve : public Handle_IGESData_IGESEntity {
 	public:
@@ -612,6 +632,7 @@ class Handle_IGESGeom_SplineCurve : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_SplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_ReadWriteModule;
 class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
@@ -638,6 +659,7 @@ class Handle_IGESGeom_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_CircularArc;
 class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
 	public:
@@ -662,6 +684,7 @@ class Handle_IGESGeom_CircularArc : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_CircularArc\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_Direction;
 class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
@@ -688,6 +711,7 @@ class Handle_IGESGeom_Direction : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_Point;
 class Handle_IGESGeom_Point : public Handle_IGESData_IGESEntity {
 	public:
@@ -712,6 +736,7 @@ class Handle_IGESGeom_Point : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_Point\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_GeneralModule;
 class Handle_IGESGeom_GeneralModule : public Handle_IGESData_GeneralModule {
@@ -738,6 +763,7 @@ class Handle_IGESGeom_GeneralModule : public Handle_IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_OffsetCurve;
 class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
 	public:
@@ -762,6 +788,7 @@ class Handle_IGESGeom_OffsetCurve : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_OffsetCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_SplineSurface;
 class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
@@ -788,6 +815,7 @@ class Handle_IGESGeom_SplineSurface : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_CopiousData;
 class Handle_IGESGeom_CopiousData : public Handle_IGESData_IGESEntity {
 	public:
@@ -812,6 +840,7 @@ class Handle_IGESGeom_CopiousData : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_CopiousData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESGeom_HArray1OfTransformationMatrix;
 class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared {
@@ -838,6 +867,7 @@ class Handle_IGESGeom_HArray1OfTransformationMatrix : public Handle_MMgt_TShared
 	}
 };
 
+
 %nodefaultctor Handle_IGESGeom_TabulatedCylinder;
 class Handle_IGESGeom_TabulatedCylinder : public Handle_IGESData_IGESEntity {
 	public:
@@ -862,6 +892,7 @@ class Handle_IGESGeom_TabulatedCylinder : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESGeom_TabulatedCylinder\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_ToolBoundary;
 class IGESGeom_ToolBoundary {
@@ -892,6 +923,7 @@ class IGESGeom_ToolBoundary {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolBoundary\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_TrimmedSurface;
 class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
@@ -933,6 +965,7 @@ class IGESGeom_TrimmedSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ReadWriteModule;
 class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 	public:
@@ -964,6 +997,7 @@ class IGESGeom_ReadWriteModule : public IGESData_ReadWriteModule {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_HArray1OfTransformationMatrix;
 class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
@@ -1010,6 +1044,7 @@ class IGESGeom_HArray1OfTransformationMatrix : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_HArray1OfTransformationMatrix\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_CircularArc;
 class IGESGeom_CircularArc : public IGESData_IGESEntity {
@@ -1063,6 +1098,7 @@ class IGESGeom_CircularArc : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_SurfaceOfRevolution;
 class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 	public:
@@ -1099,6 +1135,7 @@ class IGESGeom_SurfaceOfRevolution : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_TabulatedCylinder;
 class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
 	public:
@@ -1132,6 +1169,7 @@ class IGESGeom_TabulatedCylinder : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_TabulatedCylinder\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_Boundary;
 class IGESGeom_Boundary : public IGESData_IGESEntity {
@@ -1178,6 +1216,7 @@ class IGESGeom_Boundary : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_Boundary\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_BSplineSurface;
 class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
@@ -1253,6 +1292,7 @@ class IGESGeom_BSplineSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolOffsetSurface;
 class IGESGeom_ToolOffsetSurface {
 	public:
@@ -1280,6 +1320,7 @@ class IGESGeom_ToolOffsetSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolOffsetSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_Line;
 class IGESGeom_Line : public IGESData_IGESEntity {
@@ -1321,6 +1362,7 @@ class IGESGeom_Line : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolCopiousData;
 class IGESGeom_ToolCopiousData {
 	public:
@@ -1348,6 +1390,7 @@ class IGESGeom_ToolCopiousData {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolCopiousData\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_CurveOnSurface;
 class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
@@ -1387,6 +1430,7 @@ class IGESGeom_CurveOnSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolSplineCurve;
 class IGESGeom_ToolSplineCurve {
 	public:
@@ -1414,6 +1458,7 @@ class IGESGeom_ToolSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_BoundedSurface;
 class IGESGeom_BoundedSurface : public IGESData_IGESEntity {
@@ -1450,6 +1495,7 @@ class IGESGeom_BoundedSurface : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_BoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_RuledSurface;
 class IGESGeom_RuledSurface : public IGESData_IGESEntity {
@@ -1491,6 +1537,7 @@ class IGESGeom_RuledSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolFlash;
 class IGESGeom_ToolFlash {
 	public:
@@ -1521,6 +1568,7 @@ class IGESGeom_ToolFlash {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolTabulatedCylinder;
 class IGESGeom_ToolTabulatedCylinder {
 	public:
@@ -1548,6 +1596,7 @@ class IGESGeom_ToolTabulatedCylinder {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolTabulatedCylinder\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_ToolConicArc;
 class IGESGeom_ToolConicArc {
@@ -1578,6 +1627,7 @@ class IGESGeom_ToolConicArc {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolConicArc\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_OffsetSurface;
 class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
@@ -1615,6 +1665,7 @@ class IGESGeom_OffsetSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolDirection;
 class IGESGeom_ToolDirection {
 	public:
@@ -1642,6 +1693,7 @@ class IGESGeom_ToolDirection {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolDirection\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_Array1OfCurveOnSurface;
 class IGESGeom_Array1OfCurveOnSurface {
@@ -1683,6 +1735,7 @@ class IGESGeom_Array1OfCurveOnSurface {
 	}
 };
 
+
 %nodefaultctor IGESGeom;
 class IGESGeom {
 	public:
@@ -1700,6 +1753,7 @@ class IGESGeom {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_ToolCircularArc;
 class IGESGeom_ToolCircularArc {
@@ -1729,6 +1783,7 @@ class IGESGeom_ToolCircularArc {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolSplineSurface;
 class IGESGeom_ToolSplineSurface {
 	public:
@@ -1756,6 +1811,7 @@ class IGESGeom_ToolSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_SplineSurface;
 class IGESGeom_SplineSurface : public IGESData_IGESEntity {
@@ -1805,6 +1861,7 @@ class IGESGeom_SplineSurface : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_HArray1OfBoundary;
 class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 	public:
@@ -1851,6 +1908,7 @@ class IGESGeom_HArray1OfBoundary : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolCurveOnSurface;
 class IGESGeom_ToolCurveOnSurface {
 	public:
@@ -1881,6 +1939,7 @@ class IGESGeom_ToolCurveOnSurface {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolRuledSurface;
 class IGESGeom_ToolRuledSurface {
 	public:
@@ -1908,6 +1967,7 @@ class IGESGeom_ToolRuledSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolRuledSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_Array1OfBoundary;
 class IGESGeom_Array1OfBoundary {
@@ -1948,6 +2008,7 @@ class IGESGeom_Array1OfBoundary {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_Array1OfBoundary\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_BSplineCurve;
 class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
@@ -2009,6 +2070,7 @@ class IGESGeom_BSplineCurve : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolBSplineCurve;
 class IGESGeom_ToolBSplineCurve {
 	public:
@@ -2037,6 +2099,7 @@ class IGESGeom_ToolBSplineCurve {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolPlane;
 class IGESGeom_ToolPlane {
 	public:
@@ -2064,6 +2127,7 @@ class IGESGeom_ToolPlane {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolPlane\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_CompositeCurve;
 class IGESGeom_CompositeCurve : public IGESData_IGESEntity {
@@ -2097,6 +2161,7 @@ class IGESGeom_CompositeCurve : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolTransformationMatrix;
 class IGESGeom_ToolTransformationMatrix {
 	public:
@@ -2127,6 +2192,7 @@ class IGESGeom_ToolTransformationMatrix {
 	}
 };
 
+
 %nodefaultctor IGESGeom_SpecificModule;
 class IGESGeom_SpecificModule : public IGESData_SpecificModule {
 	public:
@@ -2156,6 +2222,7 @@ class IGESGeom_SpecificModule : public IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_ConicArc;
 class IGESGeom_ConicArc : public IGESData_IGESEntity {
@@ -2219,6 +2286,7 @@ class IGESGeom_ConicArc : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_GeneralModule;
 class IGESGeom_GeneralModule : public IGESData_GeneralModule {
 	public:
@@ -2257,6 +2325,7 @@ class IGESGeom_GeneralModule : public IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor IGESGeom_TransformationMatrix;
 class IGESGeom_TransformationMatrix : public IGESData_TransfEntity {
 	public:
@@ -2290,6 +2359,7 @@ class IGESGeom_TransformationMatrix : public IGESData_TransfEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_TransformationMatrix\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_HArray1OfCurveOnSurface;
 class IGESGeom_HArray1OfCurveOnSurface : public MMgt_TShared {
@@ -2336,6 +2406,7 @@ class IGESGeom_HArray1OfCurveOnSurface : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_HArray1OfCurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_CopiousData;
 class IGESGeom_CopiousData : public IGESData_IGESEntity {
@@ -2391,6 +2462,7 @@ class IGESGeom_CopiousData : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolLine;
 class IGESGeom_ToolLine {
 	public:
@@ -2418,6 +2490,7 @@ class IGESGeom_ToolLine {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolLine\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_ToolBoundedSurface;
 class IGESGeom_ToolBoundedSurface {
@@ -2447,6 +2520,7 @@ class IGESGeom_ToolBoundedSurface {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolCompositeCurve;
 class IGESGeom_ToolCompositeCurve {
 	public:
@@ -2474,6 +2548,7 @@ class IGESGeom_ToolCompositeCurve {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolCompositeCurve\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_Point;
 class IGESGeom_Point : public IGESData_IGESEntity {
@@ -2510,6 +2585,7 @@ class IGESGeom_Point : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_Point\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_SplineCurve;
 class IGESGeom_SplineCurve : public IGESData_IGESEntity {
@@ -2561,6 +2637,7 @@ class IGESGeom_SplineCurve : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_Plane;
 class IGESGeom_Plane : public IGESData_IGESEntity {
 	public:
@@ -2609,6 +2686,7 @@ class IGESGeom_Plane : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolPoint;
 class IGESGeom_ToolPoint {
 	public:
@@ -2636,6 +2714,7 @@ class IGESGeom_ToolPoint {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolPoint\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_Array1OfTransformationMatrix;
 class IGESGeom_Array1OfTransformationMatrix {
@@ -2677,6 +2756,7 @@ class IGESGeom_Array1OfTransformationMatrix {
 	}
 };
 
+
 %nodefaultctor IGESGeom_Direction;
 class IGESGeom_Direction : public IGESData_IGESEntity {
 	public:
@@ -2709,6 +2789,7 @@ class IGESGeom_Direction : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolBSplineSurface;
 class IGESGeom_ToolBSplineSurface {
 	public:
@@ -2737,6 +2818,7 @@ class IGESGeom_ToolBSplineSurface {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolTrimmedSurface;
 class IGESGeom_ToolTrimmedSurface {
 	public:
@@ -2764,6 +2846,7 @@ class IGESGeom_ToolTrimmedSurface {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolTrimmedSurface\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_ToolOffsetCurve;
 class IGESGeom_ToolOffsetCurve {
@@ -2794,6 +2877,7 @@ class IGESGeom_ToolOffsetCurve {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolOffsetCurve\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_Flash;
 class IGESGeom_Flash : public IGESData_IGESEntity {
@@ -2839,6 +2923,7 @@ class IGESGeom_Flash : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESGeom_ToolSurfaceOfRevolution;
 class IGESGeom_ToolSurfaceOfRevolution {
 	public:
@@ -2866,6 +2951,7 @@ class IGESGeom_ToolSurfaceOfRevolution {
 	if (__env){printf("## Call custom destructor for instance of IGESGeom_ToolSurfaceOfRevolution\n");}
 	}
 };
+
 
 %nodefaultctor IGESGeom_OffsetCurve;
 class IGESGeom_OffsetCurve : public IGESData_IGESEntity {

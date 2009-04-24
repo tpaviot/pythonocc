@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_MDocStd_ListNodeOfDocEntryList : public Handle_TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Handle_MDocStd_DocumentRetrievalDriver;
 class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_MDocStd_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDrive
 	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_DocumentRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDocStd_XLinkRetrievalDriver;
 class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
@@ -188,6 +191,7 @@ class Handle_MDocStd_XLinkRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDocStd_StdMapNodeOfPersistentMap;
 class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_MDocStd_StdMapNodeOfPersistentMap : public Handle_TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of Handle_MDocStd_StdMapNodeOfPersistentMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDocStd_DocumentStorageDriver;
 class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
@@ -238,6 +243,7 @@ class Handle_MDocStd_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDocStd_XLinkStorageDriver;
 class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -263,6 +269,7 @@ class Handle_MDocStd_XLinkStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDocStd;
 class MDocStd {
 	public:
@@ -284,6 +291,7 @@ class MDocStd {
 	if (__env){printf("## Call custom destructor for instance of MDocStd\n");}
 	}
 };
+
 
 %nodefaultctor MDocStd_ListNodeOfDocEntryList;
 class MDocStd_ListNodeOfDocEntryList : public TCollection_MapNode {
@@ -313,6 +321,7 @@ class MDocStd_ListNodeOfDocEntryList : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor MDocStd_StdMapNodeOfPersistentMap;
 class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
 	public:
@@ -340,6 +349,7 @@ class MDocStd_StdMapNodeOfPersistentMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MDocStd_StdMapNodeOfPersistentMap\n");}
 	}
 };
+
 
 %nodefaultctor MDocStd_DocumentRetrievalDriver;
 class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
@@ -377,6 +387,7 @@ class MDocStd_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	}
 };
 
+
 %nodefaultctor MDocStd_ListIteratorOfDocEntryList;
 class MDocStd_ListIteratorOfDocEntryList {
 	public:
@@ -400,6 +411,7 @@ class MDocStd_ListIteratorOfDocEntryList {
 	if (__env){printf("## Call custom destructor for instance of MDocStd_ListIteratorOfDocEntryList\n");}
 	}
 };
+
 
 %nodefaultctor MDocStd_XLinkRetrievalDriver;
 class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
@@ -435,6 +447,7 @@ class MDocStd_XLinkRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDocStd_MapIteratorOfPersistentMap;
 class MDocStd_MapIteratorOfPersistentMap : public TCollection_BasicMapIterator {
 	public:
@@ -454,6 +467,7 @@ class MDocStd_MapIteratorOfPersistentMap : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of MDocStd_MapIteratorOfPersistentMap\n");}
 	}
 };
+
 
 %nodefaultctor MDocStd_DocumentStorageDriver;
 class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
@@ -491,6 +505,7 @@ class MDocStd_DocumentStorageDriver : public PCDM_StorageDriver {
 	}
 };
 
+
 %nodefaultctor MDocStd_XLinkStorageDriver;
 class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 	public:
@@ -524,6 +539,7 @@ class MDocStd_XLinkStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDocStd_XLinkStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDocStd_DocEntryList;
 class MDocStd_DocEntryList {
@@ -574,6 +590,7 @@ class MDocStd_DocEntryList {
 	if (__env){printf("## Call custom destructor for instance of MDocStd_DocEntryList\n");}
 	}
 };
+
 
 %nodefaultctor MDocStd_PersistentMap;
 class MDocStd_PersistentMap : public TCollection_BasicMap {

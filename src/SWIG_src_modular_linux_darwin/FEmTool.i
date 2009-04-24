@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_FEmTool_ElementaryCriterion : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_FEmTool_LinearFlexion;
 class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 	public:
@@ -162,6 +164,7 @@ class Handle_FEmTool_LinearFlexion : public Handle_FEmTool_ElementaryCriterion {
 	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearFlexion\n");}
 	}
 };
+
 
 %nodefaultctor Handle_FEmTool_SequenceNodeOfSeqOfLinConstr;
 class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_SeqNode {
@@ -188,6 +191,7 @@ class Handle_FEmTool_SequenceNodeOfSeqOfLinConstr : public Handle_TCollection_Se
 	}
 };
 
+
 %nodefaultctor Handle_FEmTool_LinearTension;
 class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 	public:
@@ -212,6 +216,7 @@ class Handle_FEmTool_LinearTension : public Handle_FEmTool_ElementaryCriterion {
 	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearTension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_FEmTool_ListNodeOfListOfVectors;
 class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode {
@@ -238,6 +243,7 @@ class Handle_FEmTool_ListNodeOfListOfVectors : public Handle_TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor Handle_FEmTool_LinearJerk;
 class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 	public:
@@ -262,6 +268,7 @@ class Handle_FEmTool_LinearJerk : public Handle_FEmTool_ElementaryCriterion {
 	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_LinearJerk\n");}
 	}
 };
+
 
 %nodefaultctor Handle_FEmTool_SparseMatrix;
 class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_FEmTool_SparseMatrix : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_FEmTool_ProfileMatrix;
 class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 	public:
@@ -312,6 +320,7 @@ class Handle_FEmTool_ProfileMatrix : public Handle_FEmTool_SparseMatrix {
 	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_ProfileMatrix\n");}
 	}
 };
+
 
 %nodefaultctor Handle_FEmTool_Curve;
 class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_FEmTool_Curve : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_FEmTool_HAssemblyTable;
 class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_FEmTool_HAssemblyTable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_FEmTool_HAssemblyTable\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_Curve;
 class FEmTool_Curve : public MMgt_TShared {
@@ -417,6 +428,7 @@ class FEmTool_Curve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor FEmTool_ListNodeOfListOfVectors;
 class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 	public:
@@ -445,6 +457,7 @@ class FEmTool_ListNodeOfListOfVectors : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor FEmTool_SequenceNodeOfSeqOfLinConstr;
 class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
 	public:
@@ -472,6 +485,7 @@ class FEmTool_SequenceNodeOfSeqOfLinConstr : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of FEmTool_SequenceNodeOfSeqOfLinConstr\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_ElementaryCriterion;
 class FEmTool_ElementaryCriterion : public MMgt_TShared {
@@ -509,6 +523,7 @@ class FEmTool_ElementaryCriterion : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor FEmTool_LinearJerk;
 class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 	public:
@@ -536,6 +551,7 @@ class FEmTool_LinearJerk : public FEmTool_ElementaryCriterion {
 	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearJerk\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_Assembly;
 class FEmTool_Assembly {
@@ -573,6 +589,7 @@ class FEmTool_Assembly {
 	}
 };
 
+
 %nodefaultctor FEmTool_LinearTension;
 class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 	public:
@@ -606,6 +623,7 @@ class FEmTool_LinearTension : public FEmTool_ElementaryCriterion {
 	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearTension\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_SparseMatrix;
 class FEmTool_SparseMatrix : public MMgt_TShared {
@@ -649,6 +667,7 @@ class FEmTool_SparseMatrix : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor FEmTool_ProfileMatrix;
 class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 	public:
@@ -678,6 +697,7 @@ class FEmTool_ProfileMatrix : public FEmTool_SparseMatrix {
 	if (__env){printf("## Call custom destructor for instance of FEmTool_ProfileMatrix\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_ListOfVectors;
 class FEmTool_ListOfVectors {
@@ -728,6 +748,7 @@ class FEmTool_ListOfVectors {
 	if (__env){printf("## Call custom destructor for instance of FEmTool_ListOfVectors\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_HAssemblyTable;
 class FEmTool_HAssemblyTable : public MMgt_TShared {
@@ -781,6 +802,7 @@ class FEmTool_HAssemblyTable : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor FEmTool_AssemblyTable;
 class FEmTool_AssemblyTable {
 	public:
@@ -825,6 +847,7 @@ class FEmTool_AssemblyTable {
 	}
 };
 
+
 %nodefaultctor FEmTool_ElementsOfRefMatrix;
 class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
 	public:
@@ -844,6 +867,7 @@ class FEmTool_ElementsOfRefMatrix : public math_FunctionSet {
 	if (__env){printf("## Call custom destructor for instance of FEmTool_ElementsOfRefMatrix\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_LinearFlexion;
 class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
@@ -878,6 +902,7 @@ class FEmTool_LinearFlexion : public FEmTool_ElementaryCriterion {
 	if (__env){printf("## Call custom destructor for instance of FEmTool_LinearFlexion\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_SeqOfLinConstr;
 class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
@@ -932,6 +957,7 @@ class FEmTool_SeqOfLinConstr : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of FEmTool_SeqOfLinConstr\n");}
 	}
 };
+
 
 %nodefaultctor FEmTool_ListIteratorOfListOfVectors;
 class FEmTool_ListIteratorOfListOfVectors {

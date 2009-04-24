@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -157,6 +158,7 @@ class IntAna2d_IntPoint {
 	}
 };
 
+
 %nodefaultctor IntAna2d_Conic;
 class IntAna2d_Conic {
 	public:
@@ -188,6 +190,7 @@ class IntAna2d_Conic {
 	if (__env){printf("## Call custom destructor for instance of IntAna2d_Conic\n");}
 	}
 };
+
 
 %nodefaultctor IntAna2d_AnaIntersection;
 class IntAna2d_AnaIntersection {

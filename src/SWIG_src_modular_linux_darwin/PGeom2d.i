@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PGeom2d_Geometry : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_Curve;
 class Handle_PGeom2d_Curve : public Handle_PGeom2d_Geometry {
 	public:
@@ -162,6 +164,7 @@ class Handle_PGeom2d_Curve : public Handle_PGeom2d_Geometry {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Curve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_Conic;
 class Handle_PGeom2d_Conic : public Handle_PGeom2d_Curve {
@@ -188,6 +191,7 @@ class Handle_PGeom2d_Conic : public Handle_PGeom2d_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_Parabola;
 class Handle_PGeom2d_Parabola : public Handle_PGeom2d_Conic {
 	public:
@@ -212,6 +216,7 @@ class Handle_PGeom2d_Parabola : public Handle_PGeom2d_Conic {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Parabola\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_Point;
 class Handle_PGeom2d_Point : public Handle_PGeom2d_Geometry {
@@ -238,6 +243,7 @@ class Handle_PGeom2d_Point : public Handle_PGeom2d_Geometry {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_Ellipse;
 class Handle_PGeom2d_Ellipse : public Handle_PGeom2d_Conic {
 	public:
@@ -262,6 +268,7 @@ class Handle_PGeom2d_Ellipse : public Handle_PGeom2d_Conic {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Ellipse\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_Vector;
 class Handle_PGeom2d_Vector : public Handle_PGeom2d_Geometry {
@@ -288,6 +295,7 @@ class Handle_PGeom2d_Vector : public Handle_PGeom2d_Geometry {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_VectorWithMagnitude;
 class Handle_PGeom2d_VectorWithMagnitude : public Handle_PGeom2d_Vector {
 	public:
@@ -312,6 +320,7 @@ class Handle_PGeom2d_VectorWithMagnitude : public Handle_PGeom2d_Vector {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_VectorWithMagnitude\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_BoundedCurve;
 class Handle_PGeom2d_BoundedCurve : public Handle_PGeom2d_Curve {
@@ -338,6 +347,7 @@ class Handle_PGeom2d_BoundedCurve : public Handle_PGeom2d_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_BSplineCurve;
 class Handle_PGeom2d_BSplineCurve : public Handle_PGeom2d_BoundedCurve {
 	public:
@@ -362,6 +372,7 @@ class Handle_PGeom2d_BSplineCurve : public Handle_PGeom2d_BoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_BSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_TrimmedCurve;
 class Handle_PGeom2d_TrimmedCurve : public Handle_PGeom2d_BoundedCurve {
@@ -388,6 +399,7 @@ class Handle_PGeom2d_TrimmedCurve : public Handle_PGeom2d_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_AxisPlacement;
 class Handle_PGeom2d_AxisPlacement : public Handle_PGeom2d_Geometry {
 	public:
@@ -412,6 +424,7 @@ class Handle_PGeom2d_AxisPlacement : public Handle_PGeom2d_Geometry {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_AxisPlacement\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_Circle;
 class Handle_PGeom2d_Circle : public Handle_PGeom2d_Conic {
@@ -438,6 +451,7 @@ class Handle_PGeom2d_Circle : public Handle_PGeom2d_Conic {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_OffsetCurve;
 class Handle_PGeom2d_OffsetCurve : public Handle_PGeom2d_Curve {
 	public:
@@ -462,6 +476,7 @@ class Handle_PGeom2d_OffsetCurve : public Handle_PGeom2d_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_OffsetCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_Hyperbola;
 class Handle_PGeom2d_Hyperbola : public Handle_PGeom2d_Conic {
@@ -488,6 +503,7 @@ class Handle_PGeom2d_Hyperbola : public Handle_PGeom2d_Conic {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_Line;
 class Handle_PGeom2d_Line : public Handle_PGeom2d_Curve {
 	public:
@@ -512,6 +528,7 @@ class Handle_PGeom2d_Line : public Handle_PGeom2d_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Line\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_Transformation;
 class Handle_PGeom2d_Transformation : public Handle_Standard_Persistent {
@@ -538,6 +555,7 @@ class Handle_PGeom2d_Transformation : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_Direction;
 class Handle_PGeom2d_Direction : public Handle_PGeom2d_Vector {
 	public:
@@ -562,6 +580,7 @@ class Handle_PGeom2d_Direction : public Handle_PGeom2d_Vector {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_Direction\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PGeom2d_BezierCurve;
 class Handle_PGeom2d_BezierCurve : public Handle_PGeom2d_BoundedCurve {
@@ -588,6 +607,7 @@ class Handle_PGeom2d_BezierCurve : public Handle_PGeom2d_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor Handle_PGeom2d_CartesianPoint;
 class Handle_PGeom2d_CartesianPoint : public Handle_PGeom2d_Point {
 	public:
@@ -612,6 +632,7 @@ class Handle_PGeom2d_CartesianPoint : public Handle_PGeom2d_Point {
 	if (__env){printf("## Call custom destructor for instance of Handle_PGeom2d_CartesianPoint\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_Geometry;
 class PGeom2d_Geometry : public Standard_Persistent {
@@ -641,6 +662,7 @@ class PGeom2d_Geometry : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PGeom2d_Curve;
 class PGeom2d_Curve : public PGeom2d_Geometry {
 	public:
@@ -667,6 +689,7 @@ class PGeom2d_Curve : public PGeom2d_Geometry {
 	}
 };
 
+
 %nodefaultctor PGeom2d_BoundedCurve;
 class PGeom2d_BoundedCurve : public PGeom2d_Curve {
 	public:
@@ -692,6 +715,7 @@ class PGeom2d_BoundedCurve : public PGeom2d_Curve {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_BoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_Conic;
 class PGeom2d_Conic : public PGeom2d_Curve {
@@ -724,6 +748,7 @@ class PGeom2d_Conic : public PGeom2d_Curve {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_Conic\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_Circle;
 class PGeom2d_Circle : public PGeom2d_Conic {
@@ -761,6 +786,7 @@ class PGeom2d_Circle : public PGeom2d_Conic {
 	}
 };
 
+
 %nodefaultctor PGeom2d_Vector;
 class PGeom2d_Vector : public PGeom2d_Geometry {
 	public:
@@ -793,6 +819,7 @@ class PGeom2d_Vector : public PGeom2d_Geometry {
 	}
 };
 
+
 %nodefaultctor PGeom2d_Direction;
 class PGeom2d_Direction : public PGeom2d_Vector {
 	public:
@@ -821,6 +848,7 @@ class PGeom2d_Direction : public PGeom2d_Vector {
 	}
 };
 
+
 %nodefaultctor PGeom2d_Point;
 class PGeom2d_Point : public PGeom2d_Geometry {
 	public:
@@ -848,6 +876,7 @@ class PGeom2d_Point : public PGeom2d_Geometry {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_Point\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_CartesianPoint;
 class PGeom2d_CartesianPoint : public PGeom2d_Point {
@@ -882,6 +911,7 @@ class PGeom2d_CartesianPoint : public PGeom2d_Point {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_CartesianPoint\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_Parabola;
 class PGeom2d_Parabola : public PGeom2d_Conic {
@@ -920,6 +950,7 @@ class PGeom2d_Parabola : public PGeom2d_Conic {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_Parabola\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_Ellipse;
 class PGeom2d_Ellipse : public PGeom2d_Conic {
@@ -967,6 +998,7 @@ class PGeom2d_Ellipse : public PGeom2d_Conic {
 	}
 };
 
+
 %nodefaultctor PGeom2d_Hyperbola;
 class PGeom2d_Hyperbola : public PGeom2d_Conic {
 	public:
@@ -1013,6 +1045,7 @@ class PGeom2d_Hyperbola : public PGeom2d_Conic {
 	}
 };
 
+
 %nodefaultctor PGeom2d_AxisPlacement;
 class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
 	public:
@@ -1048,6 +1081,7 @@ class PGeom2d_AxisPlacement : public PGeom2d_Geometry {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_AxisPlacement\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_OffsetCurve;
 class PGeom2d_OffsetCurve : public PGeom2d_Curve {
@@ -1095,6 +1129,7 @@ class PGeom2d_OffsetCurve : public PGeom2d_Curve {
 	}
 };
 
+
 %nodefaultctor PGeom2d_VectorWithMagnitude;
 class PGeom2d_VectorWithMagnitude : public PGeom2d_Vector {
 	public:
@@ -1124,6 +1159,7 @@ class PGeom2d_VectorWithMagnitude : public PGeom2d_Vector {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_VectorWithMagnitude\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_BezierCurve;
 class PGeom2d_BezierCurve : public PGeom2d_BoundedCurve {
@@ -1179,6 +1215,7 @@ class PGeom2d_BezierCurve : public PGeom2d_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor PGeom2d_Line;
 class PGeom2d_Line : public PGeom2d_Curve {
 	public:
@@ -1214,6 +1251,7 @@ class PGeom2d_Line : public PGeom2d_Curve {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_Line\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_TrimmedCurve;
 class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
@@ -1269,6 +1307,7 @@ class PGeom2d_TrimmedCurve : public PGeom2d_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor PGeom2d_Transformation;
 class PGeom2d_Transformation : public Standard_Persistent {
 	public:
@@ -1304,6 +1343,7 @@ class PGeom2d_Transformation : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PGeom2d_Transformation\n");}
 	}
 };
+
 
 %nodefaultctor PGeom2d_BSplineCurve;
 class PGeom2d_BSplineCurve : public PGeom2d_BoundedCurve {

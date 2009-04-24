@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ObjMgt_SeqNodeOfPSeqOfExtRef : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_ObjMgt_ExternRef;
 class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_ObjMgt_ExternRef : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_ObjMgt_ExternRef\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ObjMgt_ExternShareable;
 class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
@@ -188,6 +191,7 @@ class Handle_ObjMgt_ExternShareable : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_ObjMgt_PSeqOfExtRef;
 class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 	public:
@@ -213,6 +217,7 @@ class Handle_ObjMgt_PSeqOfExtRef : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor ObjMgt_SeqExplorerOfPSeqOfExtRef;
 class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 	public:
@@ -234,6 +239,7 @@ class ObjMgt_SeqExplorerOfPSeqOfExtRef {
 	if (__env){printf("## Call custom destructor for instance of ObjMgt_SeqExplorerOfPSeqOfExtRef\n");}
 	}
 };
+
 
 %nodefaultctor ObjMgt_ExternRef;
 class ObjMgt_ExternRef : public Standard_Persistent {
@@ -270,6 +276,7 @@ class ObjMgt_ExternRef : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of ObjMgt_ExternRef\n");}
 	}
 };
+
 
 %nodefaultctor ObjMgt_SeqNodeOfPSeqOfExtRef;
 class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
@@ -329,6 +336,7 @@ class ObjMgt_SeqNodeOfPSeqOfExtRef : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor ObjMgt_PSeqOfExtRef;
 class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 	public:
@@ -385,7 +393,12 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -422,6 +435,7 @@ class ObjMgt_PSeqOfExtRef : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of ObjMgt_PSeqOfExtRef\n");}
 	}
 };
+
 
 %nodefaultctor ObjMgt_ExternShareable;
 class ObjMgt_ExternShareable : public Standard_Persistent {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_MDataStd_DirectoryRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver_1;
 class Handle_MDataStd_RealArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_MDataStd_RealArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealArrayRetrievalDriver_1\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ByteArrayRetrievalDriver_1;
 class Handle_MDataStd_ByteArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
@@ -188,6 +191,7 @@ class Handle_MDataStd_ByteArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ReferenceListStorageDriver;
 class Handle_MDataStd_ReferenceListStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -212,6 +216,7 @@ class Handle_MDataStd_ReferenceListStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ReferenceListStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_IntegerListStorageDriver;
 class Handle_MDataStd_IntegerListStorageDriver : public Handle_MDF_ASDriver {
@@ -238,6 +243,7 @@ class Handle_MDataStd_IntegerListStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_BooleanListRetrievalDriver;
 class Handle_MDataStd_BooleanListRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -262,6 +268,7 @@ class Handle_MDataStd_BooleanListRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_BooleanListRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayRetrievalDriver_1;
 class Handle_MDataStd_ExtStringArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
@@ -288,6 +295,7 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver_1 : public Handle_MDF_ARDriv
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_PlacementRetrievalDriver;
 class Handle_MDataStd_PlacementRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -312,6 +320,7 @@ class Handle_MDataStd_PlacementRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PlacementRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_TreeNodeRetrievalDriver;
 class Handle_MDataStd_TreeNodeRetrievalDriver : public Handle_MDF_ARDriver {
@@ -338,6 +347,7 @@ class Handle_MDataStd_TreeNodeRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_CommentStorageDriver;
 class Handle_MDataStd_CommentStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -362,6 +372,7 @@ class Handle_MDataStd_CommentStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_CommentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ExpressionStorageDriver;
 class Handle_MDataStd_ExpressionStorageDriver : public Handle_MDF_ASDriver {
@@ -388,6 +399,7 @@ class Handle_MDataStd_ExpressionStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_PlaneRetrievalDriver;
 class Handle_MDataStd_PlaneRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -412,6 +424,7 @@ class Handle_MDataStd_PlaneRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PlaneRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ExtStringArrayRetrievalDriver;
 class Handle_MDataStd_ExtStringArrayRetrievalDriver : public Handle_MDF_ARDriver {
@@ -438,6 +451,7 @@ class Handle_MDataStd_ExtStringArrayRetrievalDriver : public Handle_MDF_ARDriver
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ExtStringListRetrievalDriver;
 class Handle_MDataStd_ExtStringListRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -462,6 +476,7 @@ class Handle_MDataStd_ExtStringListRetrievalDriver : public Handle_MDF_ARDriver 
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExtStringListRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_TickRetrievalDriver;
 class Handle_MDataStd_TickRetrievalDriver : public Handle_MDF_ARDriver {
@@ -488,6 +503,7 @@ class Handle_MDataStd_TickRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_AxisStorageDriver;
 class Handle_MDataStd_AxisStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -512,6 +528,7 @@ class Handle_MDataStd_AxisStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_AxisStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_DirectoryStorageDriver;
 class Handle_MDataStd_DirectoryStorageDriver : public Handle_MDF_ASDriver {
@@ -538,6 +555,7 @@ class Handle_MDataStd_DirectoryStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_GeometryStorageDriver;
 class Handle_MDataStd_GeometryStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -562,6 +580,7 @@ class Handle_MDataStd_GeometryStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_GeometryStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_IntegerListRetrievalDriver;
 class Handle_MDataStd_IntegerListRetrievalDriver : public Handle_MDF_ARDriver {
@@ -588,6 +607,7 @@ class Handle_MDataStd_IntegerListRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_AxisRetrievalDriver;
 class Handle_MDataStd_AxisRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -612,6 +632,7 @@ class Handle_MDataStd_AxisRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_AxisRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_AsciiStringStorageDriver;
 class Handle_MDataStd_AsciiStringStorageDriver : public Handle_MDF_ASDriver {
@@ -638,6 +659,7 @@ class Handle_MDataStd_AsciiStringStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ConstraintRetrievalDriver;
 class Handle_MDataStd_ConstraintRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -662,6 +684,7 @@ class Handle_MDataStd_ConstraintRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ConstraintRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_AsciiStringRetrievalDriver;
 class Handle_MDataStd_AsciiStringRetrievalDriver : public Handle_MDF_ARDriver {
@@ -688,6 +711,7 @@ class Handle_MDataStd_AsciiStringRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver_1;
 class Handle_MDataStd_IntPackedMapRetrievalDriver_1 : public Handle_MDF_ARDriver {
 	public:
@@ -712,6 +736,7 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver_1 : public Handle_MDF_ARDriver
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntPackedMapRetrievalDriver_1\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_IntegerStorageDriver;
 class Handle_MDataStd_IntegerStorageDriver : public Handle_MDF_ASDriver {
@@ -738,6 +763,7 @@ class Handle_MDataStd_IntegerStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ReferenceArrayStorageDriver;
 class Handle_MDataStd_ReferenceArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -762,6 +788,7 @@ class Handle_MDataStd_ReferenceArrayStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ReferenceArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_UAttributeRetrievalDriver;
 class Handle_MDataStd_UAttributeRetrievalDriver : public Handle_MDF_ARDriver {
@@ -788,6 +815,7 @@ class Handle_MDataStd_UAttributeRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_RelationRetrievalDriver;
 class Handle_MDataStd_RelationRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -812,6 +840,7 @@ class Handle_MDataStd_RelationRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RelationRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_TreeNodeStorageDriver;
 class Handle_MDataStd_TreeNodeStorageDriver : public Handle_MDF_ASDriver {
@@ -838,6 +867,7 @@ class Handle_MDataStd_TreeNodeStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_PointRetrievalDriver;
 class Handle_MDataStd_PointRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -862,6 +892,7 @@ class Handle_MDataStd_PointRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PointRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_NoteBookRetrievalDriver;
 class Handle_MDataStd_NoteBookRetrievalDriver : public Handle_MDF_ARDriver {
@@ -888,6 +919,7 @@ class Handle_MDataStd_NoteBookRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_IntegerArrayRetrievalDriver;
 class Handle_MDataStd_IntegerArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -912,6 +944,7 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerArrayRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ExpressionRetrievalDriver;
 class Handle_MDataStd_ExpressionRetrievalDriver : public Handle_MDF_ARDriver {
@@ -938,6 +971,7 @@ class Handle_MDataStd_ExpressionRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_NameRetrievalDriver;
 class Handle_MDataStd_NameRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -962,6 +996,7 @@ class Handle_MDataStd_NameRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NameRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_PatternStdStorageDriver;
 class Handle_MDataStd_PatternStdStorageDriver : public Handle_MDF_ASDriver {
@@ -988,6 +1023,7 @@ class Handle_MDataStd_PatternStdStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_RealArrayRetrievalDriver;
 class Handle_MDataStd_RealArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -1012,6 +1048,7 @@ class Handle_MDataStd_RealArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealArrayRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ReferenceArrayRetrievalDriver;
 class Handle_MDataStd_ReferenceArrayRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1038,6 +1075,7 @@ class Handle_MDataStd_ReferenceArrayRetrievalDriver : public Handle_MDF_ARDriver
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_NameStorageDriver;
 class Handle_MDataStd_NameStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1062,6 +1100,7 @@ class Handle_MDataStd_NameStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NameStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_PatternStdRetrievalDriver;
 class Handle_MDataStd_PatternStdRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1088,6 +1127,7 @@ class Handle_MDataStd_PatternStdRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_RealStorageDriver;
 class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1112,6 +1152,7 @@ class Handle_MDataStd_RealStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_RealListRetrievalDriver;
 class Handle_MDataStd_RealListRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1138,6 +1179,7 @@ class Handle_MDataStd_RealListRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_BooleanArrayStorageDriver;
 class Handle_MDataStd_BooleanArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1162,6 +1204,7 @@ class Handle_MDataStd_BooleanArrayStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_BooleanArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_IntPackedMapStorageDriver;
 class Handle_MDataStd_IntPackedMapStorageDriver : public Handle_MDF_ASDriver {
@@ -1188,6 +1231,7 @@ class Handle_MDataStd_IntPackedMapStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ExtStringArrayStorageDriver;
 class Handle_MDataStd_ExtStringArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1212,6 +1256,7 @@ class Handle_MDataStd_ExtStringArrayStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExtStringArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_PointStorageDriver;
 class Handle_MDataStd_PointStorageDriver : public Handle_MDF_ASDriver {
@@ -1238,6 +1283,7 @@ class Handle_MDataStd_PointStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_NamedDataStorageDriver;
 class Handle_MDataStd_NamedDataStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1262,6 +1308,7 @@ class Handle_MDataStd_NamedDataStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_NamedDataStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ShapeRetrievalDriver;
 class Handle_MDataStd_ShapeRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1288,6 +1335,7 @@ class Handle_MDataStd_ShapeRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ExtStringListStorageDriver;
 class Handle_MDataStd_ExtStringListStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1312,6 +1360,7 @@ class Handle_MDataStd_ExtStringListStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ExtStringListStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_RelationStorageDriver;
 class Handle_MDataStd_RelationStorageDriver : public Handle_MDF_ASDriver {
@@ -1338,6 +1387,7 @@ class Handle_MDataStd_RelationStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_BooleanArrayRetrievalDriver;
 class Handle_MDataStd_BooleanArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -1362,6 +1412,7 @@ class Handle_MDataStd_BooleanArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_BooleanArrayRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_IntegerArrayRetrievalDriver_1;
 class Handle_MDataStd_IntegerArrayRetrievalDriver_1 : public Handle_MDF_ARDriver {
@@ -1388,6 +1439,7 @@ class Handle_MDataStd_IntegerArrayRetrievalDriver_1 : public Handle_MDF_ARDriver
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_PlaneStorageDriver;
 class Handle_MDataStd_PlaneStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1412,6 +1464,7 @@ class Handle_MDataStd_PlaneStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_PlaneStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_NamedDataRetrievalDriver;
 class Handle_MDataStd_NamedDataRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1438,6 +1491,7 @@ class Handle_MDataStd_NamedDataRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_IntegerArrayStorageDriver;
 class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1462,6 +1516,7 @@ class Handle_MDataStd_IntegerArrayStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntegerArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_UAttributeStorageDriver;
 class Handle_MDataStd_UAttributeStorageDriver : public Handle_MDF_ASDriver {
@@ -1488,6 +1543,7 @@ class Handle_MDataStd_UAttributeStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_BooleanListStorageDriver;
 class Handle_MDataStd_BooleanListStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1512,6 +1568,7 @@ class Handle_MDataStd_BooleanListStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_BooleanListStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_PlacementStorageDriver;
 class Handle_MDataStd_PlacementStorageDriver : public Handle_MDF_ASDriver {
@@ -1538,6 +1595,7 @@ class Handle_MDataStd_PlacementStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_VariableStorageDriver;
 class Handle_MDataStd_VariableStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1562,6 +1620,7 @@ class Handle_MDataStd_VariableStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_VariableStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ReferenceListRetrievalDriver;
 class Handle_MDataStd_ReferenceListRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1588,6 +1647,7 @@ class Handle_MDataStd_ReferenceListRetrievalDriver : public Handle_MDF_ARDriver 
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_GeometryRetrievalDriver;
 class Handle_MDataStd_GeometryRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -1612,6 +1672,7 @@ class Handle_MDataStd_GeometryRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_GeometryRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_NoteBookStorageDriver;
 class Handle_MDataStd_NoteBookStorageDriver : public Handle_MDF_ASDriver {
@@ -1638,6 +1699,7 @@ class Handle_MDataStd_NoteBookStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ByteArrayStorageDriver;
 class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1662,6 +1724,7 @@ class Handle_MDataStd_ByteArrayStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ByteArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_IntegerRetrievalDriver;
 class Handle_MDataStd_IntegerRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1688,6 +1751,7 @@ class Handle_MDataStd_IntegerRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ShapeStorageDriver;
 class Handle_MDataStd_ShapeStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1712,6 +1776,7 @@ class Handle_MDataStd_ShapeStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ShapeStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_CommentRetrievalDriver;
 class Handle_MDataStd_CommentRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1738,6 +1803,7 @@ class Handle_MDataStd_CommentRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_ByteArrayRetrievalDriver;
 class Handle_MDataStd_ByteArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -1762,6 +1828,7 @@ class Handle_MDataStd_ByteArrayRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_ByteArrayRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_ConstraintStorageDriver;
 class Handle_MDataStd_ConstraintStorageDriver : public Handle_MDF_ASDriver {
@@ -1788,6 +1855,7 @@ class Handle_MDataStd_ConstraintStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_IntPackedMapRetrievalDriver;
 class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -1812,6 +1880,7 @@ class Handle_MDataStd_IntPackedMapRetrievalDriver : public Handle_MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_IntPackedMapRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_RealListStorageDriver;
 class Handle_MDataStd_RealListStorageDriver : public Handle_MDF_ASDriver {
@@ -1838,6 +1907,7 @@ class Handle_MDataStd_RealListStorageDriver : public Handle_MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_TickStorageDriver;
 class Handle_MDataStd_TickStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1862,6 +1932,7 @@ class Handle_MDataStd_TickStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_TickStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MDataStd_RealRetrievalDriver;
 class Handle_MDataStd_RealRetrievalDriver : public Handle_MDF_ARDriver {
@@ -1888,6 +1959,7 @@ class Handle_MDataStd_RealRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_VariableRetrievalDriver;
 class Handle_MDataStd_VariableRetrievalDriver : public Handle_MDF_ARDriver {
 	public:
@@ -1913,6 +1985,7 @@ class Handle_MDataStd_VariableRetrievalDriver : public Handle_MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor Handle_MDataStd_RealArrayStorageDriver;
 class Handle_MDataStd_RealArrayStorageDriver : public Handle_MDF_ASDriver {
 	public:
@@ -1937,6 +2010,7 @@ class Handle_MDataStd_RealArrayStorageDriver : public Handle_MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_MDataStd_RealArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ExpressionStorageDriver;
 class MDataStd_ExpressionStorageDriver : public MDF_ASDriver {
@@ -1972,6 +2046,7 @@ class MDataStd_ExpressionStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_RealStorageDriver;
 class MDataStd_RealStorageDriver : public MDF_ASDriver {
 	public:
@@ -2005,6 +2080,7 @@ class MDataStd_RealStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_RealStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ReferenceArrayRetrievalDriver;
 class MDataStd_ReferenceArrayRetrievalDriver : public MDF_ARDriver {
@@ -2040,6 +2116,7 @@ class MDataStd_ReferenceArrayRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_PlacementRetrievalDriver;
 class MDataStd_PlacementRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -2073,6 +2150,7 @@ class MDataStd_PlacementRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_PlacementRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ReferenceListRetrievalDriver;
 class MDataStd_ReferenceListRetrievalDriver : public MDF_ARDriver {
@@ -2108,6 +2186,7 @@ class MDataStd_ReferenceListRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_NameRetrievalDriver;
 class MDataStd_NameRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -2141,6 +2220,7 @@ class MDataStd_NameRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_NameRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_PointStorageDriver;
 class MDataStd_PointStorageDriver : public MDF_ASDriver {
@@ -2176,6 +2256,7 @@ class MDataStd_PointStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_PatternStdStorageDriver;
 class MDataStd_PatternStdStorageDriver : public MDF_ASDriver {
 	public:
@@ -2209,6 +2290,7 @@ class MDataStd_PatternStdStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_PatternStdStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_PlaneStorageDriver;
 class MDataStd_PlaneStorageDriver : public MDF_ASDriver {
@@ -2244,6 +2326,7 @@ class MDataStd_PlaneStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_ExtStringArrayStorageDriver;
 class MDataStd_ExtStringArrayStorageDriver : public MDF_ASDriver {
 	public:
@@ -2277,6 +2360,7 @@ class MDataStd_ExtStringArrayStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_ExtStringArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ConstraintStorageDriver;
 class MDataStd_ConstraintStorageDriver : public MDF_ASDriver {
@@ -2312,6 +2396,7 @@ class MDataStd_ConstraintStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_AxisStorageDriver;
 class MDataStd_AxisStorageDriver : public MDF_ASDriver {
 	public:
@@ -2345,6 +2430,7 @@ class MDataStd_AxisStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_AxisStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ExpressionRetrievalDriver;
 class MDataStd_ExpressionRetrievalDriver : public MDF_ARDriver {
@@ -2380,6 +2466,7 @@ class MDataStd_ExpressionRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_TickRetrievalDriver;
 class MDataStd_TickRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -2413,6 +2500,7 @@ class MDataStd_TickRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_TickRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_CommentStorageDriver;
 class MDataStd_CommentStorageDriver : public MDF_ASDriver {
@@ -2448,6 +2536,7 @@ class MDataStd_CommentStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_UAttributeRetrievalDriver;
 class MDataStd_UAttributeRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -2481,6 +2570,7 @@ class MDataStd_UAttributeRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_UAttributeRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ExtStringArrayRetrievalDriver_1;
 class MDataStd_ExtStringArrayRetrievalDriver_1 : public MDF_ARDriver {
@@ -2516,6 +2606,7 @@ class MDataStd_ExtStringArrayRetrievalDriver_1 : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_PlaneRetrievalDriver;
 class MDataStd_PlaneRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -2549,6 +2640,7 @@ class MDataStd_PlaneRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_PlaneRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_DirectoryStorageDriver;
 class MDataStd_DirectoryStorageDriver : public MDF_ASDriver {
@@ -2584,6 +2676,7 @@ class MDataStd_DirectoryStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_ReferenceListStorageDriver;
 class MDataStd_ReferenceListStorageDriver : public MDF_ASDriver {
 	public:
@@ -2617,6 +2710,7 @@ class MDataStd_ReferenceListStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_ReferenceListStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_IntPackedMapStorageDriver;
 class MDataStd_IntPackedMapStorageDriver : public MDF_ASDriver {
@@ -2652,6 +2746,7 @@ class MDataStd_IntPackedMapStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd;
 class MDataStd {
 	public:
@@ -2685,6 +2780,7 @@ class MDataStd {
 	if (__env){printf("## Call custom destructor for instance of MDataStd\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_RealArrayRetrievalDriver;
 class MDataStd_RealArrayRetrievalDriver : public MDF_ARDriver {
@@ -2720,6 +2816,7 @@ class MDataStd_RealArrayRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_RealArrayRetrievalDriver_1;
 class MDataStd_RealArrayRetrievalDriver_1 : public MDF_ARDriver {
 	public:
@@ -2753,6 +2850,7 @@ class MDataStd_RealArrayRetrievalDriver_1 : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_RealArrayRetrievalDriver_1\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_TreeNodeRetrievalDriver;
 class MDataStd_TreeNodeRetrievalDriver : public MDF_ARDriver {
@@ -2788,6 +2886,7 @@ class MDataStd_TreeNodeRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_IntegerListRetrievalDriver;
 class MDataStd_IntegerListRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -2821,6 +2920,7 @@ class MDataStd_IntegerListRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerListRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_DirectoryRetrievalDriver;
 class MDataStd_DirectoryRetrievalDriver : public MDF_ARDriver {
@@ -2856,6 +2956,7 @@ class MDataStd_DirectoryRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_ByteArrayRetrievalDriver_1;
 class MDataStd_ByteArrayRetrievalDriver_1 : public MDF_ARDriver {
 	public:
@@ -2889,6 +2990,7 @@ class MDataStd_ByteArrayRetrievalDriver_1 : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_ByteArrayRetrievalDriver_1\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_AxisRetrievalDriver;
 class MDataStd_AxisRetrievalDriver : public MDF_ARDriver {
@@ -2924,6 +3026,7 @@ class MDataStd_AxisRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_TreeNodeStorageDriver;
 class MDataStd_TreeNodeStorageDriver : public MDF_ASDriver {
 	public:
@@ -2957,6 +3060,7 @@ class MDataStd_TreeNodeStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_TreeNodeStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_BooleanListStorageDriver;
 class MDataStd_BooleanListStorageDriver : public MDF_ASDriver {
@@ -2992,6 +3096,7 @@ class MDataStd_BooleanListStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_ShapeStorageDriver;
 class MDataStd_ShapeStorageDriver : public MDF_ASDriver {
 	public:
@@ -3025,6 +3130,7 @@ class MDataStd_ShapeStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_ShapeStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ConstraintRetrievalDriver;
 class MDataStd_ConstraintRetrievalDriver : public MDF_ARDriver {
@@ -3060,6 +3166,7 @@ class MDataStd_ConstraintRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_NoteBookRetrievalDriver;
 class MDataStd_NoteBookRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -3093,6 +3200,7 @@ class MDataStd_NoteBookRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_NoteBookRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_IntegerListStorageDriver;
 class MDataStd_IntegerListStorageDriver : public MDF_ASDriver {
@@ -3128,6 +3236,7 @@ class MDataStd_IntegerListStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_IntegerArrayStorageDriver;
 class MDataStd_IntegerArrayStorageDriver : public MDF_ASDriver {
 	public:
@@ -3161,6 +3270,7 @@ class MDataStd_IntegerArrayStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_IntegerRetrievalDriver;
 class MDataStd_IntegerRetrievalDriver : public MDF_ARDriver {
@@ -3196,6 +3306,7 @@ class MDataStd_IntegerRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_BooleanArrayStorageDriver;
 class MDataStd_BooleanArrayStorageDriver : public MDF_ASDriver {
 	public:
@@ -3229,6 +3340,7 @@ class MDataStd_BooleanArrayStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_BooleanArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_NoteBookStorageDriver;
 class MDataStd_NoteBookStorageDriver : public MDF_ASDriver {
@@ -3264,6 +3376,7 @@ class MDataStd_NoteBookStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_ReferenceArrayStorageDriver;
 class MDataStd_ReferenceArrayStorageDriver : public MDF_ASDriver {
 	public:
@@ -3297,6 +3410,7 @@ class MDataStd_ReferenceArrayStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_ReferenceArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_IntPackedMapRetrievalDriver;
 class MDataStd_IntPackedMapRetrievalDriver : public MDF_ARDriver {
@@ -3332,6 +3446,7 @@ class MDataStd_IntPackedMapRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_NamedDataStorageDriver;
 class MDataStd_NamedDataStorageDriver : public MDF_ASDriver {
 	public:
@@ -3365,6 +3480,7 @@ class MDataStd_NamedDataStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_NamedDataStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_IntegerStorageDriver;
 class MDataStd_IntegerStorageDriver : public MDF_ASDriver {
@@ -3400,6 +3516,7 @@ class MDataStd_IntegerStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_UAttributeStorageDriver;
 class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
 	public:
@@ -3433,6 +3550,7 @@ class MDataStd_UAttributeStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_UAttributeStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_PatternStdRetrievalDriver;
 class MDataStd_PatternStdRetrievalDriver : public MDF_ARDriver {
@@ -3468,6 +3586,7 @@ class MDataStd_PatternStdRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_PointRetrievalDriver;
 class MDataStd_PointRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -3501,6 +3620,7 @@ class MDataStd_PointRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_PointRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_AsciiStringRetrievalDriver;
 class MDataStd_AsciiStringRetrievalDriver : public MDF_ARDriver {
@@ -3536,6 +3656,7 @@ class MDataStd_AsciiStringRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_ExtStringArrayRetrievalDriver;
 class MDataStd_ExtStringArrayRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -3569,6 +3690,7 @@ class MDataStd_ExtStringArrayRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_ExtStringArrayRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ByteArrayRetrievalDriver;
 class MDataStd_ByteArrayRetrievalDriver : public MDF_ARDriver {
@@ -3604,6 +3726,7 @@ class MDataStd_ByteArrayRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_NameStorageDriver;
 class MDataStd_NameStorageDriver : public MDF_ASDriver {
 	public:
@@ -3637,6 +3760,7 @@ class MDataStd_NameStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_NameStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_RelationStorageDriver;
 class MDataStd_RelationStorageDriver : public MDF_ASDriver {
@@ -3672,6 +3796,7 @@ class MDataStd_RelationStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_ExtStringListRetrievalDriver;
 class MDataStd_ExtStringListRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -3705,6 +3830,7 @@ class MDataStd_ExtStringListRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_ExtStringListRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_GeometryRetrievalDriver;
 class MDataStd_GeometryRetrievalDriver : public MDF_ARDriver {
@@ -3740,6 +3866,7 @@ class MDataStd_GeometryRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_RealListStorageDriver;
 class MDataStd_RealListStorageDriver : public MDF_ASDriver {
 	public:
@@ -3773,6 +3900,7 @@ class MDataStd_RealListStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_RealListStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_RealRetrievalDriver;
 class MDataStd_RealRetrievalDriver : public MDF_ARDriver {
@@ -3808,6 +3936,7 @@ class MDataStd_RealRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_TickStorageDriver;
 class MDataStd_TickStorageDriver : public MDF_ASDriver {
 	public:
@@ -3841,6 +3970,7 @@ class MDataStd_TickStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_TickStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_PlacementStorageDriver;
 class MDataStd_PlacementStorageDriver : public MDF_ASDriver {
@@ -3876,6 +4006,7 @@ class MDataStd_PlacementStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_RealArrayStorageDriver;
 class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
 	public:
@@ -3909,6 +4040,7 @@ class MDataStd_RealArrayStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_RealArrayStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_IntPackedMapRetrievalDriver_1;
 class MDataStd_IntPackedMapRetrievalDriver_1 : public MDF_ARDriver {
@@ -3944,6 +4076,7 @@ class MDataStd_IntPackedMapRetrievalDriver_1 : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_CommentRetrievalDriver;
 class MDataStd_CommentRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -3977,6 +4110,7 @@ class MDataStd_CommentRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_CommentRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_AsciiStringStorageDriver;
 class MDataStd_AsciiStringStorageDriver : public MDF_ASDriver {
@@ -4012,6 +4146,7 @@ class MDataStd_AsciiStringStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_IntegerArrayRetrievalDriver;
 class MDataStd_IntegerArrayRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -4045,6 +4180,7 @@ class MDataStd_IntegerArrayRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerArrayRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_VariableStorageDriver;
 class MDataStd_VariableStorageDriver : public MDF_ASDriver {
@@ -4080,6 +4216,7 @@ class MDataStd_VariableStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_GeometryStorageDriver;
 class MDataStd_GeometryStorageDriver : public MDF_ASDriver {
 	public:
@@ -4113,6 +4250,7 @@ class MDataStd_GeometryStorageDriver : public MDF_ASDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_GeometryStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ByteArrayStorageDriver;
 class MDataStd_ByteArrayStorageDriver : public MDF_ASDriver {
@@ -4148,6 +4286,7 @@ class MDataStd_ByteArrayStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_IntegerArrayRetrievalDriver_1;
 class MDataStd_IntegerArrayRetrievalDriver_1 : public MDF_ARDriver {
 	public:
@@ -4181,6 +4320,7 @@ class MDataStd_IntegerArrayRetrievalDriver_1 : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_IntegerArrayRetrievalDriver_1\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_RealListRetrievalDriver;
 class MDataStd_RealListRetrievalDriver : public MDF_ARDriver {
@@ -4216,6 +4356,7 @@ class MDataStd_RealListRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_ShapeRetrievalDriver;
 class MDataStd_ShapeRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -4249,6 +4390,7 @@ class MDataStd_ShapeRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_ShapeRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_BooleanArrayRetrievalDriver;
 class MDataStd_BooleanArrayRetrievalDriver : public MDF_ARDriver {
@@ -4284,6 +4426,7 @@ class MDataStd_BooleanArrayRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_NamedDataRetrievalDriver;
 class MDataStd_NamedDataRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -4317,6 +4460,7 @@ class MDataStd_NamedDataRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_NamedDataRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_ExtStringListStorageDriver;
 class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
@@ -4352,6 +4496,7 @@ class MDataStd_ExtStringListStorageDriver : public MDF_ASDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_RelationRetrievalDriver;
 class MDataStd_RelationRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -4386,6 +4531,7 @@ class MDataStd_RelationRetrievalDriver : public MDF_ARDriver {
 	}
 };
 
+
 %nodefaultctor MDataStd_BooleanListRetrievalDriver;
 class MDataStd_BooleanListRetrievalDriver : public MDF_ARDriver {
 	public:
@@ -4419,6 +4565,7 @@ class MDataStd_BooleanListRetrievalDriver : public MDF_ARDriver {
 	if (__env){printf("## Call custom destructor for instance of MDataStd_BooleanListRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor MDataStd_VariableRetrievalDriver;
 class MDataStd_VariableRetrievalDriver : public MDF_ARDriver {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESDimen_CenterLine : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_DimensionDisplayData;
 class Handle_IGESDimen_DimensionDisplayData : public Handle_IGESData_IGESEntity {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESDimen_DimensionDisplayData : public Handle_IGESData_IGESEntity 
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DimensionDisplayData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_HArray1OfLeaderArrow;
 class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_IGESDimen_HArray1OfLeaderArrow : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_GeneralSymbol;
 class Handle_IGESDimen_GeneralSymbol : public Handle_IGESData_IGESEntity {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESDimen_GeneralSymbol : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_GeneralSymbol\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_DimensionTolerance;
 class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
@@ -238,6 +243,7 @@ class Handle_IGESDimen_DimensionTolerance : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_WitnessLine;
 class Handle_IGESDimen_WitnessLine : public Handle_IGESData_IGESEntity {
 	public:
@@ -262,6 +268,7 @@ class Handle_IGESDimen_WitnessLine : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_WitnessLine\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_CurveDimension;
 class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
@@ -288,6 +295,7 @@ class Handle_IGESDimen_CurveDimension : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_GeneralModule;
 class Handle_IGESDimen_GeneralModule : public Handle_IGESData_GeneralModule {
 	public:
@@ -312,6 +320,7 @@ class Handle_IGESDimen_GeneralModule : public Handle_IGESData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_GeneralModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_BasicDimension;
 class Handle_IGESDimen_BasicDimension : public Handle_IGESData_IGESEntity {
@@ -338,6 +347,7 @@ class Handle_IGESDimen_BasicDimension : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_AngularDimension;
 class Handle_IGESDimen_AngularDimension : public Handle_IGESData_IGESEntity {
 	public:
@@ -362,6 +372,7 @@ class Handle_IGESDimen_AngularDimension : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_AngularDimension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_Section;
 class Handle_IGESDimen_Section : public Handle_IGESData_IGESEntity {
@@ -388,6 +399,7 @@ class Handle_IGESDimen_Section : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_RadiusDimension;
 class Handle_IGESDimen_RadiusDimension : public Handle_IGESData_IGESEntity {
 	public:
@@ -412,6 +424,7 @@ class Handle_IGESDimen_RadiusDimension : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_RadiusDimension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_GeneralNote;
 class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
@@ -438,6 +451,7 @@ class Handle_IGESDimen_GeneralNote : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_OrdinateDimension;
 class Handle_IGESDimen_OrdinateDimension : public Handle_IGESData_IGESEntity {
 	public:
@@ -462,6 +476,7 @@ class Handle_IGESDimen_OrdinateDimension : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_OrdinateDimension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_GeneralLabel;
 class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
@@ -488,6 +503,7 @@ class Handle_IGESDimen_GeneralLabel : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_ReadWriteModule;
 class Handle_IGESDimen_ReadWriteModule : public Handle_IGESData_ReadWriteModule {
 	public:
@@ -512,6 +528,7 @@ class Handle_IGESDimen_ReadWriteModule : public Handle_IGESData_ReadWriteModule 
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_Protocol;
 class Handle_IGESDimen_Protocol : public Handle_IGESData_Protocol {
@@ -538,6 +555,7 @@ class Handle_IGESDimen_Protocol : public Handle_IGESData_Protocol {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_FlagNote;
 class Handle_IGESDimen_FlagNote : public Handle_IGESData_IGESEntity {
 	public:
@@ -562,6 +580,7 @@ class Handle_IGESDimen_FlagNote : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_FlagNote\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_DimensionUnits;
 class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
@@ -588,6 +607,7 @@ class Handle_IGESDimen_DimensionUnits : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_NewDimensionedGeometry;
 class Handle_IGESDimen_NewDimensionedGeometry : public Handle_IGESData_IGESEntity {
 	public:
@@ -612,6 +632,7 @@ class Handle_IGESDimen_NewDimensionedGeometry : public Handle_IGESData_IGESEntit
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_NewDimensionedGeometry\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_SectionedArea;
 class Handle_IGESDimen_SectionedArea : public Handle_IGESData_IGESEntity {
@@ -638,6 +659,7 @@ class Handle_IGESDimen_SectionedArea : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_SpecificModule;
 class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 	public:
@@ -662,6 +684,7 @@ class Handle_IGESDimen_SpecificModule : public Handle_IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_HArray1OfGeneralNote;
 class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
@@ -688,6 +711,7 @@ class Handle_IGESDimen_HArray1OfGeneralNote : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_DiameterDimension;
 class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 	public:
@@ -712,6 +736,7 @@ class Handle_IGESDimen_DiameterDimension : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DiameterDimension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_NewGeneralNote;
 class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
@@ -738,6 +763,7 @@ class Handle_IGESDimen_NewGeneralNote : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_DimensionedGeometry;
 class Handle_IGESDimen_DimensionedGeometry : public Handle_IGESData_IGESEntity {
 	public:
@@ -762,6 +788,7 @@ class Handle_IGESDimen_DimensionedGeometry : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_DimensionedGeometry\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESDimen_PointDimension;
 class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
@@ -788,6 +815,7 @@ class Handle_IGESDimen_PointDimension : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_LeaderArrow;
 class Handle_IGESDimen_LeaderArrow : public Handle_IGESData_IGESEntity {
 	public:
@@ -813,6 +841,7 @@ class Handle_IGESDimen_LeaderArrow : public Handle_IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor Handle_IGESDimen_LinearDimension;
 class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 	public:
@@ -837,6 +866,7 @@ class Handle_IGESDimen_LinearDimension : public Handle_IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESDimen_LinearDimension\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_CenterLine;
 class IGESDimen_CenterLine : public IGESData_IGESEntity {
@@ -880,6 +910,7 @@ class IGESDimen_CenterLine : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_BasicDimension;
 class IGESDimen_BasicDimension : public IGESData_IGESEntity {
 	public:
@@ -918,6 +949,7 @@ class IGESDimen_BasicDimension : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolDimensionTolerance;
 class IGESDimen_ToolDimensionTolerance {
 	public:
@@ -947,6 +979,7 @@ class IGESDimen_ToolDimensionTolerance {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionTolerance\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_HArray1OfGeneralNote;
 class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
@@ -994,6 +1027,7 @@ class IGESDimen_HArray1OfGeneralNote : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESDimen_HArray1OfLeaderArrow;
 class IGESDimen_HArray1OfLeaderArrow : public MMgt_TShared {
 	public:
@@ -1040,6 +1074,7 @@ class IGESDimen_HArray1OfLeaderArrow : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolCenterLine;
 class IGESDimen_ToolCenterLine {
 	public:
@@ -1069,6 +1104,7 @@ class IGESDimen_ToolCenterLine {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolCenterLine\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_ReadWriteModule;
 class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
@@ -1101,6 +1137,7 @@ class IGESDimen_ReadWriteModule : public IGESData_ReadWriteModule {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_PointDimension;
 class IGESDimen_PointDimension : public IGESData_IGESEntity {
@@ -1141,6 +1178,7 @@ class IGESDimen_PointDimension : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_PointDimension\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_GeneralSymbol;
 class IGESDimen_GeneralSymbol : public IGESData_IGESEntity {
@@ -1184,6 +1222,7 @@ class IGESDimen_GeneralSymbol : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_DimensionedGeometry;
 class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 	public:
@@ -1220,6 +1259,7 @@ class IGESDimen_DimensionedGeometry : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolSection;
 class IGESDimen_ToolSection {
 	public:
@@ -1249,6 +1289,7 @@ class IGESDimen_ToolSection {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolSection\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_LeaderArrow;
 class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
@@ -1295,6 +1336,7 @@ class IGESDimen_LeaderArrow : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_LeaderArrow\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_SectionedArea;
 class IGESDimen_SectionedArea : public IGESData_IGESEntity {
@@ -1345,6 +1387,7 @@ class IGESDimen_SectionedArea : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_SectionedArea\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_GeneralNote;
 class IGESDimen_GeneralNote : public IGESData_IGESEntity {
@@ -1406,6 +1449,7 @@ class IGESDimen_GeneralNote : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_WitnessLine;
 class IGESDimen_WitnessLine : public IGESData_IGESEntity {
 	public:
@@ -1444,6 +1488,7 @@ class IGESDimen_WitnessLine : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolGeneralNote;
 class IGESDimen_ToolGeneralNote {
 	public:
@@ -1471,6 +1516,7 @@ class IGESDimen_ToolGeneralNote {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolGeneralNote\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_DimensionDisplayData;
 class IGESDimen_DimensionDisplayData : public IGESData_IGESEntity {
@@ -1532,6 +1578,7 @@ class IGESDimen_DimensionDisplayData : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_Array1OfGeneralNote;
 class IGESDimen_Array1OfGeneralNote {
 	public:
@@ -1572,6 +1619,7 @@ class IGESDimen_Array1OfGeneralNote {
 	}
 };
 
+
 %nodefaultctor IGESDimen_GeneralModule;
 class IGESDimen_GeneralModule : public IGESData_GeneralModule {
 	public:
@@ -1610,6 +1658,7 @@ class IGESDimen_GeneralModule : public IGESData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolDimensionedGeometry;
 class IGESDimen_ToolDimensionedGeometry {
 	public:
@@ -1640,6 +1689,7 @@ class IGESDimen_ToolDimensionedGeometry {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolRadiusDimension;
 class IGESDimen_ToolRadiusDimension {
 	public:
@@ -1668,6 +1718,7 @@ class IGESDimen_ToolRadiusDimension {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolFlagNote;
 class IGESDimen_ToolFlagNote {
 	public:
@@ -1695,6 +1746,7 @@ class IGESDimen_ToolFlagNote {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolFlagNote\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_SpecificModule;
 class IGESDimen_SpecificModule : public IGESData_SpecificModule {
@@ -1725,6 +1777,7 @@ class IGESDimen_SpecificModule : public IGESData_SpecificModule {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_SpecificModule\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_Section;
 class IGESDimen_Section : public IGESData_IGESEntity {
@@ -1766,6 +1819,7 @@ class IGESDimen_Section : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolGeneralLabel;
 class IGESDimen_ToolGeneralLabel {
 	public:
@@ -1793,6 +1847,7 @@ class IGESDimen_ToolGeneralLabel {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolGeneralLabel\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_FlagNote;
 class IGESDimen_FlagNote : public IGESData_IGESEntity {
@@ -1844,6 +1899,7 @@ class IGESDimen_FlagNote : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_DiameterDimension;
 class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 	public:
@@ -1884,6 +1940,7 @@ class IGESDimen_DiameterDimension : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolBasicDimension;
 class IGESDimen_ToolBasicDimension {
 	public:
@@ -1913,6 +1970,7 @@ class IGESDimen_ToolBasicDimension {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolBasicDimension\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_Array1OfLeaderArrow;
 class IGESDimen_Array1OfLeaderArrow {
@@ -1954,6 +2012,7 @@ class IGESDimen_Array1OfLeaderArrow {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolWitnessLine;
 class IGESDimen_ToolWitnessLine {
 	public:
@@ -1983,6 +2042,7 @@ class IGESDimen_ToolWitnessLine {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolWitnessLine\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_RadiusDimension;
 class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
@@ -2025,6 +2085,7 @@ class IGESDimen_RadiusDimension : public IGESData_IGESEntity {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_RadiusDimension\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_CurveDimension;
 class IGESDimen_CurveDimension : public IGESData_IGESEntity {
@@ -2074,6 +2135,7 @@ class IGESDimen_CurveDimension : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolDiameterDimension;
 class IGESDimen_ToolDiameterDimension {
 	public:
@@ -2101,6 +2163,7 @@ class IGESDimen_ToolDiameterDimension {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDiameterDimension\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_ToolNewDimensionedGeometry;
 class IGESDimen_ToolNewDimensionedGeometry {
@@ -2132,6 +2195,7 @@ class IGESDimen_ToolNewDimensionedGeometry {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolDimensionUnits;
 class IGESDimen_ToolDimensionUnits {
 	public:
@@ -2161,6 +2225,7 @@ class IGESDimen_ToolDimensionUnits {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionUnits\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_NewGeneralNote;
 class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
@@ -2262,6 +2327,7 @@ class IGESDimen_NewGeneralNote : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolOrdinateDimension;
 class IGESDimen_ToolOrdinateDimension {
 	public:
@@ -2289,6 +2355,7 @@ class IGESDimen_ToolOrdinateDimension {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolOrdinateDimension\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_LinearDimension;
 class IGESDimen_LinearDimension : public IGESData_IGESEntity {
@@ -2334,6 +2401,7 @@ class IGESDimen_LinearDimension : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolLinearDimension;
 class IGESDimen_ToolLinearDimension {
 	public:
@@ -2362,6 +2430,7 @@ class IGESDimen_ToolLinearDimension {
 	}
 };
 
+
 %nodefaultctor IGESDimen;
 class IGESDimen {
 	public:
@@ -2379,6 +2448,7 @@ class IGESDimen {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_OrdinateDimension;
 class IGESDimen_OrdinateDimension : public IGESData_IGESEntity {
@@ -2418,6 +2488,7 @@ class IGESDimen_OrdinateDimension : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_GeneralLabel;
 class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
 	public:
@@ -2452,6 +2523,7 @@ class IGESDimen_GeneralLabel : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolCurveDimension;
 class IGESDimen_ToolCurveDimension {
 	public:
@@ -2479,6 +2551,7 @@ class IGESDimen_ToolCurveDimension {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolCurveDimension\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_AngularDimension;
 class IGESDimen_AngularDimension : public IGESData_IGESEntity {
@@ -2528,6 +2601,7 @@ class IGESDimen_AngularDimension : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolSectionedArea;
 class IGESDimen_ToolSectionedArea {
 	public:
@@ -2556,6 +2630,7 @@ class IGESDimen_ToolSectionedArea {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolLeaderArrow;
 class IGESDimen_ToolLeaderArrow {
 	public:
@@ -2583,6 +2658,7 @@ class IGESDimen_ToolLeaderArrow {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolLeaderArrow\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_DimensionTolerance;
 class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
@@ -2630,6 +2706,7 @@ class IGESDimen_DimensionTolerance : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolGeneralSymbol;
 class IGESDimen_ToolGeneralSymbol {
 	public:
@@ -2657,6 +2734,7 @@ class IGESDimen_ToolGeneralSymbol {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolGeneralSymbol\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_ToolAngularDimension;
 class IGESDimen_ToolAngularDimension {
@@ -2686,6 +2764,7 @@ class IGESDimen_ToolAngularDimension {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolPointDimension;
 class IGESDimen_ToolPointDimension {
 	public:
@@ -2714,6 +2793,7 @@ class IGESDimen_ToolPointDimension {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolNewGeneralNote;
 class IGESDimen_ToolNewGeneralNote {
 	public:
@@ -2741,6 +2821,7 @@ class IGESDimen_ToolNewGeneralNote {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolNewGeneralNote\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_DimensionUnits;
 class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
@@ -2784,6 +2865,7 @@ class IGESDimen_DimensionUnits : public IGESData_IGESEntity {
 	}
 };
 
+
 %nodefaultctor IGESDimen_ToolDimensionDisplayData;
 class IGESDimen_ToolDimensionDisplayData {
 	public:
@@ -2813,6 +2895,7 @@ class IGESDimen_ToolDimensionDisplayData {
 	if (__env){printf("## Call custom destructor for instance of IGESDimen_ToolDimensionDisplayData\n");}
 	}
 };
+
 
 %nodefaultctor IGESDimen_NewDimensionedGeometry;
 class IGESDimen_NewDimensionedGeometry : public IGESData_IGESEntity {

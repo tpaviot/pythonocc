@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -162,6 +163,7 @@ class GCPnts_TangentialDeflection {
 	}
 };
 
+
 %nodefaultctor GCPnts_UniformAbscissa;
 class GCPnts_UniformAbscissa {
 	public:
@@ -216,6 +218,7 @@ class GCPnts_UniformAbscissa {
 	}
 };
 
+
 %nodefaultctor GCPnts_UniformDeflection;
 class GCPnts_UniformDeflection {
 	public:
@@ -256,6 +259,7 @@ class GCPnts_UniformDeflection {
 	}
 };
 
+
 %nodefaultctor GCPnts_QuasiUniformAbscissa;
 class GCPnts_QuasiUniformAbscissa {
 	public:
@@ -291,6 +295,7 @@ class GCPnts_QuasiUniformAbscissa {
 	if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformAbscissa\n");}
 	}
 };
+
 
 %nodefaultctor GCPnts_QuasiUniformDeflection;
 class GCPnts_QuasiUniformDeflection {
@@ -331,6 +336,7 @@ class GCPnts_QuasiUniformDeflection {
 	if (__env){printf("## Call custom destructor for instance of GCPnts_QuasiUniformDeflection\n");}
 	}
 };
+
 
 %nodefaultctor GCPnts_AbscissaPoint;
 class GCPnts_AbscissaPoint {

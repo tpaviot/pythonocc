@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_BRepFill_ListNodeOfListOfOffsetWire : public Handle_TCollection_Map
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfSection;
 class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollection_SeqNode {
 	public:
@@ -168,6 +170,7 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfSection : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfSection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_CurveConstraint;
 class Handle_BRepFill_CurveConstraint : public Handle_GeomPlate_CurveConstraint {
@@ -194,6 +197,7 @@ class Handle_BRepFill_CurveConstraint : public Handle_GeomPlate_CurveConstraint 
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_PipeShell;
 class Handle_BRepFill_PipeShell : public Handle_MMgt_TShared {
 	public:
@@ -218,6 +222,7 @@ class Handle_BRepFill_PipeShell : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_PipeShell\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_SectionLaw;
 class Handle_BRepFill_SectionLaw : public Handle_MMgt_TShared {
@@ -244,6 +249,7 @@ class Handle_BRepFill_SectionLaw : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_ShapeLaw;
 class Handle_BRepFill_ShapeLaw : public Handle_BRepFill_SectionLaw {
 	public:
@@ -268,6 +274,7 @@ class Handle_BRepFill_ShapeLaw : public Handle_BRepFill_SectionLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_ShapeLaw\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_LocationLaw;
 class Handle_BRepFill_LocationLaw : public Handle_MMgt_TShared {
@@ -294,6 +301,7 @@ class Handle_BRepFill_LocationLaw : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_Edge3DLaw;
 class Handle_BRepFill_Edge3DLaw : public Handle_BRepFill_LocationLaw {
 	public:
@@ -318,6 +326,7 @@ class Handle_BRepFill_Edge3DLaw : public Handle_BRepFill_LocationLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_Edge3DLaw\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_DraftLaw;
 class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
@@ -344,6 +353,7 @@ class Handle_BRepFill_DraftLaw : public Handle_BRepFill_Edge3DLaw {
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape : public Handle_TCollection_MapNode {
 	public:
@@ -368,6 +378,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfNodeShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_NSections;
 class Handle_BRepFill_NSections : public Handle_BRepFill_SectionLaw {
@@ -394,6 +405,7 @@ class Handle_BRepFill_NSections : public Handle_BRepFill_SectionLaw {
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_EdgeOnSurfLaw;
 class Handle_BRepFill_EdgeOnSurfLaw : public Handle_BRepFill_LocationLaw {
 	public:
@@ -418,6 +430,7 @@ class Handle_BRepFill_EdgeOnSurfLaw : public Handle_BRepFill_LocationLaw {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_EdgeOnSurfLaw\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder;
 class Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public Handle_TCollection_SeqNode {
@@ -444,6 +457,7 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -468,6 +482,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : pub
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_ACRLaw;
 class Handle_BRepFill_ACRLaw : public Handle_BRepFill_LocationLaw {
@@ -494,6 +509,7 @@ class Handle_BRepFill_ACRLaw : public Handle_BRepFill_LocationLaw {
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public Handle_TCollection_MapNode {
 	public:
@@ -518,6 +534,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public Han
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public Handle_TCollection_MapNode {
@@ -544,6 +561,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public Handle_T
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_TCollection_MapNode {
 	public:
@@ -568,6 +586,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Handle_TCollection_MapNode {
@@ -594,6 +613,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public Ha
 	}
 };
 
+
 %nodefaultctor Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
 class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_TCollection_SeqNode {
 	public:
@@ -618,6 +638,7 @@ class Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape;
 class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle_TCollection_MapNode {
@@ -644,6 +665,7 @@ class Handle_BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public Handle
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape;
 class BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape : public TCollection_BasicMapIterator {
 	public:
@@ -666,6 +688,7 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeDataMapOfShapeListOfShape : public
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape;
 class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TCollection_BasicMapIterator {
 	public:
@@ -687,6 +710,7 @@ class BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape : public TColl
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfOrientedShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapOfShapeSequenceOfShape;
 class BRepFill_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap {
@@ -722,6 +746,7 @@ class BRepFill_DataMapOfShapeSequenceOfShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepFill_TrimEdgeTool;
 class BRepFill_TrimEdgeTool {
 	public:
@@ -744,6 +769,7 @@ class BRepFill_TrimEdgeTool {
 	}
 };
 
+
 %nodefaultctor BRepFill_MyLeastSquareOfComputeCLine;
 class BRepFill_MyLeastSquareOfComputeCLine {
 	public:
@@ -763,6 +789,7 @@ class BRepFill_MyLeastSquareOfComputeCLine {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_MyLeastSquareOfComputeCLine\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_MultiLineTool;
 class BRepFill_MultiLineTool {
@@ -798,6 +825,7 @@ class BRepFill_MultiLineTool {
 	}
 };
 
+
 %nodefaultctor BRepFill_SequenceNodeOfSequenceOfFaceAndOrder;
 class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode {
 	public:
@@ -826,6 +854,7 @@ class BRepFill_SequenceNodeOfSequenceOfFaceAndOrder : public TCollection_SeqNode
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeShape;
 class BRepFill_DataMapIteratorOfDataMapOfNodeShape : public TCollection_BasicMapIterator {
 	public:
@@ -847,6 +876,7 @@ class BRepFill_DataMapIteratorOfDataMapOfNodeShape : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfNodeShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_ComputeCLine;
 class BRepFill_ComputeCLine {
@@ -884,6 +914,7 @@ class BRepFill_ComputeCLine {
 	}
 };
 
+
 %nodefaultctor BRepFill_OffsetAncestors;
 class BRepFill_OffsetAncestors {
 	public:
@@ -907,6 +938,7 @@ class BRepFill_OffsetAncestors {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_OffsetAncestors\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_LocationLaw;
 class BRepFill_LocationLaw : public MMgt_TShared {
@@ -970,6 +1002,7 @@ class BRepFill_LocationLaw : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapOfShapeDataMapOfShapeListOfShape;
 class BRepFill_DataMapOfShapeDataMapOfShapeListOfShape : public TCollection_BasicMap {
 	public:
@@ -1003,6 +1036,7 @@ class BRepFill_DataMapOfShapeDataMapOfShapeListOfShape : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapOfShapeDataMapOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_SequenceOfSection;
 class BRepFill_SequenceOfSection : public TCollection_BaseSequence {
@@ -1058,6 +1092,7 @@ class BRepFill_SequenceOfSection : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BRepFill_ListNodeOfListOfOffsetWire;
 class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 	public:
@@ -1086,6 +1121,7 @@ class BRepFill_ListNodeOfListOfOffsetWire : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BRepFill_Edge3DLaw;
 class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
 	public:
@@ -1112,6 +1148,7 @@ class BRepFill_Edge3DLaw : public BRepFill_LocationLaw {
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt;
 class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt : public TCollection_BasicMapIterator {
 	public:
@@ -1133,6 +1170,7 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt : public TCollection
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape;
 class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollection_MapNode {
@@ -1164,6 +1202,7 @@ class BRepFill_DataMapNodeOfDataMapOfNodeDataMapOfShapeShape : public TCollectio
 	}
 };
 
+
 %nodefaultctor BRepFill_SectionPlacement;
 class BRepFill_SectionPlacement {
 	public:
@@ -1183,6 +1222,7 @@ class BRepFill_SectionPlacement {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_SectionPlacement\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_MultiLine;
 class BRepFill_MultiLine {
@@ -1217,6 +1257,7 @@ class BRepFill_MultiLine {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_MultiLine\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_SectionLaw;
 class BRepFill_SectionLaw : public MMgt_TShared {
@@ -1268,6 +1309,7 @@ class BRepFill_SectionLaw : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepFill_NSections;
 class BRepFill_NSections : public BRepFill_SectionLaw {
 	public:
@@ -1296,6 +1338,7 @@ class BRepFill_NSections : public BRepFill_SectionLaw {
 	}
 };
 
+
 %nodefaultctor BRepFill_FaceAndOrder;
 class BRepFill_FaceAndOrder {
 	public:
@@ -1311,6 +1354,7 @@ class BRepFill_FaceAndOrder {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_FaceAndOrder\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_ApproxSeewing;
 class BRepFill_ApproxSeewing {
@@ -1337,6 +1381,7 @@ class BRepFill_ApproxSeewing {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_ApproxSeewing\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_SequenceNodeOfSequenceOfSection;
 class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
@@ -1365,6 +1410,7 @@ class BRepFill_SequenceNodeOfSequenceOfSection : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfSection\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal;
 class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_MapNode {
@@ -1396,6 +1442,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfReal : public TCollection_Ma
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape;
 class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMapIterator {
 	public:
@@ -1417,6 +1464,7 @@ class BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape : public TColle
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfNodeDataMapOfShapeShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapOfNodeDataMapOfShapeShape;
 class BRepFill_DataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMap {
@@ -1452,6 +1500,7 @@ class BRepFill_DataMapOfNodeDataMapOfShapeShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal;
 class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal : public TCollection_BasicMapIterator {
 	public:
@@ -1473,6 +1522,7 @@ class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfReal\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_OffsetWire;
 class BRepFill_OffsetWire {
@@ -1506,6 +1556,7 @@ class BRepFill_OffsetWire {
 	}
 };
 
+
 %nodefaultctor BRepFill_Section;
 class BRepFill_Section {
 	public:
@@ -1533,6 +1584,7 @@ class BRepFill_Section {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_Section\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_ShapeLaw;
 class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
@@ -1580,6 +1632,7 @@ class BRepFill_ShapeLaw : public BRepFill_SectionLaw {
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape;
 class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollection_MapNode {
 	public:
@@ -1609,6 +1662,7 @@ class BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape : public TCollecti
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfOrientedShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_TrimShellCorner;
 class BRepFill_TrimShellCorner {
@@ -1640,6 +1694,7 @@ class BRepFill_TrimShellCorner {
 	}
 };
 
+
 %nodefaultctor BRepFill_TrimSurfaceTool;
 class BRepFill_TrimSurfaceTool {
 	public:
@@ -1661,6 +1716,7 @@ class BRepFill_TrimSurfaceTool {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_TrimSurfaceTool\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapOfNodeShape;
 class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
@@ -1696,6 +1752,7 @@ class BRepFill_DataMapOfNodeShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepFill_DraftLaw;
 class BRepFill_DraftLaw : public BRepFill_Edge3DLaw {
 	public:
@@ -1723,6 +1780,7 @@ class BRepFill_DraftLaw : public BRepFill_Edge3DLaw {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DraftLaw\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_CompatibleWires;
 class BRepFill_CompatibleWires {
@@ -1753,6 +1811,7 @@ class BRepFill_CompatibleWires {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_CompatibleWires\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_SequenceOfFaceAndOrder;
 class BRepFill_SequenceOfFaceAndOrder : public TCollection_BaseSequence {
@@ -1808,6 +1867,7 @@ class BRepFill_SequenceOfFaceAndOrder : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BRepFill_Pipe;
 class BRepFill_Pipe {
 	public:
@@ -1844,6 +1904,7 @@ class BRepFill_Pipe {
 	}
 };
 
+
 %nodefaultctor BRepFill_Draft;
 class BRepFill_Draft {
 	public:
@@ -1876,6 +1937,7 @@ class BRepFill_Draft {
 	}
 };
 
+
 %nodefaultctor BRepFill_EdgeFaceAndOrder;
 class BRepFill_EdgeFaceAndOrder {
 	public:
@@ -1891,6 +1953,7 @@ class BRepFill_EdgeFaceAndOrder {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_EdgeFaceAndOrder\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_ACRLaw;
 class BRepFill_ACRLaw : public BRepFill_LocationLaw {
@@ -1918,6 +1981,7 @@ class BRepFill_ACRLaw : public BRepFill_LocationLaw {
 	}
 };
 
+
 %nodefaultctor BRepFill_ListIteratorOfListOfOffsetWire;
 class BRepFill_ListIteratorOfListOfOffsetWire {
 	public:
@@ -1941,6 +2005,7 @@ class BRepFill_ListIteratorOfListOfOffsetWire {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_ListIteratorOfListOfOffsetWire\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_PipeShell;
 class BRepFill_PipeShell : public MMgt_TShared {
@@ -2010,6 +2075,7 @@ class BRepFill_PipeShell : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRepFill_Generator;
 class BRepFill_Generator {
 	public:
@@ -2033,6 +2099,7 @@ class BRepFill_Generator {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_Generator\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapOfShapeSequenceOfReal;
 class BRepFill_DataMapOfShapeSequenceOfReal : public TCollection_BasicMap {
@@ -2068,6 +2135,7 @@ class BRepFill_DataMapOfShapeSequenceOfReal : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepFill_CurveConstraint;
 class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 	public:
@@ -2095,6 +2163,7 @@ class BRepFill_CurveConstraint : public GeomPlate_CurveConstraint {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_CurveConstraint\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_Filling;
 class BRepFill_Filling {
@@ -2146,6 +2215,7 @@ class BRepFill_Filling {
 	}
 };
 
+
 %nodefaultctor BRepFill_EdgeOnSurfLaw;
 class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
 	public:
@@ -2173,6 +2243,7 @@ class BRepFill_EdgeOnSurfLaw : public BRepFill_LocationLaw {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_EdgeOnSurfLaw\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape;
 class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCollection_MapNode {
@@ -2203,6 +2274,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape : public TCo
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeDataMapOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_Evolved;
 class BRepFill_Evolved {
@@ -2238,6 +2310,7 @@ class BRepFill_Evolved {
 	}
 };
 
+
 %nodefaultctor BRepFill_Sweep;
 class BRepFill_Sweep {
 	public:
@@ -2271,6 +2344,7 @@ class BRepFill_Sweep {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_Sweep\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapOfOrientedShapeListOfShape;
 class BRepFill_DataMapOfOrientedShapeListOfShape : public TCollection_BasicMap {
@@ -2306,6 +2380,7 @@ class BRepFill_DataMapOfOrientedShapeListOfShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfNodeShape;
 class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 	public:
@@ -2335,6 +2410,7 @@ class BRepFill_DataMapNodeOfDataMapOfNodeShape : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfNodeShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_SequenceOfEdgeFaceAndOrder;
 class BRepFill_SequenceOfEdgeFaceAndOrder : public TCollection_BaseSequence {
@@ -2390,6 +2466,7 @@ class BRepFill_SequenceOfEdgeFaceAndOrder : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape;
 class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_MapNode {
 	public:
@@ -2419,6 +2496,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape : public TCollection_M
 	if (__env){printf("## Call custom destructor for instance of BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt;
 class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_MapNode {
@@ -2450,6 +2528,7 @@ class BRepFill_DataMapNodeOfDataMapOfShapeSequenceOfPnt : public TCollection_Map
 	}
 };
 
+
 %nodefaultctor BRepFill;
 class BRepFill {
 	public:
@@ -2473,6 +2552,7 @@ class BRepFill {
 	if (__env){printf("## Call custom destructor for instance of BRepFill\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_ListOfOffsetWire;
 class BRepFill_ListOfOffsetWire {
@@ -2524,6 +2604,7 @@ class BRepFill_ListOfOffsetWire {
 	}
 };
 
+
 %nodefaultctor BRepFill_DataMapOfShapeSequenceOfPnt;
 class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
 	public:
@@ -2558,6 +2639,7 @@ class BRepFill_DataMapOfShapeSequenceOfPnt : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder;
 class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_SeqNode {
 	public:
@@ -2585,6 +2667,7 @@ class BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder : public TCollection_Seq
 	if (__env){printf("## Call custom destructor for instance of BRepFill_SequenceNodeOfSequenceOfEdgeFaceAndOrder\n");}
 	}
 };
+
 
 %nodefaultctor BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape;
 class BRepFill_DataMapIteratorOfDataMapOfShapeSequenceOfShape : public TCollection_BasicMapIterator {

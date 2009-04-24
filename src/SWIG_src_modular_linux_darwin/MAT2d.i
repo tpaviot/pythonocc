@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfConnexion;
 class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection_SeqNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfConnexion : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfConnexion\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
 class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public Han
 	}
 };
 
+
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
 class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MAT2d_Circuit;
 class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_MAT2d_Circuit : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger;
 class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollection_MapNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfBiIntInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MAT2d_Connexion;
 class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_MAT2d_Connexion : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger;
 class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_TCollection_MapNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
 class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public Handle_TCollection_SeqNode {
@@ -338,6 +347,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
 class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public Handle_TCollection_MapNode {
 	public:
@@ -362,6 +372,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MAT2d_SequenceNodeOfSequenceOfBoolean;
 class Handle_MAT2d_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_SeqNode {
@@ -388,6 +399,7 @@ class Handle_MAT2d_SequenceNodeOfSequenceOfBoolean : public Handle_TCollection_S
 	}
 };
 
+
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec;
 class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public Handle_TCollection_MapNode {
 	public:
@@ -413,6 +425,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d;
 class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public Handle_TCollection_MapNode {
 	public:
@@ -437,6 +450,7 @@ class Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_MAT2d_DataMapNodeOfDataMapOfIntegerVec2d\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_SequenceOfSequenceOfGeometry;
 class MAT2d_SequenceOfSequenceOfGeometry : public TCollection_BaseSequence {
@@ -492,6 +506,7 @@ class MAT2d_SequenceOfSequenceOfGeometry : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntInteger;
 class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMapIterator {
 	public:
@@ -513,6 +528,7 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntInteger : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntInteger\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_DataMapOfBiIntSequenceOfInteger;
 class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
@@ -548,6 +564,7 @@ class MAT2d_DataMapOfBiIntSequenceOfInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfBiIntInteger;
 class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 	public:
@@ -577,6 +594,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntInteger : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfBiIntInteger\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_Connexion;
 class MAT2d_Connexion : public MMgt_TShared {
@@ -648,6 +666,7 @@ class MAT2d_Connexion : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger;
 class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_MapNode {
 	public:
@@ -678,6 +697,7 @@ class MAT2d_DataMapNodeOfDataMapOfBiIntSequenceOfInteger : public TCollection_Ma
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerBisec;
 class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 	public:
@@ -707,6 +727,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerBisec : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerBisec\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_Circuit;
 class MAT2d_Circuit : public MMgt_TShared {
@@ -748,6 +769,7 @@ class MAT2d_Circuit : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MAT2d_BiInt;
 class MAT2d_BiInt {
 	public:
@@ -773,6 +795,7 @@ class MAT2d_BiInt {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_BiInt\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_DataMapOfIntegerBisec;
 class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
@@ -808,6 +831,7 @@ class MAT2d_DataMapOfIntegerBisec : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfConnexion;
 class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 	public:
@@ -835,6 +859,7 @@ class MAT2d_SequenceNodeOfSequenceOfConnexion : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfConnexion\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_SequenceOfConnexion;
 class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
@@ -890,6 +915,7 @@ class MAT2d_SequenceOfConnexion : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMapIterator {
 	public:
@@ -911,6 +937,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion : public TColle
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerSequenceOfConnexion\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_DataMapOfIntegerVec2d;
 class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
@@ -946,6 +973,7 @@ class MAT2d_DataMapOfIntegerVec2d : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapOfIntegerConnexion;
 class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 	public:
@@ -979,6 +1007,7 @@ class MAT2d_DataMapOfIntegerConnexion : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerConnexion\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_Tool2d;
 class MAT2d_Tool2d {
@@ -1036,6 +1065,7 @@ class MAT2d_Tool2d {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d : public TCollection_BasicMapIterator {
 	public:
@@ -1057,6 +1087,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerVec2d\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_SequenceOfSequenceOfCurve;
 class MAT2d_SequenceOfSequenceOfCurve : public TCollection_BaseSequence {
@@ -1112,6 +1143,7 @@ class MAT2d_SequenceOfSequenceOfCurve : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion;
 class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollection_MapNode {
 	public:
@@ -1141,6 +1173,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerSequenceOfConnexion\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_DataMapOfIntegerPnt2d;
 class MAT2d_DataMapOfIntegerPnt2d : public TCollection_BasicMap {
@@ -1176,6 +1209,7 @@ class MAT2d_DataMapOfIntegerPnt2d : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerVec2d;
 class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 	public:
@@ -1206,6 +1240,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerVec2d : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerBisec;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMapIterator {
 	public:
@@ -1227,6 +1262,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerBisec : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerBisec\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfBoolean;
 class MAT2d_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
@@ -1255,6 +1291,7 @@ class MAT2d_SequenceNodeOfSequenceOfBoolean : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfBoolean\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_DataMapOfBiIntInteger;
 class MAT2d_DataMapOfBiIntInteger : public TCollection_BasicMap {
@@ -1290,6 +1327,7 @@ class MAT2d_DataMapOfBiIntInteger : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerConnexion;
 class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode {
 	public:
@@ -1320,6 +1358,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerConnexion : public TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_BasicMapIterator {
 	public:
@@ -1341,6 +1380,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerConnexion\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve;
 class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode {
@@ -1370,6 +1410,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfCurve : public TCollection_SeqNode
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d;
 class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMapIterator {
 	public:
@@ -1391,6 +1432,7 @@ class MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfIntegerPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry;
 class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqNode {
@@ -1419,6 +1461,7 @@ class MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry : public TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of MAT2d_SequenceNodeOfSequenceOfSequenceOfGeometry\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_DataMapOfIntegerSequenceOfConnexion;
 class MAT2d_DataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMap {
@@ -1453,6 +1496,7 @@ class MAT2d_DataMapOfIntegerSequenceOfConnexion : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapOfIntegerSequenceOfConnexion\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_Array2OfConnexion;
 class MAT2d_Array2OfConnexion {
@@ -1498,6 +1542,7 @@ class MAT2d_Array2OfConnexion {
 	}
 };
 
+
 %nodefaultctor MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger;
 class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollection_BasicMapIterator {
 	public:
@@ -1519,6 +1564,7 @@ class MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapIteratorOfDataMapOfBiIntSequenceOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_SequenceOfBoolean;
 class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
@@ -1574,6 +1620,7 @@ class MAT2d_SequenceOfBoolean : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MAT2d_MiniPath;
 class MAT2d_MiniPath {
 	public:
@@ -1602,6 +1649,7 @@ class MAT2d_MiniPath {
 	}
 };
 
+
 %nodefaultctor MAT2d_MapBiIntHasher;
 class MAT2d_MapBiIntHasher {
 	public:
@@ -1619,6 +1667,7 @@ class MAT2d_MapBiIntHasher {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_MapBiIntHasher\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d;
 class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
@@ -1649,6 +1698,7 @@ class MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of MAT2d_DataMapNodeOfDataMapOfIntegerPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor MAT2d_Mat2d;
 class MAT2d_Mat2d {

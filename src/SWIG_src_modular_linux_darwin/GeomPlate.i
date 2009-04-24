@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_GeomPlate_PointConstraint : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
 class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_TCollection_SeqNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfPointConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomPlate_HArray1OfHCurveOnSurface;
 class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_GeomPlate_HArray1OfHCurveOnSurface : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfAij;
 class Handle_GeomPlate_SequenceNodeOfSequenceOfAij : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfAij : public Handle_TCollection_S
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfAij\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomPlate_HSequenceOfPointConstraint;
 class Handle_GeomPlate_HSequenceOfPointConstraint : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_GeomPlate_HSequenceOfPointConstraint : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint;
 class Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public Handle_TCollection_SeqNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public Handle_T
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_SequenceNodeOfSequenceOfCurveConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomPlate_Surface;
 class Handle_GeomPlate_Surface : public Handle_Geom_Surface {
@@ -288,6 +295,7 @@ class Handle_GeomPlate_Surface : public Handle_Geom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_GeomPlate_HArray1OfSequenceOfReal;
 class Handle_GeomPlate_HArray1OfSequenceOfReal : public Handle_MMgt_TShared {
 	public:
@@ -312,6 +320,7 @@ class Handle_GeomPlate_HArray1OfSequenceOfReal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_HArray1OfSequenceOfReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_GeomPlate_CurveConstraint;
 class Handle_GeomPlate_CurveConstraint : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_GeomPlate_CurveConstraint : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_GeomPlate_HSequenceOfCurveConstraint;
 class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_GeomPlate_HSequenceOfCurveConstraint : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_GeomPlate_HSequenceOfCurveConstraint\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_CurveConstraint;
 class GeomPlate_CurveConstraint : public MMgt_TShared {
@@ -437,6 +448,7 @@ class GeomPlate_CurveConstraint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomPlate_HArray1OfHCurveOnSurface;
 class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 	public:
@@ -482,6 +494,7 @@ class GeomPlate_HArray1OfHCurveOnSurface : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_HArray1OfHCurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_HSequenceOfCurveConstraint;
 class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
@@ -553,6 +566,7 @@ class GeomPlate_HSequenceOfCurveConstraint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfCurveConstraint;
 class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_SeqNode {
 	public:
@@ -580,6 +594,7 @@ class GeomPlate_SequenceNodeOfSequenceOfCurveConstraint : public TCollection_Seq
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfCurveConstraint\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_HSequenceOfPointConstraint;
 class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
@@ -651,6 +666,7 @@ class GeomPlate_HSequenceOfPointConstraint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomPlate_Aij;
 class GeomPlate_Aij {
 	public:
@@ -666,6 +682,7 @@ class GeomPlate_Aij {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_Aij\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_HArray1OfSequenceOfReal;
 class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
@@ -712,6 +729,7 @@ class GeomPlate_HArray1OfSequenceOfReal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_HArray1OfSequenceOfReal\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_SequenceOfCurveConstraint;
 class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
@@ -767,6 +785,7 @@ class GeomPlate_SequenceOfCurveConstraint : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfPointConstraint;
 class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_SeqNode {
 	public:
@@ -795,6 +814,7 @@ class GeomPlate_SequenceNodeOfSequenceOfPointConstraint : public TCollection_Seq
 	}
 };
 
+
 %nodefaultctor GeomPlate_BuildAveragePlane;
 class GeomPlate_BuildAveragePlane {
 	public:
@@ -822,6 +842,7 @@ class GeomPlate_BuildAveragePlane {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_BuildAveragePlane\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_Surface;
 class GeomPlate_Surface : public Geom_Surface {
@@ -907,6 +928,7 @@ class GeomPlate_Surface : public Geom_Surface {
 	}
 };
 
+
 %nodefaultctor GeomPlate_PlateG0Criterion;
 class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
 	public:
@@ -924,6 +946,7 @@ class GeomPlate_PlateG0Criterion : public AdvApp2Var_Criterion {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG0Criterion\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_Array1OfHCurveOnSurface;
 class GeomPlate_Array1OfHCurveOnSurface {
@@ -964,6 +987,7 @@ class GeomPlate_Array1OfHCurveOnSurface {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_Array1OfHCurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_SequenceOfPointConstraint;
 class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
@@ -1019,6 +1043,7 @@ class GeomPlate_SequenceOfPointConstraint : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor GeomPlate_SequenceNodeOfSequenceOfAij;
 class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 	public:
@@ -1046,6 +1071,7 @@ class GeomPlate_SequenceNodeOfSequenceOfAij : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceNodeOfSequenceOfAij\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_BuildPlateSurface;
 class GeomPlate_BuildPlateSurface {
@@ -1109,6 +1135,7 @@ class GeomPlate_BuildPlateSurface {
 	}
 };
 
+
 %nodefaultctor GeomPlate_PlateG1Criterion;
 class GeomPlate_PlateG1Criterion : public AdvApp2Var_Criterion {
 	public:
@@ -1126,6 +1153,7 @@ class GeomPlate_PlateG1Criterion : public AdvApp2Var_Criterion {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_PlateG1Criterion\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_PointConstraint;
 class GeomPlate_PointConstraint : public MMgt_TShared {
@@ -1185,6 +1213,7 @@ class GeomPlate_PointConstraint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomPlate_MakeApprox;
 class GeomPlate_MakeApprox {
 	public:
@@ -1206,6 +1235,7 @@ class GeomPlate_MakeApprox {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_MakeApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_SequenceOfAij;
 class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
@@ -1260,6 +1290,7 @@ class GeomPlate_SequenceOfAij : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of GeomPlate_SequenceOfAij\n");}
 	}
 };
+
 
 %nodefaultctor GeomPlate_Array1OfSequenceOfReal;
 class GeomPlate_Array1OfSequenceOfReal {

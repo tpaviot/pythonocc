@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -166,6 +167,7 @@ class TopoDSToStep_Root {
 	}
 };
 
+
 %nodefaultctor TopoDSToStep_WireframeBuilder;
 class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 	public:
@@ -194,6 +196,7 @@ class TopoDSToStep_WireframeBuilder : public TopoDSToStep_Root {
 	}
 };
 
+
 %nodefaultctor TopoDSToStep_FacetedTool;
 class TopoDSToStep_FacetedTool {
 	public:
@@ -209,6 +212,7 @@ class TopoDSToStep_FacetedTool {
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_FacetedTool\n");}
 	}
 };
+
 
 %nodefaultctor TopoDSToStep_MakeStepVertex;
 class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
@@ -232,6 +236,7 @@ class TopoDSToStep_MakeStepVertex : public TopoDSToStep_Root {
 	}
 };
 
+
 %nodefaultctor TopoDSToStep_MakeFacetedBrepAndBrepWithVoids;
 class TopoDSToStep_MakeFacetedBrepAndBrepWithVoids : public TopoDSToStep_Root {
 	public:
@@ -247,6 +252,7 @@ class TopoDSToStep_MakeFacetedBrepAndBrepWithVoids : public TopoDSToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeFacetedBrepAndBrepWithVoids\n");}
 	}
 };
+
 
 %nodefaultctor TopoDSToStep_MakeManifoldSolidBrep;
 class TopoDSToStep_MakeManifoldSolidBrep : public TopoDSToStep_Root {
@@ -266,6 +272,7 @@ class TopoDSToStep_MakeManifoldSolidBrep : public TopoDSToStep_Root {
 	}
 };
 
+
 %nodefaultctor TopoDSToStep_MakeFacetedBrep;
 class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
 	public:
@@ -283,6 +290,7 @@ class TopoDSToStep_MakeFacetedBrep : public TopoDSToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeFacetedBrep\n");}
 	}
 };
+
 
 %nodefaultctor TopoDSToStep_MakeShellBasedSurfaceModel;
 class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
@@ -303,6 +311,7 @@ class TopoDSToStep_MakeShellBasedSurfaceModel : public TopoDSToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeShellBasedSurfaceModel\n");}
 	}
 };
+
 
 %nodefaultctor TopoDSToStep_MakeStepWire;
 class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
@@ -325,6 +334,7 @@ class TopoDSToStep_MakeStepWire : public TopoDSToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepWire\n");}
 	}
 };
+
 
 %nodefaultctor TopoDSToStep_Tool;
 class TopoDSToStep_Tool {
@@ -382,6 +392,7 @@ class TopoDSToStep_Tool {
 	}
 };
 
+
 %nodefaultctor TopoDSToStep;
 class TopoDSToStep {
 	public:
@@ -410,6 +421,7 @@ class TopoDSToStep {
 	}
 };
 
+
 %nodefaultctor TopoDSToStep_Builder;
 class TopoDSToStep_Builder : public TopoDSToStep_Root {
 	public:
@@ -432,6 +444,7 @@ class TopoDSToStep_Builder : public TopoDSToStep_Root {
 	}
 };
 
+
 %nodefaultctor TopoDSToStep_MakeBrepWithVoids;
 class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
 	public:
@@ -447,6 +460,7 @@ class TopoDSToStep_MakeBrepWithVoids : public TopoDSToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeBrepWithVoids\n");}
 	}
 };
+
 
 %nodefaultctor TopoDSToStep_MakeStepFace;
 class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
@@ -470,6 +484,7 @@ class TopoDSToStep_MakeStepFace : public TopoDSToStep_Root {
 	}
 };
 
+
 %nodefaultctor TopoDSToStep_MakeStepEdge;
 class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 	public:
@@ -491,6 +506,7 @@ class TopoDSToStep_MakeStepEdge : public TopoDSToStep_Root {
 	if (__env){printf("## Call custom destructor for instance of TopoDSToStep_MakeStepEdge\n");}
 	}
 };
+
 
 %nodefaultctor TopoDSToStep_MakeGeometricCurveSet;
 class TopoDSToStep_MakeGeometricCurveSet : public TopoDSToStep_Root {

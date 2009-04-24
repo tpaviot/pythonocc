@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -285,6 +286,7 @@ class Handle_Message_Printer : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Message_PrinterOStream;
 class Handle_Message_PrinterOStream : public Handle_Message_Printer {
 	public:
@@ -309,6 +311,7 @@ class Handle_Message_PrinterOStream : public Handle_Message_Printer {
 	if (__env){printf("## Call custom destructor for instance of Handle_Message_PrinterOStream\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Message_Messenger;
 class Handle_Message_Messenger : public Handle_MMgt_TShared {
@@ -335,6 +338,7 @@ class Handle_Message_Messenger : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Message_SequenceNodeOfSequenceOfPrinters;
 class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollection_SeqNode {
 	public:
@@ -359,6 +363,7 @@ class Handle_Message_SequenceNodeOfSequenceOfPrinters : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_Message_SequenceNodeOfSequenceOfPrinters\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Message_ListNodeOfListOfMsg;
 class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
@@ -385,6 +390,7 @@ class Handle_Message_ListNodeOfListOfMsg : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_Message_ProgressIndicator;
 class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
 	public:
@@ -409,6 +415,7 @@ class Handle_Message_ProgressIndicator : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Message_ProgressIndicator\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Message_SequenceNodeOfSequenceOfProgressScale;
 class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TCollection_SeqNode {
@@ -435,6 +442,7 @@ class Handle_Message_SequenceNodeOfSequenceOfProgressScale : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_Message_Algorithm;
 class Handle_Message_Algorithm : public Handle_MMgt_TShared {
 	public:
@@ -459,6 +467,7 @@ class Handle_Message_Algorithm : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Message_Algorithm\n");}
 	}
 };
+
 
 %nodefaultctor Message_ProgressIndicator;
 class Message_ProgressIndicator : public MMgt_TShared {
@@ -534,6 +543,7 @@ class Message_ProgressIndicator : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Message_ProgressScale;
 class Message_ProgressScale {
 	public:
@@ -584,6 +594,7 @@ class Message_ProgressScale {
 	}
 };
 
+
 %nodefaultctor Message_Messenger;
 class Message_Messenger : public MMgt_TShared {
 	public:
@@ -627,6 +638,7 @@ class Message_Messenger : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Message_Messenger\n");}
 	}
 };
+
 
 %nodefaultctor Message_SequenceOfProgressScale;
 class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
@@ -682,6 +694,7 @@ class Message_SequenceOfProgressScale : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Message_SequenceNodeOfSequenceOfPrinters;
 class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 	public:
@@ -709,6 +722,7 @@ class Message_SequenceNodeOfSequenceOfPrinters : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Message_SequenceNodeOfSequenceOfPrinters\n");}
 	}
 };
+
 
 %nodefaultctor Message_ProgressSentry;
 class Message_ProgressSentry {
@@ -738,6 +752,7 @@ class Message_ProgressSentry {
 	}
 };
 
+
 %nodefaultctor Message_ListNodeOfListOfMsg;
 class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 	public:
@@ -765,6 +780,7 @@ class Message_ListNodeOfListOfMsg : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Message_ListNodeOfListOfMsg\n");}
 	}
 };
+
 
 %nodefaultctor Message_ListOfMsg;
 class Message_ListOfMsg {
@@ -816,6 +832,7 @@ class Message_ListOfMsg {
 	}
 };
 
+
 %nodefaultctor Message;
 class Message {
 	public:
@@ -833,6 +850,7 @@ class Message {
 	if (__env){printf("## Call custom destructor for instance of Message\n");}
 	}
 };
+
 
 %nodefaultctor Message_SequenceOfPrinters;
 class Message_SequenceOfPrinters : public TCollection_BaseSequence {
@@ -888,6 +906,7 @@ class Message_SequenceOfPrinters : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Message_Printer;
 class Message_Printer : public MMgt_TShared {
 	public:
@@ -917,6 +936,7 @@ class Message_Printer : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Message_Printer\n");}
 	}
 };
+
 
 %nodefaultctor Message_PrinterOStream;
 class Message_PrinterOStream : public Message_Printer {
@@ -964,6 +984,7 @@ class Message_PrinterOStream : public Message_Printer {
 	}
 };
 
+
 %nodefaultctor Message_MsgFile;
 class Message_MsgFile {
 	public:
@@ -989,6 +1010,7 @@ class Message_MsgFile {
 	if (__env){printf("## Call custom destructor for instance of Message_MsgFile\n");}
 	}
 };
+
 
 %nodefaultctor Message_SequenceNodeOfSequenceOfProgressScale;
 class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode {
@@ -1018,6 +1040,7 @@ class Message_SequenceNodeOfSequenceOfProgressScale : public TCollection_SeqNode
 	}
 };
 
+
 %nodefaultctor Message_ListIteratorOfListOfMsg;
 class Message_ListIteratorOfListOfMsg {
 	public:
@@ -1041,6 +1064,7 @@ class Message_ListIteratorOfListOfMsg {
 	if (__env){printf("## Call custom destructor for instance of Message_ListIteratorOfListOfMsg\n");}
 	}
 };
+
 
 %nodefaultctor Message_Msg;
 class Message_Msg {

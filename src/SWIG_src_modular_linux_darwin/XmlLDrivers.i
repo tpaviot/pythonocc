@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_XmlLDrivers_DocumentStorageDriver;
 class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	public:
@@ -163,6 +165,7 @@ class Handle_XmlLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 	}
 };
 
+
 %nodefaultctor Handle_XmlLDrivers_DocumentRetrievalDriver;
 class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalDriver {
 	public:
@@ -187,6 +190,7 @@ class Handle_XmlLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlLDrivers_DocumentRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlLDrivers_DocumentRetrievalDriver;
 class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
@@ -224,6 +228,7 @@ class XmlLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	}
 };
 
+
 %nodefaultctor XmlLDrivers;
 class XmlLDrivers {
 	public:
@@ -245,6 +250,7 @@ class XmlLDrivers {
 	if (__env){printf("## Call custom destructor for instance of XmlLDrivers\n");}
 	}
 };
+
 
 %nodefaultctor XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef;
 class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqNode {
@@ -273,6 +279,7 @@ class XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef : public TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef\n");}
 	}
 };
+
 
 %nodefaultctor XmlLDrivers_DocumentStorageDriver;
 class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
@@ -307,6 +314,7 @@ class XmlLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlLDrivers_SequenceOfNamespaceDef;
 class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
@@ -361,6 +369,7 @@ class XmlLDrivers_SequenceOfNamespaceDef : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of XmlLDrivers_SequenceOfNamespaceDef\n");}
 	}
 };
+
 
 %nodefaultctor XmlLDrivers_NamespaceDef;
 class XmlLDrivers_NamespaceDef {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -165,6 +166,7 @@ class Handle_TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRep_Hctxff2d;
 class Handle_TopOpeBRep_Hctxff2d : public Handle_MMgt_TShared {
 	public:
@@ -189,6 +191,7 @@ class Handle_TopOpeBRep_Hctxff2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_Hctxff2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRep_FFDumper;
 class Handle_TopOpeBRep_FFDumper : public Handle_MMgt_TShared {
@@ -215,6 +218,7 @@ class Handle_TopOpeBRep_FFDumper : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool;
 class Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public Handle_TCollection_MapNode {
 	public:
@@ -239,6 +243,7 @@ class Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public Handle_TCollect
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_DataMapNodeOfDataMapOfTopolTool\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRep_ListNodeOfListOfBipoint;
 class Handle_TopOpeBRep_ListNodeOfListOfBipoint : public Handle_TCollection_MapNode {
@@ -265,6 +270,7 @@ class Handle_TopOpeBRep_ListNodeOfListOfBipoint : public Handle_TCollection_MapN
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRep_HArray1OfVPointInter;
 class Handle_TopOpeBRep_HArray1OfVPointInter : public Handle_MMgt_TShared {
 	public:
@@ -289,6 +295,7 @@ class Handle_TopOpeBRep_HArray1OfVPointInter : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_HArray1OfVPointInter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TopOpeBRep_Hctxee2d;
 class Handle_TopOpeBRep_Hctxee2d : public Handle_MMgt_TShared {
@@ -315,6 +322,7 @@ class Handle_TopOpeBRep_Hctxee2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger;
 class Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public Handle_TCollection_MapNode {
 	public:
@@ -340,6 +348,7 @@ class Handle_TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_TopOpeBRep_HArray1OfLineInter;
 class Handle_TopOpeBRep_HArray1OfLineInter : public Handle_MMgt_TShared {
 	public:
@@ -364,6 +373,7 @@ class Handle_TopOpeBRep_HArray1OfLineInter : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TopOpeBRep_HArray1OfLineInter\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_DataMapOfShapeInteger;
 class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
@@ -398,6 +408,7 @@ class TopOpeBRep_DataMapOfShapeInteger : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapOfShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_FaceEdgeIntersector;
 class TopOpeBRep_FaceEdgeIntersector {
@@ -447,6 +458,7 @@ class TopOpeBRep_FaceEdgeIntersector {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_VPointInterClassifier;
 class TopOpeBRep_VPointInterClassifier {
 	public:
@@ -466,6 +478,7 @@ class TopOpeBRep_VPointInterClassifier {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_VPointInterClassifier\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_GeomTool;
 class TopOpeBRep_GeomTool {
@@ -488,6 +501,7 @@ class TopOpeBRep_GeomTool {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_GeomTool\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_DSFiller;
 class TopOpeBRep_DSFiller {
@@ -547,6 +561,7 @@ class TopOpeBRep_DSFiller {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_WPointInter;
 class TopOpeBRep_WPointInter {
 	public:
@@ -576,6 +591,7 @@ class TopOpeBRep_WPointInter {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_WPointInter\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_FacesIntersector;
 class TopOpeBRep_FacesIntersector {
@@ -631,6 +647,7 @@ class TopOpeBRep_FacesIntersector {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool;
 class TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool : public TCollection_BasicMapIterator {
 	public:
@@ -652,6 +669,7 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool : public TCollection_BasicM
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfTopolTool\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_VPointInter;
 class TopOpeBRep_VPointInter {
@@ -759,6 +777,7 @@ class TopOpeBRep_VPointInter {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_EdgesIntersector;
 class TopOpeBRep_EdgesIntersector {
 	public:
@@ -831,6 +850,7 @@ class TopOpeBRep_EdgesIntersector {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_DataMapOfTopolTool;
 class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 	public:
@@ -865,6 +885,7 @@ class TopOpeBRep_DataMapOfTopolTool : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_ListIteratorOfListOfBipoint;
 class TopOpeBRep_ListIteratorOfListOfBipoint {
 	public:
@@ -888,6 +909,7 @@ class TopOpeBRep_ListIteratorOfListOfBipoint {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListIteratorOfListOfBipoint\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_Array1OfLineInter;
 class TopOpeBRep_Array1OfLineInter {
@@ -929,6 +951,7 @@ class TopOpeBRep_Array1OfLineInter {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_Hctxee2d;
 class TopOpeBRep_Hctxee2d : public MMgt_TShared {
 	public:
@@ -962,6 +985,7 @@ class TopOpeBRep_Hctxee2d : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Hctxee2d\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_FacesFiller;
 class TopOpeBRep_FacesFiller {
@@ -1073,6 +1097,7 @@ class TopOpeBRep_FacesFiller {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger;
 class TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode {
 	public:
@@ -1103,6 +1128,7 @@ class TopOpeBRep_DataMapNodeOfDataMapOfShapeInteger : public TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_SequenceNodeOfSequenceOfPoint2d;
 class TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public TCollection_SeqNode {
 	public:
@@ -1131,6 +1157,7 @@ class TopOpeBRep_SequenceNodeOfSequenceOfPoint2d : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_FFTransitionTool;
 class TopOpeBRep_FFTransitionTool {
 	public:
@@ -1155,6 +1182,7 @@ class TopOpeBRep_FFTransitionTool {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger;
 class TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_BasicMapIterator {
 	public:
@@ -1176,6 +1204,7 @@ class TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger : public TCollection_Bas
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapIteratorOfDataMapOfShapeInteger\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_VPointInterIterator;
 class TopOpeBRep_VPointInterIterator {
@@ -1209,6 +1238,7 @@ class TopOpeBRep_VPointInterIterator {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_PointGeomTool;
 class TopOpeBRep_PointGeomTool {
 	public:
@@ -1233,6 +1263,7 @@ class TopOpeBRep_PointGeomTool {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_EdgesFiller;
 class TopOpeBRep_EdgesFiller {
 	public:
@@ -1253,6 +1284,7 @@ class TopOpeBRep_EdgesFiller {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_FaceEdgeFiller;
 class TopOpeBRep_FaceEdgeFiller {
 	public:
@@ -1268,6 +1300,7 @@ class TopOpeBRep_FaceEdgeFiller {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_FaceEdgeFiller\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_DataMapNodeOfDataMapOfTopolTool;
 class TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public TCollection_MapNode {
@@ -1298,6 +1331,7 @@ class TopOpeBRep_DataMapNodeOfDataMapOfTopolTool : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_DataMapNodeOfDataMapOfTopolTool\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_HArray1OfLineInter;
 class TopOpeBRep_HArray1OfLineInter : public MMgt_TShared {
@@ -1345,6 +1379,7 @@ class TopOpeBRep_HArray1OfLineInter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_ShapeIntersector;
 class TopOpeBRep_ShapeIntersector {
 	public:
@@ -1385,6 +1420,7 @@ class TopOpeBRep_ShapeIntersector {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_ShapeScanner;
 class TopOpeBRep_ShapeScanner {
 	public:
@@ -1411,7 +1447,12 @@ class TopOpeBRep_ShapeScanner {
 		%feature("autodoc", "1");
 		Standard_Integer Index() const;
 		%feature("autodoc", "1");
-		Standard_OStream & DumpCurrent(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpCurrentToString() {
+			std::stringstream s;
+			self->DumpCurrent(s);
+			return s.str();}
+		};
 
 };
 %extend TopOpeBRep_ShapeScanner {
@@ -1420,6 +1461,7 @@ class TopOpeBRep_ShapeScanner {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ShapeScanner\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_Array1OfVPointInter;
 class TopOpeBRep_Array1OfVPointInter {
@@ -1461,6 +1503,7 @@ class TopOpeBRep_Array1OfVPointInter {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_WPointInterIterator;
 class TopOpeBRep_WPointInterIterator {
 	public:
@@ -1489,6 +1532,7 @@ class TopOpeBRep_WPointInterIterator {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep;
 class TopOpeBRep {
 	public:
@@ -1504,6 +1548,7 @@ class TopOpeBRep {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_ListNodeOfListOfBipoint;
 class TopOpeBRep_ListNodeOfListOfBipoint : public TCollection_MapNode {
@@ -1532,6 +1577,7 @@ class TopOpeBRep_ListNodeOfListOfBipoint : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListNodeOfListOfBipoint\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_Hctxff2d;
 class TopOpeBRep_Hctxff2d : public MMgt_TShared {
@@ -1579,6 +1625,7 @@ class TopOpeBRep_Hctxff2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_Bipoint;
 class TopOpeBRep_Bipoint {
 	public:
@@ -1598,6 +1645,7 @@ class TopOpeBRep_Bipoint {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_Bipoint\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_Point2d;
 class TopOpeBRep_Point2d {
@@ -1683,6 +1731,7 @@ class TopOpeBRep_Point2d {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_FFDumper;
 class TopOpeBRep_FFDumper : public MMgt_TShared {
 	public:
@@ -1725,6 +1774,7 @@ class TopOpeBRep_FFDumper : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_ShapeIntersector2d;
 class TopOpeBRep_ShapeIntersector2d {
 	public:
@@ -1755,6 +1805,7 @@ class TopOpeBRep_ShapeIntersector2d {
 	}
 };
 
+
 %nodefaultctor TopOpeBRep_PointClassifier;
 class TopOpeBRep_PointClassifier {
 	public:
@@ -1776,6 +1827,7 @@ class TopOpeBRep_PointClassifier {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_PointClassifier\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_ListOfBipoint;
 class TopOpeBRep_ListOfBipoint {
@@ -1826,6 +1878,7 @@ class TopOpeBRep_ListOfBipoint {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_ListOfBipoint\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_SequenceOfPoint2d;
 class TopOpeBRep_SequenceOfPoint2d : public TCollection_BaseSequence {
@@ -1880,6 +1933,7 @@ class TopOpeBRep_SequenceOfPoint2d : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of TopOpeBRep_SequenceOfPoint2d\n");}
 	}
 };
+
 
 %nodefaultctor TopOpeBRep_HArray1OfVPointInter;
 class TopOpeBRep_HArray1OfVPointInter : public MMgt_TShared {

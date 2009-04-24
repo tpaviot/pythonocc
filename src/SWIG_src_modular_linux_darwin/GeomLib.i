@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -143,6 +144,7 @@ class GeomLib_CheckBSplineCurve {
 	}
 };
 
+
 %nodefaultctor GeomLib_DenominatorMultiplier;
 class GeomLib_DenominatorMultiplier {
 	public:
@@ -158,6 +160,7 @@ class GeomLib_DenominatorMultiplier {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_DenominatorMultiplier\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_Tool;
 class GeomLib_Tool {
@@ -179,6 +182,7 @@ class GeomLib_Tool {
 	}
 };
 
+
 %nodefaultctor GeomLib_LogSample;
 class GeomLib_LogSample : public math_FunctionSample {
 	public:
@@ -194,6 +198,7 @@ class GeomLib_LogSample : public math_FunctionSample {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_LogSample\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_Interpolate;
 class GeomLib_Interpolate {
@@ -215,6 +220,7 @@ class GeomLib_Interpolate {
 	}
 };
 
+
 %nodefaultctor GeomLib_IsPlanarSurface;
 class GeomLib_IsPlanarSurface {
 	public:
@@ -232,6 +238,7 @@ class GeomLib_IsPlanarSurface {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_IsPlanarSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_PolyFunc;
 class GeomLib_PolyFunc : public math_FunctionWithDerivative {
@@ -252,6 +259,7 @@ class GeomLib_PolyFunc : public math_FunctionWithDerivative {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_PolyFunc\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib;
 class GeomLib {
@@ -299,6 +307,7 @@ class GeomLib {
 	}
 };
 
+
 %nodefaultctor GeomLib_MakeCurvefromApprox;
 class GeomLib_MakeCurvefromApprox {
 	public:
@@ -330,6 +339,7 @@ class GeomLib_MakeCurvefromApprox {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_MakeCurvefromApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_Array1OfMat;
 class GeomLib_Array1OfMat {
@@ -370,6 +380,7 @@ class GeomLib_Array1OfMat {
 	if (__env){printf("## Call custom destructor for instance of GeomLib_Array1OfMat\n");}
 	}
 };
+
 
 %nodefaultctor GeomLib_Check2dBSplineCurve;
 class GeomLib_Check2dBSplineCurve {

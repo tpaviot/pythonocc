@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepGeom_RWQuasiUniformSurfaceAndRationalBSplineSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWBoundedCurve;
 class RWStepGeom_RWBoundedCurve {
 	public:
@@ -150,6 +152,7 @@ class RWStepGeom_RWBoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWPointReplica;
 class RWStepGeom_RWPointReplica {
@@ -171,6 +174,7 @@ class RWStepGeom_RWPointReplica {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWDegeneratePcurve;
 class RWStepGeom_RWDegeneratePcurve {
 	public:
@@ -190,6 +194,7 @@ class RWStepGeom_RWDegeneratePcurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWDegeneratePcurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
 class RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
@@ -211,6 +216,7 @@ class RWStepGeom_RWGeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface;
 class RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface {
 	public:
@@ -230,6 +236,7 @@ class RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBezierSurfaceAndRationalBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWAxis2Placement3d;
 class RWStepGeom_RWAxis2Placement3d {
@@ -251,6 +258,7 @@ class RWStepGeom_RWAxis2Placement3d {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWCompositeCurve;
 class RWStepGeom_RWCompositeCurve {
 	public:
@@ -271,6 +279,7 @@ class RWStepGeom_RWCompositeCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWGeometricRepresentationContext;
 class RWStepGeom_RWGeometricRepresentationContext {
 	public:
@@ -288,6 +297,7 @@ class RWStepGeom_RWGeometricRepresentationContext {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWGeometricRepresentationContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWRectangularTrimmedSurface;
 class RWStepGeom_RWRectangularTrimmedSurface {
@@ -308,6 +318,7 @@ class RWStepGeom_RWRectangularTrimmedSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWRectangularTrimmedSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve;
 class RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
@@ -331,6 +342,7 @@ class RWStepGeom_RWBSplineCurveWithKnotsAndRationalBSplineCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWCompositeCurveSegment;
 class RWStepGeom_RWCompositeCurveSegment {
 	public:
@@ -351,6 +363,7 @@ class RWStepGeom_RWCompositeCurveSegment {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWGeometricRepresentationItem;
 class RWStepGeom_RWGeometricRepresentationItem {
 	public:
@@ -369,6 +382,7 @@ class RWStepGeom_RWGeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWBoundedSurface;
 class RWStepGeom_RWBoundedSurface {
 	public:
@@ -386,6 +400,7 @@ class RWStepGeom_RWBoundedSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWQuasiUniformCurve;
 class RWStepGeom_RWQuasiUniformCurve {
@@ -407,6 +422,7 @@ class RWStepGeom_RWQuasiUniformCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWLine;
 class RWStepGeom_RWLine {
 	public:
@@ -426,6 +442,7 @@ class RWStepGeom_RWLine {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWLine\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWCartesianTransformationOperator3d;
 class RWStepGeom_RWCartesianTransformationOperator3d {
@@ -447,6 +464,7 @@ class RWStepGeom_RWCartesianTransformationOperator3d {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWCurve;
 class RWStepGeom_RWCurve {
 	public:
@@ -464,6 +482,7 @@ class RWStepGeom_RWCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWAxis1Placement;
 class RWStepGeom_RWAxis1Placement {
@@ -485,6 +504,7 @@ class RWStepGeom_RWAxis1Placement {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWConicalSurface;
 class RWStepGeom_RWConicalSurface {
 	public:
@@ -504,6 +524,7 @@ class RWStepGeom_RWConicalSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWConicalSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWAxis2Placement2d;
 class RWStepGeom_RWAxis2Placement2d {
@@ -525,6 +546,7 @@ class RWStepGeom_RWAxis2Placement2d {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWCurveReplica;
 class RWStepGeom_RWCurveReplica {
 	public:
@@ -544,6 +566,7 @@ class RWStepGeom_RWCurveReplica {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWCurveReplica\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWToroidalSurface;
 class RWStepGeom_RWToroidalSurface {
@@ -567,6 +590,7 @@ class RWStepGeom_RWToroidalSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWOffsetSurface;
 class RWStepGeom_RWOffsetSurface {
 	public:
@@ -587,6 +611,7 @@ class RWStepGeom_RWOffsetSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWBezierCurve;
 class RWStepGeom_RWBezierCurve {
 	public:
@@ -606,6 +631,7 @@ class RWStepGeom_RWBezierCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWVector;
 class RWStepGeom_RWVector {
@@ -629,6 +655,7 @@ class RWStepGeom_RWVector {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWReparametrisedCompositeCurveSegment;
 class RWStepGeom_RWReparametrisedCompositeCurveSegment {
 	public:
@@ -649,6 +676,7 @@ class RWStepGeom_RWReparametrisedCompositeCurveSegment {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWBoundaryCurve;
 class RWStepGeom_RWBoundaryCurve {
 	public:
@@ -668,6 +696,7 @@ class RWStepGeom_RWBoundaryCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBoundaryCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWRationalBSplineSurface;
 class RWStepGeom_RWRationalBSplineSurface {
@@ -691,6 +720,7 @@ class RWStepGeom_RWRationalBSplineSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWSeamCurve;
 class RWStepGeom_RWSeamCurve {
 	public:
@@ -710,6 +740,7 @@ class RWStepGeom_RWSeamCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSeamCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWSurfaceCurve;
 class RWStepGeom_RWSurfaceCurve {
@@ -731,6 +762,7 @@ class RWStepGeom_RWSurfaceCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWOuterBoundaryCurve;
 class RWStepGeom_RWOuterBoundaryCurve {
 	public:
@@ -750,6 +782,7 @@ class RWStepGeom_RWOuterBoundaryCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWOuterBoundaryCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWCompositeCurveOnSurface;
 class RWStepGeom_RWCompositeCurveOnSurface {
@@ -771,6 +804,7 @@ class RWStepGeom_RWCompositeCurveOnSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWOffsetCurve3d;
 class RWStepGeom_RWOffsetCurve3d {
 	public:
@@ -790,6 +824,7 @@ class RWStepGeom_RWOffsetCurve3d {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWOffsetCurve3d\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWUniformCurveAndRationalBSplineCurve;
 class RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
@@ -811,6 +846,7 @@ class RWStepGeom_RWUniformCurveAndRationalBSplineCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWUniformCurve;
 class RWStepGeom_RWUniformCurve {
 	public:
@@ -830,6 +866,7 @@ class RWStepGeom_RWUniformCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWUniformCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWPointOnSurface;
 class RWStepGeom_RWPointOnSurface {
@@ -851,6 +888,7 @@ class RWStepGeom_RWPointOnSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWParabola;
 class RWStepGeom_RWParabola {
 	public:
@@ -870,6 +908,7 @@ class RWStepGeom_RWParabola {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWParabola\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWUniformSurface;
 class RWStepGeom_RWUniformSurface {
@@ -891,6 +930,7 @@ class RWStepGeom_RWUniformSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWElementarySurface;
 class RWStepGeom_RWElementarySurface {
 	public:
@@ -910,6 +950,7 @@ class RWStepGeom_RWElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWElementarySurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface;
 class RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
@@ -931,6 +972,7 @@ class RWStepGeom_RWUniformSurfaceAndRationalBSplineSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWSweptSurface;
 class RWStepGeom_RWSweptSurface {
 	public:
@@ -950,6 +992,7 @@ class RWStepGeom_RWSweptSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSweptSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWBezierSurface;
 class RWStepGeom_RWBezierSurface {
@@ -971,6 +1014,7 @@ class RWStepGeom_RWBezierSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWPlane;
 class RWStepGeom_RWPlane {
 	public:
@@ -990,6 +1034,7 @@ class RWStepGeom_RWPlane {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWPlane\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWPointOnCurve;
 class RWStepGeom_RWPointOnCurve {
@@ -1011,6 +1056,7 @@ class RWStepGeom_RWPointOnCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext;
 class RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext {
 	public:
@@ -1030,6 +1076,7 @@ class RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationCont
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWGeometricRepresentationContextAndParametricRepresentationContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWTrimmedCurve;
 class RWStepGeom_RWTrimmedCurve {
@@ -1051,6 +1098,7 @@ class RWStepGeom_RWTrimmedCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWRectangularCompositeSurface;
 class RWStepGeom_RWRectangularCompositeSurface {
 	public:
@@ -1071,6 +1119,7 @@ class RWStepGeom_RWRectangularCompositeSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWOrientedSurface;
 class RWStepGeom_RWOrientedSurface {
 	public:
@@ -1090,6 +1139,7 @@ class RWStepGeom_RWOrientedSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWOrientedSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWRationalBSplineCurve;
 class RWStepGeom_RWRationalBSplineCurve {
@@ -1113,6 +1163,7 @@ class RWStepGeom_RWRationalBSplineCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWDirection;
 class RWStepGeom_RWDirection {
 	public:
@@ -1133,6 +1184,7 @@ class RWStepGeom_RWDirection {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWBSplineCurve;
 class RWStepGeom_RWBSplineCurve {
 	public:
@@ -1152,6 +1204,7 @@ class RWStepGeom_RWBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWBSplineCurveWithKnots;
 class RWStepGeom_RWBSplineCurveWithKnots {
@@ -1175,6 +1228,7 @@ class RWStepGeom_RWBSplineCurveWithKnots {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWDegenerateToroidalSurface;
 class RWStepGeom_RWDegenerateToroidalSurface {
 	public:
@@ -1194,6 +1248,7 @@ class RWStepGeom_RWDegenerateToroidalSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWDegenerateToroidalSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWSurfaceOfLinearExtrusion;
 class RWStepGeom_RWSurfaceOfLinearExtrusion {
@@ -1215,6 +1270,7 @@ class RWStepGeom_RWSurfaceOfLinearExtrusion {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext;
 class RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
 	public:
@@ -1234,6 +1290,7 @@ class RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWGeometricRepresentationContextAndGlobalUnitAssignedContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWPlacement;
 class RWStepGeom_RWPlacement {
@@ -1255,6 +1312,7 @@ class RWStepGeom_RWPlacement {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWSphericalSurface;
 class RWStepGeom_RWSphericalSurface {
 	public:
@@ -1274,6 +1332,7 @@ class RWStepGeom_RWSphericalSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSphericalSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWCylindricalSurface;
 class RWStepGeom_RWCylindricalSurface {
@@ -1295,6 +1354,7 @@ class RWStepGeom_RWCylindricalSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWBezierCurveAndRationalBSplineCurve;
 class RWStepGeom_RWBezierCurveAndRationalBSplineCurve {
 	public:
@@ -1315,6 +1375,7 @@ class RWStepGeom_RWBezierCurveAndRationalBSplineCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWPoint;
 class RWStepGeom_RWPoint {
 	public:
@@ -1332,6 +1393,7 @@ class RWStepGeom_RWPoint {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWPoint\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWEvaluatedDegeneratePcurve;
 class RWStepGeom_RWEvaluatedDegeneratePcurve {
@@ -1353,6 +1415,7 @@ class RWStepGeom_RWEvaluatedDegeneratePcurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWBSplineSurface;
 class RWStepGeom_RWBSplineSurface {
 	public:
@@ -1372,6 +1435,7 @@ class RWStepGeom_RWBSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWCartesianTransformationOperator;
 class RWStepGeom_RWCartesianTransformationOperator {
@@ -1393,6 +1457,7 @@ class RWStepGeom_RWCartesianTransformationOperator {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWPcurve;
 class RWStepGeom_RWPcurve {
 	public:
@@ -1413,6 +1478,7 @@ class RWStepGeom_RWPcurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWSurfaceCurveAndBoundedCurve;
 class RWStepGeom_RWSurfaceCurveAndBoundedCurve {
 	public:
@@ -1432,6 +1498,7 @@ class RWStepGeom_RWSurfaceCurveAndBoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSurfaceCurveAndBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWEllipse;
 class RWStepGeom_RWEllipse {
@@ -1455,6 +1522,7 @@ class RWStepGeom_RWEllipse {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWIntersectionCurve;
 class RWStepGeom_RWIntersectionCurve {
 	public:
@@ -1474,6 +1542,7 @@ class RWStepGeom_RWIntersectionCurve {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWIntersectionCurve\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface;
 class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
@@ -1497,6 +1566,7 @@ class RWStepGeom_RWBSplineSurfaceWithKnotsAndRationalBSplineSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWSurfaceOfRevolution;
 class RWStepGeom_RWSurfaceOfRevolution {
 	public:
@@ -1517,6 +1587,7 @@ class RWStepGeom_RWSurfaceOfRevolution {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWCartesianPoint;
 class RWStepGeom_RWCartesianPoint {
 	public:
@@ -1534,6 +1605,7 @@ class RWStepGeom_RWCartesianPoint {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWCartesianPoint\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWSurfaceReplica;
 class RWStepGeom_RWSurfaceReplica {
@@ -1555,6 +1627,7 @@ class RWStepGeom_RWSurfaceReplica {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWCircle;
 class RWStepGeom_RWCircle {
 	public:
@@ -1574,6 +1647,7 @@ class RWStepGeom_RWCircle {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWCircle\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWSurfacePatch;
 class RWStepGeom_RWSurfacePatch {
@@ -1595,6 +1669,7 @@ class RWStepGeom_RWSurfacePatch {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve;
 class RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
 	public:
@@ -1615,6 +1690,7 @@ class RWStepGeom_RWQuasiUniformCurveAndRationalBSplineCurve {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWCurveBoundedSurface;
 class RWStepGeom_RWCurveBoundedSurface {
 	public:
@@ -1634,6 +1710,7 @@ class RWStepGeom_RWCurveBoundedSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWCurveBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWBSplineSurfaceWithKnots;
 class RWStepGeom_RWBSplineSurfaceWithKnots {
@@ -1657,6 +1734,7 @@ class RWStepGeom_RWBSplineSurfaceWithKnots {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWQuasiUniformSurface;
 class RWStepGeom_RWQuasiUniformSurface {
 	public:
@@ -1677,6 +1755,7 @@ class RWStepGeom_RWQuasiUniformSurface {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWSurface;
 class RWStepGeom_RWSurface {
 	public:
@@ -1694,6 +1773,7 @@ class RWStepGeom_RWSurface {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWSurface\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWPolyline;
 class RWStepGeom_RWPolyline {
@@ -1715,6 +1795,7 @@ class RWStepGeom_RWPolyline {
 	}
 };
 
+
 %nodefaultctor RWStepGeom_RWConic;
 class RWStepGeom_RWConic {
 	public:
@@ -1734,6 +1815,7 @@ class RWStepGeom_RWConic {
 	if (__env){printf("## Call custom destructor for instance of RWStepGeom_RWConic\n");}
 	}
 };
+
 
 %nodefaultctor RWStepGeom_RWHyperbola;
 class RWStepGeom_RWHyperbola {

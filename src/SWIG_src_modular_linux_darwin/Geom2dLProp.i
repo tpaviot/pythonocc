@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -137,6 +138,7 @@ class Geom2dLProp_NumericCurInf2d {
 	}
 };
 
+
 %nodefaultctor Geom2dLProp_FCurNulOfNumericCurInf2d;
 class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative {
 	public:
@@ -156,6 +158,7 @@ class Geom2dLProp_FCurNulOfNumericCurInf2d : public math_FunctionWithDerivative 
 	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_FCurNulOfNumericCurInf2d\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dLProp_Curve2dTool;
 class Geom2dLProp_Curve2dTool {
@@ -185,6 +188,7 @@ class Geom2dLProp_Curve2dTool {
 	}
 };
 
+
 %nodefaultctor Geom2dLProp_CurAndInf2d;
 class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 	public:
@@ -206,6 +210,7 @@ class Geom2dLProp_CurAndInf2d : public LProp_CurAndInf {
 	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_CurAndInf2d\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dLProp_CLProps2d;
 class Geom2dLProp_CLProps2d {
@@ -246,6 +251,7 @@ class Geom2dLProp_CLProps2d {
 	if (__env){printf("## Call custom destructor for instance of Geom2dLProp_CLProps2d\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dLProp_FCurExtOfNumericCurInf2d;
 class Geom2dLProp_FCurExtOfNumericCurInf2d : public math_FunctionWithDerivative {

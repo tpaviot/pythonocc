@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepDimTol_RWDatumFeature {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWGeometricToleranceWithDatumReference;
 class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 	public:
@@ -152,6 +154,7 @@ class RWStepDimTol_RWGeometricToleranceWithDatumReference {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceWithDatumReference\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWPlacedDatumTargetFeature;
 class RWStepDimTol_RWPlacedDatumTargetFeature {
@@ -173,6 +176,7 @@ class RWStepDimTol_RWPlacedDatumTargetFeature {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWDatumReference;
 class RWStepDimTol_RWDatumReference {
 	public:
@@ -192,6 +196,7 @@ class RWStepDimTol_RWDatumReference {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumReference\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWRoundnessTolerance;
 class RWStepDimTol_RWRoundnessTolerance {
@@ -213,6 +218,7 @@ class RWStepDimTol_RWRoundnessTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWAngularityTolerance;
 class RWStepDimTol_RWAngularityTolerance {
 	public:
@@ -232,6 +238,7 @@ class RWStepDimTol_RWAngularityTolerance {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWAngularityTolerance\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWPerpendicularityTolerance;
 class RWStepDimTol_RWPerpendicularityTolerance {
@@ -253,6 +260,7 @@ class RWStepDimTol_RWPerpendicularityTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWSymmetryTolerance;
 class RWStepDimTol_RWSymmetryTolerance {
 	public:
@@ -272,6 +280,7 @@ class RWStepDimTol_RWSymmetryTolerance {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWSymmetryTolerance\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWCircularRunoutTolerance;
 class RWStepDimTol_RWCircularRunoutTolerance {
@@ -293,6 +302,7 @@ class RWStepDimTol_RWCircularRunoutTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWParallelismTolerance;
 class RWStepDimTol_RWParallelismTolerance {
 	public:
@@ -312,6 +322,7 @@ class RWStepDimTol_RWParallelismTolerance {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWParallelismTolerance\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWPositionTolerance;
 class RWStepDimTol_RWPositionTolerance {
@@ -333,6 +344,7 @@ class RWStepDimTol_RWPositionTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWSurfaceProfileTolerance;
 class RWStepDimTol_RWSurfaceProfileTolerance {
 	public:
@@ -352,6 +364,7 @@ class RWStepDimTol_RWSurfaceProfileTolerance {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWSurfaceProfileTolerance\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWLineProfileTolerance;
 class RWStepDimTol_RWLineProfileTolerance {
@@ -373,6 +386,7 @@ class RWStepDimTol_RWLineProfileTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWDatumTarget;
 class RWStepDimTol_RWDatumTarget {
 	public:
@@ -392,6 +406,7 @@ class RWStepDimTol_RWDatumTarget {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatumTarget\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWFlatnessTolerance;
 class RWStepDimTol_RWFlatnessTolerance {
@@ -413,6 +428,7 @@ class RWStepDimTol_RWFlatnessTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol;
 class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	public:
@@ -432,6 +448,7 @@ class RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeoTolAndGeoTolWthDatRefAndModGeoTolAndPosTol\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWGeometricTolerance;
 class RWStepDimTol_RWGeometricTolerance {
@@ -453,6 +470,7 @@ class RWStepDimTol_RWGeometricTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWStraightnessTolerance;
 class RWStepDimTol_RWStraightnessTolerance {
 	public:
@@ -472,6 +490,7 @@ class RWStepDimTol_RWStraightnessTolerance {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWStraightnessTolerance\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWCylindricityTolerance;
 class RWStepDimTol_RWCylindricityTolerance {
@@ -493,6 +512,7 @@ class RWStepDimTol_RWCylindricityTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWGeometricToleranceRelationship;
 class RWStepDimTol_RWGeometricToleranceRelationship {
 	public:
@@ -512,6 +532,7 @@ class RWStepDimTol_RWGeometricToleranceRelationship {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWGeometricToleranceRelationship\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWCoaxialityTolerance;
 class RWStepDimTol_RWCoaxialityTolerance {
@@ -533,6 +554,7 @@ class RWStepDimTol_RWCoaxialityTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWTotalRunoutTolerance;
 class RWStepDimTol_RWTotalRunoutTolerance {
 	public:
@@ -552,6 +574,7 @@ class RWStepDimTol_RWTotalRunoutTolerance {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWTotalRunoutTolerance\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWModifiedGeometricTolerance;
 class RWStepDimTol_RWModifiedGeometricTolerance {
@@ -573,6 +596,7 @@ class RWStepDimTol_RWModifiedGeometricTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWConcentricityTolerance;
 class RWStepDimTol_RWConcentricityTolerance {
 	public:
@@ -593,6 +617,7 @@ class RWStepDimTol_RWConcentricityTolerance {
 	}
 };
 
+
 %nodefaultctor RWStepDimTol_RWDatum;
 class RWStepDimTol_RWDatum {
 	public:
@@ -612,6 +637,7 @@ class RWStepDimTol_RWDatum {
 	if (__env){printf("## Call custom destructor for instance of RWStepDimTol_RWDatum\n");}
 	}
 };
+
 
 %nodefaultctor RWStepDimTol_RWCommonDatum;
 class RWStepDimTol_RWCommonDatum {

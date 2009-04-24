@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_RWHeaderSection_ReadWriteModule : public Handle_StepData_ReadWriteM
 	}
 };
 
+
 %nodefaultctor Handle_RWHeaderSection_GeneralModule;
 class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModule {
 	public:
@@ -163,6 +165,7 @@ class Handle_RWHeaderSection_GeneralModule : public Handle_StepData_GeneralModul
 	}
 };
 
+
 %nodefaultctor RWHeaderSection_RWFileSchema;
 class RWHeaderSection_RWFileSchema {
 	public:
@@ -181,6 +184,7 @@ class RWHeaderSection_RWFileSchema {
 	}
 };
 
+
 %nodefaultctor RWHeaderSection_RWFileDescription;
 class RWHeaderSection_RWFileDescription {
 	public:
@@ -198,6 +202,7 @@ class RWHeaderSection_RWFileDescription {
 	if (__env){printf("## Call custom destructor for instance of RWHeaderSection_RWFileDescription\n");}
 	}
 };
+
 
 %nodefaultctor RWHeaderSection_ReadWriteModule;
 class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
@@ -237,6 +242,7 @@ class RWHeaderSection_ReadWriteModule : public StepData_ReadWriteModule {
 	}
 };
 
+
 %nodefaultctor RWHeaderSection_RWFileName;
 class RWHeaderSection_RWFileName {
 	public:
@@ -255,6 +261,7 @@ class RWHeaderSection_RWFileName {
 	}
 };
 
+
 %nodefaultctor RWHeaderSection;
 class RWHeaderSection {
 	public:
@@ -270,6 +277,7 @@ class RWHeaderSection {
 	if (__env){printf("## Call custom destructor for instance of RWHeaderSection\n");}
 	}
 };
+
 
 %nodefaultctor RWHeaderSection_GeneralModule;
 class RWHeaderSection_GeneralModule : public StepData_GeneralModule {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepBasic_RWActionAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndLengthUnit;
 class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 	public:
@@ -153,6 +155,7 @@ class RWStepBasic_RWConversionBasedUnitAndLengthUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSecurityClassificationLevel;
 class RWStepBasic_RWSecurityClassificationLevel {
 	public:
@@ -170,6 +173,7 @@ class RWStepBasic_RWSecurityClassificationLevel {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSecurityClassificationLevel\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWThermodynamicTemperatureUnit;
 class RWStepBasic_RWThermodynamicTemperatureUnit {
@@ -191,6 +195,7 @@ class RWStepBasic_RWThermodynamicTemperatureUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWCertificationType;
 class RWStepBasic_RWCertificationType {
 	public:
@@ -210,6 +215,7 @@ class RWStepBasic_RWCertificationType {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCertificationType\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWDerivedUnitElement;
 class RWStepBasic_RWDerivedUnitElement {
@@ -231,6 +237,7 @@ class RWStepBasic_RWDerivedUnitElement {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductDefinitionEffectivity;
 class RWStepBasic_RWProductDefinitionEffectivity {
 	public:
@@ -250,6 +257,7 @@ class RWStepBasic_RWProductDefinitionEffectivity {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionEffectivity\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWSiUnit;
 class RWStepBasic_RWSiUnit {
@@ -277,6 +285,7 @@ class RWStepBasic_RWSiUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductDefinitionContext;
 class RWStepBasic_RWProductDefinitionContext {
 	public:
@@ -296,6 +305,7 @@ class RWStepBasic_RWProductDefinitionContext {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWCertification;
 class RWStepBasic_RWCertification {
@@ -317,6 +327,7 @@ class RWStepBasic_RWCertification {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWDocumentType;
 class RWStepBasic_RWDocumentType {
 	public:
@@ -337,6 +348,7 @@ class RWStepBasic_RWDocumentType {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWCalendarDate;
 class RWStepBasic_RWCalendarDate {
 	public:
@@ -354,6 +366,7 @@ class RWStepBasic_RWCalendarDate {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCalendarDate\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWLengthUnit;
 class RWStepBasic_RWLengthUnit {
@@ -375,6 +388,7 @@ class RWStepBasic_RWLengthUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductCategoryRelationship;
 class RWStepBasic_RWProductCategoryRelationship {
 	public:
@@ -394,6 +408,7 @@ class RWStepBasic_RWProductCategoryRelationship {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductCategoryRelationship\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndTimeUnit;
 class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
@@ -415,6 +430,7 @@ class RWStepBasic_RWConversionBasedUnitAndTimeUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWNameAssignment;
 class RWStepBasic_RWNameAssignment {
 	public:
@@ -434,6 +450,7 @@ class RWStepBasic_RWNameAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWNameAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWGroup;
 class RWStepBasic_RWGroup {
@@ -455,6 +472,7 @@ class RWStepBasic_RWGroup {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductDefinition;
 class RWStepBasic_RWProductDefinition {
 	public:
@@ -474,6 +492,7 @@ class RWStepBasic_RWProductDefinition {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinition\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWEffectivity;
 class RWStepBasic_RWEffectivity {
@@ -495,6 +514,7 @@ class RWStepBasic_RWEffectivity {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWDateRole;
 class RWStepBasic_RWDateRole {
 	public:
@@ -512,6 +532,7 @@ class RWStepBasic_RWDateRole {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateRole\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWDocumentRepresentationType;
 class RWStepBasic_RWDocumentRepresentationType {
@@ -533,6 +554,7 @@ class RWStepBasic_RWDocumentRepresentationType {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWDimensionalExponents;
 class RWStepBasic_RWDimensionalExponents {
 	public:
@@ -550,6 +572,7 @@ class RWStepBasic_RWDimensionalExponents {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDimensionalExponents\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndAreaUnit;
 class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
@@ -571,6 +594,7 @@ class RWStepBasic_RWConversionBasedUnitAndAreaUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWPersonAndOrganizationRole;
 class RWStepBasic_RWPersonAndOrganizationRole {
 	public:
@@ -588,6 +612,7 @@ class RWStepBasic_RWPersonAndOrganizationRole {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonAndOrganizationRole\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWDocumentProductAssociation;
 class RWStepBasic_RWDocumentProductAssociation {
@@ -609,6 +634,7 @@ class RWStepBasic_RWDocumentProductAssociation {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWApproval;
 class RWStepBasic_RWApproval {
 	public:
@@ -628,6 +654,7 @@ class RWStepBasic_RWApproval {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApproval\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWOrganizationalAddress;
 class RWStepBasic_RWOrganizationalAddress {
@@ -649,6 +676,7 @@ class RWStepBasic_RWOrganizationalAddress {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource;
 class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 	public:
@@ -668,6 +696,7 @@ class RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationWithSpecifiedSource\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWSolidAngleMeasureWithUnit;
 class RWStepBasic_RWSolidAngleMeasureWithUnit {
@@ -689,6 +718,7 @@ class RWStepBasic_RWSolidAngleMeasureWithUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSolidAngleUnit;
 class RWStepBasic_RWSolidAngleUnit {
 	public:
@@ -708,6 +738,7 @@ class RWStepBasic_RWSolidAngleUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSolidAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWProductDefinitionRelationship;
 class RWStepBasic_RWProductDefinitionRelationship {
@@ -729,6 +760,7 @@ class RWStepBasic_RWProductDefinitionRelationship {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit;
 class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 	public:
@@ -749,6 +781,7 @@ class RWStepBasic_RWConversionBasedUnitAndSolidAngleUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndPlaneAngleUnit;
 class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 	public:
@@ -766,6 +799,7 @@ class RWStepBasic_RWSiUnitAndPlaneAngleUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndPlaneAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndVolumeUnit;
 class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
@@ -787,6 +821,7 @@ class RWStepBasic_RWConversionBasedUnitAndVolumeUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWPersonAndOrganization;
 class RWStepBasic_RWPersonAndOrganization {
 	public:
@@ -807,6 +842,7 @@ class RWStepBasic_RWPersonAndOrganization {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWOrganizationRole;
 class RWStepBasic_RWOrganizationRole {
 	public:
@@ -824,6 +860,7 @@ class RWStepBasic_RWOrganizationRole {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganizationRole\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWEffectivityAssignment;
 class RWStepBasic_RWEffectivityAssignment {
@@ -845,6 +882,7 @@ class RWStepBasic_RWEffectivityAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndMassUnit;
 class RWStepBasic_RWConversionBasedUnitAndMassUnit {
 	public:
@@ -865,6 +903,7 @@ class RWStepBasic_RWConversionBasedUnitAndMassUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWApplicationContext;
 class RWStepBasic_RWApplicationContext {
 	public:
@@ -882,6 +921,7 @@ class RWStepBasic_RWApplicationContext {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApplicationContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWActionMethod;
 class RWStepBasic_RWActionMethod {
@@ -903,6 +943,7 @@ class RWStepBasic_RWActionMethod {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWLocalTime;
 class RWStepBasic_RWLocalTime {
 	public:
@@ -922,6 +963,7 @@ class RWStepBasic_RWLocalTime {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWLocalTime\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWActionRequestAssignment;
 class RWStepBasic_RWActionRequestAssignment {
@@ -943,6 +985,7 @@ class RWStepBasic_RWActionRequestAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWMassMeasureWithUnit;
 class RWStepBasic_RWMassMeasureWithUnit {
 	public:
@@ -962,6 +1005,7 @@ class RWStepBasic_RWMassMeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnit;
 class RWStepBasic_RWConversionBasedUnit {
@@ -983,6 +1027,7 @@ class RWStepBasic_RWConversionBasedUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWObjectRole;
 class RWStepBasic_RWObjectRole {
 	public:
@@ -1003,6 +1048,7 @@ class RWStepBasic_RWObjectRole {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWWeekOfYearAndDayDate;
 class RWStepBasic_RWWeekOfYearAndDayDate {
 	public:
@@ -1020,6 +1066,7 @@ class RWStepBasic_RWWeekOfYearAndDayDate {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWWeekOfYearAndDayDate\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndRatioUnit;
 class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
@@ -1041,6 +1088,7 @@ class RWStepBasic_RWConversionBasedUnitAndRatioUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWDocumentRelationship;
 class RWStepBasic_RWDocumentRelationship {
 	public:
@@ -1061,6 +1109,7 @@ class RWStepBasic_RWDocumentRelationship {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit;
 class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 	public:
@@ -1079,6 +1128,7 @@ class RWStepBasic_RWSiUnitAndThermodynamicTemperatureUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWDateTimeRole;
 class RWStepBasic_RWDateTimeRole {
 	public:
@@ -1096,6 +1146,7 @@ class RWStepBasic_RWDateTimeRole {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateTimeRole\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWDerivedUnit;
 class RWStepBasic_RWDerivedUnit {
@@ -1117,6 +1168,7 @@ class RWStepBasic_RWDerivedUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductDefinitionFormationRelationship;
 class RWStepBasic_RWProductDefinitionFormationRelationship {
 	public:
@@ -1136,6 +1188,7 @@ class RWStepBasic_RWProductDefinitionFormationRelationship {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductDefinitionFormationRelationship\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWIdentificationAssignment;
 class RWStepBasic_RWIdentificationAssignment {
@@ -1157,6 +1210,7 @@ class RWStepBasic_RWIdentificationAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndSolidAngleUnit;
 class RWStepBasic_RWSiUnitAndSolidAngleUnit {
 	public:
@@ -1175,6 +1229,7 @@ class RWStepBasic_RWSiUnitAndSolidAngleUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWAddress;
 class RWStepBasic_RWAddress {
 	public:
@@ -1192,6 +1247,7 @@ class RWStepBasic_RWAddress {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAddress\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWExternallyDefinedItem;
 class RWStepBasic_RWExternallyDefinedItem {
@@ -1213,6 +1269,7 @@ class RWStepBasic_RWExternallyDefinedItem {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWVersionedActionRequest;
 class RWStepBasic_RWVersionedActionRequest {
 	public:
@@ -1232,6 +1289,7 @@ class RWStepBasic_RWVersionedActionRequest {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWVersionedActionRequest\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWExternalIdentificationAssignment;
 class RWStepBasic_RWExternalIdentificationAssignment {
@@ -1253,6 +1311,7 @@ class RWStepBasic_RWExternalIdentificationAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndLengthUnit;
 class RWStepBasic_RWSiUnitAndLengthUnit {
 	public:
@@ -1270,6 +1329,7 @@ class RWStepBasic_RWSiUnitAndLengthUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndLengthUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWLengthMeasureWithUnit;
 class RWStepBasic_RWLengthMeasureWithUnit {
@@ -1291,6 +1351,7 @@ class RWStepBasic_RWLengthMeasureWithUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWNamedUnit;
 class RWStepBasic_RWNamedUnit {
 	public:
@@ -1310,6 +1371,7 @@ class RWStepBasic_RWNamedUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWNamedUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit;
 class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
@@ -1331,6 +1393,7 @@ class RWStepBasic_RWConversionBasedUnitAndPlaneAngleUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndRatioUnit;
 class RWStepBasic_RWSiUnitAndRatioUnit {
 	public:
@@ -1348,6 +1411,7 @@ class RWStepBasic_RWSiUnitAndRatioUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndRatioUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWProductDefinitionWithAssociatedDocuments;
 class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
@@ -1369,6 +1433,7 @@ class RWStepBasic_RWProductDefinitionWithAssociatedDocuments {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWApprovalPersonOrganization;
 class RWStepBasic_RWApprovalPersonOrganization {
 	public:
@@ -1389,6 +1454,7 @@ class RWStepBasic_RWApprovalPersonOrganization {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWApprovalRole;
 class RWStepBasic_RWApprovalRole {
 	public:
@@ -1407,6 +1473,7 @@ class RWStepBasic_RWApprovalRole {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWCoordinatedUniversalTimeOffset;
 class RWStepBasic_RWCoordinatedUniversalTimeOffset {
 	public:
@@ -1424,6 +1491,7 @@ class RWStepBasic_RWCoordinatedUniversalTimeOffset {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWCoordinatedUniversalTimeOffset\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWDocumentProductEquivalence;
 class RWStepBasic_RWDocumentProductEquivalence {
@@ -1445,6 +1513,7 @@ class RWStepBasic_RWDocumentProductEquivalence {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWOrdinalDate;
 class RWStepBasic_RWOrdinalDate {
 	public:
@@ -1462,6 +1531,7 @@ class RWStepBasic_RWOrdinalDate {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrdinalDate\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWCharacterizedObject;
 class RWStepBasic_RWCharacterizedObject {
@@ -1483,6 +1553,7 @@ class RWStepBasic_RWCharacterizedObject {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndMassUnit;
 class RWStepBasic_RWSiUnitAndMassUnit {
 	public:
@@ -1500,6 +1571,7 @@ class RWStepBasic_RWSiUnitAndMassUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndMassUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWPlaneAngleMeasureWithUnit;
 class RWStepBasic_RWPlaneAngleMeasureWithUnit {
@@ -1521,6 +1593,7 @@ class RWStepBasic_RWPlaneAngleMeasureWithUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWGroupRelationship;
 class RWStepBasic_RWGroupRelationship {
 	public:
@@ -1540,6 +1613,7 @@ class RWStepBasic_RWGroupRelationship {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWGroupRelationship\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWProductContext;
 class RWStepBasic_RWProductContext {
@@ -1561,6 +1635,7 @@ class RWStepBasic_RWProductContext {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWPersonalAddress;
 class RWStepBasic_RWPersonalAddress {
 	public:
@@ -1580,6 +1655,7 @@ class RWStepBasic_RWPersonalAddress {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPersonalAddress\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWExternalSource;
 class RWStepBasic_RWExternalSource {
@@ -1601,6 +1677,7 @@ class RWStepBasic_RWExternalSource {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWDocumentFile;
 class RWStepBasic_RWDocumentFile {
 	public:
@@ -1620,6 +1697,7 @@ class RWStepBasic_RWDocumentFile {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentFile\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWProduct;
 class RWStepBasic_RWProduct {
@@ -1641,6 +1719,7 @@ class RWStepBasic_RWProduct {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWRoleAssociation;
 class RWStepBasic_RWRoleAssociation {
 	public:
@@ -1660,6 +1739,7 @@ class RWStepBasic_RWRoleAssociation {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWRoleAssociation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWRatioMeasureWithUnit;
 class RWStepBasic_RWRatioMeasureWithUnit {
@@ -1681,6 +1761,7 @@ class RWStepBasic_RWRatioMeasureWithUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWDateAndTime;
 class RWStepBasic_RWDateAndTime {
 	public:
@@ -1700,6 +1781,7 @@ class RWStepBasic_RWDateAndTime {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDateAndTime\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWGroupAssignment;
 class RWStepBasic_RWGroupAssignment {
@@ -1721,6 +1803,7 @@ class RWStepBasic_RWGroupAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWUncertaintyMeasureWithUnit;
 class RWStepBasic_RWUncertaintyMeasureWithUnit {
 	public:
@@ -1740,6 +1823,7 @@ class RWStepBasic_RWUncertaintyMeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWUncertaintyMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWProductDefinitionFormation;
 class RWStepBasic_RWProductDefinitionFormation {
@@ -1761,6 +1845,7 @@ class RWStepBasic_RWProductDefinitionFormation {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndVolumeUnit;
 class RWStepBasic_RWSiUnitAndVolumeUnit {
 	public:
@@ -1779,6 +1864,7 @@ class RWStepBasic_RWSiUnitAndVolumeUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWOrganization;
 class RWStepBasic_RWOrganization {
 	public:
@@ -1796,6 +1882,7 @@ class RWStepBasic_RWOrganization {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWOrganization\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWSecurityClassification;
 class RWStepBasic_RWSecurityClassification {
@@ -1817,6 +1904,7 @@ class RWStepBasic_RWSecurityClassification {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWIdentificationRole;
 class RWStepBasic_RWIdentificationRole {
 	public:
@@ -1836,6 +1924,7 @@ class RWStepBasic_RWIdentificationRole {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWIdentificationRole\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWMechanicalContext;
 class RWStepBasic_RWMechanicalContext {
@@ -1857,6 +1946,7 @@ class RWStepBasic_RWMechanicalContext {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWContractAssignment;
 class RWStepBasic_RWContractAssignment {
 	public:
@@ -1876,6 +1966,7 @@ class RWStepBasic_RWContractAssignment {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWContractAssignment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWMeasureWithUnit;
 class RWStepBasic_RWMeasureWithUnit {
@@ -1897,6 +1988,7 @@ class RWStepBasic_RWMeasureWithUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWAction;
 class RWStepBasic_RWAction {
 	public:
@@ -1916,6 +2008,7 @@ class RWStepBasic_RWAction {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWAction\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWDocument;
 class RWStepBasic_RWDocument {
@@ -1937,6 +2030,7 @@ class RWStepBasic_RWDocument {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductType;
 class RWStepBasic_RWProductType {
 	public:
@@ -1957,6 +2051,7 @@ class RWStepBasic_RWProductType {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWApprovalStatus;
 class RWStepBasic_RWApprovalStatus {
 	public:
@@ -1975,6 +2070,7 @@ class RWStepBasic_RWApprovalStatus {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWPerson;
 class RWStepBasic_RWPerson {
 	public:
@@ -1992,6 +2088,7 @@ class RWStepBasic_RWPerson {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWPerson\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWApplicationProtocolDefinition;
 class RWStepBasic_RWApplicationProtocolDefinition {
@@ -2013,6 +2110,7 @@ class RWStepBasic_RWApplicationProtocolDefinition {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWContractType;
 class RWStepBasic_RWContractType {
 	public:
@@ -2033,6 +2131,7 @@ class RWStepBasic_RWContractType {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWDate;
 class RWStepBasic_RWDate {
 	public:
@@ -2050,6 +2149,7 @@ class RWStepBasic_RWDate {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDate\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWCertificationAssignment;
 class RWStepBasic_RWCertificationAssignment {
@@ -2071,6 +2171,7 @@ class RWStepBasic_RWCertificationAssignment {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWApprovalRelationship;
 class RWStepBasic_RWApprovalRelationship {
 	public:
@@ -2090,6 +2191,7 @@ class RWStepBasic_RWApprovalRelationship {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWApprovalRelationship\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWApprovalDateTime;
 class RWStepBasic_RWApprovalDateTime {
@@ -2111,6 +2213,7 @@ class RWStepBasic_RWApprovalDateTime {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductRelatedProductCategory;
 class RWStepBasic_RWProductRelatedProductCategory {
 	public:
@@ -2130,6 +2233,7 @@ class RWStepBasic_RWProductRelatedProductCategory {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductRelatedProductCategory\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWContract;
 class RWStepBasic_RWContract {
@@ -2151,6 +2255,7 @@ class RWStepBasic_RWContract {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWEulerAngles;
 class RWStepBasic_RWEulerAngles {
 	public:
@@ -2170,6 +2275,7 @@ class RWStepBasic_RWEulerAngles {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWEulerAngles\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWProductConceptContext;
 class RWStepBasic_RWProductConceptContext {
@@ -2191,6 +2297,7 @@ class RWStepBasic_RWProductConceptContext {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWProductCategory;
 class RWStepBasic_RWProductCategory {
 	public:
@@ -2208,6 +2315,7 @@ class RWStepBasic_RWProductCategory {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWProductCategory\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWPlaneAngleUnit;
 class RWStepBasic_RWPlaneAngleUnit {
@@ -2229,6 +2337,7 @@ class RWStepBasic_RWPlaneAngleUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWMassUnit;
 class RWStepBasic_RWMassUnit {
 	public:
@@ -2248,6 +2357,7 @@ class RWStepBasic_RWMassUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWMassUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWGeneralProperty;
 class RWStepBasic_RWGeneralProperty {
@@ -2269,6 +2379,7 @@ class RWStepBasic_RWGeneralProperty {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWApplicationContextElement;
 class RWStepBasic_RWApplicationContextElement {
 	public:
@@ -2289,6 +2400,7 @@ class RWStepBasic_RWApplicationContextElement {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndTimeUnit;
 class RWStepBasic_RWSiUnitAndTimeUnit {
 	public:
@@ -2307,6 +2419,7 @@ class RWStepBasic_RWSiUnitAndTimeUnit {
 	}
 };
 
+
 %nodefaultctor RWStepBasic_RWSiUnitAndAreaUnit;
 class RWStepBasic_RWSiUnitAndAreaUnit {
 	public:
@@ -2324,6 +2437,7 @@ class RWStepBasic_RWSiUnitAndAreaUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWSiUnitAndAreaUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWDocumentUsageConstraint;
 class RWStepBasic_RWDocumentUsageConstraint {
@@ -2344,6 +2458,7 @@ class RWStepBasic_RWDocumentUsageConstraint {
 	if (__env){printf("## Call custom destructor for instance of RWStepBasic_RWDocumentUsageConstraint\n");}
 	}
 };
+
 
 %nodefaultctor RWStepBasic_RWActionRequestSolution;
 class RWStepBasic_RWActionRequestSolution {

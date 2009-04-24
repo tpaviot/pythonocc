@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -353,6 +354,7 @@ class Handle_Graphic3d_TextureRoot : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_TextureMap;
 class Handle_Graphic3d_TextureMap : public Handle_Graphic3d_TextureRoot {
 	public:
@@ -377,6 +379,7 @@ class Handle_Graphic3d_TextureMap : public Handle_Graphic3d_TextureRoot {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_TextureMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_Texture2D;
 class Handle_Graphic3d_Texture2D : public Handle_Graphic3d_TextureMap {
@@ -403,6 +406,7 @@ class Handle_Graphic3d_Texture2D : public Handle_Graphic3d_TextureMap {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_Texture2Dmanual;
 class Handle_Graphic3d_Texture2Dmanual : public Handle_Graphic3d_Texture2D {
 	public:
@@ -427,6 +431,7 @@ class Handle_Graphic3d_Texture2Dmanual : public Handle_Graphic3d_Texture2D {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture2Dmanual\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_DataStructureManager;
 class Handle_Graphic3d_DataStructureManager : public Handle_MMgt_TShared {
@@ -453,6 +458,7 @@ class Handle_Graphic3d_DataStructureManager : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_AspectMarker3d;
 class Handle_Graphic3d_AspectMarker3d : public Handle_Aspect_AspectMarker {
 	public:
@@ -477,6 +483,7 @@ class Handle_Graphic3d_AspectMarker3d : public Handle_Aspect_AspectMarker {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_AspectMarker3d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_Texture1D;
 class Handle_Graphic3d_Texture1D : public Handle_Graphic3d_TextureMap {
@@ -503,6 +510,7 @@ class Handle_Graphic3d_Texture1D : public Handle_Graphic3d_TextureMap {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_Texture1Dmanual;
 class Handle_Graphic3d_Texture1Dmanual : public Handle_Graphic3d_Texture1D {
 	public:
@@ -527,6 +535,7 @@ class Handle_Graphic3d_Texture1Dmanual : public Handle_Graphic3d_Texture1D {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture1Dmanual\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_ArrayOfPrimitives;
 class Handle_Graphic3d_ArrayOfPrimitives : public Handle_MMgt_TShared {
@@ -553,6 +562,7 @@ class Handle_Graphic3d_ArrayOfPrimitives : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_ArrayOfPolygons;
 class Handle_Graphic3d_ArrayOfPolygons : public Handle_Graphic3d_ArrayOfPrimitives {
 	public:
@@ -577,6 +587,7 @@ class Handle_Graphic3d_ArrayOfPolygons : public Handle_Graphic3d_ArrayOfPrimitiv
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPolygons\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_MaterialDefinitionError;
 class Handle_Graphic3d_MaterialDefinitionError : public Handle_Standard_OutOfRange {
@@ -603,6 +614,7 @@ class Handle_Graphic3d_MaterialDefinitionError : public Handle_Standard_OutOfRan
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_StructureManager;
 class Handle_Graphic3d_StructureManager : public Handle_MMgt_TShared {
 	public:
@@ -627,6 +639,7 @@ class Handle_Graphic3d_StructureManager : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_StructureManager\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_VectorError;
 class Handle_Graphic3d_VectorError : public Handle_Standard_OutOfRange {
@@ -653,6 +666,7 @@ class Handle_Graphic3d_VectorError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_ArrayOfTriangles;
 class Handle_Graphic3d_ArrayOfTriangles : public Handle_Graphic3d_ArrayOfPrimitives {
 	public:
@@ -677,6 +691,7 @@ class Handle_Graphic3d_ArrayOfTriangles : public Handle_Graphic3d_ArrayOfPrimiti
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfTriangles\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_ArrayOfTriangleFans;
 class Handle_Graphic3d_ArrayOfTriangleFans : public Handle_Graphic3d_ArrayOfPrimitives {
@@ -703,6 +718,7 @@ class Handle_Graphic3d_ArrayOfTriangleFans : public Handle_Graphic3d_ArrayOfPrim
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_PriorityDefinitionError;
 class Handle_Graphic3d_PriorityDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -727,6 +743,7 @@ class Handle_Graphic3d_PriorityDefinitionError : public Handle_Standard_OutOfRan
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_PriorityDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_AspectFillArea3d;
 class Handle_Graphic3d_AspectFillArea3d : public Handle_Aspect_AspectFillArea {
@@ -753,6 +770,7 @@ class Handle_Graphic3d_AspectFillArea3d : public Handle_Aspect_AspectFillArea {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_ListNodeOfListOfShortReal;
 class Handle_Graphic3d_ListNodeOfListOfShortReal : public Handle_TCollection_MapNode {
 	public:
@@ -777,6 +795,7 @@ class Handle_Graphic3d_ListNodeOfListOfShortReal : public Handle_TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ListNodeOfListOfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_AspectLine3d;
 class Handle_Graphic3d_AspectLine3d : public Handle_Aspect_AspectLine {
@@ -803,6 +822,7 @@ class Handle_Graphic3d_AspectLine3d : public Handle_Aspect_AspectLine {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_ArrayOfQuadrangleStrips;
 class Handle_Graphic3d_ArrayOfQuadrangleStrips : public Handle_Graphic3d_ArrayOfPrimitives {
 	public:
@@ -827,6 +847,7 @@ class Handle_Graphic3d_ArrayOfQuadrangleStrips : public Handle_Graphic3d_ArrayOf
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfQuadrangleStrips\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_ListNodeOfListOfPArray;
 class Handle_Graphic3d_ListNodeOfListOfPArray : public Handle_TCollection_MapNode {
@@ -853,6 +874,7 @@ class Handle_Graphic3d_ListNodeOfListOfPArray : public Handle_TCollection_MapNod
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_Plotter;
 class Handle_Graphic3d_Plotter : public Handle_MMgt_TShared {
 	public:
@@ -877,6 +899,7 @@ class Handle_Graphic3d_Plotter : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Plotter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_StdMapNodeOfMapOfStructure;
 class Handle_Graphic3d_StdMapNodeOfMapOfStructure : public Handle_TCollection_MapNode {
@@ -903,6 +926,7 @@ class Handle_Graphic3d_StdMapNodeOfMapOfStructure : public Handle_TCollection_Ma
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_SequenceNodeOfSequenceOfAddress;
 class Handle_Graphic3d_SequenceNodeOfSequenceOfAddress : public Handle_TCollection_SeqNode {
 	public:
@@ -927,6 +951,7 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfAddress : public Handle_TCollecti
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_ArrayOfQuadrangles;
 class Handle_Graphic3d_ArrayOfQuadrangles : public Handle_Graphic3d_ArrayOfPrimitives {
@@ -953,6 +978,7 @@ class Handle_Graphic3d_ArrayOfQuadrangles : public Handle_Graphic3d_ArrayOfPrimi
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_SequenceNodeOfSequenceOfGroup;
 class Handle_Graphic3d_SequenceNodeOfSequenceOfGroup : public Handle_TCollection_SeqNode {
 	public:
@@ -977,6 +1003,7 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfGroup : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_SequenceNodeOfSequenceOfGroup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_GraphicDriver;
 class Handle_Graphic3d_GraphicDriver : public Handle_Aspect_GraphicDriver {
@@ -1003,6 +1030,7 @@ class Handle_Graphic3d_GraphicDriver : public Handle_Aspect_GraphicDriver {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_GraphicDevice;
 class Handle_Graphic3d_GraphicDevice : public Handle_Xw_GraphicDevice {
 	public:
@@ -1027,6 +1055,7 @@ class Handle_Graphic3d_GraphicDevice : public Handle_Xw_GraphicDevice {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_GraphicDevice\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_TextureEnv;
 class Handle_Graphic3d_TextureEnv : public Handle_Graphic3d_TextureRoot {
@@ -1053,6 +1082,7 @@ class Handle_Graphic3d_TextureEnv : public Handle_Graphic3d_TextureRoot {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_Texture2Dplane;
 class Handle_Graphic3d_Texture2Dplane : public Handle_Graphic3d_Texture2D {
 	public:
@@ -1077,6 +1107,7 @@ class Handle_Graphic3d_Texture2Dplane : public Handle_Graphic3d_Texture2D {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Texture2Dplane\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_PickIdDefinitionError;
 class Handle_Graphic3d_PickIdDefinitionError : public Handle_Standard_OutOfRange {
@@ -1103,6 +1134,7 @@ class Handle_Graphic3d_PickIdDefinitionError : public Handle_Standard_OutOfRange
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_GroupDefinitionError;
 class Handle_Graphic3d_GroupDefinitionError : public Handle_Standard_OutOfRange {
 	public:
@@ -1127,6 +1159,7 @@ class Handle_Graphic3d_GroupDefinitionError : public Handle_Standard_OutOfRange 
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_GroupDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_TransformError;
 class Handle_Graphic3d_TransformError : public Handle_Standard_OutOfRange {
@@ -1153,6 +1186,7 @@ class Handle_Graphic3d_TransformError : public Handle_Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_ArrayOfPoints;
 class Handle_Graphic3d_ArrayOfPoints : public Handle_Graphic3d_ArrayOfPrimitives {
 	public:
@@ -1177,6 +1211,7 @@ class Handle_Graphic3d_ArrayOfPoints : public Handle_Graphic3d_ArrayOfPrimitives
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfPoints\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_SequenceNodeOfSequenceOfStructure;
 class Handle_Graphic3d_SequenceNodeOfSequenceOfStructure : public Handle_TCollection_SeqNode {
@@ -1203,6 +1238,7 @@ class Handle_Graphic3d_SequenceNodeOfSequenceOfStructure : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_ArrayOfSegments;
 class Handle_Graphic3d_ArrayOfSegments : public Handle_Graphic3d_ArrayOfPrimitives {
 	public:
@@ -1227,6 +1263,7 @@ class Handle_Graphic3d_ArrayOfSegments : public Handle_Graphic3d_ArrayOfPrimitiv
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ArrayOfSegments\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_AspectText3d;
 class Handle_Graphic3d_AspectText3d : public Handle_MMgt_TShared {
@@ -1253,6 +1290,7 @@ class Handle_Graphic3d_AspectText3d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_HSequenceOfGroup;
 class Handle_Graphic3d_HSequenceOfGroup : public Handle_MMgt_TShared {
 	public:
@@ -1277,6 +1315,7 @@ class Handle_Graphic3d_HSequenceOfGroup : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HSequenceOfGroup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_AspectTextDefinitionError;
 class Handle_Graphic3d_AspectTextDefinitionError : public Handle_Standard_OutOfRange {
@@ -1303,6 +1342,7 @@ class Handle_Graphic3d_AspectTextDefinitionError : public Handle_Standard_OutOfR
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_HSequenceOfStructure;
 class Handle_Graphic3d_HSequenceOfStructure : public Handle_MMgt_TShared {
 	public:
@@ -1327,6 +1367,7 @@ class Handle_Graphic3d_HSequenceOfStructure : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HSequenceOfStructure\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_ArrayOfPolylines;
 class Handle_Graphic3d_ArrayOfPolylines : public Handle_Graphic3d_ArrayOfPrimitives {
@@ -1353,6 +1394,7 @@ class Handle_Graphic3d_ArrayOfPolylines : public Handle_Graphic3d_ArrayOfPrimiti
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_Group;
 class Handle_Graphic3d_Group : public Handle_MMgt_TShared {
 	public:
@@ -1377,6 +1419,7 @@ class Handle_Graphic3d_Group : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_Group\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_ArrayOfTriangleStrips;
 class Handle_Graphic3d_ArrayOfTriangleStrips : public Handle_Graphic3d_ArrayOfPrimitives {
@@ -1403,6 +1446,7 @@ class Handle_Graphic3d_ArrayOfTriangleStrips : public Handle_Graphic3d_ArrayOfPr
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup;
 class Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup : public Handle_TCollection_MapNode {
 	public:
@@ -1427,6 +1471,7 @@ class Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_ListNodeOfSetListOfSetOfGroup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_StructureDefinitionError;
 class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRange {
@@ -1453,6 +1498,7 @@ class Handle_Graphic3d_StructureDefinitionError : public Handle_Standard_OutOfRa
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_InitialisationError;
 class Handle_Graphic3d_InitialisationError : public Handle_Standard_OutOfRange {
 	public:
@@ -1477,6 +1523,7 @@ class Handle_Graphic3d_InitialisationError : public Handle_Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_InitialisationError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_PlotterDefinitionError;
 class Handle_Graphic3d_PlotterDefinitionError : public Handle_Standard_OutOfRange {
@@ -1503,6 +1550,7 @@ class Handle_Graphic3d_PlotterDefinitionError : public Handle_Standard_OutOfRang
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_CycleError;
 class Handle_Graphic3d_CycleError : public Handle_Standard_DomainError {
 	public:
@@ -1527,6 +1575,7 @@ class Handle_Graphic3d_CycleError : public Handle_Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_CycleError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_Structure;
 class Handle_Graphic3d_Structure : public Handle_MMgt_TShared {
@@ -1553,6 +1602,7 @@ class Handle_Graphic3d_Structure : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_HArray1OfBytes;
 class Handle_Graphic3d_HArray1OfBytes : public Handle_MMgt_TShared {
 	public:
@@ -1577,6 +1627,7 @@ class Handle_Graphic3d_HArray1OfBytes : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Graphic3d_HArray1OfBytes\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Graphic3d_Texture1Dsegment;
 class Handle_Graphic3d_Texture1Dsegment : public Handle_Graphic3d_Texture1D {
@@ -1603,6 +1654,7 @@ class Handle_Graphic3d_Texture1Dsegment : public Handle_Graphic3d_Texture1D {
 	}
 };
 
+
 %nodefaultctor Handle_Graphic3d_HSetOfGroup;
 class Handle_Graphic3d_HSetOfGroup : public Handle_MMgt_TShared {
 	public:
@@ -1628,6 +1680,7 @@ class Handle_Graphic3d_HSetOfGroup : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_CBitFields20;
 class Graphic3d_CBitFields20 {
 	public:
@@ -1641,6 +1694,7 @@ class Graphic3d_CBitFields20 {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields20\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Array2OfVertex;
 class Graphic3d_Array2OfVertex {
@@ -1686,6 +1740,7 @@ class Graphic3d_Array2OfVertex {
 	}
 };
 
+
 %nodefaultctor Graphic3d_InitialisationError;
 class Graphic3d_InitialisationError : public Standard_OutOfRange {
 	public:
@@ -1719,6 +1774,7 @@ class Graphic3d_InitialisationError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_InitialisationError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_ArrayOfPrimitives;
 class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
@@ -1856,6 +1912,7 @@ class Graphic3d_ArrayOfPrimitives : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfAddress;
 class Graphic3d_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 	public:
@@ -1883,6 +1940,7 @@ class Graphic3d_SequenceNodeOfSequenceOfAddress : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfAddress\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Array1OfBytes;
 class Graphic3d_Array1OfBytes {
@@ -1923,6 +1981,7 @@ class Graphic3d_Array1OfBytes {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfBytes\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_SequenceOfStructure;
 class Graphic3d_SequenceOfStructure : public TCollection_BaseSequence {
@@ -1978,6 +2037,7 @@ class Graphic3d_SequenceOfStructure : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfPoints;
 class Graphic3d_ArrayOfPoints : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -2003,6 +2063,7 @@ class Graphic3d_ArrayOfPoints : public Graphic3d_ArrayOfPrimitives {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPoints\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_GroupDefinitionError;
 class Graphic3d_GroupDefinitionError : public Standard_OutOfRange {
@@ -2038,6 +2099,7 @@ class Graphic3d_GroupDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic3d_PlotterDefinitionError;
 class Graphic3d_PlotterDefinitionError : public Standard_OutOfRange {
 	public:
@@ -2071,6 +2133,7 @@ class Graphic3d_PlotterDefinitionError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_PlotterDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_HSequenceOfStructure;
 class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
@@ -2142,6 +2205,7 @@ class Graphic3d_HSequenceOfStructure : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ListIteratorOfListOfPArray;
 class Graphic3d_ListIteratorOfListOfPArray {
 	public:
@@ -2166,6 +2230,7 @@ class Graphic3d_ListIteratorOfListOfPArray {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ListIteratorOfSetListOfSetOfGroup;
 class Graphic3d_ListIteratorOfSetListOfSetOfGroup {
 	public:
@@ -2189,6 +2254,7 @@ class Graphic3d_ListIteratorOfSetListOfSetOfGroup {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListIteratorOfSetListOfSetOfGroup\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Array1OfVertex;
 class Graphic3d_Array1OfVertex {
@@ -2230,6 +2296,7 @@ class Graphic3d_Array1OfVertex {
 	}
 };
 
+
 %nodefaultctor Graphic3d_TextureRoot;
 class Graphic3d_TextureRoot : public MMgt_TShared {
 	public:
@@ -2269,6 +2336,7 @@ class Graphic3d_TextureRoot : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_TextureRoot\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_TextureMap;
 class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
@@ -2310,6 +2378,7 @@ class Graphic3d_TextureMap : public Graphic3d_TextureRoot {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Texture2D;
 class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 	public:
@@ -2337,6 +2406,7 @@ class Graphic3d_Texture2D : public Graphic3d_TextureMap {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2D\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Texture2Dplane;
 class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
@@ -2396,6 +2466,7 @@ class Graphic3d_Texture2Dplane : public Graphic3d_Texture2D {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Array2OfVertexNT;
 class Graphic3d_Array2OfVertexNT {
 	public:
@@ -2440,6 +2511,7 @@ class Graphic3d_Array2OfVertexNT {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Array1OfVertexN;
 class Graphic3d_Array1OfVertexN {
 	public:
@@ -2479,6 +2551,7 @@ class Graphic3d_Array1OfVertexN {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array1OfVertexN\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Structure;
 class Graphic3d_Structure : public MMgt_TShared {
@@ -2676,6 +2749,7 @@ class Graphic3d_Structure : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_VectorError;
 class Graphic3d_VectorError : public Standard_OutOfRange {
 	public:
@@ -2709,6 +2783,7 @@ class Graphic3d_VectorError : public Standard_OutOfRange {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_VectorError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Vertex;
 class Graphic3d_Vertex {
@@ -2745,6 +2820,7 @@ class Graphic3d_Vertex {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Vertex\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_SequenceOfGroup;
 class Graphic3d_SequenceOfGroup : public TCollection_BaseSequence {
@@ -2800,6 +2876,7 @@ class Graphic3d_SequenceOfGroup : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Array2OfVertexNC;
 class Graphic3d_Array2OfVertexNC {
 	public:
@@ -2844,6 +2921,7 @@ class Graphic3d_Array2OfVertexNC {
 	}
 };
 
+
 %nodefaultctor Graphic3d_VertexC;
 class Graphic3d_VertexC : public Graphic3d_Vertex {
 	public:
@@ -2865,6 +2943,7 @@ class Graphic3d_VertexC : public Graphic3d_Vertex {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexC\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_VertexN;
 class Graphic3d_VertexN : public Graphic3d_Vertex {
@@ -2888,6 +2967,7 @@ class Graphic3d_VertexN : public Graphic3d_Vertex {
 	}
 };
 
+
 %nodefaultctor Graphic3d_VertexNT;
 class Graphic3d_VertexNT : public Graphic3d_VertexN {
 	public:
@@ -2909,6 +2989,7 @@ class Graphic3d_VertexNT : public Graphic3d_VertexN {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexNT\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_HSetOfGroup;
 class Graphic3d_HSetOfGroup : public MMgt_TShared {
@@ -2963,6 +3044,7 @@ class Graphic3d_HSetOfGroup : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_HSetOfGroup\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_HSequenceOfGroup;
 class Graphic3d_HSequenceOfGroup : public MMgt_TShared {
@@ -3034,6 +3116,7 @@ class Graphic3d_HSequenceOfGroup : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ListOfPArray;
 class Graphic3d_ListOfPArray {
 	public:
@@ -3084,6 +3167,7 @@ class Graphic3d_ListOfPArray {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfTriangleStrips;
 class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -3110,6 +3194,7 @@ class Graphic3d_ArrayOfTriangleStrips : public Graphic3d_ArrayOfPrimitives {
 	}
 };
 
+
 %nodefaultctor Graphic3d_MapOfStructure;
 class Graphic3d_MapOfStructure : public TCollection_BasicMap {
 	public:
@@ -3135,6 +3220,7 @@ class Graphic3d_MapOfStructure : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_MapOfStructure\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Array1OfVertexNC;
 class Graphic3d_Array1OfVertexNC {
@@ -3176,6 +3262,7 @@ class Graphic3d_Array1OfVertexNC {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Array1OfVertexNT;
 class Graphic3d_Array1OfVertexNT {
 	public:
@@ -3216,6 +3303,7 @@ class Graphic3d_Array1OfVertexNT {
 	}
 };
 
+
 %nodefaultctor Graphic3d_CBitFields16;
 class Graphic3d_CBitFields16 {
 	public:
@@ -3229,6 +3317,7 @@ class Graphic3d_CBitFields16 {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields16\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_CBitFields4;
 class Graphic3d_CBitFields4 {
@@ -3244,6 +3333,7 @@ class Graphic3d_CBitFields4 {
 	}
 };
 
+
 %nodefaultctor Graphic3d_CBitFields8;
 class Graphic3d_CBitFields8 {
 	public:
@@ -3257,6 +3347,7 @@ class Graphic3d_CBitFields8 {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_CBitFields8\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_MaterialDefinitionError;
 class Graphic3d_MaterialDefinitionError : public Standard_OutOfRange {
@@ -3292,6 +3383,7 @@ class Graphic3d_MaterialDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ListNodeOfListOfShortReal;
 class Graphic3d_ListNodeOfListOfShortReal : public TCollection_MapNode {
 	public:
@@ -3319,6 +3411,7 @@ class Graphic3d_ListNodeOfListOfShortReal : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfListOfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_AspectTextDefinitionError;
 class Graphic3d_AspectTextDefinitionError : public Standard_OutOfRange {
@@ -3354,6 +3447,7 @@ class Graphic3d_AspectTextDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfSegments;
 class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -3379,6 +3473,7 @@ class Graphic3d_ArrayOfSegments : public Graphic3d_ArrayOfPrimitives {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfSegments\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_DataStructureManager;
 class Graphic3d_DataStructureManager : public MMgt_TShared {
@@ -3406,6 +3501,7 @@ class Graphic3d_DataStructureManager : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfTriangles;
 class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -3431,6 +3527,7 @@ class Graphic3d_ArrayOfTriangles : public Graphic3d_ArrayOfPrimitives {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfTriangles\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_MaterialAspect;
 class Graphic3d_MaterialAspect {
@@ -3530,6 +3627,7 @@ class Graphic3d_MaterialAspect {
 	}
 };
 
+
 %nodefaultctor Graphic3d_PriorityDefinitionError;
 class Graphic3d_PriorityDefinitionError : public Standard_OutOfRange {
 	public:
@@ -3564,6 +3662,7 @@ class Graphic3d_PriorityDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ListNodeOfListOfPArray;
 class Graphic3d_ListNodeOfListOfPArray : public TCollection_MapNode {
 	public:
@@ -3591,6 +3690,7 @@ class Graphic3d_ListNodeOfListOfPArray : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfListOfPArray\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_AspectMarker3d;
 class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
@@ -3628,6 +3728,7 @@ class Graphic3d_AspectMarker3d : public Aspect_AspectMarker {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfQuadrangleStrips;
 class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -3653,6 +3754,7 @@ class Graphic3d_ArrayOfQuadrangleStrips : public Graphic3d_ArrayOfPrimitives {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfQuadrangleStrips\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Array1OfVector;
 class Graphic3d_Array1OfVector {
@@ -3694,6 +3796,7 @@ class Graphic3d_Array1OfVector {
 	}
 };
 
+
 %nodefaultctor Graphic3d_TextureEnv;
 class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 	public:
@@ -3728,6 +3831,7 @@ class Graphic3d_TextureEnv : public Graphic3d_TextureRoot {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ListIteratorOfListOfShortReal;
 class Graphic3d_ListIteratorOfListOfShortReal {
 	public:
@@ -3751,6 +3855,7 @@ class Graphic3d_ListIteratorOfListOfShortReal {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListIteratorOfListOfShortReal\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Strips;
 class Graphic3d_Strips {
@@ -3777,6 +3882,7 @@ class Graphic3d_Strips {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Strips\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Vector;
 class Graphic3d_Vector {
@@ -3824,6 +3930,7 @@ class Graphic3d_Vector {
 	}
 };
 
+
 %nodefaultctor Graphic3d_AspectLine3d;
 class Graphic3d_AspectLine3d : public Aspect_AspectLine {
 	public:
@@ -3851,6 +3958,7 @@ class Graphic3d_AspectLine3d : public Aspect_AspectLine {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectLine3d\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_SetListOfSetOfGroup;
 class Graphic3d_SetListOfSetOfGroup {
@@ -3902,6 +4010,7 @@ class Graphic3d_SetListOfSetOfGroup {
 	}
 };
 
+
 %nodefaultctor Graphic3d_HArray1OfBytes;
 class Graphic3d_HArray1OfBytes : public MMgt_TShared {
 	public:
@@ -3948,6 +4057,7 @@ class Graphic3d_HArray1OfBytes : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfTriangleFans;
 class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -3974,6 +4084,7 @@ class Graphic3d_ArrayOfTriangleFans : public Graphic3d_ArrayOfPrimitives {
 	}
 };
 
+
 %nodefaultctor Graphic3d_VertexNC;
 class Graphic3d_VertexNC : public Graphic3d_VertexN {
 	public:
@@ -3995,6 +4106,7 @@ class Graphic3d_VertexNC : public Graphic3d_VertexN {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_VertexNC\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_ListOfShortReal;
 class Graphic3d_ListOfShortReal {
@@ -4046,6 +4158,7 @@ class Graphic3d_ListOfShortReal {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Array1OfVertexC;
 class Graphic3d_Array1OfVertexC {
 	public:
@@ -4086,6 +4199,7 @@ class Graphic3d_Array1OfVertexC {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Texture1D;
 class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 	public:
@@ -4115,6 +4229,7 @@ class Graphic3d_Texture1D : public Graphic3d_TextureMap {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture1D\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Texture1Dsegment;
 class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
@@ -4146,6 +4261,7 @@ class Graphic3d_Texture1Dsegment : public Graphic3d_Texture1D {
 	}
 };
 
+
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfStructure;
 class Graphic3d_SequenceNodeOfSequenceOfStructure : public TCollection_SeqNode {
 	public:
@@ -4173,6 +4289,7 @@ class Graphic3d_SequenceNodeOfSequenceOfStructure : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_SequenceNodeOfSequenceOfStructure\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Plotter;
 class Graphic3d_Plotter : public MMgt_TShared {
@@ -4206,6 +4323,7 @@ class Graphic3d_Plotter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_MapIteratorOfMapOfStructure;
 class Graphic3d_MapIteratorOfMapOfStructure : public TCollection_BasicMapIterator {
 	public:
@@ -4225,6 +4343,7 @@ class Graphic3d_MapIteratorOfMapOfStructure : public TCollection_BasicMapIterato
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_MapIteratorOfMapOfStructure\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_StructureManager;
 class Graphic3d_StructureManager : public MMgt_TShared {
@@ -4320,6 +4439,7 @@ class Graphic3d_StructureManager : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_SetIteratorOfSetOfGroup;
 class Graphic3d_SetIteratorOfSetOfGroup {
 	public:
@@ -4343,6 +4463,7 @@ class Graphic3d_SetIteratorOfSetOfGroup {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_SetIteratorOfSetOfGroup\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Texture2Dmanual;
 class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
@@ -4371,6 +4492,7 @@ class Graphic3d_Texture2Dmanual : public Graphic3d_Texture2D {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture2Dmanual\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_AspectFillArea3d;
 class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
@@ -4447,6 +4569,7 @@ class Graphic3d_AspectFillArea3d : public Aspect_AspectFillArea {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectFillArea3d\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Group;
 class Graphic3d_Group : public MMgt_TShared {
@@ -4608,6 +4731,7 @@ class Graphic3d_Group : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ListNodeOfSetListOfSetOfGroup;
 class Graphic3d_ListNodeOfSetListOfSetOfGroup : public TCollection_MapNode {
 	public:
@@ -4635,6 +4759,7 @@ class Graphic3d_ListNodeOfSetListOfSetOfGroup : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ListNodeOfSetListOfSetOfGroup\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_SequenceNodeOfSequenceOfGroup;
 class Graphic3d_SequenceNodeOfSequenceOfGroup : public TCollection_SeqNode {
@@ -4664,6 +4789,7 @@ class Graphic3d_SequenceNodeOfSequenceOfGroup : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfQuadrangles;
 class Graphic3d_ArrayOfQuadrangles : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -4690,6 +4816,7 @@ class Graphic3d_ArrayOfQuadrangles : public Graphic3d_ArrayOfPrimitives {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfPolylines;
 class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -4715,6 +4842,7 @@ class Graphic3d_ArrayOfPolylines : public Graphic3d_ArrayOfPrimitives {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPolylines\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_SequenceOfAddress;
 class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
@@ -4770,6 +4898,7 @@ class Graphic3d_SequenceOfAddress : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Graphic3d_SetOfGroup;
 class Graphic3d_SetOfGroup {
 	public:
@@ -4806,6 +4935,7 @@ class Graphic3d_SetOfGroup {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Texture1Dmanual;
 class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 	public:
@@ -4833,6 +4963,7 @@ class Graphic3d_Texture1Dmanual : public Graphic3d_Texture1D {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Texture1Dmanual\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_TransformError;
 class Graphic3d_TransformError : public Standard_OutOfRange {
@@ -4868,6 +4999,7 @@ class Graphic3d_TransformError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic3d_ArrayOfPolygons;
 class Graphic3d_ArrayOfPolygons : public Graphic3d_ArrayOfPrimitives {
 	public:
@@ -4893,6 +5025,7 @@ class Graphic3d_ArrayOfPolygons : public Graphic3d_ArrayOfPrimitives {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_ArrayOfPolygons\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_StdMapNodeOfMapOfStructure;
 class Graphic3d_StdMapNodeOfMapOfStructure : public TCollection_MapNode {
@@ -4921,6 +5054,7 @@ class Graphic3d_StdMapNodeOfMapOfStructure : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_StdMapNodeOfMapOfStructure\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_Array2OfVertexC;
 class Graphic3d_Array2OfVertexC {
@@ -4966,6 +5100,7 @@ class Graphic3d_Array2OfVertexC {
 	}
 };
 
+
 %nodefaultctor Graphic3d_Array2OfVertexN;
 class Graphic3d_Array2OfVertexN {
 	public:
@@ -5009,6 +5144,7 @@ class Graphic3d_Array2OfVertexN {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_Array2OfVertexN\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_GraphicDriver;
 class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
@@ -5376,6 +5512,7 @@ class Graphic3d_GraphicDriver : public Aspect_GraphicDriver {
 	}
 };
 
+
 %nodefaultctor Graphic3d_PickIdDefinitionError;
 class Graphic3d_PickIdDefinitionError : public Standard_OutOfRange {
 	public:
@@ -5410,6 +5547,7 @@ class Graphic3d_PickIdDefinitionError : public Standard_OutOfRange {
 	}
 };
 
+
 %nodefaultctor Graphic3d_GraphicDevice;
 class Graphic3d_GraphicDevice : public Xw_GraphicDevice {
 	public:
@@ -5441,6 +5579,7 @@ class Graphic3d_GraphicDevice : public Xw_GraphicDevice {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_GraphicDevice\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_CycleError;
 class Graphic3d_CycleError : public Standard_DomainError {
@@ -5475,6 +5614,7 @@ class Graphic3d_CycleError : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_CycleError\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_AspectText3d;
 class Graphic3d_AspectText3d : public MMgt_TShared {
@@ -5529,6 +5669,7 @@ class Graphic3d_AspectText3d : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Graphic3d_AspectText3d\n");}
 	}
 };
+
 
 %nodefaultctor Graphic3d_StructureDefinitionError;
 class Graphic3d_StructureDefinitionError : public Standard_OutOfRange {

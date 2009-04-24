@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -147,6 +148,7 @@ class BRepGProp_Sinert : public GProp_GProps {
 	}
 };
 
+
 %nodefaultctor BRepGProp;
 class BRepGProp {
 	public:
@@ -175,6 +177,7 @@ class BRepGProp {
 	}
 };
 
+
 %nodefaultctor BRepGProp_EdgeTool;
 class BRepGProp_EdgeTool {
 	public:
@@ -202,6 +205,7 @@ class BRepGProp_EdgeTool {
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_EdgeTool\n");}
 	}
 };
+
 
 %nodefaultctor BRepGProp_Vinert;
 class BRepGProp_Vinert : public GProp_GProps {
@@ -269,6 +273,7 @@ class BRepGProp_Vinert : public GProp_GProps {
 	}
 };
 
+
 %nodefaultctor BRepGProp_UFunctionOfVinertGK;
 class BRepGProp_UFunctionOfVinertGK : public math_Function {
 	public:
@@ -289,6 +294,7 @@ class BRepGProp_UFunctionOfVinertGK : public math_Function {
 	}
 };
 
+
 %nodefaultctor BRepGProp_Cinert;
 class BRepGProp_Cinert : public GProp_GProps {
 	public:
@@ -308,6 +314,7 @@ class BRepGProp_Cinert : public GProp_GProps {
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_Cinert\n");}
 	}
 };
+
 
 %nodefaultctor BRepGProp_Domain;
 class BRepGProp_Domain {
@@ -334,6 +341,7 @@ class BRepGProp_Domain {
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_Domain\n");}
 	}
 };
+
 
 %nodefaultctor BRepGProp_TFunctionOfVinertGK;
 class BRepGProp_TFunctionOfVinertGK : public math_Function {
@@ -364,6 +372,7 @@ class BRepGProp_TFunctionOfVinertGK : public math_Function {
 	if (__env){printf("## Call custom destructor for instance of BRepGProp_TFunctionOfVinertGK\n");}
 	}
 };
+
 
 %nodefaultctor BRepGProp_Face;
 class BRepGProp_Face {

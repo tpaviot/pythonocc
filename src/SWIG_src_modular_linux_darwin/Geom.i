@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Geom_UndefinedValue : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_Geometry;
 class Handle_Geom_Geometry : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_Geom_Geometry : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Geometry\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Curve;
 class Handle_Geom_Curve : public Handle_Geom_Geometry {
@@ -188,6 +191,7 @@ class Handle_Geom_Curve : public Handle_Geom_Geometry {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_BoundedCurve;
 class Handle_Geom_BoundedCurve : public Handle_Geom_Curve {
 	public:
@@ -212,6 +216,7 @@ class Handle_Geom_BoundedCurve : public Handle_Geom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_SequenceNodeOfSequenceOfSurface;
 class Handle_Geom_SequenceNodeOfSequenceOfSurface : public Handle_TCollection_SeqNode {
@@ -238,6 +243,7 @@ class Handle_Geom_SequenceNodeOfSequenceOfSurface : public Handle_TCollection_Se
 	}
 };
 
+
 %nodefaultctor Handle_Geom_AxisPlacement;
 class Handle_Geom_AxisPlacement : public Handle_Geom_Geometry {
 	public:
@@ -262,6 +268,7 @@ class Handle_Geom_AxisPlacement : public Handle_Geom_Geometry {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_AxisPlacement\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Axis2Placement;
 class Handle_Geom_Axis2Placement : public Handle_Geom_AxisPlacement {
@@ -288,6 +295,7 @@ class Handle_Geom_Axis2Placement : public Handle_Geom_AxisPlacement {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_HSequenceOfSurface;
 class Handle_Geom_HSequenceOfSurface : public Handle_MMgt_TShared {
 	public:
@@ -312,6 +320,7 @@ class Handle_Geom_HSequenceOfSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_HSequenceOfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Line;
 class Handle_Geom_Line : public Handle_Geom_Curve {
@@ -338,6 +347,7 @@ class Handle_Geom_Line : public Handle_Geom_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_Transformation;
 class Handle_Geom_Transformation : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_Geom_Transformation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Transformation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Vector;
 class Handle_Geom_Vector : public Handle_Geom_Geometry {
@@ -388,6 +399,7 @@ class Handle_Geom_Vector : public Handle_Geom_Geometry {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_Surface;
 class Handle_Geom_Surface : public Handle_Geom_Geometry {
 	public:
@@ -412,6 +424,7 @@ class Handle_Geom_Surface : public Handle_Geom_Geometry {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Surface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_ElementarySurface;
 class Handle_Geom_ElementarySurface : public Handle_Geom_Surface {
@@ -438,6 +451,7 @@ class Handle_Geom_ElementarySurface : public Handle_Geom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_ConicalSurface;
 class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
 	public:
@@ -462,6 +476,7 @@ class Handle_Geom_ConicalSurface : public Handle_Geom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ConicalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Conic;
 class Handle_Geom_Conic : public Handle_Geom_Curve {
@@ -488,6 +503,7 @@ class Handle_Geom_Conic : public Handle_Geom_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_Hyperbola;
 class Handle_Geom_Hyperbola : public Handle_Geom_Conic {
 	public:
@@ -512,6 +528,7 @@ class Handle_Geom_Hyperbola : public Handle_Geom_Conic {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Hyperbola\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Point;
 class Handle_Geom_Point : public Handle_Geom_Geometry {
@@ -538,6 +555,7 @@ class Handle_Geom_Point : public Handle_Geom_Geometry {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface;
 class Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface : public Handle_TCollection_SeqNode {
 	public:
@@ -562,6 +580,7 @@ class Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SequenceNodeOfSequenceOfBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Parabola;
 class Handle_Geom_Parabola : public Handle_Geom_Conic {
@@ -588,6 +607,7 @@ class Handle_Geom_Parabola : public Handle_Geom_Conic {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_TrimmedCurve;
 class Handle_Geom_TrimmedCurve : public Handle_Geom_BoundedCurve {
 	public:
@@ -612,6 +632,7 @@ class Handle_Geom_TrimmedCurve : public Handle_Geom_BoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_TrimmedCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_BoundedSurface;
 class Handle_Geom_BoundedSurface : public Handle_Geom_Surface {
@@ -638,6 +659,7 @@ class Handle_Geom_BoundedSurface : public Handle_Geom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_BezierSurface;
 class Handle_Geom_BezierSurface : public Handle_Geom_BoundedSurface {
 	public:
@@ -662,6 +684,7 @@ class Handle_Geom_BezierSurface : public Handle_Geom_BoundedSurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BezierSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_SphericalSurface;
 class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
@@ -688,6 +711,7 @@ class Handle_Geom_SphericalSurface : public Handle_Geom_ElementarySurface {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_SweptSurface;
 class Handle_Geom_SweptSurface : public Handle_Geom_Surface {
 	public:
@@ -712,6 +736,7 @@ class Handle_Geom_SweptSurface : public Handle_Geom_Surface {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_SweptSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_SurfaceOfLinearExtrusion;
 class Handle_Geom_SurfaceOfLinearExtrusion : public Handle_Geom_SweptSurface {
@@ -738,6 +763,7 @@ class Handle_Geom_SurfaceOfLinearExtrusion : public Handle_Geom_SweptSurface {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_Axis1Placement;
 class Handle_Geom_Axis1Placement : public Handle_Geom_AxisPlacement {
 	public:
@@ -762,6 +788,7 @@ class Handle_Geom_Axis1Placement : public Handle_Geom_AxisPlacement {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Axis1Placement\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_BSplineSurface;
 class Handle_Geom_BSplineSurface : public Handle_Geom_BoundedSurface {
@@ -788,6 +815,7 @@ class Handle_Geom_BSplineSurface : public Handle_Geom_BoundedSurface {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_CartesianPoint;
 class Handle_Geom_CartesianPoint : public Handle_Geom_Point {
 	public:
@@ -812,6 +840,7 @@ class Handle_Geom_CartesianPoint : public Handle_Geom_Point {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_CartesianPoint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_CylindricalSurface;
 class Handle_Geom_CylindricalSurface : public Handle_Geom_ElementarySurface {
@@ -838,6 +867,7 @@ class Handle_Geom_CylindricalSurface : public Handle_Geom_ElementarySurface {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_OffsetCurve;
 class Handle_Geom_OffsetCurve : public Handle_Geom_Curve {
 	public:
@@ -862,6 +892,7 @@ class Handle_Geom_OffsetCurve : public Handle_Geom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_OffsetCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_HSequenceOfBSplineSurface;
 class Handle_Geom_HSequenceOfBSplineSurface : public Handle_MMgt_TShared {
@@ -888,6 +919,7 @@ class Handle_Geom_HSequenceOfBSplineSurface : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_RectangularTrimmedSurface;
 class Handle_Geom_RectangularTrimmedSurface : public Handle_Geom_BoundedSurface {
 	public:
@@ -912,6 +944,7 @@ class Handle_Geom_RectangularTrimmedSurface : public Handle_Geom_BoundedSurface 
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_RectangularTrimmedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_OffsetSurface;
 class Handle_Geom_OffsetSurface : public Handle_Geom_Surface {
@@ -938,6 +971,7 @@ class Handle_Geom_OffsetSurface : public Handle_Geom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_BSplineCurve;
 class Handle_Geom_BSplineCurve : public Handle_Geom_BoundedCurve {
 	public:
@@ -962,6 +996,7 @@ class Handle_Geom_BSplineCurve : public Handle_Geom_BoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_VectorWithMagnitude;
 class Handle_Geom_VectorWithMagnitude : public Handle_Geom_Vector {
@@ -988,6 +1023,7 @@ class Handle_Geom_VectorWithMagnitude : public Handle_Geom_Vector {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_ToroidalSurface;
 class Handle_Geom_ToroidalSurface : public Handle_Geom_ElementarySurface {
 	public:
@@ -1012,6 +1048,7 @@ class Handle_Geom_ToroidalSurface : public Handle_Geom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_ToroidalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Direction;
 class Handle_Geom_Direction : public Handle_Geom_Vector {
@@ -1038,6 +1075,7 @@ class Handle_Geom_Direction : public Handle_Geom_Vector {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_BezierCurve;
 class Handle_Geom_BezierCurve : public Handle_Geom_BoundedCurve {
 	public:
@@ -1062,6 +1100,7 @@ class Handle_Geom_BezierCurve : public Handle_Geom_BoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_BezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_UndefinedDerivative;
 class Handle_Geom_UndefinedDerivative : public Handle_Standard_DomainError {
@@ -1088,6 +1127,7 @@ class Handle_Geom_UndefinedDerivative : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_Circle;
 class Handle_Geom_Circle : public Handle_Geom_Conic {
 	public:
@@ -1112,6 +1152,7 @@ class Handle_Geom_Circle : public Handle_Geom_Conic {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Circle\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Geom_Ellipse;
 class Handle_Geom_Ellipse : public Handle_Geom_Conic {
@@ -1138,6 +1179,7 @@ class Handle_Geom_Ellipse : public Handle_Geom_Conic {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_SurfaceOfRevolution;
 class Handle_Geom_SurfaceOfRevolution : public Handle_Geom_SweptSurface {
 	public:
@@ -1163,6 +1205,7 @@ class Handle_Geom_SurfaceOfRevolution : public Handle_Geom_SweptSurface {
 	}
 };
 
+
 %nodefaultctor Handle_Geom_Plane;
 class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 	public:
@@ -1187,6 +1230,7 @@ class Handle_Geom_Plane : public Handle_Geom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom_Plane\n");}
 	}
 };
+
 
 %nodefaultctor Geom_SequenceOfSurface;
 class Geom_SequenceOfSurface : public TCollection_BaseSequence {
@@ -1241,6 +1285,7 @@ class Geom_SequenceOfSurface : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Geom_SequenceOfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Geometry;
 class Geom_Geometry : public MMgt_TShared {
@@ -1300,6 +1345,7 @@ class Geom_Geometry : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Geom_Curve;
 class Geom_Curve : public Geom_Geometry {
 	public:
@@ -1358,6 +1404,7 @@ class Geom_Curve : public Geom_Geometry {
 	}
 };
 
+
 %nodefaultctor Geom_BoundedCurve;
 class Geom_BoundedCurve : public Geom_Curve {
 	public:
@@ -1383,6 +1430,7 @@ class Geom_BoundedCurve : public Geom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Geom_BoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Surface;
 class Geom_Surface : public Geom_Geometry {
@@ -1460,6 +1508,7 @@ class Geom_Surface : public Geom_Geometry {
 	}
 };
 
+
 %nodefaultctor Geom_OffsetSurface;
 class Geom_OffsetSurface : public Geom_Surface {
 	public:
@@ -1518,6 +1567,7 @@ class Geom_OffsetSurface : public Geom_Surface {
 	}
 };
 
+
 %nodefaultctor Geom_BoundedSurface;
 class Geom_BoundedSurface : public Geom_Surface {
 	public:
@@ -1541,6 +1591,7 @@ class Geom_BoundedSurface : public Geom_Surface {
 	if (__env){printf("## Call custom destructor for instance of Geom_BoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_AxisPlacement;
 class Geom_AxisPlacement : public Geom_Geometry {
@@ -1580,6 +1631,7 @@ class Geom_AxisPlacement : public Geom_Geometry {
 	}
 };
 
+
 %nodefaultctor Geom_Axis1Placement;
 class Geom_Axis1Placement : public Geom_AxisPlacement {
 	public:
@@ -1615,6 +1667,7 @@ class Geom_Axis1Placement : public Geom_AxisPlacement {
 	if (__env){printf("## Call custom destructor for instance of Geom_Axis1Placement\n");}
 	}
 };
+
 
 %nodefaultctor Geom_ElementarySurface;
 class Geom_ElementarySurface : public Geom_Surface {
@@ -1665,6 +1718,7 @@ class Geom_ElementarySurface : public Geom_Surface {
 	if (__env){printf("## Call custom destructor for instance of Geom_ElementarySurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Plane;
 class Geom_Plane : public Geom_ElementarySurface {
@@ -1733,6 +1787,7 @@ class Geom_Plane : public Geom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of Geom_Plane\n");}
 	}
 };
+
 
 %nodefaultctor Geom_BezierSurface;
 class Geom_BezierSurface : public Geom_BoundedSurface {
@@ -1872,6 +1927,7 @@ class Geom_BezierSurface : public Geom_BoundedSurface {
 	}
 };
 
+
 %nodefaultctor Geom_Conic;
 class Geom_Conic : public Geom_Curve {
 	public:
@@ -1921,6 +1977,7 @@ class Geom_Conic : public Geom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Geom_Conic\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Hyperbola;
 class Geom_Hyperbola : public Geom_Conic {
@@ -2004,6 +2061,7 @@ class Geom_Hyperbola : public Geom_Conic {
 	}
 };
 
+
 %nodefaultctor Geom_Vector;
 class Geom_Vector : public Geom_Geometry {
 	public:
@@ -2062,6 +2120,7 @@ class Geom_Vector : public Geom_Geometry {
 	}
 };
 
+
 %nodefaultctor Geom_Direction;
 class Geom_Direction : public Geom_Vector {
 	public:
@@ -2103,6 +2162,7 @@ class Geom_Direction : public Geom_Vector {
 	if (__env){printf("## Call custom destructor for instance of Geom_Direction\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Circle;
 class Geom_Circle : public Geom_Conic {
@@ -2166,6 +2226,7 @@ class Geom_Circle : public Geom_Conic {
 	}
 };
 
+
 %nodefaultctor Geom_SequenceNodeOfSequenceOfBSplineSurface;
 class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 	public:
@@ -2194,6 +2255,7 @@ class Geom_SequenceNodeOfSequenceOfBSplineSurface : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Geom_SequenceNodeOfSequenceOfSurface;
 class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	public:
@@ -2221,6 +2283,7 @@ class Geom_SequenceNodeOfSequenceOfSurface : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Geom_SequenceNodeOfSequenceOfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Axis2Placement;
 class Geom_Axis2Placement : public Geom_AxisPlacement {
@@ -2267,6 +2330,7 @@ class Geom_Axis2Placement : public Geom_AxisPlacement {
 	if (__env){printf("## Call custom destructor for instance of Geom_Axis2Placement\n");}
 	}
 };
+
 
 %nodefaultctor Geom_OffsetCurve;
 class Geom_OffsetCurve : public Geom_Curve {
@@ -2350,6 +2414,7 @@ class Geom_OffsetCurve : public Geom_Curve {
 	}
 };
 
+
 %nodefaultctor Geom_OsculatingSurface;
 class Geom_OsculatingSurface {
 	public:
@@ -2375,6 +2440,7 @@ class Geom_OsculatingSurface {
 	if (__env){printf("## Call custom destructor for instance of Geom_OsculatingSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_SweptSurface;
 class Geom_SweptSurface : public Geom_Surface {
@@ -2405,6 +2471,7 @@ class Geom_SweptSurface : public Geom_Surface {
 	if (__env){printf("## Call custom destructor for instance of Geom_SweptSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_VectorWithMagnitude;
 class Geom_VectorWithMagnitude : public Geom_Vector {
@@ -2482,6 +2549,7 @@ class Geom_VectorWithMagnitude : public Geom_Vector {
 	}
 };
 
+
 %nodefaultctor Geom_SequenceOfBSplineSurface;
 class Geom_SequenceOfBSplineSurface : public TCollection_BaseSequence {
 	public:
@@ -2536,6 +2604,7 @@ class Geom_SequenceOfBSplineSurface : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Geom_Point;
 class Geom_Point : public Geom_Geometry {
 	public:
@@ -2573,6 +2642,7 @@ class Geom_Point : public Geom_Geometry {
 	if (__env){printf("## Call custom destructor for instance of Geom_Point\n");}
 	}
 };
+
 
 %nodefaultctor Geom_SurfaceOfRevolution;
 class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
@@ -2668,6 +2738,7 @@ class Geom_SurfaceOfRevolution : public Geom_SweptSurface {
 	}
 };
 
+
 %nodefaultctor Geom_UndefinedValue;
 class Geom_UndefinedValue : public Standard_DomainError {
 	public:
@@ -2701,6 +2772,7 @@ class Geom_UndefinedValue : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Geom_UndefinedValue\n");}
 	}
 };
+
 
 %nodefaultctor Geom_RectangularTrimmedSurface;
 class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
@@ -2786,6 +2858,7 @@ class Geom_RectangularTrimmedSurface : public Geom_BoundedSurface {
 	}
 };
 
+
 %nodefaultctor Geom_Line;
 class Geom_Line : public Geom_Curve {
 	public:
@@ -2862,6 +2935,7 @@ class Geom_Line : public Geom_Curve {
 	}
 };
 
+
 %nodefaultctor Geom_CylindricalSurface;
 class Geom_CylindricalSurface : public Geom_ElementarySurface {
 	public:
@@ -2935,6 +3009,7 @@ class Geom_CylindricalSurface : public Geom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of Geom_CylindricalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Ellipse;
 class Geom_Ellipse : public Geom_Conic {
@@ -3014,6 +3089,7 @@ class Geom_Ellipse : public Geom_Conic {
 	}
 };
 
+
 %nodefaultctor Geom_HSequenceOfBSplineSurface;
 class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 	public:
@@ -3083,6 +3159,7 @@ class Geom_HSequenceOfBSplineSurface : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Geom_HSequenceOfBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Parabola;
 class Geom_Parabola : public Geom_Conic {
@@ -3157,6 +3234,7 @@ class Geom_Parabola : public Geom_Conic {
 	if (__env){printf("## Call custom destructor for instance of Geom_Parabola\n");}
 	}
 };
+
 
 %nodefaultctor Geom_ConicalSurface;
 class Geom_ConicalSurface : public Geom_ElementarySurface {
@@ -3239,6 +3317,7 @@ class Geom_ConicalSurface : public Geom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of Geom_ConicalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_SurfaceOfLinearExtrusion;
 class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
@@ -3324,6 +3403,7 @@ class Geom_SurfaceOfLinearExtrusion : public Geom_SweptSurface {
 	}
 };
 
+
 %nodefaultctor Geom_TrimmedCurve;
 class Geom_TrimmedCurve : public Geom_BoundedCurve {
 	public:
@@ -3393,6 +3473,7 @@ class Geom_TrimmedCurve : public Geom_BoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of Geom_TrimmedCurve\n");}
 	}
 };
+
 
 %nodefaultctor Geom_ToroidalSurface;
 class Geom_ToroidalSurface : public Geom_ElementarySurface {
@@ -3472,6 +3553,7 @@ class Geom_ToroidalSurface : public Geom_ElementarySurface {
 	}
 };
 
+
 %nodefaultctor Geom_UndefinedDerivative;
 class Geom_UndefinedDerivative : public Standard_DomainError {
 	public:
@@ -3505,6 +3587,7 @@ class Geom_UndefinedDerivative : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Geom_UndefinedDerivative\n");}
 	}
 };
+
 
 %nodefaultctor Geom_BSplineCurve;
 class Geom_BSplineCurve : public Geom_BoundedCurve {
@@ -3660,6 +3743,7 @@ class Geom_BSplineCurve : public Geom_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor Geom_HSequenceOfSurface;
 class Geom_HSequenceOfSurface : public MMgt_TShared {
 	public:
@@ -3729,6 +3813,7 @@ class Geom_HSequenceOfSurface : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Geom_HSequenceOfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_Transformation;
 class Geom_Transformation : public MMgt_TShared {
@@ -3805,6 +3890,7 @@ class Geom_Transformation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Geom_Transformation\n");}
 	}
 };
+
 
 %nodefaultctor Geom_BezierCurve;
 class Geom_BezierCurve : public Geom_BoundedCurve {
@@ -3906,6 +3992,7 @@ class Geom_BezierCurve : public Geom_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor Geom_CartesianPoint;
 class Geom_CartesianPoint : public Geom_Point {
 	public:
@@ -3957,6 +4044,7 @@ class Geom_CartesianPoint : public Geom_Point {
 	if (__env){printf("## Call custom destructor for instance of Geom_CartesianPoint\n");}
 	}
 };
+
 
 %nodefaultctor Geom_BSplineSurface;
 class Geom_BSplineSurface : public Geom_BoundedSurface {
@@ -4187,6 +4275,7 @@ class Geom_BSplineSurface : public Geom_BoundedSurface {
 	if (__env){printf("## Call custom destructor for instance of Geom_BSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Geom_SphericalSurface;
 class Geom_SphericalSurface : public Geom_ElementarySurface {

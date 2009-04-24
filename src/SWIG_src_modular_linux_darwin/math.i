@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -146,6 +147,7 @@ class Handle_math_NotSquare : public Handle_Standard_DimensionError {
 	}
 };
 
+
 %nodefaultctor Handle_math_SingularMatrix;
 class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 	public:
@@ -171,6 +173,7 @@ class Handle_math_SingularMatrix : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor math_MultipleVarFunction;
 class math_MultipleVarFunction {
 	public:
@@ -188,6 +191,7 @@ class math_MultipleVarFunction {
 	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunction\n");}
 	}
 };
+
 
 %nodefaultctor math_MultipleVarFunctionWithGradient;
 class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
@@ -207,6 +211,7 @@ class math_MultipleVarFunctionWithGradient : public math_MultipleVarFunction {
 	}
 };
 
+
 %nodefaultctor math_MultipleVarFunctionWithHessian;
 class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithGradient {
 	public:
@@ -220,6 +225,7 @@ class math_MultipleVarFunctionWithHessian : public math_MultipleVarFunctionWithG
 	if (__env){printf("## Call custom destructor for instance of math_MultipleVarFunctionWithHessian\n");}
 	}
 };
+
 
 %nodefaultctor math_TrigonometricFunctionRoots;
 class math_TrigonometricFunctionRoots {
@@ -239,7 +245,12 @@ class math_TrigonometricFunctionRoots {
 		%feature("autodoc", "1");
 		Standard_Integer NbSolutions() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_TrigonometricFunctionRoots {
@@ -248,6 +259,7 @@ class math_TrigonometricFunctionRoots {
 	if (__env){printf("## Call custom destructor for instance of math_TrigonometricFunctionRoots\n");}
 	}
 };
+
 
 %nodefaultctor math_BissecNewton;
 class math_BissecNewton {
@@ -265,7 +277,12 @@ class math_BissecNewton {
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BissecNewton {
@@ -274,6 +291,7 @@ class math_BissecNewton {
 	if (__env){printf("## Call custom destructor for instance of math_BissecNewton\n");}
 	}
 };
+
 
 %nodefaultctor math_BFGS;
 class math_BFGS {
@@ -303,7 +321,12 @@ class math_BFGS {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BFGS {
@@ -312,6 +335,7 @@ class math_BFGS {
 	if (__env){printf("## Call custom destructor for instance of math_BFGS\n");}
 	}
 };
+
 
 %nodefaultctor math_DirectPolynomialRoots;
 class math_DirectPolynomialRoots {
@@ -333,7 +357,12 @@ class math_DirectPolynomialRoots {
 		%feature("autodoc", "1");
 		Standard_Real Value(const Standard_Integer Nieme) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_DirectPolynomialRoots {
@@ -342,6 +371,7 @@ class math_DirectPolynomialRoots {
 	if (__env){printf("## Call custom destructor for instance of math_DirectPolynomialRoots\n");}
 	}
 };
+
 
 %nodefaultctor math_IntegerRandom;
 class math_IntegerRandom {
@@ -361,6 +391,7 @@ class math_IntegerRandom {
 	}
 };
 
+
 %nodefaultctor math_Jacobi;
 class math_Jacobi {
 	public:
@@ -377,7 +408,12 @@ class math_Jacobi {
 		%feature("autodoc", "1");
 		void Vector(const Standard_Integer Num, math_Vector & V) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Jacobi {
@@ -386,6 +422,7 @@ class math_Jacobi {
 	if (__env){printf("## Call custom destructor for instance of math_Jacobi\n");}
 	}
 };
+
 
 %nodefaultctor math_BracketedRoot;
 class math_BracketedRoot {
@@ -401,7 +438,12 @@ class math_BracketedRoot {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BracketedRoot {
@@ -410,6 +452,7 @@ class math_BracketedRoot {
 	if (__env){printf("## Call custom destructor for instance of math_BracketedRoot\n");}
 	}
 };
+
 
 %nodefaultctor math_Powell;
 class math_Powell {
@@ -435,7 +478,12 @@ class math_Powell {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Powell {
@@ -444,6 +492,7 @@ class math_Powell {
 	if (__env){printf("## Call custom destructor for instance of math_Powell\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionRoot;
 class math_FunctionRoot {
@@ -463,7 +512,12 @@ class math_FunctionRoot {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FunctionRoot {
@@ -472,6 +526,7 @@ class math_FunctionRoot {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionRoot\n");}
 	}
 };
+
 
 %nodefaultctor math_Array1OfValueAndWeight;
 class math_Array1OfValueAndWeight {
@@ -513,6 +568,7 @@ class math_Array1OfValueAndWeight {
 	}
 };
 
+
 %nodefaultctor math_SingleTabOfInteger;
 class math_SingleTabOfInteger {
 	public:
@@ -542,6 +598,7 @@ class math_SingleTabOfInteger {
 	if (__env){printf("## Call custom destructor for instance of math_SingleTabOfInteger\n");}
 	}
 };
+
 
 %nodefaultctor math_SingularMatrix;
 class math_SingularMatrix : public Standard_Failure {
@@ -576,6 +633,7 @@ class math_SingularMatrix : public Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of math_SingularMatrix\n");}
 	}
 };
+
 
 %nodefaultctor math_Matrix;
 class math_Matrix {
@@ -697,7 +755,12 @@ class math_Matrix {
 		%feature("autodoc", "1");
 		math_Matrix operator-();
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Matrix {
@@ -706,6 +769,7 @@ class math_Matrix {
 	if (__env){printf("## Call custom destructor for instance of math_Matrix\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionAllRoots;
 class math_FunctionAllRoots {
@@ -727,7 +791,12 @@ class math_FunctionAllRoots {
 		%feature("autodoc", "1");
 		Standard_Integer GetPointState(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FunctionAllRoots {
@@ -736,6 +805,7 @@ class math_FunctionAllRoots {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionAllRoots\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionSample;
 class math_FunctionSample {
@@ -756,6 +826,7 @@ class math_FunctionSample {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionSample\n");}
 	}
 };
+
 
 %nodefaultctor math_EigenValuesSearcher;
 class math_EigenValuesSearcher {
@@ -779,6 +850,7 @@ class math_EigenValuesSearcher {
 	}
 };
 
+
 %nodefaultctor math_Gauss;
 class math_Gauss {
 	public:
@@ -795,7 +867,12 @@ class math_Gauss {
 		%feature("autodoc", "1");
 		void Invert(math_Matrix & Inv) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Gauss {
@@ -804,6 +881,7 @@ class math_Gauss {
 	if (__env){printf("## Call custom destructor for instance of math_Gauss\n");}
 	}
 };
+
 
 %nodefaultctor math_ComputeGaussPointsAndWeights;
 class math_ComputeGaussPointsAndWeights {
@@ -824,6 +902,7 @@ class math_ComputeGaussPointsAndWeights {
 	if (__env){printf("## Call custom destructor for instance of math_ComputeGaussPointsAndWeights\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionSet;
 class math_FunctionSet {
@@ -847,6 +926,7 @@ class math_FunctionSet {
 	}
 };
 
+
 %nodefaultctor math_FunctionSetWithDerivatives;
 class math_FunctionSetWithDerivatives : public math_FunctionSet {
 	public:
@@ -863,6 +943,7 @@ class math_FunctionSetWithDerivatives : public math_FunctionSet {
 	}
 };
 
+
 %nodefaultctor math_GaussSingleIntegration;
 class math_GaussSingleIntegration {
 	public:
@@ -877,7 +958,12 @@ class math_GaussSingleIntegration {
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_GaussSingleIntegration {
@@ -886,6 +972,7 @@ class math_GaussSingleIntegration {
 	if (__env){printf("## Call custom destructor for instance of math_GaussSingleIntegration\n");}
 	}
 };
+
 
 %nodefaultctor math_DoubleTabOfReal;
 class math_DoubleTabOfReal {
@@ -919,6 +1006,7 @@ class math_DoubleTabOfReal {
 	}
 };
 
+
 %nodefaultctor math_GaussSetIntegration;
 class math_GaussSetIntegration {
 	public:
@@ -929,7 +1017,12 @@ class math_GaussSetIntegration {
 		%feature("autodoc", "1");
 		const math_Vector & Value() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_GaussSetIntegration {
@@ -938,6 +1031,7 @@ class math_GaussSetIntegration {
 	if (__env){printf("## Call custom destructor for instance of math_GaussSetIntegration\n");}
 	}
 };
+
 
 %nodefaultctor math_Vector;
 class math_Vector {
@@ -1045,7 +1139,12 @@ class math_Vector {
 		%feature("autodoc", "1");
 		void Multiply(const Standard_Real Left, const math_Vector &Right);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Vector {
@@ -1054,6 +1153,7 @@ class math_Vector {
 	if (__env){printf("## Call custom destructor for instance of math_Vector\n");}
 	}
 };
+
 
 %nodefaultctor math_NotSquare;
 class math_NotSquare : public Standard_DimensionError {
@@ -1089,6 +1189,7 @@ class math_NotSquare : public Standard_DimensionError {
 	}
 };
 
+
 %nodefaultctor math_Crout;
 class math_Crout {
 	public:
@@ -1105,7 +1206,12 @@ class math_Crout {
 		%feature("autodoc", "1");
 		Standard_Real Determinant() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Crout {
@@ -1114,6 +1220,7 @@ class math_Crout {
 	if (__env){printf("## Call custom destructor for instance of math_Crout\n");}
 	}
 };
+
 
 %nodefaultctor math_QuickSortOfValueAndWeight;
 class math_QuickSortOfValueAndWeight {
@@ -1130,6 +1237,7 @@ class math_QuickSortOfValueAndWeight {
 	if (__env){printf("## Call custom destructor for instance of math_QuickSortOfValueAndWeight\n");}
 	}
 };
+
 
 %nodefaultctor math_ComputeKronrodPointsAndWeights;
 class math_ComputeKronrodPointsAndWeights {
@@ -1150,6 +1258,7 @@ class math_ComputeKronrodPointsAndWeights {
 	if (__env){printf("## Call custom destructor for instance of math_ComputeKronrodPointsAndWeights\n");}
 	}
 };
+
 
 %nodefaultctor math_NewtonFunctionRoot;
 class math_NewtonFunctionRoot {
@@ -1173,7 +1282,12 @@ class math_NewtonFunctionRoot {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_NewtonFunctionRoot {
@@ -1182,6 +1296,7 @@ class math_NewtonFunctionRoot {
 	if (__env){printf("## Call custom destructor for instance of math_NewtonFunctionRoot\n");}
 	}
 };
+
 
 %nodefaultctor math_IntegerVector;
 class math_IntegerVector {
@@ -1265,7 +1380,12 @@ class math_IntegerVector {
 		%feature("autodoc", "1");
 		void Multiply(const Standard_Integer Left, const math_IntegerVector &Right);
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_IntegerVector {
@@ -1274,6 +1394,7 @@ class math_IntegerVector {
 	if (__env){printf("## Call custom destructor for instance of math_IntegerVector\n");}
 	}
 };
+
 
 %nodefaultctor math_SVD;
 class math_SVD {
@@ -1287,7 +1408,12 @@ class math_SVD {
 		%feature("autodoc", "1");
 		void PseudoInverse(math_Matrix & Inv, const Standard_Real Eps=9.99999999999999954748111825886258685613938723691e-7) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_SVD {
@@ -1296,6 +1422,7 @@ class math_SVD {
 	if (__env){printf("## Call custom destructor for instance of math_SVD\n");}
 	}
 };
+
 
 %nodefaultctor math_BrentMinimum;
 class math_BrentMinimum {
@@ -1319,7 +1446,12 @@ class math_BrentMinimum {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BrentMinimum {
@@ -1328,6 +1460,7 @@ class math_BrentMinimum {
 	if (__env){printf("## Call custom destructor for instance of math_BrentMinimum\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionRoots;
 class math_FunctionRoots {
@@ -1345,7 +1478,12 @@ class math_FunctionRoots {
 		%feature("autodoc", "1");
 		Standard_Integer StateNumber(const Standard_Integer Nieme) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FunctionRoots {
@@ -1354,6 +1492,7 @@ class math_FunctionRoots {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionRoots\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionSetRoot;
 class math_FunctionSetRoot {
@@ -1393,7 +1532,12 @@ class math_FunctionSetRoot {
 		%feature("autodoc", "1");
 		void FunctionSetErrors(math_Vector & Err) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FunctionSetRoot {
@@ -1402,6 +1546,7 @@ class math_FunctionSetRoot {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionSetRoot\n");}
 	}
 };
+
 
 %nodefaultctor math_BracketMinimum;
 class math_BracketMinimum {
@@ -1419,7 +1564,12 @@ class math_BracketMinimum {
 		%feature("autodoc", "1");
 		void FunctionValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_BracketMinimum {
@@ -1428,6 +1578,7 @@ class math_BracketMinimum {
 	if (__env){printf("## Call custom destructor for instance of math_BracketMinimum\n");}
 	}
 };
+
 
 %nodefaultctor math_Function;
 class math_Function {
@@ -1444,6 +1595,7 @@ class math_Function {
 	if (__env){printf("## Call custom destructor for instance of math_Function\n");}
 	}
 };
+
 
 %nodefaultctor math_FunctionWithDerivative;
 class math_FunctionWithDerivative : public math_Function {
@@ -1462,6 +1614,7 @@ class math_FunctionWithDerivative : public math_Function {
 	if (__env){printf("## Call custom destructor for instance of math_FunctionWithDerivative\n");}
 	}
 };
+
 
 %nodefaultctor math_SingleTabOfReal;
 class math_SingleTabOfReal {
@@ -1493,6 +1646,7 @@ class math_SingleTabOfReal {
 	}
 };
 
+
 %nodefaultctor math_ValueAndWeight;
 class math_ValueAndWeight {
 	public:
@@ -1512,6 +1666,7 @@ class math_ValueAndWeight {
 	if (__env){printf("## Call custom destructor for instance of math_ValueAndWeight\n");}
 	}
 };
+
 
 %nodefaultctor math_Uzawa;
 class math_Uzawa {
@@ -1535,7 +1690,12 @@ class math_Uzawa {
 		%feature("autodoc", "1");
 		const math_Matrix & InverseCont() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Uzawa {
@@ -1544,6 +1704,7 @@ class math_Uzawa {
 	if (__env){printf("## Call custom destructor for instance of math_Uzawa\n");}
 	}
 };
+
 
 %nodefaultctor math_Householder;
 class math_Householder {
@@ -1561,7 +1722,12 @@ class math_Householder {
 		%feature("autodoc", "1");
 		const math_Matrix & AllValues() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_Householder {
@@ -1570,6 +1736,7 @@ class math_Householder {
 	if (__env){printf("## Call custom destructor for instance of math_Householder\n");}
 	}
 };
+
 
 %nodefaultctor math_CompareOfValueAndWeight;
 class math_CompareOfValueAndWeight {
@@ -1591,6 +1758,7 @@ class math_CompareOfValueAndWeight {
 	}
 };
 
+
 %nodefaultctor math_GaussLeastSquare;
 class math_GaussLeastSquare {
 	public:
@@ -1601,7 +1769,12 @@ class math_GaussLeastSquare {
 		%feature("autodoc", "1");
 		void Solve(const math_Vector &B, math_Vector & X) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_GaussLeastSquare {
@@ -1610,6 +1783,7 @@ class math_GaussLeastSquare {
 	if (__env){printf("## Call custom destructor for instance of math_GaussLeastSquare\n");}
 	}
 };
+
 
 %nodefaultctor math_RealRandom;
 class math_RealRandom {
@@ -1628,6 +1802,7 @@ class math_RealRandom {
 	if (__env){printf("## Call custom destructor for instance of math_RealRandom\n");}
 	}
 };
+
 
 %nodefaultctor math_KronrodSingleIntegration;
 class math_KronrodSingleIntegration {
@@ -1665,6 +1840,7 @@ class math_KronrodSingleIntegration {
 	}
 };
 
+
 %nodefaultctor math_FRPR;
 class math_FRPR {
 	public:
@@ -1693,7 +1869,12 @@ class math_FRPR {
 		%feature("autodoc", "1");
 		Standard_Integer NbIterations() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_FRPR {
@@ -1702,6 +1883,7 @@ class math_FRPR {
 	if (__env){printf("## Call custom destructor for instance of math_FRPR\n");}
 	}
 };
+
 
 %nodefaultctor math_GaussMultipleIntegration;
 class math_GaussMultipleIntegration {
@@ -1713,7 +1895,12 @@ class math_GaussMultipleIntegration {
 		%feature("autodoc", "1");
 		Standard_Real Value() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend math_GaussMultipleIntegration {
@@ -1722,6 +1909,7 @@ class math_GaussMultipleIntegration {
 	if (__env){printf("## Call custom destructor for instance of math_GaussMultipleIntegration\n");}
 	}
 };
+
 
 %nodefaultctor math;
 class math {

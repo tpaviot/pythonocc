@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ShapeAlgo_ToolContainer : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeAlgo_AlgoContainer;
 class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_ShapeAlgo_AlgoContainer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeAlgo_AlgoContainer\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAlgo_AlgoContainer;
 class ShapeAlgo_AlgoContainer : public MMgt_TShared {
@@ -216,6 +219,7 @@ class ShapeAlgo_AlgoContainer : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of ShapeAlgo_AlgoContainer\n");}
 	}
 };
+
 
 %nodefaultctor ShapeAlgo_ToolContainer;
 class ShapeAlgo_ToolContainer : public MMgt_TShared {

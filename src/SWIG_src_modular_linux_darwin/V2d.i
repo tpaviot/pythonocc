@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_V2d_BackgroundGraphicObject : public Handle_Graphic2d_GraphicObject
 	}
 };
 
+
 %nodefaultctor Handle_V2d_View;
 class Handle_V2d_View : public Handle_Viewer_View {
 	public:
@@ -168,6 +170,7 @@ class Handle_V2d_View : public Handle_Viewer_View {
 	if (__env){printf("## Call custom destructor for instance of Handle_V2d_View\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V2d_RectangularGrid;
 class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
@@ -194,6 +197,7 @@ class Handle_V2d_RectangularGrid : public Handle_Aspect_RectangularGrid {
 	}
 };
 
+
 %nodefaultctor Handle_V2d_CircularGraphicGrid;
 class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 	public:
@@ -218,6 +222,7 @@ class Handle_V2d_CircularGraphicGrid : public Handle_Graphic2d_Primitive {
 	if (__env){printf("## Call custom destructor for instance of Handle_V2d_CircularGraphicGrid\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V2d_CircularGrid;
 class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
@@ -244,6 +249,7 @@ class Handle_V2d_CircularGrid : public Handle_Aspect_CircularGrid {
 	}
 };
 
+
 %nodefaultctor Handle_V2d_Viewer;
 class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 	public:
@@ -268,6 +274,7 @@ class Handle_V2d_Viewer : public Handle_Viewer_Viewer {
 	if (__env){printf("## Call custom destructor for instance of Handle_V2d_Viewer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_V2d_RectangularGraphicGrid;
 class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
@@ -294,6 +301,7 @@ class Handle_V2d_RectangularGraphicGrid : public Handle_Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor V2d;
 class V2d {
 	public:
@@ -309,6 +317,7 @@ class V2d {
 	if (__env){printf("## Call custom destructor for instance of V2d\n");}
 	}
 };
+
 
 %nodefaultctor V2d_CircularGrid;
 class V2d_CircularGrid : public Aspect_CircularGrid {
@@ -344,6 +353,7 @@ class V2d_CircularGrid : public Aspect_CircularGrid {
 	}
 };
 
+
 %nodefaultctor V2d_View;
 class V2d_View : public Viewer_View {
 	public:
@@ -378,7 +388,7 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Quantity_Length Convert(const Standard_Integer V) const;
 		%feature("autodoc", "1");
-		void Convert(const Standard_Integer X, const Standard_Integer Y, Quantity_Length & ViewX, Quantity_Length & ViewY) const;
+		void Convert(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void Convert(const Quantity_Length ViewX, const Quantity_Length ViewY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
@@ -428,7 +438,7 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		void ScreenPostScriptOutput(const char * aFile, const Quantity_Length aWidth, const Quantity_Length aHeight, const Aspect_TypeOfColorSpace aTypeOfColorSpace) const;
 		%feature("autodoc", "1");
-		void Hit(const Standard_Integer X, const Standard_Integer Y, Quantity_Length & gx, Quantity_Length & gy) const;
+		void Hit(const Standard_Integer X, const Standard_Integer Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void ShowHit(const Standard_Integer X, const Standard_Integer Y);
 		%feature("autodoc", "1");
@@ -448,7 +458,7 @@ class V2d_View : public Viewer_View {
 		%feature("autodoc", "1");
 		Quantity_Factor Zoom() const;
 		%feature("autodoc", "1");
-		void Center(Quantity_Length & aX, Quantity_Length & aY) const;
+		void Center(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Quantity_Length Size() const;
 		%feature("autodoc", "1");
@@ -488,6 +498,7 @@ class V2d_View : public Viewer_View {
 	}
 };
 
+
 %nodefaultctor V2d_CircularGraphicGrid;
 class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 	public:
@@ -518,6 +529,7 @@ class V2d_CircularGraphicGrid : public Graphic2d_Primitive {
 	}
 };
 
+
 %nodefaultctor V2d_BackgroundGraphicObject;
 class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 	public:
@@ -546,6 +558,7 @@ class V2d_BackgroundGraphicObject : public Graphic2d_GraphicObject {
 	}
 };
 
+
 %nodefaultctor V2d_DefaultMap;
 class V2d_DefaultMap {
 	public:
@@ -569,6 +582,7 @@ class V2d_DefaultMap {
 	if (__env){printf("## Call custom destructor for instance of V2d_DefaultMap\n");}
 	}
 };
+
 
 %nodefaultctor V2d_Viewer;
 class V2d_Viewer : public Viewer_Viewer {
@@ -624,7 +638,7 @@ class V2d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		Aspect_GridType GridType() const;
 		%feature("autodoc", "1");
-		void Hit(const Quantity_Length X, const Quantity_Length Y, Quantity_Length & gx, Quantity_Length & gy) const;
+		void Hit(const Quantity_Length X, const Quantity_Length Y, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		void ActivateGrid(const Aspect_GridType aGridType, const Aspect_GridDrawMode aGridDrawMode);
 		%feature("autodoc", "1");
@@ -632,11 +646,11 @@ class V2d_Viewer : public Viewer_Viewer {
 		%feature("autodoc", "1");
 		Standard_Boolean IsActive() const;
 		%feature("autodoc", "1");
-		void RectangularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & XStep, Quantity_Length & YStep, Quantity_PlaneAngle & RotationAngle) const;
+		void RectangularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetRectangularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length XStep, const Quantity_Length YStep, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");
-		void CircularGridValues(Quantity_Length & XOrigin, Quantity_Length & YOrigin, Quantity_Length & RadiusStep, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
+		void CircularGridValues(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Integer &OutValue, Quantity_PlaneAngle & RotationAngle) const;
 		%feature("autodoc", "1");
 		void SetCircularGridValues(const Quantity_Length XOrigin, const Quantity_Length YOrigin, const Quantity_Length RadiusStep, const Standard_Integer DivisionNumber, const Quantity_PlaneAngle RotationAngle);
 		%feature("autodoc", "1");
@@ -661,6 +675,7 @@ class V2d_Viewer : public Viewer_Viewer {
 	if (__env){printf("## Call custom destructor for instance of V2d_Viewer\n");}
 	}
 };
+
 
 %nodefaultctor V2d_RectangularGrid;
 class V2d_RectangularGrid : public Aspect_RectangularGrid {
@@ -695,6 +710,7 @@ class V2d_RectangularGrid : public Aspect_RectangularGrid {
 	if (__env){printf("## Call custom destructor for instance of V2d_RectangularGrid\n");}
 	}
 };
+
 
 %nodefaultctor V2d_RectangularGraphicGrid;
 class V2d_RectangularGraphicGrid : public Graphic2d_Primitive {

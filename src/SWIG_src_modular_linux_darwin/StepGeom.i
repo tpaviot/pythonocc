@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -187,6 +188,7 @@ class Handle_StepGeom_GeometricRepresentationItem : public Handle_StepRepr_Repre
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Surface;
 class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -211,6 +213,7 @@ class Handle_StepGeom_Surface : public Handle_StepGeom_GeometricRepresentationIt
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Surface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_SurfaceReplica;
 class Handle_StepGeom_SurfaceReplica : public Handle_StepGeom_Surface {
@@ -237,6 +240,7 @@ class Handle_StepGeom_SurfaceReplica : public Handle_StepGeom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Curve;
 class Handle_StepGeom_Curve : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -261,6 +265,7 @@ class Handle_StepGeom_Curve : public Handle_StepGeom_GeometricRepresentationItem
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Curve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_SurfaceCurve;
 class Handle_StepGeom_SurfaceCurve : public Handle_StepGeom_Curve {
@@ -287,6 +292,7 @@ class Handle_StepGeom_SurfaceCurve : public Handle_StepGeom_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BoundedCurve;
 class Handle_StepGeom_BoundedCurve : public Handle_StepGeom_Curve {
 	public:
@@ -311,6 +317,7 @@ class Handle_StepGeom_BoundedCurve : public Handle_StepGeom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_CompositeCurve;
 class Handle_StepGeom_CompositeCurve : public Handle_StepGeom_BoundedCurve {
@@ -337,6 +344,7 @@ class Handle_StepGeom_CompositeCurve : public Handle_StepGeom_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_CompositeCurveOnSurface;
 class Handle_StepGeom_CompositeCurveOnSurface : public Handle_StepGeom_CompositeCurve {
 	public:
@@ -361,6 +369,7 @@ class Handle_StepGeom_CompositeCurveOnSurface : public Handle_StepGeom_Composite
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CompositeCurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_BoundaryCurve;
 class Handle_StepGeom_BoundaryCurve : public Handle_StepGeom_CompositeCurveOnSurface {
@@ -387,6 +396,7 @@ class Handle_StepGeom_BoundaryCurve : public Handle_StepGeom_CompositeCurveOnSur
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_OuterBoundaryCurve;
 class Handle_StepGeom_OuterBoundaryCurve : public Handle_StepGeom_BoundaryCurve {
 	public:
@@ -411,6 +421,7 @@ class Handle_StepGeom_OuterBoundaryCurve : public Handle_StepGeom_BoundaryCurve 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_OuterBoundaryCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_Point;
 class Handle_StepGeom_Point : public Handle_StepGeom_GeometricRepresentationItem {
@@ -437,6 +448,7 @@ class Handle_StepGeom_Point : public Handle_StepGeom_GeometricRepresentationItem
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_DegeneratePcurve;
 class Handle_StepGeom_DegeneratePcurve : public Handle_StepGeom_Point {
 	public:
@@ -461,6 +473,7 @@ class Handle_StepGeom_DegeneratePcurve : public Handle_StepGeom_Point {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_DegeneratePcurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_EvaluatedDegeneratePcurve;
 class Handle_StepGeom_EvaluatedDegeneratePcurve : public Handle_StepGeom_DegeneratePcurve {
@@ -487,6 +500,7 @@ class Handle_StepGeom_EvaluatedDegeneratePcurve : public Handle_StepGeom_Degener
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BoundedSurface;
 class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
 	public:
@@ -511,6 +525,7 @@ class Handle_StepGeom_BoundedSurface : public Handle_StepGeom_Surface {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_BSplineSurface;
 class Handle_StepGeom_BSplineSurface : public Handle_StepGeom_BoundedSurface {
@@ -537,6 +552,7 @@ class Handle_StepGeom_BSplineSurface : public Handle_StepGeom_BoundedSurface {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_RationalBSplineSurface;
 class Handle_StepGeom_RationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
@@ -561,6 +577,7 @@ class Handle_StepGeom_RationalBSplineSurface : public Handle_StepGeom_BSplineSur
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_RationalBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_HArray2OfCartesianPoint;
 class Handle_StepGeom_HArray2OfCartesianPoint : public Handle_MMgt_TShared {
@@ -587,6 +604,7 @@ class Handle_StepGeom_HArray2OfCartesianPoint : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_PointOnSurface;
 class Handle_StepGeom_PointOnSurface : public Handle_StepGeom_Point {
 	public:
@@ -611,6 +629,7 @@ class Handle_StepGeom_PointOnSurface : public Handle_StepGeom_Point {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_PointOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_BSplineCurve;
 class Handle_StepGeom_BSplineCurve : public Handle_StepGeom_BoundedCurve {
@@ -637,6 +656,7 @@ class Handle_StepGeom_BSplineCurve : public Handle_StepGeom_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BezierCurveAndRationalBSplineCurve;
 class Handle_StepGeom_BezierCurveAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -661,6 +681,7 @@ class Handle_StepGeom_BezierCurveAndRationalBSplineCurve : public Handle_StepGeo
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierCurveAndRationalBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_QuasiUniformCurve;
 class Handle_StepGeom_QuasiUniformCurve : public Handle_StepGeom_BSplineCurve {
@@ -687,6 +708,7 @@ class Handle_StepGeom_QuasiUniformCurve : public Handle_StepGeom_BSplineCurve {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_IntersectionCurve;
 class Handle_StepGeom_IntersectionCurve : public Handle_StepGeom_SurfaceCurve {
 	public:
@@ -711,6 +733,7 @@ class Handle_StepGeom_IntersectionCurve : public Handle_StepGeom_SurfaceCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_IntersectionCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_HArray1OfCompositeCurveSegment;
 class Handle_StepGeom_HArray1OfCompositeCurveSegment : public Handle_MMgt_TShared {
@@ -737,6 +760,7 @@ class Handle_StepGeom_HArray1OfCompositeCurveSegment : public Handle_MMgt_TShare
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
 class Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext : public Handle_StepRepr_RepresentationContext {
 	public:
@@ -761,6 +785,7 @@ class Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationC
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndParametricRepresentationContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_OffsetSurface;
 class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
@@ -787,6 +812,7 @@ class Handle_StepGeom_OffsetSurface : public Handle_StepGeom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Conic;
 class Handle_StepGeom_Conic : public Handle_StepGeom_Curve {
 	public:
@@ -811,6 +837,7 @@ class Handle_StepGeom_Conic : public Handle_StepGeom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Conic\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_Circle;
 class Handle_StepGeom_Circle : public Handle_StepGeom_Conic {
@@ -837,6 +864,7 @@ class Handle_StepGeom_Circle : public Handle_StepGeom_Conic {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext;
 class Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext : public Handle_StepRepr_RepresentationContext {
 	public:
@@ -861,6 +889,7 @@ class Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_SurfaceCurveAndBoundedCurve;
 class Handle_StepGeom_SurfaceCurveAndBoundedCurve : public Handle_StepGeom_SurfaceCurve {
@@ -887,6 +916,7 @@ class Handle_StepGeom_SurfaceCurveAndBoundedCurve : public Handle_StepGeom_Surfa
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_CartesianTransformationOperator;
 class Handle_StepGeom_CartesianTransformationOperator : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -911,6 +941,7 @@ class Handle_StepGeom_CartesianTransformationOperator : public Handle_StepGeom_G
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_CartesianTransformationOperator2d;
 class Handle_StepGeom_CartesianTransformationOperator2d : public Handle_StepGeom_CartesianTransformationOperator {
@@ -937,6 +968,7 @@ class Handle_StepGeom_CartesianTransformationOperator2d : public Handle_StepGeom
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Direction;
 class Handle_StepGeom_Direction : public Handle_StepGeom_GeometricRepresentationItem {
 	public:
@@ -961,6 +993,7 @@ class Handle_StepGeom_Direction : public Handle_StepGeom_GeometricRepresentation
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Direction\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_Placement;
 class Handle_StepGeom_Placement : public Handle_StepGeom_GeometricRepresentationItem {
@@ -987,6 +1020,7 @@ class Handle_StepGeom_Placement : public Handle_StepGeom_GeometricRepresentation
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Axis2Placement2d;
 class Handle_StepGeom_Axis2Placement2d : public Handle_StepGeom_Placement {
 	public:
@@ -1011,6 +1045,7 @@ class Handle_StepGeom_Axis2Placement2d : public Handle_StepGeom_Placement {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Axis2Placement2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_ElementarySurface;
 class Handle_StepGeom_ElementarySurface : public Handle_StepGeom_Surface {
@@ -1037,6 +1072,7 @@ class Handle_StepGeom_ElementarySurface : public Handle_StepGeom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_SphericalSurface;
 class Handle_StepGeom_SphericalSurface : public Handle_StepGeom_ElementarySurface {
 	public:
@@ -1061,6 +1097,7 @@ class Handle_StepGeom_SphericalSurface : public Handle_StepGeom_ElementarySurfac
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SphericalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_Polyline;
 class Handle_StepGeom_Polyline : public Handle_StepGeom_BoundedCurve {
@@ -1087,6 +1124,7 @@ class Handle_StepGeom_Polyline : public Handle_StepGeom_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_HArray1OfTrimmingSelect;
 class Handle_StepGeom_HArray1OfTrimmingSelect : public Handle_MMgt_TShared {
 	public:
@@ -1111,6 +1149,7 @@ class Handle_StepGeom_HArray1OfTrimmingSelect : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfTrimmingSelect\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_RectangularCompositeSurface;
 class Handle_StepGeom_RectangularCompositeSurface : public Handle_StepGeom_BoundedSurface {
@@ -1137,6 +1176,7 @@ class Handle_StepGeom_RectangularCompositeSurface : public Handle_StepGeom_Bound
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BSplineCurveWithKnots;
 class Handle_StepGeom_BSplineCurveWithKnots : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -1161,6 +1201,7 @@ class Handle_StepGeom_BSplineCurveWithKnots : public Handle_StepGeom_BSplineCurv
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineCurveWithKnots\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_Pcurve;
 class Handle_StepGeom_Pcurve : public Handle_StepGeom_Curve {
@@ -1187,6 +1228,7 @@ class Handle_StepGeom_Pcurve : public Handle_StepGeom_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_SeamCurve;
 class Handle_StepGeom_SeamCurve : public Handle_StepGeom_SurfaceCurve {
 	public:
@@ -1211,6 +1253,7 @@ class Handle_StepGeom_SeamCurve : public Handle_StepGeom_SurfaceCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SeamCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_HArray2OfSurfacePatch;
 class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
@@ -1237,6 +1280,7 @@ class Handle_StepGeom_HArray2OfSurfacePatch : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_CartesianTransformationOperator3d;
 class Handle_StepGeom_CartesianTransformationOperator3d : public Handle_StepGeom_CartesianTransformationOperator {
 	public:
@@ -1261,6 +1305,7 @@ class Handle_StepGeom_CartesianTransformationOperator3d : public Handle_StepGeom
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CartesianTransformationOperator3d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_HArray1OfCartesianPoint;
 class Handle_StepGeom_HArray1OfCartesianPoint : public Handle_MMgt_TShared {
@@ -1287,6 +1332,7 @@ class Handle_StepGeom_HArray1OfCartesianPoint : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_HArray1OfPcurveOrSurface;
 class Handle_StepGeom_HArray1OfPcurveOrSurface : public Handle_MMgt_TShared {
 	public:
@@ -1311,6 +1357,7 @@ class Handle_StepGeom_HArray1OfPcurveOrSurface : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfPcurveOrSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_Hyperbola;
 class Handle_StepGeom_Hyperbola : public Handle_StepGeom_Conic {
@@ -1337,6 +1384,7 @@ class Handle_StepGeom_Hyperbola : public Handle_StepGeom_Conic {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_TrimmedCurve;
 class Handle_StepGeom_TrimmedCurve : public Handle_StepGeom_BoundedCurve {
 	public:
@@ -1361,6 +1409,7 @@ class Handle_StepGeom_TrimmedCurve : public Handle_StepGeom_BoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_TrimmedCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_UniformSurface;
 class Handle_StepGeom_UniformSurface : public Handle_StepGeom_BSplineSurface {
@@ -1387,6 +1436,7 @@ class Handle_StepGeom_UniformSurface : public Handle_StepGeom_BSplineSurface {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_HArray1OfCurve;
 class Handle_StepGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 	public:
@@ -1411,6 +1461,7 @@ class Handle_StepGeom_HArray1OfCurve : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_Axis1Placement;
 class Handle_StepGeom_Axis1Placement : public Handle_StepGeom_Placement {
@@ -1437,6 +1488,7 @@ class Handle_StepGeom_Axis1Placement : public Handle_StepGeom_Placement {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
 class Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -1461,6 +1513,7 @@ class Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public Handle_S
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformCurveAndRationalBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_SurfacePatch;
 class Handle_StepGeom_SurfacePatch : public Handle_MMgt_TShared {
@@ -1487,6 +1540,7 @@ class Handle_StepGeom_SurfacePatch : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_SweptSurface;
 class Handle_StepGeom_SweptSurface : public Handle_StepGeom_Surface {
 	public:
@@ -1511,6 +1565,7 @@ class Handle_StepGeom_SweptSurface : public Handle_StepGeom_Surface {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_SweptSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
 class Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
@@ -1537,6 +1592,7 @@ class Handle_StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public Hand
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_UniformCurve;
 class Handle_StepGeom_UniformCurve : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -1561,6 +1617,7 @@ class Handle_StepGeom_UniformCurve : public Handle_StepGeom_BSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_ToroidalSurface;
 class Handle_StepGeom_ToroidalSurface : public Handle_StepGeom_ElementarySurface {
@@ -1587,6 +1644,7 @@ class Handle_StepGeom_ToroidalSurface : public Handle_StepGeom_ElementarySurface
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BSplineSurfaceWithKnots;
 class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSurface {
 	public:
@@ -1611,6 +1669,7 @@ class Handle_StepGeom_BSplineSurfaceWithKnots : public Handle_StepGeom_BSplineSu
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnots\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_CompositeCurveSegment;
 class Handle_StepGeom_CompositeCurveSegment : public Handle_MMgt_TShared {
@@ -1637,6 +1696,7 @@ class Handle_StepGeom_CompositeCurveSegment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface;
 class Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
@@ -1661,6 +1721,7 @@ class Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface : public Handle_Ste
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurfaceAndRationalBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_OffsetCurve3d;
 class Handle_StepGeom_OffsetCurve3d : public Handle_StepGeom_Curve {
@@ -1687,6 +1748,7 @@ class Handle_StepGeom_OffsetCurve3d : public Handle_StepGeom_Curve {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
 class Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public Handle_StepRepr_RepresentationContext {
 	public:
@@ -1711,6 +1773,7 @@ class Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_PointOnCurve;
 class Handle_StepGeom_PointOnCurve : public Handle_StepGeom_Point {
@@ -1737,6 +1800,7 @@ class Handle_StepGeom_PointOnCurve : public Handle_StepGeom_Point {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
 class Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
@@ -1761,6 +1825,7 @@ class Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_Vector;
 class Handle_StepGeom_Vector : public Handle_StepGeom_GeometricRepresentationItem {
@@ -1787,6 +1852,7 @@ class Handle_StepGeom_Vector : public Handle_StepGeom_GeometricRepresentationIte
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_ConicalSurface;
 class Handle_StepGeom_ConicalSurface : public Handle_StepGeom_ElementarySurface {
 	public:
@@ -1811,6 +1877,7 @@ class Handle_StepGeom_ConicalSurface : public Handle_StepGeom_ElementarySurface 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_ConicalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_ReparametrisedCompositeCurveSegment;
 class Handle_StepGeom_ReparametrisedCompositeCurveSegment : public Handle_StepGeom_CompositeCurveSegment {
@@ -1837,6 +1904,7 @@ class Handle_StepGeom_ReparametrisedCompositeCurveSegment : public Handle_StepGe
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_HArray1OfSurfaceBoundary;
 class Handle_StepGeom_HArray1OfSurfaceBoundary : public Handle_MMgt_TShared {
 	public:
@@ -1861,6 +1929,7 @@ class Handle_StepGeom_HArray1OfSurfaceBoundary : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_HArray1OfSurfaceBoundary\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_RationalBSplineCurve;
 class Handle_StepGeom_RationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
@@ -1887,6 +1956,7 @@ class Handle_StepGeom_RationalBSplineCurve : public Handle_StepGeom_BSplineCurve
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Parabola;
 class Handle_StepGeom_Parabola : public Handle_StepGeom_Conic {
 	public:
@@ -1911,6 +1981,7 @@ class Handle_StepGeom_Parabola : public Handle_StepGeom_Conic {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Parabola\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_OrientedSurface;
 class Handle_StepGeom_OrientedSurface : public Handle_StepGeom_Surface {
@@ -1937,6 +2008,7 @@ class Handle_StepGeom_OrientedSurface : public Handle_StepGeom_Surface {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_QuasiUniformSurface;
 class Handle_StepGeom_QuasiUniformSurface : public Handle_StepGeom_BSplineSurface {
 	public:
@@ -1961,6 +2033,7 @@ class Handle_StepGeom_QuasiUniformSurface : public Handle_StepGeom_BSplineSurfac
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_QuasiUniformSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_CartesianPoint;
 class Handle_StepGeom_CartesianPoint : public Handle_StepGeom_Point {
@@ -1987,6 +2060,7 @@ class Handle_StepGeom_CartesianPoint : public Handle_StepGeom_Point {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface;
 class Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
 	public:
@@ -2011,6 +2085,7 @@ class Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface : public Handle_St
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_UniformSurfaceAndRationalBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_RectangularTrimmedSurface;
 class Handle_StepGeom_RectangularTrimmedSurface : public Handle_StepGeom_BoundedSurface {
@@ -2037,6 +2112,7 @@ class Handle_StepGeom_RectangularTrimmedSurface : public Handle_StepGeom_Bounded
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_DegenerateToroidalSurface;
 class Handle_StepGeom_DegenerateToroidalSurface : public Handle_StepGeom_ToroidalSurface {
 	public:
@@ -2061,6 +2137,7 @@ class Handle_StepGeom_DegenerateToroidalSurface : public Handle_StepGeom_Toroida
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_DegenerateToroidalSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_CylindricalSurface;
 class Handle_StepGeom_CylindricalSurface : public Handle_StepGeom_ElementarySurface {
@@ -2087,6 +2164,7 @@ class Handle_StepGeom_CylindricalSurface : public Handle_StepGeom_ElementarySurf
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Axis2Placement3d;
 class Handle_StepGeom_Axis2Placement3d : public Handle_StepGeom_Placement {
 	public:
@@ -2111,6 +2189,7 @@ class Handle_StepGeom_Axis2Placement3d : public Handle_StepGeom_Placement {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Axis2Placement3d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_SurfaceOfLinearExtrusion;
 class Handle_StepGeom_SurfaceOfLinearExtrusion : public Handle_StepGeom_SweptSurface {
@@ -2137,6 +2216,7 @@ class Handle_StepGeom_SurfaceOfLinearExtrusion : public Handle_StepGeom_SweptSur
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Plane;
 class Handle_StepGeom_Plane : public Handle_StepGeom_ElementarySurface {
 	public:
@@ -2161,6 +2241,7 @@ class Handle_StepGeom_Plane : public Handle_StepGeom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Plane\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_PointReplica;
 class Handle_StepGeom_PointReplica : public Handle_StepGeom_Point {
@@ -2187,6 +2268,7 @@ class Handle_StepGeom_PointReplica : public Handle_StepGeom_Point {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BezierCurve;
 class Handle_StepGeom_BezierCurve : public Handle_StepGeom_BSplineCurve {
 	public:
@@ -2211,6 +2293,7 @@ class Handle_StepGeom_BezierCurve : public Handle_StepGeom_BSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_SurfaceOfRevolution;
 class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface {
@@ -2237,6 +2320,7 @@ class Handle_StepGeom_SurfaceOfRevolution : public Handle_StepGeom_SweptSurface 
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_TrimmingMember;
 class Handle_StepGeom_TrimmingMember : public Handle_StepData_SelectReal {
 	public:
@@ -2261,6 +2345,7 @@ class Handle_StepGeom_TrimmingMember : public Handle_StepData_SelectReal {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_TrimmingMember\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_HArray1OfBoundaryCurve;
 class Handle_StepGeom_HArray1OfBoundaryCurve : public Handle_MMgt_TShared {
@@ -2287,6 +2372,7 @@ class Handle_StepGeom_HArray1OfBoundaryCurve : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_BezierSurface;
 class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
 	public:
@@ -2311,6 +2397,7 @@ class Handle_StepGeom_BezierSurface : public Handle_StepGeom_BSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_BezierSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_CurveBoundedSurface;
 class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurface {
@@ -2337,6 +2424,7 @@ class Handle_StepGeom_CurveBoundedSurface : public Handle_StepGeom_BoundedSurfac
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_CurveReplica;
 class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
 	public:
@@ -2361,6 +2449,7 @@ class Handle_StepGeom_CurveReplica : public Handle_StepGeom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_CurveReplica\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_UniformCurveAndRationalBSplineCurve;
 class Handle_StepGeom_UniformCurveAndRationalBSplineCurve : public Handle_StepGeom_BSplineCurve {
@@ -2387,6 +2476,7 @@ class Handle_StepGeom_UniformCurveAndRationalBSplineCurve : public Handle_StepGe
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Ellipse;
 class Handle_StepGeom_Ellipse : public Handle_StepGeom_Conic {
 	public:
@@ -2411,6 +2501,7 @@ class Handle_StepGeom_Ellipse : public Handle_StepGeom_Conic {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Ellipse\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface;
 class Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public Handle_StepGeom_BSplineSurface {
@@ -2437,6 +2528,7 @@ class Handle_StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public Hand
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_GeometricRepresentationContext;
 class Handle_StepGeom_GeometricRepresentationContext : public Handle_StepRepr_RepresentationContext {
 	public:
@@ -2462,6 +2554,7 @@ class Handle_StepGeom_GeometricRepresentationContext : public Handle_StepRepr_Re
 	}
 };
 
+
 %nodefaultctor Handle_StepGeom_Line;
 class Handle_StepGeom_Line : public Handle_StepGeom_Curve {
 	public:
@@ -2486,6 +2579,7 @@ class Handle_StepGeom_Line : public Handle_StepGeom_Curve {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepGeom_Line\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_GeometricRepresentationItem;
 class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem {
@@ -2513,6 +2607,7 @@ class StepGeom_GeometricRepresentationItem : public StepRepr_RepresentationItem 
 	}
 };
 
+
 %nodefaultctor StepGeom_Surface;
 class StepGeom_Surface : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -2536,6 +2631,7 @@ class StepGeom_Surface : public StepGeom_GeometricRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Surface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_ElementarySurface;
 class StepGeom_ElementarySurface : public StepGeom_Surface {
@@ -2568,6 +2664,7 @@ class StepGeom_ElementarySurface : public StepGeom_Surface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_ElementarySurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_HArray1OfCompositeCurveSegment;
 class StepGeom_HArray1OfCompositeCurveSegment : public MMgt_TShared {
@@ -2615,6 +2712,7 @@ class StepGeom_HArray1OfCompositeCurveSegment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_Point;
 class StepGeom_Point : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -2640,6 +2738,7 @@ class StepGeom_Point : public StepGeom_GeometricRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Point\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_PointOnCurve;
 class StepGeom_PointOnCurve : public StepGeom_Point {
@@ -2677,6 +2776,7 @@ class StepGeom_PointOnCurve : public StepGeom_Point {
 	}
 };
 
+
 %nodefaultctor StepGeom_Placement;
 class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -2711,6 +2811,7 @@ class StepGeom_Placement : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepGeom_BoundedSurface;
 class StepGeom_BoundedSurface : public StepGeom_Surface {
 	public:
@@ -2736,6 +2837,7 @@ class StepGeom_BoundedSurface : public StepGeom_Surface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_BSplineSurface;
 class StepGeom_BSplineSurface : public StepGeom_BoundedSurface {
@@ -2799,6 +2901,7 @@ class StepGeom_BSplineSurface : public StepGeom_BoundedSurface {
 	}
 };
 
+
 %nodefaultctor StepGeom_UniformSurface;
 class StepGeom_UniformSurface : public StepGeom_BSplineSurface {
 	public:
@@ -2822,6 +2925,7 @@ class StepGeom_UniformSurface : public StepGeom_BSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_HArray1OfSurfaceBoundary;
 class StepGeom_HArray1OfSurfaceBoundary : public MMgt_TShared {
@@ -2869,6 +2973,7 @@ class StepGeom_HArray1OfSurfaceBoundary : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_CompositeCurveSegment;
 class StepGeom_CompositeCurveSegment : public MMgt_TShared {
 	public:
@@ -2908,6 +3013,7 @@ class StepGeom_CompositeCurveSegment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_CompositeCurveSegment\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_GeometricRepresentationContextAndParametricRepresentationContext;
 class StepGeom_GeometricRepresentationContextAndParametricRepresentationContext : public StepRepr_RepresentationContext {
@@ -2953,6 +3059,7 @@ class StepGeom_GeometricRepresentationContextAndParametricRepresentationContext 
 	}
 };
 
+
 %nodefaultctor StepGeom_Plane;
 class StepGeom_Plane : public StepGeom_ElementarySurface {
 	public:
@@ -2978,6 +3085,7 @@ class StepGeom_Plane : public StepGeom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Plane\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Curve;
 class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
@@ -3005,6 +3113,7 @@ class StepGeom_Curve : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepGeom_BoundedCurve;
 class StepGeom_BoundedCurve : public StepGeom_Curve {
 	public:
@@ -3028,6 +3137,7 @@ class StepGeom_BoundedCurve : public StepGeom_Curve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_CompositeCurve;
 class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
@@ -3069,6 +3179,7 @@ class StepGeom_CompositeCurve : public StepGeom_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor StepGeom_CompositeCurveOnSurface;
 class StepGeom_CompositeCurveOnSurface : public StepGeom_CompositeCurve {
 	public:
@@ -3093,6 +3204,7 @@ class StepGeom_CompositeCurveOnSurface : public StepGeom_CompositeCurve {
 	}
 };
 
+
 %nodefaultctor StepGeom_BoundaryCurve;
 class StepGeom_BoundaryCurve : public StepGeom_CompositeCurveOnSurface {
 	public:
@@ -3116,6 +3228,7 @@ class StepGeom_BoundaryCurve : public StepGeom_CompositeCurveOnSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_BoundaryCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface;
 class StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public StepGeom_BSplineSurface {
@@ -3203,6 +3316,7 @@ class StepGeom_BSplineSurfaceWithKnotsAndRationalBSplineSurface : public StepGeo
 	}
 };
 
+
 %nodefaultctor StepGeom_PointReplica;
 class StepGeom_PointReplica : public StepGeom_Point {
 	public:
@@ -3241,6 +3355,7 @@ class StepGeom_PointReplica : public StepGeom_Point {
 	}
 };
 
+
 %nodefaultctor StepGeom_PcurveOrSurface;
 class StepGeom_PcurveOrSurface : public StepData_SelectType {
 	public:
@@ -3260,6 +3375,7 @@ class StepGeom_PcurveOrSurface : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_PcurveOrSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_SphericalSurface;
 class StepGeom_SphericalSurface : public StepGeom_ElementarySurface {
@@ -3294,6 +3410,7 @@ class StepGeom_SphericalSurface : public StepGeom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_SphericalSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_BSplineCurve;
 class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
@@ -3349,6 +3466,7 @@ class StepGeom_BSplineCurve : public StepGeom_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor StepGeom_BSplineCurveWithKnots;
 class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
 	public:
@@ -3394,6 +3512,7 @@ class StepGeom_BSplineCurveWithKnots : public StepGeom_BSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_BSplineCurveWithKnots\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve;
 class StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public StepGeom_BSplineCurve {
@@ -3463,6 +3582,7 @@ class StepGeom_BSplineCurveWithKnotsAndRationalBSplineCurve : public StepGeom_BS
 	}
 };
 
+
 %nodefaultctor StepGeom_CartesianTransformationOperator;
 class StepGeom_CartesianTransformationOperator : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -3521,6 +3641,7 @@ class StepGeom_CartesianTransformationOperator : public StepGeom_GeometricRepres
 	}
 };
 
+
 %nodefaultctor StepGeom_Pcurve;
 class StepGeom_Pcurve : public StepGeom_Curve {
 	public:
@@ -3559,6 +3680,7 @@ class StepGeom_Pcurve : public StepGeom_Curve {
 	}
 };
 
+
 %nodefaultctor StepGeom_VectorOrDirection;
 class StepGeom_VectorOrDirection : public StepData_SelectType {
 	public:
@@ -3578,6 +3700,7 @@ class StepGeom_VectorOrDirection : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_VectorOrDirection\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Array1OfTrimmingSelect;
 class StepGeom_Array1OfTrimmingSelect {
@@ -3619,6 +3742,7 @@ class StepGeom_Array1OfTrimmingSelect {
 	}
 };
 
+
 %nodefaultctor StepGeom_Array1OfBoundaryCurve;
 class StepGeom_Array1OfBoundaryCurve {
 	public:
@@ -3659,6 +3783,7 @@ class StepGeom_Array1OfBoundaryCurve {
 	}
 };
 
+
 %nodefaultctor StepGeom_Polyline;
 class StepGeom_Polyline : public StepGeom_BoundedCurve {
 	public:
@@ -3696,6 +3821,7 @@ class StepGeom_Polyline : public StepGeom_BoundedCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Polyline\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_CurveBoundedSurface;
 class StepGeom_CurveBoundedSurface : public StepGeom_BoundedSurface {
@@ -3736,6 +3862,7 @@ class StepGeom_CurveBoundedSurface : public StepGeom_BoundedSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_CurveBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_BSplineSurfaceWithKnots;
 class StepGeom_BSplineSurfaceWithKnots : public StepGeom_BSplineSurface {
@@ -3803,6 +3930,7 @@ class StepGeom_BSplineSurfaceWithKnots : public StepGeom_BSplineSurface {
 	}
 };
 
+
 %nodefaultctor StepGeom_SurfaceCurve;
 class StepGeom_SurfaceCurve : public StepGeom_Curve {
 	public:
@@ -3849,6 +3977,7 @@ class StepGeom_SurfaceCurve : public StepGeom_Curve {
 	}
 };
 
+
 %nodefaultctor StepGeom_SurfaceCurveAndBoundedCurve;
 class StepGeom_SurfaceCurveAndBoundedCurve : public StepGeom_SurfaceCurve {
 	public:
@@ -3874,6 +4003,7 @@ class StepGeom_SurfaceCurveAndBoundedCurve : public StepGeom_SurfaceCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceCurveAndBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_OrientedSurface;
 class StepGeom_OrientedSurface : public StepGeom_Surface {
@@ -3906,6 +4036,7 @@ class StepGeom_OrientedSurface : public StepGeom_Surface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_OrientedSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_PointOnSurface;
 class StepGeom_PointOnSurface : public StepGeom_Point {
@@ -3948,6 +4079,7 @@ class StepGeom_PointOnSurface : public StepGeom_Point {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_PointOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_TrimmedCurve;
 class StepGeom_TrimmedCurve : public StepGeom_BoundedCurve {
@@ -4007,6 +4139,7 @@ class StepGeom_TrimmedCurve : public StepGeom_BoundedCurve {
 	}
 };
 
+
 %nodefaultctor StepGeom_SurfaceBoundary;
 class StepGeom_SurfaceBoundary : public StepData_SelectType {
 	public:
@@ -4026,6 +4159,7 @@ class StepGeom_SurfaceBoundary : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceBoundary\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Conic;
 class StepGeom_Conic : public StepGeom_Curve {
@@ -4061,6 +4195,7 @@ class StepGeom_Conic : public StepGeom_Curve {
 	}
 };
 
+
 %nodefaultctor StepGeom_Circle;
 class StepGeom_Circle : public StepGeom_Conic {
 	public:
@@ -4090,6 +4225,7 @@ class StepGeom_Circle : public StepGeom_Conic {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Circle\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_DegeneratePcurve;
 class StepGeom_DegeneratePcurve : public StepGeom_Point {
@@ -4128,6 +4264,7 @@ class StepGeom_DegeneratePcurve : public StepGeom_Point {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_DegeneratePcurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Array1OfCartesianPoint;
 class StepGeom_Array1OfCartesianPoint {
@@ -4169,6 +4306,7 @@ class StepGeom_Array1OfCartesianPoint {
 	}
 };
 
+
 %nodefaultctor StepGeom_ReparametrisedCompositeCurveSegment;
 class StepGeom_ReparametrisedCompositeCurveSegment : public StepGeom_CompositeCurveSegment {
 	public:
@@ -4202,6 +4340,7 @@ class StepGeom_ReparametrisedCompositeCurveSegment : public StepGeom_CompositeCu
 	if (__env){printf("## Call custom destructor for instance of StepGeom_ReparametrisedCompositeCurveSegment\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_RectangularCompositeSurface;
 class StepGeom_RectangularCompositeSurface : public StepGeom_BoundedSurface {
@@ -4242,6 +4381,7 @@ class StepGeom_RectangularCompositeSurface : public StepGeom_BoundedSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_RectangularCompositeSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_HArray1OfCurve;
 class StepGeom_HArray1OfCurve : public MMgt_TShared {
@@ -4289,6 +4429,7 @@ class StepGeom_HArray1OfCurve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_OuterBoundaryCurve;
 class StepGeom_OuterBoundaryCurve : public StepGeom_BoundaryCurve {
 	public:
@@ -4314,6 +4455,7 @@ class StepGeom_OuterBoundaryCurve : public StepGeom_BoundaryCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_OuterBoundaryCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_BezierCurveAndRationalBSplineCurve;
 class StepGeom_BezierCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve {
@@ -4363,6 +4505,7 @@ class StepGeom_BezierCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve
 	}
 };
 
+
 %nodefaultctor StepGeom_Array1OfCurve;
 class StepGeom_Array1OfCurve {
 	public:
@@ -4402,6 +4545,7 @@ class StepGeom_Array1OfCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Array2OfCartesianPoint;
 class StepGeom_Array2OfCartesianPoint {
@@ -4447,6 +4591,7 @@ class StepGeom_Array2OfCartesianPoint {
 	}
 };
 
+
 %nodefaultctor StepGeom_Axis1Placement;
 class StepGeom_Axis1Placement : public StepGeom_Placement {
 	public:
@@ -4484,6 +4629,7 @@ class StepGeom_Axis1Placement : public StepGeom_Placement {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Axis1Placement\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_BezierSurfaceAndRationalBSplineSurface;
 class StepGeom_BezierSurfaceAndRationalBSplineSurface : public StepGeom_BSplineSurface {
@@ -4535,6 +4681,7 @@ class StepGeom_BezierSurfaceAndRationalBSplineSurface : public StepGeom_BSplineS
 	}
 };
 
+
 %nodefaultctor StepGeom_SweptSurface;
 class StepGeom_SweptSurface : public StepGeom_Surface {
 	public:
@@ -4569,6 +4716,7 @@ class StepGeom_SweptSurface : public StepGeom_Surface {
 	}
 };
 
+
 %nodefaultctor StepGeom_CurveOnSurface;
 class StepGeom_CurveOnSurface : public StepData_SelectType {
 	public:
@@ -4590,6 +4738,7 @@ class StepGeom_CurveOnSurface : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_CurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_RationalBSplineCurve;
 class StepGeom_RationalBSplineCurve : public StepGeom_BSplineCurve {
@@ -4629,6 +4778,7 @@ class StepGeom_RationalBSplineCurve : public StepGeom_BSplineCurve {
 	}
 };
 
+
 %nodefaultctor StepGeom_SeamCurve;
 class StepGeom_SeamCurve : public StepGeom_SurfaceCurve {
 	public:
@@ -4654,6 +4804,7 @@ class StepGeom_SeamCurve : public StepGeom_SurfaceCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_SeamCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_QuasiUniformCurveAndRationalBSplineCurve;
 class StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve {
@@ -4703,6 +4854,7 @@ class StepGeom_QuasiUniformCurveAndRationalBSplineCurve : public StepGeom_BSplin
 	}
 };
 
+
 %nodefaultctor StepGeom_Hyperbola;
 class StepGeom_Hyperbola : public StepGeom_Conic {
 	public:
@@ -4740,6 +4892,7 @@ class StepGeom_Hyperbola : public StepGeom_Conic {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Hyperbola\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface;
 class StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public StepGeom_BSplineSurface {
@@ -4791,6 +4944,7 @@ class StepGeom_QuasiUniformSurfaceAndRationalBSplineSurface : public StepGeom_BS
 	}
 };
 
+
 %nodefaultctor StepGeom_Array1OfCompositeCurveSegment;
 class StepGeom_Array1OfCompositeCurveSegment {
 	public:
@@ -4830,6 +4984,7 @@ class StepGeom_Array1OfCompositeCurveSegment {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Array1OfCompositeCurveSegment\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_HArray1OfTrimmingSelect;
 class StepGeom_HArray1OfTrimmingSelect : public MMgt_TShared {
@@ -4877,6 +5032,7 @@ class StepGeom_HArray1OfTrimmingSelect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_TrimmingSelect;
 class StepGeom_TrimmingSelect : public StepData_SelectType {
 	public:
@@ -4902,6 +5058,7 @@ class StepGeom_TrimmingSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmingSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_SurfaceReplica;
 class StepGeom_SurfaceReplica : public StepGeom_Surface {
@@ -4941,6 +5098,7 @@ class StepGeom_SurfaceReplica : public StepGeom_Surface {
 	}
 };
 
+
 %nodefaultctor StepGeom_ConicalSurface;
 class StepGeom_ConicalSurface : public StepGeom_ElementarySurface {
 	public:
@@ -4979,6 +5137,7 @@ class StepGeom_ConicalSurface : public StepGeom_ElementarySurface {
 	}
 };
 
+
 %nodefaultctor StepGeom_SurfaceOfLinearExtrusion;
 class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
 	public:
@@ -5012,6 +5171,7 @@ class StepGeom_SurfaceOfLinearExtrusion : public StepGeom_SweptSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_SurfaceOfLinearExtrusion\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Parabola;
 class StepGeom_Parabola : public StepGeom_Conic {
@@ -5047,6 +5207,7 @@ class StepGeom_Parabola : public StepGeom_Conic {
 	}
 };
 
+
 %nodefaultctor StepGeom_SurfaceOfRevolution;
 class StepGeom_SurfaceOfRevolution : public StepGeom_SweptSurface {
 	public:
@@ -5081,6 +5242,7 @@ class StepGeom_SurfaceOfRevolution : public StepGeom_SweptSurface {
 	}
 };
 
+
 %nodefaultctor StepGeom_TrimmingMember;
 class StepGeom_TrimmingMember : public StepData_SelectReal {
 	public:
@@ -5112,6 +5274,7 @@ class StepGeom_TrimmingMember : public StepData_SelectReal {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_TrimmingMember\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_CurveReplica;
 class StepGeom_CurveReplica : public StepGeom_Curve {
@@ -5151,6 +5314,7 @@ class StepGeom_CurveReplica : public StepGeom_Curve {
 	}
 };
 
+
 %nodefaultctor StepGeom_CylindricalSurface;
 class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
 	public:
@@ -5185,6 +5349,7 @@ class StepGeom_CylindricalSurface : public StepGeom_ElementarySurface {
 	}
 };
 
+
 %nodefaultctor StepGeom_CartesianTransformationOperator2d;
 class StepGeom_CartesianTransformationOperator2d : public StepGeom_CartesianTransformationOperator {
 	public:
@@ -5210,6 +5375,7 @@ class StepGeom_CartesianTransformationOperator2d : public StepGeom_CartesianTran
 	if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator2d\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx;
 class StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public StepRepr_RepresentationContext {
@@ -5275,6 +5441,7 @@ class StepGeom_GeomRepContextAndGlobUnitAssCtxAndGlobUncertaintyAssCtx : public 
 	}
 };
 
+
 %nodefaultctor StepGeom_Ellipse;
 class StepGeom_Ellipse : public StepGeom_Conic {
 	public:
@@ -5312,6 +5479,7 @@ class StepGeom_Ellipse : public StepGeom_Conic {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Ellipse\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_HArray2OfSurfacePatch;
 class StepGeom_HArray2OfSurfacePatch : public MMgt_TShared {
@@ -5365,6 +5533,7 @@ class StepGeom_HArray2OfSurfacePatch : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_QuasiUniformSurface;
 class StepGeom_QuasiUniformSurface : public StepGeom_BSplineSurface {
 	public:
@@ -5390,6 +5559,7 @@ class StepGeom_QuasiUniformSurface : public StepGeom_BSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_RationalBSplineSurface;
 class StepGeom_RationalBSplineSurface : public StepGeom_BSplineSurface {
@@ -5430,6 +5600,7 @@ class StepGeom_RationalBSplineSurface : public StepGeom_BSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_RationalBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_UniformCurveAndRationalBSplineCurve;
 class StepGeom_UniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurve {
@@ -5479,6 +5650,7 @@ class StepGeom_UniformCurveAndRationalBSplineCurve : public StepGeom_BSplineCurv
 	}
 };
 
+
 %nodefaultctor StepGeom_Array2OfSurfacePatch;
 class StepGeom_Array2OfSurfacePatch {
 	public:
@@ -5522,6 +5694,7 @@ class StepGeom_Array2OfSurfacePatch {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Array2OfSurfacePatch\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_HArray2OfCartesianPoint;
 class StepGeom_HArray2OfCartesianPoint : public MMgt_TShared {
@@ -5575,6 +5748,7 @@ class StepGeom_HArray2OfCartesianPoint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_HArray1OfCartesianPoint;
 class StepGeom_HArray1OfCartesianPoint : public MMgt_TShared {
 	public:
@@ -5621,6 +5795,7 @@ class StepGeom_HArray1OfCartesianPoint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_QuasiUniformCurve;
 class StepGeom_QuasiUniformCurve : public StepGeom_BSplineCurve {
 	public:
@@ -5646,6 +5821,7 @@ class StepGeom_QuasiUniformCurve : public StepGeom_BSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_QuasiUniformCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_SurfacePatch;
 class StepGeom_SurfacePatch : public MMgt_TShared {
@@ -5695,6 +5871,7 @@ class StepGeom_SurfacePatch : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_EvaluatedDegeneratePcurve;
 class StepGeom_EvaluatedDegeneratePcurve : public StepGeom_DegeneratePcurve {
 	public:
@@ -5728,6 +5905,7 @@ class StepGeom_EvaluatedDegeneratePcurve : public StepGeom_DegeneratePcurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_EvaluatedDegeneratePcurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Vector;
 class StepGeom_Vector : public StepGeom_GeometricRepresentationItem {
@@ -5767,6 +5945,7 @@ class StepGeom_Vector : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepGeom_Axis2Placement2d;
 class StepGeom_Axis2Placement2d : public StepGeom_Placement {
 	public:
@@ -5805,6 +5984,7 @@ class StepGeom_Axis2Placement2d : public StepGeom_Placement {
 	}
 };
 
+
 %nodefaultctor StepGeom_BezierSurface;
 class StepGeom_BezierSurface : public StepGeom_BSplineSurface {
 	public:
@@ -5830,6 +6010,7 @@ class StepGeom_BezierSurface : public StepGeom_BSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_BezierSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_ToroidalSurface;
 class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
@@ -5868,6 +6049,7 @@ class StepGeom_ToroidalSurface : public StepGeom_ElementarySurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_ToroidalSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Axis2Placement3d;
 class StepGeom_Axis2Placement3d : public StepGeom_Placement {
@@ -5915,6 +6097,7 @@ class StepGeom_Axis2Placement3d : public StepGeom_Placement {
 	}
 };
 
+
 %nodefaultctor StepGeom_CartesianPoint;
 class StepGeom_CartesianPoint : public StepGeom_Point {
 	public:
@@ -5957,6 +6140,7 @@ class StepGeom_CartesianPoint : public StepGeom_Point {
 	}
 };
 
+
 %nodefaultctor StepGeom_Line;
 class StepGeom_Line : public StepGeom_Curve {
 	public:
@@ -5994,6 +6178,7 @@ class StepGeom_Line : public StepGeom_Curve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Line\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_OffsetCurve3d;
 class StepGeom_OffsetCurve3d : public StepGeom_Curve {
@@ -6040,6 +6225,7 @@ class StepGeom_OffsetCurve3d : public StepGeom_Curve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_OffsetCurve3d\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext;
 class StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext : public StepRepr_RepresentationContext {
@@ -6093,6 +6279,7 @@ class StepGeom_GeometricRepresentationContextAndGlobalUnitAssignedContext : publ
 	}
 };
 
+
 %nodefaultctor StepGeom_HArray1OfBoundaryCurve;
 class StepGeom_HArray1OfBoundaryCurve : public MMgt_TShared {
 	public:
@@ -6139,6 +6326,7 @@ class StepGeom_HArray1OfBoundaryCurve : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_IntersectionCurve;
 class StepGeom_IntersectionCurve : public StepGeom_SurfaceCurve {
 	public:
@@ -6164,6 +6352,7 @@ class StepGeom_IntersectionCurve : public StepGeom_SurfaceCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_IntersectionCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_UniformSurfaceAndRationalBSplineSurface;
 class StepGeom_UniformSurfaceAndRationalBSplineSurface : public StepGeom_BSplineSurface {
@@ -6215,6 +6404,7 @@ class StepGeom_UniformSurfaceAndRationalBSplineSurface : public StepGeom_BSpline
 	}
 };
 
+
 %nodefaultctor StepGeom_Array1OfSurfaceBoundary;
 class StepGeom_Array1OfSurfaceBoundary {
 	public:
@@ -6255,6 +6445,7 @@ class StepGeom_Array1OfSurfaceBoundary {
 	}
 };
 
+
 %nodefaultctor StepGeom_UniformCurve;
 class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
 	public:
@@ -6280,6 +6471,7 @@ class StepGeom_UniformCurve : public StepGeom_BSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_UniformCurve\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_HArray1OfPcurveOrSurface;
 class StepGeom_HArray1OfPcurveOrSurface : public MMgt_TShared {
@@ -6327,6 +6519,7 @@ class StepGeom_HArray1OfPcurveOrSurface : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepGeom_Direction;
 class StepGeom_Direction : public StepGeom_GeometricRepresentationItem {
 	public:
@@ -6365,6 +6558,7 @@ class StepGeom_Direction : public StepGeom_GeometricRepresentationItem {
 	}
 };
 
+
 %nodefaultctor StepGeom_GeometricRepresentationContext;
 class StepGeom_GeometricRepresentationContext : public StepRepr_RepresentationContext {
 	public:
@@ -6399,6 +6593,7 @@ class StepGeom_GeometricRepresentationContext : public StepRepr_RepresentationCo
 	}
 };
 
+
 %nodefaultctor StepGeom_BezierCurve;
 class StepGeom_BezierCurve : public StepGeom_BSplineCurve {
 	public:
@@ -6425,6 +6620,7 @@ class StepGeom_BezierCurve : public StepGeom_BSplineCurve {
 	}
 };
 
+
 %nodefaultctor StepGeom_Axis2Placement;
 class StepGeom_Axis2Placement : public StepData_SelectType {
 	public:
@@ -6444,6 +6640,7 @@ class StepGeom_Axis2Placement : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_Axis2Placement\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_RectangularTrimmedSurface;
 class StepGeom_RectangularTrimmedSurface : public StepGeom_BoundedSurface {
@@ -6503,6 +6700,7 @@ class StepGeom_RectangularTrimmedSurface : public StepGeom_BoundedSurface {
 	}
 };
 
+
 %nodefaultctor StepGeom_DegenerateToroidalSurface;
 class StepGeom_DegenerateToroidalSurface : public StepGeom_ToroidalSurface {
 	public:
@@ -6536,6 +6734,7 @@ class StepGeom_DegenerateToroidalSurface : public StepGeom_ToroidalSurface {
 	if (__env){printf("## Call custom destructor for instance of StepGeom_DegenerateToroidalSurface\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_Array1OfPcurveOrSurface;
 class StepGeom_Array1OfPcurveOrSurface {
@@ -6577,6 +6776,7 @@ class StepGeom_Array1OfPcurveOrSurface {
 	}
 };
 
+
 %nodefaultctor StepGeom_CartesianTransformationOperator3d;
 class StepGeom_CartesianTransformationOperator3d : public StepGeom_CartesianTransformationOperator {
 	public:
@@ -6614,6 +6814,7 @@ class StepGeom_CartesianTransformationOperator3d : public StepGeom_CartesianTran
 	if (__env){printf("## Call custom destructor for instance of StepGeom_CartesianTransformationOperator3d\n");}
 	}
 };
+
 
 %nodefaultctor StepGeom_OffsetSurface;
 class StepGeom_OffsetSurface : public StepGeom_Surface {

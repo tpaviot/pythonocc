@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -257,6 +258,7 @@ class Handle_AIS2D_ListNodeOfListOfIO : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit;
 class Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit : public Handle_TCollection_SeqNode {
 	public:
@@ -281,6 +283,7 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_SequenceNodeOfSequenceOfPrimArchit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS2D_GlobalStatus;
 class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
@@ -307,6 +310,7 @@ class Handle_AIS2D_GlobalStatus : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AIS2D_LocalContext;
 class Handle_AIS2D_LocalContext : public Handle_MMgt_TShared {
 	public:
@@ -331,6 +335,7 @@ class Handle_AIS2D_LocalContext : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_LocalContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS2D_InteractiveObject;
 class Handle_AIS2D_InteractiveObject : public Handle_Graphic2d_GraphicObject {
@@ -357,6 +362,7 @@ class Handle_AIS2D_InteractiveObject : public Handle_Graphic2d_GraphicObject {
 	}
 };
 
+
 %nodefaultctor Handle_AIS2D_ProjShape;
 class Handle_AIS2D_ProjShape : public Handle_AIS2D_InteractiveObject {
 	public:
@@ -381,6 +387,7 @@ class Handle_AIS2D_ProjShape : public Handle_AIS2D_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_ProjShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfLC;
 class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode {
@@ -407,6 +414,7 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLC : public Handle_TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Handle_AIS2D_SequenceNodeOfSequenceOfIO;
 class Handle_AIS2D_SequenceNodeOfSequenceOfIO : public Handle_TCollection_SeqNode {
 	public:
@@ -431,6 +439,7 @@ class Handle_AIS2D_SequenceNodeOfSequenceOfIO : public Handle_TCollection_SeqNod
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_SequenceNodeOfSequenceOfIO\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS2D_LocalStatus;
 class Handle_AIS2D_LocalStatus : public Handle_MMgt_TShared {
@@ -457,6 +466,7 @@ class Handle_AIS2D_LocalStatus : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfLocStat;
 class Handle_AIS2D_DataMapNodeOfDataMapOfLocStat : public Handle_TCollection_MapNode {
 	public:
@@ -481,6 +491,7 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfLocStat : public Handle_TCollection_Map
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_DataMapNodeOfDataMapOfLocStat\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects;
 class Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects : public Handle_TCollection_MapNode {
@@ -507,6 +518,7 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfPrimAspects : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_AIS2D_PrimitiveArchit;
 class Handle_AIS2D_PrimitiveArchit : public Handle_MMgt_TShared {
 	public:
@@ -531,6 +543,7 @@ class Handle_AIS2D_PrimitiveArchit : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_PrimitiveArchit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS2D_HSequenceOfIO;
 class Handle_AIS2D_HSequenceOfIO : public Handle_MMgt_TShared {
@@ -557,6 +570,7 @@ class Handle_AIS2D_HSequenceOfIO : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AIS2D_HSequenceOfPrimArchit;
 class Handle_AIS2D_HSequenceOfPrimArchit : public Handle_MMgt_TShared {
 	public:
@@ -581,6 +595,7 @@ class Handle_AIS2D_HSequenceOfPrimArchit : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS2D_HSequenceOfPrimArchit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS2D_InteractiveContext;
 class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
@@ -607,6 +622,7 @@ class Handle_AIS2D_InteractiveContext : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus;
 class Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapNode {
 	public:
@@ -632,6 +648,7 @@ class Handle_AIS2D_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_Ma
 	}
 };
 
+
 %nodefaultctor AIS2D_ListIteratorOfListOfIO;
 class AIS2D_ListIteratorOfListOfIO {
 	public:
@@ -655,6 +672,7 @@ class AIS2D_ListIteratorOfListOfIO {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_ListIteratorOfListOfIO\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_SequenceOfPrimArchit;
 class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
@@ -710,6 +728,7 @@ class AIS2D_SequenceOfPrimArchit : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor AIS2D_DataMapOfLC;
 class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 	public:
@@ -743,6 +762,7 @@ class AIS2D_DataMapOfLC : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfLC\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_LocalStatus;
 class AIS2D_LocalStatus : public MMgt_TShared {
@@ -815,6 +835,7 @@ class AIS2D_LocalStatus : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_LocalStatus\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_InteractiveObject;
 class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
@@ -904,6 +925,7 @@ class AIS2D_InteractiveObject : public Graphic2d_GraphicObject {
 	}
 };
 
+
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfLC;
 class AIS2D_DataMapIteratorOfDataMapOfLC : public TCollection_BasicMapIterator {
 	public:
@@ -925,6 +947,7 @@ class AIS2D_DataMapIteratorOfDataMapOfLC : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfLC\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_ListOfIO;
 class AIS2D_ListOfIO {
@@ -976,6 +999,7 @@ class AIS2D_ListOfIO {
 	}
 };
 
+
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfLocStat;
 class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 	public:
@@ -1006,6 +1030,7 @@ class AIS2D_DataMapNodeOfDataMapOfLocStat : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor AIS2D_ListNodeOfListOfIO;
 class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 	public:
@@ -1033,6 +1058,7 @@ class AIS2D_ListNodeOfListOfIO : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_ListNodeOfListOfIO\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfPrimAspects;
 class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
@@ -1063,6 +1089,7 @@ class AIS2D_DataMapNodeOfDataMapOfPrimAspects : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfPrimAspects\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_ProjShape;
 class AIS2D_ProjShape : public AIS2D_InteractiveObject {
@@ -1114,6 +1141,7 @@ class AIS2D_ProjShape : public AIS2D_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfPrimAspects;
 class AIS2D_DataMapIteratorOfDataMapOfPrimAspects : public TCollection_BasicMapIterator {
 	public:
@@ -1135,6 +1163,7 @@ class AIS2D_DataMapIteratorOfDataMapOfPrimAspects : public TCollection_BasicMapI
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfPrimAspects\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_HSequenceOfIO;
 class AIS2D_HSequenceOfIO : public MMgt_TShared {
@@ -1205,6 +1234,7 @@ class AIS2D_HSequenceOfIO : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_HSequenceOfIO\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_InteractiveContext;
 class AIS2D_InteractiveContext : public MMgt_TShared {
@@ -1410,6 +1440,7 @@ class AIS2D_InteractiveContext : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AIS2D_SequenceOfIO;
 class AIS2D_SequenceOfIO : public TCollection_BaseSequence {
 	public:
@@ -1463,6 +1494,7 @@ class AIS2D_SequenceOfIO : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceOfIO\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_GlobalStatus;
 class AIS2D_GlobalStatus : public MMgt_TShared {
@@ -1530,6 +1562,7 @@ class AIS2D_GlobalStatus : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AIS2D_DataMapOfIOStatus;
 class AIS2D_DataMapOfIOStatus : public TCollection_BasicMap {
 	public:
@@ -1564,6 +1597,7 @@ class AIS2D_DataMapOfIOStatus : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor AIS2D_SequenceNodeOfSequenceOfIO;
 class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 	public:
@@ -1591,6 +1625,7 @@ class AIS2D_SequenceNodeOfSequenceOfIO : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_SequenceNodeOfSequenceOfIO\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfLC;
 class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
@@ -1621,6 +1656,7 @@ class AIS2D_DataMapNodeOfDataMapOfLC : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapNodeOfDataMapOfLC\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_DataMapOfPrimAspects;
 class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
@@ -1656,6 +1692,7 @@ class AIS2D_DataMapOfPrimAspects : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor AIS2D_DataMapNodeOfDataMapOfIOStatus;
 class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 	public:
@@ -1686,6 +1723,7 @@ class AIS2D_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor AIS2D;
 class AIS2D {
 	public:
@@ -1703,6 +1741,7 @@ class AIS2D {
 	if (__env){printf("## Call custom destructor for instance of AIS2D\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_SequenceNodeOfSequenceOfPrimArchit;
 class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
@@ -1732,6 +1771,7 @@ class AIS2D_SequenceNodeOfSequenceOfPrimArchit : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfLocStat;
 class AIS2D_DataMapIteratorOfDataMapOfLocStat : public TCollection_BasicMapIterator {
 	public:
@@ -1753,6 +1793,7 @@ class AIS2D_DataMapIteratorOfDataMapOfLocStat : public TCollection_BasicMapItera
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapIteratorOfDataMapOfLocStat\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_PrimitiveArchit;
 class AIS2D_PrimitiveArchit : public MMgt_TShared {
@@ -1783,6 +1824,7 @@ class AIS2D_PrimitiveArchit : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_PrimitiveArchit\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_HSequenceOfPrimArchit;
 class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
@@ -1853,6 +1895,7 @@ class AIS2D_HSequenceOfPrimArchit : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_HSequenceOfPrimArchit\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_LocalContext;
 class AIS2D_LocalContext : public MMgt_TShared {
@@ -1942,6 +1985,7 @@ class AIS2D_LocalContext : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AIS2D_DataMapOfLocStat;
 class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 	public:
@@ -1975,6 +2019,7 @@ class AIS2D_DataMapOfLocStat : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of AIS2D_DataMapOfLocStat\n");}
 	}
 };
+
 
 %nodefaultctor AIS2D_DataMapIteratorOfDataMapOfIOStatus;
 class AIS2D_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterator {

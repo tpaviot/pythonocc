@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class IntCurve_PConicTool {
 	}
 };
 
+
 %nodefaultctor IntCurve_MyImpParToolOfIntImpConicParConic;
 class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDerivative {
 	public:
@@ -158,6 +160,7 @@ class IntCurve_MyImpParToolOfIntImpConicParConic : public math_FunctionWithDeriv
 	if (__env){printf("## Call custom destructor for instance of IntCurve_MyImpParToolOfIntImpConicParConic\n");}
 	}
 };
+
 
 %nodefaultctor IntCurve_IntImpConicParConic;
 class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
@@ -182,6 +185,7 @@ class IntCurve_IntImpConicParConic : public IntRes2d_Intersection {
 	if (__env){printf("## Call custom destructor for instance of IntCurve_IntImpConicParConic\n");}
 	}
 };
+
 
 %nodefaultctor IntCurve_IntConicConic;
 class IntCurve_IntConicConic : public IntRes2d_Intersection {
@@ -257,6 +261,7 @@ class IntCurve_IntConicConic : public IntRes2d_Intersection {
 	}
 };
 
+
 %nodefaultctor IntCurve_IConicTool;
 class IntCurve_IConicTool {
 	public:
@@ -295,6 +300,7 @@ class IntCurve_IConicTool {
 	}
 };
 
+
 %nodefaultctor IntCurve_ProjectOnPConicTool;
 class IntCurve_ProjectOnPConicTool {
 	public:
@@ -312,6 +318,7 @@ class IntCurve_ProjectOnPConicTool {
 	if (__env){printf("## Call custom destructor for instance of IntCurve_ProjectOnPConicTool\n");}
 	}
 };
+
 
 %nodefaultctor IntCurve_PConic;
 class IntCurve_PConic {

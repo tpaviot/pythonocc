@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -127,7 +128,12 @@ class GeomConvert_ApproxCurve {
 		%feature("autodoc", "1");
 		Standard_Real MaxError() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend GeomConvert_ApproxCurve {
@@ -136,6 +142,7 @@ class GeomConvert_ApproxCurve {
 	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxCurve\n");}
 	}
 };
+
 
 %nodefaultctor GeomConvert_BSplineSurfaceKnotSplitting;
 class GeomConvert_BSplineSurfaceKnotSplitting {
@@ -161,6 +168,7 @@ class GeomConvert_BSplineSurfaceKnotSplitting {
 	}
 };
 
+
 %nodefaultctor GeomConvert_BSplineCurveKnotSplitting;
 class GeomConvert_BSplineCurveKnotSplitting {
 	public:
@@ -180,6 +188,7 @@ class GeomConvert_BSplineCurveKnotSplitting {
 	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineCurveKnotSplitting\n");}
 	}
 };
+
 
 %nodefaultctor GeomConvert;
 class GeomConvert {
@@ -223,6 +232,7 @@ class GeomConvert {
 	}
 };
 
+
 %nodefaultctor GeomConvert_ApproxSurface;
 class GeomConvert_ApproxSurface {
 	public:
@@ -237,7 +247,12 @@ class GeomConvert_ApproxSurface {
 		%feature("autodoc", "1");
 		Standard_Real MaxError() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend GeomConvert_ApproxSurface {
@@ -246,6 +261,7 @@ class GeomConvert_ApproxSurface {
 	if (__env){printf("## Call custom destructor for instance of GeomConvert_ApproxSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomConvert_CompCurveToBSplineCurve;
 class GeomConvert_CompCurveToBSplineCurve {
@@ -264,6 +280,7 @@ class GeomConvert_CompCurveToBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of GeomConvert_CompCurveToBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor GeomConvert_BSplineCurveToBezierCurve;
 class GeomConvert_BSplineCurveToBezierCurve {
@@ -288,6 +305,7 @@ class GeomConvert_BSplineCurveToBezierCurve {
 	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineCurveToBezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor GeomConvert_BSplineSurfaceToBezierSurface;
 class GeomConvert_BSplineSurfaceToBezierSurface {
@@ -316,6 +334,7 @@ class GeomConvert_BSplineSurfaceToBezierSurface {
 	if (__env){printf("## Call custom destructor for instance of GeomConvert_BSplineSurfaceToBezierSurface\n");}
 	}
 };
+
 
 %nodefaultctor GeomConvert_CompBezierSurfacesToBSplineSurface;
 class GeomConvert_CompBezierSurfacesToBSplineSurface {

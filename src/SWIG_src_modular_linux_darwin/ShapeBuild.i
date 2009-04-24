@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ShapeBuild_ReShape : public Handle_BRepTools_ReShape {
 	}
 };
 
+
 %nodefaultctor ShapeBuild;
 class ShapeBuild {
 	public:
@@ -153,6 +155,7 @@ class ShapeBuild {
 	if (__env){printf("## Call custom destructor for instance of ShapeBuild\n");}
 	}
 };
+
 
 %nodefaultctor ShapeBuild_ReShape;
 class ShapeBuild_ReShape : public BRepTools_ReShape {
@@ -187,6 +190,7 @@ class ShapeBuild_ReShape : public BRepTools_ReShape {
 	if (__env){printf("## Call custom destructor for instance of ShapeBuild_ReShape\n");}
 	}
 };
+
 
 %nodefaultctor ShapeBuild_Edge;
 class ShapeBuild_Edge {
@@ -239,6 +243,7 @@ class ShapeBuild_Edge {
 	if (__env){printf("## Call custom destructor for instance of ShapeBuild_Edge\n");}
 	}
 };
+
 
 %nodefaultctor ShapeBuild_Vertex;
 class ShapeBuild_Vertex {

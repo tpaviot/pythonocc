@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_TColgp_HArray2OfPnt : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HSequenceOfXYZ;
 class Handle_TColgp_HSequenceOfXYZ : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_TColgp_HSequenceOfXYZ : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray2OfVec2d;
 class Handle_TColgp_HArray2OfVec2d : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_TColgp_HArray2OfVec2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray2OfDir2d;
 class Handle_TColgp_HArray2OfDir2d : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_TColgp_HArray2OfDir2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray2OfCirc2d;
 class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_TColgp_HArray2OfCirc2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray1OfVec;
 class Handle_TColgp_HArray1OfVec : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_TColgp_HArray1OfVec : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfVec\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray2OfLin2d;
 class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
@@ -288,6 +295,7 @@ class Handle_TColgp_HArray2OfLin2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray2OfXYZ;
 class Handle_TColgp_HArray2OfXYZ : public Handle_MMgt_TShared {
 	public:
@@ -312,6 +320,7 @@ class Handle_TColgp_HArray2OfXYZ : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray2OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray1OfVec2d;
 class Handle_TColgp_HArray1OfVec2d : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_TColgp_HArray1OfVec2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray1OfXY;
 class Handle_TColgp_HArray1OfXY : public Handle_MMgt_TShared {
 	public:
@@ -362,6 +372,7 @@ class Handle_TColgp_HArray1OfXY : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfXY\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray1OfXYZ;
 class Handle_TColgp_HArray1OfXYZ : public Handle_MMgt_TShared {
@@ -388,6 +399,7 @@ class Handle_TColgp_HArray1OfXYZ : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfPnt;
 class Handle_TColgp_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqNode {
 	public:
@@ -412,6 +424,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfPnt : public Handle_TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HSequenceOfPnt;
 class Handle_TColgp_HSequenceOfPnt : public Handle_MMgt_TShared {
@@ -438,6 +451,7 @@ class Handle_TColgp_HSequenceOfPnt : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfDir2d;
 class Handle_TColgp_SequenceNodeOfSequenceOfDir2d : public Handle_TCollection_SeqNode {
 	public:
@@ -462,6 +476,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfDir2d : public Handle_TCollection_Se
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray2OfVec;
 class Handle_TColgp_HArray2OfVec : public Handle_MMgt_TShared {
@@ -488,6 +503,7 @@ class Handle_TColgp_HArray2OfVec : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfVec;
 class Handle_TColgp_SequenceNodeOfSequenceOfVec : public Handle_TCollection_SeqNode {
 	public:
@@ -512,6 +528,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfVec : public Handle_TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfVec\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfVec2d;
 class Handle_TColgp_SequenceNodeOfSequenceOfVec2d : public Handle_TCollection_SeqNode {
@@ -538,6 +555,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfVec2d : public Handle_TCollection_Se
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfDir;
 class Handle_TColgp_SequenceNodeOfSequenceOfDir : public Handle_TCollection_SeqNode {
 	public:
@@ -562,6 +580,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfDir : public Handle_TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfDir\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray2OfPnt2d;
 class Handle_TColgp_HArray2OfPnt2d : public Handle_MMgt_TShared {
@@ -588,6 +607,7 @@ class Handle_TColgp_HArray2OfPnt2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray1OfDir;
 class Handle_TColgp_HArray1OfDir : public Handle_MMgt_TShared {
 	public:
@@ -612,6 +632,7 @@ class Handle_TColgp_HArray1OfDir : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HSequenceOfVec;
 class Handle_TColgp_HSequenceOfVec : public Handle_MMgt_TShared {
@@ -638,6 +659,7 @@ class Handle_TColgp_HSequenceOfVec : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray1OfDir2d;
 class Handle_TColgp_HArray1OfDir2d : public Handle_MMgt_TShared {
 	public:
@@ -662,6 +684,7 @@ class Handle_TColgp_HArray1OfDir2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray2OfXY;
 class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
@@ -688,6 +711,7 @@ class Handle_TColgp_HArray2OfXY : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray1OfLin2d;
 class Handle_TColgp_HArray1OfLin2d : public Handle_MMgt_TShared {
 	public:
@@ -712,6 +736,7 @@ class Handle_TColgp_HArray1OfLin2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfLin2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXY;
 class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNode {
@@ -738,6 +763,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfXY : public Handle_TCollection_SeqNo
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray1OfCirc2d;
 class Handle_TColgp_HArray1OfCirc2d : public Handle_MMgt_TShared {
 	public:
@@ -762,6 +788,7 @@ class Handle_TColgp_HArray1OfCirc2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray2OfDir;
 class Handle_TColgp_HArray2OfDir : public Handle_MMgt_TShared {
@@ -788,6 +815,7 @@ class Handle_TColgp_HArray2OfDir : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfPnt2d;
 class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_SeqNode {
 	public:
@@ -812,6 +840,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfPnt2d : public Handle_TCollection_Se
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_SequenceNodeOfSequenceOfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HSequenceOfDir2d;
 class Handle_TColgp_HSequenceOfDir2d : public Handle_MMgt_TShared {
@@ -838,6 +867,7 @@ class Handle_TColgp_HSequenceOfDir2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HArray1OfPnt2d;
 class Handle_TColgp_HArray1OfPnt2d : public Handle_MMgt_TShared {
 	public:
@@ -862,6 +892,7 @@ class Handle_TColgp_HArray1OfPnt2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HArray1OfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d;
 class Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public Handle_TCollection_MapNode {
@@ -888,6 +919,7 @@ class Handle_TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HSequenceOfXY;
 class Handle_TColgp_HSequenceOfXY : public Handle_MMgt_TShared {
 	public:
@@ -912,6 +944,7 @@ class Handle_TColgp_HSequenceOfXY : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfXY\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HSequenceOfDir;
 class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
@@ -938,6 +971,7 @@ class Handle_TColgp_HSequenceOfDir : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HSequenceOfVec2d;
 class Handle_TColgp_HSequenceOfVec2d : public Handle_MMgt_TShared {
 	public:
@@ -962,6 +996,7 @@ class Handle_TColgp_HSequenceOfVec2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TColgp_HArray1OfPnt;
 class Handle_TColgp_HArray1OfPnt : public Handle_MMgt_TShared {
@@ -988,6 +1023,7 @@ class Handle_TColgp_HArray1OfPnt : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_SequenceNodeOfSequenceOfXYZ;
 class Handle_TColgp_SequenceNodeOfSequenceOfXYZ : public Handle_TCollection_SeqNode {
 	public:
@@ -1013,6 +1049,7 @@ class Handle_TColgp_SequenceNodeOfSequenceOfXYZ : public Handle_TCollection_SeqN
 	}
 };
 
+
 %nodefaultctor Handle_TColgp_HSequenceOfPnt2d;
 class Handle_TColgp_HSequenceOfPnt2d : public Handle_MMgt_TShared {
 	public:
@@ -1037,6 +1074,7 @@ class Handle_TColgp_HSequenceOfPnt2d : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TColgp_HSequenceOfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HSequenceOfXYZ;
 class TColgp_HSequenceOfXYZ : public MMgt_TShared {
@@ -1108,6 +1146,7 @@ class TColgp_HSequenceOfXYZ : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_HSequenceOfVec;
 class TColgp_HSequenceOfVec : public MMgt_TShared {
 	public:
@@ -1178,6 +1217,7 @@ class TColgp_HSequenceOfVec : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_Array1OfDir2d;
 class TColgp_Array1OfDir2d {
 	public:
@@ -1217,6 +1257,7 @@ class TColgp_Array1OfDir2d {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_Array2OfDir;
 class TColgp_Array2OfDir {
@@ -1261,6 +1302,7 @@ class TColgp_Array2OfDir {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_SequenceOfPnt2d;
 class TColgp_SequenceOfPnt2d : public TCollection_BaseSequence {
@@ -1316,6 +1358,7 @@ class TColgp_SequenceOfPnt2d : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColgp_HArray1OfDir;
 class TColgp_HArray1OfDir : public MMgt_TShared {
 	public:
@@ -1361,6 +1404,7 @@ class TColgp_HArray1OfDir : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfDir\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray2OfVec;
 class TColgp_HArray2OfVec : public MMgt_TShared {
@@ -1414,6 +1458,7 @@ class TColgp_HArray2OfVec : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_HArray2OfDir2d;
 class TColgp_HArray2OfDir2d : public MMgt_TShared {
 	public:
@@ -1466,6 +1511,7 @@ class TColgp_HArray2OfDir2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfXYZ;
 class TColgp_SequenceNodeOfSequenceOfXYZ : public TCollection_SeqNode {
 	public:
@@ -1493,6 +1539,7 @@ class TColgp_SequenceNodeOfSequenceOfXYZ : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_SequenceOfXY;
 class TColgp_SequenceOfXY : public TCollection_BaseSequence {
@@ -1548,6 +1595,7 @@ class TColgp_SequenceOfXY : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceOfVec;
 class TColgp_SequenceOfVec : public TCollection_BaseSequence {
 	public:
@@ -1602,6 +1650,7 @@ class TColgp_SequenceOfVec : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColgp_HArray2OfLin2d;
 class TColgp_HArray2OfLin2d : public MMgt_TShared {
 	public:
@@ -1654,6 +1703,7 @@ class TColgp_HArray2OfLin2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfXY;
 class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
 	public:
@@ -1681,6 +1731,7 @@ class TColgp_SequenceNodeOfSequenceOfXY : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfXY\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_SequenceOfDir2d;
 class TColgp_SequenceOfDir2d : public TCollection_BaseSequence {
@@ -1736,6 +1787,7 @@ class TColgp_SequenceOfDir2d : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColgp_Array2OfLin2d;
 class TColgp_Array2OfLin2d {
 	public:
@@ -1780,6 +1832,7 @@ class TColgp_Array2OfLin2d {
 	}
 };
 
+
 %nodefaultctor TColgp_Array1OfVec2d;
 class TColgp_Array1OfVec2d {
 	public:
@@ -1819,6 +1872,7 @@ class TColgp_Array1OfVec2d {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray2OfCirc2d;
 class TColgp_HArray2OfCirc2d : public MMgt_TShared {
@@ -1872,6 +1926,7 @@ class TColgp_HArray2OfCirc2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d;
 class TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d : public TCollection_BasicMapIterator {
 	public:
@@ -1893,6 +1948,7 @@ class TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d : public TCollection_BasicM
 	if (__env){printf("## Call custom destructor for instance of TColgp_DataMapIteratorOfDataMapOfIntegerCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_SequenceOfPnt;
 class TColgp_SequenceOfPnt : public TCollection_BaseSequence {
@@ -1948,6 +2004,7 @@ class TColgp_SequenceOfPnt : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColgp_Array2OfXY;
 class TColgp_Array2OfXY {
 	public:
@@ -1991,6 +2048,7 @@ class TColgp_Array2OfXY {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfXY\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray2OfVec2d;
 class TColgp_HArray2OfVec2d : public MMgt_TShared {
@@ -2044,6 +2102,7 @@ class TColgp_HArray2OfVec2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_HArray1OfLin2d;
 class TColgp_HArray1OfLin2d : public MMgt_TShared {
 	public:
@@ -2090,6 +2149,7 @@ class TColgp_HArray1OfLin2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfVec;
 class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
 	public:
@@ -2117,6 +2177,7 @@ class TColgp_SequenceNodeOfSequenceOfVec : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_Array1OfXY;
 class TColgp_Array1OfXY {
@@ -2157,6 +2218,7 @@ class TColgp_Array1OfXY {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfXY\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray1OfVec2d;
 class TColgp_HArray1OfVec2d : public MMgt_TShared {
@@ -2204,6 +2266,7 @@ class TColgp_HArray1OfVec2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_HArray1OfDir2d;
 class TColgp_HArray1OfDir2d : public MMgt_TShared {
 	public:
@@ -2250,6 +2313,7 @@ class TColgp_HArray1OfDir2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_Array1OfDir;
 class TColgp_Array1OfDir {
 	public:
@@ -2290,6 +2354,7 @@ class TColgp_Array1OfDir {
 	}
 };
 
+
 %nodefaultctor TColgp_Array1OfLin2d;
 class TColgp_Array1OfLin2d {
 	public:
@@ -2329,6 +2394,7 @@ class TColgp_Array1OfLin2d {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfLin2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray1OfPnt;
 class TColgp_HArray1OfPnt : public MMgt_TShared {
@@ -2376,6 +2442,7 @@ class TColgp_HArray1OfPnt : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_Array2OfVec;
 class TColgp_Array2OfVec {
 	public:
@@ -2420,6 +2487,7 @@ class TColgp_Array2OfVec {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfDir;
 class TColgp_SequenceNodeOfSequenceOfDir : public TCollection_SeqNode {
 	public:
@@ -2447,6 +2515,7 @@ class TColgp_SequenceNodeOfSequenceOfDir : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_SequenceOfXYZ;
 class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
@@ -2502,6 +2571,7 @@ class TColgp_SequenceOfXYZ : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColgp_Array2OfPnt2d;
 class TColgp_Array2OfPnt2d {
 	public:
@@ -2546,6 +2616,7 @@ class TColgp_Array2OfPnt2d {
 	}
 };
 
+
 %nodefaultctor TColgp_Array1OfXYZ;
 class TColgp_Array1OfXYZ {
 	public:
@@ -2585,6 +2656,7 @@ class TColgp_Array1OfXYZ {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray1OfCirc2d;
 class TColgp_HArray1OfCirc2d : public MMgt_TShared {
@@ -2631,6 +2703,7 @@ class TColgp_HArray1OfCirc2d : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray2OfPnt;
 class TColgp_HArray2OfPnt : public MMgt_TShared {
@@ -2684,6 +2757,7 @@ class TColgp_HArray2OfPnt : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_HArray1OfXYZ;
 class TColgp_HArray1OfXYZ : public MMgt_TShared {
 	public:
@@ -2729,6 +2803,7 @@ class TColgp_HArray1OfXYZ : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray2OfXY;
 class TColgp_HArray2OfXY : public MMgt_TShared {
@@ -2782,6 +2857,7 @@ class TColgp_HArray2OfXY : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_Array2OfVec2d;
 class TColgp_Array2OfVec2d {
 	public:
@@ -2826,6 +2902,7 @@ class TColgp_Array2OfVec2d {
 	}
 };
 
+
 %nodefaultctor TColgp_Array1OfPnt2d;
 class TColgp_Array1OfPnt2d {
 	public:
@@ -2865,6 +2942,7 @@ class TColgp_Array1OfPnt2d {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray1OfXY;
 class TColgp_HArray1OfXY : public MMgt_TShared {
@@ -2911,6 +2989,7 @@ class TColgp_HArray1OfXY : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColgp_HArray1OfXY\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray2OfXYZ;
 class TColgp_HArray2OfXYZ : public MMgt_TShared {
@@ -2964,6 +3043,7 @@ class TColgp_HArray2OfXYZ : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_DataMapNodeOfDataMapOfIntegerCirc2d;
 class TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public TCollection_MapNode {
 	public:
@@ -2993,6 +3073,7 @@ class TColgp_DataMapNodeOfDataMapOfIntegerCirc2d : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_DataMapNodeOfDataMapOfIntegerCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_Array2OfDir2d;
 class TColgp_Array2OfDir2d {
@@ -3037,6 +3118,7 @@ class TColgp_Array2OfDir2d {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HSequenceOfPnt2d;
 class TColgp_HSequenceOfPnt2d : public MMgt_TShared {
@@ -3108,6 +3190,7 @@ class TColgp_HSequenceOfPnt2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfDir2d;
 class TColgp_SequenceNodeOfSequenceOfDir2d : public TCollection_SeqNode {
 	public:
@@ -3135,6 +3218,7 @@ class TColgp_SequenceNodeOfSequenceOfDir2d : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_SequenceOfDir;
 class TColgp_SequenceOfDir : public TCollection_BaseSequence {
@@ -3190,6 +3274,7 @@ class TColgp_SequenceOfDir : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColgp_Array1OfPnt;
 class TColgp_Array1OfPnt {
 	public:
@@ -3229,6 +3314,7 @@ class TColgp_Array1OfPnt {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfPnt\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray2OfPnt2d;
 class TColgp_HArray2OfPnt2d : public MMgt_TShared {
@@ -3282,6 +3368,7 @@ class TColgp_HArray2OfPnt2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfPnt;
 class TColgp_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 	public:
@@ -3309,6 +3396,7 @@ class TColgp_SequenceNodeOfSequenceOfPnt : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_Array2OfCirc2d;
 class TColgp_Array2OfCirc2d {
@@ -3353,6 +3441,7 @@ class TColgp_Array2OfCirc2d {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_SequenceOfVec2d;
 class TColgp_SequenceOfVec2d : public TCollection_BaseSequence {
@@ -3408,6 +3497,7 @@ class TColgp_SequenceOfVec2d : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfVec2d;
 class TColgp_SequenceNodeOfSequenceOfVec2d : public TCollection_SeqNode {
 	public:
@@ -3435,6 +3525,7 @@ class TColgp_SequenceNodeOfSequenceOfVec2d : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HArray1OfPnt2d;
 class TColgp_HArray1OfPnt2d : public MMgt_TShared {
@@ -3482,6 +3573,7 @@ class TColgp_HArray1OfPnt2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_SequenceNodeOfSequenceOfPnt2d;
 class TColgp_SequenceNodeOfSequenceOfPnt2d : public TCollection_SeqNode {
 	public:
@@ -3509,6 +3601,7 @@ class TColgp_SequenceNodeOfSequenceOfPnt2d : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of TColgp_SequenceNodeOfSequenceOfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HSequenceOfDir2d;
 class TColgp_HSequenceOfDir2d : public MMgt_TShared {
@@ -3580,6 +3673,7 @@ class TColgp_HSequenceOfDir2d : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_Array2OfPnt;
 class TColgp_Array2OfPnt {
 	public:
@@ -3624,6 +3718,7 @@ class TColgp_Array2OfPnt {
 	}
 };
 
+
 %nodefaultctor TColgp_DataMapOfIntegerCirc2d;
 class TColgp_DataMapOfIntegerCirc2d : public TCollection_BasicMap {
 	public:
@@ -3657,6 +3752,7 @@ class TColgp_DataMapOfIntegerCirc2d : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TColgp_DataMapOfIntegerCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HSequenceOfDir;
 class TColgp_HSequenceOfDir : public MMgt_TShared {
@@ -3728,6 +3824,7 @@ class TColgp_HSequenceOfDir : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_HArray1OfVec;
 class TColgp_HArray1OfVec : public MMgt_TShared {
 	public:
@@ -3774,6 +3871,7 @@ class TColgp_HArray1OfVec : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_Array2OfXYZ;
 class TColgp_Array2OfXYZ {
 	public:
@@ -3817,6 +3915,7 @@ class TColgp_Array2OfXYZ {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array2OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HSequenceOfXY;
 class TColgp_HSequenceOfXY : public MMgt_TShared {
@@ -3888,6 +3987,7 @@ class TColgp_HSequenceOfXY : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_HSequenceOfVec2d;
 class TColgp_HSequenceOfVec2d : public MMgt_TShared {
 	public:
@@ -3957,6 +4057,7 @@ class TColgp_HSequenceOfVec2d : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TColgp_HSequenceOfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_HSequenceOfPnt;
 class TColgp_HSequenceOfPnt : public MMgt_TShared {
@@ -4028,6 +4129,7 @@ class TColgp_HSequenceOfPnt : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_HArray2OfDir;
 class TColgp_HArray2OfDir : public MMgt_TShared {
 	public:
@@ -4080,6 +4182,7 @@ class TColgp_HArray2OfDir : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TColgp_Array1OfVec;
 class TColgp_Array1OfVec {
 	public:
@@ -4119,6 +4222,7 @@ class TColgp_Array1OfVec {
 	if (__env){printf("## Call custom destructor for instance of TColgp_Array1OfVec\n");}
 	}
 };
+
 
 %nodefaultctor TColgp_Array1OfCirc2d;
 class TColgp_Array1OfCirc2d {

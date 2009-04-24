@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_BinLDrivers_DocumentRetrievalDriver : public Handle_PCDM_RetrievalD
 	}
 };
 
+
 %nodefaultctor Handle_BinLDrivers_DocumentStorageDriver;
 class Handle_BinLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDriver {
 	public:
@@ -168,6 +170,7 @@ class Handle_BinLDrivers_DocumentStorageDriver : public Handle_PCDM_StorageDrive
 	if (__env){printf("## Call custom destructor for instance of Handle_BinLDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinLDrivers_DocumentStorageDriver;
 class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
@@ -205,6 +208,7 @@ class BinLDrivers_DocumentStorageDriver : public PCDM_StorageDriver {
 	}
 };
 
+
 %nodefaultctor BinLDrivers_DocumentSection;
 class BinLDrivers_DocumentSection {
 	public:
@@ -225,7 +229,12 @@ class BinLDrivers_DocumentSection {
 		%feature("autodoc", "1");
 		void SetLength(const Standard_Size theLength);
 		%feature("autodoc", "1");
-		void WriteTOC(Standard_OStream & theOS);
+		%extend{
+			std::string WriteTOCToString() {
+			std::stringstream s;
+			self->WriteTOC(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Write(Standard_OStream & theOS, const Standard_Size theOffset);
 		%feature("autodoc", "1");
@@ -238,6 +247,7 @@ class BinLDrivers_DocumentSection {
 	if (__env){printf("## Call custom destructor for instance of BinLDrivers_DocumentSection\n");}
 	}
 };
+
 
 %nodefaultctor BinLDrivers_DocumentRetrievalDriver;
 class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
@@ -274,6 +284,7 @@ class BinLDrivers_DocumentRetrievalDriver : public PCDM_RetrievalDriver {
 	if (__env){printf("## Call custom destructor for instance of BinLDrivers_DocumentRetrievalDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinLDrivers;
 class BinLDrivers {

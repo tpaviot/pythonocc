@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -152,6 +153,7 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfShapeTransient : public Handle_TColl
 	}
 };
 
+
 %nodefaultctor Handle_MoniTool_Profile;
 class Handle_MoniTool_Profile : public Handle_MMgt_TShared {
 	public:
@@ -176,6 +178,7 @@ class Handle_MoniTool_Profile : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_Profile\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MoniTool_DataMapNodeOfDataMapOfTimer;
 class Handle_MoniTool_DataMapNodeOfDataMapOfTimer : public Handle_TCollection_MapNode {
@@ -202,6 +205,7 @@ class Handle_MoniTool_DataMapNodeOfDataMapOfTimer : public Handle_TCollection_Ma
 	}
 };
 
+
 %nodefaultctor Handle_MoniTool_SignText;
 class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 	public:
@@ -226,6 +230,7 @@ class Handle_MoniTool_SignText : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_SignText\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MoniTool_CaseData;
 class Handle_MoniTool_CaseData : public Handle_MMgt_TShared {
@@ -252,6 +257,7 @@ class Handle_MoniTool_CaseData : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MoniTool_RealVal;
 class Handle_MoniTool_RealVal : public Handle_MMgt_TShared {
 	public:
@@ -276,6 +282,7 @@ class Handle_MoniTool_RealVal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_RealVal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MoniTool_Option;
 class Handle_MoniTool_Option : public Handle_MMgt_TShared {
@@ -302,6 +309,7 @@ class Handle_MoniTool_Option : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MoniTool_IntVal;
 class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
 	public:
@@ -326,6 +334,7 @@ class Handle_MoniTool_IntVal : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_IntVal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MoniTool_Element;
 class Handle_MoniTool_Element : public Handle_MMgt_TShared {
@@ -352,6 +361,7 @@ class Handle_MoniTool_Element : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MoniTool_TransientElem;
 class Handle_MoniTool_TransientElem : public Handle_MoniTool_Element {
 	public:
@@ -376,6 +386,7 @@ class Handle_MoniTool_TransientElem : public Handle_MoniTool_Element {
 	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_TransientElem\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MoniTool_Timer;
 class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
@@ -402,6 +413,7 @@ class Handle_MoniTool_Timer : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MoniTool_TypedValue;
 class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 	public:
@@ -426,6 +438,7 @@ class Handle_MoniTool_TypedValue : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_TypedValue\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MoniTool_HSequenceOfElement;
 class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
@@ -452,6 +465,7 @@ class Handle_MoniTool_HSequenceOfElement : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
 class Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public Handle_TCollection_MapNode {
 	public:
@@ -476,6 +490,7 @@ class Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : publi
 	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MoniTool_SignShape;
 class Handle_MoniTool_SignShape : public Handle_MoniTool_SignText {
@@ -502,6 +517,7 @@ class Handle_MoniTool_SignShape : public Handle_MoniTool_SignText {
 	}
 };
 
+
 %nodefaultctor Handle_MoniTool_SequenceNodeOfSequenceOfElement;
 class Handle_MoniTool_SequenceNodeOfSequenceOfElement : public Handle_TCollection_SeqNode {
 	public:
@@ -526,6 +542,7 @@ class Handle_MoniTool_SequenceNodeOfSequenceOfElement : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_MoniTool_SequenceNodeOfSequenceOfElement\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_RealVal;
 class MoniTool_RealVal : public MMgt_TShared {
@@ -557,6 +574,7 @@ class MoniTool_RealVal : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MoniTool_DataMapNodeOfDataMapOfShapeTransient;
 class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode {
 	public:
@@ -586,6 +604,7 @@ class MoniTool_DataMapNodeOfDataMapOfShapeTransient : public TCollection_MapNode
 	if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapNodeOfDataMapOfShapeTransient\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_Profile;
 class MoniTool_Profile : public MMgt_TShared {
@@ -661,6 +680,7 @@ class MoniTool_Profile : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MoniTool_Stat;
 class MoniTool_Stat {
 	public:
@@ -694,6 +714,7 @@ class MoniTool_Stat {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_Stat\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_DataMapOfShapeTransient;
 class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
@@ -729,6 +750,7 @@ class MoniTool_DataMapOfShapeTransient : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MoniTool_Timer;
 class MoniTool_Timer : public MMgt_TShared {
 	public:
@@ -753,7 +775,12 @@ class MoniTool_Timer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Real Amend() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & ostr);
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Handle_MoniTool_Timer Timer(const char * name);
 		%feature("autodoc", "1");
@@ -765,7 +792,12 @@ class MoniTool_Timer : public MMgt_TShared {
 		%feature("autodoc", "1");
 		void ClearTimers();
 		%feature("autodoc", "1");
-		void DumpTimers(Standard_OStream & ostr);
+		%extend{
+			std::string DumpTimersToString() {
+			std::stringstream s;
+			self->DumpTimers(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void ComputeAmendments();
 		%feature("autodoc", "1");
@@ -790,6 +822,7 @@ class MoniTool_Timer : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_Timer\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_IntVal;
 class MoniTool_IntVal : public MMgt_TShared {
@@ -820,6 +853,7 @@ class MoniTool_IntVal : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_IntVal\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_Element;
 class MoniTool_Element : public MMgt_TShared {
@@ -857,6 +891,7 @@ class MoniTool_Element : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MoniTool_ElemHasher;
 class MoniTool_ElemHasher {
 	public:
@@ -874,6 +909,7 @@ class MoniTool_ElemHasher {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_ElemHasher\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_DataMapOfTimer;
 class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
@@ -908,6 +944,7 @@ class MoniTool_DataMapOfTimer : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_DataMapOfTimer\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_TypedValue;
 class MoniTool_TypedValue : public MMgt_TShared {
@@ -1033,6 +1070,7 @@ class MoniTool_TypedValue : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MoniTool_DataInfo;
 class MoniTool_DataInfo {
 	public:
@@ -1050,6 +1088,7 @@ class MoniTool_DataInfo {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_DataInfo\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_TransientElem;
 class MoniTool_TransientElem : public MoniTool_Element {
@@ -1085,6 +1124,7 @@ class MoniTool_TransientElem : public MoniTool_Element {
 	}
 };
 
+
 %nodefaultctor MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient;
 class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TCollection_MapNode {
 	public:
@@ -1118,6 +1158,7 @@ class MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient : public TColl
 	if (__env){printf("## Call custom destructor for instance of MoniTool_IndexedDataMapNodeOfIndexedDataMapOfShapeTransient\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_AttrList;
 class MoniTool_AttrList {
@@ -1167,6 +1208,7 @@ class MoniTool_AttrList {
 	}
 };
 
+
 %nodefaultctor MoniTool_SignText;
 class MoniTool_SignText : public MMgt_TShared {
 	public:
@@ -1197,6 +1239,7 @@ class MoniTool_SignText : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MoniTool_SignShape;
 class MoniTool_SignShape : public MoniTool_SignText {
 	public:
@@ -1220,6 +1263,7 @@ class MoniTool_SignShape : public MoniTool_SignText {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_SignShape\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_OptValue;
 class MoniTool_OptValue {
@@ -1248,6 +1292,7 @@ class MoniTool_OptValue {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_OptValue\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_DataMapNodeOfDataMapOfTimer;
 class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
@@ -1279,6 +1324,7 @@ class MoniTool_DataMapNodeOfDataMapOfTimer : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor MoniTool_DataMapIteratorOfDataMapOfTimer;
 class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIterator {
 	public:
@@ -1301,6 +1347,7 @@ class MoniTool_DataMapIteratorOfDataMapOfTimer : public TCollection_BasicMapIter
 	}
 };
 
+
 %nodefaultctor MoniTool_TimerSentry;
 class MoniTool_TimerSentry {
 	public:
@@ -1322,6 +1369,7 @@ class MoniTool_TimerSentry {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_TimerSentry\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_IndexedDataMapOfShapeTransient;
 class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
@@ -1367,6 +1415,7 @@ class MoniTool_IndexedDataMapOfShapeTransient : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor MoniTool_SequenceNodeOfSequenceOfElement;
 class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 	public:
@@ -1395,6 +1444,7 @@ class MoniTool_SequenceNodeOfSequenceOfElement : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor MoniTool_MTHasher;
 class MoniTool_MTHasher {
 	public:
@@ -1412,6 +1462,7 @@ class MoniTool_MTHasher {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_MTHasher\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_SequenceOfElement;
 class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
@@ -1466,6 +1517,7 @@ class MoniTool_SequenceOfElement : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_SequenceOfElement\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_CaseData;
 class MoniTool_CaseData : public MMgt_TShared {
@@ -1583,6 +1635,7 @@ class MoniTool_CaseData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MoniTool_HSequenceOfElement;
 class MoniTool_HSequenceOfElement : public MMgt_TShared {
 	public:
@@ -1653,6 +1706,7 @@ class MoniTool_HSequenceOfElement : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MoniTool_Option;
 class MoniTool_Option : public MMgt_TShared {
 	public:
@@ -1708,6 +1762,7 @@ class MoniTool_Option : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of MoniTool_Option\n");}
 	}
 };
+
 
 %nodefaultctor MoniTool_DataMapIteratorOfDataMapOfShapeTransient;
 class MoniTool_DataMapIteratorOfDataMapOfShapeTransient : public TCollection_BasicMapIterator {

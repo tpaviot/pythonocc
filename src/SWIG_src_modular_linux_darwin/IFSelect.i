@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -181,6 +182,7 @@ class Handle_IFSelect_SignatureList : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_WorkSession;
 class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
 	public:
@@ -205,6 +207,7 @@ class Handle_IFSelect_WorkSession : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_WorkSession\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_ShareOut;
 class Handle_IFSelect_ShareOut : public Handle_MMgt_TShared {
@@ -231,6 +234,7 @@ class Handle_IFSelect_ShareOut : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_Transformer;
 class Handle_IFSelect_Transformer : public Handle_MMgt_TShared {
 	public:
@@ -255,6 +259,7 @@ class Handle_IFSelect_Transformer : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Transformer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_TransformStandard;
 class Handle_IFSelect_TransformStandard : public Handle_IFSelect_Transformer {
@@ -281,6 +286,7 @@ class Handle_IFSelect_TransformStandard : public Handle_IFSelect_Transformer {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_Signature;
 class Handle_IFSelect_Signature : public Handle_Interface_SignType {
 	public:
@@ -305,6 +311,7 @@ class Handle_IFSelect_Signature : public Handle_Interface_SignType {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Signature\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SignCategory;
 class Handle_IFSelect_SignCategory : public Handle_IFSelect_Signature {
@@ -331,6 +338,7 @@ class Handle_IFSelect_SignCategory : public Handle_IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_GeneralModifier;
 class Handle_IFSelect_GeneralModifier : public Handle_MMgt_TShared {
 	public:
@@ -355,6 +363,7 @@ class Handle_IFSelect_GeneralModifier : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_GeneralModifier\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_Modifier;
 class Handle_IFSelect_Modifier : public Handle_IFSelect_GeneralModifier {
@@ -381,6 +390,7 @@ class Handle_IFSelect_Modifier : public Handle_IFSelect_GeneralModifier {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_ModifReorder;
 class Handle_IFSelect_ModifReorder : public Handle_IFSelect_Modifier {
 	public:
@@ -405,6 +415,7 @@ class Handle_IFSelect_ModifReorder : public Handle_IFSelect_Modifier {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ModifReorder\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_Selection;
 class Handle_IFSelect_Selection : public Handle_MMgt_TShared {
@@ -431,6 +442,7 @@ class Handle_IFSelect_Selection : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectDeduct;
 class Handle_IFSelect_SelectDeduct : public Handle_IFSelect_Selection {
 	public:
@@ -455,6 +467,7 @@ class Handle_IFSelect_SelectDeduct : public Handle_IFSelect_Selection {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectDeduct\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectExplore;
 class Handle_IFSelect_SelectExplore : public Handle_IFSelect_SelectDeduct {
@@ -481,6 +494,7 @@ class Handle_IFSelect_SelectExplore : public Handle_IFSelect_SelectDeduct {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectSignedSharing;
 class Handle_IFSelect_SelectSignedSharing : public Handle_IFSelect_SelectExplore {
 	public:
@@ -505,6 +519,7 @@ class Handle_IFSelect_SelectSignedSharing : public Handle_IFSelect_SelectExplore
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignedSharing\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_IntParam;
 class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
@@ -531,6 +546,7 @@ class Handle_IFSelect_IntParam : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectBase;
 class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
 	public:
@@ -555,6 +571,7 @@ class Handle_IFSelect_SelectBase : public Handle_IFSelect_Selection {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectBase\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectPointed;
 class Handle_IFSelect_SelectPointed : public Handle_IFSelect_SelectBase {
@@ -581,6 +598,7 @@ class Handle_IFSelect_SelectPointed : public Handle_IFSelect_SelectBase {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectExtract;
 class Handle_IFSelect_SelectExtract : public Handle_IFSelect_SelectDeduct {
 	public:
@@ -605,6 +623,7 @@ class Handle_IFSelect_SelectExtract : public Handle_IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectExtract\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectRange;
 class Handle_IFSelect_SelectRange : public Handle_IFSelect_SelectExtract {
@@ -631,6 +650,7 @@ class Handle_IFSelect_SelectRange : public Handle_IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_Dispatch;
 class Handle_IFSelect_Dispatch : public Handle_MMgt_TShared {
 	public:
@@ -655,6 +675,7 @@ class Handle_IFSelect_Dispatch : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Dispatch\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_DispGlobal;
 class Handle_IFSelect_DispGlobal : public Handle_IFSelect_Dispatch {
@@ -681,6 +702,7 @@ class Handle_IFSelect_DispGlobal : public Handle_IFSelect_Dispatch {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SessionDumper;
 class Handle_IFSelect_SessionDumper : public Handle_MMgt_TShared {
 	public:
@@ -705,6 +727,7 @@ class Handle_IFSelect_SessionDumper : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SessionDumper\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_ModifEditForm;
 class Handle_IFSelect_ModifEditForm : public Handle_IFSelect_Modifier {
@@ -731,6 +754,7 @@ class Handle_IFSelect_ModifEditForm : public Handle_IFSelect_Modifier {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_ListEditor;
 class Handle_IFSelect_ListEditor : public Handle_MMgt_TShared {
 	public:
@@ -755,6 +779,7 @@ class Handle_IFSelect_ListEditor : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_ListEditor\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectErrorEntities;
 class Handle_IFSelect_SelectErrorEntities : public Handle_IFSelect_SelectExtract {
@@ -781,6 +806,7 @@ class Handle_IFSelect_SelectErrorEntities : public Handle_IFSelect_SelectExtract
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectSharing;
 class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
 	public:
@@ -805,6 +831,7 @@ class Handle_IFSelect_SelectSharing : public Handle_IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSharing\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SignCounter;
 class Handle_IFSelect_SignCounter : public Handle_IFSelect_SignatureList {
@@ -831,6 +858,7 @@ class Handle_IFSelect_SignCounter : public Handle_IFSelect_SignatureList {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectAnyType;
 class Handle_IFSelect_SelectAnyType : public Handle_IFSelect_SelectExtract {
 	public:
@@ -855,6 +883,7 @@ class Handle_IFSelect_SelectAnyType : public Handle_IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectAnyType\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectType;
 class Handle_IFSelect_SelectType : public Handle_IFSelect_SelectAnyType {
@@ -881,6 +910,7 @@ class Handle_IFSelect_SelectType : public Handle_IFSelect_SelectAnyType {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_PacketList;
 class Handle_IFSelect_PacketList : public Handle_MMgt_TShared {
 	public:
@@ -905,6 +935,7 @@ class Handle_IFSelect_PacketList : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_PacketList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_HSeqOfSelection;
 class Handle_IFSelect_HSeqOfSelection : public Handle_MMgt_TShared {
@@ -931,6 +962,7 @@ class Handle_IFSelect_HSeqOfSelection : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectUnknownEntities;
 class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtract {
 	public:
@@ -955,6 +987,7 @@ class Handle_IFSelect_SelectUnknownEntities : public Handle_IFSelect_SelectExtra
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectUnknownEntities\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectFlag;
 class Handle_IFSelect_SelectFlag : public Handle_IFSelect_SelectExtract {
@@ -981,6 +1014,7 @@ class Handle_IFSelect_SelectFlag : public Handle_IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectSuite;
 class Handle_IFSelect_SelectSuite : public Handle_IFSelect_SelectDeduct {
 	public:
@@ -1005,6 +1039,7 @@ class Handle_IFSelect_SelectSuite : public Handle_IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSuite\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
 class Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public Handle_TCollection_SeqNode {
@@ -1031,6 +1066,7 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SignType;
 class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
 	public:
@@ -1055,6 +1091,7 @@ class Handle_IFSelect_SignType : public Handle_IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignType\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectControl;
 class Handle_IFSelect_SelectControl : public Handle_IFSelect_Selection {
@@ -1081,6 +1118,7 @@ class Handle_IFSelect_SelectControl : public Handle_IFSelect_Selection {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_WorkLibrary;
 class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
 	public:
@@ -1105,6 +1143,7 @@ class Handle_IFSelect_WorkLibrary : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_WorkLibrary\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectCombine;
 class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
@@ -1131,6 +1170,7 @@ class Handle_IFSelect_SelectCombine : public Handle_IFSelect_Selection {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectIntersection;
 class Handle_IFSelect_SelectIntersection : public Handle_IFSelect_SelectCombine {
 	public:
@@ -1155,6 +1195,7 @@ class Handle_IFSelect_SelectIntersection : public Handle_IFSelect_SelectCombine 
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectIntersection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectUnion;
 class Handle_IFSelect_SelectUnion : public Handle_IFSelect_SelectCombine {
@@ -1181,6 +1222,7 @@ class Handle_IFSelect_SelectUnion : public Handle_IFSelect_SelectCombine {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectModelRoots;
 class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
 	public:
@@ -1205,6 +1247,7 @@ class Handle_IFSelect_SelectModelRoots : public Handle_IFSelect_SelectBase {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectModelRoots\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
 class Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public Handle_TCollection_SeqNode {
@@ -1231,6 +1274,7 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public Handle_TCo
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectShared;
 class Handle_IFSelect_SelectShared : public Handle_IFSelect_SelectDeduct {
 	public:
@@ -1255,6 +1299,7 @@ class Handle_IFSelect_SelectShared : public Handle_IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectShared\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectSignature;
 class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
@@ -1281,6 +1326,7 @@ class Handle_IFSelect_SelectSignature : public Handle_IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_EditForm;
 class Handle_IFSelect_EditForm : public Handle_MMgt_TShared {
 	public:
@@ -1305,6 +1351,7 @@ class Handle_IFSelect_EditForm : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_EditForm\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_DispPerFiles;
 class Handle_IFSelect_DispPerFiles : public Handle_IFSelect_Dispatch {
@@ -1331,6 +1378,7 @@ class Handle_IFSelect_DispPerFiles : public Handle_IFSelect_Dispatch {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_DispPerOne;
 class Handle_IFSelect_DispPerOne : public Handle_IFSelect_Dispatch {
 	public:
@@ -1355,6 +1403,7 @@ class Handle_IFSelect_DispPerOne : public Handle_IFSelect_Dispatch {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerOne\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectIncorrectEntities;
 class Handle_IFSelect_SelectIncorrectEntities : public Handle_IFSelect_SelectFlag {
@@ -1381,6 +1430,7 @@ class Handle_IFSelect_SelectIncorrectEntities : public Handle_IFSelect_SelectFla
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_DispPerSignature;
 class Handle_IFSelect_DispPerSignature : public Handle_IFSelect_Dispatch {
 	public:
@@ -1405,6 +1455,7 @@ class Handle_IFSelect_DispPerSignature : public Handle_IFSelect_Dispatch {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_DispPerSignature\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectAnyList;
 class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
@@ -1431,6 +1482,7 @@ class Handle_IFSelect_SelectAnyList : public Handle_IFSelect_SelectDeduct {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectInList;
 class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
 	public:
@@ -1455,6 +1507,7 @@ class Handle_IFSelect_SelectInList : public Handle_IFSelect_SelectAnyList {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectInList\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_AppliedModifiers;
 class Handle_IFSelect_AppliedModifiers : public Handle_MMgt_TShared {
@@ -1481,6 +1534,7 @@ class Handle_IFSelect_AppliedModifiers : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_Activator;
 class Handle_IFSelect_Activator : public Handle_MMgt_TShared {
 	public:
@@ -1505,6 +1559,7 @@ class Handle_IFSelect_Activator : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Activator\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectModelEntities;
 class Handle_IFSelect_SelectModelEntities : public Handle_IFSelect_SelectBase {
@@ -1531,6 +1586,7 @@ class Handle_IFSelect_SelectModelEntities : public Handle_IFSelect_SelectBase {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SignMultiple;
 class Handle_IFSelect_SignMultiple : public Handle_IFSelect_Signature {
 	public:
@@ -1555,6 +1611,7 @@ class Handle_IFSelect_SignMultiple : public Handle_IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignMultiple\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_GraphCounter;
 class Handle_IFSelect_GraphCounter : public Handle_IFSelect_SignCounter {
@@ -1581,6 +1638,7 @@ class Handle_IFSelect_GraphCounter : public Handle_IFSelect_SignCounter {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectDiff;
 class Handle_IFSelect_SelectDiff : public Handle_IFSelect_SelectControl {
 	public:
@@ -1605,6 +1663,7 @@ class Handle_IFSelect_SelectDiff : public Handle_IFSelect_SelectControl {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectDiff\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers;
 class Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public Handle_TCollection_SeqNode {
@@ -1631,6 +1690,7 @@ class Handle_IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public Handle_T
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_Editor;
 class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
 	public:
@@ -1655,6 +1715,7 @@ class Handle_IFSelect_Editor : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Editor\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_ParamEditor;
 class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
@@ -1681,6 +1742,7 @@ class Handle_IFSelect_ParamEditor : public Handle_IFSelect_Editor {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_CheckCounter;
 class Handle_IFSelect_CheckCounter : public Handle_IFSelect_SignatureList {
 	public:
@@ -1705,6 +1767,7 @@ class Handle_IFSelect_CheckCounter : public Handle_IFSelect_SignatureList {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_CheckCounter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfDispatch;
 class Handle_IFSelect_SequenceNodeOfTSeqOfDispatch : public Handle_TCollection_SeqNode {
@@ -1731,6 +1794,7 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfDispatch : public Handle_TCollection_S
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectSent;
 class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
 	public:
@@ -1755,6 +1819,7 @@ class Handle_IFSelect_SelectSent : public Handle_IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSent\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SignAncestor;
 class Handle_IFSelect_SignAncestor : public Handle_IFSelect_SignType {
@@ -1781,6 +1846,7 @@ class Handle_IFSelect_SignAncestor : public Handle_IFSelect_SignType {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SignValidity;
 class Handle_IFSelect_SignValidity : public Handle_IFSelect_Signature {
 	public:
@@ -1805,6 +1871,7 @@ class Handle_IFSelect_SignValidity : public Handle_IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SignValidity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectRootComps;
 class Handle_IFSelect_SelectRootComps : public Handle_IFSelect_SelectExtract {
@@ -1831,6 +1898,7 @@ class Handle_IFSelect_SelectRootComps : public Handle_IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectRoots;
 class Handle_IFSelect_SelectRoots : public Handle_IFSelect_SelectExtract {
 	public:
@@ -1855,6 +1923,7 @@ class Handle_IFSelect_SelectRoots : public Handle_IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectRoots\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_DispPerCount;
 class Handle_IFSelect_DispPerCount : public Handle_IFSelect_Dispatch {
@@ -1881,6 +1950,7 @@ class Handle_IFSelect_DispPerCount : public Handle_IFSelect_Dispatch {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SelectSignedShared;
 class Handle_IFSelect_SelectSignedShared : public Handle_IFSelect_SelectExplore {
 	public:
@@ -1905,6 +1975,7 @@ class Handle_IFSelect_SelectSignedShared : public Handle_IFSelect_SelectExplore 
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SelectSignedShared\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_BasicDumper;
 class Handle_IFSelect_BasicDumper : public Handle_IFSelect_SessionDumper {
@@ -1931,6 +2002,7 @@ class Handle_IFSelect_BasicDumper : public Handle_IFSelect_SessionDumper {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SessionPilot;
 class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
 	public:
@@ -1955,6 +2027,7 @@ class Handle_IFSelect_SessionPilot : public Handle_IFSelect_Activator {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SessionPilot\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_ModelCopier;
 class Handle_IFSelect_ModelCopier : public Handle_MMgt_TShared {
@@ -1981,6 +2054,7 @@ class Handle_IFSelect_ModelCopier : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_SequenceNodeOfTSeqOfSelection;
 class Handle_IFSelect_SequenceNodeOfTSeqOfSelection : public Handle_TCollection_SeqNode {
 	public:
@@ -2005,6 +2079,7 @@ class Handle_IFSelect_SequenceNodeOfTSeqOfSelection : public Handle_TCollection_
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_SequenceNodeOfTSeqOfSelection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IFSelect_SelectEntityNumber;
 class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
@@ -2031,6 +2106,7 @@ class Handle_IFSelect_SelectEntityNumber : public Handle_IFSelect_SelectBase {
 	}
 };
 
+
 %nodefaultctor Handle_IFSelect_Act;
 class Handle_IFSelect_Act : public Handle_IFSelect_Activator {
 	public:
@@ -2055,6 +2131,7 @@ class Handle_IFSelect_Act : public Handle_IFSelect_Activator {
 	if (__env){printf("## Call custom destructor for instance of Handle_IFSelect_Act\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectionIterator;
 class IFSelect_SelectionIterator {
@@ -2083,6 +2160,7 @@ class IFSelect_SelectionIterator {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectionIterator\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_TSeqOfDispatch;
 class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
@@ -2138,6 +2216,7 @@ class IFSelect_TSeqOfDispatch : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IFSelect_Selection;
 class IFSelect_Selection : public MMgt_TShared {
 	public:
@@ -2172,6 +2251,7 @@ class IFSelect_Selection : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectBase;
 class IFSelect_SelectBase : public IFSelect_Selection {
 	public:
@@ -2193,6 +2273,7 @@ class IFSelect_SelectBase : public IFSelect_Selection {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectBase\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectPointed;
 class IFSelect_SelectPointed : public IFSelect_SelectBase {
@@ -2248,6 +2329,7 @@ class IFSelect_SelectPointed : public IFSelect_SelectBase {
 	}
 };
 
+
 %nodefaultctor IFSelect_Signature;
 class IFSelect_Signature : public Interface_SignType {
 	public:
@@ -2290,6 +2372,7 @@ class IFSelect_Signature : public Interface_SignType {
 	}
 };
 
+
 %nodefaultctor IFSelect_SignMultiple;
 class IFSelect_SignMultiple : public IFSelect_Signature {
 	public:
@@ -2317,6 +2400,7 @@ class IFSelect_SignMultiple : public IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SignMultiple\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectDeduct;
 class IFSelect_SelectDeduct : public IFSelect_Selection {
@@ -2355,6 +2439,7 @@ class IFSelect_SelectDeduct : public IFSelect_Selection {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectDeduct\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectAnyList;
 class IFSelect_SelectAnyList : public IFSelect_SelectDeduct {
@@ -2410,6 +2495,7 @@ class IFSelect_SelectAnyList : public IFSelect_SelectDeduct {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectInList;
 class IFSelect_SelectInList : public IFSelect_SelectAnyList {
 	public:
@@ -2435,6 +2521,7 @@ class IFSelect_SelectInList : public IFSelect_SelectAnyList {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectInList\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectExtract;
 class IFSelect_SelectExtract : public IFSelect_SelectDeduct {
@@ -2474,6 +2561,7 @@ class IFSelect_SelectExtract : public IFSelect_SelectDeduct {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectErrorEntities;
 class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 	public:
@@ -2497,6 +2585,7 @@ class IFSelect_SelectErrorEntities : public IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectErrorEntities\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_ContextModif;
 class IFSelect_ContextModif {
@@ -2570,6 +2659,7 @@ class IFSelect_ContextModif {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectControl;
 class IFSelect_SelectControl : public IFSelect_Selection {
 	public:
@@ -2606,6 +2696,7 @@ class IFSelect_SelectControl : public IFSelect_Selection {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectDiff;
 class IFSelect_SelectDiff : public IFSelect_SelectControl {
 	public:
@@ -2634,6 +2725,7 @@ class IFSelect_SelectDiff : public IFSelect_SelectControl {
 	}
 };
 
+
 %nodefaultctor IFSelect;
 class IFSelect {
 	public:
@@ -2651,6 +2743,7 @@ class IFSelect {
 	if (__env){printf("## Call custom destructor for instance of IFSelect\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_IntParam;
 class IFSelect_IntParam : public MMgt_TShared {
@@ -2684,6 +2777,7 @@ class IFSelect_IntParam : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_Transformer;
 class IFSelect_Transformer : public MMgt_TShared {
 	public:
@@ -2715,6 +2809,7 @@ class IFSelect_Transformer : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_Transformer\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SequenceOfGeneralModifier;
 class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
@@ -2770,6 +2865,7 @@ class IFSelect_SequenceOfGeneralModifier : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfAppliedModifiers;
 class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_SeqNode {
 	public:
@@ -2797,6 +2893,7 @@ class IFSelect_SequenceNodeOfSequenceOfAppliedModifiers : public TCollection_Seq
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfAppliedModifiers\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_ShareOutResult;
 class IFSelect_ShareOutResult {
@@ -2850,6 +2947,7 @@ class IFSelect_ShareOutResult {
 	}
 };
 
+
 %nodefaultctor IFSelect_Dispatch;
 class IFSelect_Dispatch : public MMgt_TShared {
 	public:
@@ -2902,6 +3000,7 @@ class IFSelect_Dispatch : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_DispPerSignature;
 class IFSelect_DispPerSignature : public IFSelect_Dispatch {
 	public:
@@ -2932,6 +3031,7 @@ class IFSelect_DispPerSignature : public IFSelect_Dispatch {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectModelRoots;
 class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
 	public:
@@ -2961,6 +3061,7 @@ class IFSelect_SelectModelRoots : public IFSelect_SelectBase {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectModelRoots\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_TransformStandard;
 class IFSelect_TransformStandard : public IFSelect_Transformer {
@@ -3022,6 +3123,7 @@ class IFSelect_TransformStandard : public IFSelect_Transformer {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectCombine;
 class IFSelect_SelectCombine : public IFSelect_Selection {
 	public:
@@ -3060,6 +3162,7 @@ class IFSelect_SelectCombine : public IFSelect_Selection {
 	}
 };
 
+
 %nodefaultctor IFSelect_SignType;
 class IFSelect_SignType : public IFSelect_Signature {
 	public:
@@ -3087,6 +3190,7 @@ class IFSelect_SignType : public IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SignType\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SignValidity;
 class IFSelect_SignValidity : public IFSelect_Signature {
@@ -3117,6 +3221,7 @@ class IFSelect_SignValidity : public IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SignValidity\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_PacketList;
 class IFSelect_PacketList : public MMgt_TShared {
@@ -3168,6 +3273,7 @@ class IFSelect_PacketList : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectAnyType;
 class IFSelect_SelectAnyType : public IFSelect_SelectExtract {
 	public:
@@ -3195,6 +3301,7 @@ class IFSelect_SelectAnyType : public IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectAnyType\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectType;
 class IFSelect_SelectType : public IFSelect_SelectAnyType {
@@ -3225,6 +3332,7 @@ class IFSelect_SelectType : public IFSelect_SelectAnyType {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectType\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_ModelCopier;
 class IFSelect_ModelCopier : public MMgt_TShared {
@@ -3294,6 +3402,7 @@ class IFSelect_ModelCopier : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_SignatureList;
 class IFSelect_SignatureList : public MMgt_TShared {
 	public:
@@ -3352,6 +3461,7 @@ class IFSelect_SignatureList : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_SignCounter;
 class IFSelect_SignCounter : public IFSelect_SignatureList {
 	public:
@@ -3408,6 +3518,7 @@ class IFSelect_SignCounter : public IFSelect_SignatureList {
 	}
 };
 
+
 %nodefaultctor IFSelect_GraphCounter;
 class IFSelect_GraphCounter : public IFSelect_SignCounter {
 	public:
@@ -3436,6 +3547,7 @@ class IFSelect_GraphCounter : public IFSelect_SignCounter {
 	}
 };
 
+
 %nodefaultctor IFSelect_SequenceNodeOfTSeqOfSelection;
 class IFSelect_SequenceNodeOfTSeqOfSelection : public TCollection_SeqNode {
 	public:
@@ -3463,6 +3575,7 @@ class IFSelect_SequenceNodeOfTSeqOfSelection : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfTSeqOfSelection\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_DispPerCount;
 class IFSelect_DispPerCount : public IFSelect_Dispatch {
@@ -3503,6 +3616,7 @@ class IFSelect_DispPerCount : public IFSelect_Dispatch {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerCount\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_WorkLibrary;
 class IFSelect_WorkLibrary : public Standard_Transient {
@@ -3545,6 +3659,7 @@ class IFSelect_WorkLibrary : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_WorkLibrary\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_EditForm;
 class IFSelect_EditForm : public MMgt_TShared {
@@ -3658,6 +3773,7 @@ class IFSelect_EditForm : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectExplore;
 class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
 	public:
@@ -3692,6 +3808,7 @@ class IFSelect_SelectExplore : public IFSelect_SelectDeduct {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectSignedShared;
 class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
 	public:
@@ -3721,6 +3838,7 @@ class IFSelect_SelectSignedShared : public IFSelect_SelectExplore {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSignedShared\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectSignedSharing;
 class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
@@ -3758,6 +3876,7 @@ class IFSelect_SelectSignedSharing : public IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor IFSelect_Functions;
 class IFSelect_Functions {
 	public:
@@ -3781,6 +3900,7 @@ class IFSelect_Functions {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_Functions\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectShared;
 class IFSelect_SelectShared : public IFSelect_SelectDeduct {
@@ -3811,6 +3931,7 @@ class IFSelect_SelectShared : public IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectShared\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectSent;
 class IFSelect_SelectSent : public IFSelect_SelectExtract {
@@ -3847,6 +3968,7 @@ class IFSelect_SelectSent : public IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSent\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_Activator;
 class IFSelect_Activator : public MMgt_TShared {
@@ -3902,6 +4024,7 @@ class IFSelect_Activator : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_Act;
 class IFSelect_Act : public IFSelect_Activator {
 	public:
@@ -3927,6 +4050,7 @@ class IFSelect_Act : public IFSelect_Activator {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_Act\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SignAncestor;
 class IFSelect_SignAncestor : public IFSelect_SignType {
@@ -3955,6 +4079,7 @@ class IFSelect_SignAncestor : public IFSelect_SignType {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SignAncestor\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_DispPerFiles;
 class IFSelect_DispPerFiles : public IFSelect_Dispatch {
@@ -3995,6 +4120,7 @@ class IFSelect_DispPerFiles : public IFSelect_Dispatch {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerFiles\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SessionPilot;
 class IFSelect_SessionPilot : public IFSelect_Activator {
@@ -4074,6 +4200,7 @@ class IFSelect_SessionPilot : public IFSelect_Activator {
 	}
 };
 
+
 %nodefaultctor IFSelect_SessionDumper;
 class IFSelect_SessionDumper : public MMgt_TShared {
 	public:
@@ -4106,6 +4233,7 @@ class IFSelect_SessionDumper : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_BasicDumper;
 class IFSelect_BasicDumper : public IFSelect_SessionDumper {
 	public:
@@ -4129,6 +4257,7 @@ class IFSelect_BasicDumper : public IFSelect_SessionDumper {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_BasicDumper\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_TSeqOfSelection;
 class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
@@ -4184,6 +4313,7 @@ class IFSelect_TSeqOfSelection : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectModelEntities;
 class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 	public:
@@ -4215,6 +4345,7 @@ class IFSelect_SelectModelEntities : public IFSelect_SelectBase {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectModelEntities\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectRange;
 class IFSelect_SelectRange : public IFSelect_SelectExtract {
@@ -4266,6 +4397,7 @@ class IFSelect_SelectRange : public IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectFlag;
 class IFSelect_SelectFlag : public IFSelect_SelectExtract {
 	public:
@@ -4300,6 +4432,7 @@ class IFSelect_SelectFlag : public IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectRootComps;
 class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 	public:
@@ -4332,6 +4465,7 @@ class IFSelect_SelectRootComps : public IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectIncorrectEntities;
 class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
 	public:
@@ -4357,6 +4491,7 @@ class IFSelect_SelectIncorrectEntities : public IFSelect_SelectFlag {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectIncorrectEntities\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectSuite;
 class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
@@ -4399,6 +4534,7 @@ class IFSelect_SelectSuite : public IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSuite\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_ListEditor;
 class IFSelect_ListEditor : public MMgt_TShared {
@@ -4460,6 +4596,7 @@ class IFSelect_ListEditor : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_AppliedModifiers;
 class IFSelect_AppliedModifiers : public MMgt_TShared {
 	public:
@@ -4500,6 +4637,7 @@ class IFSelect_AppliedModifiers : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectIntersection;
 class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
 	public:
@@ -4529,6 +4667,7 @@ class IFSelect_SelectIntersection : public IFSelect_SelectCombine {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectIntersection\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_ShareOut;
 class IFSelect_ShareOut : public MMgt_TShared {
@@ -4616,6 +4755,7 @@ class IFSelect_ShareOut : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_SessionFile;
 class IFSelect_SessionFile {
 	public:
@@ -4702,6 +4842,7 @@ class IFSelect_SessionFile {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectUnion;
 class IFSelect_SelectUnion : public IFSelect_SelectCombine {
 	public:
@@ -4731,6 +4872,7 @@ class IFSelect_SelectUnion : public IFSelect_SelectCombine {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectUnion\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_GeneralModifier;
 class IFSelect_GeneralModifier : public MMgt_TShared {
@@ -4774,6 +4916,7 @@ class IFSelect_GeneralModifier : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_SignCategory;
 class IFSelect_SignCategory : public IFSelect_Signature {
 	public:
@@ -4802,6 +4945,7 @@ class IFSelect_SignCategory : public IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor IFSelect_SequenceNodeOfTSeqOfDispatch;
 class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
 	public:
@@ -4829,6 +4973,7 @@ class IFSelect_SequenceNodeOfTSeqOfDispatch : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfTSeqOfDispatch\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectSignature;
 class IFSelect_SelectSignature : public IFSelect_SelectExtract {
@@ -4873,6 +5018,7 @@ class IFSelect_SelectSignature : public IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSignature\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_Editor;
 class IFSelect_Editor : public MMgt_TShared {
@@ -4942,6 +5088,7 @@ class IFSelect_Editor : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_ParamEditor;
 class IFSelect_ParamEditor : public IFSelect_Editor {
 	public:
@@ -4972,6 +5119,7 @@ class IFSelect_ParamEditor : public IFSelect_Editor {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectUnknownEntities;
 class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 	public:
@@ -5001,6 +5149,7 @@ class IFSelect_SelectUnknownEntities : public IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectUnknownEntities\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SelectRoots;
 class IFSelect_SelectRoots : public IFSelect_SelectExtract {
@@ -5033,6 +5182,7 @@ class IFSelect_SelectRoots : public IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectRoots\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_ContextWrite;
 class IFSelect_ContextWrite {
@@ -5092,6 +5242,7 @@ class IFSelect_ContextWrite {
 	}
 };
 
+
 %nodefaultctor IFSelect_CheckCounter;
 class IFSelect_CheckCounter : public IFSelect_SignatureList {
 	public:
@@ -5124,6 +5275,7 @@ class IFSelect_CheckCounter : public IFSelect_SignatureList {
 	}
 };
 
+
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfGeneralModifier;
 class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqNode {
 	public:
@@ -5151,6 +5303,7 @@ class IFSelect_SequenceNodeOfSequenceOfGeneralModifier : public TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SequenceNodeOfSequenceOfGeneralModifier\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SequenceNodeOfSequenceOfInterfaceModel;
 class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNode {
@@ -5180,6 +5333,7 @@ class IFSelect_SequenceNodeOfSequenceOfInterfaceModel : public TCollection_SeqNo
 	}
 };
 
+
 %nodefaultctor IFSelect_Modifier;
 class IFSelect_Modifier : public IFSelect_GeneralModifier {
 	public:
@@ -5206,6 +5360,7 @@ class IFSelect_Modifier : public IFSelect_GeneralModifier {
 	}
 };
 
+
 %nodefaultctor IFSelect_ModifReorder;
 class IFSelect_ModifReorder : public IFSelect_Modifier {
 	public:
@@ -5231,6 +5386,7 @@ class IFSelect_ModifReorder : public IFSelect_Modifier {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_ModifReorder\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_HSeqOfSelection;
 class IFSelect_HSeqOfSelection : public MMgt_TShared {
@@ -5302,6 +5458,7 @@ class IFSelect_HSeqOfSelection : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_DispPerOne;
 class IFSelect_DispPerOne : public IFSelect_Dispatch {
 	public:
@@ -5335,6 +5492,7 @@ class IFSelect_DispPerOne : public IFSelect_Dispatch {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_DispPerOne\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_WorkSession;
 class IFSelect_WorkSession : public MMgt_TShared {
@@ -5684,6 +5842,7 @@ class IFSelect_WorkSession : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IFSelect_DispGlobal;
 class IFSelect_DispGlobal : public IFSelect_Dispatch {
 	public:
@@ -5718,6 +5877,7 @@ class IFSelect_DispGlobal : public IFSelect_Dispatch {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectEntityNumber;
 class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
 	public:
@@ -5751,6 +5911,7 @@ class IFSelect_SelectEntityNumber : public IFSelect_SelectBase {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectEntityNumber\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_SequenceOfAppliedModifiers;
 class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
@@ -5806,6 +5967,7 @@ class IFSelect_SequenceOfAppliedModifiers : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IFSelect_SequenceOfInterfaceModel;
 class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 	public:
@@ -5860,6 +6022,7 @@ class IFSelect_SequenceOfInterfaceModel : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IFSelect_SelectSharing;
 class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
 	public:
@@ -5889,6 +6052,7 @@ class IFSelect_SelectSharing : public IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of IFSelect_SelectSharing\n");}
 	}
 };
+
 
 %nodefaultctor IFSelect_ModifEditForm;
 class IFSelect_ModifEditForm : public IFSelect_Modifier {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PColPGeom_HArray1OfSurface : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_HArray2OfBezierSurface;
 class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PColPGeom_HArray2OfBezierSurface : public Handle_Standard_Persisten
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfBezierSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public Handle_PStandard_ArrayNode {
@@ -188,6 +191,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public Handle
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_HArray1OfBoundedSurface;
 class Handle_PColPGeom_HArray1OfBoundedSurface : public Handle_Standard_Persistent {
 	public:
@@ -212,6 +216,7 @@ class Handle_PColPGeom_HArray1OfBoundedSurface : public Handle_Standard_Persiste
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_HArray2OfBoundedSurface;
 class Handle_PColPGeom_HArray2OfBoundedSurface : public Handle_Standard_Persistent {
@@ -238,6 +243,7 @@ class Handle_PColPGeom_HArray2OfBoundedSurface : public Handle_Standard_Persiste
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public Handle_PStandard_ArrayNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_HArray2OfBSplineSurface;
 class Handle_PColPGeom_HArray2OfBSplineSurface : public Handle_Standard_Persistent {
@@ -288,6 +295,7 @@ class Handle_PColPGeom_HArray2OfBSplineSurface : public Handle_Standard_Persiste
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_HArray1OfBSplineCurve;
 class Handle_PColPGeom_HArray1OfBSplineCurve : public Handle_Standard_Persistent {
 	public:
@@ -312,6 +320,7 @@ class Handle_PColPGeom_HArray1OfBSplineCurve : public Handle_Standard_Persistent
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_HArray1OfBezierCurve;
 class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent {
@@ -338,6 +347,7 @@ class Handle_PColPGeom_HArray1OfBezierCurve : public Handle_Standard_Persistent 
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_HArray1OfCurve;
 class Handle_PColPGeom_HArray1OfCurve : public Handle_Standard_Persistent {
 	public:
@@ -362,6 +372,7 @@ class Handle_PColPGeom_HArray1OfCurve : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public Handle_PStandard_ArrayNode {
@@ -388,6 +399,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public Handl
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handle_PStandard_ArrayNode {
 	public:
@@ -412,6 +424,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_HArray1OfBoundedCurve;
 class Handle_PColPGeom_HArray1OfBoundedCurve : public Handle_Standard_Persistent {
@@ -438,6 +451,7 @@ class Handle_PColPGeom_HArray1OfBoundedCurve : public Handle_Standard_Persistent
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public Handle_PStandard_ArrayNode {
 	public:
@@ -462,6 +476,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public Handle_PStan
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle_PStandard_ArrayNode {
@@ -488,6 +503,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public Handle_P
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_HArray2OfSurface;
 class Handle_PColPGeom_HArray2OfSurface : public Handle_Standard_Persistent {
 	public:
@@ -512,6 +528,7 @@ class Handle_PColPGeom_HArray2OfSurface : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_HArray2OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handle_PStandard_ArrayNode {
@@ -538,6 +555,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStandard_ArrayNode {
 	public:
@@ -562,6 +580,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public Handle_PStanda
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public Handle_PStandard_ArrayNode {
@@ -588,6 +607,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public Handle_PStan
 	}
 };
 
+
 %nodefaultctor Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface;
 class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public Handle_PStandard_ArrayNode {
 	public:
@@ -612,6 +632,7 @@ class Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface;
 class PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public PStandard_ArrayNode {
@@ -651,6 +672,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBoundedSurface : public PStandard_Ar
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	public:
@@ -670,6 +692,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBSplineCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_FieldOfHArray1OfCurve;
 class PColPGeom_FieldOfHArray1OfCurve : public DBC_BaseArray {
@@ -701,6 +724,7 @@ class PColPGeom_FieldOfHArray1OfCurve : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray1OfBezierCurve;
 class PColPGeom_HArray1OfBezierCurve : public Standard_Persistent {
 	public:
@@ -721,7 +745,12 @@ class PColPGeom_HArray1OfBezierCurve : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray1OfBezierCurve();
 		%feature("autodoc", "1");
@@ -757,6 +786,7 @@ class PColPGeom_HArray1OfBezierCurve : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray1OfCurve;
 class PColPGeom_HArray1OfCurve : public Standard_Persistent {
 	public:
@@ -777,7 +807,12 @@ class PColPGeom_HArray1OfCurve : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray1OfCurve();
 		%feature("autodoc", "1");
@@ -813,6 +848,7 @@ class PColPGeom_HArray1OfCurve : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray1OfSurface;
 class PColPGeom_HArray1OfSurface : public Standard_Persistent {
 	public:
@@ -833,7 +869,12 @@ class PColPGeom_HArray1OfSurface : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray1OfSurface();
 		%feature("autodoc", "1");
@@ -868,6 +909,7 @@ class PColPGeom_HArray1OfSurface : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_HArray1OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface;
 class PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public PStandard_ArrayNode {
@@ -907,6 +949,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBSplineSurface : public PStandard_Ar
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface;
 class PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public PStandard_ArrayNode {
 	public:
@@ -944,6 +987,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface : public PStandard_Arr
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray2OfBezierSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode {
@@ -983,6 +1027,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfCurve : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface;
 class PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface {
 	public:
@@ -1002,6 +1047,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_FieldOfHArray2OfBezierSurface;
 class PColPGeom_FieldOfHArray2OfBezierSurface : public DBC_BaseArray {
@@ -1033,6 +1079,7 @@ class PColPGeom_FieldOfHArray2OfBezierSurface : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColPGeom_FieldOfHArray2OfBoundedSurface;
 class PColPGeom_FieldOfHArray2OfBoundedSurface : public DBC_BaseArray {
 	public:
@@ -1062,6 +1109,7 @@ class PColPGeom_FieldOfHArray2OfBoundedSurface : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_ArrayNode {
@@ -1101,6 +1149,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBezierCurve : public PStandard_Array
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public PStandard_ArrayNode {
 	public:
@@ -1138,6 +1187,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface : public PStandard_ArrayNode
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayNodeOfFieldOfHArray1OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface;
 class PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public PStandard_ArrayNode {
@@ -1177,6 +1227,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray2OfSurface : public PStandard_ArrayNode
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray1OfBSplineCurve;
 class PColPGeom_HArray1OfBSplineCurve : public Standard_Persistent {
 	public:
@@ -1197,7 +1248,12 @@ class PColPGeom_HArray1OfBSplineCurve : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray1OfBSplineCurve();
 		%feature("autodoc", "1");
@@ -1233,6 +1289,7 @@ class PColPGeom_HArray1OfBSplineCurve : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_FieldOfHArray2OfBSplineSurface;
 class PColPGeom_FieldOfHArray2OfBSplineSurface : public DBC_BaseArray {
 	public:
@@ -1262,6 +1319,7 @@ class PColPGeom_FieldOfHArray2OfBSplineSurface : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray2OfBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public PStandard_ArrayNode {
@@ -1301,6 +1359,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedSurface : public PStandard_Ar
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface;
 class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
 	public:
@@ -1321,6 +1380,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBezierSurface {
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
 	public:
@@ -1340,6 +1400,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_ArrayNode {
@@ -1379,6 +1440,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBSplineCurve : public PStandard_Arra
 	}
 };
 
+
 %nodefaultctor PColPGeom_FieldOfHArray1OfBSplineCurve;
 class PColPGeom_FieldOfHArray1OfBSplineCurve : public DBC_BaseArray {
 	public:
@@ -1409,6 +1471,7 @@ class PColPGeom_FieldOfHArray1OfBSplineCurve : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 	public:
@@ -1429,6 +1492,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBoundedCurve {
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
 	public:
@@ -1448,6 +1512,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_FieldOfHArray2OfSurface;
 class PColPGeom_FieldOfHArray2OfSurface : public DBC_BaseArray {
@@ -1479,6 +1544,7 @@ class PColPGeom_FieldOfHArray2OfSurface : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray2OfBezierSurface;
 class PColPGeom_HArray2OfBezierSurface : public Standard_Persistent {
 	public:
@@ -1505,7 +1571,12 @@ class PColPGeom_HArray2OfBezierSurface : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray2OfBezierSurface();
 		%feature("autodoc", "1");
@@ -1549,6 +1620,7 @@ class PColPGeom_HArray2OfBezierSurface : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray1OfBoundedSurface;
 class PColPGeom_HArray1OfBoundedSurface : public Standard_Persistent {
 	public:
@@ -1569,7 +1641,12 @@ class PColPGeom_HArray1OfBoundedSurface : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray1OfBoundedSurface();
 		%feature("autodoc", "1");
@@ -1605,6 +1682,7 @@ class PColPGeom_HArray1OfBoundedSurface : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray2OfBoundedSurface;
 class PColPGeom_HArray2OfBoundedSurface : public Standard_Persistent {
 	public:
@@ -1631,7 +1709,12 @@ class PColPGeom_HArray2OfBoundedSurface : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray2OfBoundedSurface();
 		%feature("autodoc", "1");
@@ -1675,6 +1758,7 @@ class PColPGeom_HArray2OfBoundedSurface : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve {
 	public:
@@ -1694,6 +1778,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray1OfCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_HArray1OfBoundedCurve;
 class PColPGeom_HArray1OfBoundedCurve : public Standard_Persistent {
@@ -1715,7 +1800,12 @@ class PColPGeom_HArray1OfBoundedCurve : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray1OfBoundedCurve();
 		%feature("autodoc", "1");
@@ -1751,6 +1841,7 @@ class PColPGeom_HArray1OfBoundedCurve : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_FieldOfHArray1OfSurface;
 class PColPGeom_FieldOfHArray1OfSurface : public DBC_BaseArray {
 	public:
@@ -1781,6 +1872,7 @@ class PColPGeom_FieldOfHArray1OfSurface : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray2OfBSplineSurface;
 class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 	public:
@@ -1807,7 +1899,12 @@ class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray2OfBSplineSurface();
 		%feature("autodoc", "1");
@@ -1851,6 +1948,7 @@ class PColPGeom_HArray2OfBSplineSurface : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_FieldOfHArray1OfBoundedSurface;
 class PColPGeom_FieldOfHArray1OfBoundedSurface : public DBC_BaseArray {
 	public:
@@ -1881,6 +1979,7 @@ class PColPGeom_FieldOfHArray1OfBoundedSurface : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColPGeom_HArray2OfSurface;
 class PColPGeom_HArray2OfSurface : public Standard_Persistent {
 	public:
@@ -1907,7 +2006,12 @@ class PColPGeom_HArray2OfSurface : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColPGeom_HArray2OfSurface();
 		%feature("autodoc", "1");
@@ -1951,6 +2055,7 @@ class PColPGeom_HArray2OfSurface : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColPGeom_FieldOfHArray1OfBoundedCurve;
 class PColPGeom_FieldOfHArray1OfBoundedCurve : public DBC_BaseArray {
 	public:
@@ -1980,6 +2085,7 @@ class PColPGeom_FieldOfHArray1OfBoundedCurve : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBoundedCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve;
 class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_ArrayNode {
@@ -2019,6 +2125,7 @@ class PColPGeom_VArrayNodeOfFieldOfHArray1OfBoundedCurve : public PStandard_Arra
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface;
 class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
 	public:
@@ -2039,6 +2146,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBoundedSurface {
 	}
 };
 
+
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface;
 class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface {
 	public:
@@ -2058,6 +2166,7 @@ class PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_VArrayTNodeOfFieldOfHArray2OfBSplineSurface\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_FieldOfHArray1OfBezierCurve;
 class PColPGeom_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
@@ -2088,6 +2197,7 @@ class PColPGeom_FieldOfHArray1OfBezierCurve : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColPGeom_FieldOfHArray1OfBezierCurve\n");}
 	}
 };
+
 
 %nodefaultctor PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve;
 class PColPGeom_VArrayTNodeOfFieldOfHArray1OfBezierCurve {

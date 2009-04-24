@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PTColStd_DataMapNodeOfTransientPersistentMap : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_PTColStd_DataMapNodeOfPersistentTransientMap;
 class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_PTColStd_DataMapNodeOfPersistentTransientMap : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_PTColStd_DataMapNodeOfPersistentTransientMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
 class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public Han
 	}
 };
 
+
 %nodefaultctor PTColStd_MapPersistentHasher;
 class PTColStd_MapPersistentHasher {
 	public:
@@ -205,6 +209,7 @@ class PTColStd_MapPersistentHasher {
 	if (__env){printf("## Call custom destructor for instance of PTColStd_MapPersistentHasher\n");}
 	}
 };
+
 
 %nodefaultctor PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent;
 class PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent : public TCollection_BasicMapIterator {
@@ -227,6 +232,7 @@ class PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent : public TColle
 	if (__env){printf("## Call custom destructor for instance of PTColStd_DoubleMapIteratorOfDoubleMapOfTransientPersistent\n");}
 	}
 };
+
 
 %nodefaultctor PTColStd_DoubleMapOfTransientPersistent;
 class PTColStd_DoubleMapOfTransientPersistent : public TCollection_BasicMap {
@@ -264,6 +270,7 @@ class PTColStd_DoubleMapOfTransientPersistent : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor PTColStd_PersistentTransientMap;
 class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
 	public:
@@ -297,6 +304,7 @@ class PTColStd_PersistentTransientMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of PTColStd_PersistentTransientMap\n");}
 	}
 };
+
 
 %nodefaultctor PTColStd_TransientPersistentMap;
 class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
@@ -332,6 +340,7 @@ class PTColStd_TransientPersistentMap : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor PTColStd_DataMapIteratorOfPersistentTransientMap;
 class PTColStd_DataMapIteratorOfPersistentTransientMap : public TCollection_BasicMapIterator {
 	public:
@@ -353,6 +362,7 @@ class PTColStd_DataMapIteratorOfPersistentTransientMap : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfPersistentTransientMap\n");}
 	}
 };
+
 
 %nodefaultctor PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent;
 class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollection_MapNode {
@@ -386,6 +396,7 @@ class PTColStd_DoubleMapNodeOfDoubleMapOfTransientPersistent : public TCollectio
 	}
 };
 
+
 %nodefaultctor PTColStd_DataMapNodeOfPersistentTransientMap;
 class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode {
 	public:
@@ -416,6 +427,7 @@ class PTColStd_DataMapNodeOfPersistentTransientMap : public TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor PTColStd_DataMapIteratorOfTransientPersistentMap;
 class PTColStd_DataMapIteratorOfTransientPersistentMap : public TCollection_BasicMapIterator {
 	public:
@@ -437,6 +449,7 @@ class PTColStd_DataMapIteratorOfTransientPersistentMap : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of PTColStd_DataMapIteratorOfTransientPersistentMap\n");}
 	}
 };
+
 
 %nodefaultctor PTColStd_DataMapNodeOfTransientPersistentMap;
 class PTColStd_DataMapNodeOfTransientPersistentMap : public TCollection_MapNode {

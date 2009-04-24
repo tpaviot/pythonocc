@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfPinpointConstraint : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint;
 class Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public Handle_TCollection_SeqNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public Handl
 	if (__env){printf("## Call custom destructor for instance of Handle_Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
 class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_TCollection_SeqNode {
@@ -188,6 +191,7 @@ class Handle_Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public Handle_T
 	}
 };
 
+
 %nodefaultctor Handle_Plate_HArray1OfPinpointConstraint;
 class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_Plate_HArray1OfPinpointConstraint : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Plate_HArray1OfPinpointConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_Plate;
 class Plate_Plate {
@@ -271,6 +276,7 @@ class Plate_Plate {
 	}
 };
 
+
 %nodefaultctor Plate_GlobalTranslationConstraint;
 class Plate_GlobalTranslationConstraint {
 	public:
@@ -286,6 +292,7 @@ class Plate_GlobalTranslationConstraint {
 	if (__env){printf("## Call custom destructor for instance of Plate_GlobalTranslationConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_PlaneConstraint;
 class Plate_PlaneConstraint {
@@ -303,6 +310,7 @@ class Plate_PlaneConstraint {
 	}
 };
 
+
 %nodefaultctor Plate_SampledCurveConstraint;
 class Plate_SampledCurveConstraint {
 	public:
@@ -318,6 +326,7 @@ class Plate_SampledCurveConstraint {
 	if (__env){printf("## Call custom destructor for instance of Plate_SampledCurveConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_GtoCConstraint;
 class Plate_GtoCConstraint {
@@ -351,6 +360,7 @@ class Plate_GtoCConstraint {
 	}
 };
 
+
 %nodefaultctor Plate_D3;
 class Plate_D3 {
 	public:
@@ -366,6 +376,7 @@ class Plate_D3 {
 	if (__env){printf("## Call custom destructor for instance of Plate_D3\n");}
 	}
 };
+
 
 %nodefaultctor Plate_SequenceOfLinearXYZConstraint;
 class Plate_SequenceOfLinearXYZConstraint : public TCollection_BaseSequence {
@@ -421,6 +432,7 @@ class Plate_SequenceOfLinearXYZConstraint : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Plate_D1;
 class Plate_D1 {
 	public:
@@ -440,6 +452,7 @@ class Plate_D1 {
 	if (__env){printf("## Call custom destructor for instance of Plate_D1\n");}
 	}
 };
+
 
 %nodefaultctor Plate_Array1OfPinpointConstraint;
 class Plate_Array1OfPinpointConstraint {
@@ -481,6 +494,7 @@ class Plate_Array1OfPinpointConstraint {
 	}
 };
 
+
 %nodefaultctor Plate_D2;
 class Plate_D2 {
 	public:
@@ -496,6 +510,7 @@ class Plate_D2 {
 	if (__env){printf("## Call custom destructor for instance of Plate_D2\n");}
 	}
 };
+
 
 %nodefaultctor Plate_SequenceNodeOfSequenceOfLinearScalarConstraint;
 class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_SeqNode {
@@ -524,6 +539,7 @@ class Plate_SequenceNodeOfSequenceOfLinearScalarConstraint : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearScalarConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_LinearScalarConstraint;
 class Plate_LinearScalarConstraint {
@@ -554,6 +570,7 @@ class Plate_LinearScalarConstraint {
 	if (__env){printf("## Call custom destructor for instance of Plate_LinearScalarConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_HArray1OfPinpointConstraint;
 class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
@@ -601,6 +618,7 @@ class Plate_HArray1OfPinpointConstraint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Plate_PinpointConstraint;
 class Plate_PinpointConstraint {
 	public:
@@ -624,6 +642,7 @@ class Plate_PinpointConstraint {
 	if (__env){printf("## Call custom destructor for instance of Plate_PinpointConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_SequenceNodeOfSequenceOfLinearXYZConstraint;
 class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_SeqNode {
@@ -652,6 +671,7 @@ class Plate_SequenceNodeOfSequenceOfLinearXYZConstraint : public TCollection_Seq
 	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfLinearXYZConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_SequenceOfPinpointConstraint;
 class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
@@ -707,6 +727,7 @@ class Plate_SequenceOfPinpointConstraint : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Plate_FreeGtoCConstraint;
 class Plate_FreeGtoCConstraint {
 	public:
@@ -733,6 +754,7 @@ class Plate_FreeGtoCConstraint {
 	}
 };
 
+
 %nodefaultctor Plate_LineConstraint;
 class Plate_LineConstraint {
 	public:
@@ -748,6 +770,7 @@ class Plate_LineConstraint {
 	if (__env){printf("## Call custom destructor for instance of Plate_LineConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_SequenceNodeOfSequenceOfPinpointConstraint;
 class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqNode {
@@ -776,6 +799,7 @@ class Plate_SequenceNodeOfSequenceOfPinpointConstraint : public TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Plate_SequenceNodeOfSequenceOfPinpointConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_SequenceOfLinearScalarConstraint;
 class Plate_SequenceOfLinearScalarConstraint : public TCollection_BaseSequence {
@@ -830,6 +854,7 @@ class Plate_SequenceOfLinearScalarConstraint : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Plate_SequenceOfLinearScalarConstraint\n");}
 	}
 };
+
 
 %nodefaultctor Plate_LinearXYZConstraint;
 class Plate_LinearXYZConstraint {

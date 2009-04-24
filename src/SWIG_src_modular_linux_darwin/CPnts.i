@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -153,6 +154,7 @@ class CPnts_UniformDeflection {
 	}
 };
 
+
 %nodefaultctor CPnts_MyGaussFunction;
 class CPnts_MyGaussFunction : public math_Function {
 	public:
@@ -168,6 +170,7 @@ class CPnts_MyGaussFunction : public math_Function {
 	if (__env){printf("## Call custom destructor for instance of CPnts_MyGaussFunction\n");}
 	}
 };
+
 
 %nodefaultctor CPnts_AbscissaPoint;
 class CPnts_AbscissaPoint {
@@ -234,6 +237,7 @@ class CPnts_AbscissaPoint {
 	if (__env){printf("## Call custom destructor for instance of CPnts_AbscissaPoint\n");}
 	}
 };
+
 
 %nodefaultctor CPnts_MyRootFunction;
 class CPnts_MyRootFunction : public math_FunctionWithDerivative {

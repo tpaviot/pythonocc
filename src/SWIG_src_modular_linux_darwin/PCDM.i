@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -164,6 +165,7 @@ class Handle_PCDM_ReadWriter : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_PCDM_ReadWriter_1;
 class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 	public:
@@ -188,6 +190,7 @@ class Handle_PCDM_ReadWriter_1 : public Handle_PCDM_ReadWriter {
 	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_ReadWriter_1\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfReference;
 class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_SeqNode {
@@ -214,6 +217,7 @@ class Handle_PCDM_SequenceNodeOfSequenceOfReference : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_PCDM_SequenceNodeOfSequenceOfDocument;
 class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_SeqNode {
 	public:
@@ -238,6 +242,7 @@ class Handle_PCDM_SequenceNodeOfSequenceOfDocument : public Handle_TCollection_S
 	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_SequenceNodeOfSequenceOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PCDM_DriverError;
 class Handle_PCDM_DriverError : public Handle_Standard_Failure {
@@ -264,6 +269,7 @@ class Handle_PCDM_DriverError : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_PCDM_Writer;
 class Handle_PCDM_Writer : public Handle_Standard_Transient {
 	public:
@@ -288,6 +294,7 @@ class Handle_PCDM_Writer : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Writer\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PCDM_StorageDriver;
 class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
@@ -314,6 +321,7 @@ class Handle_PCDM_StorageDriver : public Handle_PCDM_Writer {
 	}
 };
 
+
 %nodefaultctor Handle_PCDM_Reader;
 class Handle_PCDM_Reader : public Handle_Standard_Transient {
 	public:
@@ -338,6 +346,7 @@ class Handle_PCDM_Reader : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Reader\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PCDM_RetrievalDriver;
 class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
@@ -364,6 +373,7 @@ class Handle_PCDM_RetrievalDriver : public Handle_PCDM_Reader {
 	}
 };
 
+
 %nodefaultctor Handle_PCDM_Document;
 class Handle_PCDM_Document : public Handle_Standard_Persistent {
 	public:
@@ -388,6 +398,7 @@ class Handle_PCDM_Document : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PCDM_Document\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PCDM_ReferenceIterator;
 class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
@@ -414,6 +425,7 @@ class Handle_PCDM_ReferenceIterator : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor PCDM_Writer;
 class PCDM_Writer : public Standard_Transient {
 	public:
@@ -439,6 +451,7 @@ class PCDM_Writer : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of PCDM_Writer\n");}
 	}
 };
+
 
 %nodefaultctor PCDM_DriverError;
 class PCDM_DriverError : public Standard_Failure {
@@ -474,6 +487,7 @@ class PCDM_DriverError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor PCDM_SequenceNodeOfSequenceOfReference;
 class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 	public:
@@ -501,6 +515,7 @@ class PCDM_SequenceNodeOfSequenceOfReference : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of PCDM_SequenceNodeOfSequenceOfReference\n");}
 	}
 };
+
 
 %nodefaultctor PCDM_ReadWriter;
 class PCDM_ReadWriter : public Standard_Transient {
@@ -554,6 +569,7 @@ class PCDM_ReadWriter : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor PCDM_ReadWriter_1;
 class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 	public:
@@ -579,6 +595,7 @@ class PCDM_ReadWriter_1 : public PCDM_ReadWriter {
 	if (__env){printf("## Call custom destructor for instance of PCDM_ReadWriter_1\n");}
 	}
 };
+
 
 %nodefaultctor PCDM_Reader;
 class PCDM_Reader : public Standard_Transient {
@@ -610,6 +627,7 @@ class PCDM_Reader : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor PCDM_Reference;
 class PCDM_Reference {
 	public:
@@ -632,6 +650,7 @@ class PCDM_Reference {
 	}
 };
 
+
 %nodefaultctor PCDM;
 class PCDM {
 	public:
@@ -649,6 +668,7 @@ class PCDM {
 	if (__env){printf("## Call custom destructor for instance of PCDM\n");}
 	}
 };
+
 
 %nodefaultctor PCDM_SequenceOfDocument;
 class PCDM_SequenceOfDocument : public TCollection_BaseSequence {
@@ -704,6 +724,7 @@ class PCDM_SequenceOfDocument : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor PCDM_SequenceOfReference;
 class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 	public:
@@ -758,6 +779,7 @@ class PCDM_SequenceOfReference : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor PCDM_RetrievalDriver;
 class PCDM_RetrievalDriver : public PCDM_Reader {
 	public:
@@ -800,6 +822,7 @@ class PCDM_RetrievalDriver : public PCDM_Reader {
 	}
 };
 
+
 %nodefaultctor PCDM_SequenceNodeOfSequenceOfDocument;
 class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 	public:
@@ -828,6 +851,7 @@ class PCDM_SequenceNodeOfSequenceOfDocument : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor PCDM_Document;
 class PCDM_Document : public Standard_Persistent {
 	public:
@@ -855,6 +879,7 @@ class PCDM_Document : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PCDM_Document\n");}
 	}
 };
+
 
 %nodefaultctor PCDM_ReferenceIterator;
 class PCDM_ReferenceIterator : public Standard_Transient {

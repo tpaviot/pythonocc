@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -150,6 +151,7 @@ class Handle_PrsMgr_Prs : public Handle_Prs3d_Presentation {
 	}
 };
 
+
 %nodefaultctor Handle_PrsMgr_Presentation;
 class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 	public:
@@ -174,6 +176,7 @@ class Handle_PrsMgr_Presentation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_Presentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PrsMgr_Presentation2d;
 class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
@@ -200,6 +203,7 @@ class Handle_PrsMgr_Presentation2d : public Handle_PrsMgr_Presentation {
 	}
 };
 
+
 %nodefaultctor Handle_PrsMgr_PresentationManager;
 class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 	public:
@@ -224,6 +228,7 @@ class Handle_PrsMgr_PresentationManager : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PrsMgr_PresentationManager3d;
 class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationManager {
@@ -250,6 +255,7 @@ class Handle_PrsMgr_PresentationManager3d : public Handle_PrsMgr_PresentationMan
 	}
 };
 
+
 %nodefaultctor Handle_PrsMgr_PresentationManager2d;
 class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationManager {
 	public:
@@ -274,6 +280,7 @@ class Handle_PrsMgr_PresentationManager2d : public Handle_PrsMgr_PresentationMan
 	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_PresentationManager2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PrsMgr_PresentableObject;
 class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
@@ -300,6 +307,7 @@ class Handle_PrsMgr_PresentableObject : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_PrsMgr_SequenceNodeOfPresentations;
 class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqNode {
 	public:
@@ -324,6 +332,7 @@ class Handle_PrsMgr_SequenceNodeOfPresentations : public Handle_TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Handle_PrsMgr_SequenceNodeOfPresentations\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PrsMgr_Presentation3d;
 class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
@@ -350,6 +359,7 @@ class Handle_PrsMgr_Presentation3d : public Handle_PrsMgr_Presentation {
 	}
 };
 
+
 %nodefaultctor PrsMgr_ModedPresentation;
 class PrsMgr_ModedPresentation {
 	public:
@@ -369,6 +379,7 @@ class PrsMgr_ModedPresentation {
 	if (__env){printf("## Call custom destructor for instance of PrsMgr_ModedPresentation\n");}
 	}
 };
+
 
 %nodefaultctor PrsMgr_Presentation;
 class PrsMgr_Presentation : public MMgt_TShared {
@@ -401,6 +412,7 @@ class PrsMgr_Presentation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation\n");}
 	}
 };
+
 
 %nodefaultctor PrsMgr_PresentableObject;
 class PrsMgr_PresentableObject : public MMgt_TShared {
@@ -456,6 +468,7 @@ class PrsMgr_PresentableObject : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor PrsMgr_Prs;
 class PrsMgr_Prs : public Prs3d_Presentation {
 	public:
@@ -490,6 +503,7 @@ class PrsMgr_Prs : public Prs3d_Presentation {
 	}
 };
 
+
 %nodefaultctor PrsMgr_Presentation3d;
 class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 	public:
@@ -517,6 +531,7 @@ class PrsMgr_Presentation3d : public PrsMgr_Presentation {
 	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation3d\n");}
 	}
 };
+
 
 %nodefaultctor PrsMgr_Presentations;
 class PrsMgr_Presentations : public TCollection_BaseSequence {
@@ -572,6 +587,7 @@ class PrsMgr_Presentations : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor PrsMgr_SequenceNodeOfPresentations;
 class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 	public:
@@ -599,6 +615,7 @@ class PrsMgr_SequenceNodeOfPresentations : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of PrsMgr_SequenceNodeOfPresentations\n");}
 	}
 };
+
 
 %nodefaultctor PrsMgr_Presentation2d;
 class PrsMgr_Presentation2d : public PrsMgr_Presentation {
@@ -633,6 +650,7 @@ class PrsMgr_Presentation2d : public PrsMgr_Presentation {
 	if (__env){printf("## Call custom destructor for instance of PrsMgr_Presentation2d\n");}
 	}
 };
+
 
 %nodefaultctor PrsMgr_PresentationManager;
 class PrsMgr_PresentationManager : public MMgt_TShared {
@@ -693,6 +711,7 @@ class PrsMgr_PresentationManager : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager\n");}
 	}
 };
+
 
 %nodefaultctor PrsMgr_PresentationManager2d;
 class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
@@ -755,6 +774,7 @@ class PrsMgr_PresentationManager2d : public PrsMgr_PresentationManager {
 	if (__env){printf("## Call custom destructor for instance of PrsMgr_PresentationManager2d\n");}
 	}
 };
+
 
 %nodefaultctor PrsMgr_PresentationManager3d;
 class PrsMgr_PresentationManager3d : public PrsMgr_PresentationManager {

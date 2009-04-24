@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -176,6 +177,7 @@ class Handle_MFT_SequenceNodeOfListOfFontName : public Handle_TCollection_SeqNod
 	}
 };
 
+
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontHandle;
 class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqNode {
 	public:
@@ -200,6 +202,7 @@ class Handle_MFT_SequenceNodeOfListOfFontHandle : public Handle_TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Handle_MFT_SequenceNodeOfListOfFontHandle\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MFT_TextManager;
 class Handle_MFT_TextManager : public Handle_MMgt_TShared {
@@ -226,6 +229,7 @@ class Handle_MFT_TextManager : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MFT_FontManager;
 class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 	public:
@@ -250,6 +254,7 @@ class Handle_MFT_FontManager : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManager\n");}
 	}
 };
+
 
 %nodefaultctor Handle_MFT_FontManagerError;
 class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
@@ -276,6 +281,7 @@ class Handle_MFT_FontManagerError : public Handle_Standard_TypeMismatch {
 	}
 };
 
+
 %nodefaultctor Handle_MFT_SequenceNodeOfListOfFontReference;
 class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_SeqNode {
 	public:
@@ -301,6 +307,7 @@ class Handle_MFT_SequenceNodeOfListOfFontReference : public Handle_TCollection_S
 	}
 };
 
+
 %nodefaultctor Handle_MFT_FontManagerDefinitionError;
 class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObject {
 	public:
@@ -325,6 +332,7 @@ class Handle_MFT_FontManagerDefinitionError : public Handle_Standard_NoSuchObjec
 	if (__env){printf("## Call custom destructor for instance of Handle_MFT_FontManagerDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor MFT_FontManagerError;
 class MFT_FontManagerError : public Standard_TypeMismatch {
@@ -360,6 +368,7 @@ class MFT_FontManagerError : public Standard_TypeMismatch {
 	}
 };
 
+
 %nodefaultctor MFT_FontManagerDefinitionError;
 class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 	public:
@@ -394,6 +403,7 @@ class MFT_FontManagerDefinitionError : public Standard_NoSuchObject {
 	}
 };
 
+
 %nodefaultctor MFT;
 class MFT {
 	public:
@@ -407,6 +417,7 @@ class MFT {
 	if (__env){printf("## Call custom destructor for instance of MFT\n");}
 	}
 };
+
 
 %nodefaultctor MFT_SequenceNodeOfListOfFontName;
 class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
@@ -435,6 +446,7 @@ class MFT_SequenceNodeOfListOfFontName : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontName\n");}
 	}
 };
+
 
 %nodefaultctor MFT_ListOfFontHandle;
 class MFT_ListOfFontHandle : public TCollection_BaseSequence {
@@ -490,6 +502,7 @@ class MFT_ListOfFontHandle : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MFT_ListOfFontName;
 class MFT_ListOfFontName : public TCollection_BaseSequence {
 	public:
@@ -543,6 +556,7 @@ class MFT_ListOfFontName : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of MFT_ListOfFontName\n");}
 	}
 };
+
 
 %nodefaultctor MFT_ListOfFontReference;
 class MFT_ListOfFontReference : public TCollection_BaseSequence {
@@ -598,6 +612,7 @@ class MFT_ListOfFontReference : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor MFT_SequenceNodeOfListOfFontReference;
 class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 	public:
@@ -626,6 +641,7 @@ class MFT_SequenceNodeOfListOfFontReference : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor MFT_SequenceNodeOfListOfFontHandle;
 class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 	public:
@@ -653,6 +669,7 @@ class MFT_SequenceNodeOfListOfFontHandle : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of MFT_SequenceNodeOfListOfFontHandle\n");}
 	}
 };
+
 
 %nodefaultctor MFT_TextManager;
 class MFT_TextManager : public MMgt_TShared {
@@ -699,6 +716,7 @@ class MFT_TextManager : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of MFT_TextManager\n");}
 	}
 };
+
 
 %nodefaultctor MFT_FontManager;
 class MFT_FontManager : public MMgt_TShared {
@@ -760,15 +778,15 @@ class MFT_FontManager : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Quantity_PlaneAngle ItalicAngle() const;
 		%feature("autodoc", "1");
-		char * FontAttribs(Quantity_Length & aWidth, Quantity_Length & aHeight, Quantity_Length & aDescent, Quantity_PlaneAngle & aSlant, Quantity_Factor & aPrecision, Standard_Boolean & aCapsHeight);
+		char * FontAttribs(Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Quantity_PlaneAngle & aSlant, Quantity_Factor & aPrecision, Standard_Boolean & aCapsHeight);
 		%feature("autodoc", "1");
-		void TextSize(const char * aString, Quantity_Length & aWidth, Quantity_Length & anAscent, Quantity_Length & aLbearing, Quantity_Length & aDescent);
+		void TextSize(const char * aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		void TextSize(const Standard_ExtString aString, Quantity_Length & aWidth, Quantity_Length & anAscent, Quantity_Length & aLbearing, Quantity_Length & aDescent);
+		void TextSize(const Standard_ExtString aString, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean CharSize(const Standard_Character aChar, Quantity_Length & aWidth, Quantity_Length & aLbearing, Quantity_Length & aRbearing, Quantity_Length & anAscent, Quantity_Length & aDescent);
+		Standard_Boolean CharSize(const Standard_Character aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
-		Standard_Boolean CharSize(const Standard_ExtCharacter aChar, Quantity_Length & aWidth, Quantity_Length & aLbearing, Quantity_Length & aRbearing, Quantity_Length & anAscent, Quantity_Length & aDescent);
+		Standard_Boolean CharSize(const Standard_ExtCharacter aChar, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue, Standard_Real &OutValue);
 		%feature("autodoc", "1");
 		Aspect_FontStyle Font() const;
 		%feature("autodoc", "1");

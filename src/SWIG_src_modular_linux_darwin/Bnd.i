@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Bnd_SequenceNodeOfSeqOfBox : public Handle_TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Handle_Bnd_HArray1OfBox2d;
 class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	public:
@@ -163,6 +165,7 @@ class Handle_Bnd_HArray1OfBox2d : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Bnd_HArray1OfBox;
 class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 	public:
@@ -187,6 +190,7 @@ class Handle_Bnd_HArray1OfBox : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Bnd_HArray1OfBox\n");}
 	}
 };
+
 
 %nodefaultctor Bnd_B2d;
 class Bnd_B2d {
@@ -246,6 +250,7 @@ class Bnd_B2d {
 	}
 };
 
+
 %nodefaultctor Bnd_B2f;
 class Bnd_B2f {
 	public:
@@ -304,6 +309,7 @@ class Bnd_B2f {
 	}
 };
 
+
 %nodefaultctor Bnd_BoundSortBox2d;
 class Bnd_BoundSortBox2d {
 	public:
@@ -329,6 +335,7 @@ class Bnd_BoundSortBox2d {
 	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox2d\n");}
 	}
 };
+
 
 %nodefaultctor Bnd_SequenceNodeOfSeqOfBox;
 class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
@@ -357,6 +364,7 @@ class Bnd_SequenceNodeOfSeqOfBox : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Bnd_SequenceNodeOfSeqOfBox\n");}
 	}
 };
+
 
 %nodefaultctor Bnd_Box;
 class Bnd_Box {
@@ -458,6 +466,7 @@ class Bnd_Box {
 	}
 };
 
+
 %nodefaultctor Bnd_Array1OfBox2d;
 class Bnd_Array1OfBox2d {
 	public:
@@ -497,6 +506,7 @@ class Bnd_Array1OfBox2d {
 	if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox2d\n");}
 	}
 };
+
 
 %nodefaultctor Bnd_B3d;
 class Bnd_B3d {
@@ -556,6 +566,7 @@ class Bnd_B3d {
 	}
 };
 
+
 %nodefaultctor Bnd_HArray1OfBox2d;
 class Bnd_HArray1OfBox2d : public MMgt_TShared {
 	public:
@@ -601,6 +612,7 @@ class Bnd_HArray1OfBox2d : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox2d\n");}
 	}
 };
+
 
 %nodefaultctor Bnd_SeqOfBox;
 class Bnd_SeqOfBox : public TCollection_BaseSequence {
@@ -656,6 +668,7 @@ class Bnd_SeqOfBox : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Bnd_HArray1OfBox;
 class Bnd_HArray1OfBox : public MMgt_TShared {
 	public:
@@ -701,6 +714,7 @@ class Bnd_HArray1OfBox : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Bnd_HArray1OfBox\n");}
 	}
 };
+
 
 %nodefaultctor Bnd_B3f;
 class Bnd_B3f {
@@ -760,6 +774,7 @@ class Bnd_B3f {
 	}
 };
 
+
 %nodefaultctor Bnd_BoundSortBox;
 class Bnd_BoundSortBox {
 	public:
@@ -789,6 +804,7 @@ class Bnd_BoundSortBox {
 	if (__env){printf("## Call custom destructor for instance of Bnd_BoundSortBox\n");}
 	}
 };
+
 
 %nodefaultctor Bnd_Array1OfBox;
 class Bnd_Array1OfBox {
@@ -829,6 +845,7 @@ class Bnd_Array1OfBox {
 	if (__env){printf("## Call custom destructor for instance of Bnd_Array1OfBox\n");}
 	}
 };
+
 
 %nodefaultctor Bnd_Box2d;
 class Bnd_Box2d {

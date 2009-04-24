@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurO
 	}
 };
 
+
 %nodefaultctor Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter;
 class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public math_FunctionWithDerivative {
 	public:
@@ -157,6 +159,7 @@ class Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter : public 
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Interference {
@@ -182,6 +185,7 @@ class Geom2dInt_InterferencePoly2dOfTheIntPCurvePCurveOfGInter : public Intf_Int
 	}
 };
 
+
 %nodefaultctor Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	public:
@@ -205,6 +209,7 @@ class Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter {
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_ExactIntersectionPointOfTheIntPCurvePCurveOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_FunctionWithDerivative {
@@ -242,6 +247,7 @@ class Geom2dInt_PCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public math_Functi
 	}
 };
 
+
 %nodefaultctor Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter;
 class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 	public:
@@ -255,6 +261,7 @@ class Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter {
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheCurveLocatorOfTheProjPCurOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_TheProjPCurOfGInter;
 class Geom2dInt_TheProjPCurOfGInter {
@@ -273,6 +280,7 @@ class Geom2dInt_TheProjPCurOfGInter {
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheProjPCurOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
@@ -300,6 +308,7 @@ class Geom2dInt_ThePolygon2dToolOfTheIntPCurvePCurveOfGInter {
 	}
 };
 
+
 %nodefaultctor Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_FunctionSetWithDerivatives {
 	public:
@@ -323,6 +332,7 @@ class Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter : public math_
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_GInter;
 class Geom2dInt_GInter : public IntRes2d_Intersection {
@@ -364,6 +374,7 @@ class Geom2dInt_GInter : public IntRes2d_Intersection {
 	}
 };
 
+
 %nodefaultctor Geom2dInt_IntConicCurveOfGInter;
 class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 	public:
@@ -397,6 +408,7 @@ class Geom2dInt_IntConicCurveOfGInter : public IntRes2d_Intersection {
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_IntConicCurveOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 class Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCollection_BaseSequence {
@@ -452,6 +464,7 @@ class Geom2dInt_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCol
 	}
 };
 
+
 %nodefaultctor Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter;
 class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 	public:
@@ -481,6 +494,7 @@ class Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter {
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheLocateExtPCOfTheProjPCurOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_Geom2dCurveTool;
 class Geom2dInt_Geom2dCurveTool {
@@ -532,6 +546,7 @@ class Geom2dInt_Geom2dCurveTool {
 	}
 };
 
+
 %nodefaultctor Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter;
 class Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter : public TCollection_SeqNode {
 	public:
@@ -559,6 +574,7 @@ class Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter;
 class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
@@ -606,6 +622,7 @@ class Geom2dInt_ThePolygon2dOfTheIntPCurvePCurveOfGInter {
 	}
 };
 
+
 %nodefaultctor Geom2dInt_TheIntConicCurveOfGInter;
 class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 	public:
@@ -640,6 +657,7 @@ class Geom2dInt_TheIntConicCurveOfGInter : public IntRes2d_Intersection {
 	}
 };
 
+
 %nodefaultctor Geom2dInt_TheIntPCurvePCurveOfGInter;
 class Geom2dInt_TheIntPCurvePCurveOfGInter : public IntRes2d_Intersection {
 	public:
@@ -657,6 +675,7 @@ class Geom2dInt_TheIntPCurvePCurveOfGInter : public IntRes2d_Intersection {
 	if (__env){printf("## Call custom destructor for instance of Geom2dInt_TheIntPCurvePCurveOfGInter\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter;
 class Geom2dInt_TheIntersectorOfTheIntConicCurveOfGInter : public IntRes2d_Intersection {

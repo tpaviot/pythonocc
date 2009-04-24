@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_XmlXCAFDrivers_DocumentRetrievalDriver : public Handle_XmlDrivers_D
 	}
 };
 
+
 %nodefaultctor Handle_XmlXCAFDrivers_DocumentStorageDriver;
 class Handle_XmlXCAFDrivers_DocumentStorageDriver : public Handle_XmlDrivers_DocumentStorageDriver {
 	public:
@@ -162,6 +164,7 @@ class Handle_XmlXCAFDrivers_DocumentStorageDriver : public Handle_XmlDrivers_Doc
 	if (__env){printf("## Call custom destructor for instance of Handle_XmlXCAFDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlXCAFDrivers_DocumentRetrievalDriver;
 class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetrievalDriver {
@@ -191,6 +194,7 @@ class XmlXCAFDrivers_DocumentRetrievalDriver : public XmlDrivers_DocumentRetriev
 	}
 };
 
+
 %nodefaultctor XmlXCAFDrivers_DocumentStorageDriver;
 class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDriver {
 	public:
@@ -218,6 +222,7 @@ class XmlXCAFDrivers_DocumentStorageDriver : public XmlDrivers_DocumentStorageDr
 	if (__env){printf("## Call custom destructor for instance of XmlXCAFDrivers_DocumentStorageDriver\n");}
 	}
 };
+
 
 %nodefaultctor XmlXCAFDrivers;
 class XmlXCAFDrivers {

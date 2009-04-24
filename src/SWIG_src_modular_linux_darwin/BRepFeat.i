@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -176,6 +177,7 @@ class BRepFeat_Builder : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepFeat_Form;
 class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 	public:
@@ -222,6 +224,7 @@ class BRepFeat_Form : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepFeat_MakePipe;
 class BRepFeat_MakePipe : public BRepFeat_Form {
 	public:
@@ -247,6 +250,7 @@ class BRepFeat_MakePipe : public BRepFeat_Form {
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakePipe\n");}
 	}
 };
+
 
 %nodefaultctor BRepFeat_MakePrism;
 class BRepFeat_MakePrism : public BRepFeat_Form {
@@ -286,6 +290,7 @@ class BRepFeat_MakePrism : public BRepFeat_Form {
 	}
 };
 
+
 %nodefaultctor BRepFeat_LocalOperation;
 class BRepFeat_LocalOperation : public BRepFeat_Builder {
 	public:
@@ -317,6 +322,7 @@ class BRepFeat_LocalOperation : public BRepFeat_Builder {
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_LocalOperation\n");}
 	}
 };
+
 
 %nodefaultctor BRepFeat_SplitShape;
 class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
@@ -352,6 +358,7 @@ class BRepFeat_SplitShape : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepFeat_RibSlot;
 class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 	public:
@@ -386,6 +393,7 @@ class BRepFeat_RibSlot : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepFeat_MakeLinearForm;
 class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 	public:
@@ -410,6 +418,7 @@ class BRepFeat_MakeLinearForm : public BRepFeat_RibSlot {
 	}
 };
 
+
 %nodefaultctor BRepFeat_MakeRevolutionForm;
 class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 	public:
@@ -433,6 +442,7 @@ class BRepFeat_MakeRevolutionForm : public BRepFeat_RibSlot {
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevolutionForm\n");}
 	}
 };
+
 
 %nodefaultctor BRepFeat_MakeDPrism;
 class BRepFeat_MakeDPrism : public BRepFeat_Form {
@@ -478,6 +488,7 @@ class BRepFeat_MakeDPrism : public BRepFeat_Form {
 	}
 };
 
+
 %nodefaultctor BRepFeat_Gluer;
 class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 	public:
@@ -511,6 +522,7 @@ class BRepFeat_Gluer : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_Gluer\n");}
 	}
 };
+
 
 %nodefaultctor BRepFeat_MakeCylindricalHole;
 class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
@@ -548,6 +560,7 @@ class BRepFeat_MakeCylindricalHole : public BRepFeat_Builder {
 	}
 };
 
+
 %nodefaultctor BRepFeat_MakeRevol;
 class BRepFeat_MakeRevol : public BRepFeat_Form {
 	public:
@@ -581,6 +594,7 @@ class BRepFeat_MakeRevol : public BRepFeat_Form {
 	if (__env){printf("## Call custom destructor for instance of BRepFeat_MakeRevol\n");}
 	}
 };
+
 
 %nodefaultctor BRepFeat;
 class BRepFeat {

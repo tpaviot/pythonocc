@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -813,6 +814,7 @@ class Handle_Quantity_ColorDefinitionError : public Handle_Standard_DomainError 
 	}
 };
 
+
 %nodefaultctor Handle_Quantity_PeriodDefinitionError;
 class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError {
 	public:
@@ -837,6 +839,7 @@ class Handle_Quantity_PeriodDefinitionError : public Handle_Standard_DomainError
 	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_PeriodDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Quantity_HArray1OfColor;
 class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
@@ -863,6 +866,7 @@ class Handle_Quantity_HArray1OfColor : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Quantity_DateDefinitionError;
 class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	public:
@@ -887,6 +891,7 @@ class Handle_Quantity_DateDefinitionError : public Handle_Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Handle_Quantity_DateDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Quantity_Array2OfColor;
 class Quantity_Array2OfColor {
@@ -932,6 +937,7 @@ class Quantity_Array2OfColor {
 	}
 };
 
+
 %nodefaultctor Quantity_ColorDefinitionError;
 class Quantity_ColorDefinitionError : public Standard_DomainError {
 	public:
@@ -965,6 +971,7 @@ class Quantity_ColorDefinitionError : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Quantity_ColorDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Quantity_Array1OfCoefficient;
 class Quantity_Array1OfCoefficient {
@@ -1005,6 +1012,7 @@ class Quantity_Array1OfCoefficient {
 	if (__env){printf("## Call custom destructor for instance of Quantity_Array1OfCoefficient\n");}
 	}
 };
+
 
 %nodefaultctor Quantity_Period;
 class Quantity_Period {
@@ -1063,6 +1071,7 @@ class Quantity_Period {
 	if (__env){printf("## Call custom destructor for instance of Quantity_Period\n");}
 	}
 };
+
 
 %nodefaultctor Quantity_Date;
 class Quantity_Date {
@@ -1134,6 +1143,7 @@ class Quantity_Date {
 	}
 };
 
+
 %nodefaultctor Quantity_PeriodDefinitionError;
 class Quantity_PeriodDefinitionError : public Standard_DomainError {
 	public:
@@ -1167,6 +1177,7 @@ class Quantity_PeriodDefinitionError : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Quantity_PeriodDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Quantity_Color;
 class Quantity_Color {
@@ -1252,6 +1263,7 @@ class Quantity_Color {
 	}
 };
 
+
 %nodefaultctor Quantity_Array1OfColor;
 class Quantity_Array1OfColor {
 	public:
@@ -1292,6 +1304,7 @@ class Quantity_Array1OfColor {
 	}
 };
 
+
 %nodefaultctor Quantity_DateDefinitionError;
 class Quantity_DateDefinitionError : public Standard_DomainError {
 	public:
@@ -1325,6 +1338,7 @@ class Quantity_DateDefinitionError : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of Quantity_DateDefinitionError\n");}
 	}
 };
+
 
 %nodefaultctor Quantity_HArray1OfColor;
 class Quantity_HArray1OfColor : public MMgt_TShared {
@@ -1371,6 +1385,7 @@ class Quantity_HArray1OfColor : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Quantity_HArray1OfColor\n");}
 	}
 };
+
 
 %nodefaultctor Quantity_Convert;
 class Quantity_Convert {

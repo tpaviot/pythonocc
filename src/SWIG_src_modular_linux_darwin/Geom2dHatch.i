@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
 class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public 
 	if (__env){printf("## Call custom destructor for instance of Handle_Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dHatch_ElementOfHatcher;
 class Geom2dHatch_ElementOfHatcher {
@@ -188,6 +191,7 @@ class Geom2dHatch_ElementOfHatcher {
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ElementOfHatcher\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dHatch_MapOfElementsOfElementsOfHatcher;
 class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap {
@@ -222,6 +226,7 @@ class Geom2dHatch_MapOfElementsOfElementsOfHatcher : public TCollection_BasicMap
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_MapOfElementsOfElementsOfHatcher\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dHatch_Hatcher;
 class Geom2dHatch_Hatcher {
@@ -303,6 +308,7 @@ class Geom2dHatch_Hatcher {
 	}
 };
 
+
 %nodefaultctor Geom2dHatch_HatchingOfHatcher;
 class Geom2dHatch_HatchingOfHatcher {
 	public:
@@ -363,6 +369,7 @@ class Geom2dHatch_HatchingOfHatcher {
 	}
 };
 
+
 %nodefaultctor Geom2dHatch_ClassifierOfHatcher;
 class Geom2dHatch_ClassifierOfHatcher {
 	public:
@@ -392,6 +399,7 @@ class Geom2dHatch_ClassifierOfHatcher {
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_ClassifierOfHatcher\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dHatch_DataMapNodeOfHatchingsOfHatcher;
 class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
@@ -423,6 +431,7 @@ class Geom2dHatch_DataMapNodeOfHatchingsOfHatcher : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher;
 class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollection_MapNode {
 	public:
@@ -453,6 +462,7 @@ class Geom2dHatch_DataMapNodeOfMapOfElementsOfElementsOfHatcher : public TCollec
 	}
 };
 
+
 %nodefaultctor Geom2dHatch_Intersector;
 class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 	public:
@@ -482,6 +492,7 @@ class Geom2dHatch_Intersector : public Geom2dInt_GInter {
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_Intersector\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dHatch_HatchingsOfHatcher;
 class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
@@ -517,6 +528,7 @@ class Geom2dHatch_HatchingsOfHatcher : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor Geom2dHatch_FClass2dOfClassifierOfHatcher;
 class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 	public:
@@ -544,6 +556,7 @@ class Geom2dHatch_FClass2dOfClassifierOfHatcher {
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_FClass2dOfClassifierOfHatcher\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dHatch_ElementsOfHatcher;
 class Geom2dHatch_ElementsOfHatcher {
@@ -601,6 +614,7 @@ class Geom2dHatch_ElementsOfHatcher {
 	}
 };
 
+
 %nodefaultctor Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher;
 class Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher : public TCollection_BasicMapIterator {
 	public:
@@ -622,6 +636,7 @@ class Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher : public TCollection_Basic
 	if (__env){printf("## Call custom destructor for instance of Geom2dHatch_DataMapIteratorOfHatchingsOfHatcher\n");}
 	}
 };
+
 
 %nodefaultctor Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher;
 class Geom2dHatch_DataMapIteratorOfMapOfElementsOfElementsOfHatcher : public TCollection_BasicMapIterator {

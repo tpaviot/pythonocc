@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class AppCont_FitFunction {
 	}
 };
 
+
 %nodefaultctor AppCont_FunctionTool2d;
 class AppCont_FunctionTool2d {
 	public:
@@ -167,6 +169,7 @@ class AppCont_FunctionTool2d {
 	}
 };
 
+
 %nodefaultctor AppCont_Function;
 class AppCont_Function {
 	public:
@@ -188,6 +191,7 @@ class AppCont_Function {
 	if (__env){printf("## Call custom destructor for instance of AppCont_Function\n");}
 	}
 };
+
 
 %nodefaultctor AppCont_FunctionTool;
 class AppCont_FunctionTool {
@@ -223,6 +227,7 @@ class AppCont_FunctionTool {
 	}
 };
 
+
 %nodefaultctor AppCont_Function2d;
 class AppCont_Function2d {
 	public:
@@ -244,6 +249,7 @@ class AppCont_Function2d {
 	if (__env){printf("## Call custom destructor for instance of AppCont_Function2d\n");}
 	}
 };
+
 
 %nodefaultctor AppCont_FitFunction2d;
 class AppCont_FitFunction2d {

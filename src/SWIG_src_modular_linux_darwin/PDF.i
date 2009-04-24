@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PDF_Attribute : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PDF_Reference;
 class Handle_PDF_Reference : public Handle_PDF_Attribute {
 	public:
@@ -162,6 +164,7 @@ class Handle_PDF_Reference : public Handle_PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Reference\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PDF_TagSource;
 class Handle_PDF_TagSource : public Handle_PDF_Attribute {
@@ -188,6 +191,7 @@ class Handle_PDF_TagSource : public Handle_PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_PDF_Data;
 class Handle_PDF_Data : public Handle_Standard_Persistent {
 	public:
@@ -212,6 +216,7 @@ class Handle_PDF_Data : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PDF_Data\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PDF_HAttributeArray1;
 class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
@@ -238,6 +243,7 @@ class Handle_PDF_HAttributeArray1 : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1;
 class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_ArrayNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1 : public Handle_PStandard_A
 	if (__env){printf("## Call custom destructor for instance of Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1\n");}
 	}
 };
+
 
 %nodefaultctor PDF_Attribute;
 class PDF_Attribute : public Standard_Persistent {
@@ -290,6 +297,7 @@ class PDF_Attribute : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PDF_Attribute\n");}
 	}
 };
+
 
 %nodefaultctor PDF_Reference;
 class PDF_Reference : public PDF_Attribute {
@@ -326,6 +334,7 @@ class PDF_Reference : public PDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of PDF_Reference\n");}
 	}
 };
+
 
 %nodefaultctor PDF_TagSource;
 class PDF_TagSource : public PDF_Attribute {
@@ -365,6 +374,7 @@ class PDF_TagSource : public PDF_Attribute {
 	}
 };
 
+
 %nodefaultctor PDF_VArrayNodeOfFieldOfHAttributeArray1;
 class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 	public:
@@ -402,6 +412,7 @@ class PDF_VArrayNodeOfFieldOfHAttributeArray1 : public PStandard_ArrayNode {
 	if (__env){printf("## Call custom destructor for instance of PDF_VArrayNodeOfFieldOfHAttributeArray1\n");}
 	}
 };
+
 
 %nodefaultctor PDF_Data;
 class PDF_Data : public Standard_Persistent {
@@ -455,6 +466,7 @@ class PDF_Data : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PDF_HAttributeArray1;
 class PDF_HAttributeArray1 : public Standard_Persistent {
 	public:
@@ -475,7 +487,12 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PDF_HAttributeArray1();
 		%feature("autodoc", "1");
@@ -511,6 +528,7 @@ class PDF_HAttributeArray1 : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PDF_FieldOfHAttributeArray1;
 class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
 	public:
@@ -540,6 +558,7 @@ class PDF_FieldOfHAttributeArray1 : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PDF_FieldOfHAttributeArray1\n");}
 	}
 };
+
 
 %nodefaultctor PDF_VArrayTNodeOfFieldOfHAttributeArray1;
 class PDF_VArrayTNodeOfFieldOfHAttributeArray1 {

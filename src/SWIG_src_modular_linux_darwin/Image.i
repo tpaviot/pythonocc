@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -160,6 +161,7 @@ class Handle_Image_Image : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Image_DIndexedImage;
 class Handle_Image_DIndexedImage : public Handle_Image_Image {
 	public:
@@ -184,6 +186,7 @@ class Handle_Image_DIndexedImage : public Handle_Image_Image {
 	if (__env){printf("## Call custom destructor for instance of Handle_Image_DIndexedImage\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Image_PseudoColorImage;
 class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
@@ -210,6 +213,7 @@ class Handle_Image_PseudoColorImage : public Handle_Image_DIndexedImage {
 	}
 };
 
+
 %nodefaultctor Handle_Image_DColorImage;
 class Handle_Image_DColorImage : public Handle_Image_Image {
 	public:
@@ -234,6 +238,7 @@ class Handle_Image_DColorImage : public Handle_Image_Image {
 	if (__env){printf("## Call custom destructor for instance of Handle_Image_DColorImage\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Image_ColorImage;
 class Handle_Image_ColorImage : public Handle_Image_DColorImage {
@@ -260,6 +265,7 @@ class Handle_Image_ColorImage : public Handle_Image_DColorImage {
 	}
 };
 
+
 %nodefaultctor Handle_Image_DataMapNodeOfColorPixelDataMap;
 class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_MapNode {
 	public:
@@ -285,6 +291,7 @@ class Handle_Image_DataMapNodeOfColorPixelDataMap : public Handle_TCollection_Ma
 	}
 };
 
+
 %nodefaultctor Handle_Image_DataMapNodeOfLookupTable;
 class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode {
 	public:
@@ -309,6 +316,7 @@ class Handle_Image_DataMapNodeOfLookupTable : public Handle_TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_Image_DataMapNodeOfLookupTable\n");}
 	}
 };
+
 
 %nodefaultctor Image_Image;
 class Image_Image : public MMgt_TShared {
@@ -392,6 +400,7 @@ class Image_Image : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Image_IndexPixelMapHasher;
 class Image_IndexPixelMapHasher {
 	public:
@@ -409,6 +418,7 @@ class Image_IndexPixelMapHasher {
 	if (__env){printf("## Call custom destructor for instance of Image_IndexPixelMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor Image_PixelInterpolation;
 class Image_PixelInterpolation {
@@ -430,6 +440,7 @@ class Image_PixelInterpolation {
 	}
 };
 
+
 %nodefaultctor Image_PlanarPixelInterpolation;
 class Image_PlanarPixelInterpolation : public Image_PixelInterpolation {
 	public:
@@ -447,6 +458,7 @@ class Image_PlanarPixelInterpolation : public Image_PixelInterpolation {
 	if (__env){printf("## Call custom destructor for instance of Image_PlanarPixelInterpolation\n");}
 	}
 };
+
 
 %nodefaultctor Image_PixelRowOfDIndexedImage;
 class Image_PixelRowOfDIndexedImage {
@@ -488,6 +500,7 @@ class Image_PixelRowOfDIndexedImage {
 	}
 };
 
+
 %nodefaultctor Image_DataMapIteratorOfLookupTable;
 class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
 	public:
@@ -509,6 +522,7 @@ class Image_DataMapIteratorOfLookupTable : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of Image_DataMapIteratorOfLookupTable\n");}
 	}
 };
+
 
 %nodefaultctor Image_LookupTable;
 class Image_LookupTable : public TCollection_BasicMap {
@@ -543,6 +557,7 @@ class Image_LookupTable : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Image_LookupTable\n");}
 	}
 };
+
 
 %nodefaultctor Image_DColorImage;
 class Image_DColorImage : public Image_Image {
@@ -652,6 +667,7 @@ class Image_DColorImage : public Image_Image {
 	}
 };
 
+
 %nodefaultctor Image_ColorImage;
 class Image_ColorImage : public Image_DColorImage {
 	public:
@@ -684,6 +700,7 @@ class Image_ColorImage : public Image_DColorImage {
 	}
 };
 
+
 %nodefaultctor Image_DataMapNodeOfColorPixelDataMap;
 class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 	public:
@@ -713,6 +730,7 @@ class Image_DataMapNodeOfColorPixelDataMap : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Image_DataMapNodeOfColorPixelDataMap\n");}
 	}
 };
+
 
 %nodefaultctor Image;
 class Image {
@@ -748,6 +766,7 @@ class Image {
 	}
 };
 
+
 %nodefaultctor Image_AveragePixelInterpolation;
 class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 	public:
@@ -767,6 +786,7 @@ class Image_AveragePixelInterpolation : public Image_PixelInterpolation {
 	if (__env){printf("## Call custom destructor for instance of Image_AveragePixelInterpolation\n");}
 	}
 };
+
 
 %nodefaultctor Image_DataMapNodeOfLookupTable;
 class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
@@ -797,6 +817,7 @@ class Image_DataMapNodeOfLookupTable : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Image_DataMapNodeOfLookupTable\n");}
 	}
 };
+
 
 %nodefaultctor Image_DIndexedImage;
 class Image_DIndexedImage : public Image_Image {
@@ -906,6 +927,7 @@ class Image_DIndexedImage : public Image_Image {
 	}
 };
 
+
 %nodefaultctor Image_BilinearPixelInterpolation;
 class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
 	public:
@@ -925,6 +947,7 @@ class Image_BilinearPixelInterpolation : public Image_PixelInterpolation {
 	if (__env){printf("## Call custom destructor for instance of Image_BilinearPixelInterpolation\n");}
 	}
 };
+
 
 %nodefaultctor Image_Convertor;
 class Image_Convertor {
@@ -948,6 +971,7 @@ class Image_Convertor {
 	}
 };
 
+
 %nodefaultctor Image_ColorPixelMapHasher;
 class Image_ColorPixelMapHasher {
 	public:
@@ -965,6 +989,7 @@ class Image_ColorPixelMapHasher {
 	if (__env){printf("## Call custom destructor for instance of Image_ColorPixelMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor Image_ColorPixelDataMap;
 class Image_ColorPixelDataMap : public TCollection_BasicMap {
@@ -999,6 +1024,7 @@ class Image_ColorPixelDataMap : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Image_ColorPixelDataMap\n");}
 	}
 };
+
 
 %nodefaultctor Image_PixelRowOfDColorImage;
 class Image_PixelRowOfDColorImage {
@@ -1040,6 +1066,7 @@ class Image_PixelRowOfDColorImage {
 	}
 };
 
+
 %nodefaultctor Image_BalancedPixelInterpolation;
 class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
 	public:
@@ -1059,6 +1086,7 @@ class Image_BalancedPixelInterpolation : public Image_PixelInterpolation {
 	if (__env){printf("## Call custom destructor for instance of Image_BalancedPixelInterpolation\n");}
 	}
 };
+
 
 %nodefaultctor Image_DataMapIteratorOfColorPixelDataMap;
 class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIterator {
@@ -1081,6 +1109,7 @@ class Image_DataMapIteratorOfColorPixelDataMap : public TCollection_BasicMapIter
 	if (__env){printf("## Call custom destructor for instance of Image_DataMapIteratorOfColorPixelDataMap\n");}
 	}
 };
+
 
 %nodefaultctor Image_PseudoColorImage;
 class Image_PseudoColorImage : public Image_DIndexedImage {
@@ -1133,6 +1162,7 @@ class Image_PseudoColorImage : public Image_DIndexedImage {
 	if (__env){printf("## Call custom destructor for instance of Image_PseudoColorImage\n");}
 	}
 };
+
 
 %nodefaultctor Image_PixelFieldOfDColorImage;
 class Image_PixelFieldOfDColorImage {

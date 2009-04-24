@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -152,6 +153,7 @@ class Handle_Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : publ
 	}
 };
 
+
 %nodefaultctor Handle_Contap_TheIWLineOfTheIWalkingOfContour;
 class Handle_Contap_TheIWLineOfTheIWalkingOfContour : public Handle_MMgt_TShared {
 	public:
@@ -176,6 +178,7 @@ class Handle_Contap_TheIWLineOfTheIWalkingOfContour : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_Contap_TheIWLineOfTheIWalkingOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour;
 class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TCollection_SeqNode {
@@ -202,6 +205,7 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfPointOfContour : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour;
 class Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public Handle_TCollection_SeqNode {
 	public:
@@ -226,6 +230,7 @@ class Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : publi
 	if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Contap_TheHSequenceOfPointOfContour;
 class Handle_Contap_TheHSequenceOfPointOfContour : public Handle_MMgt_TShared {
@@ -252,6 +257,7 @@ class Handle_Contap_TheHSequenceOfPointOfContour : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour;
 class Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public Handle_TCollection_SeqNode {
 	public:
@@ -277,6 +283,7 @@ class Handle_Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public
 	}
 };
 
+
 %nodefaultctor Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour;
 class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCollection_SeqNode {
 	public:
@@ -301,6 +308,7 @@ class Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour;
 class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCollection_SeqNode {
@@ -329,6 +337,7 @@ class Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour : public TCol
 	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheSurfFunctionOfContour;
 class Contap_TheSurfFunctionOfContour : public math_FunctionSetWithDerivatives {
@@ -388,6 +397,7 @@ class Contap_TheSurfFunctionOfContour : public math_FunctionSetWithDerivatives {
 	}
 };
 
+
 %nodefaultctor Contap_SequenceOfIWLineOfTheIWalkingOfContour;
 class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSequence {
 	public:
@@ -441,6 +451,7 @@ class Contap_SequenceOfIWLineOfTheIWalkingOfContour : public TCollection_BaseSeq
 	if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfIWLineOfTheIWalkingOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_HSurfaceTool;
 class Contap_HSurfaceTool {
@@ -534,6 +545,7 @@ class Contap_HSurfaceTool {
 	}
 };
 
+
 %nodefaultctor Contap_SequenceOfSegmentOfTheSearchOfContour;
 class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequence {
 	public:
@@ -588,6 +600,7 @@ class Contap_SequenceOfSegmentOfTheSearchOfContour : public TCollection_BaseSequ
 	}
 };
 
+
 %nodefaultctor Contap_TheSurfPropsOfContour;
 class Contap_TheSurfPropsOfContour {
 	public:
@@ -607,6 +620,7 @@ class Contap_TheSurfPropsOfContour {
 	if (__env){printf("## Call custom destructor for instance of Contap_TheSurfPropsOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheSearchOfContour;
 class Contap_TheSearchOfContour {
@@ -635,6 +649,7 @@ class Contap_TheSearchOfContour {
 	if (__env){printf("## Call custom destructor for instance of Contap_TheSearchOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_SequenceOfPathPointOfTheSearchOfContour;
 class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSequence {
@@ -689,6 +704,7 @@ class Contap_SequenceOfPathPointOfTheSearchOfContour : public TCollection_BaseSe
 	if (__env){printf("## Call custom destructor for instance of Contap_SequenceOfPathPointOfTheSearchOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheHSequenceOfPointOfContour;
 class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
@@ -760,6 +776,7 @@ class Contap_TheHSequenceOfPointOfContour : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Contap_Contour;
 class Contap_Contour {
 	public:
@@ -810,6 +827,7 @@ class Contap_Contour {
 	}
 };
 
+
 %nodefaultctor Contap_SequenceNodeOfTheSequenceOfLineOfContour;
 class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNode {
 	public:
@@ -837,6 +855,7 @@ class Contap_SequenceNodeOfTheSequenceOfLineOfContour : public TCollection_SeqNo
 	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfLineOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheSequenceOfPointOfContour;
 class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
@@ -891,6 +910,7 @@ class Contap_TheSequenceOfPointOfContour : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of Contap_TheSequenceOfPointOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheIWLineOfTheIWalkingOfContour;
 class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
@@ -972,6 +992,7 @@ class Contap_TheIWLineOfTheIWalkingOfContour : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Contap_ContAna;
 class Contap_ContAna {
 	public:
@@ -1014,6 +1035,7 @@ class Contap_ContAna {
 	}
 };
 
+
 %nodefaultctor Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour;
 class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TCollection_SeqNode {
 	public:
@@ -1041,6 +1063,7 @@ class Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour : public TColl
 	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheLineOfContour;
 class Contap_TheLineOfContour {
@@ -1094,6 +1117,7 @@ class Contap_TheLineOfContour {
 	}
 };
 
+
 %nodefaultctor Contap_HContTool;
 class Contap_HContTool {
 	public:
@@ -1143,6 +1167,7 @@ class Contap_HContTool {
 	if (__env){printf("## Call custom destructor for instance of Contap_HContTool\n");}
 	}
 };
+
 
 %nodefaultctor Contap_HCurve2dTool;
 class Contap_HCurve2dTool {
@@ -1206,6 +1231,7 @@ class Contap_HCurve2dTool {
 	}
 };
 
+
 %nodefaultctor Contap_TheSearchInsideOfContour;
 class Contap_TheSearchInsideOfContour {
 	public:
@@ -1231,6 +1257,7 @@ class Contap_TheSearchInsideOfContour {
 	if (__env){printf("## Call custom destructor for instance of Contap_TheSearchInsideOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheSegmentOfTheSearchOfContour;
 class Contap_TheSegmentOfTheSearchOfContour {
@@ -1259,6 +1286,7 @@ class Contap_TheSegmentOfTheSearchOfContour {
 	if (__env){printf("## Call custom destructor for instance of Contap_TheSegmentOfTheSearchOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheSequenceOfLineOfContour;
 class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
@@ -1314,6 +1342,7 @@ class Contap_TheSequenceOfLineOfContour : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Contap_ThePointOfContour;
 class Contap_ThePointOfContour {
 	public:
@@ -1366,6 +1395,7 @@ class Contap_ThePointOfContour {
 	}
 };
 
+
 %nodefaultctor Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour;
 class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TCollection_SeqNode {
 	public:
@@ -1393,6 +1423,7 @@ class Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour : public TColle
 	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_ThePathPointOfTheSearchOfContour;
 class Contap_ThePathPointOfTheSearchOfContour {
@@ -1428,6 +1459,7 @@ class Contap_ThePathPointOfTheSearchOfContour {
 	}
 };
 
+
 %nodefaultctor Contap_SequenceNodeOfTheSequenceOfPointOfContour;
 class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqNode {
 	public:
@@ -1455,6 +1487,7 @@ class Contap_SequenceNodeOfTheSequenceOfPointOfContour : public TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Contap_SequenceNodeOfTheSequenceOfPointOfContour\n");}
 	}
 };
+
 
 %nodefaultctor Contap_TheArcFunctionOfContour;
 class Contap_TheArcFunctionOfContour : public math_FunctionWithDerivative {

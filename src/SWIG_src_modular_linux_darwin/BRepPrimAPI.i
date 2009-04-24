@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -135,6 +136,7 @@ class BRepPrimAPI_MakeOneAxis : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepPrimAPI_MakeTorus;
 class BRepPrimAPI_MakeTorus : public BRepPrimAPI_MakeOneAxis {
 	public:
@@ -164,6 +166,7 @@ class BRepPrimAPI_MakeTorus : public BRepPrimAPI_MakeOneAxis {
 	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeTorus\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrimAPI_MakeRevolution;
 class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
@@ -197,6 +200,7 @@ class BRepPrimAPI_MakeRevolution : public BRepPrimAPI_MakeOneAxis {
 	}
 };
 
+
 %nodefaultctor BRepPrimAPI_MakeSweep;
 class BRepPrimAPI_MakeSweep : public BRepBuilderAPI_MakeShape {
 	public:
@@ -212,6 +216,7 @@ class BRepPrimAPI_MakeSweep : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeSweep\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrimAPI_MakeWedge;
 class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
@@ -241,6 +246,7 @@ class BRepPrimAPI_MakeWedge : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepPrimAPI_MakeCylinder;
 class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 	public:
@@ -264,6 +270,7 @@ class BRepPrimAPI_MakeCylinder : public BRepPrimAPI_MakeOneAxis {
 	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeCylinder\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrimAPI_MakeCone;
 class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
@@ -289,6 +296,7 @@ class BRepPrimAPI_MakeCone : public BRepPrimAPI_MakeOneAxis {
 	}
 };
 
+
 %nodefaultctor BRepPrimAPI_MakeHalfSpace;
 class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
 	public:
@@ -306,6 +314,7 @@ class BRepPrimAPI_MakeHalfSpace : public BRepBuilderAPI_MakeShape {
 	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeHalfSpace\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrimAPI_MakeBox;
 class BRepPrimAPI_MakeBox : public BRepBuilderAPI_MakeShape {
@@ -347,6 +356,7 @@ class BRepPrimAPI_MakeBox : public BRepBuilderAPI_MakeShape {
 	}
 };
 
+
 %nodefaultctor BRepPrimAPI_MakeSphere;
 class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
 	public:
@@ -387,6 +397,7 @@ class BRepPrimAPI_MakeSphere : public BRepPrimAPI_MakeOneAxis {
 	}
 };
 
+
 %nodefaultctor BRepPrimAPI_MakeRevol;
 class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 	public:
@@ -420,6 +431,7 @@ class BRepPrimAPI_MakeRevol : public BRepPrimAPI_MakeSweep {
 	if (__env){printf("## Call custom destructor for instance of BRepPrimAPI_MakeRevol\n");}
 	}
 };
+
 
 %nodefaultctor BRepPrimAPI_MakePrism;
 class BRepPrimAPI_MakePrism : public BRepPrimAPI_MakeSweep {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -151,6 +152,7 @@ class Handle_VrmlConverter_ShadingAspect : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_VrmlConverter_LineAspect;
 class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 	public:
@@ -175,6 +177,7 @@ class Handle_VrmlConverter_LineAspect : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_LineAspect\n");}
 	}
 };
+
 
 %nodefaultctor Handle_VrmlConverter_PointAspect;
 class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
@@ -201,6 +204,7 @@ class Handle_VrmlConverter_PointAspect : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_VrmlConverter_Projector;
 class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 	public:
@@ -225,6 +229,7 @@ class Handle_VrmlConverter_Projector : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_VrmlConverter_Projector\n");}
 	}
 };
+
 
 %nodefaultctor Handle_VrmlConverter_IsoAspect;
 class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
@@ -251,6 +256,7 @@ class Handle_VrmlConverter_IsoAspect : public Handle_VrmlConverter_LineAspect {
 	}
 };
 
+
 %nodefaultctor Handle_VrmlConverter_Drawer;
 class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 	public:
@@ -276,6 +282,7 @@ class Handle_VrmlConverter_Drawer : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor VrmlConverter_WFShape;
 class VrmlConverter_WFShape {
 	public:
@@ -292,6 +299,7 @@ class VrmlConverter_WFShape {
 	}
 };
 
+
 %nodefaultctor VrmlConverter_WFDeflectionShape;
 class VrmlConverter_WFDeflectionShape {
 	public:
@@ -307,6 +315,7 @@ class VrmlConverter_WFDeflectionShape {
 	if (__env){printf("## Call custom destructor for instance of VrmlConverter_WFDeflectionShape\n");}
 	}
 };
+
 
 %nodefaultctor VrmlConverter_LineAspect;
 class VrmlConverter_LineAspect : public MMgt_TShared {
@@ -344,6 +353,7 @@ class VrmlConverter_LineAspect : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor VrmlConverter_IsoAspect;
 class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 	public:
@@ -376,6 +386,7 @@ class VrmlConverter_IsoAspect : public VrmlConverter_LineAspect {
 	}
 };
 
+
 %nodefaultctor VrmlConverter_WFRestrictedFace;
 class VrmlConverter_WFRestrictedFace {
 	public:
@@ -398,6 +409,7 @@ class VrmlConverter_WFRestrictedFace {
 	}
 };
 
+
 %nodefaultctor VrmlConverter_ShadedShape;
 class VrmlConverter_ShadedShape {
 	public:
@@ -415,6 +427,7 @@ class VrmlConverter_ShadedShape {
 	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadedShape\n");}
 	}
 };
+
 
 %nodefaultctor VrmlConverter_WFDeflectionRestrictedFace;
 class VrmlConverter_WFDeflectionRestrictedFace {
@@ -438,6 +451,7 @@ class VrmlConverter_WFDeflectionRestrictedFace {
 	}
 };
 
+
 %nodefaultctor VrmlConverter_Projector;
 class VrmlConverter_Projector : public MMgt_TShared {
 	public:
@@ -452,7 +466,12 @@ class VrmlConverter_Projector : public MMgt_TShared {
 		%feature("autodoc", "1");
 		VrmlConverter_TypeOfLight Light() const;
 		%feature("autodoc", "1");
-		void Add(Standard_OStream & anOStream) const;
+		%extend{
+			std::string AddToString() {
+			std::stringstream s;
+			self->Add(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		HLRAlgo_Projector Projector() const;
 		%feature("autodoc", "1");
@@ -476,6 +495,7 @@ class VrmlConverter_Projector : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor VrmlConverter_Curve;
 class VrmlConverter_Curve {
 	public:
@@ -495,6 +515,7 @@ class VrmlConverter_Curve {
 	if (__env){printf("## Call custom destructor for instance of VrmlConverter_Curve\n");}
 	}
 };
+
 
 %nodefaultctor VrmlConverter_PointAspect;
 class VrmlConverter_PointAspect : public MMgt_TShared {
@@ -531,6 +552,7 @@ class VrmlConverter_PointAspect : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of VrmlConverter_PointAspect\n");}
 	}
 };
+
 
 %nodefaultctor VrmlConverter_Drawer;
 class VrmlConverter_Drawer : public MMgt_TShared {
@@ -640,6 +662,7 @@ class VrmlConverter_Drawer : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor VrmlConverter_DeflectionCurve;
 class VrmlConverter_DeflectionCurve {
 	public:
@@ -663,6 +686,7 @@ class VrmlConverter_DeflectionCurve {
 	if (__env){printf("## Call custom destructor for instance of VrmlConverter_DeflectionCurve\n");}
 	}
 };
+
 
 %nodefaultctor VrmlConverter_ShadingAspect;
 class VrmlConverter_ShadingAspect : public MMgt_TShared {
@@ -705,6 +729,7 @@ class VrmlConverter_ShadingAspect : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of VrmlConverter_ShadingAspect\n");}
 	}
 };
+
 
 %nodefaultctor VrmlConverter_HLRShape;
 class VrmlConverter_HLRShape {

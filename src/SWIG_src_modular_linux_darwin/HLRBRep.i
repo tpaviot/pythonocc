@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_HLRBRep_InternalAlgo : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_HLRBRep_Algo;
 class Handle_HLRBRep_Algo : public Handle_HLRBRep_InternalAlgo {
 	public:
@@ -162,6 +164,7 @@ class Handle_HLRBRep_Algo : public Handle_HLRBRep_InternalAlgo {
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_Algo\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPoint;
 class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_HLRBRep_ListNodeOfListOfBPoint : public Handle_TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Handle_HLRBRep_AreaLimit;
 class Handle_HLRBRep_AreaLimit : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_HLRBRep_AreaLimit : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_AreaLimit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRBRep_ListNodeOfListOfBPnt2D;
 class Handle_HLRBRep_ListNodeOfListOfBPnt2D : public Handle_TCollection_MapNode {
@@ -238,6 +243,7 @@ class Handle_HLRBRep_ListNodeOfListOfBPnt2D : public Handle_TCollection_MapNode 
 	}
 };
 
+
 %nodefaultctor Handle_HLRBRep_PolyAlgo;
 class Handle_HLRBRep_PolyAlgo : public Handle_MMgt_TShared {
 	public:
@@ -262,6 +268,7 @@ class Handle_HLRBRep_PolyAlgo : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_PolyAlgo\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds;
 class Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds : public Handle_TCollection_SeqNode {
@@ -288,6 +295,7 @@ class Handle_HLRBRep_SequenceNodeOfSeqOfShapeBounds : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
 class Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public Handle_TCollection_SeqNode {
 	public:
@@ -312,6 +320,7 @@ class Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfC
 	if (__env){printf("## Call custom destructor for instance of Handle_HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_HLRBRep_Data;
 class Handle_HLRBRep_Data : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_HLRBRep_Data : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Interference {
 	public:
@@ -362,6 +372,7 @@ class HLRBRep_InterferencePoly2dOfTheIntPCurvePCurveOfCInter : public Intf_Inter
 	}
 };
 
+
 %nodefaultctor HLRBRep_ListIteratorOfListOfBPoint;
 class HLRBRep_ListIteratorOfListOfBPoint {
 	public:
@@ -385,6 +396,7 @@ class HLRBRep_ListIteratorOfListOfBPoint {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListIteratorOfListOfBPoint\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_TheIntConicCurveOfCInter;
 class HLRBRep_TheIntConicCurveOfCInter : public IntRes2d_Intersection {
@@ -419,6 +431,7 @@ class HLRBRep_TheIntConicCurveOfCInter : public IntRes2d_Intersection {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheIntConicCurveOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_SeqOfShapeBounds;
 class HLRBRep_SeqOfShapeBounds : public TCollection_BaseSequence {
@@ -474,6 +487,7 @@ class HLRBRep_SeqOfShapeBounds : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor HLRBRep_TheProjPCurOfCInter;
 class HLRBRep_TheProjPCurOfCInter {
 	public:
@@ -491,6 +505,7 @@ class HLRBRep_TheProjPCurOfCInter {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheProjPCurOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_InternalAlgo;
 class HLRBRep_InternalAlgo : public MMgt_TShared {
@@ -574,6 +589,7 @@ class HLRBRep_InternalAlgo : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
 class HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public TCollection_BaseSequence {
 	public:
@@ -628,6 +644,7 @@ class HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public TColle
 	}
 };
 
+
 %nodefaultctor HLRBRep_InterCSurf;
 class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
 	public:
@@ -651,6 +668,7 @@ class HLRBRep_InterCSurf : public IntCurveSurface_Intersection {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_InterCSurf\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_LineTool;
 class HLRBRep_LineTool {
@@ -696,6 +714,7 @@ class HLRBRep_LineTool {
 	}
 };
 
+
 %nodefaultctor HLRBRep_ThePolygonToolOfInterCSurf;
 class HLRBRep_ThePolygonToolOfInterCSurf {
 	public:
@@ -723,6 +742,7 @@ class HLRBRep_ThePolygonToolOfInterCSurf {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolygonToolOfInterCSurf\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_FaceData;
 class HLRBRep_FaceData {
@@ -809,6 +829,7 @@ class HLRBRep_FaceData {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_FaceData\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_Curve;
 class HLRBRep_Curve {
@@ -906,6 +927,7 @@ class HLRBRep_Curve {
 	}
 };
 
+
 %nodefaultctor HLRBRep_Hider;
 class HLRBRep_Hider {
 	public:
@@ -923,6 +945,7 @@ class HLRBRep_Hider {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_Hider\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_Array1OfFData;
 class HLRBRep_Array1OfFData {
@@ -964,6 +987,7 @@ class HLRBRep_Array1OfFData {
 	}
 };
 
+
 %nodefaultctor HLRBRep_IntConicCurveOfCInter;
 class HLRBRep_IntConicCurveOfCInter : public IntRes2d_Intersection {
 	public:
@@ -997,6 +1021,7 @@ class HLRBRep_IntConicCurveOfCInter : public IntRes2d_Intersection {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_IntConicCurveOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
@@ -1044,6 +1069,7 @@ class HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter {
 	}
 };
 
+
 %nodefaultctor HLRBRep_ListIteratorOfListOfBPnt2D;
 class HLRBRep_ListIteratorOfListOfBPnt2D {
 	public:
@@ -1067,6 +1093,7 @@ class HLRBRep_ListIteratorOfListOfBPnt2D {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListIteratorOfListOfBPnt2D\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_Array1OfEData;
 class HLRBRep_Array1OfEData {
@@ -1107,6 +1134,7 @@ class HLRBRep_Array1OfEData {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_Array1OfEData\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_HLRToShape;
 class HLRBRep_HLRToShape {
@@ -1162,6 +1190,7 @@ class HLRBRep_HLRToShape {
 	}
 };
 
+
 %nodefaultctor HLRBRep_VertexList;
 class HLRBRep_VertexList {
 	public:
@@ -1194,6 +1223,7 @@ class HLRBRep_VertexList {
 	}
 };
 
+
 %nodefaultctor HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
 	public:
@@ -1217,6 +1247,7 @@ class HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_ThePolygonOfInterCSurf;
 class HLRBRep_ThePolygonOfInterCSurf {
@@ -1260,6 +1291,7 @@ class HLRBRep_ThePolygonOfInterCSurf {
 	}
 };
 
+
 %nodefaultctor HLRBRep_Algo;
 class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 	public:
@@ -1296,6 +1328,7 @@ class HLRBRep_Algo : public HLRBRep_InternalAlgo {
 	}
 };
 
+
 %nodefaultctor HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter;
 class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
 	public:
@@ -1309,6 +1342,7 @@ class HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_SLPropsATool;
 class HLRBRep_SLPropsATool {
@@ -1335,6 +1369,7 @@ class HLRBRep_SLPropsATool {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_SLPropsATool\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_ListNodeOfListOfBPnt2D;
 class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
@@ -1364,6 +1399,7 @@ class HLRBRep_ListNodeOfListOfBPnt2D : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor HLRBRep_SequenceNodeOfSeqOfShapeBounds;
 class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 	public:
@@ -1392,6 +1428,7 @@ class HLRBRep_SequenceNodeOfSeqOfShapeBounds : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf;
 class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_FunctionWithDerivative {
 	public:
@@ -1411,6 +1448,7 @@ class HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf : public math_Function
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter : public math_FunctionSetWithDerivatives {
@@ -1435,6 +1473,7 @@ class HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter : public math_Fu
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_BiPoint;
 class HLRBRep_BiPoint {
@@ -1476,6 +1515,7 @@ class HLRBRep_BiPoint {
 	}
 };
 
+
 %nodefaultctor HLRBRep_ShapeToHLR;
 class HLRBRep_ShapeToHLR {
 	public:
@@ -1491,6 +1531,7 @@ class HLRBRep_ShapeToHLR {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ShapeToHLR\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_TheCSFunctionOfInterCSurf;
 class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives {
@@ -1523,6 +1564,7 @@ class HLRBRep_TheCSFunctionOfInterCSurf : public math_FunctionSetWithDerivatives
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheCSFunctionOfInterCSurf\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_Surface;
 class HLRBRep_Surface {
@@ -1614,6 +1656,7 @@ class HLRBRep_Surface {
 	}
 };
 
+
 %nodefaultctor HLRBRep_EdgeIList;
 class HLRBRep_EdgeIList {
 	public:
@@ -1631,6 +1674,7 @@ class HLRBRep_EdgeIList {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeIList\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_EdgeData;
 class HLRBRep_EdgeData {
@@ -1726,6 +1770,7 @@ class HLRBRep_EdgeData {
 	}
 };
 
+
 %nodefaultctor HLRBRep_Data;
 class HLRBRep_Data : public MMgt_TShared {
 	public:
@@ -1818,6 +1863,7 @@ class HLRBRep_Data : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRBRep_BCurveTool;
 class HLRBRep_BCurveTool {
 	public:
@@ -1892,6 +1938,7 @@ class HLRBRep_BCurveTool {
 	}
 };
 
+
 %nodefaultctor HLRBRep_CInter;
 class HLRBRep_CInter : public IntRes2d_Intersection {
 	public:
@@ -1932,6 +1979,7 @@ class HLRBRep_CInter : public IntRes2d_Intersection {
 	}
 };
 
+
 %nodefaultctor HLRBRep_EdgeInterferenceTool;
 class HLRBRep_EdgeInterferenceTool {
 	public:
@@ -1971,6 +2019,7 @@ class HLRBRep_EdgeInterferenceTool {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeInterferenceTool\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_ListOfBPoint;
 class HLRBRep_ListOfBPoint {
@@ -2021,6 +2070,7 @@ class HLRBRep_ListOfBPoint {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ListOfBPoint\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_SLProps;
 class HLRBRep_SLProps {
@@ -2082,6 +2132,7 @@ class HLRBRep_SLProps {
 	}
 };
 
+
 %nodefaultctor HLRBRep_TheIntPCurvePCurveOfCInter;
 class HLRBRep_TheIntPCurvePCurveOfCInter : public IntRes2d_Intersection {
 	public:
@@ -2099,6 +2150,7 @@ class HLRBRep_TheIntPCurvePCurveOfCInter : public IntRes2d_Intersection {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheIntPCurvePCurveOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_AreaLimit;
 class HLRBRep_AreaLimit : public MMgt_TShared {
@@ -2158,6 +2210,7 @@ class HLRBRep_AreaLimit : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor HLRBRep_TheQuadCurvExactInterCSurf;
 class HLRBRep_TheQuadCurvExactInterCSurf {
 	public:
@@ -2181,6 +2234,7 @@ class HLRBRep_TheQuadCurvExactInterCSurf {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheQuadCurvExactInterCSurf\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_PolyAlgo;
 class HLRBRep_PolyAlgo : public MMgt_TShared {
@@ -2263,6 +2317,7 @@ class HLRBRep_PolyAlgo : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_PolyAlgo\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_BSurfaceTool;
 class HLRBRep_BSurfaceTool {
@@ -2376,6 +2431,7 @@ class HLRBRep_BSurfaceTool {
 	}
 };
 
+
 %nodefaultctor HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter;
 class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 	public:
@@ -2405,6 +2461,7 @@ class HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_ThePolyhedronToolOfInterCSurf;
 class HLRBRep_ThePolyhedronToolOfInterCSurf {
@@ -2439,6 +2496,7 @@ class HLRBRep_ThePolyhedronToolOfInterCSurf {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ThePolyhedronToolOfInterCSurf\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_CLProps;
 class HLRBRep_CLProps {
@@ -2480,6 +2538,7 @@ class HLRBRep_CLProps {
 	}
 };
 
+
 %nodefaultctor HLRBRep_BiPnt2D;
 class HLRBRep_BiPnt2D {
 	public:
@@ -2520,6 +2579,7 @@ class HLRBRep_BiPnt2D {
 	}
 };
 
+
 %nodefaultctor HLRBRep;
 class HLRBRep {
 	public:
@@ -2537,6 +2597,7 @@ class HLRBRep {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_FaceIterator;
 class HLRBRep_FaceIterator {
@@ -2578,6 +2639,7 @@ class HLRBRep_FaceIterator {
 	}
 };
 
+
 %nodefaultctor HLRBRep_ListNodeOfListOfBPoint;
 class HLRBRep_ListNodeOfListOfBPoint : public TCollection_MapNode {
 	public:
@@ -2606,6 +2668,7 @@ class HLRBRep_ListNodeOfListOfBPoint : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter;
 class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
 	public:
@@ -2632,6 +2695,7 @@ class HLRBRep_ThePolygon2dToolOfTheIntPCurvePCurveOfCInter {
 	}
 };
 
+
 %nodefaultctor HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter;
 class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Intersection {
 	public:
@@ -2655,6 +2719,7 @@ class HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter : public IntRes2d_Interse
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_PolyHLRToShape;
 class HLRBRep_PolyHLRToShape {
@@ -2708,6 +2773,7 @@ class HLRBRep_PolyHLRToShape {
 	}
 };
 
+
 %nodefaultctor HLRBRep_ListOfBPnt2D;
 class HLRBRep_ListOfBPnt2D {
 	public:
@@ -2758,6 +2824,7 @@ class HLRBRep_ListOfBPnt2D {
 	}
 };
 
+
 %nodefaultctor HLRBRep_CLPropsATool;
 class HLRBRep_CLPropsATool {
 	public:
@@ -2786,6 +2853,7 @@ class HLRBRep_CLPropsATool {
 	}
 };
 
+
 %nodefaultctor HLRBRep_EdgeFaceTool;
 class HLRBRep_EdgeFaceTool {
 	public:
@@ -2803,6 +2871,7 @@ class HLRBRep_EdgeFaceTool {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeFaceTool\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_TheExactInterCSurf;
 class HLRBRep_TheExactInterCSurf {
@@ -2834,6 +2903,7 @@ class HLRBRep_TheExactInterCSurf {
 	}
 };
 
+
 %nodefaultctor HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
 class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public TCollection_SeqNode {
 	public:
@@ -2861,6 +2931,7 @@ class HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter :
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_ShapeBounds;
 class HLRBRep_ShapeBounds {
@@ -2901,6 +2972,7 @@ class HLRBRep_ShapeBounds {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_ShapeBounds\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_CurveTool;
 class HLRBRep_CurveTool {
@@ -2972,6 +3044,7 @@ class HLRBRep_CurveTool {
 	}
 };
 
+
 %nodefaultctor HLRBRep_TheInterferenceOfInterCSurf;
 class HLRBRep_TheInterferenceOfInterCSurf : public Intf_Interference {
 	public:
@@ -3014,6 +3087,7 @@ class HLRBRep_TheInterferenceOfInterCSurf : public Intf_Interference {
 	}
 };
 
+
 %nodefaultctor HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter;
 class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public math_FunctionWithDerivative {
 	public:
@@ -3033,6 +3107,7 @@ class HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter : public ma
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_SurfaceTool;
 class HLRBRep_SurfaceTool {
@@ -3130,6 +3205,7 @@ class HLRBRep_SurfaceTool {
 	}
 };
 
+
 %nodefaultctor HLRBRep_Intersector;
 class HLRBRep_Intersector {
 	public:
@@ -3169,6 +3245,7 @@ class HLRBRep_Intersector {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_Intersector\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_EdgeBuilder;
 class HLRBRep_EdgeBuilder {
@@ -3219,6 +3296,7 @@ class HLRBRep_EdgeBuilder {
 	if (__env){printf("## Call custom destructor for instance of HLRBRep_EdgeBuilder\n");}
 	}
 };
+
 
 %nodefaultctor HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter;
 class HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter : public math_FunctionWithDerivative {

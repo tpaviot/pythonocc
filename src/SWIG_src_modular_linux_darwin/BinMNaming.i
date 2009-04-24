@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BinMNaming_NamingDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor Handle_BinMNaming_NamedShapeDriver;
 class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 	public:
@@ -163,6 +165,7 @@ class Handle_BinMNaming_NamedShapeDriver : public Handle_BinMDF_ADriver {
 	}
 };
 
+
 %nodefaultctor BinMNaming_NamedShapeDriver;
 class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 	public:
@@ -175,9 +178,18 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 		%feature("autodoc", "1");
 		virtual		void Paste(const Handle_TDF_Attribute &Source, BinObjMgt_Persistent & Target, BinObjMgt_SRelocationTable & RelocTable) const;
 		%feature("autodoc", "1");
-		void ReadShapeSection(std::istream & theIS);
+		%extend{
+			void ReadShapeSectionFromString(std::string src) {
+			std::stringstream s(src);
+			self->ReadShapeSection(s);}
+		};
 		%feature("autodoc", "1");
-		void WriteShapeSection(Standard_OStream & theOS);
+		%extend{
+			std::string WriteShapeSectionToString() {
+			std::stringstream s;
+			self->WriteShapeSection(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Clear();
 		%feature("autodoc", "1");
@@ -204,6 +216,7 @@ class BinMNaming_NamedShapeDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamedShapeDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMNaming_NamingDriver;
 class BinMNaming_NamingDriver : public BinMDF_ADriver {
@@ -236,6 +249,7 @@ class BinMNaming_NamingDriver : public BinMDF_ADriver {
 	if (__env){printf("## Call custom destructor for instance of BinMNaming_NamingDriver\n");}
 	}
 };
+
 
 %nodefaultctor BinMNaming;
 class BinMNaming {

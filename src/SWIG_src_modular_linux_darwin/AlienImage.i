@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -147,6 +148,7 @@ class Handle_AlienImage_AlienImage : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_AlienUserImage;
 class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
 	public:
@@ -171,6 +173,7 @@ class Handle_AlienImage_AlienUserImage : public Handle_AlienImage_AlienImage {
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AlienUserImage\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AlienImage_SGIRGBAlienImage;
 class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserImage {
@@ -197,6 +200,7 @@ class Handle_AlienImage_SGIRGBAlienImage : public Handle_AlienImage_AlienUserIma
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_AlienImageData;
 class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
 	public:
@@ -221,6 +225,7 @@ class Handle_AlienImage_AlienImageData : public Handle_AlienImage_AlienImage {
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AlienImageData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AlienImage_X11XWDAlienData;
 class Handle_AlienImage_X11XWDAlienData : public Handle_AlienImage_AlienImageData {
@@ -247,6 +252,7 @@ class Handle_AlienImage_X11XWDAlienData : public Handle_AlienImage_AlienImageDat
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_EuclidAlienImage;
 class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserImage {
 	public:
@@ -271,6 +277,7 @@ class Handle_AlienImage_EuclidAlienImage : public Handle_AlienImage_AlienUserIma
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_EuclidAlienImage\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AlienImage_EuclidAlienData;
 class Handle_AlienImage_EuclidAlienData : public Handle_AlienImage_AlienImageData {
@@ -297,6 +304,7 @@ class Handle_AlienImage_EuclidAlienData : public Handle_AlienImage_AlienImageDat
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_SGIRGBAlienData;
 class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageData {
 	public:
@@ -321,6 +329,7 @@ class Handle_AlienImage_SGIRGBAlienData : public Handle_AlienImage_AlienImageDat
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_SGIRGBAlienData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AlienImage_SunRFAlienData;
 class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData {
@@ -347,6 +356,7 @@ class Handle_AlienImage_SunRFAlienData : public Handle_AlienImage_AlienImageData
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_AidaAlienImage;
 class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage {
 	public:
@@ -371,6 +381,7 @@ class Handle_AlienImage_AidaAlienImage : public Handle_AlienImage_AlienUserImage
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_AidaAlienImage\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AlienImage_GIFAlienImage;
 class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage {
@@ -397,6 +408,7 @@ class Handle_AlienImage_GIFAlienImage : public Handle_AlienImage_AlienUserImage 
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_BMPAlienImage;
 class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage {
 	public:
@@ -421,6 +433,7 @@ class Handle_AlienImage_BMPAlienImage : public Handle_AlienImage_AlienUserImage 
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_BMPAlienImage\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AlienImage_BMPAlienData;
 class Handle_AlienImage_BMPAlienData : public Handle_AlienImage_AlienImageData {
@@ -447,6 +460,7 @@ class Handle_AlienImage_BMPAlienData : public Handle_AlienImage_AlienImageData {
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_GIFAlienData;
 class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 	public:
@@ -471,6 +485,7 @@ class Handle_AlienImage_GIFAlienData : public Handle_AlienImage_AlienImageData {
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_GIFAlienData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AlienImage_SunRFAlienImage;
 class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImage {
@@ -497,6 +512,7 @@ class Handle_AlienImage_SunRFAlienImage : public Handle_AlienImage_AlienUserImag
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_AidaAlienData;
 class Handle_AlienImage_AidaAlienData : public Handle_AlienImage_AlienImageData {
 	public:
@@ -522,6 +538,7 @@ class Handle_AlienImage_AidaAlienData : public Handle_AlienImage_AlienImageData 
 	}
 };
 
+
 %nodefaultctor Handle_AlienImage_XAlienImage;
 class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
 	public:
@@ -546,6 +563,7 @@ class Handle_AlienImage_XAlienImage : public Handle_AlienImage_AlienUserImage {
 	if (__env){printf("## Call custom destructor for instance of Handle_AlienImage_XAlienImage\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_AlienImage;
 class AlienImage_AlienImage : public MMgt_TShared {
@@ -579,6 +597,7 @@ class AlienImage_AlienImage : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AlienImage_AlienImageData;
 class AlienImage_AlienImageData : public AlienImage_AlienImage {
 	public:
@@ -604,6 +623,7 @@ class AlienImage_AlienImageData : public AlienImage_AlienImage {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_AlienImageData\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_SGIRGBAlienData;
 class AlienImage_SGIRGBAlienData : public AlienImage_AlienImageData {
@@ -631,6 +651,7 @@ class AlienImage_SGIRGBAlienData : public AlienImage_AlienImageData {
 	}
 };
 
+
 %nodefaultctor AlienImage_SGIRGBFileHeader;
 class AlienImage_SGIRGBFileHeader {
 	public:
@@ -645,6 +666,7 @@ class AlienImage_SGIRGBFileHeader {
 	}
 };
 
+
 %nodefaultctor AlienImage_SUNRFFileHeader;
 class AlienImage_SUNRFFileHeader {
 	public:
@@ -658,6 +680,7 @@ class AlienImage_SUNRFFileHeader {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_SUNRFFileHeader\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_AlienUserImage;
 class AlienImage_AlienUserImage : public AlienImage_AlienImage {
@@ -695,6 +718,7 @@ class AlienImage_AlienUserImage : public AlienImage_AlienImage {
 	}
 };
 
+
 %nodefaultctor AlienImage_SGIRGBAlienImage;
 class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 	public:
@@ -725,6 +749,7 @@ class AlienImage_SGIRGBAlienImage : public AlienImage_AlienUserImage {
 	}
 };
 
+
 %nodefaultctor AlienImage_MemoryOperations;
 class AlienImage_MemoryOperations {
 	public:
@@ -742,6 +767,7 @@ class AlienImage_MemoryOperations {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_MemoryOperations\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_SunRFAlienImage;
 class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
@@ -783,6 +809,7 @@ class AlienImage_SunRFAlienImage : public AlienImage_AlienUserImage {
 	}
 };
 
+
 %nodefaultctor AlienImage_X11XWDAlienData;
 class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
 	public:
@@ -822,6 +849,7 @@ class AlienImage_X11XWDAlienData : public AlienImage_AlienImageData {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_X11XWDAlienData\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_XAlienImage;
 class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
@@ -863,6 +891,7 @@ class AlienImage_XAlienImage : public AlienImage_AlienUserImage {
 	}
 };
 
+
 %nodefaultctor AlienImage_X11XColor;
 class AlienImage_X11XColor {
 	public:
@@ -876,6 +905,7 @@ class AlienImage_X11XColor {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_X11XColor\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_BMPAlienData;
 class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
@@ -913,6 +943,7 @@ class AlienImage_BMPAlienData : public AlienImage_AlienImageData {
 	}
 };
 
+
 %nodefaultctor AlienImage;
 class AlienImage {
 	public:
@@ -934,6 +965,7 @@ class AlienImage {
 	if (__env){printf("## Call custom destructor for instance of AlienImage\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_AidaAlienImage;
 class AlienImage_AidaAlienImage : public AlienImage_AlienUserImage {
@@ -973,6 +1005,7 @@ class AlienImage_AidaAlienImage : public AlienImage_AlienUserImage {
 	}
 };
 
+
 %nodefaultctor AlienImage_EuclidAlienImage;
 class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 	public:
@@ -1008,6 +1041,7 @@ class AlienImage_EuclidAlienImage : public AlienImage_AlienUserImage {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_EuclidAlienImage\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_EuclidAlienData;
 class AlienImage_EuclidAlienData : public AlienImage_AlienImageData {
@@ -1049,6 +1083,7 @@ class AlienImage_EuclidAlienData : public AlienImage_AlienImageData {
 	}
 };
 
+
 %nodefaultctor AlienImage_AidaAlienData;
 class AlienImage_AidaAlienData : public AlienImage_AlienImageData {
 	public:
@@ -1086,6 +1121,7 @@ class AlienImage_AidaAlienData : public AlienImage_AlienImageData {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_AidaAlienData\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_SunRFAlienData;
 class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
@@ -1137,6 +1173,7 @@ class AlienImage_SunRFAlienData : public AlienImage_AlienImageData {
 	}
 };
 
+
 %nodefaultctor AlienImage_BMPHeader;
 class AlienImage_BMPHeader {
 	public:
@@ -1150,6 +1187,7 @@ class AlienImage_BMPHeader {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_BMPHeader\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_GIFAlienData;
 class AlienImage_GIFAlienData : public AlienImage_AlienImageData {
@@ -1186,6 +1224,7 @@ class AlienImage_GIFAlienData : public AlienImage_AlienImageData {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_GIFAlienData\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_BMPAlienImage;
 class AlienImage_BMPAlienImage : public AlienImage_AlienUserImage {
@@ -1226,6 +1265,7 @@ class AlienImage_BMPAlienImage : public AlienImage_AlienUserImage {
 	if (__env){printf("## Call custom destructor for instance of AlienImage_BMPAlienImage\n");}
 	}
 };
+
 
 %nodefaultctor AlienImage_GIFAlienImage;
 class AlienImage_GIFAlienImage : public AlienImage_AlienUserImage {

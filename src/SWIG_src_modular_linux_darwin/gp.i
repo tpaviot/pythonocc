@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -150,6 +151,7 @@ class Handle_gp_VectorWithNullMagnitude : public Handle_Standard_DomainError {
 	}
 };
 
+
 %nodefaultctor gp_Cone;
 class gp_Cone {
 	public:
@@ -242,6 +244,7 @@ class gp_Cone {
 	}
 };
 
+
 %nodefaultctor gp_Dir2d;
 class gp_Dir2d {
 	public:
@@ -323,6 +326,7 @@ class gp_Dir2d {
 	if (__env){printf("## Call custom destructor for instance of gp_Dir2d\n");}
 	}
 };
+
 
 %nodefaultctor gp_Parab2d;
 class gp_Parab2d {
@@ -410,6 +414,7 @@ class gp_Parab2d {
 	}
 };
 
+
 %nodefaultctor gp_VectorWithNullMagnitude;
 class gp_VectorWithNullMagnitude : public Standard_DomainError {
 	public:
@@ -443,6 +448,7 @@ class gp_VectorWithNullMagnitude : public Standard_DomainError {
 	if (__env){printf("## Call custom destructor for instance of gp_VectorWithNullMagnitude\n");}
 	}
 };
+
 
 %nodefaultctor gp_Ax22d;
 class gp_Ax22d {
@@ -519,6 +525,7 @@ class gp_Ax22d {
 	if (__env){printf("## Call custom destructor for instance of gp_Ax22d\n");}
 	}
 };
+
 
 %nodefaultctor gp_XYZ;
 class gp_XYZ {
@@ -662,6 +669,7 @@ class gp_XYZ {
 	}
 };
 
+
 %nodefaultctor gp_Mat2d;
 class gp_Mat2d {
 	public:
@@ -767,6 +775,7 @@ class gp_Mat2d {
 	if (__env){printf("## Call custom destructor for instance of gp_Mat2d\n");}
 	}
 };
+
 
 %nodefaultctor gp_Vec2d;
 class gp_Vec2d {
@@ -908,6 +917,7 @@ class gp_Vec2d {
 	}
 };
 
+
 %nodefaultctor gp_Elips;
 class gp_Elips {
 	public:
@@ -1005,6 +1015,7 @@ class gp_Elips {
 	if (__env){printf("## Call custom destructor for instance of gp_Elips\n");}
 	}
 };
+
 
 %nodefaultctor gp_Vec;
 class gp_Vec {
@@ -1170,6 +1181,7 @@ class gp_Vec {
 	}
 };
 
+
 %nodefaultctor gp_Ax2;
 class gp_Ax2 {
 	public:
@@ -1251,6 +1263,7 @@ class gp_Ax2 {
 	if (__env){printf("## Call custom destructor for instance of gp_Ax2\n");}
 	}
 };
+
 
 %nodefaultctor gp_Torus;
 class gp_Torus {
@@ -1345,6 +1358,7 @@ class gp_Torus {
 	if (__env){printf("## Call custom destructor for instance of gp_Torus\n");}
 	}
 };
+
 
 %nodefaultctor gp_Dir;
 class gp_Dir {
@@ -1448,6 +1462,7 @@ class gp_Dir {
 	}
 };
 
+
 %nodefaultctor gp_Circ2d;
 class gp_Circ2d {
 	public:
@@ -1540,6 +1555,7 @@ class gp_Circ2d {
 	}
 };
 
+
 %nodefaultctor gp_Lin;
 class gp_Lin {
 	public:
@@ -1621,6 +1637,7 @@ class gp_Lin {
 	if (__env){printf("## Call custom destructor for instance of gp_Lin\n");}
 	}
 };
+
 
 %nodefaultctor gp_XY;
 class gp_XY {
@@ -1744,6 +1761,7 @@ class gp_XY {
 	}
 };
 
+
 %nodefaultctor gp_Lin2d;
 class gp_Lin2d {
 	public:
@@ -1825,6 +1843,7 @@ class gp_Lin2d {
 	if (__env){printf("## Call custom destructor for instance of gp_Lin2d\n");}
 	}
 };
+
 
 %nodefaultctor gp_Hypr;
 class gp_Hypr {
@@ -1932,6 +1951,7 @@ class gp_Hypr {
 	}
 };
 
+
 %nodefaultctor gp_Elips2d;
 class gp_Elips2d {
 	public:
@@ -2036,6 +2056,7 @@ class gp_Elips2d {
 	}
 };
 
+
 %nodefaultctor gp_Trsf;
 class gp_Trsf {
 	public:
@@ -2127,6 +2148,7 @@ class gp_Trsf {
 	if (__env){printf("## Call custom destructor for instance of gp_Trsf\n");}
 	}
 };
+
 
 %nodefaultctor gp_Hypr2d;
 class gp_Hypr2d {
@@ -2240,6 +2262,7 @@ class gp_Hypr2d {
 	}
 };
 
+
 %nodefaultctor gp_Trsf2d;
 class gp_Trsf2d {
 	public:
@@ -2326,6 +2349,7 @@ class gp_Trsf2d {
 	}
 };
 
+
 %nodefaultctor gp_Parab;
 class gp_Parab {
 	public:
@@ -2407,6 +2431,7 @@ class gp_Parab {
 	if (__env){printf("## Call custom destructor for instance of gp_Parab\n");}
 	}
 };
+
 
 %nodefaultctor gp_Cylinder;
 class gp_Cylinder {
@@ -2490,6 +2515,7 @@ class gp_Cylinder {
 	}
 };
 
+
 %nodefaultctor gp_Ax1;
 class gp_Ax1 {
 	public:
@@ -2563,6 +2589,7 @@ class gp_Ax1 {
 	if (__env){printf("## Call custom destructor for instance of gp_Ax1\n");}
 	}
 };
+
 
 %nodefaultctor gp_Sphere;
 class gp_Sphere {
@@ -2646,6 +2673,7 @@ class gp_Sphere {
 	}
 };
 
+
 %nodefaultctor gp_GTrsf;
 class gp_GTrsf {
 	public:
@@ -2723,6 +2751,7 @@ class gp_GTrsf {
 	if (__env){printf("## Call custom destructor for instance of gp_GTrsf\n");}
 	}
 };
+
 
 %nodefaultctor gp_Pln;
 class gp_Pln {
@@ -2818,6 +2847,7 @@ class gp_Pln {
 	}
 };
 
+
 %nodefaultctor gp_Ax3;
 class gp_Ax3 {
 	public:
@@ -2912,6 +2942,7 @@ class gp_Ax3 {
 	}
 };
 
+
 %nodefaultctor gp_Pnt;
 class gp_Pnt {
 	public:
@@ -3000,6 +3031,7 @@ class gp_Pnt {
 	}
 };
 
+
 %nodefaultctor gp_Pnt2d;
 class gp_Pnt2d {
 	public:
@@ -3077,6 +3109,7 @@ class gp_Pnt2d {
 	if (__env){printf("## Call custom destructor for instance of gp_Pnt2d\n");}
 	}
 };
+
 
 %nodefaultctor gp_Circ;
 class gp_Circ {
@@ -3161,6 +3194,7 @@ class gp_Circ {
 	if (__env){printf("## Call custom destructor for instance of gp_Circ\n");}
 	}
 };
+
 
 %nodefaultctor gp_Mat;
 class gp_Mat {
@@ -3276,6 +3310,7 @@ class gp_Mat {
 	}
 };
 
+
 %nodefaultctor gp_Ax2d;
 class gp_Ax2d {
 	public:
@@ -3346,6 +3381,7 @@ class gp_Ax2d {
 	}
 };
 
+
 %nodefaultctor gp;
 class gp {
 	public:
@@ -3391,6 +3427,7 @@ class gp {
 	if (__env){printf("## Call custom destructor for instance of gp\n");}
 	}
 };
+
 
 %nodefaultctor gp_GTrsf2d;
 class gp_GTrsf2d {

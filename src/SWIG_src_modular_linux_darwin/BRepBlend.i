@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BRepBlend_Line : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BRepBlend_AppFuncRoot;
 class Handle_BRepBlend_AppFuncRoot : public Handle_Approx_SweepFunction {
 	public:
@@ -162,6 +164,7 @@ class Handle_BRepBlend_AppFuncRoot : public Handle_Approx_SweepFunction {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_AppFuncRoot\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepBlend_AppFuncRstRst;
 class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
@@ -188,6 +191,7 @@ class Handle_BRepBlend_AppFuncRstRst : public Handle_BRepBlend_AppFuncRoot {
 	}
 };
 
+
 %nodefaultctor Handle_BRepBlend_AppFunc;
 class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 	public:
@@ -212,6 +216,7 @@ class Handle_BRepBlend_AppFunc : public Handle_BRepBlend_AppFuncRoot {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_AppFunc\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepBlend_AppFuncRst;
 class Handle_BRepBlend_AppFuncRst : public Handle_BRepBlend_AppFuncRoot {
@@ -238,6 +243,7 @@ class Handle_BRepBlend_AppFuncRst : public Handle_BRepBlend_AppFuncRoot {
 	}
 };
 
+
 %nodefaultctor Handle_BRepBlend_SequenceNodeOfSequenceOfLine;
 class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_SeqNode {
 	public:
@@ -263,6 +269,7 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfLine : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
 class Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public Handle_TCollection_SeqNode {
 	public:
@@ -287,6 +294,7 @@ class Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepBlend_SequenceNodeOfSequenceOfPointOnRst\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_SurfPointConstRadInv;
 class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
@@ -320,6 +328,7 @@ class BRepBlend_SurfPointConstRadInv : public Blend_SurfPointFuncInv {
 	}
 };
 
+
 %nodefaultctor BRepBlend_SequenceNodeOfSequenceOfPointOnRst;
 class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode {
 	public:
@@ -347,6 +356,7 @@ class BRepBlend_SequenceNodeOfSequenceOfPointOnRst : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceNodeOfSequenceOfPointOnRst\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_RstRstEvolRad;
 class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
@@ -444,6 +454,7 @@ class BRepBlend_RstRstEvolRad : public Blend_RstRstFunction {
 	}
 };
 
+
 %nodefaultctor BRepBlend_EvolRadInv;
 class BRepBlend_EvolRadInv : public Blend_FuncInv {
 	public:
@@ -476,6 +487,7 @@ class BRepBlend_EvolRadInv : public Blend_FuncInv {
 	}
 };
 
+
 %nodefaultctor BRepBlend_BlendTool;
 class BRepBlend_BlendTool {
 	public:
@@ -506,6 +518,7 @@ class BRepBlend_BlendTool {
 	}
 };
 
+
 %nodefaultctor BRepBlend_SequenceNodeOfSequenceOfLine;
 class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	public:
@@ -533,6 +546,7 @@ class BRepBlend_SequenceNodeOfSequenceOfLine : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceNodeOfSequenceOfLine\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_ConstRadInv;
 class BRepBlend_ConstRadInv : public Blend_FuncInv {
@@ -565,6 +579,7 @@ class BRepBlend_ConstRadInv : public Blend_FuncInv {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_ConstRadInv\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_HCurve2dTool;
 class BRepBlend_HCurve2dTool {
@@ -627,6 +642,7 @@ class BRepBlend_HCurve2dTool {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_HCurve2dTool\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_Chamfer;
 class BRepBlend_Chamfer : public Blend_Function {
@@ -707,6 +723,7 @@ class BRepBlend_Chamfer : public Blend_Function {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_Chamfer\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_ConstRad;
 class BRepBlend_ConstRad : public Blend_Function {
@@ -796,6 +813,7 @@ class BRepBlend_ConstRad : public Blend_Function {
 	}
 };
 
+
 %nodefaultctor BRepBlend_PointOnRst;
 class BRepBlend_PointOnRst {
 	public:
@@ -821,6 +839,7 @@ class BRepBlend_PointOnRst {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_PointOnRst\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_SurfCurvEvolRadInv;
 class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
@@ -854,6 +873,7 @@ class BRepBlend_SurfCurvEvolRadInv : public Blend_SurfCurvFuncInv {
 	}
 };
 
+
 %nodefaultctor BRepBlend_SurfCurvConstRadInv;
 class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
 	public:
@@ -885,6 +905,7 @@ class BRepBlend_SurfCurvConstRadInv : public Blend_SurfCurvFuncInv {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfCurvConstRadInv\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_CurvPointRadInv;
 class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
@@ -918,6 +939,7 @@ class BRepBlend_CurvPointRadInv : public Blend_CurvPointFuncInv {
 	}
 };
 
+
 %nodefaultctor BRepBlend_SurfPointEvolRadInv;
 class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
 	public:
@@ -950,6 +972,7 @@ class BRepBlend_SurfPointEvolRadInv : public Blend_SurfPointFuncInv {
 	}
 };
 
+
 %nodefaultctor BRepBlend_ChamfInv;
 class BRepBlend_ChamfInv : public Blend_FuncInv {
 	public:
@@ -981,6 +1004,7 @@ class BRepBlend_ChamfInv : public Blend_FuncInv {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_ChamfInv\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_Ruled;
 class BRepBlend_Ruled : public Blend_Function {
@@ -1062,6 +1086,7 @@ class BRepBlend_Ruled : public Blend_Function {
 	}
 };
 
+
 %nodefaultctor BRepBlend_AppFuncRoot;
 class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 	public:
@@ -1124,6 +1149,7 @@ class BRepBlend_AppFuncRoot : public Approx_SweepFunction {
 	}
 };
 
+
 %nodefaultctor BRepBlend_AppFuncRst;
 class BRepBlend_AppFuncRst : public BRepBlend_AppFuncRoot {
 	public:
@@ -1147,6 +1173,7 @@ class BRepBlend_AppFuncRst : public BRepBlend_AppFuncRoot {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppFuncRst\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_SurfRstConstRad;
 class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
@@ -1240,6 +1267,7 @@ class BRepBlend_SurfRstConstRad : public Blend_SurfRstFunction {
 	}
 };
 
+
 %nodefaultctor BRepBlend_SurfRstLineBuilder;
 class BRepBlend_SurfRstLineBuilder {
 	public:
@@ -1269,6 +1297,7 @@ class BRepBlend_SurfRstLineBuilder {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SurfRstLineBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_ChAsym;
 class BRepBlend_ChAsym : public Blend_Function {
@@ -1356,6 +1385,7 @@ class BRepBlend_ChAsym : public Blend_Function {
 	}
 };
 
+
 %nodefaultctor BRepBlend_AppSurface;
 class BRepBlend_AppSurface : public AppBlend_Approx {
 	public:
@@ -1406,7 +1436,12 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 		%feature("autodoc", "1");
 		virtual		Standard_Real TolCurveOnSurf(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend BRepBlend_AppSurface {
@@ -1415,6 +1450,7 @@ class BRepBlend_AppSurface : public AppBlend_Approx {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppSurface\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_Extremity;
 class BRepBlend_Extremity {
@@ -1470,6 +1506,7 @@ class BRepBlend_Extremity {
 	}
 };
 
+
 %nodefaultctor BRepBlend_AppFunc;
 class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
 	public:
@@ -1499,6 +1536,7 @@ class BRepBlend_AppFunc : public BRepBlend_AppFuncRoot {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppFunc\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_SequenceOfLine;
 class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
@@ -1554,6 +1592,7 @@ class BRepBlend_SequenceOfLine : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor BRepBlend_CSWalking;
 class BRepBlend_CSWalking {
 	public:
@@ -1575,6 +1614,7 @@ class BRepBlend_CSWalking {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_CSWalking\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_Line;
 class BRepBlend_Line : public MMgt_TShared {
@@ -1637,6 +1677,7 @@ class BRepBlend_Line : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_Line\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_CSConstRad;
 class BRepBlend_CSConstRad : public Blend_CSFunction {
@@ -1722,6 +1763,7 @@ class BRepBlend_CSConstRad : public Blend_CSFunction {
 	}
 };
 
+
 %nodefaultctor BRepBlend_AppFuncRstRst;
 class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 	public:
@@ -1752,6 +1794,7 @@ class BRepBlend_AppFuncRstRst : public BRepBlend_AppFuncRoot {
 	}
 };
 
+
 %nodefaultctor BRepBlend_RuledInv;
 class BRepBlend_RuledInv : public Blend_FuncInv {
 	public:
@@ -1781,6 +1824,7 @@ class BRepBlend_RuledInv : public Blend_FuncInv {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_RuledInv\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_HCurveTool;
 class BRepBlend_HCurveTool {
@@ -1843,6 +1887,7 @@ class BRepBlend_HCurveTool {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_HCurveTool\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_CSCircular;
 class BRepBlend_CSCircular : public Blend_CSFunction {
@@ -1930,6 +1975,7 @@ class BRepBlend_CSCircular : public Blend_CSFunction {
 	}
 };
 
+
 %nodefaultctor BRepBlend_ChAsymInv;
 class BRepBlend_ChAsymInv : public Blend_FuncInv {
 	public:
@@ -1963,6 +2009,7 @@ class BRepBlend_ChAsymInv : public Blend_FuncInv {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_ChAsymInv\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_Corde;
 class BRepBlend_Corde {
@@ -2001,6 +2048,7 @@ class BRepBlend_Corde {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_Corde\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_AppSurf;
 class BRepBlend_AppSurf : public AppBlend_Approx {
@@ -2063,6 +2111,7 @@ class BRepBlend_AppSurf : public AppBlend_Approx {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_AppSurf\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_HSurfaceTool;
 class BRepBlend_HSurfaceTool {
@@ -2156,6 +2205,7 @@ class BRepBlend_HSurfaceTool {
 	}
 };
 
+
 %nodefaultctor BRepBlend_RstRstLineBuilder;
 class BRepBlend_RstRstLineBuilder {
 	public:
@@ -2187,6 +2237,7 @@ class BRepBlend_RstRstLineBuilder {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_RstRstLineBuilder\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_SequenceOfPointOnRst;
 class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
@@ -2241,6 +2292,7 @@ class BRepBlend_SequenceOfPointOnRst : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_SequenceOfPointOnRst\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_RstRstConstRad;
 class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
@@ -2338,6 +2390,7 @@ class BRepBlend_RstRstConstRad : public Blend_RstRstFunction {
 	}
 };
 
+
 %nodefaultctor BRepBlend_Walking;
 class BRepBlend_Walking {
 	public:
@@ -2383,6 +2436,7 @@ class BRepBlend_Walking {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_Walking\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_EvolRad;
 class BRepBlend_EvolRad : public Blend_Function {
@@ -2469,6 +2523,7 @@ class BRepBlend_EvolRad : public Blend_Function {
 	if (__env){printf("## Call custom destructor for instance of BRepBlend_EvolRad\n");}
 	}
 };
+
 
 %nodefaultctor BRepBlend_SurfRstEvolRad;
 class BRepBlend_SurfRstEvolRad : public Blend_SurfRstFunction {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -170,6 +171,7 @@ class Handle_Storage_Schema : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_InternalData;
 class Handle_Storage_InternalData : public Handle_MMgt_TShared {
 	public:
@@ -194,6 +196,7 @@ class Handle_Storage_InternalData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_InternalData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_SequenceNodeOfSeqOfCallBack;
 class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_SeqNode {
@@ -220,6 +223,7 @@ class Handle_Storage_SequenceNodeOfSeqOfCallBack : public Handle_TCollection_Seq
 	}
 };
 
+
 %nodefaultctor Handle_Storage_DataMapNodeOfMapOfPers;
 class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode {
 	public:
@@ -244,6 +248,7 @@ class Handle_Storage_DataMapNodeOfMapOfPers : public Handle_TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfPers\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_SequenceNodeOfSeqOfPersistent;
 class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_SeqNode {
@@ -270,6 +275,7 @@ class Handle_Storage_SequenceNodeOfSeqOfPersistent : public Handle_TCollection_S
 	}
 };
 
+
 %nodefaultctor Handle_Storage_StreamReadError;
 class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
 	public:
@@ -294,6 +300,7 @@ class Handle_Storage_StreamReadError : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamReadError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_StreamTypeMismatchError;
 class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadError {
@@ -320,6 +327,7 @@ class Handle_Storage_StreamTypeMismatchError : public Handle_Storage_StreamReadE
 	}
 };
 
+
 %nodefaultctor Handle_Storage_HSeqOfPersistent;
 class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
 	public:
@@ -344,6 +352,7 @@ class Handle_Storage_HSeqOfPersistent : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HSeqOfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_HPArray;
 class Handle_Storage_HPArray : public Handle_MMgt_TShared {
@@ -370,6 +379,7 @@ class Handle_Storage_HPArray : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_StreamFormatError;
 class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
 	public:
@@ -394,6 +404,7 @@ class Handle_Storage_StreamFormatError : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamFormatError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_HSeqOfCallBack;
 class Handle_Storage_HSeqOfCallBack : public Handle_MMgt_TShared {
@@ -420,6 +431,7 @@ class Handle_Storage_HSeqOfCallBack : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_Root;
 class Handle_Storage_Root : public Handle_MMgt_TShared {
 	public:
@@ -444,6 +456,7 @@ class Handle_Storage_Root : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_Root\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_Data;
 class Handle_Storage_Data : public Handle_MMgt_TShared {
@@ -470,6 +483,7 @@ class Handle_Storage_Data : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_HArrayOfSchema;
 class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
 	public:
@@ -494,6 +508,7 @@ class Handle_Storage_HArrayOfSchema : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfSchema\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_StreamWriteError;
 class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
@@ -520,6 +535,7 @@ class Handle_Storage_StreamWriteError : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_DataMapNodeOfMapOfCallBack;
 class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapNode {
 	public:
@@ -544,6 +560,7 @@ class Handle_Storage_DataMapNodeOfMapOfCallBack : public Handle_TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DataMapNodeOfMapOfCallBack\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_IndexedDataMapNodeOfPType;
 class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNode {
@@ -570,6 +587,7 @@ class Handle_Storage_IndexedDataMapNodeOfPType : public Handle_TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor Handle_Storage_RootData;
 class Handle_Storage_RootData : public Handle_MMgt_TShared {
 	public:
@@ -594,6 +612,7 @@ class Handle_Storage_RootData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_RootData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_TypedCallBack;
 class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
@@ -620,6 +639,7 @@ class Handle_Storage_TypedCallBack : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_StreamExtCharParityError;
 class Handle_Storage_StreamExtCharParityError : public Handle_Storage_StreamReadError {
 	public:
@@ -644,6 +664,7 @@ class Handle_Storage_StreamExtCharParityError : public Handle_Storage_StreamRead
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StreamExtCharParityError\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_SequenceNodeOfSeqOfRoot;
 class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode {
@@ -670,6 +691,7 @@ class Handle_Storage_SequenceNodeOfSeqOfRoot : public Handle_TCollection_SeqNode
 	}
 };
 
+
 %nodefaultctor Handle_Storage_TypeData;
 class Handle_Storage_TypeData : public Handle_MMgt_TShared {
 	public:
@@ -694,6 +716,7 @@ class Handle_Storage_TypeData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_TypeData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_StreamModeError;
 class Handle_Storage_StreamModeError : public Handle_Standard_Failure {
@@ -720,6 +743,7 @@ class Handle_Storage_StreamModeError : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_HeaderData;
 class Handle_Storage_HeaderData : public Handle_MMgt_TShared {
 	public:
@@ -744,6 +768,7 @@ class Handle_Storage_HeaderData : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HeaderData\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_CallBack;
 class Handle_Storage_CallBack : public Handle_MMgt_TShared {
@@ -770,6 +795,7 @@ class Handle_Storage_CallBack : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_DefaultCallBack;
 class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
 	public:
@@ -794,6 +820,7 @@ class Handle_Storage_DefaultCallBack : public Handle_Storage_CallBack {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_DefaultCallBack\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_StreamUnknownTypeError;
 class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadError {
@@ -820,6 +847,7 @@ class Handle_Storage_StreamUnknownTypeError : public Handle_Storage_StreamReadEr
 	}
 };
 
+
 %nodefaultctor Handle_Storage_HArrayOfCallBack;
 class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 	public:
@@ -844,6 +872,7 @@ class Handle_Storage_HArrayOfCallBack : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_HArrayOfCallBack\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Storage_HSeqOfRoot;
 class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
@@ -870,6 +899,7 @@ class Handle_Storage_HSeqOfRoot : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Storage_StdMapNodeOfMapOfAsciiString;
 class Handle_Storage_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_MapNode {
 	public:
@@ -894,6 +924,7 @@ class Handle_Storage_StdMapNodeOfMapOfAsciiString : public Handle_TCollection_Ma
 	if (__env){printf("## Call custom destructor for instance of Handle_Storage_StdMapNodeOfMapOfAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Storage_SequenceNodeOfSeqOfPersistent;
 class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
@@ -922,6 +953,7 @@ class Storage_SequenceNodeOfSeqOfPersistent : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor Storage_SeqOfRoot;
 class Storage_SeqOfRoot : public TCollection_BaseSequence {
@@ -977,6 +1009,7 @@ class Storage_SeqOfRoot : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Storage_StdMapNodeOfMapOfAsciiString;
 class Storage_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 	public:
@@ -1004,6 +1037,7 @@ class Storage_StdMapNodeOfMapOfAsciiString : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Storage_StdMapNodeOfMapOfAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Storage_ArrayOfCallBack;
 class Storage_ArrayOfCallBack {
@@ -1045,6 +1079,7 @@ class Storage_ArrayOfCallBack {
 	}
 };
 
+
 %nodefaultctor Storage_MapOfCallBack;
 class Storage_MapOfCallBack : public TCollection_BasicMap {
 	public:
@@ -1078,6 +1113,7 @@ class Storage_MapOfCallBack : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Storage_MapOfCallBack\n");}
 	}
 };
+
 
 %nodefaultctor Storage_HArrayOfSchema;
 class Storage_HArrayOfSchema : public MMgt_TShared {
@@ -1125,6 +1161,7 @@ class Storage_HArrayOfSchema : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_DataMapNodeOfMapOfPers;
 class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
 	public:
@@ -1154,6 +1191,7 @@ class Storage_DataMapNodeOfMapOfPers : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Storage_DataMapNodeOfMapOfPers\n");}
 	}
 };
+
 
 %nodefaultctor Storage_TypedCallBack;
 class Storage_TypedCallBack : public MMgt_TShared {
@@ -1195,6 +1233,7 @@ class Storage_TypedCallBack : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_MapPSDHasher;
 class Storage_MapPSDHasher {
 	public:
@@ -1212,6 +1251,7 @@ class Storage_MapPSDHasher {
 	if (__env){printf("## Call custom destructor for instance of Storage_MapPSDHasher\n");}
 	}
 };
+
 
 %nodefaultctor Storage_MapOfAsciiString;
 class Storage_MapOfAsciiString : public TCollection_BasicMap {
@@ -1238,6 +1278,7 @@ class Storage_MapOfAsciiString : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Storage_MapOfAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Storage_InternalData;
 class Storage_InternalData : public MMgt_TShared {
@@ -1267,6 +1308,7 @@ class Storage_InternalData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_DataMapIteratorOfMapOfCallBack;
 class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterator {
 	public:
@@ -1288,6 +1330,7 @@ class Storage_DataMapIteratorOfMapOfCallBack : public TCollection_BasicMapIterat
 	if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfCallBack\n");}
 	}
 };
+
 
 %nodefaultctor Storage_StreamReadError;
 class Storage_StreamReadError : public Standard_Failure {
@@ -1323,6 +1366,7 @@ class Storage_StreamReadError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Storage_StreamExtCharParityError;
 class Storage_StreamExtCharParityError : public Storage_StreamReadError {
 	public:
@@ -1350,6 +1394,7 @@ class Storage_StreamExtCharParityError : public Storage_StreamReadError {
 	if (__env){printf("## Call custom destructor for instance of Storage_StreamExtCharParityError\n");}
 	}
 };
+
 
 %nodefaultctor Storage_Schema;
 class Storage_Schema : public MMgt_TShared {
@@ -1445,6 +1490,7 @@ class Storage_Schema : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_StreamUnknownTypeError;
 class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
 	public:
@@ -1478,6 +1524,7 @@ class Storage_StreamUnknownTypeError : public Storage_StreamReadError {
 	if (__env){printf("## Call custom destructor for instance of Storage_StreamUnknownTypeError\n");}
 	}
 };
+
 
 %nodefaultctor Storage_RootData;
 class Storage_RootData : public MMgt_TShared {
@@ -1523,6 +1570,7 @@ class Storage_RootData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_ArrayOfSchema;
 class Storage_ArrayOfSchema {
 	public:
@@ -1563,6 +1611,7 @@ class Storage_ArrayOfSchema {
 	}
 };
 
+
 %nodefaultctor Storage_StreamWriteError;
 class Storage_StreamWriteError : public Standard_Failure {
 	public:
@@ -1597,6 +1646,7 @@ class Storage_StreamWriteError : public Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Storage;
 class Storage {
 	public:
@@ -1612,6 +1662,7 @@ class Storage {
 	if (__env){printf("## Call custom destructor for instance of Storage\n");}
 	}
 };
+
 
 %nodefaultctor Storage_DataMapIteratorOfMapOfPers;
 class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
@@ -1634,6 +1685,7 @@ class Storage_DataMapIteratorOfMapOfPers : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of Storage_DataMapIteratorOfMapOfPers\n");}
 	}
 };
+
 
 %nodefaultctor Storage_DataMapNodeOfMapOfCallBack;
 class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
@@ -1665,6 +1717,7 @@ class Storage_DataMapNodeOfMapOfCallBack : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Storage_stCONSTclCOM;
 class Storage_stCONSTclCOM {
 	public:
@@ -1678,6 +1731,7 @@ class Storage_stCONSTclCOM {
 	if (__env){printf("## Call custom destructor for instance of Storage_stCONSTclCOM\n");}
 	}
 };
+
 
 %nodefaultctor Storage_IndexedDataMapNodeOfPType;
 class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
@@ -1713,6 +1767,7 @@ class Storage_IndexedDataMapNodeOfPType : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Storage_StreamTypeMismatchError;
 class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 	public:
@@ -1746,6 +1801,7 @@ class Storage_StreamTypeMismatchError : public Storage_StreamReadError {
 	if (__env){printf("## Call custom destructor for instance of Storage_StreamTypeMismatchError\n");}
 	}
 };
+
 
 %nodefaultctor Storage_BaseDriver;
 class Storage_BaseDriver {
@@ -1903,6 +1959,7 @@ class Storage_BaseDriver {
 	}
 };
 
+
 %nodefaultctor Storage_HPArray;
 class Storage_HPArray : public MMgt_TShared {
 	public:
@@ -1949,6 +2006,7 @@ class Storage_HPArray : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_CallBack;
 class Storage_CallBack : public MMgt_TShared {
 	public:
@@ -1981,6 +2039,7 @@ class Storage_CallBack : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_SequenceNodeOfSeqOfCallBack;
 class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
 	public:
@@ -2008,6 +2067,7 @@ class Storage_SequenceNodeOfSeqOfCallBack : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfCallBack\n");}
 	}
 };
+
 
 %nodefaultctor Storage_HSeqOfRoot;
 class Storage_HSeqOfRoot : public MMgt_TShared {
@@ -2079,6 +2139,7 @@ class Storage_HSeqOfRoot : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_SequenceNodeOfSeqOfRoot;
 class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
 	public:
@@ -2106,6 +2167,7 @@ class Storage_SequenceNodeOfSeqOfRoot : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Storage_SequenceNodeOfSeqOfRoot\n");}
 	}
 };
+
 
 %nodefaultctor Storage_SeqOfPersistent;
 class Storage_SeqOfPersistent : public TCollection_BaseSequence {
@@ -2161,6 +2223,7 @@ class Storage_SeqOfPersistent : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Storage_PArray;
 class Storage_PArray {
 	public:
@@ -2200,6 +2263,7 @@ class Storage_PArray {
 	if (__env){printf("## Call custom destructor for instance of Storage_PArray\n");}
 	}
 };
+
 
 %nodefaultctor Storage_HSeqOfCallBack;
 class Storage_HSeqOfCallBack : public MMgt_TShared {
@@ -2271,6 +2335,7 @@ class Storage_HSeqOfCallBack : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_StreamModeError;
 class Storage_StreamModeError : public Standard_Failure {
 	public:
@@ -2304,6 +2369,7 @@ class Storage_StreamModeError : public Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Storage_StreamModeError\n");}
 	}
 };
+
 
 %nodefaultctor Storage_DefaultCallBack;
 class Storage_DefaultCallBack : public Storage_CallBack {
@@ -2339,6 +2405,7 @@ class Storage_DefaultCallBack : public Storage_CallBack {
 	}
 };
 
+
 %nodefaultctor Storage_StreamFormatError;
 class Storage_StreamFormatError : public Standard_Failure {
 	public:
@@ -2372,6 +2439,7 @@ class Storage_StreamFormatError : public Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Storage_StreamFormatError\n");}
 	}
 };
+
 
 %nodefaultctor Storage_TypeData;
 class Storage_TypeData : public MMgt_TShared {
@@ -2412,6 +2480,7 @@ class Storage_TypeData : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Storage_TypeData\n");}
 	}
 };
+
 
 %nodefaultctor Storage_PType;
 class Storage_PType : public TCollection_BasicMap {
@@ -2456,6 +2525,7 @@ class Storage_PType : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Storage_PType\n");}
 	}
 };
+
 
 %nodefaultctor Storage_Data;
 class Storage_Data : public MMgt_TShared {
@@ -2539,6 +2609,7 @@ class Storage_Data : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_Root;
 class Storage_Root : public MMgt_TShared {
 	public:
@@ -2576,6 +2647,7 @@ class Storage_Root : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Storage_Root\n");}
 	}
 };
+
 
 %nodefaultctor Storage_HeaderData;
 class Storage_HeaderData : public MMgt_TShared {
@@ -2639,6 +2711,7 @@ class Storage_HeaderData : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Storage_MapIteratorOfMapOfAsciiString;
 class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterator {
 	public:
@@ -2658,6 +2731,7 @@ class Storage_MapIteratorOfMapOfAsciiString : public TCollection_BasicMapIterato
 	if (__env){printf("## Call custom destructor for instance of Storage_MapIteratorOfMapOfAsciiString\n");}
 	}
 };
+
 
 %nodefaultctor Storage_MapOfPers;
 class Storage_MapOfPers : public TCollection_BasicMap {
@@ -2692,6 +2766,7 @@ class Storage_MapOfPers : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of Storage_MapOfPers\n");}
 	}
 };
+
 
 %nodefaultctor Storage_HArrayOfCallBack;
 class Storage_HArrayOfCallBack : public MMgt_TShared {
@@ -2738,6 +2813,7 @@ class Storage_HArrayOfCallBack : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Storage_HArrayOfCallBack\n");}
 	}
 };
+
 
 %nodefaultctor Storage_HSeqOfPersistent;
 class Storage_HSeqOfPersistent : public MMgt_TShared {
@@ -2808,6 +2884,7 @@ class Storage_HSeqOfPersistent : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Storage_HSeqOfPersistent\n");}
 	}
 };
+
 
 %nodefaultctor Storage_SeqOfCallBack;
 class Storage_SeqOfCallBack : public TCollection_BaseSequence {

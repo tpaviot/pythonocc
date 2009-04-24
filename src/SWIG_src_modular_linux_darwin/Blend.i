@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -156,6 +157,7 @@ class Handle_Blend_SequenceNodeOfSequenceOfPoint : public Handle_TCollection_Seq
 	}
 };
 
+
 %nodefaultctor Blend_SurfCurvFuncInv;
 class Blend_SurfCurvFuncInv : public math_FunctionSetWithDerivatives {
 	public:
@@ -186,6 +188,7 @@ class Blend_SurfCurvFuncInv : public math_FunctionSetWithDerivatives {
 	}
 };
 
+
 %nodefaultctor Blend_SurfPointFuncInv;
 class Blend_SurfPointFuncInv : public math_FunctionSetWithDerivatives {
 	public:
@@ -215,6 +218,7 @@ class Blend_SurfPointFuncInv : public math_FunctionSetWithDerivatives {
 	if (__env){printf("## Call custom destructor for instance of Blend_SurfPointFuncInv\n");}
 	}
 };
+
 
 %nodefaultctor Blend_AppFunction;
 class Blend_AppFunction : public math_FunctionSetWithDerivatives {
@@ -282,6 +286,7 @@ class Blend_AppFunction : public math_FunctionSetWithDerivatives {
 	}
 };
 
+
 %nodefaultctor Blend_CSFunction;
 class Blend_CSFunction : public Blend_AppFunction {
 	public:
@@ -311,6 +316,7 @@ class Blend_CSFunction : public Blend_AppFunction {
 	if (__env){printf("## Call custom destructor for instance of Blend_CSFunction\n");}
 	}
 };
+
 
 %nodefaultctor Blend_RstRstFunction;
 class Blend_RstRstFunction : public Blend_AppFunction {
@@ -398,6 +404,7 @@ class Blend_RstRstFunction : public Blend_AppFunction {
 	}
 };
 
+
 %nodefaultctor Blend_CurvPointFuncInv;
 class Blend_CurvPointFuncInv : public math_FunctionSetWithDerivatives {
 	public:
@@ -427,6 +434,7 @@ class Blend_CurvPointFuncInv : public math_FunctionSetWithDerivatives {
 	if (__env){printf("## Call custom destructor for instance of Blend_CurvPointFuncInv\n");}
 	}
 };
+
 
 %nodefaultctor Blend_SequenceOfPoint;
 class Blend_SequenceOfPoint : public TCollection_BaseSequence {
@@ -482,6 +490,7 @@ class Blend_SequenceOfPoint : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Blend_FuncInv;
 class Blend_FuncInv : public math_FunctionSetWithDerivatives {
 	public:
@@ -512,6 +521,7 @@ class Blend_FuncInv : public math_FunctionSetWithDerivatives {
 	}
 };
 
+
 %nodefaultctor Blend_SequenceNodeOfSequenceOfPoint;
 class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 	public:
@@ -539,6 +549,7 @@ class Blend_SequenceNodeOfSequenceOfPoint : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of Blend_SequenceNodeOfSequenceOfPoint\n");}
 	}
 };
+
 
 %nodefaultctor Blend_Point;
 class Blend_Point {
@@ -634,6 +645,7 @@ class Blend_Point {
 	}
 };
 
+
 %nodefaultctor Blend_SurfRstFunction;
 class Blend_SurfRstFunction : public Blend_AppFunction {
 	public:
@@ -717,6 +729,7 @@ class Blend_SurfRstFunction : public Blend_AppFunction {
 	if (__env){printf("## Call custom destructor for instance of Blend_SurfRstFunction\n");}
 	}
 };
+
 
 %nodefaultctor Blend_Function;
 class Blend_Function : public Blend_AppFunction {

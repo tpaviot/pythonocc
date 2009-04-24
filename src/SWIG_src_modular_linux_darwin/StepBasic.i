@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -200,6 +201,7 @@ class Handle_StepBasic_Person : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_IdentificationRole;
 class Handle_StepBasic_IdentificationRole : public Handle_MMgt_TShared {
 	public:
@@ -224,6 +226,7 @@ class Handle_StepBasic_IdentificationRole : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_IdentificationRole\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ApplicationContextElement;
 class Handle_StepBasic_ApplicationContextElement : public Handle_MMgt_TShared {
@@ -250,6 +253,7 @@ class Handle_StepBasic_ApplicationContextElement : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_MeasureWithUnit;
 class Handle_StepBasic_MeasureWithUnit : public Handle_MMgt_TShared {
 	public:
@@ -274,6 +278,7 @@ class Handle_StepBasic_MeasureWithUnit : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_PlaneAngleMeasureWithUnit;
 class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
@@ -300,6 +305,7 @@ class Handle_StepBasic_PlaneAngleMeasureWithUnit : public Handle_StepBasic_Measu
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_Document;
 class Handle_StepBasic_Document : public Handle_MMgt_TShared {
 	public:
@@ -324,6 +330,7 @@ class Handle_StepBasic_Document : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Document\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_NamedUnit;
 class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
@@ -350,6 +357,7 @@ class Handle_StepBasic_NamedUnit : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SiUnit;
 class Handle_StepBasic_SiUnit : public Handle_StepBasic_NamedUnit {
 	public:
@@ -374,6 +382,7 @@ class Handle_StepBasic_SiUnit : public Handle_StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit;
 class Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit : public Handle_StepBasic_SiUnit {
@@ -400,6 +409,7 @@ class Handle_StepBasic_SiUnitAndThermodynamicTemperatureUnit : public Handle_Ste
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ApprovalRelationship;
 class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
 	public:
@@ -424,6 +434,7 @@ class Handle_StepBasic_ApprovalRelationship : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ApprovalAssignment;
 class Handle_StepBasic_ApprovalAssignment : public Handle_MMgt_TShared {
@@ -450,6 +461,7 @@ class Handle_StepBasic_ApprovalAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ApprovalStatus;
 class Handle_StepBasic_ApprovalStatus : public Handle_MMgt_TShared {
 	public:
@@ -474,6 +486,7 @@ class Handle_StepBasic_ApprovalStatus : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApprovalStatus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ActionMethod;
 class Handle_StepBasic_ActionMethod : public Handle_MMgt_TShared {
@@ -500,6 +513,7 @@ class Handle_StepBasic_ActionMethod : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SiUnitAndSolidAngleUnit;
 class Handle_StepBasic_SiUnitAndSolidAngleUnit : public Handle_StepBasic_SiUnit {
 	public:
@@ -524,6 +538,7 @@ class Handle_StepBasic_SiUnitAndSolidAngleUnit : public Handle_StepBasic_SiUnit 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndSolidAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_Approval;
 class Handle_StepBasic_Approval : public Handle_MMgt_TShared {
@@ -550,6 +565,7 @@ class Handle_StepBasic_Approval : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SiUnitAndTimeUnit;
 class Handle_StepBasic_SiUnitAndTimeUnit : public Handle_StepBasic_SiUnit {
 	public:
@@ -574,6 +590,7 @@ class Handle_StepBasic_SiUnitAndTimeUnit : public Handle_StepBasic_SiUnit {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndTimeUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ActionRequestAssignment;
 class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
@@ -600,6 +617,7 @@ class Handle_StepBasic_ActionRequestAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_IdentificationAssignment;
 class Handle_StepBasic_IdentificationAssignment : public Handle_MMgt_TShared {
 	public:
@@ -624,6 +642,7 @@ class Handle_StepBasic_IdentificationAssignment : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_IdentificationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ExternalIdentificationAssignment;
 class Handle_StepBasic_ExternalIdentificationAssignment : public Handle_StepBasic_IdentificationAssignment {
@@ -650,6 +669,7 @@ class Handle_StepBasic_ExternalIdentificationAssignment : public Handle_StepBasi
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ProductDefinition;
 class Handle_StepBasic_ProductDefinition : public Handle_MMgt_TShared {
 	public:
@@ -674,6 +694,7 @@ class Handle_StepBasic_ProductDefinition : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinition\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionWithAssociatedDocuments;
 class Handle_StepBasic_ProductDefinitionWithAssociatedDocuments : public Handle_StepBasic_ProductDefinition {
@@ -700,6 +721,7 @@ class Handle_StepBasic_ProductDefinitionWithAssociatedDocuments : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_Date;
 class Handle_StepBasic_Date : public Handle_MMgt_TShared {
 	public:
@@ -724,6 +746,7 @@ class Handle_StepBasic_Date : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Date\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_OrdinalDate;
 class Handle_StepBasic_OrdinalDate : public Handle_StepBasic_Date {
@@ -750,6 +773,7 @@ class Handle_StepBasic_OrdinalDate : public Handle_StepBasic_Date {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ProductContext;
 class Handle_StepBasic_ProductContext : public Handle_StepBasic_ApplicationContextElement {
 	public:
@@ -774,6 +798,7 @@ class Handle_StepBasic_ProductContext : public Handle_StepBasic_ApplicationConte
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_MechanicalContext;
 class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContext {
@@ -800,6 +825,7 @@ class Handle_StepBasic_MechanicalContext : public Handle_StepBasic_ProductContex
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_MassMeasureWithUnit;
 class Handle_StepBasic_MassMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
@@ -824,6 +850,7 @@ class Handle_StepBasic_MassMeasureWithUnit : public Handle_StepBasic_MeasureWith
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MassMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionContext;
 class Handle_StepBasic_ProductDefinitionContext : public Handle_StepBasic_ApplicationContextElement {
@@ -850,6 +877,7 @@ class Handle_StepBasic_ProductDefinitionContext : public Handle_StepBasic_Applic
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DesignContext;
 class Handle_StepBasic_DesignContext : public Handle_StepBasic_ProductDefinitionContext {
 	public:
@@ -874,6 +902,7 @@ class Handle_StepBasic_DesignContext : public Handle_StepBasic_ProductDefinition
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DesignContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_DateAndTimeAssignment;
 class Handle_StepBasic_DateAndTimeAssignment : public Handle_MMgt_TShared {
@@ -900,6 +929,7 @@ class Handle_StepBasic_DateAndTimeAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ProductCategoryRelationship;
 class Handle_StepBasic_ProductCategoryRelationship : public Handle_MMgt_TShared {
 	public:
@@ -924,6 +954,7 @@ class Handle_StepBasic_ProductCategoryRelationship : public Handle_MMgt_TShared 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductCategoryRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ObjectRole;
 class Handle_StepBasic_ObjectRole : public Handle_MMgt_TShared {
@@ -950,6 +981,7 @@ class Handle_StepBasic_ObjectRole : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SecurityClassification;
 class Handle_StepBasic_SecurityClassification : public Handle_MMgt_TShared {
 	public:
@@ -974,6 +1006,7 @@ class Handle_StepBasic_SecurityClassification : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnit;
 class Handle_StepBasic_ConversionBasedUnit : public Handle_StepBasic_NamedUnit {
@@ -1000,6 +1033,7 @@ class Handle_StepBasic_ConversionBasedUnit : public Handle_StepBasic_NamedUnit {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndRatioUnit;
 class Handle_StepBasic_ConversionBasedUnitAndRatioUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
@@ -1024,6 +1058,7 @@ class Handle_StepBasic_ConversionBasedUnitAndRatioUnit : public Handle_StepBasic
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndRatioUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_PersonAndOrganization;
 class Handle_StepBasic_PersonAndOrganization : public Handle_MMgt_TShared {
@@ -1050,6 +1085,7 @@ class Handle_StepBasic_PersonAndOrganization : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ActionRequestSolution;
 class Handle_StepBasic_ActionRequestSolution : public Handle_MMgt_TShared {
 	public:
@@ -1074,6 +1110,7 @@ class Handle_StepBasic_ActionRequestSolution : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ActionRequestSolution\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_DocumentReference;
 class Handle_StepBasic_DocumentReference : public Handle_MMgt_TShared {
@@ -1100,6 +1137,7 @@ class Handle_StepBasic_DocumentReference : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_CoordinatedUniversalTimeOffset;
 class Handle_StepBasic_CoordinatedUniversalTimeOffset : public Handle_MMgt_TShared {
 	public:
@@ -1124,6 +1162,7 @@ class Handle_StepBasic_CoordinatedUniversalTimeOffset : public Handle_MMgt_TShar
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CoordinatedUniversalTimeOffset\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_SolidAngleUnit;
 class Handle_StepBasic_SolidAngleUnit : public Handle_StepBasic_NamedUnit {
@@ -1150,6 +1189,7 @@ class Handle_StepBasic_SolidAngleUnit : public Handle_StepBasic_NamedUnit {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_MeasureValueMember;
 class Handle_StepBasic_MeasureValueMember : public Handle_StepData_SelectReal {
 	public:
@@ -1174,6 +1214,7 @@ class Handle_StepBasic_MeasureValueMember : public Handle_StepData_SelectReal {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MeasureValueMember\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_SiUnitAndAreaUnit;
 class Handle_StepBasic_SiUnitAndAreaUnit : public Handle_StepBasic_SiUnit {
@@ -1200,6 +1241,7 @@ class Handle_StepBasic_SiUnitAndAreaUnit : public Handle_StepBasic_SiUnit {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DocumentType;
 class Handle_StepBasic_DocumentType : public Handle_MMgt_TShared {
 	public:
@@ -1224,6 +1266,7 @@ class Handle_StepBasic_DocumentType : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentType\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_HArray1OfProductDefinition;
 class Handle_StepBasic_HArray1OfProductDefinition : public Handle_MMgt_TShared {
@@ -1250,6 +1293,7 @@ class Handle_StepBasic_HArray1OfProductDefinition : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormation;
 class Handle_StepBasic_ProductDefinitionFormation : public Handle_MMgt_TShared {
 	public:
@@ -1274,6 +1318,7 @@ class Handle_StepBasic_ProductDefinitionFormation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource;
 class Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource : public Handle_StepBasic_ProductDefinitionFormation {
@@ -1300,6 +1345,7 @@ class Handle_StepBasic_ProductDefinitionFormationWithSpecifiedSource : public Ha
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_RatioUnit;
 class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
 	public:
@@ -1324,6 +1370,7 @@ class Handle_StepBasic_RatioUnit : public Handle_StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RatioUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_DocumentRepresentationType;
 class Handle_StepBasic_DocumentRepresentationType : public Handle_MMgt_TShared {
@@ -1350,6 +1397,7 @@ class Handle_StepBasic_DocumentRepresentationType : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit;
 class Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
@@ -1374,6 +1422,7 @@ class Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public Handle_Step
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndPlaneAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_EffectivityAssignment;
 class Handle_StepBasic_EffectivityAssignment : public Handle_MMgt_TShared {
@@ -1400,6 +1449,7 @@ class Handle_StepBasic_EffectivityAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SecurityClassificationAssignment;
 class Handle_StepBasic_SecurityClassificationAssignment : public Handle_MMgt_TShared {
 	public:
@@ -1424,6 +1474,7 @@ class Handle_StepBasic_SecurityClassificationAssignment : public Handle_MMgt_TSh
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassificationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ProductCategory;
 class Handle_StepBasic_ProductCategory : public Handle_MMgt_TShared {
@@ -1450,6 +1501,7 @@ class Handle_StepBasic_ProductCategory : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_PersonAndOrganizationRole;
 class Handle_StepBasic_PersonAndOrganizationRole : public Handle_MMgt_TShared {
 	public:
@@ -1474,6 +1526,7 @@ class Handle_StepBasic_PersonAndOrganizationRole : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonAndOrganizationRole\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_HArray1OfApproval;
 class Handle_StepBasic_HArray1OfApproval : public Handle_MMgt_TShared {
@@ -1500,6 +1553,7 @@ class Handle_StepBasic_HArray1OfApproval : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DocumentProductAssociation;
 class Handle_StepBasic_DocumentProductAssociation : public Handle_MMgt_TShared {
 	public:
@@ -1524,6 +1578,7 @@ class Handle_StepBasic_DocumentProductAssociation : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentProductAssociation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_RoleAssociation;
 class Handle_StepBasic_RoleAssociation : public Handle_MMgt_TShared {
@@ -1550,6 +1605,7 @@ class Handle_StepBasic_RoleAssociation : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DocumentProductEquivalence;
 class Handle_StepBasic_DocumentProductEquivalence : public Handle_StepBasic_DocumentProductAssociation {
 	public:
@@ -1574,6 +1630,7 @@ class Handle_StepBasic_DocumentProductEquivalence : public Handle_StepBasic_Docu
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DocumentProductEquivalence\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ProductRelatedProductCategory;
 class Handle_StepBasic_ProductRelatedProductCategory : public Handle_StepBasic_ProductCategory {
@@ -1600,6 +1657,7 @@ class Handle_StepBasic_ProductRelatedProductCategory : public Handle_StepBasic_P
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DateRole;
 class Handle_StepBasic_DateRole : public Handle_MMgt_TShared {
 	public:
@@ -1624,6 +1682,7 @@ class Handle_StepBasic_DateRole : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateRole\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_GeneralProperty;
 class Handle_StepBasic_GeneralProperty : public Handle_MMgt_TShared {
@@ -1650,6 +1709,7 @@ class Handle_StepBasic_GeneralProperty : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DigitalDocument;
 class Handle_StepBasic_DigitalDocument : public Handle_StepBasic_Document {
 	public:
@@ -1674,6 +1734,7 @@ class Handle_StepBasic_DigitalDocument : public Handle_StepBasic_Document {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DigitalDocument\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_TimeUnit;
 class Handle_StepBasic_TimeUnit : public Handle_StepBasic_NamedUnit {
@@ -1700,6 +1761,7 @@ class Handle_StepBasic_TimeUnit : public Handle_StepBasic_NamedUnit {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ExternalSource;
 class Handle_StepBasic_ExternalSource : public Handle_MMgt_TShared {
 	public:
@@ -1724,6 +1786,7 @@ class Handle_StepBasic_ExternalSource : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ExternalSource\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_CertificationAssignment;
 class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
@@ -1750,6 +1813,7 @@ class Handle_StepBasic_CertificationAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SiUnitAndRatioUnit;
 class Handle_StepBasic_SiUnitAndRatioUnit : public Handle_StepBasic_SiUnit {
 	public:
@@ -1774,6 +1838,7 @@ class Handle_StepBasic_SiUnitAndRatioUnit : public Handle_StepBasic_SiUnit {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndRatioUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_HArray1OfProduct;
 class Handle_StepBasic_HArray1OfProduct : public Handle_MMgt_TShared {
@@ -1800,6 +1865,7 @@ class Handle_StepBasic_HArray1OfProduct : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_Group;
 class Handle_StepBasic_Group : public Handle_MMgt_TShared {
 	public:
@@ -1824,6 +1890,7 @@ class Handle_StepBasic_Group : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Group\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_SolidAngleMeasureWithUnit;
 class Handle_StepBasic_SolidAngleMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
@@ -1850,6 +1917,7 @@ class Handle_StepBasic_SolidAngleMeasureWithUnit : public Handle_StepBasic_Measu
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ProductDefinitionFormationRelationship;
 class Handle_StepBasic_ProductDefinitionFormationRelationship : public Handle_MMgt_TShared {
 	public:
@@ -1874,6 +1942,7 @@ class Handle_StepBasic_ProductDefinitionFormationRelationship : public Handle_MM
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionFormationRelationship\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_NameAssignment;
 class Handle_StepBasic_NameAssignment : public Handle_MMgt_TShared {
@@ -1900,6 +1969,7 @@ class Handle_StepBasic_NameAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_MassUnit;
 class Handle_StepBasic_MassUnit : public Handle_StepBasic_NamedUnit {
 	public:
@@ -1924,6 +1994,7 @@ class Handle_StepBasic_MassUnit : public Handle_StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_MassUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_Address;
 class Handle_StepBasic_Address : public Handle_MMgt_TShared {
@@ -1950,6 +2021,7 @@ class Handle_StepBasic_Address : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_PersonalAddress;
 class Handle_StepBasic_PersonalAddress : public Handle_StepBasic_Address {
 	public:
@@ -1974,6 +2046,7 @@ class Handle_StepBasic_PersonalAddress : public Handle_StepBasic_Address {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PersonalAddress\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_DocumentRelationship;
 class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
@@ -2000,6 +2073,7 @@ class Handle_StepBasic_DocumentRelationship : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DerivedUnitElement;
 class Handle_StepBasic_DerivedUnitElement : public Handle_MMgt_TShared {
 	public:
@@ -2024,6 +2098,7 @@ class Handle_StepBasic_DerivedUnitElement : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DerivedUnitElement\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndVolumeUnit;
 class Handle_StepBasic_ConversionBasedUnitAndVolumeUnit : public Handle_StepBasic_ConversionBasedUnit {
@@ -2050,6 +2125,7 @@ class Handle_StepBasic_ConversionBasedUnitAndVolumeUnit : public Handle_StepBasi
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndMassUnit;
 class Handle_StepBasic_ConversionBasedUnitAndMassUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
@@ -2074,6 +2150,7 @@ class Handle_StepBasic_ConversionBasedUnitAndMassUnit : public Handle_StepBasic_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndMassUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ActionAssignment;
 class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
@@ -2100,6 +2177,7 @@ class Handle_StepBasic_ActionAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SiUnitAndPlaneAngleUnit;
 class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit {
 	public:
@@ -2124,6 +2202,7 @@ class Handle_StepBasic_SiUnitAndPlaneAngleUnit : public Handle_StepBasic_SiUnit 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndPlaneAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ThermodynamicTemperatureUnit;
 class Handle_StepBasic_ThermodynamicTemperatureUnit : public Handle_StepBasic_NamedUnit {
@@ -2150,6 +2229,7 @@ class Handle_StepBasic_ThermodynamicTemperatureUnit : public Handle_StepBasic_Na
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DateAndTime;
 class Handle_StepBasic_DateAndTime : public Handle_MMgt_TShared {
 	public:
@@ -2174,6 +2254,7 @@ class Handle_StepBasic_DateAndTime : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DateAndTime\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_SiUnitAndVolumeUnit;
 class Handle_StepBasic_SiUnitAndVolumeUnit : public Handle_StepBasic_SiUnit {
@@ -2200,6 +2281,7 @@ class Handle_StepBasic_SiUnitAndVolumeUnit : public Handle_StepBasic_SiUnit {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_LengthUnit;
 class Handle_StepBasic_LengthUnit : public Handle_StepBasic_NamedUnit {
 	public:
@@ -2224,6 +2306,7 @@ class Handle_StepBasic_LengthUnit : public Handle_StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LengthUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_DateAssignment;
 class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
@@ -2250,6 +2333,7 @@ class Handle_StepBasic_DateAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_Effectivity;
 class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
 	public:
@@ -2274,6 +2358,7 @@ class Handle_StepBasic_Effectivity : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Effectivity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_PlaneAngleUnit;
 class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
@@ -2300,6 +2385,7 @@ class Handle_StepBasic_PlaneAngleUnit : public Handle_StepBasic_NamedUnit {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_Product;
 class Handle_StepBasic_Product : public Handle_MMgt_TShared {
 	public:
@@ -2324,6 +2410,7 @@ class Handle_StepBasic_Product : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Product\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_GroupRelationship;
 class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
@@ -2350,6 +2437,7 @@ class Handle_StepBasic_GroupRelationship : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_HArray1OfDerivedUnitElement;
 class Handle_StepBasic_HArray1OfDerivedUnitElement : public Handle_MMgt_TShared {
 	public:
@@ -2374,6 +2462,7 @@ class Handle_StepBasic_HArray1OfDerivedUnitElement : public Handle_MMgt_TShared 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfDerivedUnitElement\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_CharacterizedObject;
 class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
@@ -2400,6 +2489,7 @@ class Handle_StepBasic_CharacterizedObject : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndLengthUnit;
 class Handle_StepBasic_ConversionBasedUnitAndLengthUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
@@ -2424,6 +2514,7 @@ class Handle_StepBasic_ConversionBasedUnitAndLengthUnit : public Handle_StepBasi
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndLengthUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_OrganizationRole;
 class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
@@ -2450,6 +2541,7 @@ class Handle_StepBasic_OrganizationRole : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_VersionedActionRequest;
 class Handle_StepBasic_VersionedActionRequest : public Handle_MMgt_TShared {
 	public:
@@ -2474,6 +2566,7 @@ class Handle_StepBasic_VersionedActionRequest : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_VersionedActionRequest\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_OrganizationAssignment;
 class Handle_StepBasic_OrganizationAssignment : public Handle_MMgt_TShared {
@@ -2500,6 +2593,7 @@ class Handle_StepBasic_OrganizationAssignment : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit;
 class Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
@@ -2524,6 +2618,7 @@ class Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit : public Handle_Step
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndSolidAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_CalendarDate;
 class Handle_StepBasic_CalendarDate : public Handle_StepBasic_Date {
@@ -2550,6 +2645,7 @@ class Handle_StepBasic_CalendarDate : public Handle_StepBasic_Date {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_HArray1OfPerson;
 class Handle_StepBasic_HArray1OfPerson : public Handle_MMgt_TShared {
 	public:
@@ -2574,6 +2670,7 @@ class Handle_StepBasic_HArray1OfPerson : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfPerson\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ContractType;
 class Handle_StepBasic_ContractType : public Handle_MMgt_TShared {
@@ -2600,6 +2697,7 @@ class Handle_StepBasic_ContractType : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ProductDefinitionEffectivity;
 class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Effectivity {
 	public:
@@ -2624,6 +2722,7 @@ class Handle_StepBasic_ProductDefinitionEffectivity : public Handle_StepBasic_Ef
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ProductDefinitionEffectivity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ProductConceptContext;
 class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_ApplicationContextElement {
@@ -2650,6 +2749,7 @@ class Handle_StepBasic_ProductConceptContext : public Handle_StepBasic_Applicati
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_Certification;
 class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
 	public:
@@ -2674,6 +2774,7 @@ class Handle_StepBasic_Certification : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Certification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_AreaUnit;
 class Handle_StepBasic_AreaUnit : public Handle_StepBasic_NamedUnit {
@@ -2700,6 +2801,7 @@ class Handle_StepBasic_AreaUnit : public Handle_StepBasic_NamedUnit {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SecurityClassificationLevel;
 class Handle_StepBasic_SecurityClassificationLevel : public Handle_MMgt_TShared {
 	public:
@@ -2724,6 +2826,7 @@ class Handle_StepBasic_SecurityClassificationLevel : public Handle_MMgt_TShared 
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SecurityClassificationLevel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_HArray1OfProductContext;
 class Handle_StepBasic_HArray1OfProductContext : public Handle_MMgt_TShared {
@@ -2750,6 +2853,7 @@ class Handle_StepBasic_HArray1OfProductContext : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndAreaUnit;
 class Handle_StepBasic_ConversionBasedUnitAndAreaUnit : public Handle_StepBasic_ConversionBasedUnit {
 	public:
@@ -2774,6 +2878,7 @@ class Handle_StepBasic_ConversionBasedUnitAndAreaUnit : public Handle_StepBasic_
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ConversionBasedUnitAndAreaUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_HArray1OfNamedUnit;
 class Handle_StepBasic_HArray1OfNamedUnit : public Handle_MMgt_TShared {
@@ -2800,6 +2905,7 @@ class Handle_StepBasic_HArray1OfNamedUnit : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_HArray1OfOrganization;
 class Handle_StepBasic_HArray1OfOrganization : public Handle_MMgt_TShared {
 	public:
@@ -2824,6 +2930,7 @@ class Handle_StepBasic_HArray1OfOrganization : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_HArray1OfOrganization\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ConversionBasedUnitAndTimeUnit;
 class Handle_StepBasic_ConversionBasedUnitAndTimeUnit : public Handle_StepBasic_ConversionBasedUnit {
@@ -2850,6 +2957,7 @@ class Handle_StepBasic_ConversionBasedUnitAndTimeUnit : public Handle_StepBasic_
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_OrganizationalAddress;
 class Handle_StepBasic_OrganizationalAddress : public Handle_StepBasic_Address {
 	public:
@@ -2874,6 +2982,7 @@ class Handle_StepBasic_OrganizationalAddress : public Handle_StepBasic_Address {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_OrganizationalAddress\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ExternallyDefinedItem;
 class Handle_StepBasic_ExternallyDefinedItem : public Handle_MMgt_TShared {
@@ -2900,6 +3009,7 @@ class Handle_StepBasic_ExternallyDefinedItem : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_WeekOfYearAndDayDate;
 class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 	public:
@@ -2924,6 +3034,7 @@ class Handle_StepBasic_WeekOfYearAndDayDate : public Handle_StepBasic_Date {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_WeekOfYearAndDayDate\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_SiUnitAndMassUnit;
 class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
@@ -2950,6 +3061,7 @@ class Handle_StepBasic_SiUnitAndMassUnit : public Handle_StepBasic_SiUnit {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_UncertaintyMeasureWithUnit;
 class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
@@ -2974,6 +3086,7 @@ class Handle_StepBasic_UncertaintyMeasureWithUnit : public Handle_StepBasic_Meas
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_UncertaintyMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ProductDefinitionRelationship;
 class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShared {
@@ -3000,6 +3113,7 @@ class Handle_StepBasic_ProductDefinitionRelationship : public Handle_MMgt_TShare
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ContractAssignment;
 class Handle_StepBasic_ContractAssignment : public Handle_MMgt_TShared {
 	public:
@@ -3024,6 +3138,7 @@ class Handle_StepBasic_ContractAssignment : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ContractAssignment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_LengthMeasureWithUnit;
 class Handle_StepBasic_LengthMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
@@ -3050,6 +3165,7 @@ class Handle_StepBasic_LengthMeasureWithUnit : public Handle_StepBasic_MeasureWi
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_CertificationType;
 class Handle_StepBasic_CertificationType : public Handle_MMgt_TShared {
 	public:
@@ -3074,6 +3190,7 @@ class Handle_StepBasic_CertificationType : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_CertificationType\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ApprovalRole;
 class Handle_StepBasic_ApprovalRole : public Handle_MMgt_TShared {
@@ -3100,6 +3217,7 @@ class Handle_StepBasic_ApprovalRole : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DerivedUnit;
 class Handle_StepBasic_DerivedUnit : public Handle_MMgt_TShared {
 	public:
@@ -3124,6 +3242,7 @@ class Handle_StepBasic_DerivedUnit : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DerivedUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_HArray1OfDocument;
 class Handle_StepBasic_HArray1OfDocument : public Handle_MMgt_TShared {
@@ -3150,6 +3269,7 @@ class Handle_StepBasic_HArray1OfDocument : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_VolumeUnit;
 class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 	public:
@@ -3174,6 +3294,7 @@ class Handle_StepBasic_VolumeUnit : public Handle_StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_VolumeUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_SizeMember;
 class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
@@ -3200,6 +3321,7 @@ class Handle_StepBasic_SizeMember : public Handle_StepData_SelectReal {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_EulerAngles;
 class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
 	public:
@@ -3224,6 +3346,7 @@ class Handle_StepBasic_EulerAngles : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_EulerAngles\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_DocumentFile;
 class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
@@ -3250,6 +3373,7 @@ class Handle_StepBasic_DocumentFile : public Handle_StepBasic_Document {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_LocalTime;
 class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
 	public:
@@ -3274,6 +3398,7 @@ class Handle_StepBasic_LocalTime : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_LocalTime\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ProductType;
 class Handle_StepBasic_ProductType : public Handle_StepBasic_ProductRelatedProductCategory {
@@ -3300,6 +3425,7 @@ class Handle_StepBasic_ProductType : public Handle_StepBasic_ProductRelatedProdu
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_SiUnitAndLengthUnit;
 class Handle_StepBasic_SiUnitAndLengthUnit : public Handle_StepBasic_SiUnit {
 	public:
@@ -3324,6 +3450,7 @@ class Handle_StepBasic_SiUnitAndLengthUnit : public Handle_StepBasic_SiUnit {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_SiUnitAndLengthUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit;
 class Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit : public Handle_MMgt_TShared {
@@ -3350,6 +3477,7 @@ class Handle_StepBasic_HArray1OfUncertaintyMeasureWithUnit : public Handle_MMgt_
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_Action;
 class Handle_StepBasic_Action : public Handle_MMgt_TShared {
 	public:
@@ -3374,6 +3502,7 @@ class Handle_StepBasic_Action : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Action\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_Organization;
 class Handle_StepBasic_Organization : public Handle_MMgt_TShared {
@@ -3400,6 +3529,7 @@ class Handle_StepBasic_Organization : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_TimeMeasureWithUnit;
 class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
@@ -3424,6 +3554,7 @@ class Handle_StepBasic_TimeMeasureWithUnit : public Handle_StepBasic_MeasureWith
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_TimeMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ApprovalDateTime;
 class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
@@ -3450,6 +3581,7 @@ class Handle_StepBasic_ApprovalDateTime : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_DimensionalExponents;
 class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 	public:
@@ -3474,6 +3606,7 @@ class Handle_StepBasic_DimensionalExponents : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_DimensionalExponents\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ApprovalPersonOrganization;
 class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
@@ -3500,6 +3633,7 @@ class Handle_StepBasic_ApprovalPersonOrganization : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_RatioMeasureWithUnit;
 class Handle_StepBasic_RatioMeasureWithUnit : public Handle_StepBasic_MeasureWithUnit {
 	public:
@@ -3524,6 +3658,7 @@ class Handle_StepBasic_RatioMeasureWithUnit : public Handle_StepBasic_MeasureWit
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_RatioMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_ApplicationProtocolDefinition;
 class Handle_StepBasic_ApplicationProtocolDefinition : public Handle_MMgt_TShared {
@@ -3550,6 +3685,7 @@ class Handle_StepBasic_ApplicationProtocolDefinition : public Handle_MMgt_TShare
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_ApplicationContext;
 class Handle_StepBasic_ApplicationContext : public Handle_MMgt_TShared {
 	public:
@@ -3574,6 +3710,7 @@ class Handle_StepBasic_ApplicationContext : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_ApplicationContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_DateTimeRole;
 class Handle_StepBasic_DateTimeRole : public Handle_MMgt_TShared {
@@ -3600,6 +3737,7 @@ class Handle_StepBasic_DateTimeRole : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_GroupAssignment;
 class Handle_StepBasic_GroupAssignment : public Handle_MMgt_TShared {
 	public:
@@ -3624,6 +3762,7 @@ class Handle_StepBasic_GroupAssignment : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_GroupAssignment\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_PersonAndOrganizationAssignment;
 class Handle_StepBasic_PersonAndOrganizationAssignment : public Handle_MMgt_TShared {
@@ -3650,6 +3789,7 @@ class Handle_StepBasic_PersonAndOrganizationAssignment : public Handle_MMgt_TSha
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_PhysicallyModeledProductDefinition;
 class Handle_StepBasic_PhysicallyModeledProductDefinition : public Handle_StepBasic_ProductDefinition {
 	public:
@@ -3674,6 +3814,7 @@ class Handle_StepBasic_PhysicallyModeledProductDefinition : public Handle_StepBa
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_PhysicallyModeledProductDefinition\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepBasic_DocumentUsageConstraint;
 class Handle_StepBasic_DocumentUsageConstraint : public Handle_MMgt_TShared {
@@ -3700,6 +3841,7 @@ class Handle_StepBasic_DocumentUsageConstraint : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepBasic_Contract;
 class Handle_StepBasic_Contract : public Handle_MMgt_TShared {
 	public:
@@ -3724,6 +3866,7 @@ class Handle_StepBasic_Contract : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepBasic_Contract\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_NameAssignment;
 class StepBasic_NameAssignment : public MMgt_TShared {
@@ -3757,6 +3900,7 @@ class StepBasic_NameAssignment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_SecurityClassificationLevel;
 class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
 	public:
@@ -3788,6 +3932,7 @@ class StepBasic_SecurityClassificationLevel : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassificationLevel\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_GeneralProperty;
 class StepBasic_GeneralProperty : public MMgt_TShared {
@@ -3831,6 +3976,7 @@ class StepBasic_GeneralProperty : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DateAndTimeAssignment;
 class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
 	public:
@@ -3867,6 +4013,7 @@ class StepBasic_DateAndTimeAssignment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_NamedUnit;
 class StepBasic_NamedUnit : public MMgt_TShared {
 	public:
@@ -3898,6 +4045,7 @@ class StepBasic_NamedUnit : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_NamedUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ConversionBasedUnit;
 class StepBasic_ConversionBasedUnit : public StepBasic_NamedUnit {
@@ -3933,6 +4081,7 @@ class StepBasic_ConversionBasedUnit : public StepBasic_NamedUnit {
 	}
 };
 
+
 %nodefaultctor StepBasic_ConversionBasedUnitAndAreaUnit;
 class StepBasic_ConversionBasedUnitAndAreaUnit : public StepBasic_ConversionBasedUnit {
 	public:
@@ -3960,6 +4109,7 @@ class StepBasic_ConversionBasedUnitAndAreaUnit : public StepBasic_ConversionBase
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndAreaUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_MeasureWithUnit;
 class StepBasic_MeasureWithUnit : public MMgt_TShared {
@@ -4001,6 +4151,7 @@ class StepBasic_MeasureWithUnit : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_MassMeasureWithUnit;
 class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	public:
@@ -4024,6 +4175,7 @@ class StepBasic_MassMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_MassMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_DocumentUsageConstraint;
 class StepBasic_DocumentUsageConstraint : public MMgt_TShared {
@@ -4065,6 +4217,7 @@ class StepBasic_DocumentUsageConstraint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_Array1OfProduct;
 class StepBasic_Array1OfProduct {
 	public:
@@ -4105,6 +4258,7 @@ class StepBasic_Array1OfProduct {
 	}
 };
 
+
 %nodefaultctor StepBasic_SizeMember;
 class StepBasic_SizeMember : public StepData_SelectReal {
 	public:
@@ -4137,6 +4291,7 @@ class StepBasic_SizeMember : public StepData_SelectReal {
 	}
 };
 
+
 %nodefaultctor StepBasic_TimeMeasureWithUnit;
 class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	public:
@@ -4162,6 +4317,7 @@ class StepBasic_TimeMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_TimeMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductCategory;
 class StepBasic_ProductCategory : public MMgt_TShared {
@@ -4203,6 +4359,7 @@ class StepBasic_ProductCategory : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DateRole;
 class StepBasic_DateRole : public MMgt_TShared {
 	public:
@@ -4234,6 +4391,7 @@ class StepBasic_DateRole : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_DateRole\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfOrganization;
 class StepBasic_HArray1OfOrganization : public MMgt_TShared {
@@ -4281,6 +4439,7 @@ class StepBasic_HArray1OfOrganization : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DateTimeSelect;
 class StepBasic_DateTimeSelect : public StepData_SelectType {
 	public:
@@ -4302,6 +4461,7 @@ class StepBasic_DateTimeSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_DateTimeSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_RoleSelect;
 class StepBasic_RoleSelect : public StepData_SelectType {
@@ -4340,6 +4500,7 @@ class StepBasic_RoleSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_RoleSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_VersionedActionRequest;
 class StepBasic_VersionedActionRequest : public MMgt_TShared {
@@ -4387,6 +4548,7 @@ class StepBasic_VersionedActionRequest : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_RatioUnit;
 class StepBasic_RatioUnit : public StepBasic_NamedUnit {
 	public:
@@ -4412,6 +4574,7 @@ class StepBasic_RatioUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_RatioUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Array1OfProductDefinition;
 class StepBasic_Array1OfProductDefinition {
@@ -4453,6 +4616,7 @@ class StepBasic_Array1OfProductDefinition {
 	}
 };
 
+
 %nodefaultctor StepBasic_Date;
 class StepBasic_Date : public MMgt_TShared {
 	public:
@@ -4484,6 +4648,7 @@ class StepBasic_Date : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Date\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ApplicationContextElement;
 class StepBasic_ApplicationContextElement : public MMgt_TShared {
@@ -4521,6 +4686,7 @@ class StepBasic_ApplicationContextElement : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ProductDefinitionContext;
 class StepBasic_ProductDefinitionContext : public StepBasic_ApplicationContextElement {
 	public:
@@ -4551,6 +4717,7 @@ class StepBasic_ProductDefinitionContext : public StepBasic_ApplicationContextEl
 	}
 };
 
+
 %nodefaultctor StepBasic_DesignContext;
 class StepBasic_DesignContext : public StepBasic_ProductDefinitionContext {
 	public:
@@ -4574,6 +4741,7 @@ class StepBasic_DesignContext : public StepBasic_ProductDefinitionContext {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_DesignContext\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ActionRequestSolution;
 class StepBasic_ActionRequestSolution : public MMgt_TShared {
@@ -4610,6 +4778,7 @@ class StepBasic_ActionRequestSolution : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ActionRequestSolution\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_SiUnit;
 class StepBasic_SiUnit : public StepBasic_NamedUnit {
@@ -4657,6 +4826,7 @@ class StepBasic_SiUnit : public StepBasic_NamedUnit {
 	}
 };
 
+
 %nodefaultctor StepBasic_SiUnitAndPlaneAngleUnit;
 class StepBasic_SiUnitAndPlaneAngleUnit : public StepBasic_SiUnit {
 	public:
@@ -4684,6 +4854,7 @@ class StepBasic_SiUnitAndPlaneAngleUnit : public StepBasic_SiUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndPlaneAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_DocumentRelationship;
 class StepBasic_DocumentRelationship : public MMgt_TShared {
@@ -4729,6 +4900,7 @@ class StepBasic_DocumentRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_LengthUnit;
 class StepBasic_LengthUnit : public StepBasic_NamedUnit {
 	public:
@@ -4754,6 +4926,7 @@ class StepBasic_LengthUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_LengthUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndMassUnit;
 class StepBasic_ConversionBasedUnitAndMassUnit : public StepBasic_ConversionBasedUnit {
@@ -4789,6 +4962,7 @@ class StepBasic_ConversionBasedUnitAndMassUnit : public StepBasic_ConversionBase
 	}
 };
 
+
 %nodefaultctor StepBasic_AreaUnit;
 class StepBasic_AreaUnit : public StepBasic_NamedUnit {
 	public:
@@ -4814,6 +4988,7 @@ class StepBasic_AreaUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_AreaUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Array1OfApproval;
 class StepBasic_Array1OfApproval {
@@ -4854,6 +5029,7 @@ class StepBasic_Array1OfApproval {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfApproval\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfProductContext;
 class StepBasic_HArray1OfProductContext : public MMgt_TShared {
@@ -4901,6 +5077,7 @@ class StepBasic_HArray1OfProductContext : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ApplicationProtocolDefinition;
 class StepBasic_ApplicationProtocolDefinition : public MMgt_TShared {
 	public:
@@ -4945,6 +5122,7 @@ class StepBasic_ApplicationProtocolDefinition : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_Array1OfOrganization;
 class StepBasic_Array1OfOrganization {
 	public:
@@ -4985,6 +5163,7 @@ class StepBasic_Array1OfOrganization {
 	}
 };
 
+
 %nodefaultctor StepBasic_PlaneAngleUnit;
 class StepBasic_PlaneAngleUnit : public StepBasic_NamedUnit {
 	public:
@@ -5010,6 +5189,7 @@ class StepBasic_PlaneAngleUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_PlaneAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Address;
 class StepBasic_Address : public MMgt_TShared {
@@ -5135,6 +5315,7 @@ class StepBasic_Address : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_Organization;
 class StepBasic_Organization : public MMgt_TShared {
 	public:
@@ -5179,6 +5360,7 @@ class StepBasic_Organization : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ApplicationContext;
 class StepBasic_ApplicationContext : public MMgt_TShared {
 	public:
@@ -5210,6 +5392,7 @@ class StepBasic_ApplicationContext : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ApplicationContext\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndTimeUnit;
 class StepBasic_ConversionBasedUnitAndTimeUnit : public StepBasic_ConversionBasedUnit {
@@ -5244,6 +5427,7 @@ class StepBasic_ConversionBasedUnitAndTimeUnit : public StepBasic_ConversionBase
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndTimeUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Approval;
 class StepBasic_Approval : public MMgt_TShared {
@@ -5280,6 +5464,7 @@ class StepBasic_Approval : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Approval\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductRelatedProductCategory;
 class StepBasic_ProductRelatedProductCategory : public StepBasic_ProductCategory {
@@ -5319,6 +5504,7 @@ class StepBasic_ProductRelatedProductCategory : public StepBasic_ProductCategory
 	}
 };
 
+
 %nodefaultctor StepBasic_ProductType;
 class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 	public:
@@ -5344,6 +5530,7 @@ class StepBasic_ProductType : public StepBasic_ProductRelatedProductCategory {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductType\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_DateAndTime;
 class StepBasic_DateAndTime : public MMgt_TShared {
@@ -5381,6 +5568,7 @@ class StepBasic_DateAndTime : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DocumentType;
 class StepBasic_DocumentType : public MMgt_TShared {
 	public:
@@ -5412,6 +5600,7 @@ class StepBasic_DocumentType : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentType\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Effectivity;
 class StepBasic_Effectivity : public MMgt_TShared {
@@ -5445,6 +5634,7 @@ class StepBasic_Effectivity : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_EulerAngles;
 class StepBasic_EulerAngles : public MMgt_TShared {
 	public:
@@ -5476,6 +5666,7 @@ class StepBasic_EulerAngles : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_EulerAngles\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_CalendarDate;
 class StepBasic_CalendarDate : public StepBasic_Date {
@@ -5515,6 +5706,7 @@ class StepBasic_CalendarDate : public StepBasic_Date {
 	}
 };
 
+
 %nodefaultctor StepBasic_ActionAssignment;
 class StepBasic_ActionAssignment : public MMgt_TShared {
 	public:
@@ -5547,6 +5739,7 @@ class StepBasic_ActionAssignment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_OrganizationRole;
 class StepBasic_OrganizationRole : public MMgt_TShared {
 	public:
@@ -5578,6 +5771,7 @@ class StepBasic_OrganizationRole : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationRole\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_DerivedUnitElement;
 class StepBasic_DerivedUnitElement : public MMgt_TShared {
@@ -5615,6 +5809,7 @@ class StepBasic_DerivedUnitElement : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_SiUnitAndThermodynamicTemperatureUnit;
 class StepBasic_SiUnitAndThermodynamicTemperatureUnit : public StepBasic_SiUnit {
 	public:
@@ -5649,6 +5844,7 @@ class StepBasic_SiUnitAndThermodynamicTemperatureUnit : public StepBasic_SiUnit 
 	}
 };
 
+
 %nodefaultctor StepBasic_Unit;
 class StepBasic_Unit : public StepData_SelectType {
 	public:
@@ -5668,6 +5864,7 @@ class StepBasic_Unit : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Unit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_IdentificationRole;
 class StepBasic_IdentificationRole : public MMgt_TShared {
@@ -5707,6 +5904,7 @@ class StepBasic_IdentificationRole : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ApprovalStatus;
 class StepBasic_ApprovalStatus : public MMgt_TShared {
 	public:
@@ -5738,6 +5936,7 @@ class StepBasic_ApprovalStatus : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalStatus\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_LocalTime;
 class StepBasic_LocalTime : public MMgt_TShared {
@@ -5791,6 +5990,7 @@ class StepBasic_LocalTime : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_PlaneAngleMeasureWithUnit;
 class StepBasic_PlaneAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	public:
@@ -5816,6 +6016,7 @@ class StepBasic_PlaneAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_PlaneAngleMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_SiUnitAndMassUnit;
 class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
@@ -5850,6 +6051,7 @@ class StepBasic_SiUnitAndMassUnit : public StepBasic_SiUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndMassUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_PersonalAddress;
 class StepBasic_PersonalAddress : public StepBasic_Address {
@@ -5893,6 +6095,7 @@ class StepBasic_PersonalAddress : public StepBasic_Address {
 	}
 };
 
+
 %nodefaultctor StepBasic_CertificationType;
 class StepBasic_CertificationType : public MMgt_TShared {
 	public:
@@ -5925,6 +6128,7 @@ class StepBasic_CertificationType : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_MeasureValueMember;
 class StepBasic_MeasureValueMember : public StepData_SelectReal {
 	public:
@@ -5956,6 +6160,7 @@ class StepBasic_MeasureValueMember : public StepData_SelectReal {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_MeasureValueMember\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductDefinitionRelationship;
 class StepBasic_ProductDefinitionRelationship : public MMgt_TShared {
@@ -6007,6 +6212,7 @@ class StepBasic_ProductDefinitionRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_Product;
 class StepBasic_Product : public MMgt_TShared {
 	public:
@@ -6055,6 +6261,7 @@ class StepBasic_Product : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ConversionBasedUnitAndVolumeUnit;
 class StepBasic_ConversionBasedUnitAndVolumeUnit : public StepBasic_ConversionBasedUnit {
 	public:
@@ -6084,6 +6291,7 @@ class StepBasic_ConversionBasedUnitAndVolumeUnit : public StepBasic_ConversionBa
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndVolumeUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_CoordinatedUniversalTimeOffset;
 class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
@@ -6129,6 +6337,7 @@ class StepBasic_CoordinatedUniversalTimeOffset : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_Group;
 class StepBasic_Group : public MMgt_TShared {
 	public:
@@ -6167,6 +6376,7 @@ class StepBasic_Group : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ApprovalRole;
 class StepBasic_ApprovalRole : public MMgt_TShared {
 	public:
@@ -6198,6 +6408,7 @@ class StepBasic_ApprovalRole : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalRole\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_GroupRelationship;
 class StepBasic_GroupRelationship : public MMgt_TShared {
@@ -6245,6 +6456,7 @@ class StepBasic_GroupRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_CertificationAssignment;
 class StepBasic_CertificationAssignment : public MMgt_TShared {
 	public:
@@ -6276,6 +6488,7 @@ class StepBasic_CertificationAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_CertificationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductContext;
 class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
@@ -6311,6 +6524,7 @@ class StepBasic_ProductContext : public StepBasic_ApplicationContextElement {
 	}
 };
 
+
 %nodefaultctor StepBasic_MechanicalContext;
 class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 	public:
@@ -6334,6 +6548,7 @@ class StepBasic_MechanicalContext : public StepBasic_ProductContext {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_MechanicalContext\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_MassUnit;
 class StepBasic_MassUnit : public StepBasic_NamedUnit {
@@ -6360,6 +6575,7 @@ class StepBasic_MassUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_MassUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_SecurityClassificationAssignment;
 class StepBasic_SecurityClassificationAssignment : public MMgt_TShared {
@@ -6392,6 +6608,7 @@ class StepBasic_SecurityClassificationAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassificationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_SiUnitAndSolidAngleUnit;
 class StepBasic_SiUnitAndSolidAngleUnit : public StepBasic_SiUnit {
@@ -6427,6 +6644,7 @@ class StepBasic_SiUnitAndSolidAngleUnit : public StepBasic_SiUnit {
 	}
 };
 
+
 %nodefaultctor StepBasic_ThermodynamicTemperatureUnit;
 class StepBasic_ThermodynamicTemperatureUnit : public StepBasic_NamedUnit {
 	public:
@@ -6452,6 +6670,7 @@ class StepBasic_ThermodynamicTemperatureUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ThermodynamicTemperatureUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Document;
 class StepBasic_Document : public MMgt_TShared {
@@ -6499,6 +6718,7 @@ class StepBasic_Document : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_SolidAngleMeasureWithUnit;
 class StepBasic_SolidAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	public:
@@ -6524,6 +6744,7 @@ class StepBasic_SolidAngleMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SolidAngleMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_OrganizationalAddress;
 class StepBasic_OrganizationalAddress : public StepBasic_Address {
@@ -6567,6 +6788,7 @@ class StepBasic_OrganizationalAddress : public StepBasic_Address {
 	}
 };
 
+
 %nodefaultctor StepBasic_DocumentFile;
 class StepBasic_DocumentFile : public StepBasic_Document {
 	public:
@@ -6598,6 +6820,7 @@ class StepBasic_DocumentFile : public StepBasic_Document {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentFile\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_SiUnitAndRatioUnit;
 class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
@@ -6632,6 +6855,7 @@ class StepBasic_SiUnitAndRatioUnit : public StepBasic_SiUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndRatioUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ApprovalPersonOrganization;
 class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
@@ -6672,6 +6896,7 @@ class StepBasic_ApprovalPersonOrganization : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalPersonOrganization\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductDefinitionFormationRelationship;
 class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
@@ -6721,6 +6946,7 @@ class StepBasic_ProductDefinitionFormationRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DocumentRepresentationType;
 class StepBasic_DocumentRepresentationType : public MMgt_TShared {
 	public:
@@ -6757,6 +6983,7 @@ class StepBasic_DocumentRepresentationType : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ConversionBasedUnitAndPlaneAngleUnit;
 class StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public StepBasic_ConversionBasedUnit {
 	public:
@@ -6791,6 +7018,7 @@ class StepBasic_ConversionBasedUnitAndPlaneAngleUnit : public StepBasic_Conversi
 	}
 };
 
+
 %nodefaultctor StepBasic_SiUnitAndAreaUnit;
 class StepBasic_SiUnitAndAreaUnit : public StepBasic_SiUnit {
 	public:
@@ -6824,6 +7052,7 @@ class StepBasic_SiUnitAndAreaUnit : public StepBasic_SiUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndAreaUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ObjectRole;
 class StepBasic_ObjectRole : public MMgt_TShared {
@@ -6862,6 +7091,7 @@ class StepBasic_ObjectRole : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ObjectRole\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Array1OfProductContext;
 class StepBasic_Array1OfProductContext {
@@ -6903,6 +7133,7 @@ class StepBasic_Array1OfProductContext {
 	}
 };
 
+
 %nodefaultctor StepBasic_PersonAndOrganizationRole;
 class StepBasic_PersonAndOrganizationRole : public MMgt_TShared {
 	public:
@@ -6934,6 +7165,7 @@ class StepBasic_PersonAndOrganizationRole : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_PersonAndOrganizationRole\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Action;
 class StepBasic_Action : public MMgt_TShared {
@@ -6977,6 +7209,7 @@ class StepBasic_Action : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DocumentReference;
 class StepBasic_DocumentReference : public MMgt_TShared {
 	public:
@@ -7013,6 +7246,7 @@ class StepBasic_DocumentReference : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_SolidAngleUnit;
 class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 	public:
@@ -7038,6 +7272,7 @@ class StepBasic_SolidAngleUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SolidAngleUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_DigitalDocument;
 class StepBasic_DigitalDocument : public StepBasic_Document {
@@ -7065,6 +7300,7 @@ class StepBasic_DigitalDocument : public StepBasic_Document {
 	}
 };
 
+
 %nodefaultctor StepBasic_PersonOrganizationSelect;
 class StepBasic_PersonOrganizationSelect : public StepData_SelectType {
 	public:
@@ -7086,6 +7322,7 @@ class StepBasic_PersonOrganizationSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_PersonOrganizationSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductDefinitionEffectivity;
 class StepBasic_ProductDefinitionEffectivity : public StepBasic_Effectivity {
@@ -7118,6 +7355,7 @@ class StepBasic_ProductDefinitionEffectivity : public StepBasic_Effectivity {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionEffectivity\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Certification;
 class StepBasic_Certification : public MMgt_TShared {
@@ -7159,6 +7397,7 @@ class StepBasic_Certification : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_GroupAssignment;
 class StepBasic_GroupAssignment : public MMgt_TShared {
 	public:
@@ -7190,6 +7429,7 @@ class StepBasic_GroupAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_GroupAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductDefinitionFormation;
 class StepBasic_ProductDefinitionFormation : public MMgt_TShared {
@@ -7231,6 +7471,7 @@ class StepBasic_ProductDefinitionFormation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ProductDefinitionFormationWithSpecifiedSource;
 class StepBasic_ProductDefinitionFormationWithSpecifiedSource : public StepBasic_ProductDefinitionFormation {
 	public:
@@ -7260,6 +7501,7 @@ class StepBasic_ProductDefinitionFormationWithSpecifiedSource : public StepBasic
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductDefinitionFormationWithSpecifiedSource\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ConversionBasedUnitAndRatioUnit;
 class StepBasic_ConversionBasedUnitAndRatioUnit : public StepBasic_ConversionBasedUnit {
@@ -7294,6 +7536,7 @@ class StepBasic_ConversionBasedUnitAndRatioUnit : public StepBasic_ConversionBas
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ConversionBasedUnitAndRatioUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfNamedUnit;
 class StepBasic_HArray1OfNamedUnit : public MMgt_TShared {
@@ -7341,6 +7584,7 @@ class StepBasic_HArray1OfNamedUnit : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ConversionBasedUnitAndLengthUnit;
 class StepBasic_ConversionBasedUnitAndLengthUnit : public StepBasic_ConversionBasedUnit {
 	public:
@@ -7375,6 +7619,7 @@ class StepBasic_ConversionBasedUnitAndLengthUnit : public StepBasic_ConversionBa
 	}
 };
 
+
 %nodefaultctor StepBasic_OrdinalDate;
 class StepBasic_OrdinalDate : public StepBasic_Date {
 	public:
@@ -7408,6 +7653,7 @@ class StepBasic_OrdinalDate : public StepBasic_Date {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_OrdinalDate\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_OrganizationAssignment;
 class StepBasic_OrganizationAssignment : public MMgt_TShared {
@@ -7444,6 +7690,7 @@ class StepBasic_OrganizationAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_OrganizationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfDocument;
 class StepBasic_HArray1OfDocument : public MMgt_TShared {
@@ -7491,6 +7738,7 @@ class StepBasic_HArray1OfDocument : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ExternalSource;
 class StepBasic_ExternalSource : public MMgt_TShared {
 	public:
@@ -7523,6 +7771,7 @@ class StepBasic_ExternalSource : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DateTimeRole;
 class StepBasic_DateTimeRole : public MMgt_TShared {
 	public:
@@ -7554,6 +7803,7 @@ class StepBasic_DateTimeRole : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_DateTimeRole\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_SiUnitAndTimeUnit;
 class StepBasic_SiUnitAndTimeUnit : public StepBasic_SiUnit {
@@ -7588,6 +7838,7 @@ class StepBasic_SiUnitAndTimeUnit : public StepBasic_SiUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SiUnitAndTimeUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ExternallyDefinedItem;
 class StepBasic_ExternallyDefinedItem : public MMgt_TShared {
@@ -7624,6 +7875,7 @@ class StepBasic_ExternallyDefinedItem : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ExternallyDefinedItem\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_SecurityClassification;
 class StepBasic_SecurityClassification : public MMgt_TShared {
@@ -7664,6 +7916,7 @@ class StepBasic_SecurityClassification : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SecurityClassification\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_DimensionalExponents;
 class StepBasic_DimensionalExponents : public MMgt_TShared {
@@ -7721,6 +7974,7 @@ class StepBasic_DimensionalExponents : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ContractAssignment;
 class StepBasic_ContractAssignment : public MMgt_TShared {
 	public:
@@ -7752,6 +8006,7 @@ class StepBasic_ContractAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ContractAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ApprovalDateTime;
 class StepBasic_ApprovalDateTime : public MMgt_TShared {
@@ -7789,6 +8044,7 @@ class StepBasic_ApprovalDateTime : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_LengthMeasureWithUnit;
 class StepBasic_LengthMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	public:
@@ -7814,6 +8070,7 @@ class StepBasic_LengthMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_LengthMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductDefinition;
 class StepBasic_ProductDefinition : public MMgt_TShared {
@@ -7859,6 +8116,7 @@ class StepBasic_ProductDefinition : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ProductDefinitionWithAssociatedDocuments;
 class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_ProductDefinition {
 	public:
@@ -7895,6 +8153,7 @@ class StepBasic_ProductDefinitionWithAssociatedDocuments : public StepBasic_Prod
 	}
 };
 
+
 %nodefaultctor StepBasic_EffectivityAssignment;
 class StepBasic_EffectivityAssignment : public MMgt_TShared {
 	public:
@@ -7926,6 +8185,7 @@ class StepBasic_EffectivityAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_EffectivityAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_PersonAndOrganization;
 class StepBasic_PersonAndOrganization : public MMgt_TShared {
@@ -7962,6 +8222,7 @@ class StepBasic_PersonAndOrganization : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_PersonAndOrganization\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Array1OfDocument;
 class StepBasic_Array1OfDocument {
@@ -8002,6 +8263,7 @@ class StepBasic_Array1OfDocument {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfDocument\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfProductDefinition;
 class StepBasic_HArray1OfProductDefinition : public MMgt_TShared {
@@ -8049,6 +8311,7 @@ class StepBasic_HArray1OfProductDefinition : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_SiUnitAndVolumeUnit;
 class StepBasic_SiUnitAndVolumeUnit : public StepBasic_SiUnit {
 	public:
@@ -8083,6 +8346,7 @@ class StepBasic_SiUnitAndVolumeUnit : public StepBasic_SiUnit {
 	}
 };
 
+
 %nodefaultctor StepBasic_ContractType;
 class StepBasic_ContractType : public MMgt_TShared {
 	public:
@@ -8114,6 +8378,7 @@ class StepBasic_ContractType : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ContractType\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ActionMethod;
 class StepBasic_ActionMethod : public MMgt_TShared {
@@ -8161,6 +8426,7 @@ class StepBasic_ActionMethod : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ConversionBasedUnitAndSolidAngleUnit;
 class StepBasic_ConversionBasedUnitAndSolidAngleUnit : public StepBasic_ConversionBasedUnit {
 	public:
@@ -8195,6 +8461,7 @@ class StepBasic_ConversionBasedUnitAndSolidAngleUnit : public StepBasic_Conversi
 	}
 };
 
+
 %nodefaultctor StepBasic_VolumeUnit;
 class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 	public:
@@ -8220,6 +8487,7 @@ class StepBasic_VolumeUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_VolumeUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ProductCategoryRelationship;
 class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
@@ -8267,6 +8535,7 @@ class StepBasic_ProductCategoryRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_IdentificationAssignment;
 class StepBasic_IdentificationAssignment : public MMgt_TShared {
 	public:
@@ -8302,6 +8571,7 @@ class StepBasic_IdentificationAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_IdentificationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_ApprovalRelationship;
 class StepBasic_ApprovalRelationship : public MMgt_TShared {
@@ -8347,6 +8617,7 @@ class StepBasic_ApprovalRelationship : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_RoleAssociation;
 class StepBasic_RoleAssociation : public MMgt_TShared {
 	public:
@@ -8383,6 +8654,7 @@ class StepBasic_RoleAssociation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ApprovalAssignment;
 class StepBasic_ApprovalAssignment : public MMgt_TShared {
 	public:
@@ -8414,6 +8686,7 @@ class StepBasic_ApprovalAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ApprovalAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_PersonAndOrganizationAssignment;
 class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
@@ -8451,6 +8724,7 @@ class StepBasic_PersonAndOrganizationAssignment : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DateAssignment;
 class StepBasic_DateAssignment : public MMgt_TShared {
 	public:
@@ -8486,6 +8760,7 @@ class StepBasic_DateAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_DateAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_WeekOfYearAndDayDate;
 class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
@@ -8529,6 +8804,7 @@ class StepBasic_WeekOfYearAndDayDate : public StepBasic_Date {
 	}
 };
 
+
 %nodefaultctor StepBasic_DerivedUnit;
 class StepBasic_DerivedUnit : public MMgt_TShared {
 	public:
@@ -8565,6 +8841,7 @@ class StepBasic_DerivedUnit : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ExternalIdentificationAssignment;
 class StepBasic_ExternalIdentificationAssignment : public StepBasic_IdentificationAssignment {
 	public:
@@ -8596,6 +8873,7 @@ class StepBasic_ExternalIdentificationAssignment : public StepBasic_Identificati
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ExternalIdentificationAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_DocumentProductAssociation;
 class StepBasic_DocumentProductAssociation : public MMgt_TShared {
@@ -8643,6 +8921,7 @@ class StepBasic_DocumentProductAssociation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_DocumentProductEquivalence;
 class StepBasic_DocumentProductEquivalence : public StepBasic_DocumentProductAssociation {
 	public:
@@ -8666,6 +8945,7 @@ class StepBasic_DocumentProductEquivalence : public StepBasic_DocumentProductAss
 	if (__env){printf("## Call custom destructor for instance of StepBasic_DocumentProductEquivalence\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Array1OfNamedUnit;
 class StepBasic_Array1OfNamedUnit {
@@ -8707,6 +8987,7 @@ class StepBasic_Array1OfNamedUnit {
 	}
 };
 
+
 %nodefaultctor StepBasic_SourceItem;
 class StepBasic_SourceItem : public StepData_SelectType {
 	public:
@@ -8726,6 +9007,7 @@ class StepBasic_SourceItem : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SourceItem\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Array1OfUncertaintyMeasureWithUnit;
 class StepBasic_Array1OfUncertaintyMeasureWithUnit {
@@ -8766,6 +9048,7 @@ class StepBasic_Array1OfUncertaintyMeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Array1OfUncertaintyMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfProduct;
 class StepBasic_HArray1OfProduct : public MMgt_TShared {
@@ -8813,6 +9096,7 @@ class StepBasic_HArray1OfProduct : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_HArray1OfUncertaintyMeasureWithUnit;
 class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
 	public:
@@ -8858,6 +9142,7 @@ class StepBasic_HArray1OfUncertaintyMeasureWithUnit : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_HArray1OfUncertaintyMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfPerson;
 class StepBasic_HArray1OfPerson : public MMgt_TShared {
@@ -8905,6 +9190,7 @@ class StepBasic_HArray1OfPerson : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_PhysicallyModeledProductDefinition;
 class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDefinition {
 	public:
@@ -8930,6 +9216,7 @@ class StepBasic_PhysicallyModeledProductDefinition : public StepBasic_ProductDef
 	if (__env){printf("## Call custom destructor for instance of StepBasic_PhysicallyModeledProductDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Person;
 class StepBasic_Person : public MMgt_TShared {
@@ -9015,6 +9302,7 @@ class StepBasic_Person : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_UncertaintyMeasureWithUnit;
 class StepBasic_UncertaintyMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	public:
@@ -9053,6 +9341,7 @@ class StepBasic_UncertaintyMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	}
 };
 
+
 %nodefaultctor StepBasic_ProductConceptContext;
 class StepBasic_ProductConceptContext : public StepBasic_ApplicationContextElement {
 	public:
@@ -9085,6 +9374,7 @@ class StepBasic_ProductConceptContext : public StepBasic_ApplicationContextEleme
 	}
 };
 
+
 %nodefaultctor StepBasic_ProductOrFormationOrDefinition;
 class StepBasic_ProductOrFormationOrDefinition : public StepData_SelectType {
 	public:
@@ -9106,6 +9396,7 @@ class StepBasic_ProductOrFormationOrDefinition : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ProductOrFormationOrDefinition\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_RatioMeasureWithUnit;
 class StepBasic_RatioMeasureWithUnit : public StepBasic_MeasureWithUnit {
@@ -9133,6 +9424,7 @@ class StepBasic_RatioMeasureWithUnit : public StepBasic_MeasureWithUnit {
 	}
 };
 
+
 %nodefaultctor StepBasic_SizeSelect;
 class StepBasic_SizeSelect : public StepData_SelectType {
 	public:
@@ -9156,6 +9448,7 @@ class StepBasic_SizeSelect : public StepData_SelectType {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_SizeSelect\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfApproval;
 class StepBasic_HArray1OfApproval : public MMgt_TShared {
@@ -9203,6 +9496,7 @@ class StepBasic_HArray1OfApproval : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_TimeUnit;
 class StepBasic_TimeUnit : public StepBasic_NamedUnit {
 	public:
@@ -9228,6 +9522,7 @@ class StepBasic_TimeUnit : public StepBasic_NamedUnit {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_TimeUnit\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_HArray1OfDerivedUnitElement;
 class StepBasic_HArray1OfDerivedUnitElement : public MMgt_TShared {
@@ -9275,6 +9570,7 @@ class StepBasic_HArray1OfDerivedUnitElement : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepBasic_ActionRequestAssignment;
 class StepBasic_ActionRequestAssignment : public MMgt_TShared {
 	public:
@@ -9306,6 +9602,7 @@ class StepBasic_ActionRequestAssignment : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_ActionRequestAssignment\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Array1OfDerivedUnitElement;
 class StepBasic_Array1OfDerivedUnitElement {
@@ -9347,6 +9644,7 @@ class StepBasic_Array1OfDerivedUnitElement {
 	}
 };
 
+
 %nodefaultctor StepBasic_Contract;
 class StepBasic_Contract : public MMgt_TShared {
 	public:
@@ -9386,6 +9684,7 @@ class StepBasic_Contract : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_Contract\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_Array1OfPerson;
 class StepBasic_Array1OfPerson {
@@ -9427,6 +9726,7 @@ class StepBasic_Array1OfPerson {
 	}
 };
 
+
 %nodefaultctor StepBasic_CharacterizedObject;
 class StepBasic_CharacterizedObject : public MMgt_TShared {
 	public:
@@ -9464,6 +9764,7 @@ class StepBasic_CharacterizedObject : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepBasic_CharacterizedObject\n");}
 	}
 };
+
 
 %nodefaultctor StepBasic_SiUnitAndLengthUnit;
 class StepBasic_SiUnitAndLengthUnit : public StepBasic_SiUnit {

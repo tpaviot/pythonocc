@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_MgtTopoDS_TranslateTool : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_MgtTopoDS_TranslateTool1;
 class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_MgtTopoDS_TranslateTool1 : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_MgtTopoDS_TranslateTool1\n");}
 	}
 };
+
 
 %nodefaultctor MgtTopoDS_TranslateTool;
 class MgtTopoDS_TranslateTool : public MMgt_TShared {
@@ -257,6 +260,7 @@ class MgtTopoDS_TranslateTool : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor MgtTopoDS_TranslateTool1;
 class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 	public:
@@ -350,6 +354,7 @@ class MgtTopoDS_TranslateTool1 : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of MgtTopoDS_TranslateTool1\n");}
 	}
 };
+
 
 %nodefaultctor MgtTopoDS;
 class MgtTopoDS {

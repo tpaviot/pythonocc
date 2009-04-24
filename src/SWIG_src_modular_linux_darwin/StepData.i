@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -144,6 +145,7 @@ class Handle_StepData_EDescr : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_ReadWriteModule;
 class Handle_StepData_ReadWriteModule : public Handle_Interface_ReaderModule {
 	public:
@@ -168,6 +170,7 @@ class Handle_StepData_ReadWriteModule : public Handle_Interface_ReaderModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_ReadWriteModule\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_DescrReadWrite;
 class Handle_StepData_DescrReadWrite : public Handle_StepData_ReadWriteModule {
@@ -194,6 +197,7 @@ class Handle_StepData_DescrReadWrite : public Handle_StepData_ReadWriteModule {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_Protocol;
 class Handle_StepData_Protocol : public Handle_Interface_Protocol {
 	public:
@@ -218,6 +222,7 @@ class Handle_StepData_Protocol : public Handle_Interface_Protocol {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_Protocol\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_SelectMember;
 class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
@@ -244,6 +249,7 @@ class Handle_StepData_SelectMember : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_SelectReal;
 class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
 	public:
@@ -268,6 +274,7 @@ class Handle_StepData_SelectReal : public Handle_StepData_SelectMember {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectReal\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_GeneralModule;
 class Handle_StepData_GeneralModule : public Handle_Interface_GeneralModule {
@@ -294,6 +301,7 @@ class Handle_StepData_GeneralModule : public Handle_Interface_GeneralModule {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_DefaultGeneral;
 class Handle_StepData_DefaultGeneral : public Handle_StepData_GeneralModule {
 	public:
@@ -318,6 +326,7 @@ class Handle_StepData_DefaultGeneral : public Handle_StepData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_DefaultGeneral\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_Described;
 class Handle_StepData_Described : public Handle_MMgt_TShared {
@@ -344,6 +353,7 @@ class Handle_StepData_Described : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_ESDescr;
 class Handle_StepData_ESDescr : public Handle_StepData_EDescr {
 	public:
@@ -368,6 +378,7 @@ class Handle_StepData_ESDescr : public Handle_StepData_EDescr {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_ESDescr\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_ECDescr;
 class Handle_StepData_ECDescr : public Handle_StepData_EDescr {
@@ -394,6 +405,7 @@ class Handle_StepData_ECDescr : public Handle_StepData_EDescr {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_PDescr;
 class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 	public:
@@ -418,6 +430,7 @@ class Handle_StepData_PDescr : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_PDescr\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_UndefinedEntity;
 class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
@@ -444,6 +457,7 @@ class Handle_StepData_UndefinedEntity : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_StepModel;
 class Handle_StepData_StepModel : public Handle_Interface_InterfaceModel {
 	public:
@@ -468,6 +482,7 @@ class Handle_StepData_StepModel : public Handle_Interface_InterfaceModel {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_StepModel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_StepReaderData;
 class Handle_StepData_StepReaderData : public Handle_Interface_FileReaderData {
@@ -494,6 +509,7 @@ class Handle_StepData_StepReaderData : public Handle_Interface_FileReaderData {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_SelectNamed;
 class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
 	public:
@@ -518,6 +534,7 @@ class Handle_StepData_SelectNamed : public Handle_StepData_SelectMember {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_SelectNamed\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_SelectArrReal;
 class Handle_StepData_SelectArrReal : public Handle_StepData_SelectNamed {
@@ -544,6 +561,7 @@ class Handle_StepData_SelectArrReal : public Handle_StepData_SelectNamed {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_FileProtocol;
 class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
 	public:
@@ -568,6 +586,7 @@ class Handle_StepData_FileProtocol : public Handle_StepData_Protocol {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_FileProtocol\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_DescrProtocol;
 class Handle_StepData_DescrProtocol : public Handle_StepData_FileProtocol {
@@ -594,6 +613,7 @@ class Handle_StepData_DescrProtocol : public Handle_StepData_FileProtocol {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_FreeFormEntity;
 class Handle_StepData_FreeFormEntity : public Handle_MMgt_TShared {
 	public:
@@ -618,6 +638,7 @@ class Handle_StepData_FreeFormEntity : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_FreeFormEntity\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_GlobalNodeOfWriterLib;
 class Handle_StepData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
@@ -644,6 +665,7 @@ class Handle_StepData_GlobalNodeOfWriterLib : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_HArray1OfField;
 class Handle_StepData_HArray1OfField : public Handle_MMgt_TShared {
 	public:
@@ -668,6 +690,7 @@ class Handle_StepData_HArray1OfField : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_HArray1OfField\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_FileRecognizer;
 class Handle_StepData_FileRecognizer : public Handle_Standard_Transient {
@@ -694,6 +717,7 @@ class Handle_StepData_FileRecognizer : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_NodeOfWriterLib;
 class Handle_StepData_NodeOfWriterLib : public Handle_MMgt_TShared {
 	public:
@@ -718,6 +742,7 @@ class Handle_StepData_NodeOfWriterLib : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_NodeOfWriterLib\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_Simple;
 class Handle_StepData_Simple : public Handle_StepData_Described {
@@ -744,6 +769,7 @@ class Handle_StepData_Simple : public Handle_StepData_Described {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_DescrGeneral;
 class Handle_StepData_DescrGeneral : public Handle_StepData_GeneralModule {
 	public:
@@ -768,6 +794,7 @@ class Handle_StepData_DescrGeneral : public Handle_StepData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_DescrGeneral\n");}
 	}
 };
+
 
 %nodefaultctor Handle_StepData_SelectInt;
 class Handle_StepData_SelectInt : public Handle_StepData_SelectMember {
@@ -794,6 +821,7 @@ class Handle_StepData_SelectInt : public Handle_StepData_SelectMember {
 	}
 };
 
+
 %nodefaultctor Handle_StepData_Plex;
 class Handle_StepData_Plex : public Handle_StepData_Described {
 	public:
@@ -818,6 +846,7 @@ class Handle_StepData_Plex : public Handle_StepData_Described {
 	if (__env){printf("## Call custom destructor for instance of Handle_StepData_Plex\n");}
 	}
 };
+
 
 %nodefaultctor StepData_NodeOfWriterLib;
 class StepData_NodeOfWriterLib : public MMgt_TShared {
@@ -853,6 +882,7 @@ class StepData_NodeOfWriterLib : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepData_GlobalNodeOfWriterLib;
 class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 	public:
@@ -887,6 +917,7 @@ class StepData_GlobalNodeOfWriterLib : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor StepData_HeaderTool;
 class StepData_HeaderTool {
 	public:
@@ -911,7 +942,12 @@ class StepData_HeaderTool {
 		%feature("autodoc", "1");
 		const TCollection_AsciiString & Ignored(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		void Print(Standard_OStream & S) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend StepData_HeaderTool {
@@ -920,6 +956,7 @@ class StepData_HeaderTool {
 	if (__env){printf("## Call custom destructor for instance of StepData_HeaderTool\n");}
 	}
 };
+
 
 %nodefaultctor StepData_FreeFormEntity;
 class StepData_FreeFormEntity : public MMgt_TShared {
@@ -969,6 +1006,7 @@ class StepData_FreeFormEntity : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepData_FileProtocol;
 class StepData_FileProtocol : public StepData_Protocol {
 	public:
@@ -1007,6 +1045,7 @@ class StepData_FileProtocol : public StepData_Protocol {
 	}
 };
 
+
 %nodefaultctor StepData_DescrProtocol;
 class StepData_DescrProtocol : public StepData_FileProtocol {
 	public:
@@ -1034,6 +1073,7 @@ class StepData_DescrProtocol : public StepData_FileProtocol {
 	if (__env){printf("## Call custom destructor for instance of StepData_DescrProtocol\n");}
 	}
 };
+
 
 %nodefaultctor StepData_GeneralModule;
 class StepData_GeneralModule : public Interface_GeneralModule {
@@ -1065,6 +1105,7 @@ class StepData_GeneralModule : public Interface_GeneralModule {
 	}
 };
 
+
 %nodefaultctor StepData_EDescr;
 class StepData_EDescr : public MMgt_TShared {
 	public:
@@ -1094,6 +1135,7 @@ class StepData_EDescr : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepData_EDescr\n");}
 	}
 };
+
 
 %nodefaultctor StepData_SelectMember;
 class StepData_SelectMember : public MMgt_TShared {
@@ -1167,6 +1209,7 @@ class StepData_SelectMember : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepData_StepModel;
 class StepData_StepModel : public Interface_InterfaceModel {
 	public:
@@ -1225,6 +1268,7 @@ class StepData_StepModel : public Interface_InterfaceModel {
 	}
 };
 
+
 %nodefaultctor StepData_FileRecognizer;
 class StepData_FileRecognizer : public Standard_Transient {
 	public:
@@ -1254,6 +1298,7 @@ class StepData_FileRecognizer : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of StepData_FileRecognizer\n");}
 	}
 };
+
 
 %nodefaultctor StepData_SelectNamed;
 class StepData_SelectNamed : public StepData_SelectMember {
@@ -1307,6 +1352,7 @@ class StepData_SelectNamed : public StepData_SelectMember {
 	}
 };
 
+
 %nodefaultctor StepData_SelectArrReal;
 class StepData_SelectArrReal : public StepData_SelectNamed {
 	public:
@@ -1334,6 +1380,7 @@ class StepData_SelectArrReal : public StepData_SelectNamed {
 	if (__env){printf("## Call custom destructor for instance of StepData_SelectArrReal\n");}
 	}
 };
+
 
 %nodefaultctor StepData_Field;
 class StepData_Field {
@@ -1432,6 +1479,7 @@ class StepData_Field {
 	if (__env){printf("## Call custom destructor for instance of StepData_Field\n");}
 	}
 };
+
 
 %nodefaultctor StepData_PDescr;
 class StepData_PDescr : public MMgt_TShared {
@@ -1547,6 +1595,7 @@ class StepData_PDescr : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepData_ReadWriteModule;
 class StepData_ReadWriteModule : public Interface_ReaderModule {
 	public:
@@ -1591,6 +1640,7 @@ class StepData_ReadWriteModule : public Interface_ReaderModule {
 	}
 };
 
+
 %nodefaultctor StepData_DescrReadWrite;
 class StepData_DescrReadWrite : public StepData_ReadWriteModule {
 	public:
@@ -1614,6 +1664,7 @@ class StepData_DescrReadWrite : public StepData_ReadWriteModule {
 	if (__env){printf("## Call custom destructor for instance of StepData_DescrReadWrite\n");}
 	}
 };
+
 
 %nodefaultctor StepData_SelectInt;
 class StepData_SelectInt : public StepData_SelectMember {
@@ -1649,6 +1700,7 @@ class StepData_SelectInt : public StepData_SelectMember {
 	}
 };
 
+
 %nodefaultctor StepData_StepDumper;
 class StepData_StepDumper {
 	public:
@@ -1668,6 +1720,7 @@ class StepData_StepDumper {
 	if (__env){printf("## Call custom destructor for instance of StepData_StepDumper\n");}
 	}
 };
+
 
 %nodefaultctor StepData_StepReaderData;
 class StepData_StepReaderData : public Interface_FileReaderData {
@@ -1767,6 +1820,7 @@ class StepData_StepReaderData : public Interface_FileReaderData {
 	}
 };
 
+
 %nodefaultctor StepData_FieldList;
 class StepData_FieldList {
 	public:
@@ -1789,6 +1843,7 @@ class StepData_FieldList {
 	}
 };
 
+
 %nodefaultctor StepData_FieldListD;
 class StepData_FieldListD : public StepData_FieldList {
 	public:
@@ -1806,6 +1861,7 @@ class StepData_FieldListD : public StepData_FieldList {
 	if (__env){printf("## Call custom destructor for instance of StepData_FieldListD\n");}
 	}
 };
+
 
 %nodefaultctor StepData_FieldListN;
 class StepData_FieldListN : public StepData_FieldList {
@@ -1828,6 +1884,7 @@ class StepData_FieldListN : public StepData_FieldList {
 	if (__env){printf("## Call custom destructor for instance of StepData_FieldListN\n");}
 	}
 };
+
 
 %nodefaultctor StepData_EnumTool;
 class StepData_EnumTool {
@@ -1858,6 +1915,7 @@ class StepData_EnumTool {
 	if (__env){printf("## Call custom destructor for instance of StepData_EnumTool\n");}
 	}
 };
+
 
 %nodefaultctor StepData_StepWriter;
 class StepData_StepWriter {
@@ -1959,7 +2017,12 @@ class StepData_StepWriter {
 		%feature("autodoc", "1");
 		Handle_TCollection_HAsciiString Line(const Standard_Integer num) const;
 		%feature("autodoc", "1");
-		Standard_Boolean Print(Standard_OStream & S);
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 
 };
 %extend StepData_StepWriter {
@@ -1968,6 +2031,7 @@ class StepData_StepWriter {
 	if (__env){printf("## Call custom destructor for instance of StepData_StepWriter\n");}
 	}
 };
+
 
 %nodefaultctor StepData_FieldList1;
 class StepData_FieldList1 : public StepData_FieldList {
@@ -1990,6 +2054,7 @@ class StepData_FieldList1 : public StepData_FieldList {
 	if (__env){printf("## Call custom destructor for instance of StepData_FieldList1\n");}
 	}
 };
+
 
 %nodefaultctor StepData_Described;
 class StepData_Described : public MMgt_TShared {
@@ -2033,6 +2098,7 @@ class StepData_Described : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepData_Plex;
 class StepData_Plex : public StepData_Described {
 	public:
@@ -2066,6 +2132,7 @@ class StepData_Plex : public StepData_Described {
 	if (__env){printf("## Call custom destructor for instance of StepData_Plex\n");}
 	}
 };
+
 
 %nodefaultctor StepData_HArray1OfField;
 class StepData_HArray1OfField : public MMgt_TShared {
@@ -2113,6 +2180,7 @@ class StepData_HArray1OfField : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor StepData;
 class StepData {
 	public:
@@ -2134,6 +2202,7 @@ class StepData {
 	if (__env){printf("## Call custom destructor for instance of StepData\n");}
 	}
 };
+
 
 %nodefaultctor StepData_ESDescr;
 class StepData_ESDescr : public StepData_EDescr {
@@ -2195,6 +2264,7 @@ class StepData_ESDescr : public StepData_EDescr {
 	}
 };
 
+
 %nodefaultctor StepData_Array1OfField;
 class StepData_Array1OfField {
 	public:
@@ -2235,6 +2305,7 @@ class StepData_Array1OfField {
 	}
 };
 
+
 %nodefaultctor StepData_WriterLib;
 class StepData_WriterLib {
 	public:
@@ -2271,6 +2342,7 @@ class StepData_WriterLib {
 	}
 };
 
+
 %nodefaultctor StepData_StepReaderTool;
 class StepData_StepReaderTool : public Interface_FileReaderTool {
 	public:
@@ -2298,6 +2370,7 @@ class StepData_StepReaderTool : public Interface_FileReaderTool {
 	if (__env){printf("## Call custom destructor for instance of StepData_StepReaderTool\n");}
 	}
 };
+
 
 %nodefaultctor StepData_DescrGeneral;
 class StepData_DescrGeneral : public StepData_GeneralModule {
@@ -2332,6 +2405,7 @@ class StepData_DescrGeneral : public StepData_GeneralModule {
 	if (__env){printf("## Call custom destructor for instance of StepData_DescrGeneral\n");}
 	}
 };
+
 
 %nodefaultctor StepData_ECDescr;
 class StepData_ECDescr : public StepData_EDescr {
@@ -2373,6 +2447,7 @@ class StepData_ECDescr : public StepData_EDescr {
 	}
 };
 
+
 %nodefaultctor StepData_DefaultGeneral;
 class StepData_DefaultGeneral : public StepData_GeneralModule {
 	public:
@@ -2407,6 +2482,7 @@ class StepData_DefaultGeneral : public StepData_GeneralModule {
 	}
 };
 
+
 %nodefaultctor StepData_SelectReal;
 class StepData_SelectReal : public StepData_SelectMember {
 	public:
@@ -2438,6 +2514,7 @@ class StepData_SelectReal : public StepData_SelectMember {
 	if (__env){printf("## Call custom destructor for instance of StepData_SelectReal\n");}
 	}
 };
+
 
 %nodefaultctor StepData_SelectType;
 class StepData_SelectType {
@@ -2501,6 +2578,7 @@ class StepData_SelectType {
 	}
 };
 
+
 %nodefaultctor StepData_UndefinedEntity;
 class StepData_UndefinedEntity : public MMgt_TShared {
 	public:
@@ -2546,6 +2624,7 @@ class StepData_UndefinedEntity : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of StepData_UndefinedEntity\n");}
 	}
 };
+
 
 %nodefaultctor StepData_Simple;
 class StepData_Simple : public StepData_Described {

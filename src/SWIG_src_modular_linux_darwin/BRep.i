@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BRep_PointRepresentation : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_PointsOnSurface;
 class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 	public:
@@ -162,6 +164,7 @@ class Handle_BRep_PointsOnSurface : public Handle_BRep_PointRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointsOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_PointOnSurface;
 class Handle_BRep_PointOnSurface : public Handle_BRep_PointsOnSurface {
@@ -188,6 +191,7 @@ class Handle_BRep_PointOnSurface : public Handle_BRep_PointsOnSurface {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_ListNodeOfListOfCurveRepresentation;
 class Handle_BRep_ListNodeOfListOfCurveRepresentation : public Handle_TCollection_MapNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_BRep_ListNodeOfListOfCurveRepresentation : public Handle_TCollectio
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_ListNodeOfListOfCurveRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_CurveRepresentation;
 class Handle_BRep_CurveRepresentation : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_BRep_CurveRepresentation : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_GCurve;
 class Handle_BRep_GCurve : public Handle_BRep_CurveRepresentation {
 	public:
@@ -262,6 +268,7 @@ class Handle_BRep_GCurve : public Handle_BRep_CurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_GCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_Curve3D;
 class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
@@ -288,6 +295,7 @@ class Handle_BRep_Curve3D : public Handle_BRep_GCurve {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_Polygon3D;
 class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 	public:
@@ -312,6 +320,7 @@ class Handle_BRep_Polygon3D : public Handle_BRep_CurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_Polygon3D\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_TVertex;
 class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
@@ -338,6 +347,7 @@ class Handle_BRep_TVertex : public Handle_TopoDS_TVertex {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_CurveOn2Surfaces;
 class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
 	public:
@@ -362,6 +372,7 @@ class Handle_BRep_CurveOn2Surfaces : public Handle_BRep_CurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveOn2Surfaces\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_ListNodeOfListOfPointRepresentation;
 class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollection_MapNode {
@@ -388,6 +399,7 @@ class Handle_BRep_ListNodeOfListOfPointRepresentation : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_BRep_PolygonOnSurface;
 class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 	public:
@@ -412,6 +424,7 @@ class Handle_BRep_PolygonOnSurface : public Handle_BRep_CurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_PolygonOnClosedSurface;
 class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
@@ -438,6 +451,7 @@ class Handle_BRep_PolygonOnClosedSurface : public Handle_BRep_PolygonOnSurface {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_PointOnCurve;
 class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
 	public:
@@ -462,6 +476,7 @@ class Handle_BRep_PointOnCurve : public Handle_BRep_PointRepresentation {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PointOnCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_PointOnCurveOnSurface;
 class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
@@ -488,6 +503,7 @@ class Handle_BRep_PointOnCurveOnSurface : public Handle_BRep_PointsOnSurface {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_CurveOnSurface;
 class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
 	public:
@@ -512,6 +528,7 @@ class Handle_BRep_CurveOnSurface : public Handle_BRep_GCurve {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_CurveOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_PolygonOnTriangulation;
 class Handle_BRep_PolygonOnTriangulation : public Handle_BRep_CurveRepresentation {
@@ -538,6 +555,7 @@ class Handle_BRep_PolygonOnTriangulation : public Handle_BRep_CurveRepresentatio
 	}
 };
 
+
 %nodefaultctor Handle_BRep_PolygonOnClosedTriangulation;
 class Handle_BRep_PolygonOnClosedTriangulation : public Handle_BRep_PolygonOnTriangulation {
 	public:
@@ -562,6 +580,7 @@ class Handle_BRep_PolygonOnClosedTriangulation : public Handle_BRep_PolygonOnTri
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_PolygonOnClosedTriangulation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRep_CurveOnClosedSurface;
 class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
@@ -588,6 +607,7 @@ class Handle_BRep_CurveOnClosedSurface : public Handle_BRep_CurveOnSurface {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_TEdge;
 class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
 	public:
@@ -613,6 +633,7 @@ class Handle_BRep_TEdge : public Handle_TopoDS_TEdge {
 	}
 };
 
+
 %nodefaultctor Handle_BRep_TFace;
 class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 	public:
@@ -637,6 +658,7 @@ class Handle_BRep_TFace : public Handle_TopoDS_TFace {
 	if (__env){printf("## Call custom destructor for instance of Handle_BRep_TFace\n");}
 	}
 };
+
 
 %nodefaultctor BRep_PointRepresentation;
 class BRep_PointRepresentation : public MMgt_TShared {
@@ -697,6 +719,7 @@ class BRep_PointRepresentation : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of BRep_PointRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor BRep_CurveRepresentation;
 class BRep_CurveRepresentation : public MMgt_TShared {
@@ -798,6 +821,7 @@ class BRep_CurveRepresentation : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor BRep_GCurve;
 class BRep_GCurve : public BRep_CurveRepresentation {
 	public:
@@ -836,6 +860,7 @@ class BRep_GCurve : public BRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor BRep_CurveOnSurface;
 class BRep_CurveOnSurface : public BRep_GCurve {
 	public:
@@ -868,6 +893,7 @@ class BRep_CurveOnSurface : public BRep_GCurve {
 	}
 };
 
+
 %nodefaultctor BRep_PointsOnSurface;
 class BRep_PointsOnSurface : public BRep_PointRepresentation {
 	public:
@@ -895,6 +921,7 @@ class BRep_PointsOnSurface : public BRep_PointRepresentation {
 	if (__env){printf("## Call custom destructor for instance of BRep_PointsOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor BRep_PointOnCurveOnSurface;
 class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
@@ -928,6 +955,7 @@ class BRep_PointOnCurveOnSurface : public BRep_PointsOnSurface {
 	}
 };
 
+
 %nodefaultctor BRep_ListIteratorOfListOfCurveRepresentation;
 class BRep_ListIteratorOfListOfCurveRepresentation {
 	public:
@@ -951,6 +979,7 @@ class BRep_ListIteratorOfListOfCurveRepresentation {
 	if (__env){printf("## Call custom destructor for instance of BRep_ListIteratorOfListOfCurveRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor BRep_Tool;
 class BRep_Tool {
@@ -1064,6 +1093,7 @@ class BRep_Tool {
 	}
 };
 
+
 %nodefaultctor BRep_ListOfPointRepresentation;
 class BRep_ListOfPointRepresentation {
 	public:
@@ -1114,6 +1144,7 @@ class BRep_ListOfPointRepresentation {
 	}
 };
 
+
 %nodefaultctor BRep_PointOnSurface;
 class BRep_PointOnSurface : public BRep_PointsOnSurface {
 	public:
@@ -1147,6 +1178,7 @@ class BRep_PointOnSurface : public BRep_PointsOnSurface {
 	if (__env){printf("## Call custom destructor for instance of BRep_PointOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor BRep_PolygonOnTriangulation;
 class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
@@ -1186,6 +1218,7 @@ class BRep_PolygonOnTriangulation : public BRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor BRep_PolygonOnClosedTriangulation;
 class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
 	public:
@@ -1215,6 +1248,7 @@ class BRep_PolygonOnClosedTriangulation : public BRep_PolygonOnTriangulation {
 	if (__env){printf("## Call custom destructor for instance of BRep_PolygonOnClosedTriangulation\n");}
 	}
 };
+
 
 %nodefaultctor BRep_PointOnCurve;
 class BRep_PointOnCurve : public BRep_PointRepresentation {
@@ -1249,6 +1283,7 @@ class BRep_PointOnCurve : public BRep_PointRepresentation {
 	if (__env){printf("## Call custom destructor for instance of BRep_PointOnCurve\n");}
 	}
 };
+
 
 %nodefaultctor BRep_TEdge;
 class BRep_TEdge : public TopoDS_TEdge {
@@ -1300,6 +1335,7 @@ class BRep_TEdge : public TopoDS_TEdge {
 	}
 };
 
+
 %nodefaultctor BRep_CurveOn2Surfaces;
 class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 	public:
@@ -1344,6 +1380,7 @@ class BRep_CurveOn2Surfaces : public BRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor BRep_Curve3D;
 class BRep_Curve3D : public BRep_GCurve {
 	public:
@@ -1379,6 +1416,7 @@ class BRep_Curve3D : public BRep_GCurve {
 	if (__env){printf("## Call custom destructor for instance of BRep_Curve3D\n");}
 	}
 };
+
 
 %nodefaultctor BRep_Builder;
 class BRep_Builder : public TopoDS_Builder3D {
@@ -1496,6 +1534,7 @@ class BRep_Builder : public TopoDS_Builder3D {
 	}
 };
 
+
 %nodefaultctor BRep_PolygonOnSurface;
 class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 	public:
@@ -1534,6 +1573,7 @@ class BRep_PolygonOnSurface : public BRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor BRep_ListIteratorOfListOfPointRepresentation;
 class BRep_ListIteratorOfListOfPointRepresentation {
 	public:
@@ -1557,6 +1597,7 @@ class BRep_ListIteratorOfListOfPointRepresentation {
 	if (__env){printf("## Call custom destructor for instance of BRep_ListIteratorOfListOfPointRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor BRep_CurveOnClosedSurface;
 class BRep_CurveOnClosedSurface : public BRep_CurveOnSurface {
@@ -1614,6 +1655,7 @@ class BRep_CurveOnClosedSurface : public BRep_CurveOnSurface {
 	}
 };
 
+
 %nodefaultctor BRep_TFace;
 class BRep_TFace : public TopoDS_TFace {
 	public:
@@ -1661,6 +1703,7 @@ class BRep_TFace : public TopoDS_TFace {
 	if (__env){printf("## Call custom destructor for instance of BRep_TFace\n");}
 	}
 };
+
 
 %nodefaultctor BRep_ListOfCurveRepresentation;
 class BRep_ListOfCurveRepresentation {
@@ -1712,6 +1755,7 @@ class BRep_ListOfCurveRepresentation {
 	}
 };
 
+
 %nodefaultctor BRep_ListNodeOfListOfPointRepresentation;
 class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
 	public:
@@ -1739,6 +1783,7 @@ class BRep_ListNodeOfListOfPointRepresentation : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfPointRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor BRep_PolygonOnClosedSurface;
 class BRep_PolygonOnClosedSurface : public BRep_PolygonOnSurface {
@@ -1774,6 +1819,7 @@ class BRep_PolygonOnClosedSurface : public BRep_PolygonOnSurface {
 	}
 };
 
+
 %nodefaultctor BRep_Polygon3D;
 class BRep_Polygon3D : public BRep_CurveRepresentation {
 	public:
@@ -1808,6 +1854,7 @@ class BRep_Polygon3D : public BRep_CurveRepresentation {
 	}
 };
 
+
 %nodefaultctor BRep_ListNodeOfListOfCurveRepresentation;
 class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
 	public:
@@ -1835,6 +1882,7 @@ class BRep_ListNodeOfListOfCurveRepresentation : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of BRep_ListNodeOfListOfCurveRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor BRep_TVertex;
 class BRep_TVertex : public TopoDS_TVertex {

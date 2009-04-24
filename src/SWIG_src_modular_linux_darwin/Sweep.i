@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -145,6 +146,7 @@ class Sweep_NumShapeTool {
 	}
 };
 
+
 %nodefaultctor Sweep_NumShape;
 class Sweep_NumShape {
 	public:
@@ -174,6 +176,7 @@ class Sweep_NumShape {
 	if (__env){printf("## Call custom destructor for instance of Sweep_NumShape\n");}
 	}
 };
+
 
 %nodefaultctor Sweep_NumShapeIterator;
 class Sweep_NumShapeIterator {

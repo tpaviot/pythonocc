@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ShapeProcess_StackItemOfDictionaryOfOperator : public Handle_MMgt_T
 	}
 };
 
+
 %nodefaultctor Handle_ShapeProcess_Context;
 class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	public:
@@ -162,6 +164,7 @@ class Handle_ShapeProcess_Context : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_Context\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeProcess_Operator;
 class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
@@ -188,6 +191,7 @@ class Handle_ShapeProcess_Operator : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeProcess_UOperator;
 class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 	public:
@@ -212,6 +216,7 @@ class Handle_ShapeProcess_UOperator : public Handle_ShapeProcess_Operator {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_UOperator\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ShapeProcess_DictionaryOfOperator;
 class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
@@ -238,6 +243,7 @@ class Handle_ShapeProcess_DictionaryOfOperator : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_ShapeProcess_ShapeContext;
 class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 	public:
@@ -262,6 +268,7 @@ class Handle_ShapeProcess_ShapeContext : public Handle_ShapeProcess_Context {
 	if (__env){printf("## Call custom destructor for instance of Handle_ShapeProcess_ShapeContext\n");}
 	}
 };
+
 
 %nodefaultctor ShapeProcess_Operator;
 class ShapeProcess_Operator : public MMgt_TShared {
@@ -289,6 +296,7 @@ class ShapeProcess_Operator : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeProcess_UOperator;
 class ShapeProcess_UOperator : public ShapeProcess_Operator {
 	public:
@@ -313,6 +321,7 @@ class ShapeProcess_UOperator : public ShapeProcess_Operator {
 	}
 };
 
+
 %nodefaultctor ShapeProcess;
 class ShapeProcess {
 	public:
@@ -332,6 +341,7 @@ class ShapeProcess {
 	if (__env){printf("## Call custom destructor for instance of ShapeProcess\n");}
 	}
 };
+
 
 %nodefaultctor ShapeProcess_StackItemOfDictionaryOfOperator;
 class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
@@ -367,6 +377,7 @@ class ShapeProcess_StackItemOfDictionaryOfOperator : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeProcess_OperLibrary;
 class ShapeProcess_OperLibrary {
 	public:
@@ -384,6 +395,7 @@ class ShapeProcess_OperLibrary {
 	if (__env){printf("## Call custom destructor for instance of ShapeProcess_OperLibrary\n");}
 	}
 };
+
 
 %nodefaultctor ShapeProcess_IteratorOfDictionaryOfOperator;
 class ShapeProcess_IteratorOfDictionaryOfOperator {
@@ -412,6 +424,7 @@ class ShapeProcess_IteratorOfDictionaryOfOperator {
 	if (__env){printf("## Call custom destructor for instance of ShapeProcess_IteratorOfDictionaryOfOperator\n");}
 	}
 };
+
 
 %nodefaultctor ShapeProcess_Context;
 class ShapeProcess_Context : public MMgt_TShared {
@@ -477,6 +490,7 @@ class ShapeProcess_Context : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ShapeProcess_ShapeContext;
 class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 	public:
@@ -536,6 +550,7 @@ class ShapeProcess_ShapeContext : public ShapeProcess_Context {
 	if (__env){printf("## Call custom destructor for instance of ShapeProcess_ShapeContext\n");}
 	}
 };
+
 
 %nodefaultctor ShapeProcess_DictionaryOfOperator;
 class ShapeProcess_DictionaryOfOperator : public MMgt_TShared {

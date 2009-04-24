@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -299,6 +300,7 @@ class Handle_AIS_InteractiveObject : public Handle_SelectMgr_SelectableObject {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_Relation;
 class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 	public:
@@ -323,6 +325,7 @@ class Handle_AIS_Relation : public Handle_AIS_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Relation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_EllipseRadiusDimension;
 class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
@@ -349,6 +352,7 @@ class Handle_AIS_EllipseRadiusDimension : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_MidPointRelation;
 class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 	public:
@@ -373,6 +377,7 @@ class Handle_AIS_MidPointRelation : public Handle_AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MidPointRelation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_DiameterDimension;
 class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
@@ -399,6 +404,7 @@ class Handle_AIS_DiameterDimension : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_MultipleConnectedInteractive;
 class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObject {
 	public:
@@ -423,6 +429,7 @@ class Handle_AIS_MultipleConnectedInteractive : public Handle_AIS_InteractiveObj
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MultipleConnectedInteractive\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_FixRelation;
 class Handle_AIS_FixRelation : public Handle_AIS_Relation {
@@ -449,6 +456,7 @@ class Handle_AIS_FixRelation : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_EqualDistanceRelation;
 class Handle_AIS_EqualDistanceRelation : public Handle_AIS_Relation {
 	public:
@@ -473,6 +481,7 @@ class Handle_AIS_EqualDistanceRelation : public Handle_AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_EqualDistanceRelation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfIOStatus;
 class Handle_AIS_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapNode {
@@ -499,6 +508,7 @@ class Handle_AIS_DataMapNodeOfDataMapOfIOStatus : public Handle_TCollection_MapN
 	}
 };
 
+
 %nodefaultctor Handle_AIS_ParallelRelation;
 class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
 	public:
@@ -523,6 +533,7 @@ class Handle_AIS_ParallelRelation : public Handle_AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ParallelRelation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_ConnectedInteractive;
 class Handle_AIS_ConnectedInteractive : public Handle_AIS_InteractiveObject {
@@ -549,6 +560,7 @@ class Handle_AIS_ConnectedInteractive : public Handle_AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_ConnectedShape;
 class Handle_AIS_ConnectedShape : public Handle_AIS_ConnectedInteractive {
 	public:
@@ -573,6 +585,7 @@ class Handle_AIS_ConnectedShape : public Handle_AIS_ConnectedInteractive {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ConnectedShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_Trihedron;
 class Handle_AIS_Trihedron : public Handle_AIS_InteractiveObject {
@@ -599,6 +612,7 @@ class Handle_AIS_Trihedron : public Handle_AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_RadiusDimension;
 class Handle_AIS_RadiusDimension : public Handle_AIS_Relation {
 	public:
@@ -623,6 +637,7 @@ class Handle_AIS_RadiusDimension : public Handle_AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_RadiusDimension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_LengthDimension;
 class Handle_AIS_LengthDimension : public Handle_AIS_Relation {
@@ -649,6 +664,7 @@ class Handle_AIS_LengthDimension : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_Line;
 class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
 	public:
@@ -673,6 +689,7 @@ class Handle_AIS_Line : public Handle_AIS_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Line\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_TangentRelation;
 class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
@@ -699,6 +716,7 @@ class Handle_AIS_TangentRelation : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_MultipleConnectedShape;
 class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInteractive {
 	public:
@@ -723,6 +741,7 @@ class Handle_AIS_MultipleConnectedShape : public Handle_AIS_MultipleConnectedInt
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_MultipleConnectedShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfILC;
 class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
@@ -749,6 +768,7 @@ class Handle_AIS_DataMapNodeOfDataMapOfILC : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_ConcentricRelation;
 class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
 	public:
@@ -773,6 +793,7 @@ class Handle_AIS_ConcentricRelation : public Handle_AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ConcentricRelation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_Chamf2dDimension;
 class Handle_AIS_Chamf2dDimension : public Handle_AIS_Relation {
@@ -799,6 +820,7 @@ class Handle_AIS_Chamf2dDimension : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_ExclusionFilter;
 class Handle_AIS_ExclusionFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -823,6 +845,7 @@ class Handle_AIS_ExclusionFilter : public Handle_SelectMgr_Filter {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ExclusionFilter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_PerpendicularRelation;
 class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
@@ -849,6 +872,7 @@ class Handle_AIS_PerpendicularRelation : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_AttributeFilter;
 class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -873,6 +897,7 @@ class Handle_AIS_AttributeFilter : public Handle_SelectMgr_Filter {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_AttributeFilter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_EqualRadiusRelation;
 class Handle_AIS_EqualRadiusRelation : public Handle_AIS_Relation {
@@ -899,6 +924,7 @@ class Handle_AIS_EqualRadiusRelation : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_GlobalStatus;
 class Handle_AIS_GlobalStatus : public Handle_MMgt_TShared {
 	public:
@@ -923,6 +949,7 @@ class Handle_AIS_GlobalStatus : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_GlobalStatus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_DimensionOwner;
 class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
@@ -949,6 +976,7 @@ class Handle_AIS_DimensionOwner : public Handle_SelectMgr_EntityOwner {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_BadEdgeFilter;
 class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -973,6 +1001,7 @@ class Handle_AIS_BadEdgeFilter : public Handle_SelectMgr_Filter {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_BadEdgeFilter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_TypeFilter;
 class Handle_AIS_TypeFilter : public Handle_SelectMgr_Filter {
@@ -999,6 +1028,7 @@ class Handle_AIS_TypeFilter : public Handle_SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_SignatureFilter;
 class Handle_AIS_SignatureFilter : public Handle_AIS_TypeFilter {
 	public:
@@ -1023,6 +1053,7 @@ class Handle_AIS_SignatureFilter : public Handle_AIS_TypeFilter {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SignatureFilter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_InteractiveContext;
 class Handle_AIS_InteractiveContext : public Handle_MMgt_TShared {
@@ -1049,6 +1080,7 @@ class Handle_AIS_InteractiveContext : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_OffsetDimension;
 class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 	public:
@@ -1073,6 +1105,7 @@ class Handle_AIS_OffsetDimension : public Handle_AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_OffsetDimension\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_Axis;
 class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
@@ -1099,6 +1132,7 @@ class Handle_AIS_Axis : public Handle_AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_C0RegularityFilter;
 class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 	public:
@@ -1123,6 +1157,7 @@ class Handle_AIS_C0RegularityFilter : public Handle_SelectMgr_Filter {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_C0RegularityFilter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_Plane;
 class Handle_AIS_Plane : public Handle_AIS_InteractiveObject {
@@ -1149,6 +1184,7 @@ class Handle_AIS_Plane : public Handle_AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_Point;
 class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 	public:
@@ -1173,6 +1209,7 @@ class Handle_AIS_Point : public Handle_AIS_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Point\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_MaxRadiusDimension;
 class Handle_AIS_MaxRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
@@ -1199,6 +1236,7 @@ class Handle_AIS_MaxRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_LocalStatus;
 class Handle_AIS_LocalStatus : public Handle_MMgt_TShared {
 	public:
@@ -1223,6 +1261,7 @@ class Handle_AIS_LocalStatus : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_LocalStatus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_Drawer;
 class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
@@ -1249,6 +1288,7 @@ class Handle_AIS_Drawer : public Handle_Prs3d_Drawer {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_LocalContext;
 class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 	public:
@@ -1273,6 +1313,7 @@ class Handle_AIS_LocalContext : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_LocalContext\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_MinRadiusDimension;
 class Handle_AIS_MinRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
@@ -1299,6 +1340,7 @@ class Handle_AIS_MinRadiusDimension : public Handle_AIS_EllipseRadiusDimension {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_StdMapNodeOfMapOfInteractive;
 class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNode {
 	public:
@@ -1323,6 +1365,7 @@ class Handle_AIS_StdMapNodeOfMapOfInteractive : public Handle_TCollection_MapNod
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_StdMapNodeOfMapOfInteractive\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_Circle;
 class Handle_AIS_Circle : public Handle_AIS_InteractiveObject {
@@ -1349,6 +1392,7 @@ class Handle_AIS_Circle : public Handle_AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_Shape;
 class Handle_AIS_Shape : public Handle_AIS_InteractiveObject {
 	public:
@@ -1373,6 +1417,7 @@ class Handle_AIS_Shape : public Handle_AIS_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Shape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_TexturedShape;
 class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
@@ -1399,6 +1444,7 @@ class Handle_AIS_TexturedShape : public Handle_AIS_Shape {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfInteractive;
 class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection_SeqNode {
 	public:
@@ -1423,6 +1469,7 @@ class Handle_AIS_SequenceNodeOfSequenceOfInteractive : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SequenceNodeOfSequenceOfInteractive\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_SequenceNodeOfSequenceOfDimension;
 class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_SeqNode {
@@ -1449,6 +1496,7 @@ class Handle_AIS_SequenceNodeOfSequenceOfDimension : public Handle_TCollection_S
 	}
 };
 
+
 %nodefaultctor Handle_AIS_SymmetricRelation;
 class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
 	public:
@@ -1473,6 +1521,7 @@ class Handle_AIS_SymmetricRelation : public Handle_AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_SymmetricRelation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfTransientTransient;
 class Handle_AIS_DataMapNodeOfDataMapOfTransientTransient : public Handle_TCollection_MapNode {
@@ -1499,6 +1548,7 @@ class Handle_AIS_DataMapNodeOfDataMapOfTransientTransient : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_AIS_Selection;
 class Handle_AIS_Selection : public Handle_MMgt_TShared {
 	public:
@@ -1523,6 +1573,7 @@ class Handle_AIS_Selection : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Selection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
 class Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TCollection_MapNode {
@@ -1549,6 +1600,7 @@ class Handle_AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapOfSelStat;
 class Handle_AIS_DataMapNodeOfDataMapOfSelStat : public Handle_TCollection_MapNode {
 	public:
@@ -1573,6 +1625,7 @@ class Handle_AIS_DataMapNodeOfDataMapOfSelStat : public Handle_TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_DataMapNodeOfDataMapOfSelStat\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_IdenticRelation;
 class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
@@ -1599,6 +1652,7 @@ class Handle_AIS_IdenticRelation : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_ListNodeOfListOfInteractive;
 class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode {
 	public:
@@ -1623,6 +1677,7 @@ class Handle_AIS_ListNodeOfListOfInteractive : public Handle_TCollection_MapNode
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_ListNodeOfListOfInteractive\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_AngleDimension;
 class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
@@ -1649,6 +1704,7 @@ class Handle_AIS_AngleDimension : public Handle_AIS_Relation {
 	}
 };
 
+
 %nodefaultctor Handle_AIS_PlaneTrihedron;
 class Handle_AIS_PlaneTrihedron : public Handle_AIS_InteractiveObject {
 	public:
@@ -1673,6 +1729,7 @@ class Handle_AIS_PlaneTrihedron : public Handle_AIS_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_PlaneTrihedron\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
 class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_TCollection_MapNode {
@@ -1699,6 +1756,7 @@ class Handle_AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public Handle_
 	}
 };
 
+
 %nodefaultctor Handle_AIS_Chamf3dDimension;
 class Handle_AIS_Chamf3dDimension : public Handle_AIS_Relation {
 	public:
@@ -1723,6 +1781,7 @@ class Handle_AIS_Chamf3dDimension : public Handle_AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of Handle_AIS_Chamf3dDimension\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Drawer;
 class AIS_Drawer : public Prs3d_Drawer {
@@ -1880,6 +1939,7 @@ class AIS_Drawer : public Prs3d_Drawer {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfTransientTransient;
 class AIS_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_BasicMapIterator {
 	public:
@@ -1901,6 +1961,7 @@ class AIS_DataMapIteratorOfDataMapOfTransientTransient : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfTransientTransient\n");}
 	}
 };
+
 
 %nodefaultctor AIS_InteractiveObject;
 class AIS_InteractiveObject : public SelectMgr_SelectableObject {
@@ -2072,6 +2133,7 @@ class AIS_InteractiveObject : public SelectMgr_SelectableObject {
 	}
 };
 
+
 %nodefaultctor AIS_Relation;
 class AIS_Relation : public AIS_InteractiveObject {
 	public:
@@ -2142,6 +2204,7 @@ class AIS_Relation : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_DiameterDimension;
 class AIS_DiameterDimension : public AIS_Relation {
 	public:
@@ -2174,6 +2237,7 @@ class AIS_DiameterDimension : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_EllipseRadiusDimension;
 class AIS_EllipseRadiusDimension : public AIS_Relation {
 	public:
@@ -2204,6 +2268,7 @@ class AIS_EllipseRadiusDimension : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapNodeOfDataMapOfSelStat;
 class AIS_DataMapNodeOfDataMapOfSelStat : public TCollection_MapNode {
 	public:
@@ -2233,6 +2298,7 @@ class AIS_DataMapNodeOfDataMapOfSelStat : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfSelStat\n");}
 	}
 };
+
 
 %nodefaultctor AIS_DataMapOfSelStat;
 class AIS_DataMapOfSelStat : public TCollection_BasicMap {
@@ -2267,6 +2333,7 @@ class AIS_DataMapOfSelStat : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfSelStat\n");}
 	}
 };
+
 
 %nodefaultctor AIS_ExclusionFilter;
 class AIS_ExclusionFilter : public SelectMgr_Filter {
@@ -2319,6 +2386,7 @@ class AIS_ExclusionFilter : public SelectMgr_Filter {
 	if (__env){printf("## Call custom destructor for instance of AIS_ExclusionFilter\n");}
 	}
 };
+
 
 %nodefaultctor AIS_SequenceOfDimension;
 class AIS_SequenceOfDimension : public TCollection_BaseSequence {
@@ -2374,6 +2442,7 @@ class AIS_SequenceOfDimension : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs;
 class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapNode {
 	public:
@@ -2407,6 +2476,7 @@ class AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of AIS_IndexedDataMapNodeOfIndexedDataMapOfOwnerPrs\n");}
 	}
 };
+
 
 %nodefaultctor AIS_SequenceOfInteractive;
 class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
@@ -2462,6 +2532,7 @@ class AIS_SequenceOfInteractive : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor AIS_Line;
 class AIS_Line : public AIS_InteractiveObject {
 	public:
@@ -2514,6 +2585,7 @@ class AIS_Line : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_AttributeFilter;
 class AIS_AttributeFilter : public SelectMgr_Filter {
 	public:
@@ -2557,6 +2629,7 @@ class AIS_AttributeFilter : public SelectMgr_Filter {
 	if (__env){printf("## Call custom destructor for instance of AIS_AttributeFilter\n");}
 	}
 };
+
 
 %nodefaultctor AIS_ConnectedInteractive;
 class AIS_ConnectedInteractive : public AIS_InteractiveObject {
@@ -2610,6 +2683,7 @@ class AIS_ConnectedInteractive : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfILC;
 class AIS_DataMapIteratorOfDataMapOfILC : public TCollection_BasicMapIterator {
 	public:
@@ -2631,6 +2705,7 @@ class AIS_DataMapIteratorOfDataMapOfILC : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfILC\n");}
 	}
 };
+
 
 %nodefaultctor AIS_DataMapNodeOfDataMapOfTransientTransient;
 class AIS_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode {
@@ -2661,6 +2736,7 @@ class AIS_DataMapNodeOfDataMapOfTransientTransient : public TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapOfTransientTransient\n");}
 	}
 };
+
 
 %nodefaultctor AIS_BadEdgeFilter;
 class AIS_BadEdgeFilter : public SelectMgr_Filter {
@@ -2698,6 +2774,7 @@ class AIS_BadEdgeFilter : public SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapOfIOStatus;
 class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 	public:
@@ -2732,6 +2809,7 @@ class AIS_DataMapOfIOStatus : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor AIS_TypeFilter;
 class AIS_TypeFilter : public SelectMgr_Filter {
 	public:
@@ -2760,6 +2838,7 @@ class AIS_TypeFilter : public SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor AIS_SignatureFilter;
 class AIS_SignatureFilter : public AIS_TypeFilter {
 	public:
@@ -2783,6 +2862,7 @@ class AIS_SignatureFilter : public AIS_TypeFilter {
 	if (__env){printf("## Call custom destructor for instance of AIS_SignatureFilter\n");}
 	}
 };
+
 
 %nodefaultctor AIS_OffsetDimension;
 class AIS_OffsetDimension : public AIS_Relation {
@@ -2817,6 +2897,7 @@ class AIS_OffsetDimension : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_OffsetDimension\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Axis;
 class AIS_Axis : public AIS_InteractiveObject {
@@ -2881,6 +2962,7 @@ class AIS_Axis : public AIS_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of AIS_Axis\n");}
 	}
 };
+
 
 %nodefaultctor AIS_LocalStatus;
 class AIS_LocalStatus : public MMgt_TShared {
@@ -2954,6 +3036,7 @@ class AIS_LocalStatus : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AIS_FixRelation;
 class AIS_FixRelation : public AIS_Relation {
 	public:
@@ -2994,6 +3077,7 @@ class AIS_FixRelation : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfSelStat;
 class AIS_DataMapIteratorOfDataMapOfSelStat : public TCollection_BasicMapIterator {
 	public:
@@ -3015,6 +3099,7 @@ class AIS_DataMapIteratorOfDataMapOfSelStat : public TCollection_BasicMapIterato
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfSelStat\n");}
 	}
 };
+
 
 %nodefaultctor AIS_ListOfInteractive;
 class AIS_ListOfInteractive {
@@ -3066,6 +3151,7 @@ class AIS_ListOfInteractive {
 	}
 };
 
+
 %nodefaultctor AIS_PerpendicularRelation;
 class AIS_PerpendicularRelation : public AIS_Relation {
 	public:
@@ -3095,6 +3181,7 @@ class AIS_PerpendicularRelation : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_PerpendicularRelation\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Chamf3dDimension;
 class AIS_Chamf3dDimension : public AIS_Relation {
@@ -3129,6 +3216,7 @@ class AIS_Chamf3dDimension : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_Chamf3dDimension\n");}
 	}
 };
+
 
 %nodefaultctor AIS_MultipleConnectedInteractive;
 class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
@@ -3175,6 +3263,7 @@ class AIS_MultipleConnectedInteractive : public AIS_InteractiveObject {
 	if (__env){printf("## Call custom destructor for instance of AIS_MultipleConnectedInteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Trihedron;
 class AIS_Trihedron : public AIS_InteractiveObject {
@@ -3260,6 +3349,7 @@ class AIS_Trihedron : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_MidPointRelation;
 class AIS_MidPointRelation : public AIS_Relation {
 	public:
@@ -3293,6 +3383,7 @@ class AIS_MidPointRelation : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_MidPointRelation\n");}
 	}
 };
+
 
 %nodefaultctor AIS_IndexedDataMapOfOwnerPrs;
 class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
@@ -3337,6 +3428,7 @@ class AIS_IndexedDataMapOfOwnerPrs : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of AIS_IndexedDataMapOfOwnerPrs\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Point;
 class AIS_Point : public AIS_InteractiveObject {
@@ -3390,6 +3482,7 @@ class AIS_Point : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapIteratorOfDataMapOfIOStatus;
 class AIS_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterator {
 	public:
@@ -3411,6 +3504,7 @@ class AIS_DataMapIteratorOfDataMapOfIOStatus : public TCollection_BasicMapIterat
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapOfIOStatus\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Shape;
 class AIS_Shape : public AIS_InteractiveObject {
@@ -3514,6 +3608,7 @@ class AIS_Shape : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_TexturedShape;
 class AIS_TexturedShape : public AIS_Shape {
 	public:
@@ -3586,6 +3681,7 @@ class AIS_TexturedShape : public AIS_Shape {
 	}
 };
 
+
 %nodefaultctor AIS;
 class AIS {
 	public:
@@ -3644,6 +3740,7 @@ class AIS {
 	}
 };
 
+
 %nodefaultctor AIS_ParallelRelation;
 class AIS_ParallelRelation : public AIS_Relation {
 	public:
@@ -3676,6 +3773,7 @@ class AIS_ParallelRelation : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_C0RegularityFilter;
 class AIS_C0RegularityFilter : public SelectMgr_Filter {
 	public:
@@ -3705,6 +3803,7 @@ class AIS_C0RegularityFilter : public SelectMgr_Filter {
 	if (__env){printf("## Call custom destructor for instance of AIS_C0RegularityFilter\n");}
 	}
 };
+
 
 %nodefaultctor AIS_GraphicTool;
 class AIS_GraphicTool {
@@ -3736,6 +3835,7 @@ class AIS_GraphicTool {
 	}
 };
 
+
 %nodefaultctor AIS_ListNodeOfListOfInteractive;
 class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 	public:
@@ -3763,6 +3863,7 @@ class AIS_ListNodeOfListOfInteractive : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of AIS_ListNodeOfListOfInteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_DataMapNodeOfDataMapOfIOStatus;
 class AIS_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
@@ -3794,6 +3895,7 @@ class AIS_DataMapNodeOfDataMapOfIOStatus : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor AIS_DimensionOwner;
 class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 	public:
@@ -3823,6 +3925,7 @@ class AIS_DimensionOwner : public SelectMgr_EntityOwner {
 	if (__env){printf("## Call custom destructor for instance of AIS_DimensionOwner\n");}
 	}
 };
+
 
 %nodefaultctor AIS_PlaneTrihedron;
 class AIS_PlaneTrihedron : public AIS_InteractiveObject {
@@ -3880,6 +3983,7 @@ class AIS_PlaneTrihedron : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapNodeOfDataMapOfILC;
 class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
 	public:
@@ -3910,6 +4014,7 @@ class AIS_DataMapNodeOfDataMapOfILC : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor AIS_MapOfInteractive;
 class AIS_MapOfInteractive : public TCollection_BasicMap {
 	public:
@@ -3935,6 +4040,7 @@ class AIS_MapOfInteractive : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of AIS_MapOfInteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_LocalContext;
 class AIS_LocalContext : public MMgt_TShared {
@@ -4154,6 +4260,7 @@ class AIS_LocalContext : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AIS_ListIteratorOfListOfInteractive;
 class AIS_ListIteratorOfListOfInteractive {
 	public:
@@ -4177,6 +4284,7 @@ class AIS_ListIteratorOfListOfInteractive {
 	if (__env){printf("## Call custom destructor for instance of AIS_ListIteratorOfListOfInteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_ConcentricRelation;
 class AIS_ConcentricRelation : public AIS_Relation {
@@ -4205,6 +4313,7 @@ class AIS_ConcentricRelation : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_ConcentricRelation\n");}
 	}
 };
+
 
 %nodefaultctor AIS_IdenticRelation;
 class AIS_IdenticRelation : public AIS_Relation {
@@ -4235,6 +4344,7 @@ class AIS_IdenticRelation : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_IdenticRelation\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Selection;
 class AIS_Selection : public MMgt_TShared {
@@ -4301,6 +4411,7 @@ class AIS_Selection : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of AIS_Selection\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Plane;
 class AIS_Plane : public AIS_InteractiveObject {
@@ -4386,6 +4497,7 @@ class AIS_Plane : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_StdMapNodeOfMapOfInteractive;
 class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 	public:
@@ -4414,6 +4526,7 @@ class AIS_StdMapNodeOfMapOfInteractive : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor AIS_SequenceNodeOfSequenceOfInteractive;
 class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 	public:
@@ -4441,6 +4554,7 @@ class AIS_SequenceNodeOfSequenceOfInteractive : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of AIS_SequenceNodeOfSequenceOfInteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_Circle;
 class AIS_Circle : public AIS_InteractiveObject {
@@ -4496,6 +4610,7 @@ class AIS_Circle : public AIS_InteractiveObject {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapofIntegerListOfinteractive;
 class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 	public:
@@ -4529,6 +4644,7 @@ class AIS_DataMapofIntegerListOfinteractive : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapofIntegerListOfinteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_SymmetricRelation;
 class AIS_SymmetricRelation : public AIS_Relation {
@@ -4564,6 +4680,7 @@ class AIS_SymmetricRelation : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_Chamf2dDimension;
 class AIS_Chamf2dDimension : public AIS_Relation {
 	public:
@@ -4597,6 +4714,7 @@ class AIS_Chamf2dDimension : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_Chamf2dDimension\n");}
 	}
 };
+
 
 %nodefaultctor AIS_GlobalStatus;
 class AIS_GlobalStatus : public MMgt_TShared {
@@ -4664,6 +4782,7 @@ class AIS_GlobalStatus : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive;
 class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollection_BasicMapIterator {
 	public:
@@ -4685,6 +4804,7 @@ class AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive : public TCollectio
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapIteratorOfDataMapofIntegerListOfinteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_InteractiveContext;
 class AIS_InteractiveContext : public MMgt_TShared {
@@ -5194,6 +5314,7 @@ class AIS_InteractiveContext : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AIS_MultipleConnectedShape;
 class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 	public:
@@ -5232,6 +5353,7 @@ class AIS_MultipleConnectedShape : public AIS_MultipleConnectedInteractive {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapNodeOfDataMapofIntegerListOfinteractive;
 class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_MapNode {
 	public:
@@ -5261,6 +5383,7 @@ class AIS_DataMapNodeOfDataMapofIntegerListOfinteractive : public TCollection_Ma
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapNodeOfDataMapofIntegerListOfinteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_AngleDimension;
 class AIS_AngleDimension : public AIS_Relation {
@@ -5318,6 +5441,7 @@ class AIS_AngleDimension : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_DataMapOfTransientTransient;
 class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
 	public:
@@ -5351,6 +5475,7 @@ class AIS_DataMapOfTransientTransient : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of AIS_DataMapOfTransientTransient\n");}
 	}
 };
+
 
 %nodefaultctor AIS_DataMapOfILC;
 class AIS_DataMapOfILC : public TCollection_BasicMap {
@@ -5386,6 +5511,7 @@ class AIS_DataMapOfILC : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor AIS_TangentRelation;
 class AIS_TangentRelation : public AIS_Relation {
 	public:
@@ -5418,6 +5544,7 @@ class AIS_TangentRelation : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_EqualRadiusRelation;
 class AIS_EqualRadiusRelation : public AIS_Relation {
 	public:
@@ -5445,6 +5572,7 @@ class AIS_EqualRadiusRelation : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_EqualRadiusRelation\n");}
 	}
 };
+
 
 %nodefaultctor AIS_RadiusDimension;
 class AIS_RadiusDimension : public AIS_Relation {
@@ -5486,6 +5614,7 @@ class AIS_RadiusDimension : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_MapIteratorOfMapOfInteractive;
 class AIS_MapIteratorOfMapOfInteractive : public TCollection_BasicMapIterator {
 	public:
@@ -5505,6 +5634,7 @@ class AIS_MapIteratorOfMapOfInteractive : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of AIS_MapIteratorOfMapOfInteractive\n");}
 	}
 };
+
 
 %nodefaultctor AIS_EqualDistanceRelation;
 class AIS_EqualDistanceRelation : public AIS_Relation {
@@ -5547,6 +5677,7 @@ class AIS_EqualDistanceRelation : public AIS_Relation {
 	if (__env){printf("## Call custom destructor for instance of AIS_EqualDistanceRelation\n");}
 	}
 };
+
 
 %nodefaultctor AIS_ConnectedShape;
 class AIS_ConnectedShape : public AIS_ConnectedInteractive {
@@ -5594,6 +5725,7 @@ class AIS_ConnectedShape : public AIS_ConnectedInteractive {
 	}
 };
 
+
 %nodefaultctor AIS_MaxRadiusDimension;
 class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
 	public:
@@ -5623,6 +5755,7 @@ class AIS_MaxRadiusDimension : public AIS_EllipseRadiusDimension {
 	if (__env){printf("## Call custom destructor for instance of AIS_MaxRadiusDimension\n");}
 	}
 };
+
 
 %nodefaultctor AIS_LengthDimension;
 class AIS_LengthDimension : public AIS_Relation {
@@ -5678,6 +5811,7 @@ class AIS_LengthDimension : public AIS_Relation {
 	}
 };
 
+
 %nodefaultctor AIS_MinRadiusDimension;
 class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
 	public:
@@ -5707,6 +5841,7 @@ class AIS_MinRadiusDimension : public AIS_EllipseRadiusDimension {
 	if (__env){printf("## Call custom destructor for instance of AIS_MinRadiusDimension\n");}
 	}
 };
+
 
 %nodefaultctor AIS_SequenceNodeOfSequenceOfDimension;
 class AIS_SequenceNodeOfSequenceOfDimension : public TCollection_SeqNode {

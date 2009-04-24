@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PColgp_HArray2OfVec : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray1OfCirc2d;
 class Handle_PColgp_HArray1OfCirc2d : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PColgp_HArray1OfCirc2d : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public Handle_PStandard_ArrayNode {
@@ -188,6 +191,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public Handle_PStandard_
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray1OfVec;
 class Handle_PColgp_HArray1OfVec : public Handle_Standard_Persistent {
 	public:
@@ -212,6 +216,7 @@ class Handle_PColgp_HArray1OfVec : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfVec\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray1OfDir;
 class Handle_PColgp_HArray1OfDir : public Handle_Standard_Persistent {
@@ -238,6 +243,7 @@ class Handle_PColgp_HArray1OfDir : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec : public Handle_PStandard_ArrayNode {
 	public:
@@ -262,6 +268,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec : public Handle_PStandard_Ar
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray2OfDir;
 class Handle_PColgp_HArray2OfDir : public Handle_Standard_Persistent {
@@ -288,6 +295,7 @@ class Handle_PColgp_HArray2OfDir : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray1OfXY;
 class Handle_PColgp_HArray1OfXY : public Handle_Standard_Persistent {
 	public:
@@ -312,6 +320,7 @@ class Handle_PColgp_HArray1OfXY : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfXY\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public Handle_PStandard_ArrayNode {
@@ -338,6 +347,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public Handle_PStandard_
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray1OfDir2d;
 class Handle_PColgp_HArray1OfDir2d : public Handle_Standard_Persistent {
 	public:
@@ -362,6 +372,7 @@ class Handle_PColgp_HArray1OfDir2d : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir : public Handle_PStandard_ArrayNode {
@@ -388,6 +399,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir : public Handle_PStandard_Ar
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfVec;
 class Handle_PColgp_SeqNodeOfHSequenceOfVec : public Handle_PMMgt_PManaged {
 	public:
@@ -412,6 +424,7 @@ class Handle_PColgp_SeqNodeOfHSequenceOfVec : public Handle_PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_SeqNodeOfHSequenceOfVec\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfXYZ;
 class Handle_PColgp_SeqNodeOfHSequenceOfXYZ : public Handle_PMMgt_PManaged {
@@ -438,6 +451,7 @@ class Handle_PColgp_SeqNodeOfHSequenceOfXYZ : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HSequenceOfXYZ;
 class Handle_PColgp_HSequenceOfXYZ : public Handle_Standard_Persistent {
 	public:
@@ -462,6 +476,7 @@ class Handle_PColgp_HSequenceOfXYZ : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HSequenceOfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir : public Handle_PStandard_ArrayNode {
@@ -488,6 +503,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir : public Handle_PStandard_Ar
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray1OfLin2d;
 class Handle_PColgp_HArray1OfLin2d : public Handle_Standard_Persistent {
 	public:
@@ -512,6 +528,7 @@ class Handle_PColgp_HArray1OfLin2d : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfLin2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray1OfVec2d;
 class Handle_PColgp_HArray1OfVec2d : public Handle_Standard_Persistent {
@@ -538,6 +555,7 @@ class Handle_PColgp_HArray1OfVec2d : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfDir;
 class Handle_PColgp_SeqNodeOfHSequenceOfDir : public Handle_PMMgt_PManaged {
 	public:
@@ -562,6 +580,7 @@ class Handle_PColgp_SeqNodeOfHSequenceOfDir : public Handle_PMMgt_PManaged {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_SeqNodeOfHSequenceOfDir\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public Handle_PStandard_ArrayNode {
@@ -588,6 +607,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public Handle_PStandard_
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public Handle_PStandard_ArrayNode {
 	public:
@@ -612,6 +632,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public Handle_PStandard_Ar
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfPnt\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HSequenceOfVec;
 class Handle_PColgp_HSequenceOfVec : public Handle_Standard_Persistent {
@@ -638,6 +659,7 @@ class Handle_PColgp_HSequenceOfVec : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public Handle_PStandard_ArrayNode {
 	public:
@@ -662,6 +684,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public Handle_PStandard_Ar
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfPnt\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public Handle_PStandard_ArrayNode {
@@ -688,6 +711,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public Handle_PStandard_Ar
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HSequenceOfDir;
 class Handle_PColgp_HSequenceOfDir : public Handle_Standard_Persistent {
 	public:
@@ -712,6 +736,7 @@ class Handle_PColgp_HSequenceOfDir : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HSequenceOfDir\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray2OfXYZ;
 class Handle_PColgp_HArray2OfXYZ : public Handle_Standard_Persistent {
@@ -738,6 +763,7 @@ class Handle_PColgp_HArray2OfXYZ : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public Handle_PStandard_ArrayNode {
 	public:
@@ -762,6 +788,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public Handle_PStandard
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public Handle_PStandard_ArrayNode {
@@ -788,6 +815,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public Handle_PStandard_
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public Handle_PStandard_ArrayNode {
 	public:
@@ -812,6 +840,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public Handle_PStandard_Ar
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray2OfPnt2d;
 class Handle_PColgp_HArray2OfPnt2d : public Handle_Standard_Persistent {
@@ -838,6 +867,7 @@ class Handle_PColgp_HArray2OfPnt2d : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public Handle_PStandard_ArrayNode {
 	public:
@@ -862,6 +892,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public Handle_PStandard
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray1OfPnt2d;
 class Handle_PColgp_HArray1OfPnt2d : public Handle_Standard_Persistent {
@@ -888,6 +919,7 @@ class Handle_PColgp_HArray1OfPnt2d : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray2OfXY;
 class Handle_PColgp_HArray2OfXY : public Handle_Standard_Persistent {
 	public:
@@ -912,6 +944,7 @@ class Handle_PColgp_HArray2OfXY : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray2OfXY\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_SeqNodeOfHSequenceOfPnt;
 class Handle_PColgp_SeqNodeOfHSequenceOfPnt : public Handle_PMMgt_PManaged {
@@ -938,6 +971,7 @@ class Handle_PColgp_SeqNodeOfHSequenceOfPnt : public Handle_PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public Handle_PStandard_ArrayNode {
 	public:
@@ -962,6 +996,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public Handle_PStandard_
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public Handle_PStandard_ArrayNode {
@@ -988,6 +1023,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public Handle_PStandard_
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray2OfCirc2d;
 class Handle_PColgp_HArray2OfCirc2d : public Handle_Standard_Persistent {
 	public:
@@ -1012,6 +1048,7 @@ class Handle_PColgp_HArray2OfCirc2d : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray2OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray2OfPnt;
 class Handle_PColgp_HArray2OfPnt : public Handle_Standard_Persistent {
@@ -1038,6 +1075,7 @@ class Handle_PColgp_HArray2OfPnt : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray1OfXYZ;
 class Handle_PColgp_HArray1OfXYZ : public Handle_Standard_Persistent {
 	public:
@@ -1062,6 +1100,7 @@ class Handle_PColgp_HArray1OfXYZ : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray1OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HSequenceOfPnt;
 class Handle_PColgp_HSequenceOfPnt : public Handle_Standard_Persistent {
@@ -1088,6 +1127,7 @@ class Handle_PColgp_HSequenceOfPnt : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_ArrayNode {
 	public:
@@ -1112,6 +1152,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public Handle_PStandard_
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray2OfLin2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray1OfPnt;
 class Handle_PColgp_HArray1OfPnt : public Handle_Standard_Persistent {
@@ -1138,6 +1179,7 @@ class Handle_PColgp_HArray1OfPnt : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray2OfDir2d;
 class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
 	public:
@@ -1162,6 +1204,7 @@ class Handle_PColgp_HArray2OfDir2d : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_HArray2OfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY : public Handle_PStandard_ArrayNode {
@@ -1188,6 +1231,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfXY : public Handle_PStandard_Arr
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public Handle_PStandard_ArrayNode {
 	public:
@@ -1212,6 +1256,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public Handle_PStandard_
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_HArray2OfLin2d;
 class Handle_PColgp_HArray2OfLin2d : public Handle_Standard_Persistent {
@@ -1238,6 +1283,7 @@ class Handle_PColgp_HArray2OfLin2d : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec : public Handle_PStandard_ArrayNode {
 	public:
@@ -1262,6 +1308,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec : public Handle_PStandard_Ar
 	if (__env){printf("## Call custom destructor for instance of Handle_PColgp_VArrayNodeOfFieldOfHArray1OfVec\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY;
 class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY : public Handle_PStandard_ArrayNode {
@@ -1288,6 +1335,7 @@ class Handle_PColgp_VArrayNodeOfFieldOfHArray2OfXY : public Handle_PStandard_Arr
 	}
 };
 
+
 %nodefaultctor Handle_PColgp_HArray2OfVec2d;
 class Handle_PColgp_HArray2OfVec2d : public Handle_Standard_Persistent {
 	public:
@@ -1313,6 +1361,7 @@ class Handle_PColgp_HArray2OfVec2d : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray1OfXY;
 class PColgp_HArray1OfXY : public Standard_Persistent {
 	public:
@@ -1333,7 +1382,12 @@ class PColgp_HArray1OfXY : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfXY();
 		%feature("autodoc", "1");
@@ -1369,6 +1423,7 @@ class PColgp_HArray1OfXY : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
 	public:
@@ -1388,6 +1443,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfLin2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfDir2d;
 class PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public PStandard_ArrayNode {
@@ -1425,6 +1481,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir2d : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray1OfVec;
 class PColgp_HArray1OfVec : public Standard_Persistent {
 	public:
@@ -1445,7 +1502,12 @@ class PColgp_HArray1OfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfVec();
 		%feature("autodoc", "1");
@@ -1481,6 +1543,7 @@ class PColgp_HArray1OfVec : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d {
 	public:
@@ -1500,6 +1563,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HArray2OfVec;
 class PColgp_HArray2OfVec : public Standard_Persistent {
@@ -1527,7 +1591,12 @@ class PColgp_HArray2OfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfVec();
 		%feature("autodoc", "1");
@@ -1570,6 +1639,7 @@ class PColgp_HArray2OfVec : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfVec\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfDir;
 class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
@@ -1627,6 +1697,7 @@ class PColgp_SeqNodeOfHSequenceOfDir : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfPnt;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
 	public:
@@ -1647,6 +1718,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
 	public:
@@ -1666,6 +1738,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HArray2OfVec2d;
 class PColgp_HArray2OfVec2d : public Standard_Persistent {
@@ -1693,7 +1766,12 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfVec2d();
 		%feature("autodoc", "1");
@@ -1737,6 +1815,7 @@ class PColgp_HArray2OfVec2d : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfXYZ;
 class PColgp_SeqExplorerOfHSequenceOfXYZ {
 	public:
@@ -1758,6 +1837,7 @@ class PColgp_SeqExplorerOfHSequenceOfXYZ {
 	if (__env){printf("## Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfLin2d;
 class PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public PStandard_ArrayNode {
@@ -1795,6 +1875,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfLin2d : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfXY;
 class PColgp_FieldOfHArray2OfXY : public DBC_BaseArray {
 	public:
@@ -1825,6 +1906,7 @@ class PColgp_FieldOfHArray2OfXY : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray1OfVec;
 class PColgp_FieldOfHArray1OfVec : public DBC_BaseArray {
 	public:
@@ -1854,6 +1936,7 @@ class PColgp_FieldOfHArray1OfVec : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfVec\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfVec;
 class PColgp_VArrayNodeOfFieldOfHArray1OfVec : public PStandard_ArrayNode {
@@ -1891,6 +1974,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray1OfXYZ;
 class PColgp_FieldOfHArray1OfXYZ : public DBC_BaseArray {
 	public:
@@ -1920,6 +2004,7 @@ class PColgp_FieldOfHArray1OfXYZ : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_FieldOfHArray1OfPnt2d;
 class PColgp_FieldOfHArray1OfPnt2d : public DBC_BaseArray {
@@ -1951,6 +2036,7 @@ class PColgp_FieldOfHArray1OfPnt2d : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
 	public:
@@ -1970,6 +2056,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d;
 class PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public PStandard_ArrayNode {
@@ -2007,6 +2094,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfCirc2d : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray2OfLin2d;
 class PColgp_HArray2OfLin2d : public Standard_Persistent {
 	public:
@@ -2033,7 +2121,12 @@ class PColgp_HArray2OfLin2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfLin2d();
 		%feature("autodoc", "1");
@@ -2077,6 +2170,7 @@ class PColgp_HArray2OfLin2d : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfVec;
 class PColgp_FieldOfHArray2OfVec : public DBC_BaseArray {
 	public:
@@ -2107,6 +2201,7 @@ class PColgp_FieldOfHArray2OfVec : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray1OfDir;
 class PColgp_HArray1OfDir : public Standard_Persistent {
 	public:
@@ -2127,7 +2222,12 @@ class PColgp_HArray1OfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfDir();
 		%feature("autodoc", "1");
@@ -2163,6 +2263,7 @@ class PColgp_HArray1OfDir : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfVec;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
 	public:
@@ -2183,6 +2284,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
 	public:
@@ -2202,6 +2304,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfDir2d;
 class PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public PStandard_ArrayNode {
@@ -2239,6 +2342,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir2d : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfDir;
 class PColgp_VArrayNodeOfFieldOfHArray2OfDir : public PStandard_ArrayNode {
 	public:
@@ -2275,6 +2379,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfDir : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray2OfXYZ;
 class PColgp_HArray2OfXYZ : public Standard_Persistent {
 	public:
@@ -2301,7 +2406,12 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfXYZ();
 		%feature("autodoc", "1");
@@ -2345,6 +2455,7 @@ class PColgp_HArray2OfXYZ : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
 	public:
@@ -2364,6 +2475,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HArray2OfPnt2d;
 class PColgp_HArray2OfPnt2d : public Standard_Persistent {
@@ -2391,7 +2503,12 @@ class PColgp_HArray2OfPnt2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfPnt2d();
 		%feature("autodoc", "1");
@@ -2435,6 +2552,7 @@ class PColgp_HArray2OfPnt2d : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfXYZ;
 class PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public PStandard_ArrayNode {
 	public:
@@ -2471,6 +2589,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXYZ : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfXY;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
 	public:
@@ -2490,6 +2609,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfXY {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfXY\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HArray1OfLin2d;
 class PColgp_HArray1OfLin2d : public Standard_Persistent {
@@ -2511,7 +2631,12 @@ class PColgp_HArray1OfLin2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfLin2d();
 		%feature("autodoc", "1");
@@ -2547,6 +2672,7 @@ class PColgp_HArray1OfLin2d : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray1OfPnt;
 class PColgp_HArray1OfPnt : public Standard_Persistent {
 	public:
@@ -2567,7 +2693,12 @@ class PColgp_HArray1OfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfPnt();
 		%feature("autodoc", "1");
@@ -2603,6 +2734,7 @@ class PColgp_HArray1OfPnt : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfPnt;
 class PColgp_FieldOfHArray2OfPnt : public DBC_BaseArray {
 	public:
@@ -2633,6 +2765,7 @@ class PColgp_FieldOfHArray2OfPnt : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray2OfCirc2d;
 class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 	public:
@@ -2659,7 +2792,12 @@ class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfCirc2d();
 		%feature("autodoc", "1");
@@ -2702,6 +2840,7 @@ class PColgp_HArray2OfCirc2d : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PColgp_HArray2OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HSequenceOfDir;
 class PColgp_HSequenceOfDir : public Standard_Persistent {
@@ -2759,7 +2898,12 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -2797,6 +2941,7 @@ class PColgp_HSequenceOfDir : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfVec;
 class PColgp_SeqExplorerOfHSequenceOfVec {
 	public:
@@ -2818,6 +2963,7 @@ class PColgp_SeqExplorerOfHSequenceOfVec {
 	if (__env){printf("## Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfVec\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfXYZ;
 class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
@@ -2875,6 +3021,7 @@ class PColgp_SeqNodeOfHSequenceOfXYZ : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfDir;
 class PColgp_FieldOfHArray2OfDir : public DBC_BaseArray {
 	public:
@@ -2904,6 +3051,7 @@ class PColgp_FieldOfHArray2OfDir : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfDir\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfVec;
 class PColgp_VArrayNodeOfFieldOfHArray2OfVec : public PStandard_ArrayNode {
@@ -2941,6 +3089,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray2OfDir2d;
 class PColgp_HArray2OfDir2d : public Standard_Persistent {
 	public:
@@ -2967,7 +3116,12 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfDir2d();
 		%feature("autodoc", "1");
@@ -3011,6 +3165,7 @@ class PColgp_HArray2OfDir2d : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
 	public:
@@ -3030,6 +3185,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfLin2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HSequenceOfVec;
 class PColgp_HSequenceOfVec : public Standard_Persistent {
@@ -3087,7 +3243,12 @@ class PColgp_HSequenceOfVec : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -3124,6 +3285,7 @@ class PColgp_HSequenceOfVec : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PColgp_HSequenceOfVec\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfPnt;
 class PColgp_SeqNodeOfHSequenceOfPnt : public PMMgt_PManaged {
@@ -3181,6 +3343,7 @@ class PColgp_SeqNodeOfHSequenceOfPnt : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray1OfPnt;
 class PColgp_FieldOfHArray1OfPnt : public DBC_BaseArray {
 	public:
@@ -3211,6 +3374,7 @@ class PColgp_FieldOfHArray1OfPnt : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray2OfPnt;
 class PColgp_HArray2OfPnt : public Standard_Persistent {
 	public:
@@ -3237,7 +3401,12 @@ class PColgp_HArray2OfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfPnt();
 		%feature("autodoc", "1");
@@ -3281,6 +3450,7 @@ class PColgp_HArray2OfPnt : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfDir2d;
 class PColgp_FieldOfHArray2OfDir2d : public DBC_BaseArray {
 	public:
@@ -3311,6 +3481,7 @@ class PColgp_FieldOfHArray2OfDir2d : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray1OfVec2d;
 class PColgp_HArray1OfVec2d : public Standard_Persistent {
 	public:
@@ -3331,7 +3502,12 @@ class PColgp_HArray1OfVec2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfVec2d();
 		%feature("autodoc", "1");
@@ -3366,6 +3542,7 @@ class PColgp_HArray1OfVec2d : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PColgp_HArray1OfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfPnt;
 class PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public PStandard_ArrayNode {
@@ -3403,6 +3580,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfCirc2d;
 class PColgp_FieldOfHArray2OfCirc2d : public DBC_BaseArray {
 	public:
@@ -3433,6 +3611,7 @@ class PColgp_FieldOfHArray2OfCirc2d : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray1OfPnt2d;
 class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 	public:
@@ -3453,7 +3632,12 @@ class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfPnt2d();
 		%feature("autodoc", "1");
@@ -3489,6 +3673,7 @@ class PColgp_HArray1OfPnt2d : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfVec;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
 	public:
@@ -3509,6 +3694,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfVec {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
 	public:
@@ -3528,6 +3714,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HArray2OfXY;
 class PColgp_HArray2OfXY : public Standard_Persistent {
@@ -3555,7 +3742,12 @@ class PColgp_HArray2OfXY : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfXY();
 		%feature("autodoc", "1");
@@ -3599,6 +3791,7 @@ class PColgp_HArray2OfXY : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray1OfXYZ;
 class PColgp_HArray1OfXYZ : public Standard_Persistent {
 	public:
@@ -3619,7 +3812,12 @@ class PColgp_HArray1OfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfXYZ();
 		%feature("autodoc", "1");
@@ -3654,6 +3852,7 @@ class PColgp_HArray1OfXYZ : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PColgp_HArray1OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_SeqNodeOfHSequenceOfVec;
 class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
@@ -3711,6 +3910,7 @@ class PColgp_SeqNodeOfHSequenceOfVec : public PMMgt_PManaged {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfVec2d;
 class PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public PStandard_ArrayNode {
 	public:
@@ -3746,6 +3946,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfVec2d : public PStandard_ArrayNode {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray1OfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfPnt;
 class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
@@ -3783,6 +3984,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfDir;
 class PColgp_SeqExplorerOfHSequenceOfDir {
 	public:
@@ -3805,6 +4007,7 @@ class PColgp_SeqExplorerOfHSequenceOfDir {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfDir;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
 	public:
@@ -3824,6 +4027,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfDir {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfDir\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfXY;
 class PColgp_VArrayNodeOfFieldOfHArray1OfXY : public PStandard_ArrayNode {
@@ -3861,6 +4065,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfXY : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfVec2d;
 class PColgp_FieldOfHArray2OfVec2d : public DBC_BaseArray {
 	public:
@@ -3891,6 +4096,7 @@ class PColgp_FieldOfHArray2OfVec2d : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
 	public:
@@ -3910,6 +4116,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfCirc2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HArray1OfCirc2d;
 class PColgp_HArray1OfCirc2d : public Standard_Persistent {
@@ -3931,7 +4138,12 @@ class PColgp_HArray1OfCirc2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfCirc2d();
 		%feature("autodoc", "1");
@@ -3967,6 +4179,7 @@ class PColgp_HArray1OfCirc2d : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
 	public:
@@ -3986,6 +4199,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfXYZ\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_FieldOfHArray1OfXY;
 class PColgp_FieldOfHArray1OfXY : public DBC_BaseArray {
@@ -4017,6 +4231,7 @@ class PColgp_FieldOfHArray1OfXY : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfPnt2d;
 class PColgp_FieldOfHArray2OfPnt2d : public DBC_BaseArray {
 	public:
@@ -4046,6 +4261,7 @@ class PColgp_FieldOfHArray2OfPnt2d : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_FieldOfHArray2OfXYZ;
 class PColgp_FieldOfHArray2OfXYZ : public DBC_BaseArray {
@@ -4077,6 +4293,7 @@ class PColgp_FieldOfHArray2OfXYZ : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray1OfDir;
 class PColgp_FieldOfHArray1OfDir : public DBC_BaseArray {
 	public:
@@ -4106,6 +4323,7 @@ class PColgp_FieldOfHArray1OfDir : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfDir\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HSequenceOfPnt;
 class PColgp_HSequenceOfPnt : public Standard_Persistent {
@@ -4163,7 +4381,12 @@ class PColgp_HSequenceOfPnt : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -4201,6 +4424,7 @@ class PColgp_HSequenceOfPnt : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d;
 class PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public PStandard_ArrayNode {
 	public:
@@ -4237,6 +4461,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfPnt2d : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray1OfDir2d;
 class PColgp_HArray1OfDir2d : public Standard_Persistent {
 	public:
@@ -4257,7 +4482,12 @@ class PColgp_HArray1OfDir2d : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray1OfDir2d();
 		%feature("autodoc", "1");
@@ -4293,6 +4523,7 @@ class PColgp_HArray1OfDir2d : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray1OfCirc2d;
 class PColgp_FieldOfHArray1OfCirc2d : public DBC_BaseArray {
 	public:
@@ -4323,6 +4554,7 @@ class PColgp_FieldOfHArray1OfCirc2d : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfXY;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
 	public:
@@ -4342,6 +4574,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfXY {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfXY\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfLin2d;
 class PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public PStandard_ArrayNode {
@@ -4379,6 +4612,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfLin2d : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray1OfDir2d;
 class PColgp_FieldOfHArray1OfDir2d : public DBC_BaseArray {
 	public:
@@ -4409,6 +4643,7 @@ class PColgp_FieldOfHArray1OfDir2d : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
 	public:
@@ -4428,6 +4663,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray2OfDir2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXY;
 class PColgp_VArrayNodeOfFieldOfHArray2OfXY : public PStandard_ArrayNode {
@@ -4465,6 +4701,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXY : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray2OfLin2d;
 class PColgp_FieldOfHArray2OfLin2d : public DBC_BaseArray {
 	public:
@@ -4494,6 +4731,7 @@ class PColgp_FieldOfHArray2OfLin2d : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray2OfLin2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_HSequenceOfXYZ;
 class PColgp_HSequenceOfXYZ : public Standard_Persistent {
@@ -4551,7 +4789,12 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		void Destroy();
 		%feature("autodoc", "1");
@@ -4589,6 +4832,7 @@ class PColgp_HSequenceOfXYZ : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfXYZ;
 class PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public PStandard_ArrayNode {
 	public:
@@ -4625,6 +4869,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfXYZ : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray1OfVec2d;
 class PColgp_FieldOfHArray1OfVec2d : public DBC_BaseArray {
 	public:
@@ -4655,6 +4900,7 @@ class PColgp_FieldOfHArray1OfVec2d : public DBC_BaseArray {
 	}
 };
 
+
 %nodefaultctor PColgp_HArray2OfDir;
 class PColgp_HArray2OfDir : public Standard_Persistent {
 	public:
@@ -4681,7 +4927,12 @@ class PColgp_HArray2OfDir : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PColgp_HArray2OfDir();
 		%feature("autodoc", "1");
@@ -4725,6 +4976,7 @@ class PColgp_HArray2OfDir : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PColgp_FieldOfHArray1OfLin2d;
 class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
 	public:
@@ -4754,6 +5006,7 @@ class PColgp_FieldOfHArray1OfLin2d : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PColgp_FieldOfHArray1OfLin2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d;
 class PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public PStandard_ArrayNode {
@@ -4791,6 +5044,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfPnt2d : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_SeqExplorerOfHSequenceOfPnt;
 class PColgp_SeqExplorerOfHSequenceOfPnt {
 	public:
@@ -4812,6 +5066,7 @@ class PColgp_SeqExplorerOfHSequenceOfPnt {
 	if (__env){printf("## Call custom destructor for instance of PColgp_SeqExplorerOfHSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d;
 class PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public PStandard_ArrayNode {
@@ -4849,6 +5104,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfCirc2d : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d {
 	public:
@@ -4869,6 +5125,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfCirc2d {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray1OfPnt;
 class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt {
 	public:
@@ -4888,6 +5145,7 @@ class PColgp_VArrayTNodeOfFieldOfHArray1OfPnt {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayTNodeOfFieldOfHArray1OfPnt\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray1OfDir;
 class PColgp_VArrayNodeOfFieldOfHArray1OfDir : public PStandard_ArrayNode {
@@ -4925,6 +5183,7 @@ class PColgp_VArrayNodeOfFieldOfHArray1OfDir : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PColgp_VArrayNodeOfFieldOfHArray2OfVec2d;
 class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
 	public:
@@ -4960,6 +5219,7 @@ class PColgp_VArrayNodeOfFieldOfHArray2OfVec2d : public PStandard_ArrayNode {
 	if (__env){printf("## Call custom destructor for instance of PColgp_VArrayNodeOfFieldOfHArray2OfVec2d\n");}
 	}
 };
+
 
 %nodefaultctor PColgp_VArrayTNodeOfFieldOfHArray2OfDir;
 class PColgp_VArrayTNodeOfFieldOfHArray2OfDir {

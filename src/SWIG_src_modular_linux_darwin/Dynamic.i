@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -146,6 +147,7 @@ class Handle_Dynamic_DynamicInstance : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_Variable;
 class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 	public:
@@ -170,6 +172,7 @@ class Handle_Dynamic_Variable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Variable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_VariableNode;
 class Handle_Dynamic_VariableNode : public Handle_MMgt_TShared {
@@ -196,6 +199,7 @@ class Handle_Dynamic_VariableNode : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions;
 class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TCollection_SeqNode {
 	public:
@@ -220,6 +224,7 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfClasses;
 class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqNode {
@@ -246,6 +251,7 @@ class Handle_Dynamic_SequenceNodeOfSeqOfClasses : public Handle_TCollection_SeqN
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_ParameterNode;
 class Handle_Dynamic_ParameterNode : public Handle_MMgt_TShared {
 	public:
@@ -270,6 +276,7 @@ class Handle_Dynamic_ParameterNode : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_ParameterNode\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_FuzzyClass;
 class Handle_Dynamic_FuzzyClass : public Handle_MMgt_TShared {
@@ -296,6 +303,7 @@ class Handle_Dynamic_FuzzyClass : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_FuzzyDefinition;
 class Handle_Dynamic_FuzzyDefinition : public Handle_Dynamic_FuzzyClass {
 	public:
@@ -320,6 +328,7 @@ class Handle_Dynamic_FuzzyDefinition : public Handle_Dynamic_FuzzyClass {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_FuzzyDefinition\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_Method;
 class Handle_Dynamic_Method : public Handle_MMgt_TShared {
@@ -346,6 +355,7 @@ class Handle_Dynamic_Method : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_Parameter;
 class Handle_Dynamic_Parameter : public Handle_MMgt_TShared {
 	public:
@@ -370,6 +380,7 @@ class Handle_Dynamic_Parameter : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_Parameter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_RealParameter;
 class Handle_Dynamic_RealParameter : public Handle_Dynamic_Parameter {
@@ -396,6 +407,7 @@ class Handle_Dynamic_RealParameter : public Handle_Dynamic_Parameter {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfMethods;
 class Handle_Dynamic_SequenceNodeOfSeqOfMethods : public Handle_TCollection_SeqNode {
 	public:
@@ -420,6 +432,7 @@ class Handle_Dynamic_SequenceNodeOfSeqOfMethods : public Handle_TCollection_SeqN
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceNodeOfSeqOfMethods\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_MethodDefinition;
 class Handle_Dynamic_MethodDefinition : public Handle_Dynamic_Method {
@@ -446,6 +459,7 @@ class Handle_Dynamic_MethodDefinition : public Handle_Dynamic_Method {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_CompiledMethod;
 class Handle_Dynamic_CompiledMethod : public Handle_Dynamic_MethodDefinition {
 	public:
@@ -470,6 +484,7 @@ class Handle_Dynamic_CompiledMethod : public Handle_Dynamic_MethodDefinition {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompiledMethod\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_InterpretedMethod;
 class Handle_Dynamic_InterpretedMethod : public Handle_Dynamic_MethodDefinition {
@@ -496,6 +511,7 @@ class Handle_Dynamic_InterpretedMethod : public Handle_Dynamic_MethodDefinition 
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_BooleanParameter;
 class Handle_Dynamic_BooleanParameter : public Handle_Dynamic_Parameter {
 	public:
@@ -520,6 +536,7 @@ class Handle_Dynamic_BooleanParameter : public Handle_Dynamic_Parameter {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_BooleanParameter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_SequenceOfFuzzyDefinitions;
 class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
@@ -546,6 +563,7 @@ class Handle_Dynamic_SequenceOfFuzzyDefinitions : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_AbstractVariableInstance;
 class Handle_Dynamic_AbstractVariableInstance : public Handle_Dynamic_Variable {
 	public:
@@ -570,6 +588,7 @@ class Handle_Dynamic_AbstractVariableInstance : public Handle_Dynamic_Variable {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_AbstractVariableInstance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_VariableInstance;
 class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableInstance {
@@ -596,6 +615,7 @@ class Handle_Dynamic_VariableInstance : public Handle_Dynamic_AbstractVariableIn
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_VariableGroup;
 class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 	public:
@@ -620,6 +640,7 @@ class Handle_Dynamic_VariableGroup : public Handle_Dynamic_Variable {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_VariableGroup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_IntegerParameter;
 class Handle_Dynamic_IntegerParameter : public Handle_Dynamic_Parameter {
@@ -646,6 +667,7 @@ class Handle_Dynamic_IntegerParameter : public Handle_Dynamic_Parameter {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_CompositVariableInstance;
 class Handle_Dynamic_CompositVariableInstance : public Handle_Dynamic_AbstractVariableInstance {
 	public:
@@ -670,6 +692,7 @@ class Handle_Dynamic_CompositVariableInstance : public Handle_Dynamic_AbstractVa
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositVariableInstance\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_SequenceOfClasses;
 class Handle_Dynamic_SequenceOfClasses : public Handle_MMgt_TShared {
@@ -696,6 +719,7 @@ class Handle_Dynamic_SequenceOfClasses : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_MethodDefinitionsDictionary;
 class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transient {
 	public:
@@ -720,6 +744,7 @@ class Handle_Dynamic_MethodDefinitionsDictionary : public Handle_Standard_Transi
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_MethodDefinitionsDictionary\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_SequenceOfMethodDefinitions;
 class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
@@ -746,6 +771,7 @@ class Handle_Dynamic_SequenceOfMethodDefinitions : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_SequenceOfMethods;
 class Handle_Dynamic_SequenceOfMethods : public Handle_MMgt_TShared {
 	public:
@@ -770,6 +796,7 @@ class Handle_Dynamic_SequenceOfMethods : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_SequenceOfMethods\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions;
 class Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public Handle_TCollection_SeqNode {
@@ -796,6 +823,7 @@ class Handle_Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_InstanceParameter;
 class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 	public:
@@ -820,6 +848,7 @@ class Handle_Dynamic_InstanceParameter : public Handle_Dynamic_Parameter {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_InstanceParameter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_DynamicClass;
 class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
@@ -846,6 +875,7 @@ class Handle_Dynamic_DynamicClass : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_DynamicDerivedClass;
 class Handle_Dynamic_DynamicDerivedClass : public Handle_Dynamic_DynamicClass {
 	public:
@@ -870,6 +900,7 @@ class Handle_Dynamic_DynamicDerivedClass : public Handle_Dynamic_DynamicClass {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_DynamicDerivedClass\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_StringParameter;
 class Handle_Dynamic_StringParameter : public Handle_Dynamic_Parameter {
@@ -896,6 +927,7 @@ class Handle_Dynamic_StringParameter : public Handle_Dynamic_Parameter {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_CompositMethod;
 class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 	public:
@@ -920,6 +952,7 @@ class Handle_Dynamic_CompositMethod : public Handle_Dynamic_MethodDefinition {
 	if (__env){printf("## Call custom destructor for instance of Handle_Dynamic_CompositMethod\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Dynamic_ObjectParameter;
 class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
@@ -946,6 +979,7 @@ class Handle_Dynamic_ObjectParameter : public Handle_Dynamic_Parameter {
 	}
 };
 
+
 %nodefaultctor Handle_Dynamic_FuzzyDefinitionsDictionary;
 class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
 	public:
@@ -971,6 +1005,7 @@ class Handle_Dynamic_FuzzyDefinitionsDictionary : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_Method;
 class Dynamic_Method : public MMgt_TShared {
 	public:
@@ -987,7 +1022,12 @@ class Dynamic_Method : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean Value(const char * aname, Handle_Dynamic_Variable & avariable) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1009,11 +1049,19 @@ class Dynamic_Method : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_MethodDefinition;
 class Dynamic_MethodDefinition : public Dynamic_Method {
 	public:
 		%feature("autodoc", "1");
 		void AddVariable(const Handle_Dynamic_Parameter &aparameter, const Dynamic_ModeEnum amode, const Standard_Boolean agroup=0);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Dynamic_MethodDefinition {
@@ -1032,6 +1080,7 @@ class Dynamic_MethodDefinition : public Dynamic_Method {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinition\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_InterpretedMethod;
 class Dynamic_InterpretedMethod : public Dynamic_MethodDefinition {
@@ -1062,6 +1111,7 @@ class Dynamic_InterpretedMethod : public Dynamic_MethodDefinition {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_InterpretedMethod\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SeqOfMethodDefinitions;
 class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
@@ -1117,6 +1167,7 @@ class Dynamic_SeqOfMethodDefinitions : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Dynamic_DynamicClass;
 class Dynamic_DynamicClass : public MMgt_TShared {
 	public:
@@ -1133,7 +1184,12 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Handle_Dynamic_DynamicInstance Instance() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1154,6 +1210,7 @@ class Dynamic_DynamicClass : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicClass\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_CompiledMethod;
 class Dynamic_CompiledMethod : public Dynamic_MethodDefinition {
@@ -1185,6 +1242,7 @@ class Dynamic_CompiledMethod : public Dynamic_MethodDefinition {
 	}
 };
 
+
 %nodefaultctor Dynamic_SequenceNodeOfSeqOfClasses;
 class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 	public:
@@ -1213,13 +1271,19 @@ class Dynamic_SequenceNodeOfSeqOfClasses : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Dynamic_Parameter;
 class Dynamic_Parameter : public MMgt_TShared {
 	public:
 		%feature("autodoc", "1");
 		TCollection_AsciiString Name() const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1241,6 +1305,7 @@ class Dynamic_Parameter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_InstanceParameter;
 class Dynamic_InstanceParameter : public Dynamic_Parameter {
 	public:
@@ -1252,6 +1317,13 @@ class Dynamic_InstanceParameter : public Dynamic_Parameter {
 		Handle_Dynamic_DynamicInstance Value() const;
 		%feature("autodoc", "1");
 		void Value(const Handle_Dynamic_DynamicInstance &avalue);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Dynamic_InstanceParameter {
@@ -1270,6 +1342,7 @@ class Dynamic_InstanceParameter : public Dynamic_Parameter {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_InstanceParameter\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SeqOfMethods;
 class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
@@ -1325,6 +1398,7 @@ class Dynamic_SeqOfMethods : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Dynamic_MethodDefinitionsDictionary;
 class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 	public:
@@ -1343,7 +1417,12 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method Definition(const Standard_Integer anindex) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1364,6 +1443,7 @@ class Dynamic_MethodDefinitionsDictionary : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_MethodDefinitionsDictionary\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_VariableNode;
 class Dynamic_VariableNode : public MMgt_TShared {
@@ -1401,6 +1481,7 @@ class Dynamic_VariableNode : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_Variable;
 class Dynamic_Variable : public MMgt_TShared {
 	public:
@@ -1415,7 +1496,12 @@ class Dynamic_Variable : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Dynamic_ModeEnum Mode() const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1436,6 +1522,7 @@ class Dynamic_Variable : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_Variable\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_VariableGroup;
 class Dynamic_VariableGroup : public Dynamic_Variable {
@@ -1460,6 +1547,7 @@ class Dynamic_VariableGroup : public Dynamic_Variable {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_VariableGroup\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SequenceOfMethods;
 class Dynamic_SequenceOfMethods : public MMgt_TShared {
@@ -1531,6 +1619,7 @@ class Dynamic_SequenceOfMethods : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_RealParameter;
 class Dynamic_RealParameter : public Dynamic_Parameter {
 	public:
@@ -1543,7 +1632,12 @@ class Dynamic_RealParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Standard_Real avalue);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1564,6 +1658,7 @@ class Dynamic_RealParameter : public Dynamic_Parameter {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_RealParameter\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SequenceNodeOfSeqOfMethods;
 class Dynamic_SequenceNodeOfSeqOfMethods : public TCollection_SeqNode {
@@ -1593,6 +1688,7 @@ class Dynamic_SequenceNodeOfSeqOfMethods : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Dynamic_BooleanParameter;
 class Dynamic_BooleanParameter : public Dynamic_Parameter {
 	public:
@@ -1607,7 +1703,12 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Standard_Boolean avalue);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1629,6 +1730,7 @@ class Dynamic_BooleanParameter : public Dynamic_Parameter {
 	}
 };
 
+
 %nodefaultctor Dynamic_StringParameter;
 class Dynamic_StringParameter : public Dynamic_Parameter {
 	public:
@@ -1641,7 +1743,12 @@ class Dynamic_StringParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const char * avalue);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1662,6 +1769,7 @@ class Dynamic_StringParameter : public Dynamic_Parameter {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_StringParameter\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_DynamicInstance;
 class Dynamic_DynamicInstance : public MMgt_TShared {
@@ -1706,6 +1814,7 @@ class Dynamic_DynamicInstance : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_DynamicInstance\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SeqOfClasses;
 class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
@@ -1761,6 +1870,7 @@ class Dynamic_SeqOfClasses : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor Dynamic_ParameterNode;
 class Dynamic_ParameterNode : public MMgt_TShared {
 	public:
@@ -1797,6 +1907,7 @@ class Dynamic_ParameterNode : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_FuzzyClass;
 class Dynamic_FuzzyClass : public MMgt_TShared {
 	public:
@@ -1829,7 +1940,12 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean Value(const char * aparameter, Handle_Standard_Transient & avalue) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1851,11 +1967,19 @@ class Dynamic_FuzzyClass : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_FuzzyDefinition;
 class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 	public:
 		%feature("autodoc", "1");
 		Dynamic_FuzzyDefinition(const char * aname);
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend Dynamic_FuzzyDefinition {
@@ -1875,6 +1999,7 @@ class Dynamic_FuzzyDefinition : public Dynamic_FuzzyClass {
 	}
 };
 
+
 %nodefaultctor Dynamic_IntegerParameter;
 class Dynamic_IntegerParameter : public Dynamic_Parameter {
 	public:
@@ -1887,7 +2012,12 @@ class Dynamic_IntegerParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Standard_Integer avalue);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1909,6 +2039,7 @@ class Dynamic_IntegerParameter : public Dynamic_Parameter {
 	}
 };
 
+
 %nodefaultctor Dynamic_FuzzyDefinitionsDictionary;
 class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 	public:
@@ -1925,7 +2056,12 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Handle_Dynamic_FuzzyClass Definition(const Standard_Integer anindex) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1946,6 +2082,7 @@ class Dynamic_FuzzyDefinitionsDictionary : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_FuzzyDefinitionsDictionary\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SequenceOfFuzzyDefinitions;
 class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
@@ -2017,6 +2154,7 @@ class Dynamic_SequenceOfFuzzyDefinitions : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_ObjectParameter;
 class Dynamic_ObjectParameter : public Dynamic_Parameter {
 	public:
@@ -2029,7 +2167,12 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 		%feature("autodoc", "1");
 		void Value(const Handle_Standard_Transient &anobject);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2050,6 +2193,7 @@ class Dynamic_ObjectParameter : public Dynamic_Parameter {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_ObjectParameter\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_AbstractVariableInstance;
 class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
@@ -2076,6 +2220,7 @@ class Dynamic_AbstractVariableInstance : public Dynamic_Variable {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_AbstractVariableInstance\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SequenceOfMethodDefinitions;
 class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
@@ -2147,6 +2292,7 @@ class Dynamic_SequenceOfMethodDefinitions : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions;
 class Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public TCollection_SeqNode {
 	public:
@@ -2175,6 +2321,7 @@ class Dynamic_SequenceNodeOfSeqOfFuzzyDefinitions : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor Dynamic_SequenceNodeOfSeqOfMethodDefinitions;
 class Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public TCollection_SeqNode {
 	public:
@@ -2202,6 +2349,7 @@ class Dynamic_SequenceNodeOfSeqOfMethodDefinitions : public TCollection_SeqNode 
 	if (__env){printf("## Call custom destructor for instance of Dynamic_SequenceNodeOfSeqOfMethodDefinitions\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_VariableInstance;
 class Dynamic_VariableInstance : public Dynamic_AbstractVariableInstance {
@@ -2233,6 +2381,7 @@ class Dynamic_VariableInstance : public Dynamic_AbstractVariableInstance {
 	}
 };
 
+
 %nodefaultctor Dynamic_CompositMethod;
 class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 	public:
@@ -2245,7 +2394,12 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 		%feature("autodoc", "1");
 		Handle_Dynamic_Method Method(const Standard_Integer anindex) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & astream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -2266,6 +2420,7 @@ class Dynamic_CompositMethod : public Dynamic_MethodDefinition {
 	if (__env){printf("## Call custom destructor for instance of Dynamic_CompositMethod\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SequenceOfClasses;
 class Dynamic_SequenceOfClasses : public MMgt_TShared {
@@ -2337,6 +2492,7 @@ class Dynamic_SequenceOfClasses : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Dynamic;
 class Dynamic {
 	public:
@@ -2352,6 +2508,7 @@ class Dynamic {
 	if (__env){printf("## Call custom destructor for instance of Dynamic\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_DynamicDerivedClass;
 class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
@@ -2385,6 +2542,7 @@ class Dynamic_DynamicDerivedClass : public Dynamic_DynamicClass {
 	}
 };
 
+
 %nodefaultctor Dynamic_CompositVariableInstance;
 class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance {
 	public:
@@ -2414,6 +2572,7 @@ class Dynamic_CompositVariableInstance : public Dynamic_AbstractVariableInstance
 	if (__env){printf("## Call custom destructor for instance of Dynamic_CompositVariableInstance\n");}
 	}
 };
+
 
 %nodefaultctor Dynamic_SeqOfFuzzyDefinitions;
 class Dynamic_SeqOfFuzzyDefinitions : public TCollection_BaseSequence {

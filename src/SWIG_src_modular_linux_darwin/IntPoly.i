@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
 class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCollection_SeqNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
 class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection_MapNode {
@@ -188,6 +191,7 @@ class Handle_IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
 class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TCollection_SeqNode {
 	public:
@@ -212,6 +216,7 @@ class Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public Handle_TColl
 	if (__env){printf("## Call custom destructor for instance of Handle_IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor IntPoly_SequenceOfSequenceOfPnt2d;
 class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
@@ -267,6 +272,7 @@ class IntPoly_SequenceOfSequenceOfPnt2d : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntPoly_PlaneSection;
 class IntPoly_PlaneSection {
 	public:
@@ -301,6 +307,7 @@ class IntPoly_PlaneSection {
 	}
 };
 
+
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt;
 class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 	public:
@@ -332,6 +339,7 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapNodeOfIndexedMapOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor IntPoly_ShapeSection;
 class IntPoly_ShapeSection {
@@ -375,6 +383,7 @@ class IntPoly_ShapeSection {
 	}
 };
 
+
 %nodefaultctor IntPoly_PntHasher;
 class IntPoly_PntHasher {
 	public:
@@ -392,6 +401,7 @@ class IntPoly_PntHasher {
 	if (__env){printf("## Call custom destructor for instance of IntPoly_PntHasher\n");}
 	}
 };
+
 
 %nodefaultctor IntPoly_SequenceOfSequenceOfPnt;
 class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
@@ -447,6 +457,7 @@ class IntPoly_SequenceOfSequenceOfPnt : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d;
 class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNode {
 	public:
@@ -474,6 +485,7 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d : public TCollection_SeqNo
 	if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt2d\n");}
 	}
 };
+
 
 %nodefaultctor IntPoly_IndexedMapOfPnt2d;
 class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
@@ -509,6 +521,7 @@ class IntPoly_IndexedMapOfPnt2d : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d;
 class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 	public:
@@ -541,6 +554,7 @@ class IntPoly_IndexedMapNodeOfIndexedMapOfPnt2d : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt;
 class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public TCollection_SeqNode {
 	public:
@@ -568,6 +582,7 @@ class IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt : public TCollection_SeqNode
 	if (__env){printf("## Call custom destructor for instance of IntPoly_SequenceNodeOfSequenceOfSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor IntPoly_IndexedMapOfPnt;
 class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
@@ -602,6 +617,7 @@ class IntPoly_IndexedMapOfPnt : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of IntPoly_IndexedMapOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor IntPoly_Pnt2dHasher;
 class IntPoly_Pnt2dHasher {

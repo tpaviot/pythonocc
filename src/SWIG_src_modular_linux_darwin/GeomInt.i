@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public Ha
 	}
 };
 
+
 %nodefaultctor GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
 class GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
 	public:
@@ -182,6 +184,7 @@ class GeomInt_TheFunctionOfTheInt2SOfThePrmPrmSvSurfacesOfWLApprox : public math
 	}
 };
 
+
 %nodefaultctor GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation;
 class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollection_SeqNode {
 	public:
@@ -210,6 +213,7 @@ class GeomInt_SequenceNodeOfSequenceOfParameterAndOrientation : public TCollecti
 	}
 };
 
+
 %nodefaultctor GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 	public:
@@ -236,6 +240,7 @@ class GeomInt_MyGradientOfTheComputeLineBezierOfWLApprox {
 	}
 };
 
+
 %nodefaultctor GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public math_BFGS {
 	public:
@@ -251,6 +256,7 @@ class GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox : public
 	if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientOfTheComputeLineBezierOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox;
 class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
@@ -279,6 +285,7 @@ class GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox {
 	if (__env){printf("## Call custom destructor for instance of GeomInt_MyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox;
 class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
@@ -325,6 +332,7 @@ class GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox : public 
 	if (__env){printf("## Call custom destructor for instance of GeomInt_BSpParFunctionOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox;
 class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_FunctionSetWithDerivatives {
@@ -376,6 +384,7 @@ class GeomInt_TheZerImpFuncOfTheImpPrmSvSurfacesOfWLApprox : public math_Functio
 	}
 };
 
+
 %nodefaultctor GeomInt_MyGradientbisOfTheComputeLineOfWLApprox;
 class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 	public:
@@ -401,6 +410,7 @@ class GeomInt_MyGradientbisOfTheComputeLineOfWLApprox {
 	if (__env){printf("## Call custom destructor for instance of GeomInt_MyGradientbisOfTheComputeLineOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_SequenceOfParameterAndOrientation;
 class GeomInt_SequenceOfParameterAndOrientation : public TCollection_BaseSequence {
@@ -456,6 +466,7 @@ class GeomInt_SequenceOfParameterAndOrientation : public TCollection_BaseSequenc
 	}
 };
 
+
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox;
 class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 	public:
@@ -510,6 +521,7 @@ class GeomInt_ParLeastSquareOfMyGradientbisOfTheComputeLineOfWLApprox {
 	}
 };
 
+
 %nodefaultctor GeomInt_TheMultiLineOfWLApprox;
 class GeomInt_TheMultiLineOfWLApprox {
 	public:
@@ -550,6 +562,7 @@ class GeomInt_TheMultiLineOfWLApprox {
 	}
 };
 
+
 %nodefaultctor GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox;
 class GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox : public math_BFGS {
 	public:
@@ -565,6 +578,7 @@ class GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox : public ma
 	if (__env){printf("## Call custom destructor for instance of GeomInt_Gradient_BFGSOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox;
 class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math_MultipleVarFunctionWithGradient {
@@ -601,6 +615,7 @@ class GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox : public math
 	if (__env){printf("## Call custom destructor for instance of GeomInt_ParFunctionOfMyGradientbisOfTheComputeLineOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox;
 class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
@@ -656,6 +671,7 @@ class GeomInt_BSpParLeastSquareOfMyBSplGradientOfTheComputeLineOfWLApprox {
 	}
 };
 
+
 %nodefaultctor GeomInt_ThePrmPrmSvSurfacesOfWLApprox;
 class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	public:
@@ -679,6 +695,7 @@ class GeomInt_ThePrmPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	if (__env){printf("## Call custom destructor for instance of GeomInt_ThePrmPrmSvSurfacesOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
@@ -734,6 +751,7 @@ class GeomInt_ParLeastSquareOfMyGradientOfTheComputeLineBezierOfWLApprox {
 	}
 };
 
+
 %nodefaultctor GeomInt_TheComputeLineBezierOfWLApprox;
 class GeomInt_TheComputeLineBezierOfWLApprox {
 	public:
@@ -782,6 +800,7 @@ class GeomInt_TheComputeLineBezierOfWLApprox {
 	}
 };
 
+
 %nodefaultctor GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox;
 class GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox : public math_BFGS {
 	public:
@@ -797,6 +816,7 @@ class GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox : publi
 	if (__env){printf("## Call custom destructor for instance of GeomInt_BSpGradient_BFGSOfMyBSplGradientOfTheComputeLineOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_LineTool;
 class GeomInt_LineTool {
@@ -819,6 +839,7 @@ class GeomInt_LineTool {
 	if (__env){printf("## Call custom destructor for instance of GeomInt_LineTool\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_LineConstructor;
 class GeomInt_LineConstructor {
@@ -843,6 +864,7 @@ class GeomInt_LineConstructor {
 	if (__env){printf("## Call custom destructor for instance of GeomInt_LineConstructor\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_TheComputeLineOfWLApprox;
 class GeomInt_TheComputeLineOfWLApprox {
@@ -896,6 +918,7 @@ class GeomInt_TheComputeLineOfWLApprox {
 	}
 };
 
+
 %nodefaultctor GeomInt_TheImpPrmSvSurfacesOfWLApprox;
 class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	public:
@@ -922,6 +945,7 @@ class GeomInt_TheImpPrmSvSurfacesOfWLApprox : public ApproxInt_SvSurfaces {
 	}
 };
 
+
 %nodefaultctor GeomInt_ParameterAndOrientation;
 class GeomInt_ParameterAndOrientation {
 	public:
@@ -947,6 +971,7 @@ class GeomInt_ParameterAndOrientation {
 	if (__env){printf("## Call custom destructor for instance of GeomInt_ParameterAndOrientation\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_TheMultiLineToolOfWLApprox;
 class GeomInt_TheMultiLineToolOfWLApprox {
@@ -992,6 +1017,7 @@ class GeomInt_TheMultiLineToolOfWLApprox {
 	}
 };
 
+
 %nodefaultctor GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox;
 class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 	public:
@@ -1029,6 +1055,7 @@ class GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox {
 	if (__env){printf("## Call custom destructor for instance of GeomInt_TheInt2SOfThePrmPrmSvSurfacesOfWLApprox\n");}
 	}
 };
+
 
 %nodefaultctor GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox;
 class GeomInt_ParFunctionOfMyGradientOfTheComputeLineBezierOfWLApprox : public math_MultipleVarFunctionWithGradient {

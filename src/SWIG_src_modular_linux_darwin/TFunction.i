@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -146,6 +147,7 @@ class Handle_TFunction_HArray1OfDataMapOfGUIDDriver : public Handle_MMgt_TShared
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_DriverTable;
 class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 	public:
@@ -170,6 +172,7 @@ class Handle_TFunction_DriverTable : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DriverTable\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TFunction_GraphNode;
 class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
@@ -196,6 +199,7 @@ class Handle_TFunction_GraphNode : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_Scope;
 class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 	public:
@@ -220,6 +224,7 @@ class Handle_TFunction_Scope : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_Scope\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TFunction_Driver;
 class Handle_TFunction_Driver : public Handle_MMgt_TShared {
@@ -246,6 +251,7 @@ class Handle_TFunction_Driver : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver;
 class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollection_MapNode {
 	public:
@@ -270,6 +276,7 @@ class Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver : public Handle_TCollect
 	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
 class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TCollection_MapNode {
@@ -296,6 +303,7 @@ class Handle_TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_Function;
 class Handle_TFunction_Function : public Handle_TDF_Attribute {
 	public:
@@ -321,6 +329,7 @@ class Handle_TFunction_Function : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
 class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TCollection_MapNode {
 	public:
@@ -345,6 +354,7 @@ class Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public Handle_TC
 	if (__env){printf("## Call custom destructor for instance of Handle_TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_HArray1OfDataMapOfGUIDDriver;
 class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
@@ -392,6 +402,7 @@ class TFunction_HArray1OfDataMapOfGUIDDriver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TFunction_Driver;
 class TFunction_Driver : public MMgt_TShared {
 	public:
@@ -430,6 +441,7 @@ class TFunction_Driver : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TFunction_DataMapOfGUIDDriver;
 class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 	public:
@@ -464,6 +476,7 @@ class TFunction_DataMapOfGUIDDriver : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TFunction_Function;
 class TFunction_Function : public TDF_Attribute {
 	public:
@@ -496,7 +509,12 @@ class TFunction_Function : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -517,6 +535,7 @@ class TFunction_Function : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TFunction_Function\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_DataMapIteratorOfDataMapOfGUIDDriver;
 class TFunction_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicMapIterator {
@@ -540,6 +559,7 @@ class TFunction_DataMapIteratorOfDataMapOfGUIDDriver : public TCollection_BasicM
 	}
 };
 
+
 %nodefaultctor TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel;
 class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_BasicMapIterator {
 	public:
@@ -561,6 +581,7 @@ class TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel : public TCollection_
 	if (__env){printf("## Call custom destructor for instance of TFunction_DoubleMapIteratorOfDoubleMapOfIntegerLabel\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_DataMapOfLabelListOfLabel;
 class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
@@ -596,6 +617,7 @@ class TFunction_DataMapOfLabelListOfLabel : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfGUIDDriver;
 class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 	public:
@@ -625,6 +647,7 @@ class TFunction_DataMapNodeOfDataMapOfGUIDDriver : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfGUIDDriver\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_Array1OfDataMapOfGUIDDriver;
 class TFunction_Array1OfDataMapOfGUIDDriver {
@@ -666,6 +689,7 @@ class TFunction_Array1OfDataMapOfGUIDDriver {
 	}
 };
 
+
 %nodefaultctor TFunction_DriverTable;
 class TFunction_DriverTable : public MMgt_TShared {
 	public:
@@ -680,7 +704,12 @@ class TFunction_DriverTable : public MMgt_TShared {
 		%feature("autodoc", "1");
 		Standard_Boolean FindDriver(const Standard_GUID &guid, Handle_TFunction_Driver & driver, const Standard_Integer thread=0) const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		Standard_Boolean RemoveDriver(const Standard_GUID &guid, const Standard_Integer thread=0);
 		%feature("autodoc", "1");
@@ -705,6 +734,7 @@ class TFunction_DriverTable : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of TFunction_DriverTable\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel;
 class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapNode {
@@ -738,6 +768,7 @@ class TFunction_DoubleMapNodeOfDoubleMapOfIntegerLabel : public TCollection_MapN
 	}
 };
 
+
 %nodefaultctor TFunction_DataMapNodeOfDataMapOfLabelListOfLabel;
 class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapNode {
 	public:
@@ -767,6 +798,7 @@ class TFunction_DataMapNodeOfDataMapOfLabelListOfLabel : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of TFunction_DataMapNodeOfDataMapOfLabelListOfLabel\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_Logbook;
 class TFunction_Logbook {
@@ -798,7 +830,12 @@ class TFunction_Logbook {
 		%feature("autodoc", "1");
 		Standard_Boolean IsDone() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & stream) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TFunction_Logbook {
@@ -807,6 +844,7 @@ class TFunction_Logbook {
 	if (__env){printf("## Call custom destructor for instance of TFunction_Logbook\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_IFunction;
 class TFunction_IFunction {
@@ -856,6 +894,7 @@ class TFunction_IFunction {
 	}
 };
 
+
 %nodefaultctor TFunction_DoubleMapOfIntegerLabel;
 class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 	public:
@@ -892,6 +931,7 @@ class TFunction_DoubleMapOfIntegerLabel : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TFunction_Iterator;
 class TFunction_Iterator {
 	public:
@@ -918,7 +958,12 @@ class TFunction_Iterator {
 		%feature("autodoc", "1");
 		void SetStatus(const TDF_Label &func, const TFunction_ExecutionStatus status) const;
 		%feature("autodoc", "1");
-		Standard_OStream & Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend TFunction_Iterator {
@@ -927,6 +972,7 @@ class TFunction_Iterator {
 	if (__env){printf("## Call custom destructor for instance of TFunction_Iterator\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_GraphNode;
 class TFunction_GraphNode : public TDF_Attribute {
@@ -976,7 +1022,12 @@ class TFunction_GraphNode : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -997,6 +1048,7 @@ class TFunction_GraphNode : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TFunction_GraphNode\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_Scope;
 class TFunction_Scope : public TDF_Attribute {
@@ -1034,7 +1086,12 @@ class TFunction_Scope : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		Handle_TDF_Attribute NewEmpty() const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		const TFunction_DoubleMapOfIntegerLabel & GetFunctions() const;
 		%feature("autodoc", "1");
@@ -1063,6 +1120,7 @@ class TFunction_Scope : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TFunction_Scope\n");}
 	}
 };
+
 
 %nodefaultctor TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel;
 class TFunction_DataMapIteratorOfDataMapOfLabelListOfLabel : public TCollection_BasicMapIterator {

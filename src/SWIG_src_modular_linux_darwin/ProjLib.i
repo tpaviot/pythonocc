@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_ProjLib_HCompProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	}
 };
 
+
 %nodefaultctor Handle_ProjLib_HProjectedCurve;
 class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	public:
@@ -162,6 +164,7 @@ class Handle_ProjLib_HProjectedCurve : public Handle_Adaptor2d_HCurve2d {
 	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HProjectedCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
 class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCollection_SeqNode {
@@ -188,6 +191,7 @@ class Handle_ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public Handle_TCol
 	}
 };
 
+
 %nodefaultctor Handle_ProjLib_HSequenceOfHSequenceOfPnt;
 class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 	public:
@@ -212,6 +216,7 @@ class Handle_ProjLib_HSequenceOfHSequenceOfPnt : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_ProjLib_HSequenceOfHSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_SequenceOfHSequenceOfPnt;
 class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
@@ -266,6 +271,7 @@ class ProjLib_SequenceOfHSequenceOfPnt : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_SequenceOfHSequenceOfPnt\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_Projector;
 class ProjLib_Projector {
@@ -327,6 +333,7 @@ class ProjLib_Projector {
 	}
 };
 
+
 %nodefaultctor ProjLib_Cylinder;
 class ProjLib_Cylinder : public ProjLib_Projector {
 	public:
@@ -350,6 +357,7 @@ class ProjLib_Cylinder : public ProjLib_Projector {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_Cylinder\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_CompProjectedCurve;
 class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
@@ -416,6 +424,7 @@ class ProjLib_CompProjectedCurve : public Adaptor2d_Curve2d {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_CompProjectedCurve\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_ProjectedCurve;
 class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
@@ -499,6 +508,7 @@ class ProjLib_ProjectedCurve : public Adaptor2d_Curve2d {
 	}
 };
 
+
 %nodefaultctor ProjLib_Sphere;
 class ProjLib_Sphere : public ProjLib_Projector {
 	public:
@@ -530,6 +540,7 @@ class ProjLib_Sphere : public ProjLib_Projector {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_Sphere\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib;
 class ProjLib {
@@ -577,6 +588,7 @@ class ProjLib {
 	}
 };
 
+
 %nodefaultctor ProjLib_ProjectOnSurface;
 class ProjLib_ProjectOnSurface {
 	public:
@@ -598,6 +610,7 @@ class ProjLib_ProjectOnSurface {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_ProjectOnSurface\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_Plane;
 class ProjLib_Plane : public ProjLib_Projector {
@@ -637,6 +650,7 @@ class ProjLib_Plane : public ProjLib_Projector {
 	}
 };
 
+
 %nodefaultctor ProjLib_Torus;
 class ProjLib_Torus : public ProjLib_Projector {
 	public:
@@ -667,6 +681,7 @@ class ProjLib_Torus : public ProjLib_Projector {
 	}
 };
 
+
 %nodefaultctor ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt;
 class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNode {
 	public:
@@ -695,6 +710,7 @@ class ProjLib_SequenceNodeOfSequenceOfHSequenceOfPnt : public TCollection_SeqNod
 	}
 };
 
+
 %nodefaultctor ProjLib_ComputeApprox;
 class ProjLib_ComputeApprox {
 	public:
@@ -714,6 +730,7 @@ class ProjLib_ComputeApprox {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_ComputeApprox\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_ProjectOnPlane;
 class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
@@ -797,6 +814,7 @@ class ProjLib_ProjectOnPlane : public Adaptor3d_Curve {
 	}
 };
 
+
 %nodefaultctor ProjLib_PrjResolve;
 class ProjLib_PrjResolve {
 	public:
@@ -816,6 +834,7 @@ class ProjLib_PrjResolve {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_PrjResolve\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_HCompProjectedCurve;
 class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
@@ -851,6 +870,7 @@ class ProjLib_HCompProjectedCurve : public Adaptor2d_HCurve2d {
 	}
 };
 
+
 %nodefaultctor ProjLib_ComputeApproxOnPolarSurface;
 class ProjLib_ComputeApproxOnPolarSurface {
 	public:
@@ -883,6 +903,7 @@ class ProjLib_ComputeApproxOnPolarSurface {
 	}
 };
 
+
 %nodefaultctor ProjLib_PrjFunc;
 class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 	public:
@@ -908,6 +929,7 @@ class ProjLib_PrjFunc : public math_FunctionSetWithDerivatives {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_PrjFunc\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_HSequenceOfHSequenceOfPnt;
 class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
@@ -979,6 +1001,7 @@ class ProjLib_HSequenceOfHSequenceOfPnt : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor ProjLib_HProjectedCurve;
 class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 	public:
@@ -1012,6 +1035,7 @@ class ProjLib_HProjectedCurve : public Adaptor2d_HCurve2d {
 	if (__env){printf("## Call custom destructor for instance of ProjLib_HProjectedCurve\n");}
 	}
 };
+
 
 %nodefaultctor ProjLib_Cone;
 class ProjLib_Cone : public ProjLib_Projector {

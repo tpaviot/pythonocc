@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -137,6 +138,7 @@ class Handle_AppStdL_Application : public Handle_TDocStd_Application {
 	if (__env){printf("## Call custom destructor for instance of Handle_AppStdL_Application\n");}
 	}
 };
+
 
 %nodefaultctor AppStdL_Application;
 class AppStdL_Application : public TDocStd_Application {

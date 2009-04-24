@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -157,7 +158,12 @@ class AdvApprox_ApproxAFunction {
 		%feature("autodoc", "1");
 		Standard_Real AverageError(const Standard_Integer Dimension, const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AdvApprox_ApproxAFunction {
@@ -166,6 +172,7 @@ class AdvApprox_ApproxAFunction {
 	if (__env){printf("## Call custom destructor for instance of AdvApprox_ApproxAFunction\n");}
 	}
 };
+
 
 %nodefaultctor AdvApprox_Cutting;
 class AdvApprox_Cutting {
@@ -183,6 +190,7 @@ class AdvApprox_Cutting {
 	}
 };
 
+
 %nodefaultctor AdvApprox_PrefAndRec;
 class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 	public:
@@ -196,6 +204,7 @@ class AdvApprox_PrefAndRec : public AdvApprox_Cutting {
 	if (__env){printf("## Call custom destructor for instance of AdvApprox_PrefAndRec\n");}
 	}
 };
+
 
 %nodefaultctor AdvApprox_PrefCutting;
 class AdvApprox_PrefCutting : public AdvApprox_Cutting {
@@ -213,6 +222,7 @@ class AdvApprox_PrefCutting : public AdvApprox_Cutting {
 	}
 };
 
+
 %nodefaultctor AdvApprox_DichoCutting;
 class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 	public:
@@ -228,6 +238,7 @@ class AdvApprox_DichoCutting : public AdvApprox_Cutting {
 	if (__env){printf("## Call custom destructor for instance of AdvApprox_DichoCutting\n");}
 	}
 };
+
 
 %nodefaultctor AdvApprox_SimpleApprox;
 class AdvApprox_SimpleApprox {
@@ -255,7 +266,12 @@ class AdvApprox_SimpleApprox {
 		%feature("autodoc", "1");
 		Standard_Real AverageError(const Standard_Integer Index) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AdvApprox_SimpleApprox {

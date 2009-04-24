@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -163,6 +164,7 @@ class Handle_TNaming_DeltaOnRemoval : public Handle_TDF_DeltaOnRemoval {
 	}
 };
 
+
 %nodefaultctor Handle_TNaming_ListNodeOfListOfNamedShape;
 class Handle_TNaming_ListNodeOfListOfNamedShape : public Handle_TCollection_MapNode {
 	public:
@@ -187,6 +189,7 @@ class Handle_TNaming_ListNodeOfListOfNamedShape : public Handle_TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_ListNodeOfListOfNamedShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TNaming_TranslateTool;
 class Handle_TNaming_TranslateTool : public Handle_MMgt_TShared {
@@ -213,6 +216,7 @@ class Handle_TNaming_TranslateTool : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_TNaming_DeltaOnModification;
 class Handle_TNaming_DeltaOnModification : public Handle_TDF_DeltaOnModification {
 	public:
@@ -237,6 +241,7 @@ class Handle_TNaming_DeltaOnModification : public Handle_TDF_DeltaOnModification
 	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_DeltaOnModification\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TNaming_NamedShape;
 class Handle_TNaming_NamedShape : public Handle_TDF_Attribute {
@@ -263,6 +268,7 @@ class Handle_TNaming_NamedShape : public Handle_TDF_Attribute {
 	}
 };
 
+
 %nodefaultctor Handle_TNaming_Naming;
 class Handle_TNaming_Naming : public Handle_TDF_Attribute {
 	public:
@@ -287,6 +293,7 @@ class Handle_TNaming_Naming : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_Naming\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TNaming_StdMapNodeOfMapOfNamedShape;
 class Handle_TNaming_StdMapNodeOfMapOfNamedShape : public Handle_TCollection_MapNode {
@@ -313,6 +320,7 @@ class Handle_TNaming_StdMapNodeOfMapOfNamedShape : public Handle_TCollection_Map
 	}
 };
 
+
 %nodefaultctor Handle_TNaming_UsedShapes;
 class Handle_TNaming_UsedShapes : public Handle_TDF_Attribute {
 	public:
@@ -337,6 +345,7 @@ class Handle_TNaming_UsedShapes : public Handle_TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_UsedShapes\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape;
 class Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public Handle_TCollection_MapNode {
@@ -363,6 +372,7 @@ class Handle_TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public H
 	}
 };
 
+
 %nodefaultctor Handle_TNaming_ListNodeOfListOfMapOfShape;
 class Handle_TNaming_ListNodeOfListOfMapOfShape : public Handle_TCollection_MapNode {
 	public:
@@ -387,6 +397,7 @@ class Handle_TNaming_ListNodeOfListOfMapOfShape : public Handle_TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of Handle_TNaming_ListNodeOfListOfMapOfShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet;
 class Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public Handle_TCollection_MapNode {
@@ -413,6 +424,7 @@ class Handle_TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public Handle_TColle
 	}
 };
 
+
 %nodefaultctor Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape;
 class Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public Handle_TCollection_MapNode {
 	public:
@@ -438,6 +450,7 @@ class Handle_TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public Handle_TCol
 	}
 };
 
+
 %nodefaultctor TNaming_NamedShapeHasher;
 class TNaming_NamedShapeHasher {
 	public:
@@ -455,6 +468,7 @@ class TNaming_NamedShapeHasher {
 	if (__env){printf("## Call custom destructor for instance of TNaming_NamedShapeHasher\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_Tool;
 class TNaming_Tool {
@@ -498,6 +512,7 @@ class TNaming_Tool {
 	}
 };
 
+
 %nodefaultctor TNaming_Name;
 class TNaming_Name {
 	public:
@@ -540,6 +555,7 @@ class TNaming_Name {
 	}
 };
 
+
 %nodefaultctor TNaming_UsedShapes;
 class TNaming_UsedShapes : public TDF_Attribute {
 	public:
@@ -566,7 +582,12 @@ class TNaming_UsedShapes : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -587,6 +608,7 @@ class TNaming_UsedShapes : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TNaming_UsedShapes\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_TranslateTool;
 class TNaming_TranslateTool : public MMgt_TShared {
@@ -640,6 +662,7 @@ class TNaming_TranslateTool : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor TNaming_MapOfNamedShape;
 class TNaming_MapOfNamedShape : public TCollection_BasicMap {
 	public:
@@ -665,6 +688,7 @@ class TNaming_MapOfNamedShape : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of TNaming_MapOfNamedShape\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_ListOfMapOfShape;
 class TNaming_ListOfMapOfShape {
@@ -716,6 +740,7 @@ class TNaming_ListOfMapOfShape {
 	}
 };
 
+
 %nodefaultctor TNaming_IteratorOnShapesSet;
 class TNaming_IteratorOnShapesSet {
 	public:
@@ -739,6 +764,7 @@ class TNaming_IteratorOnShapesSet {
 	if (__env){printf("## Call custom destructor for instance of TNaming_IteratorOnShapesSet\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_Builder;
 class TNaming_Builder {
@@ -768,6 +794,7 @@ class TNaming_Builder {
 	}
 };
 
+
 %nodefaultctor TNaming_RefShape;
 class TNaming_RefShape {
 	public:
@@ -796,6 +823,7 @@ class TNaming_RefShape {
 	}
 };
 
+
 %nodefaultctor TNaming_StdMapNodeOfMapOfNamedShape;
 class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 	public:
@@ -823,6 +851,7 @@ class TNaming_StdMapNodeOfMapOfNamedShape : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TNaming_StdMapNodeOfMapOfNamedShape\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_ShapesSet;
 class TNaming_ShapesSet {
@@ -861,6 +890,7 @@ class TNaming_ShapesSet {
 	if (__env){printf("## Call custom destructor for instance of TNaming_ShapesSet\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_ListOfIndexedDataMapOfShapeListOfShape;
 class TNaming_ListOfIndexedDataMapOfShapeListOfShape {
@@ -912,6 +942,7 @@ class TNaming_ListOfIndexedDataMapOfShapeListOfShape {
 	}
 };
 
+
 %nodefaultctor TNaming_Translator;
 class TNaming_Translator {
 	public:
@@ -937,6 +968,7 @@ class TNaming_Translator {
 	if (__env){printf("## Call custom destructor for instance of TNaming_Translator\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_Selector;
 class TNaming_Selector {
@@ -964,6 +996,7 @@ class TNaming_Selector {
 	}
 };
 
+
 %nodefaultctor TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape;
 class TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape : public TCollection_BasicMapIterator {
 	public:
@@ -985,6 +1018,7 @@ class TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape : public TCollection_Ba
 	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapIteratorOfDataMapOfShapePtrRefShape\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_Localizer;
 class TNaming_Localizer {
@@ -1020,6 +1054,7 @@ class TNaming_Localizer {
 	}
 };
 
+
 %nodefaultctor TNaming_Iterator;
 class TNaming_Iterator {
 	public:
@@ -1050,6 +1085,7 @@ class TNaming_Iterator {
 	}
 };
 
+
 %nodefaultctor TNaming_SameShapeIterator;
 class TNaming_SameShapeIterator {
 	public:
@@ -1069,6 +1105,7 @@ class TNaming_SameShapeIterator {
 	if (__env){printf("## Call custom destructor for instance of TNaming_SameShapeIterator\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape;
 class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollection_MapNode {
@@ -1098,6 +1135,7 @@ class TNaming_ListNodeOfListOfIndexedDataMapOfShapeListOfShape : public TCollect
 	}
 };
 
+
 %nodefaultctor TNaming_DeltaOnRemoval;
 class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 	public:
@@ -1126,6 +1164,7 @@ class TNaming_DeltaOnRemoval : public TDF_DeltaOnRemoval {
 	}
 };
 
+
 %nodefaultctor TNaming_ListIteratorOfListOfNamedShape;
 class TNaming_ListIteratorOfListOfNamedShape {
 	public:
@@ -1150,6 +1189,7 @@ class TNaming_ListIteratorOfListOfNamedShape {
 	}
 };
 
+
 %nodefaultctor TNaming_CopyShape;
 class TNaming_CopyShape {
 	public:
@@ -1170,6 +1210,7 @@ class TNaming_CopyShape {
 	}
 };
 
+
 %nodefaultctor TNaming_NamingTool;
 class TNaming_NamingTool {
 	public:
@@ -1189,6 +1230,7 @@ class TNaming_NamingTool {
 	if (__env){printf("## Call custom destructor for instance of TNaming_NamingTool\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_DataMapNodeOfDataMapOfShapeShapesSet;
 class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode {
@@ -1219,6 +1261,7 @@ class TNaming_DataMapNodeOfDataMapOfShapeShapesSet : public TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapNodeOfDataMapOfShapeShapesSet\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_NamedShape;
 class TNaming_NamedShape : public TDF_Attribute {
@@ -1266,7 +1309,12 @@ class TNaming_NamedShape : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		Standard_Boolean AfterUndo(const Handle_TDF_AttributeDelta &anAttDelta, const Standard_Boolean forceIt=0);
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		const Handle_Standard_Type & DynamicType() const;
 
@@ -1287,6 +1335,7 @@ class TNaming_NamedShape : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TNaming_NamedShape\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_DeltaOnModification;
 class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
@@ -1316,6 +1365,7 @@ class TNaming_DeltaOnModification : public TDF_DeltaOnModification {
 	}
 };
 
+
 %nodefaultctor TNaming_ListNodeOfListOfNamedShape;
 class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
 	public:
@@ -1344,6 +1394,7 @@ class TNaming_ListNodeOfListOfNamedShape : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor TNaming_ListNodeOfListOfMapOfShape;
 class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 	public:
@@ -1371,6 +1422,7 @@ class TNaming_ListNodeOfListOfMapOfShape : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of TNaming_ListNodeOfListOfMapOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_Scope;
 class TNaming_Scope {
@@ -1412,6 +1464,7 @@ class TNaming_Scope {
 	}
 };
 
+
 %nodefaultctor TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape;
 class TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
 	public:
@@ -1435,6 +1488,7 @@ class TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape {
 	if (__env){printf("## Call custom destructor for instance of TNaming_ListIteratorOfListOfIndexedDataMapOfShapeListOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_ListOfNamedShape;
 class TNaming_ListOfNamedShape {
@@ -1486,6 +1540,7 @@ class TNaming_ListOfNamedShape {
 	}
 };
 
+
 %nodefaultctor TNaming_ListIteratorOfListOfMapOfShape;
 class TNaming_ListIteratorOfListOfMapOfShape {
 	public:
@@ -1509,6 +1564,7 @@ class TNaming_ListIteratorOfListOfMapOfShape {
 	if (__env){printf("## Call custom destructor for instance of TNaming_ListIteratorOfListOfMapOfShape\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_OldShapeIterator;
 class TNaming_OldShapeIterator {
@@ -1542,6 +1598,7 @@ class TNaming_OldShapeIterator {
 	}
 };
 
+
 %nodefaultctor TNaming_MapIteratorOfMapOfNamedShape;
 class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator {
 	public:
@@ -1561,6 +1618,7 @@ class TNaming_MapIteratorOfMapOfNamedShape : public TCollection_BasicMapIterator
 	if (__env){printf("## Call custom destructor for instance of TNaming_MapIteratorOfMapOfNamedShape\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_DataMapNodeOfDataMapOfShapePtrRefShape;
 class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNode {
@@ -1592,6 +1650,7 @@ class TNaming_DataMapNodeOfDataMapOfShapePtrRefShape : public TCollection_MapNod
 	}
 };
 
+
 %nodefaultctor TNaming_DataMapIteratorOfDataMapOfShapeShapesSet;
 class TNaming_DataMapIteratorOfDataMapOfShapeShapesSet : public TCollection_BasicMapIterator {
 	public:
@@ -1613,6 +1672,7 @@ class TNaming_DataMapIteratorOfDataMapOfShapeShapesSet : public TCollection_Basi
 	if (__env){printf("## Call custom destructor for instance of TNaming_DataMapIteratorOfDataMapOfShapeShapesSet\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_DataMapOfShapePtrRefShape;
 class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
@@ -1648,6 +1708,7 @@ class TNaming_DataMapOfShapePtrRefShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor TNaming_NewShapeIterator;
 class TNaming_NewShapeIterator {
 	public:
@@ -1679,6 +1740,7 @@ class TNaming_NewShapeIterator {
 	if (__env){printf("## Call custom destructor for instance of TNaming_NewShapeIterator\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_Naming;
 class TNaming_Naming : public TDF_Attribute {
@@ -1712,7 +1774,12 @@ class TNaming_Naming : public TDF_Attribute {
 		%feature("autodoc", "1");
 		virtual		void References(const Handle_TDF_DataSet &aDataSet) const;
 		%feature("autodoc", "1");
-		virtual		Standard_OStream & Dump(Standard_OStream & anOS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		virtual		void ExtendedDump(Standard_OStream & anOS, const TDF_IDFilter &aFilter, TDF_AttributeIndexedMap & aMap) const;
 		%feature("autodoc", "1");
@@ -1735,6 +1802,7 @@ class TNaming_Naming : public TDF_Attribute {
 	if (__env){printf("## Call custom destructor for instance of TNaming_Naming\n");}
 	}
 };
+
 
 %nodefaultctor TNaming;
 class TNaming {
@@ -1771,6 +1839,7 @@ class TNaming {
 	if (__env){printf("## Call custom destructor for instance of TNaming\n");}
 	}
 };
+
 
 %nodefaultctor TNaming_DataMapOfShapeShapesSet;
 class TNaming_DataMapOfShapeShapesSet : public TCollection_BasicMap {

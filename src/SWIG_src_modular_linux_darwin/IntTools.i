@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -139,6 +140,7 @@ class Handle_IntTools_ListNodeOfListOfSurfaceRangeSample : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox;
 class Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public Handle_TCollection_MapNode {
 	public:
@@ -163,6 +165,7 @@ class Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntTools_StdMapNodeOfMapOfSurfaceSample;
 class Handle_IntTools_StdMapNodeOfMapOfSurfaceSample : public Handle_TCollection_MapNode {
@@ -189,6 +192,7 @@ class Handle_IntTools_StdMapNodeOfMapOfSurfaceSample : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_IntTools_TopolTool;
 class Handle_IntTools_TopolTool : public Handle_Adaptor3d_TopolTool {
 	public:
@@ -213,6 +217,7 @@ class Handle_IntTools_TopolTool : public Handle_Adaptor3d_TopolTool {
 	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_TopolTool\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts;
 class Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts : public Handle_TCollection_SeqNode {
@@ -239,6 +244,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCommonPrts : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox;
 class Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public Handle_TCollection_MapNode {
 	public:
@@ -263,6 +269,7 @@ class Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public Handle_TColl
 	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_DataMapNodeOfDataMapOfCurveSampleBox\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntTools_ListNodeOfListOfCurveRangeSample;
 class Handle_IntTools_ListNodeOfListOfCurveRangeSample : public Handle_TCollection_MapNode {
@@ -289,6 +296,7 @@ class Handle_IntTools_ListNodeOfListOfCurveRangeSample : public Handle_TCollecti
 	}
 };
 
+
 %nodefaultctor Handle_IntTools_StdMapNodeOfMapOfCurveSample;
 class Handle_IntTools_StdMapNodeOfMapOfCurveSample : public Handle_TCollection_MapNode {
 	public:
@@ -313,6 +321,7 @@ class Handle_IntTools_StdMapNodeOfMapOfCurveSample : public Handle_TCollection_M
 	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_StdMapNodeOfMapOfCurveSample\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfRoots;
 class Handle_IntTools_SequenceNodeOfSequenceOfRoots : public Handle_TCollection_SeqNode {
@@ -339,6 +348,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRoots : public Handle_TCollection_
 	}
 };
 
+
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfCurves;
 class Handle_IntTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection_SeqNode {
 	public:
@@ -363,6 +373,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfCurves : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfCurves\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntTools_ListNodeOfListOfBox;
 class Handle_IntTools_ListNodeOfListOfBox : public Handle_TCollection_MapNode {
@@ -389,6 +400,7 @@ class Handle_IntTools_ListNodeOfListOfBox : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress;
 class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : public Handle_TCollection_MapNode {
 	public:
@@ -413,6 +425,7 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : pub
 	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfRanges;
 class Handle_IntTools_SequenceNodeOfSequenceOfRanges : public Handle_TCollection_SeqNode {
@@ -439,6 +452,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfRanges : public Handle_TCollection
 	}
 };
 
+
 %nodefaultctor Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces;
 class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TCollection_SeqNode {
 	public:
@@ -463,6 +477,7 @@ class Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public Handle_TColle
 	if (__env){printf("## Call custom destructor for instance of Handle_IntTools_SequenceNodeOfSequenceOfPntOn2Faces\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
 class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public Handle_TCollection_MapNode {
@@ -489,6 +504,7 @@ class Handle_IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public 
 	}
 };
 
+
 %nodefaultctor IntTools_SurfaceRangeSampleMapHasher;
 class IntTools_SurfaceRangeSampleMapHasher {
 	public:
@@ -506,6 +522,7 @@ class IntTools_SurfaceRangeSampleMapHasher {
 	if (__env){printf("## Call custom destructor for instance of IntTools_SurfaceRangeSampleMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfRoots;
 class IntTools_SequenceNodeOfSequenceOfRoots : public TCollection_SeqNode {
@@ -535,6 +552,7 @@ class IntTools_SequenceNodeOfSequenceOfRoots : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor IntTools_FClass2d;
 class IntTools_FClass2d {
 	public:
@@ -562,6 +580,7 @@ class IntTools_FClass2d {
 	if (__env){printf("## Call custom destructor for instance of IntTools_FClass2d\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_CommonPrt;
 class IntTools_CommonPrt {
@@ -627,6 +646,7 @@ class IntTools_CommonPrt {
 	}
 };
 
+
 %nodefaultctor IntTools_ListNodeOfListOfBox;
 class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 	public:
@@ -654,6 +674,7 @@ class IntTools_ListNodeOfListOfBox : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfBox\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_PntOnFace;
 class IntTools_PntOnFace {
@@ -686,6 +707,7 @@ class IntTools_PntOnFace {
 	if (__env){printf("## Call custom destructor for instance of IntTools_PntOnFace\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_IndexedDataMapOfShapeAddress;
 class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
@@ -731,6 +753,7 @@ class IntTools_IndexedDataMapOfShapeAddress : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor IntTools_Array1OfRoots;
 class IntTools_Array1OfRoots {
 	public:
@@ -770,6 +793,7 @@ class IntTools_Array1OfRoots {
 	if (__env){printf("## Call custom destructor for instance of IntTools_Array1OfRoots\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SequenceOfRoots;
 class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
@@ -825,6 +849,7 @@ class IntTools_SequenceOfRoots : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntTools_SequenceOfCurves;
 class IntTools_SequenceOfCurves : public TCollection_BaseSequence {
 	public:
@@ -879,6 +904,7 @@ class IntTools_SequenceOfCurves : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntTools_ListOfSurfaceRangeSample;
 class IntTools_ListOfSurfaceRangeSample {
 	public:
@@ -929,6 +955,7 @@ class IntTools_ListOfSurfaceRangeSample {
 	}
 };
 
+
 %nodefaultctor IntTools_Compare;
 class IntTools_Compare {
 	public:
@@ -950,6 +977,7 @@ class IntTools_Compare {
 	if (__env){printf("## Call custom destructor for instance of IntTools_Compare\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_DataMapOfCurveSampleBox;
 class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
@@ -985,6 +1013,7 @@ class IntTools_DataMapOfCurveSampleBox : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor IntTools_CompareRange;
 class IntTools_CompareRange {
 	public:
@@ -1006,6 +1035,7 @@ class IntTools_CompareRange {
 	if (__env){printf("## Call custom destructor for instance of IntTools_CompareRange\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfPntOn2Faces;
 class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode {
@@ -1035,6 +1065,7 @@ class IntTools_SequenceNodeOfSequenceOfPntOn2Faces : public TCollection_SeqNode 
 	}
 };
 
+
 %nodefaultctor IntTools_QuickSort;
 class IntTools_QuickSort {
 	public:
@@ -1050,6 +1081,7 @@ class IntTools_QuickSort {
 	if (__env){printf("## Call custom destructor for instance of IntTools_QuickSort\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_MapOfCurveSample;
 class IntTools_MapOfCurveSample : public TCollection_BasicMap {
@@ -1076,6 +1108,7 @@ class IntTools_MapOfCurveSample : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of IntTools_MapOfCurveSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SequenceOfCommonPrts;
 class IntTools_SequenceOfCommonPrts : public TCollection_BaseSequence {
@@ -1131,6 +1164,7 @@ class IntTools_SequenceOfCommonPrts : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntTools_MarkedRangeSet;
 class IntTools_MarkedRangeSet {
 	public:
@@ -1175,6 +1209,7 @@ class IntTools_MarkedRangeSet {
 	}
 };
 
+
 %nodefaultctor IntTools_DataMapOfSurfaceSampleBox;
 class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 	public:
@@ -1208,6 +1243,7 @@ class IntTools_DataMapOfSurfaceSampleBox : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapOfSurfaceSampleBox\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_CArray1OfInteger;
 class IntTools_CArray1OfInteger {
@@ -1249,6 +1285,7 @@ class IntTools_CArray1OfInteger {
 	}
 };
 
+
 %nodefaultctor IntTools_StdMapNodeOfMapOfSurfaceSample;
 class IntTools_StdMapNodeOfMapOfSurfaceSample : public TCollection_MapNode {
 	public:
@@ -1276,6 +1313,7 @@ class IntTools_StdMapNodeOfMapOfSurfaceSample : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of IntTools_StdMapNodeOfMapOfSurfaceSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SequenceOfRanges;
 class IntTools_SequenceOfRanges : public TCollection_BaseSequence {
@@ -1330,6 +1368,7 @@ class IntTools_SequenceOfRanges : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceOfRanges\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SurfaceRangeSample;
 class IntTools_SurfaceRangeSample {
@@ -1397,6 +1436,7 @@ class IntTools_SurfaceRangeSample {
 	}
 };
 
+
 %nodefaultctor IntTools_Range;
 class IntTools_Range {
 	public:
@@ -1422,6 +1462,7 @@ class IntTools_Range {
 	if (__env){printf("## Call custom destructor for instance of IntTools_Range\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_IndexedDataMapOfTransientAddress;
 class IntTools_IndexedDataMapOfTransientAddress : public TCollection_BasicMap {
@@ -1466,6 +1507,7 @@ class IntTools_IndexedDataMapOfTransientAddress : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapOfTransientAddress\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_Context;
 class IntTools_Context {
@@ -1519,6 +1561,7 @@ class IntTools_Context {
 	}
 };
 
+
 %nodefaultctor IntTools_MapIteratorOfMapOfSurfaceSample;
 class IntTools_MapIteratorOfMapOfSurfaceSample : public TCollection_BasicMapIterator {
 	public:
@@ -1538,6 +1581,7 @@ class IntTools_MapIteratorOfMapOfSurfaceSample : public TCollection_BasicMapIter
 	if (__env){printf("## Call custom destructor for instance of IntTools_MapIteratorOfMapOfSurfaceSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_EdgeFace;
 class IntTools_EdgeFace {
@@ -1587,6 +1631,7 @@ class IntTools_EdgeFace {
 	}
 };
 
+
 %nodefaultctor IntTools_Array1OfRange;
 class IntTools_Array1OfRange {
 	public:
@@ -1627,6 +1672,7 @@ class IntTools_Array1OfRange {
 	}
 };
 
+
 %nodefaultctor IntTools_BaseRangeSample;
 class IntTools_BaseRangeSample {
 	public:
@@ -1646,6 +1692,7 @@ class IntTools_BaseRangeSample {
 	if (__env){printf("## Call custom destructor for instance of IntTools_BaseRangeSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_CurveRangeSample;
 class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
@@ -1672,6 +1719,7 @@ class IntTools_CurveRangeSample : public IntTools_BaseRangeSample {
 	if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools;
 class IntTools {
@@ -1700,6 +1748,7 @@ class IntTools {
 	if (__env){printf("## Call custom destructor for instance of IntTools\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_Curve;
 class IntTools_Curve {
@@ -1739,6 +1788,7 @@ class IntTools_Curve {
 	}
 };
 
+
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfCurves;
 class IntTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 	public:
@@ -1766,6 +1816,7 @@ class IntTools_SequenceNodeOfSequenceOfCurves : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfCurves\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_ListNodeOfListOfSurfaceRangeSample;
 class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
@@ -1795,6 +1846,7 @@ class IntTools_ListNodeOfListOfSurfaceRangeSample : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor IntTools_CurveRangeSampleMapHasher;
 class IntTools_CurveRangeSampleMapHasher {
 	public:
@@ -1812,6 +1864,7 @@ class IntTools_CurveRangeSampleMapHasher {
 	if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeSampleMapHasher\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfCommonPrts;
 class IntTools_SequenceNodeOfSequenceOfCommonPrts : public TCollection_SeqNode {
@@ -1841,6 +1894,7 @@ class IntTools_SequenceNodeOfSequenceOfCommonPrts : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor IntTools_CurveRangeLocalizeData;
 class IntTools_CurveRangeLocalizeData {
 	public:
@@ -1868,6 +1922,7 @@ class IntTools_CurveRangeLocalizeData {
 	if (__env){printf("## Call custom destructor for instance of IntTools_CurveRangeLocalizeData\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_TopolTool;
 class IntTools_TopolTool : public Adaptor3d_TopolTool {
@@ -1912,6 +1967,7 @@ class IntTools_TopolTool : public Adaptor3d_TopolTool {
 	if (__env){printf("## Call custom destructor for instance of IntTools_TopolTool\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SequenceOfPntOn2Faces;
 class IntTools_SequenceOfPntOn2Faces : public TCollection_BaseSequence {
@@ -1967,6 +2023,7 @@ class IntTools_SequenceOfPntOn2Faces : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor IntTools_EdgeEdge;
 class IntTools_EdgeEdge {
 	public:
@@ -2019,6 +2076,7 @@ class IntTools_EdgeEdge {
 	}
 };
 
+
 %nodefaultctor IntTools_LineConstructor;
 class IntTools_LineConstructor {
 	public:
@@ -2042,6 +2100,7 @@ class IntTools_LineConstructor {
 	if (__env){printf("## Call custom destructor for instance of IntTools_LineConstructor\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_SurfaceRangeLocalizeData;
 class IntTools_SurfaceRangeLocalizeData {
@@ -2121,6 +2180,7 @@ class IntTools_SurfaceRangeLocalizeData {
 	}
 };
 
+
 %nodefaultctor IntTools_SequenceNodeOfSequenceOfRanges;
 class IntTools_SequenceNodeOfSequenceOfRanges : public TCollection_SeqNode {
 	public:
@@ -2148,6 +2208,7 @@ class IntTools_SequenceNodeOfSequenceOfRanges : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of IntTools_SequenceNodeOfSequenceOfRanges\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_Root;
 class IntTools_Root {
@@ -2191,6 +2252,7 @@ class IntTools_Root {
 	}
 };
 
+
 %nodefaultctor IntTools_StdMapNodeOfMapOfCurveSample;
 class IntTools_StdMapNodeOfMapOfCurveSample : public TCollection_MapNode {
 	public:
@@ -2219,6 +2281,7 @@ class IntTools_StdMapNodeOfMapOfCurveSample : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor IntTools_ListNodeOfListOfCurveRangeSample;
 class IntTools_ListNodeOfListOfCurveRangeSample : public TCollection_MapNode {
 	public:
@@ -2246,6 +2309,7 @@ class IntTools_ListNodeOfListOfCurveRangeSample : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of IntTools_ListNodeOfListOfCurveRangeSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox;
 class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNode {
@@ -2277,6 +2341,7 @@ class IntTools_DataMapNodeOfDataMapOfSurfaceSampleBox : public TCollection_MapNo
 	}
 };
 
+
 %nodefaultctor IntTools_PntOn2Faces;
 class IntTools_PntOn2Faces {
 	public:
@@ -2304,6 +2369,7 @@ class IntTools_PntOn2Faces {
 	if (__env){printf("## Call custom destructor for instance of IntTools_PntOn2Faces\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress;
 class IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollection_MapNode {
@@ -2338,6 +2404,7 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress : public TCollec
 	if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapNodeOfIndexedDataMapOfShapeAddress\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_ListOfCurveRangeSample;
 class IntTools_ListOfCurveRangeSample {
@@ -2389,6 +2456,7 @@ class IntTools_ListOfCurveRangeSample {
 	}
 };
 
+
 %nodefaultctor IntTools_ListIteratorOfListOfCurveRangeSample;
 class IntTools_ListIteratorOfListOfCurveRangeSample {
 	public:
@@ -2412,6 +2480,7 @@ class IntTools_ListIteratorOfListOfCurveRangeSample {
 	if (__env){printf("## Call custom destructor for instance of IntTools_ListIteratorOfListOfCurveRangeSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_BeanBeanIntersector;
 class IntTools_BeanBeanIntersector {
@@ -2449,6 +2518,7 @@ class IntTools_BeanBeanIntersector {
 	}
 };
 
+
 %nodefaultctor IntTools_DataMapIteratorOfDataMapOfCurveSampleBox;
 class IntTools_DataMapIteratorOfDataMapOfCurveSampleBox : public TCollection_BasicMapIterator {
 	public:
@@ -2471,6 +2541,7 @@ class IntTools_DataMapIteratorOfDataMapOfCurveSampleBox : public TCollection_Bas
 	}
 };
 
+
 %nodefaultctor IntTools_QuickSortRange;
 class IntTools_QuickSortRange {
 	public:
@@ -2486,6 +2557,7 @@ class IntTools_QuickSortRange {
 	if (__env){printf("## Call custom destructor for instance of IntTools_QuickSortRange\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_CArray1OfReal;
 class IntTools_CArray1OfReal {
@@ -2527,6 +2599,7 @@ class IntTools_CArray1OfReal {
 	}
 };
 
+
 %nodefaultctor IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox;
 class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_BasicMapIterator {
 	public:
@@ -2548,6 +2621,7 @@ class IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox : public TCollection_B
 	if (__env){printf("## Call custom destructor for instance of IntTools_DataMapIteratorOfDataMapOfSurfaceSampleBox\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_Tools;
 class IntTools_Tools {
@@ -2595,6 +2669,7 @@ class IntTools_Tools {
 	}
 };
 
+
 %nodefaultctor IntTools_ListIteratorOfListOfSurfaceRangeSample;
 class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 	public:
@@ -2618,6 +2693,7 @@ class IntTools_ListIteratorOfListOfSurfaceRangeSample {
 	if (__env){printf("## Call custom destructor for instance of IntTools_ListIteratorOfListOfSurfaceRangeSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_ShrunkRange;
 class IntTools_ShrunkRange {
@@ -2648,6 +2724,7 @@ class IntTools_ShrunkRange {
 	if (__env){printf("## Call custom destructor for instance of IntTools_ShrunkRange\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_ListOfBox;
 class IntTools_ListOfBox {
@@ -2699,6 +2776,7 @@ class IntTools_ListOfBox {
 	}
 };
 
+
 %nodefaultctor IntTools_MapIteratorOfMapOfCurveSample;
 class IntTools_MapIteratorOfMapOfCurveSample : public TCollection_BasicMapIterator {
 	public:
@@ -2718,6 +2796,7 @@ class IntTools_MapIteratorOfMapOfCurveSample : public TCollection_BasicMapIterat
 	if (__env){printf("## Call custom destructor for instance of IntTools_MapIteratorOfMapOfCurveSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_BeanFaceIntersector;
 class IntTools_BeanFaceIntersector {
@@ -2759,6 +2838,7 @@ class IntTools_BeanFaceIntersector {
 	}
 };
 
+
 %nodefaultctor IntTools_FaceFace;
 class IntTools_FaceFace {
 	public:
@@ -2797,6 +2877,7 @@ class IntTools_FaceFace {
 	}
 };
 
+
 %nodefaultctor IntTools_DataMapNodeOfDataMapOfCurveSampleBox;
 class IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public TCollection_MapNode {
 	public:
@@ -2827,6 +2908,7 @@ class IntTools_DataMapNodeOfDataMapOfCurveSampleBox : public TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor IntTools_MapOfSurfaceSample;
 class IntTools_MapOfSurfaceSample : public TCollection_BasicMap {
 	public:
@@ -2852,6 +2934,7 @@ class IntTools_MapOfSurfaceSample : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of IntTools_MapOfSurfaceSample\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress;
 class IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : public TCollection_MapNode {
@@ -2886,6 +2969,7 @@ class IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress : public TCo
 	if (__env){printf("## Call custom destructor for instance of IntTools_IndexedDataMapNodeOfIndexedDataMapOfTransientAddress\n");}
 	}
 };
+
 
 %nodefaultctor IntTools_ListIteratorOfListOfBox;
 class IntTools_ListIteratorOfListOfBox {

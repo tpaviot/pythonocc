@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -145,6 +146,7 @@ class Handle_AppParCurves_HArray1OfMultiCurve : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve;
 class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_TCollection_SeqNode {
 	public:
@@ -169,6 +171,7 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public Handle_
 	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AppParCurves_SmoothCriterion;
 class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
@@ -195,6 +198,7 @@ class Handle_AppParCurves_SmoothCriterion : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiBSpCurve;
 class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 	public:
@@ -219,6 +223,7 @@ class Handle_AppParCurves_HArray1OfMultiBSpCurve : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfMultiBSpCurve\n");}
 	}
 };
+
 
 %nodefaultctor Handle_AppParCurves_HArray1OfMultiPoint;
 class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
@@ -245,6 +250,7 @@ class Handle_AppParCurves_HArray1OfMultiPoint : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve;
 class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCollection_SeqNode {
 	public:
@@ -270,6 +276,7 @@ class Handle_AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public Handle_TCo
 	}
 };
 
+
 %nodefaultctor Handle_AppParCurves_HArray1OfConstraintCouple;
 class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared {
 	public:
@@ -294,6 +301,7 @@ class Handle_AppParCurves_HArray1OfConstraintCouple : public Handle_MMgt_TShared
 	if (__env){printf("## Call custom destructor for instance of Handle_AppParCurves_HArray1OfConstraintCouple\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_SequenceOfMultiCurve;
 class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
@@ -349,6 +357,7 @@ class AppParCurves_SequenceOfMultiCurve : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor AppParCurves_MultiCurve;
 class AppParCurves_MultiCurve {
 	public:
@@ -399,7 +408,12 @@ class AppParCurves_MultiCurve {
 		%feature("autodoc", "1");
 		virtual		void D2(const Standard_Integer CuIndex, const Standard_Real U, gp_Pnt2d & Pt, gp_Vec2d & V1, gp_Vec2d & V2) const;
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AppParCurves_MultiCurve {
@@ -408,6 +422,7 @@ class AppParCurves_MultiCurve {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiCurve\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_MultiBSpCurve;
 class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
@@ -428,6 +443,13 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 		const TColStd_Array1OfReal & Knots() const;
 		%feature("autodoc", "1");
 		const TColStd_Array1OfInteger & Multiplicities() const;
+		%feature("autodoc", "1");
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AppParCurves_MultiBSpCurve {
@@ -436,6 +458,7 @@ class AppParCurves_MultiBSpCurve : public AppParCurves_MultiCurve {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiBSpCurve\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_Array1OfMultiCurve;
 class AppParCurves_Array1OfMultiCurve {
@@ -477,6 +500,7 @@ class AppParCurves_Array1OfMultiCurve {
 	}
 };
 
+
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiCurve;
 class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNode {
 	public:
@@ -504,6 +528,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiCurve : public TCollection_SeqNo
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiCurve\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_MultiPoint;
 class AppParCurves_MultiPoint {
@@ -539,7 +564,12 @@ class AppParCurves_MultiPoint {
 		%feature("autodoc", "1");
 		void Transform2d(const Standard_Integer CuIndex, const Standard_Real x, const Standard_Real dx, const Standard_Real y, const Standard_Real dy);
 		%feature("autodoc", "1");
-		virtual		void Dump(Standard_OStream & o) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 
 };
 %extend AppParCurves_MultiPoint {
@@ -548,6 +578,7 @@ class AppParCurves_MultiPoint {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_MultiPoint\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_ConstraintCouple;
 class AppParCurves_ConstraintCouple {
@@ -572,6 +603,7 @@ class AppParCurves_ConstraintCouple {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_ConstraintCouple\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_HArray1OfMultiCurve;
 class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
@@ -618,6 +650,7 @@ class AppParCurves_HArray1OfMultiCurve : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiCurve\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_SmoothCriterion;
 class AppParCurves_SmoothCriterion : public MMgt_TShared {
@@ -675,6 +708,7 @@ class AppParCurves_SmoothCriterion : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AppParCurves_Array1OfConstraintCouple;
 class AppParCurves_Array1OfConstraintCouple {
 	public:
@@ -714,6 +748,7 @@ class AppParCurves_Array1OfConstraintCouple {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfConstraintCouple\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_SequenceOfMultiBSpCurve;
 class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
@@ -769,6 +804,7 @@ class AppParCurves_SequenceOfMultiBSpCurve : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve;
 class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_SeqNode {
 	public:
@@ -796,6 +832,7 @@ class AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve : public TCollection_Se
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_SequenceNodeOfSequenceOfMultiBSpCurve\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_Array1OfMultiBSpCurve;
 class AppParCurves_Array1OfMultiBSpCurve {
@@ -836,6 +873,7 @@ class AppParCurves_Array1OfMultiBSpCurve {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_Array1OfMultiBSpCurve\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_HArray1OfConstraintCouple;
 class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
@@ -883,6 +921,7 @@ class AppParCurves_HArray1OfConstraintCouple : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AppParCurves_HArray1OfMultiPoint;
 class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 	public:
@@ -929,6 +968,7 @@ class AppParCurves_HArray1OfMultiPoint : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor AppParCurves;
 class AppParCurves {
 	public:
@@ -950,6 +990,7 @@ class AppParCurves {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_HArray1OfMultiBSpCurve;
 class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
@@ -996,6 +1037,7 @@ class AppParCurves_HArray1OfMultiBSpCurve : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of AppParCurves_HArray1OfMultiBSpCurve\n");}
 	}
 };
+
 
 %nodefaultctor AppParCurves_Array1OfMultiPoint;
 class AppParCurves_Array1OfMultiPoint {

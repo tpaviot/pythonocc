@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_GeomTools_UndefinedTypeHandler : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor GeomTools_Curve2dSet;
 class GeomTools_Curve2dSet {
 	public:
@@ -152,11 +154,25 @@ class GeomTools_Curve2dSet {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Handle_Geom2d_Curve &C) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void PrintCurve2d(const Handle_Geom2d_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
@@ -174,6 +190,7 @@ class GeomTools_Curve2dSet {
 	}
 };
 
+
 %nodefaultctor GeomTools_CurveSet;
 class GeomTools_CurveSet {
 	public:
@@ -188,11 +205,25 @@ class GeomTools_CurveSet {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Handle_Geom_Curve &C) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void PrintCurve(const Handle_Geom_Curve &C, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
@@ -209,6 +240,7 @@ class GeomTools_CurveSet {
 	if (__env){printf("## Call custom destructor for instance of GeomTools_CurveSet\n");}
 	}
 };
+
 
 %nodefaultctor GeomTools;
 class GeomTools {
@@ -246,6 +278,7 @@ class GeomTools {
 	}
 };
 
+
 %nodefaultctor GeomTools_SurfaceSet;
 class GeomTools_SurfaceSet {
 	public:
@@ -260,11 +293,25 @@ class GeomTools_SurfaceSet {
 		%feature("autodoc", "1");
 		Standard_Integer Index(const Handle_Geom_Surface &S) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & OS) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Write(Standard_OStream & OS) const;
+		%extend{
+			std::string WriteToString() {
+			std::stringstream s;
+			self->Write(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
-		void Read(std::istream & IS);
+		%extend{
+			void ReadFromString(std::string src) {
+			std::stringstream s(src);
+			self->Read(s);}
+		};
 		%feature("autodoc", "1");
 		void PrintSurface(const Handle_Geom_Surface &S, Standard_OStream & OS, const Standard_Boolean compact=0);
 		%feature("autodoc", "1");
@@ -281,6 +328,7 @@ class GeomTools_SurfaceSet {
 	if (__env){printf("## Call custom destructor for instance of GeomTools_SurfaceSet\n");}
 	}
 };
+
 
 %nodefaultctor GeomTools_UndefinedTypeHandler;
 class GeomTools_UndefinedTypeHandler : public MMgt_TShared {

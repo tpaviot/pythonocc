@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -133,6 +134,7 @@ class RWStepRepr_RWStructuralResponsePropertyDefinitionRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWQuantifiedAssemblyComponentUsage;
 class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
 	public:
@@ -152,6 +154,7 @@ class RWStepRepr_RWQuantifiedAssemblyComponentUsage {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWQuantifiedAssemblyComponentUsage\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWCompoundRepresentationItem;
 class RWStepRepr_RWCompoundRepresentationItem {
@@ -173,6 +176,7 @@ class RWStepRepr_RWCompoundRepresentationItem {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWDerivedShapeAspect;
 class RWStepRepr_RWDerivedShapeAspect {
 	public:
@@ -192,6 +196,7 @@ class RWStepRepr_RWDerivedShapeAspect {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWDerivedShapeAspect\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWExtension;
 class RWStepRepr_RWExtension {
@@ -213,6 +218,7 @@ class RWStepRepr_RWExtension {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWRepresentationRelationship;
 class RWStepRepr_RWRepresentationRelationship {
 	public:
@@ -232,6 +238,7 @@ class RWStepRepr_RWRepresentationRelationship {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationRelationship\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWConfigurationItem;
 class RWStepRepr_RWConfigurationItem {
@@ -253,6 +260,7 @@ class RWStepRepr_RWConfigurationItem {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWMaterialPropertyRepresentation;
 class RWStepRepr_RWMaterialPropertyRepresentation {
 	public:
@@ -273,6 +281,7 @@ class RWStepRepr_RWMaterialPropertyRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWFunctionallyDefinedTransformation;
 class RWStepRepr_RWFunctionallyDefinedTransformation {
 	public:
@@ -291,6 +300,7 @@ class RWStepRepr_RWFunctionallyDefinedTransformation {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWRepresentationContext;
 class RWStepRepr_RWRepresentationContext {
 	public:
@@ -308,6 +318,7 @@ class RWStepRepr_RWRepresentationContext {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWSpecifiedHigherUsageOccurrence;
 class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
@@ -329,6 +340,7 @@ class RWStepRepr_RWSpecifiedHigherUsageOccurrence {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWConfigurationEffectivity;
 class RWStepRepr_RWConfigurationEffectivity {
 	public:
@@ -348,6 +360,7 @@ class RWStepRepr_RWConfigurationEffectivity {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWConfigurationEffectivity\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWMakeFromUsageOption;
 class RWStepRepr_RWMakeFromUsageOption {
@@ -369,6 +382,7 @@ class RWStepRepr_RWMakeFromUsageOption {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWParametricRepresentationContext;
 class RWStepRepr_RWParametricRepresentationContext {
 	public:
@@ -386,6 +400,7 @@ class RWStepRepr_RWParametricRepresentationContext {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWParametricRepresentationContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWShapeAspectDerivingRelationship;
 class RWStepRepr_RWShapeAspectDerivingRelationship {
@@ -407,6 +422,7 @@ class RWStepRepr_RWShapeAspectDerivingRelationship {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWReprItemAndLengthMeasureWithUnit;
 class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
 	public:
@@ -424,6 +440,7 @@ class RWStepRepr_RWReprItemAndLengthMeasureWithUnit {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWReprItemAndLengthMeasureWithUnit\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWShapeAspectTransition;
 class RWStepRepr_RWShapeAspectTransition {
@@ -445,6 +462,7 @@ class RWStepRepr_RWShapeAspectTransition {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWStructuralResponseProperty;
 class RWStepRepr_RWStructuralResponseProperty {
 	public:
@@ -464,6 +482,7 @@ class RWStepRepr_RWStructuralResponseProperty {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWStructuralResponseProperty\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWMappedItem;
 class RWStepRepr_RWMappedItem {
@@ -485,6 +504,7 @@ class RWStepRepr_RWMappedItem {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWMaterialDesignation;
 class RWStepRepr_RWMaterialDesignation {
 	public:
@@ -504,6 +524,7 @@ class RWStepRepr_RWMaterialDesignation {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWMaterialDesignation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWProductDefinitionShape;
 class RWStepRepr_RWProductDefinitionShape {
@@ -525,6 +546,7 @@ class RWStepRepr_RWProductDefinitionShape {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWDataEnvironment;
 class RWStepRepr_RWDataEnvironment {
 	public:
@@ -544,6 +566,7 @@ class RWStepRepr_RWDataEnvironment {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWDataEnvironment\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWCompositeShapeAspect;
 class RWStepRepr_RWCompositeShapeAspect {
@@ -565,6 +588,7 @@ class RWStepRepr_RWCompositeShapeAspect {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWPropertyDefinition;
 class RWStepRepr_RWPropertyDefinition {
 	public:
@@ -584,6 +608,7 @@ class RWStepRepr_RWPropertyDefinition {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWPropertyDefinition\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWShapeAspectRelationship;
 class RWStepRepr_RWShapeAspectRelationship {
@@ -605,6 +630,7 @@ class RWStepRepr_RWShapeAspectRelationship {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWRepresentationMap;
 class RWStepRepr_RWRepresentationMap {
 	public:
@@ -624,6 +650,7 @@ class RWStepRepr_RWRepresentationMap {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationMap\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWMaterialProperty;
 class RWStepRepr_RWMaterialProperty {
@@ -645,6 +672,7 @@ class RWStepRepr_RWMaterialProperty {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWDescriptiveRepresentationItem;
 class RWStepRepr_RWDescriptiveRepresentationItem {
 	public:
@@ -662,6 +690,7 @@ class RWStepRepr_RWDescriptiveRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWDescriptiveRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWRepresentationRelationshipWithTransformation;
 class RWStepRepr_RWRepresentationRelationshipWithTransformation {
@@ -683,6 +712,7 @@ class RWStepRepr_RWRepresentationRelationshipWithTransformation {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWDefinitionalRepresentation;
 class RWStepRepr_RWDefinitionalRepresentation {
 	public:
@@ -703,6 +733,7 @@ class RWStepRepr_RWDefinitionalRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWRepresentationItem;
 class RWStepRepr_RWRepresentationItem {
 	public:
@@ -720,6 +751,7 @@ class RWStepRepr_RWRepresentationItem {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentationItem\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWConfigurationDesign;
 class RWStepRepr_RWConfigurationDesign {
@@ -741,6 +773,7 @@ class RWStepRepr_RWConfigurationDesign {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWGlobalUncertaintyAssignedContext;
 class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 	public:
@@ -760,6 +793,7 @@ class RWStepRepr_RWGlobalUncertaintyAssignedContext {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWGlobalUncertaintyAssignedContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWShapeAspect;
 class RWStepRepr_RWShapeAspect {
@@ -781,6 +815,7 @@ class RWStepRepr_RWShapeAspect {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWGlobalUnitAssignedContext;
 class RWStepRepr_RWGlobalUnitAssignedContext {
 	public:
@@ -800,6 +835,7 @@ class RWStepRepr_RWGlobalUnitAssignedContext {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWGlobalUnitAssignedContext\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsage;
 class RWStepRepr_RWAssemblyComponentUsage {
@@ -821,6 +857,7 @@ class RWStepRepr_RWAssemblyComponentUsage {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRelationship;
 class RWStepRepr_RWPropertyDefinitionRelationship {
 	public:
@@ -840,6 +877,7 @@ class RWStepRepr_RWPropertyDefinitionRelationship {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWPropertyDefinitionRelationship\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWPropertyDefinitionRepresentation;
 class RWStepRepr_RWPropertyDefinitionRepresentation {
@@ -861,6 +899,7 @@ class RWStepRepr_RWPropertyDefinitionRepresentation {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWRepresentation;
 class RWStepRepr_RWRepresentation {
 	public:
@@ -880,6 +919,7 @@ class RWStepRepr_RWRepresentation {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWRepresentation\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWMeasureRepresentationItem;
 class RWStepRepr_RWMeasureRepresentationItem {
@@ -901,6 +941,7 @@ class RWStepRepr_RWMeasureRepresentationItem {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWProductConcept;
 class RWStepRepr_RWProductConcept {
 	public:
@@ -920,6 +961,7 @@ class RWStepRepr_RWProductConcept {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWProductConcept\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWShapeRepresentationRelationshipWithTransformation;
 class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
@@ -941,6 +983,7 @@ class RWStepRepr_RWShapeRepresentationRelationshipWithTransformation {
 	}
 };
 
+
 %nodefaultctor RWStepRepr_RWAssemblyComponentUsageSubstitute;
 class RWStepRepr_RWAssemblyComponentUsageSubstitute {
 	public:
@@ -960,6 +1003,7 @@ class RWStepRepr_RWAssemblyComponentUsageSubstitute {
 	if (__env){printf("## Call custom destructor for instance of RWStepRepr_RWAssemblyComponentUsageSubstitute\n");}
 	}
 };
+
 
 %nodefaultctor RWStepRepr_RWItemDefinedTransformation;
 class RWStepRepr_RWItemDefinedTransformation {

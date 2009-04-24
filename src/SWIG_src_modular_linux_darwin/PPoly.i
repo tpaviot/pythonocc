@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PPoly_HArray1OfTriangle : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PPoly_Triangulation;
 class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PPoly_Triangulation : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Triangulation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PPoly_Polygon2D;
 class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
@@ -188,6 +191,7 @@ class Handle_PPoly_Polygon2D : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PPoly_Polygon3D;
 class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 	public:
@@ -212,6 +216,7 @@ class Handle_PPoly_Polygon3D : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_Polygon3D\n");}
 	}
 };
+
 
 %nodefaultctor Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
 class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandard_ArrayNode {
@@ -238,6 +243,7 @@ class Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public Handle_PStandar
 	}
 };
 
+
 %nodefaultctor Handle_PPoly_PolygonOnTriangulation;
 class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 	public:
@@ -262,6 +268,7 @@ class Handle_PPoly_PolygonOnTriangulation : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PPoly_PolygonOnTriangulation\n");}
 	}
 };
+
 
 %nodefaultctor PPoly_Triangulation;
 class PPoly_Triangulation : public Standard_Persistent {
@@ -327,6 +334,7 @@ class PPoly_Triangulation : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle;
 class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 	public:
@@ -346,6 +354,7 @@ class PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle {
 	if (__env){printf("## Call custom destructor for instance of PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle\n");}
 	}
 };
+
 
 %nodefaultctor PPoly_Polygon3D;
 class PPoly_Polygon3D : public Standard_Persistent {
@@ -407,6 +416,7 @@ class PPoly_Polygon3D : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PPoly_Triangle;
 class PPoly_Triangle {
 	public:
@@ -428,6 +438,7 @@ class PPoly_Triangle {
 	if (__env){printf("## Call custom destructor for instance of PPoly_Triangle\n");}
 	}
 };
+
 
 %nodefaultctor PPoly_Polygon2D;
 class PPoly_Polygon2D : public Standard_Persistent {
@@ -477,6 +488,7 @@ class PPoly_Polygon2D : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PPoly_FieldOfHArray1OfTriangle;
 class PPoly_FieldOfHArray1OfTriangle : public DBC_BaseArray {
 	public:
@@ -506,6 +518,7 @@ class PPoly_FieldOfHArray1OfTriangle : public DBC_BaseArray {
 	if (__env){printf("## Call custom destructor for instance of PPoly_FieldOfHArray1OfTriangle\n");}
 	}
 };
+
 
 %nodefaultctor PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
 class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
@@ -543,6 +556,7 @@ class PPoly_VArrayNodeOfFieldOfHArray1OfTriangle : public PStandard_ArrayNode {
 	}
 };
 
+
 %nodefaultctor PPoly_HArray1OfTriangle;
 class PPoly_HArray1OfTriangle : public Standard_Persistent {
 	public:
@@ -563,7 +577,12 @@ class PPoly_HArray1OfTriangle : public Standard_Persistent {
 		%feature("autodoc", "1");
 		virtual		Handle_Standard_Persistent ShallowCopy() const;
 		%feature("autodoc", "1");
-		virtual		void ShallowDump(Standard_OStream & s) const;
+		%extend{
+			std::string ShallowDumpToString() {
+			std::stringstream s;
+			self->ShallowDump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		PPoly_HArray1OfTriangle();
 		%feature("autodoc", "1");
@@ -598,6 +617,7 @@ class PPoly_HArray1OfTriangle : public Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of PPoly_HArray1OfTriangle\n");}
 	}
 };
+
 
 %nodefaultctor PPoly_PolygonOnTriangulation;
 class PPoly_PolygonOnTriangulation : public Standard_Persistent {

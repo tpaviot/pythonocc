@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public Ha
 	}
 };
 
+
 %nodefaultctor Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape;
 class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TCollection_MapNode {
 	public:
@@ -162,6 +164,7 @@ class Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public Handle_TColl
 	if (__env){printf("## Call custom destructor for instance of Handle_BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");}
 	}
 };
+
 
 %nodefaultctor Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
 class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollection_SeqNode {
@@ -188,6 +191,7 @@ class Handle_BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape;
 class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_BasicMapIterator {
 	public:
@@ -209,6 +213,7 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape : public TCollection_Bas
 	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfBasicEltShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepMAT2d_Explorer;
 class BRepMAT2d_Explorer {
@@ -252,6 +257,7 @@ class BRepMAT2d_Explorer {
 	}
 };
 
+
 %nodefaultctor BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt;
 class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMapIterator {
 	public:
@@ -273,6 +279,7 @@ class BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt : public TColl
 	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapIteratorOfDataMapOfShapeSequenceOfBasicElt\n");}
 	}
 };
+
 
 %nodefaultctor BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt;
 class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollection_MapNode {
@@ -303,6 +310,7 @@ class BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt : public TCollecti
 	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfShapeSequenceOfBasicElt\n");}
 	}
 };
+
 
 %nodefaultctor BRepMAT2d_DataMapOfShapeSequenceOfBasicElt;
 class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
@@ -338,6 +346,7 @@ class BRepMAT2d_DataMapOfShapeSequenceOfBasicElt : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape;
 class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode {
 	public:
@@ -367,6 +376,7 @@ class BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape : public TCollection_MapNode
 	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_DataMapNodeOfDataMapOfBasicEltShape\n");}
 	}
 };
+
 
 %nodefaultctor BRepMAT2d_DataMapOfBasicEltShape;
 class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
@@ -402,6 +412,7 @@ class BRepMAT2d_DataMapOfBasicEltShape : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor BRepMAT2d_BisectingLocus;
 class BRepMAT2d_BisectingLocus {
 	public:
@@ -436,6 +447,7 @@ class BRepMAT2d_BisectingLocus {
 	}
 };
 
+
 %nodefaultctor BRepMAT2d_LinkTopoBilo;
 class BRepMAT2d_LinkTopoBilo {
 	public:
@@ -464,6 +476,7 @@ class BRepMAT2d_LinkTopoBilo {
 	}
 };
 
+
 %nodefaultctor BRepMAT2d_SequenceNodeOfSequenceOfBasicElt;
 class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 	public:
@@ -491,6 +504,7 @@ class BRepMAT2d_SequenceNodeOfSequenceOfBasicElt : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of BRepMAT2d_SequenceNodeOfSequenceOfBasicElt\n");}
 	}
 };
+
 
 %nodefaultctor BRepMAT2d_SequenceOfBasicElt;
 class BRepMAT2d_SequenceOfBasicElt : public TCollection_BaseSequence {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -155,6 +156,7 @@ class Handle_SelectMgr_EntityOwner : public Handle_SelectBasics_EntityOwner {
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_Filter;
 class Handle_SelectMgr_Filter : public Handle_MMgt_TShared {
 	public:
@@ -179,6 +181,7 @@ class Handle_SelectMgr_Filter : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_Filter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectMgr_CompositionFilter;
 class Handle_SelectMgr_CompositionFilter : public Handle_SelectMgr_Filter {
@@ -205,6 +208,7 @@ class Handle_SelectMgr_CompositionFilter : public Handle_SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_AndFilter;
 class Handle_SelectMgr_AndFilter : public Handle_SelectMgr_CompositionFilter {
 	public:
@@ -229,6 +233,7 @@ class Handle_SelectMgr_AndFilter : public Handle_SelectMgr_CompositionFilter {
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_AndFilter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfFilter;
 class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollection_SeqNode {
@@ -255,6 +260,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfFilter : public Handle_TCollectio
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation;
 class Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public Handle_TCollection_MapNode {
 	public:
@@ -279,6 +285,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public Handle
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfSelectionActivation\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfSelector;
 class Handle_SelectMgr_SequenceNodeOfSequenceOfSelector : public Handle_TCollection_SeqNode {
@@ -305,6 +312,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelector : public Handle_TCollect
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_SelectionManager;
 class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
 	public:
@@ -329,6 +337,7 @@ class Handle_SelectMgr_SelectionManager : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SelectionManager\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectMgr_ViewerSelector;
 class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
@@ -355,6 +364,7 @@ class Handle_SelectMgr_ViewerSelector : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
 class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCollection_MapNode {
 	public:
@@ -379,6 +389,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public Handle_TCo
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
 class Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public Handle_TCollection_MapNode {
@@ -405,6 +416,7 @@ class Handle_SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public Handle_TCollec
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfSelection;
 class Handle_SelectMgr_SequenceNodeOfSequenceOfSelection : public Handle_TCollection_SeqNode {
 	public:
@@ -429,6 +441,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfSelection : public Handle_TCollec
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfSelection\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive;
 class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TCollection_MapNode {
@@ -455,6 +468,7 @@ class Handle_SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public Handle_TC
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_SequenceNodeOfSequenceOfOwner;
 class Handle_SelectMgr_SequenceNodeOfSequenceOfOwner : public Handle_TCollection_SeqNode {
 	public:
@@ -479,6 +493,7 @@ class Handle_SelectMgr_SequenceNodeOfSequenceOfOwner : public Handle_TCollection
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_SequenceNodeOfSequenceOfOwner\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectMgr_ListNodeOfListOfFilter;
 class Handle_SelectMgr_ListNodeOfListOfFilter : public Handle_TCollection_MapNode {
@@ -505,6 +520,7 @@ class Handle_SelectMgr_ListNodeOfListOfFilter : public Handle_TCollection_MapNod
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_OrFilter;
 class Handle_SelectMgr_OrFilter : public Handle_SelectMgr_CompositionFilter {
 	public:
@@ -529,6 +545,7 @@ class Handle_SelectMgr_OrFilter : public Handle_SelectMgr_CompositionFilter {
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_OrFilter\n");}
 	}
 };
+
 
 %nodefaultctor Handle_SelectMgr_SelectableObject;
 class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject {
@@ -555,6 +572,7 @@ class Handle_SelectMgr_SelectableObject : public Handle_PrsMgr_PresentableObject
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_Selection;
 class Handle_SelectMgr_Selection : public Handle_MMgt_TShared {
 	public:
@@ -580,6 +598,7 @@ class Handle_SelectMgr_Selection : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion;
 class Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public Handle_TCollection_MapNode {
 	public:
@@ -604,6 +623,7 @@ class Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : publ
 	if (__env){printf("## Call custom destructor for instance of Handle_SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_ListNodeOfListOfFilter;
 class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
@@ -633,6 +653,7 @@ class SelectMgr_ListNodeOfListOfFilter : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor SelectMgr_Filter;
 class SelectMgr_Filter : public MMgt_TShared {
 	public:
@@ -660,6 +681,7 @@ class SelectMgr_Filter : public MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_Filter\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_CompositionFilter;
 class SelectMgr_CompositionFilter : public SelectMgr_Filter {
@@ -695,6 +717,7 @@ class SelectMgr_CompositionFilter : public SelectMgr_Filter {
 	}
 };
 
+
 %nodefaultctor SelectMgr_AndFilter;
 class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 	public:
@@ -720,6 +743,7 @@ class SelectMgr_AndFilter : public SelectMgr_CompositionFilter {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_AndFilter\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive;
 class SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public TCollection_MapNode {
@@ -750,6 +774,7 @@ class SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive : public TCollection_MapN
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfIntegerSensitive\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_IndexedDataMapOfOwnerCriterion;
 class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
@@ -794,6 +819,7 @@ class SelectMgr_IndexedDataMapOfOwnerCriterion : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_IndexedDataMapOfOwnerCriterion\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_SelectionManager;
 class SelectMgr_SelectionManager : public MMgt_TShared {
@@ -881,6 +907,7 @@ class SelectMgr_SelectionManager : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor SelectMgr_DataMapOfObjectSelectors;
 class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 	public:
@@ -914,6 +941,7 @@ class SelectMgr_DataMapOfObjectSelectors : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapOfObjectSelectors\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_ViewerSelector;
 class SelectMgr_ViewerSelector : public MMgt_TShared {
@@ -969,7 +997,12 @@ class SelectMgr_ViewerSelector : public MMgt_TShared {
 		%feature("autodoc", "1");
 		SelectMgr_StateOfSelection Status(const Handle_SelectMgr_Selection &aSelection) const;
 		%feature("autodoc", "1");
-		void Dump(Standard_OStream & S) const;
+		%extend{
+			std::string DumpToString() {
+			std::stringstream s;
+			self->Dump(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		TCollection_AsciiString Status(const Handle_SelectMgr_SelectableObject &aSelectableObject) const;
 		%feature("autodoc", "1");
@@ -1005,6 +1038,7 @@ class SelectMgr_ViewerSelector : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor SelectMgr_DataMapNodeOfDataMapOfSelectionActivation;
 class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_MapNode {
 	public:
@@ -1034,6 +1068,7 @@ class SelectMgr_DataMapNodeOfDataMapOfSelectionActivation : public TCollection_M
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfSelectionActivation\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_SelectableObject;
 class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
@@ -1099,6 +1134,7 @@ class SelectMgr_SelectableObject : public PrsMgr_PresentableObject {
 	}
 };
 
+
 %nodefaultctor SelectMgr_DataMapNodeOfDataMapOfObjectSelectors;
 class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNode {
 	public:
@@ -1128,6 +1164,7 @@ class SelectMgr_DataMapNodeOfDataMapOfObjectSelectors : public TCollection_MapNo
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapNodeOfDataMapOfObjectSelectors\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_DataMapOfSelectionActivation;
 class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
@@ -1163,6 +1200,7 @@ class SelectMgr_DataMapOfSelectionActivation : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfOwner;
 class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 	public:
@@ -1190,6 +1228,7 @@ class SelectMgr_SequenceNodeOfSequenceOfOwner : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfOwner\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_SequenceOfSelection;
 class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
@@ -1245,6 +1284,7 @@ class SelectMgr_SequenceOfSelection : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation;
 class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollection_BasicMapIterator {
 	public:
@@ -1266,6 +1306,7 @@ class SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation : public TCollecti
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfSelectionActivation\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_Selection;
 class SelectMgr_Selection : public MMgt_TShared {
@@ -1313,6 +1354,7 @@ class SelectMgr_Selection : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor SelectMgr_ListIteratorOfListOfFilter;
 class SelectMgr_ListIteratorOfListOfFilter {
 	public:
@@ -1336,6 +1378,7 @@ class SelectMgr_ListIteratorOfListOfFilter {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_ListIteratorOfListOfFilter\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_ListOfFilter;
 class SelectMgr_ListOfFilter {
@@ -1387,6 +1430,7 @@ class SelectMgr_ListOfFilter {
 	}
 };
 
+
 %nodefaultctor SelectMgr_SortCriterion;
 class SelectMgr_SortCriterion {
 	public:
@@ -1427,6 +1471,7 @@ class SelectMgr_SortCriterion {
 	}
 };
 
+
 %nodefaultctor SelectMgr_IndexedMapOfOwner;
 class SelectMgr_IndexedMapOfOwner : public TCollection_BasicMap {
 	public:
@@ -1460,6 +1505,7 @@ class SelectMgr_IndexedMapOfOwner : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_IndexedMapOfOwner\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_SequenceOfSelector;
 class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
@@ -1515,6 +1561,7 @@ class SelectMgr_SequenceOfSelector : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfFilter;
 class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
 	public:
@@ -1543,6 +1590,7 @@ class SelectMgr_SequenceNodeOfSequenceOfFilter : public TCollection_SeqNode {
 	}
 };
 
+
 %nodefaultctor SelectMgr_OrFilter;
 class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
 	public:
@@ -1570,6 +1618,7 @@ class SelectMgr_OrFilter : public SelectMgr_CompositionFilter {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_OrFilter\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_SequenceOfFilter;
 class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
@@ -1625,6 +1674,7 @@ class SelectMgr_SequenceOfFilter : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelection;
 class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
 	public:
@@ -1652,6 +1702,7 @@ class SelectMgr_SequenceNodeOfSequenceOfSelection : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfSelection\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_SequenceOfOwner;
 class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
@@ -1706,6 +1757,7 @@ class SelectMgr_SequenceOfOwner : public TCollection_BaseSequence {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceOfOwner\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_EntityOwner;
 class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
@@ -1769,6 +1821,7 @@ class SelectMgr_EntityOwner : public SelectBasics_EntityOwner {
 	}
 };
 
+
 %nodefaultctor SelectMgr_DataMapOfIntegerSensitive;
 class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
 	public:
@@ -1803,6 +1856,7 @@ class SelectMgr_DataMapOfIntegerSensitive : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive;
 class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_BasicMapIterator {
 	public:
@@ -1825,6 +1879,7 @@ class SelectMgr_DataMapIteratorOfDataMapOfIntegerSensitive : public TCollection_
 	}
 };
 
+
 %nodefaultctor SelectMgr_CompareResults;
 class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 	public:
@@ -1842,6 +1897,7 @@ class SelectMgr_CompareResults : public TCollection_CompareOfInteger {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_CompareResults\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors;
 class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_BasicMapIterator {
@@ -1864,6 +1920,7 @@ class SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors : public TCollection_B
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_DataMapIteratorOfDataMapOfObjectSelectors\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion;
 class SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public TCollection_MapNode {
@@ -1899,6 +1956,7 @@ class SelectMgr_IndexedDataMapNodeOfIndexedDataMapOfOwnerCriterion : public TCol
 	}
 };
 
+
 %nodefaultctor SelectMgr_SequenceNodeOfSequenceOfSelector;
 class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
 	public:
@@ -1926,6 +1984,7 @@ class SelectMgr_SequenceNodeOfSequenceOfSelector : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of SelectMgr_SequenceNodeOfSequenceOfSelector\n");}
 	}
 };
+
 
 %nodefaultctor SelectMgr_IndexedMapNodeOfIndexedMapOfOwner;
 class SelectMgr_IndexedMapNodeOfIndexedMapOfOwner : public TCollection_MapNode {

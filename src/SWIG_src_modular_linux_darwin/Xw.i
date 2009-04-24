@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -169,6 +170,7 @@ class Handle_Xw_HListOfMFTFonts : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Xw_TextManager;
 class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 	public:
@@ -193,6 +195,7 @@ class Handle_Xw_TextManager : public Handle_MFT_TextManager {
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_TextManager\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Xw_Driver;
 class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
@@ -219,6 +222,7 @@ class Handle_Xw_Driver : public Handle_Aspect_WindowDriver {
 	}
 };
 
+
 %nodefaultctor Handle_Xw_Window;
 class Handle_Xw_Window : public Handle_Aspect_Window {
 	public:
@@ -243,6 +247,7 @@ class Handle_Xw_Window : public Handle_Aspect_Window {
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_Window\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Xw_ColorMap;
 class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
@@ -269,6 +274,7 @@ class Handle_Xw_ColorMap : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_Xw_HListOfMFTSizes;
 class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 	public:
@@ -293,6 +299,7 @@ class Handle_Xw_HListOfMFTSizes : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfMFTSizes\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Xw_GraphicDevice;
 class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
@@ -319,6 +326,7 @@ class Handle_Xw_GraphicDevice : public Handle_Aspect_GraphicDevice {
 	}
 };
 
+
 %nodefaultctor Handle_Xw_FontMap;
 class Handle_Xw_FontMap : public Handle_Standard_Transient {
 	public:
@@ -343,6 +351,7 @@ class Handle_Xw_FontMap : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_FontMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Xw_MarkMap;
 class Handle_Xw_MarkMap : public Handle_Standard_Transient {
@@ -369,6 +378,7 @@ class Handle_Xw_MarkMap : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_Xw_HListOfIndexs;
 class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 	public:
@@ -393,6 +403,7 @@ class Handle_Xw_HListOfIndexs : public Handle_MMgt_TShared {
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_HListOfIndexs\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Xw_IconBox;
 class Handle_Xw_IconBox : public Handle_Xw_Window {
@@ -419,6 +430,7 @@ class Handle_Xw_IconBox : public Handle_Xw_Window {
 	}
 };
 
+
 %nodefaultctor Handle_Xw_WidthMap;
 class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 	public:
@@ -443,6 +455,7 @@ class Handle_Xw_WidthMap : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_WidthMap\n");}
 	}
 };
+
 
 %nodefaultctor Handle_Xw_TypeMap;
 class Handle_Xw_TypeMap : public Handle_Standard_Transient {
@@ -469,6 +482,7 @@ class Handle_Xw_TypeMap : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_Xw_PixMap;
 class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
 	public:
@@ -493,6 +507,7 @@ class Handle_Xw_PixMap : public Handle_Aspect_PixMap {
 	if (__env){printf("## Call custom destructor for instance of Handle_Xw_PixMap\n");}
 	}
 };
+
 
 %nodefaultctor Xw_HListOfMFTFonts;
 class Xw_HListOfMFTFonts : public MMgt_TShared {
@@ -540,6 +555,7 @@ class Xw_HListOfMFTFonts : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Xw_ListOfMFTFonts;
 class Xw_ListOfMFTFonts {
 	public:
@@ -579,6 +595,7 @@ class Xw_ListOfMFTFonts {
 	if (__env){printf("## Call custom destructor for instance of Xw_ListOfMFTFonts\n");}
 	}
 };
+
 
 %nodefaultctor Xw_Driver;
 class Xw_Driver : public Aspect_WindowDriver {
@@ -674,7 +691,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 		%feature("autodoc", "1");
 		virtual		void RotateBuffer(const Standard_Integer aRetainBuffer, const Quantity_PlaneAngle anAngle=0.0) const;
 		%feature("autodoc", "1");
-		virtual		void WorkSpace(Quantity_Length & Width, Quantity_Length & Heigth) const;
+		virtual		void WorkSpace(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void TextSize(const TCollection_ExtendedString &aText, Standard_ShortReal & aWidth, Standard_ShortReal & aHeight, const Standard_Integer aFontIndex=-0x000000001) const;
 		%feature("autodoc", "1");
@@ -688,7 +705,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 		%feature("autodoc", "1");
 		virtual		Standard_Integer Convert(const Quantity_Length DV) const;
 		%feature("autodoc", "1");
-		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Quantity_Length & DX, Quantity_Length & DY) const;
+		virtual		void Convert(const Standard_Integer PX, const Standard_Integer PY, Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		virtual		void Convert(const Quantity_Length DX, const Quantity_Length DY, Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
@@ -743,6 +760,7 @@ class Xw_Driver : public Aspect_WindowDriver {
 	if (__env){printf("## Call custom destructor for instance of Xw_Driver\n");}
 	}
 };
+
 
 %nodefaultctor Xw_ColorMap;
 class Xw_ColorMap : public MMgt_TShared {
@@ -818,6 +836,7 @@ class Xw_ColorMap : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Xw_FontMap;
 class Xw_FontMap : public Standard_Transient {
 	public:
@@ -851,6 +870,7 @@ class Xw_FontMap : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Xw_FontMap\n");}
 	}
 };
+
 
 %nodefaultctor Xw_HListOfIndexs;
 class Xw_HListOfIndexs : public MMgt_TShared {
@@ -898,6 +918,7 @@ class Xw_HListOfIndexs : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Xw_PixMap;
 class Xw_PixMap : public Aspect_PixMap {
 	public:
@@ -929,6 +950,7 @@ class Xw_PixMap : public Aspect_PixMap {
 	if (__env){printf("## Call custom destructor for instance of Xw_PixMap\n");}
 	}
 };
+
 
 %nodefaultctor Xw_Window;
 class Xw_Window : public Aspect_Window {
@@ -1070,6 +1092,7 @@ class Xw_Window : public Aspect_Window {
 	}
 };
 
+
 %nodefaultctor Xw_IconBox;
 class Xw_IconBox : public Xw_Window {
 	public:
@@ -1113,6 +1136,7 @@ class Xw_IconBox : public Xw_Window {
 	if (__env){printf("## Call custom destructor for instance of Xw_IconBox\n");}
 	}
 };
+
 
 %nodefaultctor Xw_TextManager;
 class Xw_TextManager : public MFT_TextManager {
@@ -1160,6 +1184,7 @@ class Xw_TextManager : public MFT_TextManager {
 	}
 };
 
+
 %nodefaultctor Xw_WidthMap;
 class Xw_WidthMap : public Standard_Transient {
 	public:
@@ -1194,6 +1219,7 @@ class Xw_WidthMap : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Xw_TypeMap;
 class Xw_TypeMap : public Standard_Transient {
 	public:
@@ -1227,6 +1253,7 @@ class Xw_TypeMap : public Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Xw_TypeMap\n");}
 	}
 };
+
 
 %nodefaultctor Xw_ListOfIndexs;
 class Xw_ListOfIndexs {
@@ -1268,6 +1295,7 @@ class Xw_ListOfIndexs {
 	}
 };
 
+
 %nodefaultctor Xw_GraphicDevice;
 class Xw_GraphicDevice : public Aspect_GraphicDevice {
 	public:
@@ -1302,7 +1330,7 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 		%feature("autodoc", "1");
 		void DisplaySize(Standard_Integer &OutValue, Standard_Integer &OutValue) const;
 		%feature("autodoc", "1");
-		void DisplaySize(Quantity_Length & Width, Quantity_Length & Height) const;
+		void DisplaySize(Standard_Real &OutValue, Standard_Real &OutValue) const;
 		%feature("autodoc", "1");
 		Standard_Integer PlaneLayer(const Standard_Integer aVisualID) const;
 		%feature("autodoc", "1");
@@ -1327,6 +1355,7 @@ class Xw_GraphicDevice : public Aspect_GraphicDevice {
 	if (__env){printf("## Call custom destructor for instance of Xw_GraphicDevice\n");}
 	}
 };
+
 
 %nodefaultctor Xw_HListOfMFTSizes;
 class Xw_HListOfMFTSizes : public MMgt_TShared {
@@ -1374,6 +1403,7 @@ class Xw_HListOfMFTSizes : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Xw_MarkMap;
 class Xw_MarkMap : public Standard_Transient {
 	public:
@@ -1408,6 +1438,7 @@ class Xw_MarkMap : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Xw;
 class Xw {
 	public:
@@ -1423,6 +1454,7 @@ class Xw {
 	if (__env){printf("## Call custom destructor for instance of Xw\n");}
 	}
 };
+
 
 %nodefaultctor Xw_ListOfMFTSizes;
 class Xw_ListOfMFTSizes {

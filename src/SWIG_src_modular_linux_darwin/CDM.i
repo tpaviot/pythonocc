@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -147,6 +148,7 @@ class Handle_CDM_MetaData : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_CDM_StdMapNodeOfMapOfDocument;
 class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 	public:
@@ -171,6 +173,7 @@ class Handle_CDM_StdMapNodeOfMapOfDocument : public Handle_TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_StdMapNodeOfMapOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor Handle_CDM_DataMapNodeOfNamesDirectory;
 class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode {
@@ -197,6 +200,7 @@ class Handle_CDM_DataMapNodeOfNamesDirectory : public Handle_TCollection_MapNode
 	}
 };
 
+
 %nodefaultctor Handle_CDM_Reference;
 class Handle_CDM_Reference : public Handle_Standard_Transient {
 	public:
@@ -221,6 +225,7 @@ class Handle_CDM_Reference : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_Reference\n");}
 	}
 };
+
 
 %nodefaultctor Handle_CDM_Document;
 class Handle_CDM_Document : public Handle_Standard_Transient {
@@ -247,6 +252,7 @@ class Handle_CDM_Document : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_CDM_MessageDriver;
 class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 	public:
@@ -271,6 +277,7 @@ class Handle_CDM_MessageDriver : public Handle_Standard_Transient {
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_MessageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_CDM_COutMessageDriver;
 class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
@@ -297,6 +304,7 @@ class Handle_CDM_COutMessageDriver : public Handle_CDM_MessageDriver {
 	}
 };
 
+
 %nodefaultctor Handle_CDM_NullMessageDriver;
 class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 	public:
@@ -321,6 +329,7 @@ class Handle_CDM_NullMessageDriver : public Handle_CDM_MessageDriver {
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_NullMessageDriver\n");}
 	}
 };
+
 
 %nodefaultctor Handle_CDM_DataMapNodeOfMetaDataLookUpTable;
 class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_MapNode {
@@ -347,6 +356,7 @@ class Handle_CDM_DataMapNodeOfMetaDataLookUpTable : public Handle_TCollection_Ma
 	}
 };
 
+
 %nodefaultctor Handle_CDM_DataMapNodeOfPresentationDirectory;
 class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_MapNode {
 	public:
@@ -371,6 +381,7 @@ class Handle_CDM_DataMapNodeOfPresentationDirectory : public Handle_TCollection_
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_DataMapNodeOfPresentationDirectory\n");}
 	}
 };
+
 
 %nodefaultctor Handle_CDM_ListNodeOfListOfDocument;
 class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
@@ -397,6 +408,7 @@ class Handle_CDM_ListNodeOfListOfDocument : public Handle_TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor Handle_CDM_StackNodeOfStackOfDocument;
 class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode {
 	public:
@@ -421,6 +433,7 @@ class Handle_CDM_StackNodeOfStackOfDocument : public Handle_TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_StackNodeOfStackOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor Handle_CDM_Application;
 class Handle_CDM_Application : public Handle_Standard_Transient {
@@ -447,6 +460,7 @@ class Handle_CDM_Application : public Handle_Standard_Transient {
 	}
 };
 
+
 %nodefaultctor Handle_CDM_ListNodeOfListOfReferences;
 class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode {
 	public:
@@ -471,6 +485,7 @@ class Handle_CDM_ListNodeOfListOfReferences : public Handle_TCollection_MapNode 
 	if (__env){printf("## Call custom destructor for instance of Handle_CDM_ListNodeOfListOfReferences\n");}
 	}
 };
+
 
 %nodefaultctor CDM_DataMapNodeOfNamesDirectory;
 class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
@@ -502,6 +517,7 @@ class CDM_DataMapNodeOfNamesDirectory : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor CDM_DataMapIteratorOfMetaDataLookUpTable;
 class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIterator {
 	public:
@@ -523,6 +539,7 @@ class CDM_DataMapIteratorOfMetaDataLookUpTable : public TCollection_BasicMapIter
 	if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfMetaDataLookUpTable\n");}
 	}
 };
+
 
 %nodefaultctor CDM_DataMapNodeOfPresentationDirectory;
 class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
@@ -554,6 +571,7 @@ class CDM_DataMapNodeOfPresentationDirectory : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor CDM_ListIteratorOfListOfDocument;
 class CDM_ListIteratorOfListOfDocument {
 	public:
@@ -578,6 +596,7 @@ class CDM_ListIteratorOfListOfDocument {
 	}
 };
 
+
 %nodefaultctor CDM_ReferenceIterator;
 class CDM_ReferenceIterator {
 	public:
@@ -601,6 +620,7 @@ class CDM_ReferenceIterator {
 	if (__env){printf("## Call custom destructor for instance of CDM_ReferenceIterator\n");}
 	}
 };
+
 
 %nodefaultctor CDM_Application;
 class CDM_Application : public Standard_Transient {
@@ -636,6 +656,7 @@ class CDM_Application : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor CDM_NamesDirectory;
 class CDM_NamesDirectory : public TCollection_BasicMap {
 	public:
@@ -669,6 +690,7 @@ class CDM_NamesDirectory : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of CDM_NamesDirectory\n");}
 	}
 };
+
 
 %nodefaultctor CDM_ListOfReferences;
 class CDM_ListOfReferences {
@@ -720,6 +742,7 @@ class CDM_ListOfReferences {
 	}
 };
 
+
 %nodefaultctor CDM_DataMapIteratorOfPresentationDirectory;
 class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIterator {
 	public:
@@ -741,6 +764,7 @@ class CDM_DataMapIteratorOfPresentationDirectory : public TCollection_BasicMapIt
 	if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfPresentationDirectory\n");}
 	}
 };
+
 
 %nodefaultctor CDM_MetaData;
 class CDM_MetaData : public Standard_Transient {
@@ -764,7 +788,12 @@ class CDM_MetaData : public Standard_Transient {
 		%feature("autodoc", "1");
 		TCollection_ExtendedString FileName() const;
 		%feature("autodoc", "1");
-		Standard_OStream & Print(Standard_OStream & anOStream) const;
+		%extend{
+			std::string PrintToString() {
+			std::stringstream s;
+			self->Print(s);
+			return s.str();}
+		};
 		%feature("autodoc", "1");
 		TCollection_ExtendedString Path() const;
 		%feature("autodoc", "1");
@@ -796,6 +825,7 @@ class CDM_MetaData : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor CDM_StdMapNodeOfMapOfDocument;
 class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 	public:
@@ -824,6 +854,7 @@ class CDM_StdMapNodeOfMapOfDocument : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor CDM_MessageDriver;
 class CDM_MessageDriver : public Standard_Transient {
 	public:
@@ -850,6 +881,7 @@ class CDM_MessageDriver : public Standard_Transient {
 	}
 };
 
+
 %nodefaultctor CDM_COutMessageDriver;
 class CDM_COutMessageDriver : public CDM_MessageDriver {
 	public:
@@ -873,6 +905,7 @@ class CDM_COutMessageDriver : public CDM_MessageDriver {
 	if (__env){printf("## Call custom destructor for instance of CDM_COutMessageDriver\n");}
 	}
 };
+
 
 %nodefaultctor CDM_PresentationDirectory;
 class CDM_PresentationDirectory : public TCollection_BasicMap {
@@ -908,6 +941,7 @@ class CDM_PresentationDirectory : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor CDM_StackNodeOfStackOfDocument;
 class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 	public:
@@ -935,6 +969,7 @@ class CDM_StackNodeOfStackOfDocument : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of CDM_StackNodeOfStackOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor CDM_NullMessageDriver;
 class CDM_NullMessageDriver : public CDM_MessageDriver {
@@ -964,6 +999,7 @@ class CDM_NullMessageDriver : public CDM_MessageDriver {
 	}
 };
 
+
 %nodefaultctor CDM_ListIteratorOfListOfReferences;
 class CDM_ListIteratorOfListOfReferences {
 	public:
@@ -987,6 +1023,7 @@ class CDM_ListIteratorOfListOfReferences {
 	if (__env){printf("## Call custom destructor for instance of CDM_ListIteratorOfListOfReferences\n");}
 	}
 };
+
 
 %nodefaultctor CDM_MetaDataLookUpTable;
 class CDM_MetaDataLookUpTable : public TCollection_BasicMap {
@@ -1022,6 +1059,7 @@ class CDM_MetaDataLookUpTable : public TCollection_BasicMap {
 	}
 };
 
+
 %nodefaultctor CDM_DataMapNodeOfMetaDataLookUpTable;
 class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 	public:
@@ -1052,6 +1090,7 @@ class CDM_DataMapNodeOfMetaDataLookUpTable : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor CDM_DataMapIteratorOfNamesDirectory;
 class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator {
 	public:
@@ -1073,6 +1112,7 @@ class CDM_DataMapIteratorOfNamesDirectory : public TCollection_BasicMapIterator 
 	if (__env){printf("## Call custom destructor for instance of CDM_DataMapIteratorOfNamesDirectory\n");}
 	}
 };
+
 
 %nodefaultctor CDM_StackIteratorOfStackOfDocument;
 class CDM_StackIteratorOfStackOfDocument {
@@ -1098,6 +1138,7 @@ class CDM_StackIteratorOfStackOfDocument {
 	}
 };
 
+
 %nodefaultctor CDM_MapIteratorOfMapOfDocument;
 class CDM_MapIteratorOfMapOfDocument : public TCollection_BasicMapIterator {
 	public:
@@ -1117,6 +1158,7 @@ class CDM_MapIteratorOfMapOfDocument : public TCollection_BasicMapIterator {
 	if (__env){printf("## Call custom destructor for instance of CDM_MapIteratorOfMapOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor CDM_ListNodeOfListOfReferences;
 class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
@@ -1146,6 +1188,7 @@ class CDM_ListNodeOfListOfReferences : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor CDM_DocumentHasher;
 class CDM_DocumentHasher {
 	public:
@@ -1163,6 +1206,7 @@ class CDM_DocumentHasher {
 	if (__env){printf("## Call custom destructor for instance of CDM_DocumentHasher\n");}
 	}
 };
+
 
 %nodefaultctor CDM_ListOfDocument;
 class CDM_ListOfDocument {
@@ -1214,6 +1258,7 @@ class CDM_ListOfDocument {
 	}
 };
 
+
 %nodefaultctor CDM_MapOfDocument;
 class CDM_MapOfDocument : public TCollection_BasicMap {
 	public:
@@ -1239,6 +1284,7 @@ class CDM_MapOfDocument : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of CDM_MapOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor CDM_ListNodeOfListOfDocument;
 class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
@@ -1267,6 +1313,7 @@ class CDM_ListNodeOfListOfDocument : public TCollection_MapNode {
 	if (__env){printf("## Call custom destructor for instance of CDM_ListNodeOfListOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor CDM_StackOfDocument;
 class CDM_StackOfDocument {
@@ -1297,6 +1344,7 @@ class CDM_StackOfDocument {
 	if (__env){printf("## Call custom destructor for instance of CDM_StackOfDocument\n");}
 	}
 };
+
 
 %nodefaultctor CDM_Reference;
 class CDM_Reference : public Standard_Transient {

@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_BRepClass3d_DataMapNodeOfMapOfInter : public Handle_TCollection_Map
 	}
 };
 
+
 %nodefaultctor BRepClass3d_DataMapIteratorOfMapOfInter;
 class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapIterator {
 	public:
@@ -159,6 +161,7 @@ class BRepClass3d_DataMapIteratorOfMapOfInter : public TCollection_BasicMapItera
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_DataMapIteratorOfMapOfInter\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass3d_SClassifier;
 class BRepClass3d_SClassifier {
@@ -187,6 +190,7 @@ class BRepClass3d_SClassifier {
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SClassifier\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass3d_SolidExplorer;
 class BRepClass3d_SolidExplorer {
@@ -260,6 +264,7 @@ class BRepClass3d_SolidExplorer {
 	}
 };
 
+
 %nodefaultctor BRepClass3d_SolidClassifier;
 class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 	public:
@@ -285,6 +290,7 @@ class BRepClass3d_SolidClassifier : public BRepClass3d_SClassifier {
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidClassifier\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass3d_DataMapNodeOfMapOfInter;
 class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
@@ -316,6 +322,7 @@ class BRepClass3d_DataMapNodeOfMapOfInter : public TCollection_MapNode {
 	}
 };
 
+
 %nodefaultctor BRepClass3d_SolidPassiveClassifier;
 class BRepClass3d_SolidPassiveClassifier {
 	public:
@@ -341,6 +348,7 @@ class BRepClass3d_SolidPassiveClassifier {
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_SolidPassiveClassifier\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass3d_MapOfInter;
 class BRepClass3d_MapOfInter : public TCollection_BasicMap {
@@ -375,6 +383,7 @@ class BRepClass3d_MapOfInter : public TCollection_BasicMap {
 	if (__env){printf("## Call custom destructor for instance of BRepClass3d_MapOfInter\n");}
 	}
 };
+
 
 %nodefaultctor BRepClass3d_Intersector3d;
 class BRepClass3d_Intersector3d {

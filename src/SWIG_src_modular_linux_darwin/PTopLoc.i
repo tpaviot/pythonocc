@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_PTopLoc_Datum3D : public Handle_Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor Handle_PTopLoc_ItemLocation;
 class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 	public:
@@ -162,6 +164,7 @@ class Handle_PTopLoc_ItemLocation : public Handle_Standard_Persistent {
 	if (__env){printf("## Call custom destructor for instance of Handle_PTopLoc_ItemLocation\n");}
 	}
 };
+
 
 %nodefaultctor PTopLoc_Datum3D;
 class PTopLoc_Datum3D : public Standard_Persistent {
@@ -197,6 +200,7 @@ class PTopLoc_Datum3D : public Standard_Persistent {
 	}
 };
 
+
 %nodefaultctor PTopLoc_Location;
 class PTopLoc_Location {
 	public:
@@ -224,6 +228,7 @@ class PTopLoc_Location {
 	if (__env){printf("## Call custom destructor for instance of PTopLoc_Location\n");}
 	}
 };
+
 
 %nodefaultctor PTopLoc_ItemLocation;
 class PTopLoc_ItemLocation : public Standard_Persistent {

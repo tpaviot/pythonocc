@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -151,6 +152,7 @@ class Handle_LProp_SequenceNodeOfSequenceOfCIType : public Handle_TCollection_Se
 	}
 };
 
+
 %nodefaultctor Handle_LProp_BadContinuity;
 class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 	public:
@@ -176,6 +178,7 @@ class Handle_LProp_BadContinuity : public Handle_Standard_Failure {
 	}
 };
 
+
 %nodefaultctor Handle_LProp_NotDefined;
 class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 	public:
@@ -200,6 +203,7 @@ class Handle_LProp_NotDefined : public Handle_Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of Handle_LProp_NotDefined\n");}
 	}
 };
+
 
 %nodefaultctor LProp_SequenceNodeOfSequenceOfCIType;
 class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
@@ -228,6 +232,7 @@ class LProp_SequenceNodeOfSequenceOfCIType : public TCollection_SeqNode {
 	if (__env){printf("## Call custom destructor for instance of LProp_SequenceNodeOfSequenceOfCIType\n");}
 	}
 };
+
 
 %nodefaultctor LProp_BadContinuity;
 class LProp_BadContinuity : public Standard_Failure {
@@ -262,6 +267,7 @@ class LProp_BadContinuity : public Standard_Failure {
 	if (__env){printf("## Call custom destructor for instance of LProp_BadContinuity\n");}
 	}
 };
+
 
 %nodefaultctor LProp_SequenceOfCIType;
 class LProp_SequenceOfCIType : public TCollection_BaseSequence {
@@ -317,6 +323,7 @@ class LProp_SequenceOfCIType : public TCollection_BaseSequence {
 	}
 };
 
+
 %nodefaultctor LProp_CurAndInf;
 class LProp_CurAndInf {
 	public:
@@ -345,6 +352,7 @@ class LProp_CurAndInf {
 	}
 };
 
+
 %nodefaultctor LProp_AnalyticCurInf;
 class LProp_AnalyticCurInf {
 	public:
@@ -360,6 +368,7 @@ class LProp_AnalyticCurInf {
 	if (__env){printf("## Call custom destructor for instance of LProp_AnalyticCurInf\n");}
 	}
 };
+
 
 %nodefaultctor LProp_NotDefined;
 class LProp_NotDefined : public Standard_Failure {

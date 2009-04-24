@@ -27,6 +27,7 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 %include exception.i
 %include std_list.i
 %include std_string.i
+%include <python/std_basic_string.i>
 
 #ifndef _Standard_TypeDef_HeaderFile
 #define _Standard_TypeDef_HeaderFile
@@ -138,6 +139,7 @@ class Handle_IGESSelect_SignLevelNumber : public Handle_IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_FileModifier;
 class Handle_IGESSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	public:
@@ -162,6 +164,7 @@ class Handle_IGESSelect_FileModifier : public Handle_IFSelect_GeneralModifier {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_FileModifier\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_FloatFormat;
 class Handle_IGESSelect_FloatFormat : public Handle_IGESSelect_FileModifier {
@@ -188,6 +191,7 @@ class Handle_IGESSelect_FloatFormat : public Handle_IGESSelect_FileModifier {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_Dumper;
 class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 	public:
@@ -212,6 +216,7 @@ class Handle_IGESSelect_Dumper : public Handle_IFSelect_SessionDumper {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_Dumper\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_SelectPCurves;
 class Handle_IGESSelect_SelectPCurves : public Handle_IFSelect_SelectExplore {
@@ -238,6 +243,7 @@ class Handle_IGESSelect_SelectPCurves : public Handle_IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SplineToBSpline;
 class Handle_IGESSelect_SplineToBSpline : public Handle_IFSelect_Transformer {
 	public:
@@ -262,6 +268,7 @@ class Handle_IGESSelect_SplineToBSpline : public Handle_IFSelect_Transformer {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SplineToBSpline\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_ModelModifier;
 class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
@@ -288,6 +295,7 @@ class Handle_IGESSelect_ModelModifier : public Handle_IFSelect_Modifier {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_UpdateCreationDate;
 class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModifier {
 	public:
@@ -312,6 +320,7 @@ class Handle_IGESSelect_UpdateCreationDate : public Handle_IGESSelect_ModelModif
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_UpdateCreationDate\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_ViewSorter;
 class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
@@ -338,6 +347,7 @@ class Handle_IGESSelect_ViewSorter : public Handle_MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectFaces;
 class Handle_IGESSelect_SelectFaces : public Handle_IFSelect_SelectExplore {
 	public:
@@ -362,6 +372,7 @@ class Handle_IGESSelect_SelectFaces : public Handle_IFSelect_SelectExplore {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFaces\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_RemoveCurves;
 class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
@@ -388,6 +399,7 @@ class Handle_IGESSelect_RemoveCurves : public Handle_IGESSelect_ModelModifier {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectVisibleStatus;
 class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtract {
 	public:
@@ -412,6 +424,7 @@ class Handle_IGESSelect_SelectVisibleStatus : public Handle_IFSelect_SelectExtra
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectVisibleStatus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_SetGlobalParameter;
 class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModifier {
@@ -438,6 +451,7 @@ class Handle_IGESSelect_SetGlobalParameter : public Handle_IGESSelect_ModelModif
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_WorkLibrary;
 class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	public:
@@ -462,6 +476,7 @@ class Handle_IGESSelect_WorkLibrary : public Handle_IFSelect_WorkLibrary {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_WorkLibrary\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_DispPerSingleView;
 class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
@@ -488,6 +503,7 @@ class Handle_IGESSelect_DispPerSingleView : public Handle_IFSelect_Dispatch {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectName;
 class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
 	public:
@@ -512,6 +528,7 @@ class Handle_IGESSelect_SelectName : public Handle_IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectName\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_IGESTypeForm;
 class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
@@ -538,6 +555,7 @@ class Handle_IGESSelect_IGESTypeForm : public Handle_IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_DispPerDrawing;
 class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 	public:
@@ -562,6 +580,7 @@ class Handle_IGESSelect_DispPerDrawing : public Handle_IFSelect_Dispatch {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_DispPerDrawing\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_SelectLevelNumber;
 class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract {
@@ -588,6 +607,7 @@ class Handle_IGESSelect_SelectLevelNumber : public Handle_IFSelect_SelectExtract
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectSingleViewFrom;
 class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDeduct {
 	public:
@@ -612,6 +632,7 @@ class Handle_IGESSelect_SelectSingleViewFrom : public Handle_IFSelect_SelectDedu
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectSingleViewFrom\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_SetVersion5;
 class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
@@ -638,6 +659,7 @@ class Handle_IGESSelect_SetVersion5 : public Handle_IGESSelect_ModelModifier {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_ComputeStatus;
 class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 	public:
@@ -662,6 +684,7 @@ class Handle_IGESSelect_ComputeStatus : public Handle_IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_ComputeStatus\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_RebuildDrawings;
 class Handle_IGESSelect_RebuildDrawings : public Handle_IGESSelect_ModelModifier {
@@ -688,6 +711,7 @@ class Handle_IGESSelect_RebuildDrawings : public Handle_IGESSelect_ModelModifier
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectFromDrawing;
 class Handle_IGESSelect_SelectFromDrawing : public Handle_IFSelect_SelectDeduct {
 	public:
@@ -712,6 +736,7 @@ class Handle_IGESSelect_SelectFromDrawing : public Handle_IFSelect_SelectDeduct 
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFromDrawing\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_CounterOfLevelNumber;
 class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounter {
@@ -738,6 +763,7 @@ class Handle_IGESSelect_CounterOfLevelNumber : public Handle_IFSelect_SignCounte
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SetLabel;
 class Handle_IGESSelect_SetLabel : public Handle_IGESSelect_ModelModifier {
 	public:
@@ -762,6 +788,7 @@ class Handle_IGESSelect_SetLabel : public Handle_IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SetLabel\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_IGESName;
 class Handle_IGESSelect_IGESName : public Handle_IFSelect_Signature {
@@ -788,6 +815,7 @@ class Handle_IGESSelect_IGESName : public Handle_IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectSubordinate;
 class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract {
 	public:
@@ -812,6 +840,7 @@ class Handle_IGESSelect_SelectSubordinate : public Handle_IFSelect_SelectExtract
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectSubordinate\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_SelectBypassSubfigure;
 class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExplore {
@@ -838,6 +867,7 @@ class Handle_IGESSelect_SelectBypassSubfigure : public Handle_IFSelect_SelectExp
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectBasicGeom;
 class Handle_IGESSelect_SelectBasicGeom : public Handle_IFSelect_SelectExplore {
 	public:
@@ -862,6 +892,7 @@ class Handle_IGESSelect_SelectBasicGeom : public Handle_IFSelect_SelectExplore {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBasicGeom\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_UpdateFileName;
 class Handle_IGESSelect_UpdateFileName : public Handle_IGESSelect_ModelModifier {
@@ -888,6 +919,7 @@ class Handle_IGESSelect_UpdateFileName : public Handle_IGESSelect_ModelModifier 
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectFromSingleView;
 class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDeduct {
 	public:
@@ -912,6 +944,7 @@ class Handle_IGESSelect_SelectFromSingleView : public Handle_IFSelect_SelectDedu
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectFromSingleView\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_ChangeLevelList;
 class Handle_IGESSelect_ChangeLevelList : public Handle_IGESSelect_ModelModifier {
@@ -938,6 +971,7 @@ class Handle_IGESSelect_ChangeLevelList : public Handle_IGESSelect_ModelModifier
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_EditHeader;
 class Handle_IGESSelect_EditHeader : public Handle_IFSelect_Editor {
 	public:
@@ -962,6 +996,7 @@ class Handle_IGESSelect_EditHeader : public Handle_IFSelect_Editor {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_EditHeader\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_AddFileComment;
 class Handle_IGESSelect_AddFileComment : public Handle_IGESSelect_FileModifier {
@@ -988,6 +1023,7 @@ class Handle_IGESSelect_AddFileComment : public Handle_IGESSelect_FileModifier {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_EditDirPart;
 class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 	public:
@@ -1012,6 +1048,7 @@ class Handle_IGESSelect_EditDirPart : public Handle_IFSelect_Editor {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_EditDirPart\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_ChangeLevelNumber;
 class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifier {
@@ -1038,6 +1075,7 @@ class Handle_IGESSelect_ChangeLevelNumber : public Handle_IGESSelect_ModelModifi
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectBypassGroup;
 class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore {
 	public:
@@ -1062,6 +1100,7 @@ class Handle_IGESSelect_SelectBypassGroup : public Handle_IFSelect_SelectExplore
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectBypassGroup\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_AddGroup;
 class Handle_IGESSelect_AddGroup : public Handle_IGESSelect_ModelModifier {
@@ -1088,6 +1127,7 @@ class Handle_IGESSelect_AddGroup : public Handle_IGESSelect_ModelModifier {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_RebuildGroups;
 class Handle_IGESSelect_RebuildGroups : public Handle_IGESSelect_ModelModifier {
 	public:
@@ -1112,6 +1152,7 @@ class Handle_IGESSelect_RebuildGroups : public Handle_IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_RebuildGroups\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_SignStatus;
 class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
@@ -1138,6 +1179,7 @@ class Handle_IGESSelect_SignStatus : public Handle_IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SignColor;
 class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
 	public:
@@ -1162,6 +1204,7 @@ class Handle_IGESSelect_SignColor : public Handle_IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SignColor\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_AutoCorrect;
 class Handle_IGESSelect_AutoCorrect : public Handle_IGESSelect_ModelModifier {
@@ -1188,6 +1231,7 @@ class Handle_IGESSelect_AutoCorrect : public Handle_IGESSelect_ModelModifier {
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_Activator;
 class Handle_IGESSelect_Activator : public Handle_IFSelect_Activator {
 	public:
@@ -1212,6 +1256,7 @@ class Handle_IGESSelect_Activator : public Handle_IFSelect_Activator {
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_Activator\n");}
 	}
 };
+
 
 %nodefaultctor Handle_IGESSelect_UpdateLastChange;
 class Handle_IGESSelect_UpdateLastChange : public Handle_IGESSelect_ModelModifier {
@@ -1238,6 +1283,7 @@ class Handle_IGESSelect_UpdateLastChange : public Handle_IGESSelect_ModelModifie
 	}
 };
 
+
 %nodefaultctor Handle_IGESSelect_SelectDrawingFrom;
 class Handle_IGESSelect_SelectDrawingFrom : public Handle_IFSelect_SelectDeduct {
 	public:
@@ -1262,6 +1308,7 @@ class Handle_IGESSelect_SelectDrawingFrom : public Handle_IFSelect_SelectDeduct 
 	if (__env){printf("## Call custom destructor for instance of Handle_IGESSelect_SelectDrawingFrom\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_ModelModifier;
 class IGESSelect_ModelModifier : public IFSelect_Modifier {
@@ -1293,6 +1340,7 @@ class IGESSelect_ModelModifier : public IFSelect_Modifier {
 	}
 };
 
+
 %nodefaultctor IGESSelect_UpdateLastChange;
 class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
 	public:
@@ -1318,6 +1366,7 @@ class IGESSelect_UpdateLastChange : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateLastChange\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_SelectName;
 class IGESSelect_SelectName : public IFSelect_SelectExtract {
@@ -1353,6 +1402,7 @@ class IGESSelect_SelectName : public IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SplineToBSpline;
 class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
 	public:
@@ -1387,6 +1437,7 @@ class IGESSelect_SplineToBSpline : public IFSelect_Transformer {
 	}
 };
 
+
 %nodefaultctor IGESSelect_ComputeStatus;
 class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
 	public:
@@ -1416,6 +1467,7 @@ class IGESSelect_ComputeStatus : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_ComputeStatus\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_IGESTypeForm;
 class IGESSelect_IGESTypeForm : public IFSelect_Signature {
@@ -1447,6 +1499,7 @@ class IGESSelect_IGESTypeForm : public IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SignStatus;
 class IGESSelect_SignStatus : public IFSelect_Signature {
 	public:
@@ -1476,6 +1529,7 @@ class IGESSelect_SignStatus : public IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignStatus\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_SetLabel;
 class IGESSelect_SetLabel : public IGESSelect_ModelModifier {
@@ -1507,6 +1561,7 @@ class IGESSelect_SetLabel : public IGESSelect_ModelModifier {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SelectDrawingFrom;
 class IGESSelect_SelectDrawingFrom : public IFSelect_SelectDeduct {
 	public:
@@ -1536,6 +1591,7 @@ class IGESSelect_SelectDrawingFrom : public IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectDrawingFrom\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_ViewSorter;
 class IGESSelect_ViewSorter : public MMgt_TShared {
@@ -1587,6 +1643,7 @@ class IGESSelect_ViewSorter : public MMgt_TShared {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SelectSingleViewFrom;
 class IGESSelect_SelectSingleViewFrom : public IFSelect_SelectDeduct {
 	public:
@@ -1616,6 +1673,7 @@ class IGESSelect_SelectSingleViewFrom : public IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectSingleViewFrom\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_Activator;
 class IGESSelect_Activator : public IFSelect_Activator {
@@ -1647,6 +1705,7 @@ class IGESSelect_Activator : public IFSelect_Activator {
 	}
 };
 
+
 %nodefaultctor IGESSelect_RemoveCurves;
 class IGESSelect_RemoveCurves : public IGESSelect_ModelModifier {
 	public:
@@ -1676,6 +1735,7 @@ class IGESSelect_RemoveCurves : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_RemoveCurves\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_ChangeLevelNumber;
 class IGESSelect_ChangeLevelNumber : public IGESSelect_ModelModifier {
@@ -1717,6 +1777,7 @@ class IGESSelect_ChangeLevelNumber : public IGESSelect_ModelModifier {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SelectPCurves;
 class IGESSelect_SelectPCurves : public IFSelect_SelectExplore {
 	public:
@@ -1747,6 +1808,7 @@ class IGESSelect_SelectPCurves : public IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SelectFromDrawing;
 class IGESSelect_SelectFromDrawing : public IFSelect_SelectDeduct {
 	public:
@@ -1776,6 +1838,7 @@ class IGESSelect_SelectFromDrawing : public IFSelect_SelectDeduct {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectFromDrawing\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_CounterOfLevelNumber;
 class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
@@ -1819,6 +1882,7 @@ class IGESSelect_CounterOfLevelNumber : public IFSelect_SignCounter {
 	}
 };
 
+
 %nodefaultctor IGESSelect_UpdateFileName;
 class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
 	public:
@@ -1848,6 +1912,7 @@ class IGESSelect_UpdateFileName : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateFileName\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_SelectSubordinate;
 class IGESSelect_SelectSubordinate : public IFSelect_SelectExtract {
@@ -1881,6 +1946,7 @@ class IGESSelect_SelectSubordinate : public IFSelect_SelectExtract {
 	}
 };
 
+
 %nodefaultctor IGESSelect_AddGroup;
 class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
 	public:
@@ -1910,6 +1976,7 @@ class IGESSelect_AddGroup : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_AddGroup\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_SelectFaces;
 class IGESSelect_SelectFaces : public IFSelect_SelectExplore {
@@ -1941,6 +2008,7 @@ class IGESSelect_SelectFaces : public IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor IGESSelect_UpdateCreationDate;
 class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 	public:
@@ -1970,6 +2038,7 @@ class IGESSelect_UpdateCreationDate : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_UpdateCreationDate\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_EditDirPart;
 class IGESSelect_EditDirPart : public IFSelect_Editor {
@@ -2009,6 +2078,7 @@ class IGESSelect_EditDirPart : public IFSelect_Editor {
 	}
 };
 
+
 %nodefaultctor IGESSelect_IGESName;
 class IGESSelect_IGESName : public IFSelect_Signature {
 	public:
@@ -2037,6 +2107,7 @@ class IGESSelect_IGESName : public IFSelect_Signature {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SignLevelNumber;
 class IGESSelect_SignLevelNumber : public IFSelect_Signature {
 	public:
@@ -2064,6 +2135,7 @@ class IGESSelect_SignLevelNumber : public IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignLevelNumber\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_WorkLibrary;
 class IGESSelect_WorkLibrary : public IFSelect_WorkLibrary {
@@ -2099,6 +2171,7 @@ class IGESSelect_WorkLibrary : public IFSelect_WorkLibrary {
 	}
 };
 
+
 %nodefaultctor IGESSelect_FileModifier;
 class IGESSelect_FileModifier : public IFSelect_GeneralModifier {
 	public:
@@ -2124,6 +2197,7 @@ class IGESSelect_FileModifier : public IFSelect_GeneralModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_FileModifier\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_SelectBypassGroup;
 class IGESSelect_SelectBypassGroup : public IFSelect_SelectExplore {
@@ -2155,6 +2229,7 @@ class IGESSelect_SelectBypassGroup : public IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor IGESSelect_Dumper;
 class IGESSelect_Dumper : public IFSelect_SessionDumper {
 	public:
@@ -2185,6 +2260,7 @@ class IGESSelect_Dumper : public IFSelect_SessionDumper {
 	}
 };
 
+
 %nodefaultctor IGESSelect;
 class IGESSelect {
 	public:
@@ -2202,6 +2278,7 @@ class IGESSelect {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_AutoCorrect;
 class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {
@@ -2233,6 +2310,7 @@ class IGESSelect_AutoCorrect : public IGESSelect_ModelModifier {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SelectVisibleStatus;
 class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
 	public:
@@ -2262,6 +2340,7 @@ class IGESSelect_SelectVisibleStatus : public IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectVisibleStatus\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_FloatFormat;
 class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
@@ -2303,6 +2382,7 @@ class IGESSelect_FloatFormat : public IGESSelect_FileModifier {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SelectFromSingleView;
 class IGESSelect_SelectFromSingleView : public IFSelect_SelectDeduct {
 	public:
@@ -2333,6 +2413,7 @@ class IGESSelect_SelectFromSingleView : public IFSelect_SelectDeduct {
 	}
 };
 
+
 %nodefaultctor IGESSelect_RebuildDrawings;
 class IGESSelect_RebuildDrawings : public IGESSelect_ModelModifier {
 	public:
@@ -2362,6 +2443,7 @@ class IGESSelect_RebuildDrawings : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_RebuildDrawings\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_DispPerSingleView;
 class IGESSelect_DispPerSingleView : public IFSelect_Dispatch {
@@ -2397,6 +2479,7 @@ class IGESSelect_DispPerSingleView : public IFSelect_Dispatch {
 	}
 };
 
+
 %nodefaultctor IGESSelect_RebuildGroups;
 class IGESSelect_RebuildGroups : public IGESSelect_ModelModifier {
 	public:
@@ -2426,6 +2509,7 @@ class IGESSelect_RebuildGroups : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_RebuildGroups\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_SelectBasicGeom;
 class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
@@ -2459,6 +2543,7 @@ class IGESSelect_SelectBasicGeom : public IFSelect_SelectExplore {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SetVersion5;
 class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 	public:
@@ -2488,6 +2573,7 @@ class IGESSelect_SetVersion5 : public IGESSelect_ModelModifier {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SetVersion5\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_EditHeader;
 class IGESSelect_EditHeader : public IFSelect_Editor {
@@ -2526,6 +2612,7 @@ class IGESSelect_EditHeader : public IFSelect_Editor {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_EditHeader\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_ChangeLevelList;
 class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
@@ -2569,6 +2656,7 @@ class IGESSelect_ChangeLevelList : public IGESSelect_ModelModifier {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SignColor;
 class IGESSelect_SignColor : public IFSelect_Signature {
 	public:
@@ -2596,6 +2684,7 @@ class IGESSelect_SignColor : public IFSelect_Signature {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SignColor\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_AddFileComment;
 class IGESSelect_AddFileComment : public IGESSelect_FileModifier {
@@ -2639,6 +2728,7 @@ class IGESSelect_AddFileComment : public IGESSelect_FileModifier {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SelectBypassSubfigure;
 class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 	public:
@@ -2668,6 +2758,7 @@ class IGESSelect_SelectBypassSubfigure : public IFSelect_SelectExplore {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectBypassSubfigure\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_DispPerDrawing;
 class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
@@ -2703,6 +2794,7 @@ class IGESSelect_DispPerDrawing : public IFSelect_Dispatch {
 	}
 };
 
+
 %nodefaultctor IGESSelect_SelectLevelNumber;
 class IGESSelect_SelectLevelNumber : public IFSelect_SelectExtract {
 	public:
@@ -2736,6 +2828,7 @@ class IGESSelect_SelectLevelNumber : public IFSelect_SelectExtract {
 	if (__env){printf("## Call custom destructor for instance of IGESSelect_SelectLevelNumber\n");}
 	}
 };
+
 
 %nodefaultctor IGESSelect_SetGlobalParameter;
 class IGESSelect_SetGlobalParameter : public IGESSelect_ModelModifier {
