@@ -76,7 +76,7 @@ print "map"
 #print AttributeMap
 
 shape_gid = TDataStd.TDataStd_Shape().ID()
-        
+      
 class Attribute(HasTraits):
     TDF_Attribute = Instance(TDF.TDF_Attribute)
     attr_cls = Property(depends_on="TDF_Attribute")
@@ -285,7 +285,7 @@ if __name__=="__main__":
         
     
     app = App()
-    fname = "../test.stp"
+    fname = "../../../data/_3dmodels/aube_pleine.stp"
     app.LoadSTEPFile(fname)
     
     doc = app.MakeNewDoc()
