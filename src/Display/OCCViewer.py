@@ -235,7 +235,7 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
 #        self.Context.Display(anAIS.GetHandle())
 
         
-    def DisplayShape(self,shape,material=None,texture=None):
+    def DisplayShape(self,shape,material=None,texture=None, update=True):
         if material:#careful: != operator segfaults
             self.View.SetSurfaceDetail(OCC.V3d.V3d_TEX_ALL)
             shape_to_display = OCC.AIS.AIS_TexturedShape(shape)
@@ -249,23 +249,33 @@ class Viewer3d(BaseDriver, OCC.Visualization.Display3d):
                 shape_to_display.SetTextureOrigin(True, originU, originV)
                 shape_to_display.SetDisplayMode(3);
         else:
-            shape_to_display = OCC.AIS.AIS_Shape(shape)
+            shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
         #self._objects_displayed.append(shape_to_display)
-        self.Context.Display(shape_to_display.GetHandle())
+        if update:
+            self.Context.Display(shape_to_display, True)
+        else:
+            # don't update the view when shape_to_display is added
+            # comes in handy when adding lots and lots of objects 
+            self.Context.Display(shape_to_display, False)
         self.FitAll()
-        return shape_to_display.GetHandle()
+        return shape_to_display
 
-    def DisplayColoredShape(self,shape,color):
+    def DisplayColoredShape(self,shape,color, update=True):
         dict_color = {'WHITE':OCC.Quantity.Quantity_NOC_WHITE,\
                       'BLUE':OCC.Quantity.Quantity_NOC_BLUE1,\
                       'RED':OCC.Quantity.Quantity_NOC_RED,\
                       'GREEN':OCC.Quantity.Quantity_NOC_GREEN,\
                       'YELLOW':OCC.Quantity.Quantity_NOC_YELLOW}
-        shape_to_display = OCC.AIS.AIS_Shape(shape)
-        self.Context.SetColor(shape_to_display.GetHandle(),dict_color[color],0)
-        self.Context.Display(shape_to_display.GetHandle())
+        shape_to_display = OCC.AIS.AIS_Shape(shape).GetHandle()
+        self.Context.SetColor(shape_to_display,dict_color[color],0)
+        if update:
+            self.Context.Display(shape_to_display, True)
+        else:
+            # don't update the view when shape_to_display is added
+            # comes in handy when adding lots and lots of objects 
+            self.Context.Display(shape_to_display, False)
         self.FitAll()
-        return shape_to_display.GetHandle()
+        return shape_to_display
         
     def DisplayTriedron(self):
         self.View.TriedronDisplay(OCC.Aspect.Aspect_TOTP_RIGHT_LOWER, OCC.Quantity.Quantity_NOC_BLACK, 0.08,  OCC.V3d.V3d_WIREFRAME)
