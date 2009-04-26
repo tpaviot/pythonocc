@@ -683,6 +683,8 @@ class ModularBuilder(object):
         self.fp.write('\n%')
         self.fp.write('extend %s {\n'%class_name)
         self.fp.write('\t~%s() {\n\tchar *__env=getenv("PYTHONOCC_VERBOSE");\n\tif (__env){printf("## Call custom destructor for instance of %s\\n");}'%(class_name,class_name))
+        if class_name == 'BRepAlgoAPI_BooleanOperation':
+            self.fp.write('\n\t$self->Destroy();\n')
         self.fp.write('\n\t}\n};\n')
         #
         # Special method for XCAFApp_Application
@@ -704,7 +706,25 @@ class ModularBuilder(object):
             self.fp.write('\tstrcpy(tmpstr,"00000000-0000-0000-0000-000000000000");\n')
             self.fp.write('\t$self->ToCString(tmpstr);\n')
             self.fp.write('\treturn tmpstr;\n\t}\n};\n')
-    
+        #
+        # Pickling for TopoDS shapes
+        #
+        if (class_name=='TopoDS_Shape'):
+            self.fp.write('%extend TopoDS_Shape {\n%pythoncode {\n')
+            self.fp.write('\tdef __getstate__(self):\n')
+            self.fp.write('\t\tfrom BRepTools import BRepTools_ShapeSet\n')
+            self.fp.write('\t\tss = BRepTools_ShapeSet()\n')
+            self.fp.write('\t\tss.Add(self)\n')
+            self.fp.write('\t\tstr_shape = ss.WriteToString()\n')
+            self.fp.write('\t\treturn str_shape\n')
+
+            self.fp.write('\tdef __setstate__(self, state):\n')
+            self.fp.write('\t\tfrom BRepTools import BRepTools_ShapeSet\n')
+            self.fp.write('\t\tss = BRepTools_ShapeSet()\n')
+            self.fp.write('\t\tss.ReadFromString(state)\n')
+            self.fp.write('\t\tthe_shape = ss.Shape(ss.NbShapes())\n')
+            self.fp.write('\t\tself.this = the_shape.this\n')
+            self.fp.write('\t}\n};\n')
 
         #
         # On l'ajoute a la liste des classes deja exposees
