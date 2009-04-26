@@ -13,7 +13,7 @@ import time, processing, numpy, os, pickle
 
 
 def get_brep():
-    from occ_utils import file_to_shape
+    from OCC.Utils.DataExchange.utils import file_to_shape
     pth = os.path.split(os.path.abspath(__file__))[0]
     pth = os.path.abspath( os.path.join(pth, '../../../data/_3dmodels/Lower_Right_Stringer.step') )
     print 'pth', pth
@@ -83,7 +83,9 @@ def run( n_procs ):
     
     _results = []
     P = processing.Pool( n_procs )
-    _results = P.map(vectorized_slicer, arguments(10000, n_procs))
+    _results = P.map(vectorized_slicer, arguments(1000, n_procs))
+    
+    print '\n\n\n DONE SLICING \n\n\n'
     
     for result_shp in _results:
         print 'result_shp',result_shp
