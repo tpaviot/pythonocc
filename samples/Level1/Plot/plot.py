@@ -17,6 +17,7 @@ from OCC.Display.wxSamplesGui import display, start_display
 
 
 from occ_utils import file_to_shape
+from OCC.Aspect import *
 box = file_to_shape('/Volumes/DATA/Jelle_prive/Jelle_dev/workspace/SVN/phd_code/chair_II/open_cube/open_voxel_chair_1.iges')
 
 box_ais = display.DisplayShape(box)
@@ -47,12 +48,41 @@ img = PlotMgt_ImageDriver(tmp[0].ToCString())
 # build projector
 proj = display.View.Proj()
 # V3d_Coordinate is missing
-#at = display.View.At()
+at = display.View.At()
+up = display.View.Up()
 
+'''
+
+    V3d_Coordinate DX,DY,DZ,XAt,YAt,ZAt, Vx,Vy,Vz ; 
+    myActiveView->Proj(DX,DY,DZ); 
+    myActiveView->At(XAt,YAt,ZAt); 
+    myActiveView->Up( Vx,Vy,Vz );
+    OnDisplay(false);
+    Standard_Boolean IsPerspective = (myActiveView->Type() == V3d_PERSPECTIVE);
+    Quantity_Length aFocus = 1;
+    Prs3d_Projector aPrs3dProjector(IsPerspective,aFocus,DX,DY,DZ,XAt,YAt,ZAt,Vx,Vy,Vz);
+    HLRAlgo_Projector aProjector = aPrs3dProjector.Projector();
+ 
+    if (myDisplayableShape.IsNull()) return;
+    myDisplayableShape->SetProjector(aProjector);
+'''
+
+#import ipdb; ipdb.set_trace()
+projector = Prs3d_Projector(False, 1, proj[0],
+                                       proj[1],
+                                        proj[2],
+                                      at[0],
+                                       at[1],
+                                        at[2],
+                                      up[0],
+                                       up[1],
+                                        up[2]
+                                )
 
 proj = HLRAlgo_Projector()
 hlr = HLRBRep_PolyAlgo()
-hlr.Projector(proj)
+#hlr.Projector(proj)
+hlr.Projector(projector.Projector())
 
 hlr.Load(box) 
 hlr.Update()
@@ -75,8 +105,20 @@ for i in [
 #    display.EraseAll()
     display.DisplayShape(i)
 #    import ipdb; ipdb.set_trace()
+    # works
+    display.View.ScreenCopy(img.GetHandle())
+    # crash
+#    img.Spool(Aspect_PM_NPLOTTER, tmp[0] )
     
+'''
+
+notes printing: 
     
+    display.View.ScreenCopy
+    display.View.ProjModel
+
+
+'''
 
 
 #_pres_proj = Prs3d_Projector()
