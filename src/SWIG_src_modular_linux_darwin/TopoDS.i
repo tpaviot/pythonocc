@@ -554,7 +554,22 @@ class TopoDS_Shape {
 	if (__env){printf("## Call custom destructor for instance of TopoDS_Shape\n");}
 	}
 };
-
+%extend TopoDS_Shape {
+%pythoncode {
+	def __getstate__(self):
+		from BRepTools import BRepTools_ShapeSet
+		ss = BRepTools_ShapeSet()
+		ss.Add(self)
+		str_shape = ss.WriteToString()
+		return str_shape
+	def __setstate__(self, state):
+		from BRepTools import BRepTools_ShapeSet
+		ss = BRepTools_ShapeSet()
+		ss.ReadFromString(state)
+		the_shape = ss.Shape(ss.NbShapes())
+		self.this = the_shape.this
+	}
+};
 
 %nodefaultctor TopoDS_Compound;
 class TopoDS_Compound : public TopoDS_Shape {

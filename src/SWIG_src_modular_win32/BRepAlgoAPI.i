@@ -159,6 +159,8 @@ class BRepAlgoAPI_BooleanOperation : public BRepBuilderAPI_MakeShape {
 	~BRepAlgoAPI_BooleanOperation() {
 	char *__env=getenv("PYTHONOCC_VERBOSE");
 	if (__env){printf("## Call custom destructor for instance of BRepAlgoAPI_BooleanOperation\n");}
+	$self->Destroy();
+
 	}
 };
 
