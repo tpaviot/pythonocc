@@ -34,11 +34,13 @@
 ##The fact that you are presently reading this means that you have had
 ##knowledge of the CeCILL license and that you accept its terms.
 
-import OCC
+from OCC.Bnd import *
+from OCC.BRepBndLib import *
 
-def GetBoundingBox(shape, tol=1e-4):
-    bbox = OCC.Bnd_Box()
-    OCC.BRepBndLib().Add(shape, bbox)
+
+def get_boundingbox(shape, tol=1e-4):
+    bbox = Bnd_Box()
+    BRepBndLib().Add(shape, bbox)
     bbox.SetGap(tol)
     return bbox
 
