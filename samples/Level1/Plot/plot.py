@@ -15,10 +15,9 @@ from OCC.Display.wxSamplesGui import display, start_display
 
 #box = BRepPrimAPI_MakeBox(1,1,1).Shape()
 
-
-from occ_utils import file_to_shape
+from OCC.Utils.DataExchange.utils import file_to_shape
 from OCC.Aspect import *
-box = file_to_shape('/Volumes/DATA/Jelle_prive/Jelle_dev/workspace/SVN/phd_code/chair_II/open_cube/open_voxel_chair_1.iges')
+box = file_to_shape('../../../data/_3dmodels/aube_pleine.stp')
 
 box_ais = display.DisplayShape(box)
 #display.Context.SetTransparency(box_ais, 0.8)
