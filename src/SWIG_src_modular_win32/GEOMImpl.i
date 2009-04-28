@@ -1892,11 +1892,11 @@ class GEOMImpl_IHealingOperations : public GEOM_IOperations {
 		%feature("autodoc", "1");
 		Handle_GEOM_Object ShapeProcess(Handle_GEOM_Object , const Handle_TColStd_HArray1OfExtendedString &theOperations, const Handle_TColStd_HArray1OfExtendedString &theParams, const Handle_TColStd_HArray1OfExtendedString &theValues);
 		%feature("autodoc", "1");
-		void GetShapeProcessParameters(std::list<std::basic_string>, std::list<std::basic_string>, std::list<std::basic_string>);
+		void GetShapeProcessParameters(std::list<std::string>, std::list<std::string>, std::list<std::string>);
 		%feature("autodoc", "1");
-		bool GetOperatorParameters(const std::string theOperation, std::list<std::basic_string>, std::list<std::basic_string>);
+		bool GetOperatorParameters(const std::string theOperation, std::list<std::string>, std::list<std::string>);
 		%feature("autodoc", "1");
-		bool GetParameters(const std::string theOperation, std::list<std::basic_string>);
+		bool GetParameters(const std::string theOperation, std::list<std::string>);
 		%feature("autodoc", "1");
 		Handle_GEOM_Object SuppressFaces(Handle_GEOM_Object , const Handle_TColStd_HArray1OfInteger &theFaces);
 		%feature("autodoc", "1");
