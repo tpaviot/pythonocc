@@ -511,8 +511,8 @@ class ModularBuilder(object):
                 tmp = argument_types[0]
                 tmp = tmp.split('<')[1]
                 tmp = tmp.split(',')[0]
-                #if tmp=='std::basic_string':
-                #    tmp='std::string'
+                if tmp=='std::basic_string':
+                    tmp='std::string'
                 #if tmp=='std::basic_string':
                 #    tmp='std::basic_string<char>'
                 argument_types[0] = 'std::list'
