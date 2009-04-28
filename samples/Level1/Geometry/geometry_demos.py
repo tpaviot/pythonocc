@@ -85,14 +85,12 @@ def _Tcol_dim_1(li, _type):
     pts = _type(0, len(li)-1)
     for n,i in enumerate(li):
         pts.SetValue(n,i)
-    pts.thisown = False
     return pts
 
 def _Tcol_dim_2(li, _type):
     '''function factory for 2-dimensional TCol* types'''
     length_nested = len(li[0])-1
     pts = _type(0, len(li)-1, 0, length_nested)
-    pts.thisown = False
     return pts
     for n1,i in enumerate(li):
         for n2,j in enumerate(i):
@@ -167,13 +165,11 @@ def make_text(string, pnt, height):
 def make_edge2d(shape):
     spline = BRepBuilderAPI_MakeEdge2d(shape)
     spline.Build()
-    spline.thisown = False
     return spline.Shape()
 
 def make_edge(shape):
     spline = BRepBuilderAPI_MakeEdge(shape)
     spline.Build()
-    spline.thisown = False
     return spline.Shape()
 
 def make_vertex(pnt):
@@ -182,13 +178,11 @@ def make_vertex(pnt):
     else: 
         vertex = BRepBuilderAPI_MakeVertex( pnt )
     vertex.Build()
-    vertex.thisown = False
     return vertex.Shape()
 
 def make_face(shape):
     face = BRepBuilderAPI_MakeFace(shape)
     face.Build()
-    face.thisown = False
     return face.Shape()
 
 
