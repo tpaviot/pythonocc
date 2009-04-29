@@ -391,7 +391,8 @@ class ChamferFilter(FilterSource):
         ret = selector.Solve(Map)
         
         if not ret:
-            raise Exception("Failed to solve for edge")
+            #raise Exception("Failed to solve for edge")
+            print "Failed to solve for edge"
         
         nt = TNaming.TNaming_Tool()
         selected_shape = nt.CurrentShape(selector.NamedShape())
