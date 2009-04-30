@@ -207,6 +207,7 @@ class ModularBuilder(object):
         self.NEEDED_HXX = []
         self.IMPORTED_MODULES = []
         self.MEMBER_FUNCTIONS_TO_EXCLUDE = {}
+        self.CLASS_TO_RENAME = {}
         self.ClassDocstring = ""
         self.MemberfunctionDocStrings = {}
         self.ALREADY_EXPOSED = []
@@ -218,6 +219,7 @@ class ModularBuilder(object):
         self.GenerateSWIGSourceFile()
         self.WriteDepencyFile()
         self.WriteHeaderFile()
+        self.WriteRenameFile()
         
     def BuildClassHierarchy(self):
         """
@@ -232,7 +234,43 @@ class ModularBuilder(object):
             if len(derived)>0:
                 for der in derived:
                     self.DERIVED[der.related_class.name]=class_name
-       
+    
+    def Rename(self, OCC_class_name):
+        """
+        The OCC_class_name can is formatted as PackageName_ClassName. We wish to have something more pythonic:
+        PackageName.ClassName. Class renaming is then necessary.
+        This function takes the OCC_class_name and returns pythonOCC_class_name.
+        gp_Pnt->Pnt
+        gp_Vec->Vec
+        Standard_GUID->GUID
+        Handle_Standard_Transient->Handle->Transient
+        """
+        if OCC_class_name == self.MODULE_NAME: # for instance the 'gp' class of the 'gp' package
+            return OCC_class_name
+        if OCC_class_name.startswith("Handle"):
+            l = OCC_class_name.split('_')
+            l[1] = '_'
+            pythonOCC_class_name = ''.join(l)
+        else:
+            pythonOCC_class_name = OCC_class_name.split('_')[1]
+        return pythonOCC_class_name
+    
+    def AddRename(self, OCC_class_name):
+        """
+        Adds this rename to the dict of renames to include in MODULENAME_renames.i
+        """
+        pythonOCC_class_name = self.Rename(OCC_class_name)
+        self.CLASS_TO_RENAME[pythonOCC_class_name] = OCC_class_name
+    
+    def WriteRenameFile(self):
+        """
+        Create the modulename_renames.i file
+        """
+        renames_fp = open(os.path.join(os.getcwd(),'%s'%environment.SWIG_FILES_PATH_MODULAR,'%s_renames.i'%self.MODULE_NAME),"w")
+        for pythonOCC_class_name in self.CLASS_TO_RENAME.keys():
+            OCC_class_name = self.CLASS_TO_RENAME[pythonOCC_class_name]
+            renames_fp.write('%%rename(%s) %s;\n'%(pythonOCC_class_name, OCC_class_name))
+    
     def BuildTypedefList(self):
         """
         Fill in the typedef_list with all typedef defined in this module
@@ -601,7 +639,9 @@ class ModularBuilder(object):
             return True
         if class_declaration.is_abstract: #cannot instanciate abstract class
             CURRENT_CLASS_IS_ABSTRACT = True
-
+        # That's ok, let's go for this class
+        #print self.Rename(class_name)
+        self.AddRename(class_name)
         print "####### class %s ##########"%class_name
         # getting docstrings
         if self._generate_doc and not ('Handle' in class_name):
@@ -769,7 +809,10 @@ class ModularBuilder(object):
         self.WriteLicenseHeader(self.occ_fp)
         self.occ_fp.write("%module ")
         self.occ_fp.write("%s"%self.MODULE_NAME)
-        self.occ_fp.write(PYOCC_HEADER_TEMPLATE)
+        # Add renames
+        self.occ_fp.write("\n\n%%include %s_renames.i"%self.MODULE_NAME)        
+        # Write common header
+        self.occ_fp.write(PYOCC_HEADER_TEMPLATE)        
         # Add dependencies
         self.occ_fp.write("\n%%include %s_dependencies.i\n\n"%self.MODULE_NAME)
         # Add headers
@@ -888,6 +931,8 @@ class ModularBuilder(object):
                     self.fp.write("enum %s {\n"%enum_name)
                     for value in enum.values:
                         self.fp.write("\t%s,\n"%value[0])
+                        # Rename enums
+                        self.AddRename(value[0])
                     self.fp.write("\t};\n\n")
         except:
             print "Error while getting enums"
