@@ -1,27 +1,21 @@
-##Copyright (c) 2009, Bryan Cole
-##All rights reserved.
+#!/usr/bin/env python
+
+##Copyright 2009, Bryan Cole (bryancole.cam@googlemail.com)
 ##
-##Redistribution and use in source and binary forms, with or without
-##modification, are permitted provided that the following conditions are met:
-##    * Redistributions of source code must retain the above copyright
-##      notice, this list of conditions and the following disclaimer.
-##    * Redistributions in binary form must reproduce the above copyright
-##      notice, this list of conditions and the following disclaimer in the
-##      documentation and/or other materials provided with the distribution.
-##    * Neither the name of the <organization> nor the
-##      names of its contributors may be used to endorse or promote products
-##      derived from this software without specific prior written permission.
+##This file is part of pythonOCC.
 ##
-##THIS SOFTWARE IS PROVIDED BY Bryan Cole ''AS IS'' AND ANY
-##EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-##WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-##DISCLAIMED. IN NO EVENT SHALL Bryan Cole BE LIABLE FOR ANY
-##DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-##(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-##LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-##ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-##(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-##SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
+##
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU General Public License for more details.
+##
+##You should have received a copy of the GNU General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 
 from enthought.traits.api import (HasTraits, Property, Bool, 
@@ -127,18 +121,19 @@ class TopologySource(ProcessObject):
     def update_naming(self, make_shape):
         """
         Create named shapes for the created primitive and all the
-        sub-shapes we want to track (edges, in this case).
-        
-        In most application, one would want to track faces as well.
+        sub-shapes we want to track. It seems sufficient to 
+        track faces. TNaming_Selector automatically identifies
+        other topology (edges, vertices) based on the faces to
+        which they belong
         """
         label = self.label
         shape = make_shape.Shape()
         builder = TNaming.TNaming_Builder(label)
         builder.Generated(shape)
-        for i, edge in enumerate(Topo(shape).edges()):
-            e_label = label.FindChild(i+1) #creates a new label if it is not found
-            builder = TNaming.TNaming_Builder(e_label)
-            builder.Generated(edge)
+        for i, face in enumerate(Topo(shape).faces()):
+            f_label = label.FindChild(i+1) #creates a new label if it is not found
+            builder = TNaming.TNaming_Builder(f_label)
+            builder.Generated(face)
             
             
 class FilterSource(ProcessObject):
@@ -164,27 +159,27 @@ class FilterSource(ProcessObject):
         
         topo = Topo(input_shape)
         
-        for edge in topo.edges():
-            gen_shapes = make_shape.Generated(edge)
+        for face in topo.faces():
+            gen_shapes = make_shape.Generated(face)
             itr = TopTools.TopTools_ListIteratorOfListOfShape(gen_shapes)
             while itr.More():
                 this = itr.Value()
-                gen_builder.Generated(edge, this)
-                print "generated", edge, this
+                gen_builder.Generated(face, this)
+                print "generated", face, this
                 itr.Next()
                         
-        for edge in topo.edges():
-            mod_shapes = make_shape.Modified(edge)
+        for face in topo.faces():
+            mod_shapes = make_shape.Modified(face)
             itr = TopTools.TopTools_ListIteratorOfListOfShape(mod_shapes)
             while itr.More():
                 this = itr.Value()
-                mod_builder.Modified(edge, this)
-                print "modified", edge, this
+                mod_builder.Modified(face, this)
+                print "modified", face, this
                 itr.Next()
                         
-        for edge in topo.edges():
-            if make_shape.IsDeleted(edge):
-                del_builder.Delete(edge)
+        for face in topo.faces():
+            if make_shape.IsDeleted(face):
+                del_builder.Delete(face)
       
       
 class BlockSource(TopologySource):
@@ -286,38 +281,41 @@ class BooleanOpFilter(FilterSource):
         
         if make_shape.HasGenerated():
             for in_shape in [input_shape, tool_shape]:
-                for edge in Topo(in_shape).edges():
-                    gen_shapes = make_shape.Generated(edge)
+                for face in Topo(in_shape).faces():
+                    gen_shapes = make_shape.Generated(face)
                     itr = TopTools.TopTools_ListIteratorOfListOfShape(gen_shapes)
                     while itr.More():
                         this = itr.Value()
-                        gen_builder.Generated(edge, this)
-                        print "generated", edge, this
+                        gen_builder.Generated(face, this)
+                        print "generated", face, this
                         itr.Next()
                         
         if make_shape.HasModified():
-            for edge in Topo(input_shape).edges():
-                mod_shapes = make_shape.Modified(edge)
+            for face in Topo(input_shape).faces():
+                mod_shapes = make_shape.Modified(face)
                 itr = TopTools.TopTools_ListIteratorOfListOfShape(mod_shapes)
                 while itr.More():
                     this = itr.Value()
-                    mod_builder.Modify(edge, this)
-                    print "modified", edge, this
+                    mod_builder.Modify(face, this)
+                    print "modified", face, this
                     itr.Next()
                     
-            for edge in Topo(tool_shape).edges():
-                mod_shapes = make_shape.Modified2(edge)
+            for face in Topo(tool_shape).faces():
+                mod_shapes = make_shape.Modified2(face)
                 itr = TopTools.TopTools_ListIteratorOfListOfShape(mod_shapes)
                 while itr.More():
                     this = itr.Value()
-                    mod_builder.Modified(edge, this)
-                    print "modified2", edge, this
+                    mod_builder.Modify(face, this)
+                    print "modified2", face, this
                     itr.Next()
                         
         if make_shape.HasDeleted():
-            for edge in Topo(input_shape).edges():
-                if make_shape.IsDeleted(edge):
-                    del_builder.Delete(edge)
+            for face in Topo(input_shape).faces():
+                if make_shape.IsDeleted(face):
+                    del_builder.Delete(face)
+            for face in Topo(tool_shape).faces():
+                if make_shape.IsDeleted(face):
+                    del_builder.Delete(face)
     
     
 class ChamferFilter(FilterSource):
@@ -391,8 +389,8 @@ class ChamferFilter(FilterSource):
         ret = selector.Solve(Map)
         
         if not ret:
-            #raise Exception("Failed to solve for edge")
-            print "Failed to solve for edge"
+            raise Exception("Failed to solve for edge")
+            #print "Failed to solve for edge"
         
         nt = TNaming.TNaming_Tool()
         selected_shape = nt.CurrentShape(selector.NamedShape())

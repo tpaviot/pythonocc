@@ -1,27 +1,21 @@
-##Copyright (c) 2009, Bryan Cole
-##All rights reserved.
+#!/usr/bin/env python
+
+##Copyright 2009, Bryan Cole (bryancole.cam@googlemail.com)
 ##
-##Redistribution and use in source and binary forms, with or without
-##modification, are permitted provided that the following conditions are met:
-##    * Redistributions of source code must retain the above copyright
-##      notice, this list of conditions and the following disclaimer.
-##    * Redistributions in binary form must reproduce the above copyright
-##      notice, this list of conditions and the following disclaimer in the
-##      documentation and/or other materials provided with the distribution.
-##    * Neither the name of the <organization> nor the
-##      names of its contributors may be used to endorse or promote products
-##      derived from this software without specific prior written permission.
+##This file is part of pythonOCC.
 ##
-##THIS SOFTWARE IS PROVIDED BY Bryan Cole ''AS IS'' AND ANY
-##EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-##WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-##DISCLAIMED. IN NO EVENT SHALL Bryan Cole BE LIABLE FOR ANY
-##DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-##(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-##LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-##ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-##(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-##SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+##pythonOCC is free software: you can redistribute it and/or modify
+##it under the terms of the GNU General Public License as published by
+##the Free Software Foundation, either version 3 of the License, or
+##(at your option) any later version.
+##
+##pythonOCC is distributed in the hope that it will be useful,
+##but WITHOUT ANY WARRANTY; without even the implied warranty of
+##MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+##GNU General Public License for more details.
+##
+##You should have received a copy of the GNU General Public License
+##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 """
 An example illustrating how to update components in an XDE document and have the View 
@@ -165,16 +159,18 @@ class MyFrame(wx.Frame):
         self.canvas = MyCanvas(self, doc)
         self.canvas.InitDoc()
         
-        label1 = wx.StaticText(self, -1, "Scale shape:")
-        self.slider = wx.Slider(self, -1, 20, 1,100, style=wx.SL_HORIZONTAL)
+        panel = wx.Panel(self, -1)
+        
+        label1 = wx.StaticText(panel, -1, "Scale shape:")
+        self.slider = wx.Slider(panel, -1, 20, 1,100, style=wx.SL_HORIZONTAL)
         self.slider.Bind(wx.EVT_SLIDER, self.OnSlide)
         
-        label2 = wx.StaticText(self, -1, "Translate component:")
-        self.slider2 = wx.Slider(self, -1, 50, 0,100, style=wx.SL_HORIZONTAL)
+        label2 = wx.StaticText(panel, -1, "Translate component:")
+        self.slider2 = wx.Slider(panel, -1, 50, 0,100, style=wx.SL_HORIZONTAL)
         self.slider2.Bind(wx.EVT_SLIDER, self.OnSlide2)
         
-        label3 = wx.StaticText(self, -1, "Rotate shape:")
-        self.slider3 = wx.Slider(self, -1, 50, 0,100, style=wx.SL_HORIZONTAL)
+        label3 = wx.StaticText(panel, -1, "Rotate shape:")
+        self.slider3 = wx.Slider(panel, -1, 50, 0,100, style=wx.SL_HORIZONTAL)
         self.slider3.Bind(wx.EVT_SLIDER, self.OnSlide3)
         
         sizer=wx.FlexGridSizer(wx.VERTICAL)
@@ -187,9 +183,11 @@ class MyFrame(wx.Frame):
         sizer.Add(label3, 0, wx.ALL|wx.EXPAND,3)
         sizer.Add(self.slider3, 0, wx.EXPAND|wx.ALL, 3)
         
+        panel.SetSizer(sizer)
+        
         sz = wx.BoxSizer(wx.VERTICAL)
         sz.Add(self.canvas, 1, wx.EXPAND|wx.ALL,3)
-        sz.Add(sizer, 0, wx.EXPAND|wx.ALL,3)
+        sz.Add(panel, 0, wx.EXPAND|wx.ALL,3)
         self.SetSizer(sz)
         
         self.Layout()
