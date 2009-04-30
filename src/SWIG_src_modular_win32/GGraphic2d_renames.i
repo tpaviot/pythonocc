@@ -1,0 +1,9 @@
+%rename(CurveDefinitionError) GGraphic2d_CurveDefinitionError;
+%rename(SequenceOfCurve) GGraphic2d_SequenceOfCurve;
+%rename(Handle_SetOfCurves) Handle_GGraphic2d_SetOfCurves;
+%rename(Handle_CurveDefinitionError) Handle_GGraphic2d_CurveDefinitionError;
+%rename(Curve) GGraphic2d_Curve;
+%rename(Handle_Curve) Handle_GGraphic2d_Curve;
+%rename(SetOfCurves) GGraphic2d_SetOfCurves;
+%rename(SequenceNodeOfSequenceOfCurve) GGraphic2d_SequenceNodeOfSequenceOfCurve;
+%rename(Handle_SequenceNodeOfSequenceOfCurve) Handle_GGraphic2d_SequenceNodeOfSequenceOfCurve;

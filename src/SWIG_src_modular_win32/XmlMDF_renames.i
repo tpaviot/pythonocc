@@ -1,0 +1,17 @@
+%rename(DataMapNodeOfTypeADriverMap) XmlMDF_DataMapNodeOfTypeADriverMap;
+%rename(DataMapIteratorOfMapOfDriver) XmlMDF_DataMapIteratorOfMapOfDriver;
+%rename(Handle_DataMapNodeOfTypeADriverMap) Handle_XmlMDF_DataMapNodeOfTypeADriverMap;
+%rename(Handle_TagSourceDriver) Handle_XmlMDF_TagSourceDriver;
+%rename(TypeADriverMap) XmlMDF_TypeADriverMap;
+%rename(TagSourceDriver) XmlMDF_TagSourceDriver;
+%rename(Handle_ReferenceDriver) Handle_XmlMDF_ReferenceDriver;
+%rename(Handle_DataMapNodeOfMapOfDriver) Handle_XmlMDF_DataMapNodeOfMapOfDriver;
+%rename(Handle_ADriverTable) Handle_XmlMDF_ADriverTable;
+%rename(DataMapNodeOfMapOfDriver) XmlMDF_DataMapNodeOfMapOfDriver;
+%rename(ReferenceDriver) XmlMDF_ReferenceDriver;
+%rename(DataMapIteratorOfTypeADriverMap) XmlMDF_DataMapIteratorOfTypeADriverMap;
+%rename(MapOfDriver) XmlMDF_MapOfDriver;
+%rename(Handle_ADriver) Handle_XmlMDF_ADriver;
+%rename(XmlMDF) XmlMDF;
+%rename(ADriver) XmlMDF_ADriver;
+%rename(ADriverTable) XmlMDF_ADriverTable;

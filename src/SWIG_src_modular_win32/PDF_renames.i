@@ -1,0 +1,14 @@
+%rename(Handle_Reference) Handle_PDF_Reference;
+%rename(VArrayNodeOfFieldOfHAttributeArray1) PDF_VArrayNodeOfFieldOfHAttributeArray1;
+%rename(VArrayTNodeOfFieldOfHAttributeArray1) PDF_VArrayTNodeOfFieldOfHAttributeArray1;
+%rename(Reference) PDF_Reference;
+%rename(Data) PDF_Data;
+%rename(Attribute) PDF_Attribute;
+%rename(Handle_VArrayNodeOfFieldOfHAttributeArray1) Handle_PDF_VArrayNodeOfFieldOfHAttributeArray1;
+%rename(TagSource) PDF_TagSource;
+%rename(FieldOfHAttributeArray1) PDF_FieldOfHAttributeArray1;
+%rename(HAttributeArray1) PDF_HAttributeArray1;
+%rename(Handle_Data) Handle_PDF_Data;
+%rename(Handle_Attribute) Handle_PDF_Attribute;
+%rename(Handle_TagSource) Handle_PDF_TagSource;
+%rename(Handle_HAttributeArray1) Handle_PDF_HAttributeArray1;

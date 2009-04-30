@@ -1,0 +1,11 @@
+%rename(RWCcDesignDateAndTimeAssignment) RWStepAP203_RWCcDesignDateAndTimeAssignment;
+%rename(RWChangeRequest) RWStepAP203_RWChangeRequest;
+%rename(RWCcDesignApproval) RWStepAP203_RWCcDesignApproval;
+%rename(RWStartRequest) RWStepAP203_RWStartRequest;
+%rename(RWCcDesignPersonAndOrganizationAssignment) RWStepAP203_RWCcDesignPersonAndOrganizationAssignment;
+%rename(RWCcDesignSpecificationReference) RWStepAP203_RWCcDesignSpecificationReference;
+%rename(RWChange) RWStepAP203_RWChange;
+%rename(RWCcDesignCertification) RWStepAP203_RWCcDesignCertification;
+%rename(RWCcDesignSecurityClassification) RWStepAP203_RWCcDesignSecurityClassification;
+%rename(RWCcDesignContract) RWStepAP203_RWCcDesignContract;
+%rename(RWStartWork) RWStepAP203_RWStartWork;

@@ -1,0 +1,15 @@
+%rename(Handle_XYZDriver) Handle_XmlTObjDrivers_XYZDriver;
+%rename(Handle_ModelDriver) Handle_XmlTObjDrivers_ModelDriver;
+%rename(ObjectDriver) XmlTObjDrivers_ObjectDriver;
+%rename(ModelDriver) XmlTObjDrivers_ModelDriver;
+%rename(Handle_ObjectDriver) Handle_XmlTObjDrivers_ObjectDriver;
+%rename(Handle_DocumentRetrievalDriver) Handle_XmlTObjDrivers_DocumentRetrievalDriver;
+%rename(Handle_ReferenceDriver) Handle_XmlTObjDrivers_ReferenceDriver;
+%rename(IntSparseArrayDriver) XmlTObjDrivers_IntSparseArrayDriver;
+%rename(DocumentRetrievalDriver) XmlTObjDrivers_DocumentRetrievalDriver;
+%rename(DocumentStorageDriver) XmlTObjDrivers_DocumentStorageDriver;
+%rename(ReferenceDriver) XmlTObjDrivers_ReferenceDriver;
+%rename(XYZDriver) XmlTObjDrivers_XYZDriver;
+%rename(XmlTObjDrivers) XmlTObjDrivers;
+%rename(Handle_IntSparseArrayDriver) Handle_XmlTObjDrivers_IntSparseArrayDriver;
+%rename(Handle_DocumentStorageDriver) Handle_XmlTObjDrivers_DocumentStorageDriver;

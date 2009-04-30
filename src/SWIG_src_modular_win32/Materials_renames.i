@@ -1,0 +1,16 @@
+%rename(Handle_Color) Handle_Materials_Color;
+%rename(MaterialDefinition) Materials_MaterialDefinition;
+%rename(MaterialsDictionary) Materials_MaterialsDictionary;
+%rename(Handle_MaterialDefinition) Handle_Materials_MaterialDefinition;
+%rename(Material) Materials_Material;
+%rename(Materials) Materials;
+%rename(MaterialsSequence) Materials_MaterialsSequence;
+%rename(Color) Materials_Color;
+%rename(Handle_MaterialsDictionary) Handle_Materials_MaterialsDictionary;
+%rename(SequenceNodeOfMtsSequence) Materials_SequenceNodeOfMtsSequence;
+%rename(MtsSequence) Materials_MtsSequence;
+%rename(Handle_FuzzyInstance) Handle_Materials_FuzzyInstance;
+%rename(FuzzyInstance) Materials_FuzzyInstance;
+%rename(Handle_Material) Handle_Materials_Material;
+%rename(Handle_SequenceNodeOfMtsSequence) Handle_Materials_SequenceNodeOfMtsSequence;
+%rename(Handle_MaterialsSequence) Handle_Materials_MaterialsSequence;

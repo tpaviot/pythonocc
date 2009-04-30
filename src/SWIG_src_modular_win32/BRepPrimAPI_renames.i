@@ -1,0 +1,12 @@
+%rename(MakeCylinder) BRepPrimAPI_MakeCylinder;
+%rename(MakeCone) BRepPrimAPI_MakeCone;
+%rename(MakeOneAxis) BRepPrimAPI_MakeOneAxis;
+%rename(MakeSphere) BRepPrimAPI_MakeSphere;
+%rename(MakePrism) BRepPrimAPI_MakePrism;
+%rename(MakeHalfSpace) BRepPrimAPI_MakeHalfSpace;
+%rename(MakeTorus) BRepPrimAPI_MakeTorus;
+%rename(MakeRevolution) BRepPrimAPI_MakeRevolution;
+%rename(MakeRevol) BRepPrimAPI_MakeRevol;
+%rename(MakeBox) BRepPrimAPI_MakeBox;
+%rename(MakeSweep) BRepPrimAPI_MakeSweep;
+%rename(MakeWedge) BRepPrimAPI_MakeWedge;

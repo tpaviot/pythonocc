@@ -1,0 +1,10 @@
+%rename(DictionaryOfInteger) Dico_DictionaryOfInteger;
+%rename(StackItemOfDictionaryOfTransient) Dico_StackItemOfDictionaryOfTransient;
+%rename(Handle_DictionaryOfInteger) Handle_Dico_DictionaryOfInteger;
+%rename(StackItemOfDictionaryOfInteger) Dico_StackItemOfDictionaryOfInteger;
+%rename(Handle_DictionaryOfTransient) Handle_Dico_DictionaryOfTransient;
+%rename(Handle_StackItemOfDictionaryOfInteger) Handle_Dico_StackItemOfDictionaryOfInteger;
+%rename(DictionaryOfTransient) Dico_DictionaryOfTransient;
+%rename(Handle_StackItemOfDictionaryOfTransient) Handle_Dico_StackItemOfDictionaryOfTransient;
+%rename(IteratorOfDictionaryOfInteger) Dico_IteratorOfDictionaryOfInteger;
+%rename(IteratorOfDictionaryOfTransient) Dico_IteratorOfDictionaryOfTransient;

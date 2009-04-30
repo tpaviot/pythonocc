@@ -1,0 +1,15 @@
+%rename(Handle_HArray1OfTriangle) Handle_PPoly_HArray1OfTriangle;
+%rename(PolygonOnTriangulation) PPoly_PolygonOnTriangulation;
+%rename(Polygon3D) PPoly_Polygon3D;
+%rename(VArrayTNodeOfFieldOfHArray1OfTriangle) PPoly_VArrayTNodeOfFieldOfHArray1OfTriangle;
+%rename(Triangle) PPoly_Triangle;
+%rename(Handle_Polygon3D) Handle_PPoly_Polygon3D;
+%rename(Handle_PolygonOnTriangulation) Handle_PPoly_PolygonOnTriangulation;
+%rename(Handle_Polygon2D) Handle_PPoly_Polygon2D;
+%rename(Triangulation) PPoly_Triangulation;
+%rename(Polygon2D) PPoly_Polygon2D;
+%rename(Handle_VArrayNodeOfFieldOfHArray1OfTriangle) Handle_PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
+%rename(VArrayNodeOfFieldOfHArray1OfTriangle) PPoly_VArrayNodeOfFieldOfHArray1OfTriangle;
+%rename(FieldOfHArray1OfTriangle) PPoly_FieldOfHArray1OfTriangle;
+%rename(Handle_Triangulation) Handle_PPoly_Triangulation;
+%rename(HArray1OfTriangle) PPoly_HArray1OfTriangle;

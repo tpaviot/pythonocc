@@ -1,0 +1,12 @@
+%rename(ListIteratorOfListOfSequenceOfInteger) GraphTools_ListIteratorOfListOfSequenceOfInteger;
+%rename(Handle_SC) Handle_GraphTools_SC;
+%rename(Handle_ListNodeOfSCList) Handle_GraphTools_ListNodeOfSCList;
+%rename(RGNode) GraphTools_RGNode;
+%rename(SCList) GraphTools_SCList;
+%rename(ListNodeOfSCList) GraphTools_ListNodeOfSCList;
+%rename(ListNodeOfListOfSequenceOfInteger) GraphTools_ListNodeOfListOfSequenceOfInteger;
+%rename(ListOfSequenceOfInteger) GraphTools_ListOfSequenceOfInteger;
+%rename(ListIteratorOfSCList) GraphTools_ListIteratorOfSCList;
+%rename(TSNode) GraphTools_TSNode;
+%rename(SC) GraphTools_SC;
+%rename(Handle_ListNodeOfListOfSequenceOfInteger) Handle_GraphTools_ListNodeOfListOfSequenceOfInteger;

@@ -1,0 +1,13 @@
+%rename(Rotation) BRepSweep_Rotation;
+%rename(Tool) BRepSweep_Tool;
+%rename(Iterator) BRepSweep_Iterator;
+%rename(Handle_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep) Handle_BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep;
+%rename(Trsf) BRepSweep_Trsf;
+%rename(Builder) BRepSweep_Builder;
+%rename(Revol) BRepSweep_Revol;
+%rename(Prism) BRepSweep_Prism;
+%rename(Array2OfShapesOfNumLinearRegularSweep) BRepSweep_Array2OfShapesOfNumLinearRegularSweep;
+%rename(SequenceOfShapesOfNumLinearRegularSweep) BRepSweep_SequenceOfShapesOfNumLinearRegularSweep;
+%rename(Translation) BRepSweep_Translation;
+%rename(SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep) BRepSweep_SequenceNodeOfSequenceOfShapesOfNumLinearRegularSweep;
+%rename(NumLinearRegularSweep) BRepSweep_NumLinearRegularSweep;

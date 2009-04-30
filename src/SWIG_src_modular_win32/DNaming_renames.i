@@ -1,0 +1,5 @@
+%rename(Handle_DataMapNodeOfDataMapOfShapeOfName) Handle_DNaming_DataMapNodeOfDataMapOfShapeOfName;
+%rename(DataMapIteratorOfDataMapOfShapeOfName) DNaming_DataMapIteratorOfDataMapOfShapeOfName;
+%rename(DataMapOfShapeOfName) DNaming_DataMapOfShapeOfName;
+%rename(DataMapNodeOfDataMapOfShapeOfName) DNaming_DataMapNodeOfDataMapOfShapeOfName;
+%rename(DNaming) DNaming;

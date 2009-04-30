@@ -1,0 +1,17 @@
+%rename(VArrayOfReal) DBC_VArrayOfReal;
+%rename(VArrayTNodeOfVArrayOfExtCharacter) DBC_VArrayTNodeOfVArrayOfExtCharacter;
+%rename(VArrayNodeOfVArrayOfInteger) DBC_VArrayNodeOfVArrayOfInteger;
+%rename(VArrayOfInteger) DBC_VArrayOfInteger;
+%rename(Handle_VArrayNodeOfVArrayOfExtCharacter) Handle_DBC_VArrayNodeOfVArrayOfExtCharacter;
+%rename(VArrayNodeOfVArrayOfReal) DBC_VArrayNodeOfVArrayOfReal;
+%rename(VArrayTNodeOfVArrayOfReal) DBC_VArrayTNodeOfVArrayOfReal;
+%rename(VArrayTNodeOfVArrayOfInteger) DBC_VArrayTNodeOfVArrayOfInteger;
+%rename(VArrayNodeOfVArrayOfCharacter) DBC_VArrayNodeOfVArrayOfCharacter;
+%rename(Handle_VArrayNodeOfVArrayOfCharacter) Handle_DBC_VArrayNodeOfVArrayOfCharacter;
+%rename(VArrayOfExtCharacter) DBC_VArrayOfExtCharacter;
+%rename(VArrayTNodeOfVArrayOfCharacter) DBC_VArrayTNodeOfVArrayOfCharacter;
+%rename(VArrayNodeOfVArrayOfExtCharacter) DBC_VArrayNodeOfVArrayOfExtCharacter;
+%rename(VArrayOfCharacter) DBC_VArrayOfCharacter;
+%rename(BaseArray) DBC_BaseArray;
+%rename(Handle_VArrayNodeOfVArrayOfReal) Handle_DBC_VArrayNodeOfVArrayOfReal;
+%rename(Handle_VArrayNodeOfVArrayOfInteger) Handle_DBC_VArrayNodeOfVArrayOfInteger;

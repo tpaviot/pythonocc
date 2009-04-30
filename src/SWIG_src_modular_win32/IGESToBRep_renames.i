@@ -1,0 +1,15 @@
+%rename(CurveAndSurface) IGESToBRep_CurveAndSurface;
+%rename(IGESBoundary) IGESToBRep_IGESBoundary;
+%rename(Handle_IGESBoundary) Handle_IGESToBRep_IGESBoundary;
+%rename(Handle_Actor) Handle_IGESToBRep_Actor;
+%rename(Actor) IGESToBRep_Actor;
+%rename(TopoCurve) IGESToBRep_TopoCurve;
+%rename(IGESToBRep) IGESToBRep;
+%rename(TopoSurface) IGESToBRep_TopoSurface;
+%rename(Reader) IGESToBRep_Reader;
+%rename(BRepEntity) IGESToBRep_BRepEntity;
+%rename(BasicCurve) IGESToBRep_BasicCurve;
+%rename(BasicSurface) IGESToBRep_BasicSurface;
+%rename(Handle_ToolContainer) Handle_IGESToBRep_ToolContainer;
+%rename(Handle_AlgoContainer) Handle_IGESToBRep_AlgoContainer;
+%rename(ToolContainer) IGESToBRep_ToolContainer;

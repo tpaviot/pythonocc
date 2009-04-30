@@ -1,0 +1,12 @@
+%rename(FieldOfHArray1OfNamedShape) PNaming_FieldOfHArray1OfNamedShape;
+%rename(Handle_Naming) Handle_PNaming_Naming;
+%rename(Name) PNaming_Name;
+%rename(Naming) PNaming_Naming;
+%rename(HArray1OfNamedShape) PNaming_HArray1OfNamedShape;
+%rename(VArrayNodeOfFieldOfHArray1OfNamedShape) PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
+%rename(NamedShape) PNaming_NamedShape;
+%rename(Handle_HArray1OfNamedShape) Handle_PNaming_HArray1OfNamedShape;
+%rename(Handle_VArrayNodeOfFieldOfHArray1OfNamedShape) Handle_PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape;
+%rename(Handle_Name) Handle_PNaming_Name;
+%rename(Handle_NamedShape) Handle_PNaming_NamedShape;
+%rename(VArrayTNodeOfFieldOfHArray1OfNamedShape) PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape;

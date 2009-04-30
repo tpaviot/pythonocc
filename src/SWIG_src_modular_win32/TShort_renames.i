@@ -1,0 +1,11 @@
+%rename(Handle_HArray2OfShortReal) Handle_TShort_HArray2OfShortReal;
+%rename(Array1OfShortReal) TShort_Array1OfShortReal;
+%rename(SequenceNodeOfSequenceOfShortReal) TShort_SequenceNodeOfSequenceOfShortReal;
+%rename(Handle_HSequenceOfShortReal) Handle_TShort_HSequenceOfShortReal;
+%rename(HArray1OfShortReal) TShort_HArray1OfShortReal;
+%rename(Array2OfShortReal) TShort_Array2OfShortReal;
+%rename(Handle_SequenceNodeOfSequenceOfShortReal) Handle_TShort_SequenceNodeOfSequenceOfShortReal;
+%rename(HSequenceOfShortReal) TShort_HSequenceOfShortReal;
+%rename(Handle_HArray1OfShortReal) Handle_TShort_HArray1OfShortReal;
+%rename(HArray2OfShortReal) TShort_HArray2OfShortReal;
+%rename(SequenceOfShortReal) TShort_SequenceOfShortReal;

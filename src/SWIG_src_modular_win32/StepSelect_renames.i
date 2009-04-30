@@ -1,0 +1,12 @@
+%rename(Handle_WorkLibrary) Handle_StepSelect_WorkLibrary;
+%rename(Handle_StepType) Handle_StepSelect_StepType;
+%rename(ModelModifier) StepSelect_ModelModifier;
+%rename(FloatFormat) StepSelect_FloatFormat;
+%rename(Handle_Activator) Handle_StepSelect_Activator;
+%rename(WorkLibrary) StepSelect_WorkLibrary;
+%rename(StepType) StepSelect_StepType;
+%rename(Handle_FileModifier) Handle_StepSelect_FileModifier;
+%rename(FileModifier) StepSelect_FileModifier;
+%rename(Activator) StepSelect_Activator;
+%rename(Handle_FloatFormat) Handle_StepSelect_FloatFormat;
+%rename(Handle_ModelModifier) Handle_StepSelect_ModelModifier;

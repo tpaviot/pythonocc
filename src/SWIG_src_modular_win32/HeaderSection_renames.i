@@ -1,0 +1,10 @@
+%rename(FileSchema) HeaderSection_FileSchema;
+%rename(Handle_FileDescription) Handle_HeaderSection_FileDescription;
+%rename(HeaderSection) HeaderSection;
+%rename(HeaderRecognizer) HeaderSection_HeaderRecognizer;
+%rename(Handle_FileName) Handle_HeaderSection_FileName;
+%rename(FileName) HeaderSection_FileName;
+%rename(Handle_FileSchema) Handle_HeaderSection_FileSchema;
+%rename(FileDescription) HeaderSection_FileDescription;
+%rename(Handle_Protocol) Handle_HeaderSection_Protocol;
+%rename(Handle_HeaderRecognizer) Handle_HeaderSection_HeaderRecognizer;

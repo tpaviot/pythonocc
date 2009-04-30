@@ -1,0 +1,15 @@
+%rename(Context) ShapeProcess_Context;
+%rename(OperLibrary) ShapeProcess_OperLibrary;
+%rename(ShapeContext) ShapeProcess_ShapeContext;
+%rename(Handle_DictionaryOfOperator) Handle_ShapeProcess_DictionaryOfOperator;
+%rename(StackItemOfDictionaryOfOperator) ShapeProcess_StackItemOfDictionaryOfOperator;
+%rename(Handle_ShapeContext) Handle_ShapeProcess_ShapeContext;
+%rename(Handle_Context) Handle_ShapeProcess_Context;
+%rename(ShapeProcess) ShapeProcess;
+%rename(IteratorOfDictionaryOfOperator) ShapeProcess_IteratorOfDictionaryOfOperator;
+%rename(Handle_Operator) Handle_ShapeProcess_Operator;
+%rename(Handle_StackItemOfDictionaryOfOperator) Handle_ShapeProcess_StackItemOfDictionaryOfOperator;
+%rename(DictionaryOfOperator) ShapeProcess_DictionaryOfOperator;
+%rename(UOperator) ShapeProcess_UOperator;
+%rename(Handle_UOperator) Handle_ShapeProcess_UOperator;
+%rename(Operator) ShapeProcess_Operator;
