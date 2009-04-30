@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module StlAPI
 
+%include StlAPI_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i

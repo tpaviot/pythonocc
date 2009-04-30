@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module BRep
 
+%include BRep_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i

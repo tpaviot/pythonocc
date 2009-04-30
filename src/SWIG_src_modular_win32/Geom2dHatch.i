@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Geom2dHatch
 
+%include Geom2dHatch_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i

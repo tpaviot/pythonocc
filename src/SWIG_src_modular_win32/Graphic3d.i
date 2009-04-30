@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module Graphic3d
 
+%include Graphic3d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i

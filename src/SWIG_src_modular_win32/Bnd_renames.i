@@ -1,0 +1,17 @@
+%rename(Box) Bnd_Box;
+%rename(Handle_HArray1OfBox) Handle_Bnd_HArray1OfBox;
+%rename(BoundSortBox2d) Bnd_BoundSortBox2d;
+%rename(Array1OfBox2d) Bnd_Array1OfBox2d;
+%rename(SequenceNodeOfSeqOfBox) Bnd_SequenceNodeOfSeqOfBox;
+%rename(SeqOfBox) Bnd_SeqOfBox;
+%rename(Array1OfBox) Bnd_Array1OfBox;
+%rename(Box2d) Bnd_Box2d;
+%rename(HArray1OfBox2d) Bnd_HArray1OfBox2d;
+%rename(BoundSortBox) Bnd_BoundSortBox;
+%rename(Handle_HArray1OfBox2d) Handle_Bnd_HArray1OfBox2d;
+%rename(B3d) Bnd_B3d;
+%rename(B2f) Bnd_B2f;
+%rename(B3f) Bnd_B3f;
+%rename(B2d) Bnd_B2d;
+%rename(Handle_SequenceNodeOfSeqOfBox) Handle_Bnd_SequenceNodeOfSeqOfBox;
+%rename(HArray1OfBox) Bnd_HArray1OfBox;

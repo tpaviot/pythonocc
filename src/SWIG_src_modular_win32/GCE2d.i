@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module GCE2d
 
+%include GCE2d_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i

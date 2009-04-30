@@ -1,0 +1,17 @@
+%rename(DistanceSS) BRepExtrema_DistanceSS;
+%rename(UnCompatibleShape) BRepExtrema_UnCompatibleShape;
+%rename(SequenceNodeOfSeqOfSolution) BRepExtrema_SequenceNodeOfSeqOfSolution;
+%rename(IsVertex) BRepExtrema_IsVertex;
+%rename(DistShapeShape) BRepExtrema_DistShapeShape;
+%rename(Poly) BRepExtrema_Poly;
+%rename(ExtPC) BRepExtrema_ExtPC;
+%rename(IsOnEdge) BRepExtrema_IsOnEdge;
+%rename(IsInFace) BRepExtrema_IsInFace;
+%rename(ExtCF) BRepExtrema_ExtCF;
+%rename(ExtCC) BRepExtrema_ExtCC;
+%rename(SolutionElem) BRepExtrema_SolutionElem;
+%rename(Handle_SequenceNodeOfSeqOfSolution) Handle_BRepExtrema_SequenceNodeOfSeqOfSolution;
+%rename(ExtPF) BRepExtrema_ExtPF;
+%rename(ExtFF) BRepExtrema_ExtFF;
+%rename(Handle_UnCompatibleShape) Handle_BRepExtrema_UnCompatibleShape;
+%rename(SeqOfSolution) BRepExtrema_SeqOfSolution;

@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module ShapeProcess
 
+%include ShapeProcess_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i

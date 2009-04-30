@@ -20,6 +20,8 @@ along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 */
 %module DBC
 
+%include DBC_renames.i
+
 %include typemaps.i
 %include cmalloc.i
 %include cpointer.i
