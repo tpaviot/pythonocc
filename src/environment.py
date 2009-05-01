@@ -28,7 +28,7 @@ from distutils import sysconfig
 #
 # Define pythonOCC version
 #
-VERSION = '30_april_2009'
+VERSION = '1st_may_2009'
 #
 # Wrap SalomeGEOM?
 #
@@ -62,7 +62,7 @@ if sys.platform=='win32':
     ECA = ['/link']#,'/SUBSYSTEM:CONSOLE']#,'/Os'] #space optimization '/MACHINE:X86',
     #SWIG_OPTS = ['-modern','-small','-fastdispatch','-c++','-DWNT','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS']
     SWIG_OPTS = ['-O','-c++','-DWNT',\
-                 '-w302,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
+                 '-w302,401,314,509,512','-Wall','-DCSFDB','-DWIN32','-D_WINDOWS','-outdir','%s'%os.path.join(os.getcwd(),'OCC')]
     ELA = []
 elif sys.platform=='linux2':
     SWIG_FILES_PATH_MODULAR = os.path.join(os.getcwd(),'SWIG_src_modular_linux_darwin')

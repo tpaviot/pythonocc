@@ -45,7 +45,6 @@
 %rename(OSD) OSD;
 %rename(Handle_ExceptionINTDIVIDEBYZERO) Handle_OSD_Exception_INT_DIVIDE_BY_ZERO;
 %rename(OSF) OSD_OSF;
-%rename(None) OSD_None;
 %rename(Path) OSD_Path;
 %rename(ExclusiveLock) OSD_ExclusiveLock;
 %rename(OS2) OSD_OS2;
@@ -101,6 +100,7 @@
 %rename(ReadWrite) OSD_ReadWrite;
 %rename(WHost) OSD_WHost;
 %rename(Environment) OSD_Environment;
+%rename(OSD_None) OSD_None;
 %rename(FileNode) OSD_FileNode;
 %rename(VMS) OSD_VMS;
 %rename(SIGHUP) OSD_SIGHUP;

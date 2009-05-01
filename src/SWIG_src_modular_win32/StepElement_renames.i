@@ -24,6 +24,7 @@
 %rename(Unspecified) StepElement_Unspecified;
 %rename(CurveElementSectionDerivedDefinitions) StepElement_CurveElementSectionDerivedDefinitions;
 %rename(Handle_SequenceNodeOfSequenceOfCurveElementSectionDefinition) Handle_StepElement_SequenceNodeOfSequenceOfCurveElementSectionDefinition;
+%rename(Handle_HArray2OfSurfaceElementPurposeMember) Handle_StepElement_HArray2OfSurfaceElementPurposeMember;
 %rename(Warping) StepElement_Warping;
 %rename(BendingTorsion) StepElement_BendingTorsion;
 %rename(ZRotation) StepElement_ZRotation;
@@ -48,7 +49,6 @@
 %rename(CurveElementPurposeMember) StepElement_CurveElementPurposeMember;
 %rename(Handle_CurveElementEndReleasePacket) Handle_StepElement_CurveElementEndReleasePacket;
 %rename(CurveElementPurpose) StepElement_CurveElementPurpose;
-%rename(None) StepElement_None;
 %rename(XRotation) StepElement_XRotation;
 %rename(Handle_AnalysisItemWithinRepresentation) Handle_StepElement_AnalysisItemWithinRepresentation;
 %rename(HArray1OfVolumeElementPurpose) StepElement_HArray1OfVolumeElementPurpose;
@@ -114,7 +114,7 @@
 %rename(Volume) StepElement_Volume;
 %rename(SurfaceSection) StepElement_SurfaceSection;
 %rename(XYShear) StepElement_XYShear;
-%rename(Handle_HArray2OfSurfaceElementPurposeMember) Handle_StepElement_HArray2OfSurfaceElementPurposeMember;
+%rename(StepElement_None) StepElement_None;
 %rename(SurfaceSectionField) StepElement_SurfaceSectionField;
 %rename(Handle_HArray2OfCurveElementPurposeMember) Handle_StepElement_HArray2OfCurveElementPurposeMember;
 %rename(Volume3dElementDescriptor) StepElement_Volume3dElementDescriptor;

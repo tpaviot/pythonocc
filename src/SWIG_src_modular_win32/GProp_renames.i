@@ -10,7 +10,7 @@
 %rename(Plane) GProp_Plane;
 %rename(Line) GProp_Line;
 %rename(PEquation) GProp_PEquation;
-%rename(None) GProp_None;
+%rename(GProp_None) GProp_None;
 %rename(InertiaXX) GProp_InertiaXX;
 %rename(Mass) GProp_Mass;
 %rename(PrincipalProps) GProp_PrincipalProps;

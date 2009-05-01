@@ -253,6 +253,8 @@ class ModularBuilder(object):
             pythonOCC_class_name = ''.join(l)
         else:
             pythonOCC_class_name = OCC_class_name.split('_')[1]
+            if pythonOCC_class_name == 'None':
+                pythonOCC_class_name = OCC_class_name
         return pythonOCC_class_name
     
     def AddRename(self, OCC_class_name):

@@ -30,6 +30,7 @@
 %rename(SequenceNodeOfSequenceOfPrinters) Message_SequenceNodeOfSequenceOfPrinters;
 %rename(Fail19) Message_Fail19;
 %rename(Fail18) Message_Fail18;
+%rename(Message_None) Message_None;
 %rename(Fail11) Message_Fail11;
 %rename(Fail10) Message_Fail10;
 %rename(Fail13) Message_Fail13;
@@ -39,7 +40,6 @@
 %rename(Fail17) Message_Fail17;
 %rename(Fail16) Message_Fail16;
 %rename(Info) Message_Info;
-%rename(None) Message_None;
 %rename(Fail32) Message_Fail32;
 %rename(Fail31) Message_Fail31;
 %rename(Fail30) Message_Fail30;
