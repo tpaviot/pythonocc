@@ -26,8 +26,6 @@ import datetime
 try:
     from pygccxml import declarations
     from pyplusplus import module_builder
-    from pyplusplus.module_creator import sort_algorithms
-    from pyplusplus.module_builder import call_policies
     HAVE_PYGCCXML = True
 except ImportError:
     HAVE_PYGCCXML = False
