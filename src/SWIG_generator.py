@@ -251,7 +251,7 @@ class ModularBuilder(object):
             pythonOCC_class_name = ''.join(l)
         else:
             pythonOCC_class_name = OCC_class_name.split('_')[1]
-            if pythonOCC_class_name == 'None':
+            if pythonOCC_class_name in ['None','LIN']:#issues with GProp_None, OSD_LIN
                 pythonOCC_class_name = OCC_class_name
         return pythonOCC_class_name
     
