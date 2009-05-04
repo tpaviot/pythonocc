@@ -217,7 +217,7 @@ class ModularBuilder(object):
         self.GenerateSWIGSourceFile()
         self.WriteDepencyFile()
         self.WriteHeaderFile()
-        self.WriteRenameFile()
+        self.WriteFilterNameFile()
         
     def BuildClassHierarchy(self):
         """
@@ -233,8 +233,10 @@ class ModularBuilder(object):
                 for der in derived:
                     self.DERIVED[der.related_class.name]=class_name
     
-    def Rename(self, OCC_class_name):
+    def FilterName(self, OCC_class_name):
         """
+        This method can be used to rename classes / enums.
+        For instance.
         The OCC_class_name can is formatted as PackageName_ClassName. We wish to have something more pythonic:
         PackageName.ClassName. Class renaming is then necessary.
         This function takes the OCC_class_name and returns pythonOCC_class_name.
@@ -242,8 +244,12 @@ class ModularBuilder(object):
         gp_Vec->Vec
         Standard_GUID->GUID
         Handle_Standard_Transient->Handle->Transient
+        By default, class name filtering is not enabled and returns the base class name
         """
+        return OCC_class_name
         if OCC_class_name == self.MODULE_NAME: # for instance the 'gp' class of the 'gp' package
+            return OCC_class_name
+        if OCC_class_name.startswith("Viewer_"):#no renamig for Viewer (V3d_Viwewer etc.)
             return OCC_class_name
         if OCC_class_name.startswith("Handle"):
             l = OCC_class_name.split('_')
@@ -255,14 +261,14 @@ class ModularBuilder(object):
                 pythonOCC_class_name = OCC_class_name
         return pythonOCC_class_name
     
-    def AddRename(self, OCC_class_name):
+    def AddFilterName(self, OCC_class_name):
         """
         Adds this rename to the dict of renames to include in MODULENAME_renames.i
         """
-        pythonOCC_class_name = self.Rename(OCC_class_name)
+        pythonOCC_class_name = self.FilterName(OCC_class_name)
         self.CLASS_TO_RENAME[pythonOCC_class_name] = OCC_class_name
     
-    def WriteRenameFile(self):
+    def WriteFilterNameFile(self):
         """
         Create the modulename_renames.i file
         """
@@ -641,7 +647,7 @@ class ModularBuilder(object):
             CURRENT_CLASS_IS_ABSTRACT = True
         # That's ok, let's go for this class
         #print self.Rename(class_name)
-        self.AddRename(class_name)
+        self.AddFilterName(class_name)
         print "####### class %s ##########"%class_name
         # getting docstrings
         if self._generate_doc and not ('Handle' in class_name):
@@ -932,7 +938,7 @@ class ModularBuilder(object):
                     for value in enum.values:
                         self.fp.write("\t%s,\n"%value[0])
                         # Rename enums
-                        self.AddRename(value[0])
+                        self.AddFilterName(value[0])
                     self.fp.write("\t};\n\n")
         except:
             print "Error while getting enums"
