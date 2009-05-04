@@ -1,5 +1,5 @@
-%rename(DocumentRetrievalDriver) StdLDrivers_DocumentRetrievalDriver;
-%rename(DocumentStorageDriver) StdLDrivers_DocumentStorageDriver;
-%rename(Handle_DocumentRetrievalDriver) Handle_StdLDrivers_DocumentRetrievalDriver;
+%rename(Handle_StdLDrivers_DocumentStorageDriver) Handle_StdLDrivers_DocumentStorageDriver;
+%rename(Handle_StdLDrivers_DocumentRetrievalDriver) Handle_StdLDrivers_DocumentRetrievalDriver;
+%rename(StdLDrivers_DocumentRetrievalDriver) StdLDrivers_DocumentRetrievalDriver;
 %rename(StdLDrivers) StdLDrivers;
-%rename(Handle_DocumentStorageDriver) Handle_StdLDrivers_DocumentStorageDriver;
+%rename(StdLDrivers_DocumentStorageDriver) StdLDrivers_DocumentStorageDriver;

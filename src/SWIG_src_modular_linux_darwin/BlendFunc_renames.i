@@ -1,6 +1,6 @@
+%rename(BlendFunc_Tensor) BlendFunc_Tensor;
 %rename(BlendFunc) BlendFunc;
-%rename(Tensor) BlendFunc_Tensor;
-%rename(Rational) BlendFunc_Rational;
-%rename(Polynomial) BlendFunc_Polynomial;
-%rename(QuasiAngular) BlendFunc_QuasiAngular;
-%rename(Linear) BlendFunc_Linear;
+%rename(BlendFunc_Linear) BlendFunc_Linear;
+%rename(BlendFunc_Rational) BlendFunc_Rational;
+%rename(BlendFunc_QuasiAngular) BlendFunc_QuasiAngular;
+%rename(BlendFunc_Polynomial) BlendFunc_Polynomial;

@@ -1,5 +1,5 @@
-%rename(PointConfondu) IntWalk_PointConfondu;
-%rename(ArretSurPointPrecedent) IntWalk_ArretSurPointPrecedent;
-%rename(PasTropGrand) IntWalk_PasTropGrand;
-%rename(OK) IntWalk_OK;
-%rename(ArretSurPoint) IntWalk_ArretSurPoint;
+%rename(IntWalk_PasTropGrand) IntWalk_PasTropGrand;
+%rename(IntWalk_PointConfondu) IntWalk_PointConfondu;
+%rename(IntWalk_ArretSurPointPrecedent) IntWalk_ArretSurPointPrecedent;
+%rename(IntWalk_OK) IntWalk_OK;
+%rename(IntWalk_ArretSurPoint) IntWalk_ArretSurPoint;

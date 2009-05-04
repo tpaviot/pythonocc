@@ -1,5 +1,5 @@
-%rename(ShadedRepresentation) VrmlAPI_ShadedRepresentation;
-%rename(Writer) VrmlAPI_Writer;
-%rename(BothRepresentation) VrmlAPI_BothRepresentation;
+%rename(VrmlAPI_BothRepresentation) VrmlAPI_BothRepresentation;
+%rename(VrmlAPI_WireFrameRepresentation) VrmlAPI_WireFrameRepresentation;
 %rename(VrmlAPI) VrmlAPI;
-%rename(WireFrameRepresentation) VrmlAPI_WireFrameRepresentation;
+%rename(VrmlAPI_ShadedRepresentation) VrmlAPI_ShadedRepresentation;
+%rename(VrmlAPI_Writer) VrmlAPI_Writer;

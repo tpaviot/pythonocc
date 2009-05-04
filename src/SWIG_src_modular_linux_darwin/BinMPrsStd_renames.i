@@ -1,5 +1,5 @@
-%rename(PositionDriver) BinMPrsStd_PositionDriver;
 %rename(BinMPrsStd) BinMPrsStd;
-%rename(Handle_AISPresentationDriver) Handle_BinMPrsStd_AISPresentationDriver;
-%rename(AISPresentationDriver) BinMPrsStd_AISPresentationDriver;
-%rename(Handle_PositionDriver) Handle_BinMPrsStd_PositionDriver;
+%rename(Handle_BinMPrsStd_AISPresentationDriver) Handle_BinMPrsStd_AISPresentationDriver;
+%rename(BinMPrsStd_PositionDriver) BinMPrsStd_PositionDriver;
+%rename(BinMPrsStd_AISPresentationDriver) BinMPrsStd_AISPresentationDriver;
+%rename(Handle_BinMPrsStd_PositionDriver) Handle_BinMPrsStd_PositionDriver;

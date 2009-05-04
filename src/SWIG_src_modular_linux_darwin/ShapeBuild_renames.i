@@ -1,5 +1,5 @@
+%rename(ShapeBuild_ReShape) ShapeBuild_ReShape;
+%rename(Handle_ShapeBuild_ReShape) Handle_ShapeBuild_ReShape;
 %rename(ShapeBuild) ShapeBuild;
-%rename(Edge) ShapeBuild_Edge;
-%rename(Handle_ReShape) Handle_ShapeBuild_ReShape;
-%rename(Vertex) ShapeBuild_Vertex;
-%rename(ReShape) ShapeBuild_ReShape;
+%rename(ShapeBuild_Edge) ShapeBuild_Edge;
+%rename(ShapeBuild_Vertex) ShapeBuild_Vertex;

@@ -1,1 +1,1 @@
-%rename(Handle_Driver) Handle_CGM_Driver;
+%rename(Handle_CGM_Driver) Handle_CGM_Driver;

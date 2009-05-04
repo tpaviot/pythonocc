@@ -1,8 +1,8 @@
-%rename(RWFileName) RWHeaderSection_RWFileName;
 %rename(RWHeaderSection) RWHeaderSection;
-%rename(RWFileSchema) RWHeaderSection_RWFileSchema;
-%rename(Handle_GeneralModule) Handle_RWHeaderSection_GeneralModule;
-%rename(GeneralModule) RWHeaderSection_GeneralModule;
-%rename(RWFileDescription) RWHeaderSection_RWFileDescription;
-%rename(Handle_ReadWriteModule) Handle_RWHeaderSection_ReadWriteModule;
-%rename(ReadWriteModule) RWHeaderSection_ReadWriteModule;
+%rename(Handle_RWHeaderSection_GeneralModule) Handle_RWHeaderSection_GeneralModule;
+%rename(RWHeaderSection_GeneralModule) RWHeaderSection_GeneralModule;
+%rename(RWHeaderSection_RWFileSchema) RWHeaderSection_RWFileSchema;
+%rename(RWHeaderSection_RWFileName) RWHeaderSection_RWFileName;
+%rename(Handle_RWHeaderSection_ReadWriteModule) Handle_RWHeaderSection_ReadWriteModule;
+%rename(RWHeaderSection_ReadWriteModule) RWHeaderSection_ReadWriteModule;
+%rename(RWHeaderSection_RWFileDescription) RWHeaderSection_RWFileDescription;

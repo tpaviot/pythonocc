@@ -1,3 +1,3 @@
+%rename(IGESCAFControl_Writer) IGESCAFControl_Writer;
 %rename(IGESCAFControl) IGESCAFControl;
-%rename(Writer) IGESCAFControl_Writer;
-%rename(Reader) IGESCAFControl_Reader;
+%rename(IGESCAFControl_Reader) IGESCAFControl_Reader;

@@ -1,4 +1,4 @@
-%rename(DEFAULT) UnitsAPI_DEFAULT;
-%rename(SI) UnitsAPI_SI;
-%rename(MDTV) UnitsAPI_MDTV;
+%rename(UnitsAPI_DEFAULT) UnitsAPI_DEFAULT;
+%rename(UnitsAPI_MDTV) UnitsAPI_MDTV;
+%rename(UnitsAPI_SI) UnitsAPI_SI;
 %rename(UnitsAPI) UnitsAPI;

@@ -1,5 +1,5 @@
-%rename(GeomCurve) GeomToIGES_GeomCurve;
-%rename(GeomSurface) GeomToIGES_GeomSurface;
-%rename(GeomEntity) GeomToIGES_GeomEntity;
-%rename(GeomPoint) GeomToIGES_GeomPoint;
-%rename(GeomVector) GeomToIGES_GeomVector;
+%rename(GeomToIGES_GeomPoint) GeomToIGES_GeomPoint;
+%rename(GeomToIGES_GeomCurve) GeomToIGES_GeomCurve;
+%rename(GeomToIGES_GeomVector) GeomToIGES_GeomVector;
+%rename(GeomToIGES_GeomSurface) GeomToIGES_GeomSurface;
+%rename(GeomToIGES_GeomEntity) GeomToIGES_GeomEntity;

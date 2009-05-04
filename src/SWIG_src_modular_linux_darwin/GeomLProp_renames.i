@@ -1,5 +1,5 @@
+%rename(GeomLProp_SurfaceTool) GeomLProp_SurfaceTool;
+%rename(GeomLProp_CurveTool) GeomLProp_CurveTool;
 %rename(GeomLProp) GeomLProp;
-%rename(SurfaceTool) GeomLProp_SurfaceTool;
-%rename(SLProps) GeomLProp_SLProps;
-%rename(CurveTool) GeomLProp_CurveTool;
-%rename(CLProps) GeomLProp_CLProps;
+%rename(GeomLProp_CLProps) GeomLProp_CLProps;
+%rename(GeomLProp_SLProps) GeomLProp_SLProps;

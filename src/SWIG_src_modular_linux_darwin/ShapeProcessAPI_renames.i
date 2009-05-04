@@ -1,1 +1,1 @@
-%rename(ApplySequence) ShapeProcessAPI_ApplySequence;
+%rename(ShapeProcessAPI_ApplySequence) ShapeProcessAPI_ApplySequence;

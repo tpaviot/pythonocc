@@ -1,7 +1,7 @@
+%rename(Handle_BinMFunction_FunctionDriver) Handle_BinMFunction_FunctionDriver;
 %rename(BinMFunction) BinMFunction;
-%rename(Handle_ScopeDriver) Handle_BinMFunction_ScopeDriver;
-%rename(GraphNodeDriver) BinMFunction_GraphNodeDriver;
-%rename(Handle_FunctionDriver) Handle_BinMFunction_FunctionDriver;
-%rename(FunctionDriver) BinMFunction_FunctionDriver;
-%rename(Handle_GraphNodeDriver) Handle_BinMFunction_GraphNodeDriver;
-%rename(ScopeDriver) BinMFunction_ScopeDriver;
+%rename(Handle_BinMFunction_GraphNodeDriver) Handle_BinMFunction_GraphNodeDriver;
+%rename(BinMFunction_FunctionDriver) BinMFunction_FunctionDriver;
+%rename(Handle_BinMFunction_ScopeDriver) Handle_BinMFunction_ScopeDriver;
+%rename(BinMFunction_GraphNodeDriver) BinMFunction_GraphNodeDriver;
+%rename(BinMFunction_ScopeDriver) BinMFunction_ScopeDriver;

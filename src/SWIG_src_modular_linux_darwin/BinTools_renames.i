@@ -1,6 +1,6 @@
-%rename(LocationSet) BinTools_LocationSet;
-%rename(ShapeSet) BinTools_ShapeSet;
-%rename(CurveSet) BinTools_CurveSet;
+%rename(BinTools_CurveSet) BinTools_CurveSet;
+%rename(BinTools_ShapeSet) BinTools_ShapeSet;
 %rename(BinTools) BinTools;
-%rename(Curve2dSet) BinTools_Curve2dSet;
-%rename(SurfaceSet) BinTools_SurfaceSet;
+%rename(BinTools_Curve2dSet) BinTools_Curve2dSet;
+%rename(BinTools_LocationSet) BinTools_LocationSet;
+%rename(BinTools_SurfaceSet) BinTools_SurfaceSet;

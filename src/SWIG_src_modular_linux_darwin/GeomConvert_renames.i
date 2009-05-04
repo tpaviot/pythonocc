@@ -1,9 +1,9 @@
-%rename(ApproxSurface) GeomConvert_ApproxSurface;
-%rename(BSplineSurfaceToBezierSurface) GeomConvert_BSplineSurfaceToBezierSurface;
-%rename(ApproxCurve) GeomConvert_ApproxCurve;
-%rename(BSplineSurfaceKnotSplitting) GeomConvert_BSplineSurfaceKnotSplitting;
-%rename(BSplineCurveToBezierCurve) GeomConvert_BSplineCurveToBezierCurve;
-%rename(CompCurveToBSplineCurve) GeomConvert_CompCurveToBSplineCurve;
-%rename(CompBezierSurfacesToBSplineSurface) GeomConvert_CompBezierSurfacesToBSplineSurface;
-%rename(BSplineCurveKnotSplitting) GeomConvert_BSplineCurveKnotSplitting;
+%rename(GeomConvert_BSplineCurveKnotSplitting) GeomConvert_BSplineCurveKnotSplitting;
+%rename(GeomConvert_BSplineSurfaceToBezierSurface) GeomConvert_BSplineSurfaceToBezierSurface;
+%rename(GeomConvert_BSplineCurveToBezierCurve) GeomConvert_BSplineCurveToBezierCurve;
+%rename(GeomConvert_ApproxSurface) GeomConvert_ApproxSurface;
+%rename(GeomConvert_BSplineSurfaceKnotSplitting) GeomConvert_BSplineSurfaceKnotSplitting;
+%rename(GeomConvert_CompCurveToBSplineCurve) GeomConvert_CompCurveToBSplineCurve;
+%rename(GeomConvert_ApproxCurve) GeomConvert_ApproxCurve;
+%rename(GeomConvert_CompBezierSurfacesToBSplineSurface) GeomConvert_CompBezierSurfacesToBSplineSurface;
 %rename(GeomConvert) GeomConvert;

@@ -1,3 +1,3 @@
-%rename(CurveTransition) TopTrans_CurveTransition;
-%rename(Array2OfOrientation) TopTrans_Array2OfOrientation;
-%rename(SurfaceTransition) TopTrans_SurfaceTransition;
+%rename(TopTrans_Array2OfOrientation) TopTrans_Array2OfOrientation;
+%rename(TopTrans_CurveTransition) TopTrans_CurveTransition;
+%rename(TopTrans_SurfaceTransition) TopTrans_SurfaceTransition;

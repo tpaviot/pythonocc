@@ -1,1 +1,1 @@
-%rename(Entity) BRepToIGESBRep_Entity;
+%rename(BRepToIGESBRep_Entity) BRepToIGESBRep_Entity;

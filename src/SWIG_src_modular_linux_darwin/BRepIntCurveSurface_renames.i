@@ -1,1 +1,1 @@
-%rename(Inter) BRepIntCurveSurface_Inter;
+%rename(BRepIntCurveSurface_Inter) BRepIntCurveSurface_Inter;
